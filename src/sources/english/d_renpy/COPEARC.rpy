@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say46723
 label copearc_s0: # - # IF ~  True()
-    nr 'This copper earring looks extremely old. It looks like it was meant to be worn, but there doesn„t seem to be a hook or any means of actually attaching it to your ear. There is a series of strange grooves on the inside of the earring, however.{#copearc_s0_}'
+    nr 'This copper earring looks extremely old. It looks like it was meant to be worn, but there doesn„t seem to be a hook or any means of actually attaching it to your ear. There is a series of strange grooves on the inside of the earring, however.{#copearc_s0_1}'
 
     menu:
         'Examine the grooves.{#copearc_s0_r46724}':
@@ -30,7 +30,7 @@ label copearc_s0: # - # IF ~  True()
 
 # s1 # say46727
 label copearc_s1: # from 0.0
-    nr 'The grooves are evenly spaced along the inside of the earring - upon closer examination, they remind you of small fangs. They are definitely man-made, but you can„t figure out what they were intended for.{#copearc_s1_}'
+    nr 'The grooves are evenly spaced along the inside of the earring - upon closer examination, they remind you of small fangs. They are definitely man-made, but you can„t figure out what they were intended for.{#copearc_s1_1}'
 
     menu:
         'Insert your fingernail into the notch that matches where the triangle was pointing in the fanged circle you saw on zombie #79„s forehead.{#copearc_s1_r46728}' if copearcLogic.r46728_condition():
@@ -45,7 +45,7 @@ label copearc_s1: # from 0.0
 
 # s2 # say46730
 label copearc_s2: # from 0.1 1.0
-    nr 'You hook your fingernail into the third groove from the top and press it inwards. As you do, there is a *click* and the top of the earring snaps open. Not only can you wear the earring now, it also looks like there is a secret compartment inside the earring.{#copearc_s2_}'
+    nr 'You hook your fingernail into the third groove from the top and press it inwards. As you do, there is a *click* and the top of the earring snaps open. Not only can you wear the earring now, it also looks like there is a secret compartment inside the earring.{#copearc_s2_1}'
 
     menu:
         'Shake the earring, see if anything comes out.{#copearc_s2_r46731}':
@@ -55,7 +55,7 @@ label copearc_s2: # from 0.1 1.0
 
 # s3 # say46732
 label copearc_s3: # from 2.0
-    nr 'You shake the earring, but nothing comes out. Whatever was hidden in the earring is gone now.  ^NNOTE: Discovering the latch to the earring will now allow you to wear it. In addition, the secret compartment may make the earring more valuable to a merchant.^-{#copearc_s3_}'
+    nr 'You shake the earring, but nothing comes out. Whatever was hidden in the earring is gone now.  ^NNOTE: Discovering the latch to the earring will now allow you to wear it. In addition, the secret compartment may make the earring more valuable to a merchant.^-{#copearc_s3_1}'
 
     menu:
         'Put the earring away.{#copearc_s3_r46733}':

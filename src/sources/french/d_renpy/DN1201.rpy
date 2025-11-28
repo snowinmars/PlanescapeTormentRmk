@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say44993
 label n1201_s0: # from 1.6 3.0 # IF ~  True()
-    nr 'Cette note dégage une odeur atroce, et un étrange schéma a été dessiné sous le texte. On dirait qu„il t“indique de replier les quatre coins du morceau de papier vers le centre. Il y a toute une série de marques bizarres dans les coins : une en haut à droite, deux en bas à droite et trois en bas à gauche (aucune en haut à gauche).{#n1201_s0_}'
+    nr 'Cette note dégage une odeur atroce, et un étrange schéma a été dessiné sous le texte. On dirait qu„il t“indique de replier les quatre coins du morceau de papier vers le centre. Il y a toute une série de marques bizarres dans les coins : une en haut à droite, deux en bas à droite et trois en bas à gauche (aucune en haut à gauche).{#n1201_s0_1}'
 
     menu:
         'Replie le coin du haut à droite vers le centre.{#n1201_s0_r44994}':
@@ -42,7 +42,7 @@ label n1201_s0: # from 1.6 3.0 # IF ~  True()
 
 # s1 # say44999
 label n1201_s1: # from 0.0 0.1 0.2 0.3 1.0 1.1 1.2 1.3 1.4
-    nr 'Tu replies le coin de manière à ce que sa pointe touche le centre.{#n1201_s1_}'
+    nr 'Tu replies le coin de manière à ce que sa pointe touche le centre.{#n1201_s1_1}'
 
     menu:
         'Replie le coin du haut à droite vers le centre.{#n1201_s1_r45000}' if n1201Logic.r45000_condition():
@@ -87,7 +87,7 @@ label n1201_s1: # from 0.0 0.1 0.2 0.3 1.0 1.1 1.2 1.3 1.4
 
 # s2 # say45015
 label n1201_s2: # from 1.5
-    nr 'Alors que tu plies le coin du haut à gauche vers le centre, tu vois que celui du haut à droite se déplie tout seul pour reprendre sa position initiale.{#n1201_s2_}'
+    nr 'Alors que tu plies le coin du haut à gauche vers le centre, tu vois que celui du haut à droite se déplie tout seul pour reprendre sa position initiale.{#n1201_s2_1}'
 
     menu:
         'Replie le coin du haut à droite vers le centre.{#n1201_s2_r45016}':
@@ -107,7 +107,7 @@ label n1201_s2: # from 1.5
 
 # s3 # say45019
 label n1201_s3: # from 2.1
-    nr 'Quand tu replies le coin du bas à gauche vers l„intérieur, rien ne se produit pendant un instant, puis les deux autres coins se déplient d“eux-mêmes. Il ne se passe rien d„autre.{#n1201_s3_}'
+    nr 'Quand tu replies le coin du bas à gauche vers l„intérieur, rien ne se produit pendant un instant, puis les deux autres coins se déplient d“eux-mêmes. Il ne se passe rien d„autre.{#n1201_s3_1}'
 
     menu:
         'Inspecte une nouvelle fois la note.{#n1201_s3_r45020}':
@@ -121,7 +121,7 @@ label n1201_s3: # from 2.1
 
 # s4 # say45022
 label n1201_s4: # from 2.0
-    nr 'Lorsque tu replies le coin du haut à droite vers le centre, celui du bas à gauche se plie également de lui-même. Les quatre coins touchent désormais le centre. Au bout de quelques secondes, les quatre triangles ainsi réunis se soulèvent pour constituer une petite pyramide de papier.{#n1201_s4_}'
+    nr 'Lorsque tu replies le coin du haut à droite vers le centre, celui du bas à gauche se plie également de lui-même. Les quatre coins touchent désormais le centre. Au bout de quelques secondes, les quatre triangles ainsi réunis se soulèvent pour constituer une petite pyramide de papier.{#n1201_s4_1}'
 
     menu:
         'Écarte les faces de la pyramide.{#n1201_s4_r45023}':
@@ -132,7 +132,7 @@ label n1201_s4: # from 2.0
 
 # s5 # say45024
 label n1201_s5: # from 4.0
-    nr 'Tu déplies les faces de la pyramide et le papier tombe en poussière pour te révéler une petite boucle d„oreille triangulaire qui luit de mille feux à la lumière.{#n1201_s5_}'
+    nr 'Tu déplies les faces de la pyramide et le papier tombe en poussière pour te révéler une petite boucle d„oreille triangulaire qui luit de mille feux à la lumière.{#n1201_s5_1}'
 
     menu:
         'Prends la boucle d„oreille triangulaire.{#n1201_s5_r45025}':

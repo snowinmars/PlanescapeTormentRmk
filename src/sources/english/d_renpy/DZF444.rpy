@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say35210
 label zf444_s0: # - # IF ~  True()
-    nr 'This female corpse is in terrible shape. What seem to be hundreds of tiny bites - from rats, perhaps - pock the tough, preservative-treated skin of the body. Judging from the puckered flesh around the wounds, they were most likely inflicted before the corpse was prepared. Her lips are sewn together, and the number "444" has been stained onto her face with dark blue ink.{#zf444_s0_}'
+    nr 'This female corpse is in terrible shape. What seem to be hundreds of tiny bites - from rats, perhaps - pock the tough, preservative-treated skin of the body. Judging from the puckered flesh around the wounds, they were most likely inflicted before the corpse was prepared. Her lips are sewn together, and the number "444" has been stained onto her face with dark blue ink.{#zf444_s0_1}'
 
     menu:
         '"So… doing anything later?"{#zf444_s0_r35211}' if zf444Logic.r35211_condition():
@@ -58,7 +58,7 @@ label zf444_s0: # - # IF ~  True()
 
 # s1 # say35212
 label zf444_s1: # from 0.0 0.1 0.2
-    nr 'The corpse continues to stare at you.{#zf444_s1_}'
+    nr 'The corpse continues to stare at you.{#zf444_s1_1}'
 
     menu:
         '"Farewell then."{#zf444_s1_r35213}' if zf444Logic.r35213_condition():
@@ -76,7 +76,7 @@ label zf444_s1: # from 0.0 0.1 0.2
 
 # s2 # say35231
 label zf444_s2: # from 0.3
-    nr 'This corpse makes no reply. It looks like it is too far gone to answer any of your questions.{#zf444_s2_}'
+    nr 'This corpse makes no reply. It looks like it is too far gone to answer any of your questions.{#zf444_s2_1}'
 
     menu:
         '"Farewell then."{#zf444_s2_r35232}' if zf444Logic.r35232_condition():
@@ -94,6 +94,6 @@ label zf444_s2: # from 0.3
 
 # s3 # say35241
 label zf444_s3: # - # IF ~  False()
-    nr 'This corpse makes no reply. It looks like it is too far gone to answer any of your questions.{#zf444_s3_}'
+    nr 'This corpse makes no reply. It looks like it is too far gone to answer any of your questions.{#zf444_s3_1}'
 
     menu:

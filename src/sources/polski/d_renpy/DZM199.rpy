@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say34975
 label zm199_s0: # - # IF ~  True()
-    nr 'Ten ponownie ożywiony truposz ciągnie za sobą odór zwęglonego mięsa i palących się tkanin. Dość świeże ślady oparzeń ciągną się wzdłuż jego prawego boku; być może stanął zbyt blisko jakiegoś pożaru i zaczął się palić. Na czole ma wyryty numer "199"; jego wargi są zaszyte.{#zm199_s0_}'
+    nr 'Ten ponownie ożywiony truposz ciągnie za sobą odór zwęglonego mięsa i palących się tkanin. Dość świeże ślady oparzeń ciągną się wzdłuż jego prawego boku; być może stanął zbyt blisko jakiegoś pożaru i zaczął się palić. Na czole ma wyryty numer "199"; jego wargi są zaszyte.{#zm199_s0_1}'
 
     menu:
         '"Więc jak… widziałeś, żeby działo się tu coś interesującego?"{#zm199_s0_r34976}' if zm199Logic.r34976_condition():
@@ -42,7 +42,7 @@ label zm199_s0: # - # IF ~  True()
 
 # s1 # say34977
 label zm199_s1: # from 0.0 0.1 0.2
-    nr 'Trup wciąż się w ciebie wpatruje.{#zm199_s1_}'
+    nr 'Trup wciąż się w ciebie wpatruje.{#zm199_s1_1}'
 
     menu:
         'Zostaw truposza w spokoju.{#zm199_s1_r34978}':
@@ -52,7 +52,7 @@ label zm199_s1: # from 0.0 0.1 0.2
 
 # s2 # say34982
 label zm199_s2: # from 0.3
-    nr 'Trup nie odpowiada. Wygląda na to, że jest w zbyt daleko posuniętym stadium rozkładu, aby odpowiedzieć na twoje pytania.{#zm199_s2_}'
+    nr 'Trup nie odpowiada. Wygląda na to, że jest w zbyt daleko posuniętym stadium rozkładu, aby odpowiedzieć na twoje pytania.{#zm199_s2_1}'
 
     menu:
         'Zostaw truposza w spokoju.{#zm199_s2_r34983}':

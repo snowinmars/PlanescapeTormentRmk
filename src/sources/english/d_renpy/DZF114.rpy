@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say34986
 label zf114_s0: # - # IF ~  True()
-    nr 'This woman„s corpse pauses in its trudging about as you approach. You notice the number "114" is carved into her forehead. Her mouth has been sewn shut, but the threading is slowly coming loose and faint moans issue from between her lips.{#zf114_s0_}'
+    nr 'This woman„s corpse pauses in its trudging about as you approach. You notice the number "114" is carved into her forehead. Her mouth has been sewn shut, but the threading is slowly coming loose and faint moans issue from between her lips.{#zf114_s0_1}'
 
     menu:
         '"So… doing anything later?"{#zf114_s0_r34987}' if zf114Logic.r34987_condition():
@@ -58,7 +58,7 @@ label zf114_s0: # - # IF ~  True()
 
 # s1 # say34988
 label zf114_s1: # from 0.0 0.1 0.2
-    nr 'The corpse continues to stare at you.{#zf114_s1_}'
+    nr 'The corpse continues to stare at you.{#zf114_s1_1}'
 
     menu:
         '"Farewell then."{#zf114_s1_r34989}' if zf114Logic.r34989_condition():
@@ -76,7 +76,7 @@ label zf114_s1: # from 0.0 0.1 0.2
 
 # s2 # say35007
 label zf114_s2: # from 0.3
-    nr 'This corpse makes no reply. It looks like it is too far gone to answer any of your questions.{#zf114_s2_}'
+    nr 'This corpse makes no reply. It looks like it is too far gone to answer any of your questions.{#zf114_s2_1}'
 
     menu:
         '"Farewell then."{#zf114_s2_r35008}' if zf114Logic.r35008_condition():
@@ -94,6 +94,6 @@ label zf114_s2: # from 0.3
 
 # s3 # say35017
 label zf114_s3: # - # IF ~  False()
-    nr 'This corpse makes no reply. It looks like it is too far gone to answer any of your questions.{#zf114_s3_}'
+    nr 'This corpse makes no reply. It looks like it is too far gone to answer any of your questions.{#zf114_s3_1}'
 
     menu:

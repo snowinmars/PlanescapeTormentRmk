@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say35082
 label zf1096_s0: # - # IF ~  True()
-    nr 'Diese weibliche Leiche macht ihre Runden im Raum, von Totenbank zu Totenbank. Ihr Haar ist zu einen langen Zopf geflochten und wie eine Schlinge um ihren Hals gelegt. Jemand hat die Zahl "1096" auf ihre Stirn gestanzt, und ihre Lippen sind zugenäht worden.{#zf1096_s0_}'
+    nr 'Diese weibliche Leiche macht ihre Runden im Raum, von Totenbank zu Totenbank. Ihr Haar ist zu einen langen Zopf geflochten und wie eine Schlinge um ihren Hals gelegt. Jemand hat die Zahl "1096" auf ihre Stirn gestanzt, und ihre Lippen sind zugenäht worden.{#zf1096_s0_1}'
 
     menu:
         '"Äh… Netter Zopf."{#zf1096_s0_r35083}' if zf1096Logic.r35083_condition():
@@ -58,7 +58,7 @@ label zf1096_s0: # - # IF ~  True()
 
 # s1 # say35084
 label zf1096_s1: # from 0.0 0.1 0.2
-    nr 'Die Leiche antwortet nicht. Du bezweifelst, daß sie überhaupt weiß, daß du da bist.{#zf1096_s1_}'
+    nr 'Die Leiche antwortet nicht. Du bezweifelst, daß sie überhaupt weiß, daß du da bist.{#zf1096_s1_1}'
 
     menu:
         '"Dann leb wohl."{#zf1096_s1_r35085}' if zf1096Logic.r35085_condition():
@@ -76,7 +76,7 @@ label zf1096_s1: # from 0.0 0.1 0.2
 
 # s2 # say35103
 label zf1096_s2: # from 0.3
-    nr 'Die Leiche rührt sich nicht. Sie sieht so aus, als sei sie schon ein bißchen zu weit hinüber, um deine Fragen zu beantworten.{#zf1096_s2_}'
+    nr 'Die Leiche rührt sich nicht. Sie sieht so aus, als sei sie schon ein bißchen zu weit hinüber, um deine Fragen zu beantworten.{#zf1096_s2_1}'
 
     menu:
         '"Dann leb wohl."{#zf1096_s2_r35104}' if zf1096Logic.r35104_condition():
@@ -94,6 +94,6 @@ label zf1096_s2: # from 0.3
 
 # s3 # say35113
 label zf1096_s3: # - # IF ~  False()
-    nr 'Die Leiche rührt sich nicht. Sie sieht so aus, als sei sie schon ein bißchen zu weit hinüber, um deine Fragen zu beantworten.{#zf1096_s3_}'
+    nr 'Die Leiche rührt sich nicht. Sie sieht so aus, als sei sie schon ein bißchen zu weit hinüber, um deine Fragen zu beantworten.{#zf1096_s3_1}'
 
     menu:

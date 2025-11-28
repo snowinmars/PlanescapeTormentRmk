@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say35018
 label zf594_s0: # - # IF ~  True()
-    nr 'Belhající se mrtvola na tebe zírá prázdnýma očima. Kůži má tenkou jako papír… jako by její tělo někdo potáhl hustou pavučinou. Uhlem má na čele napsané číslo "594".{#zf594_s0_}'
+    nr 'Belhající se mrtvola na tebe zírá prázdnýma očima. Kůži má tenkou jako papír… jako by její tělo někdo potáhl hustou pavučinou. Uhlem má na čele napsané číslo "594".{#zf594_s0_1}'
 
     menu:
         '"Takže… cos dělala poslední dobou?"{#zf594_s0_r35019}' if zf594Logic.r35019_condition():
@@ -58,7 +58,7 @@ label zf594_s0: # - # IF ~  True()
 
 # s1 # say35020
 label zf594_s1: # from 0.0 0.1 0.2
-    nr 'Mrtvola na tebe dál zírá.{#zf594_s1_}'
+    nr 'Mrtvola na tebe dál zírá.{#zf594_s1_1}'
 
     menu:
         '"Sbohem tedy."{#zf594_s1_r35021}' if zf594Logic.r35021_condition():
@@ -76,7 +76,7 @@ label zf594_s1: # from 0.0 0.1 0.2
 
 # s2 # say35039
 label zf594_s2: # from 0.3
-    nr 'Mrtvola neodpovídá. Asi už shnila příliš, aby byla schopná odpovídat na otázky.{#zf594_s2_}'
+    nr 'Mrtvola neodpovídá. Asi už shnila příliš, aby byla schopná odpovídat na otázky.{#zf594_s2_1}'
 
     menu:
         '"Sbohem tedy."{#zf594_s2_r35040}' if zf594Logic.r35040_condition():
@@ -94,6 +94,6 @@ label zf594_s2: # from 0.3
 
 # s3 # say35049
 label zf594_s3: # - # IF ~  False()
-    nr 'Mrtvola neodpovídá. Asi už shnila příliš, aby byla schopná odpovídat na otázky.{#zf594_s3_}'
+    nr 'Mrtvola neodpovídá. Asi už shnila příliš, aby byla schopná odpovídat na otázky.{#zf594_s3_1}'
 
     menu:

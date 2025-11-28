@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say6584
 label zm475_s0: # - # IF ~  True()
-    nr 'Der leicht deformierte Kopf der Leiche scheint von einigen dünnen Metallbändern, die direkt an seinen Schädel geschraubt sind, zusammengehalten zu werden. Ein verrostetes Eisenschild über seinem linken Auge hat die Nummer „475“ eingraviert. Ihr Mund ist zugeschraubt und sie riecht nach Einbalsamierflüssigkeit.{#zm475_s0_}'
+    nr 'Der leicht deformierte Kopf der Leiche scheint von einigen dünnen Metallbändern, die direkt an seinen Schädel geschraubt sind, zusammengehalten zu werden. Ein verrostetes Eisenschild über seinem linken Auge hat die Nummer „475“ eingraviert. Ihr Mund ist zugeschraubt und sie riecht nach Einbalsamierflüssigkeit.{#zm475_s0_1}'
 
     menu:
         '"Na… irgendwas Interessantes passiert?"{#zm475_s0_r6587}' if zm475Logic.r6587_condition():
@@ -42,7 +42,7 @@ label zm475_s0: # - # IF ~  True()
 
 # s1 # say6585
 label zm475_s1: # from 0.0 0.1 0.2
-    nr 'Die Leiche starrt dich weiter an.{#zm475_s1_}'
+    nr 'Die Leiche starrt dich weiter an.{#zm475_s1_1}'
 
     menu:
         'Laß die Leiche in Ruhe.{#zm475_s1_r6593}':
@@ -52,7 +52,7 @@ label zm475_s1: # from 0.0 0.1 0.2
 
 # s2 # say6586
 label zm475_s2: # from 0.3
-    nr 'Die Leiche antwortet nicht. Es sieht so aus, als ob sie schon zu tot ist, um noch auf irgendeine deiner Fragen zu antworten.{#zm475_s2_}'
+    nr 'Die Leiche antwortet nicht. Es sieht so aus, als ob sie schon zu tot ist, um noch auf irgendeine deiner Fragen zu antworten.{#zm475_s2_1}'
 
     menu:
         'Laß die Leiche in Ruhe.{#zm475_s2_r6594}':

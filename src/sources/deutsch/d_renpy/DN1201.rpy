@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say44993
 label n1201_s0: # from 1.6 3.0 # IF ~  True()
-    nr 'Auf diesem stinkenden Zettel ist unter einem Stück Text ein seltsames Diagramm erkennbar. Du verstehst es als Anleitung, alle Ecken auf die Mitte zu falten. In jeder Ecke stehen mehrere seltsame Zeichen: ein Zeichen oben rechts, zwei unten rechts und drei unten links. In der oberen linken Ecke steht gar nichts.{#n1201_s0_}'
+    nr 'Auf diesem stinkenden Zettel ist unter einem Stück Text ein seltsames Diagramm erkennbar. Du verstehst es als Anleitung, alle Ecken auf die Mitte zu falten. In jeder Ecke stehen mehrere seltsame Zeichen: ein Zeichen oben rechts, zwei unten rechts und drei unten links. In der oberen linken Ecke steht gar nichts.{#n1201_s0_1}'
 
     menu:
         'Falte die obere rechte Ecke zur Mitte.{#n1201_s0_r44994}':
@@ -42,7 +42,7 @@ label n1201_s0: # from 1.6 3.0 # IF ~  True()
 
 # s1 # say44999
 label n1201_s1: # from 0.0 0.1 0.2 0.3 1.0 1.1 1.2 1.3 1.4
-    nr 'Du faltest die Ecke so nach innen, daß sie mit der Spitze auf dem Mittelpunkt liegt.{#n1201_s1_}'
+    nr 'Du faltest die Ecke so nach innen, daß sie mit der Spitze auf dem Mittelpunkt liegt.{#n1201_s1_1}'
 
     menu:
         'Falte die obere rechte Ecke zur Mitte.{#n1201_s1_r45000}' if n1201Logic.r45000_condition():
@@ -87,7 +87,7 @@ label n1201_s1: # from 0.0 0.1 0.2 0.3 1.0 1.1 1.2 1.3 1.4
 
 # s2 # say45015
 label n1201_s2: # from 1.5
-    nr 'Als du die obere linke Ecke nach innen faltest, siehst du, wie die obere rechte Ecke in ihre normale Lage zurückkehrt.{#n1201_s2_}'
+    nr 'Als du die obere linke Ecke nach innen faltest, siehst du, wie die obere rechte Ecke in ihre normale Lage zurückkehrt.{#n1201_s2_1}'
 
     menu:
         'Falte die obere rechte Ecke wieder zur Mitte.{#n1201_s2_r45016}':
@@ -107,7 +107,7 @@ label n1201_s2: # from 1.5
 
 # s3 # say45019
 label n1201_s3: # from 2.1
-    nr 'Als du die untere linke Ecke nach innen faltest, bleibt sie kurz so liegen, aber dann gehen die anderen beiden Ecken auf. Sonst rührt sich nichts.{#n1201_s3_}'
+    nr 'Als du die untere linke Ecke nach innen faltest, bleibt sie kurz so liegen, aber dann gehen die anderen beiden Ecken auf. Sonst rührt sich nichts.{#n1201_s3_1}'
 
     menu:
         'Schau dir den Zettel noch mal genau an.{#n1201_s3_r45020}':
@@ -121,7 +121,7 @@ label n1201_s3: # from 2.1
 
 # s4 # say45022
 label n1201_s4: # from 2.0
-    nr 'Als du die obere rechte Ecke erneut nach innen faltest, knickt sich die untere linke Ecke ebenfalls spiegelbildlich nach innen. Es folgen die anderen beiden Ecken, bis alle sich mit der Spitze in der Mitte berühren. Dann richten sich die Ecken des Zettels zu einer kleinen vierseitige Papierpyramide auf.{#n1201_s4_}'
+    nr 'Als du die obere rechte Ecke erneut nach innen faltest, knickt sich die untere linke Ecke ebenfalls spiegelbildlich nach innen. Es folgen die anderen beiden Ecken, bis alle sich mit der Spitze in der Mitte berühren. Dann richten sich die Ecken des Zettels zu einer kleinen vierseitige Papierpyramide auf.{#n1201_s4_1}'
 
     menu:
         'Öffne die Seiten der Pyramide.{#n1201_s4_r45023}':
@@ -132,7 +132,7 @@ label n1201_s4: # from 2.0
 
 # s5 # say45024
 label n1201_s5: # from 4.0
-    nr 'Als du die Seiten der Pyramide wieder nach unten biegen willst, zerfällt das Papier zu Staub. Darin liegt ein kleiner dreieckiger Ohrring, der das Licht einfängt und strahlend glänzt.{#n1201_s5_}'
+    nr 'Als du die Seiten der Pyramide wieder nach unten biegen willst, zerfällt das Papier zu Staub. Darin liegt ein kleiner dreieckiger Ohrring, der das Licht einfängt und strahlend glänzt.{#n1201_s5_1}'
 
     menu:
         'Nimm den dreieckigen Ohrring…{#n1201_s5_r45025}':

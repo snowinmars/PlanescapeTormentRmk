@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say500
 label xach_s0: # - # IF ~  True()
-    nr 'Widzisz ciało mężczyzny z numerem "331" wyciętym na czole. Jego powieki i wargi są skrupulatnie zaszyte, natomiast w jego szyi tkwi pokaźna wyrwa. Fetor, jaki od niego bije, mógłby zapewne zabić kogoś o delikatniejszych nozdrzach.{#xach_s0_}'
+    nr 'Widzisz ciało mężczyzny z numerem "331" wyciętym na czole. Jego powieki i wargi są skrupulatnie zaszyte, natomiast w jego szyi tkwi pokaźna wyrwa. Fetor, jaki od niego bije, mógłby zapewne zabić kogoś o delikatniejszych nozdrzach.{#xach_s0_1}'
 
     menu:
         '"Więc, cóż? Jakieś ciekawe wrażenia z podróży po okolicy?"{#xach_s0_r502}' if xachLogic.r502_condition():
@@ -42,7 +42,7 @@ label xach_s0: # - # IF ~  True()
 
 # s1 # say501
 label xach_s1: # from 0.0 0.1 0.2 0.4
-    nr 'Truposz w milczeniu spogląda przed siebie przez zasznurowane powieki.{#xach_s1_}'
+    nr 'Truposz w milczeniu spogląda przed siebie przez zasznurowane powieki.{#xach_s1_1}'
 
     menu:
         '"Zatem żegnaj."{#xach_s1_r505}':
@@ -52,7 +52,7 @@ label xach_s1: # from 0.0 0.1 0.2 0.4
 
 # s2 # say504
 label xach_s2: # from 0.3
-    nr '"Kk-kk…" Zombie niezdarnie odzyskuje głos i sprawia wrażenia silnie wystraszonego. "Kto tam? Odpowiadaj!"{#xach_s2_}'
+    nr '"Kk-kk…" Zombie niezdarnie odzyskuje głos i sprawia wrażenia silnie wystraszonego. "Kto tam? Odpowiadaj!"{#xach_s2_1}'
 
     menu:
         '"Nie widzisz mnie?"{#xach_s2_r507}':
@@ -82,7 +82,7 @@ label xach_s2: # from 0.3
 
 # s3 # say509
 label xach_s3: # from 2.0
-    nr '"Ślepy jestem, tak samo po śmierci, jak i za życia… A teraz odpowiadaj, kim jesteś?"{#xach_s3_}'
+    nr '"Ślepy jestem, tak samo po śmierci, jak i za życia… A teraz odpowiadaj, kim jesteś?"{#xach_s3_1}'
 
     menu:
         'Spróbuj improwizacji: "To ja. Nie poznajesz mojego głosu?"{#xach_s3_r510}' if xachLogic.r510_condition():
@@ -108,7 +108,7 @@ label xach_s3: # from 2.0
 
 # s4 # say512
 label xach_s4: # from 2.4 3.3 30.0 31.0
-    nr '"Co…?" Zombie wygląda na wstrząśniętego, ale jego przerażenie szybko ustępuje miejsca radosnemu zdumieniu. "Na Wzrok Pani…" Truposz sprawia wrażenie, jakby na jego niewidzących oczach rozgrywał się prawdziwy cud. "Nie jesteś *martwy*, śmiałku?"{#xach_s4_}'
+    nr '"Co…?" Zombie wygląda na wstrząśniętego, ale jego przerażenie szybko ustępuje miejsca radosnemu zdumieniu. "Na Wzrok Pani…" Truposz sprawia wrażenie, jakby na jego niewidzących oczach rozgrywał się prawdziwy cud. "Nie jesteś *martwy*, śmiałku?"{#xach_s4_1}'
 
     menu:
         '"Kim jesteś?"{#xach_s4_r515}':
@@ -134,7 +134,7 @@ label xach_s4: # from 2.4 3.3 30.0 31.0
 
 # s5 # say514
 label xach_s5: # from 4.0
-    nr '"Czy naprawdę tak trudno przebić się wzrokiem przez tę plugawą skorupę i ujrzeć pod nią starego Głupca Zachariasza? To przecież ja, śmiałku. Błogosławione niechaj będą Wszelkie Moce, nie sądziłem, że przyjdzie mi jeszcze kiedykolwiek cię obaczyć… Ale ty się też znacznie zmieniłeś, przynajmniej tak mówi mi mój słuch… Powiedz, czy dalej swoim zwyczajem obierasz błędne i zwodnicze szlaki?" Zachariasz świszczy przez otwór w szyi. "A może też jesteś martwy?"{#xach_s5_}'
+    nr '"Czy naprawdę tak trudno przebić się wzrokiem przez tę plugawą skorupę i ujrzeć pod nią starego Głupca Zachariasza? To przecież ja, śmiałku. Błogosławione niechaj będą Wszelkie Moce, nie sądziłem, że przyjdzie mi jeszcze kiedykolwiek cię obaczyć… Ale ty się też znacznie zmieniłeś, przynajmniej tak mówi mi mój słuch… Powiedz, czy dalej swoim zwyczajem obierasz błędne i zwodnicze szlaki?" Zachariasz świszczy przez otwór w szyi. "A może też jesteś martwy?"{#xach_s5_1}'
 
     menu:
         '"To długa historia… Ale nie… Nie jestem martwy."{#xach_s5_r685}':
@@ -160,7 +160,7 @@ label xach_s5: # from 4.0
 
 # s6 # say513
 label xach_s6: # from 4.2 5.2
-    nr '"Kostnica, śmiałku. Czy to trudno zauważyć?"{#xach_s6_}'
+    nr '"Kostnica, śmiałku. Czy to trudno zauważyć?"{#xach_s6_1}'
 
     menu:
         '"Co doprowadziło cię do takiego stanu?"{#xach_s6_r523}':
@@ -191,7 +191,7 @@ label xach_s6: # from 4.2 5.2
 
 # s7 # say528
 label xach_s7: # from 8.0 9.1 10.2 11.1 12.1 13.0 14.0 15.0 16.2 17.1 18.1 19.3 22.1 23.5 24.2 25.0 26.2 27.4 28.1 29.1 32.1 33.2 35.0 36.1 40.0 46.1 47.1 48.0 49.1
-    nr '"Tak?"{#xach_s7_}'
+    nr '"Tak?"{#xach_s7_1}'
 
     menu:
         '"Chciałby teraz wydobyć ten przedmiot, Zachariaszu…"{#xach_s7_r63484}' if xachLogic.r63484_condition():
@@ -225,7 +225,7 @@ label xach_s7: # from 8.0 9.1 10.2 11.1 12.1 13.0 14.0 15.0 16.2 17.1 18.1 19.3 
 
 # s8 # say529
 label xach_s8: # from 6.0 7.1
-    nr 'Jego głos załamuje się, jakby zombie wstydził się czegoś. "Ciężko było podążać za tobą, śmiałku, widziałem też wiele okropieństw. Po tym wszystkim zacząłem pić i stoczyłem się. A któregoś dnia, po pijanemu, zapisałem swoje ciało Grabom. Wkrótce potem Moce odwróciły się ode mnie i zmarłem."{#xach_s8_}'
+    nr 'Jego głos załamuje się, jakby zombie wstydził się czegoś. "Ciężko było podążać za tobą, śmiałku, widziałem też wiele okropieństw. Po tym wszystkim zacząłem pić i stoczyłem się. A któregoś dnia, po pijanemu, zapisałem swoje ciało Grabom. Wkrótce potem Moce odwróciły się ode mnie i zmarłem."{#xach_s8_1}'
 
     menu:
         '"Mam jeszcze kilka pytań…"{#xach_s8_r531}':
@@ -243,7 +243,7 @@ label xach_s8: # from 6.0 7.1
 
 # s9 # say533
 label xach_s9: # from 6.1 7.2
-    nr '"Miejsce dla martwych prowadzone przez Martwych… Ale są tu pewne rzeczy, które toczą się podejrzanym torem…"{#xach_s9_}'
+    nr '"Miejsce dla martwych prowadzone przez Martwych… Ale są tu pewne rzeczy, które toczą się podejrzanym torem…"{#xach_s9_1}'
 
     menu:
         '"Na przykład co?"{#xach_s9_r534}':
@@ -265,7 +265,7 @@ label xach_s9: # from 6.1 7.2
 
 # s10 # say535
 label xach_s10: # from 9.0
-    nr '"Zdradzę ci ten cień. Jest tutaj zombie, który udaje, że jest zombie, ale nie jest nim w istocie. Nie ciekawi mnie przyczyna pojawienia się tu takiej postaci, ale rzecz ta sama w sobie jest bardzo dziwna."{#xach_s10_}'
+    nr '"Zdradzę ci ten cień. Jest tutaj zombie, który udaje, że jest zombie, ale nie jest nim w istocie. Nie ciekawi mnie przyczyna pojawienia się tu takiej postaci, ale rzecz ta sama w sobie jest bardzo dziwna."{#xach_s10_1}'
 
     menu:
         '"Coś jeszcze?"{#xach_s10_r538}' if xachLogic.r538_condition():
@@ -291,7 +291,7 @@ label xach_s10: # from 9.0
 
 # s11 # say541
 label xach_s11: # from 10.0 12.0
-    nr '"I jeszcze jedna rzecz. Ten stary githzerai, ten, który zajmuje salę przygotowań… Dhall. On wielokrotnie uratował cię przed piecem krematoryjnym. Twoje szczęście, że masz takiego sprzymierzeńca."{#xach_s11_}'
+    nr '"I jeszcze jedna rzecz. Ten stary githzerai, ten, który zajmuje salę przygotowań… Dhall. On wielokrotnie uratował cię przed piecem krematoryjnym. Twoje szczęście, że masz takiego sprzymierzeńca."{#xach_s11_1}'
 
     menu:
         '"Co takiego Dhall zrobił, aby mnie ocalić?"{#xach_s11_r542}' if xachLogic.r542_condition():
@@ -313,7 +313,7 @@ label xach_s11: # from 10.0 12.0
 
 # s12 # say547
 label xach_s12: # from 10.1
-    nr '"Nawet gdyby moje oczy pozwoliłyby mi go zobaczyć, trudno byłoby mi podać liczbę na jego czole. Mogę ci tylko rzec, jak można go odróżnić od innych, śmiałku: jego głos nie jest głosem zombie… reaguje inaczej, niż inne zombie."{#xach_s12_}'
+    nr '"Nawet gdyby moje oczy pozwoliłyby mi go zobaczyć, trudno byłoby mi podać liczbę na jego czole. Mogę ci tylko rzec, jak można go odróżnić od innych, śmiałku: jego głos nie jest głosem zombie… reaguje inaczej, niż inne zombie."{#xach_s12_1}'
 
     menu:
         '"Zauważyłeś jeszcze jakieś inne osobliwe rzeczy w Kostnicy?"{#xach_s12_r548}' if xachLogic.r548_condition():
@@ -335,7 +335,7 @@ label xach_s12: # from 10.1
 
 # s13 # say550
 label xach_s13: # from 11.0
-    nr '"On dbał o to, aby odwlec kremację na tyle, abyś zdążył się wcześniej obudzić. Ale nie wiem, dlaczego to czynił."{#xach_s13_}'
+    nr '"On dbał o to, aby odwlec kremację na tyle, abyś zdążył się wcześniej obudzić. Ale nie wiem, dlaczego to czynił."{#xach_s13_1}'
 
     menu:
         '"Interesujące. Mam jeszcze kilka pytań…"{#xach_s13_r552}':
@@ -353,7 +353,7 @@ label xach_s13: # from 11.0
 
 # s14 # say555
 label xach_s14: # -
-    nr '"Uznał, że to konieczne dla tego, aby zapobiec… aby zapobiec… No właśnie nie pamiętam za bardzo o co to chodziło, ale wiem, że uznał to za konieczne."{#xach_s14_}'
+    nr '"Uznał, że to konieczne dla tego, aby zapobiec… aby zapobiec… No właśnie nie pamiętam za bardzo o co to chodziło, ale wiem, że uznał to za konieczne."{#xach_s14_1}'
 
     menu:
         '"Hm… To brzmi podejrzanie. Mam jeszcze kilka innych pytań."{#xach_s14_r557}':
@@ -371,7 +371,7 @@ label xach_s14: # -
 
 # s15 # say558
 label xach_s15: # -
-    nr 'Jego głos załamuje się, jakby zombie wstydził się czegoś. "Ciężko było podążać za tobą, śmiałku, widziałem też wiele okropieństw. Po tym wszystkim zacząłem pić i stoczyłem się. A któregoś dnia, po pijanemu, zapisałem swoje ciało Grabom. Wkrótce potem Moce odwróciły się ode mnie i zmarłem."{#xach_s15_}'
+    nr 'Jego głos załamuje się, jakby zombie wstydził się czegoś. "Ciężko było podążać za tobą, śmiałku, widziałem też wiele okropieństw. Po tym wszystkim zacząłem pić i stoczyłem się. A któregoś dnia, po pijanemu, zapisałem swoje ciało Grabom. Wkrótce potem Moce odwróciły się ode mnie i zmarłem."{#xach_s15_1}'
 
     menu:
         '"Mam jeszcze kilka pytań…"{#xach_s15_r559}':
@@ -389,7 +389,7 @@ label xach_s15: # -
 
 # s16 # say561
 label xach_s16: # from 6.2 7.3
-    nr '"Dlaczego? Zapomniałeś o swojej przeszłości?"{#xach_s16_}'
+    nr '"Dlaczego? Zapomniałeś o swojej przeszłości?"{#xach_s16_1}'
 
     menu:
         '"Tak, można to tak ująć."{#xach_s16_r562}':
@@ -415,7 +415,7 @@ label xach_s16: # from 6.2 7.3
 
 # s17 # say566
 label xach_s17: # from 16.0 21.0 22.0
-    nr '"Cóż, byłeś dziwakiem, zawsze pełnym podejrzeń i zawsze spodziewającym się czegoś… czyjegoś przybycia. Inna sprawa, że we wszystkich swoich żywotach musiałeś namnożyć sobie wrogów. A nie było przesady w twierdzeniu, że kto z tobą zadzierał, szybko lądował w księdze umarłych."{#xach_s17_}'
+    nr '"Cóż, byłeś dziwakiem, zawsze pełnym podejrzeń i zawsze spodziewającym się czegoś… czyjegoś przybycia. Inna sprawa, że we wszystkich swoich żywotach musiałeś namnożyć sobie wrogów. A nie było przesady w twierdzeniu, że kto z tobą zadzierał, szybko lądował w księdze umarłych."{#xach_s17_1}'
 
     menu:
         '"Co jeszcze? Jakieś inne ciekawostki…"{#xach_s17_r569}':
@@ -437,7 +437,7 @@ label xach_s17: # from 16.0 21.0 22.0
 
 # s18 # say567
 label xach_s18: # from 17.0
-    nr '"Potrafiłeś być także diabelsko okrutny… Takim byłeś, kiedy skłoniłeś mnie do podpisania kontraktu i takim byłeś, kiedy porzuciłeś tę dzierlatkę na Avernusie. Spędziliśmy razem szmat czasu. Nikt z nas nie mógł się pochwalić tym, że ci się w czymś sprzeciwił, synu."{#xach_s18_}'
+    nr '"Potrafiłeś być także diabelsko okrutny… Takim byłeś, kiedy skłoniłeś mnie do podpisania kontraktu i takim byłeś, kiedy porzuciłeś tę dzierlatkę na Avernusie. Spędziliśmy razem szmat czasu. Nikt z nas nie mógł się pochwalić tym, że ci się w czymś sprzeciwił, synu."{#xach_s18_1}'
 
     menu:
         '"Ach tak… Opowiedz jeszcze coś. Nawet drobiazg z twoich wspomnień może mi pomóc."{#xach_s18_r572}':
@@ -459,7 +459,7 @@ label xach_s18: # from 17.0
 
 # s19 # say568
 label xach_s19: # from 18.0
-    nr '"Całe swoje życie traktowałeś jak jedną wielką wojnę. Wszystko było dla ciebie bitwą, którą musiałeś wygrać. A byłeś przy tym najbardziej bezlitosnym łotrem, jakiego za moich czasów świat nosił. Jeśliś na coś zawziął, żadna siła nie mogła cię zawrócić z drogi. I nikt nic dla ciebie nie znaczył. Ani Deionarra ze swoimi szlochem i narzekaniami, ani gith zawsze pełen mądrych wojennych rad, ani biedny Zachariasz, który robił co mógł, aby utrzymać się u twojego boku. Byłeś twardy i niełatwo było cię zabić, ale byliśmy wszyscy tylko ludźmi. Teraz zaś wszyscy jesteśmy stronami księgi umarłych. Niektórzy można nawet rzec stronicami wydartymi."{#xach_s19_}'
+    nr '"Całe swoje życie traktowałeś jak jedną wielką wojnę. Wszystko było dla ciebie bitwą, którą musiałeś wygrać. A byłeś przy tym najbardziej bezlitosnym łotrem, jakiego za moich czasów świat nosił. Jeśliś na coś zawziął, żadna siła nie mogła cię zawrócić z drogi. I nikt nic dla ciebie nie znaczył. Ani Deionarra ze swoimi szlochem i narzekaniami, ani gith zawsze pełen mądrych wojennych rad, ani biedny Zachariasz, który robił co mógł, aby utrzymać się u twojego boku. Byłeś twardy i niełatwo było cię zabić, ale byliśmy wszyscy tylko ludźmi. Teraz zaś wszyscy jesteśmy stronami księgi umarłych. Niektórzy można nawet rzec stronicami wydartymi."{#xach_s19_1}'
 
     menu:
         '"Coś jeszcze?"{#xach_s19_r63234}' if xachLogic.r63234_condition():
@@ -489,7 +489,7 @@ label xach_s19: # from 18.0
 
 # s20 # say580
 label xach_s20: # from 16.1
-    nr '"Hm, cóż takiego mogę ci opowiedzieć? Też nie pamiętam wszystkiego. Pamiętasz, jak ruszyliśmy w tę tułaczkę po Avernusie i wpadliśmy na stado abiszai w tej dolinie pełnej muszych larw?"{#xach_s20_}'
+    nr '"Hm, cóż takiego mogę ci opowiedzieć? Też nie pamiętam wszystkiego. Pamiętasz, jak ruszyliśmy w tę tułaczkę po Avernusie i wpadliśmy na stado abiszai w tej dolinie pełnej muszych larw?"{#xach_s20_1}'
 
     menu:
         'Kłamstwo: "Tak."{#xach_s20_r581}':
@@ -503,7 +503,7 @@ label xach_s20: # from 16.1
 
 # s21 # say583
 label xach_s21: # from 20.0
-    nr '"No cóż cieszę się, że przynajmniej jeden z nas pamięta to wszystko. Bo ja, jak mi Balor miły, niczego takiego nie pamiętam. Kim jesteś, śmiałku, i co sobie obiecujesz po wspomnieniach umarlaka?"{#xach_s21_}'
+    nr '"No cóż cieszę się, że przynajmniej jeden z nas pamięta to wszystko. Bo ja, jak mi Balor miły, niczego takiego nie pamiętam. Kim jesteś, śmiałku, i co sobie obiecujesz po wspomnieniach umarlaka?"{#xach_s21_1}'
 
     menu:
         '"Pragnę poznać samego siebie. Naprawdę zapomniałem o tym, kim jestem, Zachariaszu, a wierzę, że ty mnie znałeś. Co możesz mi opowiedzieć o moim poprzednim życiu?"{#xach_s21_r584}':
@@ -525,7 +525,7 @@ label xach_s21: # from 20.0
 
 # s22 # say588
 label xach_s22: # from 20.1
-    nr '"Hmmm. Może to całe wydarzenie potoczyło się w inny sposób? A może spróbujemy tego: Pamiętasz, jak Deionarra niemal sama wpakowała się do księgi umarłych, próbując powstrzymać cię przed wstąpieniem w mury Klątwy?"{#xach_s22_}'
+    nr '"Hmmm. Może to całe wydarzenie potoczyło się w inny sposób? A może spróbujemy tego: Pamiętasz, jak Deionarra niemal sama wpakowała się do księgi umarłych, próbując powstrzymać cię przed wstąpieniem w mury Klątwy?"{#xach_s22_1}'
 
     menu:
         '"Nie, naprawdę, ale to nic nie szkodzi. Wierzę ci, że mnie znałeś. Zatem, co możesz mi powiedzieć o moim poprzednim życiu?"{#xach_s22_r590}':
@@ -547,7 +547,7 @@ label xach_s22: # from 20.1
 
 # s23 # say589
 label xach_s23: # from 6.3 7.4
-    nr '"Barwną stanowiliśmy paczkę, nie ma co… Pół-umarły człek, którym zawsze wzgardzała księga umarłych, choćby się starał ze wszelkich sił - tak brzydki, że odwracały się od niego wszelkie Moce Śmierci - płaczliwa córka adwokata, gith wyrzutek, skoczna czaszka o niewyparzonym języku i na poły skurlały ślepy łucznik."{#xach_s23_}'
+    nr '"Barwną stanowiliśmy paczkę, nie ma co… Pół-umarły człek, którym zawsze wzgardzała księga umarłych, choćby się starał ze wszelkich sił - tak brzydki, że odwracały się od niego wszelkie Moce Śmierci - płaczliwa córka adwokata, gith wyrzutek, skoczna czaszka o niewyparzonym języku i na poły skurlały ślepy łucznik."{#xach_s23_1}'
 
     menu:
         '"Gith?"{#xach_s23_r593}':
@@ -585,7 +585,7 @@ label xach_s23: # from 6.3 7.4
 
 # s24 # say600
 label xach_s24: # from 19.2 23.0 27.0
-    nr '"Gith o ponurym wyglądzie… Mroczny i cichy, jak wszyscy z jego gatunku. Nic a nic nie ufałem temu githowi, jak mi bogowie mili. Widzisz, śmiałku, te wrzecionowate githy myślą tylko o dwóch rzeczach: jak uniknąć niewoli i jak zabić jak najwięcej Illithidów o łbach kałamarnic. Wszystko inne dla nich nie ma najmniejszego znaczenia, więc i ten, choć za tobą poszedłby w ogień, nie dałby za resztę z nas złamanego grosza."{#xach_s24_}'
+    nr '"Gith o ponurym wyglądzie… Mroczny i cichy, jak wszyscy z jego gatunku. Nic a nic nie ufałem temu githowi, jak mi bogowie mili. Widzisz, śmiałku, te wrzecionowate githy myślą tylko o dwóch rzeczach: jak uniknąć niewoli i jak zabić jak najwięcej Illithidów o łbach kałamarnic. Wszystko inne dla nich nie ma najmniejszego znaczenia, więc i ten, choć za tobą poszedłby w ogień, nie dałby za resztę z nas złamanego grosza."{#xach_s24_1}'
 
     menu:
         '"Co było tego przyczyną?"{#xach_s24_r601}' if xachLogic.r601_condition():
@@ -611,7 +611,7 @@ label xach_s24: # from 19.2 23.0 27.0
 
 # s25 # say605
 label xach_s25: # from 24.0 26.0
-    nr '"To jeden z cieni, którego nigdy nie rozgryzłem. Może ty mi powiesz, śmiałku?"{#xach_s25_}'
+    nr '"To jeden z cieni, którego nigdy nie rozgryzłem. Może ty mi powiesz, śmiałku?"{#xach_s25_1}'
 
     menu:
         '"Sam tego nie wiem. Mam jeszcze kilka innych pytań."{#xach_s25_r606}':
@@ -629,7 +629,7 @@ label xach_s25: # from 24.0 26.0
 
 # s26 # say608
 label xach_s26: # from 19.1 23.1 27.1
-    nr '"Ta ognista dzierlatka-która-chciała-być-żołnierzem przysięgała, że pójdzie za tobą do Baator i z powrotem, i klnę się na Wszelkie Moce, zrobiła to! Za nic miała mnie, czy githa. Szalała za tobą. Po mojemu, musiała być pomylona. Nie wiem, co dziewki dostrzegały w twojej poznaczonej bliznami facjacie, ale było w tobie coś takiego, że wszystka krew gotowała im się w żyłach. Pochodziła z bogatej rodziny z Dzielnicy Urzędników, a ty potrzebowałeś czegoś od niej i ostatecznie stanęło na tym, że ruszyła z tobą."{#xach_s26_}'
+    nr '"Ta ognista dzierlatka-która-chciała-być-żołnierzem przysięgała, że pójdzie za tobą do Baator i z powrotem, i klnę się na Wszelkie Moce, zrobiła to! Za nic miała mnie, czy githa. Szalała za tobą. Po mojemu, musiała być pomylona. Nie wiem, co dziewki dostrzegały w twojej poznaczonej bliznami facjacie, ale było w tobie coś takiego, że wszystka krew gotowała im się w żyłach. Pochodziła z bogatej rodziny z Dzielnicy Urzędników, a ty potrzebowałeś czegoś od niej i ostatecznie stanęło na tym, że ruszyła z tobą."{#xach_s26_1}'
 
     menu:
         '"Czego takiego potrzebowałem od niej?"{#xach_s26_r609}' if xachLogic.r609_condition():
@@ -655,7 +655,7 @@ label xach_s26: # from 19.1 23.1 27.1
 
 # s27 # say612
 label xach_s27: # from 24.1 26.1 28.0 29.0 33.1 49.0
-    nr '"Dobra, o kim?"{#xach_s27_}'
+    nr '"Dobra, o kim?"{#xach_s27_1}'
 
     menu:
         '"O tym githcie."{#xach_s27_r613}':
@@ -689,7 +689,7 @@ label xach_s27: # from 24.1 26.1 28.0 29.0 33.1 49.0
 
 # s28 # say620
 label xach_s28: # from 23.2 27.2
-    nr '"Ta czaszka o plugawym języku zawsze szukała porządnego guza! Zawsze rezonowała i zawsze natrząsała się z mojego położenia!"{#xach_s28_}'
+    nr '"Ta czaszka o plugawym języku zawsze szukała porządnego guza! Zawsze rezonowała i zawsze natrząsała się z mojego położenia!"{#xach_s28_1}'
 
     menu:
         '"Chciałbym usłyszeć coś o moich towarzyszach…"{#xach_s28_r622}':
@@ -711,7 +711,7 @@ label xach_s28: # from 23.2 27.2
 
 # s29 # say625
 label xach_s29: # from 23.4
-    nr '"Chodzi ci o tę ohydną księgę o stronnicach z twojej własnej skóry, których było więcej niż lat w moim przeklętym życiu? Jeśliś ją naprawdę zgubił, moje powinszowania! Zawsze w niej coś zapisywałeś, pamiętam. Cuchnęło od jak od zarazy. Wydawało się, że ciągle obawiałeś się, że ktoś przyjdzie i ci ją weźmie. Pisywałeś w mnie tak długo, aż ci palce mdlały i nieraz zastanawiałem się, cóż to za dzieło swojego życia spisujesz. Czasem siadałeś do pisania i nie wstawałeś przez kilka dni. Nienawidziłem tej piekielnej książki. Byłeś od niej uzależniony, ale nie był to miły nałóg. Ostatnim razem, kiedy ją widziałem, była w twoich rękach, śmiałku. Jeżeli nie masz jej przy sobie, nie mam zielonego pojęcia, gdzie może się znajdować w wieloświecie."{#xach_s29_}'
+    nr '"Chodzi ci o tę ohydną księgę o stronnicach z twojej własnej skóry, których było więcej niż lat w moim przeklętym życiu? Jeśliś ją naprawdę zgubił, moje powinszowania! Zawsze w niej coś zapisywałeś, pamiętam. Cuchnęło od jak od zarazy. Wydawało się, że ciągle obawiałeś się, że ktoś przyjdzie i ci ją weźmie. Pisywałeś w mnie tak długo, aż ci palce mdlały i nieraz zastanawiałem się, cóż to za dzieło swojego życia spisujesz. Czasem siadałeś do pisania i nie wstawałeś przez kilka dni. Nienawidziłem tej piekielnej książki. Byłeś od niej uzależniony, ale nie był to miły nałóg. Ostatnim razem, kiedy ją widziałem, była w twoich rękach, śmiałku. Jeżeli nie masz jej przy sobie, nie mam zielonego pojęcia, gdzie może się znajdować w wieloświecie."{#xach_s29_1}'
 
     menu:
         '"Chciałbym usłyszeć coś o moich towarzyszach…"{#xach_s29_r626}':
@@ -733,7 +733,7 @@ label xach_s29: # from 23.4
 
 # s30 # say629
 label xach_s30: # from 2.1 2.2 3.0 3.1
-    nr '"Głos brzmi zaiste znajomo… Ale jeżeli jesteś tym, o kim teraz myślę, powiedz…" Zombie milknie na pewną chwilę. "Powiedz, kim jestem?"{#xach_s30_}'
+    nr '"Głos brzmi zaiste znajomo… Ale jeżeli jesteś tym, o kim teraz myślę, powiedz…" Zombie milknie na pewną chwilę. "Powiedz, kim jestem?"{#xach_s30_1}'
 
     menu:
         '"Zachariasz?"{#xach_s30_r631}' if xachLogic.r631_condition():
@@ -747,7 +747,7 @@ label xach_s30: # from 2.1 2.2 3.0 3.1
 
 # s31 # say630
 label xach_s31: # from 2.3 3.2
-    nr '"Ja…" Zombie milknie na chwilę. "Moje imię. Opuściło mnie. Nie mogę sobie przypomnieć, kim jestem."{#xach_s31_}'
+    nr '"Ja…" Zombie milknie na chwilę. "Moje imię. Opuściło mnie. Nie mogę sobie przypomnieć, kim jestem."{#xach_s31_1}'
 
     menu:
         '"Zachariasz?"{#xach_s31_r634}' if xachLogic.r634_condition():
@@ -765,7 +765,7 @@ label xach_s31: # from 2.3 3.2
 
 # s32 # say642
 label xach_s32: # from 19.0
-    nr '"Nam wszystkim coś zostawiłeś, kiedy odszedłeś, śmiałku… Zostawiłeś Deionarrze płacz po stracie kochanka, Dak„konowi żal po utracie mistrza, a czaszce rozpacz po rozstaniu z przyjacielem. A mnie? Wbiłeś coś we mnie, bardzo głęboko, tak, że nigdy nie wyszło na wierzch za mojego życia. Ta rzecz, ciśnięta w głąb moich trzewi jak kawał zimnego ołowiu, utoczyła wiele mojej krwi."{#xach_s32_}'
+    nr '"Nam wszystkim coś zostawiłeś, kiedy odszedłeś, śmiałku… Zostawiłeś Deionarrze płacz po stracie kochanka, Dak„konowi żal po utracie mistrza, a czaszce rozpacz po rozstaniu z przyjacielem. A mnie? Wbiłeś coś we mnie, bardzo głęboko, tak, że nigdy nie wyszło na wierzch za mojego życia. Ta rzecz, ciśnięta w głąb moich trzewi jak kawał zimnego ołowiu, utoczyła wiele mojej krwi."{#xach_s32_1}'
 
     menu:
         '"Co to takiego?"{#xach_s32_r645}':
@@ -788,7 +788,7 @@ label xach_s32: # from 19.0
 
 # s33 # say643
 label xach_s33: # from 32.0
-    nr '"Och… Tego nie wiem. Ale to zmieniło mnie na pewien sposób. Zmieniło moje wnętrze. Chociaż, kiedy mi to zrobiłeś, i tak byłem już bliski śmierci, dlatego niespecjalnie mnie to zainteresowało."{#xach_s33_}'
+    nr '"Och… Tego nie wiem. Ale to zmieniło mnie na pewien sposób. Zmieniło moje wnętrze. Chociaż, kiedy mi to zrobiłeś, i tak byłem już bliski śmierci, dlatego niespecjalnie mnie to zainteresowało."{#xach_s33_1}'
 
     menu:
         '"Czy mogę to odzyskać?"{#xach_s33_r649}':
@@ -814,7 +814,7 @@ label xach_s33: # from 32.0
 
 # s34 # say644
 label xach_s34: # from 7.0 33.0
-    nr '"Tkwi bardzo głęboko, ale nie mam pojęcia gdzie. Bez pomocy skalpela albo noża i moich wskazówek, nigdy go nie wydobędziesz. Masz skalpel albo nóż?"{#xach_s34_}'
+    nr '"Tkwi bardzo głęboko, ale nie mam pojęcia gdzie. Bez pomocy skalpela albo noża i moich wskazówek, nigdy go nie wydobędziesz. Masz skalpel albo nóż?"{#xach_s34_1}'
 
     menu:
         '"Tak."{#xach_s34_r647}' if xachLogic.r647_condition():
@@ -828,7 +828,7 @@ label xach_s34: # from 7.0 33.0
 
 # s35 # say654
 label xach_s35: # -
-    nr '"Wobec tego powróć tutaj, kiedy będziesz miał czym mnie rozpruć i wtedy pomyślimy o wydostaniu z mojego wnętrza tego drobiazgu."{#xach_s35_}'
+    nr '"Wobec tego powróć tutaj, kiedy będziesz miał czym mnie rozpruć i wtedy pomyślimy o wydostaniu z mojego wnętrza tego drobiazgu."{#xach_s35_1}'
 
     menu:
         '"Mam jeszcze kilka pytań…"{#xach_s35_r655}':
@@ -842,7 +842,7 @@ label xach_s35: # -
 
 # s36 # say657
 label xach_s36: # from 34.0 34.1
-    nr '"Zatem otwórz mnie na trzy cale od mostka i ostrożnie pomacaj, tak, aby to wyczuć."{#xach_s36_}'
+    nr '"Zatem otwórz mnie na trzy cale od mostka i ostrożnie pomacaj, tak, aby to wyczuć."{#xach_s36_1}'
 
     menu:
         'Zrób to.{#xach_s36_r658}':
@@ -864,7 +864,7 @@ label xach_s36: # from 34.0 34.1
 
 # s37 # say661
 label xach_s37: # from 36.0
-    nr '"Trochę bardziej na lewo… trochę na lewo…" Natrafiasz na jakiś obiekt.{#xach_s37_}'
+    nr '"Trochę bardziej na lewo… trochę na lewo…" Natrafiasz na jakiś obiekt.{#xach_s37_1}'
 
     menu:
         'Wyciągnij to.{#xach_s37_r663}':
@@ -875,7 +875,7 @@ label xach_s37: # from 36.0
 
 # s38 # say662
 label xach_s38: # from 37.0
-    nr 'Wyciągasz na wierzch wątrobę zombie. "Na oczy Pani Bólu! Wybacz, śmiałku… Wydawało mi się, że Grabarze wywlekli ze mnie wszystkie narządy. Spróbuj jeszcze raz. Może tym razem trochę bardziej na prawo."{#xach_s38_}'
+    nr 'Wyciągasz na wierzch wątrobę zombie. "Na oczy Pani Bólu! Wybacz, śmiałku… Wydawało mi się, że Grabarze wywlekli ze mnie wszystkie narządy. Spróbuj jeszcze raz. Może tym razem trochę bardziej na prawo."{#xach_s38_1}'
 
     menu:
         'Spróbuj jeszcze raz.{#xach_s38_r664}':
@@ -885,7 +885,7 @@ label xach_s38: # from 37.0
 
 # s39 # say665
 label xach_s39: # from 38.0
-    nr '"Dobra… Teraz troszeczkę na prawo i z powrotem… bardzo niedużo." Znowu na coś natrafiasz. "Wydaje mi się, że to jest to. Wyciągaj."{#xach_s39_}'
+    nr '"Dobra… Teraz troszeczkę na prawo i z powrotem… bardzo niedużo." Znowu na coś natrafiasz. "Wydaje mi się, że to jest to. Wyciągaj."{#xach_s39_1}'
 
     menu:
         'Wyciągnij to.{#xach_s39_r666}':
@@ -896,7 +896,7 @@ label xach_s39: # from 38.0
 
 # s40 # say667
 label xach_s40: # from 39.0
-    nr 'Trzymasz w ręku pociemniały obiekt wielkości pięści, który sprawia wrażenie znacznie cięższego niż być powinien. "Tak to właśnie to. W porządku. Och. Większe niż przypuszczałem. Czy to jest… Co to właściwie jest? Wygląda jak… serce."{#xach_s40_}'
+    nr 'Trzymasz w ręku pociemniały obiekt wielkości pięści, który sprawia wrażenie znacznie cięższego niż być powinien. "Tak to właśnie to. W porządku. Och. Większe niż przypuszczałem. Czy to jest… Co to właściwie jest? Wygląda jak… serce."{#xach_s40_1}'
 
     menu:
         '"Tak. Tak mi się wydaje. Dzięki, Zachariaszu. Mam jeszcze kilka innych pytań."{#xach_s40_r668}':
@@ -914,7 +914,7 @@ label xach_s40: # from 39.0
 
 # s41 # say670
 label xach_s41: # from 4.3 5.3 6.4 7.6 8.1 9.2 10.3 11.2 12.2 13.1 14.1 15.1 16.3 17.2 18.2 19.4 21.2 22.2 23.6 24.3 25.1 26.3 27.5 28.2 29.2 32.2 33.3 36.2 40.1 46.2 47.2 48.1 49.2
-    nr '"Zanim odejdziesz, chciałbym, abyś oddał mi niewielką przysługę, śmiałku."{#xach_s41_}'
+    nr '"Zanim odejdziesz, chciałbym, abyś oddał mi niewielką przysługę, śmiałku."{#xach_s41_1}'
 
     menu:
         '"Co to takiego?"{#xach_s41_r672}':
@@ -930,7 +930,7 @@ label xach_s41: # from 4.3 5.3 6.4 7.6 8.1 9.2 10.3 11.2 12.2 13.1 14.1 15.1 16.
 
 # s42 # say673
 label xach_s42: # from 41.0
-    nr 'Jego głos schodzi do szeptu, jakby zombie wstydził się czegoś. "Zrobiłem w życiu parę błędów, zaś pośród najgorszych z nich było zapisanie mojego ciała Grabarzom. Gdybym nie był wtedy tak bliski dna, nigdy bym tego nie uczynił. Żałuję tego gorąco, i mam nadzieję, że jesteś w stanie na to poradzić."{#xach_s42_}'
+    nr 'Jego głos schodzi do szeptu, jakby zombie wstydził się czegoś. "Zrobiłem w życiu parę błędów, zaś pośród najgorszych z nich było zapisanie mojego ciała Grabarzom. Gdybym nie był wtedy tak bliski dna, nigdy bym tego nie uczynił. Żałuję tego gorąco, i mam nadzieję, że jesteś w stanie na to poradzić."{#xach_s42_1}'
 
     menu:
         '"Jak?"{#xach_s42_r675}':
@@ -944,7 +944,7 @@ label xach_s42: # from 41.0
 
 # s43 # say677
 label xach_s43: # from 42.0
-    nr '"Z tego, co mi się wydaje, moje ciało będzie trwało jeszcze długo, a każdy taki dzień jest dla nie do zniesienia. Nie mógłbyś śmiałku wypruć mi bebechów jeszcze raz? W imię dawnej komitywy? Perspektywa spędzenia długich lat w tej zatęchłej Kostnicy pośród tych trupich pysków naprawdę nie jest dla mnie miła. Nie dałbyś rady wsadzić mnie z powrotem do księgi umarłych? Tam przecież moje miejsce."{#xach_s43_}'
+    nr '"Z tego, co mi się wydaje, moje ciało będzie trwało jeszcze długo, a każdy taki dzień jest dla nie do zniesienia. Nie mógłbyś śmiałku wypruć mi bebechów jeszcze raz? W imię dawnej komitywy? Perspektywa spędzenia długich lat w tej zatęchłej Kostnicy pośród tych trupich pysków naprawdę nie jest dla mnie miła. Nie dałbyś rady wsadzić mnie z powrotem do księgi umarłych? Tam przecież moje miejsce."{#xach_s43_1}'
 
     menu:
         '"Jeżeli taka twoja wola…"{#xach_s43_r679}':
@@ -959,7 +959,7 @@ label xach_s43: # from 42.0
 
 # s44 # say678
 label xach_s44: # from 43.0
-    nr 'Przebijasz go, a Zachariasz przewraca się na posadzkę z ciężkim stukotem. Z wnętrza ciała daje się słyszeć słaby świst, kiedy jego pierś unosi się jeszcze w ostatnim skurczu, a potem, w akompaniamencie ostatnich szmerów, zombie cichnie raz na zawsze.{#xach_s44_}'
+    nr 'Przebijasz go, a Zachariasz przewraca się na posadzkę z ciężkim stukotem. Z wnętrza ciała daje się słyszeć słaby świst, kiedy jego pierś unosi się jeszcze w ostatnim skurczu, a potem, w akompaniamencie ostatnich szmerów, zombie cichnie raz na zawsze.{#xach_s44_1}'
 
     menu:
         '"Spoczywaj w pokoju, Zachariaszu."{#xach_s44_r681}':
@@ -970,7 +970,7 @@ label xach_s44: # from 43.0
 
 # s45 # say682
 label xach_s45: # from 41.1 42.1 43.1
-    nr '"Jeśli tak, mniejsza o to. Podejrzewam, że już ci się na wiele nie przydam."{#xach_s45_}'
+    nr '"Jeśli tak, mniejsza o to. Podejrzewam, że już ci się na wiele nie przydam."{#xach_s45_1}'
 
     menu:
         'Odejdź.{#xach_s45_r684}':
@@ -980,7 +980,7 @@ label xach_s45: # from 41.1 42.1 43.1
 
 # s46 # say683
 label xach_s46: # from 5.0
-    nr '"Cóż, śmiałku. Trudno poddawać twoją kondycję w wątpliwość. Ale jak to się dzieje, że możesz ze mną rozmawiać? Twój głos jest ostry i jasny, jak nóż…"{#xach_s46_}'
+    nr '"Cóż, śmiałku. Trudno poddawać twoją kondycję w wątpliwość. Ale jak to się dzieje, że możesz ze mną rozmawiać? Twój głos jest ostry i jasny, jak nóż…"{#xach_s46_1}'
 
     menu:
         '"Co tutaj robisz?"{#xach_s46_r689}':
@@ -1002,7 +1002,7 @@ label xach_s46: # from 5.0
 
 # s47 # say692
 label xach_s47: # from 4.1 5.1 46.0
-    nr '"Utkwiłem w najbardziej ponurym z miejsc na Sferach. Wiele dałbym, żeby przebyć Granicę Wieczności i znaleźć dla swojej duszy gniazdko na którejś ze Sfer, ale duża część mojej duszy została rozproszona. A teraz znalazłem się tutaj."{#xach_s47_}'
+    nr '"Utkwiłem w najbardziej ponurym z miejsc na Sferach. Wiele dałbym, żeby przebyć Granicę Wieczności i znaleźć dla swojej duszy gniazdko na którejś ze Sfer, ale duża część mojej duszy została rozproszona. A teraz znalazłem się tutaj."{#xach_s47_1}'
 
     menu:
         '"Jak to jest być zombie?"{#xach_s47_r693}':
@@ -1024,7 +1024,7 @@ label xach_s47: # from 4.1 5.1 46.0
 
 # s48 # say694
 label xach_s48: # from 47.0
-    nr '"To uczciwa robota… Szwy na ustach Zachariasza puszczają, a jego wargi wykrzywiają się w grymasie, który mógłby uchodzić za uśmiech. "Mało mnie to obchodzi.""{#xach_s48_}'
+    nr '"To uczciwa robota… Szwy na ustach Zachariasza puszczają, a jego wargi wykrzywiają się w grymasie, który mógłby uchodzić za uśmiech. "Mało mnie to obchodzi.""{#xach_s48_1}'
 
     menu:
         '"Mam jeszcze kilka pytań…"{#xach_s48_r697}':
@@ -1043,7 +1043,7 @@ label xach_s48: # from 47.0
 
 # s49 # say63625
 label xach_s49: # from 23.3 27.3
-    nr '"To byłem ja. Naprawdę zapomniałeś? Ludzie potrafią widzieć nie tylko dzięki oczom, śmiałku… Jednym wychodzi to lepiej, innym gorzej. Ja zaś potrafiłem usłyszeć serca moich wrogów. *Twoich* wrogów. I moje strzały uciszały je niechybnie. Ech, to były czasy…"{#xach_s49_}'
+    nr '"To byłem ja. Naprawdę zapomniałeś? Ludzie potrafią widzieć nie tylko dzięki oczom, śmiałku… Jednym wychodzi to lepiej, innym gorzej. Ja zaś potrafiłem usłyszeć serca moich wrogów. *Twoich* wrogów. I moje strzały uciszały je niechybnie. Ech, to były czasy…"{#xach_s49_1}'
 
     menu:
         '"Chciałbym usłyszeć coś o moich towarzyszach…"{#xach_s49_r63626}':

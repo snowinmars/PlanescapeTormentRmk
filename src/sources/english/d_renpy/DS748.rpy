@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say35383
 label s748_s0: # - # IF ~  True()
-    nr 'This skeleton - number "748," according to the number chiseled above its brow - is odd only in that some of its teeth appear to be false ones made of reddish-brown stone. They„re clearly not valuable, however, as its caretakers would have otherwise removed them.{#s748_s0_}'
+    nr 'This skeleton - number "748," according to the number chiseled above its brow - is odd only in that some of its teeth appear to be false ones made of reddish-brown stone. They„re clearly not valuable, however, as its caretakers would have otherwise removed them.{#s748_s0_1}'
 
     menu:
         '"Pardon me, have you seen any skeletons walking around here?"{#s748_s0_r35384}' if s748Logic.r35384_condition():
@@ -90,7 +90,7 @@ label s748_s0: # - # IF ~  True()
 
 # s1 # say35385
 label s748_s1: # from 0.0 0.1 0.2 0.3
-    nr 'The skeleton makes no reply.{#s748_s1_}'
+    nr 'The skeleton makes no reply.{#s748_s1_1}'
 
     menu:
         '"Great talking to you, Bones. Stay healthy."{#s748_s1_r35386}' if s748Logic.r35386_condition():
@@ -109,7 +109,7 @@ label s748_s1: # from 0.0 0.1 0.2 0.3
 
 # s2 # say35411
 label s748_s2: # from 0.4
-    nr 'This skeleton makes no reply. It looks like it is too far gone to answer any of your questions.{#s748_s2_}'
+    nr 'This skeleton makes no reply. It looks like it is too far gone to answer any of your questions.{#s748_s2_1}'
 
     menu:
         'Leave the skeleton in peace.{#s748_s2_r35412}' if s748Logic.r35412_condition():
@@ -128,7 +128,7 @@ label s748_s2: # from 0.4
 
 # s3 # say35416
 label s748_s3: # from 0.5
-    nr 'Someone has taken care to bind the bones of this skeleton with leather straps, woven around the body in such a pattern that they resemble muscles and tendons. The straps are secured to metal bolts punched into the skeleton„s joints. This skeleton looks like it has seen a great deal of service: many of its bones are chipped and its numerous fractures are bound with sealant and foul-smelling glues.{#s748_s3_}'
+    nr 'Someone has taken care to bind the bones of this skeleton with leather straps, woven around the body in such a pattern that they resemble muscles and tendons. The straps are secured to metal bolts punched into the skeleton„s joints. This skeleton looks like it has seen a great deal of service: many of its bones are chipped and its numerous fractures are bound with sealant and foul-smelling glues.{#s748_s3_1}'
 
     menu:
         'Try and pry out the skeleton„s joint bolts.{#s748_s3_r35417}' if s748Logic.r35417_condition():
@@ -176,7 +176,7 @@ label s748_s3: # from 0.5
 
 # s4 # say35422
 label s748_s4: # from 0.7 0.10 3.1 3.4
-    nr 'You pull at the iron bolts, but you„re not strong enough to pull them out. They“ve been hammered in pretty tight.{#s748_s4_}'
+    nr 'You pull at the iron bolts, but you„re not strong enough to pull them out. They“ve been hammered in pretty tight.{#s748_s4_1}'
 
     menu:
         '"Maybe if I had the right tool, I could get them out… hmmmm. I may be back, Bones."{#s748_s4_r35423}' if s748Logic.r35423_condition():
@@ -208,7 +208,7 @@ label s748_s4: # from 0.7 0.10 3.1 3.4
 
 # s5 # say35430
 label s748_s5: # from 0.8 0.11 3.2 3.5
-    nr 'You pull at the iron bolts with all your strength, and after a few moments of tugging, you rip the bolts from the joints. The skeleton collapses, some of its bones still twitching.{#s748_s5_}'
+    nr 'You pull at the iron bolts with all your strength, and after a few moments of tugging, you rip the bolts from the joints. The skeleton collapses, some of its bones still twitching.{#s748_s5_1}'
 
     menu:
         '"Sorry about that, Bones…"{#s748_s5_r35431}':
@@ -219,7 +219,7 @@ label s748_s5: # from 0.8 0.11 3.2 3.5
 
 # s6 # say35433
 label s748_s6: # from 0.9 0.12 3.3 3.6
-    nr 'Using your prybar, you rip the bolts from the skeleton„s joints. The skeleton collapses, some of its bones still twitching.{#s748_s6_}'
+    nr 'Using your prybar, you rip the bolts from the skeleton„s joints. The skeleton collapses, some of its bones still twitching.{#s748_s6_1}'
 
     menu:
         '"Sorry about that, Bones…"{#s748_s6_r35434}':
@@ -230,6 +230,6 @@ label s748_s6: # from 0.9 0.12 3.3 3.6
 
 # s7 # say35459
 label s748_s7: # - # IF ~  False()
-    nr 'This skeleton makes no reply. It looks like it is too far gone to answer any of your questions.{#s748_s7_}'
+    nr 'This skeleton makes no reply. It looks like it is too far gone to answer any of your questions.{#s748_s7_1}'
 
     menu:

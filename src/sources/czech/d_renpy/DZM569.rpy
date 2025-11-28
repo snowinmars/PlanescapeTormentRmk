@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say24575
 label zm569_s0: # - # IF ~  True()
-    nr 'Tato belhající se mrtvola vypadá, že je mrtvá už několik let. Kůže kolem čela se už odloupala, čímž se odhalila její křídově bílá lebka. Někdo vyryl na odhalenou kost číslo "569".{#zm569_s0_}'
+    nr 'Tato belhající se mrtvola vypadá, že je mrtvá už několik let. Kůže kolem čela se už odloupala, čímž se odhalila její křídově bílá lebka. Někdo vyryl na odhalenou kost číslo "569".{#zm569_s0_1}'
 
     menu:
         '"Hledám klíč… je možné, abys ho měl ty?"{#zm569_s0_r24576}' if zm569Logic.r24576_condition():
@@ -49,7 +49,7 @@ label zm569_s0: # - # IF ~  True()
 
 # s1 # say24577
 label zm569_s1: # from 0.1 0.2 0.3 3.1
-    nr 'Mrtvola na tebe tiše zírá..{#zm569_s1_}'
+    nr 'Mrtvola na tebe tiše zírá..{#zm569_s1_1}'
 
     menu:
         '"No, nevadí. Sbohem."{#zm569_s1_r24578}':
@@ -63,7 +63,7 @@ label zm569_s1: # from 0.1 0.2 0.3 3.1
 
 # s2 # say24582
 label zm569_s2: # from 0.4
-    nr 'Mrtvola se nehýbe. Vypadá to, že už je natolik hotová, že ti neodpoví na nějakou tvou otázku.{#zm569_s2_}'
+    nr 'Mrtvola se nehýbe. Vypadá to, že už je natolik hotová, že ti neodpoví na nějakou tvou otázku.{#zm569_s2_1}'
 
     menu:
         'Nechej mrtvolu na pokoji.{#zm569_s2_r24583}':
@@ -73,7 +73,7 @@ label zm569_s2: # from 0.4
 
 # s3 # say42293
 label zm569_s3: # from 0.5
-    nr 'Nezdá se, že by tenhle mrtvák měl u sebe nějaký klíč… a stejně i kdyby měl, těžko by ho mohl používat. Má úplně zpřerážené prsty, jako by je někdo přetáhl kladivem. Nutno podotknout, že jeho levé rameno je silně zafačováno… obvazy by se daly použít, ale to by je napřed mrtvák musel chtít vydat.{#zm569_s3_}'
+    nr 'Nezdá se, že by tenhle mrtvák měl u sebe nějaký klíč… a stejně i kdyby měl, těžko by ho mohl používat. Má úplně zpřerážené prsty, jako by je někdo přetáhl kladivem. Nutno podotknout, že jeho levé rameno je silně zafačováno… obvazy by se daly použít, ale to by je napřed mrtvák musel chtít vydat.{#zm569_s3_1}'
 
     menu:
         '"Poslyš, nemáš náhodou - nebo spíš některý z tvých přátel mrtváků - klíč, kterým by se dalo odtud dostat?"{#zm569_s3_r42294}' if zm569Logic.r42294_condition():

@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say1431
 label soego_s0: # - # IF WEIGHT #8 /* Triggers after states #: 59 58 12 63 108 79 82 95 even though they appear after this state */ ~  CreatureInArea("AR0201") Global("Appearance","GLOBAL",1) Global("Gate_Open","GLOBAL",0) Global("Soego","GLOBAL",0)
-    nr 'Du siehst einen müde wirkenden Mann in einer ausgebleichten, schwarzen Robe. Sein schmales Gesicht ist extrem blaß. Er sieht aus, als hätte er lange nicht geschlafen: seine Schultern hängen herab, und seine schlaffen Wangen unterstreichen die blutunterlaufenden Augen. Er scheint dich nicht zu bemerken… wahrscheinlich hält er dich für eine dieser lebenden Leichen, die hier arbeiten.{#soego_s0_}'
+    nr 'Du siehst einen müde wirkenden Mann in einer ausgebleichten, schwarzen Robe. Sein schmales Gesicht ist extrem blaß. Er sieht aus, als hätte er lange nicht geschlafen: seine Schultern hängen herab, und seine schlaffen Wangen unterstreichen die blutunterlaufenden Augen. Er scheint dich nicht zu bemerken… wahrscheinlich hält er dich für eine dieser lebenden Leichen, die hier arbeiten.{#soego_s0_1}'
 
     menu:
         '"Sei gegrüßt."{#soego_s0_r1432}':
@@ -37,7 +37,7 @@ label soego_s0: # - # IF WEIGHT #8 /* Triggers after states #: 59 58 12 63 108 7
 
 # s1 # say1437
 label soego_s1: # from 0.0 0.1 0.2 0.3
-    nr 'Der Staubmensch blickt blitzschnell auf, als du ihn ansprichst. "Wie…wie bitte? Habt Ihr mit mir gesprochen?"{#soego_s1_}'
+    nr 'Der Staubmensch blickt blitzschnell auf, als du ihn ansprichst. "Wie…wie bitte? Habt Ihr mit mir gesprochen?"{#soego_s1_1}'
 
     menu:
         '"Ja, hab„ ich. Ich hätte da ein paar Fragen…"{#soego_s1_r1438}':
@@ -65,7 +65,7 @@ label soego_s1: # from 0.0 0.1 0.2 0.3
 
 # s2 # say1443
 label soego_s2: # from 1.0 1.1 3.0 3.3 4.0 4.1
-    nr '"Bei den Mächten!" Der Staubmensch zuckt zusammen; dann schaut er dich durchdringend an. Dir fällt auf, daß seine Augen nicht blutunterlaufen sind, sondern einen Rotstich haben. "Mein Herr, Ihr entlockt mir eine wenig schmeichelhafte Bemerkung: Ihr wirkt durchaus überzeugend als Zombie." Er verbeugt sich leicht. "Ich bin Soego. Darf ich fragen, was Euch hierher führt…", er starrt auf deine Narben, "…so, wie Ihr ausseht?"{#soego_s2_}'
+    nr '"Bei den Mächten!" Der Staubmensch zuckt zusammen; dann schaut er dich durchdringend an. Dir fällt auf, daß seine Augen nicht blutunterlaufen sind, sondern einen Rotstich haben. "Mein Herr, Ihr entlockt mir eine wenig schmeichelhafte Bemerkung: Ihr wirkt durchaus überzeugend als Zombie." Er verbeugt sich leicht. "Ich bin Soego. Darf ich fragen, was Euch hierher führt…", er starrt auf deine Narben, "…so, wie Ihr ausseht?"{#soego_s2_1}'
 
     menu:
         '"Das geht dich gar nichts an."{#soego_s2_r1444}':
@@ -96,7 +96,7 @@ label soego_s2: # from 1.0 1.1 3.0 3.3 4.0 4.1
 
 # s3 # say1449
 label soego_s3: # from 1.2
-    nr 'Der Staubmensch schaut dich kurz prüfend an, dann schüttelt er den Kopf. "Meine Einbildung…" Er seufzt und reibt sich die Augen. "Diese Fieberzustände werden immer schlimmer…"{#soego_s3_}'
+    nr 'Der Staubmensch schaut dich kurz prüfend an, dann schüttelt er den Kopf. "Meine Einbildung…" Er seufzt und reibt sich die Augen. "Diese Fieberzustände werden immer schlimmer…"{#soego_s3_1}'
 
     menu:
         '"Es ist keine Einbildung. Ich hätte da ein paar Fragen…"{#soego_s3_r1450}':
@@ -124,7 +124,7 @@ label soego_s3: # from 1.2
 
 # s4 # say1455
 label soego_s4: # from 1.3
-    nr 'Der Staubmensch betrachtet dich aufmerksam, dann beugt er sich vor… er zieht seine Lippen auseinander, unter denen seine schmutzigen, spitzen Zähne zum Vorschein kommen. Dann beschnuppert er dich wie eine Ratte.{#soego_s4_}'
+    nr 'Der Staubmensch betrachtet dich aufmerksam, dann beugt er sich vor… er zieht seine Lippen auseinander, unter denen seine schmutzigen, spitzen Zähne zum Vorschein kommen. Dann beschnuppert er dich wie eine Ratte.{#soego_s4_1}'
 
     menu:
         '"Äh… warum, zum Teufel, schnüffelst du so an mir?"{#soego_s4_r1456}':
@@ -152,7 +152,7 @@ label soego_s4: # from 1.3
 
 # s5 # say1461
 label soego_s5: # from 1.4
-    nr 'Als du dich umdrehst und gehen willst, läßt der Staubmensch ein leises Zischen hören, streckt seinen Kopf nach vorn und beschnuppert dich. "Bei den Mächten!" Der Staubmensch geht mit weit geöffneten Augen einen Schritt zurück. Dir fällt auf, daß seine Augen nicht blutunterlaufen sind, sondern einen Rotstich haben. "Mein Herr, Ihr entlockt mir eine wenig schmeichelhafte Bemerkung: Ihr wirkt durchaus überzeugend als Zombie." Er verbeugt sich leicht. "Ich bin Soego. Darf ich fragen, was Euch hierher führt… so, wie Ihr ausseht?"{#soego_s5_}'
+    nr 'Als du dich umdrehst und gehen willst, läßt der Staubmensch ein leises Zischen hören, streckt seinen Kopf nach vorn und beschnuppert dich. "Bei den Mächten!" Der Staubmensch geht mit weit geöffneten Augen einen Schritt zurück. Dir fällt auf, daß seine Augen nicht blutunterlaufen sind, sondern einen Rotstich haben. "Mein Herr, Ihr entlockt mir eine wenig schmeichelhafte Bemerkung: Ihr wirkt durchaus überzeugend als Zombie." Er verbeugt sich leicht. "Ich bin Soego. Darf ich fragen, was Euch hierher führt… so, wie Ihr ausseht?"{#soego_s5_1}'
 
     menu:
         '"Das geht dich gar nichts an."{#soego_s5_r1462}':
@@ -183,7 +183,7 @@ label soego_s5: # from 1.4
 
 # s6 # say1468
 label soego_s6: # from 2.0 5.0 15.0 41.1 43.0 50.1 115.1
-    nr '"Oh, ich fürchte, dies *geht* mich sehr wohl etwas an." Soegos Augen leuchten rot, und seine Mundwinkel zucken leicht. "Vielleicht…", er grinst höhnisch, wobei er seine spitzen, schmutzigen Zähne zeigt, "vielleicht sollte ich die Wache rufen, oder? Ja… genau. Ich glaube, das werde ich tun."{#soego_s6_}'
+    nr '"Oh, ich fürchte, dies *geht* mich sehr wohl etwas an." Soegos Augen leuchten rot, und seine Mundwinkel zucken leicht. "Vielleicht…", er grinst höhnisch, wobei er seine spitzen, schmutzigen Zähne zeigt, "vielleicht sollte ich die Wache rufen, oder? Ja… genau. Ich glaube, das werde ich tun."{#soego_s6_1}'
 
     menu:
         '"Einen Moment mal! Ich hatte mich verirrt… Ich finde mich in diesen Hallen hier einfach nicht zurecht und weiß nicht, wo der Ausgang ist. Kannst du mir helfen?"{#soego_s6_r1469}' if soegoLogic.r1469_condition():
@@ -209,7 +209,7 @@ label soego_s6: # from 2.0 5.0 15.0 41.1 43.0 50.1 115.1
 
 # s7 # say1474
 label soego_s7: # from 2.1 5.1 13.3 15.1 42.1 57.0
-    nr '"Wirklich?" Der Staubmensch mustert dich. "Ihr seht definitiv aus, als hätte man Euch präpariert. Ich weiß nicht, wie Ihr diese Schmerzen sonst hättet ertragen können… Ihr habt doch *Schmerzen,* oder? Scheint jedenfalls so."{#soego_s7_}'
+    nr '"Wirklich?" Der Staubmensch mustert dich. "Ihr seht definitiv aus, als hätte man Euch präpariert. Ich weiß nicht, wie Ihr diese Schmerzen sonst hättet ertragen können… Ihr habt doch *Schmerzen,* oder? Scheint jedenfalls so."{#soego_s7_1}'
 
     menu:
         '"Wie soll ich denn überhaupt hierher gekommen sein?"{#soego_s7_r1475}':
@@ -223,7 +223,7 @@ label soego_s7: # from 2.1 5.1 13.3 15.1 42.1 57.0
 
 # s8 # say1477
 label soego_s8: # from 2.2 5.2 6.0 13.0 15.2 16.0 17.0 26.0 40.0 41.0 50.0 61.0 62.0
-    nr 'Soego nickt, und seine Mundwinkel zucken. "Hm… gewiß. Diese Hallen *können* für Besucher ganz schön verwirrend sein. Nehmt„s mir nicht übel, aber nach dem neunten Glockenschlag dürft Ihr Euch nicht mehr in der Leichenhalle aufhalten - wartet, ich öffne Euch das Haupttor."{#soego_s8_}'
+    nr 'Soego nickt, und seine Mundwinkel zucken. "Hm… gewiß. Diese Hallen *können* für Besucher ganz schön verwirrend sein. Nehmt„s mir nicht übel, aber nach dem neunten Glockenschlag dürft Ihr Euch nicht mehr in der Leichenhalle aufhalten - wartet, ich öffne Euch das Haupttor."{#soego_s8_1}'
 
     menu:
         '"Vielen Dank."{#soego_s8_r1478}' if soegoLogic.r1478_condition():
@@ -238,7 +238,7 @@ label soego_s8: # from 2.2 5.2 6.0 13.0 15.2 16.0 17.0 26.0 40.0 41.0 50.0 61.0 
 
 # s9 # say1480
 label soego_s9: # from 8.1 56.1 60.1
-    nr 'Soego faßt an seinen Gürtel, nestelt kurz daran herum und zischt: "Der Schlüssel!" Seine Augen leuchten rot; wütend verzieht er seinen Mund… seine Fratze erinnert an ein wildes Tier. "Jemand hat den Schlüssel gestohlen!" Er dreht sich zu dir um und faucht. "Ihr! Ihr müßt es getan haben!"{#soego_s9_}'
+    nr 'Soego faßt an seinen Gürtel, nestelt kurz daran herum und zischt: "Der Schlüssel!" Seine Augen leuchten rot; wütend verzieht er seinen Mund… seine Fratze erinnert an ein wildes Tier. "Jemand hat den Schlüssel gestohlen!" Er dreht sich zu dir um und faucht. "Ihr! Ihr müßt es getan haben!"{#soego_s9_1}'
 
     menu:
         'Täusch ihn: "Äh… warte mal! Warum sollte ich dich danach fragen, wenn ich ihn gestohlen hätte?"{#soego_s9_r1481}':
@@ -265,7 +265,7 @@ label soego_s9: # from 8.1 56.1 60.1
 
 # s10 # say1486
 label soego_s10: # -
-    nr 'Soego nimmt einen großen Schlüssel von seinem Gürtel ab und geht zum Haupttor. Jetzt fällt dir sein merkwürdiger Gang auf… er krümmt sich nach vorn, als versuche er so, das Gleichgewicht zu halten.{#soego_s10_}'
+    nr 'Soego nimmt einen großen Schlüssel von seinem Gürtel ab und geht zum Haupttor. Jetzt fällt dir sein merkwürdiger Gang auf… er krümmt sich nach vorn, als versuche er so, das Gleichgewicht zu halten.{#soego_s10_1}'
 
     menu:
         '"Komischen Gang hat der."{#soego_s10_r1487}' if soegoLogic.r1487_condition():
@@ -279,7 +279,7 @@ label soego_s10: # -
 
 # s11 # say1489
 label soego_s11: # from 10.1
-    nr 'Am Tor angelangt, dreht Soego den Schlüssel im Schloß um. Kurz darauf knirrscht es im Schloßkasten… das Geräusch hallt von den Marmorfußböden der Haupthalle wider.{#soego_s11_}'
+    nr 'Am Tor angelangt, dreht Soego den Schlüssel im Schloß um. Kurz darauf knirrscht es im Schloßkasten… das Geräusch hallt von den Marmorfußböden der Haupthalle wider.{#soego_s11_1}'
 
     menu:
         'Warte, bis er wiederkommt.{#soego_s11_r1490}':
@@ -290,7 +290,7 @@ label soego_s11: # from 10.1
 
 # s12 # say1491
 label soego_s12: # from 11.0 # IF WEIGHT #5 /* Triggers after states #: 63 108 79 82 95 even though they appear after this state */ ~  CreatureInArea("AR0201") Global("Gate_Open","GLOBAL",1) Global("Gate_Cut_Scene","AR0201",1)
-    nr '"Gut. Das Haupttor ist jetzt aufgeschlossen, aber Ihr könnt nicht wieder hineingehen."{#soego_s12_}'
+    nr '"Gut. Das Haupttor ist jetzt aufgeschlossen, aber Ihr könnt nicht wieder hineingehen."{#soego_s12_1}'
 
     menu:
         '"Kann ich dich vielleicht was fragen, bevor ich gehe?"{#soego_s12_r1492}':
@@ -306,7 +306,7 @@ label soego_s12: # from 11.0 # IF WEIGHT #5 /* Triggers after states #: 63 108 7
 
 # s13 # say1494
 label soego_s13: # from 2.3 5.3 6.1 15.3 16.1 17.1 26.1 61.1
-    nr '"Ihr wollt hier raus?" Soego runzelt die Stirn. "Wie seid Ihr reingekommen?"{#soego_s13_}'
+    nr '"Ihr wollt hier raus?" Soego runzelt die Stirn. "Wie seid Ihr reingekommen?"{#soego_s13_1}'
 
     menu:
         '"Ich war für eine Bestattung vorhin hier, um jemandem die letzte Ehre zu erweisen. Ich wollte gehen… aber ich glaube, ich habe mich verirrt. Kannst du mir helfen, den Ausgang zu finden?"{#soego_s13_r1495}' if soegoLogic.r1495_condition():
@@ -332,7 +332,7 @@ label soego_s13: # from 2.3 5.3 6.1 15.3 16.1 17.1 26.1 61.1
 
 # s14 # say1500
 label soego_s14: # from 13.1
-    nr 'Soego schnalzt mit der Zunge. "Sehr merkwürdig." Er betrachtet dich wieder mit prüfendem Blick. "Ist es möglich, daß Ihr einer der Vertragsarbeiter seid?"{#soego_s14_}'
+    nr 'Soego schnalzt mit der Zunge. "Sehr merkwürdig." Er betrachtet dich wieder mit prüfendem Blick. "Ist es möglich, daß Ihr einer der Vertragsarbeiter seid?"{#soego_s14_1}'
 
     menu:
         '"Ähh… „Vertragsarbeiter“?"{#soego_s14_r1501}':
@@ -346,7 +346,7 @@ label soego_s14: # from 13.1
 
 # s15 # say1503
 label soego_s15: # from 4.4
-    nr 'Als du dich umdrehst und gehen willst, hört der Staubmensch auf, dich zu beschnuppern und zischt: "Bei den Mächten!" Der Staubmensch geht mit weit geöffneten Augen einen Schritt zurück. Dir fällt auf, daß seine Augen nicht blutunterlaufen sind, sondern einen Rotstich haben. "Mein Herr, Ihr entlockt mir eine wenig schmeichelhafte Bemerkung: Ihr wirkt durchaus überzeugend als Zombie." Er verbeugt sich leicht. "Ich bin Soego. Darf ich fragen, was Euch hierher führt…so, wie Ihr ausseht?"{#soego_s15_}'
+    nr 'Als du dich umdrehst und gehen willst, hört der Staubmensch auf, dich zu beschnuppern und zischt: "Bei den Mächten!" Der Staubmensch geht mit weit geöffneten Augen einen Schritt zurück. Dir fällt auf, daß seine Augen nicht blutunterlaufen sind, sondern einen Rotstich haben. "Mein Herr, Ihr entlockt mir eine wenig schmeichelhafte Bemerkung: Ihr wirkt durchaus überzeugend als Zombie." Er verbeugt sich leicht. "Ich bin Soego. Darf ich fragen, was Euch hierher führt…so, wie Ihr ausseht?"{#soego_s15_1}'
 
     menu:
         '"Das geht dich gar nichts an."{#soego_s15_r1504}':
@@ -377,7 +377,7 @@ label soego_s15: # from 4.4
 
 # s16 # say1511
 label soego_s16: # from 2.4 5.4 15.4
-    nr '"Aha…" Soegos Augen leuchten rot, und seine Mundwinkel zucken leicht. "Vielleicht…" Er grinst höhnisch, wobei er seine spitzen, schmutzigen Zähne zeigt. "Vielleicht sollte ich die Wache rufen, oder? Ja… genau. Ich glaube, das werde ich tun."{#soego_s16_}'
+    nr '"Aha…" Soegos Augen leuchten rot, und seine Mundwinkel zucken leicht. "Vielleicht…" Er grinst höhnisch, wobei er seine spitzen, schmutzigen Zähne zeigt. "Vielleicht sollte ich die Wache rufen, oder? Ja… genau. Ich glaube, das werde ich tun."{#soego_s16_1}'
 
     menu:
         '"Einen Moment mal! Ich hatte mich verirrt… Ich finde mich in diesen Hallen hier einfach nicht zurecht und weiß nicht, wo der Ausgang ist. Kannst du mir helfen?"{#soego_s16_r1512}' if soegoLogic.r1512_condition():
@@ -403,7 +403,7 @@ label soego_s16: # from 2.4 5.4 15.4
 
 # s17 # say1517
 label soego_s17: # from 2.5 5.5 7.1 13.4 14.1 15.5 23.2 24.2 25.2 26.9 27.4 28.2 29.3 31.3 32.2 33.4 34.4 35.3 36.3 37.2 114.3 115.4
-    nr 'Als du dich umdrehst und gehen willst, faucht Soego dich an… doch dann beruhigt er sich plötzlich und erhebt die Hand. "Nein, nein. Ihr könnt leider nicht einfach gehen. Wir vermissen hier etwas. Vielleicht sollten wir diese Angelegenheit erst einmal klären…" Seine Mundwinkel zucken leicht, und seine Augen leuchten. "…vielleicht können die Wächter helfen. Ja… ich glaube, ich sollte sie rufen."{#soego_s17_}'
+    nr 'Als du dich umdrehst und gehen willst, faucht Soego dich an… doch dann beruhigt er sich plötzlich und erhebt die Hand. "Nein, nein. Ihr könnt leider nicht einfach gehen. Wir vermissen hier etwas. Vielleicht sollten wir diese Angelegenheit erst einmal klären…" Seine Mundwinkel zucken leicht, und seine Augen leuchten. "…vielleicht können die Wächter helfen. Ja… ich glaube, ich sollte sie rufen."{#soego_s17_1}'
 
     menu:
         '"Einen Moment mal! Ich hatte mich verirrt… Ich finde mich in diesen Hallen hier einfach nicht zurecht und weiß nicht, wo der Ausgang ist. Kannst du mir helfen?"{#soego_s17_r1518}' if soegoLogic.r1518_condition():
@@ -429,7 +429,7 @@ label soego_s17: # from 2.5 5.5 7.1 13.4 14.1 15.5 23.2 24.2 25.2 26.9 27.4 28.2
 
 # s18 # say1524
 label soego_s18: # from 6.4 9.0 9.1 9.4 16.4 17.4 40.4 40.5 41.6 50.6 53.6 61.4
-    nr 'Soego geht einen Schritt zurück, dann klatscht er dreimal fest in die Hände. Daraufhin ertönt der Klang einer großen Eisenglocke durch die ganze Leichenhalle.{#soego_s18_}'
+    nr 'Soego geht einen Schritt zurück, dann klatscht er dreimal fest in die Hände. Daraufhin ertönt der Klang einer großen Eisenglocke durch die ganze Leichenhalle.{#soego_s18_1}'
 
     menu:
         '"In Ordnung…"{#soego_s18_r1525}':
@@ -440,7 +440,7 @@ label soego_s18: # from 6.4 9.0 9.1 9.4 16.4 17.4 40.4 40.5 41.6 50.6 53.6 61.4
 
 # s19 # say1526
 label soego_s19: # from 3.1 4.2 6.2 9.2 16.2 17.2 40.2 51.0 61.2 114.2 115.3
-    nr 'Bevor er auch nur ein Wort sagen kann, packst du ihn an den Schläfen und drehst seinen Kopf ruckartig nach links.{#soego_s19_}'
+    nr 'Bevor er auch nur ein Wort sagen kann, packst du ihn an den Schläfen und drehst seinen Kopf ruckartig nach links.{#soego_s19_1}'
 
     menu:
         '"Ich kann nicht zulassen, daß du deine Freunde warnst…"{#soego_s19_r1528}':
@@ -451,7 +451,7 @@ label soego_s19: # from 3.1 4.2 6.2 9.2 16.2 17.2 40.2 51.0 61.2 114.2 115.3
 
 # s20 # say1529
 label soego_s20: # from 19.0
-    nr 'In seinem Genick macht es *Knacks*… aber anstatt zusammenzusacken gibt der Staubmensch nur einen Würgelaut von sich und reißt sich von dir los!{#soego_s20_}'
+    nr 'In seinem Genick macht es *Knacks*… aber anstatt zusammenzusacken gibt der Staubmensch nur einen Würgelaut von sich und reißt sich von dir los!{#soego_s20_1}'
 
     menu:
         '"Was…?!"{#soego_s20_r1530}' if soegoLogic.r1530_condition():
@@ -467,7 +467,7 @@ label soego_s20: # from 19.0
 
 # s21 # say1532
 label soego_s21: # from 20.1
-    nr 'Der Staubmensch macht einen genauso schockierten Eindruck wie du. Sein Blick ist irre, und aus seiner Kehle kommt ein gurgelndes Geräusch… du bist sicher, daß du ihm das Genick gebrochen hast, da sein Kopf in einem unnatürlichen Winkel auf dem Rumpf sitzt, aber er lebt noch! Als du ihn fassungslos anschaust, klatscht er dreimal schwach in die Hände. Daraufhin ertönt der Klang einer großen Eisenglocke durch die ganze Leichenhalle.{#soego_s21_}'
+    nr 'Der Staubmensch macht einen genauso schockierten Eindruck wie du. Sein Blick ist irre, und aus seiner Kehle kommt ein gurgelndes Geräusch… du bist sicher, daß du ihm das Genick gebrochen hast, da sein Kopf in einem unnatürlichen Winkel auf dem Rumpf sitzt, aber er lebt noch! Als du ihn fassungslos anschaust, klatscht er dreimal schwach in die Hände. Daraufhin ertönt der Klang einer großen Eisenglocke durch die ganze Leichenhalle.{#soego_s21_1}'
 
     menu:
         '"In Ordnung…"{#soego_s21_r1533}':
@@ -478,7 +478,7 @@ label soego_s21: # from 20.1
 
 # s22 # say1534
 label soego_s22: # from 3.2 4.3 6.3 9.3 16.3 17.3 40.3 61.3 114.1 115.2
-    nr '*Irgendetwas* muß den Staubmenschen in Alarmbereitschaft versetzt haben… bevor du auf ihn losstürzen kannst, beginnen seine Augen rot zu leuchten, und er fletscht die Zähne. Er zischt und klatscht dreimal hintereinander fest in die Hände. Daraufhin ertönt der Klang einer großen Eisenglocke durch die ganze Leichenhalle.{#soego_s22_}'
+    nr '*Irgendetwas* muß den Staubmenschen in Alarmbereitschaft versetzt haben… bevor du auf ihn losstürzen kannst, beginnen seine Augen rot zu leuchten, und er fletscht die Zähne. Er zischt und klatscht dreimal hintereinander fest in die Hände. Daraufhin ertönt der Klang einer großen Eisenglocke durch die ganze Leichenhalle.{#soego_s22_1}'
 
     menu:
         '"In Ordnung…"{#soego_s22_r1535}':
@@ -489,7 +489,7 @@ label soego_s22: # from 3.2 4.3 6.3 9.3 16.3 17.3 40.3 61.3 114.1 115.2
 
 # s23 # say4792
 label soego_s23: # from 14.0
-    nr '"Es gibt Leute, die haben einen Vertrag unterzeichnet, mit dem sie den Staubmenschen erlauben, ihren Körper nach dem Tod zu verwenden. Es ist möglich, daß Ihr einem… Mißverständnis zum Opfer gefallen seid. Ihr seht viel intelligenter aus als unsere gewöhnlichen Zombies."{#soego_s23_}'
+    nr '"Es gibt Leute, die haben einen Vertrag unterzeichnet, mit dem sie den Staubmenschen erlauben, ihren Körper nach dem Tod zu verwenden. Es ist möglich, daß Ihr einem… Mißverständnis zum Opfer gefallen seid. Ihr seht viel intelligenter aus als unsere gewöhnlichen Zombies."{#soego_s23_1}'
 
     menu:
         '"Leute verkaufen euch ihre Leiche?"{#soego_s23_r4793}':
@@ -507,7 +507,7 @@ label soego_s23: # from 14.0
 
 # s24 # say4796
 label soego_s24: # from 23.0
-    nr '"Oh ja. Für ein paar Kupfermünzen erklären sich viele bereit, einen Körper zu verkaufen, den sie im Wahren Tod ohnehin nicht mehr gebrauchen können."{#soego_s24_}'
+    nr '"Oh ja. Für ein paar Kupfermünzen erklären sich viele bereit, einen Körper zu verkaufen, den sie im Wahren Tod ohnehin nicht mehr gebrauchen können."{#soego_s24_1}'
 
     menu:
         '"Was macht ihr mit diesen Leichen?"{#soego_s24_r4797}':
@@ -525,7 +525,7 @@ label soego_s24: # from 23.0
 
 # s25 # say4800
 label soego_s25: # from 24.0 24.1
-    nr '"Diese Zombies erledigen niedrige Aufgaben in der Leichenhalle. Sie transportieren Leichen, putzen den Boden und helfen uns, Leichen für die Bestattung vorzubereiten… alles ziemlich simple Aufgaben. Es ist ein Pech, daß sie keine komplizierteren Anweisungen befolgen können."{#soego_s25_}'
+    nr '"Diese Zombies erledigen niedrige Aufgaben in der Leichenhalle. Sie transportieren Leichen, putzen den Boden und helfen uns, Leichen für die Bestattung vorzubereiten… alles ziemlich simple Aufgaben. Es ist ein Pech, daß sie keine komplizierteren Anweisungen befolgen können."{#soego_s25_1}'
 
     menu:
         '"Nun, „Vertragsarbeiter“ oder auch nicht; wie sollte ich denn hierhergekommen sein, wenn ich nicht tot war?"{#soego_s25_r4801}':
@@ -543,7 +543,7 @@ label soego_s25: # from 24.0 24.1
 
 # s26 # say4804
 label soego_s26: # from 12.0 23.1 25.1 27.2 28.0 29.1 31.1 32.0 33.2 34.2 35.1 36.1 37.0 58.0
-    nr 'Soego nickt. "Stellt Eure Fragen."{#soego_s26_}'
+    nr 'Soego nickt. "Stellt Eure Fragen."{#soego_s26_1}'
 
     menu:
         '"Ich würde gerne gehen. Kannst du mich zum Ausgang bringen?"{#soego_s26_r4805}' if soegoLogic.r4805_condition():
@@ -591,7 +591,7 @@ label soego_s26: # from 12.0 23.1 25.1 27.2 28.0 29.1 31.1 32.0 33.2 34.2 35.1 3
 
 # s27 # say4808
 label soego_s27: # from 26.2
-    nr '"Wie bitte?"{#soego_s27_}'
+    nr '"Wie bitte?"{#soego_s27_1}'
 
     menu:
         '"Da oben ist ein Mann, der sich als Leiche verkleidet hat. "Ich glaub, er bespitzelt die Staubmenschen."{#soego_s27_r4836}' if soegoLogic.r4836_condition():
@@ -619,7 +619,7 @@ label soego_s27: # from 26.2
 
 # s28 # say4840
 label soego_s28: # from 27.0 27.1
-    nr '"Was? Weshalb sollte…?" Soegos Stimme wird plötzlich zischend. Er zieht seine Lippen auseinander, unter denen seine gezackten Zähne zum Vorschein kommen. "Ein *Anarchist*." Seine Augen leuchten grell rot. "Ein Anarchist. *Hier*." Plötzlich scheint er sich an deine Anwesenheit zu erinnern und reißt sich zusammen. "Danke für die Information. Ich werde dafür sorgen, daß die Wächter sich um diese Angelegenheit kümmern."{#soego_s28_}'
+    nr '"Was? Weshalb sollte…?" Soegos Stimme wird plötzlich zischend. Er zieht seine Lippen auseinander, unter denen seine gezackten Zähne zum Vorschein kommen. "Ein *Anarchist*." Seine Augen leuchten grell rot. "Ein Anarchist. *Hier*." Plötzlich scheint er sich an deine Anwesenheit zu erinnern und reißt sich zusammen. "Danke für die Information. Ich werde dafür sorgen, daß die Wächter sich um diese Angelegenheit kümmern."{#soego_s28_1}'
 
     menu:
         '"Kein Problem. Ich hätte aber noch ein paar Fragen…"{#soego_s28_r4852}':
@@ -637,7 +637,7 @@ label soego_s28: # from 27.0 27.1
 
 # s29 # say4855
 label soego_s29: # from 26.5
-    nr 'Du willst es gerade erwähnen, als du plötzlich zögerst. Dich überkommt ein merkwürdiges Gefühl, als du Soego betrachtest… irgendwie glaubst du, daß es am besten wäre, jetzt nichts zu sagen.{#soego_s29_}'
+    nr 'Du willst es gerade erwähnen, als du plötzlich zögerst. Dich überkommt ein merkwürdiges Gefühl, als du Soego betrachtest… irgendwie glaubst du, daß es am besten wäre, jetzt nichts zu sagen.{#soego_s29_1}'
 
     menu:
         '"Hab„ gehört, du wärst ein bißchen komisch, Soego. Daß du Ratten magst."{#soego_s29_r4856}':
@@ -659,7 +659,7 @@ label soego_s29: # from 26.5
 
 # s30 # say4860
 label soego_s30: # from 26.4 29.0
-    nr 'Soego verstummt kurz, während er dich prüfend betrachtet. Seine Augen leuchten grell rot, und er zischt leise. "Ich glaube, Ihr habt die Gastfreundschaft überstrapaziert." Zu deinem Erstaunen geht er einen Schritt zurück und klatscht dreimal fest in die Hände. Daraufhin ertönt der Klang einer großen Eisenglocke durch die ganze Leichenhalle.{#soego_s30_}'
+    nr 'Soego verstummt kurz, während er dich prüfend betrachtet. Seine Augen leuchten grell rot, und er zischt leise. "Ich glaube, Ihr habt die Gastfreundschaft überstrapaziert." Zu deinem Erstaunen geht er einen Schritt zurück und klatscht dreimal fest in die Hände. Daraufhin ertönt der Klang einer großen Eisenglocke durch die ganze Leichenhalle.{#soego_s30_1}'
 
     menu:
         '"Was zum…? Was machst du da?"{#soego_s30_r4861}':
@@ -675,7 +675,7 @@ label soego_s30: # from 26.4 29.0
 
 # s31 # say4863
 label soego_s31: # from 26.3
-    nr 'Soego zwingt sich zu einem Lächeln; seine Mundwinkel zucken leicht. "Ich bin in letzter Zeit öfter krank… leichtes Fieber, nichts Ernstes. Nur kann ich oft… nicht gut schlafen."{#soego_s31_}'
+    nr 'Soego zwingt sich zu einem Lächeln; seine Mundwinkel zucken leicht. "Ich bin in letzter Zeit öfter krank… leichtes Fieber, nichts Ernstes. Nur kann ich oft… nicht gut schlafen."{#soego_s31_1}'
 
     menu:
         '"Kann ich vielleicht irgendwas tun?"{#soego_s31_r4864}':
@@ -698,7 +698,7 @@ label soego_s31: # from 26.3
 
 # s32 # say4868
 label soego_s32: # from 31.0
-    nr 'Soego schüttelt den Kopf. "Nein, nein, danke der Nachfrage… ich komm schon zurecht." Mit einem leichten Stirnrunzeln: "Was kann ich sonst für Euch tun?"{#soego_s32_}'
+    nr 'Soego schüttelt den Kopf. "Nein, nein, danke der Nachfrage… ich komm schon zurecht." Mit einem leichten Stirnrunzeln: "Was kann ich sonst für Euch tun?"{#soego_s32_1}'
 
     menu:
         '"Ja. Ich hätte aber noch ein paar Fragen…"{#soego_s32_r4869}':
@@ -716,7 +716,7 @@ label soego_s32: # from 31.0
 
 # s33 # say4872
 label soego_s33: # from 26.6
-    nr '"Pharod? Klar kenne ich ihn." Er runzelt die Stirn, und seine Augen leuchten rot. "Ein teuflischer Mensch ohne Respekt vor den Toten, und mit noch weniger Respekt vor den Lebenden. Er ist ein Aasgeier. Ein Sammler."{#soego_s33_}'
+    nr '"Pharod? Klar kenne ich ihn." Er runzelt die Stirn, und seine Augen leuchten rot. "Ein teuflischer Mensch ohne Respekt vor den Toten, und mit noch weniger Respekt vor den Lebenden. Er ist ein Aasgeier. Ein Sammler."{#soego_s33_1}'
 
     menu:
         '"Sammler?"{#soego_s33_r4873}':
@@ -742,7 +742,7 @@ label soego_s33: # from 26.6
 
 # s34 # say4878
 label soego_s34: # from 33.0 36.0
-    nr '"Sammler bestreiten ihren Lebensunterhalt, indem sie Leichen sammeln und sie zur Leichenhalle bringen. Wir kümmern uns dann darum, daß sie ordnungsgemäß bestattet werden."{#soego_s34_}'
+    nr '"Sammler bestreiten ihren Lebensunterhalt, indem sie Leichen sammeln und sie zur Leichenhalle bringen. Wir kümmern uns dann darum, daß sie ordnungsgemäß bestattet werden."{#soego_s34_1}'
 
     menu:
         '"Also, wenn ein Sammler eine Leiche findet… meine, zum Beispiel… dann könnte er sie hierherbringen und euch verkaufen?"{#soego_s34_r4879}' if soegoLogic.r4879_condition():
@@ -768,7 +768,7 @@ label soego_s34: # from 33.0 36.0
 
 # s35 # say4884
 label soego_s35: # from 34.0
-    nr '"Ja."{#soego_s35_}'
+    nr '"Ja."{#soego_s35_1}'
 
     menu:
         '"Hmmmm. Plötzlich scheint es äußerst wichtig zu werden, daß ich diesen Pharod finde. Weißt du, wo er sein könnte?"{#soego_s35_r4885}':
@@ -790,7 +790,7 @@ label soego_s35: # from 34.0
 
 # s36 # say4889
 label soego_s36: # from 33.1 34.1 35.0
-    nr '"Ich weiß, daß er im Stock wohnt, in den Elendsvierteln außerhalb der Leichenhalle. Wo genau, weiß ich aber nicht. Vielleicht kann Euch einer der anderen Sammler weiterhelfen, falls er mit Euch spricht."{#soego_s36_}'
+    nr '"Ich weiß, daß er im Stock wohnt, in den Elendsvierteln außerhalb der Leichenhalle. Wo genau, weiß ich aber nicht. Vielleicht kann Euch einer der anderen Sammler weiterhelfen, falls er mit Euch spricht."{#soego_s36_1}'
 
     menu:
         '"Was machen diese Sammler nochmal?"{#soego_s36_r4890}':
@@ -812,7 +812,7 @@ label soego_s36: # from 33.1 34.1 35.0
 
 # s37 # say4894
 label soego_s37: # from 26.7
-    nr '"Ein Journal?" Soego scheint verwirrt. "Nein, ich habe keines gesehen."{#soego_s37_}'
+    nr '"Ein Journal?" Soego scheint verwirrt. "Nein, ich habe keines gesehen."{#soego_s37_1}'
 
     menu:
         '"Auch egal. Ich hätte aber noch ein paar Fragen…"{#soego_s37_r4895}':
@@ -830,7 +830,7 @@ label soego_s37: # from 26.7
 
 # s38 # say4898
 label soego_s38: # - # IF WEIGHT #9 /* Triggers after states #: 59 58 63 108 79 82 95 even though they appear after this state */ ~  CreatureInArea("AR0201") !Global("Appearance","GLOBAL",1) Global("Gate_Open","GLOBAL",0) Global("Soego","GLOBAL",0)
-    nr 'Du siehst einen müde wirkenden Mann in einer schwarzen Robe. Sein schmales Gesicht ist extrem blaß. Er sieht aus, als hätte er lange nicht geschlafen: Seine Schultern hängen herab und seine schlaffen Wangen unterstreichen die blutunterlaufenen Augen. Er scheint in Gedanken versunken.{#soego_s38_}'
+    nr 'Du siehst einen müde wirkenden Mann in einer schwarzen Robe. Sein schmales Gesicht ist extrem blaß. Er sieht aus, als hätte er lange nicht geschlafen: Seine Schultern hängen herab und seine schlaffen Wangen unterstreichen die blutunterlaufenen Augen. Er scheint in Gedanken versunken.{#soego_s38_1}'
 
     menu:
         '"Sei gegrüßt…"{#soego_s38_r66706}' if soegoLogic.r66706_condition():
@@ -850,7 +850,7 @@ label soego_s38: # - # IF WEIGHT #9 /* Triggers after states #: 59 58 63 108 79 
 
 # s39 # say4904
 label soego_s39: # from 38.0
-    nr '"Seid gegrüßt…" Der Mann dreht sich zu dir um und verbeugt sich leicht. Dir fällt plötzlich auf, daß seine Augen nicht blutunterlaufen sind, sondern einen Rotstich haben. "Ich bin Soego. Wie kann ich…" Als er deine Narben bemerkt, zucken seine Mundwinkel. "Verzeihung, mein Herr, habt Ihr Euch verlaufen?"{#soego_s39_}'
+    nr '"Seid gegrüßt…" Der Mann dreht sich zu dir um und verbeugt sich leicht. Dir fällt plötzlich auf, daß seine Augen nicht blutunterlaufen sind, sondern einen Rotstich haben. "Ich bin Soego. Wie kann ich…" Als er deine Narben bemerkt, zucken seine Mundwinkel. "Verzeihung, mein Herr, habt Ihr Euch verlaufen?"{#soego_s39_1}'
 
     menu:
         '"Ja."{#soego_s39_r4905}':
@@ -872,7 +872,7 @@ label soego_s39: # from 38.0
 
 # s40 # say4909
 label soego_s40: # from 39.0
-    nr '"Na gut…" Soegos Mundwinkel zucken erneut. "Ich rufe jetzt die Wächter, die Euch rausbringen werden. Wartet einen Moment." Er sieht aus, als würde er jeden Moment die Wache rufen.{#soego_s40_}'
+    nr '"Na gut…" Soegos Mundwinkel zucken erneut. "Ich rufe jetzt die Wächter, die Euch rausbringen werden. Wartet einen Moment." Er sieht aus, als würde er jeden Moment die Wache rufen.{#soego_s40_1}'
 
     menu:
         '"Einen Moment mal! Bitte… du brauchst wirklich nicht die Wache zu rufen. Ich bin wegen einer Bestattung hergekommen, und dann muß ich mich irgendwie in den Hallen verirrt haben… Kannst du mir vielleicht den Weg hier raus zeigen?"{#soego_s40_r4910}' if soegoLogic.r4910_condition():
@@ -902,7 +902,7 @@ label soego_s40: # from 39.0
 
 # s41 # say4916
 label soego_s41: # from 39.1 39.2 39.3
-    nr '"Ich kann mich nicht dran erinnern, Euch je hereingelassen zu haben." Soego begutachtet dich mißtrauisch; im Licht der Fackeln leuchten seine Augen rot. "Darf ich fragen, was Euch hierher führt?"{#soego_s41_}'
+    nr '"Ich kann mich nicht dran erinnern, Euch je hereingelassen zu haben." Soego begutachtet dich mißtrauisch; im Licht der Fackeln leuchten seine Augen rot. "Darf ich fragen, was Euch hierher führt?"{#soego_s41_1}'
 
     menu:
         '"Ich war für eine Bestattung vorhin hier, um jemandem die letzte Ehre zu erweisen. Ich wollte gehen… aber ich glaube, ich habe mich verirrt. Kannst du mir helfen, den Ausgang zu finden?"{#soego_s41_r4917}' if soegoLogic.r4917_condition():
@@ -936,7 +936,7 @@ label soego_s41: # from 39.1 39.2 39.3
 
 # s42 # say4924
 label soego_s42: # from 41.2 50.2 115.0
-    nr 'Er wirkt überrascht. "Ihr… Ihr seid auf einer dieser Totenbänke oben aufgewacht?"{#soego_s42_}'
+    nr 'Er wirkt überrascht. "Ihr… Ihr seid auf einer dieser Totenbänke oben aufgewacht?"{#soego_s42_1}'
 
     menu:
         '"Äh, nein. Ich habe mich versprochen."{#soego_s42_r4925}':
@@ -951,7 +951,7 @@ label soego_s42: # from 41.2 50.2 115.0
 
 # s43 # say4927
 label soego_s43: # from 41.3 50.3
-    nr 'Soego nickt. "Wen sucht Ihr hier? Es wäre mir ein Vergnügen, Euch weiterzuhelfen."{#soego_s43_}'
+    nr 'Soego nickt. "Wen sucht Ihr hier? Es wäre mir ein Vergnügen, Euch weiterzuhelfen."{#soego_s43_1}'
 
     menu:
         '"Das geht dich nichts an."{#soego_s43_r4928}':
@@ -982,7 +982,7 @@ label soego_s43: # from 41.3 50.3
 
 # s44 # say4934
 label soego_s44: # from 43.1
-    nr '"Dhall? Dhall der Schreiberling ist im Empfangsraum im oberen Stockwerk." Soegos Mundwinkel zucken leicht. "Er hat alle Hände voll zu tun und ist nicht bei bester Gesundheit. Wenn es nicht furchtbar dringend ist, würde ich ihn lieber nicht stören."{#soego_s44_}'
+    nr '"Dhall? Dhall der Schreiberling ist im Empfangsraum im oberen Stockwerk." Soegos Mundwinkel zucken leicht. "Er hat alle Hände voll zu tun und ist nicht bei bester Gesundheit. Wenn es nicht furchtbar dringend ist, würde ich ihn lieber nicht stören."{#soego_s44_1}'
 
     menu:
         '"Was fehlt Dhall?"{#soego_s44_r4935}':
@@ -1000,7 +1000,7 @@ label soego_s44: # from 43.1
 
 # s45 # say4938
 label soego_s45: # from 44.1
-    nr '"Ja… der Empfangsraum. Dorthin werden die Leichen aus der Stadt gebracht, nachdem sie hier angeliefert wurden. Sie werden registriert und zum Bestatten vorbereitet."{#soego_s45_}'
+    nr '"Ja… der Empfangsraum. Dorthin werden die Leichen aus der Stadt gebracht, nachdem sie hier angeliefert wurden. Sie werden registriert und zum Bestatten vorbereitet."{#soego_s45_1}'
 
     menu:
         '"Was fehlt Dhall?"{#soego_s45_r4939}':
@@ -1014,7 +1014,7 @@ label soego_s45: # from 44.1
 
 # s46 # say4941
 label soego_s46: # from 44.0 45.0
-    nr '"Ach, im Grunde ist alles in Ordnung mit ihm. Dhall ist…" Soego klappert mit den Zähnen. "…*alt*. Lange hat er die Toten katalogisiert, aber diese Zeit neigt sich langsam aber sicher dem Ende zu. Der Tod ist ihm gewiß nach seinem Siechtum."{#soego_s46_}'
+    nr '"Ach, im Grunde ist alles in Ordnung mit ihm. Dhall ist…" Soego klappert mit den Zähnen. "…*alt*. Lange hat er die Toten katalogisiert, aber diese Zeit neigt sich langsam aber sicher dem Ende zu. Der Tod ist ihm gewiß nach seinem Siechtum."{#soego_s46_1}'
 
     menu:
         '"Also gut. Ich werden meinen Besuch bei ihm kurz halten. Leb wohl."{#soego_s46_r4942}':
@@ -1024,7 +1024,7 @@ label soego_s46: # from 44.0 45.0
 
 # s47 # say4943
 label soego_s47: # from 43.2 53.2
-    nr '"Deionarra? Eine Frau, die so heißt, ist im Nordwesten der Gedenkhalle bestattet. Ist das die Person, die Ihr sucht?"{#soego_s47_}'
+    nr '"Deionarra? Eine Frau, die so heißt, ist im Nordwesten der Gedenkhalle bestattet. Ist das die Person, die Ihr sucht?"{#soego_s47_1}'
 
     menu:
         '"Ja… kannst du mir sagen, was mit ihr passiert ist?"{#soego_s47_r4944}':
@@ -1038,7 +1038,7 @@ label soego_s47: # from 43.2 53.2
 
 # s48 # say4946
 label soego_s48: # from 47.0
-    nr '"Ich weiß nicht, aber sie war eine ganze Weile hier. Vielleicht weiß ihr Vater, was sie hatte… auf dem Weg zu seinem Büro im Oberen Bezirk kommt er oft hier vorbei. Es war sein Wunsch, sie hier in der Gedenkhalle zu bestatten."{#soego_s48_}'
+    nr '"Ich weiß nicht, aber sie war eine ganze Weile hier. Vielleicht weiß ihr Vater, was sie hatte… auf dem Weg zu seinem Büro im Oberen Bezirk kommt er oft hier vorbei. Es war sein Wunsch, sie hier in der Gedenkhalle zu bestatten."{#soego_s48_1}'
 
     menu:
         '"Danke für die Hinweise. Ich werd gehen, um ihr die letzte Ehre zu erweisen."{#soego_s48_r4947}':
@@ -1048,7 +1048,7 @@ label soego_s48: # from 47.0
 
 # s49 # say4948
 label soego_s49: # from 43.3 43.4 53.3 53.4
-    nr '"Adahn…" Soego kneift seine Augen zusammen, und der Rotstich scheint jetzt noch ausgeprägter als zuvor. "Niemand, der so heißt, weder tot noch lebendig, befindet sich in der Leichenhalle." Seine Mundwinkel zucken, und zu deiner Überraschung schnüffelt er die Luft.{#soego_s49_}'
+    nr '"Adahn…" Soego kneift seine Augen zusammen, und der Rotstich scheint jetzt noch ausgeprägter als zuvor. "Niemand, der so heißt, weder tot noch lebendig, befindet sich in der Leichenhalle." Seine Mundwinkel zucken, und zu deiner Überraschung schnüffelt er die Luft.{#soego_s49_1}'
 
     menu:
         '"Äh… da muß ich mich wohl versprochen haben."{#soego_s49_r4949}':
@@ -1058,7 +1058,7 @@ label soego_s49: # from 43.3 43.4 53.3 53.4
 
 # s50 # say4950
 label soego_s50: # from 40.1 42.0 43.5 49.0 53.1 57.1
-    nr 'Soegos Mundwinkel zucken erneut, und seine Augen leuchten. "Was führt Euch dann hierher?"{#soego_s50_}'
+    nr 'Soegos Mundwinkel zucken erneut, und seine Augen leuchten. "Was führt Euch dann hierher?"{#soego_s50_1}'
 
     menu:
         '"Ich war für eine Bestattung vorhin hier, um jemandem die letzte Ehre zu erweisen. Ich wollte gehen… aber ich glaube, ich habe mich verirrt. Kannst du mir helfen, den Ausgang zu finden?"{#soego_s50_r4951}' if soegoLogic.r4951_condition():
@@ -1092,7 +1092,7 @@ label soego_s50: # from 40.1 42.0 43.5 49.0 53.1 57.1
 
 # s51 # say4957
 label soego_s51: # from 41.5 50.5 53.5
-    nr 'Soego runzelt die Stirn, als du dich vorbeugst. Dir fällt auf, daß er die Luft schnüffelt, als wollte er sie testen. Plötzlich kneift er die Augen zusammen; er sieht aus, als würde er jeden Moment die Wache rufen.{#soego_s51_}'
+    nr 'Soego runzelt die Stirn, als du dich vorbeugst. Dir fällt auf, daß er die Luft schnüffelt, als wollte er sie testen. Plötzlich kneift er die Augen zusammen; er sieht aus, als würde er jeden Moment die Wache rufen.{#soego_s51_1}'
 
     menu:
         'Brich ihm das Genick, bevor er rufen kann.{#soego_s51_r4958}' if soegoLogic.r4958_condition():
@@ -1106,7 +1106,7 @@ label soego_s51: # from 41.5 50.5 53.5
 
 # s52 # say4960
 label soego_s52: # from 51.1
-    nr 'Als du auf ihn losgehen willst, macht Soego einen Satz zurück. Seine Augen leuchten rot, und er fletscht die Zähne. Er zischt und klatscht dreimal hintereinander fest in die Hände. Daraufhin ertönt durch die ganze Leichenhalle der Klang einer großen Eisenglocke.{#soego_s52_}'
+    nr 'Als du auf ihn losgehen willst, macht Soego einen Satz zurück. Seine Augen leuchten rot, und er fletscht die Zähne. Er zischt und klatscht dreimal hintereinander fest in die Hände. Daraufhin ertönt durch die ganze Leichenhalle der Klang einer großen Eisenglocke.{#soego_s52_1}'
 
     menu:
         '"Nun gut…"{#soego_s52_r4961}':
@@ -1117,7 +1117,7 @@ label soego_s52: # from 51.1
 
 # s53 # say4962
 label soego_s53: # from 41.4 50.4
-    nr '"Wer sollte bestattet werden? Vielleicht finden die Feierlichkeiten woanders in der Leichenhalle statt."{#soego_s53_}'
+    nr '"Wer sollte bestattet werden? Vielleicht finden die Feierlichkeiten woanders in der Leichenhalle statt."{#soego_s53_1}'
 
     menu:
         '"Du verstehst mich falsch… ICH sollte bestattet werden."{#soego_s53_r4963}':
@@ -1152,7 +1152,7 @@ label soego_s53: # from 41.4 50.4
 
 # s54 # say4966
 label soego_s54: # from 7.0 25.0
-    nr '"Hm…" Soego schielt dich an. Er scheint verwirrt. "Offensichtlich ist hier ein Fehler unterlaufen. Hierhergebracht haben Euch entweder Eure Blutsverwandten, andere Staubmenschen oder…", Soego fängt plötzlich an zu zischen, als hätte er soeben einen unangenehmen Gedanken gehabt, "oder einer der *Sammler*."{#soego_s54_}'
+    nr '"Hm…" Soego schielt dich an. Er scheint verwirrt. "Offensichtlich ist hier ein Fehler unterlaufen. Hierhergebracht haben Euch entweder Eure Blutsverwandten, andere Staubmenschen oder…", Soego fängt plötzlich an zu zischen, als hätte er soeben einen unangenehmen Gedanken gehabt, "oder einer der *Sammler*."{#soego_s54_1}'
 
     menu:
         '"Sammler?"{#soego_s54_r4971}':
@@ -1162,7 +1162,7 @@ label soego_s54: # from 7.0 25.0
 
 # s55 # say4972
 label soego_s55: # from 54.0
-    nr '"Ja, Sammler… ein Haufen Aasgeier, die die Leichen der Toten zu uns bringen. Sie haben Euch wohl für tot gehalten…", Soego zischt mit leuchtenden Augen, "…und sie sind so geldsüchtig, daß sie Euch nicht einmal genau angeschaut haben, bevor sie Euch abgeliefert haben." Soego mustert dich. "Zum Glück seid Ihr rechtzeitig aufgewacht… sonst hättet Ihr den Wahren Tod zu früh erlangt."{#soego_s55_}'
+    nr '"Ja, Sammler… ein Haufen Aasgeier, die die Leichen der Toten zu uns bringen. Sie haben Euch wohl für tot gehalten…", Soego zischt mit leuchtenden Augen, "…und sie sind so geldsüchtig, daß sie Euch nicht einmal genau angeschaut haben, bevor sie Euch abgeliefert haben." Soego mustert dich. "Zum Glück seid Ihr rechtzeitig aufgewacht… sonst hättet Ihr den Wahren Tod zu früh erlangt."{#soego_s55_1}'
 
     menu:
         '"Dann muß da jemandem ein Fehler unterlaufen sein… und ich würde gerne gehen. Und zwar sofort."{#soego_s55_r4973}':
@@ -1172,7 +1172,7 @@ label soego_s55: # from 54.0
 
 # s56 # say4974
 label soego_s56: # from 55.0 59.1
-    nr 'Soego nickt, wobei er mit den Mundwinkeln zuckt. "Hm… na gut. Kein Problem. Ich mach Euch das Haupttor auf."{#soego_s56_}'
+    nr 'Soego nickt, wobei er mit den Mundwinkeln zuckt. "Hm… na gut. Kein Problem. Ich mach Euch das Haupttor auf."{#soego_s56_1}'
 
     menu:
         '"In Ordnung."{#soego_s56_r4975}' if soegoLogic.r4975_condition():
@@ -1187,7 +1187,7 @@ label soego_s56: # from 55.0 59.1
 
 # s57 # say4977
 label soego_s57: # from 53.0
-    nr '"Ihr?"{#soego_s57_}'
+    nr '"Ihr?"{#soego_s57_1}'
 
     menu:
         '"Ja, ICH. Ich bin auf einer eurer Totenbänke da oben aufgewacht."{#soego_s57_r4978}':
@@ -1201,7 +1201,7 @@ label soego_s57: # from 53.0
 
 # s58 # say4980
 label soego_s58: # - # IF WEIGHT #6 /* Triggers after states #: 63 108 79 82 95 even though they appear after this state */ ~  CreatureInArea("AR0201") Global("Gate_Open","GLOBAL",1)
-    nr 'Als du näherkommst, schnüffelt Soego die Luft und blickt auf. Als er dich sieht, runzelt er die Stirn. "Ich hab„ Euch doch das Tor aufgeschlossen. Weshalb seid Ihr immer noch hier?"{#soego_s58_}'
+    nr 'Als du näherkommst, schnüffelt Soego die Luft und blickt auf. Als er dich sieht, runzelt er die Stirn. "Ich hab„ Euch doch das Tor aufgeschlossen. Weshalb seid Ihr immer noch hier?"{#soego_s58_1}'
 
     menu:
         '"Ich hätte da noch ein paar Fragen an dich, bevor ich gehe."{#soego_s58_r4981}':
@@ -1215,7 +1215,7 @@ label soego_s58: # - # IF WEIGHT #6 /* Triggers after states #: 63 108 79 82 95 
 
 # s59 # say4983
 label soego_s59: # - # IF WEIGHT #7 /* Triggers after states #: 63 108 79 82 95 even though they appear after this state */ ~  CreatureInArea("AR0201") Global("Soego","GLOBAL",1) Global("Gate_Open","GLOBAL",0)
-    nr 'Als du näherkommst, schnüffelt Soego die Luft und blickt auf. Als er dich sieht, beugt er sich leicht nach vorn: "Habt Ihr gefunden, wonach Ihr gesucht habt?"{#soego_s59_}'
+    nr 'Als du näherkommst, schnüffelt Soego die Luft und blickt auf. Als er dich sieht, beugt er sich leicht nach vorn: "Habt Ihr gefunden, wonach Ihr gesucht habt?"{#soego_s59_1}'
 
     menu:
         '"Ja, vielen Dank. Verzeih mir, aber ich muß mich in diesen Hallen irgendwie verirrt haben… kannst du mir helfen, den Ausgang zu finden?"{#soego_s59_r4984}' if soegoLogic.r4984_condition():
@@ -1233,7 +1233,7 @@ label soego_s59: # - # IF WEIGHT #7 /* Triggers after states #: 63 108 79 82 95 
 
 # s60 # say4987
 label soego_s60: # from 59.0
-    nr 'Soego nickt, und seine Mundwinkel zucken. "Hm… stimmt schon. Diese Hallen *können* für Besucher schon verwirrend sein. Wartet, ich öffne Euch das Haupttor."{#soego_s60_}'
+    nr 'Soego nickt, und seine Mundwinkel zucken. "Hm… stimmt schon. Diese Hallen *können* für Besucher schon verwirrend sein. Wartet, ich öffne Euch das Haupttor."{#soego_s60_1}'
 
     menu:
         '"Vielen Dank."{#soego_s60_r4988}' if soegoLogic.r4988_condition():
@@ -1248,7 +1248,7 @@ label soego_s60: # from 59.0
 
 # s61 # say4990
 label soego_s61: # from 13.2
-    nr '"Das ist aber merkwürdig." Soegos Augen leuchten rot, und seine Mundwinkel zucken leicht. "Vielleicht…", er grinst höhnisch und zeigt dabei seine spitzen, schmutzigen Zähne, "vielleicht sollte ich die Wache rufen, oder? Ja… genau. Ich glaube, das werde ich tun."{#soego_s61_}'
+    nr '"Das ist aber merkwürdig." Soegos Augen leuchten rot, und seine Mundwinkel zucken leicht. "Vielleicht…", er grinst höhnisch und zeigt dabei seine spitzen, schmutzigen Zähne, "vielleicht sollte ich die Wache rufen, oder? Ja… genau. Ich glaube, das werde ich tun."{#soego_s61_1}'
 
     menu:
         '"Einen Moment mal! Ich hatte mich verirrt… Ich finde mich in diesen Hallen hier einfach nicht zurecht und weiß nicht, wo der Ausgang ist. Kannst du mir helfen?"{#soego_s61_r4991}' if soegoLogic.r4991_condition():
@@ -1274,7 +1274,7 @@ label soego_s61: # from 13.2
 
 # s62 # say4996
 label soego_s62: # from 44.2 45.1 46.0 47.1 48.0
-    nr 'Soego nickt… und seine Mundwinkel zucken leicht, was er nicht einmal zu bemerken scheint. "Kommt zurück, wenn Ihr Euren Totenbesuch beendet habt, dann schließ ich Euch das Haupttor auf. Es hat schon neunmal geläutet - wenn Ihr fertig seid, müßt Ihr uns sofort verlassen."{#soego_s62_}'
+    nr 'Soego nickt… und seine Mundwinkel zucken leicht, was er nicht einmal zu bemerken scheint. "Kommt zurück, wenn Ihr Euren Totenbesuch beendet habt, dann schließ ich Euch das Haupttor auf. Es hat schon neunmal geläutet - wenn Ihr fertig seid, müßt Ihr uns sofort verlassen."{#soego_s62_1}'
 
     menu:
         '"Weißt du, das könnte ich ein andermal tun. Kannst du mich jetzt hier rauslassen?"{#soego_s62_r4997}':
@@ -1288,7 +1288,7 @@ label soego_s62: # from 44.2 45.1 46.0 47.1 48.0
 
 # s63 # say21653
 label soego_s63: # - # IF WEIGHT #4 /* Triggers after states #: 108 79 82 95 even though they appear after this state */ ~  CreatureInArea("AR1500") !Global("CR_Vic","GLOBAL",1)
-    nr '"Aha, ein weiteres Mitglied der Lebenden. Die meisten, die soweit in die Katakomben vordringen, werden von Ghulen getötet; du hast Glück."{#soego_s63_}'
+    nr '"Aha, ein weiteres Mitglied der Lebenden. Die meisten, die soweit in die Katakomben vordringen, werden von Ghulen getötet; du hast Glück."{#soego_s63_1}'
 
     menu:
         '"Du bist Soego, aus der Leichenhalle. Was machst du hier?"{#soego_s63_r21655}' if soegoLogic.r21655_condition():
@@ -1319,7 +1319,7 @@ label soego_s63: # - # IF WEIGHT #4 /* Triggers after states #: 108 79 82 95 eve
 
 # s64 # say21661
 label soego_s64: # from 63.1 77.0 78.0
-    nr '"Ich bin Soego Totenhimmel, Faktotum der Staubmenschen. Ich bin Missionar in dieser Gegend." Er verbeugt sich leicht.{#soego_s64_}'
+    nr '"Ich bin Soego Totenhimmel, Faktotum der Staubmenschen. Ich bin Missionar in dieser Gegend." Er verbeugt sich leicht.{#soego_s64_1}'
 
     menu:
         '"Missionar?"{#soego_s64_r21662}':
@@ -1345,7 +1345,7 @@ label soego_s64: # from 63.1 77.0 78.0
 
 # s65 # say21666
 label soego_s65: # from 64.0 72.2 73.2 74.0 101.3 104.1
-    nr '"Ja, ich kam in diese Katakomben, nachdem ich Gerüchte gehört hatte, daß es in dieser Gegend Untote mit *Bewußtsein* geben soll. Ich hoffe, sie retten zu können."{#soego_s65_}'
+    nr '"Ja, ich kam in diese Katakomben, nachdem ich Gerüchte gehört hatte, daß es in dieser Gegend Untote mit *Bewußtsein* geben soll. Ich hoffe, sie retten zu können."{#soego_s65_1}'
 
     menu:
         '"Sie retten?"{#soego_s65_r21667}':
@@ -1367,7 +1367,7 @@ label soego_s65: # from 64.0 72.2 73.2 74.0 101.3 104.1
 
 # s66 # say21670
 label soego_s66: # from 64.1 72.3 73.3 74.1 101.4 104.2 109.2
-    nr '"Ich bin der einzige. Ich kam in diese Katakomben, nachdem ich Gerüchte gehört hatte, daß es in dieser Gegend Untote mit *Bewußtsein* geben soll. Ich hoffe, sie retten zu können."{#soego_s66_}'
+    nr '"Ich bin der einzige. Ich kam in diese Katakomben, nachdem ich Gerüchte gehört hatte, daß es in dieser Gegend Untote mit *Bewußtsein* geben soll. Ich hoffe, sie retten zu können."{#soego_s66_1}'
 
     menu:
         '"Sie retten?"{#soego_s66_r21671}':
@@ -1389,7 +1389,7 @@ label soego_s66: # from 64.1 72.3 73.3 74.1 101.4 104.2 109.2
 
 # s67 # say21674
 label soego_s67: # from 65.0 66.0
-    nr '"Ja, Leidenschaft bindet sie an dieses falsche Leben. Ich hoffe, ich kann ihnen beibringen, diesen Leidenschaften zu entsagen, dieses falsche Leben hinter sich zu lassen und den Wahren Tod zu erreichen."{#soego_s67_}'
+    nr '"Ja, Leidenschaft bindet sie an dieses falsche Leben. Ich hoffe, ich kann ihnen beibringen, diesen Leidenschaften zu entsagen, dieses falsche Leben hinter sich zu lassen und den Wahren Tod zu erreichen."{#soego_s67_1}'
 
     menu:
         '"Falsches Leben?"{#soego_s67_r21675}':
@@ -1419,7 +1419,7 @@ label soego_s67: # from 65.0 66.0
 
 # s68 # say21771
 label soego_s68: # from 67.0 69.0 70.0
-    nr '"Diese… Toten… sind so nah am Wahren Tod… Trotzdem klammern sie sich an dieses Leben. Dieses falsche Leben ist die Lüge der Existenz auf dieser Ebene."{#soego_s68_}'
+    nr '"Diese… Toten… sind so nah am Wahren Tod… Trotzdem klammern sie sich an dieses Leben. Dieses falsche Leben ist die Lüge der Existenz auf dieser Ebene."{#soego_s68_1}'
 
     menu:
         '"Wahrer Tod?"{#soego_s68_r21772}':
@@ -1445,7 +1445,7 @@ label soego_s68: # from 67.0 69.0 70.0
 
 # s69 # say21777
 label soego_s69: # from 67.1 68.0 70.1
-    nr '"Der Wahre Tod ist die völlige Abwesenheit von Leidenschaft, das wahre Leben jenseits dieses Schattendaseins. Nach diesem Ort müssen diese Toten streben, um sich selbst zu befreien."{#soego_s69_}'
+    nr '"Der Wahre Tod ist die völlige Abwesenheit von Leidenschaft, das wahre Leben jenseits dieses Schattendaseins. Nach diesem Ort müssen diese Toten streben, um sich selbst zu befreien."{#soego_s69_1}'
 
     menu:
         '"Was war das für ein „falsches Leben“, von dem du gesprochen hast?"{#soego_s69_r21779}':
@@ -1471,7 +1471,7 @@ label soego_s69: # from 67.1 68.0 70.1
 
 # s70 # say21786
 label soego_s70: # from 67.2 68.1 69.1
-    nr '"Ich wünsche mir, daß sie diese Existenzebene überschreiten, sich von der Leidenschaft lossagen. Das kann sie retten."{#soego_s70_}'
+    nr '"Ich wünsche mir, daß sie diese Existenzebene überschreiten, sich von der Leidenschaft lossagen. Das kann sie retten."{#soego_s70_1}'
 
     menu:
         '"Was war das für ein „falsches Leben“, von dem du gesprochen hast?"{#soego_s70_r21788}':
@@ -1497,7 +1497,7 @@ label soego_s70: # from 67.2 68.1 69.1
 
 # s71 # say21799
 label soego_s71: # from 63.4 64.4 65.3 66.3 67.5 68.4 69.4 70.4 72.6 73.6 74.4 77.2 78.2 79.5 80.1 81.0 101.5 104.3 109.5 110.3 112.1
-    nr '"Bitte gib mir noch einen Moment deiner Zeit, bevor du gehst. Greife keinen der Untoten hier in den Katakomben an. Sie werden dir nichts antun, solange du friedlich bleibst. Wenn du sie angreifst, werden sie sich verteidigen, und sie sind… viele. Du kannst hierher zurückkommen, wenn du dich ausruhen willst."{#soego_s71_}'
+    nr '"Bitte gib mir noch einen Moment deiner Zeit, bevor du gehst. Greife keinen der Untoten hier in den Katakomben an. Sie werden dir nichts antun, solange du friedlich bleibst. Wenn du sie angreifst, werden sie sich verteidigen, und sie sind… viele. Du kannst hierher zurückkommen, wenn du dich ausruhen willst."{#soego_s71_1}'
 
     menu:
         '"Warte… Kann ich mich jetzt ausruhen?"{#soego_s71_r21800}' if soegoLogic.r21800_condition():
@@ -1518,7 +1518,7 @@ label soego_s71: # from 63.4 64.4 65.3 66.3 67.5 68.4 69.4 70.4 72.6 73.6 74.4 7
 
 # s72 # say21806
 label soego_s72: # from 63.0
-    nr '"Du hast ein gutes Gedächtnis. Ich bin nicht mehr in der Leichenhalle beschäftigt… Statt dessen bin ich jetzt hier Missionar."{#soego_s72_}'
+    nr '"Du hast ein gutes Gedächtnis. Ich bin nicht mehr in der Leichenhalle beschäftigt… Statt dessen bin ich jetzt hier Missionar."{#soego_s72_1}'
 
     menu:
         '"Aber ich dachte, ich hätte dir das Genick gebrochen…"{#soego_s72_r64547}' if soegoLogic.r64547_condition():
@@ -1552,7 +1552,7 @@ label soego_s72: # from 63.0
 
 # s73 # say21814
 label soego_s73: # from 72.0 72.1 109.0 109.1
-    nr '"Die Wunde, die du mir beigebracht hast, war nicht tödlich. Ich habe mich schnell erholt… und festgestellt, daß ich Abstand zur Leichenhalle gewinnen wollte."{#soego_s73_}'
+    nr '"Die Wunde, die du mir beigebracht hast, war nicht tödlich. Ich habe mich schnell erholt… und festgestellt, daß ich Abstand zur Leichenhalle gewinnen wollte."{#soego_s73_1}'
 
     menu:
         '"Soego, ich hab„ dir das Genick gebrochen… und trotzdem lebst du noch?"{#soego_s73_r21815}' if soegoLogic.r21815_condition():
@@ -1586,7 +1586,7 @@ label soego_s73: # from 72.0 72.1 109.0 109.1
 
 # s74 # say21821
 label soego_s74: # from 73.1 101.2 104.0
-    nr '"Nein… sollte ich? Ich bin etwas enttäuscht, daß es nicht an der Zeit für mich war, diesen Ort zu verlassen. Trotzdem solltest du nicht zur Leichenhalle zurückkehren, denn vieler meiner Faktotum-Kollegen wären nicht erfreut, dich zu sehen."{#soego_s74_}'
+    nr '"Nein… sollte ich? Ich bin etwas enttäuscht, daß es nicht an der Zeit für mich war, diesen Ort zu verlassen. Trotzdem solltest du nicht zur Leichenhalle zurückkehren, denn vieler meiner Faktotum-Kollegen wären nicht erfreut, dich zu sehen."{#soego_s74_1}'
 
     menu:
         '"Du hattest gesagt, daß du ein Missionar bist?"{#soego_s74_r64614}':
@@ -1612,21 +1612,21 @@ label soego_s74: # from 73.1 101.2 104.0
 
 # s75 # say21716
 label soego_s75: # -
-    nr '"Du hast ein gutes Gedächtnis. Ich bin nicht mehr in der Leichenhalle beschäftigt… Statt dessen bin ich jetzt hier Missionar. Du solltest nicht zur Leichenhalle zurückkehren, denn viele meiner Faktotum-Kollegen wären nicht erfreut, dich nach deinem Angriff auf das Hauptquartier unseres Bundes zu sehen."{#soego_s75_}'
+    nr '"Du hast ein gutes Gedächtnis. Ich bin nicht mehr in der Leichenhalle beschäftigt… Statt dessen bin ich jetzt hier Missionar. Du solltest nicht zur Leichenhalle zurückkehren, denn viele meiner Faktotum-Kollegen wären nicht erfreut, dich nach deinem Angriff auf das Hauptquartier unseres Bundes zu sehen."{#soego_s75_1}'
 
     jump soego_dispose
 
 
 # s76 # say21832
 label soego_s76: # -
-    nr '"Du bist bereits tot, Namenloser. Wiederaufzuerstehen war sehr… unhöflich."{#soego_s76_}'
+    nr '"Du bist bereits tot, Namenloser. Wiederaufzuerstehen war sehr… unhöflich."{#soego_s76_1}'
 
     jump soego_dispose
 
 
 # s77 # say21837
 label soego_s77: # from 63.2 64.2 65.1 66.1 67.3 68.2 69.2 70.2 72.4 73.4 74.2 78.1 109.3
-    nr '"Du bist in den Katakomben der Toten Lande. Die Wächter haben dich hergebracht."{#soego_s77_}'
+    nr '"Du bist in den Katakomben der Toten Lande. Die Wächter haben dich hergebracht."{#soego_s77_1}'
 
     menu:
         '"Und wer warst du?"{#soego_s77_r21840}':
@@ -1644,7 +1644,7 @@ label soego_s77: # from 63.2 64.2 65.1 66.1 67.3 68.2 69.2 70.2 72.4 73.4 74.2 7
 
 # s78 # say21844
 label soego_s78: # from 63.3 64.3 65.2 66.2 67.4 68.3 69.3 70.3 72.5 73.5 74.3 77.1 109.4
-    nr '"Ich weiß es nicht. Frag einen der Bürger hier."{#soego_s78_}'
+    nr '"Ich weiß es nicht. Frag einen der Bürger hier."{#soego_s78_1}'
 
     menu:
         '"Und wer warst du?"{#soego_s78_r21847}':
@@ -1662,7 +1662,7 @@ label soego_s78: # from 63.3 64.3 65.2 66.2 67.4 68.3 69.3 70.3 72.5 73.5 74.3 7
 
 # s79 # say21851
 label soego_s79: # - # IF WEIGHT #2 /* Triggers after states #: 82 95 even though they appear after this state */ ~  CreatureInArea("AR1500") Global("CR_Vic","GLOBAL",1)
-    nr '"Ach, jemand, der uns in unserem Anliegen unterstützt! Ich, als Agent von Viele-als-Einer, wurde über dein Kommen informiert. Du mußt für uns versuchen, einen Weg in den Thronsaal des Schweigenden Königs zu finden, und ihn töten. Tu das, und Viele-als-Einer wird dich belohnen."{#soego_s79_}'
+    nr '"Ach, jemand, der uns in unserem Anliegen unterstützt! Ich, als Agent von Viele-als-Einer, wurde über dein Kommen informiert. Du mußt für uns versuchen, einen Weg in den Thronsaal des Schweigenden Königs zu finden, und ihn töten. Tu das, und Viele-als-Einer wird dich belohnen."{#soego_s79_1}'
 
     menu:
         '"Soego… Emoric wollte wissen, wo du steckst."{#soego_s79_r66181}' if soegoLogic.r66181_condition():
@@ -1698,7 +1698,7 @@ label soego_s79: # - # IF WEIGHT #2 /* Triggers after states #: 82 95 even thoug
 
 # s80 # say21858
 label soego_s80: # from 79.4 110.2 112.0
-    nr '"Ich weiß es nicht… Ich bin schon einige Zeit hier, und ich habe immer noch keinen Weg in seinen Thronsaal gefunden. Vielleicht hast du mehr Glück, weil sie dir nicht den Haß und die Borniertheit entgegenbringen, die sie mir gegenüber zeigen."{#soego_s80_}'
+    nr '"Ich weiß es nicht… Ich bin schon einige Zeit hier, und ich habe immer noch keinen Weg in seinen Thronsaal gefunden. Vielleicht hast du mehr Glück, weil sie dir nicht den Haß und die Borniertheit entgegenbringen, die sie mir gegenüber zeigen."{#soego_s80_1}'
 
     menu:
         '"Haß und Borniertheir?"{#soego_s80_r21860}':
@@ -1712,7 +1712,7 @@ label soego_s80: # from 79.4 110.2 112.0
 
 # s81 # say21864
 label soego_s81: # from 80.0
-    nr '"Die Ansichten meines Bundes werden von einigen geteilt, aber nicht allen. Die wichtigsten Galionsfiguren dieser Zivilisation schätzen sie nicht besonders."{#soego_s81_}'
+    nr '"Die Ansichten meines Bundes werden von einigen geteilt, aber nicht allen. Die wichtigsten Galionsfiguren dieser Zivilisation schätzen sie nicht besonders."{#soego_s81_1}'
 
     menu:
         '"Ich verstehe. Dann leb wohl."{#soego_s81_r21870}':
@@ -1722,7 +1722,7 @@ label soego_s81: # from 80.0
 
 # s82 # say21913
 label soego_s82: # - # IF WEIGHT #1 /* Triggers after states #: 95 even though they appear after this state */ ~  CreatureInArea("AR1500") Global("Met_Soego2","GLOBAL",1)
-    nr '"Ah, wir treffen uns wieder."{#soego_s82_}'
+    nr '"Ah, wir treffen uns wieder."{#soego_s82_1}'
 
     menu:
         '"Der Schweigende König ist tot, und das schon eine ganze Weile. Es *gibt* keinen Schweigenden König."{#soego_s82_r24206}' if soegoLogic.r24206_condition():
@@ -1769,7 +1769,7 @@ label soego_s82: # - # IF WEIGHT #1 /* Triggers after states #: 95 even though t
 
 # s83 # say21943
 label soego_s83: # from 82.7 88.0 89.1 90.0 91.1 92.0 94.1 94.3 111.0
-    nr '"Ich werde antworten, so gut ich kann."{#soego_s83_}'
+    nr '"Ich werde antworten, so gut ich kann."{#soego_s83_1}'
 
     menu:
         '"Erzähl mir was über Hargrimm."{#soego_s83_r21944}' if soegoLogic.r21944_condition():
@@ -1803,7 +1803,7 @@ label soego_s83: # from 82.7 88.0 89.1 90.0 91.1 92.0 94.1 94.3 111.0
 
 # s84 # say21954
 label soego_s84: # from 71.0 71.1 82.5 82.6
-    nr '"Natürlich. In dieser Kammer bist du sicher, während du dich ausruhst."{#soego_s84_}'
+    nr '"Natürlich. In dieser Kammer bist du sicher, während du dich ausruhst."{#soego_s84_1}'
 
     menu:
         '"Danke…"{#soego_s84_r21956}':
@@ -1814,28 +1814,28 @@ label soego_s84: # from 71.0 71.1 82.5 82.6
 
 # s85 # say21958
 label soego_s85: # -
-    nr 'Null node.{#soego_s85_}'
+    nr 'Null node.{#soego_s85_1}'
 
     jump soego_dispose
 
 
 # s86 # say21963
 label soego_s86: # -
-    nr 'Null node.{#soego_s86_}'
+    nr 'Null node.{#soego_s86_1}'
 
     jump soego_dispose
 
 
 # s87 # say21969
 label soego_s87: # -
-    nr 'Null node.{#soego_s87_}'
+    nr 'Null node.{#soego_s87_1}'
 
     jump soego_dispose
 
 
 # s88 # say21975
 label soego_s88: # from 83.0 91.0
-    nr '"Ein Starrköpfiger, aber bewundernswert in seiner Frömmigkeit und seinem Pflichtbewußtsein. Er ist hier mein stärkster Rivale, und er hat viele Jahre lang die Zivilisation zusammengehalten. Seine Leidenschaften stammen von seiner Frömmigkeit und seinem Pflichtbewußtsein… bewundernswerte Qualitäten, aber fehl am Platz."{#soego_s88_}'
+    nr '"Ein Starrköpfiger, aber bewundernswert in seiner Frömmigkeit und seinem Pflichtbewußtsein. Er ist hier mein stärkster Rivale, und er hat viele Jahre lang die Zivilisation zusammengehalten. Seine Leidenschaften stammen von seiner Frömmigkeit und seinem Pflichtbewußtsein… bewundernswerte Qualitäten, aber fehl am Platz."{#soego_s88_1}'
 
     menu:
         '"Ich hätte noch ein paar Fragen…"{#soego_s88_r21976}':
@@ -1849,7 +1849,7 @@ label soego_s88: # from 83.0 91.0
 
 # s89 # say21978
 label soego_s89: # from 83.1
-    nr '"Akaste ist ein Scheusal. Nur der Schweigende König hält sie in Schach, fürchte ich. Ohne seine Anwesenheit würden die Ghule in den Katakomben Amok laufen."{#soego_s89_}'
+    nr '"Akaste ist ein Scheusal. Nur der Schweigende König hält sie in Schach, fürchte ich. Ohne seine Anwesenheit würden die Ghule in den Katakomben Amok laufen."{#soego_s89_1}'
 
     menu:
         '"Erzähl mir was über den Schweigenden König."{#soego_s89_r21979}':
@@ -1868,7 +1868,7 @@ label soego_s89: # from 83.1
 
 # s90 # say21982
 label soego_s90: # from 83.2
-    nr '"Die Muffige Mary ist eine gute Seele, wenn auch langsam. Ich verstehe nicht viel von dem, was sie sagt, aber sie und die Zombies neigen nicht zu Gewalt."{#soego_s90_}'
+    nr '"Die Muffige Mary ist eine gute Seele, wenn auch langsam. Ich verstehe nicht viel von dem, was sie sagt, aber sie und die Zombies neigen nicht zu Gewalt."{#soego_s90_1}'
 
     menu:
         '"Ich hätte noch ein paar Fragen…"{#soego_s90_r21983}':
@@ -1882,7 +1882,7 @@ label soego_s90: # from 83.2
 
 # s91 # say21985
 label soego_s91: # from 83.3 89.0
-    nr '"Ich habe den Schweigenden König nie gesehen. Ich wünschte, ich könnte dir etwas über ihn erzählen, aber ich habe ihn nie gesehen. Vermutlich liegt sein Thronsaal hinter den purpurfarbenen Türen, aber ich erhalte keinen Zutritt… Hargrimm, der Skelettpriester, läßt mich nicht."{#soego_s91_}'
+    nr '"Ich habe den Schweigenden König nie gesehen. Ich wünschte, ich könnte dir etwas über ihn erzählen, aber ich habe ihn nie gesehen. Vermutlich liegt sein Thronsaal hinter den purpurfarbenen Türen, aber ich erhalte keinen Zutritt… Hargrimm, der Skelettpriester, läßt mich nicht."{#soego_s91_1}'
 
     menu:
         '"Erzähl mir was über Hargrimm."{#soego_s91_r21986}':
@@ -1901,7 +1901,7 @@ label soego_s91: # from 83.3 89.0
 
 # s92 # say21989
 label soego_s92: # from 83.4
-    nr '"Sie sind seit vielen Jahrhunderten hier, glaube ich, und kümmern sich um die, die in ihren Hallen verstorben sind. Solch ein Pflichtbewußtsein ist nicht mehr nötig… es ist beinahe ein Verbrechen."{#soego_s92_}'
+    nr '"Sie sind seit vielen Jahrhunderten hier, glaube ich, und kümmern sich um die, die in ihren Hallen verstorben sind. Solch ein Pflichtbewußtsein ist nicht mehr nötig… es ist beinahe ein Verbrechen."{#soego_s92_1}'
 
     menu:
         '"Ich hätte noch ein paar Fragen…"{#soego_s92_r21990}':
@@ -1915,14 +1915,14 @@ label soego_s92: # from 83.4
 
 # s93 # say21992
 label soego_s93: # from 83.5
-    nr '"Sie sind seit vielen Jahrhunderten hier, glaube ich, und kümmern sich um die, die in ihren Hallen verstorben sind. Solch ein Pflichtbewußtsein ist nicht mehr nötig… es ist beinahe ein Verbrechen."{#soego_s93_}'
+    nr '"Sie sind seit vielen Jahrhunderten hier, glaube ich, und kümmern sich um die, die in ihren Hallen verstorben sind. Solch ein Pflichtbewußtsein ist nicht mehr nötig… es ist beinahe ein Verbrechen."{#soego_s93_1}'
 
     jump morte_s220  # EXTERN
 
 
 # s94 # say21993
 label soego_s94: # from 82.0 82.1
-    nr '"Was? Ist das wahr? Ah, Viele-als-Einer würde dich gewiß für solche Informationen belohnen…"{#soego_s94_}'
+    nr '"Was? Ist das wahr? Ah, Viele-als-Einer würde dich gewiß für solche Informationen belohnen…"{#soego_s94_1}'
 
     menu:
         '"Viele-als-Einer?"{#soego_s94_r25248}' if soegoLogic.r25248_condition():
@@ -1953,7 +1953,7 @@ label soego_s94: # from 82.0 82.1
 
 # s95 # say21997
 label soego_s95: # - # IF WEIGHT #0 ~  CreatureInArea("AR1500") GlobalGT("Soego_Exposed","GLOBAL",0)
-    nr '"Du… Bastard!"{#soego_s95_}'
+    nr '"Du… Bastard!"{#soego_s95_1}'
 
     menu:
         '"Wa-"{#soego_s95_r21998}':
@@ -1964,7 +1964,7 @@ label soego_s95: # - # IF WEIGHT #0 ~  CreatureInArea("AR1500") GlobalGT("Soego_
 
 # s96 # say22003
 label soego_s96: # -
-    nr '"Äh… diese Tür führt in meine Privatgemächer. Bitte betrete diese Gemächer nicht."{#soego_s96_}'
+    nr '"Äh… diese Tür führt in meine Privatgemächer. Bitte betrete diese Gemächer nicht."{#soego_s96_1}'
 
     menu:
         'Geh weg.{#soego_s96_r22004}':
@@ -1974,7 +1974,7 @@ label soego_s96: # -
 
 # s97 # say22005
 label soego_s97: # from 82.4
-    nr '"Oh! Ich werde gleich mit ihm reden!"{#soego_s97_}'
+    nr '"Oh! Ich werde gleich mit ihm reden!"{#soego_s97_1}'
 
     menu:
         '"Leb wohl."{#soego_s97_r22006}':
@@ -1984,7 +1984,7 @@ label soego_s97: # from 82.4
 
 # s98 # say22007
 label soego_s98: # -
-    nr '"Nein, aber ich bin schon unterwegs."{#soego_s98_}'
+    nr '"Nein, aber ich bin schon unterwegs."{#soego_s98_1}'
 
     menu:
         '"Leb wohl."{#soego_s98_r22008}':
@@ -1994,7 +1994,7 @@ label soego_s98: # -
 
 # s99 # say22009
 label soego_s99: # -
-    nr '"Leider nein. Aber vielleicht kommt es irgendwann mal her."{#soego_s99_}'
+    nr '"Leider nein. Aber vielleicht kommt es irgendwann mal her."{#soego_s99_1}'
 
     menu:
         '"Ich verstehe. Leb wohl."{#soego_s99_r22010}':
@@ -2004,7 +2004,7 @@ label soego_s99: # -
 
 # s100 # say22011
 label soego_s100: # from 82.3
-    nr 'Soego hält einen Moment lang inne. "Ich verstehe." Plötzlich beginnt er mit einer überraschenden Umwandlung…{#soego_s100_}'
+    nr 'Soego hält einen Moment lang inne. "Ich verstehe." Plötzlich beginnt er mit einer überraschenden Umwandlung…{#soego_s100_1}'
 
     menu:
         '"Was zum…?"{#soego_s100_r22012}':
@@ -2015,7 +2015,7 @@ label soego_s100: # from 82.3
 
 # s101 # say22014
 label soego_s101: # from 73.0
-    nr '"Ähm… Dein Gedächtnis ist nicht sehr gut. Mein Hals war verletzt, das schon… verrenkt. Aber gebrochen? Wohl kaum."{#soego_s101_}'
+    nr '"Ähm… Dein Gedächtnis ist nicht sehr gut. Mein Hals war verletzt, das schon… verrenkt. Aber gebrochen? Wohl kaum."{#soego_s101_1}'
 
     menu:
         '"Mit Verlaub, das seh ich anders. Was bist du, Soego?"{#soego_s101_r22015}' if soegoLogic.r22015_condition():
@@ -2045,7 +2045,7 @@ label soego_s101: # from 73.0
 
 # s102 # say22023
 label soego_s102: # -
-    nr 'Er entzieht sich deinem Griff mit übernatürlicher Schnelligkeit. Höhnisch grinsend und ausspuckend zischt er: "Töricht, einen Agenten des geeinten Geistes der Schädelratten anzugreifen!" Unvermittelt setzt bei ihm eine erstaunliche Verwandlung ein…{#soego_s102_}'
+    nr 'Er entzieht sich deinem Griff mit übernatürlicher Schnelligkeit. Höhnisch grinsend und ausspuckend zischt er: "Töricht, einen Agenten des geeinten Geistes der Schädelratten anzugreifen!" Unvermittelt setzt bei ihm eine erstaunliche Verwandlung ein…{#soego_s102_1}'
 
     menu:
         '"Was zum…?"{#soego_s102_r22024}':
@@ -2056,7 +2056,7 @@ label soego_s102: # -
 
 # s103 # say22026
 label soego_s103: # from 101.1
-    nr '"Lächerliche Frage! Du bist auf einer Totenbank aufgewacht, in der Leichenhalle… Das hast du mir selbst gesagt. Sicher konnten meine Wunden nicht schlimmer sein als die, wegen der dich die Sammler für eine Leiche gehalten haben, oder?"{#soego_s103_}'
+    nr '"Lächerliche Frage! Du bist auf einer Totenbank aufgewacht, in der Leichenhalle… Das hast du mir selbst gesagt. Sicher konnten meine Wunden nicht schlimmer sein als die, wegen der dich die Sammler für eine Leiche gehalten haben, oder?"{#soego_s103_1}'
 
     menu:
         '"Das stimmt natürlich, aber… ach, egal."{#soego_s103_r22027}':
@@ -2074,7 +2074,7 @@ label soego_s103: # from 101.1
 
 # s104 # say22032
 label soego_s104: # from 103.0 103.2 105.0 105.1 106.1 107.0
-    nr 'Er zuckt mit den Schultern. "Wie du meinst."{#soego_s104_}'
+    nr 'Er zuckt mit den Schultern. "Wie du meinst."{#soego_s104_1}'
 
     menu:
         '"Bist du nicht wütend über das, was geschehen ist?"{#soego_s104_r22033}':
@@ -2096,7 +2096,7 @@ label soego_s104: # from 103.0 103.2 105.0 105.1 106.1 107.0
 
 # s105 # say22039
 label soego_s105: # from 103.1
-    nr 'Er lächelt. "Jeder ist einzigartig. Jeder. Das willst du doch sicher nicht bestreiten?"{#soego_s105_}'
+    nr 'Er lächelt. "Jeder ist einzigartig. Jeder. Das willst du doch sicher nicht bestreiten?"{#soego_s105_1}'
 
     menu:
         '"Das stimmt natürlich, aber… ach, egal."{#soego_s105_r22040}':
@@ -2110,7 +2110,7 @@ label soego_s105: # from 103.1
 
 # s106 # say22043
 label soego_s106: # from 101.0
-    nr '"Was ich -? Was für eine Frage ist das?"{#soego_s106_}'
+    nr '"Was ich -? Was für eine Frage ist das?"{#soego_s106_1}'
 
     menu:
         '"Du hast gehört, was ich gesagt habe. Du bist kein gewöhnlicher Staubmensch… also, was *bist* du, Soego?"{#soego_s106_r22044}':
@@ -2124,7 +2124,7 @@ label soego_s106: # from 101.0
 
 # s107 # say22047
 label soego_s107: # from 106.0
-    nr 'Soego sieht dich finster an. "Ich weiß nicht, *was* du meinst."{#soego_s107_}'
+    nr 'Soego sieht dich finster an. "Ich weiß nicht, *was* du meinst."{#soego_s107_1}'
 
     menu:
         '"Irgendwas stimmt hier nicht, und ich werd schon früh genug herausfinden, was es ist."{#soego_s107_r22048}':
@@ -2134,7 +2134,7 @@ label soego_s107: # from 106.0
 
 # s108 # say22050
 label soego_s108: # - # IF WEIGHT #3 ~  Global("Dustman_Initiation","GLOBAL",5) GlobalLT("Soego","GLOBAL",3) !Global("CR_Vic","GLOBAL",1)
-    nr '"Aha, ein weiteres Mitglied der Lebenden. Die meisten, die soweit in die Katakomben vordringen, werden von Ghulen getötet; du hast Glück."{#soego_s108_}'
+    nr '"Aha, ein weiteres Mitglied der Lebenden. Die meisten, die soweit in die Katakomben vordringen, werden von Ghulen getötet; du hast Glück."{#soego_s108_1}'
 
     menu:
         '"Bist du Soego? Emoric wollte wissen, wo du gewesen bist."{#soego_s108_r22051}' if soegoLogic.r22051_condition():
@@ -2150,7 +2150,7 @@ label soego_s108: # - # IF WEIGHT #3 ~  Global("Dustman_Initiation","GLOBAL",5) 
 
 # s109 # say22053
 label soego_s109: # from 82.2 108.0 108.1
-    nr '"Ja, das bin ich. Ich leiste hier Missionsarbeit für die Staubmenschen."{#soego_s109_}'
+    nr '"Ja, das bin ich. Ich leiste hier Missionsarbeit für die Staubmenschen."{#soego_s109_1}'
 
     menu:
         '"In Ordnung. Aber… Ich dachte, ich hätte dir das Genick gebrochen…"{#soego_s109_r64617}' if soegoLogic.r64617_condition():
@@ -2180,7 +2180,7 @@ label soego_s109: # from 82.2 108.0 108.1
 
 # s110 # say22057
 label soego_s110: # from 79.0 79.1
-    nr '"Ja, das bin ich."{#soego_s110_}'
+    nr '"Ja, das bin ich."{#soego_s110_1}'
 
     menu:
         '"Warte mal… Hab ich dir nicht in der Leichenhalle das Genick gebrochen?"{#soego_s110_r64625}' if soegoLogic.r64625_condition():
@@ -2203,7 +2203,7 @@ label soego_s110: # from 79.0 79.1
 
 # s111 # say25249
 label soego_s111: # from 94.0
-    nr '"Ja, das Gehirn des Stocks für die Schädelratten. Geh zu den Katakomben östlich des Weinenden Steins. Von da aus wirst den Weg schon finden."{#soego_s111_}'
+    nr '"Ja, das Gehirn des Stocks für die Schädelratten. Geh zu den Katakomben östlich des Weinenden Steins. Von da aus wirst den Weg schon finden."{#soego_s111_1}'
 
     menu:
         '"Interessant. Ich hätte da ein paar Fragen…"{#soego_s111_r25250}':
@@ -2217,7 +2217,7 @@ label soego_s111: # from 94.0
 
 # s112 # say64620
 label soego_s112: # from 79.2 79.3 110.0 110.1
-    nr 'Er winkt ab, als du sprichst. "Nichts, es war nichts für mich. Ich war bereits mit Lykanthropie gesegnet, die Wunden verheilten fast sofort."{#soego_s112_}'
+    nr 'Er winkt ab, als du sprichst. "Nichts, es war nichts für mich. Ich war bereits mit Lykanthropie gesegnet, die Wunden verheilten fast sofort."{#soego_s112_1}'
 
     menu:
         '"Ich… verstehe. Also, wie komme ich zum Schweigenden König?"{#soego_s112_r64621}':
@@ -2231,7 +2231,7 @@ label soego_s112: # from 79.2 79.3 110.0 110.1
 
 # s113 # say66709
 label soego_s113: # from 38.1
-    nr '"Sei gegrüßt…" Der Mann dreht sich zu dir um und macht eine kurze Verbeugung. Plötzlich bemerkst du, daß seine Augen nicht so blutunterlaufen sind, da sie nur eine leichte rötliche Färbung aufweisen. "Ich bin Soego. Womit kann ich dir helfen?"{#soego_s113_}'
+    nr '"Sei gegrüßt…" Der Mann dreht sich zu dir um und macht eine kurze Verbeugung. Plötzlich bemerkst du, daß seine Augen nicht so blutunterlaufen sind, da sie nur eine leichte rötliche Färbung aufweisen. "Ich bin Soego. Womit kann ich dir helfen?"{#soego_s113_1}'
 
     menu:
         '"Ich möchte die Leichenhalle verlassen. Kannt du mir helfen?"{#soego_s113_r66712}':
@@ -2249,7 +2249,7 @@ label soego_s113: # from 38.1
 
 # s114 # say66710
 label soego_s114: # from 113.0 113.1
-    nr 'Mitten in deiner Antwort kommt hinter Soegos Lippen plötzlich eine Reihe dunkler, scharfer Zähne zum Vorschein, und er beugt sich vor und beschnüffelt dich.{#soego_s114_}'
+    nr 'Mitten in deiner Antwort kommt hinter Soegos Lippen plötzlich eine Reihe dunkler, scharfer Zähne zum Vorschein, und er beugt sich vor und beschnüffelt dich.{#soego_s114_1}'
 
     menu:
         '"Äh… Warum zum Teufel beschnupperst du mich?"{#soego_s114_r66715}':
@@ -2271,7 +2271,7 @@ label soego_s114: # from 113.0 113.1
 
 # s115 # say66711
 label soego_s115: # from 114.0
-    nr '"Deine Kleidung,… diese Roben! Sie riechen nach jemand anders. Das sind nicht deine." Soego schließt die Lippen zu einem merkwürdigen Lächeln, und seine Augen glühen beinahe wild. "Wer *bist* du?"{#soego_s115_}'
+    nr '"Deine Kleidung,… diese Roben! Sie riechen nach jemand anders. Das sind nicht deine." Soego schließt die Lippen zu einem merkwürdigen Lächeln, und seine Augen glühen beinahe wild. "Wer *bist* du?"{#soego_s115_1}'
 
     menu:
         '"Ich… hab diese Roben nur genommen, damit ich hier in Ruhe verschwinden kann. Ich bin in einem der Vorbereitungsräume oben aufgewacht."{#soego_s115_r66719}':

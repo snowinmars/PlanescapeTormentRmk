@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say69459
 label deionarra_s0: # from 5.2 9.5 10.8 11.3 12.3 13.4 14.2 25.3 27.4 28.4 30.2 31.3 32.2 41.4 41.5 42.3 42.4 43.4 44.4
-    nr '"Ich warte auf dich in den Gewölben des Todes, mein Liebster." Sie lächelt, aber ihr Gesicht zeigt Traurigkeit. Sie schließt ihre Augen und entschwindet mit einem ätherischen Säuseln.~ [DEN008B]{#deionarra_s0_}'
+    nr '"Ich warte auf dich in den Gewölben des Todes, mein Liebster." Sie lächelt, aber ihr Gesicht zeigt Traurigkeit. Sie schließt ihre Augen und entschwindet mit einem ätherischen Säuseln.~ [DEN008B]{#deionarra_s0_1}'
 
     menu:
         'Geh weg.{#deionarra_s0_r701}' if deionarraLogic.r701_condition():
@@ -32,7 +32,7 @@ label deionarra_s0: # from 5.2 9.5 10.8 11.3 12.3 13.4 14.2 25.3 27.4 28.4 30.2 
 
 # s1 # say5
 label deionarra_s1: # - # IF WEIGHT #0 ~  Global("Deionarra","GLOBAL",0) !Global("Current_Area","GLOBAL",1203) !Global("Current_Area","GLOBAL",1200)
-    nr 'Du siehst eine umwerfend schöne, geisterhafte Gestalt vor dir. Sie hat ihre Arme verschränkt und die Augen geschlossen. Sie hat langes, fließendes Haar, und ein ätherischer Hauch weht durch ihr Kleid. Als du sie anschaust, bewegt sie sich leicht, und ihre Augenlider flattern.{#deionarra_s1_}'
+    nr 'Du siehst eine umwerfend schöne, geisterhafte Gestalt vor dir. Sie hat ihre Arme verschränkt und die Augen geschlossen. Sie hat langes, fließendes Haar, und ein ätherischer Hauch weht durch ihr Kleid. Als du sie anschaust, bewegt sie sich leicht, und ihre Augenlider flattern.{#deionarra_s1_1}'
 
     menu:
         '"Sei gegrüßt…?"{#deionarra_s1_r703}':
@@ -51,7 +51,7 @@ label deionarra_s1: # - # IF WEIGHT #0 ~  Global("Deionarra","GLOBAL",0) !Global
 
 # s2 # say706
 label deionarra_s2: # from 1.0 1.1
-    nr 'Ihre Augen öffnen sich langsam, und einen Augenblick lang blinzelt sie verwirrt, als wüßte sich nicht genau, wo sie ist. Sie schaut langsam um sich, bis sie dich erblickt. Ihre bisher ruhige Miene wird wild. "Du! Was führt denn *dich* hierher?! Kommst du, um mit eigenen Augen zu sehen, welches Unheil du angerichtet hast? Soll ich vielleicht im Tode noch irgend etwas mit dir anzufangen wissen…?" Ihre Stimme wird zu leisen Zischen: "… „mein Liebster.“"~ [DEN001]{#deionarra_s2_}'
+    nr 'Ihre Augen öffnen sich langsam, und einen Augenblick lang blinzelt sie verwirrt, als wüßte sich nicht genau, wo sie ist. Sie schaut langsam um sich, bis sie dich erblickt. Ihre bisher ruhige Miene wird wild. "Du! Was führt denn *dich* hierher?! Kommst du, um mit eigenen Augen zu sehen, welches Unheil du angerichtet hast? Soll ich vielleicht im Tode noch irgend etwas mit dir anzufangen wissen…?" Ihre Stimme wird zu leisen Zischen: "… „mein Liebster.“"~ [DEN001]{#deionarra_s2_1}'
 
     menu:
         '"Wer bist du?"{#deionarra_s2_r707}':
@@ -72,7 +72,7 @@ label deionarra_s2: # from 1.0 1.1
 
 # s3 # say710
 label deionarra_s3: # from 2.0 2.1 2.2 10.0
-    nr 'Der Geist formt seine Hände zu einer flehenden Geste. "Wie kann es sein, daß die Gedächtnisdiebe immer noch meinen Namen aus deiner Erinnerung stehlen? *Kennst* du mich nicht mehr, mein Liebster?" Der Geist streckt seine Arme aus. "Denk doch nach…" Die Stimme klingt jetzt wieder verzweifelt "… der Name *Deionarra* muß dich doch an etwas erinnern."{#deionarra_s3_}'
+    nr 'Der Geist formt seine Hände zu einer flehenden Geste. "Wie kann es sein, daß die Gedächtnisdiebe immer noch meinen Namen aus deiner Erinnerung stehlen? *Kennst* du mich nicht mehr, mein Liebster?" Der Geist streckt seine Arme aus. "Denk doch nach…" Die Stimme klingt jetzt wieder verzweifelt "… der Name *Deionarra* muß dich doch an etwas erinnern."{#deionarra_s3_1}'
 
     menu:
         '"Nein, tut mir leid. Ich habe meine Erinnerungen verloren."{#deionarra_s3_r711}':
@@ -103,7 +103,7 @@ label deionarra_s3: # from 2.0 2.1 2.2 10.0
 
 # s4 # say715
 label deionarra_s4: # - # IF WEIGHT #1 ~  Global("Deionarra","GLOBAL",2) !Global("Current_Area","GLOBAL",1203) !Global("Current_Area","GLOBAL",1200)
-    nr 'Deionarra materialisiert sich wieder… dieses Mal erscheint sie mit verzweifelter Miene. Ihre Arme sind ausgestreckt, als ob sie nach etwas greifen wollte. Dann wandelt sich ihr Ausdruck von Verzweiflung zu Wut. "Du schon wieder! Warum hörst du nicht auf, mich zu quälen?"~ [DEN002]{#deionarra_s4_}'
+    nr 'Deionarra materialisiert sich wieder… dieses Mal erscheint sie mit verzweifelter Miene. Ihre Arme sind ausgestreckt, als ob sie nach etwas greifen wollte. Dann wandelt sich ihr Ausdruck von Verzweiflung zu Wut. "Du schon wieder! Warum hörst du nicht auf, mich zu quälen?"~ [DEN002]{#deionarra_s4_1}'
 
     menu:
         '"Es gibt viel, was ich wissen muß. Ich hätte da ein paar Fragen an dich…"{#deionarra_s4_r765}':
@@ -117,7 +117,7 @@ label deionarra_s4: # - # IF WEIGHT #1 ~  Global("Deionarra","GLOBAL",2) !Global
 
 # s5 # say716
 label deionarra_s5: # - # IF WEIGHT #2 ~  Global("Deionarra","GLOBAL",1) !Global("Current_Area","GLOBAL",1203) !Global("Current_Area","GLOBAL",1200)
-    nr 'Deionarra materialisiert sich wieder… dieses Mal erscheint sie mit verzweifelter Miene. Ihre Arme sind ausgestreckt, als ob  sie nach etwas greifen wollte. Dann wandelt sich ihr Ausdruck von Verzweiflung zu Erleichterung. "Mein Liebster… du bist zu mir zurückgekehrt! Ist es möglich, daß deine Erinnerung zurückgekehrt ist?"~ [DEN003A]{#deionarra_s5_}'
+    nr 'Deionarra materialisiert sich wieder… dieses Mal erscheint sie mit verzweifelter Miene. Ihre Arme sind ausgestreckt, als ob  sie nach etwas greifen wollte. Dann wandelt sich ihr Ausdruck von Verzweiflung zu Erleichterung. "Mein Liebster… du bist zu mir zurückgekehrt! Ist es möglich, daß deine Erinnerung zurückgekehrt ist?"~ [DEN003A]{#deionarra_s5_1}'
 
     menu:
         '"Ich hätte da ein paar Fragen an dich…"{#deionarra_s5_r766}':
@@ -135,7 +135,7 @@ label deionarra_s5: # - # IF WEIGHT #2 ~  Global("Deionarra","GLOBAL",1) !Global
 
 # s6 # say717
 label deionarra_s6: # from 3.0
-    nr '"Dann hat sich meine Befürchtung bewahrheitet. Ich bin wirklich für dich verloren… Früher war ich für dich nur ein Klotz am Bein, und jetzt hast du endlich einen Vorwand, mich genauso wie deine Erinnerung wegzuwerfen!"{#deionarra_s6_}'
+    nr '"Dann hat sich meine Befürchtung bewahrheitet. Ich bin wirklich für dich verloren… Früher war ich für dich nur ein Klotz am Bein, und jetzt hast du endlich einen Vorwand, mich genauso wie deine Erinnerung wegzuwerfen!"{#deionarra_s6_1}'
 
     menu:
         '"Klotz am Bein? Dich wegwerfen? Ich kenne dich nicht, Geist… meine Erinnerung ist nicht mehr. Sag du mir… wer bist du? Was weißt Du von mir?"{#deionarra_s6_r720}':
@@ -169,7 +169,7 @@ label deionarra_s6: # from 3.0
 
 # s7 # say722
 label deionarra_s7: # from 3.1
-    nr '"Ja…" Sie scheint Hoffnung zu schöpfen. "Welche Erinnerungen ruft mein Name wach?"{#deionarra_s7_}'
+    nr '"Ja…" Sie scheint Hoffnung zu schöpfen. "Welche Erinnerungen ruft mein Name wach?"{#deionarra_s7_1}'
 
     menu:
         '"Keine. Ich hab„ gelogen."{#deionarra_s7_r700}':
@@ -201,7 +201,7 @@ label deionarra_s7: # from 3.1
 
 # s8 # say725
 label deionarra_s8: # from 7.0 47.2
-    nr 'Deionarras Gesicht verzieht sich zu einer wütenden Fratze. "Du gemeiner Hund! Du hast mein Herz verraten! Alle Flüche dieser Welt würde ich dir an den Hals wünschen, wenn ich nicht wüßte, daß Qualen dich auch ohne sie in allen möglichen Formen heimsuchen! Hinfort!" Sie verschränkt ihre Arme und schließt die Augen.{#deionarra_s8_}'
+    nr 'Deionarras Gesicht verzieht sich zu einer wütenden Fratze. "Du gemeiner Hund! Du hast mein Herz verraten! Alle Flüche dieser Welt würde ich dir an den Hals wünschen, wenn ich nicht wüßte, daß Qualen dich auch ohne sie in allen möglichen Formen heimsuchen! Hinfort!" Sie verschränkt ihre Arme und schließt die Augen.{#deionarra_s8_1}'
 
     menu:
         '"Also gut…{#deionarra_s8_r747}' if deionarraLogic.r747_condition():
@@ -222,7 +222,7 @@ label deionarra_s8: # from 7.0 47.2
 
 # s9 # say726
 label deionarra_s9: # from 3.2 3.3 6.1 6.2 7.1 7.2 7.3
-    nr '"Oh, endlich ist das Schicksal einmal gnädig! Selbst der Tod kann mich nicht aus deinem Gedächtnis verbannen, mein Liebster! Verstehst du nicht? Deine Erinnerungen werden zurückkehren! Sag mir, wie ich dir helfen kann: Ich werde alles tun!"{#deionarra_s9_}'
+    nr '"Oh, endlich ist das Schicksal einmal gnädig! Selbst der Tod kann mich nicht aus deinem Gedächtnis verbannen, mein Liebster! Verstehst du nicht? Deine Erinnerungen werden zurückkehren! Sag mir, wie ich dir helfen kann: Ich werde alles tun!"{#deionarra_s9_1}'
 
     menu:
         '"Weißt du, wer ich bin?"{#deionarra_s9_r729}':
@@ -252,7 +252,7 @@ label deionarra_s9: # from 3.2 3.3 6.1 6.2 7.1 7.2 7.3
 
 # s10 # say733
 label deionarra_s10: # from 5.0 11.1 12.1 13.1 14.0 25.1 27.2 28.0 30.0 31.1 32.0 34.1 35.1 36.0 41.1 42.0 43.1 44.2 74.0
-    nr '"Was willst du von mir wissen?"{#deionarra_s10_}'
+    nr '"Was willst du von mir wissen?"{#deionarra_s10_1}'
 
     menu:
         '"Wer bist du?"{#deionarra_s10_r734}':
@@ -294,7 +294,7 @@ label deionarra_s10: # from 5.0 11.1 12.1 13.1 14.0 25.1 27.2 28.0 30.0 31.1 32.
 
 # s11 # say739
 label deionarra_s11: # from 6.0 9.0 10.1
-    nr '"Du bist zugleich gesegnet und verflucht, mein Liebster. Und du bist der, den ich nie ganz aus meinen Gedanken und aus meinem Herzen verbannen konnte."{#deionarra_s11_}'
+    nr '"Du bist zugleich gesegnet und verflucht, mein Liebster. Und du bist der, den ich nie ganz aus meinen Gedanken und aus meinem Herzen verbannen konnte."{#deionarra_s11_1}'
 
     menu:
         '"Gesegnet und verflucht? Was soll das heißen?"{#deionarra_s11_r740}':
@@ -316,7 +316,7 @@ label deionarra_s11: # from 6.0 9.0 10.1
 
 # s12 # say743
 label deionarra_s12: # from 9.1 10.2
-    nr '"Wo du bist? Du bist hier bei mir, mein Liebster… wie damals, als das Leben uns beide noch hatte. Jetzt trennt uns die Ewige Grenze voneinander."{#deionarra_s12_}'
+    nr '"Wo du bist? Du bist hier bei mir, mein Liebster… wie damals, als das Leben uns beide noch hatte. Jetzt trennt uns die Ewige Grenze voneinander."{#deionarra_s12_1}'
 
     menu:
         '"„Ewige Grenze“?"{#deionarra_s12_r744}':
@@ -338,7 +338,7 @@ label deionarra_s12: # from 9.1 10.2
 
 # s13 # say748
 label deionarra_s13: # from 11.0
-    nr '"Was dein Fluch bewirkt, ist doch offensichtlich, mein Liebster. Sieh dich nur an." Sie zeigt auf dich. "Der Tod verschmäht dich. Deine Erinnerung läßt dich im Stich. Fragst du dich denn gar nicht, warum?"{#deionarra_s13_}'
+    nr '"Was dein Fluch bewirkt, ist doch offensichtlich, mein Liebster. Sieh dich nur an." Sie zeigt auf dich. "Der Tod verschmäht dich. Deine Erinnerung läßt dich im Stich. Fragst du dich denn gar nicht, warum?"{#deionarra_s13_1}'
 
     menu:
         '"Ehrlich gesagt, bin ich immer noch dabei, mich zurechtzufinden. Was kannst du mir noch über meine eigene Person erzählen?"{#deionarra_s13_r749}':
@@ -364,7 +364,7 @@ label deionarra_s13: # from 11.0
 
 # s14 # say752
 label deionarra_s14: # from 12.0
-    nr 'Deionarra klingt traurig. "Es ist eine Grenze, die du wahrscheinlich nie überschreiten wirst, mein Liebster. Es ist die Grenze zwischen deinem Leben und dem kläglichen Rest meines eigenen Lebens…"{#deionarra_s14_}'
+    nr 'Deionarra klingt traurig. "Es ist eine Grenze, die du wahrscheinlich nie überschreiten wirst, mein Liebster. Es ist die Grenze zwischen deinem Leben und dem kläglichen Rest meines eigenen Lebens…"{#deionarra_s14_1}'
 
     menu:
         '"Ich… verstehe. Vielleicht könntest du mir noch ein paar andere Fragen beantworten…"{#deionarra_s14_r753}':
@@ -382,7 +382,7 @@ label deionarra_s14: # from 12.0
 
 # s15 # say756
 label deionarra_s15: # from 3.4 5.1 6.3 6.4 7.4 9.4 10.7 11.2 12.2 13.3 14.1 25.2 27.3 28.1 28.3 30.1 31.2 32.1 41.2 41.3 42.1 42.2 43.3 44.3 47.3
-    nr '"Warte einen Augenblick… ich habe viel gelernt, als ich mit dir reiste, mein Liebster, und was du verloren hast, habe ich bewahrt. Ich habe nicht alles, was ich weiß, an dich weitergegeben. Ich sehe klar… während du im Dunkeln tappst und auf den Funken eines Gedanken wartest."{#deionarra_s15_}'
+    nr '"Warte einen Augenblick… ich habe viel gelernt, als ich mit dir reiste, mein Liebster, und was du verloren hast, habe ich bewahrt. Ich habe nicht alles, was ich weiß, an dich weitergegeben. Ich sehe klar… während du im Dunkeln tappst und auf den Funken eines Gedanken wartest."{#deionarra_s15_1}'
 
     menu:
         '"Was du auch wissen magst, es kann warten. Leb wohl."{#deionarra_s15_r757}':
@@ -404,7 +404,7 @@ label deionarra_s15: # from 3.4 5.1 6.3 6.4 7.4 9.4 10.7 11.2 12.2 13.3 14.1 25.
 
 # s16 # say762
 label deionarra_s16: # from 20.0 21.0
-    nr 'Deionarra wirkt betroffen; jetzt ändert sie ihren Ton und spricht mit fast flehender Stimme. "Ich… habe nicht vor, dir ein Versprechen abzuringen, mein Liebster. Aber ich habe so lange darauf gewartet, daß du zu mir kommst, jenseits d…"{#deionarra_s16_}'
+    nr 'Deionarra wirkt betroffen; jetzt ändert sie ihren Ton und spricht mit fast flehender Stimme. "Ich… habe nicht vor, dir ein Versprechen abzuringen, mein Liebster. Aber ich habe so lange darauf gewartet, daß du zu mir kommst, jenseits d…"{#deionarra_s16_1}'
 
     menu:
         '"Wenn du nicht vorhast, mir ein Gelübde abzuringen, Deionarra, dann tu„s auch nicht. Erzähl mir lieber von deiner Vision, und wir reden nicht mehr von Gelübden und Versprechen."{#deionarra_s16_r763}':
@@ -414,7 +414,7 @@ label deionarra_s16: # from 20.0 21.0
 
 # s17 # say769
 label deionarra_s17: # from 15.1 15.2
-    nr '"Auch die Zeit verliert an Bedeutung, wenn wir der Vergessenheit anheimfallen, mein Liebster. In meinen Visionen sehe ich schon, was sein wird. Ich sehe dich, mein Liebster, ich sehe dich so, wie du jetzt bist, und…" Deionarra verstummt.{#deionarra_s17_}'
+    nr '"Auch die Zeit verliert an Bedeutung, wenn wir der Vergessenheit anheimfallen, mein Liebster. In meinen Visionen sehe ich schon, was sein wird. Ich sehe dich, mein Liebster, ich sehe dich so, wie du jetzt bist, und…" Deionarra verstummt.{#deionarra_s17_1}'
 
     menu:
         '"Warum schweigst du plötzlich? Hat dich dein Lamentieren so ermüdet?"{#deionarra_s17_r770}':
@@ -432,7 +432,7 @@ label deionarra_s17: # from 15.1 15.2
 
 # s18 # say773
 label deionarra_s18: # from 17.0 17.1
-    nr '"Ich sehe, was dir bevorsteht. Es zieht sich wie eine Welle durch die Ebenen und geht von diesem Punkt aus. Möchtest du wissen, was ich sehe?"{#deionarra_s18_}'
+    nr '"Ich sehe, was dir bevorsteht. Es zieht sich wie eine Welle durch die Ebenen und geht von diesem Punkt aus. Möchtest du wissen, was ich sehe?"{#deionarra_s18_1}'
 
     menu:
         '"Erzähl."{#deionarra_s18_r774}':
@@ -446,7 +446,7 @@ label deionarra_s18: # from 17.0 17.1
 
 # s19 # say776
 label deionarra_s19: # from 17.2 18.1
-    nr '"So bist du schon immer gewesen, mein Liebster. Schon weigerst du dich, dem Ruf des Todes zu folgen. Wirst du als nächstes die Zeit verschmähen?" Sie schließt ihre Augen und entschwindet mit einem ätherischen Säuseln.{#deionarra_s19_}'
+    nr '"So bist du schon immer gewesen, mein Liebster. Schon weigerst du dich, dem Ruf des Todes zu folgen. Wirst du als nächstes die Zeit verschmähen?" Sie schließt ihre Augen und entschwindet mit einem ätherischen Säuseln.{#deionarra_s19_1}'
 
     menu:
         'Verschwinde.{#deionarra_s19_r803}' if deionarraLogic.r803_condition():
@@ -467,7 +467,7 @@ label deionarra_s19: # from 17.2 18.1
 
 # s20 # say777
 label deionarra_s20: # from 18.0
-    nr '"Zuerst mußt du mir etwas versprechen. Versprich, daß du zurückkehren wirst. Daß du eine Möglichkeit finden wirst, mich zu retten oder bei mir zu bleiben."{#deionarra_s20_}'
+    nr '"Zuerst mußt du mir etwas versprechen. Versprich, daß du zurückkehren wirst. Daß du eine Möglichkeit finden wirst, mich zu retten oder bei mir zu bleiben."{#deionarra_s20_1}'
 
     menu:
         '"Mir fällt es schwer zu glauben, daß eine Frau, die ich einst liebte, versucht, mir Versprechen abzupressen und mir dafür Enthüllungen verspricht. Hast du deinen Glauben an mich verloren, Deionarra?"{#deionarra_s20_r778}' if deionarraLogic.r778_condition():
@@ -499,7 +499,7 @@ label deionarra_s20: # from 18.0
 
 # s21 # say783
 label deionarra_s21: # from 20.1
-    nr 'Deionarra verschränkt ihre Arme. "Das ist er tatsächlich, mein Liebster. Der Preis für die Unsterblichkeit war aber offenbar nicht zu hoch. Ist Redlichkeit zuviel verlangt für einen wie dich?"{#deionarra_s21_}'
+    nr 'Deionarra verschränkt ihre Arme. "Das ist er tatsächlich, mein Liebster. Der Preis für die Unsterblichkeit war aber offenbar nicht zu hoch. Ist Redlichkeit zuviel verlangt für einen wie dich?"{#deionarra_s21_1}'
 
     menu:
         '"Mir fällt es schwer zu glauben, daß eine Frau, die ich einst liebte, versucht, mir Versprechen abzupressen und mir dafür Enthüllungen verspricht. Hast du deinen Glauben an mich verloren, Deionarra?"{#deionarra_s21_r804}':
@@ -531,7 +531,7 @@ label deionarra_s21: # from 20.1
 
 # s22 # say784
 label deionarra_s22: # from 10.5 20.2 20.5 21.1 21.4 40.0
-    nr '"Dies sehen meine Augen, mein Liebster, frei von den Ketten der Zeit…"~ [DEN020]{#deionarra_s22_}'
+    nr '"Dies sehen meine Augen, mein Liebster, frei von den Ketten der Zeit…"~ [DEN020]{#deionarra_s22_1}'
 
     menu:
         'Warte, bis sie fortfährt.{#deionarra_s22_r786}':
@@ -542,7 +542,7 @@ label deionarra_s22: # from 10.5 20.2 20.5 21.1 21.4 40.0
 
 # s23 # say785
 label deionarra_s23: # from 22.0
-    nr '"Du wirst auf drei Feinde treffen, doch keiner wird fürchterlicher sein als du selbst in deinem ganzen Glanz. Es sind die Schatten des Bösen, des Guten und der Neutralität, zum Leben erweckt und verzerrt durch die Gesetze der Ebenen."~ [DEN021]{#deionarra_s23_}'
+    nr '"Du wirst auf drei Feinde treffen, doch keiner wird fürchterlicher sein als du selbst in deinem ganzen Glanz. Es sind die Schatten des Bösen, des Guten und der Neutralität, zum Leben erweckt und verzerrt durch die Gesetze der Ebenen."~ [DEN021]{#deionarra_s23_1}'
 
     menu:
         'Warte, bis sie fortfährt.{#deionarra_s23_r787}':
@@ -552,7 +552,7 @@ label deionarra_s23: # from 22.0
 
 # s24 # say788
 label deionarra_s24: # from 23.0
-    nr '"Du wirst zu einen Kerker kommen, erbaut aus Reue und Kummer, wo die Schatten selbst dem Wahnsinn verfallen sind. Dort wird man von dir ein schreckliches Opfer verlangen, mein Liebster. Damit all dies Ruhe finden kann, mußt du das zerstören, was dich am Leben erhält, und deine Unsterblichkeit opfern."~ [DEN022]{#deionarra_s24_}'
+    nr '"Du wirst zu einen Kerker kommen, erbaut aus Reue und Kummer, wo die Schatten selbst dem Wahnsinn verfallen sind. Dort wird man von dir ein schreckliches Opfer verlangen, mein Liebster. Damit all dies Ruhe finden kann, mußt du das zerstören, was dich am Leben erhält, und deine Unsterblichkeit opfern."~ [DEN022]{#deionarra_s24_1}'
 
     menu:
         '"„Zerstören, was mich am Leben erhält“?"{#deionarra_s24_r789}':
@@ -562,7 +562,7 @@ label deionarra_s24: # from 23.0
 
 # s25 # say791
 label deionarra_s25: # from 13.2 29.0
-    nr '"An deiner Fähigkeit, von den Toten aufzuerstehen, gibt es keinen Zweifel. Ich glaube, daß deine Gedanken und Erinnerungen mit jeder Inkarnation schwächer werden. Du behauptest, du hättest deine Erinnerung verloren. Vielleicht ist dies eine Begleiterscheinung deiner unzähligen Tode. Wenn ja, was wird dir bei den nächsten Toden noch alles abhanden kommen? Wenn du den Verstand verlierst, wirst du nicht einmal mehr wissen, daß du nicht sterben kannst. Dann bist du wahrlich verdammt."{#deionarra_s25_}'
+    nr '"An deiner Fähigkeit, von den Toten aufzuerstehen, gibt es keinen Zweifel. Ich glaube, daß deine Gedanken und Erinnerungen mit jeder Inkarnation schwächer werden. Du behauptest, du hättest deine Erinnerung verloren. Vielleicht ist dies eine Begleiterscheinung deiner unzähligen Tode. Wenn ja, was wird dir bei den nächsten Toden noch alles abhanden kommen? Wenn du den Verstand verlierst, wirst du nicht einmal mehr wissen, daß du nicht sterben kannst. Dann bist du wahrlich verdammt."{#deionarra_s25_1}'
 
     menu:
         '"„Unzählige Tode“? Wie lange geht das denn schon so?"{#deionarra_s25_r812}':
@@ -584,7 +584,7 @@ label deionarra_s25: # from 13.2 29.0
 
 # s26 # say793
 label deionarra_s26: # from 3.5 4.1 6.5 6.6 7.5 15.0 15.3 20.3 21.2 21.5 28.2 47.4
-    nr 'Deionarra wird wütend. "Dann geh doch, zum dreihundertsten Mal! Kommst du nur, um mich zu quälen?! Geh fort und laß dich hier nie wieder blicken!" Sie schließt ihre Augen und entschwindet mit einem ätherischen Säuseln.{#deionarra_s26_}'
+    nr 'Deionarra wird wütend. "Dann geh doch, zum dreihundertsten Mal! Kommst du nur, um mich zu quälen?! Geh fort und laß dich hier nie wieder blicken!" Sie schließt ihre Augen und entschwindet mit einem ätherischen Säuseln.{#deionarra_s26_1}'
 
     menu:
         'Verschwinde.{#deionarra_s26_r6081}' if deionarraLogic.r6081_condition():
@@ -605,7 +605,7 @@ label deionarra_s26: # from 3.5 4.1 6.5 6.6 7.5 15.0 15.3 20.3 21.2 21.5 28.2 47
 
 # s27 # say795
 label deionarra_s27: # from 13.0
-    nr '"Ich weiß, daß du früher behauptet hast, mich zu lieben, und daß du mich lieben würdest, bis der Tod uns beide zu sich hole. Ich habe dir vertraut, denn ich wußte nicht, wer und was du wirklich warst."{#deionarra_s27_}'
+    nr '"Ich weiß, daß du früher behauptet hast, mich zu lieben, und daß du mich lieben würdest, bis der Tod uns beide zu sich hole. Ich habe dir vertraut, denn ich wußte nicht, wer und was du wirklich warst."{#deionarra_s27_1}'
 
     menu:
         '"Und was bin ich?"{#deionarra_s27_r797}' if deionarraLogic.r797_condition():
@@ -631,7 +631,7 @@ label deionarra_s27: # from 13.0
 
 # s28 # say799
 label deionarra_s28: # from 27.0
-    nr '"Wir haben schon über dein Wesen gesprochen." Deionarras Gesicht nimmt einen abwesenden Ausdruck an. "Wir werden es nicht nochmals tun."{#deionarra_s28_}'
+    nr '"Wir haben schon über dein Wesen gesprochen." Deionarras Gesicht nimmt einen abwesenden Ausdruck an. "Wir werden es nicht nochmals tun."{#deionarra_s28_1}'
 
     menu:
         '"Von mir aus… Ich hätte noch ein paar Fragen…"{#deionarra_s28_r800}':
@@ -657,7 +657,7 @@ label deionarra_s28: # from 27.0
 
 # s29 # say809
 label deionarra_s29: # from 24.0
-    nr '"Ich weiß, dass du sterben musst… solange du noch kannst. Der Kreis *muss* sich schließen, mein Liebster. Du bist nicht für dieses Leben bestimmt und der Zeitpunkt deines Todes wurde schon zu lange aufgeschoben. Du musst finden, was dir genommen wurde, und über die Grenzen dieses Lebens hinausziehen, in das Land der Toten."~ [DEN023]{#deionarra_s29_}'
+    nr '"Ich weiß, dass du sterben musst… solange du noch kannst. Der Kreis *muss* sich schließen, mein Liebster. Du bist nicht für dieses Leben bestimmt und der Zeitpunkt deines Todes wurde schon zu lange aufgeschoben. Du musst finden, was dir genommen wurde, und über die Grenzen dieses Lebens hinausziehen, in das Land der Toten."~ [DEN023]{#deionarra_s29_1}'
 
     menu:
         '"„Sterben, so lange ich noch kann“?"{#deionarra_s29_r810}':
@@ -668,7 +668,7 @@ label deionarra_s29: # from 24.0
 
 # s30 # say814
 label deionarra_s30: # from 25.0
-    nr '"Genau weiß ich es nicht. Ich weiß nur, daß es schon lange genug dauert."{#deionarra_s30_}'
+    nr '"Genau weiß ich es nicht. Ich weiß nur, daß es schon lange genug dauert."{#deionarra_s30_1}'
 
     menu:
         '"Ich hätte noch ein paar andere Fragen…"{#deionarra_s30_r815}':
@@ -686,7 +686,7 @@ label deionarra_s30: # from 25.0
 
 # s31 # say817
 label deionarra_s31: # from 45.0
-    nr '"Portale sind Löcher in der Existenz, durch die man Ziele auf den inneren und äußeren Ebenen erreichen kann… wenn du den passenden Schlüssel finden würdest, könntest du durch eines entkommen."{#deionarra_s31_}'
+    nr '"Portale sind Löcher in der Existenz, durch die man Ziele auf den inneren und äußeren Ebenen erreichen kann… wenn du den passenden Schlüssel finden würdest, könntest du durch eines entkommen."{#deionarra_s31_1}'
 
     menu:
         '"Schlüssel?"{#deionarra_s31_r819}':
@@ -708,7 +708,7 @@ label deionarra_s31: # from 45.0
 
 # s32 # say821
 label deionarra_s32: # from 31.0
-    nr 'Deionarra zögert kurz, als versuchte sie sich zu erinnern. "Ein Portal erkennst du erst, wenn du den richtigen „Schlüssel“ besitzt. Dieser Schlüssel kann leider alles mögliche sein… ein Gefühl, ein Stück Holz, ein Dolch aus versilbertem Glas, ein Stoffetzen, eine Melodie, die du vor dich hin summst… Ich fürchte, die Staubmenschen sind die einzigen, die dir sagen könnten, mit welchen Schlüsseln du ihre Hallen verlassen kannst, mein Liebster."{#deionarra_s32_}'
+    nr 'Deionarra zögert kurz, als versuchte sie sich zu erinnern. "Ein Portal erkennst du erst, wenn du den richtigen „Schlüssel“ besitzt. Dieser Schlüssel kann leider alles mögliche sein… ein Gefühl, ein Stück Holz, ein Dolch aus versilbertem Glas, ein Stoffetzen, eine Melodie, die du vor dich hin summst… Ich fürchte, die Staubmenschen sind die einzigen, die dir sagen könnten, mit welchen Schlüsseln du ihre Hallen verlassen kannst, mein Liebster."{#deionarra_s32_1}'
 
     menu:
         '"Ich verstehe. Ich hätte noch ein paar andere Fragen…"{#deionarra_s32_r824}':
@@ -726,7 +726,7 @@ label deionarra_s32: # from 31.0
 
 # s33 # say6083
 label deionarra_s33: # from 4.0
-    nr '"Ich habe keine Antworten für dich! Dein treuloses Herz hat dich soweit geleitet, jetzt soll es dich auch bis ans Ende des Weges führen! Geh jetzt!"{#deionarra_s33_}'
+    nr '"Ich habe keine Antworten für dich! Dein treuloses Herz hat dich soweit geleitet, jetzt soll es dich auch bis ans Ende des Weges führen! Geh jetzt!"{#deionarra_s33_1}'
 
     menu:
         'Lüge: "Dies ist nicht die Deionarra, an die ich mich erinnere. Die Deionarra, die ich liebte, war freundlich, sanft… und ließ nie eine bedürftige Seele im Stich. Bist du wirklich so tief gesunken?"{#deionarra_s33_r6129}' if deionarraLogic.r6129_condition():
@@ -760,7 +760,7 @@ label deionarra_s33: # from 4.0
 
 # s34 # say6086
 label deionarra_s34: # from 33.2 33.3 33.4
-    nr 'Der zornige Ausdruck in Deionarras Gesicht schmilzt wie Eis… die Plötzlichkeit dieser Veränderung ist so angsteinflößend wie der Ausdruck der Verzweiflung, der sich jetzt auf ihrem Gesicht abzeichnet. "Nein! Warte, mein Liebster." Ihre Stimme fleht. "Bitte verzeih mir, ich bitte dich! Bitte geh nicht!"{#deionarra_s34_}'
+    nr 'Der zornige Ausdruck in Deionarras Gesicht schmilzt wie Eis… die Plötzlichkeit dieser Veränderung ist so angsteinflößend wie der Ausdruck der Verzweiflung, der sich jetzt auf ihrem Gesicht abzeichnet. "Nein! Warte, mein Liebster." Ihre Stimme fleht. "Bitte verzeih mir, ich bitte dich! Bitte geh nicht!"{#deionarra_s34_1}'
 
     menu:
         '"Deionarra, meine Geduld für deine Ausbrüche ist langsam am Ende. Wenn du weiter mit mir reden willst, *mußt* du dich ein wenig zurückhalten, oder ich spreche nie wieder mit dir. Und du wirst ganz alleine sein. Habe ich mich klar genug ausgedrückt?"{#deionarra_s34_r6095}':
@@ -775,7 +775,7 @@ label deionarra_s34: # from 33.2 33.3 33.4
 
 # s35 # say6087
 label deionarra_s35: # from 33.0
-    nr 'Der zornige Ausdruck in Deionarras Gesicht schmilzt wie Eis… die Plötzlichkeit dieser Veränderung ist so angsteinflößend wie der Ausdruck der Verzweiflung, der sich jetzt auf ihrem Gesicht abzeichnet. "Nein… nein, nein… ich bin noch immer die Deionarra, an die du dich erinnerst, mein Liebster. Bitte verzeih mir, ich flehe dich an."{#deionarra_s35_}'
+    nr 'Der zornige Ausdruck in Deionarras Gesicht schmilzt wie Eis… die Plötzlichkeit dieser Veränderung ist so angsteinflößend wie der Ausdruck der Verzweiflung, der sich jetzt auf ihrem Gesicht abzeichnet. "Nein… nein, nein… ich bin noch immer die Deionarra, an die du dich erinnerst, mein Liebster. Bitte verzeih mir, ich flehe dich an."{#deionarra_s35_1}'
 
     menu:
         '"Deionarra, meine Geduld für deine Ausbrüche ist langsam am Ende. Wenn du weiter mit mir reden willst, *mußt* du dich ein wenig zurückhalten, oder ich spreche nie wieder mit dir. Und du wirst ganz alleine sein. Habe ich mich klar genug ausgedrückt?"{#deionarra_s35_r6097}':
@@ -790,7 +790,7 @@ label deionarra_s35: # from 33.0
 
 # s36 # say6088
 label deionarra_s36: # from 34.0 35.0
-    nr 'Ihre Stimme wird zu einem leisen Flüstern. "Ja… ja, bitte. Geh nicht." Ihr Flehen läßt dich erschauern… nicht vor Angst, sondern vor Freude. Du hast das Gefühl, daß du diese Frau nicht zum ersten Mal manipuliert hast.{#deionarra_s36_}'
+    nr 'Ihre Stimme wird zu einem leisen Flüstern. "Ja… ja, bitte. Geh nicht." Ihr Flehen läßt dich erschauern… nicht vor Angst, sondern vor Freude. Du hast das Gefühl, daß du diese Frau nicht zum ersten Mal manipuliert hast.{#deionarra_s36_1}'
 
     menu:
         '"Nun hör mal zu, Deionarra. Ich hätte da ein paar Fragen an dich…"{#deionarra_s36_r6099}':
@@ -800,7 +800,7 @@ label deionarra_s36: # from 34.0 35.0
 
 # s37 # say6089
 label deionarra_s37: # from 33.1 47.0
-    nr '"Abweisen - *dich?!* Du WAGST es, mir vorzuwerfen, daß ich DICH abweise?!" Deionarra wirft ihre Arme nach außen, richtet sie nach vorn und zeigt dann mit beiden Zeigefingern auf dich. Es scheint, als ob sie einen Fluch aussprechen will. "Du WAGST ES…!"{#deionarra_s37_}'
+    nr '"Abweisen - *dich?!* Du WAGST es, mir vorzuwerfen, daß ich DICH abweise?!" Deionarra wirft ihre Arme nach außen, richtet sie nach vorn und zeigt dann mit beiden Zeigefingern auf dich. Es scheint, als ob sie einen Fluch aussprechen will. "Du WAGST ES…!"{#deionarra_s37_1}'
 
     menu:
         '"Schweig! Hör mich an, Geist! Meine Geduld mit deinen Spielchen ist langsam am Ende…"{#deionarra_s37_r6100}':
@@ -816,7 +816,7 @@ label deionarra_s37: # from 33.1 47.0
 
 # s38 # say6090
 label deionarra_s38: # from 37.0 37.1
-    nr '"Brenne! Du sollst brennen, als ob die leibhaftigen Feuer von Baator dich von innen verzehren! Brenne, und wisse, daß dies nur ein *Hauch* meines Hasses auf dich ist! Ich verfluche dich - Ich verfluche dich aus ganzem Herzen und ganzer Seele, auf daß du nie mehr von den Fesseln deines elenden Schattendaseins loskommen mögest. Mögest du verwelken und sterben, deine Seele in deinem verfaulenden Körper wie eine Wunde schwären!"{#deionarra_s38_}'
+    nr '"Brenne! Du sollst brennen, als ob die leibhaftigen Feuer von Baator dich von innen verzehren! Brenne, und wisse, daß dies nur ein *Hauch* meines Hasses auf dich ist! Ich verfluche dich - Ich verfluche dich aus ganzem Herzen und ganzer Seele, auf daß du nie mehr von den Fesseln deines elenden Schattendaseins loskommen mögest. Mögest du verwelken und sterben, deine Seele in deinem verfaulenden Körper wie eine Wunde schwären!"{#deionarra_s38_1}'
 
     menu:
         '"Halt„ deine Zunge im Zaum, Frau! Mein Geduldsfaden reißt…"{#deionarra_s38_r6102}':
@@ -830,7 +830,7 @@ label deionarra_s38: # from 37.0 37.1
 
 # s39 # say6091
 label deionarra_s39: # from 38.0 38.1
-    nr '"Einmal ausgesprochen, kann der Fluch nicht wieder zurückgenommen werden." Deionarras Stimme wird zu einem Fauchen. "Merke dir: Ich habe alle Ewigkeit, „mein Liebster.“ Ich warte auf dich vor dem Totenreich." Sie lächelt, aber in ihrem Gesicht ist keine Freude. "Wir *werden* wieder zusammen sein."{#deionarra_s39_}'
+    nr '"Einmal ausgesprochen, kann der Fluch nicht wieder zurückgenommen werden." Deionarras Stimme wird zu einem Fauchen. "Merke dir: Ich habe alle Ewigkeit, „mein Liebster.“ Ich warte auf dich vor dem Totenreich." Sie lächelt, aber in ihrem Gesicht ist keine Freude. "Wir *werden* wieder zusammen sein."{#deionarra_s39_1}'
 
     menu:
         '"Einen Moment mal! Ich würde gern sprechen mit…"{#deionarra_s39_r6104}':
@@ -844,7 +844,7 @@ label deionarra_s39: # from 38.0 38.1
 
 # s40 # say6092
 label deionarra_s40: # from 16.0 20.4 21.3
-    nr 'Deionarra erstarrt. Sie sieht aus, als wollte sie etwas sagen, seufzt aber nur resigniert. "Na gut, mein Liebster… so wie zuvor werde ich mein Vertrauen in dich legen müssen." Sie schließt ihre Augen.{#deionarra_s40_}'
+    nr 'Deionarra erstarrt. Sie sieht aus, als wollte sie etwas sagen, seufzt aber nur resigniert. "Na gut, mein Liebster… so wie zuvor werde ich mein Vertrauen in dich legen müssen." Sie schließt ihre Augen.{#deionarra_s40_1}'
 
     menu:
         'Warte…{#deionarra_s40_r6106}':
@@ -854,7 +854,7 @@ label deionarra_s40: # from 16.0 20.4 21.3
 
 # s41 # say6108
 label deionarra_s41: # from 10.6
-    nr 'Deionarra schüttelt traurig den Kopf. "Einmal ausgesprochen, kann der Fluch nicht wieder zurückgenommen werden. Verzeih mir, mein Liebster."{#deionarra_s41_}'
+    nr 'Deionarra schüttelt traurig den Kopf. "Einmal ausgesprochen, kann der Fluch nicht wieder zurückgenommen werden. Verzeih mir, mein Liebster."{#deionarra_s41_1}'
 
     menu:
         '"Kann denn niemand ihn aufheben?"{#deionarra_s41_r6110}':
@@ -884,7 +884,7 @@ label deionarra_s41: # from 10.6
 
 # s42 # say6109
 label deionarra_s42: # from 41.0
-    nr '"Wenn es so jemanden gibt, dann kenne ich ihn nicht." Deionarra sieht zuversichtlich aus. "Aber es gibt andere, die noch mächtiger sind als ich und die ihn aufheben können. Ich bitte dich noch einmal um Vergebung, mein Liebster. Ich wußte nicht, was ich tue."{#deionarra_s42_}'
+    nr '"Wenn es so jemanden gibt, dann kenne ich ihn nicht." Deionarra sieht zuversichtlich aus. "Aber es gibt andere, die noch mächtiger sind als ich und die ihn aufheben können. Ich bitte dich noch einmal um Vergebung, mein Liebster. Ich wußte nicht, was ich tue."{#deionarra_s42_1}'
 
     menu:
         '"Da war noch was, was ich dich fragen wollte…"{#deionarra_s42_r6116}':
@@ -910,7 +910,7 @@ label deionarra_s42: # from 41.0
 
 # s43 # say6121
 label deionarra_s43: # from 9.2 10.3 44.0
-    nr '"Wegkommen…?" Deionarras Stimme wird zu einem Fauchen und schwillt dann wieder an. "*Wegkommen?!* Du fragst mich, die ich wegen dir hier gefangen bin, wie man von hier *wegkommen* kann?!"{#deionarra_s43_}'
+    nr '"Wegkommen…?" Deionarras Stimme wird zu einem Fauchen und schwillt dann wieder an. "*Wegkommen?!* Du fragst mich, die ich wegen dir hier gefangen bin, wie man von hier *wegkommen* kann?!"{#deionarra_s43_1}'
 
     menu:
         '"Ja, ich muß diesem Ort entfliehen. Weißt Du einen Weg hier raus?"{#deionarra_s43_r6137}':
@@ -936,7 +936,7 @@ label deionarra_s43: # from 9.2 10.3 44.0
 
 # s44 # say6122
 label deionarra_s44: # from 9.3 10.4
-    nr 'Als du Deionarra die Frage stellen willst, schnürt es dir die Kehle zu. Du erkennst, daß, wenn du sie nach einem Fluchtweg fragst, in ihr das Gefühl geweckt werden könnte, daß du sie verlassen willst. Wenn du sie fragen willst, wie man hier wegkommt, mußt du es ganz vorsichtig anstellen.{#deionarra_s44_}'
+    nr 'Als du Deionarra die Frage stellen willst, schnürt es dir die Kehle zu. Du erkennst, daß, wenn du sie nach einem Fluchtweg fragst, in ihr das Gefühl geweckt werden könnte, daß du sie verlassen willst. Wenn du sie fragen willst, wie man hier wegkommt, mußt du es ganz vorsichtig anstellen.{#deionarra_s44_1}'
 
     menu:
         '"Kannst du mir sagen, wie ich diesen Ort verlassen kann?"{#deionarra_s44_r6142}':
@@ -962,7 +962,7 @@ label deionarra_s44: # from 9.3 10.4
 
 # s45 # say6123
 label deionarra_s45: # from 46.0 46.1
-    nr '"Ich fühle, daß dieser Ort viele Türen hat, die vor den Augen Sterblicher verborgen sind. Vielleicht könntest du eines dieser Portale zur Flucht benutzen."{#deionarra_s45_}'
+    nr '"Ich fühle, daß dieser Ort viele Türen hat, die vor den Augen Sterblicher verborgen sind. Vielleicht könntest du eines dieser Portale zur Flucht benutzen."{#deionarra_s45_1}'
 
     menu:
         '"Portale?"{#deionarra_s45_r6124}':
@@ -972,7 +972,7 @@ label deionarra_s45: # from 46.0 46.1
 
 # s46 # say6125
 label deionarra_s46: # from 43.2 44.1 47.1
-    nr '"In Gefahr?" Deionarra sieht besorgt aus. "Natürlich, mein Liebster. Ich werde dir mit allem, was in meiner Macht steht, helfen…" Sie schließt ihre Augen für einen Moment und du siehst, wie ein ätherischer Zephyr ihren Körper durchfährt und ihr Haar zerwühlt. Einen Augenblick später erstirbt der Zephyr und langsam öffnen sich ihre Augen. "Vielleicht gibt es eine Möglichkeit."{#deionarra_s46_}'
+    nr '"In Gefahr?" Deionarra sieht besorgt aus. "Natürlich, mein Liebster. Ich werde dir mit allem, was in meiner Macht steht, helfen…" Sie schließt ihre Augen für einen Moment und du siehst, wie ein ätherischer Zephyr ihren Körper durchfährt und ihr Haar zerwühlt. Einen Augenblick später erstirbt der Zephyr und langsam öffnen sich ihre Augen. "Vielleicht gibt es eine Möglichkeit."{#deionarra_s46_1}'
 
     menu:
         '"Ja?"{#deionarra_s46_r6147}' if deionarraLogic.r6147_condition():
@@ -987,7 +987,7 @@ label deionarra_s46: # from 43.2 44.1 47.1
 
 # s47 # say6135
 label deionarra_s47: # from 43.0
-    nr '"Du kommst zu mir im Tod und sagst mir, daß du meine Hilfe brauchst, um mich *wieder* verlassen zu können!?" Ihr Gesicht ist vor Zorn zu einer Maske erstarrt. "Ich bin für dich *gestorben*, mein Liebster. Sogar jetzt noch *leide* ich dafür!"{#deionarra_s47_}'
+    nr '"Du kommst zu mir im Tod und sagst mir, daß du meine Hilfe brauchst, um mich *wieder* verlassen zu können!?" Ihr Gesicht ist vor Zorn zu einer Maske erstarrt. "Ich bin für dich *gestorben*, mein Liebster. Sogar jetzt noch *leide* ich dafür!"{#deionarra_s47_1}'
 
     menu:
         '"Deionarra, bitte… Ich brauche deine Hilfe. Wirst du mich in dieser Stunde abweisen, wo ich dich so sehr brauche?"{#deionarra_s47_r6149}':
@@ -1013,7 +1013,7 @@ label deionarra_s47: # from 43.0
 
 # s48 # say6136
 label deionarra_s48: # from 33.5 39.0 39.1
-    nr 'Deionarra schließt ihre Augen und entschwindet mit einem ätherischen Säuseln.{#deionarra_s48_}'
+    nr 'Deionarra schließt ihre Augen und entschwindet mit einem ätherischen Säuseln.{#deionarra_s48_1}'
 
     menu:
         'Verschwinde.{#deionarra_s48_r6154}' if deionarraLogic.r6154_condition():
@@ -1034,7 +1034,7 @@ label deionarra_s48: # from 33.5 39.0 39.1
 
 # s49 # say63356
 label deionarra_s49: # - # IF WEIGHT #3 ~  Global("Deionarra","GLOBAL",0) Global("Current_Area","GLOBAL",1203)
-    nr 'Du siehst eine bestechend schöne, geisterhafte Form vor dir. Sie hat langes, fließendes Haar, und ihr Gewand scheint von einer ätherischen Brise bewegt zu werden. Ihre Augen liegen auf deinen, und du verspürst ein seltsames, unzusammenhängendes Gefühl, als würdest du in mehrere Augenpaare gleichzeitig sehen.{#deionarra_s49_}'
+    nr 'Du siehst eine bestechend schöne, geisterhafte Form vor dir. Sie hat langes, fließendes Haar, und ihr Gewand scheint von einer ätherischen Brise bewegt zu werden. Ihre Augen liegen auf deinen, und du verspürst ein seltsames, unzusammenhängendes Gefühl, als würdest du in mehrere Augenpaare gleichzeitig sehen.{#deionarra_s49_1}'
 
     menu:
         '"Bist du Deionarra…?"{#deionarra_s49_r63357}':
@@ -1044,7 +1044,7 @@ label deionarra_s49: # - # IF WEIGHT #3 ~  Global("Deionarra","GLOBAL",0) Global
 
 # s50 # say63358
 label deionarra_s50: # - # IF WEIGHT #4 ~  GlobalGT("Deionarra","GLOBAL",0) Global("Current_Area","GLOBAL",1203)
-    nr 'Vor dir steht die geisterhafte Form Deionarras. Ihr gespenstisches Gewand scheint von einer ätherischen Brise bewegt zu werden. Ihre Augen heften sich auf deine, und du spürst ein seltsames, unzusammenhängendes Gefühl, als würdest du in mehrere Augenpaare auf einmal blicken.{#deionarra_s50_}'
+    nr 'Vor dir steht die geisterhafte Form Deionarras. Ihr gespenstisches Gewand scheint von einer ätherischen Brise bewegt zu werden. Ihre Augen heften sich auf deine, und du spürst ein seltsames, unzusammenhängendes Gefühl, als würdest du in mehrere Augenpaare auf einmal blicken.{#deionarra_s50_1}'
 
     menu:
         '"Deionarra…?"{#deionarra_s50_r63359}':
@@ -1054,7 +1054,7 @@ label deionarra_s50: # - # IF WEIGHT #4 ~  GlobalGT("Deionarra","GLOBAL",0) Glob
 
 # s51 # say63360
 label deionarra_s51: # from 49.0 50.0
-    nr '"Mein Liebster, endlich habe ich dich *gefunden.* Ich habe dich gesucht, nachdem ihr durch den Kristall getrennt wurdet - diese Festung erstreckt sich über Hunderte von Meilen, und ich fürchtete schon, du seist mir verloren." Ihre gespenstischen Augen betrachten dich, suchen deinen Körper nach frischen Wunden ab. "Geht es dir gut?"{#deionarra_s51_}'
+    nr '"Mein Liebster, endlich habe ich dich *gefunden.* Ich habe dich gesucht, nachdem ihr durch den Kristall getrennt wurdet - diese Festung erstreckt sich über Hunderte von Meilen, und ich fürchtete schon, du seist mir verloren." Ihre gespenstischen Augen betrachten dich, suchen deinen Körper nach frischen Wunden ab. "Geht es dir gut?"{#deionarra_s51_1}'
 
     menu:
         '"Ich glaube ja - der Kristall hat mich geteilt, aber jetzt bin ich wieder eins. Aber jetzt sitze ich hier fest."{#deionarra_s51_r63362}':
@@ -1064,14 +1064,14 @@ label deionarra_s51: # from 49.0 50.0
 
 # s52 # say63363
 label deionarra_s52: # from 51.0
-    nr '"Ich habe den Verdacht, daß es das wirkliche Ziel des Kristalls war, dich hier einzusperren. Aber für mich stellt das kein Hindernis dar." Sie schließt die Augen. "Meine Augen sehen vieles, und die Hallen der Festung sind mir wohlbekannt."{#deionarra_s52_}'
+    nr '"Ich habe den Verdacht, daß es das wirkliche Ziel des Kristalls war, dich hier einzusperren. Aber für mich stellt das kein Hindernis dar." Sie schließt die Augen. "Meine Augen sehen vieles, und die Hallen der Festung sind mir wohlbekannt."{#deionarra_s52_1}'
 
     jump deionarra_s53
 
 
 # s53 # say63364
 label deionarra_s53: # from 52.0 58.0 59.0
-    nr '"Wenn du hier gefangen bist, Liebster, dann werde ich dafür sorgen, daß du befreit wirst. Wohin möchtest du gehen?"{#deionarra_s53_}'
+    nr '"Wenn du hier gefangen bist, Liebster, dann werde ich dafür sorgen, daß du befreit wirst. Wohin möchtest du gehen?"{#deionarra_s53_1}'
 
     menu:
         '"Ich will meinen Widersacher finden und ihn besiegen."{#deionarra_s53_r63365}':
@@ -1097,7 +1097,7 @@ label deionarra_s53: # from 52.0 58.0 59.0
 
 # s54 # say63370
 label deionarra_s54: # from 53.0 53.1 53.2 53.3
-    nr '"Wie du wünschst, mein Liebster." Sie streckt ihre Hand aus. "Berühre meine Hand, und die Mauern der Festung werden keine Mauern mehr für dich sein."{#deionarra_s54_}'
+    nr '"Wie du wünschst, mein Liebster." Sie streckt ihre Hand aus. "Berühre meine Hand, und die Mauern der Festung werden keine Mauern mehr für dich sein."{#deionarra_s54_1}'
 
     menu:
         'Berühre ihre Hand…{#deionarra_s54_r63371}' if deionarraLogic.r63371_condition():
@@ -1113,7 +1113,7 @@ label deionarra_s54: # from 53.0 53.1 53.2 53.3
 
 # s55 # say63372
 label deionarra_s55: # from 53.4
-    nr '"Wovon sprichst du?"{#deionarra_s55_}'
+    nr '"Wovon sprichst du?"{#deionarra_s55_1}'
 
     menu:
         'Wahrheit: "Als ich dich in die Festung brachte, da wollte ich, daß du hier stirbst. Ich brauchte jemanden, der zurückbleibt, damit er als Bindeglied zu diesem Ort fungieren würde. Ich wußte, daß du mich so liebtest, daß deine Liebe den Tod hinausschieben würde, und es dir erlauben würde, ein Geist zu werden. Und deshalb mußt du nun leiden."{#deionarra_s55_r63373}':
@@ -1129,7 +1129,7 @@ label deionarra_s55: # from 53.4
 
 # s56 # say63375
 label deionarra_s56: # from 55.0
-    nr 'Deionarras Gesicht ist eine Maske, während du die Worte aussprichst.{#deionarra_s56_}'
+    nr 'Deionarras Gesicht ist eine Maske, während du die Worte aussprichst.{#deionarra_s56_1}'
 
     menu:
         'Lüge: "Es tut mir leid, Deionarra."{#deionarra_s56_r63376}':
@@ -1149,7 +1149,7 @@ label deionarra_s56: # from 55.0
 
 # s57 # say63379
 label deionarra_s57: # from 56.0 56.1 56.2
-    nr '"*Liebst* du mich? Wenn du ja sagst, dann bedeutet alles, was passiert ist, nichts."{#deionarra_s57_}'
+    nr '"*Liebst* du mich? Wenn du ja sagst, dann bedeutet alles, was passiert ist, nichts."{#deionarra_s57_1}'
 
     menu:
         'Lüge: "Natürlich liebe ich dich. Selbst der Tod kann das Band zwischen uns nicht zerschneiden."{#deionarra_s57_r63380}':
@@ -1170,7 +1170,7 @@ label deionarra_s57: # from 56.0 56.1 56.2
 
 # s58 # say63383
 label deionarra_s58: # from 55.1 57.0 57.1
-    nr '"Dann werde ich dir helfen, Liebster. Sag mir, wie ich dir helfen kann, und ich werde es tun."{#deionarra_s58_}'
+    nr '"Dann werde ich dir helfen, Liebster. Sag mir, wie ich dir helfen kann, und ich werde es tun."{#deionarra_s58_1}'
 
     menu:
         '"Ich bin hier gefangen. Kannst du mir helfen, hier rauszukommen?"{#deionarra_s58_r63384}':
@@ -1181,7 +1181,7 @@ label deionarra_s58: # from 55.1 57.0 57.1
 
 # s59 # say63385
 label deionarra_s59: # from 57.2
-    nr '"Dann… ist das das Ende für uns, mein Liebster. Wegen dir bin ich hiergeblieben - aus keinem anderen Grund. Ich werde dir ein letztes Mal helfen, und dann werde ich über die Ewige Grenze reisen, wie es für mich bestimmt war."{#deionarra_s59_}'
+    nr '"Dann… ist das das Ende für uns, mein Liebster. Wegen dir bin ich hiergeblieben - aus keinem anderen Grund. Ich werde dir ein letztes Mal helfen, und dann werde ich über die Ewige Grenze reisen, wie es für mich bestimmt war."{#deionarra_s59_1}'
 
     menu:
         '"Dann werde ich dich um diesen letzten Gefallen bitten und dich dann in Frieden lassen: Ich bin hier gefangen. Kannst du mir helfen?{#deionarra_s59_r63386}':
@@ -1191,7 +1191,7 @@ label deionarra_s59: # from 57.2
 
 # s60 # say63387
 label deionarra_s60: # - # IF WEIGHT #6 /* Triggers after states #: 62 even though they appear after this state */ ~  Global("Deionarra","GLOBAL",0) Global("Current_Area","GLOBAL",1200) Global("1200_Cut_Scene_2","GLOBAL",0)
-    nr 'Du erblickst eine umwerfend schöne Gestalt. Sie hat langes, fließendes Haar, und ihr Gewand scheint von einer ätherischen Brise bewegt zu werden. Sie steht am Rande des steinernen Wegs und starrt in die Leere der Ebene.{#deionarra_s60_}'
+    nr 'Du erblickst eine umwerfend schöne Gestalt. Sie hat langes, fließendes Haar, und ihr Gewand scheint von einer ätherischen Brise bewegt zu werden. Sie steht am Rande des steinernen Wegs und starrt in die Leere der Ebene.{#deionarra_s60_1}'
 
     menu:
         '"Wer bist du?"{#deionarra_s60_r63388}':
@@ -1206,7 +1206,7 @@ label deionarra_s60: # - # IF WEIGHT #6 /* Triggers after states #: 62 even thou
 
 # s61 # say63390
 label deionarra_s61: # - # IF WEIGHT #7 /* Triggers after states #: 62 even though they appear after this state */ ~  GlobalGT("Deionarra","GLOBAL",0) Global("Current_Area","GLOBAL",1200) Global("1200_Cut_Scene_2","GLOBAL",0)
-    nr 'Vor dir steht de geisterhafte Gestalt Deionarras. Ihr gespenstisches Gewand scheint von einer ätherischen Brise bewegt zu werden. Sie steht am Rande des steinernen Weges und starrt in die Leere der Ebene.{#deionarra_s61_}'
+    nr 'Vor dir steht de geisterhafte Gestalt Deionarras. Ihr gespenstisches Gewand scheint von einer ätherischen Brise bewegt zu werden. Sie steht am Rande des steinernen Weges und starrt in die Leere der Ebene.{#deionarra_s61_1}'
 
     menu:
         '"Deionarra…?"{#deionarra_s61_r63391}':
@@ -1221,7 +1221,7 @@ label deionarra_s61: # - # IF WEIGHT #7 /* Triggers after states #: 62 even thou
 
 # s62 # say63393
 label deionarra_s62: # from 60.0 61.0 # IF WEIGHT #5 ~  Global("Current_Area","GLOBAL",1200) Global("1200_Cut_Scene_2","GLOBAL",1)
-    nr '"Mein Liebster! Du solltest *nicht* hier sein.! Du mußt sofort gehen!"{#deionarra_s62_}'
+    nr '"Mein Liebster! Du solltest *nicht* hier sein.! Du mußt sofort gehen!"{#deionarra_s62_1}'
 
     menu:
         '"Warum? Wer bist du, Geist… Was ist das für ein Ort?"{#deionarra_s62_r63394}' if deionarraLogic.r63394_condition():
@@ -1235,7 +1235,7 @@ label deionarra_s62: # from 60.0 61.0 # IF WEIGHT #5 ~  Global("Current_Area","G
 
 # s63 # say63396
 label deionarra_s63: # from 62.0 62.1
-    nr '"Das ist die Festung der Reue. Es ist der Ort, an dem der Moment meines Todes gefangengehalten wird, und ich darf mich nicht zu weit von seinen Hallen entfernen. Wenn du einen Weg zurück nach Sigil finden kannst, *mußt* du gehen. Wenn du hierbleibst, mein Liebster, wirst du sterben."{#deionarra_s63_}'
+    nr '"Das ist die Festung der Reue. Es ist der Ort, an dem der Moment meines Todes gefangengehalten wird, und ich darf mich nicht zu weit von seinen Hallen entfernen. Wenn du einen Weg zurück nach Sigil finden kannst, *mußt* du gehen. Wenn du hierbleibst, mein Liebster, wirst du sterben."{#deionarra_s63_1}'
 
     menu:
         '"Ich bin unsterblich, Geist. Ich danke dir für deine Warnung, aber der Tod ist mein geringstes Problem."{#deionarra_s63_r63397}' if deionarraLogic.r63397_condition():
@@ -1253,7 +1253,7 @@ label deionarra_s63: # from 62.0 62.1
 
 # s64 # say63400
 label deionarra_s64: # from 63.0 63.1 63.2
-    nr 'Sie schüttelt den Kopf. "Nein, mein Liebster. Es ist etwas an dieser Festung - die Hülle, die sie umgibt, trennt sie vom Rest der Ebenen. Es ist diese Hülle, die eine Schranke zu deiner Unsterblichkeit bildet."{#deionarra_s64_}'
+    nr 'Sie schüttelt den Kopf. "Nein, mein Liebster. Es ist etwas an dieser Festung - die Hülle, die sie umgibt, trennt sie vom Rest der Ebenen. Es ist diese Hülle, die eine Schranke zu deiner Unsterblichkeit bildet."{#deionarra_s64_1}'
 
     menu:
         '"Eine Hülle? Die Säule sagte mir, wenn ich sterbe, stirbt ein Anderer an meiner Stelle. Und wenn ich niemanden finde, der für mich stirbt, -"{#deionarra_s64_r63401}' if deionarraLogic.r63401_condition():
@@ -1267,7 +1267,7 @@ label deionarra_s64: # from 63.0 63.1 63.2
 
 # s65 # say63403
 label deionarra_s65: # from 64.1
-    nr '"Da ich hier weiterhin Wache gehalten habe, habe ich das Wesen deiner Unsterblichkeit begriffen, mein Liebster. Es ist etwas, das nach dem Leben Anderer hungert. Im Moment deines Todes verlangt es ein anderes Leben an deiner Stelle, damit du leben kannst. Die Seele, die an deiner Stelle stirbt, wird hierher gebracht, in die Festung, als ein Schatten. Ich glaube, diese Hülle verhindert, daß deine Unsterblichkeit ein weiteres Opfer findet."{#deionarra_s65_}'
+    nr '"Da ich hier weiterhin Wache gehalten habe, habe ich das Wesen deiner Unsterblichkeit begriffen, mein Liebster. Es ist etwas, das nach dem Leben Anderer hungert. Im Moment deines Todes verlangt es ein anderes Leben an deiner Stelle, damit du leben kannst. Die Seele, die an deiner Stelle stirbt, wird hierher gebracht, in die Festung, als ein Schatten. Ich glaube, diese Hülle verhindert, daß deine Unsterblichkeit ein weiteres Opfer findet."{#deionarra_s65_1}'
 
     menu:
         '"Also… wenn ich sterbe. stirbt ein Anderer an meiner Stelle. Und wenn ich kein lebendes Wesen finde. das für mich stirbt…"{#deionarra_s65_r63404}':
@@ -1277,7 +1277,7 @@ label deionarra_s65: # from 64.1
 
 # s66 # say63405
 label deionarra_s66: # from 64.0 65.0
-    nr '"Wenn du an diesem Ort stirbst, dann ist es das Ende, denn hier gibt es nichts *Lebendes.* Du mußt also vorsichtig sein. Kehre nach Sigil zurück und verlasse diesen verfluchten Ort!"{#deionarra_s66_}'
+    nr '"Wenn du an diesem Ort stirbst, dann ist es das Ende, denn hier gibt es nichts *Lebendes.* Du mußt also vorsichtig sein. Kehre nach Sigil zurück und verlasse diesen verfluchten Ort!"{#deionarra_s66_1}'
 
     menu:
         '"Aber - meine Verbündeten sind hier. Und das heißt, sie befinden sich in dieser Hülle. Was passiert mit ihnen, wenn ich sterbe?"{#deionarra_s66_r63406}' if deionarraLogic.r63406_condition():
@@ -1299,7 +1299,7 @@ label deionarra_s66: # from 64.0 65.0
 
 # s67 # say63410
 label deionarra_s67: # from 66.0 66.1
-    nr '"Mein Liebster, wenn du *irgend etwas* Lebendiges mit hierher gebracht hast, dann ist es in schrecklicher Gefahr. Sowohl die Schatten als auch du bedrohen es. Wenn du hier stirbst, dann wird deine Unsterblichkeit das nächste lebende Wesen in der Festung jagen, und *das* wird dann an deiner Stelle sterben!"{#deionarra_s67_}'
+    nr '"Mein Liebster, wenn du *irgend etwas* Lebendiges mit hierher gebracht hast, dann ist es in schrecklicher Gefahr. Sowohl die Schatten als auch du bedrohen es. Wenn du hier stirbst, dann wird deine Unsterblichkeit das nächste lebende Wesen in der Festung jagen, und *das* wird dann an deiner Stelle sterben!"{#deionarra_s67_1}'
 
     menu:
         '"Ich kann nicht zurück gehen. Kannst du mir irgend etwas sagen, das nützlich sein könnte? Was erwartet mich in der Festung?"{#deionarra_s67_r63411}':
@@ -1309,7 +1309,7 @@ label deionarra_s67: # from 66.0 66.1
 
 # s68 # say63412
 label deionarra_s68: # from 66.2 66.3 67.0
-    nr '"Es gibt keine natürliche Dunkelheit in der Festung, mein Liebster, nur die Schatten derer, die an deiner Stelle gestorben sind. Die Energien dieser Ebene ernähren sie, und ihr Haß auf dich ist grenzenlos. Sie werden dir nicht erlauben zu gehen." Sie wirft einen Blick auf die Mauern der Festung. "Geh *nicht* hinein, ich flehe dich an!"{#deionarra_s68_}'
+    nr '"Es gibt keine natürliche Dunkelheit in der Festung, mein Liebster, nur die Schatten derer, die an deiner Stelle gestorben sind. Die Energien dieser Ebene ernähren sie, und ihr Haß auf dich ist grenzenlos. Sie werden dir nicht erlauben zu gehen." Sie wirft einen Blick auf die Mauern der Festung. "Geh *nicht* hinein, ich flehe dich an!"{#deionarra_s68_1}'
 
     menu:
         '"Aber - meine Verbündeten sind da drin. Ich kann sie nicht im Stich lassen. Hast du eine Ahnung, wo sie sein könnten?"{#deionarra_s68_r63413}' if deionarraLogic.r63413_condition():
@@ -1328,7 +1328,7 @@ label deionarra_s68: # from 66.2 66.3 67.0
 
 # s69 # say63416
 label deionarra_s69: # from 68.0 68.1
-    nr '"Wenn du jemanden mitgebracht hast, wurde er von dir getrennt, als du angekommen bist - an diesem Ort werden die Lebenden voneinander getrennt… und dann getötet." Sie sieht verwirrt aus. "Die Festung erstreckt sich über viele Meilen - deine Freunde hier zu finden, wird schwierig sein."{#deionarra_s69_}'
+    nr '"Wenn du jemanden mitgebracht hast, wurde er von dir getrennt, als du angekommen bist - an diesem Ort werden die Lebenden voneinander getrennt… und dann getötet." Sie sieht verwirrt aus. "Die Festung erstreckt sich über viele Meilen - deine Freunde hier zu finden, wird schwierig sein."{#deionarra_s69_1}'
 
     menu:
         '"Ich muß sie finden. Ich habe keine Wahl."{#deionarra_s69_r63417}':
@@ -1339,7 +1339,7 @@ label deionarra_s69: # from 68.0 68.1
 
 # s70 # say63418
 label deionarra_s70: # from 75.0
-    nr '"Dann werde ich über dich wachen, mein Liebster, und dir helfen, wenn ich kann."{#deionarra_s70_}'
+    nr '"Dann werde ich über dich wachen, mein Liebster, und dir helfen, wenn ich kann."{#deionarra_s70_1}'
 
     menu:
         '"Ich habe dir deinen Ring gebracht, Deionarra. Ich habe dein Erbe für mich gefunden."{#deionarra_s70_r63419}' if deionarraLogic.r63419_condition():
@@ -1358,7 +1358,7 @@ label deionarra_s70: # from 75.0
 
 # s71 # say63422
 label deionarra_s71: # from 70.0
-    nr '"Der Ring hat noch einen Teil von mir in sich, mein Liebster. Wenn du ihn trägst, hast du mein Herz bei dir." Sie schließt die Augen, und du spürst plötzlich eine Wärme durch dich fließen. Deionarra öffnet die Augen und lächelt. "Ich wußte, daß du zu mir zurückkehren würdest, während du ihn trägst. Trage ihn nun mit meinem Segen, und halte ihn eng an deinem Herzen. Durch ihn werde ich dich verteidigen."{#deionarra_s71_}'
+    nr '"Der Ring hat noch einen Teil von mir in sich, mein Liebster. Wenn du ihn trägst, hast du mein Herz bei dir." Sie schließt die Augen, und du spürst plötzlich eine Wärme durch dich fließen. Deionarra öffnet die Augen und lächelt. "Ich wußte, daß du zu mir zurückkehren würdest, während du ihn trägst. Trage ihn nun mit meinem Segen, und halte ihn eng an deinem Herzen. Durch ihn werde ich dich verteidigen."{#deionarra_s71_1}'
 
     menu:
         '"Ich bin dir dankbar, Deionarra. Jetzt muß ich aber gehen."{#deionarra_s71_r63423}' if deionarraLogic.r63423_condition():
@@ -1368,14 +1368,14 @@ label deionarra_s71: # from 70.0
 
 # s72 # say66912
 label deionarra_s72: # from 27.1
-    nr '"Du… Ich… kann nicht…" Ihr Gesicht erstarrt plötzlich, und sie spricht langsam und bedacht, als ob ihre Stimme ihr Angst einflößt. "Die Wahrheit ist die: Du bist jemand, der viele Tode stirbt. Diese Tode haben das Wissen von allen sterblichen Dingen vermittelt, und in deinen Händen liegt der Funke von Leben… und Tod. Diejenigen, die in deiner Nähe sterben, tragen eine Spur ihrer selbst in sich, die du hervorbringen kannst…"{#deionarra_s72_}'
+    nr '"Du… Ich… kann nicht…" Ihr Gesicht erstarrt plötzlich, und sie spricht langsam und bedacht, als ob ihre Stimme ihr Angst einflößt. "Die Wahrheit ist die: Du bist jemand, der viele Tode stirbt. Diese Tode haben das Wissen von allen sterblichen Dingen vermittelt, und in deinen Händen liegt der Funke von Leben… und Tod. Diejenigen, die in deiner Nähe sterben, tragen eine Spur ihrer selbst in sich, die du hervorbringen kannst…"{#deionarra_s72_1}'
 
     jump deionarra_s73
 
 
 # s73 # say66913
 label deionarra_s73: # from 72.0
-    nr 'Als Deionarra diese Worte spricht, beschleicht dich ein komisches Gefühl… Plötzlich fühlst du dich genötigt, deine Hand anzusehen. Als du sie hochhebst und *betrachtest*, kannst du SEHEN, wie das Blut träge durch deinen Arm fließt, in deine Muskeln strömt und als Folge deinen Knochen Kraft verleiht…{#deionarra_s73_}'
+    nr 'Als Deionarra diese Worte spricht, beschleicht dich ein komisches Gefühl… Plötzlich fühlst du dich genötigt, deine Hand anzusehen. Als du sie hochhebst und *betrachtest*, kannst du SEHEN, wie das Blut träge durch deinen Arm fließt, in deine Muskeln strömt und als Folge deinen Knochen Kraft verleiht…{#deionarra_s73_1}'
 
     menu:
         '"W…"{#deionarra_s73_r66914}':
@@ -1386,7 +1386,7 @@ label deionarra_s73: # from 72.0
 
 # s74 # say66915
 label deionarra_s74: # from 73.0
-    nr 'Und du weißt, daß Deionarra *recht* hat. Du erinnerst dich plötzlich daran, wie du auch den kleinsten Funken von Leben einem Körper entlocken und hervorbringen kannst… Dieser Gedanke erschreckt und fasziniert dich zugleich.  ^NHINWEIS: Du hast dich daran erinnert, wie du andere von den Toten erwecken kannst. Um auf diese Fähigkeit zuzugreifen, wählst du die Schaltfläche „Besondere Fähigkeiten“ im Kontextmenü. Du kannst dieses Attribut nur auf Gruppenmitglieder anwenden, die in deinem Beisein gestorben sind - Es funktioniert nicht bei denen, die nicht mit dir zusammen sind, und es funktioniert *nicht* bei Gruppenmitgliedern, die du aus der Gruppe ausschließt, wenn sie tot sind.^-{#deionarra_s74_}'
+    nr 'Und du weißt, daß Deionarra *recht* hat. Du erinnerst dich plötzlich daran, wie du auch den kleinsten Funken von Leben einem Körper entlocken und hervorbringen kannst… Dieser Gedanke erschreckt und fasziniert dich zugleich.  ^NHINWEIS: Du hast dich daran erinnert, wie du andere von den Toten erwecken kannst. Um auf diese Fähigkeit zuzugreifen, wählst du die Schaltfläche „Besondere Fähigkeiten“ im Kontextmenü. Du kannst dieses Attribut nur auf Gruppenmitglieder anwenden, die in deinem Beisein gestorben sind - Es funktioniert nicht bei denen, die nicht mit dir zusammen sind, und es funktioniert *nicht* bei Gruppenmitgliedern, die du aus der Gruppe ausschließt, wenn sie tot sind.^-{#deionarra_s74_1}'
 
     menu:
         '"Ich,… ich… ich hätte da noch andere Fragen…"{#deionarra_s74_r66916}':
@@ -1396,6 +1396,6 @@ label deionarra_s74: # from 73.0
 
 # s75 # say68114
 label deionarra_s75: # from 68.2 69.0
-    nr '"Also gut, mein Liebster… Wenn du weiterkommen willst, mußt du folgendes wissen: Hinter dem Eingang zur Festung ist eine große Vorkammer mit zahllosen Schatten. Du mußt dich schnell bewegen und darfst sie dich nicht umzingeln lassen, oder du wirst garantiert niedergemetzelt!"{#deionarra_s75_}'
+    nr '"Also gut, mein Liebster… Wenn du weiterkommen willst, mußt du folgendes wissen: Hinter dem Eingang zur Festung ist eine große Vorkammer mit zahllosen Schatten. Du mußt dich schnell bewegen und darfst sie dich nicht umzingeln lassen, oder du wirst garantiert niedergemetzelt!"{#deionarra_s75_1}'
 
     jump deionarra_s70

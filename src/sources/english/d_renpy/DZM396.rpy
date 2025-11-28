@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say34931
 label zm396_s0: # - # IF ~  HasItem("Bandage","ZM396")
-    nr 'This corpse is shuffling from slab to slab, bandaging the corpses lying there. The number "396" is carved into his left temple, and his lips are stitched closed. You notice the corpse is carrying a roll of bandages in its hand… the bandages look usable.{#zm396_s0_}'
+    nr 'This corpse is shuffling from slab to slab, bandaging the corpses lying there. The number "396" is carved into his left temple, and his lips are stitched closed. You notice the corpse is carrying a roll of bandages in its hand… the bandages look usable.{#zm396_s0_1}'
 
     menu:
         '"Mind if I borrow those bandages?"{#zm396_s0_r34932}' if zm396Logic.r34932_condition():
@@ -47,7 +47,7 @@ label zm396_s0: # - # IF ~  HasItem("Bandage","ZM396")
 
 # s1 # say34933
 label zm396_s1: # from 0.0 0.1 0.3 4.0 4.1 4.2
-    nr 'The corpse continues to stare at you.{#zm396_s1_}'
+    nr 'The corpse continues to stare at you.{#zm396_s1_1}'
 
     menu:
         'Try and take the bandages from the zombie.{#zm396_s1_r34934}' if zm396Logic.r34934_condition():
@@ -62,7 +62,7 @@ label zm396_s1: # from 0.0 0.1 0.3 4.0 4.1 4.2
 
 # s2 # say34938
 label zm396_s2: # from 0.4 4.3
-    nr 'The corpse does not stir. It looks like it is too far gone to answer any of your questions.{#zm396_s2_}'
+    nr 'The corpse does not stir. It looks like it is too far gone to answer any of your questions.{#zm396_s2_1}'
 
     menu:
         'Leave the corpse in peace.{#zm396_s2_r34939}':
@@ -72,7 +72,7 @@ label zm396_s2: # from 0.4 4.3
 
 # s3 # say45108
 label zm396_s3: # from 0.2 1.0
-    nr 'You snake your hand out and take the roll of bandages from the corpse„s hand. The corpse doesn“t even seem to notice; it continues going through the motions of bandaging the bodies.{#zm396_s3_}'
+    nr 'You snake your hand out and take the roll of bandages from the corpse„s hand. The corpse doesn“t even seem to notice; it continues going through the motions of bandaging the bodies.{#zm396_s3_1}'
 
     menu:
         'Examine the corpse again.{#zm396_s3_r45109}':
@@ -86,7 +86,7 @@ label zm396_s3: # from 0.2 1.0
 
 # s4 # say45111
 label zm396_s4: # from 3.0 # IF ~  !HasItem("Bandage","ZM396")
-    nr 'This corpse is shuffling from slab to slab, bandaging the corpses lying there. It is still carrying on about its duties, even without bandages. The number "396" is carved into his left temple, and his lips are stitched closed.{#zm396_s4_}'
+    nr 'This corpse is shuffling from slab to slab, bandaging the corpses lying there. It is still carrying on about its duties, even without bandages. The number "396" is carved into his left temple, and his lips are stitched closed.{#zm396_s4_1}'
 
     menu:
         '"Sorry about taking those bandages from you. It„s just that I need them more than the bodies here."{#zm396_s4_r45112}' if zm396Logic.r45112_condition():

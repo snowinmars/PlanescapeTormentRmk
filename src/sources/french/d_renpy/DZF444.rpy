@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say35210
 label zf444_s0: # - # IF ~  True()
-    nr 'Ce cadavre de femme est dans un horrible état. Ce qui ressemble à des centaines de minuscules morsures - de rats, peut-être - grêle le cuir de la peau embaumée du corps. À voir les plis de la chair autour des blessures, il est probable qu„elles ont été infligées avant la préparation du cadavre. Les lèvres sont cousues ensemble et le numéro “444„ est inscrit sur la visage à l“encre bleu foncé.{#zf444_s0_}'
+    nr 'Ce cadavre de femme est dans un horrible état. Ce qui ressemble à des centaines de minuscules morsures - de rats, peut-être - grêle le cuir de la peau embaumée du corps. À voir les plis de la chair autour des blessures, il est probable qu„elles ont été infligées avant la préparation du cadavre. Les lèvres sont cousues ensemble et le numéro “444„ est inscrit sur la visage à l“encre bleu foncé.{#zf444_s0_1}'
 
     menu:
         '"Alors… Tu fais quelque chose plus tard ?"{#zf444_s0_r35211}' if zf444Logic.r35211_condition():
@@ -58,7 +58,7 @@ label zf444_s0: # - # IF ~  True()
 
 # s1 # say35212
 label zf444_s1: # from 0.0 0.1 0.2
-    nr 'Le cadavre continue à te fixer.{#zf444_s1_}'
+    nr 'Le cadavre continue à te fixer.{#zf444_s1_1}'
 
     menu:
         '"Alors, au revoir."{#zf444_s1_r35213}' if zf444Logic.r35213_condition():
@@ -76,7 +76,7 @@ label zf444_s1: # from 0.0 0.1 0.2
 
 # s2 # say35231
 label zf444_s2: # from 0.3
-    nr 'Ce cadavre ne répond pas. Il semble qu„il soit trop absent pour répondre à tes questions.{#zf444_s2_}'
+    nr 'Ce cadavre ne répond pas. Il semble qu„il soit trop absent pour répondre à tes questions.{#zf444_s2_1}'
 
     menu:
         '"Alors, au revoir."{#zf444_s2_r35232}' if zf444Logic.r35232_condition():
@@ -94,6 +94,6 @@ label zf444_s2: # from 0.3
 
 # s3 # say35241
 label zf444_s3: # - # IF ~  False()
-    nr 'Ce cadavre ne répond pas. Il semble qu„il soit trop absent pour répondre à tes questions.{#zf444_s3_}'
+    nr 'Ce cadavre ne répond pas. Il semble qu„il soit trop absent pour répondre à tes questions.{#zf444_s3_1}'
 
     menu:

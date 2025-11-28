@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say35146
 label zf832_s0: # - # IF ~  True()
-    nr 'Despite this corpse„s dry, leathery skin, it“s clear this was once a beautiful woman of middle years. Whomever prepared the corpse seemed to take pity on her, sewing her bow lips shut with small, neat stitches and tattooing the number "832" upon her forehead in elegant script.{#zf832_s0_}'
+    nr 'Despite this corpse„s dry, leathery skin, it“s clear this was once a beautiful woman of middle years. Whomever prepared the corpse seemed to take pity on her, sewing her bow lips shut with small, neat stitches and tattooing the number "832" upon her forehead in elegant script.{#zf832_s0_1}'
 
     menu:
         '"So… doing anything later?"{#zf832_s0_r35147}' if zf832Logic.r35147_condition():
@@ -58,7 +58,7 @@ label zf832_s0: # - # IF ~  True()
 
 # s1 # say35148
 label zf832_s1: # from 0.0 0.1 0.2
-    nr 'The corpse continues to stare at you.{#zf832_s1_}'
+    nr 'The corpse continues to stare at you.{#zf832_s1_1}'
 
     menu:
         '"Farewell then."{#zf832_s1_r35149}' if zf832Logic.r35149_condition():
@@ -76,7 +76,7 @@ label zf832_s1: # from 0.0 0.1 0.2
 
 # s2 # say35167
 label zf832_s2: # from 0.3
-    nr 'This corpse makes no reply. It looks like it is too far gone to answer any of your questions.{#zf832_s2_}'
+    nr 'This corpse makes no reply. It looks like it is too far gone to answer any of your questions.{#zf832_s2_1}'
 
     menu:
         '"Farewell then."{#zf832_s2_r35168}' if zf832Logic.r35168_condition():
@@ -94,6 +94,6 @@ label zf832_s2: # from 0.3
 
 # s3 # say35177
 label zf832_s3: # - # IF ~  False()
-    nr 'This corpse makes no reply. It looks like it is too far gone to answer any of your questions.{#zf832_s3_}'
+    nr 'This corpse makes no reply. It looks like it is too far gone to answer any of your questions.{#zf832_s3_1}'
 
     menu:

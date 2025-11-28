@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say35274
 label zf891_s0: # - # IF ~  True()
-    nr 'Obzvláště příšerně vypadající ženské tělo postrádá uši, nos a rty. Aby jí mohl sešít čelist, preparátor jí stáhnul kůži kolem úst obzvláště pevně. Řada zkřivených zažloutlých zubů je stále vidět skrze úzkou štěrbinu. Nad obočím má vyryto číslo "891".{#zf891_s0_}'
+    nr 'Obzvláště příšerně vypadající ženské tělo postrádá uši, nos a rty. Aby jí mohl sešít čelist, preparátor jí stáhnul kůži kolem úst obzvláště pevně. Řada zkřivených zažloutlých zubů je stále vidět skrze úzkou štěrbinu. Nad obočím má vyryto číslo "891".{#zf891_s0_1}'
 
     menu:
         '"Takže… cos dělala poslední dobou?"{#zf891_s0_r35275}' if zf891Logic.r35275_condition():
@@ -58,7 +58,7 @@ label zf891_s0: # - # IF ~  True()
 
 # s1 # say35276
 label zf891_s1: # from 0.0 0.1 0.2
-    nr 'Mrtvola na tebe dál zírá.{#zf891_s1_}'
+    nr 'Mrtvola na tebe dál zírá.{#zf891_s1_1}'
 
     menu:
         '"Sbohem tedy."{#zf891_s1_r35277}' if zf891Logic.r35277_condition():
@@ -76,7 +76,7 @@ label zf891_s1: # from 0.0 0.1 0.2
 
 # s2 # say35295
 label zf891_s2: # from 0.3
-    nr 'Mrtvola neodpovídá. Asi už shnila příliš, aby byla schopná odpovídat na otázky.{#zf891_s2_}'
+    nr 'Mrtvola neodpovídá. Asi už shnila příliš, aby byla schopná odpovídat na otázky.{#zf891_s2_1}'
 
     menu:
         '"Sbohem tedy."{#zf891_s2_r35296}' if zf891Logic.r35296_condition():
@@ -94,6 +94,6 @@ label zf891_s2: # from 0.3
 
 # s3 # say35305
 label zf891_s3: # - # IF ~  False()
-    nr 'Mrtvola neodpovídá. Asi už shnila příliš, aby byla schopná odpovídat na otázky.{#zf891_s3_}'
+    nr 'Mrtvola neodpovídá. Asi už shnila příliš, aby byla schopná odpovídat na otázky.{#zf891_s3_1}'
 
     menu:

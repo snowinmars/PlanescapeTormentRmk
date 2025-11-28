@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say35050
 label zf626_s0: # - # IF ~  True()
-    nr 'Levá část ženina obličeje vypadá jako po ráně palicí, maso jí z lebky visí ve zhmožděných, nateklých chumáčích. Do pravé tváře, těsně pod oko, jí někdo vyšil číslo "626".{#zf626_s0_}'
+    nr 'Levá část ženina obličeje vypadá jako po ráně palicí, maso jí z lebky visí ve zhmožděných, nateklých chumáčích. Do pravé tváře, těsně pod oko, jí někdo vyšil číslo "626".{#zf626_s0_1}'
 
     menu:
         '"Uh… máš pěkně škaredou ránu."{#zf626_s0_r35051}' if zf626Logic.r35051_condition():
@@ -58,7 +58,7 @@ label zf626_s0: # - # IF ~  True()
 
 # s1 # say35052
 label zf626_s1: # from 0.0 0.1 0.2
-    nr 'Mrtvola se na tebe dál dívá svým jediným dobrým okem.{#zf626_s1_}'
+    nr 'Mrtvola se na tebe dál dívá svým jediným dobrým okem.{#zf626_s1_1}'
 
     menu:
         '"Sbohem tedy."{#zf626_s1_r35053}' if zf626Logic.r35053_condition():
@@ -76,7 +76,7 @@ label zf626_s1: # from 0.0 0.1 0.2
 
 # s2 # say35071
 label zf626_s2: # from 0.3
-    nr 'Tělo se nehýbe. Asi už shnilo příliš.{#zf626_s2_}'
+    nr 'Tělo se nehýbe. Asi už shnilo příliš.{#zf626_s2_1}'
 
     menu:
         '"Sbohem tedy."{#zf626_s2_r35072}' if zf626Logic.r35072_condition():
@@ -94,6 +94,6 @@ label zf626_s2: # from 0.3
 
 # s3 # say35081
 label zf626_s3: # - # IF ~  False()
-    nr 'Mrtvola neodpovídá. Asi už shnila příliš, aby byla schopná odpovídat na otázky.{#zf626_s3_}'
+    nr 'Mrtvola neodpovídá. Asi už shnila příliš, aby byla schopná odpovídat na otázky.{#zf626_s3_1}'
 
     menu:

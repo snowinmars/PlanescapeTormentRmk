@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say6484
 label zm463_s0: # - # IF ~  True()
-    nr 'Le cadavre dégingandé t„observe d“un air hagard. Le numéro „463“ est gravé sur son front et ses lèvres sont cousues. Une très légère odeur de formol émane de ce corps.{#zm463_s0_}'
+    nr 'Le cadavre dégingandé t„observe d“un air hagard. Le numéro „463“ est gravé sur son front et ses lèvres sont cousues. Une très légère odeur de formol émane de ce corps.{#zm463_s0_1}'
 
     menu:
         '"Alors… t„as vu quelque chose d“intéressant ?"{#zm463_s0_r6485}' if zm463Logic.r6485_condition():
@@ -42,7 +42,7 @@ label zm463_s0: # - # IF ~  True()
 
 # s1 # say6486
 label zm463_s1: # from 0.0 0.1 0.2
-    nr 'Le cadavre continue à te fixer.{#zm463_s1_}'
+    nr 'Le cadavre continue à te fixer.{#zm463_s1_1}'
 
     menu:
         'Laisse le cadavre tranquille.{#zm463_s1_r6493}':
@@ -52,7 +52,7 @@ label zm463_s1: # from 0.0 0.1 0.2
 
 # s2 # say6487
 label zm463_s2: # from 0.3
-    nr 'Le cadavre ne répond pas. Il semble qu„il soit trop absent pour répondre à tes questions.{#zm463_s2_}'
+    nr 'Le cadavre ne répond pas. Il semble qu„il soit trop absent pour répondre à tes questions.{#zm463_s2_1}'
 
     menu:
         'Laisse le cadavre tranquille.{#zm463_s2_r6494}':

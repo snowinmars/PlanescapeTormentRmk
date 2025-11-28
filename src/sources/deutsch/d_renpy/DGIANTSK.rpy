@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say292
 label giantsk_s0: # - # IF ~  True()
-    nr 'Vor dir steht ein riesiges Skelett in einer reich verzierten Bronzerüstung. Die Rüstung ist mit Schrauben am Körper befestigt, und auf dem Brustharnisch sind kunstvolle Symbole eingeritzt. Du fragst dich, woher das Skelett stammt: Du wußtest gar nicht, daß es so große Menschen gibt. Die riesige Klinge in seinen Händen sieht aus, als wöge sie soviel wie ein ganzes Fuhrwerk.{#giantsk_s0_}'
+    nr 'Vor dir steht ein riesiges Skelett in einer reich verzierten Bronzerüstung. Die Rüstung ist mit Schrauben am Körper befestigt, und auf dem Brustharnisch sind kunstvolle Symbole eingeritzt. Du fragst dich, woher das Skelett stammt: Du wußtest gar nicht, daß es so große Menschen gibt. Die riesige Klinge in seinen Händen sieht aus, als wöge sie soviel wie ein ganzes Fuhrwerk.{#giantsk_s0_1}'
 
     menu:
         '"Was dagegen, wenn ich dir die Klinge mal einen Moment abnehme? Du mußt doch wirklich müde sein, dieses Gewicht dauernd zu halten."{#giantsk_s0_r293}':
@@ -63,7 +63,7 @@ label giantsk_s0: # - # IF ~  True()
 
 # s1 # say1166
 label giantsk_s1: # from 0.0 0.1 0.9 # IF ~  False()
-    nr 'Das Skelett sieht als, als wäre es schon zu lange tot, um irgendeine deiner Fragen beantworten zu können. Oder es kann dich nicht hören, weil es seinen Kopf zu hoch oben trägt.{#giantsk_s1_}'
+    nr 'Das Skelett sieht als, als wäre es schon zu lange tot, um irgendeine deiner Fragen beantworten zu können. Oder es kann dich nicht hören, weil es seinen Kopf zu hoch oben trägt.{#giantsk_s1_1}'
 
     menu:
         'Untersuche das riesige Skelett… aber vorsichtig.{#giantsk_s1_r1167}':
@@ -101,7 +101,7 @@ label giantsk_s1: # from 0.0 0.1 0.9 # IF ~  False()
 
 # s2 # say4005
 label giantsk_s2: # from 0.4 0.6 1.2 1.4 3.0 4.1 4.3 5.3 5.5 6.2 6.4 7.3 7.5 8.2 8.4 9.4 9.6
-    nr 'Als du das Skelett berührst ertönt der Klang einer Eisenglocke durch die ganze Leichenhalle… blitzartig erwacht das Skelett und erhebt seine Klinge zum Angriff!{#giantsk_s2_}'
+    nr 'Als du das Skelett berührst ertönt der Klang einer Eisenglocke durch die ganze Leichenhalle… blitzartig erwacht das Skelett und erhebt seine Klinge zum Angriff!{#giantsk_s2_1}'
 
     menu:
         '"Du wirst dich noch danach zurücksehnen, tot zu sein, Knochengestell…"{#giantsk_s2_r4042}':
@@ -112,7 +112,7 @@ label giantsk_s2: # from 0.4 0.6 1.2 1.4 3.0 4.1 4.3 5.3 5.5 6.2 6.4 7.3 7.5 8.2
 
 # s3 # say4006
 label giantsk_s3: # from 0.5 0.7 1.3 1.5 4.2 4.4 5.4 5.6 6.3 6.5 7.4 7.6 8.3 8.5 9.5 9.7
-    nr 'Als du schon drauf und dran bist, hältst du plötzlich inne… und dein Blick fällt auf die Rüstung des Skeletts. Die auf dem Brustharnisch eingravierten Symbole bremsen dich irgendwie. Wenn diese Skelette Wächter sind, dann stört man sie vielleicht besser nicht… sonst wachen sie auf.{#giantsk_s3_}'
+    nr 'Als du schon drauf und dran bist, hältst du plötzlich inne… und dein Blick fällt auf die Rüstung des Skeletts. Die auf dem Brustharnisch eingravierten Symbole bremsen dich irgendwie. Wenn diese Skelette Wächter sind, dann stört man sie vielleicht besser nicht… sonst wachen sie auf.{#giantsk_s3_1}'
 
     menu:
         '"Das Risiko nehme ich gerne auf mich…"{#giantsk_s3_r4043}':
@@ -130,7 +130,7 @@ label giantsk_s3: # from 0.5 0.7 1.3 1.5 4.2 4.4 5.4 5.6 6.3 6.5 7.4 7.6 8.3 8.5
 
 # s4 # say4007
 label giantsk_s4: # from 0.2 1.0 3.1 7.1 15.1 16.3
-    nr 'Die komplexe Bronzerüstung ist mit Eisenbolzen am Brustkorb und an den Schulterblättern des Skeletts befestigt. Bei genauerer Betrachtung des Knochengerüsts unter der Rüstung bemerkst du, daß dieselben Eisenbolzen auch in den Schultern, Ellbogen und Kniegelenken sowie im Becken des Skeletts stecken. Dicke Lederriemen und Seile sind so um die Arme und Beine des Skeletts gewickelt, daß sie den Eindruck von Muskeln und Sehnen erwecken.{#giantsk_s4_}'
+    nr 'Die komplexe Bronzerüstung ist mit Eisenbolzen am Brustkorb und an den Schulterblättern des Skeletts befestigt. Bei genauerer Betrachtung des Knochengerüsts unter der Rüstung bemerkst du, daß dieselben Eisenbolzen auch in den Schultern, Ellbogen und Kniegelenken sowie im Becken des Skeletts stecken. Dicke Lederriemen und Seile sind so um die Arme und Beine des Skeletts gewickelt, daß sie den Eindruck von Muskeln und Sehnen erwecken.{#giantsk_s4_1}'
 
     menu:
         'Untersuche die Rüstung.{#giantsk_s4_r4045}':
@@ -164,7 +164,7 @@ label giantsk_s4: # from 0.2 1.0 3.1 7.1 15.1 16.3
 
 # s5 # say4008
 label giantsk_s5: # from 4.0
-    nr 'Obwohl es sich offensichtlich um eine alte Rüstung handelt, wirkt sie gut gepflegt. Sie strahlt einen matten Glanz ab, und die Symbole auf dem Brustharnisch verändern sich im Licht des Feuers - und zwar immer dann, wenn du sie fixieren willst.{#giantsk_s5_}'
+    nr 'Obwohl es sich offensichtlich um eine alte Rüstung handelt, wirkt sie gut gepflegt. Sie strahlt einen matten Glanz ab, und die Symbole auf dem Brustharnisch verändern sich im Licht des Feuers - und zwar immer dann, wenn du sie fixieren willst.{#giantsk_s5_1}'
 
     menu:
         'Sieh dir die Zeichen genau an.{#giantsk_s5_r4054}' if giantskLogic.r4054_condition():
@@ -206,7 +206,7 @@ label giantsk_s5: # from 4.0
 
 # s6 # say4009
 label giantsk_s6: # from 5.0 5.1
-    nr 'Fast unbewußt entspannt sich dein Blick bei Betrachtung der Symbole. Jetzt verändern sich die Symbole nicht mehr. Du siehst nur noch eine Runenreihe, die quer über den gesamten Brustharnisch verläuft. Irgendwie erinnern dich die ineinandergreifenden Runen an Ketten… und bei diesem Gedanken fällt dir plötzlich ein, daß sie eine Art Abwehrzauber sind.{#giantsk_s6_}'
+    nr 'Fast unbewußt entspannt sich dein Blick bei Betrachtung der Symbole. Jetzt verändern sich die Symbole nicht mehr. Du siehst nur noch eine Runenreihe, die quer über den gesamten Brustharnisch verläuft. Irgendwie erinnern dich die ineinandergreifenden Runen an Ketten… und bei diesem Gedanken fällt dir plötzlich ein, daß sie eine Art Abwehrzauber sind.{#giantsk_s6_1}'
 
     menu:
         'Sieh dir die Runen genau an und versuch, dich an die Zauber zu erinnern.{#giantsk_s6_r4062}' if giantskLogic.r4062_condition():
@@ -244,7 +244,7 @@ label giantsk_s6: # from 5.0 5.1
 
 # s7 # say4010
 label giantsk_s7: # from 5.2 6.1 7.2
-    nr 'Du schaust dir die Runen eine Zeitlang genau an, schaffst es aber nicht, den Zauber zu entziffern. Er sieht ziemlich kompliziert aus und bereitet dir viel Kopfzerbrechen.{#giantsk_s7_}'
+    nr 'Du schaust dir die Runen eine Zeitlang genau an, schaffst es aber nicht, den Zauber zu entziffern. Er sieht ziemlich kompliziert aus und bereitet dir viel Kopfzerbrechen.{#giantsk_s7_1}'
 
     menu:
         'Vergleiche die Runen mit den Runen im Buch der Knochen und Asche.{#giantsk_s7_r64294}' if giantskLogic.r64294_condition():
@@ -286,7 +286,7 @@ label giantsk_s7: # from 5.2 6.1 7.2
 
 # s8 # say4011
 label giantsk_s8: # from 6.0
-    nr 'Du schaust dir das quer über den Brustharnisch verlaufende Runenmuster genau an. Auf der untersten Ebene betrachtet handelt es sich wohl um einen schwächeren Rüstungszauber, doch die schädelförmigen Runen und kugelförmigen Embleme an den Rändern der Rüstung sprechen dafür, daß hier auch verschiedene stärkere Nekromantie- und Schutzzauber im Spiel sind. Bei Berührung wacht das Skelett wahrscheinlich auf… und verteidigt sich.{#giantsk_s8_}'
+    nr 'Du schaust dir das quer über den Brustharnisch verlaufende Runenmuster genau an. Auf der untersten Ebene betrachtet handelt es sich wohl um einen schwächeren Rüstungszauber, doch die schädelförmigen Runen und kugelförmigen Embleme an den Rändern der Rüstung sprechen dafür, daß hier auch verschiedene stärkere Nekromantie- und Schutzzauber im Spiel sind. Bei Berührung wacht das Skelett wahrscheinlich auf… und verteidigt sich.{#giantsk_s8_1}'
 
     menu:
         'Versuch, ob du die Zauber irgendwie auflösen kannst.{#giantsk_s8_r4079}' if giantskLogic.r4079_condition():
@@ -325,7 +325,7 @@ label giantsk_s8: # from 6.0
 
 # s9 # say4012
 label giantsk_s9: # from 0.3 1.1 8.0 8.1
-    nr 'Du vermutest, daß du die Runen auf dem Brustharnisch vernichten mußt, um den Zauber aufzudecken - doch dies ist wahrscheinlich einfacher gesagt als getan… das Muster ist sehr komplex, und bei Vernichtung des falschen Teils wird das Skelett womöglich zum Leben erweckt.{#giantsk_s9_}'
+    nr 'Du vermutest, daß du die Runen auf dem Brustharnisch vernichten mußt, um den Zauber aufzudecken - doch dies ist wahrscheinlich einfacher gesagt als getan… das Muster ist sehr komplex, und bei Vernichtung des falschen Teils wird das Skelett womöglich zum Leben erweckt.{#giantsk_s9_1}'
 
     menu:
         'Vergleiche das Muster mit den Zaubersprüchen im Buch der Knochen und Asche, und versuche festzustellen, wie sie durchbrochen werden können.{#giantsk_s9_r64296}' if giantskLogic.r64296_condition():
@@ -373,7 +373,7 @@ label giantsk_s9: # from 0.3 1.1 8.0 8.1
 
 # s10 # say4013
 label giantsk_s10: # from 9.1 16.0
-    nr 'Als du anfängst, die Runen auf dem Brustharnisch zu bearbeiten, ertönt der Klang einer Eisenglocke durch die ganze Leichenhalle… blitzartig wacht das Skelett auf und erhebt seine Klinge zum Angriff!{#giantsk_s10_}'
+    nr 'Als du anfängst, die Runen auf dem Brustharnisch zu bearbeiten, ertönt der Klang einer Eisenglocke durch die ganze Leichenhalle… blitzartig wacht das Skelett auf und erhebt seine Klinge zum Angriff!{#giantsk_s10_1}'
 
     menu:
         '"Du wirst dich noch danach zurücksehnen, tot zu sein, Knochengestell…"{#giantsk_s10_r4095}':
@@ -384,7 +384,7 @@ label giantsk_s10: # from 9.1 16.0
 
 # s11 # say4014
 label giantsk_s11: # from 9.2 16.1
-    nr 'Die Arbeit ist zunächst schwierig und nervenaufreibend, aber mit der Zeit schaffst du es, dich konzentrieren, so daß die Runen sich unter deinen Händen auflösen. Innerhalb weniger Minuten befreist du das Skelett von jeglichen Zaubern, die es zusammengehalten haben. Es bricht zusammen und fällt klappernd und mit einem heftigen Schlag zu Boden!{#giantsk_s11_}'
+    nr 'Die Arbeit ist zunächst schwierig und nervenaufreibend, aber mit der Zeit schaffst du es, dich konzentrieren, so daß die Runen sich unter deinen Händen auflösen. Innerhalb weniger Minuten befreist du das Skelett von jeglichen Zaubern, die es zusammengehalten haben. Es bricht zusammen und fällt klappernd und mit einem heftigen Schlag zu Boden!{#giantsk_s11_1}'
 
     menu:
         '"Verfluchter Haufen Knochen…!"{#giantsk_s11_r4096}':
@@ -395,7 +395,7 @@ label giantsk_s11: # from 9.2 16.1
 
 # s12 # say4015
 label giantsk_s12: # from 11.0
-    nr 'Du wartest kurz, doch niemand reagiert auf das Geräusch. Rasch durchwühlst du die am Boden liegenden Skeletteile. Die meisten sind zu schwer oder zu alt, als daß man noch irgend etwas damit anfangen könnte, doch dann entdeckst du ein Stück des Brustharnisches, auf dem noch mehr als die Hälfte einer Zauberformel zu sehen ist. Du hast das Gefühl, dies könnte noch sehr nützlich sein.{#giantsk_s12_}'
+    nr 'Du wartest kurz, doch niemand reagiert auf das Geräusch. Rasch durchwühlst du die am Boden liegenden Skeletteile. Die meisten sind zu schwer oder zu alt, als daß man noch irgend etwas damit anfangen könnte, doch dann entdeckst du ein Stück des Brustharnisches, auf dem noch mehr als die Hälfte einer Zauberformel zu sehen ist. Du hast das Gefühl, dies könnte noch sehr nützlich sein.{#giantsk_s12_1}'
 
     menu:
         '"Dann nehm„ ich“s einfach…"{#giantsk_s12_r4097}':
@@ -406,7 +406,7 @@ label giantsk_s12: # from 11.0
 
 # s13 # say4016
 label giantsk_s13: # from 9.3 16.2
-    nr 'Diesmal ist es einfacher, den Zauber zu bannen - die Runen lösen sich unter deinen Händen rasch auf. Innerhalb weniger Minuten hast du das Skelett frei von jeglichen Zaubern befreit, die es zusammengehalten haben. Weil du weißt, was als nächstes droht, fängst zu das Skelett auf, bevor es zu Boden fällt, und mit einem Ächzen legst du es sachte ab.{#giantsk_s13_}'
+    nr 'Diesmal ist es einfacher, den Zauber zu bannen - die Runen lösen sich unter deinen Händen rasch auf. Innerhalb weniger Minuten hast du das Skelett frei von jeglichen Zaubern befreit, die es zusammengehalten haben. Weil du weißt, was als nächstes droht, fängst zu das Skelett auf, bevor es zu Boden fällt, und mit einem Ächzen legst du es sachte ab.{#giantsk_s13_1}'
 
     menu:
         '"Mal sehen, was wir hier haben…"{#giantsk_s13_r4098}':
@@ -417,7 +417,7 @@ label giantsk_s13: # from 9.3 16.2
 
 # s14 # say4017
 label giantsk_s14: # from 13.0
-    nr 'Rasch durchwühlst du die Reste des Skeletts und nimmst wieder ein Stück des Brustharnisches ab. Auch darauf ist ein Teil eines gebannten Zaubers zu sehen, der dir sehr nützlich sein könnte.{#giantsk_s14_}'
+    nr 'Rasch durchwühlst du die Reste des Skeletts und nimmst wieder ein Stück des Brustharnisches ab. Auch darauf ist ein Teil eines gebannten Zaubers zu sehen, der dir sehr nützlich sein könnte.{#giantsk_s14_1}'
 
     menu:
         '"Dann nehm„ ich“s einfach…"{#giantsk_s14_r4099}' if giantskLogic.r4099_condition():
@@ -438,7 +438,7 @@ label giantsk_s14: # from 13.0
 
 # s15 # say64295
 label giantsk_s15: # from 7.0
-    nr 'Du ziehst das Buch zu Rate und vergleichst die Diagramme mit den Zeichen auf der Brustplatte. Soweit du feststellen kannst, handelt es sich bei den Runen um einen Rüstungszauber, aber einige schädelförmige Runen und kreisförmige Zeichen entlang der Kanten der Rüstung lassen darauf schließen, daß auch einige größere nekromantische und Abwehrzauber mit eingeschlossen sind. Wenn du das Skelett berührst, wird es vermutlich aufwachen… und sich verteidigen.{#giantsk_s15_}'
+    nr 'Du ziehst das Buch zu Rate und vergleichst die Diagramme mit den Zeichen auf der Brustplatte. Soweit du feststellen kannst, handelt es sich bei den Runen um einen Rüstungszauber, aber einige schädelförmige Runen und kreisförmige Zeichen entlang der Kanten der Rüstung lassen darauf schließen, daß auch einige größere nekromantische und Abwehrzauber mit eingeschlossen sind. Wenn du das Skelett berührst, wird es vermutlich aufwachen… und sich verteidigen.{#giantsk_s15_1}'
 
     menu:
         'Ziehe das Buch der Knochen und Asche zu Rate, und versuche festzustellen, wie sie durchbrochen werden können.{#giantsk_s15_r64298}':
@@ -452,7 +452,7 @@ label giantsk_s15: # from 7.0
 
 # s16 # say64297
 label giantsk_s16: # from 9.0 15.0
-    nr 'Soweit du das aus dem Buch schließen kannst, scheint der Rüstungszauber sich nur auf die Brustplatte zu beziehen, der nekromantische Zauber ermöglicht es dem Skelett, aufzuerstehen, und der Abwehrzauber verleiht dem Skelett sein beschränktes Bewußtsein seiner Umgebung. Du schätzt, daß das Skelett es als Angriff auslegen würde, wenn du seinen Abwehrzauber  schwächst, es sei denn, du machst es zuvor für deine Gegenwart unempfänglich.{#giantsk_s16_}'
+    nr 'Soweit du das aus dem Buch schließen kannst, scheint der Rüstungszauber sich nur auf die Brustplatte zu beziehen, der nekromantische Zauber ermöglicht es dem Skelett, aufzuerstehen, und der Abwehrzauber verleiht dem Skelett sein beschränktes Bewußtsein seiner Umgebung. Du schätzt, daß das Skelett es als Angriff auslegen würde, wenn du seinen Abwehrzauber  schwächst, es sei denn, du machst es zuvor für deine Gegenwart unempfänglich.{#giantsk_s16_1}'
 
     menu:
         'Zerstöre zunächst die Runen des Rüstungszaubers, dann die des nekromantischen Zaubers und zuletzt die des Abwehrzaubers.{#giantsk_s16_r64300}':

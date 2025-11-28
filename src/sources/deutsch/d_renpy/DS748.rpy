@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say35383
 label s748_s0: # - # IF ~  True()
-    nr 'Dieses Skelett mit der Zahl "748", die ihm über die Augenbrauen gemeißelt wurde, ist nur deshalb seltsam, weil einige seiner Zähne unecht zu sein scheinen, aus einem rötlich-braunen Stein gefertigt. Sie sind aber eindeutig nicht wertvoll, denn sonst hätten diejenigen, die sich um das Skelett kümmern, sie ihm abgenommen.{#s748_s0_}'
+    nr 'Dieses Skelett mit der Zahl "748", die ihm über die Augenbrauen gemeißelt wurde, ist nur deshalb seltsam, weil einige seiner Zähne unecht zu sein scheinen, aus einem rötlich-braunen Stein gefertigt. Sie sind aber eindeutig nicht wertvoll, denn sonst hätten diejenigen, die sich um das Skelett kümmern, sie ihm abgenommen.{#s748_s0_1}'
 
     menu:
         '"Entschuldige, hast du hier vielleicht ein paar Skelette rumlaufen sehen?"{#s748_s0_r35384}' if s748Logic.r35384_condition():
@@ -90,7 +90,7 @@ label s748_s0: # - # IF ~  True()
 
 # s1 # say35385
 label s748_s1: # from 0.0 0.1 0.2 0.3
-    nr 'Das Skelett reagiert nicht.{#s748_s1_}'
+    nr 'Das Skelett reagiert nicht.{#s748_s1_1}'
 
     menu:
         '"War nett, mit dir zu reden, Gerippe. Bleib gesund."{#s748_s1_r35386}' if s748Logic.r35386_condition():
@@ -109,7 +109,7 @@ label s748_s1: # from 0.0 0.1 0.2 0.3
 
 # s2 # say35411
 label s748_s2: # from 0.4
-    nr 'Dieses Skelett antwortet nicht. Es sieht so aus, als ob es schon zu tot ist, um noch auf irgendeine deiner Fragen zu antworten.{#s748_s2_}'
+    nr 'Dieses Skelett antwortet nicht. Es sieht so aus, als ob es schon zu tot ist, um noch auf irgendeine deiner Fragen zu antworten.{#s748_s2_1}'
 
     menu:
         'Laß das Skelett in Ruhe.{#s748_s2_r35412}' if s748Logic.r35412_condition():
@@ -128,7 +128,7 @@ label s748_s2: # from 0.4
 
 # s3 # say35416
 label s748_s3: # from 0.5
-    nr 'Irgendwer hat sich die Mühe gemacht, die Knochen dieses Skeletts mit Lederbändern zu umwickeln. Sie sind so um das Gestell gewickelt, daß sie wie Muskeln und Sehnen aussehen. Die Bänder sind mit Metallbolzen an den Gelenken des Skeletts befestigt. Das Skelett sieht aus, als ob es eine harte Zeit hinter sich hätte: An vielen Stellen sind Teile der Knochen abgesprungen, und die zahlreichen Brüche sind mit Dichtungsmittel und stinkenden Klebstoffen repariert worden.{#s748_s3_}'
+    nr 'Irgendwer hat sich die Mühe gemacht, die Knochen dieses Skeletts mit Lederbändern zu umwickeln. Sie sind so um das Gestell gewickelt, daß sie wie Muskeln und Sehnen aussehen. Die Bänder sind mit Metallbolzen an den Gelenken des Skeletts befestigt. Das Skelett sieht aus, als ob es eine harte Zeit hinter sich hätte: An vielen Stellen sind Teile der Knochen abgesprungen, und die zahlreichen Brüche sind mit Dichtungsmittel und stinkenden Klebstoffen repariert worden.{#s748_s3_1}'
 
     menu:
         'Versuch dem Skelett die Gelenkbolzen herauszunehmen.{#s748_s3_r35417}' if s748Logic.r35417_condition():
@@ -176,7 +176,7 @@ label s748_s3: # from 0.5
 
 # s4 # say35422
 label s748_s4: # from 0.7 0.10 3.1 3.4
-    nr 'Du ziehst an den Eisenbolzen, aber du bist nicht stark genug, sie herauszuziehen. Sie sitzen bombenfest.{#s748_s4_}'
+    nr 'Du ziehst an den Eisenbolzen, aber du bist nicht stark genug, sie herauszuziehen. Sie sitzen bombenfest.{#s748_s4_1}'
 
     menu:
         '"Wenn ich das richtige Werkzeug hätte, würd ich sie vielleicht rauskriegen… hmmmn. Vielleicht komm ich wieder, Knochengestell."{#s748_s4_r35423}' if s748Logic.r35423_condition():
@@ -208,7 +208,7 @@ label s748_s4: # from 0.7 0.10 3.1 3.4
 
 # s5 # say35430
 label s748_s5: # from 0.8 0.11 3.2 3.5
-    nr 'Du ziehst mit aller Kraft an den Eisenbolzen, und nach kurzer Zeit heftigen Ziehens reißt du sie aus den Gelenken. Das Skelett fällt in sich zusammen; einige Knochen zucken noch.{#s748_s5_}'
+    nr 'Du ziehst mit aller Kraft an den Eisenbolzen, und nach kurzer Zeit heftigen Ziehens reißt du sie aus den Gelenken. Das Skelett fällt in sich zusammen; einige Knochen zucken noch.{#s748_s5_1}'
 
     menu:
         '"Tut mir echt leid, Gerippe…"{#s748_s5_r35431}':
@@ -219,7 +219,7 @@ label s748_s5: # from 0.8 0.11 3.2 3.5
 
 # s6 # say35433
 label s748_s6: # from 0.9 0.12 3.3 3.6
-    nr 'Mit Hilfe deines Brecheisens reißt du die Bolzen aus den Gelenken des Skeletts. Das Skelett fällt zusammen; einige Knochen zucken noch.{#s748_s6_}'
+    nr 'Mit Hilfe deines Brecheisens reißt du die Bolzen aus den Gelenken des Skeletts. Das Skelett fällt zusammen; einige Knochen zucken noch.{#s748_s6_1}'
 
     menu:
         '"Tut mir leid, Knochengestell…"{#s748_s6_r35434}':
@@ -230,6 +230,6 @@ label s748_s6: # from 0.9 0.12 3.3 3.6
 
 # s7 # say35459
 label s748_s7: # - # IF ~  False()
-    nr 'Dieses Skelett reagiert nicht. Es scheint schon zu weit hinüber zu sein, um irgendeine deiner Fragen beantworten zu können.{#s748_s7_}'
+    nr 'Dieses Skelett reagiert nicht. Es scheint schon zu weit hinüber zu sein, um irgendeine deiner Fragen beantworten zu können.{#s748_s7_1}'
 
     menu:

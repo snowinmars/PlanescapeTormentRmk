@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say6573
 label zm1041_s0: # - # IF ~  Global("Bei","GLOBAL",0)
-    nr 'Diese wiederbelebte männliche Leiche trägt die Nummer "1041" auf der Stirn. Trotz ihrer fahlen, ausgetrockneten Haut ist es offensichtlich, daß seine Gesichtzüge einmal einen „exotischen“ Einschlag hatten. Die Lippen des Zombies wurden zugenäht - höchstwahrscheinlich um zu verhindern, daß er unentwegt jammert und stöhnt - und er riecht stark nach Formaldehyd .{#zm1041_s0_}'
+    nr 'Diese wiederbelebte männliche Leiche trägt die Nummer "1041" auf der Stirn. Trotz ihrer fahlen, ausgetrockneten Haut ist es offensichtlich, daß seine Gesichtzüge einmal einen „exotischen“ Einschlag hatten. Die Lippen des Zombies wurden zugenäht - höchstwahrscheinlich um zu verhindern, daß er unentwegt jammert und stöhnt - und er riecht stark nach Formaldehyd .{#zm1041_s0_1}'
 
     menu:
         '"Na… gibt„s hier irgendwas Interessantes zu berichten?"{#zm1041_s0_r6576}' if zm1041Logic.r6576_condition():
@@ -46,7 +46,7 @@ label zm1041_s0: # - # IF ~  Global("Bei","GLOBAL",0)
 
 # s1 # say6574
 label zm1041_s1: # from 0.0 0.1 0.2
-    nr 'Die Leiche starrt dich weiter an.{#zm1041_s1_}'
+    nr 'Die Leiche starrt dich weiter an.{#zm1041_s1_1}'
 
     menu:
         'Laß die Leiche in Ruhe.{#zm1041_s1_r6582}':
@@ -56,7 +56,7 @@ label zm1041_s1: # from 0.0 0.1 0.2
 
 # s2 # say6575
 label zm1041_s2: # from 0.3
-    nr 'Die Leiche schwankt einen Moment lang, während der Geist seine frühere Heimstatt besucht. Ihre mandelförmigen Augen verdunkeln sich ein weiteres Mal, und über die blasse Haut legt sich ein leichter, bronzefarbener Schleier. Sie richtet sich auf und wischt den Staub von ihrer Kleidung.  Als er endlich den Rufer wahrnimmt, starrt der Geist dich einen Moment lang neugierig an und verbeugt sich dann leicht.{#zm1041_s2_}'
+    nr 'Die Leiche schwankt einen Moment lang, während der Geist seine frühere Heimstatt besucht. Ihre mandelförmigen Augen verdunkeln sich ein weiteres Mal, und über die blasse Haut legt sich ein leichter, bronzefarbener Schleier. Sie richtet sich auf und wischt den Staub von ihrer Kleidung.  Als er endlich den Rufer wahrnimmt, starrt der Geist dich einen Moment lang neugierig an und verbeugt sich dann leicht.{#zm1041_s2_1}'
 
     menu:
         'Verbeug dich auch.{#zm1041_s2_r6583}':
@@ -77,7 +77,7 @@ label zm1041_s2: # from 0.3
 
 # s3 # say9060
 label zm1041_s3: # from 2.0
-    nr 'Der Geist lächelt einen Moment zufrieden. Er sammelt sich, steht mit einer Hand hinter dem Rücken da und beginnt mit leiser Stimme zu reden:  "Suiang jianne shyr nan bye yih nan; "Dong feng wu lih bay hua tsarn; "Chuen tsarn daw syy sy fang jinn; "Lah Jiuh cherng huei ley shyy gan."  Nachdem er diese Worte gesagt hat, wartet er zufrieden und geduldig auf deine Antwort.{#zm1041_s3_}'
+    nr 'Der Geist lächelt einen Moment zufrieden. Er sammelt sich, steht mit einer Hand hinter dem Rücken da und beginnt mit leiser Stimme zu reden:  "Suiang jianne shyr nan bye yih nan; "Dong feng wu lih bay hua tsarn; "Chuen tsarn daw syy sy fang jinn; "Lah Jiuh cherng huei ley shyy gan."  Nachdem er diese Worte gesagt hat, wartet er zufrieden und geduldig auf deine Antwort.{#zm1041_s3_1}'
 
     menu:
         '"Ich… ähh."{#zm1041_s3_r9098}':
@@ -95,7 +95,7 @@ label zm1041_s3: # from 2.0
 
 # s4 # say9061
 label zm1041_s4: # from 2.1
-    nr 'Du öffnest deinen Mund, um eine Frage zu formulieren, aber bevor du ansetzen kannst, beginnt der Geist mit leiser Stimme zu reden:  "Suiang jianne shyr nan bye yih nan; "Dong feng wu lih bay hua tsarn; "Chuen tsarn daw syy sy fang jinn; "Lah Jiuh cherng huei ley shyy gan."  Nachdem er diese Worte gesagt hat, wartet er zufrieden und geduldig auf deine Antwort.{#zm1041_s4_}'
+    nr 'Du öffnest deinen Mund, um eine Frage zu formulieren, aber bevor du ansetzen kannst, beginnt der Geist mit leiser Stimme zu reden:  "Suiang jianne shyr nan bye yih nan; "Dong feng wu lih bay hua tsarn; "Chuen tsarn daw syy sy fang jinn; "Lah Jiuh cherng huei ley shyy gan."  Nachdem er diese Worte gesagt hat, wartet er zufrieden und geduldig auf deine Antwort.{#zm1041_s4_1}'
 
     menu:
         '"Ich… ähh."{#zm1041_s4_r9101}':
@@ -113,7 +113,7 @@ label zm1041_s4: # from 2.1
 
 # s5 # say9062
 label zm1041_s5: # from 3.0 3.1 4.0 4.1
-    nr 'Der Geist hält einen Moment inne und scheint nachzudenken. Dann setzt er wieder mit starkem Akzent, aber dennoch wohl formuliert, seine Ausführungen fort.  "Ihr müßt mir verzeihen, ehrenwerter Herr. Aber es ist schon eine ganze Weile her, daß ich in Eurer Sprache habe reden müssen. Zweifellos ist mein Geist hierher befohlen worden, um Eure Fragen zu beantworten; was ist es, das Ihr von mir wissen möchtet?"{#zm1041_s5_}'
+    nr 'Der Geist hält einen Moment inne und scheint nachzudenken. Dann setzt er wieder mit starkem Akzent, aber dennoch wohl formuliert, seine Ausführungen fort.  "Ihr müßt mir verzeihen, ehrenwerter Herr. Aber es ist schon eine ganze Weile her, daß ich in Eurer Sprache habe reden müssen. Zweifellos ist mein Geist hierher befohlen worden, um Eure Fragen zu beantworten; was ist es, das Ihr von mir wissen möchtet?"{#zm1041_s5_1}'
 
     menu:
         '"Wer bist du?"{#zm1041_s5_r9104}':
@@ -147,7 +147,7 @@ label zm1041_s5: # from 3.0 3.1 4.0 4.1
 
 # s6 # say9063
 label zm1041_s6: # from 5.0 14.0
-    nr '"Wer ich bin, ist eine schwierige Frage… nicht jedoch, wer ich *war*. Man kannte mich unter dem Namen Zhuang Bei, Lehrer und Leibwächter von Liu Xixi, der Tochter des Zensors Chi„an.{#zm1041_s6_}'
+    nr '"Wer ich bin, ist eine schwierige Frage… nicht jedoch, wer ich *war*. Man kannte mich unter dem Namen Zhuang Bei, Lehrer und Leibwächter von Liu Xixi, der Tochter des Zensors Chi„an.{#zm1041_s6_1}'
 
     menu:
         '"Lehrer *und* Leibwächter?"{#zm1041_s6_r9111}':
@@ -169,7 +169,7 @@ label zm1041_s6: # from 5.0 14.0
 
 # s7 # say9064
 label zm1041_s7: # from 5.1 14.1
-    nr '"Ich kam aus einem Ort namens Shou Lung… einem Ort, den ich einst als Mittelpunkt des Universums betrachtet habe." Diese Vorstellung scheint ihn leicht zu amüsieren. "So viele Orte, so viele Welten. Ich hielt mich für einen wirklich gebildeten Mann, doch wußte ich so wenig, als ich starb…"{#zm1041_s7_}'
+    nr '"Ich kam aus einem Ort namens Shou Lung… einem Ort, den ich einst als Mittelpunkt des Universums betrachtet habe." Diese Vorstellung scheint ihn leicht zu amüsieren. "So viele Orte, so viele Welten. Ich hielt mich für einen wirklich gebildeten Mann, doch wußte ich so wenig, als ich starb…"{#zm1041_s7_1}'
 
     menu:
         '"Und wie kamst du von diesem Ort „Shou Lung“ hierher?"{#zm1041_s7_r9115}':
@@ -187,7 +187,7 @@ label zm1041_s7: # from 5.1 14.1
 
 # s8 # say9065
 label zm1041_s8: # from 5.2 14.2
-    nr '"Ich wurde von einem der Männer ermordet, mit denen zusammen ich in diese Welt gefallen bin. Ich hatte ihn in dieser Stadt schon seit vielen, vielen Wochen gejagt - in dieser Zeit hatte ich übrigens ihre Sprache gelernt - aber er hat mich zuerst aufgespürt. Er war ein bezahlter Mörder und hat mich im Schlaf umgebracht."{#zm1041_s8_}'
+    nr '"Ich wurde von einem der Männer ermordet, mit denen zusammen ich in diese Welt gefallen bin. Ich hatte ihn in dieser Stadt schon seit vielen, vielen Wochen gejagt - in dieser Zeit hatte ich übrigens ihre Sprache gelernt - aber er hat mich zuerst aufgespürt. Er war ein bezahlter Mörder und hat mich im Schlaf umgebracht."{#zm1041_s8_1}'
 
     menu:
         '"In diese Welt gefallen?"{#zm1041_s8_r9118}':
@@ -217,7 +217,7 @@ label zm1041_s8: # from 5.2 14.2
 
 # s9 # say9066
 label zm1041_s9: # from 5.4 14.4
-    nr '"Über dieses Gebäude? Überhaupt nichts; ich hatte davon gehört, wußte, daß meine Leiche hier zu Diensten sein würde, aber das ist schon alles." "Über „Sigil“, diese großartige Stadt, weiß ich fast ebenso wenig. Die Wochen, die ich hier verbrachte, waren ausgefüllt mit der Suche nach den Männern, mit denen zusammen ich in dieser Welt gelandet bin sowie mit dem Erlernen der Sprache. Es schmerzte mich, daß ich für andere Dinge wenig Zeit hatte. Von den zahllosen Wundern eines solchen Ortes hätte ich so vieles lernen können…"{#zm1041_s9_}'
+    nr '"Über dieses Gebäude? Überhaupt nichts; ich hatte davon gehört, wußte, daß meine Leiche hier zu Diensten sein würde, aber das ist schon alles." "Über „Sigil“, diese großartige Stadt, weiß ich fast ebenso wenig. Die Wochen, die ich hier verbrachte, waren ausgefüllt mit der Suche nach den Männern, mit denen zusammen ich in dieser Welt gelandet bin sowie mit dem Erlernen der Sprache. Es schmerzte mich, daß ich für andere Dinge wenig Zeit hatte. Von den zahllosen Wundern eines solchen Ortes hätte ich so vieles lernen können…"{#zm1041_s9_1}'
 
     menu:
         '"Dein Körper sollte nach dem Tode hier dienen? Wie denn das?"{#zm1041_s9_r9124}':
@@ -243,7 +243,7 @@ label zm1041_s9: # from 5.4 14.4
 
 # s10 # say9067
 label zm1041_s10: # from 5.5 14.5
-    nr '"Nein, der Name sagt mir nichts. Es tut mir leid, daß ich Euch in dieser Sache nicht helfen kann."{#zm1041_s10_}'
+    nr '"Nein, der Name sagt mir nichts. Es tut mir leid, daß ich Euch in dieser Sache nicht helfen kann."{#zm1041_s10_1}'
 
     menu:
         '"Versteh schon. Ich hätte da noch ein paar Fragen…"{#zm1041_s10_r9129}':
@@ -257,7 +257,7 @@ label zm1041_s10: # from 5.5 14.5
 
 # s11 # say9068
 label zm1041_s11: # from 5.3 14.3
-    nr 'Der Geist sieht einen Moment lang schmerzerfüllt aus. "Ich… Mein Geist residiert im Reich des ruhmreichen Magistrats Yen-Wang-Yeh: dem Urteilspalast."{#zm1041_s11_}'
+    nr 'Der Geist sieht einen Moment lang schmerzerfüllt aus. "Ich… Mein Geist residiert im Reich des ruhmreichen Magistrats Yen-Wang-Yeh: dem Urteilspalast."{#zm1041_s11_1}'
 
     menu:
         '"Ist etwas nicht in Ordnung? Ist es solch ein schlechter Ort?"{#zm1041_s11_r9131}':
@@ -275,7 +275,7 @@ label zm1041_s11: # from 5.3 14.3
 
 # s12 # say9069
 label zm1041_s12: # from 6.0 16.1
-    nr '"Ja; dort, wo ich herkomme, ist das nichts Ungewöhnliches. Es war meine Pflicht, ständig an Miss Lius Seite zu sein, und zwar nicht nur, um sie vor Gefahren zu schützen, sondern auch, um sie auszubilden. Ich hatte mir sowohl als Lehrer wie auch als Schwertkämpfer einen gewissen Namen gemacht. Ich hätte ihr sicher besser dienen können, wenn ich ein besserer Schwertkämpfer gewesen wäre…"{#zm1041_s12_}'
+    nr '"Ja; dort, wo ich herkomme, ist das nichts Ungewöhnliches. Es war meine Pflicht, ständig an Miss Lius Seite zu sein, und zwar nicht nur, um sie vor Gefahren zu schützen, sondern auch, um sie auszubilden. Ich hatte mir sowohl als Lehrer wie auch als Schwertkämpfer einen gewissen Namen gemacht. Ich hätte ihr sicher besser dienen können, wenn ich ein besserer Schwertkämpfer gewesen wäre…"{#zm1041_s12_1}'
 
     menu:
         '"Ihr besser gedient haben? Hast du sie irgendwie enttäuscht?"{#zm1041_s12_r9134}':
@@ -293,7 +293,7 @@ label zm1041_s12: # from 6.0 16.1
 
 # s13 # say9070
 label zm1041_s13: # from 6.1
-    nr '"Beeindruckend? Ja, vielleicht könnte man es in meinem Fall so ausdrücken. Ich… ich habe Miss Liu und dem Zensor gegenüber meine Pflicht nicht erfüllt."{#zm1041_s13_}'
+    nr '"Beeindruckend? Ja, vielleicht könnte man es in meinem Fall so ausdrücken. Ich… ich habe Miss Liu und dem Zensor gegenüber meine Pflicht nicht erfüllt."{#zm1041_s13_1}'
 
     menu:
         '"Wie das?"{#zm1041_s13_r9137}':
@@ -311,7 +311,7 @@ label zm1041_s13: # from 6.1
 
 # s14 # say9071
 label zm1041_s14: # from 6.2 7.1 8.4 9.3 10.0 11.1 12.1 13.1 15.2 17.1 18.0 19.0 20.1 21.1 22.0 23.1 24.0 25.0 26.0 27.1 28.0 29.0 30.0 31.2 32.1 33.2 34.0 35.2 36.0 37.0 38.1
-    nr 'Der Geist nickt - eine überraschend würdevolle Geste für eine runzelige Leiche. "Bitte, fragt, was immer Ihr wollt."{#zm1041_s14_}'
+    nr 'Der Geist nickt - eine überraschend würdevolle Geste für eine runzelige Leiche. "Bitte, fragt, was immer Ihr wollt."{#zm1041_s14_1}'
 
     menu:
         '"Wer bist du?"{#zm1041_s14_r9140}':
@@ -349,7 +349,7 @@ label zm1041_s14: # from 6.2 7.1 8.4 9.3 10.0 11.1 12.1 13.1 15.2 17.1 18.0 19.0
 
 # s15 # say9072
 label zm1041_s15: # from 11.0
-    nr '"Nun ja, seht…" Der Geist hält einen Augenblick inne, um nachzudenken und reibt die welken Hände der Leiche aneinander. "Als ich ankam, sollte ich nach einer kurzen Wartezeit zu meinem letzten, *wahren* Bestimmungsort geleitet werden. Allerdings kam es, als ich durch den Palast geführt wurde, zu einigen Verzögerungen und ich wurde in einen Nebenraum geführt mit dem Versprechen, daß man sich sofort um mich kümmern würde."{#zm1041_s15_}'
+    nr '"Nun ja, seht…" Der Geist hält einen Augenblick inne, um nachzudenken und reibt die welken Hände der Leiche aneinander. "Als ich ankam, sollte ich nach einer kurzen Wartezeit zu meinem letzten, *wahren* Bestimmungsort geleitet werden. Allerdings kam es, als ich durch den Palast geführt wurde, zu einigen Verzögerungen und ich wurde in einen Nebenraum geführt mit dem Versprechen, daß man sich sofort um mich kümmern würde."{#zm1041_s15_1}'
 
     menu:
         '"Und…?"{#zm1041_s15_r9148}':
@@ -371,7 +371,7 @@ label zm1041_s15: # from 11.0
 
 # s16 # say9073
 label zm1041_s16: # from 7.0 8.0 8.1 9.1 12.0 13.0
-    nr '"Ich will ihnen die ganze Geschichte erzählen. Als Lehrer und Leibwächter von Liu Xixi bin ich natürlich sowohl mit ihrer Ausbildung als auch mit ihrem Schutz beauftragt. Eines Abends standen wir auf einem Balkon oberhalb des Gerichtshofes und ich erklärte ihr die verschiedenen Sternbilder.{#zm1041_s16_}'
+    nr '"Ich will ihnen die ganze Geschichte erzählen. Als Lehrer und Leibwächter von Liu Xixi bin ich natürlich sowohl mit ihrer Ausbildung als auch mit ihrem Schutz beauftragt. Eines Abends standen wir auf einem Balkon oberhalb des Gerichtshofes und ich erklärte ihr die verschiedenen Sternbilder.{#zm1041_s16_1}'
 
     menu:
         '"Bitte, erzähl weiter."{#zm1041_s16_r9152}':
@@ -389,7 +389,7 @@ label zm1041_s16: # from 7.0 8.0 8.1 9.1 12.0 13.0
 
 # s17 # say9074
 label zm1041_s17: # from 8.2 9.0
-    nr '"Ach das. Einmal bin ich nachts von einer jungen Frau auf der Straße angesprochen worden; sie gehörte zu einer Gruppe, die sich die Staubmenschen nannte; es sind dieselben, die auch diesen Komplex beaufsichtigen." "Sie hat mir in Aussicht gestellt, daß meine Leiche für eine geringe Summe nach meinem Ableben.. hier… Verwendung finden könne."{#zm1041_s17_}'
+    nr '"Ach das. Einmal bin ich nachts von einer jungen Frau auf der Straße angesprochen worden; sie gehörte zu einer Gruppe, die sich die Staubmenschen nannte; es sind dieselben, die auch diesen Komplex beaufsichtigen." "Sie hat mir in Aussicht gestellt, daß meine Leiche für eine geringe Summe nach meinem Ableben.. hier… Verwendung finden könne."{#zm1041_s17_1}'
 
     menu:
         '"Und das schien dir nicht irgendwie merkwürdig?"{#zm1041_s17_r9155}':
@@ -407,7 +407,7 @@ label zm1041_s17: # from 8.2 9.0
 
 # s18 # say9075
 label zm1041_s18: # from 8.3 9.2
-    nr '"Linguistik ist in der Tat ein Fach, das mich außerordentlich interessiert. Als ich Lehrer wurde, habe ich festgestellt, daß ich neue Sprachen ganz ohne Mühe erlernen konnte."{#zm1041_s18_}'
+    nr '"Linguistik ist in der Tat ein Fach, das mich außerordentlich interessiert. Als ich Lehrer wurde, habe ich festgestellt, daß ich neue Sprachen ganz ohne Mühe erlernen konnte."{#zm1041_s18_1}'
 
     menu:
         '"Das würde einiges erklären. Nun zu einer anderen Frage…"{#zm1041_s18_r9158}':
@@ -421,7 +421,7 @@ label zm1041_s18: # from 8.3 9.2
 
 # s19 # say9076
 label zm1041_s19: # from 15.0 20.0
-    nr '"Nun ja, seht… es ist nie wieder jemand zu mir gekommen. Ich habe tagelang geduldig gewartet, aber es war umsonst. Schließlich habe ich den Raum verlassen und bin im Palast umhergegangen, in der Hoffnung, daß ich jemanden finden würde, der mich führt…" Er seufzt leise und sein Atem riecht leicht nach Balsamierungsöl. "Hier gibt es 9.001 Räume; kaum hatte ich einen davon passiert, war ich schon in einem anderen. Es sieht so aus, als sei ich vorerst hier gefangen."{#zm1041_s19_}'
+    nr '"Nun ja, seht… es ist nie wieder jemand zu mir gekommen. Ich habe tagelang geduldig gewartet, aber es war umsonst. Schließlich habe ich den Raum verlassen und bin im Palast umhergegangen, in der Hoffnung, daß ich jemanden finden würde, der mich führt…" Er seufzt leise und sein Atem riecht leicht nach Balsamierungsöl. "Hier gibt es 9.001 Räume; kaum hatte ich einen davon passiert, war ich schon in einem anderen. Es sieht so aus, als sei ich vorerst hier gefangen."{#zm1041_s19_1}'
 
     menu:
         '"Ich verstehe. Ich hätte da aber noch eine andere Frage…"{#zm1041_s19_r9160}':
@@ -445,7 +445,7 @@ label zm1041_s19: # from 15.0 20.0
 
 # s20 # say9077
 label zm1041_s20: # from 15.1
-    nr '"Das kann ich nicht sagen. Es ist alles so frustrierend!" Er hält einen Augenblick inne, um sich wieder zu fassen; die steifen Gelenke und Sehnen der Leiche knacken, als sie sich entspannen.{#zm1041_s20_}'
+    nr '"Das kann ich nicht sagen. Es ist alles so frustrierend!" Er hält einen Augenblick inne, um sich wieder zu fassen; die steifen Gelenke und Sehnen der Leiche knacken, als sie sich entspannen.{#zm1041_s20_1}'
 
     menu:
         '"Bitte, erzähl deine Geschichte weiter."{#zm1041_s20_r9164}':
@@ -463,7 +463,7 @@ label zm1041_s20: # from 15.1
 
 # s21 # say9078
 label zm1041_s21: # from 16.0
-    nr '"Natürlich. Als wir dort oben standen, sprangen plötzlich zwei Angreifer vom Dach auf den Balkon, um Miss Liu zu ermorden oder zu entführen. Ich rief nach der Wache und eilte ihr mit gezückter Klinge zu Hilfe. Im darauf folgenden Kampf zerbrach das Balkongeländer und wir vier fielen in das Jade-Portal."{#zm1041_s21_}'
+    nr '"Natürlich. Als wir dort oben standen, sprangen plötzlich zwei Angreifer vom Dach auf den Balkon, um Miss Liu zu ermorden oder zu entführen. Ich rief nach der Wache und eilte ihr mit gezückter Klinge zu Hilfe. Im darauf folgenden Kampf zerbrach das Balkongeländer und wir vier fielen in das Jade-Portal."{#zm1041_s21_1}'
 
     menu:
         '"Das was? Jade-Portal?"{#zm1041_s21_r9167}':
@@ -481,7 +481,7 @@ label zm1041_s21: # from 16.0
 
 # s22 # say9079
 label zm1041_s22: # from 17.0
-    nr '"Vielleicht kommt das einem zunächst etwas… makaber vor. Aber nachdem ich längere Zeit mit ihr gesprochen hatte, merkte ich, daß sie - die Staubmenschen - über den Tod ganz ähnlich dachten wie ich. Mein Körper? Ein Vehikel, mehr nicht. Ich glaube, daß ihr „Wahrer Tod“ jene höhere Daseinsform ist, die ich immer zu erreichen bestrebt war… völlige Loslösung und Befreiung von der materiellen Welt. Sollte mein Körper, nachdem er seine Aufgabe als meine sterbliche Hülle erfüllt hat, einem bescheidenen Zwecke hier dienen, dann soll es mir recht sein." Der Geist lächelt dich höflich an.{#zm1041_s22_}'
+    nr '"Vielleicht kommt das einem zunächst etwas… makaber vor. Aber nachdem ich längere Zeit mit ihr gesprochen hatte, merkte ich, daß sie - die Staubmenschen - über den Tod ganz ähnlich dachten wie ich. Mein Körper? Ein Vehikel, mehr nicht. Ich glaube, daß ihr „Wahrer Tod“ jene höhere Daseinsform ist, die ich immer zu erreichen bestrebt war… völlige Loslösung und Befreiung von der materiellen Welt. Sollte mein Körper, nachdem er seine Aufgabe als meine sterbliche Hülle erfüllt hat, einem bescheidenen Zwecke hier dienen, dann soll es mir recht sein." Der Geist lächelt dich höflich an.{#zm1041_s22_1}'
 
     menu:
         '"Hört sich logisch an. Nun zu einer anderen Frage…"{#zm1041_s22_r9170}':
@@ -495,7 +495,7 @@ label zm1041_s22: # from 17.0
 
 # s23 # say9080
 label zm1041_s23: # from 21.0
-    nr '"Oh! Verzeiht die Annahme meinerseits… das Jade-Portal ist ein rundes Becken, das sich in der Mitte des Hofs befindet. Es ist mit Kacheln aus grünem und weißen Speckstein ausgekleidet und wird Portal genannt, weil sich in seinem schimmerndem Wasser das Bild eines anderen Ortes abzeichnet."{#zm1041_s23_}'
+    nr '"Oh! Verzeiht die Annahme meinerseits… das Jade-Portal ist ein rundes Becken, das sich in der Mitte des Hofs befindet. Es ist mit Kacheln aus grünem und weißen Speckstein ausgekleidet und wird Portal genannt, weil sich in seinem schimmerndem Wasser das Bild eines anderen Ortes abzeichnet."{#zm1041_s23_1}'
 
     menu:
         '"Ich verstehe. Bitte, erzähl deine Geschichte weiter."{#zm1041_s23_r9172}':
@@ -513,7 +513,7 @@ label zm1041_s23: # from 21.0
 
 # s24 # say9081
 label zm1041_s24: # from 19.1
-    nr '"Euer Angebot ist zu freundlich. Allerdings fürchte ich, daß Ihr nichts tun könnt… ich bin sicher, daß ich mich bald auf den Weg machen muß. Trotzdem vielen Dank."{#zm1041_s24_}'
+    nr '"Euer Angebot ist zu freundlich. Allerdings fürchte ich, daß Ihr nichts tun könnt… ich bin sicher, daß ich mich bald auf den Weg machen muß. Trotzdem vielen Dank."{#zm1041_s24_1}'
 
     menu:
         '"Natürlich. Aber sag mal, ich hätte da noch eine andere Frage…"{#zm1041_s24_r9175}':
@@ -527,7 +527,7 @@ label zm1041_s24: # from 19.1
 
 # s25 # say9082
 label zm1041_s25: # from 19.2 33.1 35.1
-    nr 'Der Geist starrt dich kalt an; tief in seinen toten Augen siehst du ein Funkeln. Anscheinend hast du ihn beleidigt .{#zm1041_s25_}'
+    nr 'Der Geist starrt dich kalt an; tief in seinen toten Augen siehst du ein Funkeln. Anscheinend hast du ihn beleidigt .{#zm1041_s25_1}'
 
     menu:
         '"Ich bitte um Entschuldigung. Dürfte ich dann noch etwas anderes fragen?"{#zm1041_s25_r9177}':
@@ -541,7 +541,7 @@ label zm1041_s25: # from 19.2 33.1 35.1
 
 # s26 # say9083
 label zm1041_s26: # from 14.6
-    nr '"Oh, das… äh… das war ein Gedicht. Schwer zu übersetzen. Habt Ihr vielleicht noch eine Frage?" Er lächelt dich gezwungen an.{#zm1041_s26_}'
+    nr '"Oh, das… äh… das war ein Gedicht. Schwer zu übersetzen. Habt Ihr vielleicht noch eine Frage?" Er lächelt dich gezwungen an.{#zm1041_s26_1}'
 
     menu:
         '"Ja ja… hab„ ich."{#zm1041_s26_r9179}':
@@ -559,7 +559,7 @@ label zm1041_s26: # from 14.6
 
 # s27 # say9084
 label zm1041_s27: # from 23.0
-    nr '"Wie ich schon sagte, sind wir in das Jade-Portal gefallen. Ich hätte mir niemals träumen lassen, daß es *tatsächlich* ein Portal im ursprünglichen Sinn des Wortes war! Ich habe mich in einer unbekannten Gasse wiedergefunden, mein Bein war gebrochen. Als ich mich umschaute, sah ich die Mörder davonlaufen, von denen einer Liu Xixi auf der Schulter trug."{#zm1041_s27_}'
+    nr '"Wie ich schon sagte, sind wir in das Jade-Portal gefallen. Ich hätte mir niemals träumen lassen, daß es *tatsächlich* ein Portal im ursprünglichen Sinn des Wortes war! Ich habe mich in einer unbekannten Gasse wiedergefunden, mein Bein war gebrochen. Als ich mich umschaute, sah ich die Mörder davonlaufen, von denen einer Liu Xixi auf der Schulter trug."{#zm1041_s27_1}'
 
     menu:
         '"Wirklich merkwürdig. Bitte erzähl weiter."{#zm1041_s27_r9182}':
@@ -577,7 +577,7 @@ label zm1041_s27: # from 23.0
 
 # s28 # say9085
 label zm1041_s28: # from 26.1
-    nr '"Also gut." Er denkt einen Moment nach und tippt die Spitzen seiner langen, knochigen Finger aneinander. Danach beginnt er wieder, in einem langsamen, stetigen Rhythmus zu reden:  "Es ist so schwierig, einander zu finden wie voneinander zu scheiden. "Der Nordwind ist abgeflaut, hunderte von Blumen welken dahin. "Wenn die Raupen sterben, wird die Seide nie wieder erstehen. "Wenn das Kerzenwachs zu Asche verbrennt, werden alle Tränen versiegen."  Er lächelt dich höflich an.{#zm1041_s28_}'
+    nr '"Also gut." Er denkt einen Moment nach und tippt die Spitzen seiner langen, knochigen Finger aneinander. Danach beginnt er wieder, in einem langsamen, stetigen Rhythmus zu reden:  "Es ist so schwierig, einander zu finden wie voneinander zu scheiden. "Der Nordwind ist abgeflaut, hunderte von Blumen welken dahin. "Wenn die Raupen sterben, wird die Seide nie wieder erstehen. "Wenn das Kerzenwachs zu Asche verbrennt, werden alle Tränen versiegen."  Er lächelt dich höflich an.{#zm1041_s28_1}'
 
     menu:
         '"Ah… Ich hätte noch eine andere Frage."{#zm1041_s28_r9185}':
@@ -599,7 +599,7 @@ label zm1041_s28: # from 26.1
 
 # s29 # say9086
 label zm1041_s29: # from 28.1
-    nr '"Nun, ich muß zu meiner Beschämung zugeben, daß ich versucht habe anzudeuten, daß Ihr besser die Geister der Toten in Ruhe laßt. Ich habe nicht länger das Verlangen, an dieser Welt…" Mit einer ausholenden Bewegung deutet er auf alles um ihn herum. "…teil zu haben."{#zm1041_s29_}'
+    nr '"Nun, ich muß zu meiner Beschämung zugeben, daß ich versucht habe anzudeuten, daß Ihr besser die Geister der Toten in Ruhe laßt. Ich habe nicht länger das Verlangen, an dieser Welt…" Mit einer ausholenden Bewegung deutet er auf alles um ihn herum. "…teil zu haben."{#zm1041_s29_1}'
 
     menu:
         '"Hmm. Ich verstehe. Da war noch was, was ich dich fragen wollte."{#zm1041_s29_r9189}':
@@ -613,7 +613,7 @@ label zm1041_s29: # from 28.1
 
 # s30 # say9087
 label zm1041_s30: # from 28.2
-    nr '"Äh.. nun ja… nein. Ich wollte nicht so direkt sein und eine Konfrontation vermeiden, verstehst du. Es ist nur so, daß ich nicht länger das Verlangen habe, an dieser Welt…" Mit einer ausholenden Bewegung deutet er auf alles um ihn herum. "…teil zu haben."{#zm1041_s30_}'
+    nr '"Äh.. nun ja… nein. Ich wollte nicht so direkt sein und eine Konfrontation vermeiden, verstehst du. Es ist nur so, daß ich nicht länger das Verlangen habe, an dieser Welt…" Mit einer ausholenden Bewegung deutet er auf alles um ihn herum. "…teil zu haben."{#zm1041_s30_1}'
 
     menu:
         '"Hmm. Ich verstehe. Da war noch was, was ich dich fragen wollte…"{#zm1041_s30_r9191}':
@@ -627,7 +627,7 @@ label zm1041_s30: # from 28.2
 
 # s31 # say9088
 label zm1041_s31: # from 27.0
-    nr '"Nun, das ist eigentlich schon alles. Ich bin unter Schmerzen mit dem gebrochenen Bein umhergehumpelt, bis ich jemanden gefunden habe, der es heilen konnte. Dafür hat er mir das bißchen Geld abgenommen, das ich dabei hatte. Von diesem Heiler und anderen habe ich dann die Sprache der Leute hier gelernt; die ganze Zeit aber habe ich diesen Ort nach den Mördern und meiner Schutzbefohlenen abgesucht."{#zm1041_s31_}'
+    nr '"Nun, das ist eigentlich schon alles. Ich bin unter Schmerzen mit dem gebrochenen Bein umhergehumpelt, bis ich jemanden gefunden habe, der es heilen konnte. Dafür hat er mir das bißchen Geld abgenommen, das ich dabei hatte. Von diesem Heiler und anderen habe ich dann die Sprache der Leute hier gelernt; die ganze Zeit aber habe ich diesen Ort nach den Mördern und meiner Schutzbefohlenen abgesucht."{#zm1041_s31_1}'
 
     menu:
         '"Du hast sie demnach nie gefunden?"{#zm1041_s31_r9193}':
@@ -649,7 +649,7 @@ label zm1041_s31: # from 27.0
 
 # s32 # say9089
 label zm1041_s32: # from 31.0 38.0
-    nr '"Einen von ihnen habe ich erwischt, aber er wollte nicht reden. Ich habe ihn exekutiert und seinen Kopf in einem seidenen Sack aufbewahrt, um ihn dem Zensor zeigen zu können, wenn ich ihm seine Tochter zurückbringe." Er legt seine Stirn in Falten und spricht weiter. "Der andere Mörder ist… mir entwischt. Es ist ihm sogar noch mehr gelungen; er hat mich erwischt, bevor ich ihn töten und meine Schutzbefohlene retten konnte. Traurig, aber damit habe ich abgeschlossen."{#zm1041_s32_}'
+    nr '"Einen von ihnen habe ich erwischt, aber er wollte nicht reden. Ich habe ihn exekutiert und seinen Kopf in einem seidenen Sack aufbewahrt, um ihn dem Zensor zeigen zu können, wenn ich ihm seine Tochter zurückbringe." Er legt seine Stirn in Falten und spricht weiter. "Der andere Mörder ist… mir entwischt. Es ist ihm sogar noch mehr gelungen; er hat mich erwischt, bevor ich ihn töten und meine Schutzbefohlene retten konnte. Traurig, aber damit habe ich abgeschlossen."{#zm1041_s32_1}'
 
     menu:
         '"Hättest du gewußt, wie du in dein Land zurückkehren könntest, wenn du diese… „Xi-xi“ gerettet hättest?"{#zm1041_s32_r9197}':
@@ -667,7 +667,7 @@ label zm1041_s32: # from 31.0 38.0
 
 # s33 # say9090
 label zm1041_s33: # from 32.0
-    nr '"Nein, aber ich bin sicher, daß ich einen Weg gefunden hätte. Aber es ist müßig, jetzt darüber zu spekulieren."{#zm1041_s33_}'
+    nr '"Nein, aber ich bin sicher, daß ich einen Weg gefunden hätte. Aber es ist müßig, jetzt darüber zu spekulieren."{#zm1041_s33_1}'
 
     menu:
         '"Ich frage mich, ob sie noch immer in der Stadt sind. Vielleicht könnte ich dieses Mädchen finden und ihr helfen."{#zm1041_s33_r9200}':
@@ -691,7 +691,7 @@ label zm1041_s33: # from 32.0
 
 # s34 # say9091
 label zm1041_s34: # from 33.0
-    nr '"Dein Angebot weist dich als Ehrenmann aus… Doch sind nicht weniger als fünfundsiebzig Jahre vergangen, seit ich erschlagen wurde. Der Mann, der mich umgebracht hat, ist schon lange tot, und Xixi höchstwahrscheinlich auch."{#zm1041_s34_}'
+    nr '"Dein Angebot weist dich als Ehrenmann aus… Doch sind nicht weniger als fünfundsiebzig Jahre vergangen, seit ich erschlagen wurde. Der Mann, der mich umgebracht hat, ist schon lange tot, und Xixi höchstwahrscheinlich auch."{#zm1041_s34_1}'
 
     menu:
         '"Hmm. Egal. Ich hätte noch eine andere Frage…"{#zm1041_s34_r9205}':
@@ -705,7 +705,7 @@ label zm1041_s34: # from 33.0
 
 # s35 # say9092
 label zm1041_s35: # -
-    nr '"Der Mörder hat Gesichtszüge, die den meinen gleichen, und eine Lotusblüte, die auf seine Augenbraue tätowiert ist." Als er deine Verwirrung bemerkt, sagt er: "Es ist eine Blumenart mit sieben Blütenblättern. Liu Xixi ist ein junges Mädchen, gerade 14 Jahre alt. Vielleicht weiß sie oder der Mörder den Weg zurück und wie er wieder aktiviert werden kann."{#zm1041_s35_}'
+    nr '"Der Mörder hat Gesichtszüge, die den meinen gleichen, und eine Lotusblüte, die auf seine Augenbraue tätowiert ist." Als er deine Verwirrung bemerkt, sagt er: "Es ist eine Blumenart mit sieben Blütenblättern. Liu Xixi ist ein junges Mädchen, gerade 14 Jahre alt. Vielleicht weiß sie oder der Mörder den Weg zurück und wie er wieder aktiviert werden kann."{#zm1041_s35_1}'
 
     menu:
         '"Sollte ich sie sehen, werde ich mein Bestes tun und ihr in deinem Gedenken helfen."{#zm1041_s35_r9207}':
@@ -731,7 +731,7 @@ label zm1041_s35: # -
 
 # s36 # say9093
 label zm1041_s36: # from 35.0
-    nr '"Ihr seid ein gütiger und ehrenhafter Mann. Tut es nicht für mich… es sind das Mädchen und ihr Vater, denen Ihr am meisten helft."{#zm1041_s36_}'
+    nr '"Ihr seid ein gütiger und ehrenhafter Mann. Tut es nicht für mich… es sind das Mädchen und ihr Vater, denen Ihr am meisten helft."{#zm1041_s36_1}'
 
     menu:
         '"Also schön. Ich hätte noch eine andere Frage…"{#zm1041_s36_r9211}':
@@ -745,7 +745,7 @@ label zm1041_s36: # from 35.0
 
 # s37 # say9094
 label zm1041_s37: # from 0.4 # IF ~  Global("Bei","GLOBAL",1)
-    nr '"Ich habe wirklich nicht erwartet, Euch wiederzusehen." Der Geist verneigt sich höflich, aber sein Gesichtsausdruck zeigt keine Regung. "Was wollt Ihr von mir?"{#zm1041_s37_}'
+    nr '"Ich habe wirklich nicht erwartet, Euch wiederzusehen." Der Geist verneigt sich höflich, aber sein Gesichtsausdruck zeigt keine Regung. "Was wollt Ihr von mir?"{#zm1041_s37_1}'
 
     menu:
         '"Eine Frage…"{#zm1041_s37_r9213}':
@@ -759,7 +759,7 @@ label zm1041_s37: # from 0.4 # IF ~  Global("Bei","GLOBAL",1)
 
 # s38 # say9718
 label zm1041_s38: # from 31.1
-    nr '"Linguistik ist in der Tat ein Fach, das mich außerordentlich interessiert. Als ich Lehrer wurde, habe ich festgestellt, daß ich neue Sprachen ganz ohne Mühe erlernen konnte."{#zm1041_s38_}'
+    nr '"Linguistik ist in der Tat ein Fach, das mich außerordentlich interessiert. Als ich Lehrer wurde, habe ich festgestellt, daß ich neue Sprachen ganz ohne Mühe erlernen konnte."{#zm1041_s38_1}'
 
     menu:
         '"Das würde einiges erklären. Du hast die Mörder demnach nie gefunden?"{#zm1041_s38_r9719}':

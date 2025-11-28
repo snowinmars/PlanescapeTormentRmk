@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say500
 label xach_s0: # - # IF ~  True()
-    nr 'Vidíš mrtvolu muže s číslem "331" vyrytým do lebky. Jeho oči i rty jsou sešité a v jeho hrdle je rozestupující se otvor. Vypadá *špatně*.{#xach_s0_}'
+    nr 'Vidíš mrtvolu muže s číslem "331" vyrytým do lebky. Jeho oči i rty jsou sešité a v jeho hrdle je rozestupující se otvor. Vypadá *špatně*.{#xach_s0_1}'
 
     menu:
         '"Tak… viděl jsi, že by se tu stalo něco zajímavého?"{#xach_s0_r502}' if xachLogic.r502_condition():
@@ -42,7 +42,7 @@ label xach_s0: # - # IF ~  True()
 
 # s1 # say501
 label xach_s1: # from 0.0 0.1 0.2 0.4
-    nr 'Mrtvola civí před sebe prázdným pohledem.{#xach_s1_}'
+    nr 'Mrtvola civí před sebe prázdným pohledem.{#xach_s1_1}'
 
     menu:
         '"Pak tedy sbohem."{#xach_s1_r505}':
@@ -52,7 +52,7 @@ label xach_s1: # from 0.0 0.1 0.2 0.4
 
 # s2 # say504
 label xach_s2: # from 0.3
-    nr '"Kd-kdo…" Zombie se vrací jeho mrzutý hlas a vypadá vylekaně. "Kdo je tu?! Odpověz mi!"{#xach_s2_}'
+    nr '"Kd-kdo…" Zombie se vrací jeho mrzutý hlas a vypadá vylekaně. "Kdo je tu?! Odpověz mi!"{#xach_s2_1}'
 
     menu:
         '"Nemůžeš mne vidět?"{#xach_s2_r507}':
@@ -82,7 +82,7 @@ label xach_s2: # from 0.3
 
 # s3 # say509
 label xach_s3: # from 2.0
-    nr '"Jsem slepý, ve smrti jako jsem byl i v životě… a teď mi odpověz. Kdo jsi?"{#xach_s3_}'
+    nr '"Jsem slepý, ve smrti jako jsem byl i v životě… a teď mi odpověz. Kdo jsi?"{#xach_s3_1}'
 
     menu:
         'Improvizuj: "To jsem já. Nepoznáváš můj hlas?"{#xach_s3_r510}' if xachLogic.r510_condition():
@@ -108,7 +108,7 @@ label xach_s3: # from 2.0
 
 # s4 # say512
 label xach_s4: # from 2.4 3.3 30.0 31.0
-    nr '"Kdo… jsi!" Zombie vypadá šokovaně, ale potěšeně. "U vočí Paní Bolesti…" jeho tón se změnil ve zvědavost. "Ty nejseš *mrtvej* kámo?"{#xach_s4_}'
+    nr '"Kdo… jsi!" Zombie vypadá šokovaně, ale potěšeně. "U vočí Paní Bolesti…" jeho tón se změnil ve zvědavost. "Ty nejseš *mrtvej* kámo?"{#xach_s4_1}'
 
     menu:
         '"Kdo jsi?"{#xach_s4_r515}':
@@ -134,7 +134,7 @@ label xach_s4: # from 2.4 3.3 30.0 31.0
 
 # s5 # say514
 label xach_s5: # from 4.0
-    nr '"Bylo to těžký překvapení shodit tu starou špinavou pokrývku a uvidět za ní starýho blázna Xachariáše? To jsem já, kamaráde. Požehnáni buďte všechny Mocnosti, už jsem si myslel, že tě nikdy neuvidím… taky ses hodně změnil, jak můžou moje uši slyšet… už jsi zase dělal nějaká nešťastná rozhodnutí?" Xachariáš zavtipkoval. "Seš taky mrtvej?"{#xach_s5_}'
+    nr '"Bylo to těžký překvapení shodit tu starou špinavou pokrývku a uvidět za ní starýho blázna Xachariáše? To jsem já, kamaráde. Požehnáni buďte všechny Mocnosti, už jsem si myslel, že tě nikdy neuvidím… taky ses hodně změnil, jak můžou moje uši slyšet… už jsi zase dělal nějaká nešťastná rozhodnutí?" Xachariáš zavtipkoval. "Seš taky mrtvej?"{#xach_s5_1}'
 
     menu:
         '"Je to dlouhý příběh… ale ne, nejsem mrtvý."{#xach_s5_r685}':
@@ -160,7 +160,7 @@ label xach_s5: # from 4.0
 
 # s6 # say513
 label xach_s6: # from 4.2 5.2
-    nr '"V Márnici, kámo. Ty to nevíš?"{#xach_s6_}'
+    nr '"V Márnici, kámo. Ty to nevíš?"{#xach_s6_1}'
 
     menu:
         '"Co tě přivedlo do tohoto postavení?"{#xach_s6_r523}':
@@ -191,7 +191,7 @@ label xach_s6: # from 4.2 5.2
 
 # s7 # say528
 label xach_s7: # from 8.0 9.1 10.2 11.1 12.1 13.0 14.0 15.0 16.2 17.1 18.1 19.3 22.1 23.5 24.2 25.0 26.2 27.4 28.1 29.1 32.1 33.2 35.0 36.1 40.0 46.1 47.1 48.0 49.1
-    nr '"Vždy?"{#xach_s7_}'
+    nr '"Vždy?"{#xach_s7_1}'
 
     menu:
         '"Chci ten předmět zpět, Xachariáši…"{#xach_s7_r63484}' if xachLogic.r63484_condition():
@@ -225,7 +225,7 @@ label xach_s7: # from 8.0 9.1 10.2 11.1 12.1 13.0 14.0 15.0 16.2 17.1 18.1 19.3 
 
 # s8 # say529
 label xach_s8: # from 6.0 7.1
-    nr 'Jeho hlas zahanbeně poklesl. "Je velmi těžký jít ve tvejch stopách, kámo, viděl jsem spoustu hroznejch věcí. Dal jsem si jeden drink a pak jsem si dal další, začal jsem chlastat. Pak jednou, když jsem byl vožralej, upsal jsem svý tělo Spalovačům. Osud se rozhod postavit proti mně, když jsem byl na dně a já krátce na to umřel."{#xach_s8_}'
+    nr 'Jeho hlas zahanbeně poklesl. "Je velmi těžký jít ve tvejch stopách, kámo, viděl jsem spoustu hroznejch věcí. Dal jsem si jeden drink a pak jsem si dal další, začal jsem chlastat. Pak jednou, když jsem byl vožralej, upsal jsem svý tělo Spalovačům. Osud se rozhod postavit proti mně, když jsem byl na dně a já krátce na to umřel."{#xach_s8_1}'
 
     menu:
         '"Měl bych nějaké další otázky…"{#xach_s8_r531}':
@@ -243,7 +243,7 @@ label xach_s8: # from 6.0 7.1
 
 # s9 # say533
 label xach_s9: # from 6.1 7.2
-    nr '"Místo bez života kde pobíhaj živí mrtví… něco tu není správně, i když…"{#xach_s9_}'
+    nr '"Místo bez života kde pobíhaj živí mrtví… něco tu není správně, i když…"{#xach_s9_1}'
 
     menu:
         '"Jako co?"{#xach_s9_r534}':
@@ -265,7 +265,7 @@ label xach_s9: # from 6.1 7.2
 
 # s10 # say535
 label xach_s10: # from 9.0
-    nr '"Řeknu ti tu tajemství jedný věci: Je tu zombie, kterej si hraje na zombie, ale nejni. Moc jsem se nestaral o důvod, proč to dělá, ale je to divný."{#xach_s10_}'
+    nr '"Řeknu ti tu tajemství jedný věci: Je tu zombie, kterej si hraje na zombie, ale nejni. Moc jsem se nestaral o důvod, proč to dělá, ale je to divný."{#xach_s10_1}'
 
     menu:
         '"Ještě něco jiného?"{#xach_s10_r538}' if xachLogic.r538_condition():
@@ -291,7 +291,7 @@ label xach_s10: # from 9.0
 
 # s11 # say541
 label xach_s11: # from 10.0 12.0
-    nr '"Nebo jiná věc, ten starej githzerai… jo ten, kterej má na starosti preparační místnost… Dhall. Zachránil tě před kremací už aspoň dvacetkrát. Můžeš bejt šťastnej, že máš takovýho kámoše."{#xach_s11_}'
+    nr '"Nebo jiná věc, ten starej githzerai… jo ten, kterej má na starosti preparační místnost… Dhall. Zachránil tě před kremací už aspoň dvacetkrát. Můžeš bejt šťastnej, že máš takovýho kámoše."{#xach_s11_1}'
 
     menu:
         '"Co přesně Dhall udělal, že mě zachránil?"{#xach_s11_r542}' if xachLogic.r542_condition():
@@ -313,7 +313,7 @@ label xach_s11: # from 10.0 12.0
 
 # s12 # say547
 label xach_s12: # from 10.1
-    nr '"Co mi mé oči dovolili uvidět "ho", nemůžu si to dát porád do kupy. Tady sice funguje, jako vořezávač mrtvol: ale jeho hlas na zombie je vopravdu divnej… nekomunikuje stejně jako ostatní."{#xach_s12_}'
+    nr '"Co mi mé oči dovolili uvidět "ho", nemůžu si to dát porád do kupy. Tady sice funguje, jako vořezávač mrtvol: ale jeho hlas na zombie je vopravdu divnej… nekomunikuje stejně jako ostatní."{#xach_s12_1}'
 
     menu:
         '"Zpozoroval si ještě něco jiného divného tady v Márnici?"{#xach_s12_r548}' if xachLogic.r548_condition():
@@ -335,7 +335,7 @@ label xach_s12: # from 10.1
 
 # s13 # say550
 label xach_s13: # from 11.0
-    nr '"Vodkládal tvou kremaci tak dlouho, dokud jsi nevstal z tý kamenné desky. Nevím proč, opravdu."{#xach_s13_}'
+    nr '"Vodkládal tvou kremaci tak dlouho, dokud jsi nevstal z tý kamenné desky. Nevím proč, opravdu."{#xach_s13_1}'
 
     menu:
         '"Zajímavé. Měl bych nějaké další otázky…"{#xach_s13_r552}':
@@ -353,7 +353,7 @@ label xach_s13: # from 11.0
 
 # s14 # say555
 label xach_s14: # -
-    nr '"Myslel si, že je to nezbytně nutný k zabránění… toho… já… já si teď, sakra, nemůžu vzpomenout, proč to bylo nutný."{#xach_s14_}'
+    nr '"Myslel si, že je to nezbytně nutný k zabránění… toho… já… já si teď, sakra, nemůžu vzpomenout, proč to bylo nutný."{#xach_s14_1}'
 
     menu:
         '"Hmmm. Podezřelé… Měl bych nějaké další otázky…"{#xach_s14_r557}':
@@ -371,7 +371,7 @@ label xach_s14: # -
 
 # s15 # say558
 label xach_s15: # -
-    nr 'Jeho hlas se zahanbeně snížil. "Když se naše cesty rozdělily, kamaráde, nezbylo ve mně moc života. Je to těžký, následovat tvý kroky, zažil jsem moc hroznejch věcí. Začal jsem chlastat a začal být na pití závislej. A když sem byl jednou vožralej, upsal jsem svý tělo Spalovačům. Osud se rozhod postavit proti mně, když jsem byl na dně a já krátce na to umřel."{#xach_s15_}'
+    nr 'Jeho hlas se zahanbeně snížil. "Když se naše cesty rozdělily, kamaráde, nezbylo ve mně moc života. Je to těžký, následovat tvý kroky, zažil jsem moc hroznejch věcí. Začal jsem chlastat a začal být na pití závislej. A když sem byl jednou vožralej, upsal jsem svý tělo Spalovačům. Osud se rozhod postavit proti mně, když jsem byl na dně a já krátce na to umřel."{#xach_s15_1}'
 
     menu:
         '"Měl bych nějaké další otázky…"{#xach_s15_r559}':
@@ -389,7 +389,7 @@ label xach_s15: # -
 
 # s16 # say561
 label xach_s16: # from 6.2 7.3
-    nr '"Proč? Zapomněl jsi sám na sebe?"{#xach_s16_}'
+    nr '"Proč? Zapomněl jsi sám na sebe?"{#xach_s16_1}'
 
     menu:
         '"Řekněme. Jak se říká… ano."{#xach_s16_r562}':
@@ -415,7 +415,7 @@ label xach_s16: # from 6.2 7.3
 
 # s17 # say566
 label xach_s17: # from 16.0 21.0 22.0
-    nr '"Dobře… byl jsi vopravdu zvláštní, vždycky podezíravavej a dával sis porád na něco pozor… vypořádat se s někým jako jsi to dělal ty se svými nepřáteli po celý život. A nedá se popřít, že kdo si s tebou něco začal, skončil na černejch stránkách Knihy mrtvejch."{#xach_s17_}'
+    nr '"Dobře… byl jsi vopravdu zvláštní, vždycky podezíravavej a dával sis porád na něco pozor… vypořádat se s někým jako jsi to dělal ty se svými nepřáteli po celý život. A nedá se popřít, že kdo si s tebou něco začal, skončil na černejch stránkách Knihy mrtvejch."{#xach_s17_1}'
 
     menu:
         '"Ještě něco jiného? Něco určitého…"{#xach_s17_r569}':
@@ -437,7 +437,7 @@ label xach_s17: # from 16.0 21.0 22.0
 
 # s18 # say567
 label xach_s18: # from 17.0
-    nr '"Měl bys bejt taky proklatě bezcitnej… jako když jsi podepsal tu smlouvu nebo opustil tu kňourající žábu v Avernusu. Stejně jsme měli málo času. Ani jeden z nás nikdy nezvážil možnost odtamtud včas zdrhnout, synu."{#xach_s18_}'
+    nr '"Měl bys bejt taky proklatě bezcitnej… jako když jsi podepsal tu smlouvu nebo opustil tu kňourající žábu v Avernusu. Stejně jsme měli málo času. Ani jeden z nás nikdy nezvážil možnost odtamtud včas zdrhnout, synu."{#xach_s18_1}'
 
     menu:
         '"A… aha. Co dalšího? Cokoliv co mi řekneš mi může pomoci."{#xach_s18_r572}':
@@ -459,7 +459,7 @@ label xach_s18: # from 17.0
 
 # s19 # say568
 label xach_s19: # from 18.0
-    nr '"A teď k jádru věci, ty vypadáš, jakoby se ti stalo to, žes zabral válečná území; všecko pro tebe bylo jako bitva a tys byl ten největší bezcitnej bastard jakýho jsem kdy potkal. Na ničem jiným ti nezáleželo krom vyřešení té věci. Chudák Deionarra se svojím brekotem a prošením, abys už nikoho neovládal, githové tě varovali kvůli tvýho válečnictví a chudák Xachariáš se pokoušel vytrvat, když jsme dorazili do Sfér. Tys byl houževnatej jako kdybys nemoh umřít, ale my jsme byli jen lidi. Teď si myslim, že jsme všichni v knize mrtvejch… nebo jsme v ní, ale nejsme v ní, takže mluv."{#xach_s19_}'
+    nr '"A teď k jádru věci, ty vypadáš, jakoby se ti stalo to, žes zabral válečná území; všecko pro tebe bylo jako bitva a tys byl ten největší bezcitnej bastard jakýho jsem kdy potkal. Na ničem jiným ti nezáleželo krom vyřešení té věci. Chudák Deionarra se svojím brekotem a prošením, abys už nikoho neovládal, githové tě varovali kvůli tvýho válečnictví a chudák Xachariáš se pokoušel vytrvat, když jsme dorazili do Sfér. Tys byl houževnatej jako kdybys nemoh umřít, ale my jsme byli jen lidi. Teď si myslim, že jsme všichni v knize mrtvejch… nebo jsme v ní, ale nejsme v ní, takže mluv."{#xach_s19_1}'
 
     menu:
         '"Něco jiného?"{#xach_s19_r63234}' if xachLogic.r63234_condition():
@@ -489,7 +489,7 @@ label xach_s19: # from 18.0
 
 # s20 # say580
 label xach_s20: # from 16.1
-    nr '"Dobrý, ale když ti řeknu, že ti to můžu dokázat… teď podívej, už si moc na to nevzpomínám takže: takhle… vzpomínáš si když jsme táhli ten vozejk z Avernusu a běželi přímo prostředkem tý tlupy abishaiů v tý červí díře?"{#xach_s20_}'
+    nr '"Dobrý, ale když ti řeknu, že ti to můžu dokázat… teď podívej, už si moc na to nevzpomínám takže: takhle… vzpomínáš si když jsme táhli ten vozejk z Avernusu a běželi přímo prostředkem tý tlupy abishaiů v tý červí díře?"{#xach_s20_1}'
 
     menu:
         'Lež: "Ano."{#xach_s20_r581}':
@@ -503,7 +503,7 @@ label xach_s20: # from 16.1
 
 # s21 # say583
 label xach_s21: # from 20.0
-    nr '"Fajn, jsem rád, že si to aspoň jeden z nás pamatuje, protože já si na to, u Balora, nemůžu vzpomenout. Kdo jsi, kámo, a co čekáš od toho lapání vzpomínek od mrtvejch mužů?"{#xach_s21_}'
+    nr '"Fajn, jsem rád, že si to aspoň jeden z nás pamatuje, protože já si na to, u Balora, nemůžu vzpomenout. Kdo jsi, kámo, a co čekáš od toho lapání vzpomínek od mrtvejch mužů?"{#xach_s21_1}'
 
     menu:
         '"Doufám, že se mi vrátí paměť. Vážně jsem zapomněl, kdo jsem, Xachariáši, a věřím, že mi pomůžeš vzpomenout si. Co mi můžeš říct o mém předchozím životě?"{#xach_s21_r584}':
@@ -525,7 +525,7 @@ label xach_s21: # from 20.0
 
 # s22 # say588
 label xach_s22: # from 20.1
-    nr '"Hmmm. No, možná se ta událost nestala přesně tak, jak sem si vzpomněl. A jak bylo tohle: pamatuješ si jak se Deionarra téměř zapsala do Knihy mrtvejch, když se tě pokoušela zastavit před vkročením do Curstu?"{#xach_s22_}'
+    nr '"Hmmm. No, možná se ta událost nestala přesně tak, jak sem si vzpomněl. A jak bylo tohle: pamatuješ si jak se Deionarra téměř zapsala do Knihy mrtvejch, když se tě pokoušela zastavit před vkročením do Curstu?"{#xach_s22_1}'
 
     menu:
         '"Ne, ne ve skutečnosti… ale to je dobře; věřím, že jsi mne znal. Takže můžeš mi něco říci o mém předchozím životě?"{#xach_s22_r590}':
@@ -547,7 +547,7 @@ label xach_s22: # from 20.1
 
 # s23 # say589
 label xach_s23: # from 6.3 7.4
-    nr '"My jsme teda byli skvělá sebranka… napůl mrtvý muž, který nemoh sám sebe dostat do Knihy mrtvejch, i když se o to pokoušel -- tak ujetej, že by ho ani Mocnosti smrti nechtěli přijmout -- bědující advokátova dcera, githzeraiský vyhnanec, lítající lebka s jazykem šakala a napůl-tupý slepý lukostřelec jako jsem já."{#xach_s23_}'
+    nr '"My jsme teda byli skvělá sebranka… napůl mrtvý muž, který nemoh sám sebe dostat do Knihy mrtvejch, i když se o to pokoušel -- tak ujetej, že by ho ani Mocnosti smrti nechtěli přijmout -- bědující advokátova dcera, githzeraiský vyhnanec, lítající lebka s jazykem šakala a napůl-tupý slepý lukostřelec jako jsem já."{#xach_s23_1}'
 
     menu:
         '"Githů?"{#xach_s23_r593}':
@@ -585,7 +585,7 @@ label xach_s23: # from 6.3 7.4
 
 # s24 # say600
 label xach_s24: # from 19.2 23.0 27.0
-    nr '"„Děsivě-vypadající“ githové… nepřátelští a tiší, ostatně to jsou všici z nich. Ani trošku githům nevěř, aspoň já jim nevěřím. Koukej, kamaráde, githům jde jen o dvě věci: nedostat se do votroctví a zabíjet illithidy. Všecko vostatní je pro ně nepodstatný a voni nepřijmou nikoho z nás, a to ani tebe ne."{#xach_s24_}'
+    nr '"„Děsivě-vypadající“ githové… nepřátelští a tiší, ostatně to jsou všici z nich. Ani trošku githům nevěř, aspoň já jim nevěřím. Koukej, kamaráde, githům jde jen o dvě věci: nedostat se do votroctví a zabíjet illithidy. Všecko vostatní je pro ně nepodstatný a voni nepřijmou nikoho z nás, a to ani tebe ne."{#xach_s24_1}'
 
     menu:
         '"Proč tomu tak bylo?"{#xach_s24_r601}' if xachLogic.r601_condition():
@@ -611,7 +611,7 @@ label xach_s24: # from 19.2 23.0 27.0
 
 # s25 # say605
 label xach_s25: # from 24.0 26.0
-    nr '"Jedno z tajemství, na který sem nepřišel, kámo. Snad ty budeš vědět?"{#xach_s25_}'
+    nr '"Jedno z tajemství, na který sem nepřišel, kámo. Snad ty budeš vědět?"{#xach_s25_1}'
 
     menu:
         '"Nemůžu si vzpomenout. Měl bych nějaké další otázky…"{#xach_s25_r606}':
@@ -629,7 +629,7 @@ label xach_s25: # from 24.0 26.0
 
 # s26 # say608
 label xach_s26: # from 19.1 23.1 27.1
-    nr '"Ta žába-rádoby-vojanda přísahala, že s tebou půjde do Baatoru a nazpátek, a, u všech Mocností, byla tak posedlá strachem, aby o tebe nepřišla, že to udělala. Dávala si malý pozor na mne nebo na githy a bylo to fakt málo. Byla do tebe hrozně zamilovaná, důkazem byla její šílená oddanost tobě. Nerozumím tomu, co ti ty ženský řekli, zjizvenče, ale pravda je, že to v jejich krvi pěkně vře. Byla to totiž nějaká bohatá šťabajzna z Úřednický čtvrti a ty jsi od ní něco potřeboval a jediná cena byla ta, že šla s tebou."{#xach_s26_}'
+    nr '"Ta žába-rádoby-vojanda přísahala, že s tebou půjde do Baatoru a nazpátek, a, u všech Mocností, byla tak posedlá strachem, aby o tebe nepřišla, že to udělala. Dávala si malý pozor na mne nebo na githy a bylo to fakt málo. Byla do tebe hrozně zamilovaná, důkazem byla její šílená oddanost tobě. Nerozumím tomu, co ti ty ženský řekli, zjizvenče, ale pravda je, že to v jejich krvi pěkně vře. Byla to totiž nějaká bohatá šťabajzna z Úřednický čtvrti a ty jsi od ní něco potřeboval a jediná cena byla ta, že šla s tebou."{#xach_s26_1}'
 
     menu:
         '"Co jsem od ní chtěl?"{#xach_s26_r609}' if xachLogic.r609_condition():
@@ -655,7 +655,7 @@ label xach_s26: # from 19.1 23.1 27.1
 
 # s27 # say612
 label xach_s27: # from 24.1 26.1 28.0 29.0 33.1 49.0
-    nr '"Jo, kdo z nich?"{#xach_s27_}'
+    nr '"Jo, kdo z nich?"{#xach_s27_1}'
 
     menu:
         '"Githů."{#xach_s27_r613}':
@@ -689,7 +689,7 @@ label xach_s27: # from 24.1 26.1 28.0 29.0 33.1 49.0
 
 # s28 # say620
 label xach_s28: # from 23.2 27.2
-    nr '"Ta oplzlá ukecaná lebka toužila po mlácení a modřinách, tak to bylo! Vždycky byla čilá a dovedla mi fakt spravit náladu!"{#xach_s28_}'
+    nr '"Ta oplzlá ukecaná lebka toužila po mlácení a modřinách, tak to bylo! Vždycky byla čilá a dovedla mi fakt spravit náladu!"{#xach_s28_1}'
 
     menu:
         '"O někom z mých dalších druhů…"{#xach_s28_r622}':
@@ -711,7 +711,7 @@ label xach_s28: # from 23.2 27.2
 
 # s29 # say625
 label xach_s29: # from 23.4
-    nr '"Ta kniha cárů, co jsi sešil dohromady, měla více stránek než já počet let ve svým životě?! Tomu říkám opravdový štěstí, jestli jsi ztratil tu ghúlskou knihu! Pořád jsi do ní něco čmáral a ta věc děsně smrděla. Vobčas to vypadalo, jako by ses bál, že ti ji někdo každou chvíli čmajzne… psal jsi do ní, dokud se ti nezačala loupat kůže na prstech ruky a rád bych věděl, jestli jsi z toho psaní nezačal magořit. Někdy jsme se na pár dní někde zastavili, když jsi psal. Nenáviděl jsem tu ďábelskou knihu. Vypadalo to, že tě ta věc držela u srdce a bral jsi ji hodně vážně. Naposledy jsem ji viděl u tebe, kámo. Pokud jsi ji někde nechal, nemám vůbec tuchu, kde po Sférách by se mohla povalovat."{#xach_s29_}'
+    nr '"Ta kniha cárů, co jsi sešil dohromady, měla více stránek než já počet let ve svým životě?! Tomu říkám opravdový štěstí, jestli jsi ztratil tu ghúlskou knihu! Pořád jsi do ní něco čmáral a ta věc děsně smrděla. Vobčas to vypadalo, jako by ses bál, že ti ji někdo každou chvíli čmajzne… psal jsi do ní, dokud se ti nezačala loupat kůže na prstech ruky a rád bych věděl, jestli jsi z toho psaní nezačal magořit. Někdy jsme se na pár dní někde zastavili, když jsi psal. Nenáviděl jsem tu ďábelskou knihu. Vypadalo to, že tě ta věc držela u srdce a bral jsi ji hodně vážně. Naposledy jsem ji viděl u tebe, kámo. Pokud jsi ji někde nechal, nemám vůbec tuchu, kde po Sférách by se mohla povalovat."{#xach_s29_1}'
 
     menu:
         '"O těch mých druzích…"{#xach_s29_r626}':
@@ -733,7 +733,7 @@ label xach_s29: # from 23.4
 
 # s30 # say629
 label xach_s30: # from 2.1 2.2 3.0 3.1
-    nr '"To mi zní povědomě… jestli seš ten, kdo si myslím, že seš, pak tedy… kdo…" Zombie na chvíli utichl. "Kdo jsem já?"{#xach_s30_}'
+    nr '"To mi zní povědomě… jestli seš ten, kdo si myslím, že seš, pak tedy… kdo…" Zombie na chvíli utichl. "Kdo jsem já?"{#xach_s30_1}'
 
     menu:
         '"Xachariáš?"{#xach_s30_r631}' if xachLogic.r631_condition():
@@ -747,7 +747,7 @@ label xach_s30: # from 2.1 2.2 3.0 3.1
 
 # s31 # say630
 label xach_s31: # from 2.3 3.2
-    nr '"Já…" Zombie utichne. "…mé jméno… mi uteklo. Já… si nemůžu vzpomenout, kdo jsem."{#xach_s31_}'
+    nr '"Já…" Zombie utichne. "…mé jméno… mi uteklo. Já… si nemůžu vzpomenout, kdo jsem."{#xach_s31_1}'
 
     menu:
         '"Xachariáš?"{#xach_s31_r634}' if xachLogic.r634_condition():
@@ -765,7 +765,7 @@ label xach_s31: # from 2.3 3.2
 
 # s32 # say642
 label xach_s32: # from 19.0
-    nr '"Něco jsi ztratil, když jsi nám zdrhl, kámo… Dak„kona si nechal bez pána a lebku bez přítele. A mě? Něco jsi zabodnul hluboko do mne a nikdy to nevyšlo ven, dokud jsem byl naživu. Což mi způsobilo to, že mi v tepnách kolovala chladná krev, a že ta věc mě tlačí na prsou jako hrouda olova."{#xach_s32_}'
+    nr '"Něco jsi ztratil, když jsi nám zdrhl, kámo… Dak„kona si nechal bez pána a lebku bez přítele. A mě? Něco jsi zabodnul hluboko do mne a nikdy to nevyšlo ven, dokud jsem byl naživu. Což mi způsobilo to, že mi v tepnách kolovala chladná krev, a že ta věc mě tlačí na prsou jako hrouda olova."{#xach_s32_1}'
 
     menu:
         '"Co je to?"{#xach_s32_r645}':
@@ -788,7 +788,7 @@ label xach_s32: # from 19.0
 
 # s33 # say643
 label xach_s33: # from 32.0
-    nr '"Já… já nevím. Ale nějak mě to změnilo. Změnilo mě to uvnitř. Už jsem umíral, když jsi to do mne dal, takže jsem se o to v tu chvíli nezajímal."{#xach_s33_}'
+    nr '"Já… já nevím. Ale nějak mě to změnilo. Změnilo mě to uvnitř. Už jsem umíral, když jsi to do mne dal, takže jsem se o to v tu chvíli nezajímal."{#xach_s33_1}'
 
     menu:
         '"Můžu to dostat zpět?"{#xach_s33_r649}':
@@ -814,7 +814,7 @@ label xach_s33: # from 32.0
 
 # s34 # say644
 label xach_s34: # from 7.0 33.0
-    nr '"Je to někde pěkně hluboko, ale mám nápad, jak se k tomu dostat. Bez skalpelu a mého navigování ovšem nebudeš schopnej dostat to ven. Máš skalpel?"{#xach_s34_}'
+    nr '"Je to někde pěkně hluboko, ale mám nápad, jak se k tomu dostat. Bez skalpelu a mého navigování ovšem nebudeš schopnej dostat to ven. Máš skalpel?"{#xach_s34_1}'
 
     menu:
         '"Ano."{#xach_s34_r647}' if xachLogic.r647_condition():
@@ -828,7 +828,7 @@ label xach_s34: # from 7.0 33.0
 
 # s35 # say654
 label xach_s35: # -
-    nr '"Dobře, vrať se, kdyby ti překážel a pak uvidíme jak ho dostat ven."{#xach_s35_}'
+    nr '"Dobře, vrať se, kdyby ti překážel a pak uvidíme jak ho dostat ven."{#xach_s35_1}'
 
     menu:
         '"Měl bych nějaké další otázky…"{#xach_s35_r655}':
@@ -842,7 +842,7 @@ label xach_s35: # -
 
 # s36 # say657
 label xach_s36: # from 34.0 34.1
-    nr '"Tak mě tedy trochu otevři rukama v oblasti hrudníku a podívej se po tom."{#xach_s36_}'
+    nr '"Tak mě tedy trochu otevři rukama v oblasti hrudníku a podívej se po tom."{#xach_s36_1}'
 
     menu:
         'Udělej to.{#xach_s36_r658}':
@@ -864,7 +864,7 @@ label xach_s36: # from 34.0 34.1
 
 # s37 # say661
 label xach_s37: # from 36.0
-    nr '"Trošku více doleva… a trošku více…" Tvé ruce se skoro dotýkají té věci.{#xach_s37_}'
+    nr '"Trošku více doleva… a trošku více…" Tvé ruce se skoro dotýkají té věci.{#xach_s37_1}'
 
     menu:
         'Vytáhni to ven.{#xach_s37_r663}':
@@ -875,7 +875,7 @@ label xach_s37: # from 36.0
 
 # s38 # say662
 label xach_s38: # from 37.0
-    nr 'Vytáhl jsi játra ze zombie. "U vočí Paní bolesti! Omlouvám se, kámo… Myslel jsem, že Spalovači z nás vytáhli všechny vorgány ještě předtím, než nás vyškrtli z Knihy mrtvejch. Tak to zkusíme znovu. Možná je to víc napravo."{#xach_s38_}'
+    nr 'Vytáhl jsi játra ze zombie. "U vočí Paní bolesti! Omlouvám se, kámo… Myslel jsem, že Spalovači z nás vytáhli všechny vorgány ještě předtím, než nás vyškrtli z Knihy mrtvejch. Tak to zkusíme znovu. Možná je to víc napravo."{#xach_s38_1}'
 
     menu:
         'Udělej to znovu.{#xach_s38_r664}':
@@ -885,7 +885,7 @@ label xach_s38: # from 37.0
 
 # s39 # say665
 label xach_s39: # from 38.0
-    nr '"Jdi tamhle… teď trošku doprava a zpátky… ještě trošičku…" Cítíš něco tvrdého a studeného, trochu většího než jsi očekával. "Myslím, že to mám. Vytáhnu to ven."{#xach_s39_}'
+    nr '"Jdi tamhle… teď trošku doprava a zpátky… ještě trošičku…" Cítíš něco tvrdého a studeného, trochu většího než jsi očekával. "Myslím, že to mám. Vytáhnu to ven."{#xach_s39_1}'
 
     menu:
         'Vytáhni to ven.{#xach_s39_r666}':
@@ -896,7 +896,7 @@ label xach_s39: # from 38.0
 
 # s40 # say667
 label xach_s40: # from 39.0
-    nr 'Držíš zčernalý objekt velikosti pěsti, který je na svou velikost opravdu hodně těžký. "Tak to je vono. Jooo. Je to větší než jsem si myslel. Je to… co to je? Vypadá to jako… srdce."{#xach_s40_}'
+    nr 'Držíš zčernalý objekt velikosti pěsti, který je na svou velikost opravdu hodně těžký. "Tak to je vono. Jooo. Je to větší než jsem si myslel. Je to… co to je? Vypadá to jako… srdce."{#xach_s40_1}'
 
     menu:
         '"Ano, to si myslím. Díky, Xachariáši. Měl bych nějaké další otázky…"{#xach_s40_r668}':
@@ -914,7 +914,7 @@ label xach_s40: # from 39.0
 
 # s41 # say670
 label xach_s41: # from 4.3 5.3 6.4 7.6 8.1 9.2 10.3 11.2 12.2 13.1 14.1 15.1 16.3 17.2 18.2 19.4 21.2 22.2 23.6 24.3 25.1 26.3 27.5 28.2 29.2 32.2 33.3 36.2 40.1 46.2 47.2 48.1 49.2
-    nr '"Předtím než odejdeš: Potřebuju, abys mi udělal malou laskavost, kámo."{#xach_s41_}'
+    nr '"Předtím než odejdeš: Potřebuju, abys mi udělal malou laskavost, kámo."{#xach_s41_1}'
 
     menu:
         '"Oč jde?"{#xach_s41_r672}':
@@ -930,7 +930,7 @@ label xach_s41: # from 4.3 5.3 6.4 7.6 8.1 9.2 10.3 11.2 12.2 13.1 14.1 15.1 16.
 
 # s42 # say673
 label xach_s42: # from 41.0
-    nr 'Jeho hlas zahanbeně poklesl. "Udělal jsem pár chyb, některý zatraceně špatný, to je jasný, ale tou největší chybou je, že jsem podepsal spalovačskou smlouvu. Kdybych nebyl tak vožralej, nikdy bych takovou hovadinu neudělal. Moc toho lituju a doufal jsem, že bys to moh dát do pořádku."{#xach_s42_}'
+    nr 'Jeho hlas zahanbeně poklesl. "Udělal jsem pár chyb, některý zatraceně špatný, to je jasný, ale tou největší chybou je, že jsem podepsal spalovačskou smlouvu. Kdybych nebyl tak vožralej, nikdy bych takovou hovadinu neudělal. Moc toho lituju a doufal jsem, že bys to moh dát do pořádku."{#xach_s42_1}'
 
     menu:
         '"Jak?"{#xach_s42_r675}':
@@ -944,7 +944,7 @@ label xach_s42: # from 41.0
 
 # s43 # say677
 label xach_s43: # from 42.0
-    nr '"Když si spočítám, že todle tělo už tolik vytrpělo… a každej den je pro mne tak dlouhej. Možná bys mě měl bodnout ještě jednou, kámo… za starý dobrý časy? Myšlenka, že bych strávil dalších pár let tady v Márnici s těmadle vobživlákama, mi působí mrazení v zádech. Byl bys tý lásky a poslal mě zpátky do Knihy mrtvejch kam patřím?"{#xach_s43_}'
+    nr '"Když si spočítám, že todle tělo už tolik vytrpělo… a každej den je pro mne tak dlouhej. Možná bys mě měl bodnout ještě jednou, kámo… za starý dobrý časy? Myšlenka, že bych strávil dalších pár let tady v Márnici s těmadle vobživlákama, mi působí mrazení v zádech. Byl bys tý lásky a poslal mě zpátky do Knihy mrtvejch kam patřím?"{#xach_s43_1}'
 
     menu:
         '"Jestli je to tvé přání…"{#xach_s43_r679}':
@@ -959,7 +959,7 @@ label xach_s43: # from 42.0
 
 # s44 # say678
 label xach_s44: # from 43.0
-    nr 'Bodnul jsi ho a Xachariáš padá k zemi s těžkým žuchnutím. Slyšíš slabé zasyčení a vidíš, jak z něj vyprchává život, nakonec se v místnosti rozhostí ticho.{#xach_s44_}'
+    nr 'Bodnul jsi ho a Xachariáš padá k zemi s těžkým žuchnutím. Slyšíš slabé zasyčení a vidíš, jak z něj vyprchává život, nakonec se v místnosti rozhostí ticho.{#xach_s44_1}'
 
     menu:
         '"Odpočívej v pokoji, Xachariáši."{#xach_s44_r681}':
@@ -970,7 +970,7 @@ label xach_s44: # from 43.0
 
 # s45 # say682
 label xach_s45: # from 41.1 42.1 43.1
-    nr '"Jo, dobře, na to nehleď. Doufám, že už mne na sebe nikdy nepoužiješ."{#xach_s45_}'
+    nr '"Jo, dobře, na to nehleď. Doufám, že už mne na sebe nikdy nepoužiješ."{#xach_s45_1}'
 
     menu:
         'Odejdi.{#xach_s45_r684}':
@@ -980,7 +980,7 @@ label xach_s45: # from 41.1 42.1 43.1
 
 # s46 # say683
 label xach_s46: # from 5.0
-    nr '"Dobře, kámo, domnívám se, že být mrtvý není nic, čeho by ses měl obávat, nicméně jak můžeš se mnou takhle mluvit? Tvůj hlas je ostrý jako nůž…"{#xach_s46_}'
+    nr '"Dobře, kámo, domnívám se, že být mrtvý není nic, čeho by ses měl obávat, nicméně jak můžeš se mnou takhle mluvit? Tvůj hlas je ostrý jako nůž…"{#xach_s46_1}'
 
     menu:
         '"Co tu děláš?"{#xach_s46_r689}':
@@ -1002,7 +1002,7 @@ label xach_s46: # from 5.0
 
 # s47 # say692
 label xach_s47: # from 4.1 5.1 46.0
-    nr '"Jsem pevná ruka na většině míst bez života. Už aby to bylo, abych mohl projít za Nekonečnou hranici a nazval Sféru svým domovem, protože jsem promrhal celej svůj život a teď jsem tady."{#xach_s47_}'
+    nr '"Jsem pevná ruka na většině míst bez života. Už aby to bylo, abych mohl projít za Nekonečnou hranici a nazval Sféru svým domovem, protože jsem promrhal celej svůj život a teď jsem tady."{#xach_s47_1}'
 
     menu:
         '"Jaký to je být zombie?"{#xach_s47_r693}':
@@ -1024,7 +1024,7 @@ label xach_s47: # from 4.1 5.1 46.0
 
 # s48 # say694
 label xach_s48: # from 47.0
-    nr '"Je to čestná práce…" Vytahuješ stehy z Xachariášových úst a na jeho rtech se objevil úsměv. "…Budu si teď o ústa více pečovat."{#xach_s48_}'
+    nr '"Je to čestná práce…" Vytahuješ stehy z Xachariášových úst a na jeho rtech se objevil úsměv. "…Budu si teď o ústa více pečovat."{#xach_s48_1}'
 
     menu:
         '"Měl bych nějaké další otázky…"{#xach_s48_r697}':
@@ -1043,7 +1043,7 @@ label xach_s48: # from 47.0
 
 # s49 # say63625
 label xach_s49: # from 23.3 27.3
-    nr '"Je to tak. Opravdu jsi na to všechno zapomněl, opravdu? Víš, kamaráde, všichni muži vidí i něčím jiným než jen očima… někteří lépe než jiní. Já cítím srdce svých soků - *tvých* soků - a mé šípy vždy přinášejí pravdu. Ach, to byly časy…"{#xach_s49_}'
+    nr '"Je to tak. Opravdu jsi na to všechno zapomněl, opravdu? Víš, kamaráde, všichni muži vidí i něčím jiným než jen očima… někteří lépe než jiní. Já cítím srdce svých soků - *tvých* soků - a mé šípy vždy přinášejí pravdu. Ach, to byly časy…"{#xach_s49_1}'
 
     menu:
         '"Ještě o mých dalších společnících…"{#xach_s49_r63626}':

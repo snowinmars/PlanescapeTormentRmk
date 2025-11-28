@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say35242
 label zf1148_s0: # - # IF ~  True()
-    nr 'La peau de ce cadavre de femme est complètement tatouée de motifs compliqués. Sur le front, la peau a été enlevée pour recevoir le numéro „1148“ gravé à même l„os du crâne. La bouche est fermée par d“épaisses et grossières coutures.{#zf1148_s0_}'
+    nr 'La peau de ce cadavre de femme est complètement tatouée de motifs compliqués. Sur le front, la peau a été enlevée pour recevoir le numéro „1148“ gravé à même l„os du crâne. La bouche est fermée par d“épaisses et grossières coutures.{#zf1148_s0_1}'
 
     menu:
         '"Alors… Tu fais quelque chose plus tard ?"{#zf1148_s0_r35243}' if zf1148Logic.r35243_condition():
@@ -58,7 +58,7 @@ label zf1148_s0: # - # IF ~  True()
 
 # s1 # say35244
 label zf1148_s1: # from 0.0 0.1 0.2
-    nr 'Le cadavre continue à te fixer.{#zf1148_s1_}'
+    nr 'Le cadavre continue à te fixer.{#zf1148_s1_1}'
 
     menu:
         '"Alors, au revoir."{#zf1148_s1_r35245}' if zf1148Logic.r35245_condition():
@@ -76,7 +76,7 @@ label zf1148_s1: # from 0.0 0.1 0.2
 
 # s2 # say35263
 label zf1148_s2: # from 0.3
-    nr 'Ce cadavre ne répond pas. Il semble qu„il soit trop absent pour répondre à tes questions.{#zf1148_s2_}'
+    nr 'Ce cadavre ne répond pas. Il semble qu„il soit trop absent pour répondre à tes questions.{#zf1148_s2_1}'
 
     menu:
         '"Alors, au revoir."{#zf1148_s2_r35264}' if zf1148Logic.r35264_condition():
@@ -94,6 +94,6 @@ label zf1148_s2: # from 0.3
 
 # s3 # say35273
 label zf1148_s3: # - # IF ~  False()
-    nr 'Ce cadavre ne répond pas. Il semble qu„il soit trop absent pour répondre à tes questions.{#zf1148_s3_}'
+    nr 'Ce cadavre ne répond pas. Il semble qu„il soit trop absent pour répondre à tes questions.{#zf1148_s3_1}'
 
     menu:

@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say47002
 label zm1664_s0: # from 5.0 # IF ~  True()
-    nr 'L„impressionnant cadavre se dresse dans un coin de la pièce, face au mur. L“homme était manifestement jeune et solidement charpenté. S„il faut en croire l“état de sa dépouille, il est mort récemment. Le numéro „1664“ a été récemment cousu sur son front. Ce zombi a l„air de faire office de bibliothécaire, à en juger par le nombre de livres qu“il porte.{#zm1664_s0_}'
+    nr 'L„impressionnant cadavre se dresse dans un coin de la pièce, face au mur. L“homme était manifestement jeune et solidement charpenté. S„il faut en croire l“état de sa dépouille, il est mort récemment. Le numéro „1664“ a été récemment cousu sur son front. Ce zombi a l„air de faire office de bibliothécaire, à en juger par le nombre de livres qu“il porte.{#zm1664_s0_1}'
 
     menu:
         'Examine les livres.{#zm1664_s0_r47003}' if zm1664Logic.r47003_condition():
@@ -41,7 +41,7 @@ label zm1664_s0: # from 5.0 # IF ~  True()
 
 # s1 # say47009
 label zm1664_s1: # from 0.2 6.0
-    nr 'Le cadavre fixe le mur d„un regard vide.{#zm1664_s1_}'
+    nr 'Le cadavre fixe le mur d„un regard vide.{#zm1664_s1_1}'
 
     menu:
         'Laisse le cadavre tranquille.{#zm1664_s1_r47010}':
@@ -51,7 +51,7 @@ label zm1664_s1: # from 0.2 6.0
 
 # s2 # say47011
 label zm1664_s2: # from 0.3
-    nr 'Il ne bouge pas. Bien que mort depuis peu, il semble incapable de répondre à tes questions.{#zm1664_s2_}'
+    nr 'Il ne bouge pas. Bien que mort depuis peu, il semble incapable de répondre à tes questions.{#zm1664_s2_1}'
 
     menu:
         'Laisse le cadavre tranquille.{#zm1664_s2_r47012}':
@@ -61,7 +61,7 @@ label zm1664_s2: # from 0.3
 
 # s3 # say47013
 label zm1664_s3: # from 0.0
-    nr 'Ces livres semblent être de vieux registres de la Morgue qui ne présentent pas le moindre intérêt. Toutefois, en les feuilletant, tu remarques une feuille volante coincée entre deux d„entre eux… et tu as le sentiment que quelqu“un l„a glissée là pour la cacher.{#zm1664_s3_}'
+    nr 'Ces livres semblent être de vieux registres de la Morgue qui ne présentent pas le moindre intérêt. Toutefois, en les feuilletant, tu remarques une feuille volante coincée entre deux d„entre eux… et tu as le sentiment que quelqu“un l„a glissée là pour la cacher.{#zm1664_s3_1}'
 
     menu:
         'Prends la page.{#zm1664_s3_r47014}':
@@ -72,7 +72,7 @@ label zm1664_s3: # from 0.0
 
 # s4 # say47015
 label zm1664_s4: # from 3.0
-    nr 'Cette page ne semble pas avoir été arrachée à l„un des registres, mais plutôt à un carnet. La déchirure est nette, ce qui indique vraisemblablement qu“elle a été sciemment découpée, par exemple à l„aide d“un couteau.{#zm1664_s4_}'
+    nr 'Cette page ne semble pas avoir été arrachée à l„un des registres, mais plutôt à un carnet. La déchirure est nette, ce qui indique vraisemblablement qu“elle a été sciemment découpée, par exemple à l„aide d“un couteau.{#zm1664_s4_1}'
 
     menu:
         'Lis-la.{#zm1664_s4_r47016}':
@@ -82,7 +82,7 @@ label zm1664_s4: # from 3.0
 
 # s5 # say47017
 label zm1664_s5: # from 4.0
-    nr 'Tu prends le temps de lire la page… il s„agit d“une liste de corps apportés à la Morgue et conservés à la Réception. Les diverses entrées concernent des arrivées plutôt récentes.  ^NREMARQUE : <READSTUFF>^-{#zm1664_s5_}'
+    nr 'Tu prends le temps de lire la page… il s„agit d“une liste de corps apportés à la Morgue et conservés à la Réception. Les diverses entrées concernent des arrivées plutôt récentes.  ^NREMARQUE : <READSTUFF>^-{#zm1664_s5_1}'
 
     menu:
         'Examine une nouvelle fois le zombi.{#zm1664_s5_r47018}':
@@ -96,7 +96,7 @@ label zm1664_s5: # from 4.0
 
 # s6 # say47021
 label zm1664_s6: # from 0.1
-    nr 'Ces livres semblent être de vieux registres de la Morgue, ils ne présentent pas le moindre intérêt. Tu parcours à nouveau les textes, en vain.{#zm1664_s6_}'
+    nr 'Ces livres semblent être de vieux registres de la Morgue, ils ne présentent pas le moindre intérêt. Tu parcours à nouveau les textes, en vain.{#zm1664_s6_1}'
 
     menu:
         '"Alors, dis-moi, comment es-tu devenu bibliothécaire ? Tous les autres boulots étaient déjà pris ?"{#zm1664_s6_r47022}':

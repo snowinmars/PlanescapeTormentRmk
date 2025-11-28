@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say6518
 label zm1146_s0: # - # IF ~  Global("Crispy","GLOBAL",0)
-    nr 'Do čela této chodící mrtvoly je vyřezáno číslo "1146", rty má sešity obyčejnou černou nití. Celé tělo je pokryto hroznými jizvami - snad dokonce horšími než jsou tvé vlastní - jako kdyby jeho vlastník byl upálen. Nos, uši a některé prsty zombii chybí, pravděpodobně shořely při nějakém dávném požáru. Když jí zablokuješ cestu, abys upoutal její „pozornost,“ zastaví se a zírá na tebe prázdnýma očima.{#zm1146_s0_}'
+    nr 'Do čela této chodící mrtvoly je vyřezáno číslo "1146", rty má sešity obyčejnou černou nití. Celé tělo je pokryto hroznými jizvami - snad dokonce horšími než jsou tvé vlastní - jako kdyby jeho vlastník byl upálen. Nos, uši a některé prsty zombii chybí, pravděpodobně shořely při nějakém dávném požáru. Když jí zablokuješ cestu, abys upoutal její „pozornost,“ zastaví se a zírá na tebe prázdnýma očima.{#zm1146_s0_1}'
 
     menu:
         '"Tak… je tam dál vidět něco zajímavého?"{#zm1146_s0_r6521}' if zm1146Logic.r6521_condition():
@@ -43,7 +43,7 @@ label zm1146_s0: # - # IF ~  Global("Crispy","GLOBAL",0)
 
 # s1 # say6519
 label zm1146_s1: # from 0.0 0.1 0.2
-    nr 'Mrtvola na tebe stále zírá.{#zm1146_s1_}'
+    nr 'Mrtvola na tebe stále zírá.{#zm1146_s1_1}'
 
     menu:
         'Nechej mrtvolu být.{#zm1146_s1_r6527}':
@@ -53,7 +53,7 @@ label zm1146_s1: # from 0.0 0.1 0.2
 
 # s2 # say6520
 label zm1146_s2: # from 0.3
-    nr 'Když se duch vrátil do svého někdejšího příbytku, zaplavil tvé smysly zápach dýmající síry, spálených chlupů a vařící krve. Mrtvola se téměř okamžitě zhroutila na podlahu, prudce se chvěje a uboze sténá. Téměř vidíš slabý proužek páchnoucího kouře vycházejícího z jejího těla a údů.{#zm1146_s2_}'
+    nr 'Když se duch vrátil do svého někdejšího příbytku, zaplavil tvé smysly zápach dýmající síry, spálených chlupů a vařící krve. Mrtvola se téměř okamžitě zhroutila na podlahu, prudce se chvěje a uboze sténá. Téměř vidíš slabý proužek páchnoucího kouře vycházejícího z jejího těla a údů.{#zm1146_s2_1}'
 
     menu:
         '"Jsi… v pořádku?"{#zm1146_s2_r6528}':
@@ -71,7 +71,7 @@ label zm1146_s2: # from 0.3
 
 # s3 # say9398
 label zm1146_s3: # from 2.0
-    nr 'Duch otevřel jedno oko. Oční bělmo přímo září v porovnání se šedí zvrásněného masa, které ho obklopuje. Pomalu otočil svou hlavu a zírá ne tebe; roztrhané a rozervané maso na hlavě i krku má pevně napnuto na kosti. Konečně se z jeho sešlého hrdla vydralo: "Ne. Ne… já ne, ty… pitomej… vylízanče."{#zm1146_s3_}'
+    nr 'Duch otevřel jedno oko. Oční bělmo přímo září v porovnání se šedí zvrásněného masa, které ho obklopuje. Pomalu otočil svou hlavu a zírá ne tebe; roztrhané a rozervané maso na hlavě i krku má pevně napnuto na kosti. Konečně se z jeho sešlého hrdla vydralo: "Ne. Ne… já ne, ty… pitomej… vylízanče."{#zm1146_s3_1}'
 
     menu:
         '"Můžu ti nějak pomoci?"{#zm1146_s3_r9415}':
@@ -94,7 +94,7 @@ label zm1146_s3: # from 2.0
 
 # s4 # say9399
 label zm1146_s4: # from 3.0
-    nr '"HA, hA-HURG!" Duch se hlasitě zasmál, když tu náhle ztichl, začal se svíjet v křečích a vyzvracel na zem směsici balzamovací tekutiny s hnilobou. Stále ještě zkroucen bolestí začal chrchlavě kašlat, přičemž chvílemi přestal, aby mohl ze svých zničených rtů vypravit další várku nažloutlé tekutiny a rozervaných stehů.{#zm1146_s4_}'
+    nr '"HA, hA-HURG!" Duch se hlasitě zasmál, když tu náhle ztichl, začal se svíjet v křečích a vyzvracel na zem směsici balzamovací tekutiny s hnilobou. Stále ještě zkroucen bolestí začal chrchlavě kašlat, přičemž chvílemi přestal, aby mohl ze svých zničených rtů vypravit další várku nažloutlé tekutiny a rozervaných stehů.{#zm1146_s4_1}'
 
     menu:
         'Trpělivě vyčkej, než záchvat skončí.{#zm1146_s4_r9419}':
@@ -112,7 +112,7 @@ label zm1146_s4: # from 3.0
 
 # s5 # say9400
 label zm1146_s5: # from 4.0
-    nr 'Duchovo příšerné kašlání konečně ustalo. "Ne, blbče… nemůžeš. Leda bys… leda bys odtancoval přímo do Baatoru a zachránil mě tam. Tam sem… sem oslep. Je čas k mýmu… mýmu pokání." Opět zavřel své oči a položil hlavu na zem.{#zm1146_s5_}'
+    nr 'Duchovo příšerné kašlání konečně ustalo. "Ne, blbče… nemůžeš. Leda bys… leda bys odtancoval přímo do Baatoru a zachránil mě tam. Tam sem… sem oslep. Je čas k mýmu… mýmu pokání." Opět zavřel své oči a položil hlavu na zem.{#zm1146_s5_1}'
 
     menu:
         '"Ještě bych se chtěl na něco zeptat…"{#zm1146_s5_r9423}':
@@ -126,7 +126,7 @@ label zm1146_s5: # from 4.0
 
 # s6 # say9401
 label zm1146_s6: # from 3.2 17.0
-    nr 'Duch se sebe vypravil chrchlavý zvuk, jeho zčernalé seschlé rty odhalily křivé žluté zuby. "Jen… jen počkej, než se dostanu… z tý díry… Pro tebe… si přídu jako pro prvního, blbče…"{#zm1146_s6_}'
+    nr 'Duch se sebe vypravil chrchlavý zvuk, jeho zčernalé seschlé rty odhalily křivé žluté zuby. "Jen… jen počkej, než se dostanu… z tý díry… Pro tebe… si přídu jako pro prvního, blbče…"{#zm1146_s6_1}'
 
     menu:
         '"To klidně udělej. Nebojím se někoho, jako jsi ty."{#zm1146_s6_r9425}':
@@ -145,21 +145,21 @@ label zm1146_s6: # from 3.2 17.0
 
 # s7 # say9402
 label zm1146_s7: # from 6.0
-    nr 'Duch slabě, ale nevrle zavrčel a plivl na tebe -- jeho špinavé sliny tě ale o pár stop minuly. Vyčerpaně sebou třískl na zem a z jeho těla opět začal vyprchávat všechen život.{#zm1146_s7_}'
+    nr 'Duch slabě, ale nevrle zavrčel a plivl na tebe -- jeho špinavé sliny tě ale o pár stop minuly. Vyčerpaně sebou třískl na zem a z jeho těla opět začal vyprchávat všechen život.{#zm1146_s7_1}'
 
     jump zm1146_dispose
 
 
 # s8 # say9403
 label zm1146_s8: # from 6.1
-    nr 'Pohotově jsi mrtvolu nakopl do ledvin, ale patrně bez jakéhokoliv efektu; duch se zdá být nezraněný. "Ha, ha-ha," zachrčelo stvoření těsně předtím, než opustilo tělo. Takže tu teď jen tak stojíš s jistým pocitem neuspokojenosti.{#zm1146_s8_}'
+    nr 'Pohotově jsi mrtvolu nakopl do ledvin, ale patrně bez jakéhokoliv efektu; duch se zdá být nezraněný. "Ha, ha-ha," zachrčelo stvoření těsně předtím, než opustilo tělo. Takže tu teď jen tak stojíš s jistým pocitem neuspokojenosti.{#zm1146_s8_1}'
 
     jump zm1146_dispose
 
 
 # s9 # say9404
 label zm1146_s9: # from 2.1 3.1 4.1 5.0 10.0 11.0 12.1 13.1 14.1 15.0 16.0 17.1 18.1 19.0 20.0
-    nr '"Tak… tak co bys ode mě teda potřeboval, blbečku?" Chvílemi se tělo opět zkroutí a hází sebou na zemi, jako by se pokoušelo uhasit malé ohníčky na vlastním těle.{#zm1146_s9_}'
+    nr '"Tak… tak co bys ode mě teda potřeboval, blbečku?" Chvílemi se tělo opět zkroutí a hází sebou na zemi, jako by se pokoušelo uhasit malé ohníčky na vlastním těle.{#zm1146_s9_1}'
 
     menu:
         '"Kdo jsi?"{#zm1146_s9_r9428}':
@@ -197,7 +197,7 @@ label zm1146_s9: # from 2.1 3.1 4.1 5.0 10.0 11.0 12.1 13.1 14.1 15.0 16.0 17.1 
 
 # s10 # say9405
 label zm1146_s10: # from 9.0
-    nr '"To neni tvoje starost… nech mě… bejt…"{#zm1146_s10_}'
+    nr '"To neni tvoje starost… nech mě… bejt…"{#zm1146_s10_1}'
 
     menu:
         '"Ne. Mám ještě další otázku…"{#zm1146_s10_r9436}':
@@ -211,7 +211,7 @@ label zm1146_s10: # from 9.0
 
 # s11 # say9406
 label zm1146_s11: # from 9.1
-    nr '"Eh? Pro lásku mocnejch, kdo… se ptá? Ze Sigilu, ty… ty jedno hovado."{#zm1146_s11_}'
+    nr '"Eh? Pro lásku mocnejch, kdo… se ptá? Ze Sigilu, ty… ty jedno hovado."{#zm1146_s11_1}'
 
     menu:
         '"Mám ještě další otázku…"{#zm1146_s11_r9438}':
@@ -225,7 +225,7 @@ label zm1146_s11: # from 9.1
 
 # s12 # say9407
 label zm1146_s12: # from 9.2
-    nr '"Sakra, přemejšlej trochu, idiote." Toto vybuchnutí přivedlo ducha až k dalšímu bolestivému záchvatu přerývaného kašle. "Takhle sem se proklel kvůli… pitomý hrstce prachů. Pitomý Spalovači… a ta jejich pravá smrt - PRAVÁ SMRT, taková hovadina - navíc se ňákej střelenej čaroděj rozhod usmažit Úl a zrovna já sem musel stát uprostřed toho ohnivýho pekla!" Začal si sám pro sebe zlostně pobroukávat, zatímco mu pochybná tekutina odkapává z mnoha puklin ve rtech.{#zm1146_s12_}'
+    nr '"Sakra, přemejšlej trochu, idiote." Toto vybuchnutí přivedlo ducha až k dalšímu bolestivému záchvatu přerývaného kašle. "Takhle sem se proklel kvůli… pitomý hrstce prachů. Pitomý Spalovači… a ta jejich pravá smrt - PRAVÁ SMRT, taková hovadina - navíc se ňákej střelenej čaroděj rozhod usmažit Úl a zrovna já sem musel stát uprostřed toho ohnivýho pekla!" Začal si sám pro sebe zlostně pobroukávat, zatímco mu pochybná tekutina odkapává z mnoha puklin ve rtech.{#zm1146_s12_1}'
 
     menu:
         '"Nějaký čaroděj chtěl usmažit Úl?"{#zm1146_s12_r9440}':
@@ -243,7 +243,7 @@ label zm1146_s12: # from 9.2
 
 # s13 # say9408
 label zm1146_s13: # from 9.3
-    nr '"Kde asi… kde myslíš, hovado boží? Kde jinde než v Baatoru, v tý jedný smradlavý díře, kerý říkaj Phlegethos. Hořim, hořim… hořim… a nic jinýho tam nedělám. Uhořel sem za života a teď si hořim za smrti. Aaarrgh!" Mrtvola začala skřípat zubama - je to ke zbláznění. "Takovej hnusnej osud! Až se vodtaď dostanu, vynasnažim se dostat tam spoustu dalších nebožáků. Ha, ha-ha…"{#zm1146_s13_}'
+    nr '"Kde asi… kde myslíš, hovado boží? Kde jinde než v Baatoru, v tý jedný smradlavý díře, kerý říkaj Phlegethos. Hořim, hořim… hořim… a nic jinýho tam nedělám. Uhořel sem za života a teď si hořim za smrti. Aaarrgh!" Mrtvola začala skřípat zubama - je to ke zbláznění. "Takovej hnusnej osud! Až se vodtaď dostanu, vynasnažim se dostat tam spoustu dalších nebožáků. Ha, ha-ha…"{#zm1146_s13_1}'
 
     menu:
         '"Proč si chceš svou zlost vylívat na jiných?"{#zm1146_s13_r9442}':
@@ -261,7 +261,7 @@ label zm1146_s13: # from 9.3
 
 # s14 # say9409
 label zm1146_s14: # from 9.4
-    nr '"Zasloužil? TOHLE? Ničim! Já… jsem vážně nic neproved. Sem se jen tak procházel po ulici… jako každej normální člověk… a pak najednou „vvmmmmžžžž!“ Ňákej cvoklej kouzelníček začal pálit Úl!"{#zm1146_s14_}'
+    nr '"Zasloužil? TOHLE? Ničim! Já… jsem vážně nic neproved. Sem se jen tak procházel po ulici… jako každej normální člověk… a pak najednou „vvmmmmžžžž!“ Ňákej cvoklej kouzelníček začal pálit Úl!"{#zm1146_s14_1}'
 
     menu:
         '"Kouzelník… začal pálit… Úl?"{#zm1146_s14_r9445}':
@@ -279,7 +279,7 @@ label zm1146_s14: # from 9.4
 
 # s15 # say9410
 label zm1146_s15: # from 9.5
-    nr '"Nic. Povidám nic, blbečku. Prostě… prostě mě nech, ať si v klidu hořim…"{#zm1146_s15_}'
+    nr '"Nic. Povidám nic, blbečku. Prostě… prostě mě nech, ať si v klidu hořim…"{#zm1146_s15_1}'
 
     menu:
         '"Fajn. Měl bych pro tebe ještě další otázečku…"{#zm1146_s15_r9447}':
@@ -293,7 +293,7 @@ label zm1146_s15: # from 9.5
 
 # s16 # say9411
 label zm1146_s16: # from 9.6
-    nr '"Koho? Co? NE! Jaks… jaks přišel na to, že ho znám… hovado jedno nedomrlý? Hmph…"{#zm1146_s16_}'
+    nr '"Koho? Co? NE! Jaks… jaks přišel na to, že ho znám… hovado jedno nedomrlý? Hmph…"{#zm1146_s16_1}'
 
     menu:
         '"Fajn. Měl bych pro tebe ještě další otázečku…"{#zm1146_s16_r9449}':
@@ -307,7 +307,7 @@ label zm1146_s16: # from 9.6
 
 # s17 # say9412
 label zm1146_s17: # from 13.0
-    nr '"Říká se tomu pomsta, vylízanče! Dostanu… dostanu tam všechny, co mě kdy rozzlobili. A hlavně toho čaroděje! Rozsekám ho na mrňavý kousíčky a ty mu potom narvu do držky! A pak ho zatáhnu do týhle zatracený díry - všechny ty kousíčky a potom nějaký další! Jeho a pár dalších… jen tak do počtu! Ha, ha-ha…"{#zm1146_s17_}'
+    nr '"Říká se tomu pomsta, vylízanče! Dostanu… dostanu tam všechny, co mě kdy rozzlobili. A hlavně toho čaroděje! Rozsekám ho na mrňavý kousíčky a ty mu potom narvu do držky! A pak ho zatáhnu do týhle zatracený díry - všechny ty kousíčky a potom nějaký další! Jeho a pár dalších… jen tak do počtu! Ha, ha-ha…"{#zm1146_s17_1}'
 
     menu:
         '"Nezávidím ti to, ale tvůj osud se zdá být zasloužený."{#zm1146_s17_r9420}':
@@ -325,7 +325,7 @@ label zm1146_s17: # from 13.0
 
 # s18 # say9458
 label zm1146_s18: # from 12.0 14.0
-    nr '"Jo, Úl… tu nejhorší část Sigilu. V celym svym životě sem nikdy neviděl tolik vohně… zdrhal sem pryč, chtěl sem vocaď vypadnout, ale všechno bylo v jednom plameni! Baráky, ulice, lidi i jejich děti… a ten zpropadenej mág se celou tu dobu jenom chechtal! Pak sem uhnul za roh a myslel sem, že už je to za mnou, jenže ta příští věc, co sem si uvědomil byla, že mi hoří hlava! No a pak… už to se mnou šlo hezky rychle z kopce…" Duchovi oči září zlomyslným světlem.{#zm1146_s18_}'
+    nr '"Jo, Úl… tu nejhorší část Sigilu. V celym svym životě sem nikdy neviděl tolik vohně… zdrhal sem pryč, chtěl sem vocaď vypadnout, ale všechno bylo v jednom plameni! Baráky, ulice, lidi i jejich děti… a ten zpropadenej mág se celou tu dobu jenom chechtal! Pak sem uhnul za roh a myslel sem, že už je to za mnou, jenže ta příští věc, co sem si uvědomil byla, že mi hoří hlava! No a pak… už to se mnou šlo hezky rychle z kopce…" Duchovi oči září zlomyslným světlem.{#zm1146_s18_1}'
 
     menu:
         '"Co to bylo za mága?"{#zm1146_s18_r9459}':
@@ -343,7 +343,7 @@ label zm1146_s18: # from 12.0 14.0
 
 # s19 # say9744
 label zm1146_s19: # from 18.0
-    nr '"Nevím. Byl jsem už docela propečenej, než ho kdosi zastavil, pokaď ho vůbec někdo zastavil. Pamatuju si, jak ho ňácí lidi ze začátku honili a řvali na něj jménem… ééé… jo! Ignis, myslím, že tak nějak. Ignis. Nebo něco podobnýho. Doufám, že je ten parchant v horší díře, než já!"{#zm1146_s19_}'
+    nr '"Nevím. Byl jsem už docela propečenej, než ho kdosi zastavil, pokaď ho vůbec někdo zastavil. Pamatuju si, jak ho ňácí lidi ze začátku honili a řvali na něj jménem… ééé… jo! Ignis, myslím, že tak nějak. Ignis. Nebo něco podobnýho. Doufám, že je ten parchant v horší díře, než já!"{#zm1146_s19_1}'
 
     menu:
         '"Aha. Mám pro tebe víc otázek…"{#zm1146_s19_r9747}':
@@ -357,7 +357,7 @@ label zm1146_s19: # from 18.0
 
 # s20 # say20099
 label zm1146_s20: # - # IF ~  Global("Crispy","GLOBAL",1)
-    nr '"Zase?!"{#zm1146_s20_}'
+    nr '"Zase?!"{#zm1146_s20_1}'
 
     menu:
         '"Mám pár otázek…"{#zm1146_s20_r20100}':

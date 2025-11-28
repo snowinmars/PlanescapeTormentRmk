@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say6584
 label zm475_s0: # - # IF ~  True()
-    nr 'This corpse„s slightly misshapen head appears to be held together by a number of narrow metal bands bolted directly onto the skull. A rusting iron plate over its left eye has the number "475" etched into it. Its mouth is bolted shut, and it reeks of embalming fluid.{#zm475_s0_}'
+    nr 'This corpse„s slightly misshapen head appears to be held together by a number of narrow metal bands bolted directly onto the skull. A rusting iron plate over its left eye has the number "475" etched into it. Its mouth is bolted shut, and it reeks of embalming fluid.{#zm475_s0_1}'
 
     menu:
         '"So… seen anything interesting going on?"{#zm475_s0_r6587}' if zm475Logic.r6587_condition():
@@ -42,7 +42,7 @@ label zm475_s0: # - # IF ~  True()
 
 # s1 # say6585
 label zm475_s1: # from 0.0 0.1 0.2
-    nr 'The corpse continues to stare at you.{#zm475_s1_}'
+    nr 'The corpse continues to stare at you.{#zm475_s1_1}'
 
     menu:
         'Leave the corpse in peace.{#zm475_s1_r6593}':
@@ -52,7 +52,7 @@ label zm475_s1: # from 0.0 0.1 0.2
 
 # s2 # say6586
 label zm475_s2: # from 0.3
-    nr 'The corpse makes no reply. It looks like it is too far gone to answer any of your questions.{#zm475_s2_}'
+    nr 'The corpse makes no reply. It looks like it is too far gone to answer any of your questions.{#zm475_s2_1}'
 
     menu:
         'Leave the corpse in peace.{#zm475_s2_r6594}':

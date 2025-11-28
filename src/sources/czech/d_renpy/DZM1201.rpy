@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say34953
 label zm1201_s0: # - # IF ~  Global("1201_Note_Retrieved","GLOBAL",0)
-    nr 'Na čele této mrtvoly stojí napsáno číslo "1021" inkoustem, který jí stekl do očí, na tváře a čelist. Když sleduješ inkoustové skvrny na tváři mrtvoly, všiml sis, že inkoust stekl do sešitých úst a zastavil se na něčem, co vypadá jako růžek papírku, nacpaného v ústech mrtvoly.{#zm1201_s0_}'
+    nr 'Na čele této mrtvoly stojí napsáno číslo "1021" inkoustem, který jí stekl do očí, na tváře a čelist. Když sleduješ inkoustové skvrny na tváři mrtvoly, všiml sis, že inkoust stekl do sešitých úst a zastavil se na něčem, co vypadá jako růžek papírku, nacpaného v ústech mrtvoly.{#zm1201_s0_1}'
 
     menu:
         'Zkus papírek vytáhnout.{#zm1201_s0_r34954}' if zm1201Logic.r34954_condition():
@@ -37,7 +37,7 @@ label zm1201_s0: # - # IF ~  Global("1201_Note_Retrieved","GLOBAL",0)
 
 # s1 # say34955
 label zm1201_s1: # from 0.0
-    nr 'Papírek je nacpaný v ústech zombie. Pokud by ses pokusil vytáhnout papír skrze mezeru mezi stehy, roztrhal bys jej. Rozsekáním mrtvoly taky nic nevyřešíš, asi bys papírek zničil. Potřebuješ najít nějaký jemný způsob, jak odstranit stehy, než budeš moci papírek vytáhnout.{#zm1201_s1_}'
+    nr 'Papírek je nacpaný v ústech zombie. Pokud by ses pokusil vytáhnout papír skrze mezeru mezi stehy, roztrhal bys jej. Rozsekáním mrtvoly taky nic nevyřešíš, asi bys papírek zničil. Potřebuješ najít nějaký jemný způsob, jak odstranit stehy, než budeš moci papírek vytáhnout.{#zm1201_s1_1}'
 
     menu:
         'Prořezej stehy skalpelem.{#zm1201_s1_r34956}' if zm1201Logic.r34956_condition():
@@ -52,7 +52,7 @@ label zm1201_s1: # from 0.0
 
 # s2 # say34960
 label zm1201_s2: # from 1.0
-    nr 'ŠIkovně jsi rozpáral stehy, sešívající ústa mrtvoly, čelist se rozevřela. Opatrně si vytáhl papírek z úst mrtvoly… navzdory špatnému stavu papíru je text ještě čitelný.  Poznámka: "čtení" poznámek, knih a svitků provedeš tak, že si je dáš do inventáře a potom na ně klikneš pravým tlačítkem myši.{#zm1201_s2_}'
+    nr 'ŠIkovně jsi rozpáral stehy, sešívající ústa mrtvoly, čelist se rozevřela. Opatrně si vytáhl papírek z úst mrtvoly… navzdory špatnému stavu papíru je text ještě čitelný.  Poznámka: "čtení" poznámek, knih a svitků provedeš tak, že si je dáš do inventáře a potom na ně klikneš pravým tlačítkem myši.{#zm1201_s2_1}'
 
     menu:
         'Prozkoumej mrtvolu znovu.{#zm1201_s2_r34961}':
@@ -66,7 +66,7 @@ label zm1201_s2: # from 1.0
 
 # s3 # say45124
 label zm1201_s3: # from 0.1 5.0 5.1 5.2
-    nr 'Mléčně bílé oči mrtvoly na tebe prázdně zírají.{#zm1201_s3_}'
+    nr 'Mléčně bílé oči mrtvoly na tebe prázdně zírají.{#zm1201_s3_1}'
 
     menu:
         'Nechej mrtvolu v klidu odpočívat.{#zm1201_s3_r45125}':
@@ -76,7 +76,7 @@ label zm1201_s3: # from 0.1 5.0 5.1 5.2
 
 # s4 # say45126
 label zm1201_s4: # from 0.2 5.3
-    nr 'Mrtvola se nepohnula. Asi už moc uhnila, anebo nemá náladu na povídání.{#zm1201_s4_}'
+    nr 'Mrtvola se nepohnula. Asi už moc uhnila, anebo nemá náladu na povídání.{#zm1201_s4_1}'
 
     menu:
         'Nechej mrtvolu v klidu odpočívat.{#zm1201_s4_r45127}':
@@ -86,7 +86,7 @@ label zm1201_s4: # from 0.2 5.3
 
 # s5 # say45128
 label zm1201_s5: # from 2.0 # IF ~  Global("1201_Note_Retrieved","GLOBAL",1)
-    nr 'Na čele mrtvoly je inkoustem napsáno číslo "1201". Trochu inkoustu steklo dolů k očím a tvářím, takže to vypadá, jako by mrtvola plakala. Její čelist visí dolů a z koutku úst vychází nějaká nepříjemně vypadající tekutina.{#zm1201_s5_}'
+    nr 'Na čele mrtvoly je inkoustem napsáno číslo "1201". Trochu inkoustu steklo dolů k očím a tvářím, takže to vypadá, jako by mrtvola plakala. Její čelist visí dolů a z koutku úst vychází nějaká nepříjemně vypadající tekutina.{#zm1201_s5_1}'
 
     menu:
         '"Omlouvám se za ty stehy… ale potřeboval jsem se podívat, co to bylo v tvé puse."{#zm1201_s5_r45129}' if zm1201Logic.r45129_condition():

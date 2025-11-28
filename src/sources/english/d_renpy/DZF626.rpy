@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say35050
 label zf626_s0: # - # IF ~  True()
-    nr 'The left side of this woman„s face looks as if it was caved in with a club, and her flesh sags in bruised, swollen clumps over her ruined skull. The number "626" has been stitched onto the corpse“s right cheek, just below the eye.{#zf626_s0_}'
+    nr 'The left side of this woman„s face looks as if it was caved in with a club, and her flesh sags in bruised, swollen clumps over her ruined skull. The number "626" has been stitched onto the corpse“s right cheek, just below the eye.{#zf626_s0_1}'
 
     menu:
         '"Uh… nasty wound you„ve got there."{#zf626_s0_r35051}' if zf626Logic.r35051_condition():
@@ -58,7 +58,7 @@ label zf626_s0: # - # IF ~  True()
 
 # s1 # say35052
 label zf626_s1: # from 0.0 0.1 0.2
-    nr 'The corpse continues to stare at you with its one good eye.{#zf626_s1_}'
+    nr 'The corpse continues to stare at you with its one good eye.{#zf626_s1_1}'
 
     menu:
         '"Farewell then."{#zf626_s1_r35053}' if zf626Logic.r35053_condition():
@@ -76,7 +76,7 @@ label zf626_s1: # from 0.0 0.1 0.2
 
 # s2 # say35071
 label zf626_s2: # from 0.3
-    nr 'This corpse does not stir. It looks like it is too far gone to answer any of your questions.{#zf626_s2_}'
+    nr 'This corpse does not stir. It looks like it is too far gone to answer any of your questions.{#zf626_s2_1}'
 
     menu:
         '"Farewell then."{#zf626_s2_r35072}' if zf626Logic.r35072_condition():
@@ -94,6 +94,6 @@ label zf626_s2: # from 0.3
 
 # s3 # say35081
 label zf626_s3: # - # IF ~  False()
-    nr 'This corpse makes no reply. It looks like it is too far gone to answer any of your questions.{#zf626_s3_}'
+    nr 'This corpse makes no reply. It looks like it is too far gone to answer any of your questions.{#zf626_s3_1}'
 
     menu:

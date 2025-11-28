@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say35210
 label zf444_s0: # - # IF ~  True()
-    nr 'Diese weibliche Leiche ist in einem schrecklichen Zustand. Etwas, das wie Hunderte von winzigen Bissen aussieht - vielleicht von Ratten - entstellt die zähe, konservierte Haut der Leiche. Dem verzogenen Fleisch um die Wunden herum nach zu urteilen, wurden die Bisse der Leiche höchstwahrscheinlich bereits zugefügt, bevor sie präpariert wurde. Ihre Lippen sind zugenäht, und die Zahl "444" ist mit dunkelblauer Tinte auf ihr Gesicht gekleckst worden.{#zf444_s0_}'
+    nr 'Diese weibliche Leiche ist in einem schrecklichen Zustand. Etwas, das wie Hunderte von winzigen Bissen aussieht - vielleicht von Ratten - entstellt die zähe, konservierte Haut der Leiche. Dem verzogenen Fleisch um die Wunden herum nach zu urteilen, wurden die Bisse der Leiche höchstwahrscheinlich bereits zugefügt, bevor sie präpariert wurde. Ihre Lippen sind zugenäht, und die Zahl "444" ist mit dunkelblauer Tinte auf ihr Gesicht gekleckst worden.{#zf444_s0_1}'
 
     menu:
         '"Sag mal… hast du nachher schon was vor?"{#zf444_s0_r35211}' if zf444Logic.r35211_condition():
@@ -58,7 +58,7 @@ label zf444_s0: # - # IF ~  True()
 
 # s1 # say35212
 label zf444_s1: # from 0.0 0.1 0.2
-    nr 'Die Leiche starrt dich weiter an.{#zf444_s1_}'
+    nr 'Die Leiche starrt dich weiter an.{#zf444_s1_1}'
 
     menu:
         '"Dann leb wohl."{#zf444_s1_r35213}' if zf444Logic.r35213_condition():
@@ -76,7 +76,7 @@ label zf444_s1: # from 0.0 0.1 0.2
 
 # s2 # say35231
 label zf444_s2: # from 0.3
-    nr 'Diese Leiche antwortet nicht. Es sieht so aus, als ob sie schon zu tot ist, um noch auf irgendeine deiner Fragen zu antworten.{#zf444_s2_}'
+    nr 'Diese Leiche antwortet nicht. Es sieht so aus, als ob sie schon zu tot ist, um noch auf irgendeine deiner Fragen zu antworten.{#zf444_s2_1}'
 
     menu:
         '"Dann leb wohl."{#zf444_s2_r35232}' if zf444Logic.r35232_condition():
@@ -94,6 +94,6 @@ label zf444_s2: # from 0.3
 
 # s3 # say35241
 label zf444_s3: # - # IF ~  False()
-    nr 'Diese Leiche antwortet nicht. Es sieht so aus, als ob sie schon zu tot ist, um noch auf irgendeine deiner Fragen zu antworten.{#zf444_s3_}'
+    nr 'Diese Leiche antwortet nicht. Es sieht so aus, als ob sie schon zu tot ist, um noch auf irgendeine deiner Fragen zu antworten.{#zf444_s3_1}'
 
     menu:

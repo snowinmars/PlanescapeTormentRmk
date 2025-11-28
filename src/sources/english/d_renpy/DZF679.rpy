@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say35178
 label zf679_s0: # - # IF ~  True()
-    nr 'This looks to be the corpse of a well-aged, even ancient woman. Aside from the embalming fluid stink, the stitches sealing her mouth, and the number "679" stitched onto her right cheek, it„s likely she looks only slightly different now than she did in her final years.{#zf679_s0_}'
+    nr 'This looks to be the corpse of a well-aged, even ancient woman. Aside from the embalming fluid stink, the stitches sealing her mouth, and the number "679" stitched onto her right cheek, it„s likely she looks only slightly different now than she did in her final years.{#zf679_s0_1}'
 
     menu:
         '"So… doing anything later?"{#zf679_s0_r35179}' if zf679Logic.r35179_condition():
@@ -58,7 +58,7 @@ label zf679_s0: # - # IF ~  True()
 
 # s1 # say35180
 label zf679_s1: # from 0.0 0.1 0.2
-    nr 'The corpse continues to stare at you.{#zf679_s1_}'
+    nr 'The corpse continues to stare at you.{#zf679_s1_1}'
 
     menu:
         '"Farewell then."{#zf679_s1_r35181}' if zf679Logic.r35181_condition():
@@ -76,7 +76,7 @@ label zf679_s1: # from 0.0 0.1 0.2
 
 # s2 # say35199
 label zf679_s2: # from 0.3
-    nr 'This corpse makes no reply. It looks like it is too far gone to answer any of your questions.{#zf679_s2_}'
+    nr 'This corpse makes no reply. It looks like it is too far gone to answer any of your questions.{#zf679_s2_1}'
 
     menu:
         '"Farewell then."{#zf679_s2_r35200}' if zf679Logic.r35200_condition():
@@ -94,6 +94,6 @@ label zf679_s2: # from 0.3
 
 # s3 # say35209
 label zf679_s3: # - # IF ~  False()
-    nr 'This corpse makes no reply. It looks like it is too far gone to answer any of your questions.{#zf679_s3_}'
+    nr 'This corpse makes no reply. It looks like it is too far gone to answer any of your questions.{#zf679_s3_1}'
 
     menu:

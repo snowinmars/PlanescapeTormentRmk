@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say45515
 label zm985_s0: # - # IF ~  Global("Topple_985","GLOBAL",0)
-    nr 'This corpse - "985" - has stopped dead in its tracks; judging from the condition of its left leg, it looks as if some sort of tomb rot or corpse mold has eaten through its knee. The corpse is wobbling unsteadily back and forth, trying to keep its balance.{#zm985_s0_}'
+    nr 'This corpse - "985" - has stopped dead in its tracks; judging from the condition of its left leg, it looks as if some sort of tomb rot or corpse mold has eaten through its knee. The corpse is wobbling unsteadily back and forth, trying to keep its balance.{#zm985_s0_1}'
 
     menu:
         'Give the corpse a push.{#zm985_s0_r45516}' if zm985Logic.r45516_condition():
@@ -53,7 +53,7 @@ label zm985_s0: # - # IF ~  Global("Topple_985","GLOBAL",0)
 
 # s1 # say45524
 label zm985_s1: # from 0.4 5.0 5.1 5.2
-    nr 'The corpse stares straight ahead, oblivious. It makes no sign that it has heard you.{#zm985_s1_}'
+    nr 'The corpse stares straight ahead, oblivious. It makes no sign that it has heard you.{#zm985_s1_1}'
 
     menu:
         'Leave the corpse in peace.{#zm985_s1_r45525}':
@@ -63,7 +63,7 @@ label zm985_s1: # from 0.4 5.0 5.1 5.2
 
 # s2 # say45526
 label zm985_s2: # from 0.5 5.3
-    nr 'The corpse does not stir. It looks like it is too far gone to answer any of your questions.{#zm985_s2_}'
+    nr 'The corpse does not stir. It looks like it is too far gone to answer any of your questions.{#zm985_s2_1}'
 
     menu:
         'Leave the corpse in peace.{#zm985_s2_r45527}':
@@ -73,7 +73,7 @@ label zm985_s2: # from 0.5 5.3
 
 # s3 # say45528
 label zm985_s3: # from 0.1 6.0
-    nr 'There is a *crack* from the corpse„s left leg, and the body falls like a dead tree. Its torso strikes the stone flagstones and shatters like a rotten melon, filth and ichor gurgling from the cavity. To your surprise, no one seems to have noticed the corpse“s collapse… and even stranger, the left leg remains standing where the body was, as if at attention. After a moment, the leg falls over with a wet *thump.*{#zm985_s3_}'
+    nr 'There is a *crack* from the corpse„s left leg, and the body falls like a dead tree. Its torso strikes the stone flagstones and shatters like a rotten melon, filth and ichor gurgling from the cavity. To your surprise, no one seems to have noticed the corpse“s collapse… and even stranger, the left leg remains standing where the body was, as if at attention. After a moment, the leg falls over with a wet *thump.*{#zm985_s3_1}'
 
     $ zm985Logic.s3_action()
     jump zm985_s7
@@ -81,7 +81,7 @@ label zm985_s3: # from 0.1 6.0
 
 # s4 # say45530
 label zm985_s4: # from 0.2
-    nr 'You reach out for the corpse„s left arm to help steady it. As you grab its arm, however, the corpse suddenly sways to the right, and you end up tugging the corpse rather than steadying it…{#zm985_s4_}'
+    nr 'You reach out for the corpse„s left arm to help steady it. As you grab its arm, however, the corpse suddenly sways to the right, and you end up tugging the corpse rather than steadying it…{#zm985_s4_1}'
 
     $ zm985Logic.s4_action()
     jump morte_s482  # EXTERN
@@ -89,7 +89,7 @@ label zm985_s4: # from 0.2
 
 # s5 # say45531
 label zm985_s5: # - # IF ~  GlobalGT("Topple_985","GLOBAL",0)
-    nr 'It looks like someone has replaced this corpse„s left arm and left leg with some spare limbs taken from other corpses. The left leg is shorter than the old one, but at least the corpse is able to stand now.{#zm985_s5_}'
+    nr 'It looks like someone has replaced this corpse„s left arm and left leg with some spare limbs taken from other corpses. The left leg is shorter than the old one, but at least the corpse is able to stand now.{#zm985_s5_1}'
 
     menu:
         '"Sorry about knocking you over before. It was an accident."{#zm985_s5_r45532}' if zm985Logic.r45532_condition():
@@ -120,7 +120,7 @@ label zm985_s5: # - # IF ~  GlobalGT("Topple_985","GLOBAL",0)
 
 # s6 # say45538
 label zm985_s6: # from 0.3
-    nr 'You reach out for the corpse„s left arm to help steady it. As you grab its arm, however, the corpse suddenly sways to the right, and you end up tugging the corpse rather than steadying it…{#zm985_s6_}'
+    nr 'You reach out for the corpse„s left arm to help steady it. As you grab its arm, however, the corpse suddenly sways to the right, and you end up tugging the corpse rather than steadying it…{#zm985_s6_1}'
 
     menu:
         '"Uh-oh…"{#zm985_s6_r45539}':
@@ -131,7 +131,7 @@ label zm985_s6: # from 0.3
 
 # s7 # say64205
 label zm985_s7: # from 3.0
-    nr 'As you gaze upon the putrefied remains of the corpse, you notice that its left arm seems intact - it has snapped from the torso during the fall, and it doesn„t appear to have been touched by the tomb rot that had spread through the rest of the body.{#zm985_s7_}'
+    nr 'As you gaze upon the putrefied remains of the corpse, you notice that its left arm seems intact - it has snapped from the torso during the fall, and it doesn„t appear to have been touched by the tomb rot that had spread through the rest of the body.{#zm985_s7_1}'
 
     menu:
         '"Hmmm. I wonder if I could make use of that arm…"{#zm985_s7_r64206}':

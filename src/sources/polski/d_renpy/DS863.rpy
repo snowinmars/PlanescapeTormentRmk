@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say35537
 label s863_s0: # from 10.0 # IF ~  !HasItem("DRemind","S863")
-    nr 'Ten szkielet wygląda tak, jakby wiele przeszedł, albo wskutek udziału w walkach, albo też wskutek spadnięcia ze zbyt dużej liczby schodów; i ręce, i nogi miał złamane, ale teraz zostało to naprawione przy pomocy skórzanych pasków i cieniutkich żelaznych prętów. Z przodu czaszki ma numer „863“… ale tył czaszki się zapadł, tworząc wydrążoną dziurę.{#s863_s0_}'
+    nr 'Ten szkielet wygląda tak, jakby wiele przeszedł, albo wskutek udziału w walkach, albo też wskutek spadnięcia ze zbyt dużej liczby schodów; i ręce, i nogi miał złamane, ale teraz zostało to naprawione przy pomocy skórzanych pasków i cieniutkich żelaznych prętów. Z przodu czaszki ma numer „863“… ale tył czaszki się zapadł, tworząc wydrążoną dziurę.{#s863_s0_1}'
 
     menu:
         '"Przepraszam, że zabrałem ci ten pergamin, ale wątpię, czy dostarczyłbyś go w terminie."{#s863_s0_r35538}' if s863Logic.r35538_condition():
@@ -90,7 +90,7 @@ label s863_s0: # from 10.0 # IF ~  !HasItem("DRemind","S863")
 
 # s1 # say35539
 label s863_s1: # from 0.0 0.1 0.2 0.3
-    nr 'Szkielet nie odpowiada.{#s863_s1_}'
+    nr 'Szkielet nie odpowiada.{#s863_s1_1}'
 
     menu:
         '"Świetnie się z tobą gadało, Kostuszku. Bądź zdrów."{#s863_s1_r35540}' if s863Logic.r35540_condition():
@@ -109,7 +109,7 @@ label s863_s1: # from 0.0 0.1 0.2 0.3
 
 # s2 # say35565
 label s863_s2: # from 0.4
-    nr 'Szkielet nie odpowiada. Wygląda na to, że jest w zbyt daleko posuniętym stadium rozkładu, aby odpowiedzieć na twoje pytania.{#s863_s2_}'
+    nr 'Szkielet nie odpowiada. Wygląda na to, że jest w zbyt daleko posuniętym stadium rozkładu, aby odpowiedzieć na twoje pytania.{#s863_s2_1}'
 
     menu:
         'Zostaw szkielet w spokoju.{#s863_s2_r35566}' if s863Logic.r35566_condition():
@@ -128,7 +128,7 @@ label s863_s2: # from 0.4
 
 # s3 # say35570
 label s863_s3: # from 0.5
-    nr 'Ktoś związał kości tego szkieletu skórzanymi paskami tak, że teraz przypominają muskuły i ścięgna. Paski te są przymocowane do żelaznych nitów wetkniętych w stawy kościotrupa. Wygląda na to, że już swoje odpracował: wiele kości jest połamanych, a liczne pęknięcia wypełniono cuchnącym klejem.{#s863_s3_}'
+    nr 'Ktoś związał kości tego szkieletu skórzanymi paskami tak, że teraz przypominają muskuły i ścięgna. Paski te są przymocowane do żelaznych nitów wetkniętych w stawy kościotrupa. Wygląda na to, że już swoje odpracował: wiele kości jest połamanych, a liczne pęknięcia wypełniono cuchnącym klejem.{#s863_s3_1}'
 
     menu:
         'Spróbuj wyciągnąć nity ze stawów szkieletu.{#s863_s3_r35571}' if s863Logic.r35571_condition():
@@ -176,7 +176,7 @@ label s863_s3: # from 0.5
 
 # s4 # say35576
 label s863_s4: # from 0.7 0.10 3.1 3.4
-    nr 'Ciągniesz za żelazne nity, ale nie masz na tyle siły, żeby je wyciągnąć. Wygląda na to, że ktoś wbił je bardzo solidnie.{#s863_s4_}'
+    nr 'Ciągniesz za żelazne nity, ale nie masz na tyle siły, żeby je wyciągnąć. Wygląda na to, że ktoś wbił je bardzo solidnie.{#s863_s4_1}'
 
     menu:
         '"Może udałoby mi się je wyciągnąć, gdybym miał odpowiednie narzędzie… hmm. Może tu jeszcze wrócę, Kostuszku."{#s863_s4_r35577}' if s863Logic.r35577_condition():
@@ -208,7 +208,7 @@ label s863_s4: # from 0.7 0.10 3.1 3.4
 
 # s5 # say35584
 label s863_s5: # from 0.8 0.11 3.2 3.5
-    nr 'Z całej siły ciągniesz za żelazne nity i po chwili wyrywasz je ze stawów. Szkielet przewraca się na ziemię, a niektóre jego kości wciąż podrygują.{#s863_s5_}'
+    nr 'Z całej siły ciągniesz za żelazne nity i po chwili wyrywasz je ze stawów. Szkielet przewraca się na ziemię, a niektóre jego kości wciąż podrygują.{#s863_s5_1}'
 
     menu:
         '"Przykro mi, Kostuszku…"{#s863_s5_r35585}':
@@ -219,7 +219,7 @@ label s863_s5: # from 0.8 0.11 3.2 3.5
 
 # s6 # say35587
 label s863_s6: # from 0.9 0.12 3.3 3.6
-    nr 'Używając łomu, wyciągasz nity ze stawów szkieletu. Ten przewraca się na ziemię, a niektóre jego kości wciąż podrygują.{#s863_s6_}'
+    nr 'Używając łomu, wyciągasz nity ze stawów szkieletu. Ten przewraca się na ziemię, a niektóre jego kości wciąż podrygują.{#s863_s6_1}'
 
     menu:
         '"Przykro mi, Kostuszku…"{#s863_s6_r35588}':
@@ -230,13 +230,13 @@ label s863_s6: # from 0.9 0.12 3.3 3.6
 
 # s7 # say35613
 label s863_s7: # - # IF ~  False()
-    nr 'Szkielet nie odpowiada. Wygląda na to, że jest w zbyt daleko posuniętym stadium rozkładu, aby odpowiedzieć na twoje pytania.{#s863_s7_}'
+    nr 'Szkielet nie odpowiada. Wygląda na to, że jest w zbyt daleko posuniętym stadium rozkładu, aby odpowiedzieć na twoje pytania.{#s863_s7_1}'
 
     menu:
 
 # s8 # say64262
 label s863_s8: # - # IF ~  HasItem("DRemind","S863")
-    nr 'Ten szkielet uczestniczył w wielu walkach albo też zbyt często spadał ze schodów; ręce i nogi miał złamane, a teraz funkcjonują dobrze tylko dzięki rzemieniom i cienkim żelaznym prętom. Na przedniej części czaszki widnieje numer "863"… lecz jej tylna część jest rozbita, tworząc pustą czeluść. Widzisz, że ktoś to wykorzystał i wcisnął do środka kawałek pergaminu.{#s863_s8_}'
+    nr 'Ten szkielet uczestniczył w wielu walkach albo też zbyt często spadał ze schodów; ręce i nogi miał złamane, a teraz funkcjonują dobrze tylko dzięki rzemieniom i cienkim żelaznym prętom. Na przedniej części czaszki widnieje numer "863"… lecz jej tylna część jest rozbita, tworząc pustą czeluść. Widzisz, że ktoś to wykorzystał i wcisnął do środka kawałek pergaminu.{#s863_s8_1}'
 
     menu:
         'Wyjmij pergamin z czaszki szkieletu.{#s863_s8_r64263}':
@@ -250,7 +250,7 @@ label s863_s8: # - # IF ~  HasItem("DRemind","S863")
 
 # s9 # say64265
 label s863_s9: # from 8.0
-    nr 'Wyjmujesz pergamin z czaszki robotnika - co dziwniejsze, wygląda ona tak, aby *celowo* przechowywała wiadomości; maleńki sznurek jest przytwierdzony do pergaminu przy pomocy haczyka wbitego do czaszki od środka, chyba po to, aby zapobiegać przypadkowemu wypadnięciu pergaminu.{#s863_s9_}'
+    nr 'Wyjmujesz pergamin z czaszki robotnika - co dziwniejsze, wygląda ona tak, aby *celowo* przechowywała wiadomości; maleńki sznurek jest przytwierdzony do pergaminu przy pomocy haczyka wbitego do czaszki od środka, chyba po to, aby zapobiegać przypadkowemu wypadnięciu pergaminu.{#s863_s9_1}'
 
     menu:
         'Odczep sznurek, weź pergamin.{#s863_s9_r64266}':
@@ -261,7 +261,7 @@ label s863_s9: # from 8.0
 
 # s10 # say64267
 label s863_s10: # from 9.0
-    nr 'Rozwiązujesz sznurek i rzucasz okiem na pergamin – wygląda na notatkę jednego z pracowników kostnicy. Mając to na uwadze, dochodzisz do wniosku, że ten szkielet jest czymś w rodzaju posłańca. Kiedy się mu przyglądasz, zauważasz, że zatrzymał się przy katafalku, nie mogąc zdecydować, w jaki sposób go ominąć.  ^NNOTE: <READSTUFF>^-{#s863_s10_}'
+    nr 'Rozwiązujesz sznurek i rzucasz okiem na pergamin – wygląda na notatkę jednego z pracowników kostnicy. Mając to na uwadze, dochodzisz do wniosku, że ten szkielet jest czymś w rodzaju posłańca. Kiedy się mu przyglądasz, zauważasz, że zatrzymał się przy katafalku, nie mogąc zdecydować, w jaki sposób go ominąć.  ^NNOTE: <READSTUFF>^-{#s863_s10_1}'
 
     menu:
         'Zbadaj szkielet raz jeszcze.{#s863_s10_r64268}':

@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say6495
 label zm310_s0: # - # IF ~  Global("Oinosian","GLOBAL",0)
-    nr 'Ten ponownie ożywiony truposz ma zszyte wargi i numer "310" wyryty na czole; odór formaliny wypełnia wszystko wokół niego. Podnosi swe pozbawione życia oczy na ciebie, kiedy blokujesz mu drogę.{#zm310_s0_}'
+    nr 'Ten ponownie ożywiony truposz ma zszyte wargi i numer "310" wyryty na czole; odór formaliny wypełnia wszystko wokół niego. Podnosi swe pozbawione życia oczy na ciebie, kiedy blokujesz mu drogę.{#zm310_s0_1}'
 
     menu:
         '"Więc jak… widziałeś, aby działo się tu coś interesującego?"{#zm310_s0_r6499}' if zm310Logic.r6499_condition():
@@ -43,7 +43,7 @@ label zm310_s0: # - # IF ~  Global("Oinosian","GLOBAL",0)
 
 # s1 # say6496
 label zm310_s1: # from 0.0 0.1 0.2
-    nr 'Trup wciąż się w ciebie wpatruje.{#zm310_s1_}'
+    nr 'Trup wciąż się w ciebie wpatruje.{#zm310_s1_1}'
 
     menu:
         'Zostaw truposza w spokoju.{#zm310_s1_r6505}':
@@ -53,7 +53,7 @@ label zm310_s1: # from 0.0 0.1 0.2
 
 # s2 # say6498
 label zm310_s2: # from 0.3
-    nr 'Przez chwilę sądzisz, że truposz jest w zbyt daleko posuniętym stadium rozkładu, aby odpowiedzieć na twoje pytania… ale nagle dostrzegasz prawdziwe cierpienie wyryte na jego twarzy i czujesz jednocześnie jego rozpacz tak przejmującą, że domyślasz się, iż dusza z pewnością wróciła do swej dawnej powłoki.{#zm310_s2_}'
+    nr 'Przez chwilę sądzisz, że truposz jest w zbyt daleko posuniętym stadium rozkładu, aby odpowiedzieć na twoje pytania… ale nagle dostrzegasz prawdziwe cierpienie wyryte na jego twarzy i czujesz jednocześnie jego rozpacz tak przejmującą, że domyślasz się, iż dusza z pewnością wróciła do swej dawnej powłoki.{#zm310_s2_1}'
 
     menu:
         '"Chcę zadać pytanie…"{#zm310_s2_r6506}':
@@ -67,7 +67,7 @@ label zm310_s2: # from 0.3
 
 # s3 # say9642
 label zm310_s3: # from 2.0 4.2 5.2 6.2 7.2 8.1 9.0 10.0 11.2 12.1 13.1 14.1 15.1 16.0 18.0
-    nr 'Mówi wolno, monotonnie, załamanym i pozbawionym nadziei głosem. Nawet teraz nie da się go prawie odróżnić od pozbawionego duszy zombiaka. "Czego pragniesz się dowiedzieć, mój panie?"{#zm310_s3_}'
+    nr 'Mówi wolno, monotonnie, załamanym i pozbawionym nadziei głosem. Nawet teraz nie da się go prawie odróżnić od pozbawionego duszy zombiaka. "Czego pragniesz się dowiedzieć, mój panie?"{#zm310_s3_1}'
 
     menu:
         '"Kim jesteś?"{#zm310_s3_r9658}':
@@ -105,7 +105,7 @@ label zm310_s3: # from 2.0 4.2 5.2 6.2 7.2 8.1 9.0 10.0 11.2 12.1 13.1 14.1 15.1
 
 # s4 # say9643
 label zm310_s4: # from 3.0
-    nr 'Duch przemawia tak cichutko, że musisz wytężyć słuch, aby go usłyszeć; usta truposza prawie się nie ruszają wymawiając poszczególne słowa. "Jestem nikt, mój panie; nędzny robak, który rozpaczliwie uczepił się Wieży Przemijania w Oinos. Chociaż niegdyś zwałem się Arabhiem, mój panie… bardzo, bardzo dawno."{#zm310_s4_}'
+    nr 'Duch przemawia tak cichutko, że musisz wytężyć słuch, aby go usłyszeć; usta truposza prawie się nie ruszają wymawiając poszczególne słowa. "Jestem nikt, mój panie; nędzny robak, który rozpaczliwie uczepił się Wieży Przemijania w Oinos. Chociaż niegdyś zwałem się Arabhiem, mój panie… bardzo, bardzo dawno."{#zm310_s4_1}'
 
     menu:
         '"Wieża Przemijania?"{#zm310_s4_r9666}':
@@ -127,7 +127,7 @@ label zm310_s4: # from 3.0
 
 # s5 # say9644
 label zm310_s5: # from 3.1
-    nr '"Mieszkałem w Sigil, mój panie. W Ulu. Nie było to takie straszne miejsce, jak niegdyś sądziłem, zwłaszcza, że teraz mój dom jest… w Oinos." Trup mruga oczami, tak wolno, że przez chwilę wydawało ci się, że zamknął oczy.{#zm310_s5_}'
+    nr '"Mieszkałem w Sigil, mój panie. W Ulu. Nie było to takie straszne miejsce, jak niegdyś sądziłem, zwłaszcza, że teraz mój dom jest… w Oinos." Trup mruga oczami, tak wolno, że przez chwilę wydawało ci się, że zamknął oczy.{#zm310_s5_1}'
 
     menu:
         '"Ul?"{#zm310_s5_r9670}':
@@ -149,7 +149,7 @@ label zm310_s5: # from 3.1
 
 # s6 # say9645
 label zm310_s6: # from 3.2
-    nr '"Zostałem zamordowany, mój panie, przez bandytów. Upiłem się i szedłem zaułkami Ula, zataczając się i potykając. Zgubiłem drogę i w końcu padłem ofiarą bandy rzezimieszków. No i dobrze; moje życie było prawdopodobnie mniej warte niż te kilka miedziaków, które jakiś Zbieracz mógł dostać za moje zwłoki."{#zm310_s6_}'
+    nr '"Zostałem zamordowany, mój panie, przez bandytów. Upiłem się i szedłem zaułkami Ula, zataczając się i potykając. Zgubiłem drogę i w końcu padłem ofiarą bandy rzezimieszków. No i dobrze; moje życie było prawdopodobnie mniej warte niż te kilka miedziaków, które jakiś Zbieracz mógł dostać za moje zwłoki."{#zm310_s6_1}'
 
     menu:
         '"Skądże tak marne zdanie o własnym życiu?"{#zm310_s6_r9674}':
@@ -171,7 +171,7 @@ label zm310_s6: # from 3.2
 
 # s7 # say9646
 label zm310_s7: # from 3.3 4.1 5.1 8.0 12.0
-    nr 'Duch na chwilę zamyka oczy, a jego ciałem wstrząsają dreszcze. "Straszliwy Oinos, mój panie. Na Szarym Pustkowiu. To właśnie tam zamknięto moją duszę, w cieniu Khin-Oin, Wieży Przemijania."{#zm310_s7_}'
+    nr 'Duch na chwilę zamyka oczy, a jego ciałem wstrząsają dreszcze. "Straszliwy Oinos, mój panie. Na Szarym Pustkowiu. To właśnie tam zamknięto moją duszę, w cieniu Khin-Oin, Wieży Przemijania."{#zm310_s7_1}'
 
     menu:
         '"Opowiedz mi więcej o tym… Oinos."{#zm310_s7_r9678}':
@@ -193,7 +193,7 @@ label zm310_s7: # from 3.3 4.1 5.1 8.0 12.0
 
 # s8 # say9647
 label zm310_s8: # from 3.4
-    nr '"Nic innego mi nie pozostało, mój panie. Uwięziony na wieczność w przeklętej pustce Oinos, oto czym jestem. Dla takich jak ja nie ma nadziei." Duch wydaje się uderzać w jeszcze bardziej patetyczne tony, a jego ramiona zwisają pod ciężarem jego niedoli.{#zm310_s8_}'
+    nr '"Nic innego mi nie pozostało, mój panie. Uwięziony na wieczność w przeklętej pustce Oinos, oto czym jestem. Dla takich jak ja nie ma nadziei." Duch wydaje się uderzać w jeszcze bardziej patetyczne tony, a jego ramiona zwisają pod ciężarem jego niedoli.{#zm310_s8_1}'
 
     menu:
         '"Oinos?"{#zm310_s8_r9682}':
@@ -211,7 +211,7 @@ label zm310_s8: # from 3.4
 
 # s9 # say9648
 label zm310_s9: # from 3.5 15.0
-    nr '"Bardzo mało, mój panie; tyle że przywozi się tutaj zmarłych na pochówek lub do kremacji… albo jako pracowników, jak było z moim ciałem."{#zm310_s9_}'
+    nr '"Bardzo mało, mój panie; tyle że przywozi się tutaj zmarłych na pochówek lub do kremacji… albo jako pracowników, jak było z moim ciałem."{#zm310_s9_1}'
 
     menu:
         '"Teraz rozumiem. Następne pytanie…"{#zm310_s9_r9685}':
@@ -225,7 +225,7 @@ label zm310_s9: # from 3.5 15.0
 
 # s10 # say9649
 label zm310_s10: # from 3.6
-    nr 'Duch powoli kręci przecząco głową z boku na bok. "Nie, mój panie. Nie znałem nikogo o tym imieniu. Przykro mi, mój panie."{#zm310_s10_}'
+    nr 'Duch powoli kręci przecząco głową z boku na bok. "Nie, mój panie. Nie znałem nikogo o tym imieniu. Przykro mi, mój panie."{#zm310_s10_1}'
 
     menu:
         '"Nie ma takiej potrzeby. Mam następne pytanie…"{#zm310_s10_r9687}':
@@ -239,7 +239,7 @@ label zm310_s10: # from 3.6
 
 # s11 # say9650
 label zm310_s11: # from 7.0
-    nr '"Niewiele można o tym powiedzieć. Jest to ziemia mojego Pana, Lorda Khin-Oin… pełna udręki i chorób, robactwa, które toczy zarówno ciało jak i duszę. Jest to miejsce całkowitej beznadziei."{#zm310_s11_}'
+    nr '"Niewiele można o tym powiedzieć. Jest to ziemia mojego Pana, Lorda Khin-Oin… pełna udręki i chorób, robactwa, które toczy zarówno ciało jak i duszę. Jest to miejsce całkowitej beznadziei."{#zm310_s11_1}'
 
     menu:
         '"Kim jest ten… „Pan“?"{#zm310_s11_r9689}':
@@ -261,7 +261,7 @@ label zm310_s11: # from 7.0
 
 # s12 # say9651
 label zm310_s12: # from 5.0
-    nr '"Tak, mój panie. Nędzne to miejsce, ale nie tak straszne jak Oinos."{#zm310_s12_}'
+    nr '"Tak, mój panie. Nędzne to miejsce, ale nie tak straszne jak Oinos."{#zm310_s12_1}'
 
     menu:
         '"Oinos?"{#zm310_s12_r9693}':
@@ -279,7 +279,7 @@ label zm310_s12: # from 5.0
 
 # s13 # say9652
 label zm310_s13: # from 4.0 7.1 11.1 14.0
-    nr '"Tak, panie. Jest to potężna wieża, o wiele wyższa niż najwyższa wieża w Sigil. Ma wygląd kości, podobna do kręgosłupa jakiegoś gigantycznego stwora. To właśnie w niej haruję, naprawiając szkody wyrządzone przez armie nieprzyjaciół mojego Pana, rywalizujących z nim książąt."{#zm310_s13_}'
+    nr '"Tak, panie. Jest to potężna wieża, o wiele wyższa niż najwyższa wieża w Sigil. Ma wygląd kości, podobna do kręgosłupa jakiegoś gigantycznego stwora. To właśnie w niej haruję, naprawiając szkody wyrządzone przez armie nieprzyjaciół mojego Pana, rywalizujących z nim książąt."{#zm310_s13_1}'
 
     menu:
         '"Kim jest ten… „Pan“?"{#zm310_s13_r9696}':
@@ -297,7 +297,7 @@ label zm310_s13: # from 4.0 7.1 11.1 14.0
 
 # s14 # say9653
 label zm310_s14: # from 11.0 13.0
-    nr '"Znam go tylko jako Pana, Lorda Khin-Oin. Jest to szatański książę - nienawistnik o przeraźliwej mocy. To on właśnie ma moją duszę, i na zawsze ją będzie miał, moją duszyczkę skazaną na śmierć pod jego stopami aż do chwili, gdy wieczność skaże ją na Zapomnienie."{#zm310_s14_}'
+    nr '"Znam go tylko jako Pana, Lorda Khin-Oin. Jest to szatański książę - nienawistnik o przeraźliwej mocy. To on właśnie ma moją duszę, i na zawsze ją będzie miał, moją duszyczkę skazaną na śmierć pod jego stopami aż do chwili, gdy wieczność skaże ją na Zapomnienie."{#zm310_s14_1}'
 
     menu:
         '"Opowiedz mi o tym „Khin-Oin“."{#zm310_s14_r9699}':
@@ -315,7 +315,7 @@ label zm310_s14: # from 11.0 13.0
 
 # s15 # say9654
 label zm310_s15: # from 6.1
-    nr '"Tak, mój panie, Zbieracz. To ci, którzy zbierają zmarłych w Sigil i odwożą ich do Kostnicy - w której to właśnie stoimy teraz - za niewielką opłatą." Przez chwilę duch spoziera na otoczenie, potem cichutko wzdycha.{#zm310_s15_}'
+    nr '"Tak, mój panie, Zbieracz. To ci, którzy zbierają zmarłych w Sigil i odwożą ich do Kostnicy - w której to właśnie stoimy teraz - za niewielką opłatą." Przez chwilę duch spoziera na otoczenie, potem cichutko wzdycha.{#zm310_s15_1}'
 
     menu:
         '"Co wiesz o tej Kostnicy?"{#zm310_s15_r9702}':
@@ -333,7 +333,7 @@ label zm310_s15: # from 6.1
 
 # s16 # say9655
 label zm310_s16: # from 6.0
-    nr '"Nie chciałbym o tym mówić, mój panie. Nie warto." Duch wydaje się nieugięty w tej kwestii.{#zm310_s16_}'
+    nr '"Nie chciałbym o tym mówić, mój panie. Nie warto." Duch wydaje się nieugięty w tej kwestii.{#zm310_s16_1}'
 
     menu:
         '"Doskonale. W takim razie mam następne pytanie…"{#zm310_s16_r9705}':
@@ -347,14 +347,14 @@ label zm310_s16: # from 6.0
 
 # s17 # say9656
 label zm310_s17: # from 2.1 3.7 4.3 5.3 6.3 7.3 8.2 9.1 10.1 11.3 12.2 13.2 14.2 15.2 16.1
-    nr 'Nie zdajesz sobie sprawy z tego, że duch opuścił już ciało aż do momentu gdy zombie, powłócząc nogami, wraca do swoich obowiązków.{#zm310_s17_}'
+    nr 'Nie zdajesz sobie sprawy z tego, że duch opuścił już ciało aż do momentu gdy zombie, powłócząc nogami, wraca do swoich obowiązków.{#zm310_s17_1}'
 
     jump zm310_dispose
 
 
 # s18 # say20102
 label zm310_s18: # - # IF ~  Global("Oinosian","GLOBAL",1)
-    nr 'Wydaje się, że truposz zapada się w sobie, garbiąc się pod ciężarem rozpaczy własnej duszy.{#zm310_s18_}'
+    nr 'Wydaje się, że truposz zapada się w sobie, garbiąc się pod ciężarem rozpaczy własnej duszy.{#zm310_s18_1}'
 
     menu:
         '"Mam kilka pytań…"{#zm310_s18_r20103}':

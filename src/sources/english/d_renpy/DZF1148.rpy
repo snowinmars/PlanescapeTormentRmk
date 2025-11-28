@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say35242
 label zf1148_s0: # - # IF ~  True()
-    nr 'The skin of this female corpse is heavily tattooed with intricate patterns. The skin of her brow has been peeled back so that the number "1148" could be chiseled into the skull beneath. Her mouth has been sealed shut with thick, rough stitching.{#zf1148_s0_}'
+    nr 'The skin of this female corpse is heavily tattooed with intricate patterns. The skin of her brow has been peeled back so that the number "1148" could be chiseled into the skull beneath. Her mouth has been sealed shut with thick, rough stitching.{#zf1148_s0_1}'
 
     menu:
         '"So… doing anything later?"{#zf1148_s0_r35243}' if zf1148Logic.r35243_condition():
@@ -58,7 +58,7 @@ label zf1148_s0: # - # IF ~  True()
 
 # s1 # say35244
 label zf1148_s1: # from 0.0 0.1 0.2
-    nr 'The corpse continues to stare at you.{#zf1148_s1_}'
+    nr 'The corpse continues to stare at you.{#zf1148_s1_1}'
 
     menu:
         '"Farewell then."{#zf1148_s1_r35245}' if zf1148Logic.r35245_condition():
@@ -76,7 +76,7 @@ label zf1148_s1: # from 0.0 0.1 0.2
 
 # s2 # say35263
 label zf1148_s2: # from 0.3
-    nr 'This corpse makes no reply. It looks like it is too far gone to answer any of your questions.{#zf1148_s2_}'
+    nr 'This corpse makes no reply. It looks like it is too far gone to answer any of your questions.{#zf1148_s2_1}'
 
     menu:
         '"Farewell then."{#zf1148_s2_r35264}' if zf1148Logic.r35264_condition():
@@ -94,6 +94,6 @@ label zf1148_s2: # from 0.3
 
 # s3 # say35273
 label zf1148_s3: # - # IF ~  False()
-    nr 'This corpse makes no reply. It looks like it is too far gone to answer any of your questions.{#zf1148_s3_}'
+    nr 'This corpse makes no reply. It looks like it is too far gone to answer any of your questions.{#zf1148_s3_1}'
 
     menu:

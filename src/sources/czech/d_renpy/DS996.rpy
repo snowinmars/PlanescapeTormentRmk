@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say35460
 label s996_s0: # - # IF ~  True()
-    nr 'Kostlivec vypadá obzvláště staře, kožené pásy, které ho drží pohromadě jsou popraskané. Do jeho čela někdo pečlivě vyryl slovo "POKÁNÍ". Mnohem horší rytec později přidal na oba spánky číslo "996".{#s996_s0_}'
+    nr 'Kostlivec vypadá obzvláště staře, kožené pásy, které ho drží pohromadě jsou popraskané. Do jeho čela někdo pečlivě vyryl slovo "POKÁNÍ". Mnohem horší rytec později přidal na oba spánky číslo "996".{#s996_s0_1}'
 
     menu:
         '"Promiň, neviděl jsi tady někde chodit nějaké kostlivce?"{#s996_s0_r35461}' if s996Logic.r35461_condition():
@@ -90,7 +90,7 @@ label s996_s0: # - # IF ~  True()
 
 # s1 # say35462
 label s996_s1: # from 0.0 0.1 0.2 0.3
-    nr 'Kostlivec neodpovídá.{#s996_s1_}'
+    nr 'Kostlivec neodpovídá.{#s996_s1_1}'
 
     menu:
         '"Rád jsem si s tebou pokecal, Kostro. Buď zdráv."{#s996_s1_r35463}' if s996Logic.r35463_condition():
@@ -109,7 +109,7 @@ label s996_s1: # from 0.0 0.1 0.2 0.3
 
 # s2 # say35488
 label s996_s2: # from 0.4
-    nr 'Kostlivec neodpovídá. Asi už se dostal příliš daleko, aby byl ještě schopný odpovídat na tvé otázky.{#s996_s2_}'
+    nr 'Kostlivec neodpovídá. Asi už se dostal příliš daleko, aby byl ještě schopný odpovídat na tvé otázky.{#s996_s2_1}'
 
     menu:
         'Nechej kostlivce být.{#s996_s2_r35489}' if s996Logic.r35489_condition():
@@ -128,7 +128,7 @@ label s996_s2: # from 0.4
 
 # s3 # say35493
 label s996_s3: # from 0.5
-    nr 'Někdo si dal práci a spojil kosti tohoto kostlivce koženými pásky, omotanými kolem těla tak, že připomínají svaly a šlachy. Pásky jsou připevněné na kovových svorkách, vražených do kloubů kostlivce. Kostlivec vypadá, že už si svoje odsloužil: Mnoho kostí je oštípáno a početné fraktury jsou slepeny zapáchajícím lepidlem.{#s996_s3_}'
+    nr 'Někdo si dal práci a spojil kosti tohoto kostlivce koženými pásky, omotanými kolem těla tak, že připomínají svaly a šlachy. Pásky jsou připevněné na kovových svorkách, vražených do kloubů kostlivce. Kostlivec vypadá, že už si svoje odsloužil: Mnoho kostí je oštípáno a početné fraktury jsou slepeny zapáchajícím lepidlem.{#s996_s3_1}'
 
     menu:
         'Zkus kostlivci vytáhnout svorky z kloubů.{#s996_s3_r35494}' if s996Logic.r35494_condition():
@@ -176,7 +176,7 @@ label s996_s3: # from 0.5
 
 # s4 # say35499
 label s996_s4: # from 0.7 0.10 3.1 3.4
-    nr 'Zaškubal jsi železnými svorkami, ale nemáš dost síly na to, abys je vyrval. Jsou pořádně upevněné.{#s996_s4_}'
+    nr 'Zaškubal jsi železnými svorkami, ale nemáš dost síly na to, abys je vyrval. Jsou pořádně upevněné.{#s996_s4_1}'
 
     menu:
         '"Kdybych měl správný nástroj, dokázal bych je vytáhnout… hmmm. Vrátím se, Kostro."{#s996_s4_r35500}' if s996Logic.r35500_condition():
@@ -208,7 +208,7 @@ label s996_s4: # from 0.7 0.10 3.1 3.4
 
 # s5 # say35507
 label s996_s5: # from 0.8 0.11 3.2 3.5
-    nr 'Zarval jsi veškerou svou silou. Po chvíli námahy jsi vyrval svorky z kostlivcových kloubů. Kostlivec se rozpadl, některé z kostí sebou stále škubají.{#s996_s5_}'
+    nr 'Zarval jsi veškerou svou silou. Po chvíli námahy jsi vyrval svorky z kostlivcových kloubů. Kostlivec se rozpadl, některé z kostí sebou stále škubají.{#s996_s5_1}'
 
     menu:
         '"Promiň, Kostro…"{#s996_s5_r35508}':
@@ -219,7 +219,7 @@ label s996_s5: # from 0.8 0.11 3.2 3.5
 
 # s6 # say35510
 label s996_s6: # from 0.9 0.12 3.3 3.6
-    nr 'Pomocí svého páčidla jsi vyrval svorky z kostlivcových kloubů. Kostlivec se rozpadl, některé z kostí sebou stále škubají.{#s996_s6_}'
+    nr 'Pomocí svého páčidla jsi vyrval svorky z kostlivcových kloubů. Kostlivec se rozpadl, některé z kostí sebou stále škubají.{#s996_s6_1}'
 
     menu:
         '"Promiň, Kostro…"{#s996_s6_r35511}':
@@ -230,6 +230,6 @@ label s996_s6: # from 0.9 0.12 3.3 3.6
 
 # s7 # say35536
 label s996_s7: # - # IF ~  False()
-    nr 'Kostlivec neodpovídá. Asi už se dostal příliš daleko, aby byl ještě schopný odpovídat na tvé otázky.{#s996_s7_}'
+    nr 'Kostlivec neodpovídá. Asi už se dostal příliš daleko, aby byl ještě schopný odpovídat na tvé otázky.{#s996_s7_1}'
 
     menu:

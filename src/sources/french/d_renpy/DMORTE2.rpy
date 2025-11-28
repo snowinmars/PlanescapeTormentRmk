@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say41144
 label morte2_s0: # - # IF WEIGHT #0 ~  Global("Mortuary_Walkthrough","GLOBAL",1) InParty("Morte")
-    nr '"Pfff… un p„tit conseil, chef : à ta place, j“la mettrais en veilleuse à partir de maintenant ; pas besoin d„inscrire trop de cadavres dans le livre des morts… surtout les femmes. En plus, si tu les tues, ça risque d“attirer les gardiens."{#morte2_s0_}'
+    nr '"Pfff… un p„tit conseil, chef : à ta place, j“la mettrais en veilleuse à partir de maintenant ; pas besoin d„inscrire trop de cadavres dans le livre des morts… surtout les femmes. En plus, si tu les tues, ça risque d“attirer les gardiens."{#morte2_s0_1}'
 
     menu:
         '"Je ne crois pas que tu en aies déjà parlé… *Qui* sont ces gardiens ?"{#morte2_s0_r41145}':
@@ -37,7 +37,7 @@ label morte2_s0: # - # IF WEIGHT #0 ~  Global("Mortuary_Walkthrough","GLOBAL",1)
 
 # s1 # say41149
 label morte2_s1: # from 0.0 3.0 7.0
-    nr '"Ils se donnent le nom d„Hommes-Poussière. Tu ne peux pas les rater : ils sont obsédés par le noir et la rigidité cadavérique du visage. C“est une bande enfumée d„adorateurs vampiriques de la mort, ils croient que tout le monde doit mourir… et que le plus tôt sera le mieux."{#morte2_s1_}'
+    nr '"Ils se donnent le nom d„Hommes-Poussière. Tu ne peux pas les rater : ils sont obsédés par le noir et la rigidité cadavérique du visage. C“est une bande enfumée d„adorateurs vampiriques de la mort, ils croient que tout le monde doit mourir… et que le plus tôt sera le mieux."{#morte2_s1_1}'
 
     menu:
         '"Je ne comprends pas… Qu„est-ce que ça peut leur faire, à ces Hommes-Poussière, si je m“enfuis ?"{#morte2_s1_r41150}':
@@ -47,7 +47,7 @@ label morte2_s1: # from 0.0 3.0 7.0
 
 # s2 # say41151
 label morte2_s2: # from 1.0
-    nr '"Tu n„écoutais pas ?! J“ai dit que les Hommes-Poussière croient que TOUT LE MONDE doit mourir, et que le plus tôt sera le mieux. Tu crois que les cadavres que tu as rencontrés sont plus heureux dans le livre des morts qu„à l“extérieur ?"{#morte2_s2_}'
+    nr '"Tu n„écoutais pas ?! J“ai dit que les Hommes-Poussière croient que TOUT LE MONDE doit mourir, et que le plus tôt sera le mieux. Tu crois que les cadavres que tu as rencontrés sont plus heureux dans le livre des morts qu„à l“extérieur ?"{#morte2_s2_1}'
 
     menu:
         '"Les cadavres que j„ai vus ici… d“où ils venaient ?"{#morte2_s2_r41152}':
@@ -65,7 +65,7 @@ label morte2_s2: # from 1.0
 
 # s3 # say41155
 label morte2_s3: # from 0.1 2.0 7.1
-    nr '"La mort rend visite aux plans tous les jours, chef. Ces loques, c„est tout c“qui reste des pauvres bougres qui ont vendu leurs corps aux gardiens après leur mort."{#morte2_s3_}'
+    nr '"La mort rend visite aux plans tous les jours, chef. Ces loques, c„est tout c“qui reste des pauvres bougres qui ont vendu leurs corps aux gardiens après leur mort."{#morte2_s3_1}'
 
     menu:
         '"Explique-moi… *Qui* sont ces gardiens ?"{#morte2_s3_r41156}':
@@ -83,7 +83,7 @@ label morte2_s3: # from 0.1 2.0 7.1
 
 # s4 # say41159
 label morte2_s4: # from 0.2 2.1 3.1
-    nr '"Tu es *sérieux* ? Écoute, chef, ces petites mortes représentent la dernière chance pour deux courageux lascars comme nous. Nous devons être *chevaleresques*… Il est hors de question d„aller les charcuter ou les découper pour trouver les clés."{#morte2_s4_}'
+    nr '"Tu es *sérieux* ? Écoute, chef, ces petites mortes représentent la dernière chance pour deux courageux lascars comme nous. Nous devons être *chevaleresques*… Il est hors de question d„aller les charcuter ou les découper pour trouver les clés."{#morte2_s4_1}'
 
     menu:
         '"Dernière chance ? De quoi tu *parles* ?"{#morte2_s4_r41160}':
@@ -93,7 +93,7 @@ label morte2_s4: # from 0.2 2.1 3.1
 
 # s5 # say41161
 label morte2_s5: # from 4.0
-    nr '"Chef, ELLES SONT mortes, NOUS SOMMES morts… tu piges ? Eh ? Eh ?"{#morte2_s5_}'
+    nr '"Chef, ELLES SONT mortes, NOUS SOMMES morts… tu piges ? Eh ? Eh ?"{#morte2_s5_1}'
 
     menu:
         '"Non… non, en fait, non."{#morte2_s5_r41162}':
@@ -107,7 +107,7 @@ label morte2_s5: # from 4.0
 
 # s6 # say41164
 label morte2_s6: # from 5.0 5.1
-    nr '"Chef, on a une bonne entrée en matière avec ces dames boiteuses. Nous sommes *tous* morts ne serait-ce qu„une fois ; on aura au moins un sujet de conversation possible. Elles apprécieront des hommes qui ont notre expérience de la mort."{#morte2_s6_}'
+    nr '"Chef, on a une bonne entrée en matière avec ces dames boiteuses. Nous sommes *tous* morts ne serait-ce qu„une fois ; on aura au moins un sujet de conversation possible. Elles apprécieront des hommes qui ont notre expérience de la mort."{#morte2_s6_1}'
 
     menu:
         '"Attends… tu as bien dit tout à l„heure que j“étais *pas* mort ?"{#morte2_s6_r41165}':
@@ -117,7 +117,7 @@ label morte2_s6: # from 5.0 5.1
 
 # s7 # say41166
 label morte2_s7: # from 6.0
-    nr '"Bon… d„accord, *tu* n“es peut-être pas mort, mais *moi* si. Et comme je le vois, ça ne me déplairait pas de partager un cercueil avec l„un des cadavres délicieux que je vois ici." Morte commence à claquer des dents d“envie. "Bien sûr, les gardiens devraient d„abord s“en séparer et il y a peu de chances…"{#morte2_s7_}'
+    nr '"Bon… d„accord, *tu* n“es peut-être pas mort, mais *moi* si. Et comme je le vois, ça ne me déplairait pas de partager un cercueil avec l„un des cadavres délicieux que je vois ici." Morte commence à claquer des dents d“envie. "Bien sûr, les gardiens devraient d„abord s“en séparer et il y a peu de chances…"{#morte2_s7_1}'
 
     menu:
         '"Qui sont ces gardiens déjà ?"{#morte2_s7_r41167}':
@@ -135,7 +135,7 @@ label morte2_s7: # from 6.0
 
 # s8 # say41170
 label morte2_s8: # from 0.3 2.2 3.2 7.2 12.7 13.2 14.2 15.2 16.2 17.1 18.1 19.2 20.1 21.1 22.1
-    nr '"Écoute, chef ; on voit bien qu„t“es pas encore remis de ta rencontre avec la mort, alors j„ai deux conseils à te donner : premièrement, si t“as des questions, *pose-les moi*, d„accord ?"  ^NREMARQUE : <SPEAKTO>^-{#morte2_s8_}'
+    nr '"Écoute, chef ; on voit bien qu„t“es pas encore remis de ta rencontre avec la mort, alors j„ai deux conseils à te donner : premièrement, si t“as des questions, *pose-les moi*, d„accord ?"  ^NREMARQUE : <SPEAKTO>^-{#morte2_s8_1}'
 
     menu:
         '"D„accord… si j“ai des questions, je te les poserai."{#morte2_s8_r41171}':
@@ -145,7 +145,7 @@ label morte2_s8: # from 0.3 2.2 3.2 7.2 12.7 13.2 14.2 15.2 16.2 17.1 18.1 19.2 
 
 # s9 # say41172
 label morte2_s9: # from 8.0
-    nr '"Deuxièmement, si t„es *aussi* distrait que t“en as l„air, commence à tout noter - chaque fois que tu tombes sur quelque chose qui *pourrait* être important, note-le pour pas oublier."{#morte2_s9_}'
+    nr '"Deuxièmement, si t„es *aussi* distrait que t“en as l„air, commence à tout noter - chaque fois que tu tombes sur quelque chose qui *pourrait* être important, note-le pour pas oublier."{#morte2_s9_1}'
 
     menu:
         '"Si je détenais ce journal que je suis *supposé* avoir sur moi, c„est ce que je ferais."{#morte2_s9_r41173}':
@@ -155,7 +155,7 @@ label morte2_s9: # from 8.0
 
 # s10 # say41174
 label morte2_s10: # from 9.0
-    nr '"Alors commences-en un nouveau, chef. T„as rien à perdre. Y a plein de parchemin et d“encre par ici."{#morte2_s10_}'
+    nr '"Alors commences-en un nouveau, chef. T„as rien à perdre. Y a plein de parchemin et d“encre par ici."{#morte2_s10_1}'
 
     menu:
         '"Hmmmm. D„accord. Ça coûte rien… je vais en commencer un nouveau, alors."{#morte2_s10_r41175}':
@@ -165,7 +165,7 @@ label morte2_s10: # from 9.0
 
 # s11 # say41176
 label morte2_s11: # from 10.0
-    nr '"Utilise-le pour garder une trace de tes mouvements. Si tu commences à t„embrouiller sur les trucs importants, comme qui tu es… ou plus important, qui *je* suis… utilise-le pour te rafraîchir la mémoire."  ^NREMARQUE : Pour accéder au journal, sélectionne le bouton du journal dans le menu rapide. Le journal est mis à jour automatiquement durant la partie.^-{#morte2_s11_}'
+    nr '"Utilise-le pour garder une trace de tes mouvements. Si tu commences à t„embrouiller sur les trucs importants, comme qui tu es… ou plus important, qui *je* suis… utilise-le pour te rafraîchir la mémoire."  ^NREMARQUE : Pour accéder au journal, sélectionne le bouton du journal dans le menu rapide. Le journal est mis à jour automatiquement durant la partie.^-{#morte2_s11_1}'
 
     menu:
         '"Très bien… Compris. Allons-y."{#morte2_s11_r41177}':
@@ -176,7 +176,7 @@ label morte2_s11: # from 10.0
 
 # s12 # say41178
 label morte2_s12: # from 13.1 14.1 15.1 16.1 17.0 18.0 19.1 20.0 21.0 22.0 23.1 24.2 25.1 26.0 # IF WEIGHT #1 ~  !Global("Mortuary_Walkthrough","GLOBAL",0) !Global("Mortuary_Walkthrough","GLOBAL",1) !Global("Mortuary_Walkthrough","GLOBAL",3) InParty("Morte")
-    nr '"Qu„est-ce qui te dérange, chef ?"{#morte2_s12_}'
+    nr '"Qu„est-ce qui te dérange, chef ?"{#morte2_s12_1}'
 
     menu:
         '"Tu peux me relire ce qui est tatoué sur mon dos ?{#morte2_s12_r41179}':
@@ -218,7 +218,7 @@ label morte2_s12: # from 13.1 14.1 15.1 16.1 17.0 18.0 19.1 20.0 21.0 22.0 23.1 
 
 # s13 # say41188
 label morte2_s13: # from 12.0
-    nr '"Oh, *allez,* chef. Ne m„dis pas qu“t„as déjà oublié."{#morte2_s13_}'
+    nr '"Oh, *allez,* chef. Ne m„dis pas qu“t„as déjà oublié."{#morte2_s13_1}'
 
     menu:
         '"J„ai juste besoin de me rafraîchir la mémoire."{#morte2_s13_r41189}':
@@ -240,7 +240,7 @@ label morte2_s13: # from 12.0
 
 # s14 # say41193
 label morte2_s14: # from 13.0
-    nr '"Quelque chose me dit que je vais entendre ÇA souvent." Morte s„éclaircit la voix. "Voyons…"  “Je sais que tu as l„impression d“avoir bu plusieurs barils d„eau du Styx, mais il faut te RESSAISIR. Parmi tes biens, tu dois avoir un JOURNAL qui pourra éclaircir le soltif de cette affaire. PHAROD devrait pouvoir te donner les dernières notes de la chanson, s“il n„est pas déjà inscrit dans le livre des morts.“{#morte2_s14_}'
+    nr '"Quelque chose me dit que je vais entendre ÇA souvent." Morte s„éclaircit la voix. "Voyons…"  “Je sais que tu as l„impression d“avoir bu plusieurs barils d„eau du Styx, mais il faut te RESSAISIR. Parmi tes biens, tu dois avoir un JOURNAL qui pourra éclaircir le soltif de cette affaire. PHAROD devrait pouvoir te donner les dernières notes de la chanson, s“il n„est pas déjà inscrit dans le livre des morts.“{#morte2_s14_1}'
 
     menu:
         '"Pharod… hmmm. Continue."{#morte2_s14_r41194}':
@@ -262,7 +262,7 @@ label morte2_s14: # from 13.0
 
 # s15 # say41198
 label morte2_s15: # from 14.0
-    nr '"Oui, oui, attends." Morte s„interrompt un instant. "D“accord, voilà la fin…"  „Ne perds pas le journal ou on se retrouvera encore à traverser le Styx. Et quoi que tu fasses, NE raconte à personne QUI tu es et CE qui t“arrive, ou on t„enverra faire un rapide pèlerinage vers le crématorium. Fais ce que je te dis : LIS le journal, puis TROUVE Pharod.“{#morte2_s15_}'
+    nr '"Oui, oui, attends." Morte s„interrompt un instant. "D“accord, voilà la fin…"  „Ne perds pas le journal ou on se retrouvera encore à traverser le Styx. Et quoi que tu fasses, NE raconte à personne QUI tu es et CE qui t“arrive, ou on t„enverra faire un rapide pèlerinage vers le crématorium. Fais ce que je te dis : LIS le journal, puis TROUVE Pharod.“{#morte2_s15_1}'
 
     menu:
         '"Et il n„y avait pas de journal sur moi quand je me suis réveillé ?"{#morte2_s15_r41199}':
@@ -284,7 +284,7 @@ label morte2_s15: # from 14.0
 
 # s16 # say41202
 label morte2_s16: # from 15.0
-    nr '"Non… t„étais nu comme un ver. Comme j“te l„ai déjà dit, on dirait que t“as déjà un journal écrit sur le corps."{#morte2_s16_}'
+    nr '"Non… t„étais nu comme un ver. Comme j“te l„ai déjà dit, on dirait que t“as déjà un journal écrit sur le corps."{#morte2_s16_1}'
 
     menu:
         '"Et tu es sûr que tu ne connais personne du nom de Pharod ?"{#morte2_s16_r41204}':
@@ -306,7 +306,7 @@ label morte2_s16: # from 15.0
 
 # s17 # say41208
 label morte2_s17: # from 16.0
-    nr '"Non. Mais y doit bien y avoir un bige qui saura où le trouver. On va demander… UNE FOIS qu„on sera sorti d“ici."{#morte2_s17_}'
+    nr '"Non. Mais y doit bien y avoir un bige qui saura où le trouver. On va demander… UNE FOIS qu„on sera sorti d“ici."{#morte2_s17_1}'
 
     menu:
         '"Avant d„y aller, j“ai d„autres questions…"{#morte2_s17_r41209}':
@@ -324,7 +324,7 @@ label morte2_s17: # from 16.0
 
 # s18 # say41212
 label morte2_s18: # from 12.1
-    nr '"Ça s„appelle la “Morgue„… c“est un grand édifice noir avec tout le charme architectural d„une araignée pleine."{#morte2_s18_}'
+    nr '"Ça s„appelle la “Morgue„… c“est un grand édifice noir avec tout le charme architectural d„une araignée pleine."{#morte2_s18_1}'
 
     menu:
         '"J„ai compris. J“ai d„autres questions à te poser…"{#morte2_s18_r41213}':
@@ -342,7 +342,7 @@ label morte2_s18: # from 12.1
 
 # s19 # say41216
 label morte2_s19: # from 12.2 12.3
-    nr '"Ils se donnent le nom d„Hommes-Poussière. Tu ne peux pas les rater : ils sont obsédés par le noir et la rigidité cadavérique du visage. C“est une bande enfumée d„adorateurs vampiriques de la mort, ils croient que tout le monde doit mourir… et que le plus tôt sera le mieux."{#morte2_s19_}'
+    nr '"Ils se donnent le nom d„Hommes-Poussière. Tu ne peux pas les rater : ils sont obsédés par le noir et la rigidité cadavérique du visage. C“est une bande enfumée d„adorateurs vampiriques de la mort, ils croient que tout le monde doit mourir… et que le plus tôt sera le mieux."{#morte2_s19_1}'
 
     menu:
         '"Je ne comprends pas… Qu„est-ce que ça peut leur faire, à ces Hommes-Poussière, si je m“enfuis ?"{#morte2_s19_r41217}':
@@ -364,7 +364,7 @@ label morte2_s19: # from 12.2 12.3
 
 # s20 # say41221
 label morte2_s20: # from 19.0
-    nr '"Tu n„écoutais pas ?! J“ai dit que les Hommes-Poussière croient que TOUT LE MONDE doit mourir, et que le plus tôt sera le mieux. Tu crois que les cadavres que tu as rencontrés sont plus heureux dans le livre des morts qu„à l“extérieur ?"{#morte2_s20_}'
+    nr '"Tu n„écoutais pas ?! J“ai dit que les Hommes-Poussière croient que TOUT LE MONDE doit mourir, et que le plus tôt sera le mieux. Tu crois que les cadavres que tu as rencontrés sont plus heureux dans le livre des morts qu„à l“extérieur ?"{#morte2_s20_1}'
 
     menu:
         '"J„ai compris. J“ai d„autres questions à te poser…"{#morte2_s20_r41222}':
@@ -382,7 +382,7 @@ label morte2_s20: # from 19.0
 
 # s21 # say41225
 label morte2_s21: # from 12.6
-    nr '"Tu, ben… tu les *utilises*. Pour épancher le sang et tout ça."  ^NREMARQUE : <BANDAGES2>^-{#morte2_s21_}'
+    nr '"Tu, ben… tu les *utilises*. Pour épancher le sang et tout ça."  ^NREMARQUE : <BANDAGES2>^-{#morte2_s21_1}'
 
     menu:
         '"J„ai compris. J“ai d„autres questions à te poser…"{#morte2_s21_r41226}':
@@ -400,7 +400,7 @@ label morte2_s21: # from 12.6
 
 # s22 # say41229
 label morte2_s22: # from 12.4
-    nr '"La mort rend visite aux plans tous les jours, chef. Ces loques, c„est tout c“qui reste des pauvres bougres qui ont vendu leurs corps aux gardiens après leur mort."{#morte2_s22_}'
+    nr '"La mort rend visite aux plans tous les jours, chef. Ces loques, c„est tout c“qui reste des pauvres bougres qui ont vendu leurs corps aux gardiens après leur mort."{#morte2_s22_1}'
 
     menu:
         '"J„ai compris. J“ai d„autres questions à te poser…"{#morte2_s22_r41230}':
@@ -418,7 +418,7 @@ label morte2_s22: # from 12.4
 
 # s23 # say41233
 label morte2_s23: # from 12.5
-    nr '"Tu es *sérieux* ? Écoute, chef, ces petites mortes représentent la dernière chance pour deux courageux lascars comme nous. Nous devons être *chevaleresques*… Il est hors de question d„aller les charcuter ou les découper pour trouver les clés."{#morte2_s23_}'
+    nr '"Tu es *sérieux* ? Écoute, chef, ces petites mortes représentent la dernière chance pour deux courageux lascars comme nous. Nous devons être *chevaleresques*… Il est hors de question d„aller les charcuter ou les découper pour trouver les clés."{#morte2_s23_1}'
 
     menu:
         '"Dernière chance ? De quoi tu *parles* ?"{#morte2_s23_r41234}':
@@ -436,7 +436,7 @@ label morte2_s23: # from 12.5
 
 # s24 # say41237
 label morte2_s24: # from 23.0
-    nr '"Chef, ELLES SONT mortes, NOUS SOMMES morts… tu piges ? Eh ? Eh ?"{#morte2_s24_}'
+    nr '"Chef, ELLES SONT mortes, NOUS SOMMES morts… tu piges ? Eh ? Eh ?"{#morte2_s24_1}'
 
     menu:
         '"Non… non, en fait, non."{#morte2_s24_r41238}':
@@ -458,7 +458,7 @@ label morte2_s24: # from 23.0
 
 # s25 # say41242
 label morte2_s25: # from 24.0 24.1
-    nr '"Chef, on a une bonne entrée en matière avec ces dames boiteuses. Nous sommes *tous* morts ne serait-ce qu„une fois ; on aura au moins un sujet de conversation possible. Elles apprécieront des hommes qui ont notre expérience de la mort."{#morte2_s25_}'
+    nr '"Chef, on a une bonne entrée en matière avec ces dames boiteuses. Nous sommes *tous* morts ne serait-ce qu„une fois ; on aura au moins un sujet de conversation possible. Elles apprécieront des hommes qui ont notre expérience de la mort."{#morte2_s25_1}'
 
     menu:
         '"Attends… tu as bien dit tout à l„heure que j“étais *pas* mort ?"{#morte2_s25_r41243}':
@@ -476,7 +476,7 @@ label morte2_s25: # from 24.0 24.1
 
 # s26 # say41246
 label morte2_s26: # from 25.0
-    nr '"Bon… d„accord, *tu* n“es peut-être pas mort, mais *moi* si. Et comme je le vois, ça ne me déplairait pas de partager un cercueil avec l„un des cadavres délicieux que je vois ici." Morte commence à claquer des dents d“envie. "Bien sûr, les gardiens devraient d„abord s“en séparer et il y a peu de chances…"{#morte2_s26_}'
+    nr '"Bon… d„accord, *tu* n“es peut-être pas mort, mais *moi* si. Et comme je le vois, ça ne me déplairait pas de partager un cercueil avec l„un des cadavres délicieux que je vois ici." Morte commence à claquer des dents d“envie. "Bien sûr, les gardiens devraient d„abord s“en séparer et il y a peu de chances…"{#morte2_s26_1}'
 
     menu:
         '"J„ai d“autres questions à te poser, Morte…"{#morte2_s26_r41247}':
@@ -490,7 +490,7 @@ label morte2_s26: # from 25.0
 
 # s27 # say41250
 label morte2_s27: # - # IF WEIGHT #3 /* Triggers after states #: 31 even though they appear after this state */ ~  !InParty("Morte")
-    nr '"Je savais que tu reviendrais, chef ! T„as finalement réalisé que t“avais besoin de moi, hein ?"{#morte2_s27_}'
+    nr '"Je savais que tu reviendrais, chef ! T„as finalement réalisé que t“avais besoin de moi, hein ?"{#morte2_s27_1}'
 
     menu:
         '"Ouais… on y va."{#morte2_s27_r41251}':
@@ -505,7 +505,7 @@ label morte2_s27: # - # IF WEIGHT #3 /* Triggers after states #: 31 even though 
 
 # s28 # say41253
 label morte2_s28: # from 27.1
-    nr '"Hmmff. Bien, je ne sais pas combien de temps je vais attendre ici, alors je vais te donner un DERNIERE chance. Tu es sûr que tu ne veux pas de mes sages conseils et de mon vif esprit ?"{#morte2_s28_}'
+    nr '"Hmmff. Bien, je ne sais pas combien de temps je vais attendre ici, alors je vais te donner un DERNIERE chance. Tu es sûr que tu ne veux pas de mes sages conseils et de mon vif esprit ?"{#morte2_s28_1}'
 
     menu:
         '"Morte, tu n„as RIEN de tout ça."{#morte2_s28_r41254}':
@@ -524,7 +524,7 @@ label morte2_s28: # from 27.1
 
 # s29 # say41257
 label morte2_s29: # from 28.0 28.2
-    nr '"Est-ce que tu essaies de me vexer, chef ? Qu„est-ce qu“il y a, c„est quelque chose que j“ai dit ? Le fait que je n„ai pas de bras ? Quoi ?"{#morte2_s29_}'
+    nr '"Est-ce que tu essaies de me vexer, chef ? Qu„est-ce qu“il y a, c„est quelque chose que j“ai dit ? Le fait que je n„ai pas de bras ? Quoi ?"{#morte2_s29_1}'
 
     menu:
         '"Très bien, j„ai changé d“avis. Allez, partons."{#morte2_s29_r41258}':
@@ -539,7 +539,7 @@ label morte2_s29: # from 28.0 28.2
 
 # s30 # say41260
 label morte2_s30: # from 29.1
-    nr '"Bien, je ne vais pas attendre pour TOUJOURS, alors tu ferais mieux de revenir, dès que tu auras changé d„avis."{#morte2_s30_}'
+    nr '"Bien, je ne vais pas attendre pour TOUJOURS, alors tu ferais mieux de revenir, dès que tu auras changé d„avis."{#morte2_s30_1}'
 
     menu:
         '"Je le ferai. Au revoir, Morte."{#morte2_s30_r41261}':
@@ -549,7 +549,7 @@ label morte2_s30: # from 29.1
 
 # s31 # say41262
 label morte2_s31: # - # IF WEIGHT #2 ~  Global("Mortuary_Walkthrough","GLOBAL",3) InParty("Morte")
-    nr '"Par les Puissances d„en haut. Tu PARLES d“un livre !"{#morte2_s31_}'
+    nr '"Par les Puissances d„en haut. Tu PARLES d“un livre !"{#morte2_s31_1}'
 
     menu:
         '"Quoi ?"{#morte2_s31_r41263}':
@@ -560,7 +560,7 @@ label morte2_s31: # - # IF WEIGHT #2 ~  Global("Mortuary_Walkthrough","GLOBAL",3
 
 # s32 # say41264
 label morte2_s32: # from 31.0
-    nr '"Si j„devais deviner, j“dirais que c„est le livre où ils gribouillent le nom de tous les pauvres bougres suffisamment malchanceux pour finir ici."{#morte2_s32_}'
+    nr '"Si j„devais deviner, j“dirais que c„est le livre où ils gribouillent le nom de tous les pauvres bougres suffisamment malchanceux pour finir ici."{#morte2_s32_1}'
 
     menu:
         '"Tu crois que mon nom pourrait y être inscrit ?"{#morte2_s32_r41265}':
@@ -570,7 +570,7 @@ label morte2_s32: # from 31.0
 
 # s33 # say41266
 label morte2_s33: # from 32.0
-    nr '"Euh… ben… *j„suppose.* Pour le savoir, il faudrait que t“ailles branler ton râtelier avec l„Homme-Poussière flottant, là-bas. J“suis pas sûr que ce soit une bonne idée."{#morte2_s33_}'
+    nr '"Euh… ben… *j„suppose.* Pour le savoir, il faudrait que t“ailles branler ton râtelier avec l„Homme-Poussière flottant, là-bas. J“suis pas sûr que ce soit une bonne idée."{#morte2_s33_1}'
 
     menu:
         '"Ben, j„ai besoin de réponses. Je vais aller lui parler."{#morte2_s33_r41267}':

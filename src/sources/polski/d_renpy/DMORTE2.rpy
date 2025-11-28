@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say41144
 label morte2_s0: # - # IF WEIGHT #0 ~  Global("Mortuary_Walkthrough","GLOBAL",1) InParty("Morte")
-    nr '"Pssst… Mała rada, szefie: od tego miejsca lepiej być cicho - nie trzeba wpisywać do księgi umarłych zbyt wiele zombie… zwłaszcza zombic. A poza tym, jak ich pozabijamy, to ściągniemy sobie na głowy ich opiekunów."{#morte2_s0_}'
+    nr '"Pssst… Mała rada, szefie: od tego miejsca lepiej być cicho - nie trzeba wpisywać do księgi umarłych zbyt wiele zombie… zwłaszcza zombic. A poza tym, jak ich pozabijamy, to ściągniemy sobie na głowy ich opiekunów."{#morte2_s0_1}'
 
     menu:
         '"Chyba jeszcze o tym nie wspominałeś… *Kim* są ci opiekunowie?"{#morte2_s0_r41145}':
@@ -37,7 +37,7 @@ label morte2_s0: # - # IF WEIGHT #0 ~  Global("Mortuary_Walkthrough","GLOBAL",1)
 
 # s1 # say41149
 label morte2_s1: # from 0.0 3.0 7.0
-    nr '"Nazywają siebie „Grabarzami“. Trudno ich nie rozpoznać: mają obsesję na punkcie czarnego koloru, a w dodatku ciągle mają śmiertelnie poważny wyraz twarzy. To zbzikowana banda wyznawców śmierci. Wierzą, że każdy powinien umrzeć… i to im szybciej, tym lepiej."{#morte2_s1_}'
+    nr '"Nazywają siebie „Grabarzami“. Trudno ich nie rozpoznać: mają obsesję na punkcie czarnego koloru, a w dodatku ciągle mają śmiertelnie poważny wyraz twarzy. To zbzikowana banda wyznawców śmierci. Wierzą, że każdy powinien umrzeć… i to im szybciej, tym lepiej."{#morte2_s1_1}'
 
     menu:
         '"Czegoś tu nie rozumiem… niby dlaczego ci Grabarze mieliby się przejmować moją ucieczką?"{#morte2_s1_r41150}':
@@ -47,7 +47,7 @@ label morte2_s1: # from 0.0 3.0 7.0
 
 # s2 # say41151
 label morte2_s2: # from 1.0
-    nr '"Czyżbyś mnie nie słuchał?! Powiedziałem, że Grabarze wyznają pogląd, iż KAŻDY powinien umrzeć, i to im szybciej, tym lepiej. Wydaje ci się, że wszystkie trupy, jakie widziałeś, są bardziej szczęśliwe w księdze umarłych niż poza nią?"{#morte2_s2_}'
+    nr '"Czyżbyś mnie nie słuchał?! Powiedziałem, że Grabarze wyznają pogląd, iż KAŻDY powinien umrzeć, i to im szybciej, tym lepiej. Wydaje ci się, że wszystkie trupy, jakie widziałeś, są bardziej szczęśliwe w księdze umarłych niż poza nią?"{#morte2_s2_1}'
 
     menu:
         '"Skąd się tu wzięły te wszystkie trupy?"{#morte2_s2_r41152}':
@@ -65,7 +65,7 @@ label morte2_s2: # from 1.0
 
 # s3 # say41155
 label morte2_s3: # from 0.1 2.0 7.1
-    nr '"Śmierć nawiedza Sfery każdego dnia. Te zombie to wszystko, co zostało z biednych skurli, którzy po śmierci sprzedali swoje ciała opiekunom."{#morte2_s3_}'
+    nr '"Śmierć nawiedza Sfery każdego dnia. Te zombie to wszystko, co zostało z biednych skurli, którzy po śmierci sprzedali swoje ciała opiekunom."{#morte2_s3_1}'
 
     menu:
         '"Oświeć mnie… *kim* są ci opiekunowie?"{#morte2_s3_r41156}':
@@ -83,7 +83,7 @@ label morte2_s3: # from 0.1 2.0 7.1
 
 # s4 # say41159
 label morte2_s4: # from 0.2 2.1 3.1
-    nr '"Co - mówisz *serio*? Te umarłe dzierlatki to ostatnia szansa dla takich śmiałków jak my. Musimy być *szlachetni*… a nie zarzynać je, żeby dostać jakieś klucze. Zapomnij o odcinaniu im nóg i tym podobnych sprawach."{#morte2_s4_}'
+    nr '"Co - mówisz *serio*? Te umarłe dzierlatki to ostatnia szansa dla takich śmiałków jak my. Musimy być *szlachetni*… a nie zarzynać je, żeby dostać jakieś klucze. Zapomnij o odcinaniu im nóg i tym podobnych sprawach."{#morte2_s4_1}'
 
     menu:
         '"Ostatnia szansa? O czym ty bredzisz?"{#morte2_s4_r41160}':
@@ -93,7 +93,7 @@ label morte2_s4: # from 0.2 2.1 3.1
 
 # s5 # say41161
 label morte2_s5: # from 4.0
-    nr '"Szefie, ONE nie żyją, MY nie żyjemy… łapiesz, o co mi chodzi? Co?"{#morte2_s5_}'
+    nr '"Szefie, ONE nie żyją, MY nie żyjemy… łapiesz, o co mi chodzi? Co?"{#morte2_s5_1}'
 
     menu:
         '"Szczerze mówiąc, nie."{#morte2_s5_r41162}':
@@ -107,7 +107,7 @@ label morte2_s5: # from 4.0
 
 # s6 # say41164
 label morte2_s6: # from 5.0 5.1
-    nr '"Szefie, mamy z tymi kuśtykającymi paniami coś wspólnego, więc może uda się nam z nimi coś wskórać. Przecież *każdy z nas* umarł przynajmniej raz, więc jest od czego zacząć. Docenią ludzi z takim doświadczeniem w sprawach śmierci jak my."{#morte2_s6_}'
+    nr '"Szefie, mamy z tymi kuśtykającymi paniami coś wspólnego, więc może uda się nam z nimi coś wskórać. Przecież *każdy z nas* umarł przynajmniej raz, więc jest od czego zacząć. Docenią ludzi z takim doświadczeniem w sprawach śmierci jak my."{#morte2_s6_1}'
 
     menu:
         '"Czekaj… czy nie mówiłeś, że ja *nie* jestem nieboszczykiem?"{#morte2_s6_r41165}':
@@ -117,7 +117,7 @@ label morte2_s6: # from 5.0 5.1
 
 # s7 # say41166
 label morte2_s7: # from 6.0
-    nr '"No dobra… może *ty* nie umarłeś, ale *ja* tak. A ja nie mam nic przeciwko dzieleniu trumny z jedną z tych niezłych, muskularnych nieboszczyc, które tu widzę." Morte zaczyna dzwonić zębami, jakby nie mógł się już doczekać. "Oczywiście najpierw trzeba byłoby takiego truposza wyrwać z rąk opiekunów, a szanse na to są znikome…"{#morte2_s7_}'
+    nr '"No dobra… może *ty* nie umarłeś, ale *ja* tak. A ja nie mam nic przeciwko dzieleniu trumny z jedną z tych niezłych, muskularnych nieboszczyc, które tu widzę." Morte zaczyna dzwonić zębami, jakby nie mógł się już doczekać. "Oczywiście najpierw trzeba byłoby takiego truposza wyrwać z rąk opiekunów, a szanse na to są znikome…"{#morte2_s7_1}'
 
     menu:
         '"Kim są ci opiekunowie?"{#morte2_s7_r41167}':
@@ -135,7 +135,7 @@ label morte2_s7: # from 6.0
 
 # s8 # say41170
 label morte2_s8: # from 0.3 2.2 3.2 7.2 12.7 13.2 14.2 15.2 16.2 17.1 18.1 19.2 20.1 21.1 22.1
-    nr '"Słuchaj, szefie. To jasne, że nie doszedłeś jeszcze do siebie po pocałunku śmierci, mam więc dla ciebie dwie rady. Po pierwsze, jeśli masz jakieś pytania, to *pytaj*."  ^NNOTE: <SPEAKTO>^-{#morte2_s8_}'
+    nr '"Słuchaj, szefie. To jasne, że nie doszedłeś jeszcze do siebie po pocałunku śmierci, mam więc dla ciebie dwie rady. Po pierwsze, jeśli masz jakieś pytania, to *pytaj*."  ^NNOTE: <SPEAKTO>^-{#morte2_s8_1}'
 
     menu:
         '"Jasne… jak będę miał jakieś pytania, to pójdę z tym do ciebie."{#morte2_s8_r41171}':
@@ -145,7 +145,7 @@ label morte2_s8: # from 0.3 2.2 3.2 7.2 12.7 13.2 14.2 15.2 16.2 17.1 18.1 19.2 
 
 # s9 # say41172
 label morte2_s9: # from 8.0
-    nr '"Po drugie, jeśli jesteś nawet w *połowie* tak roztargniony, na jakiego wyglądasz, to zacznij robić zapiski - jak tylko natkniesz się na coś, co może być ważne, zapisz to sobie, żebyś nie zapomniał."{#morte2_s9_}'
+    nr '"Po drugie, jeśli jesteś nawet w *połowie* tak roztargniony, na jakiego wyglądasz, to zacznij robić zapiski - jak tylko natkniesz się na coś, co może być ważne, zapisz to sobie, żebyś nie zapomniał."{#morte2_s9_1}'
 
     menu:
         '"Gdybym miał ten dziennik, o którym napisano mi na plecach, to bym tak robił."{#morte2_s9_r41173}':
@@ -155,7 +155,7 @@ label morte2_s9: # from 8.0
 
 # s10 # say41174
 label morte2_s10: # from 9.0
-    nr '"W takim razie załóż sobie nowy. Żadna strata. Pergaminu i atramentu ci nie zabraknie."{#morte2_s10_}'
+    nr '"W takim razie załóż sobie nowy. Żadna strata. Pergaminu i atramentu ci nie zabraknie."{#morte2_s10_1}'
 
     menu:
         '"Hmmmm. Dobra. Przecież to nie będzie bolało… Zrobię sobie nowy."{#morte2_s10_r41175}':
@@ -165,7 +165,7 @@ label morte2_s10: # from 9.0
 
 # s11 # say41176
 label morte2_s11: # from 10.0
-    nr '"Użyj go do śledzenia swoich postępów. Jeśli zapomnisz o czymś ważnym, na przykład kim jesteś albo – co ważniejsze – kim *ja* jestem, otwórz go i odśwież sobie pamięć."  ^NNOTE: Aby otworzyć dziennik, wciśnij przycisk dziennika w szybkim menu. W trakcie gry dziennik będzie automatycznie uzupełniany.^-{#morte2_s11_}'
+    nr '"Użyj go do śledzenia swoich postępów. Jeśli zapomnisz o czymś ważnym, na przykład kim jesteś albo – co ważniejsze – kim *ja* jestem, otwórz go i odśwież sobie pamięć."  ^NNOTE: Aby otworzyć dziennik, wciśnij przycisk dziennika w szybkim menu. W trakcie gry dziennik będzie automatycznie uzupełniany.^-{#morte2_s11_1}'
 
     menu:
         '"Dobra… łapię. Ruszajmy."{#morte2_s11_r41177}':
@@ -176,7 +176,7 @@ label morte2_s11: # from 10.0
 
 # s12 # say41178
 label morte2_s12: # from 13.1 14.1 15.1 16.1 17.0 18.0 19.1 20.0 21.0 22.0 23.1 24.2 25.1 26.0 # IF WEIGHT #1 ~  !Global("Mortuary_Walkthrough","GLOBAL",0) !Global("Mortuary_Walkthrough","GLOBAL",1) !Global("Mortuary_Walkthrough","GLOBAL",3) InParty("Morte")
-    nr '"Co cię gryzie, szefie?"{#morte2_s12_}'
+    nr '"Co cię gryzie, szefie?"{#morte2_s12_1}'
 
     menu:
         '"Czy możesz jeszcze raz przeczytać to, co mam wytatuowane na plecach?"{#morte2_s12_r41179}':
@@ -218,7 +218,7 @@ label morte2_s12: # from 13.1 14.1 15.1 16.1 17.0 18.0 19.1 20.0 21.0 22.0 23.1 
 
 # s13 # say41188
 label morte2_s13: # from 12.0
-    nr '"Daj spokój, szefie. Tylko mi nie mów, że już zdążyłeś zapomnieć."{#morte2_s13_}'
+    nr '"Daj spokój, szefie. Tylko mi nie mów, że już zdążyłeś zapomnieć."{#morte2_s13_1}'
 
     menu:
         '"Muszę tylko odświeżyć sobie pamięć."{#morte2_s13_r41189}':
@@ -240,7 +240,7 @@ label morte2_s13: # from 12.0
 
 # s14 # say41193
 label morte2_s14: # from 13.0
-    nr '"Założę się, że jeszcze nie raz to usłyszę." Morte chrząka znacząco. "Zobaczmy…"  „Wiem że czujesz się, jakbyś władował w siebie kilka baryłek wody ze Styksu, ale musisz się wziąć w GARŚĆ. Masz przy sobie DZIENNIK, który powinien trochę rozjaśnić sprawę. Resztę śpiewki usłyszysz od FARODA, chyba że już go wpisali do księgi umarłych.“{#morte2_s14_}'
+    nr '"Założę się, że jeszcze nie raz to usłyszę." Morte chrząka znacząco. "Zobaczmy…"  „Wiem że czujesz się, jakbyś władował w siebie kilka baryłek wody ze Styksu, ale musisz się wziąć w GARŚĆ. Masz przy sobie DZIENNIK, który powinien trochę rozjaśnić sprawę. Resztę śpiewki usłyszysz od FARODA, chyba że już go wpisali do księgi umarłych.“{#morte2_s14_1}'
 
     menu:
         '"Farod… hmmmm. Kontynuuj."{#morte2_s14_r41194}':
@@ -262,7 +262,7 @@ label morte2_s14: # from 13.0
 
 # s15 # say41198
 label morte2_s15: # from 14.0
-    nr '"Dobrze, dobrze, poczekaj." Morte przerywa na chwilę. "Dobra, to jest ostatnia część…"  „Nie zgub dziennika, bo znowu popłyniemy w górę Styksu. I cokolwiek robisz, NIE MÓW nikomu KIM jesteś, ani CO się z tobą dzieje, bo inaczej wylądujesz w krematorium. Rób co ci każę: PRZECZYTAJ dziennik, a potem ODSZUKAJ Faroda.“{#morte2_s15_}'
+    nr '"Dobrze, dobrze, poczekaj." Morte przerywa na chwilę. "Dobra, to jest ostatnia część…"  „Nie zgub dziennika, bo znowu popłyniemy w górę Styksu. I cokolwiek robisz, NIE MÓW nikomu KIM jesteś, ani CO się z tobą dzieje, bo inaczej wylądujesz w krematorium. Rób co ci każę: PRZECZYTAJ dziennik, a potem ODSZUKAJ Faroda.“{#morte2_s15_1}'
 
     menu:
         '"Kiedy się obudziłem, nie było przy mnie jakiegoś dziennika?"{#morte2_s15_r41199}':
@@ -284,7 +284,7 @@ label morte2_s15: # from 14.0
 
 # s16 # say41202
 label morte2_s16: # from 15.0
-    nr '"Nie… jak tu przybyłeś, nie miałeś na sobie żadnego ubrania. A tak poza tym, wygląda na to, że ktoś wypisał ci ten dziennik na skórze."{#morte2_s16_}'
+    nr '"Nie… jak tu przybyłeś, nie miałeś na sobie żadnego ubrania. A tak poza tym, wygląda na to, że ktoś wypisał ci ten dziennik na skórze."{#morte2_s16_1}'
 
     menu:
         '"Na pewno nie znasz nikogo o imieniu Farod?"{#morte2_s16_r41204}':
@@ -306,7 +306,7 @@ label morte2_s16: # from 15.0
 
 # s17 # say41208
 label morte2_s17: # from 16.0
-    nr '"Nie. Choć jakiś trep powinien wiedzieć, gdzie go można znaleźć. Popytajmy wkoło… JAK JUŻ się stąd wydostaniemy."{#morte2_s17_}'
+    nr '"Nie. Choć jakiś trep powinien wiedzieć, gdzie go można znaleźć. Popytajmy wkoło… JAK JUŻ się stąd wydostaniemy."{#morte2_s17_1}'
 
     menu:
         '"Zanim ruszymy dalej, mam do ciebie kilka pytań…"{#morte2_s17_r41209}':
@@ -324,7 +324,7 @@ label morte2_s17: # from 16.0
 
 # s18 # say41212
 label morte2_s18: # from 12.1
-    nr '"To „Kostnica“… wielka, czarna budowla o uroku ciężarnej pajęczycy."{#morte2_s18_}'
+    nr '"To „Kostnica“… wielka, czarna budowla o uroku ciężarnej pajęczycy."{#morte2_s18_1}'
 
     menu:
         '"Rozumiem. Mam do ciebie jeszcze parę pytań…"{#morte2_s18_r41213}':
@@ -342,7 +342,7 @@ label morte2_s18: # from 12.1
 
 # s19 # say41216
 label morte2_s19: # from 12.2 12.3
-    nr '"Nazywają siebie „Grabarzami“. Trudno ich nie rozpoznać: mają obsesję na punkcie czarnego koloru, a w dodatku ciągle mają śmiertelnie poważny wyraz twarzy. To zaprzała banda wyznawców śmierci. Wierzą, że każdy powinien umrzeć… i to im szybciej, tym lepiej."{#morte2_s19_}'
+    nr '"Nazywają siebie „Grabarzami“. Trudno ich nie rozpoznać: mają obsesję na punkcie czarnego koloru, a w dodatku ciągle mają śmiertelnie poważny wyraz twarzy. To zaprzała banda wyznawców śmierci. Wierzą, że każdy powinien umrzeć… i to im szybciej, tym lepiej."{#morte2_s19_1}'
 
     menu:
         '"Czegoś tu nie rozumiem… niby dlaczego ci Grabarze mieliby się przejmować moją ucieczką?"{#morte2_s19_r41217}':
@@ -364,7 +364,7 @@ label morte2_s19: # from 12.2 12.3
 
 # s20 # say41221
 label morte2_s20: # from 19.0
-    nr '"Czyżbyś mnie nie słuchał?! Powiedziałem, że Grabarze wyznają pogląd, że KAŻDY powinien umrzeć, i to im szybciej, tym lepiej. Wydaje ci się, że wszystkie trupy, jakie widziałeś, są bardziej szczęśliwe w księdze umarłych niż poza nią?"{#morte2_s20_}'
+    nr '"Czyżbyś mnie nie słuchał?! Powiedziałem, że Grabarze wyznają pogląd, że KAŻDY powinien umrzeć, i to im szybciej, tym lepiej. Wydaje ci się, że wszystkie trupy, jakie widziałeś, są bardziej szczęśliwe w księdze umarłych niż poza nią?"{#morte2_s20_1}'
 
     menu:
         '"Rozumiem. Mam do ciebie jeszcze parę pytań…"{#morte2_s20_r41222}':
@@ -382,7 +382,7 @@ label morte2_s20: # from 19.0
 
 # s21 # say41225
 label morte2_s21: # from 12.6
-    nr '"Tak jakby… ich *używasz*. Do tamowania krwawienia i innych takich."  ^NNOTE: <BANDAGES2>^-{#morte2_s21_}'
+    nr '"Tak jakby… ich *używasz*. Do tamowania krwawienia i innych takich."  ^NNOTE: <BANDAGES2>^-{#morte2_s21_1}'
 
     menu:
         '"Rozumiem. Mam do ciebie jeszcze parę pytań…"{#morte2_s21_r41226}':
@@ -400,7 +400,7 @@ label morte2_s21: # from 12.6
 
 # s22 # say41229
 label morte2_s22: # from 12.4
-    nr '"Śmierć nawiedza Sfery każdego dnia. Te zombie to wszystko, co zostało z biednych skurli, którzy po śmierci sprzedali swoje ciała opiekunom."{#morte2_s22_}'
+    nr '"Śmierć nawiedza Sfery każdego dnia. Te zombie to wszystko, co zostało z biednych skurli, którzy po śmierci sprzedali swoje ciała opiekunom."{#morte2_s22_1}'
 
     menu:
         '"Rozumiem. Mam do ciebie jeszcze parę pytań…"{#morte2_s22_r41230}':
@@ -418,7 +418,7 @@ label morte2_s22: # from 12.4
 
 # s23 # say41233
 label morte2_s23: # from 12.5
-    nr '"Co - mówisz *serio*? Te umarłe dzierlatki to ostatnia szansa dla takich śmiałków jak my. Musimy być *szlachetni*… a nie zarzynać ich, żeby dostać jakieś klucze. Zapomnij o odcinaniu im nóg i tym podobnych sprawach."{#morte2_s23_}'
+    nr '"Co - mówisz *serio*? Te umarłe dzierlatki to ostatnia szansa dla takich śmiałków jak my. Musimy być *szlachetni*… a nie zarzynać ich, żeby dostać jakieś klucze. Zapomnij o odcinaniu im nóg i tym podobnych sprawach."{#morte2_s23_1}'
 
     menu:
         '"Ostatnia szansa? O czym ty gadasz?"{#morte2_s23_r41234}':
@@ -436,7 +436,7 @@ label morte2_s23: # from 12.5
 
 # s24 # say41237
 label morte2_s24: # from 23.0
-    nr '"Szefie, ONE nie żyją, MY nie żyjemy… łapiesz, o co mi chodzi? Co?"{#morte2_s24_}'
+    nr '"Szefie, ONE nie żyją, MY nie żyjemy… łapiesz, o co mi chodzi? Co?"{#morte2_s24_1}'
 
     menu:
         '"Tak w sumie, to nie."{#morte2_s24_r41238}':
@@ -458,7 +458,7 @@ label morte2_s24: # from 23.0
 
 # s25 # say41242
 label morte2_s25: # from 24.0 24.1
-    nr '"Szefie, mamy z tymi kuśtykającymi paniami coś wspólnego, więc może uda się nam z nimi coś wskórać. Przecież *każdy z nas* umarł przynajmniej raz, więc jest od czego zacząć. Docenią ludzi z takim doświadczeniem w sprawach śmierci, jak my."{#morte2_s25_}'
+    nr '"Szefie, mamy z tymi kuśtykającymi paniami coś wspólnego, więc może uda się nam z nimi coś wskórać. Przecież *każdy z nas* umarł przynajmniej raz, więc jest od czego zacząć. Docenią ludzi z takim doświadczeniem w sprawach śmierci, jak my."{#morte2_s25_1}'
 
     menu:
         '"Czekaj… czy nie mówiłeś, że ja *nie* jestem nieboszczykiem?"{#morte2_s25_r41243}':
@@ -476,7 +476,7 @@ label morte2_s25: # from 24.0 24.1
 
 # s26 # say41246
 label morte2_s26: # from 25.0
-    nr '"No dobra… może *ty* nie umarłeś, ale *ja* tak. A ja nie mam nic przeciwko dzieleniu trumny z jedną z tych niezłych, muskularnych nieboszczyc, które tu widzę." Morte zaczyna dzwonić zębami, jakby nie mógł się już doczekać. "Oczywiście najpierw trzeba byłoby takiego truposza wyrwać z rąk opiekunów, a szanse na to są znikome…"{#morte2_s26_}'
+    nr '"No dobra… może *ty* nie umarłeś, ale *ja* tak. A ja nie mam nic przeciwko dzieleniu trumny z jedną z tych niezłych, muskularnych nieboszczyc, które tu widzę." Morte zaczyna dzwonić zębami, jakby nie mógł się już doczekać. "Oczywiście najpierw trzeba byłoby takiego truposza wyrwać z rąk opiekunów, a szanse na to są znikome…"{#morte2_s26_1}'
 
     menu:
         '"Mam do ciebie jeszcze kilka pytań, Morte…"{#morte2_s26_r41247}':
@@ -490,7 +490,7 @@ label morte2_s26: # from 25.0
 
 # s27 # say41250
 label morte2_s27: # - # IF WEIGHT #3 /* Triggers after states #: 31 even though they appear after this state */ ~  !InParty("Morte")
-    nr '"Wiedziałem że wrócisz, szefie! W końcu zdałeś sobie sprawę, że jestem ci potrzebny, co?"{#morte2_s27_}'
+    nr '"Wiedziałem że wrócisz, szefie! W końcu zdałeś sobie sprawę, że jestem ci potrzebny, co?"{#morte2_s27_1}'
 
     menu:
         '"Jasne… ruszajmy."{#morte2_s27_r41251}':
@@ -505,7 +505,7 @@ label morte2_s27: # - # IF WEIGHT #3 /* Triggers after states #: 31 even though 
 
 # s28 # say41253
 label morte2_s28: # from 27.1
-    nr '"Hmmmm. Nie wiem, czy mnie tu jeszcze zastaniesz, ale dam ci jeszcze OSTATNIĄ szansę. Na pewno nie potrzebujesz moich wskazówek i mojego sprytu?"{#morte2_s28_}'
+    nr '"Hmmmm. Nie wiem, czy mnie tu jeszcze zastaniesz, ale dam ci jeszcze OSTATNIĄ szansę. Na pewno nie potrzebujesz moich wskazówek i mojego sprytu?"{#morte2_s28_1}'
 
     menu:
         '"Morte, przecież nie masz ŻADNEJ z tych rzeczy."{#morte2_s28_r41254}':
@@ -524,7 +524,7 @@ label morte2_s28: # from 27.1
 
 # s29 # say41257
 label morte2_s29: # from 28.0 28.2
-    nr '"Chcesz obrazić moje uczucia, szefie? Czyżbym coś powiedział nie tak? A może przeszkadza ci, że nie mam rąk? Co?"{#morte2_s29_}'
+    nr '"Chcesz obrazić moje uczucia, szefie? Czyżbym coś powiedział nie tak? A może przeszkadza ci, że nie mam rąk? Co?"{#morte2_s29_1}'
 
     menu:
         '"No dobra, zmieniłem zdanie. Ruszajmy."{#morte2_s29_r41258}':
@@ -539,7 +539,7 @@ label morte2_s29: # from 28.0 28.2
 
 # s30 # say41260
 label morte2_s30: # from 29.1
-    nr '"No cóż, nie będę czekał w NIESKOŃCZONOŚĆ, więc lepiej wróć jak tylko zmienisz zdanie."{#morte2_s30_}'
+    nr '"No cóż, nie będę czekał w NIESKOŃCZONOŚĆ, więc lepiej wróć jak tylko zmienisz zdanie."{#morte2_s30_1}'
 
     menu:
         '"Dobrze. Żegnaj, Morte."{#morte2_s30_r41261}':
@@ -549,7 +549,7 @@ label morte2_s30: # from 29.1
 
 # s31 # say41262
 label morte2_s31: # - # IF WEIGHT #2 ~  Global("Mortuary_Walkthrough","GLOBAL",3) InParty("Morte")
-    nr '"Na wielkie moce. To dopiero księga."{#morte2_s31_}'
+    nr '"Na wielkie moce. To dopiero księga."{#morte2_s31_1}'
 
     menu:
         '"Co to jest?"{#morte2_s31_r41263}':
@@ -560,7 +560,7 @@ label morte2_s31: # - # IF WEIGHT #2 ~  Global("Mortuary_Walkthrough","GLOBAL",3
 
 # s32 # say41264
 label morte2_s32: # from 31.0
-    nr '"Jakbym miał zgadywać, powiedziałbym, że to księga, w której zapisują imiona wszystkich biednych trepów, którzy mieli pecha, żeby się tu znaleźć."{#morte2_s32_}'
+    nr '"Jakbym miał zgadywać, powiedziałbym, że to księga, w której zapisują imiona wszystkich biednych trepów, którzy mieli pecha, żeby się tu znaleźć."{#morte2_s32_1}'
 
     menu:
         '"Czy moje imię też tam jest?"{#morte2_s32_r41265}':
@@ -570,7 +570,7 @@ label morte2_s32: # from 31.0
 
 # s33 # say41266
 label morte2_s33: # from 32.0
-    nr '"Hmm… no cóż… *chyba* tak. Jak chcesz się dowiedzieć, musisz trochę pokłapać jadaczką z tamtym lewitującym Grabarzem. Choć nie wiem, czy to dobry pomysł."{#morte2_s33_}'
+    nr '"Hmm… no cóż… *chyba* tak. Jak chcesz się dowiedzieć, musisz trochę pokłapać jadaczką z tamtym lewitującym Grabarzem. Choć nie wiem, czy to dobry pomysł."{#morte2_s33_1}'
 
     menu:
         '"Ktoś musi mi wyjaśnić kilka rzeczy. Muszę z nim porozmawiać."{#morte2_s33_r41267}':

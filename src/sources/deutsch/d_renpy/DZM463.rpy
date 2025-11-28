@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say6484
 label zm463_s0: # - # IF ~  True()
-    nr 'Die elendige Leiche starrt dich mit leeren Augen an. Die Nummer "463" ist in ihre Stirn geritzt und ihre Lippen wurden zugenäht. Dem Körper entströmt ein leichter Formaldehydgeruch.{#zm463_s0_}'
+    nr 'Die elendige Leiche starrt dich mit leeren Augen an. Die Nummer "463" ist in ihre Stirn geritzt und ihre Lippen wurden zugenäht. Dem Körper entströmt ein leichter Formaldehydgeruch.{#zm463_s0_1}'
 
     menu:
         '"Na… gibt„s hier irgendwas Interessantes zu berichten?"{#zm463_s0_r6485}' if zm463Logic.r6485_condition():
@@ -42,7 +42,7 @@ label zm463_s0: # - # IF ~  True()
 
 # s1 # say6486
 label zm463_s1: # from 0.0 0.1 0.2
-    nr 'Die Leiche starrt dich weiter an.{#zm463_s1_}'
+    nr 'Die Leiche starrt dich weiter an.{#zm463_s1_1}'
 
     menu:
         'Laß die Leiche in Ruhe.{#zm463_s1_r6493}':
@@ -52,7 +52,7 @@ label zm463_s1: # from 0.0 0.1 0.2
 
 # s2 # say6487
 label zm463_s2: # from 0.3
-    nr 'Die Leiche antwortet nicht. Es sieht so aus, als ob sie schon zu tot ist, um noch auf irgendeine deiner Fragen zu antworten.{#zm463_s2_}'
+    nr 'Die Leiche antwortet nicht. Es sieht so aus, als ob sie schon zu tot ist, um noch auf irgendeine deiner Fragen zu antworten.{#zm463_s2_1}'
 
     menu:
         'Laß die Leiche in Ruhe.{#zm463_s2_r6494}':

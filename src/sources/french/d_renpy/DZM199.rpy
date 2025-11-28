@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say34975
 label zm199_s0: # - # IF ~  True()
-    nr 'Ce cadavre réanimé dégage une puanteur de viande carbonisée et de textiles qui brûlent. Il porte sur tout le côté droit des marques de brûlures assez récentes ; peut-être est-il resté trop près d„un feu et qu“il a commencé à s„enflammer. Le numéro “199„ est gravé sur son front et ses lèvres sont cousues ensemble.{#zm199_s0_}'
+    nr 'Ce cadavre réanimé dégage une puanteur de viande carbonisée et de textiles qui brûlent. Il porte sur tout le côté droit des marques de brûlures assez récentes ; peut-être est-il resté trop près d„un feu et qu“il a commencé à s„enflammer. Le numéro “199„ est gravé sur son front et ses lèvres sont cousues ensemble.{#zm199_s0_1}'
 
     menu:
         '"Alors… Tu as vu quelque chose d„intéressant ?"{#zm199_s0_r34976}' if zm199Logic.r34976_condition():
@@ -42,7 +42,7 @@ label zm199_s0: # - # IF ~  True()
 
 # s1 # say34977
 label zm199_s1: # from 0.0 0.1 0.2
-    nr 'Le cadavre continue à te fixer.{#zm199_s1_}'
+    nr 'Le cadavre continue à te fixer.{#zm199_s1_1}'
 
     menu:
         'Laisse le cadavre tranquille.{#zm199_s1_r34978}':
@@ -52,7 +52,7 @@ label zm199_s1: # from 0.0 0.1 0.2
 
 # s2 # say34982
 label zm199_s2: # from 0.3
-    nr 'Le cadavre ne répond pas. Il semble qu„il soit trop absent pour répondre à tes questions.{#zm199_s2_}'
+    nr 'Le cadavre ne répond pas. Il semble qu„il soit trop absent pour répondre à tes questions.{#zm199_s2_1}'
 
     menu:
         'Laisse le cadavre tranquille.{#zm199_s2_r34983}':

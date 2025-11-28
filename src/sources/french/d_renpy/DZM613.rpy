@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say6540
 label zm613_s0: # - # IF ~  True()
-    nr 'Le numéro „613“ est gravé profondément sur le front de ce cadavre à la démarche lourde, mais deux ou trois centimètres de peau tannée et déchiquetée séparent le „1“ et le „3“. En examinant l„endroit de plus près, il te semble distinguer un “2„ gravé là.{#zm613_s0_}'
+    nr 'Le numéro „613“ est gravé profondément sur le front de ce cadavre à la démarche lourde, mais deux ou trois centimètres de peau tannée et déchiquetée séparent le „1“ et le „3“. En examinant l„endroit de plus près, il te semble distinguer un “2„ gravé là.{#zm613_s0_1}'
 
     menu:
         '"Alors… Tu as vu quelque chose d„intéressant ?"{#zm613_s0_r6543}' if zm613Logic.r6543_condition():
@@ -42,7 +42,7 @@ label zm613_s0: # - # IF ~  True()
 
 # s1 # say6541
 label zm613_s1: # from 0.0 0.1 0.2
-    nr 'Le cadavre continue à te fixer.{#zm613_s1_}'
+    nr 'Le cadavre continue à te fixer.{#zm613_s1_1}'
 
     menu:
         'Laisse le cadavre tranquille.{#zm613_s1_r6549}':
@@ -52,7 +52,7 @@ label zm613_s1: # from 0.0 0.1 0.2
 
 # s2 # say6542
 label zm613_s2: # from 0.3
-    nr 'Le cadavre ne répond pas. Il semble qu„il soit trop absent pour répondre à tes questions.{#zm613_s2_}'
+    nr 'Le cadavre ne répond pas. Il semble qu„il soit trop absent pour répondre à tes questions.{#zm613_s2_1}'
 
     menu:
         'Laisse le cadavre tranquille.{#zm613_s2_r6550}':

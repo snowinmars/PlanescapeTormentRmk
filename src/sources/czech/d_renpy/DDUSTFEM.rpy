@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say298
 label dustfem_s0: # - # IF ~  Global("Appearance","GLOBAL",1)
-    nr 'Spalovačka nevypadá, že by tě poznala. Musela si tě splést s jedním z mrtvých dělníků.{#dustfem_s0_}'
+    nr 'Spalovačka nevypadá, že by tě poznala. Musela si tě splést s jedním z mrtvých dělníků.{#dustfem_s0_1}'
 
     menu:
         '"Zdravím."{#dustfem_s0_r299}':
@@ -37,7 +37,7 @@ label dustfem_s0: # - # IF ~  Global("Appearance","GLOBAL",1)
 
 # s1 # say1171
 label dustfem_s1: # from 0.0 0.1 0.2 0.3
-    nr 'Spalovačka odskočí, pak k tobě otočí hlavu a začne na tebe civět. Vypadá zaskočeně - tvůj převlek musí být celkem dobrý.{#dustfem_s1_}'
+    nr 'Spalovačka odskočí, pak k tobě otočí hlavu a začne na tebe civět. Vypadá zaskočeně - tvůj převlek musí být celkem dobrý.{#dustfem_s1_1}'
 
     menu:
         'Využij výhody překvapení a chyť ji pod krkem, než může někoho zavolat.{#dustfem_s1_r1172}':
@@ -55,7 +55,7 @@ label dustfem_s1: # from 0.0 0.1 0.2 0.3
 
 # s2 # say1176
 label dustfem_s2: # from 1.1 1.2 4.3 5.2 5.3 6.4 19.6 20.4 47.2 47.3 51.4
-    nr 'Spalovačka udělá krok zpět, pak třikrát za sebou krátce tleskne. Krátce nato začne v Márnici vyzvánět velký železný zvon.{#dustfem_s2_}'
+    nr 'Spalovačka udělá krok zpět, pak třikrát za sebou krátce tleskne. Krátce nato začne v Márnici vyzvánět velký železný zvon.{#dustfem_s2_1}'
 
     menu:
         '"Nuže dobrá…"{#dustfem_s2_r1225}':
@@ -66,7 +66,7 @@ label dustfem_s2: # from 1.1 1.2 4.3 5.2 5.3 6.4 19.6 20.4 47.2 47.3 51.4
 
 # s3 # say1177
 label dustfem_s3: # externs morte_s84
-    nr 'Pobledlá žena je oblečena v dlouhých tmavých šatech. Vychází z ní slabý zatuchlý zápach. V obličeji má prázdný výraz a zdá se, že je zaměstnána svými povinnostmi.{#dustfem_s3_}'
+    nr 'Pobledlá žena je oblečena v dlouhých tmavých šatech. Vychází z ní slabý zatuchlý zápach. V obličeji má prázdný výraz a zdá se, že je zaměstnána svými povinnostmi.{#dustfem_s3_1}'
 
     menu:
         '"Zdravím."{#dustfem_s3_r1226}':
@@ -92,7 +92,7 @@ label dustfem_s3: # externs morte_s84
 
 # s4 # say1178
 label dustfem_s4: # from 3.0 3.1 3.2 3.3 40.2 40.3
-    nr 'Spalovačka pomalu zvedá hlavu a otáčí se k tobě. "Ztratil ses?"{#dustfem_s4_}'
+    nr 'Spalovačka pomalu zvedá hlavu a otáčí se k tobě. "Ztratil ses?"{#dustfem_s4_1}'
 
     menu:
         '"Ano."{#dustfem_s4_r1231}':
@@ -114,7 +114,7 @@ label dustfem_s4: # from 3.0 3.1 3.2 3.3 40.2 40.3
 
 # s5 # say1179
 label dustfem_s5: # from 4.0 16.2 51.1
-    nr '"Zavolám stráže aby tě odtud vyvedly. Chvíli vydrž."{#dustfem_s5_}'
+    nr '"Zavolám stráže aby tě odtud vyvedly. Chvíli vydrž."{#dustfem_s5_1}'
 
     menu:
         'Chyť ji pod krkem, než může někoho zavolat.{#dustfem_s5_r1235}' if dustfemLogic.r1235_condition():
@@ -136,7 +136,7 @@ label dustfem_s5: # from 4.0 16.2 51.1
 
 # s6 # say1180
 label dustfem_s6: # from 4.1 4.2 51.2 51.3
-    nr '"Jestli ses neztratil, tak co tu potom děláš?"{#dustfem_s6_}'
+    nr '"Jestli ses neztratil, tak co tu potom děláš?"{#dustfem_s6_1}'
 
     menu:
         '"To tě nemusí zajímat."{#dustfem_s6_r1239}':
@@ -162,7 +162,7 @@ label dustfem_s6: # from 4.1 4.2 51.2 51.3
 
 # s7 # say1181
 label dustfem_s7: # from 6.0 9.0 20.0
-    nr '"Obávám se, že to je Má věc. Možná ti stráže rozvážou jazyk." Spalovačka udělá krok zpět; vypadá, že se chystá zavolat stráže.{#dustfem_s7_}'
+    nr '"Obávám se, že to je Má věc. Možná ti stráže rozvážou jazyk." Spalovačka udělá krok zpět; vypadá, že se chystá zavolat stráže.{#dustfem_s7_1}'
 
     menu:
         'Chyť ji pod krkem, než může někoho zavolat.{#dustfem_s7_r1244}' if dustfemLogic.r1244_condition():
@@ -181,7 +181,7 @@ label dustfem_s7: # from 6.0 9.0 20.0
 
 # s8 # say1182
 label dustfem_s8: # from 6.1 16.0 20.1
-    nr '"Děláš si srandu? Asi bys to koukám radši sdělil strážím." Spalovačka udělá krok zpět; vypadá, že se chystá zavolat stráže.{#dustfem_s8_}'
+    nr '"Děláš si srandu? Asi bys to koukám radši sdělil strážím." Spalovačka udělá krok zpět; vypadá, že se chystá zavolat stráže.{#dustfem_s8_1}'
 
     menu:
         'Chyť ji pod krkem, než může někoho zavolat.{#dustfem_s8_r1247}' if dustfemLogic.r1247_condition():
@@ -200,7 +200,7 @@ label dustfem_s8: # from 6.1 16.0 20.1
 
 # s9 # say1183
 label dustfem_s9: # from 6.2 20.2
-    nr '"Koho tu hledáš?"{#dustfem_s9_}'
+    nr '"Koho tu hledáš?"{#dustfem_s9_1}'
 
     menu:
         '"To není tvoje starost."{#dustfem_s9_r1251}':
@@ -247,7 +247,7 @@ label dustfem_s9: # from 6.2 20.2
 
 # s10 # say1184
 label dustfem_s10: # from 9.1
-    nr '"Dhall je v přijímací místnosti v tomhle patře. Musím tě varovat… Dhall je docela dost zaneprázdněn svými povinnostmi a není na tom se zdravím zrovna nejlépe. Pokud s ním nemáš nějaké důležité jednání, tak bych ho, být tebou, nerušila."{#dustfem_s10_}'
+    nr '"Dhall je v přijímací místnosti v tomhle patře. Musím tě varovat… Dhall je docela dost zaneprázdněn svými povinnostmi a není na tom se zdravím zrovna nejlépe. Pokud s ním nemáš nějaké důležité jednání, tak bych ho, být tebou, nerušila."{#dustfem_s10_1}'
 
     menu:
         '"Dobře. Díky za informaci."{#dustfem_s10_r1259}':
@@ -257,7 +257,7 @@ label dustfem_s10: # from 9.1
 
 # s11 # say1185
 label dustfem_s11: # from 9.2
-    nr '"Dhall je s největší pravděpodobností v přijímací místnosti ve druhém patře. Musím tě varovat… Dhall je docela dost zaneprázdněn svými povinnostmi a není na tom se zdravím zrovna nejlépe. Pokud s ním nemáš nějaké důležité jednání, tak bych ho, být tebou, nerušila."{#dustfem_s11_}'
+    nr '"Dhall je s největší pravděpodobností v přijímací místnosti ve druhém patře. Musím tě varovat… Dhall je docela dost zaneprázdněn svými povinnostmi a není na tom se zdravím zrovna nejlépe. Pokud s ním nemáš nějaké důležité jednání, tak bych ho, být tebou, nerušila."{#dustfem_s11_1}'
 
     menu:
         '"Dobře. Díky za informaci."{#dustfem_s11_r1260}':
@@ -267,7 +267,7 @@ label dustfem_s11: # from 9.2
 
 # s12 # say1186
 label dustfem_s12: # from 9.4 19.1
-    nr '"Deionarra? Vím, že je v pamětní síni v prvním patře pohřbena nějaká žena. Mohla by to být ona?"{#dustfem_s12_}'
+    nr '"Deionarra? Vím, že je v pamětní síni v prvním patře pohřbena nějaká žena. Mohla by to být ona?"{#dustfem_s12_1}'
 
     menu:
         '"S největší pravděpodobností. Díky."{#dustfem_s12_r1261}':
@@ -277,7 +277,7 @@ label dustfem_s12: # from 9.4 19.1
 
 # s13 # say1187
 label dustfem_s13: # from 9.3
-    nr '"Deionarra? Vím, že je v pamětní síni v severozápadní části Márnice pohřbena nějaká žena. Mohla by to být ona?"{#dustfem_s13_}'
+    nr '"Deionarra? Vím, že je v pamětní síni v severozápadní části Márnice pohřbena nějaká žena. Mohla by to být ona?"{#dustfem_s13_1}'
 
     menu:
         '"S největší pravděpodobností. Díky."{#dustfem_s13_r1262}':
@@ -287,7 +287,7 @@ label dustfem_s13: # from 9.3
 
 # s14 # say1188
 label dustfem_s14: # from 9.6
-    nr '"Věřím, že Soego je u vstupní brány v prvním patře. Pracuje tam jako stráž v hodinách mimo špičku."{#dustfem_s14_}'
+    nr '"Věřím, že Soego je u vstupní brány v prvním patře. Pracuje tam jako stráž v hodinách mimo špičku."{#dustfem_s14_1}'
 
     menu:
         '"Moc dobře. Díky."{#dustfem_s14_r1263}':
@@ -297,7 +297,7 @@ label dustfem_s14: # from 9.6
 
 # s15 # say1189
 label dustfem_s15: # from 9.5
-    nr '"Věřím, že Soego je u vstupní brány v prvním patře. Pracuje tam jako stráž v hodinách mimo špičku."{#dustfem_s15_}'
+    nr '"Věřím, že Soego je u vstupní brány v prvním patře. Pracuje tam jako stráž v hodinách mimo špičku."{#dustfem_s15_1}'
 
     menu:
         '"Moc dobře. Díky."{#dustfem_s15_r1264}':
@@ -307,7 +307,7 @@ label dustfem_s15: # from 9.5
 
 # s16 # say1190
 label dustfem_s16: # from 6.3 20.3
-    nr '"Kdo byl pohřben? Přece se snad tyhle služby konají v Márnici na jiném místě."{#dustfem_s16_}'
+    nr '"Kdo byl pohřben? Přece se snad tyhle služby konají v Márnici na jiném místě."{#dustfem_s16_1}'
 
     menu:
         '"Ty jsi mi nerozuměl… tím omylem jsem JÁ."{#dustfem_s16_r1265}':
@@ -325,7 +325,7 @@ label dustfem_s16: # from 6.3 20.3
 
 # s17 # say1191
 label dustfem_s17: # from 16.1
-    nr '"Několik pohřebních komor lemuje obvod Márnice. Pak se tyto hrobky stáčejí kolem zdi v prvním a druhém patře. Znáš jméno toho zemřelého?"{#dustfem_s17_}'
+    nr '"Několik pohřebních komor lemuje obvod Márnice. Pak se tyto hrobky stáčejí kolem zdi v prvním a druhém patře. Znáš jméno toho zemřelého?"{#dustfem_s17_1}'
 
     menu:
         '"Ne."{#dustfem_s17_r1268}':
@@ -339,7 +339,7 @@ label dustfem_s17: # from 16.1
 
 # s18 # say1192
 label dustfem_s18: # from 17.0
-    nr '"Pak by sis měl popovídat s někým s průvodců u vstupní brány. Můžou ti pomoci."{#dustfem_s18_}'
+    nr '"Pak by sis měl popovídat s někým s průvodců u vstupní brány. Můžou ti pomoci."{#dustfem_s18_1}'
 
     menu:
         '"Dobře. Díky."{#dustfem_s18_r1270}':
@@ -349,7 +349,7 @@ label dustfem_s18: # from 17.0
 
 # s19 # say1193
 label dustfem_s19: # from 17.1
-    nr 'Spalovačka čeká.{#dustfem_s19_}'
+    nr 'Spalovačka čeká.{#dustfem_s19_1}'
 
     menu:
         '"Pardon… spletl jsem se. Neznám jméno toho zemřelého."{#dustfem_s19_r1271}':
@@ -384,7 +384,7 @@ label dustfem_s19: # from 17.1
 
 # s20 # say1194
 label dustfem_s20: # from 9.9 19.0
-    nr '"Aha. Takže co tu děláš?"{#dustfem_s20_}'
+    nr '"Aha. Takže co tu děláš?"{#dustfem_s20_1}'
 
     menu:
         '"To tě nemusí zajímat."{#dustfem_s20_r1278}':
@@ -410,7 +410,7 @@ label dustfem_s20: # from 9.9 19.0
 
 # s21 # say1195
 label dustfem_s21: # from 9.7 9.8 19.2 19.3
-    nr '"To jméno mi není povědomé. Poraď se s některým z průvodců u vstupní brány… měli by být schopni tě nasměrovat lépe než já."{#dustfem_s21_}'
+    nr '"To jméno mi není povědomé. Poraď se s některým z průvodců u vstupní brány… měli by být schopni tě nasměrovat lépe než já."{#dustfem_s21_1}'
 
     menu:
         '"Dobře. Udělám to. Sbohem."{#dustfem_s21_r1283}':
@@ -420,7 +420,7 @@ label dustfem_s21: # from 9.7 9.8 19.2 19.3
 
 # s22 # say1196
 label dustfem_s22: # - # IF ~  Global("Appearance","GLOBAL",2)
-    nr 'Pobledlá žena je oblečena v dlouhých tmavých šatech. Vychází z ní slabý zatuchlý zápach. V obličeji má prázdný výraz a zdá se, že je zaměstnána svými povinnostmi.{#dustfem_s22_}'
+    nr 'Pobledlá žena je oblečena v dlouhých tmavých šatech. Vychází z ní slabý zatuchlý zápach. V obličeji má prázdný výraz a zdá se, že je zaměstnána svými povinnostmi.{#dustfem_s22_1}'
 
     menu:
         '"Zdravím."{#dustfem_s22_r1284}':
@@ -434,7 +434,7 @@ label dustfem_s22: # - # IF ~  Global("Appearance","GLOBAL",2)
 
 # s23 # say1197
 label dustfem_s23: # from 22.0
-    nr 'Pomalu se otáčí a její oči spočinuly na tvém oblečení. "Zdravím kolego."{#dustfem_s23_}'
+    nr 'Pomalu se otáčí a její oči spočinuly na tvém oblečení. "Zdravím kolego."{#dustfem_s23_1}'
 
     menu:
         '"Kdo jsi?"{#dustfem_s23_r1286}':
@@ -456,7 +456,7 @@ label dustfem_s23: # from 22.0
 
 # s24 # say1198
 label dustfem_s24: # from 23.0
-    nr '"Taky by mě něco zajímalo. Tebe neznám. Kdo jsi?"{#dustfem_s24_}'
+    nr '"Taky by mě něco zajímalo. Tebe neznám. Kdo jsi?"{#dustfem_s24_1}'
 
     menu:
         'Lež: "Mé jméno je… ehm, Adahn."{#dustfem_s24_r1290}' if dustfemLogic.r1290_condition():
@@ -479,7 +479,7 @@ label dustfem_s24: # from 23.0
 
 # s25 # say1199
 label dustfem_s25: # from 23.1
-    nr '"Tohle je Márnice…" Spalovačka se na tebe na chvíli podívá, jako by ji překvapilo, cos právě řekl. "Ještě jednou jak jsi říkal, že se jmenuješ?"{#dustfem_s25_}'
+    nr '"Tohle je Márnice…" Spalovačka se na tebe na chvíli podívá, jako by ji překvapilo, cos právě řekl. "Ještě jednou jak jsi říkal, že se jmenuješ?"{#dustfem_s25_1}'
 
     menu:
         'Lež: "Mé jméno je… ehm, Adahn."{#dustfem_s25_r1294}' if dustfemLogic.r1294_condition():
@@ -502,7 +502,7 @@ label dustfem_s25: # from 23.1
 
 # s26 # say1200
 label dustfem_s26: # from 23.2 27.0 28.2 30.3 31.3 34.2 36.1 39.0 50.0
-    nr 'Spalovačka trpělivě čeká na vysvětlení.{#dustfem_s26_}'
+    nr 'Spalovačka trpělivě čeká na vysvětlení.{#dustfem_s26_1}'
 
     menu:
         '"Můžeš mi ukázat odtud cestu ven?"{#dustfem_s26_r1298}':
@@ -524,7 +524,7 @@ label dustfem_s26: # from 23.2 27.0 28.2 30.3 31.3 34.2 36.1 39.0 50.0
 
 # s27 # say1201
 label dustfem_s27: # from 26.0
-    nr '"Můžeš jednoduše odejít vstupní branou. Je v prvním patře."{#dustfem_s27_}'
+    nr '"Můžeš jednoduše odejít vstupní branou. Je v prvním patře."{#dustfem_s27_1}'
 
     menu:
         '"Měl bych nějaké další otázky…"{#dustfem_s27_r1329}':
@@ -538,7 +538,7 @@ label dustfem_s27: # from 26.0
 
 # s28 # say1202
 label dustfem_s28: # from 26.1
-    nr '"To jméno…" Spalovačka se na chvíli zamlčí. "To jméno mi *zní* nějak povědomě… Myslím, že odvolali Sběrače tohoto jména. Dhall Scrivener by o něm měl vědět."{#dustfem_s28_}'
+    nr '"To jméno…" Spalovačka se na chvíli zamlčí. "To jméno mi *zní* nějak povědomě… Myslím, že odvolali Sběrače tohoto jména. Dhall Scrivener by o něm měl vědět."{#dustfem_s28_1}'
 
     menu:
         '"Sběrač?"{#dustfem_s28_r1331}':
@@ -560,7 +560,7 @@ label dustfem_s28: # from 26.1
 
 # s29 # say1203
 label dustfem_s29: # from 28.0
-    nr '"Sběrači… sbírají mrtvé, kteří zemřeli v ulicích Sigilu a přináší je do Márnice…" Spalovačka se odmlčí, zamračí se. "Ty nejsi tady z okolí. Kdo jsi?"{#dustfem_s29_}'
+    nr '"Sběrači… sbírají mrtvé, kteří zemřeli v ulicích Sigilu a přináší je do Márnice…" Spalovačka se odmlčí, zamračí se. "Ty nejsi tady z okolí. Kdo jsi?"{#dustfem_s29_1}'
 
     menu:
         '"Jsem tu nový. Odpusť mi mou neznalost."{#dustfem_s29_r1396}' if dustfemLogic.r1396_condition():
@@ -582,7 +582,7 @@ label dustfem_s29: # from 28.0
 
 # s30 # say1204
 label dustfem_s30: # from 28.1
-    nr '"Dhall je jedním z nejváženějších členů našeho společenstva. Když tak o tom uvažuji, nikdo nepřemýšlel o přirozenosti Pravé smrti tolik, jako právě on. Má mnoho moudrosti na rozdávání. Jestliže ho neznáš, doporučuji ti, aby sis s ním při nejbližší příležitosti promluvil. Již nebude dlouho pobývat ve stínu tohoto života."{#dustfem_s30_}'
+    nr '"Dhall je jedním z nejváženějších členů našeho společenstva. Když tak o tom uvažuji, nikdo nepřemýšlel o přirozenosti Pravé smrti tolik, jako právě on. Má mnoho moudrosti na rozdávání. Jestliže ho neznáš, doporučuji ti, aby sis s ním při nejbližší příležitosti promluvil. Již nebude dlouho pobývat ve stínu tohoto života."{#dustfem_s30_1}'
 
     menu:
         '"Už nebude dlouho ve stínu této existence?"{#dustfem_s30_r4280}':
@@ -608,7 +608,7 @@ label dustfem_s30: # from 28.1
 
 # s31 # say1205
 label dustfem_s31: # from 30.0 32.0 33.0
-    nr 'Spalovačka přikyvuje. "Dhall je nemocný. Je starý, dokonce i na githzeraiské poměry. Po těžké nemoci, kterou má, bude bezpochyby následovat smrt. Je opravdu šťastný."{#dustfem_s31_}'
+    nr 'Spalovačka přikyvuje. "Dhall je nemocný. Je starý, dokonce i na githzeraiské poměry. Po těžké nemoci, kterou má, bude bezpochyby následovat smrt. Je opravdu šťastný."{#dustfem_s31_1}'
 
     menu:
         '"Githzeraiské standarty?"{#dustfem_s31_r4284}':
@@ -634,7 +634,7 @@ label dustfem_s31: # from 30.0 32.0 33.0
 
 # s32 # say1206
 label dustfem_s32: # from 30.1
-    nr '"Dhall je v přijímací místnosti v severozápadní části tohoto patra. Musím tě varovat… Dhall je hodně zaneprázdněný… hodně času, který nespolykají jeho povinnosti velkou měrou spotřebuje jeho těžká nemoc."{#dustfem_s32_}'
+    nr '"Dhall je v přijímací místnosti v severozápadní části tohoto patra. Musím tě varovat… Dhall je hodně zaneprázdněný… hodně času, který nespolykají jeho povinnosti velkou měrou spotřebuje jeho těžká nemoc."{#dustfem_s32_1}'
 
     menu:
         '"Je Dhall nemocný?"{#dustfem_s32_r4288}':
@@ -648,7 +648,7 @@ label dustfem_s32: # from 30.1
 
 # s33 # say1207
 label dustfem_s33: # from 30.2
-    nr '"Dhall je s největší pravděpodobností v přijímací místnosti v druhém patře. Nezdržoval bych ho, protože je hodně zaneprázdněn… hodně času, který nespolykají jeho povinnosti velkou měrou spotřebuje jeho těžká nemoc."{#dustfem_s33_}'
+    nr '"Dhall je s největší pravděpodobností v přijímací místnosti v druhém patře. Nezdržoval bych ho, protože je hodně zaneprázdněn… hodně času, který nespolykají jeho povinnosti velkou měrou spotřebuje jeho těžká nemoc."{#dustfem_s33_1}'
 
     menu:
         '"Je Dhall nemocný?"{#dustfem_s33_r4290}':
@@ -662,7 +662,7 @@ label dustfem_s33: # from 30.2
 
 # s34 # say1208
 label dustfem_s34: # from 31.0
-    nr '"Ano, githzeraiové žijí mnohem déle než lidé."{#dustfem_s34_}'
+    nr '"Ano, githzeraiové žijí mnohem déle než lidé."{#dustfem_s34_1}'
 
     menu:
         '"Co je to *githzerai?*"{#dustfem_s34_r4292}':
@@ -684,7 +684,7 @@ label dustfem_s34: # from 31.0
 
 # s35 # say1209
 label dustfem_s35: # from 31.1 34.0
-    nr '"Githzeraiové jsou…" Spalovačka se odmlčí, pozorně si tě prohlíží. "Ty nejsi tady z okolí. Kdo jsi?"{#dustfem_s35_}'
+    nr '"Githzeraiové jsou…" Spalovačka se odmlčí, pozorně si tě prohlíží. "Ty nejsi tady z okolí. Kdo jsi?"{#dustfem_s35_1}'
 
     menu:
         '"Jsem nový zasvěcený. Odpusť mi mou ignoranci."{#dustfem_s35_r4296}' if dustfemLogic.r4296_condition():
@@ -706,7 +706,7 @@ label dustfem_s35: # from 31.1 34.0
 
 # s36 # say1210
 label dustfem_s36: # from 31.2 34.1
-    nr '"Je šťastný proto, že konečně docílí Pravé smrti. Už nemusí pobývat ve stínu tohoto života."{#dustfem_s36_}'
+    nr '"Je šťastný proto, že konečně docílí Pravé smrti. Už nemusí pobývat ve stínu tohoto života."{#dustfem_s36_1}'
 
     menu:
         '"A… to je dobrá věc?"{#dustfem_s36_r4299}':
@@ -724,7 +724,7 @@ label dustfem_s36: # from 31.2 34.1
 
 # s37 # say1211
 label dustfem_s37: # from 36.0
-    nr 'Spalovačka přikyvuje. "Ano." Zamračí se, pozorně si tě prohlíží. "Ty nejsi tady z okolí. Kdo jsi?"{#dustfem_s37_}'
+    nr 'Spalovačka přikyvuje. "Ano." Zamračí se, pozorně si tě prohlíží. "Ty nejsi tady z okolí. Kdo jsi?"{#dustfem_s37_1}'
 
     menu:
         '"Jsem nový zasvěcený. Odpusť mi mou ignoranci."{#dustfem_s37_r4303}' if dustfemLogic.r4303_condition():
@@ -746,7 +746,7 @@ label dustfem_s37: # from 36.0
 
 # s38 # say1212
 label dustfem_s38: # -
-    nr '"Ty nejsi jeden z nás, že ne? Co tu děláš? Jsi členem Anarchistů? Nebo jsi špeh z jiného společenství?" Spalovačka udělala krok zpět. "Stráže! Stráže!"{#dustfem_s38_}'
+    nr '"Ty nejsi jeden z nás, že ne? Co tu děláš? Jsi členem Anarchistů? Nebo jsi špeh z jiného společenství?" Spalovačka udělala krok zpět. "Stráže! Stráže!"{#dustfem_s38_1}'
 
     menu:
         '"Sakra!"{#dustfem_s38_r4307}':
@@ -767,7 +767,7 @@ label dustfem_s38: # -
 
 # s39 # say1213
 label dustfem_s39: # from 26.2
-    nr '"Deník? Žádnej sem neviděla."{#dustfem_s39_}'
+    nr '"Deník? Žádnej sem neviděla."{#dustfem_s39_1}'
 
     menu:
         '"Mám nějaké otázky…"{#dustfem_s39_r4310}':
@@ -781,7 +781,7 @@ label dustfem_s39: # from 26.2
 
 # s40 # say1214
 label dustfem_s40: # -
-    nr 'Pobledlá žena je oblečena v dlouhých tmavých šatech. Vychází z ní slabý zatuchlý zápach. V obličeji má prázdný výraz a zdá se, že je zaměstnána svými povinnostmi{#dustfem_s40_}'
+    nr 'Pobledlá žena je oblečena v dlouhých tmavých šatech. Vychází z ní slabý zatuchlý zápach. V obličeji má prázdný výraz a zdá se, že je zaměstnána svými povinnostmi{#dustfem_s40_1}'
 
     menu:
         '"Zdravím."{#dustfem_s40_r4312}' if dustfemLogic.r4312_condition():
@@ -807,7 +807,7 @@ label dustfem_s40: # -
 
 # s41 # say1215
 label dustfem_s41: # from 1.0 5.1 7.1 8.1 47.1
-    nr 'Předtím než Spalovačka stačí vydat ze sebe nějaké slovo, sevřeš rukama rychle její spánky a trhneš jí hlavou ostře doleva.{#dustfem_s41_}'
+    nr 'Předtím než Spalovačka stačí vydat ze sebe nějaké slovo, sevřeš rukama rychle její spánky a trhneš jí hlavou ostře doleva.{#dustfem_s41_1}'
 
     menu:
         '"Nemůžu ti dovolit spustit poplach…"{#dustfem_s41_r4317}':
@@ -818,7 +818,7 @@ label dustfem_s41: # from 1.0 5.1 7.1 8.1 47.1
 
 # s42 # say1216
 label dustfem_s42: # from 41.0 45.0
-    nr 'Ozve se *křupnutí,* a Spalovačka spadne bezvládně do tvých rukou.{#dustfem_s42_}'
+    nr 'Ozve se *křupnutí,* a Spalovačka spadne bezvládně do tvých rukou.{#dustfem_s42_1}'
 
     menu:
         '"Radši ty, než já, Spalovači."{#dustfem_s42_r4318}' if dustfemLogic.r4318_condition():
@@ -834,7 +834,7 @@ label dustfem_s42: # from 41.0 45.0
 
 # s43 # say1217
 label dustfem_s43: # from 42.0
-    nr 'K svému překvapení zjišťuješ, žes jednal naprosto instinktivně, jako bys to už dělal mnohokrát předtím… spolu s touto myšlenkou se ti vrací útržky paměti, ale nejsou dost silné na to, aby se úplně vynořily na povrch.{#dustfem_s43_}'
+    nr 'K svému překvapení zjišťuješ, žes jednal naprosto instinktivně, jako bys to už dělal mnohokrát předtím… spolu s touto myšlenkou se ti vrací útržky paměti, ale nejsou dost silné na to, aby se úplně vynořily na povrch.{#dustfem_s43_1}'
 
     menu:
         'Nechej tělo být, jdi dál.{#dustfem_s43_r4320}':
@@ -845,7 +845,7 @@ label dustfem_s43: # from 42.0
 
 # s44 # say1218
 label dustfem_s44: # from 5.0 7.0 8.0 19.4 47.0
-    nr 'Nejsi dostatečně rychlý. Spalovačka se ti vysmekla, když ses ji pokusil překvapit. Udělala krok zpět, třikrát za sebou krátce tleskla. Krátce nato se v Márnici rozezněl velký železný zvon.{#dustfem_s44_}'
+    nr 'Nejsi dostatečně rychlý. Spalovačka se ti vysmekla, když ses ji pokusil překvapit. Udělala krok zpět, třikrát za sebou krátce tleskla. Krátce nato se v Márnici rozezněl velký železný zvon.{#dustfem_s44_1}'
 
     menu:
         '"Dobrá tedy…"{#dustfem_s44_r4321}':
@@ -856,7 +856,7 @@ label dustfem_s44: # from 5.0 7.0 8.0 19.4 47.0
 
 # s45 # say1219
 label dustfem_s45: # from 19.5
-    nr 'Když se k ní nakláníš, abys jí něco „pošeptal“, Spalovačka se k tobě taky nakloní. Když už je na dosah, sevřeš rukama rychle její spánky a trhneš jí hlavou ostře doleva.{#dustfem_s45_}'
+    nr 'Když se k ní nakláníš, abys jí něco „pošeptal“, Spalovačka se k tobě taky nakloní. Když už je na dosah, sevřeš rukama rychle její spánky a trhneš jí hlavou ostře doleva.{#dustfem_s45_1}'
 
     menu:
         '"Nemůžu ti dovolit spustit poplach…"{#dustfem_s45_r4322}':
@@ -867,7 +867,7 @@ label dustfem_s45: # from 19.5
 
 # s46 # say1220
 label dustfem_s46: # from 24.3 25.3 29.3 35.3 37.3 49.3 50.1
-    nr 'Spalovačka vypadá podezíravě. Zdá se, jako by chtěla něco říci, ale pak potřese hlavou a vrátí se ke svým povinnostem.{#dustfem_s46_}'
+    nr 'Spalovačka vypadá podezíravě. Zdá se, jako by chtěla něco říci, ale pak potřese hlavou a vrátí se ke svým povinnostem.{#dustfem_s46_1}'
 
     menu:
         'Odejdi pryč.{#dustfem_s46_r4323}':
@@ -877,7 +877,7 @@ label dustfem_s46: # from 24.3 25.3 29.3 35.3 37.3 49.3 50.1
 
 # s47 # say1221
 label dustfem_s47: # from 24.2 25.2 29.1 29.2 35.1 35.2 37.1 37.2 49.1 49.2
-    nr 'Spalovačka tě opatrně studuje. "Ty nejsi jeden z nás. Co tu děláš? Jsi členem Anarchistů? Nebo jsi špeh z jiného společenství? Vypadá to, že tenhle oříšek necháme pro naše stráže…"{#dustfem_s47_}'
+    nr 'Spalovačka tě opatrně studuje. "Ty nejsi jeden z nás. Co tu děláš? Jsi členem Anarchistů? Nebo jsi špeh z jiného společenství? Vypadá to, že tenhle oříšek necháme pro naše stráže…"{#dustfem_s47_1}'
 
     menu:
         'Zlom jí krk, než stačí zařvat.{#dustfem_s47_r4324}' if dustfemLogic.r4324_condition():
@@ -899,7 +899,7 @@ label dustfem_s47: # from 24.2 25.2 29.1 29.2 35.1 35.2 37.1 37.2 49.1 49.2
 
 # s48 # say1222
 label dustfem_s48: # from 10.0 11.0 12.0 13.0 14.0 15.0 26.3 27.1 28.3 30.4 31.4 32.1 33.1 34.3 36.2 39.1
-    nr 'Spalovačka kývne a pak se vrátí ke svým povinnostem.{#dustfem_s48_}'
+    nr 'Spalovačka kývne a pak se vrátí ke svým povinnostem.{#dustfem_s48_1}'
 
     menu:
         'Odejdi pryč.{#dustfem_s48_r4328}':
@@ -909,7 +909,7 @@ label dustfem_s48: # from 10.0 11.0 12.0 13.0 14.0 15.0 26.3 27.1 28.3 30.4 31.4
 
 # s49 # say1223
 label dustfem_s49: # from 24.0 24.1 25.0 25.1
-    nr 'Spalovačka se mračí. "To jméno je mi neznámé."{#dustfem_s49_}'
+    nr 'Spalovačka se mračí. "To jméno je mi neznámé."{#dustfem_s49_1}'
 
     menu:
         '"Jsem nový zasvěcený. Odpusť mi mou ignoranci."{#dustfem_s49_r4329}' if dustfemLogic.r4329_condition():
@@ -931,7 +931,7 @@ label dustfem_s49: # from 24.0 24.1 25.0 25.1
 
 # s50 # say1224
 label dustfem_s50: # from 29.0 35.0 37.0 49.0
-    nr 'Spalovačka se stále mračí, ale lehce kývne. "Dobře. Jak ti můžu být nápomocná, kolego?"{#dustfem_s50_}'
+    nr 'Spalovačka se stále mračí, ale lehce kývne. "Dobře. Jak ti můžu být nápomocná, kolego?"{#dustfem_s50_1}'
 
     menu:
         '"Mám nějaké otázky…"{#dustfem_s50_r4334}':
@@ -945,7 +945,7 @@ label dustfem_s50: # from 29.0 35.0 37.0 49.0
 
 # s51 # say66683
 label dustfem_s51: # - # IF ~  Global("Appearance","GLOBAL",0)
-    nr 'Spalovač tě sleduje s kamenným výrazem na tváři. "Ztratil ses?"{#dustfem_s51_}'
+    nr 'Spalovač tě sleduje s kamenným výrazem na tváři. "Ztratil ses?"{#dustfem_s51_1}'
 
     menu:
         '"Ne, jsem členem společenstva, jenom si prohlížím Márnici."{#dustfem_s51_r66684}' if dustfemLogic.r66684_condition():
@@ -971,7 +971,7 @@ label dustfem_s51: # - # IF ~  Global("Appearance","GLOBAL",0)
 
 # s52 # say66689
 label dustfem_s52: # from 51.0
-    nr 'Spalovač tě chvíli sleduje, a nakonec přikývne. "Dobrá tedy. Pokud budeš s něčím potřebovat pomoct, dej mi vědět."{#dustfem_s52_}'
+    nr 'Spalovač tě chvíli sleduje, a nakonec přikývne. "Dobrá tedy. Pokud budeš s něčím potřebovat pomoct, dej mi vědět."{#dustfem_s52_1}'
 
     menu:
         '"Udělám to tak. Sbohem."{#dustfem_s52_r66690}':

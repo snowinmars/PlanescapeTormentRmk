@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say34986
 label zf114_s0: # - # IF ~  True()
-    nr 'À ton approche, ce cadavre de femme interrompt sa marche pesante. Tu remarques le numéro „114“ gravé sur son front. Sa bouche est cousue, mais le fil se relâche peu à peu et de faibles gémissements sortent des lèvres.{#zf114_s0_}'
+    nr 'À ton approche, ce cadavre de femme interrompt sa marche pesante. Tu remarques le numéro „114“ gravé sur son front. Sa bouche est cousue, mais le fil se relâche peu à peu et de faibles gémissements sortent des lèvres.{#zf114_s0_1}'
 
     menu:
         '"Alors… Tu fais quelque chose plus tard ?"{#zf114_s0_r34987}' if zf114Logic.r34987_condition():
@@ -58,7 +58,7 @@ label zf114_s0: # - # IF ~  True()
 
 # s1 # say34988
 label zf114_s1: # from 0.0 0.1 0.2
-    nr 'Le cadavre continue à te fixer.{#zf114_s1_}'
+    nr 'Le cadavre continue à te fixer.{#zf114_s1_1}'
 
     menu:
         '"Alors, au revoir."{#zf114_s1_r34989}' if zf114Logic.r34989_condition():
@@ -76,7 +76,7 @@ label zf114_s1: # from 0.0 0.1 0.2
 
 # s2 # say35007
 label zf114_s2: # from 0.3
-    nr 'Ce cadavre ne répond pas. Il semble qu„il soit trop absent pour répondre à tes questions.{#zf114_s2_}'
+    nr 'Ce cadavre ne répond pas. Il semble qu„il soit trop absent pour répondre à tes questions.{#zf114_s2_1}'
 
     menu:
         '"Alors, au revoir."{#zf114_s2_r35008}' if zf114Logic.r35008_condition():
@@ -94,6 +94,6 @@ label zf114_s2: # from 0.3
 
 # s3 # say35017
 label zf114_s3: # - # IF ~  False()
-    nr 'Ce cadavre ne répond pas. Il semble qu„il soit trop absent pour répondre à tes questions.{#zf114_s3_}'
+    nr 'Ce cadavre ne répond pas. Il semble qu„il soit trop absent pour répondre à tes questions.{#zf114_s3_1}'
 
     menu:

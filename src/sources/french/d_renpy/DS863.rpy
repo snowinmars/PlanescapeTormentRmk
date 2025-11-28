@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say35537
 label s863_s0: # from 10.0 # IF ~  !HasItem("DRemind","S863")
-    nr 'Ce squelette paraît avoir beaucoup servi, soit au combat, soit à tomber dans des escaliers ; ses jambes et ses bras, brisés en plusieurs endroits, ont été redressés et renforcés à l„aide de sangles en cuir et de tiges de fer. Son front porte le numéro “863„… mais il a l“arrière du crâne défoncé.{#s863_s0_}'
+    nr 'Ce squelette paraît avoir beaucoup servi, soit au combat, soit à tomber dans des escaliers ; ses jambes et ses bras, brisés en plusieurs endroits, ont été redressés et renforcés à l„aide de sangles en cuir et de tiges de fer. Son front porte le numéro “863„… mais il a l“arrière du crâne défoncé.{#s863_s0_1}'
 
     menu:
         '"Désolé d„avoir pris ce parchemin, mais tu n“aurais sans doute pas pu l„apporter avant quelque temps."{#s863_s0_r35538}' if s863Logic.r35538_condition():
@@ -90,7 +90,7 @@ label s863_s0: # from 10.0 # IF ~  !HasItem("DRemind","S863")
 
 # s1 # say35539
 label s863_s1: # from 0.0 0.1 0.2 0.3
-    nr 'Le squelette ne répond pas.{#s863_s1_}'
+    nr 'Le squelette ne répond pas.{#s863_s1_1}'
 
     menu:
         '"C„était sympa de parler avec toi, Sac d“os. Prends soin de toi."{#s863_s1_r35540}' if s863Logic.r35540_condition():
@@ -109,7 +109,7 @@ label s863_s1: # from 0.0 0.1 0.2 0.3
 
 # s2 # say35565
 label s863_s2: # from 0.4
-    nr 'Ce squelette ne répond pas. Il semble qu„il soit trop absent pour répondre à tes questions.{#s863_s2_}'
+    nr 'Ce squelette ne répond pas. Il semble qu„il soit trop absent pour répondre à tes questions.{#s863_s2_1}'
 
     menu:
         'Laisse le squelette tranquille.{#s863_s2_r35566}' if s863Logic.r35566_condition():
@@ -128,7 +128,7 @@ label s863_s2: # from 0.4
 
 # s3 # say35570
 label s863_s3: # from 0.5
-    nr 'Quelqu„un a pris soin d“attacher les os de ce squelette avec des sangles de cuir, enroulées autour du corps de telle manière qu„elles ressemblent à des muscles et des tendons. Les sangles sont fixées à des boulons métalliques, enfoncés dans les articulations du squelette. Ce squelette semble avoir fait l“objet de nombreuses réparations. Nombre de ses os sont ébréchés, et ses innombrables fractures ont été réparées avec des colles puantes.{#s863_s3_}'
+    nr 'Quelqu„un a pris soin d“attacher les os de ce squelette avec des sangles de cuir, enroulées autour du corps de telle manière qu„elles ressemblent à des muscles et des tendons. Les sangles sont fixées à des boulons métalliques, enfoncés dans les articulations du squelette. Ce squelette semble avoir fait l“objet de nombreuses réparations. Nombre de ses os sont ébréchés, et ses innombrables fractures ont été réparées avec des colles puantes.{#s863_s3_1}'
 
     menu:
         'Essaie de déboulonner les articulations du squelette.{#s863_s3_r35571}' if s863Logic.r35571_condition():
@@ -176,7 +176,7 @@ label s863_s3: # from 0.5
 
 # s4 # say35576
 label s863_s4: # from 0.7 0.10 3.1 3.4
-    nr 'Tu tires sur les boulons, mais tu n„es pas assez fort pour les extraire. Ils sont enfoncés assez serrés.{#s863_s4_}'
+    nr 'Tu tires sur les boulons, mais tu n„es pas assez fort pour les extraire. Ils sont enfoncés assez serrés.{#s863_s4_1}'
 
     menu:
         '"Peut-être qu„avec l“outil adéquat, je pourrais les enlever… Hmmmm. Je vais peut-être revenir, Sac d„os."{#s863_s4_r35577}' if s863Logic.r35577_condition():
@@ -208,7 +208,7 @@ label s863_s4: # from 0.7 0.10 3.1 3.4
 
 # s5 # say35584
 label s863_s5: # from 0.8 0.11 3.2 3.5
-    nr 'Tu tires sur les boulons de toutes tes forces, et après quelques instants, tu arraches le boulon des articulations. Le squelette s„effondre, certains de ses os remuant encore.{#s863_s5_}'
+    nr 'Tu tires sur les boulons de toutes tes forces, et après quelques instants, tu arraches le boulon des articulations. Le squelette s„effondre, certains de ses os remuant encore.{#s863_s5_1}'
 
     menu:
         '"Excuse-moi, Sac d„os…"{#s863_s5_r35585}':
@@ -219,7 +219,7 @@ label s863_s5: # from 0.8 0.11 3.2 3.5
 
 # s6 # say35587
 label s863_s6: # from 0.9 0.12 3.3 3.6
-    nr 'Tu arraches les boulons des articulations du squelette avec ton pied-de-biche. Le squelette s„effondre, certains de ses os remuant encore.{#s863_s6_}'
+    nr 'Tu arraches les boulons des articulations du squelette avec ton pied-de-biche. Le squelette s„effondre, certains de ses os remuant encore.{#s863_s6_1}'
 
     menu:
         '"Excuse-moi, Sac d„os…"{#s863_s6_r35588}':
@@ -230,13 +230,13 @@ label s863_s6: # from 0.9 0.12 3.3 3.6
 
 # s7 # say35613
 label s863_s7: # - # IF ~  False()
-    nr 'Ce squelette ne répond pas. Il semble qu„il soit trop absent pour répondre à tes questions.{#s863_s7_}'
+    nr 'Ce squelette ne répond pas. Il semble qu„il soit trop absent pour répondre à tes questions.{#s863_s7_1}'
 
     menu:
 
 # s8 # say64262
 label s863_s8: # - # IF ~  HasItem("DRemind","S863")
-    nr 'Soit ce squelette a beaucoup combattu, soit il est trop souvent tombé dans des escaliers. Ses deux bras et ses deux jambes ont été brisés et réparés à l„aide de bouts de métal et de lanières de cuir. Sur son front, on peut lire le numéro “863„… l“arrière du crâne est défoncé et forme une cavité. Tu remarques que quelqu„un en a profité pour y glisser un parchemin.{#s863_s8_}'
+    nr 'Soit ce squelette a beaucoup combattu, soit il est trop souvent tombé dans des escaliers. Ses deux bras et ses deux jambes ont été brisés et réparés à l„aide de bouts de métal et de lanières de cuir. Sur son front, on peut lire le numéro “863„… l“arrière du crâne est défoncé et forme une cavité. Tu remarques que quelqu„un en a profité pour y glisser un parchemin.{#s863_s8_1}'
 
     menu:
         'Prends le parchemin dans le crâne du squelette.{#s863_s8_r64263}':
@@ -250,7 +250,7 @@ label s863_s8: # - # IF ~  HasItem("DRemind","S863")
 
 # s9 # say64265
 label s863_s9: # from 8.0
-    nr 'Tu extrais le parchemin du crâne - étrangement, il semble que la cavité était *prévue* pour recevoir des messages. Le parchemin est attaché avec une petite ficelle, elle-même fixée à un crochet dans le crâne, comme si on avait voulu éviter que le message ne tombe accidentellement de sa cachette.{#s863_s9_}'
+    nr 'Tu extrais le parchemin du crâne - étrangement, il semble que la cavité était *prévue* pour recevoir des messages. Le parchemin est attaché avec une petite ficelle, elle-même fixée à un crochet dans le crâne, comme si on avait voulu éviter que le message ne tombe accidentellement de sa cachette.{#s863_s9_1}'
 
     menu:
         'Détache la ficelle et prends le parchemin.{#s863_s9_r64266}':
@@ -261,7 +261,7 @@ label s863_s9: # from 8.0
 
 # s10 # say64267
 label s863_s10: # from 9.0
-    nr 'Tu détaches la ficelle et examines le parchemin - cela semble être une note d„un des gardiens de la Morgue. Ce squelette devait être une sorte de messager ambulant. En y regardant à deux fois, tu te rends compte que le squelette s“est arrêté devant la dalle de pierre parce qu„il ne savait pas comment la franchir.  ^NREMARQUE : pour “lire„ des notes, des livres ou des parchemins, place-les dans ton inventaire, puis clique dessus avec le bouton droit de la souris pour faire apparaître leur panneau d“information.^-{#s863_s10_}'
+    nr 'Tu détaches la ficelle et examines le parchemin - cela semble être une note d„un des gardiens de la Morgue. Ce squelette devait être une sorte de messager ambulant. En y regardant à deux fois, tu te rends compte que le squelette s“est arrêté devant la dalle de pierre parce qu„il ne savait pas comment la franchir.  ^NREMARQUE : pour “lire„ des notes, des livres ou des parchemins, place-les dans ton inventaire, puis clique dessus avec le bouton droit de la souris pour faire apparaître leur panneau d“information.^-{#s863_s10_1}'
 
     menu:
         'Étudie encore le squelette.{#s863_s10_r64268}':

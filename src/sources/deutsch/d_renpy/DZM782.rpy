@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say24708
 label zm782_s0: # - # IF ~  True()
-    nr 'Die Leiche bleibt stehen und starrt dich mit leerem Blick an, als du dich näherst. Die Zahl "782" ist in die Stirn geritzt, und ihre Lippen sind zugenäht. Die Leiche verbreitet einen leichten Geruch nach Formaldehyd.{#zm782_s0_}'
+    nr 'Die Leiche bleibt stehen und starrt dich mit leerem Blick an, als du dich näherst. Die Zahl "782" ist in die Stirn geritzt, und ihre Lippen sind zugenäht. Die Leiche verbreitet einen leichten Geruch nach Formaldehyd.{#zm782_s0_1}'
 
     menu:
         '"Ich suche nach einem Schlüssel… Hast du zufällig einen?"{#zm782_s0_r24709}' if zm782Logic.r24709_condition():
@@ -37,7 +37,7 @@ label zm782_s0: # - # IF ~  True()
 
 # s1 # say24710
 label zm782_s1: # from 0.1
-    nr 'Die Leiche antwortet nicht.{#zm782_s1_}'
+    nr 'Die Leiche antwortet nicht.{#zm782_s1_1}'
 
     menu:
         '"Ach, vergiß es. Leb wohl."{#zm782_s1_r24711}':
@@ -51,7 +51,7 @@ label zm782_s1: # from 0.1
 
 # s2 # say24715
 label zm782_s2: # from 0.2 0.3
-    nr 'Diese Leiche sieht wie die mit dem Schlüssel aus. Sie hält ihn in der linken Hand ganz fest, ihr Daumen und Zeigefinger sind in einem totenstarren Griff darum geklammert. Es sieht so aus, als ob du die Hand der Leiche abschlagen mußt, um an den Schlüssel zu kommen.{#zm782_s2_}'
+    nr 'Diese Leiche sieht wie die mit dem Schlüssel aus. Sie hält ihn in der linken Hand ganz fest, ihr Daumen und Zeigefinger sind in einem totenstarren Griff darum geklammert. Es sieht so aus, als ob du die Hand der Leiche abschlagen mußt, um an den Schlüssel zu kommen.{#zm782_s2_1}'
 
     menu:
         '"Ich brauche diesen Schlüssel, Leiche. Sieht so aus, als ob du es in dieser Welt nicht mehr lange machst."{#zm782_s2_r24716}':

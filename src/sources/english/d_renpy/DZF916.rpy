@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say24719
 label zf916_s0: # - # IF ~  True()
-    nr 'The female corpse stares at you with vacant eyes. The number "916" is carved into her forehead, and her lips have been stitched closed. The faint smell of formaldehyde emanates from her body.{#zf916_s0_}'
+    nr 'The female corpse stares at you with vacant eyes. The number "916" is carved into her forehead, and her lips have been stitched closed. The faint smell of formaldehyde emanates from her body.{#zf916_s0_1}'
 
     menu:
         '"So… doing anything later?"{#zf916_s0_r24720}' if zf916Logic.r24720_condition():
@@ -58,7 +58,7 @@ label zf916_s0: # - # IF ~  True()
 
 # s1 # say24721
 label zf916_s1: # from 0.0 0.1 0.2
-    nr 'The corpse continues to stare at you.{#zf916_s1_}'
+    nr 'The corpse continues to stare at you.{#zf916_s1_1}'
 
     menu:
         '"Farewell then."{#zf916_s1_r24722}' if zf916Logic.r24722_condition():
@@ -76,7 +76,7 @@ label zf916_s1: # from 0.0 0.1 0.2
 
 # s2 # say24740
 label zf916_s2: # from 0.3
-    nr 'This corpse makes no reply. It looks like it is too far gone to answer any of your questions.{#zf916_s2_}'
+    nr 'This corpse makes no reply. It looks like it is too far gone to answer any of your questions.{#zf916_s2_1}'
 
     menu:
         '"Farewell then."{#zf916_s2_r24741}' if zf916Logic.r24741_condition():
@@ -94,6 +94,6 @@ label zf916_s2: # from 0.3
 
 # s3 # say24750
 label zf916_s3: # - # IF ~  False()
-    nr 'This corpse makes no reply. It looks like it is too far gone to answer any of your questions.{#zf916_s3_}'
+    nr 'This corpse makes no reply. It looks like it is too far gone to answer any of your questions.{#zf916_s3_1}'
 
     menu:

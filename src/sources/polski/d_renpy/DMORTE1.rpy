@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say39792
 label morte1_s0: # - # IF WEIGHT #1 /* Triggers after states #: 26 even though they appear after this state */ ~  !InParty("Morte") Global("Morte","GLOBAL",0)
-    nr '"Hej, szefie. Dobrze się czujesz? Udajesz martwego, czy chcesz wpędzić Grabarzy w ślepaki? Myślałem, że jesteś stuprocentowym truposzem."~ [MRT001]{#morte1_s0_}'
+    nr '"Hej, szefie. Dobrze się czujesz? Udajesz martwego, czy chcesz wpędzić Grabarzy w ślepaki? Myślałem, że jesteś stuprocentowym truposzem."~ [MRT001]{#morte1_s0_1}'
 
     menu:
         '"Ki…? Kim jesteś?"{#morte1_s0_r39793}':
@@ -22,7 +22,7 @@ label morte1_s0: # - # IF WEIGHT #1 /* Triggers after states #: 26 even though t
 
 # s1 # say39795
 label morte1_s1: # from 0.0
-    nr '"Co… kim *ja* jestem? A może byś *ty* zaczął. Ktoś ty?"{#morte1_s1_}'
+    nr '"Co… kim *ja* jestem? A może byś *ty* zaczął. Ktoś ty?"{#morte1_s1_1}'
 
     menu:
         '"N… nie wiem. Nie pamiętam."{#morte1_s1_r39796}':
@@ -36,7 +36,7 @@ label morte1_s1: # from 0.0
 
 # s2 # say39798
 label morte1_s2: # from 1.0 3.0 4.0
-    nr '"Nie pamiętasz swojego *imienia*, co? NASTĘPNYM razem, jak będziesz chciał spędzić noc w tej dziurze, to nie przeginaj z bełtem. Nazywam się Morte. Ja też tu jestem uwięziony."{#morte1_s2_}'
+    nr '"Nie pamiętasz swojego *imienia*, co? NASTĘPNYM razem, jak będziesz chciał spędzić noc w tej dziurze, to nie przeginaj z bełtem. Nazywam się Morte. Ja też tu jestem uwięziony."{#morte1_s2_1}'
 
     menu:
         '"Uwięziony?"{#morte1_s2_r39799}':
@@ -46,7 +46,7 @@ label morte1_s2: # from 1.0 3.0 4.0
 
 # s3 # say39800
 label morte1_s3: # from 1.1
-    nr '"Dobra, a ja pytałem *drugi*. Jak masz na imię?"{#morte1_s3_}'
+    nr '"Dobra, a ja pytałem *drugi*. Jak masz na imię?"{#morte1_s3_1}'
 
     menu:
         '"N… nie wiem. Nie pamiętam."{#morte1_s3_r39801}':
@@ -60,7 +60,7 @@ label morte1_s3: # from 1.1
 
 # s4 # say39803
 label morte1_s4: # from 3.1
-    nr '"Ech… jesteś spięty, jakby ci coś w tyłek włożyli. Niech ci będzie. W takim razie to *ja* będę nawijał. Moje imię brzmi Morte. Jak się nazywasz?"{#morte1_s4_}'
+    nr '"Ech… jesteś spięty, jakby ci coś w tyłek włożyli. Niech ci będzie. W takim razie to *ja* będę nawijał. Moje imię brzmi Morte. Jak się nazywasz?"{#morte1_s4_1}'
 
     menu:
         '"N… nie wiem. Nie pamiętam."{#morte1_s4_r39804}':
@@ -70,7 +70,7 @@ label morte1_s4: # from 3.1
 
 # s5 # say39805
 label morte1_s5: # from 2.0
-    nr '"No dobra, widzę, że jeszcze się nie pozbierałeś, więc śpiewka jest taka: Spróbowałem wszystkich drzwi i wygląda na to, że ten pokój jest zamknięty lepiej niż pas cnoty."{#morte1_s5_}'
+    nr '"No dobra, widzę, że jeszcze się nie pozbierałeś, więc śpiewka jest taka: Spróbowałem wszystkich drzwi i wygląda na to, że ten pokój jest zamknięty lepiej niż pas cnoty."{#morte1_s5_1}'
 
     menu:
         '"Gdzie jesteśmy zamknięci? Co to za miejsce?"{#morte1_s5_r39806}':
@@ -80,7 +80,7 @@ label morte1_s5: # from 2.0
 
 # s6 # say39807
 label morte1_s6: # from 5.0
-    nr '"Nazywają to „Kostnicą“… To wielka, czarna budowla o uroku ciężarnej pajęczycy."{#morte1_s6_}'
+    nr '"Nazywają to „Kostnicą“… To wielka, czarna budowla o uroku ciężarnej pajęczycy."{#morte1_s6_1}'
 
     menu:
         '"Kostnica? Czy to oznacza, że jestem… martwy?"{#morte1_s6_r39808}':
@@ -90,7 +90,7 @@ label morte1_s6: # from 5.0
 
 # s7 # say39809
 label morte1_s7: # from 6.0
-    nr '"Z tego co widzę, to nie. Masz blizn od groma… wygląda na to, że jakiś trep podmalował cię kosą. To jeszcze jeden powód, żebyśmy się stąd odśmiali zanim ten ktoś wróci, żeby dokończyć roboty."{#morte1_s7_}'
+    nr '"Z tego co widzę, to nie. Masz blizn od groma… wygląda na to, że jakiś trep podmalował cię kosą. To jeszcze jeden powód, żebyśmy się stąd odśmiali zanim ten ktoś wróci, żeby dokończyć roboty."{#morte1_s7_1}'
 
     menu:
         '"Blizny? Jak to wygląda?"{#morte1_s7_r39810}':
@@ -100,7 +100,7 @@ label morte1_s7: # from 6.0
 
 # s8 # say39811
 label morte1_s8: # from 7.0
-    nr '"No tak… rany na klatce nie są AŻ TAK tragiczne… ale te na plecach…" Morte waha się. "Powiedzmy, że wygląda to tak, jakby ktoś zamienił cię w galerię tatuażu, szefie. Coś mi to przypomina…"{#morte1_s8_}'
+    nr '"No tak… rany na klatce nie są AŻ TAK tragiczne… ale te na plecach…" Morte waha się. "Powiedzmy, że wygląda to tak, jakby ktoś zamienił cię w galerię tatuażu, szefie. Coś mi to przypomina…"{#morte1_s8_1}'
 
     menu:
         '"Tatuaże na plecach? Co na nich jest?"{#morte1_s8_r39812}':
@@ -110,7 +110,7 @@ label morte1_s8: # from 7.0
 
 # s9 # say39813
 label morte1_s9: # from 8.0
-    nr '"Ha! Wygląda na to, że to jakiej rady…" Morte chrząka zaciekawiony. "Zobaczmy co to jest… zaczyna się od…"  „Wiem że czujesz się, jakbyś władował w siebie kilka baryłek wody ze Styksu, ale musisz się wziąć w GARŚĆ. Masz przy sobie DZIENNIK, który powinien trochę rozjaśnić sprawę. Resztę śpiewki usłyszysz od FARODA, chyba że już go wpisali do księgi umarłych.“{#morte1_s9_}'
+    nr '"Ha! Wygląda na to, że to jakiej rady…" Morte chrząka zaciekawiony. "Zobaczmy co to jest… zaczyna się od…"  „Wiem że czujesz się, jakbyś władował w siebie kilka baryłek wody ze Styksu, ale musisz się wziąć w GARŚĆ. Masz przy sobie DZIENNIK, który powinien trochę rozjaśnić sprawę. Resztę śpiewki usłyszysz od FARODA, chyba że już go wpisali do księgi umarłych.“{#morte1_s9_1}'
 
     menu:
         '"Faroda…? Jest tam coś jeszcze?"{#morte1_s9_r39814}':
@@ -120,7 +120,7 @@ label morte1_s9: # from 8.0
 
 # s10 # say39815
 label morte1_s10: # from 9.0
-    nr '"Jeszcze coś tu jest…" Morte zastanawia się. "Zobaczmy… to chyba ciąg dalszy…"  „Nie zgub dziennika, bo znowu popłyniemy w górę Styksu. I cokolwiek robisz, NIE MÓW nikomu KIM jesteś, ani CO się z tobą dzieje, bo inaczej wylądujesz w krematorium. Rób co ci każę: PRZECZYTAJ dziennik, a potem ODSZUKAJ Faroda.“{#morte1_s10_}'
+    nr '"Jeszcze coś tu jest…" Morte zastanawia się. "Zobaczmy… to chyba ciąg dalszy…"  „Nie zgub dziennika, bo znowu popłyniemy w górę Styksu. I cokolwiek robisz, NIE MÓW nikomu KIM jesteś, ani CO się z tobą dzieje, bo inaczej wylądujesz w krematorium. Rób co ci każę: PRZECZYTAJ dziennik, a potem ODSZUKAJ Faroda.“{#morte1_s10_1}'
 
     menu:
         '"Nic dziwnego, że strasznie mnie bolą plecy; jakiś kretyn wypisał na nich całą książkę. A co do tego dziennika, który to niby mam mieć przy sobie… widziałeś gdzieś coś takiego, jak tu leżałem?"{#morte1_s10_r39816}':
@@ -130,7 +130,7 @@ label morte1_s10: # from 9.0
 
 # s11 # say39817
 label morte1_s11: # from 10.0
-    nr '"Nie… jak tu przybyłeś, nie miałeś na sobie żadnego ubrania. A poza tym, wygląda na to, że ktoś wypisał ci ten dziennik na skórze."{#morte1_s11_}'
+    nr '"Nie… jak tu przybyłeś, nie miałeś na sobie żadnego ubrania. A poza tym, wygląda na to, że ktoś wypisał ci ten dziennik na skórze."{#morte1_s11_1}'
 
     menu:
         '"A co to za Farod? Znasz go?"{#morte1_s11_r39818}':
@@ -140,7 +140,7 @@ label morte1_s11: # from 10.0
 
 # s12 # say39819
 label morte1_s12: # from 11.0
-    nr '"Nikogo takiego nie znam… Choć, prawdę mówiąc, nie mam zbyt wielu znajomych. Może jakiś trep będzie wiedział, gdzie szukać tego Faroda… oczywiście, jeśli uda się nam stąd wydostać."{#morte1_s12_}'
+    nr '"Nikogo takiego nie znam… Choć, prawdę mówiąc, nie mam zbyt wielu znajomych. Może jakiś trep będzie wiedział, gdzie szukać tego Faroda… oczywiście, jeśli uda się nam stąd wydostać."{#morte1_s12_1}'
 
     menu:
         '"Niby *JAK* mamy się stąd wydostać?"{#morte1_s12_r39820}':
@@ -150,7 +150,7 @@ label morte1_s12: # from 11.0
 
 # s13 # say39821
 label morte1_s13: # from 12.0
-    nr '"Wszystkie drzwi są pozamykane, więc będziemy potrzebowali klucza. Może jakiś zombie ma go przy sobie."{#morte1_s13_}'
+    nr '"Wszystkie drzwi są pozamykane, więc będziemy potrzebowali klucza. Może jakiś zombie ma go przy sobie."{#morte1_s13_1}'
 
     menu:
         '"Zombie?"{#morte1_s13_r39822}':
@@ -160,7 +160,7 @@ label morte1_s13: # from 12.0
 
 # s14 # say39823
 label morte1_s14: # from 13.0
-    nr '"Właściciele Kostnicy używają ich jako taniej siły roboczej. To kompletni kretyni, ale nie są groźni. Nic ci nie zrobią, jeśli ty ich pierwszy nie zaatakujesz."{#morte1_s14_}'
+    nr '"Właściciele Kostnicy używają ich jako taniej siły roboczej. To kompletni kretyni, ale nie są groźni. Nic ci nie zrobią, jeśli ty ich pierwszy nie zaatakujesz."{#morte1_s14_1}'
 
     menu:
         '"Może jest jakiś inny sposób? Nie chcę zabijać ich tylko dlatego, żeby dostać klucz."{#morte1_s14_r39824}':
@@ -175,7 +175,7 @@ label morte1_s14: # from 13.0
 
 # s15 # say39826
 label morte1_s15: # from 14.0
-    nr '"A co, uważasz, że to urazi ich uczucia? Przecież są MARTWI. Ale ma to też swoje plusy - jak ich zabijesz, to przynajmniej odpoczną sobie przez chwilę zanim ich pracodawcy znowu ich nie zapędzą do pracy."{#morte1_s15_}'
+    nr '"A co, uważasz, że to urazi ich uczucia? Przecież są MARTWI. Ale ma to też swoje plusy - jak ich zabijesz, to przynajmniej odpoczną sobie przez chwilę zanim ich pracodawcy znowu ich nie zapędzą do pracy."{#morte1_s15_1}'
 
     menu:
         '"No dobra… Zabiję jednego i zabiorę mu klucz."{#morte1_s15_r39827}':
@@ -185,7 +185,7 @@ label morte1_s15: # from 14.0
 
 # s16 # say39828
 label morte1_s16: # from 14.1 15.0
-    nr '"Zanim to zrobisz, znajdź sobie jakąś broń. Na jednej z tych półek widziałem chyba skalpel."  ^NNOTE: Przeszukaj półki w pokoju, aby znaleźć broń przeciw zombie. <SEARCH_WEAPON>^-{#morte1_s16_}'
+    nr '"Zanim to zrobisz, znajdź sobie jakąś broń. Na jednej z tych półek widziałem chyba skalpel."  ^NNOTE: Przeszukaj półki w pokoju, aby znaleźć broń przeciw zombie. <SEARCH_WEAPON>^-{#morte1_s16_1}'
 
     menu:
         '"Dobra, poszukam."{#morte1_s16_r39829}':
@@ -195,7 +195,7 @@ label morte1_s16: # from 14.1 15.0
 
 # s17 # say39830
 label morte1_s17: # from 16.0
-    nr '"Jeszcze jedno: Te trupy są powolne jak muchy w smole, ale uderzają z siłą bojowego tarana. Jeśli zaczną ci sprawiać kłopoty, pamiętaj, że w przeciwieństwie do ciebie nie potrafią BIEGAĆ. Odsuń się od nich, jeśli będziesz potrzebować chwili, by opatrzyć rany."  ^NNOTE: <RUNAWAY> W sytuacji zagrożenia życia odbiegnij od zombie na bezpieczną odległość i opatrz swoje rany.^-{#morte1_s17_}'
+    nr '"Jeszcze jedno: Te trupy są powolne jak muchy w smole, ale uderzają z siłą bojowego tarana. Jeśli zaczną ci sprawiać kłopoty, pamiętaj, że w przeciwieństwie do ciebie nie potrafią BIEGAĆ. Odsuń się od nich, jeśli będziesz potrzebować chwili, by opatrzyć rany."  ^NNOTE: <RUNAWAY> W sytuacji zagrożenia życia odbiegnij od zombie na bezpieczną odległość i opatrz swoje rany.^-{#morte1_s17_1}'
 
     menu:
         '"Jasne. Dzięki za radę."{#morte1_s17_r39831}':
@@ -206,7 +206,7 @@ label morte1_s17: # from 16.0
 
 # s18 # say39832
 label morte1_s18: # - # IF WEIGHT #2 /* Triggers after states #: 26 even though they appear after this state */ ~  Global("Mortuary_Walkthrough","GLOBAL",0) !PartyHasItem("Scalpel") Global("ZM782_Dead_KAPUTZ","GLOBAL",0)
-    nr '"Na jednej z półek powinien być skalpel." Na twoim miejscu poszukałbym go, zanim się zmierzę z ożywionymi trupami."  ^NNOTE: Przeszukaj półki w pokoju, aby znaleźć broń przeciw zombie. <SEARCH_WEAPON>^-{#morte1_s18_}'
+    nr '"Na jednej z półek powinien być skalpel." Na twoim miejscu poszukałbym go, zanim się zmierzę z ożywionymi trupami."  ^NNOTE: Przeszukaj półki w pokoju, aby znaleźć broń przeciw zombie. <SEARCH_WEAPON>^-{#morte1_s18_1}'
 
     menu:
         '"Dobra… poszukam jeszcze."{#morte1_s18_r39833}':
@@ -216,7 +216,7 @@ label morte1_s18: # - # IF WEIGHT #2 /* Triggers after states #: 26 even though 
 
 # s19 # say39834
 label morte1_s19: # - # IF WEIGHT #3 /* Triggers after states #: 26 even though they appear after this state */ ~  Global("Mortuary_Walkthrough","GLOBAL",0) PartyHasItem("Scalpel") Global("ZM782_Dead_KAPUTZ","GLOBAL",0)
-    nr '"Świetnie, masz już skalpel! Teraz zabierz się za zombie… nie martw się, w razie czego udzielę ci potrzebnych wskazówek taktycznych."{#morte1_s19_}'
+    nr '"Świetnie, masz już skalpel! Teraz zabierz się za zombie… nie martw się, w razie czego udzielę ci potrzebnych wskazówek taktycznych."{#morte1_s19_1}'
 
     menu:
         '"Może jednak mógłbyś mi *pomóc*?"{#morte1_s19_r39835}':
@@ -230,7 +230,7 @@ label morte1_s19: # - # IF WEIGHT #3 /* Triggers after states #: 26 even though 
 
 # s20 # say39837
 label morte1_s20: # from 19.0
-    nr '"Przecież BĘDĘ ci pomagał. Ciężko teraz o dobre rady."{#morte1_s20_}'
+    nr '"Przecież BĘDĘ ci pomagał. Ciężko teraz o dobre rady."{#morte1_s20_1}'
 
     menu:
         '"Chodziło mi o pomoc w walce z *zombie*."{#morte1_s20_r39838}':
@@ -244,7 +244,7 @@ label morte1_s20: # from 19.0
 
 # s21 # say39840
 label morte1_s21: # from 20.0
-    nr '"Ja? Jestem romantykiem, a nie żołnierzem. Ruszaj już lepiej."{#morte1_s21_}'
+    nr '"Ja? Jestem romantykiem, a nie żołnierzem. Ruszaj już lepiej."{#morte1_s21_1}'
 
     menu:
         '"Jak będę walczył z tym truposzem, lepiej mnie nie zostawiaj, bo będziesz następnym delikwentem, którego poszlachtuję."{#morte1_s21_r39841}':
@@ -258,7 +258,7 @@ label morte1_s21: # from 20.0
 
 # s22 # say39843
 label morte1_s22: # from 21.0
-    nr '"No dobra… Pomogę ci."  UWAGA: Jeśli chcesz, aby Morte pomógł ci w walce, nie zapomnij wybrać was obu, kiedy będziesz atakował zombie. Wtedy twój towarzysz także przyłączy się do ataku.{#morte1_s22_}'
+    nr '"No dobra… Pomogę ci."  UWAGA: Jeśli chcesz, aby Morte pomógł ci w walce, nie zapomnij wybrać was obu, kiedy będziesz atakował zombie. Wtedy twój towarzysz także przyłączy się do ataku.{#morte1_s22_1}'
 
     menu:
         '"Cieszę się, że się rozumiemy."{#morte1_s22_r39844}':
@@ -268,7 +268,7 @@ label morte1_s22: # from 21.0
 
 # s23 # say39845
 label morte1_s23: # from 19.1 20.1 21.1 22.0
-    nr '"Czas zabić te trupy drugi raz…"  ^NNOTE: <ATTACKNOTE>^-{#morte1_s23_}'
+    nr '"Czas zabić te trupy drugi raz…"  ^NNOTE: <ATTACKNOTE>^-{#morte1_s23_1}'
 
     menu:
         '"Ruszajmy."{#morte1_s23_r39846}':
@@ -278,7 +278,7 @@ label morte1_s23: # from 19.1 20.1 21.1 22.0
 
 # s24 # say39847
 label morte1_s24: # - # IF WEIGHT #4 /* Triggers after states #: 26 even though they appear after this state */ ~  Global("Mortuary_Walkthrough","GLOBAL",0) !PartyHasItem("KeyPr") Global("ZM782_Dead_KAPUTZ","GLOBAL",1)
-    nr '"Widzę, że udało ci się załatwić właściwego trupa. Teraz musisz tylko znaleźć klucz. Powinien mieć go przy sobie. On pozwoli nam się stąd wydostać."  ^NNOTE: <DEADPILE>^-{#morte1_s24_}'
+    nr '"Widzę, że udało ci się załatwić właściwego trupa. Teraz musisz tylko znaleźć klucz. Powinien mieć go przy sobie. On pozwoli nam się stąd wydostać."  ^NNOTE: <DEADPILE>^-{#morte1_s24_1}'
 
     menu:
         '"W porządku."{#morte1_s24_r39848}':
@@ -288,7 +288,7 @@ label morte1_s24: # - # IF WEIGHT #4 /* Triggers after states #: 26 even though 
 
 # s25 # say39849
 label morte1_s25: # - # IF WEIGHT #5 /* Triggers after states #: 26 even though they appear after this state */ ~  Global("Mortuary_Walkthrough","GLOBAL",0) PartyHasItem("KeyPr")
-    nr '"Dobra robota; masz już klucz. Na pewno pasuje do któregoś z zamków w tym pomieszczeniu."{#morte1_s25_}'
+    nr '"Dobra robota; masz już klucz. Na pewno pasuje do któregoś z zamków w tym pomieszczeniu."{#morte1_s25_1}'
 
     menu:
         '"W takim razie spróbuję wszystkich drzwi."{#morte1_s25_r39850}':
@@ -298,7 +298,7 @@ label morte1_s25: # - # IF WEIGHT #5 /* Triggers after states #: 26 even though 
 
 # s26 # say39851
 label morte1_s26: # - # IF WEIGHT #0 ~  !InParty("Morte") GlobalGT("Morte","GLOBAL",0)
-    nr '"Wiedziałem, że wrócisz, szefie! W końcu zorientowałeś się, że mnie potrzebujesz, co?"~ [MRT516]{#morte1_s26_}'
+    nr '"Wiedziałem, że wrócisz, szefie! W końcu zorientowałeś się, że mnie potrzebujesz, co?"~ [MRT516]{#morte1_s26_1}'
 
     menu:
         '"Aha… do dzieła."{#morte1_s26_r39852}':
@@ -313,7 +313,7 @@ label morte1_s26: # - # IF WEIGHT #0 ~  !InParty("Morte") GlobalGT("Morte","GLOB
 
 # s27 # say39854
 label morte1_s27: # from 26.1
-    nr '"Hmmmm. Nie wiem, czy mnie tu jeszcze zastaniesz, ale dam ci jeszcze OSTATNIĄ szansę. Jesteś pewien, że nie potrzebujesz moich wskazówek i mojego sprytu?"{#morte1_s27_}'
+    nr '"Hmmmm. Nie wiem, czy mnie tu jeszcze zastaniesz, ale dam ci jeszcze OSTATNIĄ szansę. Jesteś pewien, że nie potrzebujesz moich wskazówek i mojego sprytu?"{#morte1_s27_1}'
 
     menu:
         '"Przecież nie masz ŻADNEJ z tych rzeczy."{#morte1_s27_r39855}':
@@ -332,7 +332,7 @@ label morte1_s27: # from 26.1
 
 # s28 # say39858
 label morte1_s28: # from 27.0 27.2
-    nr '"Chcesz obrazić moje uczucia, szefie? Czyżbym coś powiedział nie tak? A może przeszkadza ci, że nie mam rąk? Co?"{#morte1_s28_}'
+    nr '"Chcesz obrazić moje uczucia, szefie? Czyżbym coś powiedział nie tak? A może przeszkadza ci, że nie mam rąk? Co?"{#morte1_s28_1}'
 
     menu:
         '"No dobra, zmieniłem zdanie. No dalej, ruszajmy."{#morte1_s28_r39859}':
@@ -347,7 +347,7 @@ label morte1_s28: # from 27.0 27.2
 
 # s29 # say39861
 label morte1_s29: # from 28.1
-    nr '"No cóż, nie będę czekał w NIESKOŃCZONOŚĆ, więc lepiej wróć, jak tylko zmienisz zdanie."{#morte1_s29_}'
+    nr '"No cóż, nie będę czekał w NIESKOŃCZONOŚĆ, więc lepiej wróć, jak tylko zmienisz zdanie."{#morte1_s29_1}'
 
     menu:
         '"Masz to jak w banku. Żegnaj, Morte."{#morte1_s29_r39862}':
@@ -357,7 +357,7 @@ label morte1_s29: # from 28.1
 
 # s30 # say39863
 label morte1_s30: # - # IF WEIGHT #6 ~  Global("Mortuary_Walkthrough","GLOBAL",1)
-    nr '"Co cię gryzie, szefie?"~ [MRT515]{#morte1_s30_}'
+    nr '"Co cię gryzie, szefie?"~ [MRT515]{#morte1_s30_1}'
 
     menu:
         '"Nic takiego, Morte. Po prostu sprawdzam, czy wciąż ze mną jesteś."{#morte1_s30_r39864}':
@@ -367,7 +367,7 @@ label morte1_s30: # - # IF WEIGHT #6 ~  Global("Mortuary_Walkthrough","GLOBAL",1
 
 # s31 # say42298
 label morte1_s31: # externs zm825_s3 zm825_s0 zm569_s3 zm569_s0
-    nr '"Szefie… one cię nie słyszą. Przecież są martwe."{#morte1_s31_}'
+    nr '"Szefie… one cię nie słyszą. Przecież są martwe."{#morte1_s31_1}'
 
     menu:
         '"Ale przecież ty też nie żyjesz, a ze mną rozmawiasz."{#morte1_s31_r42299}':
@@ -377,7 +377,7 @@ label morte1_s31: # externs zm825_s3 zm825_s0 zm569_s3 zm569_s0
 
 # s32 # say42300
 label morte1_s32: # from 31.0
-    nr '"Tak, ale ja *jestem* inny. Śmierć nie zabiła we mnie chęci życia. A te tu…" Morte wskazuje na żywe trupy. "Pewnie nie miały wystarczająco dużo charakteru."{#morte1_s32_}'
+    nr '"Tak, ale ja *jestem* inny. Śmierć nie zabiła we mnie chęci życia. A te tu…" Morte wskazuje na żywe trupy. "Pewnie nie miały wystarczająco dużo charakteru."{#morte1_s32_1}'
 
     menu:
         '"Ro… rozumiem."{#morte1_s32_r42301}':
@@ -387,7 +387,7 @@ label morte1_s32: # from 31.0
 
 # s33 # say42302
 label morte1_s33: # from 32.0
-    nr '"Wiesz, szefie… coś mnie trafia, jak próbujesz wymienić śpiewkę z tymi truposzami. Zostawmy to świrom, dobra?"{#morte1_s33_}'
+    nr '"Wiesz, szefie… coś mnie trafia, jak próbujesz wymienić śpiewkę z tymi truposzami. Zostawmy to świrom, dobra?"{#morte1_s33_1}'
 
     menu:
         '"W takim razie ruszajmy."{#morte1_s33_r42303}':
@@ -397,6 +397,6 @@ label morte1_s33: # from 32.0
 
 # s34 # say42306
 label morte1_s34: # externs zm782_s0
-    nr '"Wygląda na to, że mamy drania, szefie. Patrz… ma w ręce klucz."{#morte1_s34_}'
+    nr '"Wygląda na to, że mamy drania, szefie. Patrz… ma w ręce klucz."{#morte1_s34_1}'
 
     jump zm782_s2  # EXTERN

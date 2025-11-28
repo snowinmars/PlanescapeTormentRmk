@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say6573
 label zm1041_s0: # - # IF ~  Global("Bei","GLOBAL",0)
-    nr 'Te ponownie ożywione zwłoki mężczyzny mają numer "1041" wygrawerowany na czole. Pomimo naprężonej i wysuszonej skóry jest rzeczą oczywistą, że kiedyś jego rysy były raczej „egzotyczne“. Jego wargi zszyto razem - najpewniej po to, aby nie mógł cały czas jęczeć - a całe ciało śmierdzi formaliną.{#zm1041_s0_}'
+    nr 'Te ponownie ożywione zwłoki mężczyzny mają numer "1041" wygrawerowany na czole. Pomimo naprężonej i wysuszonej skóry jest rzeczą oczywistą, że kiedyś jego rysy były raczej „egzotyczne“. Jego wargi zszyto razem - najpewniej po to, aby nie mógł cały czas jęczeć - a całe ciało śmierdzi formaliną.{#zm1041_s0_1}'
 
     menu:
         '"Więc… widziałeś, aby działo się tu coś ciekawego?"{#zm1041_s0_r6576}' if zm1041Logic.r6576_condition():
@@ -46,7 +46,7 @@ label zm1041_s0: # - # IF ~  Global("Bei","GLOBAL",0)
 
 # s1 # say6574
 label zm1041_s1: # from 0.0 0.1 0.2
-    nr 'Trup wciąż się w ciebie wpatruje.{#zm1041_s1_}'
+    nr 'Trup wciąż się w ciebie wpatruje.{#zm1041_s1_1}'
 
     menu:
         'Zostaw truposza w spokoju.{#zm1041_s1_r6582}':
@@ -56,7 +56,7 @@ label zm1041_s1: # from 0.0 0.1 0.2
 
 # s2 # say6575
 label zm1041_s2: # from 0.3
-    nr 'Trup zatacza się przez chwilę, podczas gdy jego duch ponownie wchodzi do swego niegdysiejszego ciała. Jego migdałowe oczy stają się raz jeszcze czarne, zaś blade ciało staje się na powrót lekko brązowe. Trup prostuje się, strzepując proch z ubrania.  W końcu, dostrzegając osobę, która się do niego zwróciła, duch wpatruje się w ciebie z zaciekawieniem, a potem lekko się kłania.{#zm1041_s2_}'
+    nr 'Trup zatacza się przez chwilę, podczas gdy jego duch ponownie wchodzi do swego niegdysiejszego ciała. Jego migdałowe oczy stają się raz jeszcze czarne, zaś blade ciało staje się na powrót lekko brązowe. Trup prostuje się, strzepując proch z ubrania.  W końcu, dostrzegając osobę, która się do niego zwróciła, duch wpatruje się w ciebie z zaciekawieniem, a potem lekko się kłania.{#zm1041_s2_1}'
 
     menu:
         'Ukłoń się i ty.{#zm1041_s2_r6583}':
@@ -77,7 +77,7 @@ label zm1041_s2: # from 0.3
 
 # s3 # say9060
 label zm1041_s3: # from 2.0
-    nr 'Duch uśmiecha się przez chwilę, jakby z zadowoleniem. Przyjmuje postawę dystyngowaną, trzymając jedną rękę za plecami, i zaczyna mówić delikatnie, melodyjnie:  "Suiang jianne shyr nan bye yih nan; "Dong feng wu lih bay hua tsarn; "Chuen tsarn daw syy sy fang jinn; "Lah Jiuh cherng huei ley shyy gan."  To powiedziawszy, wydaje się być zadowolony z siebie i cierpliwie oczekuje twojej odpowiedzi.{#zm1041_s3_}'
+    nr 'Duch uśmiecha się przez chwilę, jakby z zadowoleniem. Przyjmuje postawę dystyngowaną, trzymając jedną rękę za plecami, i zaczyna mówić delikatnie, melodyjnie:  "Suiang jianne shyr nan bye yih nan; "Dong feng wu lih bay hua tsarn; "Chuen tsarn daw syy sy fang jinn; "Lah Jiuh cherng huei ley shyy gan."  To powiedziawszy, wydaje się być zadowolony z siebie i cierpliwie oczekuje twojej odpowiedzi.{#zm1041_s3_1}'
 
     menu:
         '"Ja… eee…"{#zm1041_s3_r9098}':
@@ -95,7 +95,7 @@ label zm1041_s3: # from 2.0
 
 # s4 # say9061
 label zm1041_s4: # from 2.1
-    nr 'Otwierasz usta, aby zadać pytanie, ale zanim cokolwiek powiesz, duch zaczyna mówić delikatnie, melodyjnie:  "Suiang jianne shyr nan bye yih nan; "Dong feng wu lih bay hua tsarn; "Chuen tsarn daw syy sy fang jinn; "Lah Jiuh cherng huei ley shyy gan."  To powiedziawszy, wydaje się być zadowolony z siebie i cierpliwie oczekuje twojej odpowiedzi.{#zm1041_s4_}'
+    nr 'Otwierasz usta, aby zadać pytanie, ale zanim cokolwiek powiesz, duch zaczyna mówić delikatnie, melodyjnie:  "Suiang jianne shyr nan bye yih nan; "Dong feng wu lih bay hua tsarn; "Chuen tsarn daw syy sy fang jinn; "Lah Jiuh cherng huei ley shyy gan."  To powiedziawszy, wydaje się być zadowolony z siebie i cierpliwie oczekuje twojej odpowiedzi.{#zm1041_s4_1}'
 
     menu:
         '"Ja… eee…"{#zm1041_s4_r9101}':
@@ -113,7 +113,7 @@ label zm1041_s4: # from 2.1
 
 # s5 # say9062
 label zm1041_s5: # from 3.0 3.1 4.0 4.1
-    nr 'Duch zatrzymuje się na chwilę, jak gdyby dla zebrania myśli. Następnie zaczyna mówić głosem dystyngowanym, aczkolwiek z ciężkim akcentem. "Musisz mi wybaczyć, czcigodny panie. Wiele czasu upłynęło, odkąd posługiwałem się twoim językiem. Niewątpliwie duch mój został tu wezwany, aby odpowiedzieć na twoje pytania; czegóż to pragniesz się ode mnie dowiedzieć?"{#zm1041_s5_}'
+    nr 'Duch zatrzymuje się na chwilę, jak gdyby dla zebrania myśli. Następnie zaczyna mówić głosem dystyngowanym, aczkolwiek z ciężkim akcentem. "Musisz mi wybaczyć, czcigodny panie. Wiele czasu upłynęło, odkąd posługiwałem się twoim językiem. Niewątpliwie duch mój został tu wezwany, aby odpowiedzieć na twoje pytania; czegóż to pragniesz się ode mnie dowiedzieć?"{#zm1041_s5_1}'
 
     menu:
         '"Kim jesteś?"{#zm1041_s5_r9104}':
@@ -147,7 +147,7 @@ label zm1041_s5: # from 3.0 3.1 4.0 4.1
 
 # s6 # say9063
 label zm1041_s6: # from 5.0 14.0
-    nr '"Ciężko mi powiedzieć, kim jestem… łatwiej kim *byłem*. Byłem znany jako Zhuang Bei, nauczyciel i ochroniarz Liu Xixi, córki Cenzora Chi„an."{#zm1041_s6_}'
+    nr '"Ciężko mi powiedzieć, kim jestem… łatwiej kim *byłem*. Byłem znany jako Zhuang Bei, nauczyciel i ochroniarz Liu Xixi, córki Cenzora Chi„an."{#zm1041_s6_1}'
 
     menu:
         '"Nauczyciel *i* ochroniarz?"{#zm1041_s6_r9111}':
@@ -169,7 +169,7 @@ label zm1041_s6: # from 5.0 14.0
 
 # s7 # say9064
 label zm1041_s7: # from 5.1 14.1
-    nr '"Pochodzę z miejsca znanego jako Shou Lung… miejsca, które niegdyś uważałem za środek Wszechświata." Wydaje się, że sama ta myśl napełnia go umiarkowanym rozbawieniem. "Ile miejsc, tyle światów. Kiedyś uważałem się za naprawdę uczonego człowieka, jednakże zaiste niewiele wiedziałem w chwili śmierci…"{#zm1041_s7_}'
+    nr '"Pochodzę z miejsca znanego jako Shou Lung… miejsca, które niegdyś uważałem za środek Wszechświata." Wydaje się, że sama ta myśl napełnia go umiarkowanym rozbawieniem. "Ile miejsc, tyle światów. Kiedyś uważałem się za naprawdę uczonego człowieka, jednakże zaiste niewiele wiedziałem w chwili śmierci…"{#zm1041_s7_1}'
 
     menu:
         '"W jaki sposób przybyłeś z tego „Shou Lung?“"{#zm1041_s7_r9115}':
@@ -187,7 +187,7 @@ label zm1041_s7: # from 5.1 14.1
 
 # s8 # say9065
 label zm1041_s8: # from 5.2 14.2
-    nr '"Zostałem zamordowany przez jednego z ludzi, którzy wpadli wraz ze mną do tego świata. Polowałem na niego w tym mieście od wielu, wielu tygodni - to właśnie wtedy nauczyłem się twojego języka - ale on odnalazł mnie pierwszy. Był zawodowym zabójcą. Dopadł mnie znienacka i zamordował we śnie."{#zm1041_s8_}'
+    nr '"Zostałem zamordowany przez jednego z ludzi, którzy wpadli wraz ze mną do tego świata. Polowałem na niego w tym mieście od wielu, wielu tygodni - to właśnie wtedy nauczyłem się twojego języka - ale on odnalazł mnie pierwszy. Był zawodowym zabójcą. Dopadł mnie znienacka i zamordował we śnie."{#zm1041_s8_1}'
 
     menu:
         '"Wpadliście do tego świata?"{#zm1041_s8_r9118}':
@@ -217,7 +217,7 @@ label zm1041_s8: # from 5.2 14.2
 
 # s9 # say9066
 label zm1041_s9: # from 5.4 14.4
-    nr '"Ten budynek? Nic takiego; słyszałem o nim, wiedziałem, że moje ciało będzie tu służyć, ale to wszystko… Niewiele więcej wiem o tym wielkim mieście, „Sigil“. Całe tygodnie spędziłem w nim szukając człowieka, z którym wpadłem do tego świata, i ucząc się tutejszego języka; mimo że było to dla mnie bolesne, nie miałem czasu na nic innego. A tyle mogłem się nauczyć od tych miliardów cudów, których pełno w takim miejscu…"{#zm1041_s9_}'
+    nr '"Ten budynek? Nic takiego; słyszałem o nim, wiedziałem, że moje ciało będzie tu służyć, ale to wszystko… Niewiele więcej wiem o tym wielkim mieście, „Sigil“. Całe tygodnie spędziłem w nim szukając człowieka, z którym wpadłem do tego świata, i ucząc się tutejszego języka; mimo że było to dla mnie bolesne, nie miałem czasu na nic innego. A tyle mogłem się nauczyć od tych miliardów cudów, których pełno w takim miejscu…"{#zm1041_s9_1}'
 
     menu:
         '"Twoje ciało miało tutaj służyć? W jaki sposób do tego doszło?"{#zm1041_s9_r9124}':
@@ -243,7 +243,7 @@ label zm1041_s9: # from 5.4 14.4
 
 # s10 # say9067
 label zm1041_s10: # from 5.5 14.5
-    nr '"Nie, to imię nic mi nie mówi. Przykro mi, że nie mogłem być tutaj pomocny."{#zm1041_s10_}'
+    nr '"Nie, to imię nic mi nie mówi. Przykro mi, że nie mogłem być tutaj pomocny."{#zm1041_s10_1}'
 
     menu:
         '"Rozumiem. Mam więcej pytań…"{#zm1041_s10_r9129}':
@@ -257,7 +257,7 @@ label zm1041_s10: # from 5.5 14.5
 
 # s11 # say9068
 label zm1041_s11: # from 5.3 14.3
-    nr 'Najwyraźniej duch odczuwa chwilowy ból. "Ja… Mój duch zamieszkuje królestwo Znakomitego Sędziego pokoju, Yen-Wang-Yeh: Pałac Sądu."{#zm1041_s11_}'
+    nr 'Najwyraźniej duch odczuwa chwilowy ból. "Ja… Mój duch zamieszkuje królestwo Znakomitego Sędziego pokoju, Yen-Wang-Yeh: Pałac Sądu."{#zm1041_s11_1}'
 
     menu:
         '"Czy coś jest nie tak? Czy to takie złe miejsce?"{#zm1041_s11_r9131}':
@@ -275,7 +275,7 @@ label zm1041_s11: # from 5.3 14.3
 
 # s12 # say9069
 label zm1041_s12: # from 6.0 16.1
-    nr '"Tak. Tam, skąd się wywodzę, nie jest to niczym niezwykłym. Moim obowiązkiem było trwać cały czas przy Panience Liu, nie tylko chroniąc ją przed wszelkim niebezpieczeństwem, ale także kształcąc i wychowując ją. Widzisz, cieszyłem się dobrą reputacją zarówno jako uczony, jak i szermierz. Chociaż być może przysłużyłbym się lepiej mojej pani, gdybym był lepszym szermierzem…"{#zm1041_s12_}'
+    nr '"Tak. Tam, skąd się wywodzę, nie jest to niczym niezwykłym. Moim obowiązkiem było trwać cały czas przy Panience Liu, nie tylko chroniąc ją przed wszelkim niebezpieczeństwem, ale także kształcąc i wychowując ją. Widzisz, cieszyłem się dobrą reputacją zarówno jako uczony, jak i szermierz. Chociaż być może przysłużyłbym się lepiej mojej pani, gdybym był lepszym szermierzem…"{#zm1041_s12_1}'
 
     menu:
         '"Przysłużyłbyś się jej lepiej? Czy w jakikolwiek sposób ją zawiodłeś?"{#zm1041_s12_r9134}':
@@ -293,7 +293,7 @@ label zm1041_s12: # from 6.0 16.1
 
 # s13 # say9070
 label zm1041_s13: # from 6.1
-    nr '"Imponująco? Tak, być może nawet za bardzo, jak dla mnie. Ja… zawiodłem Panienkę Liu oraz Cenzora."{#zm1041_s13_}'
+    nr '"Imponująco? Tak, być może nawet za bardzo, jak dla mnie. Ja… zawiodłem Panienkę Liu oraz Cenzora."{#zm1041_s13_1}'
 
     menu:
         '"Jak to?"{#zm1041_s13_r9137}':
@@ -311,7 +311,7 @@ label zm1041_s13: # from 6.1
 
 # s14 # say9071
 label zm1041_s14: # from 6.2 7.1 8.4 9.3 10.0 11.1 12.1 13.1 15.2 17.1 18.0 19.0 20.1 21.1 22.0 23.1 24.0 25.0 26.0 27.1 28.0 29.0 30.0 31.2 32.1 33.2 34.0 35.2 36.0 37.0 38.1
-    nr 'Duch kiwa potakująco głową, co jest dość nieoczekiwanie pełnym wdzięku ruchem, jak na takie pomarszczone zwłoki. "Proszę, pytaj o co chcesz."{#zm1041_s14_}'
+    nr 'Duch kiwa potakująco głową, co jest dość nieoczekiwanie pełnym wdzięku ruchem, jak na takie pomarszczone zwłoki. "Proszę, pytaj o co chcesz."{#zm1041_s14_1}'
 
     menu:
         '"Kim jesteś?"{#zm1041_s14_r9140}':
@@ -349,7 +349,7 @@ label zm1041_s14: # from 6.2 7.1 8.4 9.3 10.0 11.1 12.1 13.1 15.2 17.1 18.0 19.0
 
 # s15 # say9072
 label zm1041_s15: # from 11.0
-    nr '"No cóż, widzisz…" Duch przerywa na chwilę, aby się zastanowić, zacierając wyschnięte dłonie. "Kiedy przybyłem, po krótkim oczekiwaniu miałem być przeniesiony do mego ostatecznego, *prawdziwego* celu podróży. Jednakże, w trakcie przeprowadzania mnie przez Pałac, wytworzyło się jakieś zamieszanie i zostałem sam w bocznym pokoju. Obiecano mi, że za chwilę ktoś się mną zajmie."{#zm1041_s15_}'
+    nr '"No cóż, widzisz…" Duch przerywa na chwilę, aby się zastanowić, zacierając wyschnięte dłonie. "Kiedy przybyłem, po krótkim oczekiwaniu miałem być przeniesiony do mego ostatecznego, *prawdziwego* celu podróży. Jednakże, w trakcie przeprowadzania mnie przez Pałac, wytworzyło się jakieś zamieszanie i zostałem sam w bocznym pokoju. Obiecano mi, że za chwilę ktoś się mną zajmie."{#zm1041_s15_1}'
 
     menu:
         '"I…?"{#zm1041_s15_r9148}':
@@ -371,7 +371,7 @@ label zm1041_s15: # from 11.0
 
 # s16 # say9073
 label zm1041_s16: # from 7.0 8.0 8.1 9.1 12.0 13.0
-    nr '"Opowiem ci całą historię. Jako nauczyciel i ochroniarz Liu Xixi, zajmowałem się naturalnie zarówno jej wykształceniem, jak i ochroną. Pewnego pięknego wieczoru staliśmy sobie na balkonie nad Dziedzińcem, gdzie uczyłem ją o rozmaitych gwiazdozbiorach."{#zm1041_s16_}'
+    nr '"Opowiem ci całą historię. Jako nauczyciel i ochroniarz Liu Xixi, zajmowałem się naturalnie zarówno jej wykształceniem, jak i ochroną. Pewnego pięknego wieczoru staliśmy sobie na balkonie nad Dziedzińcem, gdzie uczyłem ją o rozmaitych gwiazdozbiorach."{#zm1041_s16_1}'
 
     menu:
         '"Mów dalej, proszę."{#zm1041_s16_r9152}':
@@ -389,7 +389,7 @@ label zm1041_s16: # from 7.0 8.0 8.1 9.1 12.0 13.0
 
 # s17 # say9074
 label zm1041_s17: # from 8.2 9.0
-    nr '"Ach, to. Pewnej nocy podeszła do mnie młoda dziewczyna na ulicy; była ona z organizacji o nazwie Grabarze, tej samej, która opiekuje się tym kompleksem budowli… Zaproponowała mi, aby - w zamian za małą sumkę - moje ciało mogło być… używane… po mojej śmierci."{#zm1041_s17_}'
+    nr '"Ach, to. Pewnej nocy podeszła do mnie młoda dziewczyna na ulicy; była ona z organizacji o nazwie Grabarze, tej samej, która opiekuje się tym kompleksem budowli… Zaproponowała mi, aby - w zamian za małą sumkę - moje ciało mogło być… używane… po mojej śmierci."{#zm1041_s17_1}'
 
     menu:
         '"I nie wydało ci się to trochę dziwne?"{#zm1041_s17_r9155}':
@@ -407,7 +407,7 @@ label zm1041_s17: # from 8.2 9.0
 
 # s18 # say9075
 label zm1041_s18: # from 8.3 9.2
-    nr '"Lingwistyka, w rzeczy samej, to dziedzina szalenie mnie interesująca. Kiedy zostałem uczonym, odkryłem, że mogę uczyć się nowych języków bez większych kłopotów."{#zm1041_s18_}'
+    nr '"Lingwistyka, w rzeczy samej, to dziedzina szalenie mnie interesująca. Kiedy zostałem uczonym, odkryłem, że mogę uczyć się nowych języków bez większych kłopotów."{#zm1041_s18_1}'
 
     menu:
         '"To by wyjaśniało pewne rzeczy. Następne pytanie…"{#zm1041_s18_r9158}':
@@ -421,7 +421,7 @@ label zm1041_s18: # from 8.3 9.2
 
 # s19 # say9076
 label zm1041_s19: # from 15.0 20.0
-    nr '"No cóż, widzisz… nikt nigdy po mnie nie wrócił. Czekałem cichutko całe dnie, ale na próżno. W końcu opuściłem ten pokój, aby powłóczyć się po Pałacu, gdyż miałem nadzieję, że znajdę kogoś, kto mnie poprowadzi…" Wzdycha miękko, a wraz z wydechem wznosi się w powietrze słaba woń płynu balsamującego. "Jest tam 9001 pokoi; w każdym, przez który przechodziłem, kierowano mnie po prostu do następnego. Wygląda na to, że wpadłem w jakąś dziurę, przynajmniej chwilowo."{#zm1041_s19_}'
+    nr '"No cóż, widzisz… nikt nigdy po mnie nie wrócił. Czekałem cichutko całe dnie, ale na próżno. W końcu opuściłem ten pokój, aby powłóczyć się po Pałacu, gdyż miałem nadzieję, że znajdę kogoś, kto mnie poprowadzi…" Wzdycha miękko, a wraz z wydechem wznosi się w powietrze słaba woń płynu balsamującego. "Jest tam 9001 pokoi; w każdym, przez który przechodziłem, kierowano mnie po prostu do następnego. Wygląda na to, że wpadłem w jakąś dziurę, przynajmniej chwilowo."{#zm1041_s19_1}'
 
     menu:
         '"Rozumiem, ale mam następne pytanie…"{#zm1041_s19_r9160}':
@@ -445,7 +445,7 @@ label zm1041_s19: # from 15.0 20.0
 
 # s20 # say9077
 label zm1041_s20: # from 15.1
-    nr '"No, nie wiem. To wszystko jest takie frustrujące!" Zatrzymuje się na chwilę, aby odzyskać panowanie nad sobą. Zesztywniałe stawy i ścięgna delikatnie skrzypią, rozluźniając się.{#zm1041_s20_}'
+    nr '"No, nie wiem. To wszystko jest takie frustrujące!" Zatrzymuje się na chwilę, aby odzyskać panowanie nad sobą. Zesztywniałe stawy i ścięgna delikatnie skrzypią, rozluźniając się.{#zm1041_s20_1}'
 
     menu:
         '"Kontynuuj swoją opowieść, proszę."{#zm1041_s20_r9164}':
@@ -463,7 +463,7 @@ label zm1041_s20: # from 15.1
 
 # s21 # say9078
 label zm1041_s21: # from 16.0
-    nr '"Oczywiście. Kiedy tak tam staliśmy, nagle dwóch zabójców zeskoczyło na balkon z dachu, najpewniej w celu zabicia lub porwania Panienki Liu. Krzycząc na straże, wyciągnąłem swój miecz i skoczyłem jej na ratunek. W walce, która się wywiązała, rozwaliliśmy balustradę na balkonie i cała nasza czwórka wpadła do Nefrytowego Portalu."{#zm1041_s21_}'
+    nr '"Oczywiście. Kiedy tak tam staliśmy, nagle dwóch zabójców zeskoczyło na balkon z dachu, najpewniej w celu zabicia lub porwania Panienki Liu. Krzycząc na straże, wyciągnąłem swój miecz i skoczyłem jej na ratunek. W walce, która się wywiązała, rozwaliliśmy balustradę na balkonie i cała nasza czwórka wpadła do Nefrytowego Portalu."{#zm1041_s21_1}'
 
     menu:
         '"Nefrytowego Portalu?"{#zm1041_s21_r9167}':
@@ -481,7 +481,7 @@ label zm1041_s21: # from 16.0
 
 # s22 # say9079
 label zm1041_s22: # from 17.0
-    nr '"Być może z początku… w końcu cały ten pomysł jest dość makabryczny. Ale porozmawiawszy z nią przez chwilę zdałem sobie sprawę, że oni - Grabarze - mają w gruncie rzeczy takie samo podejście do umierania, jak ja. Moje ciało? To tylko narzędzie, nic więcej. Wierzę, że ta ich „Prawdziwa Śmierć“ jest jakimś wysublimowanym stanem, który ja, osobiście, chciałbym osiągnąć… pełnym wyzwoleniem i oderwaniem się od świata materialnego. Gdyby tak moje ciało, po wypełnieniu zadania jako moja śmiertelna powłoka, mogło jeszcze przysłużyć się i tutaj, tym lepiej." Duch uśmiecha się uprzejmie do ciebie.{#zm1041_s22_}'
+    nr '"Być może z początku… w końcu cały ten pomysł jest dość makabryczny. Ale porozmawiawszy z nią przez chwilę zdałem sobie sprawę, że oni - Grabarze - mają w gruncie rzeczy takie samo podejście do umierania, jak ja. Moje ciało? To tylko narzędzie, nic więcej. Wierzę, że ta ich „Prawdziwa Śmierć“ jest jakimś wysublimowanym stanem, który ja, osobiście, chciałbym osiągnąć… pełnym wyzwoleniem i oderwaniem się od świata materialnego. Gdyby tak moje ciało, po wypełnieniu zadania jako moja śmiertelna powłoka, mogło jeszcze przysłużyć się i tutaj, tym lepiej." Duch uśmiecha się uprzejmie do ciebie.{#zm1041_s22_1}'
 
     menu:
         '"Rozumiem twój sposób myślenia. Mam następne pytanie…"{#zm1041_s22_r9170}':
@@ -495,7 +495,7 @@ label zm1041_s22: # from 17.0
 
 # s23 # say9080
 label zm1041_s23: # from 21.0
-    nr '"Och! Proszę wybaczyć to założenie z mojej strony… Nefrytowy Portal to okrągła sadzawka leżąca na Dziedzińcu. Wyłożona jest zielonymi i białymi kafelkami steatytu. Nazywamy ją Portalem, ponieważ jak niektórzy powiadają, czasami można dojrzeć błyski innych miejsc odbite w jej migotających wodach."{#zm1041_s23_}'
+    nr '"Och! Proszę wybaczyć to założenie z mojej strony… Nefrytowy Portal to okrągła sadzawka leżąca na Dziedzińcu. Wyłożona jest zielonymi i białymi kafelkami steatytu. Nazywamy ją Portalem, ponieważ jak niektórzy powiadają, czasami można dojrzeć błyski innych miejsc odbite w jej migotających wodach."{#zm1041_s23_1}'
 
     menu:
         '"Rozumiem. Proszę, kontynuuj swą opowieść."{#zm1041_s23_r9172}':
@@ -513,7 +513,7 @@ label zm1041_s23: # from 21.0
 
 # s24 # say9081
 label zm1041_s24: # from 19.1
-    nr '"Twoja oferta jest nazbyt łaskawa. Obawiam się, jednakże, że nic nie możesz zrobić… Jestem pewny, że za jakiś czas wyruszę w dalszą drogę. Jednakowoż dziękuję raz jeszcze."{#zm1041_s24_}'
+    nr '"Twoja oferta jest nazbyt łaskawa. Obawiam się, jednakże, że nic nie możesz zrobić… Jestem pewny, że za jakiś czas wyruszę w dalszą drogę. Jednakowoż dziękuję raz jeszcze."{#zm1041_s24_1}'
 
     menu:
         '"Oczywiście. Co powiesz na następne pytanie…"{#zm1041_s24_r9175}':
@@ -527,7 +527,7 @@ label zm1041_s24: # from 19.1
 
 # s25 # say9082
 label zm1041_s25: # from 19.2 33.1 35.1
-    nr 'Duch spogląda na ciebie zimno; w trupich oczach zapalają się złowrogie światełka; chyba go obraziłeś.{#zm1041_s25_}'
+    nr 'Duch spogląda na ciebie zimno; w trupich oczach zapalają się złowrogie światełka; chyba go obraziłeś.{#zm1041_s25_1}'
 
     menu:
         '"Wybacz, proszę. Czy wolno mi zapytać cię o coś jeszcze?"{#zm1041_s25_r9177}':
@@ -541,7 +541,7 @@ label zm1041_s25: # from 19.2 33.1 35.1
 
 # s26 # say9083
 label zm1041_s26: # from 14.6
-    nr '"Ach, to… ach… to taki wiersz. Trudny do przetłumaczenia. Masz może jakieś inne pytanie?" Uśmiecha się do ciebie niepewnie.{#zm1041_s26_}'
+    nr '"Ach, to… ach… to taki wiersz. Trudny do przetłumaczenia. Masz może jakieś inne pytanie?" Uśmiecha się do ciebie niepewnie.{#zm1041_s26_1}'
 
     menu:
         '"Owszem, mam."{#zm1041_s26_r9179}':
@@ -559,7 +559,7 @@ label zm1041_s26: # from 14.6
 
 # s27 # say9084
 label zm1041_s27: # from 23.0
-    nr '"Jak już mówiłem, wpadliśmy do Nefrytowego Portalu. Nigdy wcześniej nie sądziłem, że to *jest* portal w jakimkolwiek znaczeniu tego słowa, ale z całą pewnością to był portal! Nagle okazało się, że leżę w jakimś nieznanym zaułku ze złamaną nogą. Znów się obejrzałem, tym razem w porę, aby dojrzeć, jak zabójcy uciekają. Jeden z nich miał Liu Xixi przełożoną przez ramię."{#zm1041_s27_}'
+    nr '"Jak już mówiłem, wpadliśmy do Nefrytowego Portalu. Nigdy wcześniej nie sądziłem, że to *jest* portal w jakimkolwiek znaczeniu tego słowa, ale z całą pewnością to był portal! Nagle okazało się, że leżę w jakimś nieznanym zaułku ze złamaną nogą. Znów się obejrzałem, tym razem w porę, aby dojrzeć, jak zabójcy uciekają. Jeden z nich miał Liu Xixi przełożoną przez ramię."{#zm1041_s27_1}'
 
     menu:
         '"Doprawdy dziwne. Mów dalej, proszę."{#zm1041_s27_r9182}':
@@ -577,7 +577,7 @@ label zm1041_s27: # from 23.0
 
 # s28 # say9085
 label zm1041_s28: # from 26.1
-    nr '"No dobrze." Namyśla się przez chwilę, stukając końcówkami kościstych palców o siebie. Po chwili zaczyna mówić raz jeszcze rytmicznym, miarowym głosem:  "Trudno jest spotkać się, jak i trudno się rozstać. Wiatr północny zelżał; setki kwiatów blakną. Gdy umrą robaki Wiosny, jedwab nigdy nie wzejdzie. Gdy świecy wosk stanie się popiołem, ustaną łzy."  Uśmiecha się do ciebie.{#zm1041_s28_}'
+    nr '"No dobrze." Namyśla się przez chwilę, stukając końcówkami kościstych palców o siebie. Po chwili zaczyna mówić raz jeszcze rytmicznym, miarowym głosem:  "Trudno jest spotkać się, jak i trudno się rozstać. Wiatr północny zelżał; setki kwiatów blakną. Gdy umrą robaki Wiosny, jedwab nigdy nie wzejdzie. Gdy świecy wosk stanie się popiołem, ustaną łzy."  Uśmiecha się do ciebie.{#zm1041_s28_1}'
 
     menu:
         '"Ach… mam następne pytanie."{#zm1041_s28_r9185}':
@@ -599,7 +599,7 @@ label zm1041_s28: # from 26.1
 
 # s29 # say9086
 label zm1041_s29: # from 28.1
-    nr '"No cóż, ze wstydem przyznaję, że była to subtelna próba powiedzenia… że być może najlepiej byłoby pozostawić dusze umarłych w spokoju. Ja już dłużej nie chcę mieć nic wspólnego z tym…" Duch robi zamaszysty ruch ręką, wskazując wszystko dookoła. "…światem."{#zm1041_s29_}'
+    nr '"No cóż, ze wstydem przyznaję, że była to subtelna próba powiedzenia… że być może najlepiej byłoby pozostawić dusze umarłych w spokoju. Ja już dłużej nie chcę mieć nic wspólnego z tym…" Duch robi zamaszysty ruch ręką, wskazując wszystko dookoła. "…światem."{#zm1041_s29_1}'
 
     menu:
         '"Hmm, rozumiem. Mam jeszcze coś, o co chcę cię zapytać."{#zm1041_s29_r9189}':
@@ -613,7 +613,7 @@ label zm1041_s29: # from 28.1
 
 # s30 # say9087
 label zm1041_s30: # from 28.2
-    nr '"Ach… nie. Nie było moim zamiarem być tak bezpośrednim; rozumiesz, unikam konfrontacji. Tylko że nie chcę już dłużej mieć nic wspólnego z tym…" Duch robi zamaszysty ruch ręką, wskazując wszystko dookoła. "…światem."{#zm1041_s30_}'
+    nr '"Ach… nie. Nie było moim zamiarem być tak bezpośrednim; rozumiesz, unikam konfrontacji. Tylko że nie chcę już dłużej mieć nic wspólnego z tym…" Duch robi zamaszysty ruch ręką, wskazując wszystko dookoła. "…światem."{#zm1041_s30_1}'
 
     menu:
         '"Hmm, rozumiem. Mam jeszcze coś, o co chcę cię zapytać."{#zm1041_s30_r9191}':
@@ -627,7 +627,7 @@ label zm1041_s30: # from 28.2
 
 # s31 # say9088
 label zm1041_s31: # from 27.0
-    nr '"Cóż, to prawie wszystko. Czując ból, kuśtykałem to tu, to tam, aż znalazłem ludzi, którzy uleczyli moją nogę; jako zapłatę wzięli, co ze sobą miałem. W sumie niewiele. Od tych uzdrowicieli, a i od innych też, nauczyłem się języka tutejszych ludzi, cały czas przetrząsając okolicę w poszukiwaniu tych dwóch zabójców i mojej podopiecznej."{#zm1041_s31_}'
+    nr '"Cóż, to prawie wszystko. Czując ból, kuśtykałem to tu, to tam, aż znalazłem ludzi, którzy uleczyli moją nogę; jako zapłatę wzięli, co ze sobą miałem. W sumie niewiele. Od tych uzdrowicieli, a i od innych też, nauczyłem się języka tutejszych ludzi, cały czas przetrząsając okolicę w poszukiwaniu tych dwóch zabójców i mojej podopiecznej."{#zm1041_s31_1}'
 
     menu:
         '"Więc nigdy ich nie znalazłeś?"{#zm1041_s31_r9193}':
@@ -649,7 +649,7 @@ label zm1041_s31: # from 27.0
 
 # s32 # say9089
 label zm1041_s32: # from 31.0 38.0
-    nr '"Jednego z nich schwytałem, ale nie chciał nic powiedzieć. Zabiłem go i zatrzymałem sobie jego głowę w jedwabnym worku, aby móc przynieść Cenzorowi, kiedy będę oddawać jego córkę." Marszczy brwi przez chwilę, a potem mówi dalej. "Ten drugi zabójca… umknął mi. Tak naprawdę, zrobił coś jeszcze; zabił mnie, zanim ja zdążyłem zabić jego i ocalić moją podopieczną. To smutne, ale teraz mam to już za sobą."{#zm1041_s32_}'
+    nr '"Jednego z nich schwytałem, ale nie chciał nic powiedzieć. Zabiłem go i zatrzymałem sobie jego głowę w jedwabnym worku, aby móc przynieść Cenzorowi, kiedy będę oddawać jego córkę." Marszczy brwi przez chwilę, a potem mówi dalej. "Ten drugi zabójca… umknął mi. Tak naprawdę, zrobił coś jeszcze; zabił mnie, zanim ja zdążyłem zabić jego i ocalić moją podopieczną. To smutne, ale teraz mam to już za sobą."{#zm1041_s32_1}'
 
     menu:
         '"Czy wiedziałbyś, w jaki sposób powrócić do swej krainy, gdybyś uratował tę… „Xi-xi“?"{#zm1041_s32_r9197}':
@@ -667,7 +667,7 @@ label zm1041_s32: # from 31.0 38.0
 
 # s33 # say9090
 label zm1041_s33: # from 32.0
-    nr '"Nie, ale pewien jestem, że odnalazłbym drogę. W sumie, to nie ma znaczenia."{#zm1041_s33_}'
+    nr '"Nie, ale pewien jestem, że odnalazłbym drogę. W sumie, to nie ma znaczenia."{#zm1041_s33_1}'
 
     menu:
         '"Zastanawiam się, czy wciąż są w mieście. Może mógłbym ich odnaleźć i pomóc tej dziewczynie."{#zm1041_s33_r9200}':
@@ -691,7 +691,7 @@ label zm1041_s33: # from 32.0
 
 # s34 # say9091
 label zm1041_s34: # from 33.0
-    nr '"Twoja propozycja dobrze świadczy o twojej szlachetności… jednakowoż, nie mniej niż siedemdziesiąt pięć lat upłynęło, odkąd zostałem zamordowany. Człowiek, który mnie zabił, od dawna już nie żyje, Xixi najprawdopodobniej też."{#zm1041_s34_}'
+    nr '"Twoja propozycja dobrze świadczy o twojej szlachetności… jednakowoż, nie mniej niż siedemdziesiąt pięć lat upłynęło, odkąd zostałem zamordowany. Człowiek, który mnie zabił, od dawna już nie żyje, Xixi najprawdopodobniej też."{#zm1041_s34_1}'
 
     menu:
         '"Hmmm. A zatem nieważne. Mam następne pytanie…"{#zm1041_s34_r9205}':
@@ -705,7 +705,7 @@ label zm1041_s34: # from 33.0
 
 # s35 # say9092
 label zm1041_s35: # -
-    nr '"Zabójca ów jest podobny do mnie, a na czole wytatuowany ma Kwitnący Lotos." Widząc twoje zmieszanie, dodaje "To rodzaj kwiatu, z siedmioma płatkami. Liu Xixi to młoda dziewczyna; ma ledwie czternaście lat. Być może ona albo zabójca znają drogę powrotną i sposób ponownego uruchomienia całego mechanizmu."{#zm1041_s35_}'
+    nr '"Zabójca ów jest podobny do mnie, a na czole wytatuowany ma Kwitnący Lotos." Widząc twoje zmieszanie, dodaje "To rodzaj kwiatu, z siedmioma płatkami. Liu Xixi to młoda dziewczyna; ma ledwie czternaście lat. Być może ona albo zabójca znają drogę powrotną i sposób ponownego uruchomienia całego mechanizmu."{#zm1041_s35_1}'
 
     menu:
         '"Jeżeli ją zobaczę, zrobię wszystko w mej mocy, aby ulżyć twym wspomnieniom o niej."{#zm1041_s35_r9207}':
@@ -731,7 +731,7 @@ label zm1041_s35: # -
 
 # s36 # say9093
 label zm1041_s36: # from 35.0
-    nr '"Jesteś człowiekiem honoru i wielkiej uprzejmości, panie. Nie czyń jednakowoż tego dla mnie… twoja pomoc najwięcej będzie znaczyć dla dziewczyny i jej ojca."{#zm1041_s36_}'
+    nr '"Jesteś człowiekiem honoru i wielkiej uprzejmości, panie. Nie czyń jednakowoż tego dla mnie… twoja pomoc najwięcej będzie znaczyć dla dziewczyny i jej ojca."{#zm1041_s36_1}'
 
     menu:
         '"Doskonale. Mam następne pytanie…"{#zm1041_s36_r9211}':
@@ -745,7 +745,7 @@ label zm1041_s36: # from 35.0
 
 # s37 # say9094
 label zm1041_s37: # from 0.4 # IF ~  Global("Bei","GLOBAL",1)
-    nr '"Z pewnością nie spodziewałem się ujrzeć cię ponownie." Duch skłania się uprzejmie, ale jego oczy pozostają bez wyrazu. "Czego chcesz ode mnie tym razem?"{#zm1041_s37_}'
+    nr '"Z pewnością nie spodziewałem się ujrzeć cię ponownie." Duch skłania się uprzejmie, ale jego oczy pozostają bez wyrazu. "Czego chcesz ode mnie tym razem?"{#zm1041_s37_1}'
 
     menu:
         '"Mam pytanie…"{#zm1041_s37_r9213}':
@@ -759,7 +759,7 @@ label zm1041_s37: # from 0.4 # IF ~  Global("Bei","GLOBAL",1)
 
 # s38 # say9718
 label zm1041_s38: # from 31.1
-    nr '"Lingwistyka, w rzeczy samej, to dziedzina szalenie mnie interesująca. Kiedy zostałem uczonym, odkryłem, że mogę uczyć się nowych języków bez większych kłopotów."{#zm1041_s38_}'
+    nr '"Lingwistyka, w rzeczy samej, to dziedzina szalenie mnie interesująca. Kiedy zostałem uczonym, odkryłem, że mogę uczyć się nowych języków bez większych kłopotów."{#zm1041_s38_1}'
 
     menu:
         '"To wyjaśniałoby pewne rzeczy. Więc nigdy nie znalazłeś zabójców?"{#zm1041_s38_r9719}':

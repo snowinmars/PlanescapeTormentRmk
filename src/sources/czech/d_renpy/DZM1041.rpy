@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say6573
 label zm1041_s0: # - # IF ~  Global("Bei","GLOBAL",0)
-    nr 'Tato oživená mužská mrtvola má na čele vyřezáno číslo "1041". Navzdory vyschlému tělu je zřejmé, že její rysy byly za života poněkud „exotické“. Je celkem v dobrém stavu. Rty zombie byly sešity - nejspíš proto, aby se předešlo jejímu neustálému nářku - a silně páchne formaldehydem.{#zm1041_s0_}'
+    nr 'Tato oživená mužská mrtvola má na čele vyřezáno číslo "1041". Navzdory vyschlému tělu je zřejmé, že její rysy byly za života poněkud „exotické“. Je celkem v dobrém stavu. Rty zombie byly sešity - nejspíš proto, aby se předešlo jejímu neustálému nářku - a silně páchne formaldehydem.{#zm1041_s0_1}'
 
     menu:
         '"Tak… je tam dál vidět něco zajímavého?"{#zm1041_s0_r6576}' if zm1041Logic.r6576_condition():
@@ -46,7 +46,7 @@ label zm1041_s0: # - # IF ~  Global("Bei","GLOBAL",0)
 
 # s1 # say6574
 label zm1041_s1: # from 0.0 0.1 0.2
-    nr 'Mrtvola na tebe stále zírá.{#zm1041_s1_}'
+    nr 'Mrtvola na tebe stále zírá.{#zm1041_s1_1}'
 
     menu:
         'Nechej mrtvolu být.{#zm1041_s1_r6582}':
@@ -56,7 +56,7 @@ label zm1041_s1: # from 0.0 0.1 0.2
 
 # s2 # say6575
 label zm1041_s2: # from 0.3
-    nr 'Mrtvola na moment zavrávorala, jak se duše vrátila do svého někdejšího příbytku. Její mandlové oči ztmavly a nad bledým tělem se objevil slabý bronzový přísvit. Narovnala se a oprášila si šaty.  Duch si konečně všiml toho, kdo jej vyvolal, chvíli se na tebe zvědavě zadíval a pak se lehce uklonil.{#zm1041_s2_}'
+    nr 'Mrtvola na moment zavrávorala, jak se duše vrátila do svého někdejšího příbytku. Její mandlové oči ztmavly a nad bledým tělem se objevil slabý bronzový přísvit. Narovnala se a oprášila si šaty.  Duch si konečně všiml toho, kdo jej vyvolal, chvíli se na tebe zvědavě zadíval a pak se lehce uklonil.{#zm1041_s2_1}'
 
     menu:
         'Také se ukloň.{#zm1041_s2_r6583}':
@@ -77,7 +77,7 @@ label zm1041_s2: # from 0.3
 
 # s3 # say9060
 label zm1041_s3: # from 2.0
-    nr 'Duch se na chvíli usmál, jako by byl potěšen. Potom se uklidnil, stoupl si s jednou rukou za zády a začal přednášet jemným, zpěvavým hlasem:  "Suiang jianne shyr nan bye yih nan; "Dong feng wu lih bay hua tsarn; "Chuen tsarn daw syy sy fang jinn; "Lah Jiuh cherng huei ley shyy gan."  Jen to dořekl, vypadá spokojeně a čeká na tvou odpověď.{#zm1041_s3_}'
+    nr 'Duch se na chvíli usmál, jako by byl potěšen. Potom se uklidnil, stoupl si s jednou rukou za zády a začal přednášet jemným, zpěvavým hlasem:  "Suiang jianne shyr nan bye yih nan; "Dong feng wu lih bay hua tsarn; "Chuen tsarn daw syy sy fang jinn; "Lah Jiuh cherng huei ley shyy gan."  Jen to dořekl, vypadá spokojeně a čeká na tvou odpověď.{#zm1041_s3_1}'
 
     menu:
         '"Já.. err…"{#zm1041_s3_r9098}':
@@ -95,7 +95,7 @@ label zm1041_s3: # from 2.0
 
 # s4 # say9061
 label zm1041_s4: # from 2.1
-    nr 'Chtěl ses na něco zeptat, ale než jsi stačil cokoliv říct, duch začal přednášet jemným, zpěvavým hlasem:  "Suiang jianne shyr nan bye yih nan; "Dong feng wu lih bay hua tsarn; "Chuen tsarn daw syy sy fang jinn; "Lah Jiuh cherng huei ley shyy gan."  Jen to dořekl, vypadá spokojeně a čeká na tvou odpověď.{#zm1041_s4_}'
+    nr 'Chtěl ses na něco zeptat, ale než jsi stačil cokoliv říct, duch začal přednášet jemným, zpěvavým hlasem:  "Suiang jianne shyr nan bye yih nan; "Dong feng wu lih bay hua tsarn; "Chuen tsarn daw syy sy fang jinn; "Lah Jiuh cherng huei ley shyy gan."  Jen to dořekl, vypadá spokojeně a čeká na tvou odpověď.{#zm1041_s4_1}'
 
     menu:
         '"Já… err…"{#zm1041_s4_r9101}':
@@ -113,7 +113,7 @@ label zm1041_s4: # from 2.1
 
 # s5 # say9062
 label zm1041_s5: # from 3.0 3.1 4.0 4.1
-    nr 'Duch na chvíli přestal, jako by přemýšlel. Potom začal mluvit znovu zastřeným, ještě hlubším hlasem. "Musíš mi odpustit, vzácný pane.  Byla to hodně dlouhá doba co jsem naposledy mluvil tvým jazykem. Neměj obavu, můj duch byl předvolán, aby ti odpověděl na tvé otázky; co tedy ode mně potřebuješ vědět?"{#zm1041_s5_}'
+    nr 'Duch na chvíli přestal, jako by přemýšlel. Potom začal mluvit znovu zastřeným, ještě hlubším hlasem. "Musíš mi odpustit, vzácný pane.  Byla to hodně dlouhá doba co jsem naposledy mluvil tvým jazykem. Neměj obavu, můj duch byl předvolán, aby ti odpověděl na tvé otázky; co tedy ode mně potřebuješ vědět?"{#zm1041_s5_1}'
 
     menu:
         '"Kdo jsi?"{#zm1041_s5_r9104}':
@@ -147,7 +147,7 @@ label zm1041_s5: # from 3.0 3.1 4.0 4.1
 
 # s6 # say9063
 label zm1041_s6: # from 5.0 14.0
-    nr '"Je těžké odpovědět kdo jsem… kdo jsem *byl*. Byl jsem znám jako Zhuang Bei, učitel a ochránce Liu Xixi, dcery Censora Chi„an.{#zm1041_s6_}'
+    nr '"Je těžké odpovědět kdo jsem… kdo jsem *byl*. Byl jsem znám jako Zhuang Bei, učitel a ochránce Liu Xixi, dcery Censora Chi„an.{#zm1041_s6_1}'
 
     menu:
         '"Vychovatel a tělesný strážce?"{#zm1041_s6_r9111}':
@@ -169,7 +169,7 @@ label zm1041_s6: # from 5.0 14.0
 
 # s7 # say9064
 label zm1041_s7: # from 5.1 14.1
-    nr '"Jsem z místa, které se nazývá Shou Lung… místa, které jsem kdysi považoval za střed vesmíru." Vypadá jako by našel potěšení v přemýšlení. "Mnoho míst, mnoho světů. Kdysi jsem se považoval za opravdu učeného muže, ale teď teprve vidím, jak málo jsem věděl, když jsem zemřel…"{#zm1041_s7_}'
+    nr '"Jsem z místa, které se nazývá Shou Lung… místa, které jsem kdysi považoval za střed vesmíru." Vypadá jako by našel potěšení v přemýšlení. "Mnoho míst, mnoho světů. Kdysi jsem se považoval za opravdu učeného muže, ale teď teprve vidím, jak málo jsem věděl, když jsem zemřel…"{#zm1041_s7_1}'
 
     menu:
         '"Jak ses z toho „Shou Lung“ dostal až sem?"{#zm1041_s7_r9115}':
@@ -187,7 +187,7 @@ label zm1041_s7: # from 5.1 14.1
 
 # s8 # say9065
 label zm1041_s8: # from 5.2 14.2
-    nr '"Byl jsem zavražděn jedním z mužů, se kterými jsem se dostal do tohoto světa. Honil jsem ho v tomhle městě mnoho, mnoho týdnů -- to bylo tehdy, když jsem se učil tvoji řeč -- ale on mě našel první. Profesionální zabiják, chytil mě a zabil, když jsem spal."{#zm1041_s8_}'
+    nr '"Byl jsem zavražděn jedním z mužů, se kterými jsem se dostal do tohoto světa. Honil jsem ho v tomhle městě mnoho, mnoho týdnů -- to bylo tehdy, když jsem se učil tvoji řeč -- ale on mě našel první. Profesionální zabiják, chytil mě a zabil, když jsem spal."{#zm1041_s8_1}'
 
     menu:
         '"Ty jsi spadnul do tohohle světa?"{#zm1041_s8_r9118}':
@@ -217,7 +217,7 @@ label zm1041_s8: # from 5.2 14.2
 
 # s9 # say9066
 label zm1041_s9: # from 5.4 14.4
-    nr '"Tahle budova? vůbec nic; slyšel jsem o ní, vím, že má mrtvola zde byla a sloužila, ale to je vše." "Nevím skoro nic o tomhle velkém městě, „Sigil.“ Týdny jsem zde strávil hledáním mužů, s nimiž jsem se do tohoto světa dostal a studováním řeči; ačkoliv mě to mrzelo, měl jsem jen málo času na jiné věci. Mohl jsem se toho tolik naučit z mnoha zázraků tohoto místa…"{#zm1041_s9_}'
+    nr '"Tahle budova? vůbec nic; slyšel jsem o ní, vím, že má mrtvola zde byla a sloužila, ale to je vše." "Nevím skoro nic o tomhle velkém městě, „Sigil.“ Týdny jsem zde strávil hledáním mužů, s nimiž jsem se do tohoto světa dostal a studováním řeči; ačkoliv mě to mrzelo, měl jsem jen málo času na jiné věci. Mohl jsem se toho tolik naučit z mnoha zázraků tohoto místa…"{#zm1041_s9_1}'
 
     menu:
         '"Tvá mrtvola tu slouží? Jak se něco takového přihodilo?"{#zm1041_s9_r9124}':
@@ -243,7 +243,7 @@ label zm1041_s9: # from 5.4 14.4
 
 # s10 # say9067
 label zm1041_s10: # from 5.5 14.5
-    nr '"Ne, to jméno mi nic neříká. Je mi líto, že jsem ti s tím nemohl pomoct."{#zm1041_s10_}'
+    nr '"Ne, to jméno mi nic neříká. Je mi líto, že jsem ti s tím nemohl pomoct."{#zm1041_s10_1}'
 
     menu:
         '"Rozumím ti. Měl bych ještě pár otázeček…"{#zm1041_s10_r9129}':
@@ -257,7 +257,7 @@ label zm1041_s10: # from 5.5 14.5
 
 # s11 # say9068
 label zm1041_s11: # from 5.3 14.3
-    nr 'Duch na chvíli vypadal zarmouceně. "Já… můj duch se zdržuje v království známého soudce, Yen-Wang-Yeha: v Paláci Soudu."{#zm1041_s11_}'
+    nr 'Duch na chvíli vypadal zarmouceně. "Já… můj duch se zdržuje v království známého soudce, Yen-Wang-Yeha: v Paláci Soudu."{#zm1041_s11_1}'
 
     menu:
         '"Děje se něco? Je to snad špatné místo?"{#zm1041_s11_r9131}':
@@ -275,7 +275,7 @@ label zm1041_s11: # from 5.3 14.3
 
 # s12 # say9069
 label zm1041_s12: # from 6.0 16.1
-    nr '"Ne; to není tak nezvyklé v místech, odkud pocházím. Byla to moje povinnost být neustále nablízku Slečně Liu, nejenom ji chránit před zraněním, ale také ji vzdělávat. Jak vidíš, měl jsem výbornou pověst jak ve výuce tak i v šermu. Možná jsem jí mohl posloužit více, kdybych byl lepší v šermu, ačkoliv…"{#zm1041_s12_}'
+    nr '"Ne; to není tak nezvyklé v místech, odkud pocházím. Byla to moje povinnost být neustále nablízku Slečně Liu, nejenom ji chránit před zraněním, ale také ji vzdělávat. Jak vidíš, měl jsem výbornou pověst jak ve výuce tak i v šermu. Možná jsem jí mohl posloužit více, kdybych byl lepší v šermu, ačkoliv…"{#zm1041_s12_1}'
 
     menu:
         '"Sloužil jí lépe? Copak jsi v něčem selhal?"{#zm1041_s12_r9134}':
@@ -293,7 +293,7 @@ label zm1041_s12: # from 6.0 16.1
 
 # s13 # say9070
 label zm1041_s13: # from 6.1
-    nr '"Impozantní? Ano, možná příliš na můj vkus. Já… zklamal jsem Slečnu Liu i Censora."{#zm1041_s13_}'
+    nr '"Impozantní? Ano, možná příliš na můj vkus. Já… zklamal jsem Slečnu Liu i Censora."{#zm1041_s13_1}'
 
     menu:
         '"Jak to?"{#zm1041_s13_r9137}':
@@ -311,7 +311,7 @@ label zm1041_s13: # from 6.1
 
 # s14 # say9071
 label zm1041_s14: # from 6.2 7.1 8.4 9.3 10.0 11.1 12.1 13.1 15.2 17.1 18.0 19.0 20.1 21.1 22.0 23.1 24.0 25.0 26.0 27.1 28.0 29.0 30.0 31.2 32.1 33.2 34.0 35.2 36.0 37.0 38.1
-    nr 'Duch se naklonil, v neočekávaně půvabném pohybu, k vysušené mrtvole. "Prosím, vyslov své přání."{#zm1041_s14_}'
+    nr 'Duch se naklonil, v neočekávaně půvabném pohybu, k vysušené mrtvole. "Prosím, vyslov své přání."{#zm1041_s14_1}'
 
     menu:
         '"Kdo jsi?"{#zm1041_s14_r9140}':
@@ -349,7 +349,7 @@ label zm1041_s14: # from 6.2 7.1 8.4 9.3 10.0 11.1 12.1 13.1 15.2 17.1 18.0 19.0
 
 # s15 # say9072
 label zm1041_s15: # from 11.0
-    nr '"Dobrá, uvidíš…" Duch se na chvíli zamyslel, zatímco o sebe třel odumřelé ruky mrtvoly. "Když jsem vešel, po krátké chvíli čekání byl jsem uveden k mému poslednímu, *opravdovému* cíli. Avšak, během mé cesty Palácem tam nastaly nějaké nepokoje, a já jsem zůstal sám v postranním pokoji se slibem, že se o mně za chvíli postarají."{#zm1041_s15_}'
+    nr '"Dobrá, uvidíš…" Duch se na chvíli zamyslel, zatímco o sebe třel odumřelé ruky mrtvoly. "Když jsem vešel, po krátké chvíli čekání byl jsem uveden k mému poslednímu, *opravdovému* cíli. Avšak, během mé cesty Palácem tam nastaly nějaké nepokoje, a já jsem zůstal sám v postranním pokoji se slibem, že se o mně za chvíli postarají."{#zm1041_s15_1}'
 
     menu:
         '"A…?"{#zm1041_s15_r9148}':
@@ -371,7 +371,7 @@ label zm1041_s15: # from 11.0
 
 # s16 # say9073
 label zm1041_s16: # from 7.0 8.0 8.1 9.1 12.0 13.0
-    nr '"Řeknu ti celý příběh. Jako učitel a ochránce Liu Xixi, jsem byl samozřejmě pověřen její výukou i ochranou. Jednoho krásného večera jsme stáli na balkoně nad nádvořím, kde jsem ji učil rozpoznávat různá souhvězdí.{#zm1041_s16_}'
+    nr '"Řeknu ti celý příběh. Jako učitel a ochránce Liu Xixi, jsem byl samozřejmě pověřen její výukou i ochranou. Jednoho krásného večera jsme stáli na balkoně nad nádvořím, kde jsem ji učil rozpoznávat různá souhvězdí.{#zm1041_s16_1}'
 
     menu:
         '"Pokračuj, prosím."{#zm1041_s16_r9152}':
@@ -389,7 +389,7 @@ label zm1041_s16: # from 7.0 8.0 8.1 9.1 12.0 13.0
 
 # s17 # say9074
 label zm1041_s17: # from 8.2 9.0
-    nr '"Ah, tamto. Jedné noci jsem byl na ulici osloven ženou; byla z organizace nazvané Spalovači, stejné, která dohlížela nad tímto komplexem." "Navrhla mi, oplátkou za menší obnos peněz, že má mrtvola by mohla být… použita… zde po mém úmrtí."{#zm1041_s17_}'
+    nr '"Ah, tamto. Jedné noci jsem byl na ulici osloven ženou; byla z organizace nazvané Spalovači, stejné, která dohlížela nad tímto komplexem." "Navrhla mi, oplátkou za menší obnos peněz, že má mrtvola by mohla být… použita… zde po mém úmrtí."{#zm1041_s17_1}'
 
     menu:
         '"A tobě se to nezdá trošičku divný?"{#zm1041_s17_r9155}':
@@ -407,7 +407,7 @@ label zm1041_s17: # from 8.2 9.0
 
 # s18 # say9075
 label zm1041_s18: # from 8.3 9.2
-    nr '"Lingvistika, po pravdě, je oblast, která mě velmi zajímá. Když jsem se stal učedníkem, zjistil jsem, že se velmi lehce učím nové jazyky, bez jakýchkoliv potíží."{#zm1041_s18_}'
+    nr '"Lingvistika, po pravdě, je oblast, která mě velmi zajímá. Když jsem se stal učedníkem, zjistil jsem, že se velmi lehce učím nové jazyky, bez jakýchkoliv potíží."{#zm1041_s18_1}'
 
     menu:
         '"Tím by se to všechno vysvětlilo. Další otázečka…"{#zm1041_s18_r9158}':
@@ -421,7 +421,7 @@ label zm1041_s18: # from 8.3 9.2
 
 # s19 # say9076
 label zm1041_s19: # from 15.0 20.0
-    nr '"No tak vidíš… nikdo se pro mne nevrátil. Čekal jsem tiše několik dní, ale vypadalo to, že to nemělo žádný smysl. Nakonec jsem z té místnosti odešel, abych prozkoumal palác doufaje, že najdu někoho kdo mě nasměruje…" Mírně si vydechl, z jeho výdechu je cítit slabá vůně balzamovací tekutiny. "Je tam 9 001 místností; když jsem do nějaké přišel, byl jsem pouze nasměrován do další. Vypadalo to, že tam zůstanu navěky."{#zm1041_s19_}'
+    nr '"No tak vidíš… nikdo se pro mne nevrátil. Čekal jsem tiše několik dní, ale vypadalo to, že to nemělo žádný smysl. Nakonec jsem z té místnosti odešel, abych prozkoumal palác doufaje, že najdu někoho kdo mě nasměruje…" Mírně si vydechl, z jeho výdechu je cítit slabá vůně balzamovací tekutiny. "Je tam 9 001 místností; když jsem do nějaké přišel, byl jsem pouze nasměrován do další. Vypadalo to, že tam zůstanu navěky."{#zm1041_s19_1}'
 
     menu:
         '"A mohl bych ti položit ještě další otázku…"{#zm1041_s19_r9160}':
@@ -445,7 +445,7 @@ label zm1041_s19: # from 15.0 20.0
 
 # s20 # say9077
 label zm1041_s20: # from 15.1
-    nr '"To nemohu říci. Je to všechno tak frustrující!" na chvilku se odmlčel, aby se uklidnil, protáhnul si ztuhlé maso a šlachy na koleně, čímž se znovu dostal do klidu.{#zm1041_s20_}'
+    nr '"To nemohu říci. Je to všechno tak frustrující!" na chvilku se odmlčel, aby se uklidnil, protáhnul si ztuhlé maso a šlachy na koleně, čímž se znovu dostal do klidu.{#zm1041_s20_1}'
 
     menu:
         '"Pokračuj, prosím, ve svém vyprávění."{#zm1041_s20_r9164}':
@@ -463,7 +463,7 @@ label zm1041_s20: # from 15.1
 
 # s21 # say9078
 label zm1041_s21: # from 16.0
-    nr '"Tak dobrá. Jak jsme tam postávali, dva zabijáci se znenadání dostali ze střechy na balkón, podle všeho aby zavraždili nebo unesli Slečnu Liu. Zatímco jsem pokřikoval na stráže, vytáhl jsem svou zbraň a vrhl jsem se jí na pomoc. Ve vzniknuvší bitvě se nám nějak podařilo rozbít zábradlí a všichni čtyři jsme spadli přímo do Nefritového portálu."{#zm1041_s21_}'
+    nr '"Tak dobrá. Jak jsme tam postávali, dva zabijáci se znenadání dostali ze střechy na balkón, podle všeho aby zavraždili nebo unesli Slečnu Liu. Zatímco jsem pokřikoval na stráže, vytáhl jsem svou zbraň a vrhl jsem se jí na pomoc. Ve vzniknuvší bitvě se nám nějak podařilo rozbít zábradlí a všichni čtyři jsme spadli přímo do Nefritového portálu."{#zm1041_s21_1}'
 
     menu:
         '"Kamže? Do Nefritového portálu?"{#zm1041_s21_r9167}':
@@ -481,7 +481,7 @@ label zm1041_s21: # from 16.0
 
 # s22 # say9079
 label zm1041_s22: # from 17.0
-    nr '"Možná ze začátku… ta myšlenka se mi zdá tak trošku… No ale, když jsem s ní chviličku mluvil, uvědomil jsem si, že ti -- Spalovači -- si myslí o smrti téměř to samé, co já. Mé tělo? Nic víc, než jen povoz na cestě k cíli. Věřím jejich „Pravé smrti“ - dostat se do povzneseného stavu, kterého já osobně chci dosáhnout… navždy se osvobodit ze sevření hmotného světa. Moje mrtvola, která už splnila svůj účel coby má smrtelná schránka, by tu měla ještě vykonat nějakou malou službičku. Tak je to mnohem lepší." Duch se na tebe zdvořile usmál.{#zm1041_s22_}'
+    nr '"Možná ze začátku… ta myšlenka se mi zdá tak trošku… No ale, když jsem s ní chviličku mluvil, uvědomil jsem si, že ti -- Spalovači -- si myslí o smrti téměř to samé, co já. Mé tělo? Nic víc, než jen povoz na cestě k cíli. Věřím jejich „Pravé smrti“ - dostat se do povzneseného stavu, kterého já osobně chci dosáhnout… navždy se osvobodit ze sevření hmotného světa. Moje mrtvola, která už splnila svůj účel coby má smrtelná schránka, by tu měla ještě vykonat nějakou malou službičku. Tak je to mnohem lepší." Duch se na tebe zdvořile usmál.{#zm1041_s22_1}'
 
     menu:
         '"Chápu tě. Ještě bych se rád na něco zeptal…"{#zm1041_s22_r9170}':
@@ -495,7 +495,7 @@ label zm1041_s22: # from 17.0
 
 # s23 # say9080
 label zm1041_s23: # from 21.0
-    nr '"Ach! Odpusť mi, že jsem předpokládal tvou obeznámenost s touto… Nefritový portál je jakýsi okrouhlý bazén, který leží na Nádvoří. Je vydlážděn bílými a zelenými kočičími hlavami. Říká se mu portál, protože se proslýchá, že občas se na jeho třpytivé hladině objeví obraz - pohled do jiného světa."{#zm1041_s23_}'
+    nr '"Ach! Odpusť mi, že jsem předpokládal tvou obeznámenost s touto… Nefritový portál je jakýsi okrouhlý bazén, který leží na Nádvoří. Je vydlážděn bílými a zelenými kočičími hlavami. Říká se mu portál, protože se proslýchá, že občas se na jeho třpytivé hladině objeví obraz - pohled do jiného světa."{#zm1041_s23_1}'
 
     menu:
         '"Prosím, pokračuj ve svém vyprávění."{#zm1041_s23_r9172}':
@@ -513,7 +513,7 @@ label zm1041_s23: # from 21.0
 
 # s24 # say9081
 label zm1041_s24: # from 19.1
-    nr '"Tvá nabídka je velice laskavá. Bohužel se obávám, že zde není nic, co bys mohl udělat… Jsem si jist, že se časem opět navrátím na svou cestu životem. Přesto ti děkuji."{#zm1041_s24_}'
+    nr '"Tvá nabídka je velice laskavá. Bohužel se obávám, že zde není nic, co bys mohl udělat… Jsem si jist, že se časem opět navrátím na svou cestu životem. Přesto ti děkuji."{#zm1041_s24_1}'
 
     menu:
         '"Zajisté. Já… můžu se tě ještě na něco zeptat?"{#zm1041_s24_r9175}':
@@ -527,7 +527,7 @@ label zm1041_s24: # from 19.1
 
 # s25 # say9082
 label zm1041_s25: # from 19.2 33.1 35.1
-    nr 'Duch na tebe mrazivě pohleděl, mdlé plamínky se rozhořely kdesi hluboko v jeho očích; zdá se, že jsi ho urazil.{#zm1041_s25_}'
+    nr 'Duch na tebe mrazivě pohleděl, mdlé plamínky se rozhořely kdesi hluboko v jeho očích; zdá se, že jsi ho urazil.{#zm1041_s25_1}'
 
     menu:
         '"Omlouvám se. Mohl bych se ještě na něco zeptat?"{#zm1041_s25_r9177}':
@@ -541,7 +541,7 @@ label zm1041_s25: # from 19.2 33.1 35.1
 
 # s26 # say9083
 label zm1041_s26: # from 14.6
-    nr '"Ach, to… err… to byla báseň. Velmi těžce se to překládá. Nemáš snad ještě jinou, lepší otázku?" Neklidně se na tebe usmál.{#zm1041_s26_}'
+    nr '"Ach, to… err… to byla báseň. Velmi těžce se to překládá. Nemáš snad ještě jinou, lepší otázku?" Neklidně se na tebe usmál.{#zm1041_s26_1}'
 
     menu:
         '"Ano… ano, měl bych…"{#zm1041_s26_r9179}':
@@ -559,7 +559,7 @@ label zm1041_s26: # from 14.6
 
 # s27 # say9084
 label zm1041_s27: # from 23.0
-    nr '"Jak už jsem říkal, spadli jsme do Nefritového portálu. Dřív mě nikdy ani nenapadlo, že by to mohl být skutečně portál, ale teď už vím, že je to pravda! Náhle jsem si totiž uvědomil, že ležím se zlomenou nohou v nějaké neznámé aleji. Pak jsem ze zorientoval v čase, pouze abych viděl, jak zabijáci utíkají a jak jeden z nich přitom nese Liu Xixi přehozenou přes rameno."{#zm1041_s27_}'
+    nr '"Jak už jsem říkal, spadli jsme do Nefritového portálu. Dřív mě nikdy ani nenapadlo, že by to mohl být skutečně portál, ale teď už vím, že je to pravda! Náhle jsem si totiž uvědomil, že ležím se zlomenou nohou v nějaké neznámé aleji. Pak jsem ze zorientoval v čase, pouze abych viděl, jak zabijáci utíkají a jak jeden z nich přitom nese Liu Xixi přehozenou přes rameno."{#zm1041_s27_1}'
 
     menu:
         '"Vskutku dost divné. Pokračuj, prosím."{#zm1041_s27_r9182}':
@@ -577,7 +577,7 @@ label zm1041_s27: # from 23.0
 
 # s28 # say9085
 label zm1041_s28: # from 26.1
-    nr '"Tak dobrá." Na chvilku se zamyslel, zatímco konečky mrtvolných prstů klepal jedním o druhý. Po chvíli začal přednášet v pevném, odměřeném rytmu:  "Je obtížné se potkat, je obtížné se rozejít. "Stovka květin odkvete, severní vítr se odvrátí. "Až jarní červi zahynou, hedvábí se už nevrátí. "Až se z vosku stane prach, pak mohou slzy odeznít."  Zdvořile se na tebe usmál.{#zm1041_s28_}'
+    nr '"Tak dobrá." Na chvilku se zamyslel, zatímco konečky mrtvolných prstů klepal jedním o druhý. Po chvíli začal přednášet v pevném, odměřeném rytmu:  "Je obtížné se potkat, je obtížné se rozejít. "Stovka květin odkvete, severní vítr se odvrátí. "Až jarní červi zahynou, hedvábí se už nevrátí. "Až se z vosku stane prach, pak mohou slzy odeznít."  Zdvořile se na tebe usmál.{#zm1041_s28_1}'
 
     menu:
         '"Ještě bych měl další otázečku…"{#zm1041_s28_r9185}':
@@ -599,7 +599,7 @@ label zm1041_s28: # from 26.1
 
 # s29 # say9086
 label zm1041_s29: # from 28.1
-    nr '"Víš, neříká se mi lehce, že to byl takříkajíc chabý pokus… teď říkám, že bude lepší, když necháš duše mrtvých o samotě. Už netoužím mít cokoli společného s tímto…" Rychlým gestem naznačil, že myslí vše kolem sebe. "…světem."{#zm1041_s29_}'
+    nr '"Víš, neříká se mi lehce, že to byl takříkajíc chabý pokus… teď říkám, že bude lepší, když necháš duše mrtvých o samotě. Už netoužím mít cokoli společného s tímto…" Rychlým gestem naznačil, že myslí vše kolem sebe. "…světem."{#zm1041_s29_1}'
 
     menu:
         '"Hmm. Ještě bych pro tebe měl pár dalších otázek."{#zm1041_s29_r9189}':
@@ -613,7 +613,7 @@ label zm1041_s29: # from 28.1
 
 # s30 # say9087
 label zm1041_s30: # from 28.2
-    nr '"Ach… mno… ne. Původně jsem to nechtěl říct tak přímo; vyhnout se tak konfrontaci, chápeš. Já prostě už nechci mít nic společného s tímto…" Rychlým gestem naznačil, že myslí vše kolem sebe. "…světem."{#zm1041_s30_}'
+    nr '"Ach… mno… ne. Původně jsem to nechtěl říct tak přímo; vyhnout se tak konfrontaci, chápeš. Já prostě už nechci mít nic společného s tímto…" Rychlým gestem naznačil, že myslí vše kolem sebe. "…světem."{#zm1041_s30_1}'
 
     menu:
         '"Hmm. Ještě bych pro tebe měl pár dalších otázek."{#zm1041_s30_r9191}':
@@ -627,7 +627,7 @@ label zm1041_s30: # from 28.2
 
 # s31 # say9088
 label zm1041_s31: # from 27.0
-    nr '"No, to je téměř všechno. V bolestech jsem pokulhával kolem, než jsem našel někoho, kdo by vyléčil mou nohu; za své služby si vzal jen drobnou minci, co jsem měl u sebe. Od onoho léčitele a dalších lidí jsem se naučil jazyk místních, zatímco jsem hledal místo s těmi vrahy."{#zm1041_s31_}'
+    nr '"No, to je téměř všechno. V bolestech jsem pokulhával kolem, než jsem našel někoho, kdo by vyléčil mou nohu; za své služby si vzal jen drobnou minci, co jsem měl u sebe. Od onoho léčitele a dalších lidí jsem se naučil jazyk místních, zatímco jsem hledal místo s těmi vrahy."{#zm1041_s31_1}'
 
     menu:
         '"A nikdy už jsi je nenašel, co?"{#zm1041_s31_r9193}':
@@ -649,7 +649,7 @@ label zm1041_s31: # from 27.0
 
 # s32 # say9089
 label zm1041_s32: # from 31.0 38.0
-    nr '"Jednoho z nich jsem chytil, ale on odmítal promluvit. Popravil jsem ho tedy a jeho hlavu jsem dal do hedvábného pytle, takže jsem ji mohl předat Censorovi, když jsem mu přiváděl jeho dceru zpět." Na okamžik se zamračil a poté opět pokračoval. "Ten druhý zabiják… unikl mi. Vlastně, udělal nejen to; zavraždil mě dřív, než jsem stihl zabít já jeho. Je to smutné, ale už to mám všechno za sebou."{#zm1041_s32_}'
+    nr '"Jednoho z nich jsem chytil, ale on odmítal promluvit. Popravil jsem ho tedy a jeho hlavu jsem dal do hedvábného pytle, takže jsem ji mohl předat Censorovi, když jsem mu přiváděl jeho dceru zpět." Na okamžik se zamračil a poté opět pokračoval. "Ten druhý zabiják… unikl mi. Vlastně, udělal nejen to; zavraždil mě dřív, než jsem stihl zabít já jeho. Je to smutné, ale už to mám všechno za sebou."{#zm1041_s32_1}'
 
     menu:
         '"A věděl jsi předtím, jak se vrátit zpět do své země, zachránil jsi tu… „Xi-xi?“{#zm1041_s32_r9197}':
@@ -667,7 +667,7 @@ label zm1041_s32: # from 31.0 38.0
 
 # s33 # say9090
 label zm1041_s33: # from 32.0
-    nr '"Ne, ale jsem si jistý, že bych mohl najít pro tebe nějaké řešení. Zaměřme se teď na tohle."{#zm1041_s33_}'
+    nr '"Ne, ale jsem si jistý, že bych mohl najít pro tebe nějaké řešení. Zaměřme se teď na tohle."{#zm1041_s33_1}'
 
     menu:
         '"Možná že jsou pořád ještě ve městě. Snad bych ti nějak dokázal pomoci."{#zm1041_s33_r9200}':
@@ -691,7 +691,7 @@ label zm1041_s33: # from 32.0
 
 # s34 # say9091
 label zm1041_s34: # from 33.0
-    nr '"Tvá nabídka z tebe dělá čestného muže… přesto, od doby mé smrti neuplynulo méně než sedmdesát pět let. Muž, jehož rukou jsem zahynul, je teď mrtvý též, stejně tak jako Xixi."{#zm1041_s34_}'
+    nr '"Tvá nabídka z tebe dělá čestného muže… přesto, od doby mé smrti neuplynulo méně než sedmdesát pět let. Muž, jehož rukou jsem zahynul, je teď mrtvý též, stejně tak jako Xixi."{#zm1041_s34_1}'
 
     menu:
         '"Hmm. No tak nic. Mám ještě nějaké otázky…"{#zm1041_s34_r9205}':
@@ -705,7 +705,7 @@ label zm1041_s34: # from 33.0
 
 # s35 # say9092
 label zm1041_s35: # -
-    nr '"Ten zabiják mohl vypadat podobně jako já, na svém čele měl vytetován lotosový květ." Když si všiml tvých rozpaků, dodal "Lotos je druh květiny, má sedm okvětních lístků. Liu Xixi je mladá dívka; je jí pouze čtrnáct let. Možná že ona nebo ti zabijáci ví, kde se nacházela cesta zpět a jak ji opět aktivovat."{#zm1041_s35_}'
+    nr '"Ten zabiják mohl vypadat podobně jako já, na svém čele měl vytetován lotosový květ." Když si všiml tvých rozpaků, dodal "Lotos je druh květiny, má sedm okvětních lístků. Liu Xixi je mladá dívka; je jí pouze čtrnáct let. Možná že ona nebo ti zabijáci ví, kde se nacházela cesta zpět a jak ji opět aktivovat."{#zm1041_s35_1}'
 
     menu:
         '"Kdybych ji viděl, udělám, co budu moct, abych jí pomohl - pro tvoji památku."{#zm1041_s35_r9207}':
@@ -731,7 +731,7 @@ label zm1041_s35: # -
 
 # s36 # say9093
 label zm1041_s36: # from 35.0
-    nr '"Jsi velice čestný muž. Pro mě to už nedělej, nicméně… právě dívce a jejímu otci jsi ohromně pomohl."{#zm1041_s36_}'
+    nr '"Jsi velice čestný muž. Pro mě to už nedělej, nicméně… právě dívce a jejímu otci jsi ohromně pomohl."{#zm1041_s36_1}'
 
     menu:
         '"Fajn, měl bych ještě pár otázeček…"{#zm1041_s36_r9211}':
@@ -745,7 +745,7 @@ label zm1041_s36: # from 35.0
 
 # s37 # say9094
 label zm1041_s37: # from 0.4 # IF ~  Global("Bei","GLOBAL",1)
-    nr '"Vlastně jsem ani neočekával, že tě znovu uvidím." Duch se ti uctivě poklonil, ale jeho výraz zůstal nezměněn. "Takže, co pro tebe mohu udělat?"{#zm1041_s37_}'
+    nr '"Vlastně jsem ani neočekával, že tě znovu uvidím." Duch se ti uctivě poklonil, ale jeho výraz zůstal nezměněn. "Takže, co pro tebe mohu udělat?"{#zm1041_s37_1}'
 
     menu:
         '"Otázečku…"{#zm1041_s37_r9213}':
@@ -759,7 +759,7 @@ label zm1041_s37: # from 0.4 # IF ~  Global("Bei","GLOBAL",1)
 
 # s38 # say9718
 label zm1041_s38: # from 31.1
-    nr '"Lingvistika je pro mě vlastně velice zajímavá oblast. Když jsem se stal učencem, zjistil jsem, že se dokáži naučit nové jazyky bez jakýchkoli problémů."{#zm1041_s38_}'
+    nr '"Lingvistika je pro mě vlastně velice zajímavá oblast. Když jsem se stal učencem, zjistil jsem, že se dokáži naučit nové jazyky bez jakýchkoli problémů."{#zm1041_s38_1}'
 
     menu:
         '"To by to vysvětlovalo. Takže vrahy jsi nikdy nenašel?"{#zm1041_s38_r9719}':

@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say35114
 label zf1072_s0: # - # IF ~  True()
-    nr 'Zápach formaldehydu, vycházející z této mrtvoly, je velice silný… jakoby ho někdo použil teprve nedávno, a to z docela rozumných důvodů: mrtvola je ve velmi pokročilém stádiu rozpadu. Chybí jí čelist a z lebky sklouzlo trochu masa, odhalujíc číslo "1072" vyryté do kosti.{#zf1072_s0_}'
+    nr 'Zápach formaldehydu, vycházející z této mrtvoly, je velice silný… jakoby ho někdo použil teprve nedávno, a to z docela rozumných důvodů: mrtvola je ve velmi pokročilém stádiu rozpadu. Chybí jí čelist a z lebky sklouzlo trochu masa, odhalujíc číslo "1072" vyryté do kosti.{#zf1072_s0_1}'
 
     menu:
         '"Myslím, že tahle už na tom byla líp…"{#zf1072_s0_r35115}' if zf1072Logic.r35115_condition():
@@ -58,7 +58,7 @@ label zf1072_s0: # - # IF ~  True()
 
 # s1 # say35116
 label zf1072_s1: # from 0.0 0.1 0.2
-    nr 'Tělo na tvůj hlas neodpovídá - možná s tím má co do činění fakt, že nemá čelist. Anebo zkrátka nemá co říct.{#zf1072_s1_}'
+    nr 'Tělo na tvůj hlas neodpovídá - možná s tím má co do činění fakt, že nemá čelist. Anebo zkrátka nemá co říct.{#zf1072_s1_1}'
 
     menu:
         '"Sbohem tedy."{#zf1072_s1_r35117}' if zf1072Logic.r35117_condition():
@@ -76,7 +76,7 @@ label zf1072_s1: # from 0.0 0.1 0.2
 
 # s2 # say35135
 label zf1072_s2: # from 0.3
-    nr 'Mrtvola se nehýbe. Asi už ti neodpoví na žádnou otázku.{#zf1072_s2_}'
+    nr 'Mrtvola se nehýbe. Asi už ti neodpoví na žádnou otázku.{#zf1072_s2_1}'
 
     menu:
         '"Sbohem tedy."{#zf1072_s2_r35136}' if zf1072Logic.r35136_condition():
@@ -94,6 +94,6 @@ label zf1072_s2: # from 0.3
 
 # s3 # say35145
 label zf1072_s3: # - # IF ~  False()
-    nr 'Mrtvola se nehýbe. Asi už ti neodpoví na žádnou otázku.{#zf1072_s3_}'
+    nr 'Mrtvola se nehýbe. Asi už ti neodpoví na žádnou otázku.{#zf1072_s3_1}'
 
     menu:

@@ -11,14 +11,14 @@ init 10 python:
 
 # s0 # say822
 label dhall_s0: # externs morte_s103
-    nr 'Nim Morte ma szanse skończyć swoją tyradę, skryba zaczyna kaszleć gwałtownie. Po paru chwilach napad kaszlu mija i oddech skryby na powrót przybiera postać nieregularnego charczenia.{#dhall_s0_}'
+    nr 'Nim Morte ma szanse skończyć swoją tyradę, skryba zaczyna kaszleć gwałtownie. Po paru chwilach napad kaszlu mija i oddech skryby na powrót przybiera postać nieregularnego charczenia.{#dhall_s0_1}'
 
     jump morte_s104  # EXTERN
 
 
 # s1 # say826
 label dhall_s1: # externs morte_s104
-    nr 'Nim Morte ma szansę skończyć, szare oczy skryby kierują się ku tobie. "Balast czasu wywarł na mnie swe piętno, Duchu Niespokojny." Odkłada na bok gęsie pióro. "…jednakże głuchota nie wlicza się jeszcze w poczet mych dolegliwości."{#dhall_s1_}'
+    nr 'Nim Morte ma szansę skończyć, szare oczy skryby kierują się ku tobie. "Balast czasu wywarł na mnie swe piętno, Duchu Niespokojny." Odkłada na bok gęsie pióro. "…jednakże głuchota nie wlicza się jeszcze w poczet mych dolegliwości."{#dhall_s1_1}'
 
     menu:
         '"„Duchu Niespokojny“? Znasz mnie?"{#dhall_s1_r827}':
@@ -29,7 +29,7 @@ label dhall_s1: # externs morte_s104
 
 # s2 # say829
 label dhall_s2: # from 21.0
-    nr '"Nie znasz kobiety, której ciało pochowano w położonej poniżej sali pamięci? Sądziłem, że podróżowaliście kiedyś wspólnie…" Zdaje się, iż Dhall zacznie ponownie kaszleć. Łapie jednakże oddech. "Czyżbym się mylił?"{#dhall_s2_}'
+    nr '"Nie znasz kobiety, której ciało pochowano w położonej poniżej sali pamięci? Sądziłem, że podróżowaliście kiedyś wspólnie…" Zdaje się, iż Dhall zacznie ponownie kaszleć. Łapie jednakże oddech. "Czyżbym się mylił?"{#dhall_s2_1}'
 
     menu:
         '"Gdzie spoczywa jej ciało?"{#dhall_s2_r5070}' if dhallLogic.r5070_condition():
@@ -67,7 +67,7 @@ label dhall_s2: # from 21.0
 
 # s3 # say832
 label dhall_s3: # from 9.0
-    nr 'Dhall wbija w ciebie wzrok. "Jesteś pewien?"{#dhall_s3_}'
+    nr 'Dhall wbija w ciebie wzrok. "Jesteś pewien?"{#dhall_s3_1}'
 
     menu:
         '"Tak. To dobre przebranie."{#dhall_s3_r830}' if dhallLogic.r830_condition():
@@ -87,7 +87,7 @@ label dhall_s3: # from 9.0
 
 # s4 # say833
 label dhall_s4: # from 3.0 3.1
-    nr '"Ja…" Przerywa mu kolejny atak kaszlu. Po chwili łapie on oddech na tyle, by mógł mówić. "Ja… natychmiast powiadomię straże."{#dhall_s4_}'
+    nr '"Ja…" Przerywa mu kolejny atak kaszlu. Po chwili łapie on oddech na tyle, by mógł mówić. "Ja… natychmiast powiadomię straże."{#dhall_s4_1}'
 
     menu:
         '"Dziękuję. Mam parę innych pytań…"{#dhall_s4_r836}':
@@ -101,7 +101,7 @@ label dhall_s4: # from 3.0 3.1
 
 # s5 # say838
 label dhall_s5: # - # IF ~  Global("Dhall","GLOBAL",0)
-    nr 'Skryba wygląda bardzo staro… Skóra jego jest pomarszczona i ma lekko żółtawy odcień, niczym stary pergamin. Z jego kanciastej twarzy patrzą szare niczym węgiel oczy, zaś z przodu szaty spływa, na podobieństwo wodospadu, jego biała broda. Oddycha chrapliwie i nieregularnie, ale nawet pojawiający się sporadycznie kaszel nie spowalnia ruchów jego gęsiego pióra.{#dhall_s5_}'
+    nr 'Skryba wygląda bardzo staro… Skóra jego jest pomarszczona i ma lekko żółtawy odcień, niczym stary pergamin. Z jego kanciastej twarzy patrzą szare niczym węgiel oczy, zaś z przodu szaty spływa, na podobieństwo wodospadu, jego biała broda. Oddycha chrapliwie i nieregularnie, ale nawet pojawiający się sporadycznie kaszel nie spowalnia ruchów jego gęsiego pióra.{#dhall_s5_1}'
 
     menu:
         '"Witaj."{#dhall_s5_r839}' if dhallLogic.r839_condition():
@@ -123,7 +123,7 @@ label dhall_s5: # - # IF ~  Global("Dhall","GLOBAL",0)
 
 # s6 # say841
 label dhall_s6: # from 5.2
-    nr 'W jego szarych oczach pojawia się błysk, gdy podnosi on wzrok znad swojej księgi. "Podejrzewałem, że to ty możesz być odpowiedzialny za napady w Kostnicy. To…" Pokasłuje lekko, po czym bierze chrapliwy oddech. "To nie najlepszy sposób, byś mógł wkroczyć w kolejne życie."{#dhall_s6_}'
+    nr 'W jego szarych oczach pojawia się błysk, gdy podnosi on wzrok znad swojej księgi. "Podejrzewałem, że to ty możesz być odpowiedzialny za napady w Kostnicy. To…" Pokasłuje lekko, po czym bierze chrapliwy oddech. "To nie najlepszy sposób, byś mógł wkroczyć w kolejne życie."{#dhall_s6_1}'
 
     menu:
         '"Jedynie się broniłem. Zanim odejdę, chcę ci zadać kilka pytań…"{#dhall_s6_r842}' if dhallLogic.r842_condition():
@@ -146,7 +146,7 @@ label dhall_s6: # from 5.2
 
 # s7 # say844
 label dhall_s7: # from 5.1
-    nr 'Skryba przestaje notować w leżącej przed nim księdze i podnosi wzrok. Oczy jego wyglądają niczym dwa gwoździe wbite w czaszkę. "A więc…" W jego głosie słychać zmęczenie - tak, jakby powtarzał tę samą kwestię już wiele razy. "Obudziłeś się ze swego snu i powróciłeś do swoich marzeń." Dodaje z większą dozą szacunku. "Miło cię spotkać… ponownie, Duchu Niespokojny."{#dhall_s7_}'
+    nr 'Skryba przestaje notować w leżącej przed nim księdze i podnosi wzrok. Oczy jego wyglądają niczym dwa gwoździe wbite w czaszkę. "A więc…" W jego głosie słychać zmęczenie - tak, jakby powtarzał tę samą kwestię już wiele razy. "Obudziłeś się ze swego snu i powróciłeś do swoich marzeń." Dodaje z większą dozą szacunku. "Miło cię spotkać… ponownie, Duchu Niespokojny."{#dhall_s7_1}'
 
     menu:
         '"„Duchu Niespokojny“? Znasz mnie?"{#dhall_s7_r845}':
@@ -156,7 +156,7 @@ label dhall_s7: # from 5.1
 
 # s8 # say851
 label dhall_s8: # from 22.0
-    nr '"Zrozum… Twe istnienie to dla nich bluźnierstwo. Wielu spośród mojej frakcji poddałoby cię kremacji… Gdyby tylko świadomi byli twojej przypadłości."{#dhall_s8_}'
+    nr '"Zrozum… Twe istnienie to dla nich bluźnierstwo. Wielu spośród mojej frakcji poddałoby cię kremacji… Gdyby tylko świadomi byli twojej przypadłości."{#dhall_s8_1}'
 
     menu:
         '"Jesteś grabarzem, a mimo to wydaje się, iż nie pragniesz mojej śmierci. Dlaczego?"{#dhall_s8_r940}':
@@ -178,7 +178,7 @@ label dhall_s8: # from 22.0
 
 # s9 # say852
 label dhall_s9: # from 2.5 3.2 4.0 6.0 6.1 8.2 10.5 12.1 13.0 14.4 15.2 16.3 17.3 18.2 19.2 20.2 21.1 22.2 23.2 24.1 25.2 26.2 27.0 28.1 29.2 30.0 31.1 32.6 33.3 34.2 35.2 36.2 37.1 38.2 39.0 40.0 41.3 42.4 43.3 45.0 47.4 48.2 49.2 51.2 52.2 53.1
-    nr '"Dobrze. Co chcesz wiedzieć?"{#dhall_s9_}'
+    nr '"Dobrze. Co chcesz wiedzieć?"{#dhall_s9_1}'
 
     menu:
         '"Czy wiesz, że we wschodnich komnatach znajduje się ktoś przebrany za zombie?"{#dhall_s9_r854}' if dhallLogic.r854_condition():
@@ -217,7 +217,7 @@ label dhall_s9: # from 2.5 3.2 4.0 6.0 6.1 8.2 10.5 12.1 13.0 14.4 15.2 16.3 17.
 
 # s10 # say859
 label dhall_s10: # from 9.1
-    nr '"Jesteś w Kostnicy, Duchu Niespokojny. Ponownie… przybyłeś…" Zanim ma szansę skończyć, dostaje napadu kaszlu. Po chwili uspokaja się i na powrót oddycha chrapliwie. "…to poczekalnie dla tych, którzy mają porzucić cienie tego życia."{#dhall_s10_}'
+    nr '"Jesteś w Kostnicy, Duchu Niespokojny. Ponownie… przybyłeś…" Zanim ma szansę skończyć, dostaje napadu kaszlu. Po chwili uspokaja się i na powrót oddycha chrapliwie. "…to poczekalnie dla tych, którzy mają porzucić cienie tego życia."{#dhall_s10_1}'
 
     menu:
         '"Opowiedz mi o Kostnicy."{#dhall_s10_r861}':
@@ -251,7 +251,7 @@ label dhall_s10: # from 9.1
 
 # s11 # say867
 label dhall_s11: # from 2.6 2.7 4.1 8.3 9.7 10.6 12.2 14.5 15.3 16.4 19.3 20.3 21.2 22.3 23.3 24.2 25.3 26.3 27.1 28.2 29.4 30.1 31.3 32.7 33.4 34.3 35.3 36.3 37.2 38.3 41.4 42.5 43.4 47.5 48.3 49.3 51.3 52.3 53.2
-    nr 'Kiedy odwracasz się, by odejść, Dhall rzecze. "Wiedz jedno: Nie zazdroszczę ci, Duchu Niespokojny. Ponowne odradzanie się jest klątwą, której ja nie zdołałbym udźwignąć. Musisz stawić jej czoło. W końcu twa droga cię tu zawiedzie…" Dhall pokasłuje, głos chrobocze mu w gardle. "To czeka wszystkich, którzy z prochu powstali."{#dhall_s11_}'
+    nr 'Kiedy odwracasz się, by odejść, Dhall rzecze. "Wiedz jedno: Nie zazdroszczę ci, Duchu Niespokojny. Ponowne odradzanie się jest klątwą, której ja nie zdołałbym udźwignąć. Musisz stawić jej czoło. W końcu twa droga cię tu zawiedzie…" Dhall pokasłuje, głos chrobocze mu w gardle. "To czeka wszystkich, którzy z prochu powstali."{#dhall_s11_1}'
 
     menu:
         '"W takim razie być może się jeszcze spotkamy, Dhall."{#dhall_s11_r41564}':
@@ -261,7 +261,7 @@ label dhall_s11: # from 2.6 2.7 4.1 8.3 9.7 10.6 12.2 14.5 15.3 16.4 19.3 20.3 2
 
 # s12 # say868
 label dhall_s12: # from 2.3 2.4 42.2 42.3 43.1 43.2
-    nr '"Są niewątpliwie, jednakże nie znam ich imion, nie wiem też, gdzie leżą. Tacy jak ty zostawiają za sobą ścieżkę, którą kroczyło wielu, przetrwali nieliczni." Dhall wskazuje wokół ciebie. "Przybywają tu wszyscy umarli. Niektórzy z nich bez wątpienia kiedyś z tobą podróżowali."{#dhall_s12_}'
+    nr '"Są niewątpliwie, jednakże nie znam ich imion, nie wiem też, gdzie leżą. Tacy jak ty zostawiają za sobą ścieżkę, którą kroczyło wielu, przetrwali nieliczni." Dhall wskazuje wokół ciebie. "Przybywają tu wszyscy umarli. Niektórzy z nich bez wątpienia kiedyś z tobą podróżowali."{#dhall_s12_1}'
 
     menu:
         '"Gdzie się znajduje ta kobieta, o której wspomniałeś?"{#dhall_s12_r870}' if dhallLogic.r870_condition():
@@ -279,7 +279,7 @@ label dhall_s12: # from 2.3 2.4 42.2 42.3 43.1 43.2
 
 # s13 # say875
 label dhall_s13: # from 9.3
-    nr '"Hmmm… Najbardziej oczywistym wyjściem wydaje się brama frontowa, jednak nikogo poza Grabarzami tamtędy nie przepuszczą." Znowu dostaje napadu chrapliwego kaszlu, po czym ciągnie dalej. "…jeden z pilnujących tej bramy ma do niej klucz, jednakże nie otworzy jej dla ciebie, jeśli nie będziesz nadzwyczaj przekonywujący."{#dhall_s13_}'
+    nr '"Hmmm… Najbardziej oczywistym wyjściem wydaje się brama frontowa, jednak nikogo poza Grabarzami tamtędy nie przepuszczą." Znowu dostaje napadu chrapliwego kaszlu, po czym ciągnie dalej. "…jeden z pilnujących tej bramy ma do niej klucz, jednakże nie otworzy jej dla ciebie, jeśli nie będziesz nadzwyczaj przekonywujący."{#dhall_s13_1}'
 
     menu:
         '"Rozumiem. Mam jeszcze kilka pytań…"{#dhall_s13_r876}':
@@ -293,7 +293,7 @@ label dhall_s13: # from 9.3
 
 # s14 # say878
 label dhall_s14: # from 10.3
-    nr '"Tak, *ponownie*. Przynoszono cię już tu wiele razy, Duchu Niespokojny. Biorąc pod uwagę rany, jakie odniosłeś, miałem nadzieję, że to już będzie ostatni raz." Wzdycha. "Kiedy wyzbędziesz się swych uczuć i opuścisz cień tego życia?"{#dhall_s14_}'
+    nr '"Tak, *ponownie*. Przynoszono cię już tu wiele razy, Duchu Niespokojny. Biorąc pod uwagę rany, jakie odniosłeś, miałem nadzieję, że to już będzie ostatni raz." Wzdycha. "Kiedy wyzbędziesz się swych uczuć i opuścisz cień tego życia?"{#dhall_s14_1}'
 
     menu:
         '"*Duchu Niespokojny*?"{#dhall_s14_r880}':
@@ -323,7 +323,7 @@ label dhall_s14: # from 10.3
 
 # s15 # say885
 label dhall_s15: # from 9.2 10.4 32.5
-    nr 'Dhall prycha pogardliwie, jakby wspomnienie budziło w nim odrazę. "Twój zatęchły rydwan przywiózł cię do Kostnicy, Duchu Niespokojny. Pomyśl sobie, że przyjechałeś tu na wozie, ułożony po królewsku, na śmierdzącej i ropiejącej kupie równych tobie obywateli."{#dhall_s15_}'
+    nr 'Dhall prycha pogardliwie, jakby wspomnienie budziło w nim odrazę. "Twój zatęchły rydwan przywiózł cię do Kostnicy, Duchu Niespokojny. Pomyśl sobie, że przyjechałeś tu na wozie, ułożony po królewsku, na śmierdzącej i ropiejącej kupie równych tobie obywateli."{#dhall_s15_1}'
 
     menu:
         '"Przybyłem tu na wozie?"{#dhall_s15_r886}':
@@ -346,7 +346,7 @@ label dhall_s15: # from 9.2 10.4 32.5
 
 # s16 # say890
 label dhall_s16: # from 15.0
-    nr '"Tak… Twoje ciało znajdowało się gdzieś pośrodku sterty, wymieniając płyny z resztą osobników tworzących górę ciał." Przerywa mu kolejny nagły atak kaszlu; po kilku chwilach łapie on jednak oddech. "Twój „włodarz“ Farod był jak zawsze bardzo zadowolony mogąc przyjąć kilka zaśniedziałych miedziaków w zamian za dostarczenie cię pod bramę Kostnicy."{#dhall_s16_}'
+    nr '"Tak… Twoje ciało znajdowało się gdzieś pośrodku sterty, wymieniając płyny z resztą osobników tworzących górę ciał." Przerywa mu kolejny nagły atak kaszlu; po kilku chwilach łapie on jednak oddech. "Twój „włodarz“ Farod był jak zawsze bardzo zadowolony mogąc przyjąć kilka zaśniedziałych miedziaków w zamian za dostarczenie cię pod bramę Kostnicy."{#dhall_s16_1}'
 
     menu:
         '"Kim jest ten Farod?"{#dhall_s16_r891}' if dhallLogic.r891_condition():
@@ -372,7 +372,7 @@ label dhall_s16: # from 15.0
 
 # s17 # say895
 label dhall_s17: # from 16.0
-    nr '"Jest… zbieraczem trupów." Dhall wciąga chrapliwie powietrze, po czym kontynuuje. "Istnieją w naszym mieście ludzie zbierający z ulic trupy tych, którzy wkroczyli na drogę Prawdziwej Śmierci. Przynoszą je do nas, by można je było stosownie pochować."{#dhall_s17_}'
+    nr '"Jest… zbieraczem trupów." Dhall wciąga chrapliwie powietrze, po czym kontynuuje. "Istnieją w naszym mieście ludzie zbierający z ulic trupy tych, którzy wkroczyli na drogę Prawdziwej Śmierci. Przynoszą je do nas, by można je było stosownie pochować."{#dhall_s17_1}'
 
     menu:
         '"Gdzie mogę znaleźć tego „Faroda“?"{#dhall_s17_r897}':
@@ -398,7 +398,7 @@ label dhall_s17: # from 16.0
 
 # s18 # say900
 label dhall_s18: # from 17.0 29.1 31.0 35.1 36.1
-    nr '"Jeśli wypadki potoczą się tak jak do tej pory, Duchu Niespokojny, istnieje znacznie większa szansa, że to Farod ciebie odnajdzie i ponownie do nas przywiezie, zanim ty odkryjesz, w czym tym razem macza on palce."{#dhall_s18_}'
+    nr '"Jeśli wypadki potoczą się tak jak do tej pory, Duchu Niespokojny, istnieje znacznie większa szansa, że to Farod ciebie odnajdzie i ponownie do nas przywiezie, zanim ty odkryjesz, w czym tym razem macza on palce."{#dhall_s18_1}'
 
     menu:
         '"Mimo to muszę go znaleźć."{#dhall_s18_r902}':
@@ -420,7 +420,7 @@ label dhall_s18: # from 17.0 29.1 31.0 35.1 36.1
 
 # s19 # say901
 label dhall_s19: # from 17.4 18.0 18.3 29.3 31.2
-    nr 'W ton jego głosu wkrada się ostrzeżenie. "Nie szukaj Faroda, Duchu Niespokojny. Jestem przekonany, że doprowadzi to jedynie do końca kolejne koło. Tobie to mądrości nie przysporzy, a Farod stanie się bogatszy o kilka miedziaków. Przyjmij śmierć, Duchu Niespokojny. Nie tocz już swego koła nieszczęść."{#dhall_s19_}'
+    nr 'W ton jego głosu wkrada się ostrzeżenie. "Nie szukaj Faroda, Duchu Niespokojny. Jestem przekonany, że doprowadzi to jedynie do końca kolejne koło. Tobie to mądrości nie przysporzy, a Farod stanie się bogatszy o kilka miedziaków. Przyjmij śmierć, Duchu Niespokojny. Nie tocz już swego koła nieszczęść."{#dhall_s19_1}'
 
     menu:
         '"*Muszę* go znaleźć. Wiesz, gdzie jest?"{#dhall_s19_r906}':
@@ -443,7 +443,7 @@ label dhall_s19: # from 17.4 18.0 18.3 29.3 31.2
 
 # s20 # say908
 label dhall_s20: # from 19.0
-    nr 'Dhall milczy przez chwilę. Gdy w końcu przemawia ponownie, zdaje się czynić to niechętnie. "Nie wiem, w którym rynsztoku zaszył się on obecnie, sądzę jednak, że można znaleźć go gdzieś poza bramą Kostnicy, w Ulu. Być może tam znajdziesz kogoś, kto ci powie, gdzie możesz go szukać."{#dhall_s20_}'
+    nr 'Dhall milczy przez chwilę. Gdy w końcu przemawia ponownie, zdaje się czynić to niechętnie. "Nie wiem, w którym rynsztoku zaszył się on obecnie, sądzę jednak, że można znaleźć go gdzieś poza bramą Kostnicy, w Ulu. Być może tam znajdziesz kogoś, kto ci powie, gdzie możesz go szukać."{#dhall_s20_1}'
 
     menu:
         '"Zdaje się, że nie darzysz Faroda zbytnią sympatią."{#dhall_s20_r910}' if dhallLogic.r910_condition():
@@ -465,7 +465,7 @@ label dhall_s20: # from 19.0
 
 # s21 # say914
 label dhall_s21: # from 9.4
-    nr '"Wiem o tobie wyjątkowo niewiele, Duchu Niespokojny. Wiem znacznie więcej o tych, którzy z tobą podróżowali, i którzy znajdują się obecnie pod naszą opieką." Wzdycha. "Proszę, byś więcej nie nakłaniał innych do przyłączenia się do ciebie, Duchu Niespokojny… Gdzie ty kroczysz, kroczy nieszczęście. Pozwól, by twe brzemię ciążyło jedynie na tobie."{#dhall_s21_}'
+    nr '"Wiem o tobie wyjątkowo niewiele, Duchu Niespokojny. Wiem znacznie więcej o tych, którzy z tobą podróżowali, i którzy znajdują się obecnie pod naszą opieką." Wzdycha. "Proszę, byś więcej nie nakłaniał innych do przyłączenia się do ciebie, Duchu Niespokojny… Gdzie ty kroczysz, kroczy nieszczęście. Pozwól, by twe brzemię ciążyło jedynie na tobie."{#dhall_s21_1}'
 
     menu:
         '"Istnieją inni, którzy ze mną podróżowali? Gdzież oni są?{#dhall_s21_r921}':
@@ -484,7 +484,7 @@ label dhall_s21: # from 9.4
 
 # s22 # say915
 label dhall_s22: # from 47.0
-    nr 'Dhall wzdycha. "Powiadają, że istnieją dusze, które nigdy nie osiągną Prawdziwej Śmierci. Śmierć się ich wyrzekła, ich imiona nigdy nie zostaną wpisane do Księgi Umarłych. Twe budzenie się ze śmierci… wskazuje, że jesteś jedną z takich dusz. Nasza frakcja nie może się pogodzić z twoim istnieniem."{#dhall_s22_}'
+    nr 'Dhall wzdycha. "Powiadają, że istnieją dusze, które nigdy nie osiągną Prawdziwej Śmierci. Śmierć się ich wyrzekła, ich imiona nigdy nie zostaną wpisane do Księgi Umarłych. Twe budzenie się ze śmierci… wskazuje, że jesteś jedną z takich dusz. Nasza frakcja nie może się pogodzić z twoim istnieniem."{#dhall_s22_1}'
 
     menu:
         '"„Nie może się pogodzić“? Nie stawia to mnie w zbyt dobrej sytuacji."{#dhall_s22_r917}':
@@ -506,7 +506,7 @@ label dhall_s22: # from 47.0
 
 # s23 # say924
 label dhall_s23: # from 8.0
-    nr '"Ponieważ narzucenie ci naszych przekonań nie byłoby właściwe. Musisz porzucić cień twego życia sam z siebie, a nie dlatego, że cię do tego zmuszamy." Wygląda na to, iż grozi mu kolejny atak kaszlu, udaje mu się jednak powstrzymać. "Dopóki zajmować będę moje stanowisko, będę chronił twe prawo do poszukiwania przynależnej ci prawdy."{#dhall_s23_}'
+    nr '"Ponieważ narzucenie ci naszych przekonań nie byłoby właściwe. Musisz porzucić cień twego życia sam z siebie, a nie dlatego, że cię do tego zmuszamy." Wygląda na to, iż grozi mu kolejny atak kaszlu, udaje mu się jednak powstrzymać. "Dopóki zajmować będę moje stanowisko, będę chronił twe prawo do poszukiwania przynależnej ci prawdy."{#dhall_s23_1}'
 
     menu:
         '"Jakie masz stanowisko?"{#dhall_s23_r927}':
@@ -528,7 +528,7 @@ label dhall_s23: # from 8.0
 
 # s24 # say929
 label dhall_s24: # from 25.0
-    nr '"Jestem tym, który kataloguje dostarczane nam zwłoki, Duchu Niespokojny." Przerywa mu nagły atak kaszlu, po chwili jednak uspakaja się. "Widzę jedynie twarze tych, którzy leżą na naszych stołach. Sprawy związane z twą egzystencją pozostają mi odległe."{#dhall_s24_}'
+    nr '"Jestem tym, który kataloguje dostarczane nam zwłoki, Duchu Niespokojny." Przerywa mu nagły atak kaszlu, po chwili jednak uspakaja się. "Widzę jedynie twarze tych, którzy leżą na naszych stołach. Sprawy związane z twą egzystencją pozostają mi odległe."{#dhall_s24_1}'
 
     menu:
         '"Powiedz mi coś więcej o Kostnicy."{#dhall_s24_r1305}':
@@ -546,7 +546,7 @@ label dhall_s24: # from 25.0
 
 # s25 # say930
 label dhall_s25: # from 9.5 23.0
-    nr '"Jestem skrybą katalogującym wszystkie dostarczane do Kostnicy zwłoki." Dhall kaszle ponownie, po czym bierze głęboki oddech. "Póki strumień umarłych przepływał będzie przez Kostnicę, dopóty pozostanę na mym stanowisku."{#dhall_s25_}'
+    nr '"Jestem skrybą katalogującym wszystkie dostarczane do Kostnicy zwłoki." Dhall kaszle ponownie, po czym bierze głęboki oddech. "Póki strumień umarłych przepływał będzie przez Kostnicę, dopóty pozostanę na mym stanowisku."{#dhall_s25_1}'
 
     menu:
         '"Powiedziałeś, że byłem tu już więcej niż raz. Czemuż więc Grabarze mnie nie rozpoznają?"{#dhall_s25_r931}' if dhallLogic.r931_condition():
@@ -569,7 +569,7 @@ label dhall_s25: # from 9.5 23.0
 
 # s26 # say934
 label dhall_s26: # from 9.6
-    nr '"Blisko mi już do Prawdziwej Śmierci, Duchu Niespokojny. Niedługo przekroczę Ostateczną Granicę, by odnaleźć spokój, którego poszukiwałem. Zmęczony jestem tą śmiertelną sferą…" Wzdycha chrapliwie. "Kogoś takiego jak ja Sfery nie są w stanie już niczym zadziwić."{#dhall_s26_}'
+    nr '"Blisko mi już do Prawdziwej Śmierci, Duchu Niespokojny. Niedługo przekroczę Ostateczną Granicę, by odnaleźć spokój, którego poszukiwałem. Zmęczony jestem tą śmiertelną sferą…" Wzdycha chrapliwie. "Kogoś takiego jak ja Sfery nie są w stanie już niczym zadziwić."{#dhall_s26_1}'
 
     menu:
         '"Ostateczną Granicę?"{#dhall_s26_r935}':
@@ -592,7 +592,7 @@ label dhall_s26: # from 9.6
 
 # s27 # say938
 label dhall_s27: # from 26.1
-    nr '"Nie chcę żyć wiecznie, bądź żyć ponownie, Duchu Niespokojny. Nie zniósłbym tego."{#dhall_s27_}'
+    nr '"Nie chcę żyć wiecznie, bądź żyć ponownie, Duchu Niespokojny. Nie zniósłbym tego."{#dhall_s27_1}'
 
     menu:
         '"Dobrze. Mam kilka innych pytań…"{#dhall_s27_r1303}':
@@ -606,7 +606,7 @@ label dhall_s27: # from 26.1
 
 # s28 # say939
 label dhall_s28: # from 2.2 42.1
-    nr '"*Rozmawiała* z tobą?" Głos Dhalla zniża się do szeptu. "Czyżbyś miał *omamy*. Duchu Niespokojny? Ona osiągnęła Prawdziwą Śmierć i odeszła tam, gdzie nie masz dostępu."{#dhall_s28_}'
+    nr '"*Rozmawiała* z tobą?" Głos Dhalla zniża się do szeptu. "Czyżbyś miał *omamy*. Duchu Niespokojny? Ona osiągnęła Prawdziwą Śmierć i odeszła tam, gdzie nie masz dostępu."{#dhall_s28_1}'
 
     menu:
         '"Przemówiła do mnie, Dhall. Jej duch tu rezyduje."{#dhall_s28_r981}':
@@ -624,7 +624,7 @@ label dhall_s28: # from 2.2 42.1
 
 # s29 # say941
 label dhall_s29: # from 36.0
-    nr 'Przerwawszy, zaczyna się zastanawiać. "Najprawdopodobniej. Czy straciłeś coś… szczególnie cennego?" Marszczy brwi i zniża głos. "Farod nie przepuści niczemu, co nie jest częścią twego ciała, a czasami nawet i to nie jest wystarczające, by zaspokoić jego chciwy umysł."{#dhall_s29_}'
+    nr 'Przerwawszy, zaczyna się zastanawiać. "Najprawdopodobniej. Czy straciłeś coś… szczególnie cennego?" Marszczy brwi i zniża głos. "Farod nie przepuści niczemu, co nie jest częścią twego ciała, a czasami nawet i to nie jest wystarczające, by zaspokoić jego chciwy umysł."{#dhall_s29_1}'
 
     menu:
         '"Brakuje mi dziennika."{#dhall_s29_r942}' if dhallLogic.r942_condition():
@@ -650,7 +650,7 @@ label dhall_s29: # from 36.0
 
 # s30 # say945
 label dhall_s30: # from 28.0
-    nr 'Dhall nakreśla palcem półkole w powietrzu przed sobą. "To zły znak, Duchu Niespokojny. Pragnąłbym, by ta rozmowa z nią była snem… Obawiam się jednak, że nie była."{#dhall_s30_}'
+    nr 'Dhall nakreśla palcem półkole w powietrzu przed sobą. "To zły znak, Duchu Niespokojny. Pragnąłbym, by ta rozmowa z nią była snem… Obawiam się jednak, że nie była."{#dhall_s30_1}'
 
     menu:
         '"Być może to jedynie wytwór mojej wyobraźni. Mam kilka innych pytań."{#dhall_s30_r946}':
@@ -664,7 +664,7 @@ label dhall_s30: # from 28.0
 
 # s31 # say850
 label dhall_s31: # from 29.0
-    nr '"Dziennik? Jeśli miał jakąś wartość, to najprawdopodobniej znajduje się w rękach Faroda."{#dhall_s31_}'
+    nr '"Dziennik? Jeśli miał jakąś wartość, to najprawdopodobniej znajduje się w rękach Faroda."{#dhall_s31_1}'
 
     menu:
         '"Gdzie mogę znaleźć tego Faroda?"{#dhall_s31_r948}' if dhallLogic.r948_condition():
@@ -686,7 +686,7 @@ label dhall_s31: # from 29.0
 
 # s32 # say950
 label dhall_s32: # from 8.1 10.0 14.3 15.1 16.2 17.2 18.1 19.1 20.1 22.1 23.1 24.0 25.1 33.2 34.1 37.0 38.1 41.2 47.3 48.1 49.1 51.1 52.1 53.0
-    nr '"To miejsce, do którego dostarcza się zmarłych, by mogli zostać pochowani lub poddani kremacji. Jesteśmy Grabarzami i naszą powinnością jest zaopiekowanie się tymi, którzy opuścili cień tego życia i kroczą ścieżką Prawdziwej Śmierci." Dhall zniża głos, rozważając. "Twe rany musiały dać ci się bardzo we znaki, skoro nie poznajesz tego miejsca. To prawie twój dom w Sigil."{#dhall_s32_}'
+    nr '"To miejsce, do którego dostarcza się zmarłych, by mogli zostać pochowani lub poddani kremacji. Jesteśmy Grabarzami i naszą powinnością jest zaopiekowanie się tymi, którzy opuścili cień tego życia i kroczą ścieżką Prawdziwej Śmierci." Dhall zniża głos, rozważając. "Twe rany musiały dać ci się bardzo we znaki, skoro nie poznajesz tego miejsca. To prawie twój dom w Sigil."{#dhall_s32_1}'
 
     menu:
         '"Cień tego życia?"{#dhall_s32_r951}':
@@ -725,7 +725,7 @@ label dhall_s32: # from 8.1 10.0 14.3 15.1 16.2 17.2 18.1 19.1 20.1 22.1 23.1 24
 
 # s33 # say957
 label dhall_s33: # from 10.2 14.2 32.0 41.0 47.2 49.0
-    nr '"Tak, cień. Widzisz, Duchu Niespokojny - to życie… nie jest prawdziwe. Twoje życie, moje życie - to cienie, przebłyski tego, czym kiedyś było życie. Obecne „życie“ jest tym, które przypada nam *po* naszej śmierci. Jesteśmy tu… uwięzieni. Zamknięci w klatce. Dopóki nie osiągniemy Prawdziwej Śmierci."{#dhall_s33_}'
+    nr '"Tak, cień. Widzisz, Duchu Niespokojny - to życie… nie jest prawdziwe. Twoje życie, moje życie - to cienie, przebłyski tego, czym kiedyś było życie. Obecne „życie“ jest tym, które przypada nam *po* naszej śmierci. Jesteśmy tu… uwięzieni. Zamknięci w klatce. Dopóki nie osiągniemy Prawdziwej Śmierci."{#dhall_s33_1}'
 
     menu:
         '"Prawdziwej Śmierci?"{#dhall_s33_r958}':
@@ -752,7 +752,7 @@ label dhall_s33: # from 10.2 14.2 32.0 41.0 47.2 49.0
 
 # s34 # say961
 label dhall_s34: # from 14.1 32.4
-    nr '"Tak. Rany, które zdobią twe ciało… Wyglądają na takie, które słabszego mężczyznę wysłałyby na ścieżkę Prawdziwej Śmierci… Mimo to zdaje się, iż większość z nich się już zagoiła." Przez chwilę kaszle gwałtownie, po czym się uspokaja. "Ale to tylko powierzchowne rany."{#dhall_s34_}'
+    nr '"Tak. Rany, które zdobią twe ciało… Wyglądają na takie, które słabszego mężczyznę wysłałyby na ścieżkę Prawdziwej Śmierci… Mimo to zdaje się, iż większość z nich się już zagoiła." Przez chwilę kaszle gwałtownie, po czym się uspokaja. "Ale to tylko powierzchowne rany."{#dhall_s34_1}'
 
     menu:
         '"Tylko powierzchowne rany? Co przez to rozumiesz?"{#dhall_s34_r1301}':
@@ -775,7 +775,7 @@ label dhall_s34: # from 14.1 32.4
 
 # s35 # say962
 label dhall_s35: # from 16.1 17.1 20.0
-    nr '"Są tacy, których darzę respektem, Duchu Niespokojny." Bierze chrapliwy oddech i uspokaja się. "Farod się do nich jednak nie zalicza. Obnosi się ze swą spaczoną reputacją niczym z jakąś odznaką honoru i pozwala sobie zabierać zmarłym ich dobytek. Jest macherem, obrzydliwym kanciarzem najgorszego rodzaju."{#dhall_s35_}'
+    nr '"Są tacy, których darzę respektem, Duchu Niespokojny." Bierze chrapliwy oddech i uspokaja się. "Farod się do nich jednak nie zalicza. Obnosi się ze swą spaczoną reputacją niczym z jakąś odznaką honoru i pozwala sobie zabierać zmarłym ich dobytek. Jest macherem, obrzydliwym kanciarzem najgorszego rodzaju."{#dhall_s35_1}'
 
     menu:
         '"Macherem?"{#dhall_s35_r963}':
@@ -797,7 +797,7 @@ label dhall_s35: # from 16.1 17.1 20.0
 
 # s36 # say966
 label dhall_s36: # from 35.0
-    nr '"Macherem…" Dhall kaszle. "…złodziejem. Wszyscy, których tu Farod dostarcza, przybywają pozbawieni części godności, jaką mieli za życia. Farod zagarnia wszystko, co tylko może im wyszarpnąć z ich zesztywniałych palców."{#dhall_s36_}'
+    nr '"Macherem…" Dhall kaszle. "…złodziejem. Wszyscy, których tu Farod dostarcza, przybywają pozbawieni części godności, jaką mieli za życia. Farod zagarnia wszystko, co tylko może im wyszarpnąć z ich zesztywniałych palców."{#dhall_s36_1}'
 
     menu:
         '"Czy ten Farod zabrał *mi* coś?"{#dhall_s36_r967}':
@@ -819,7 +819,7 @@ label dhall_s36: # from 35.0
 
 # s37 # say970
 label dhall_s37: # from 32.3
-    nr '"Sigil to nasze wspaniałe miasto, Duchu Niespokojny."{#dhall_s37_}'
+    nr '"Sigil to nasze wspaniałe miasto, Duchu Niespokojny."{#dhall_s37_1}'
 
     menu:
         '"Powiedz mi coś więcej o Kostnicy."{#dhall_s37_r971}':
@@ -837,7 +837,7 @@ label dhall_s37: # from 32.3
 
 # s38 # say973
 label dhall_s38: # from 10.1 14.0
-    nr '"Duch Niespokojny jest tak samo dobrym określeniem, jak inne…" Wciąga chrapliwie powietrze. "Coś cię tu zatrzymuje, czyż nie? Coś, co trzeba odrzucić - pewne uczucia, które musisz stłumić, nim będziesz mógł osiągnąć Prawdziwą Śmierć…"{#dhall_s38_}'
+    nr '"Duch Niespokojny jest tak samo dobrym określeniem, jak inne…" Wciąga chrapliwie powietrze. "Coś cię tu zatrzymuje, czyż nie? Coś, co trzeba odrzucić - pewne uczucia, które musisz stłumić, nim będziesz mógł osiągnąć Prawdziwą Śmierć…"{#dhall_s38_1}'
 
     menu:
         '"Prawdziwą Śmierć?"{#dhall_s38_r974}':
@@ -860,7 +860,7 @@ label dhall_s38: # from 10.1 14.0
 
 # s39 # say884
 label dhall_s39: # -
-    nr '"Zrobisz to, co zawsze robiłeś, Duchu Niespokojny. Poszukasz naszego łasego na pieniądze głupca, Glistokudłego i poprosisz go o zwrot twojej własności. Następnie zaczniesz kontynuować swą bezsensowną wędrówkę, starając się rozwiązywać bezsensowne zadania, gromadzić bezsensowne przedmioty, a w końcu zostaniesz uziemiony i zwrócony nam. Zaoszczędź sobie czasu i porozmawiaj ze mną teraz, byśmy nie musieli wznawiać tej rozmowy ponownie, gdy po raz kolejny utracisz wspomnienia."{#dhall_s39_}'
+    nr '"Zrobisz to, co zawsze robiłeś, Duchu Niespokojny. Poszukasz naszego łasego na pieniądze głupca, Glistokudłego i poprosisz go o zwrot twojej własności. Następnie zaczniesz kontynuować swą bezsensowną wędrówkę, starając się rozwiązywać bezsensowne zadania, gromadzić bezsensowne przedmioty, a w końcu zostaniesz uziemiony i zwrócony nam. Zaoszczędź sobie czasu i porozmawiaj ze mną teraz, byśmy nie musieli wznawiać tej rozmowy ponownie, gdy po raz kolejny utracisz wspomnienia."{#dhall_s39_1}'
 
     menu:
         '"Mam jeszcze kilka pytań…"{#dhall_s39_r976}':
@@ -874,7 +874,7 @@ label dhall_s39: # -
 
 # s40 # say978
 label dhall_s40: # - # IF ~  Global("Dhall","GLOBAL",1)
-    nr 'Dhall przypatruje się tobie, gdy się zbliżasz. "Cóż. A jednak powróciłeś…" Dhall bierze chrapliwy oddech, po czym dostaje gwałtownego napadu kaszlu. Po chwili stan ten ustępuje i na powrót zaczyna on oddychać zgrzytliwie. "…Witaj po raz kolejny, Duchu Niespokojny."{#dhall_s40_}'
+    nr 'Dhall przypatruje się tobie, gdy się zbliżasz. "Cóż. A jednak powróciłeś…" Dhall bierze chrapliwy oddech, po czym dostaje gwałtownego napadu kaszlu. Po chwili stan ten ustępuje i na powrót zaczyna on oddychać zgrzytliwie. "…Witaj po raz kolejny, Duchu Niespokojny."{#dhall_s40_1}'
 
     menu:
         '"Mam do ciebie kilka innych pytań, Dhall."{#dhall_s40_r979}':
@@ -888,7 +888,7 @@ label dhall_s40: # - # IF ~  Global("Dhall","GLOBAL",1)
 
 # s41 # say983
 label dhall_s41: # from 26.0 52.0
-    nr '"To granica pomiędzy cieniem tego życia i Prawdziwą Śmiercią."{#dhall_s41_}'
+    nr '"To granica pomiędzy cieniem tego życia i Prawdziwą Śmiercią."{#dhall_s41_1}'
 
     menu:
         '"Cieniem tego życia?"{#dhall_s41_r984}':
@@ -915,7 +915,7 @@ label dhall_s41: # from 26.0 52.0
 
 # s42 # say5075
 label dhall_s42: # from 2.0 12.0 43.0
-    nr '"Północno-zachodnia sala pamięci na piętrze poniżej. Przyjrzyj się tamtejszym katafalkom… Jej imię powinno widnieć na jednej z pamiątkowych tabliczek. Być może odświeży to twoją pamięć."{#dhall_s42_}'
+    nr '"Północno-zachodnia sala pamięci na piętrze poniżej. Przyjrzyj się tamtejszym katafalkom… Jej imię powinno widnieć na jednej z pamiątkowych tabliczek. Być może odświeży to twoją pamięć."{#dhall_s42_1}'
 
     menu:
         '"Nie wiem. Nie pamiętam nawet, że podróżowałem z kobietą."{#dhall_s42_r5076}' if dhallLogic.r5076_condition():
@@ -945,7 +945,7 @@ label dhall_s42: # from 2.0 12.0 43.0
 
 # s43 # say5080
 label dhall_s43: # from 2.1 42.0
-    nr 'Dhall nie udziela na nie odpowiedzi. Jedynie przypatruje się tobie w milczeniu.{#dhall_s43_}'
+    nr 'Dhall nie udziela na nie odpowiedzi. Jedynie przypatruje się tobie w milczeniu.{#dhall_s43_1}'
 
     menu:
         '"Gdzie mogę ją znaleźć?"{#dhall_s43_r5081}' if dhallLogic.r5081_condition():
@@ -971,7 +971,7 @@ label dhall_s43: # from 2.1 42.0
 
 # s44 # say840
 label dhall_s44: # from 1.0 6.2 7.0
-    nr '"Czy znam ciebie? Ja…" Gdy mówi, w głosie skryby wyczuć można pewną gorycz. "*Nigdy* cię nie znałem, Duchu Niespokojny. Nie bardziej, niż ty znasz samego siebie." Milknie na moment. "Ponieważ zapomniałeś, czyż nie?"{#dhall_s44_}'
+    nr '"Czy znam ciebie? Ja…" Gdy mówi, w głosie skryby wyczuć można pewną gorycz. "*Nigdy* cię nie znałem, Duchu Niespokojny. Nie bardziej, niż ty znasz samego siebie." Milknie na moment. "Ponieważ zapomniałeś, czyż nie?"{#dhall_s44_1}'
 
     menu:
         '"Kim *ty* jesteś?"{#dhall_s44_r1327}':
@@ -982,7 +982,7 @@ label dhall_s44: # from 1.0 6.2 7.0
 
 # s45 # say5728
 label dhall_s45: # from 44.0
-    nr '"Jak zwykle - pytanie. I złe pytanie - jak zwykle." Dhall skłania się lekko, jednak poruszenie to powoduje u niego napad kaszlu. "Jestem…" Przerywa na moment, by złapać oddech. "Jestem… Dhall."{#dhall_s45_}'
+    nr '"Jak zwykle - pytanie. I złe pytanie - jak zwykle." Dhall skłania się lekko, jednak poruszenie to powoduje u niego napad kaszlu. "Jestem…" Przerywa na moment, by złapać oddech. "Jestem… Dhall."{#dhall_s45_1}'
 
     menu:
         '"Być może odpowiesz mi na parę pytań, Dhall…"{#dhall_s45_r5731}':
@@ -998,7 +998,7 @@ label dhall_s45: # from 44.0
 
 # s46 # say5730
 label dhall_s46: # from 45.1
-    nr '"Dobrze, Duchu Niespokojny." Przytakuje. "Obawiam się jednak, że w tym przypadku czas jest twoim wrogiem." Chwyta ponownie gęsie pióro. "Gdybyś zechciał jeszcze kiedyś ze mną porozmawiać, będę tutaj."{#dhall_s46_}'
+    nr '"Dobrze, Duchu Niespokojny." Przytakuje. "Obawiam się jednak, że w tym przypadku czas jest twoim wrogiem." Chwyta ponownie gęsie pióro. "Gdybyś zechciał jeszcze kiedyś ze mną porozmawiać, będę tutaj."{#dhall_s46_1}'
 
     menu:
         '"Być może wrócę. Żegnaj."{#dhall_s46_r40005}':
@@ -1008,7 +1008,7 @@ label dhall_s46: # from 45.1
 
 # s47 # say847
 label dhall_s47: # from 32.2
-    nr '"My, Grabarze, jesteśmy frakcją, zgromadzeniem tych, którzy dostrzegają, że to życie to jedynie cień, iluzja. Czekamy na następne życie, pomagamy też innym w ich podróży. Czekamy na Prawdziwą Śmierć."{#dhall_s47_}'
+    nr '"My, Grabarze, jesteśmy frakcją, zgromadzeniem tych, którzy dostrzegają, że to życie to jedynie cień, iluzja. Czekamy na następne życie, pomagamy też innym w ich podróży. Czekamy na Prawdziwą Śmierć."{#dhall_s47_1}'
 
     menu:
         '"Może mi wyjaśnisz, dlaczego Grabarze chcą, bym był martwy?"{#dhall_s47_r6032}' if dhallLogic.r6032_condition():
@@ -1039,7 +1039,7 @@ label dhall_s47: # from 32.2
 
 # s48 # say848
 label dhall_s48: # from 32.1 33.0 38.0 41.1 47.1
-    nr '"Prawdziwa Śmierć to niebyt. Stan pozbawienia myśli, zmysłów, uczuć." Dhall kaszle, po czym bierze chrapliwy oddech. "Stan czystości."{#dhall_s48_}'
+    nr '"Prawdziwa Śmierć to niebyt. Stan pozbawienia myśli, zmysłów, uczuć." Dhall kaszle, po czym bierze chrapliwy oddech. "Stan czystości."{#dhall_s48_1}'
 
     menu:
         '"Wygląda to na kompletne unicestwienie. Dlaczego ktoś miałby tego pragnąć?"{#dhall_s48_r6043}':
@@ -1061,7 +1061,7 @@ label dhall_s48: # from 32.1 33.0 38.0 41.1 47.1
 
 # s49 # say849
 label dhall_s49: # from 48.0
-    nr '"Czy to gorsze niż pozostawanie w cieniu tego, czym było niegdyś życie? Sądzę, że nie."{#dhall_s49_}'
+    nr '"Czy to gorsze niż pozostawanie w cieniu tego, czym było niegdyś życie? Sądzę, że nie."{#dhall_s49_1}'
 
     menu:
         '"Cieniu?"{#dhall_s49_r6047}':
@@ -1083,7 +1083,7 @@ label dhall_s49: # from 48.0
 
 # s50 # say853
 label dhall_s50: # from 33.1
-    nr '"Co sprawia, że uważasz, iż to życie *jest* prawdziwe? Wejrzyj w swoje wnętrze. Nie czujesz, że czegoś ci brakuje?" Dhall potrząsa głową. "To czyściec. Jest tu jedynie żal. Smutek. Udręka. To nie są składniki, które kreują *życie*. Są one częścią klatki, która więzi nas w tym cieniu."{#dhall_s50_}'
+    nr '"Co sprawia, że uważasz, iż to życie *jest* prawdziwe? Wejrzyj w swoje wnętrze. Nie czujesz, że czegoś ci brakuje?" Dhall potrząsa głową. "To czyściec. Jest tu jedynie żal. Smutek. Udręka. To nie są składniki, które kreują *życie*. Są one częścią klatki, która więzi nas w tym cieniu."{#dhall_s50_1}'
 
     menu:
         '"Sądzę, że twój fatalizm przejął nad tobą górę. Te składniki są częścią życia, ale nie stanowią jego całości."{#dhall_s50_r6051}':
@@ -1103,7 +1103,7 @@ label dhall_s50: # from 33.1
 
 # s51 # say5733
 label dhall_s51: # from 50.0 50.1 50.2
-    nr 'Dhall potrząsa głową. "Uczucia niosą z sobą ciężar. Zakotwiczają się licznie w cieniu tego życia. Jak długo będzie ktoś się trzymał emocji, tak długo będzie się nieustannie odradzać w cieniu tego „życia“, nie zaznając oczyszczenia Prawdziwej Śmierci."{#dhall_s51_}'
+    nr 'Dhall potrząsa głową. "Uczucia niosą z sobą ciężar. Zakotwiczają się licznie w cieniu tego życia. Jak długo będzie ktoś się trzymał emocji, tak długo będzie się nieustannie odradzać w cieniu tego „życia“, nie zaznając oczyszczenia Prawdziwej Śmierci."{#dhall_s51_1}'
 
     menu:
         '"Ro… zumiem. W jaki sposób można się wyswobodzić z tego kręgu odradzania i osiągnąć tę… Prawdziwą Śmierć?"{#dhall_s51_r6054}':
@@ -1125,7 +1125,7 @@ label dhall_s51: # from 50.0 50.1 50.2
 
 # s52 # say5734
 label dhall_s52: # from 51.0
-    nr '"Zabij swoje uczucia. Wyzbądź się potrzeby doznawania. Gdy się już w pełni oczyścisz, wtedy cykl odradzania dobiegnie końca i osiągniesz spokój." Dhall wzdycha… Brzmi to, jakby śmierć chrobotała mu w gardle. "Poza naszymi skorupami, poza Ostateczną Granicą znajduje się spokój, którego poszukują wszystkie dusze."{#dhall_s52_}'
+    nr '"Zabij swoje uczucia. Wyzbądź się potrzeby doznawania. Gdy się już w pełni oczyścisz, wtedy cykl odradzania dobiegnie końca i osiągniesz spokój." Dhall wzdycha… Brzmi to, jakby śmierć chrobotała mu w gardle. "Poza naszymi skorupami, poza Ostateczną Granicą znajduje się spokój, którego poszukują wszystkie dusze."{#dhall_s52_1}'
 
     menu:
         '"Ostateczną Granicą?"{#dhall_s52_r6058}':
@@ -1147,7 +1147,7 @@ label dhall_s52: # from 51.0
 
 # s53 # say5742
 label dhall_s53: # from 34.0
-    nr '"Mówię o ranach umysłu. Sporo zapomniałeś, czyż nie? Być może rany twe znajdują się znacznie głębiej niż blizny, które zdobią twą cielesną powłokę…" Dhall kaszle ponownie. "…Jest to jednakże coś, co tylko ty możesz wiedzieć…"{#dhall_s53_}'
+    nr '"Mówię o ranach umysłu. Sporo zapomniałeś, czyż nie? Być może rany twe znajdują się znacznie głębiej niż blizny, które zdobią twą cielesną powłokę…" Dhall kaszle ponownie. "…Jest to jednakże coś, co tylko ty możesz wiedzieć…"{#dhall_s53_1}'
 
     menu:
         '"Powiedz mi coś więcej o Kostnicy."{#dhall_s53_r5743}':

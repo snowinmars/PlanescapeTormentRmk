@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say3404
 label eivene_s0: # - # IF ~  Global("EiVene","GLOBAL",0)
-    nr 'Du siehst eine zierliche junge Frau mit blasser Gesichtsfarbe. Mit ihren eingefallenen Wangen und dem dürren Hals sieht sie aus, als wäre sie kurz vor dem Verhungern. Sie scheint eifrig damit beschäftigt zu sein, die vor ihr liegende Leiche zu zerlegen, wobei sie mit einem Finger im Oberkörper herumstochert.{#eivene_s0_}'
+    nr 'Du siehst eine zierliche junge Frau mit blasser Gesichtsfarbe. Mit ihren eingefallenen Wangen und dem dürren Hals sieht sie aus, als wäre sie kurz vor dem Verhungern. Sie scheint eifrig damit beschäftigt zu sein, die vor ihr liegende Leiche zu zerlegen, wobei sie mit einem Finger im Oberkörper herumstochert.{#eivene_s0_1}'
 
     menu:
         '"Sei gegrüßt."{#eivene_s0_r3406}':
@@ -25,7 +25,7 @@ label eivene_s0: # - # IF ~  Global("EiVene","GLOBAL",0)
 
 # s1 # say3410
 label eivene_s1: # from 0.0
-    nr 'Die Frau antwortet nicht… sie scheint zu eifrig mit der vor ihr liegenden Leiche beschäftigt zu sein. Als du sie dabei beobachtest, fällt dein Blick plötzlich auf ihre Hände… anstelle von Fingern hat sie Krallen, die sich in schneller Abfolge wie Messer in die Brusthöhle der Leiche bohren und ein Organ nach dem anderen herausholen.{#eivene_s1_}'
+    nr 'Die Frau antwortet nicht… sie scheint zu eifrig mit der vor ihr liegenden Leiche beschäftigt zu sein. Als du sie dabei beobachtest, fällt dein Blick plötzlich auf ihre Hände… anstelle von Fingern hat sie Krallen, die sich in schneller Abfolge wie Messer in die Brusthöhle der Leiche bohren und ein Organ nach dem anderen herausholen.{#eivene_s1_1}'
 
     menu:
         '"Ich sagte: Sei gegrüßt."{#eivene_s1_r3412}' if eiveneLogic.r3412_condition():
@@ -51,7 +51,7 @@ label eivene_s1: # from 0.0
 
 # s2 # say3417
 label eivene_s2: # from 1.0 1.2
-    nr 'Die Frau reagiert nicht.{#eivene_s2_}'
+    nr 'Die Frau reagiert nicht.{#eivene_s2_1}'
 
     menu:
         'Klopf der Frau auf die Schulter, damit sie dich bemerkt.{#eivene_s2_r3418}':
@@ -66,14 +66,14 @@ label eivene_s2: # from 1.0 1.2
 
 # s3 # say3420
 label eivene_s3: # from 1.1
-    nr 'Die Frau reagiert nicht.{#eivene_s3_}'
+    nr 'Die Frau reagiert nicht.{#eivene_s3_1}'
 
     jump morte_s55  # EXTERN
 
 
 # s4 # say3421
 label eivene_s4: # from 2.0
-    nr 'Die Frau zuckt zusammen und dreht sich blitzschnell zu dir um… ihre Augen sind eitrig-gelb, mit kleinen orangefarbenen Punkten als Pupille. Als sie dich sieht, macht sie zuerst eine überraschte, dann eine verärgerte Miene. Sie wirft dir einen mißbilligenden Blick zu.{#eivene_s4_}'
+    nr 'Die Frau zuckt zusammen und dreht sich blitzschnell zu dir um… ihre Augen sind eitrig-gelb, mit kleinen orangefarbenen Punkten als Pupille. Als sie dich sieht, macht sie zuerst eine überraschte, dann eine verärgerte Miene. Sie wirft dir einen mißbilligenden Blick zu.{#eivene_s4_1}'
 
     menu:
         '"Äh… sei gegrüßt."{#eivene_s4_r3422}':
@@ -84,7 +84,7 @@ label eivene_s4: # from 2.0
 
 # s5 # say3423
 label eivene_s5: # from 4.0
-    nr 'Sie scheint dich nicht gehört zu haben. Sie beugt sich nach vorne und kneift ihre Augen zusammen, als ob sie versuchen würde, dich zu erkennen… sie scheint extrem kurzsichtig zu sein. "Du…" Sie schlägt ihre Krallen aufeinander und macht dann eine merkwürdige Bewegung mit ihren Händen. "Du suchen FADEN und BAL-samieröl, und bringen beides HIER zu Ei-Vene. Geh… geh… geh."  ^NHINWEIS: Dir ist eine Aufgabe zugewiesen worden. Aufgaben werden in deinem Tagebuch und in deinem Journal im Abschnitt "Aufgaben" angezeigt. Wenn du alle Aufgaben ansehen möchtest, die dir erteilt wurden sind, sowie ihren Status, wähle "Aufgaben" aus dem Menü des Journals aus.^-{#eivene_s5_}'
+    nr 'Sie scheint dich nicht gehört zu haben. Sie beugt sich nach vorne und kneift ihre Augen zusammen, als ob sie versuchen würde, dich zu erkennen… sie scheint extrem kurzsichtig zu sein. "Du…" Sie schlägt ihre Krallen aufeinander und macht dann eine merkwürdige Bewegung mit ihren Händen. "Du suchen FADEN und BAL-samieröl, und bringen beides HIER zu Ei-Vene. Geh… geh… geh."  ^NHINWEIS: Dir ist eine Aufgabe zugewiesen worden. Aufgaben werden in deinem Tagebuch und in deinem Journal im Abschnitt "Aufgaben" angezeigt. Wenn du alle Aufgaben ansehen möchtest, die dir erteilt wurden sind, sowie ihren Status, wähle "Aufgaben" aus dem Menü des Journals aus.^-{#eivene_s5_1}'
 
     menu:
         'Gib ihr den Faden und das Balsamierungsöl.{#eivene_s5_r3424}' if eiveneLogic.r3424_condition():
@@ -121,7 +121,7 @@ label eivene_s5: # from 4.0
 
 # s6 # say3430
 label eivene_s6: # from 5.1 5.3
-    nr 'Sie dreht sich um… sie scheint dich nicht gehört zu haben. Ihr Gehör ist wohl genauso schlecht wie ihr Sehvermögen.{#eivene_s6_}'
+    nr 'Sie dreht sich um… sie scheint dich nicht gehört zu haben. Ihr Gehör ist wohl genauso schlecht wie ihr Sehvermögen.{#eivene_s6_1}'
 
     menu:
         'Klopf ihr auf die Schulter, damit sie dich bemerkt.{#eivene_s6_r3431}':
@@ -135,7 +135,7 @@ label eivene_s6: # from 5.1 5.3
 
 # s7 # say3433
 label eivene_s7: # from 5.0 17.0
-    nr 'Ehe du dich„s versiehst, schnappt Ei-Vene dir den Faden aus der Hand und schlingt ihn um eine Kralle. Dann beginnt sie, der Leiche den Brustkorb zuzunähen. Anschließend nimmt sie das Balsamierungsöl und reibt die Leiche damit ein.{#eivene_s7_}'
+    nr 'Ehe du dich„s versiehst, schnappt Ei-Vene dir den Faden aus der Hand und schlingt ihn um eine Kralle. Dann beginnt sie, der Leiche den Brustkorb zuzunähen. Anschließend nimmt sie das Balsamierungsöl und reibt die Leiche damit ein.{#eivene_s7_1}'
 
     menu:
         'Warte.{#eivene_s7_r3434}':
@@ -149,7 +149,7 @@ label eivene_s7: # from 5.0 17.0
 
 # s8 # say3436
 label eivene_s8: # from 7.1
-    nr 'Als du gehen willst, wendet Ei-Vene sich dir zu: "Du bleiben. Du Nächster."{#eivene_s8_}'
+    nr 'Als du gehen willst, wendet Ei-Vene sich dir zu: "Du bleiben. Du Nächster."{#eivene_s8_1}'
 
     menu:
         'Warte.{#eivene_s8_r3437}':
@@ -163,7 +163,7 @@ label eivene_s8: # from 7.1
 
 # s9 # say3439
 label eivene_s9: # from 7.0 8.0
-    nr 'Nach ein paar Minuten ist sie fertig. Sie schlägt ihre Krallen aufeinander und dreht sich zu dir um. Zu deiner Überraschung streckt sie ihre Hand aus und zieht dir ihre Krallen über Brust und Arme.{#eivene_s9_}'
+    nr 'Nach ein paar Minuten ist sie fertig. Sie schlägt ihre Krallen aufeinander und dreht sich zu dir um. Zu deiner Überraschung streckt sie ihre Hand aus und zieht dir ihre Krallen über Brust und Arme.{#eivene_s9_1}'
 
     menu:
         '"Äh, nicht, daß mir das nicht schmeichelt, aber…"{#eivene_s9_r3440}' if eiveneLogic.r3440_condition():
@@ -189,7 +189,7 @@ label eivene_s9: # from 7.0 8.0
 
 # s10 # say3445
 label eivene_s10: # from 9.4 12.1
-    nr 'Sie wirkt schockiert, als du sie wegstößt. "Zomfie? Du kein Zomfie!" Sie geht einen Schritt zurück, und bevor du reagieren kannst, klatscht sie dreimal in die Hände. Daraufhin ertönt der Klang einer riesigen Glocke in der ganzen Leichenhalle.{#eivene_s10_}'
+    nr 'Sie wirkt schockiert, als du sie wegstößt. "Zomfie? Du kein Zomfie!" Sie geht einen Schritt zurück, und bevor du reagieren kannst, klatscht sie dreimal in die Hände. Daraufhin ertönt der Klang einer riesigen Glocke in der ganzen Leichenhalle.{#eivene_s10_1}'
 
     menu:
         '"In Ordnung…"{#eivene_s10_r3491}':
@@ -200,7 +200,7 @@ label eivene_s10: # from 9.4 12.1
 
 # s11 # say3446
 label eivene_s11: # from 9.0 9.2
-    nr 'Als sie dir über Brust und Arme fährt, bemerkst du plötzlich, daß sie anscheinend deine Narben untersucht. Sie zieht ihre Krallen zurück, klappert zweimal damit, beugt sich nach vorn und untersucht verschiedene Tätowierungen auf deiner Brust. "Hmmm. Wer schreiben auf dir? Stockbewohner? Kein Respekt vor Zomfies. Zomfies, nix Bilder." Sie rümpft die Nase, dann stochert sie auf einer deiner Narben herum. "Diese hier schlecht aussehen, viele Narben, nix Balsam."{#eivene_s11_}'
+    nr 'Als sie dir über Brust und Arme fährt, bemerkst du plötzlich, daß sie anscheinend deine Narben untersucht. Sie zieht ihre Krallen zurück, klappert zweimal damit, beugt sich nach vorn und untersucht verschiedene Tätowierungen auf deiner Brust. "Hmmm. Wer schreiben auf dir? Stockbewohner? Kein Respekt vor Zomfies. Zomfies, nix Bilder." Sie rümpft die Nase, dann stochert sie auf einer deiner Narben herum. "Diese hier schlecht aussehen, viele Narben, nix Balsam."{#eivene_s11_1}'
 
     menu:
         'Warte.{#eivene_s11_r3447}':
@@ -210,7 +210,7 @@ label eivene_s11: # from 9.0 9.2
 
 # s12 # say3448
 label eivene_s12: # from 11.0
-    nr 'Ihre Krallen haken sich plötzlich in den Faden fest, den du ihr gebracht hast, und plötzlich sticht sie mit einer anderen Kralle in die Haut um eine deiner Narben. Der Schmerz ist kaum schlimmer als bei einem Nadelstich, aber es scheint, als ob sie dich komplett zusammennähen wollte.{#eivene_s12_}'
+    nr 'Ihre Krallen haken sich plötzlich in den Faden fest, den du ihr gebracht hast, und plötzlich sticht sie mit einer anderen Kralle in die Haut um eine deiner Narben. Der Schmerz ist kaum schlimmer als bei einem Nadelstich, aber es scheint, als ob sie dich komplett zusammennähen wollte.{#eivene_s12_1}'
 
     menu:
         'Laß sie ihre Arbeit tun.{#eivene_s12_r3449}':
@@ -225,7 +225,7 @@ label eivene_s12: # from 11.0
 
 # s13 # say3451
 label eivene_s13: # from 12.0
-    nr 'Du empfindest eine seltsame Schmerzlosigkeit, als Ei-Vene beginnt, deine Narben zuzunähen.  Als sie fertig ist, schnuppert sie an dir, runzelt die Stirn und steckt dann ihre Finger in das Balsamierungsöl. Binnen weniger Minuten hat sie dich von Kopf bis Fuß mit dem Öl eingerieben… und komischerweise fühlst du dich tatsächlich *besser*.{#eivene_s13_}'
+    nr 'Du empfindest eine seltsame Schmerzlosigkeit, als Ei-Vene beginnt, deine Narben zuzunähen.  Als sie fertig ist, schnuppert sie an dir, runzelt die Stirn und steckt dann ihre Finger in das Balsamierungsöl. Binnen weniger Minuten hat sie dich von Kopf bis Fuß mit dem Öl eingerieben… und komischerweise fühlst du dich tatsächlich *besser*.{#eivene_s13_1}'
 
     menu:
         'Laß sie ihre Arbeit tun.{#eivene_s13_r3452}' if eiveneLogic.r3452_condition():
@@ -239,7 +239,7 @@ label eivene_s13: # from 12.0
 
 # s14 # say3454
 label eivene_s14: # from 13.0
-    nr 'Ei-Vene reibt noch die letzten Stellen auf deinem Körper ein, beschnuppert dich noch einmal, nickt und scheucht dich mit einer Krallenbewegung fort. "Fertig. Geh… geh."{#eivene_s14_}'
+    nr 'Ei-Vene reibt noch die letzten Stellen auf deinem Körper ein, beschnuppert dich noch einmal, nickt und scheucht dich mit einer Krallenbewegung fort. "Fertig. Geh… geh."{#eivene_s14_1}'
 
     menu:
         '"Warte einen Moment." (Du machst eine Handbewegung, als ob du einen Schlüssel umdrehtest.) "Ich brauche einen Schlüssel zum Balsamierungsraum. Hast du einen?"{#eivene_s14_r3456}' if eiveneLogic.r3456_condition():
@@ -258,7 +258,7 @@ label eivene_s14: # from 13.0
 
 # s15 # say3458
 label eivene_s15: # - # IF ~  Global("EiVene","GLOBAL",1)
-    nr 'Du siehst Ei-Vene. Sie ist noch immer dabei, den Brustkorb der Leiche mit ihren Krallen zu zerlegen. Der Rhythmus, mit dem sie ihre Krallen bewegt, erinnert dich an irgend etwas, aber dir fällt im Moment nicht ein, an was.{#eivene_s15_}'
+    nr 'Du siehst Ei-Vene. Sie ist noch immer dabei, den Brustkorb der Leiche mit ihren Krallen zu zerlegen. Der Rhythmus, mit dem sie ihre Krallen bewegt, erinnert dich an irgend etwas, aber dir fällt im Moment nicht ein, an was.{#eivene_s15_1}'
 
     menu:
         'Beobachte sie, verfolge ihre Handbewegungen genau.{#eivene_s15_r3459}' if eiveneLogic.r3459_condition():
@@ -281,7 +281,7 @@ label eivene_s15: # - # IF ~  Global("EiVene","GLOBAL",1)
 
 # s16 # say3464
 label eivene_s16: # from 15.0
-    nr 'Während du die Bewegung von Ei-Venes Händen beobachtest, spürst du ein Kribbeln auf deiner Kopfhaut, und plötzlich verschwimmt alles vor deinen Augen, bis…{#eivene_s16_}'
+    nr 'Während du die Bewegung von Ei-Venes Händen beobachtest, spürst du ein Kribbeln auf deiner Kopfhaut, und plötzlich verschwimmt alles vor deinen Augen, bis…{#eivene_s16_1}'
 
     $ eiveneLogic.s16_action()
     jump eivene_s26
@@ -289,7 +289,7 @@ label eivene_s16: # from 15.0
 
 # s17 # say3468
 label eivene_s17: # from 6.0 15.1 25.0 27.0
-    nr 'Sie dreht sich um, sieht dich und runzelt die Stirn. "Zomfies dumm." Sie schlägt ihre krallenbewehrten Finger ungeduldig gegeneinander, dann deutet sie mit ihren Fingern Stiche beim Nähen an. "Du suchen Faden und Balsamierungsöl und bringen beides zu Ei-Vene. Geh… geh… geh."{#eivene_s17_}'
+    nr 'Sie dreht sich um, sieht dich und runzelt die Stirn. "Zomfies dumm." Sie schlägt ihre krallenbewehrten Finger ungeduldig gegeneinander, dann deutet sie mit ihren Fingern Stiche beim Nähen an. "Du suchen Faden und Balsamierungsöl und bringen beides zu Ei-Vene. Geh… geh… geh."{#eivene_s17_1}'
 
     menu:
         'Gib ihr den Faden und das Balsamierungsöl.{#eivene_s17_r3469}' if eiveneLogic.r3469_condition():
@@ -314,7 +314,7 @@ label eivene_s17: # from 6.0 15.1 25.0 27.0
 
 # s18 # say3471
 label eivene_s18: # from 14.0 17.1 22.0
-    nr 'Sie beugt sich nach vorne, beobachtet deine Handbewegungen und rümpft die Nase. Ihre Hand schnellt in ihre Robe hinein und dann wieder heraus. An ihrem fürchterlich spitzen Zeigefinger hängt ein Schlüssel. Im Nu landet er in deiner Hand. "Zurückbringen wenn fertig. Geh… geh."{#eivene_s18_}'
+    nr 'Sie beugt sich nach vorne, beobachtet deine Handbewegungen und rümpft die Nase. Ihre Hand schnellt in ihre Robe hinein und dann wieder heraus. An ihrem fürchterlich spitzen Zeigefinger hängt ein Schlüssel. Im Nu landet er in deiner Hand. "Zurückbringen wenn fertig. Geh… geh."{#eivene_s18_1}'
 
     menu:
         '"Was ist denn mit deinen Händen los?"{#eivene_s18_r3494}' if eiveneLogic.r3494_condition():
@@ -335,7 +335,7 @@ label eivene_s18: # from 14.0 17.1 22.0
 
 # s19 # say3472
 label eivene_s19: # from 1.3
-    nr 'Die Frau reagiert nicht.{#eivene_s19_}'
+    nr 'Die Frau reagiert nicht.{#eivene_s19_1}'
 
     $ eiveneLogic.j38205_s19_action()
     jump morte_s56  # EXTERN
@@ -343,14 +343,14 @@ label eivene_s19: # from 1.3
 
 # s20 # say3485
 label eivene_s20: # from 5.2 5.4
-    nr 'Sie dreht sich um… sie scheint dich nicht gehört zu haben.{#eivene_s20_}'
+    nr 'Sie dreht sich um… sie scheint dich nicht gehört zu haben.{#eivene_s20_1}'
 
     jump morte_s57  # EXTERN
 
 
 # s21 # say3486
 label eivene_s21: # from 18.1
-    nr 'Sie dreht sich um… sie scheint dich nicht gehört zu haben. Ihr Gehör ist wohl genauso schlecht wie ihr Sehvermögen.{#eivene_s21_}'
+    nr 'Sie dreht sich um… sie scheint dich nicht gehört zu haben. Ihr Gehör ist wohl genauso schlecht wie ihr Sehvermögen.{#eivene_s21_1}'
 
     $ eiveneLogic.j38205_s21_action()
     jump morte_s58  # EXTERN
@@ -358,7 +358,7 @@ label eivene_s21: # from 18.1
 
 # s22 # say3493
 label eivene_s22: # from 15.2 25.1 27.1
-    nr 'Sie dreht sich um, sieht dich und runzelt die Stirn. "Zomfies dumm." Sie schlägt ihre krallenbewehrten Finger ungeduldig gegeneinander, dann deutet sie mit ihren Fingern Stiche beim Nähen an. "Du fertig. Zugenäht. Geh… geh… geh."{#eivene_s22_}'
+    nr 'Sie dreht sich um, sieht dich und runzelt die Stirn. "Zomfies dumm." Sie schlägt ihre krallenbewehrten Finger ungeduldig gegeneinander, dann deutet sie mit ihren Fingern Stiche beim Nähen an. "Du fertig. Zugenäht. Geh… geh… geh."{#eivene_s22_1}'
 
     menu:
         '"Warte einen Moment." (Du machst eine Handbewegung, als ob du einen Schlüssel umdrehtest.) "Ich brauche einen Schlüssel zum Balsamierungsraum. Hast du einen?"{#eivene_s22_r3501}' if eiveneLogic.r3501_condition():
@@ -377,7 +377,7 @@ label eivene_s22: # from 15.2 25.1 27.1
 
 # s23 # say3498
 label eivene_s23: # from 18.0
-    nr 'Sie dreht sich um… sie scheint dich nicht gehört zu haben. Ihr Gehör ist wohl genauso schlecht wie ihr Sehvermögen.{#eivene_s23_}'
+    nr 'Sie dreht sich um… sie scheint dich nicht gehört zu haben. Ihr Gehör ist wohl genauso schlecht wie ihr Sehvermögen.{#eivene_s23_1}'
 
     menu:
         'Verschwinde.{#eivene_s23_r3499}':
@@ -387,7 +387,7 @@ label eivene_s23: # from 18.0
 
 # s24 # say4200
 label eivene_s24: # from 14.1 17.2 22.1
-    nr 'Sie beugt sich nach vorn und beobachtet deine Handbewegungen, woraufhin sie die Nase rümpft. Jetzt verschwindet ihre Hand blitzschnell in ihrer Robe, in der sie herumwühlt. Dann zuckt sie mit den Achseln. "Kein Schlüssel." Mit einer Geste scheucht sie dich weg. "Geh- geh - geh."{#eivene_s24_}'
+    nr 'Sie beugt sich nach vorn und beobachtet deine Handbewegungen, woraufhin sie die Nase rümpft. Jetzt verschwindet ihre Hand blitzschnell in ihrer Robe, in der sie herumwühlt. Dann zuckt sie mit den Achseln. "Kein Schlüssel." Mit einer Geste scheucht sie dich weg. "Geh- geh - geh."{#eivene_s24_1}'
 
     menu:
         'Verschwinde.{#eivene_s24_r4201}':
@@ -397,7 +397,7 @@ label eivene_s24: # from 14.1 17.2 22.1
 
 # s25 # say4353
 label eivene_s25: # -
-    nr 'Nachdem du sie eine Weile beobachtet hast, erinnert dich der Rhythmus ihrer Handbewegungen an zwei Dinge - daran, daß du irgendein Saiteninstrument gespielt hast, vielleicht eine Harfe. Und daß du irgendwann eine Geldbörse geklaut hast… zu deinem Erstaunen versetzt dich diese zweite Erinnerung in die Versuchung, Ei-Venes Tasche zu entwenden.  ^NHINWEIS: Du hast eine Erinnerung zurückgewonnen. Erinnerungen können dir zusätzliche Erfahrungspunkte und Fähigkeiten einbringen und sogar dazu führen, daß du später noch weitere Erinnerungen zurückgewinnst.^-{#eivene_s25_}'
+    nr 'Nachdem du sie eine Weile beobachtet hast, erinnert dich der Rhythmus ihrer Handbewegungen an zwei Dinge - daran, daß du irgendein Saiteninstrument gespielt hast, vielleicht eine Harfe. Und daß du irgendwann eine Geldbörse geklaut hast… zu deinem Erstaunen versetzt dich diese zweite Erinnerung in die Versuchung, Ei-Venes Tasche zu entwenden.  ^NHINWEIS: Du hast eine Erinnerung zurückgewonnen. Erinnerungen können dir zusätzliche Erfahrungspunkte und Fähigkeiten einbringen und sogar dazu führen, daß du später noch weitere Erinnerungen zurückgewinnst.^-{#eivene_s25_1}'
 
     menu:
         'Klopf ihr auf die Schulter, damit sie dich bemerkt.{#eivene_s25_r4354}' if eiveneLogic.r4354_condition():
@@ -415,7 +415,7 @@ label eivene_s25: # -
 
 # s26 # say63477
 label eivene_s26: # from 16.0
-    nr '… Du stehst vor einer frisch niedergemetzelten Leiche, die Totenstarre entstellt ihr Lächeln auf groteske Weise. Auf ihrer Stirn ist die Nummer „42“ aufgestickt. Der Zombie liegt auf einer Totenbank, und du hast gerade seine Brust fertig zugenäht. Du hast etwas eingenäht, etwas, das sich als nützlich erweisen könnte, falls du hier noch mal vorbeikommst…{#eivene_s26_}'
+    nr '… Du stehst vor einer frisch niedergemetzelten Leiche, die Totenstarre entstellt ihr Lächeln auf groteske Weise. Auf ihrer Stirn ist die Nummer „42“ aufgestickt. Der Zombie liegt auf einer Totenbank, und du hast gerade seine Brust fertig zugenäht. Du hast etwas eingenäht, etwas, das sich als nützlich erweisen könnte, falls du hier noch mal vorbeikommst…{#eivene_s26_1}'
 
     menu:
         'Echo: "Bewahre diese Dinge gut auf und warte, bis ich zurrücckkomme."{#eivene_s26_r63478}' if eiveneLogic.r63478_condition():
@@ -430,7 +430,7 @@ label eivene_s26: # from 16.0
 
 # s27 # say63480
 label eivene_s27: # from 26.0 26.1
-    nr 'Die Erinnerung an deine Stimme ist ein Echo, seltsam hohl in deinen Ohren. Du verschränkst die Arme vor der Brust, und zu deiner Überraschung tut der Leichnam dasselbe. Nach einer Weile fallen die Arme wieder an seine Seite und die Vision verblaßt… bis du wieder Ei-Venes Hände beobachtest, die ihre stickenden Bewegungen machen.  ^NHINWEIS: Du hast dein Gedächtnis wiedererlangt. Erinnerungen können dir zusätzliche Erfahrungspunkte oder Fähigkeiten verleihen oder dir sogar dazu verhelfen, später etwas Wertvolles zu erhalten.^-{#eivene_s27_}'
+    nr 'Die Erinnerung an deine Stimme ist ein Echo, seltsam hohl in deinen Ohren. Du verschränkst die Arme vor der Brust, und zu deiner Überraschung tut der Leichnam dasselbe. Nach einer Weile fallen die Arme wieder an seine Seite und die Vision verblaßt… bis du wieder Ei-Venes Hände beobachtest, die ihre stickenden Bewegungen machen.  ^NHINWEIS: Du hast dein Gedächtnis wiedererlangt. Erinnerungen können dir zusätzliche Erfahrungspunkte oder Fähigkeiten verleihen oder dir sogar dazu verhelfen, später etwas Wertvolles zu erhalten.^-{#eivene_s27_1}'
 
     menu:
         'Tipp ihr auf die Schulter, mach sie auf dich aufmerksam.{#eivene_s27_r63482}' if eiveneLogic.r63482_condition():

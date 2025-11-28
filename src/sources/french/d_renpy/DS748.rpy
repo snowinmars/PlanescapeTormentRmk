@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say35383
 label s748_s0: # - # IF ~  True()
-    nr 'La bizarrerie de ce squelette (numéro „748“ d„après ce qui se trouve gravé sur son front) tient à ses quelques fausses dents faites d“une pierre brun rougeâtre. Elles ne doivent pas avoir de valeur car sinon, ses „gardiens“ les auraient enlevées.{#s748_s0_}'
+    nr 'La bizarrerie de ce squelette (numéro „748“ d„après ce qui se trouve gravé sur son front) tient à ses quelques fausses dents faites d“une pierre brun rougeâtre. Elles ne doivent pas avoir de valeur car sinon, ses „gardiens“ les auraient enlevées.{#s748_s0_1}'
 
     menu:
         '"Excuse-moi, tu n„aurais pas vu des squelettes errants dans le coin ?"{#s748_s0_r35384}' if s748Logic.r35384_condition():
@@ -90,7 +90,7 @@ label s748_s0: # - # IF ~  True()
 
 # s1 # say35385
 label s748_s1: # from 0.0 0.1 0.2 0.3
-    nr 'Le squelette ne répond pas.{#s748_s1_}'
+    nr 'Le squelette ne répond pas.{#s748_s1_1}'
 
     menu:
         '"C„était sympa de parler avec toi, Sac d“os. Prends soin de toi."{#s748_s1_r35386}' if s748Logic.r35386_condition():
@@ -109,7 +109,7 @@ label s748_s1: # from 0.0 0.1 0.2 0.3
 
 # s2 # say35411
 label s748_s2: # from 0.4
-    nr 'Ce squelette ne répond pas. Il semble qu„il soit trop absent pour répondre à tes questions.{#s748_s2_}'
+    nr 'Ce squelette ne répond pas. Il semble qu„il soit trop absent pour répondre à tes questions.{#s748_s2_1}'
 
     menu:
         'Laisse le squelette tranquille.{#s748_s2_r35412}' if s748Logic.r35412_condition():
@@ -128,7 +128,7 @@ label s748_s2: # from 0.4
 
 # s3 # say35416
 label s748_s3: # from 0.5
-    nr 'Quelqu„un a pris soin d“attacher les os de ce squelette avec des sangles de cuir, enroulées autour du corps de telle manière qu„elles ressemblent à des muscles et des tendons. Les sangles sont fixées à des boulons métalliques, enfoncés dans les articulations du squelette. Ce squelette semble avoir fait l“objet de nombreuses réparations. Nombre de ses os sont ébréchés, et ses innombrables fractures ont été réparées avec des colles puantes.{#s748_s3_}'
+    nr 'Quelqu„un a pris soin d“attacher les os de ce squelette avec des sangles de cuir, enroulées autour du corps de telle manière qu„elles ressemblent à des muscles et des tendons. Les sangles sont fixées à des boulons métalliques, enfoncés dans les articulations du squelette. Ce squelette semble avoir fait l“objet de nombreuses réparations. Nombre de ses os sont ébréchés, et ses innombrables fractures ont été réparées avec des colles puantes.{#s748_s3_1}'
 
     menu:
         'Essaie de déboulonner les articulations du squelette.{#s748_s3_r35417}' if s748Logic.r35417_condition():
@@ -176,7 +176,7 @@ label s748_s3: # from 0.5
 
 # s4 # say35422
 label s748_s4: # from 0.7 0.10 3.1 3.4
-    nr 'Tu tires sur les boulons, mais tu n„es pas assez fort pour les extraire. Ils sont enfoncés assez serrés.{#s748_s4_}'
+    nr 'Tu tires sur les boulons, mais tu n„es pas assez fort pour les extraire. Ils sont enfoncés assez serrés.{#s748_s4_1}'
 
     menu:
         '"Peut-être qu„avec l“outil adéquat, je pourrais les enlever… Hmmmm. Je vais peut-être revenir, Sac d„os."{#s748_s4_r35423}' if s748Logic.r35423_condition():
@@ -208,7 +208,7 @@ label s748_s4: # from 0.7 0.10 3.1 3.4
 
 # s5 # say35430
 label s748_s5: # from 0.8 0.11 3.2 3.5
-    nr 'Tu tires sur les boulons de toutes tes forces, et après quelques instants, tu arraches le boulon des articulations. Le squelette s„effondre, certains de ses os remuant encore.{#s748_s5_}'
+    nr 'Tu tires sur les boulons de toutes tes forces, et après quelques instants, tu arraches le boulon des articulations. Le squelette s„effondre, certains de ses os remuant encore.{#s748_s5_1}'
 
     menu:
         '"Excuse-moi, Sac d„os…"{#s748_s5_r35431}':
@@ -219,7 +219,7 @@ label s748_s5: # from 0.8 0.11 3.2 3.5
 
 # s6 # say35433
 label s748_s6: # from 0.9 0.12 3.3 3.6
-    nr 'Tu arraches les boulons des articulations du squelette avec ton pied-de-biche. Le squelette s„effondre, certains de ses os remuant encore.{#s748_s6_}'
+    nr 'Tu arraches les boulons des articulations du squelette avec ton pied-de-biche. Le squelette s„effondre, certains de ses os remuant encore.{#s748_s6_1}'
 
     menu:
         '"Excuse-moi, Sac d„os…"{#s748_s6_r35434}':
@@ -230,6 +230,6 @@ label s748_s6: # from 0.9 0.12 3.3 3.6
 
 # s7 # say35459
 label s748_s7: # - # IF ~  False()
-    nr 'Ce squelette ne répond pas. Il semble qu„il soit trop absent pour répondre à tes questions.{#s748_s7_}'
+    nr 'Ce squelette ne répond pas. Il semble qu„il soit trop absent pour répondre à tes questions.{#s748_s7_1}'
 
     menu:

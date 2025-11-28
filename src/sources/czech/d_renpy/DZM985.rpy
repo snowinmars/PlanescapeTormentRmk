@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say45515
 label zm985_s0: # - # IF ~  Global("Topple_985","GLOBAL",0)
-    nr 'Tato mrtvola - "985" - zůstala stát v půli cesty; se zřetelem na stav její levé nohy to vypadá, že se jí do kolena zahryzal nějaký druh plísně nebo hniloby. Mrtvola se kymácí zepředu dozadu a snaží se udržet rovnováhu.{#zm985_s0_}'
+    nr 'Tato mrtvola - "985" - zůstala stát v půli cesty; se zřetelem na stav její levé nohy to vypadá, že se jí do kolena zahryzal nějaký druh plísně nebo hniloby. Mrtvola se kymácí zepředu dozadu a snaží se udržet rovnováhu.{#zm985_s0_1}'
 
     menu:
         'Strč do mrtvoly.{#zm985_s0_r45516}' if zm985Logic.r45516_condition():
@@ -53,7 +53,7 @@ label zm985_s0: # - # IF ~  Global("Topple_985","GLOBAL",0)
 
 # s1 # say45524
 label zm985_s1: # from 0.4 5.0 5.1 5.2
-    nr 'Mrtvola tupě civí dopředu. Není na ní ani známka toho, že by tě slyšela.{#zm985_s1_}'
+    nr 'Mrtvola tupě civí dopředu. Není na ní ani známka toho, že by tě slyšela.{#zm985_s1_1}'
 
     menu:
         'Nechej mrtvolu být.{#zm985_s1_r45525}':
@@ -63,7 +63,7 @@ label zm985_s1: # from 0.4 5.0 5.1 5.2
 
 # s2 # say45526
 label zm985_s2: # from 0.5 5.3
-    nr 'Mrtvola se nehýbe. Zdá se, že už to s ní došlo příliš daleko na to, aby ti mohla odpovědět.{#zm985_s2_}'
+    nr 'Mrtvola se nehýbe. Zdá se, že už to s ní došlo příliš daleko na to, aby ti mohla odpovědět.{#zm985_s2_1}'
 
     menu:
         'Nechej mrtvolu být.{#zm985_s2_r45527}':
@@ -73,7 +73,7 @@ label zm985_s2: # from 0.5 5.3
 
 # s3 # say45528
 label zm985_s3: # from 0.1 6.0
-    nr 'Z levé nohy mrtvoly se ozvalo takové *prask* a tělo se skácelo k zemi jako uschlý strom. Jeho torzo narazilo do kamenných dlaždic a rozpadlo se jako shnilý meloun a z dutin jí vybublal hnis a nečistoty. K tvému údivu si pravděpodobně nikdo pádu mrtvoly nevšiml… a co více, ta levá noha zůstala jako v pozoru stát tam, kde stálo tělo. Po chvíli spadla s vlhkým *žuch* i noha.{#zm985_s3_}'
+    nr 'Z levé nohy mrtvoly se ozvalo takové *prask* a tělo se skácelo k zemi jako uschlý strom. Jeho torzo narazilo do kamenných dlaždic a rozpadlo se jako shnilý meloun a z dutin jí vybublal hnis a nečistoty. K tvému údivu si pravděpodobně nikdo pádu mrtvoly nevšiml… a co více, ta levá noha zůstala jako v pozoru stát tam, kde stálo tělo. Po chvíli spadla s vlhkým *žuch* i noha.{#zm985_s3_1}'
 
     $ zm985Logic.s3_action()
     jump zm985_s7
@@ -81,7 +81,7 @@ label zm985_s3: # from 0.1 6.0
 
 # s4 # say45530
 label zm985_s4: # from 0.2
-    nr 'Chňapl jsi levou ruku mrtvoly ve snaze ji ustálit. Nicméně, jakmile jsi zachytil její paži, naklonila se mrtvola najednou doprava, takže jsi ji nakonec místo narovnání začal natahovat…{#zm985_s4_}'
+    nr 'Chňapl jsi levou ruku mrtvoly ve snaze ji ustálit. Nicméně, jakmile jsi zachytil její paži, naklonila se mrtvola najednou doprava, takže jsi ji nakonec místo narovnání začal natahovat…{#zm985_s4_1}'
 
     $ zm985Logic.s4_action()
     jump morte_s482  # EXTERN
@@ -89,7 +89,7 @@ label zm985_s4: # from 0.2
 
 # s5 # say45531
 label zm985_s5: # - # IF ~  GlobalGT("Topple_985","GLOBAL",0)
-    nr 'Vypadá to, jako by někdo vyměnil levou ruku a nohu této mrtvoly za náhradní údy z jiného těla. Levá noha je kratší než původní, ale mrtvola je teď alespoň schopna stát.{#zm985_s5_}'
+    nr 'Vypadá to, jako by někdo vyměnil levou ruku a nohu této mrtvoly za náhradní údy z jiného těla. Levá noha je kratší než původní, ale mrtvola je teď alespoň schopna stát.{#zm985_s5_1}'
 
     menu:
         '"Promiň, že jsem tě předtím povalil. Byla to nehoda."{#zm985_s5_r45532}' if zm985Logic.r45532_condition():
@@ -120,7 +120,7 @@ label zm985_s5: # - # IF ~  GlobalGT("Topple_985","GLOBAL",0)
 
 # s6 # say45538
 label zm985_s6: # from 0.3
-    nr 'Chňapl jsi levou ruku mrtvoly ve snaze ji ustálit. Nicméně, jakmile jsi zachytil její paži, naklonila se mrtvola najednou doprava, takže jsi ji nakonec místo narovnání začal natahovat…{#zm985_s6_}'
+    nr 'Chňapl jsi levou ruku mrtvoly ve snaze ji ustálit. Nicméně, jakmile jsi zachytil její paži, naklonila se mrtvola najednou doprava, takže jsi ji nakonec místo narovnání začal natahovat…{#zm985_s6_1}'
 
     menu:
         '"Uch-och…"{#zm985_s6_r45539}':
@@ -131,7 +131,7 @@ label zm985_s6: # from 0.3
 
 # s7 # say64205
 label zm985_s7: # from 3.0
-    nr 'Jak hledíš na hnijící zbytky mrtvoly, všímáš si, že jeho levá paže je neporušená - během pádu se od těla odtrhla a nevypadá, že by byla napadena posmrtným rozkladem, jako zbytek těla.{#zm985_s7_}'
+    nr 'Jak hledíš na hnijící zbytky mrtvoly, všímáš si, že jeho levá paže je neporušená - během pádu se od těla odtrhla a nevypadá, že by byla napadena posmrtným rozkladem, jako zbytek těla.{#zm985_s7_1}'
 
     menu:
         '"Hmmm. Přemýšlím, co kdyby se ta paže mohla hodit…"{#zm985_s7_r64206}':

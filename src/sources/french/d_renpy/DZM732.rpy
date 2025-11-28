@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say6529
 label zm732_s0: # from 4.0 # IF ~  !HasItem("TomeBA","ZM732")
-    nr 'Les yeux et les lèvres de ce cadavre branlant ont été cousus, et le numéro „732“ a été gravé sur son front. Le travail de couture qui ferme ses cavités oculaires a l„air très ancien… tu te demandes si les yeux du cadavre ont été cousus avant ou après sa mort.{#zm732_s0_}'
+    nr 'Les yeux et les lèvres de ce cadavre branlant ont été cousus, et le numéro „732“ a été gravé sur son front. Le travail de couture qui ferme ses cavités oculaires a l„air très ancien… tu te demandes si les yeux du cadavre ont été cousus avant ou après sa mort.{#zm732_s0_1}'
 
     menu:
         '"Désolé de t„avoir pris ce livre… il m“a semblé trop intéressant pour le laisser."{#zm732_s0_r6533}' if zm732Logic.r6533_condition():
@@ -42,7 +42,7 @@ label zm732_s0: # from 4.0 # IF ~  !HasItem("TomeBA","ZM732")
 
 # s1 # say6530
 label zm732_s1: # from 0.0 0.1 0.2
-    nr 'Le cadavre continue à te fixer.{#zm732_s1_}'
+    nr 'Le cadavre continue à te fixer.{#zm732_s1_1}'
 
     menu:
         'Laisse le cadavre tranquille.{#zm732_s1_r6538}':
@@ -52,7 +52,7 @@ label zm732_s1: # from 0.0 0.1 0.2
 
 # s2 # say6531
 label zm732_s2: # from 0.3
-    nr 'Le cadavre ne répond pas. Il semble qu„il soit trop absent pour répondre à tes questions.{#zm732_s2_}'
+    nr 'Le cadavre ne répond pas. Il semble qu„il soit trop absent pour répondre à tes questions.{#zm732_s2_1}'
 
     menu:
         'Laisse le cadavre tranquille.{#zm732_s2_r6539}':
@@ -62,7 +62,7 @@ label zm732_s2: # from 0.3
 
 # s3 # say64270
 label zm732_s3: # - # IF ~  HasItem("TomeBA","ZM732")
-    nr 'On a cousu les yeux et la bouche de ce cadavre chancelant et on lui a gravé sur le front le numéro „732“. Les coutures des yeux semblent très vieilles… tu te demandes si elles ont été faites avant ou après sa mort. Tu remarques qu„il tient dans ses mains un énorme livre, comme s“il l„emmenait quelque part.{#zm732_s3_}'
+    nr 'On a cousu les yeux et la bouche de ce cadavre chancelant et on lui a gravé sur le front le numéro „732“. Les coutures des yeux semblent très vieilles… tu te demandes si elles ont été faites avant ou après sa mort. Tu remarques qu„il tient dans ses mains un énorme livre, comme s“il l„emmenait quelque part.{#zm732_s3_1}'
 
     menu:
         'Prends le livre de ses mains… avec précaution.{#zm732_s3_r64271}':
@@ -77,7 +77,7 @@ label zm732_s3: # - # IF ~  HasItem("TomeBA","ZM732")
 
 # s4 # say64273
 label zm732_s4: # from 3.0
-    nr 'Avec précaution, tu prends le livre des mains du zombi - il semble ne rien remarquer. L„ouvrage a l“air d„être un livre de sorcellerie - il contient des diagrammes et des symboles détaillant divers aspects de l“art de la nécromancie. Le livre est très lourd ; aussi maladroit que peut être ce zombi, il est très fort.  ^NREMARQUE : <READSTUFF>^-{#zm732_s4_}'
+    nr 'Avec précaution, tu prends le livre des mains du zombi - il semble ne rien remarquer. L„ouvrage a l“air d„être un livre de sorcellerie - il contient des diagrammes et des symboles détaillant divers aspects de l“art de la nécromancie. Le livre est très lourd ; aussi maladroit que peut être ce zombi, il est très fort.  ^NREMARQUE : <READSTUFF>^-{#zm732_s4_1}'
 
     menu:
         'Réexamine le cadavre.{#zm732_s4_r64274}':

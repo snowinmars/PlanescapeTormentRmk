@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say6584
 label zm475_s0: # - # IF ~  True()
-    nr 'Wygląda na to, że nieco zniekształcona głowa tego trupa trzyma się dzięki kilku wąskim metalowym obręczom przybitym bezpośrednio do czaszki. Zardzewiała żelazna płytka nad lewym okiem ma wyryty numer „475”. Usta truposza są zabite gwoździami. Poza tym cały cuchnie płynem balsamującym.{#zm475_s0_}'
+    nr 'Wygląda na to, że nieco zniekształcona głowa tego trupa trzyma się dzięki kilku wąskim metalowym obręczom przybitym bezpośrednio do czaszki. Zardzewiała żelazna płytka nad lewym okiem ma wyryty numer „475”. Usta truposza są zabite gwoździami. Poza tym cały cuchnie płynem balsamującym.{#zm475_s0_1}'
 
     menu:
         '"Więc jak… widziałeś, żeby działo się tu coś interesującego?"{#zm475_s0_r6587}' if zm475Logic.r6587_condition():
@@ -42,7 +42,7 @@ label zm475_s0: # - # IF ~  True()
 
 # s1 # say6585
 label zm475_s1: # from 0.0 0.1 0.2
-    nr 'Trup wciąż się w ciebie wpatruje.{#zm475_s1_}'
+    nr 'Trup wciąż się w ciebie wpatruje.{#zm475_s1_1}'
 
     menu:
         'Zostaw truposza w spokoju.{#zm475_s1_r6593}':
@@ -52,7 +52,7 @@ label zm475_s1: # from 0.0 0.1 0.2
 
 # s2 # say6586
 label zm475_s2: # from 0.3
-    nr 'Trup nie odpowiada. Wygląda na to, że jest w zbyt daleko posuniętym stadium rozkładu, aby odpowiedzieć na twoje pytania.{#zm475_s2_}'
+    nr 'Trup nie odpowiada. Wygląda na to, że jest w zbyt daleko posuniętym stadium rozkładu, aby odpowiedzieć na twoje pytania.{#zm475_s2_1}'
 
     menu:
         'Zostaw truposza w spokoju.{#zm475_s2_r6594}':

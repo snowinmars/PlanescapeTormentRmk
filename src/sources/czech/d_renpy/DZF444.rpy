@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say35210
 label zf444_s0: # - # IF ~  True()
-    nr 'Toto ženské tělo je v příšerném stavu. Její kůži pokrývá něco, co vypadá jako stovky malých kousnutí - nejspíš od krys. Podle stavu tkáně kolem ran soudíš, že byly nejspíš způsobeny před preparací těla. Její rty jsou pevně sešity a na její tváři je temně modrým inkoustem napsáno číslo "444".{#zf444_s0_}'
+    nr 'Toto ženské tělo je v příšerném stavu. Její kůži pokrývá něco, co vypadá jako stovky malých kousnutí - nejspíš od krys. Podle stavu tkáně kolem ran soudíš, že byly nejspíš způsobeny před preparací těla. Její rty jsou pevně sešity a na její tváři je temně modrým inkoustem napsáno číslo "444".{#zf444_s0_1}'
 
     menu:
         '"Takže… cos dělala poslední dobou?"{#zf444_s0_r35211}' if zf444Logic.r35211_condition():
@@ -58,7 +58,7 @@ label zf444_s0: # - # IF ~  True()
 
 # s1 # say35212
 label zf444_s1: # from 0.0 0.1 0.2
-    nr 'Mrtvola na tebe dál zírá.{#zf444_s1_}'
+    nr 'Mrtvola na tebe dál zírá.{#zf444_s1_1}'
 
     menu:
         '"Sbohem tedy."{#zf444_s1_r35213}' if zf444Logic.r35213_condition():
@@ -76,7 +76,7 @@ label zf444_s1: # from 0.0 0.1 0.2
 
 # s2 # say35231
 label zf444_s2: # from 0.3
-    nr 'Mrtvola neodpovídá. Asi už shnila příliš, aby byla schopná odpovídat na otázky.{#zf444_s2_}'
+    nr 'Mrtvola neodpovídá. Asi už shnila příliš, aby byla schopná odpovídat na otázky.{#zf444_s2_1}'
 
     menu:
         '"Sbohem tedy."{#zf444_s2_r35232}' if zf444Logic.r35232_condition():
@@ -94,6 +94,6 @@ label zf444_s2: # from 0.3
 
 # s3 # say35241
 label zf444_s3: # - # IF ~  False()
-    nr 'Mrtvola neodpovídá. Asi už shnila příliš, aby byla schopná odpovídat na otázky.{#zf444_s3_}'
+    nr 'Mrtvola neodpovídá. Asi už shnila příliš, aby byla schopná odpovídat na otázky.{#zf444_s3_1}'
 
     menu:

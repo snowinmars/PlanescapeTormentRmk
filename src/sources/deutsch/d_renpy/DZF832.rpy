@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say35146
 label zf832_s0: # - # IF ~  True()
-    nr 'Trotz der trockenen, ledrigen Haut dieser Leiche ist es noch immer offensichtlich, daß sie einmal eine schöne Frau mittleren Alters gewesen ist. Wer auch immer die Leiche präpariert hat, scheint Mitleid mit ihr gehabt zu haben, denn die Lippen sind mit kleinen, sauberen Stichen zugenäht, und die Zahl "832" ist in einer eleganten Schrift auf ihre Stirn tätowiert.{#zf832_s0_}'
+    nr 'Trotz der trockenen, ledrigen Haut dieser Leiche ist es noch immer offensichtlich, daß sie einmal eine schöne Frau mittleren Alters gewesen ist. Wer auch immer die Leiche präpariert hat, scheint Mitleid mit ihr gehabt zu haben, denn die Lippen sind mit kleinen, sauberen Stichen zugenäht, und die Zahl "832" ist in einer eleganten Schrift auf ihre Stirn tätowiert.{#zf832_s0_1}'
 
     menu:
         '"Sag mal… hast du nachher schon was vor?"{#zf832_s0_r35147}' if zf832Logic.r35147_condition():
@@ -58,7 +58,7 @@ label zf832_s0: # - # IF ~  True()
 
 # s1 # say35148
 label zf832_s1: # from 0.0 0.1 0.2
-    nr 'Die Leiche starrt dich weiter an.{#zf832_s1_}'
+    nr 'Die Leiche starrt dich weiter an.{#zf832_s1_1}'
 
     menu:
         '"Dann leb wohl."{#zf832_s1_r35149}' if zf832Logic.r35149_condition():
@@ -76,7 +76,7 @@ label zf832_s1: # from 0.0 0.1 0.2
 
 # s2 # say35167
 label zf832_s2: # from 0.3
-    nr 'Diese Leiche antwortet nicht. Es sieht so aus, als ob sie schon zu tot ist, um noch auf irgendeine deiner Fragen zu antworten.{#zf832_s2_}'
+    nr 'Diese Leiche antwortet nicht. Es sieht so aus, als ob sie schon zu tot ist, um noch auf irgendeine deiner Fragen zu antworten.{#zf832_s2_1}'
 
     menu:
         '"Dann leb wohl."{#zf832_s2_r35168}' if zf832Logic.r35168_condition():
@@ -94,6 +94,6 @@ label zf832_s2: # from 0.3
 
 # s3 # say35177
 label zf832_s3: # - # IF ~  False()
-    nr 'Diese Leiche antwortet nicht. Es sieht so aus, als ob sie schon zu tot ist, um noch auf irgendeine deiner Fragen zu antworten.{#zf832_s3_}'
+    nr 'Diese Leiche antwortet nicht. Es sieht so aus, als ob sie schon zu tot ist, um noch auf irgendeine deiner Fragen zu antworten.{#zf832_s3_1}'
 
     menu:

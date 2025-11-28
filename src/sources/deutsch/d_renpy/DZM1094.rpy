@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say6562
 label zm1094_s0: # - # IF ~  Global("Asonje","GLOBAL",0)
-    nr 'Dieser wandelnden Leiche wurde die Nummer "1094" in die Stirn eingeritzt. Ihr Mund wurde fest zugenäht und der Geruch von frischem Formaldehyd umgibt sie wie eine Wolke. Trotz ihrer bleichen, eingefallenen Gesichtszüge und leblosen, milchigen Augen kann man noch gut erkennen, daß dies einmal ein ansehnlicher junger Mann gewesen sein muß.{#zm1094_s0_}'
+    nr 'Dieser wandelnden Leiche wurde die Nummer "1094" in die Stirn eingeritzt. Ihr Mund wurde fest zugenäht und der Geruch von frischem Formaldehyd umgibt sie wie eine Wolke. Trotz ihrer bleichen, eingefallenen Gesichtszüge und leblosen, milchigen Augen kann man noch gut erkennen, daß dies einmal ein ansehnlicher junger Mann gewesen sein muß.{#zm1094_s0_1}'
 
     menu:
         '"Na… irgendwas Interessantes passiert?"{#zm1094_s0_r6565}' if zm1094Logic.r6565_condition():
@@ -43,7 +43,7 @@ label zm1094_s0: # - # IF ~  Global("Asonje","GLOBAL",0)
 
 # s1 # say6563
 label zm1094_s1: # from 0.0 0.1 0.2
-    nr 'Die Leiche starrt dich weiter an.{#zm1094_s1_}'
+    nr 'Die Leiche starrt dich weiter an.{#zm1094_s1_1}'
 
     menu:
         'Laß die Leiche in Ruhe.{#zm1094_s1_r6571}':
@@ -53,7 +53,7 @@ label zm1094_s1: # from 0.0 0.1 0.2
 
 # s2 # say6564
 label zm1094_s2: # from 0.3
-    nr 'Die Leiche zuckt einen Moment lang und wird still, als der Geist noch einmal in die sterbliche Hülle zurückkehrt. Innerhalb von Sekunden scheint so etwas wie Leben in den Augen des Zombies aufzuflackern, und er beginnt, sich mit erstauntem Gesichtsausdruck umzublicken. Der Körper scheint jetzt von einer weichen, goldenen Aura umgeben zu sein.{#zm1094_s2_}'
+    nr 'Die Leiche zuckt einen Moment lang und wird still, als der Geist noch einmal in die sterbliche Hülle zurückkehrt. Innerhalb von Sekunden scheint so etwas wie Leben in den Augen des Zombies aufzuflackern, und er beginnt, sich mit erstauntem Gesichtsausdruck umzublicken. Der Körper scheint jetzt von einer weichen, goldenen Aura umgeben zu sein.{#zm1094_s2_1}'
 
     menu:
         '"Ich würde dich gern was fragen…"{#zm1094_s2_r6572}':
@@ -67,7 +67,7 @@ label zm1094_s2: # from 0.3
 
 # s3 # say9224
 label zm1094_s3: # from 2.0
-    nr 'Der Geist scheint dich plötzlich bemerkt zu haben. Er grinst so breit, daß die Nähte um seinen Mund herum aufplatzen und die Fäden herabhängen. Angesichts dieser Überraschung hält er sich die Hand vor den Mund, zuckt mit den Achseln und nickt dir zur Begrüßung zu. "Wo… wo bin ich? Was ist das für ein merkwürdiger Ort" Er hustet leise und reibt seine Kehle.{#zm1094_s3_}'
+    nr 'Der Geist scheint dich plötzlich bemerkt zu haben. Er grinst so breit, daß die Nähte um seinen Mund herum aufplatzen und die Fäden herabhängen. Angesichts dieser Überraschung hält er sich die Hand vor den Mund, zuckt mit den Achseln und nickt dir zur Begrüßung zu. "Wo… wo bin ich? Was ist das für ein merkwürdiger Ort" Er hustet leise und reibt seine Kehle.{#zm1094_s3_1}'
 
     menu:
         '"Du bist hier, um *meine* Fragen zu beantworten, Geist."{#zm1094_s3_r9247}':
@@ -90,7 +90,7 @@ label zm1094_s3: # from 2.0
 
 # s4 # say9225
 label zm1094_s4: # from 3.0
-    nr 'Der freundliche Ton des Geistes erstirbt plötzlich. Er schaut dich einen Moment lang geringschätzig an, während die losen Fäden von seinen grauen, verwelkten Lippen herabhängen. "Na schön, fragt was Ihr wollt." Er schaut gelangweilt weg.{#zm1094_s4_}'
+    nr 'Der freundliche Ton des Geistes erstirbt plötzlich. Er schaut dich einen Moment lang geringschätzig an, während die losen Fäden von seinen grauen, verwelkten Lippen herabhängen. "Na schön, fragt was Ihr wollt." Er schaut gelangweilt weg.{#zm1094_s4_1}'
 
     menu:
         '"Wer bist du?"{#zm1094_s4_r9251}':
@@ -124,7 +124,7 @@ label zm1094_s4: # from 3.0
 
 # s5 # say9226
 label zm1094_s5: # from 4.0 11.0
-    nr '"Mein Name war Asonje. Darf ich gehen?"{#zm1094_s5_}'
+    nr '"Mein Name war Asonje. Darf ich gehen?"{#zm1094_s5_1}'
 
     menu:
         '"Nein, ich hätte da noch eine andere Frage…"{#zm1094_s5_r9258}':
@@ -138,7 +138,7 @@ label zm1094_s5: # from 4.0 11.0
 
 # s6 # say9227
 label zm1094_s6: # from 4.1 11.1
-    nr '"Ich kann mich nicht erinnern. Sonst noch was?"{#zm1094_s6_}'
+    nr '"Ich kann mich nicht erinnern. Sonst noch was?"{#zm1094_s6_1}'
 
     menu:
         '"Ja, ich hätte da noch eine andere Frage…"{#zm1094_s6_r9260}':
@@ -152,7 +152,7 @@ label zm1094_s6: # from 4.1 11.1
 
 # s7 # say9228
 label zm1094_s7: # from 4.2 11.2
-    nr 'Der Geist zuckt mit den Achseln und blickt in den Himmel. "Das kann ich nicht sagen. Aber was macht das überhaupt aus?" Er preßt seine Lippen gereizt zusammen und wirft dir einen strafenden Blick zu; seine toten Augen funkeln böse. "Wollt Ihr noch etwas von mir?"{#zm1094_s7_}'
+    nr 'Der Geist zuckt mit den Achseln und blickt in den Himmel. "Das kann ich nicht sagen. Aber was macht das überhaupt aus?" Er preßt seine Lippen gereizt zusammen und wirft dir einen strafenden Blick zu; seine toten Augen funkeln böse. "Wollt Ihr noch etwas von mir?"{#zm1094_s7_1}'
 
     menu:
         '"Ja, ich hätte da noch eine andere Frage…"{#zm1094_s7_r9262}':
@@ -166,7 +166,7 @@ label zm1094_s7: # from 4.2 11.2
 
 # s8 # say9229
 label zm1094_s8: # from 4.3 11.3
-    nr '"Mein Geist existiert in Arborea…" Er hält kurz inne, ganz in Erinnerungen versunken. "Selbst jetzt sehne ich mich danach, wieder an diesen Ort zurückkehren, weit weg von deiner eigennützigen, respektlosen und ziemlich lästigen Neugier. Darf ich wieder dorthin zurückkehren?"{#zm1094_s8_}'
+    nr '"Mein Geist existiert in Arborea…" Er hält kurz inne, ganz in Erinnerungen versunken. "Selbst jetzt sehne ich mich danach, wieder an diesen Ort zurückkehren, weit weg von deiner eigennützigen, respektlosen und ziemlich lästigen Neugier. Darf ich wieder dorthin zurückkehren?"{#zm1094_s8_1}'
 
     menu:
         '"Nein, ich hätte da noch eine andere Frage…"{#zm1094_s8_r9264}':
@@ -180,7 +180,7 @@ label zm1094_s8: # from 4.3 11.3
 
 # s9 # say9230
 label zm1094_s9: # from 4.4 11.4
-    nr 'Der Geist wirft dir einen verzweifelten Blick zu. "Natürlich nichts!" Er schüttelt ärgerlich den Kopf, wobei die losen Fäden seiner Nähte bei jeder Bewegung hin und her fliegen.{#zm1094_s9_}'
+    nr 'Der Geist wirft dir einen verzweifelten Blick zu. "Natürlich nichts!" Er schüttelt ärgerlich den Kopf, wobei die losen Fäden seiner Nähte bei jeder Bewegung hin und her fliegen.{#zm1094_s9_1}'
 
     menu:
         '"Und wie ist dann deine Hülle hierhergekommen, um in diesen öden Hallen zu arbeiten?"{#zm1094_s9_r9266}':
@@ -198,7 +198,7 @@ label zm1094_s9: # from 4.4 11.4
 
 # s10 # say9231
 label zm1094_s10: # from 4.5 11.5
-    nr '"Nein." Der Geist scheint dir kaum Aufmerksamkeit zu schenken.{#zm1094_s10_}'
+    nr '"Nein." Der Geist scheint dir kaum Aufmerksamkeit zu schenken.{#zm1094_s10_1}'
 
     menu:
         '"Dann hätte ich da noch eine andere Frage…"{#zm1094_s10_r9269}':
@@ -212,7 +212,7 @@ label zm1094_s10: # from 4.5 11.5
 
 # s11 # say9232
 label zm1094_s11: # from 5.0 6.0 7.0 8.0 9.1 10.0 12.0 27.0
-    nr 'Der Geist seufzt laut. Dabei füllt sich die Luft mit dem Formaldehydgeruch aus der Lunge der Leiche. "Ja, ja… schieß los."{#zm1094_s11_}'
+    nr 'Der Geist seufzt laut. Dabei füllt sich die Luft mit dem Formaldehydgeruch aus der Lunge der Leiche. "Ja, ja… schieß los."{#zm1094_s11_1}'
 
     menu:
         '"Wer bist du?"{#zm1094_s11_r9271}':
@@ -246,7 +246,7 @@ label zm1094_s11: # from 5.0 6.0 7.0 8.0 9.1 10.0 12.0 27.0
 
 # s12 # say9233
 label zm1094_s12: # from 9.0
-    nr '"Das möchte ich auch gerne wissen, Dummkopf. Und wenn du erlaubst, würde ich jetzt gern gehen."{#zm1094_s12_}'
+    nr '"Das möchte ich auch gerne wissen, Dummkopf. Und wenn du erlaubst, würde ich jetzt gern gehen."{#zm1094_s12_1}'
 
     menu:
         '"Nein, ich hätte da noch eine andere Frage…"{#zm1094_s12_r9278}':
@@ -260,7 +260,7 @@ label zm1094_s12: # from 9.0
 
 # s13 # say9234
 label zm1094_s13: # from 3.1
-    nr 'Er denkt kurz darüber nach und lacht. "Ja! Das würde Sinn ergeben, nicht wahr? Sag mal, kenne ich dich überhaupt?" Er legt den Kopf auf die Seite und schaut dich prüfend an. Es scheint ihm Spaß zu machen, deine Identität zu erraten.{#zm1094_s13_}'
+    nr 'Er denkt kurz darüber nach und lacht. "Ja! Das würde Sinn ergeben, nicht wahr? Sag mal, kenne ich dich überhaupt?" Er legt den Kopf auf die Seite und schaut dich prüfend an. Es scheint ihm Spaß zu machen, deine Identität zu erraten.{#zm1094_s13_1}'
 
     menu:
         '"Nein, ich bezweifle, daß du mich kennst. Ich hätte aber eine Frage an dich…"{#zm1094_s13_r9280}':
@@ -274,7 +274,7 @@ label zm1094_s13: # from 3.1
 
 # s14 # say9235
 label zm1094_s14: # from 3.2 13.0
-    nr 'Der Geist zuckt mit den Achseln und kichert leise. "Da magst du recht haben! Was wolltest du mich fragen?" Abwesend beginnt er, die restlichen Fäden aus seinen Lippen zu ziehen und einen nach dem anderen zu Boden fallen zu lassen.{#zm1094_s14_}'
+    nr 'Der Geist zuckt mit den Achseln und kichert leise. "Da magst du recht haben! Was wolltest du mich fragen?" Abwesend beginnt er, die restlichen Fäden aus seinen Lippen zu ziehen und einen nach dem anderen zu Boden fallen zu lassen.{#zm1094_s14_1}'
 
     menu:
         '"Wer bist du?"{#zm1094_s14_r9282}' if zm1094Logic.r9282_condition():
@@ -312,7 +312,7 @@ label zm1094_s14: # from 3.2 13.0
 
 # s15 # say9236
 label zm1094_s15: # from 14.0 22.0
-    nr '" Mein Name war Asonje. Und mit wem habe ich das Vergnügen?"{#zm1094_s15_}'
+    nr '" Mein Name war Asonje. Und mit wem habe ich das Vergnügen?"{#zm1094_s15_1}'
 
     menu:
         '"Ich… ich weiß es nicht."{#zm1094_s15_r9289}':
@@ -333,7 +333,7 @@ label zm1094_s15: # from 14.0 22.0
 
 # s16 # say9237
 label zm1094_s16: # from 14.2 22.2
-    nr '"Ich komme von vielen Orten! Ehrlich gesagt weiß ich nicht, wo ich geboren bin. Ich bin in meinem Leben viel gereist und an vielen Orten zu Hause gewesen. Jetzt darf ich ganz Arborea erkunden…" Der Geist macht einen zufriedenen Eindruck.{#zm1094_s16_}'
+    nr '"Ich komme von vielen Orten! Ehrlich gesagt weiß ich nicht, wo ich geboren bin. Ich bin in meinem Leben viel gereist und an vielen Orten zu Hause gewesen. Jetzt darf ich ganz Arborea erkunden…" Der Geist macht einen zufriedenen Eindruck.{#zm1094_s16_1}'
 
     menu:
         '"Ich verstehe. Ich hätte noch eine andere Frage…"{#zm1094_s16_r9292}':
@@ -347,7 +347,7 @@ label zm1094_s16: # from 14.2 22.2
 
 # s17 # say9238
 label zm1094_s17: # from 14.3 22.3
-    nr 'Das Lächeln auf dem Gesicht des Geistes erstirbt, und er wirkt besorgt. "Merkwürdig… ich weiß es nicht! Ich hab„ keine Ahnung, wie ich gestorben bin." Er zuckt mit den Achseln: "Na ja, was soll“s!" Auf sein fahles Gesicht kehrt ein freudiges Grinsen zurück, das für eine Leiche erstaunlich strahlend ist.{#zm1094_s17_}'
+    nr 'Das Lächeln auf dem Gesicht des Geistes erstirbt, und er wirkt besorgt. "Merkwürdig… ich weiß es nicht! Ich hab„ keine Ahnung, wie ich gestorben bin." Er zuckt mit den Achseln: "Na ja, was soll“s!" Auf sein fahles Gesicht kehrt ein freudiges Grinsen zurück, das für eine Leiche erstaunlich strahlend ist.{#zm1094_s17_1}'
 
     menu:
         '"Ich hätte noch eine andere Frage…"{#zm1094_s17_r9294}':
@@ -361,7 +361,7 @@ label zm1094_s17: # from 14.3 22.3
 
 # s18 # say9239
 label zm1094_s18: # from 14.4 22.4
-    nr '"In Arborea! Einen schöneren Ort gibt es für mich nicht. Nirgends sonst in meinem sterblichen Leben habe ich einen Ort von ähnlicher Leidenschaft… ähnlicher Pracht gesehen…" Er hält inne, ganz in angenehme Erinnerungen versunken. "Die Schönheit des Landes, der Menschen - ein Traum. Selbst in diesem Augenblick vermisse ich Arborea!"{#zm1094_s18_}'
+    nr '"In Arborea! Einen schöneren Ort gibt es für mich nicht. Nirgends sonst in meinem sterblichen Leben habe ich einen Ort von ähnlicher Leidenschaft… ähnlicher Pracht gesehen…" Er hält inne, ganz in angenehme Erinnerungen versunken. "Die Schönheit des Landes, der Menschen - ein Traum. Selbst in diesem Augenblick vermisse ich Arborea!"{#zm1094_s18_1}'
 
     menu:
         '"Ich verstehe. Ich hätte noch eine andere Frage…"{#zm1094_s18_r9296}':
@@ -375,7 +375,7 @@ label zm1094_s18: # from 14.4 22.4
 
 # s19 # say9240
 label zm1094_s19: # from 14.5 22.5
-    nr '"Nicht besonders viel. Ich habe aus einer Laune heraus einen Vertrag bei einer Staubmenschen-Frau unterzeichnet… sie hatte mich einst auf den schrecklichen Ort aufmerksam gemacht und gesagt, mein Körper würde nach meinem Tod als Arbeiter verwendet. Ich dachte, ich könnte ihn im nächsten Leben ohnehin nicht mehr gebrauchen, warum also nicht? Kann ich genauso gut den Klimper nehmen und in Saus und Braus leben!" Bei der Vorstellung kichert er, und der geisterhafte Schalk schaut ihm aus den Augen.{#zm1094_s19_}'
+    nr '"Nicht besonders viel. Ich habe aus einer Laune heraus einen Vertrag bei einer Staubmenschen-Frau unterzeichnet… sie hatte mich einst auf den schrecklichen Ort aufmerksam gemacht und gesagt, mein Körper würde nach meinem Tod als Arbeiter verwendet. Ich dachte, ich könnte ihn im nächsten Leben ohnehin nicht mehr gebrauchen, warum also nicht? Kann ich genauso gut den Klimper nehmen und in Saus und Braus leben!" Bei der Vorstellung kichert er, und der geisterhafte Schalk schaut ihm aus den Augen.{#zm1094_s19_1}'
 
     menu:
         '"Weißt du irgendetwas über die Stadt um die Leichenhalle herum?"{#zm1094_s19_r9298}':
@@ -393,7 +393,7 @@ label zm1094_s19: # from 14.5 22.5
 
 # s20 # say9241
 label zm1094_s20: # from 14.6 22.6
-    nr 'Der Geist denkt kurz nach. "Nein, tut mir leid, dieser Name sagt mir nichts. Ein Freund von dir?"{#zm1094_s20_}'
+    nr 'Der Geist denkt kurz nach. "Nein, tut mir leid, dieser Name sagt mir nichts. Ein Freund von dir?"{#zm1094_s20_1}'
 
     menu:
         '"Vielleicht. Ich hätte noch eine andere Frage…"{#zm1094_s20_r9301}':
@@ -407,7 +407,7 @@ label zm1094_s20: # from 14.6 22.6
 
 # s21 # say9242
 label zm1094_s21: # from 15.0
-    nr 'Er wirkt überrascht. "Komisch! Schade, eigentlich. Aber *irgendwie* muß ich dich doch nennen, oder?" Der Geist sieht dich erwartungsvoll an.{#zm1094_s21_}'
+    nr 'Er wirkt überrascht. "Komisch! Schade, eigentlich. Aber *irgendwie* muß ich dich doch nennen, oder?" Der Geist sieht dich erwartungsvoll an.{#zm1094_s21_1}'
 
     menu:
         '"Ich bin sicher, daß dir was einfallen wird. Ich hätte eine Frage…"{#zm1094_s21_r9303}':
@@ -426,7 +426,7 @@ label zm1094_s21: # from 15.0
 
 # s22 # say9243
 label zm1094_s22: # from 15.1 16.0 17.0 18.0 19.1 20.0 21.0 23.0 24.0 25.0 26.0
-    nr '"Selbstverständlich. Schieß los!" Mit einem zufriedenen Lächeln wartet er gespannt auf deine Frage. Jetzt, wo alle Nähte aufgetrennt sind, wirkt sein Grinsen nicht mehr ganz so schaurig.{#zm1094_s22_}'
+    nr '"Selbstverständlich. Schieß los!" Mit einem zufriedenen Lächeln wartet er gespannt auf deine Frage. Jetzt, wo alle Nähte aufgetrennt sind, wirkt sein Grinsen nicht mehr ganz so schaurig.{#zm1094_s22_1}'
 
     menu:
         '"Wer bist du?"{#zm1094_s22_r9306}' if zm1094Logic.r9306_condition():
@@ -464,7 +464,7 @@ label zm1094_s22: # from 15.1 16.0 17.0 18.0 19.1 20.0 21.0 23.0 24.0 25.0 26.0
 
 # s23 # say9244
 label zm1094_s23: # from 21.1
-    nr 'Der Geist spürt deine Verzweiflung und lacht gutherzig. "Armer Schlucker! Adahn also. Aber wolltest du mich nicht was fragen?"{#zm1094_s23_}'
+    nr 'Der Geist spürt deine Verzweiflung und lacht gutherzig. "Armer Schlucker! Adahn also. Aber wolltest du mich nicht was fragen?"{#zm1094_s23_1}'
 
     menu:
         '"Ja…"{#zm1094_s23_r9313}':
@@ -478,7 +478,7 @@ label zm1094_s23: # from 21.1
 
 # s24 # say9245
 label zm1094_s24: # from 19.0
-    nr '"Du meinst Sigil?" Als du nickst, verzieht sich sein Lächeln zu einem breiten, hinterhältigen Grinsen. "Oh, ich will dir nicht den Spaß verderben! Am besten findest du selbst etwas über diesen Ort raus! Verliere dich in seinen Straßen, Tavernen und Menschen… aber sieh dich vor! Sigil ist gefährlich und wunderschön zugleich. Aber gerade das macht es ja so aufregend."{#zm1094_s24_}'
+    nr '"Du meinst Sigil?" Als du nickst, verzieht sich sein Lächeln zu einem breiten, hinterhältigen Grinsen. "Oh, ich will dir nicht den Spaß verderben! Am besten findest du selbst etwas über diesen Ort raus! Verliere dich in seinen Straßen, Tavernen und Menschen… aber sieh dich vor! Sigil ist gefährlich und wunderschön zugleich. Aber gerade das macht es ja so aufregend."{#zm1094_s24_1}'
 
     menu:
         '"Ich… nehme es an. Ich habe da noch eine andere Frage…"{#zm1094_s24_r9315}':
@@ -492,7 +492,7 @@ label zm1094_s24: # from 19.0
 
 # s25 # say9283
 label zm1094_s25: # from 14.1 22.1
-    nr '"Mein Name war Asonje."{#zm1094_s25_}'
+    nr '"Mein Name war Asonje."{#zm1094_s25_1}'
 
     menu:
         '"Ich hätte noch eine Frage…"{#zm1094_s25_r9284}':
@@ -506,7 +506,7 @@ label zm1094_s25: # from 14.1 22.1
 
 # s26 # say20061
 label zm1094_s26: # - # IF ~  GlobalGT("Asonje","GLOBAL",0) GlobalLT("Asonje","GLOBAL",3)
-    nr '"Wieder da, was?" Er lächelt breit.{#zm1094_s26_}'
+    nr '"Wieder da, was?" Er lächelt breit.{#zm1094_s26_1}'
 
     menu:
         '"Ich hätte da ein paar Fragen…"{#zm1094_s26_r20063}':
@@ -520,7 +520,7 @@ label zm1094_s26: # - # IF ~  GlobalGT("Asonje","GLOBAL",0) GlobalLT("Asonje","G
 
 # s27 # say20062
 label zm1094_s27: # - # IF ~  Global("Asonje","GLOBAL",3)
-    nr '"Oh, du… schon wieder." Er runzelt die Stirn und schaut weg.{#zm1094_s27_}'
+    nr '"Oh, du… schon wieder." Er runzelt die Stirn und schaut weg.{#zm1094_s27_1}'
 
     menu:
         '"Ich hätte da ein paar Fragen…"{#zm1094_s27_r20065}':

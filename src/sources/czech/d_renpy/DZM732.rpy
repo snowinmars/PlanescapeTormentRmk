@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say6529
 label zm732_s0: # from 4.0 # IF ~  !HasItem("TomeBA","ZM732")
-    nr 'Vetchá mrtvola má sešité oči i ústa a v jejím obočí je vyřezáno číslo "732". Způsob šití, které udržuje její oční dutiny zapečetěné, vypadá neobyčejně staře… rozvažuješ se, zda oči byly sešity před, nebo až po smrti tohoto muže.{#zm732_s0_}'
+    nr 'Vetchá mrtvola má sešité oči i ústa a v jejím obočí je vyřezáno číslo "732". Způsob šití, které udržuje její oční dutiny zapečetěné, vypadá neobyčejně staře… rozvažuješ se, zda oči byly sešity před, nebo až po smrti tohoto muže.{#zm732_s0_1}'
 
     menu:
         '"Omlouvám se, že ti beru tuto knihu… vypadá příliš zajímavě na to, abych se jí zřekl."{#zm732_s0_r6533}' if zm732Logic.r6533_condition():
@@ -42,7 +42,7 @@ label zm732_s0: # from 4.0 # IF ~  !HasItem("TomeBA","ZM732")
 
 # s1 # say6530
 label zm732_s1: # from 0.0 0.1 0.2
-    nr 'Mrtvola na tebe stále zírá.{#zm732_s1_}'
+    nr 'Mrtvola na tebe stále zírá.{#zm732_s1_1}'
 
     menu:
         'Nechej mrtvolu být.{#zm732_s1_r6538}':
@@ -52,7 +52,7 @@ label zm732_s1: # from 0.0 0.1 0.2
 
 # s2 # say6531
 label zm732_s2: # from 0.3
-    nr 'Mrtvola neodpovídá. Vypadá to, že je mrtvá příliš dlouho na to, aby byla schopna odpovědět na nějakou tvou otázku.{#zm732_s2_}'
+    nr 'Mrtvola neodpovídá. Vypadá to, že je mrtvá příliš dlouho na to, aby byla schopna odpovědět na nějakou tvou otázku.{#zm732_s2_1}'
 
     menu:
         'Nechej mrtvolu být.{#zm732_s2_r6539}':
@@ -62,7 +62,7 @@ label zm732_s2: # from 0.3
 
 # s3 # say64270
 label zm732_s3: # - # IF ~  HasItem("TomeBA","ZM732")
-    nr 'Této rozpadající se mrtvole byly zašity oči i ústa a do obočí je vyřezáno číslo "732". Nitě, držící jeho oči zapečetěné, vypadají extrémně staře… zajímalo by tě, jestli neměl oči sešité dříve než zemřel. Vidíš, že v rukách svírá tlustý svazek, drží ho jako by ho někomu vzal.{#zm732_s3_}'
+    nr 'Této rozpadající se mrtvole byly zašity oči i ústa a do obočí je vyřezáno číslo "732". Nitě, držící jeho oči zapečetěné, vypadají extrémně staře… zajímalo by tě, jestli neměl oči sešité dříve než zemřel. Vidíš, že v rukách svírá tlustý svazek, drží ho jako by ho někomu vzal.{#zm732_s3_1}'
 
     menu:
         'Vzít svazek z jeho rukou… opatrně.{#zm732_s3_r64271}':
@@ -77,7 +77,7 @@ label zm732_s3: # - # IF ~  HasItem("TomeBA","ZM732")
 
 # s4 # say64273
 label zm732_s4: # from 3.0
-    nr 'Opatrně bereš svazek z rukou mrtvoly -- nezdá se, že by mu to vadilo. Svazek vypadá jako kniha kouzel a ochrany -- je plná nákresů a diagramů popisujících různé aspekty nekromantického umění. Kniha je šíleně těžká; jak moc byla zombie neopatrná, tak moc musela být silná.  POZNÁMKA: Pro "přečtení" poznámek, knih nebo svitků je vlož do svého inventáře, a pak na ně klikni pravým tlačítkem myši, vyvolá se informační panel.{#zm732_s4_}'
+    nr 'Opatrně bereš svazek z rukou mrtvoly -- nezdá se, že by mu to vadilo. Svazek vypadá jako kniha kouzel a ochrany -- je plná nákresů a diagramů popisujících různé aspekty nekromantického umění. Kniha je šíleně těžká; jak moc byla zombie neopatrná, tak moc musela být silná.  POZNÁMKA: Pro "přečtení" poznámek, knih nebo svitků je vlož do svého inventáře, a pak na ně klikni pravým tlačítkem myši, vyvolá se informační panel.{#zm732_s4_1}'
 
     menu:
         'Prozkoumej mrtvolu znovu.{#zm732_s4_r64274}':

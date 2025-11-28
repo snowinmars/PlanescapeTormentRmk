@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say44993
 label n1201_s0: # from 1.6 3.0 # IF ~  True()
-    nr 'Na tej śmierdzącej notatce narysowano dziwnie wyglądający diagram. Wygląda na to, że to instrukcja, według której masz zagiąć rogi notatki w ten sposób, żeby ich końce dotykały środka. Na każdym rogu znajdują się dziwne znaki - jeden znak w prawym górnym rogu, dwa znaki w prawym dolnym, trzy znaki w lewym dolnym, a w lewym górnym rogu nie ma żadnych znaków.{#n1201_s0_}'
+    nr 'Na tej śmierdzącej notatce narysowano dziwnie wyglądający diagram. Wygląda na to, że to instrukcja, według której masz zagiąć rogi notatki w ten sposób, żeby ich końce dotykały środka. Na każdym rogu znajdują się dziwne znaki - jeden znak w prawym górnym rogu, dwa znaki w prawym dolnym, trzy znaki w lewym dolnym, a w lewym górnym rogu nie ma żadnych znaków.{#n1201_s0_1}'
 
     menu:
         'Zagnij prawy górny róg do środka.{#n1201_s0_r44994}':
@@ -42,7 +42,7 @@ label n1201_s0: # from 1.6 3.0 # IF ~  True()
 
 # s1 # say44999
 label n1201_s1: # from 0.0 0.1 0.2 0.3 1.0 1.1 1.2 1.3 1.4
-    nr 'Zaginasz róg, tak aby jego koniec dotykał środka.{#n1201_s1_}'
+    nr 'Zaginasz róg, tak aby jego koniec dotykał środka.{#n1201_s1_1}'
 
     menu:
         'Zagnij prawy górny róg do środka.{#n1201_s1_r45000}' if n1201Logic.r45000_condition():
@@ -87,7 +87,7 @@ label n1201_s1: # from 0.0 0.1 0.2 0.3 1.0 1.1 1.2 1.3 1.4
 
 # s2 # say45015
 label n1201_s2: # from 1.5
-    nr 'Kiedy zaginasz lewy górny róg do środka, spostrzegasz, że prawy górny róg odgina się i powraca do swojego poprzedniego położenia.{#n1201_s2_}'
+    nr 'Kiedy zaginasz lewy górny róg do środka, spostrzegasz, że prawy górny róg odgina się i powraca do swojego poprzedniego położenia.{#n1201_s2_1}'
 
     menu:
         'Jeszcze raz zagnij prawy górny róg do środka.{#n1201_s2_r45016}':
@@ -107,7 +107,7 @@ label n1201_s2: # from 1.5
 
 # s3 # say45019
 label n1201_s3: # from 2.1
-    nr 'Zaginasz lewy dolny róg do środka, a po chwili dwa pozostałe rogi rozprostowują się. Nic się nie dzieje.{#n1201_s3_}'
+    nr 'Zaginasz lewy dolny róg do środka, a po chwili dwa pozostałe rogi rozprostowują się. Nic się nie dzieje.{#n1201_s3_1}'
 
     menu:
         'Jeszcze raz dokładnie przyjrzyj się notatce.{#n1201_s3_r45020}':
@@ -121,7 +121,7 @@ label n1201_s3: # from 2.1
 
 # s4 # say45022
 label n1201_s4: # from 2.0
-    nr 'Kiedy zaginasz do środka prawy górny róg, lewy dolny robi to samo, aż w końcu wszystkie rogi dotykają środka notatki. Patrzysz na to przez chwilę, a w tym czasie rogi unoszą się, a cała notatka zamienia się w czworokątną, papierową piramidę.{#n1201_s4_}'
+    nr 'Kiedy zaginasz do środka prawy górny róg, lewy dolny robi to samo, aż w końcu wszystkie rogi dotykają środka notatki. Patrzysz na to przez chwilę, a w tym czasie rogi unoszą się, a cała notatka zamienia się w czworokątną, papierową piramidę.{#n1201_s4_1}'
 
     menu:
         'Otwórz boczne ściany piramidy.{#n1201_s4_r45023}':
@@ -132,7 +132,7 @@ label n1201_s4: # from 2.0
 
 # s5 # say45024
 label n1201_s5: # from 4.0
-    nr 'Odginasz boczne ściany piramidy, a papier zamienia się w proch. Wewnątrz znajduje się mały, trójkątny kolczyk, w którym odbija się światło.{#n1201_s5_}'
+    nr 'Odginasz boczne ściany piramidy, a papier zamienia się w proch. Wewnątrz znajduje się mały, trójkątny kolczyk, w którym odbija się światło.{#n1201_s5_1}'
 
     menu:
         'Weź trójkątny kolczyk…{#n1201_s5_r45025}':

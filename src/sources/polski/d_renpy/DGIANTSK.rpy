@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say292
 label giantsk_s0: # - # IF ~  True()
-    nr 'Widzisz przed sobą ogromny szkielet odziany w zdobioną zbroję z brązu. Przymocowano ją do kości nitami, a na napierśniku wygrawerowano serię skomplikowanych symboli. Zastanawiasz się nad pochodzeniem tego kościotrupa; nie miałeś pojęcia, że w wieloświecie istnieją ludzie o tym wzroście. Ogromny miecz w jego rękach wygląda tak, jakby ważył tyle, co powóz.{#giantsk_s0_}'
+    nr 'Widzisz przed sobą ogromny szkielet odziany w zdobioną zbroję z brązu. Przymocowano ją do kości nitami, a na napierśniku wygrawerowano serię skomplikowanych symboli. Zastanawiasz się nad pochodzeniem tego kościotrupa; nie miałeś pojęcia, że w wieloświecie istnieją ludzie o tym wzroście. Ogromny miecz w jego rękach wygląda tak, jakby ważył tyle, co powóz.{#giantsk_s0_1}'
 
     menu:
         '"Nie obrazisz się, jeśli potrzymam trochę twój miecz? Musisz być zmęczony."{#giantsk_s0_r293}':
@@ -63,7 +63,7 @@ label giantsk_s0: # - # IF ~  True()
 
 # s1 # say1166
 label giantsk_s1: # from 0.0 0.1 0.9 # IF ~  False()
-    nr 'Wygląda na to, że ten szkielet jest już zbyt długo martwy, żeby mógł odpowiadać na twoje pytania. A może jego głowa znajduje się zbyt wysoko, żeby cię dosłyszeć.{#giantsk_s1_}'
+    nr 'Wygląda na to, że ten szkielet jest już zbyt długo martwy, żeby mógł odpowiadać na twoje pytania. A może jego głowa znajduje się zbyt wysoko, żeby cię dosłyszeć.{#giantsk_s1_1}'
 
     menu:
         'Przyjrzyj się ogromnemu szkieletowi… ale ostrożnie.{#giantsk_s1_r1167}':
@@ -101,7 +101,7 @@ label giantsk_s1: # from 0.0 0.1 0.9 # IF ~  False()
 
 # s2 # say4005
 label giantsk_s2: # from 0.4 0.6 1.2 1.4 3.0 4.1 4.3 5.3 5.5 6.2 6.4 7.3 7.5 8.2 8.4 9.4 9.6
-    nr 'Kiedy dotykasz szkieletu, w całej Kostnicy odzywa się dzwon… a szkielet budzi się z szybkością błyskawicy i podnosi swój miecz do ataku!{#giantsk_s2_}'
+    nr 'Kiedy dotykasz szkieletu, w całej Kostnicy odzywa się dzwon… a szkielet budzi się z szybkością błyskawicy i podnosi swój miecz do ataku!{#giantsk_s2_1}'
 
     menu:
         '"Lepiej było zostać martwym, Kościaku…"{#giantsk_s2_r4042}':
@@ -112,7 +112,7 @@ label giantsk_s2: # from 0.4 0.6 1.2 1.4 3.0 4.1 4.3 5.3 5.5 6.2 6.4 7.3 7.5 8.2
 
 # s3 # say4006
 label giantsk_s3: # from 0.5 0.7 1.3 1.5 4.2 4.4 5.4 5.6 6.3 6.5 7.4 7.6 8.3 8.5 9.5 9.7
-    nr 'Kiedy już masz to zrobić, nagle się zatrzymujesz… A twoje oczy przyciąga jego zbroja. Coś w symbolach wygrawerowanych na płycie piersiowej sprawia, że przerywasz w pół ruchu. Jeśli te szkielety są strażnikami, to zmącenie ich spokoju może… je obudzić.{#giantsk_s3_}'
+    nr 'Kiedy już masz to zrobić, nagle się zatrzymujesz… A twoje oczy przyciąga jego zbroja. Coś w symbolach wygrawerowanych na płycie piersiowej sprawia, że przerywasz w pół ruchu. Jeśli te szkielety są strażnikami, to zmącenie ich spokoju może… je obudzić.{#giantsk_s3_1}'
 
     menu:
         '"Chcę zaryzykować…"{#giantsk_s3_r4043}':
@@ -130,7 +130,7 @@ label giantsk_s3: # from 0.5 0.7 1.3 1.5 4.2 4.4 5.4 5.6 6.3 6.5 7.4 7.6 8.3 8.5
 
 # s4 # say4007
 label giantsk_s4: # from 0.2 1.0 3.1 7.1 15.1 16.3
-    nr 'Zdobioną zbroję z brązu przymocowano do jego żeber i łopatek za pomocą żelaznych nitów. Kiedy przyglądasz się jego kościom przez szpary w pancerzu, zauważasz, że takie same nity znajdują się w jego stawach, barkowym, łokciowym, miednicowym i kolanowym. Wzdłuż ramion i nóg szkieletu biegną grube, skórzane pasy i liny, które do złudzenia przypominają mięśnie i ścięgna.{#giantsk_s4_}'
+    nr 'Zdobioną zbroję z brązu przymocowano do jego żeber i łopatek za pomocą żelaznych nitów. Kiedy przyglądasz się jego kościom przez szpary w pancerzu, zauważasz, że takie same nity znajdują się w jego stawach, barkowym, łokciowym, miednicowym i kolanowym. Wzdłuż ramion i nóg szkieletu biegną grube, skórzane pasy i liny, które do złudzenia przypominają mięśnie i ścięgna.{#giantsk_s4_1}'
 
     menu:
         'Przyjrzyj się zbroi.{#giantsk_s4_r4045}':
@@ -164,7 +164,7 @@ label giantsk_s4: # from 0.2 1.0 3.1 7.1 15.1 16.3
 
 # s5 # say4008
 label giantsk_s5: # from 4.0
-    nr 'Choć pancerz ma już swoje lata, wygląda na zadbany. Odbite od niego światło świeci jasno, a symbole wygrawerowane na napierśniku zdają się płynąć w ogniu pochodni, zmieniając lekko swoje położenie za każdym razem, kiedy próbujesz na nich skupić swój wzrok.{#giantsk_s5_}'
+    nr 'Choć pancerz ma już swoje lata, wygląda na zadbany. Odbite od niego światło świeci jasno, a symbole wygrawerowane na napierśniku zdają się płynąć w ogniu pochodni, zmieniając lekko swoje położenie za każdym razem, kiedy próbujesz na nich skupić swój wzrok.{#giantsk_s5_1}'
 
     menu:
         'Uważnie przyjrzyj się symbolom.{#giantsk_s5_r4054}' if giantskLogic.r4054_condition():
@@ -206,7 +206,7 @@ label giantsk_s5: # from 4.0
 
 # s6 # say4009
 label giantsk_s6: # from 5.0 5.1
-    nr 'Kiedy spoglądasz na symbole, prawie podświadomie rozluźniasz wzrok. Po chwili symbole przestają się ruszać i układają się w ciąg runów, które biegną przez całą płytę piersiową. To dziwne, ale przeplatający się wzór przypomina łańcuch… Kiedy przychodzi ci to do głowy, nagle przypominasz sobie, że te runy tworzą jakieś zaklęcie strażnicze.{#giantsk_s6_}'
+    nr 'Kiedy spoglądasz na symbole, prawie podświadomie rozluźniasz wzrok. Po chwili symbole przestają się ruszać i układają się w ciąg runów, które biegną przez całą płytę piersiową. To dziwne, ale przeplatający się wzór przypomina łańcuch… Kiedy przychodzi ci to do głowy, nagle przypominasz sobie, że te runy tworzą jakieś zaklęcie strażnicze.{#giantsk_s6_1}'
 
     menu:
         'Uważnie przyjrzyj się symbolom i spróbuj przypomnieć sobie zaklęcie.{#giantsk_s6_r4062}' if giantskLogic.r4062_condition():
@@ -244,7 +244,7 @@ label giantsk_s6: # from 5.0 5.1
 
 # s7 # say4010
 label giantsk_s7: # from 5.2 6.1 7.2
-    nr 'Przez chwilę przyglądasz się runom uważnie, ale nie możesz odszyfrować zaklęcia. Wygląda na to, że jest bardzo skomplikowane, a w dodatku nie możesz się dobrze skoncentrować.{#giantsk_s7_}'
+    nr 'Przez chwilę przyglądasz się runom uważnie, ale nie możesz odszyfrować zaklęcia. Wygląda na to, że jest bardzo skomplikowane, a w dodatku nie możesz się dobrze skoncentrować.{#giantsk_s7_1}'
 
     menu:
         'Porównaj runy na pancerzu z runami w Księdze Kości i Popiołu.{#giantsk_s7_r64294}' if giantskLogic.r64294_condition():
@@ -286,7 +286,7 @@ label giantsk_s7: # from 5.2 6.1 7.2
 
 # s8 # say4011
 label giantsk_s8: # from 6.0
-    nr 'Przyglądasz się runom, które biegną przez całą płytę piersiową. Na pierwszy rzut oka, tworzą one jakieś mniejsze zaklęcie ochronne, ale kilka runów w kształcie czaszek i kuliste wzory wzdłuż brzegów zbroi każą ci podejrzewać, że w runy wpleciono także kilka potężniejszych zaklęć nekromanckich i strażniczych. Teraz nie masz już wątpliwości, że dotknięcie szkieletu obudzi go… i zmusi do obrony.{#giantsk_s8_}'
+    nr 'Przyglądasz się runom, które biegną przez całą płytę piersiową. Na pierwszy rzut oka, tworzą one jakieś mniejsze zaklęcie ochronne, ale kilka runów w kształcie czaszek i kuliste wzory wzdłuż brzegów zbroi każą ci podejrzewać, że w runy wpleciono także kilka potężniejszych zaklęć nekromanckich i strażniczych. Teraz nie masz już wątpliwości, że dotknięcie szkieletu obudzi go… i zmusi do obrony.{#giantsk_s8_1}'
 
     menu:
         'Spróbuj, czy nie da się tych zaklęć jakoś unieszkodliwić.{#giantsk_s8_r4079}' if giantskLogic.r4079_condition():
@@ -325,7 +325,7 @@ label giantsk_s8: # from 6.0
 
 # s9 # say4012
 label giantsk_s9: # from 0.3 1.1 8.0 8.1
-    nr 'Podejrzewasz, że zatarcie wzoru runów wzdłuż płyty piersiowej mogłoby rozplątać zaklęcia, ale wygląda na to, że to nie jest takie łatwe… Wzór jest skomplikowany, a zarysowanie nie tych runów, co trzeba, mogłoby ożywić szkielet.{#giantsk_s9_}'
+    nr 'Podejrzewasz, że zatarcie wzoru runów wzdłuż płyty piersiowej mogłoby rozplątać zaklęcia, ale wygląda na to, że to nie jest takie łatwe… Wzór jest skomplikowany, a zarysowanie nie tych runów, co trzeba, mogłoby ożywić szkielet.{#giantsk_s9_1}'
 
     menu:
         'Przejrzyj Księgę Kości i Popiołu i zobacz, czy nie da się tych zaklęć jakoś przełamać.{#giantsk_s9_r64296}' if giantskLogic.r64296_condition():
@@ -373,7 +373,7 @@ label giantsk_s9: # from 0.3 1.1 8.0 8.1
 
 # s10 # say4013
 label giantsk_s10: # from 9.1 16.0
-    nr 'Kiedy zaczynasz majstrować przy runach dekorujących płytę piersiową, w całej Kostnicy odzywa się dzwon… a szkielet budzi się z szybkością błyskawicy i podnosi swój miecz do ataku!{#giantsk_s10_}'
+    nr 'Kiedy zaczynasz majstrować przy runach dekorujących płytę piersiową, w całej Kostnicy odzywa się dzwon… a szkielet budzi się z szybkością błyskawicy i podnosi swój miecz do ataku!{#giantsk_s10_1}'
 
     menu:
         '"Lepiej było zostać martwym, Kościaku…"{#giantsk_s10_r4095}':
@@ -384,7 +384,7 @@ label giantsk_s10: # from 9.1 16.0
 
 # s11 # say4014
 label giantsk_s11: # from 9.2 16.1
-    nr 'Z początku zadanie jest trudne i stresujące, ale powoli twój umysł zaczyna się koncentrować, a runy zaczynają się rozplatać. Po kilku minutach szkielet zostaje pozbawiony zaklęć, które trzymały go w kupie. Pada na ziemię przy grzechocie kości, wydając przy tym ogromny huk!{#giantsk_s11_}'
+    nr 'Z początku zadanie jest trudne i stresujące, ale powoli twój umysł zaczyna się koncentrować, a runy zaczynają się rozplatać. Po kilku minutach szkielet zostaje pozbawiony zaklęć, które trzymały go w kupie. Pada na ziemię przy grzechocie kości, wydając przy tym ogromny huk!{#giantsk_s11_1}'
 
     menu:
         '"Przeklęta kupa kości…!"{#giantsk_s11_r4096}':
@@ -395,7 +395,7 @@ label giantsk_s11: # from 9.2 16.1
 
 # s12 # say4015
 label giantsk_s12: # from 11.0
-    nr 'Czekasz przez chwilę, ale wygląda na to, że nikt nie zareagował na huk spadającego szkieletu. W pośpiechu przeszukujesz jego części leżące na podłodze. Większość z nich jest zbyt ciężka, żebyś mógł ich użyć, ale w końcu znajdujesz kawałek napierśnika, na którym znajduje się kilka nieuszkodzonych zaklęć. Masz przeczucie, że to może ci się przydać.{#giantsk_s12_}'
+    nr 'Czekasz przez chwilę, ale wygląda na to, że nikt nie zareagował na huk spadającego szkieletu. W pośpiechu przeszukujesz jego części leżące na podłodze. Większość z nich jest zbyt ciężka, żebyś mógł ich użyć, ale w końcu znajdujesz kawałek napierśnika, na którym znajduje się kilka nieuszkodzonych zaklęć. Masz przeczucie, że to może ci się przydać.{#giantsk_s12_1}'
 
     menu:
         '"Tylko to sobie wezmę…"{#giantsk_s12_r4097}':
@@ -406,7 +406,7 @@ label giantsk_s12: # from 11.0
 
 # s13 # say4016
 label giantsk_s13: # from 9.3 16.2
-    nr 'Tym razem unieszkodliwienie zaklęć jest łatwiejsze, a runy rozplątują się szybko. Po paru minutach ogromny szkielet jest już pozbawiony zaklęć, które go utrzymywały w całości. Mając w pamięci, co się stało przy pierwszym kościotrupie, łapiesz go zanim zdąży upaść i powoli opuszczasz na ziemię."{#giantsk_s13_}'
+    nr 'Tym razem unieszkodliwienie zaklęć jest łatwiejsze, a runy rozplątują się szybko. Po paru minutach ogromny szkielet jest już pozbawiony zaklęć, które go utrzymywały w całości. Mając w pamięci, co się stało przy pierwszym kościotrupie, łapiesz go zanim zdąży upaść i powoli opuszczasz na ziemię."{#giantsk_s13_1}'
 
     menu:
         '"Zobaczmy, co tu mamy tym razem…"{#giantsk_s13_r4098}':
@@ -417,7 +417,7 @@ label giantsk_s13: # from 9.3 16.2
 
 # s14 # say4017
 label giantsk_s14: # from 13.0
-    nr 'Szybko przeszukujesz to, co zostało ze szkieletu i znowu odnajdujesz część napierśnika… Tak jak wcześniej, także na niej znajduje się fragment nieuszkodzonego zaklęcia. Może ci się to kiedyś do czegoś przydać.{#giantsk_s14_}'
+    nr 'Szybko przeszukujesz to, co zostało ze szkieletu i znowu odnajdujesz część napierśnika… Tak jak wcześniej, także na niej znajduje się fragment nieuszkodzonego zaklęcia. Może ci się to kiedyś do czegoś przydać.{#giantsk_s14_1}'
 
     menu:
         '"Tylko to sobie wezmę…"{#giantsk_s14_r4099}' if giantskLogic.r4099_condition():
@@ -438,7 +438,7 @@ label giantsk_s14: # from 13.0
 
 # s15 # say64295
 label giantsk_s15: # from 7.0
-    nr 'Spoglądasz do księgi i porównujesz wykresy ze znakami na płycie piersiowej. Z tego, co rozumiesz, runy składają się na mniejsze zaklęcie pancerza, ale kilka runów w kształcie czaszek i kuliste wzory wzdłuż brzegów zbroi każą ci podejrzewać, że w runy wpleciono także kilka potężniejszych zaklęć nekromanckich i strażniczych. Teraz nie masz już wątpliwości, że dotknięcie szkieletu obudzi go… i zmusi do obrony.{#giantsk_s15_}'
+    nr 'Spoglądasz do księgi i porównujesz wykresy ze znakami na płycie piersiowej. Z tego, co rozumiesz, runy składają się na mniejsze zaklęcie pancerza, ale kilka runów w kształcie czaszek i kuliste wzory wzdłuż brzegów zbroi każą ci podejrzewać, że w runy wpleciono także kilka potężniejszych zaklęć nekromanckich i strażniczych. Teraz nie masz już wątpliwości, że dotknięcie szkieletu obudzi go… i zmusi do obrony.{#giantsk_s15_1}'
 
     menu:
         'Przejrzyj Księgę Kości i Popiołu i zobacz, czy nie da się tych zaklęć jakoś przełamać.{#giantsk_s15_r64298}':
@@ -452,7 +452,7 @@ label giantsk_s15: # from 7.0
 
 # s16 # say64297
 label giantsk_s16: # from 9.0 15.0
-    nr 'Z tego, co możesz wyczytać w Księdze, wynika, że zaklęcie pancerza odnosi się tylko do napierśnika, zaklęcie nekromanckie pozwala ożywić szkielet, a zaklęcie strażnicze sprawia, że jego postrzeganie otoczenia jest ograniczone. Domyślasz się, że gdybyś spróbował go dotknąć, to szkielet wziąłby to za atak… chyba że najpierw udałoby ci się sprawić, żeby przestał cię zauważać.{#giantsk_s16_}'
+    nr 'Z tego, co możesz wyczytać w Księdze, wynika, że zaklęcie pancerza odnosi się tylko do napierśnika, zaklęcie nekromanckie pozwala ożywić szkielet, a zaklęcie strażnicze sprawia, że jego postrzeganie otoczenia jest ograniczone. Domyślasz się, że gdybyś spróbował go dotknąć, to szkielet wziąłby to za atak… chyba że najpierw udałoby ci się sprawić, żeby przestał cię zauważać.{#giantsk_s16_1}'
 
     menu:
         'Najpierw zamaż runy tworzące zaklęcie pancerza, potem zaklęcie nekromanckie, a potem strażnicze.{#giantsk_s16_r64300}':

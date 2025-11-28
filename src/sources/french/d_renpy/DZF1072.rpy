@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say35114
 label zf1072_s0: # - # IF ~  True()
-    nr 'L„odeur de formol qui se dégage de ce cadavre de femme est particulièrement forte… On a dû l“appliquer récemment… heureusement d„ailleurs, car le cadavre semble avoir atteint un stade de décomposition avancé. Sa mâchoire manque et la chair a en partie disparu du crâne, laissant apparaître le numéro “1072„ buriné dans l“os.{#zf1072_s0_}'
+    nr 'L„odeur de formol qui se dégage de ce cadavre de femme est particulièrement forte… On a dû l“appliquer récemment… heureusement d„ailleurs, car le cadavre semble avoir atteint un stade de décomposition avancé. Sa mâchoire manque et la chair a en partie disparu du crâne, laissant apparaître le numéro “1072„ buriné dans l“os.{#zf1072_s0_1}'
 
     menu:
         '"Celle-là, elle a dû connaître des jours meilleurs…"{#zf1072_s0_r35115}' if zf1072Logic.r35115_condition():
@@ -58,7 +58,7 @@ label zf1072_s0: # - # IF ~  True()
 
 # s1 # say35116
 label zf1072_s1: # from 0.0 0.1 0.2
-    nr 'Le cadavre ne réagit pas à ta voix. L„absence de mâchoire y est peut-être pour quelque chose… à moins qu“il n„ait tout simplement rien à dire.{#zf1072_s1_}'
+    nr 'Le cadavre ne réagit pas à ta voix. L„absence de mâchoire y est peut-être pour quelque chose… à moins qu“il n„ait tout simplement rien à dire.{#zf1072_s1_1}'
 
     menu:
         '"Alors, au revoir."{#zf1072_s1_r35117}' if zf1072Logic.r35117_condition():
@@ -76,7 +76,7 @@ label zf1072_s1: # from 0.0 0.1 0.2
 
 # s2 # say35135
 label zf1072_s2: # from 0.3
-    nr 'Le cadavre ne bouge pas. Il a l„air trop absent pour répondre à tes questions.{#zf1072_s2_}'
+    nr 'Le cadavre ne bouge pas. Il a l„air trop absent pour répondre à tes questions.{#zf1072_s2_1}'
 
     menu:
         '"Alors, au revoir."{#zf1072_s2_r35136}' if zf1072Logic.r35136_condition():
@@ -94,6 +94,6 @@ label zf1072_s2: # from 0.3
 
 # s3 # say35145
 label zf1072_s3: # - # IF ~  False()
-    nr 'Le cadavre ne bouge pas. Il a l„air trop absent pour répondre à tes questions.{#zf1072_s3_}'
+    nr 'Le cadavre ne bouge pas. Il a l„air trop absent pour répondre à tes questions.{#zf1072_s3_1}'
 
     menu:

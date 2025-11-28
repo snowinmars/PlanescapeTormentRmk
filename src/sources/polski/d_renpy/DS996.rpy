@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say35460
 label s996_s0: # - # IF ~  True()
-    nr 'Ten szkielet wygląda szczególnie staro, a skórzane paski, którymi jest powiązany, są popękane i wytarte. Na czole ktoś starannie i sprawnie wyrył słowo "POKUTA". Jakaś mniej sprawna dłoń dopisała później "996" na obu skroniach.{#s996_s0_}'
+    nr 'Ten szkielet wygląda szczególnie staro, a skórzane paski, którymi jest powiązany, są popękane i wytarte. Na czole ktoś starannie i sprawnie wyrył słowo "POKUTA". Jakaś mniej sprawna dłoń dopisała później "996" na obu skroniach.{#s996_s0_1}'
 
     menu:
         '"Przepraszam, widziałeś może jakieś przechodzące szkielety?"{#s996_s0_r35461}' if s996Logic.r35461_condition():
@@ -90,7 +90,7 @@ label s996_s0: # - # IF ~  True()
 
 # s1 # say35462
 label s996_s1: # from 0.0 0.1 0.2 0.3
-    nr 'Szkielet nie odpowiada.{#s996_s1_}'
+    nr 'Szkielet nie odpowiada.{#s996_s1_1}'
 
     menu:
         '"Świetnie się z tobą gadało, Kostuszku. Bądź zdrów."{#s996_s1_r35463}' if s996Logic.r35463_condition():
@@ -109,7 +109,7 @@ label s996_s1: # from 0.0 0.1 0.2 0.3
 
 # s2 # say35488
 label s996_s2: # from 0.4
-    nr 'Szkielet nie odpowiada. Wygląda na to, że jest w zbyt daleko posuniętym stadium rozkładu, aby odpowiedzieć na twoje pytania.{#s996_s2_}'
+    nr 'Szkielet nie odpowiada. Wygląda na to, że jest w zbyt daleko posuniętym stadium rozkładu, aby odpowiedzieć na twoje pytania.{#s996_s2_1}'
 
     menu:
         'Zostaw szkielet w spokoju.{#s996_s2_r35489}' if s996Logic.r35489_condition():
@@ -128,7 +128,7 @@ label s996_s2: # from 0.4
 
 # s3 # say35493
 label s996_s3: # from 0.5
-    nr 'Ktoś związał kości tego szkieletu skórzanymi paskami tak, że teraz przypominają muskuły i ścięgna. Paski te są przymocowane do żelaznych nitów wetkniętych w stawy kościotrupa. Wygląda na to, że już swoje odpracował: wiele kości jest połamanych, a liczne pęknięcia wypełniono cuchnącym klejem.{#s996_s3_}'
+    nr 'Ktoś związał kości tego szkieletu skórzanymi paskami tak, że teraz przypominają muskuły i ścięgna. Paski te są przymocowane do żelaznych nitów wetkniętych w stawy kościotrupa. Wygląda na to, że już swoje odpracował: wiele kości jest połamanych, a liczne pęknięcia wypełniono cuchnącym klejem.{#s996_s3_1}'
 
     menu:
         'Spróbuj wyciągnąć nity ze stawów szkieletu.{#s996_s3_r35494}' if s996Logic.r35494_condition():
@@ -176,7 +176,7 @@ label s996_s3: # from 0.5
 
 # s4 # say35499
 label s996_s4: # from 0.7 0.10 3.1 3.4
-    nr 'Ciągniesz za żelazne nity, ale nie masz na tyle siły, żeby je wyciągnąć. Wygląda na to, że ktoś wbił je bardzo solidnie.{#s996_s4_}'
+    nr 'Ciągniesz za żelazne nity, ale nie masz na tyle siły, żeby je wyciągnąć. Wygląda na to, że ktoś wbił je bardzo solidnie.{#s996_s4_1}'
 
     menu:
         '"Może udałoby mi się je wyciągnąć, gdybym miał odpowiednie narzędzie… hmm. Może tu jeszcze wrócę, Kostuszku."{#s996_s4_r35500}' if s996Logic.r35500_condition():
@@ -208,7 +208,7 @@ label s996_s4: # from 0.7 0.10 3.1 3.4
 
 # s5 # say35507
 label s996_s5: # from 0.8 0.11 3.2 3.5
-    nr 'Z całej siły ciągniesz za żelazne nity i po chwili wyrywasz je ze stawów. Szkielet przewraca się na ziemię, a niektóre jego kości wciąż podrygują.{#s996_s5_}'
+    nr 'Z całej siły ciągniesz za żelazne nity i po chwili wyrywasz je ze stawów. Szkielet przewraca się na ziemię, a niektóre jego kości wciąż podrygują.{#s996_s5_1}'
 
     menu:
         '"Przykro mi, Kostuszku…"{#s996_s5_r35508}':
@@ -219,7 +219,7 @@ label s996_s5: # from 0.8 0.11 3.2 3.5
 
 # s6 # say35510
 label s996_s6: # from 0.9 0.12 3.3 3.6
-    nr 'Używając łomu, wyciągasz nity ze stawów szkieletu. Ten przewraca się na ziemię, a niektóre jego kości wciąż podrygują.{#s996_s6_}'
+    nr 'Używając łomu, wyciągasz nity ze stawów szkieletu. Ten przewraca się na ziemię, a niektóre jego kości wciąż podrygują.{#s996_s6_1}'
 
     menu:
         '"Przykro mi, Kostuszku…"{#s996_s6_r35511}':
@@ -230,6 +230,6 @@ label s996_s6: # from 0.9 0.12 3.3 3.6
 
 # s7 # say35536
 label s996_s7: # - # IF ~  False()
-    nr 'Szkielet nie odpowiada. Wygląda na to, że jest w zbyt daleko posuniętym stadium rozkładu, aby odpowiedzieć na twoje pytania.{#s996_s7_}'
+    nr 'Szkielet nie odpowiada. Wygląda na to, że jest w zbyt daleko posuniętym stadium rozkładu, aby odpowiedzieć na twoje pytania.{#s996_s7_1}'
 
     menu:

@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say35306
 label s1221_s0: # - # IF ~  True()
-    nr 'Dieses belebte Skelett stinkt fürchterlich, als ob es erst vor kurzem präpariert worden sei. Sein Kiefer und die wichtigsten Gelenke sind straff mit Lederriemen umwickelt, und ein roher Kittel ist ihm übergeworfen worden. Die Zahl "1221" ist ihm in die Stirn gemeißelt worden.{#s1221_s0_}'
+    nr 'Dieses belebte Skelett stinkt fürchterlich, als ob es erst vor kurzem präpariert worden sei. Sein Kiefer und die wichtigsten Gelenke sind straff mit Lederriemen umwickelt, und ein roher Kittel ist ihm übergeworfen worden. Die Zahl "1221" ist ihm in die Stirn gemeißelt worden.{#s1221_s0_1}'
 
     menu:
         '"Entschuldige, hast du hier vielleicht ein paar Skelette rumlaufen sehen?"{#s1221_s0_r35307}' if s1221Logic.r35307_condition():
@@ -90,7 +90,7 @@ label s1221_s0: # - # IF ~  True()
 
 # s1 # say35308
 label s1221_s1: # from 0.0 0.1 0.2 0.3
-    nr 'Das Skelett antwortet nicht.{#s1221_s1_}'
+    nr 'Das Skelett antwortet nicht.{#s1221_s1_1}'
 
     menu:
         '"War nett, mit dir zu reden, Gerippe. Bleib gesund."{#s1221_s1_r35309}' if s1221Logic.r35309_condition():
@@ -109,7 +109,7 @@ label s1221_s1: # from 0.0 0.1 0.2 0.3
 
 # s2 # say35334
 label s1221_s2: # from 0.4
-    nr 'Dieses Skelett antwortet nicht. Es sieht so aus, als ob es schon zu tot ist, um noch auf irgendeine deiner Fragen zu antworten.{#s1221_s2_}'
+    nr 'Dieses Skelett antwortet nicht. Es sieht so aus, als ob es schon zu tot ist, um noch auf irgendeine deiner Fragen zu antworten.{#s1221_s2_1}'
 
     menu:
         'Laß das Skelett in Ruhe.{#s1221_s2_r35335}' if s1221Logic.r35335_condition():
@@ -128,7 +128,7 @@ label s1221_s2: # from 0.4
 
 # s3 # say35339
 label s1221_s3: # from 0.5
-    nr 'Irgendwer hat sich die Mühe gemacht, die Knochen dieses Skeletts mit Lederbändern zu umwickeln. Sie sind so um das Gestell gewickelt, daß sie wie Muskeln und Sehnen aussehen. Die Bänder sind mit Metallbolzen an den Gelenken des Skeletts befestigt. Das Skelett sieht aus, als ob es eine harte Zeit hinter sich hätte: An vielen Stellen sind Teile der Knochen abgesprungen, und die zahlreichen Brüche sind mit Dichtungsmittel und stinkenden Klebstoffen repariert worden.{#s1221_s3_}'
+    nr 'Irgendwer hat sich die Mühe gemacht, die Knochen dieses Skeletts mit Lederbändern zu umwickeln. Sie sind so um das Gestell gewickelt, daß sie wie Muskeln und Sehnen aussehen. Die Bänder sind mit Metallbolzen an den Gelenken des Skeletts befestigt. Das Skelett sieht aus, als ob es eine harte Zeit hinter sich hätte: An vielen Stellen sind Teile der Knochen abgesprungen, und die zahlreichen Brüche sind mit Dichtungsmittel und stinkenden Klebstoffen repariert worden.{#s1221_s3_1}'
 
     menu:
         'Versuch dem Skelett die Gelenkbolzen herauszunehmen.{#s1221_s3_r35340}' if s1221Logic.r35340_condition():
@@ -176,7 +176,7 @@ label s1221_s3: # from 0.5
 
 # s4 # say35345
 label s1221_s4: # from 0.7 0.10 3.1 3.4
-    nr 'Du ziehst an den Eisenbolzen, aber du bist nicht stark genug, sie herauszuziehen. Sie sitzen bombenfest.{#s1221_s4_}'
+    nr 'Du ziehst an den Eisenbolzen, aber du bist nicht stark genug, sie herauszuziehen. Sie sitzen bombenfest.{#s1221_s4_1}'
 
     menu:
         '"Wenn ich das richtige Werkzeug hätte, würd ich sie vielleicht rauskriegen… hmmmn. Vielleicht komm ich wieder, Knochengestell."{#s1221_s4_r35346}' if s1221Logic.r35346_condition():
@@ -208,7 +208,7 @@ label s1221_s4: # from 0.7 0.10 3.1 3.4
 
 # s5 # say35353
 label s1221_s5: # from 0.8 0.11 3.2 3.5
-    nr 'Du ziehst mit aller Kraft an den Eisenbolzen, und nach kurzer Zeit heftigen Ziehens reißt du sie aus den Gelenken. Das Skelett fällt in sich zusammen; einige Knochen zucken noch.{#s1221_s5_}'
+    nr 'Du ziehst mit aller Kraft an den Eisenbolzen, und nach kurzer Zeit heftigen Ziehens reißt du sie aus den Gelenken. Das Skelett fällt in sich zusammen; einige Knochen zucken noch.{#s1221_s5_1}'
 
     menu:
         '"Tut mir echt leid, Gerippe…"{#s1221_s5_r35354}':
@@ -219,7 +219,7 @@ label s1221_s5: # from 0.8 0.11 3.2 3.5
 
 # s6 # say35356
 label s1221_s6: # from 0.9 0.12 3.3 3.6
-    nr 'Mit Hilfe deines Brecheisens reißt du die Bolzen aus den Gelenken des Skeletts. Das Skelett fällt zusammen; einige Knochen zucken noch.{#s1221_s6_}'
+    nr 'Mit Hilfe deines Brecheisens reißt du die Bolzen aus den Gelenken des Skeletts. Das Skelett fällt zusammen; einige Knochen zucken noch.{#s1221_s6_1}'
 
     menu:
         '"Tut mir leid, Knochengestell…"{#s1221_s6_r35357}':
@@ -230,6 +230,6 @@ label s1221_s6: # from 0.9 0.12 3.3 3.6
 
 # s7 # say35382
 label s1221_s7: # - # IF ~  False()
-    nr 'Dieses Skelett reagiert nicht. Es scheint schon zu weit hinüber zu sein, um irgendeine deiner Fragen beantworten zu können.{#s1221_s7_}'
+    nr 'Dieses Skelett reagiert nicht. Es scheint schon zu weit hinüber zu sein, um irgendeine deiner Fragen beantworten zu können.{#s1221_s7_1}'
 
     menu:

@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say24564
 label zm825_s0: # - # IF ~  True()
-    nr 'Mrtvola narovnává svou hlavu… vychylující se z krku. Vypadá to, že tento člověk byl zřejmě oběšen. Na straně hlavy má namalované číslo "825".{#zm825_s0_}'
+    nr 'Mrtvola narovnává svou hlavu… vychylující se z krku. Vypadá to, že tento člověk byl zřejmě oběšen. Na straně hlavy má namalované číslo "825".{#zm825_s0_1}'
 
     menu:
         '"Hledám klíč… je možné jeden dostat?"{#zm825_s0_r24565}' if zm825Logic.r24565_condition():
@@ -49,7 +49,7 @@ label zm825_s0: # - # IF ~  True()
 
 # s1 # say24566
 label zm825_s1: # from 0.1 0.2 0.3 3.1
-    nr 'Mrtvola zírá na podlahu a neodpovídá.{#zm825_s1_}'
+    nr 'Mrtvola zírá na podlahu a neodpovídá.{#zm825_s1_1}'
 
     menu:
         '"No, nevadí. Sbohem."{#zm825_s1_r24567}':
@@ -63,7 +63,7 @@ label zm825_s1: # from 0.1 0.2 0.3 3.1
 
 # s2 # say24571
 label zm825_s2: # from 0.4
-    nr 'Mrtvola se nehýbe. Vypadá to, že je natolik hotová, že nemůže odpovědět na jakoukoliv tvou otázku.{#zm825_s2_}'
+    nr 'Mrtvola se nehýbe. Vypadá to, že je natolik hotová, že nemůže odpovědět na jakoukoliv tvou otázku.{#zm825_s2_1}'
 
     menu:
         'Nech mrtvolu na pokoji.{#zm825_s2_r24572}':
@@ -73,7 +73,7 @@ label zm825_s2: # from 0.4
 
 # s3 # say42311
 label zm825_s3: # from 0.5
-    nr 'Tahle mrtvola u sebe nic nemá… ale všiml sis, že její ruce jsou silně ovázané. Obvazy by se daly použít, ale to by se jich nejprve mrtvola musela být ochotná vzdát.{#zm825_s3_}'
+    nr 'Tahle mrtvola u sebe nic nemá… ale všiml sis, že její ruce jsou silně ovázané. Obvazy by se daly použít, ale to by se jich nejprve mrtvola musela být ochotná vzdát.{#zm825_s3_1}'
 
     menu:
         '"Tuším, že ty klíč nemáš… nevíš náhodou, kterej z tvých kámošů mrtváků by mohl mít od tohoto místa klíč?"{#zm825_s3_r42312}' if zm825Logic.r42312_condition():

@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say1431
 label soego_s0: # - # IF WEIGHT #8 /* Triggers after states #: 59 58 12 63 108 79 82 95 even though they appear after this state */ ~  CreatureInArea("AR0201") Global("Appearance","GLOBAL",1) Global("Gate_Open","GLOBAL",0) Global("Soego","GLOBAL",0)
-    nr 'Vidíš unaveně vypadajícího muže ve vybledlých černých šatech. Jeho úzký obličej je velmi bledý a vypadá to, že asi dlouho nespal: ramena má pokleslá a pod nateklýma očima jsou kruhy. Zdá se, že tě nepoznal… musel si tě splést s některým z pracujících dělníků.{#soego_s0_}'
+    nr 'Vidíš unaveně vypadajícího muže ve vybledlých černých šatech. Jeho úzký obličej je velmi bledý a vypadá to, že asi dlouho nespal: ramena má pokleslá a pod nateklýma očima jsou kruhy. Zdá se, že tě nepoznal… musel si tě splést s některým z pracujících dělníků.{#soego_s0_1}'
 
     menu:
         '"Zdravím."{#soego_s0_r1432}':
@@ -37,7 +37,7 @@ label soego_s0: # - # IF WEIGHT #8 /* Triggers after states #: 59 58 12 63 108 7
 
 # s1 # say1437
 label soego_s1: # from 0.0 0.1 0.2 0.3
-    nr 'Spalovač se k tobě otočí, když ho oslovíš. "Par… pardon? To mluvíš se mmnou?"{#soego_s1_}'
+    nr 'Spalovač se k tobě otočí, když ho oslovíš. "Par… pardon? To mluvíš se mmnou?"{#soego_s1_1}'
 
     menu:
         '"Jo, mluvil. Měl bych nějaké otázky…"{#soego_s1_r1438}':
@@ -65,7 +65,7 @@ label soego_s1: # from 0.0 0.1 0.2 0.3
 
 # s2 # say1443
 label soego_s2: # from 1.0 1.1 3.0 3.3 4.0 4.1
-    nr '"U všech Mocností!" Spalovač nejdříve uskočí a pak si tě pozorně prohlíží. Všiml sis, že jeho oči nejsou podlité krví, ale jsou rudě zbarveny. "Sirrah, vysloužila sis ode mne nelichotivé uznání: vytvořila jsi dokonalého zombie." Trochu se uklonil. "Já jsem Soego. Smím se zeptat, co tu hledáš…" Kouká na tvé jizvy. "Vypadáš tak, že?"{#soego_s2_}'
+    nr '"U všech Mocností!" Spalovač nejdříve uskočí a pak si tě pozorně prohlíží. Všiml sis, že jeho oči nejsou podlité krví, ale jsou rudě zbarveny. "Sirrah, vysloužila sis ode mne nelichotivé uznání: vytvořila jsi dokonalého zombie." Trochu se uklonil. "Já jsem Soego. Smím se zeptat, co tu hledáš…" Kouká na tvé jizvy. "Vypadáš tak, že?"{#soego_s2_1}'
 
     menu:
         '"To tě nemusí zajímat."{#soego_s2_r1444}':
@@ -96,7 +96,7 @@ label soego_s2: # from 1.0 1.1 3.0 3.3 4.0 4.1
 
 # s3 # say1449
 label soego_s3: # from 1.2
-    nr 'Spalovač tě chvíli pozoruje a pak potřese hlavou. "Další přeludy…" Nadechne se a promne si oči. "Ty moje horečky se stále zhoršují…"{#soego_s3_}'
+    nr 'Spalovač tě chvíli pozoruje a pak potřese hlavou. "Další přeludy…" Nadechne se a promne si oči. "Ty moje horečky se stále zhoršují…"{#soego_s3_1}'
 
     menu:
         '"To není přelud. Měl bych nějaké otázky…"{#soego_s3_r1450}':
@@ -124,7 +124,7 @@ label soego_s3: # from 1.2
 
 # s4 # say1455
 label soego_s4: # from 1.3
-    nr 'Spalovač se na tebe opatrně podívá, pak se k tobě nakloní… ohrne rty, odkryje tím řadu ostrých, špinavých zubů a začne tě očichávat jakoby byl krysa.{#soego_s4_}'
+    nr 'Spalovač se na tebe opatrně podívá, pak se k tobě nakloní… ohrne rty, odkryje tím řadu ostrých, špinavých zubů a začne tě očichávat jakoby byl krysa.{#soego_s4_1}'
 
     menu:
         '"Fuj… proč mě, krucinál, očucháváš?"{#soego_s4_r1456}':
@@ -152,7 +152,7 @@ label soego_s4: # from 1.3
 
 # s5 # say1461
 label soego_s5: # from 1.4
-    nr 'Když už se chystáš odejít, Spalovač přestane s očicháváním a potichu zašeptá. "U všech Mocností!" Stáhl se zpět a oči se mu rozšířily. Všiml sis, že jeho oči nejsou podlité krví, ale jsou rudě zbarveny. "Sirrah, vysloužila sis ode mne nelichotivé uznání: vytvořila jsi dokonalého zombie." Trochu se uklonil. "Já jsem Soego. Smím se zeptat, co tu hledáš… alespoň to tak vypadá?"{#soego_s5_}'
+    nr 'Když už se chystáš odejít, Spalovač přestane s očicháváním a potichu zašeptá. "U všech Mocností!" Stáhl se zpět a oči se mu rozšířily. Všiml sis, že jeho oči nejsou podlité krví, ale jsou rudě zbarveny. "Sirrah, vysloužila sis ode mne nelichotivé uznání: vytvořila jsi dokonalého zombie." Trochu se uklonil. "Já jsem Soego. Smím se zeptat, co tu hledáš… alespoň to tak vypadá?"{#soego_s5_1}'
 
     menu:
         '"To tě nemusí zajímat."{#soego_s5_r1462}':
@@ -183,7 +183,7 @@ label soego_s5: # from 1.4
 
 # s6 # say1468
 label soego_s6: # from 2.0 5.0 15.0 41.1 43.0 50.1 115.1
-    nr '"Oh, ale obávám se, že to *je* moje věc." Soegovy oči září rudě a koutky úst mu lehce poškubávají, jakoby něco tušil. "Možná…" ušklíbl se a odkryl tím řadu ostrých nečistých zubů. "Možná bych měl zavolat stráže? Ano… ano, myslím, že to udělám."{#soego_s6_}'
+    nr '"Oh, ale obávám se, že to *je* moje věc." Soegovy oči září rudě a koutky úst mu lehce poškubávají, jakoby něco tušil. "Možná…" ušklíbl se a odkryl tím řadu ostrých nečistých zubů. "Možná bych měl zavolat stráže? Ano… ano, myslím, že to udělám."{#soego_s6_1}'
 
     menu:
         '"Počkej chvíli! Ztratil jsem se… trošku sem se tady v těch halách zamotal a vypadá to, že nemůžu najít východ. Můžeš mi pomoci?"{#soego_s6_r1469}' if soegoLogic.r1469_condition():
@@ -209,7 +209,7 @@ label soego_s6: # from 2.0 5.0 15.0 41.1 43.0 50.1 115.1
 
 # s7 # say1474
 label soego_s7: # from 2.1 5.1 13.3 15.1 42.1 57.0
-    nr '"Opravdu?" Spalovač tě zkoumá. "*Vypadá to* jako by tě už zašívali. Nevím, jak jsi mohl přežít takovou bolest… *bolí* tě to? Vypadá to hrozně."{#soego_s7_}'
+    nr '"Opravdu?" Spalovač tě zkoumá. "*Vypadá to* jako by tě už zašívali. Nevím, jak jsi mohl přežít takovou bolest… *bolí* tě to? Vypadá to hrozně."{#soego_s7_1}'
 
     menu:
         '"Jak jsem se sem dostal?"{#soego_s7_r1475}':
@@ -223,7 +223,7 @@ label soego_s7: # from 2.1 5.1 13.3 15.1 42.1 57.0
 
 # s8 # say1477
 label soego_s8: # from 2.2 5.2 6.0 13.0 15.2 16.0 17.0 26.0 40.0 41.0 50.0 61.0 62.0
-    nr 'Soego kývne a koutky úst mu lehce poškubávají.  "Proč… no samozřejmě. Tyto haly *mohou* zmást každého návštěvníka. Sice jsi neuděl nic špatného, ale ty nemáš povolen vstup do Márnice po devátém zvonění zvonu - počkej, hned ti odemknu bránu."{#soego_s8_}'
+    nr 'Soego kývne a koutky úst mu lehce poškubávají.  "Proč… no samozřejmě. Tyto haly *mohou* zmást každého návštěvníka. Sice jsi neuděl nic špatného, ale ty nemáš povolen vstup do Márnice po devátém zvonění zvonu - počkej, hned ti odemknu bránu."{#soego_s8_1}'
 
     menu:
         '"Děkuju."{#soego_s8_r1478}' if soegoLogic.r1478_condition():
@@ -238,7 +238,7 @@ label soego_s8: # from 2.2 5.2 6.0 13.0 15.2 16.0 17.0 26.0 40.0 41.0 50.0 61.0 
 
 # s9 # say1480
 label soego_s9: # from 8.1 56.1 60.1
-    nr 'Soego se dotkne svého pásku, nervózně po něm tápe a pak zasyčí. "Klíč!" Jeho oči září jasně rudě a jeho rty se ve vzteku ohrnou… jeho výraz připomíná rozzuřené zvíře. "Někdo mi ukradl klíč!" Obrátí se k tobě a zabručí. "Ty! Tys to musel udělat!"{#soego_s9_}'
+    nr 'Soego se dotkne svého pásku, nervózně po něm tápe a pak zasyčí. "Klíč!" Jeho oči září jasně rudě a jeho rty se ve vzteku ohrnou… jeho výraz připomíná rozzuřené zvíře. "Někdo mi ukradl klíč!" Obrátí se k tobě a zabručí. "Ty! Tys to musel udělat!"{#soego_s9_1}'
 
     menu:
         'Blafuj: "No… počkej! Proč bych se tě na něj ptal, kdybych ti to ukradl?"{#soego_s9_r1481}':
@@ -265,7 +265,7 @@ label soego_s9: # from 8.1 56.1 60.1
 
 # s10 # say1486
 label soego_s10: # -
-    nr 'Soego si bere velký klíč, který má zastrčený za páskem, a odchází směrem ke vstupní bráně. Nemůžeš nic dělat, ale povšiml sis jeho podivné chůze… je nahrbený dopředu, jako kdyby chtěl udržet rovnováhu.{#soego_s10_}'
+    nr 'Soego si bere velký klíč, který má zastrčený za páskem, a odchází směrem ke vstupní bráně. Nemůžeš nic dělat, ale povšiml sis jeho podivné chůze… je nahrbený dopředu, jako kdyby chtěl udržet rovnováhu.{#soego_s10_1}'
 
     menu:
         '"Jak zvláštní chůzi má."{#soego_s10_r1487}' if soegoLogic.r1487_condition():
@@ -279,7 +279,7 @@ label soego_s10: # -
 
 # s11 # say1489
 label soego_s11: # from 10.1
-    nr 'Soego odchází k bráně a strká klíč do zámku. O chvilku později se ze zámku ozve skřípavý zvuk… zvuk se nese celou hlavní halou a mramorovými podlažími pronikla ozvěna.{#soego_s11_}'
+    nr 'Soego odchází k bráně a strká klíč do zámku. O chvilku později se ze zámku ozve skřípavý zvuk… zvuk se nese celou hlavní halou a mramorovými podlažími pronikla ozvěna.{#soego_s11_1}'
 
     menu:
         'Čekej na něj až se vrátí.{#soego_s11_r1490}':
@@ -290,7 +290,7 @@ label soego_s11: # from 10.1
 
 # s12 # say1491
 label soego_s12: # from 11.0 # IF WEIGHT #5 /* Triggers after states #: 63 108 79 82 95 even though they appear after this state */ ~  CreatureInArea("AR0201") Global("Gate_Open","GLOBAL",1) Global("Gate_Cut_Scene","AR0201",1)
-    nr '"Dobře. Vstupní brána je teď odemčená, ale už se sem nemůžeš vrátit."{#soego_s12_}'
+    nr '"Dobře. Vstupní brána je teď odemčená, ale už se sem nemůžeš vrátit."{#soego_s12_1}'
 
     menu:
         '"Můžu ti položit pár otázek předtím než odejdu?"{#soego_s12_r1492}':
@@ -306,7 +306,7 @@ label soego_s12: # from 11.0 # IF WEIGHT #5 /* Triggers after states #: 63 108 7
 
 # s13 # say1494
 label soego_s13: # from 2.3 5.3 6.1 15.3 16.1 17.1 26.1 61.1
-    nr '"Dostat se pryč?" Soego se zamračí. "Jak ses dostal dovnitř?"{#soego_s13_}'
+    nr '"Dostat se pryč?" Soego se zamračí. "Jak ses dostal dovnitř?"{#soego_s13_1}'
 
     menu:
         '"Byl jsem sem přivezen už dříve, čemuž se dost divím. Jsem připraven odejít… ale vypadá to, že jsem zabloudil. Můžeš mi pomoci najít východ?"{#soego_s13_r1495}' if soegoLogic.r1495_condition():
@@ -332,7 +332,7 @@ label soego_s13: # from 2.3 5.3 6.1 15.3 16.1 17.1 26.1 61.1
 
 # s14 # say1500
 label soego_s14: # from 13.1
-    nr 'Soego se podivil. "Velice podivné." Znovu tě studuje. "Je možné, že jsi jeden z těch, co uzavřeli smlouvu?"{#soego_s14_}'
+    nr 'Soego se podivil. "Velice podivné." Znovu tě studuje. "Je možné, že jsi jeden z těch, co uzavřeli smlouvu?"{#soego_s14_1}'
 
     menu:
         '"Ech, „co uzavřeli smlouvu“?"{#soego_s14_r1501}':
@@ -346,7 +346,7 @@ label soego_s14: # from 13.1
 
 # s15 # say1503
 label soego_s15: # from 4.4
-    nr 'Když už se chystáš odejít, Spalovač přestane s očicháváním a potichu zašeptá. "U všech Mocností!" Stáhl se zpět a oči se mu rozšířily. Všiml sis, že jeho oči nejsou podlité krví, ale jsou rudě zbrarveny. "Sirrah, vysloužila sis ode mne nelichotivé uznání: vytvořila jsi dokonalého zombie." Trochu se uklonil. "Já jsem Soego. Smím se zeptat, co tu hledáš… alespoň to tak vypadá?"{#soego_s15_}'
+    nr 'Když už se chystáš odejít, Spalovač přestane s očicháváním a potichu zašeptá. "U všech Mocností!" Stáhl se zpět a oči se mu rozšířily. Všiml sis, že jeho oči nejsou podlité krví, ale jsou rudě zbrarveny. "Sirrah, vysloužila sis ode mne nelichotivé uznání: vytvořila jsi dokonalého zombie." Trochu se uklonil. "Já jsem Soego. Smím se zeptat, co tu hledáš… alespoň to tak vypadá?"{#soego_s15_1}'
 
     menu:
         '"To tě nemusí zajímat."{#soego_s15_r1504}':
@@ -377,7 +377,7 @@ label soego_s15: # from 4.4
 
 # s16 # say1511
 label soego_s16: # from 2.4 5.4 15.4
-    nr '"Aha…" Soegovy oči září rudě a koutky jeho úst sebou lehce poškubávahjí jako kdyby něco tušil. "Možná…" ušklíbl se a odkryl tím řadu ostrých nečistých zubů. "Možná bych měl zavolat stráže? Ano… ano, myslím, že to udělám."{#soego_s16_}'
+    nr '"Aha…" Soegovy oči září rudě a koutky jeho úst sebou lehce poškubávahjí jako kdyby něco tušil. "Možná…" ušklíbl se a odkryl tím řadu ostrých nečistých zubů. "Možná bych měl zavolat stráže? Ano… ano, myslím, že to udělám."{#soego_s16_1}'
 
     menu:
         '"Počkej chvíli! Ztratil jsem se… zabloudil jsem tady v těch halách a vypadá to, že nemůžu najít východ. Můžeš mi pomoci?"{#soego_s16_r1512}' if soegoLogic.r1512_condition():
@@ -403,7 +403,7 @@ label soego_s16: # from 2.4 5.4 15.4
 
 # s17 # say1517
 label soego_s17: # from 2.5 5.5 7.1 13.4 14.1 15.5 23.2 24.2 25.2 26.9 27.4 28.2 29.3 31.3 32.2 33.4 34.4 35.3 36.3 37.2 114.3 115.4
-    nr 'Když už se chystáš odejít, Soego zasyčí… pak se náhle utiší a pozvedne ruku. "Ne, ne. Obávám se, že nemůžeš odejít. Něco tu není v pořádku. Myslím, že bude nejlepší tuhle záležitost vyjasnit…" Koutky úst mu lehce poškubávají a oči se lesknou. "…možná by nám s tím mohli stráže pomoci. Ano… možná bych je měl zavolat."{#soego_s17_}'
+    nr 'Když už se chystáš odejít, Soego zasyčí… pak se náhle utiší a pozvedne ruku. "Ne, ne. Obávám se, že nemůžeš odejít. Něco tu není v pořádku. Myslím, že bude nejlepší tuhle záležitost vyjasnit…" Koutky úst mu lehce poškubávají a oči se lesknou. "…možná by nám s tím mohli stráže pomoci. Ano… možná bych je měl zavolat."{#soego_s17_1}'
 
     menu:
         '"Počkej chvíli! Ztratil jsem se… zabloudil jsem tady v těch halách a vypadá to, že nemůžu najít východ. Můžeš mi pomoci?"{#soego_s17_r1518}' if soegoLogic.r1518_condition():
@@ -429,7 +429,7 @@ label soego_s17: # from 2.5 5.5 7.1 13.4 14.1 15.5 23.2 24.2 25.2 26.9 27.4 28.2
 
 # s18 # say1524
 label soego_s18: # from 6.4 9.0 9.1 9.4 16.4 17.4 40.4 40.5 41.6 50.6 53.6 61.4
-    nr 'Soego udělal krok zpět a třikrát krátce tlesknul. Krátce nato je Márnicí slyšet zvonění velkého železného zvonu.{#soego_s18_}'
+    nr 'Soego udělal krok zpět a třikrát krátce tlesknul. Krátce nato je Márnicí slyšet zvonění velkého železného zvonu.{#soego_s18_1}'
 
     menu:
         '"Nuže dobrá…"{#soego_s18_r1525}':
@@ -440,7 +440,7 @@ label soego_s18: # from 6.4 9.0 9.1 9.4 16.4 17.4 40.4 40.5 41.6 50.6 53.6 61.4
 
 # s19 # say1526
 label soego_s19: # from 3.1 4.2 6.2 9.2 16.2 17.2 40.2 51.0 61.2 114.2 115.3
-    nr 'Dřív, než stačí cokoliv říci, pevně ho chytíš za spánky a prudce mu trhneš hlavou.{#soego_s19_}'
+    nr 'Dřív, než stačí cokoliv říci, pevně ho chytíš za spánky a prudce mu trhneš hlavou.{#soego_s19_1}'
 
     menu:
         '"Nemůžu tě nechat varovat tvé přátele…"{#soego_s19_r1528}':
@@ -451,7 +451,7 @@ label soego_s19: # from 3.1 4.2 6.2 9.2 16.2 17.2 40.2 51.0 61.2 114.2 115.3
 
 # s20 # say1529
 label soego_s20: # from 19.0
-    nr 'Ozvalo se *křupnutí*, když jsi mu zlomil vaz… ale místo toho, aby padl mrtev k zemi, vydává Spalovač ze sebe přidušené výkřiky a snaží se vytrhnout z tvého sevření!{#soego_s20_}'
+    nr 'Ozvalo se *křupnutí*, když jsi mu zlomil vaz… ale místo toho, aby padl mrtev k zemi, vydává Spalovač ze sebe přidušené výkřiky a snaží se vytrhnout z tvého sevření!{#soego_s20_1}'
 
     menu:
         '"Co…?!"{#soego_s20_r1530}' if soegoLogic.r1530_condition():
@@ -467,7 +467,7 @@ label soego_s20: # from 19.0
 
 # s21 # say1532
 label soego_s21: # from 20.1
-    nr 'Spalovač vypadá překvapeně jako ty; oči má divoce otevřené a z hrdla mu vychází bublání… víš jistě, žes mu zlomil vaz, nakonec tomu napovídá i jeho krk, zkroucený v nepřirozeném úhlu. Ale stále je živý! Jak na něj ohromeně zíráš, třikrát za sebou slabě zatleská. Krátce na to ze v halách Márnice začne rozléhat zvonění velkého železného zvonu.{#soego_s21_}'
+    nr 'Spalovač vypadá překvapeně jako ty; oči má divoce otevřené a z hrdla mu vychází bublání… víš jistě, žes mu zlomil vaz, nakonec tomu napovídá i jeho krk, zkroucený v nepřirozeném úhlu. Ale stále je živý! Jak na něj ohromeně zíráš, třikrát za sebou slabě zatleská. Krátce na to ze v halách Márnice začne rozléhat zvonění velkého železného zvonu.{#soego_s21_1}'
 
     menu:
         '"Nuže dobrá…"{#soego_s21_r1533}':
@@ -478,7 +478,7 @@ label soego_s21: # from 20.1
 
 # s22 # say1534
 label soego_s22: # from 3.2 4.3 6.3 9.3 16.3 17.3 40.3 61.3 114.1 115.2
-    nr '*Něco* muselo Spalovače varovat… předtím než ses mohl na něj vrhnout, uskočil dozadu, oči se mu rudě zableskly a vycenil ostré zuby. Se zasyčením krátce třikrát tlesknul. Krátce na to ze v halách Márnice začne rozléhat zvonění velkého železného zvonu.{#soego_s22_}'
+    nr '*Něco* muselo Spalovače varovat… předtím než ses mohl na něj vrhnout, uskočil dozadu, oči se mu rudě zableskly a vycenil ostré zuby. Se zasyčením krátce třikrát tlesknul. Krátce na to ze v halách Márnice začne rozléhat zvonění velkého železného zvonu.{#soego_s22_1}'
 
     menu:
         '"Nuže dobrá…"{#soego_s22_r1535}':
@@ -489,7 +489,7 @@ label soego_s22: # from 3.2 4.3 6.3 9.3 16.3 17.3 40.3 61.3 114.1 115.2
 
 # s23 # say4792
 label soego_s23: # from 14.0
-    nr '"Jsou takoví, kteří podepsali kontrakt, který dovoluje Spalovačům použít po smrti jejich těla. Je možné, že jsi byl zachycen… v drobné administrativní chybičce, někdo to asi popletl. Jsi mnohem bystřejší, než naše zombie."{#soego_s23_}'
+    nr '"Jsou takoví, kteří podepsali kontrakt, který dovoluje Spalovačům použít po smrti jejich těla. Je možné, že jsi byl zachycen… v drobné administrativní chybičce, někdo to asi popletl. Jsi mnohem bystřejší, než naše zombie."{#soego_s23_1}'
 
     menu:
         '"Lidé vám po smrti prodávají svá těla?"{#soego_s23_r4793}':
@@ -507,7 +507,7 @@ label soego_s23: # from 14.0
 
 # s24 # say4796
 label soego_s24: # from 23.0
-    nr '"Och, ano. Výměnou za malou sumu v mědi je mnoho osob ochotno prodat své tělo, které nebudou potřebovat, až dosáhnou Pravé Smrti."{#soego_s24_}'
+    nr '"Och, ano. Výměnou za malou sumu v mědi je mnoho osob ochotno prodat své tělo, které nebudou potřebovat, až dosáhnou Pravé Smrti."{#soego_s24_1}'
 
     menu:
         '"Co s těmi těly děláte?"{#soego_s24_r4797}':
@@ -525,7 +525,7 @@ label soego_s24: # from 23.0
 
 # s25 # say4800
 label soego_s25: # from 24.0 24.1
-    nr '"Provádějí v márnici dělnické práce. Přenášejí těla, čistí podlahy, pomáhají nám v přípravě těl na pohřbení… relativně jednoduché úkoly. Je to nešťastné, ale nejsou schopni poslechnout komplikované instrukce."{#soego_s25_}'
+    nr '"Provádějí v márnici dělnické práce. Přenášejí těla, čistí podlahy, pomáhají nám v přípravě těl na pohřbení… relativně jednoduché úkoly. Je to nešťastné, ale nejsou schopni poslechnout komplikované instrukce."{#soego_s25_1}'
 
     menu:
         '"No,  „Kontraktovaný“ nebo ne, jak se odtud dostanu, když nejsem mrtvý?"{#soego_s25_r4801}':
@@ -543,7 +543,7 @@ label soego_s25: # from 24.0 24.1
 
 # s26 # say4804
 label soego_s26: # from 12.0 23.1 25.1 27.2 28.0 29.1 31.1 32.0 33.2 34.2 35.1 36.1 37.0 58.0
-    nr 'Soego přikývl. "Můžeš položit svou otázku."{#soego_s26_}'
+    nr 'Soego přikývl. "Můžeš položit svou otázku."{#soego_s26_1}'
 
     menu:
         '"Rád bych odešel. Můžeš mě navést k východu?"{#soego_s26_r4805}' if soegoLogic.r4805_condition():
@@ -591,7 +591,7 @@ label soego_s26: # from 12.0 23.1 25.1 27.2 28.0 29.1 31.1 32.0 33.2 34.2 35.1 3
 
 # s27 # say4808
 label soego_s27: # from 26.2
-    nr '"Pardon?"{#soego_s27_}'
+    nr '"Pardon?"{#soego_s27_1}'
 
     menu:
         '"O patro výš je jeden muž maskovaný jako mrtvola. Myslím si, že je tady, aby špehoval Spalovače."{#soego_s27_r4836}' if soegoLogic.r4836_condition():
@@ -619,7 +619,7 @@ label soego_s27: # from 26.2
 
 # s28 # say4840
 label soego_s28: # from 27.0 27.1
-    nr '"Co? Proč by…?" Soegův hlas náhle přešel do syčení, rty se mu odhrnuly a odhalily řadu křivých zubů. "*Anarchista.*" Oči mu rudě zazářily. "Anarchista. *Tady.*" Najednou si uvědomil tvou přítomnost a ovládl se. "Děkuji ti za informaci. Dohlédnu na to, aby stráže tuto záležitost vyřešily."{#soego_s28_}'
+    nr '"Co? Proč by…?" Soegův hlas náhle přešel do syčení, rty se mu odhrnuly a odhalily řadu křivých zubů. "*Anarchista.*" Oči mu rudě zazářily. "Anarchista. *Tady.*" Najednou si uvědomil tvou přítomnost a ovládl se. "Děkuji ti za informaci. Dohlédnu na to, aby stráže tuto záležitost vyřešily."{#soego_s28_1}'
 
     menu:
         '"Žádný problém. Mám ještě nějaké otázky…"{#soego_s28_r4852}':
@@ -637,7 +637,7 @@ label soego_s28: # from 27.0 27.1
 
 # s29 # say4855
 label soego_s29: # from 26.5
-    nr 'Už jsi to málem řekl, ale pak ses zarazil. Když se díváš na Soega, máš podivný pocit… z nějakého důvodu jsi přesvědčen, že bys neměl nic říct.{#soego_s29_}'
+    nr 'Už jsi to málem řekl, ale pak ses zarazil. Když se díváš na Soega, máš podivný pocit… z nějakého důvodu jsi přesvědčen, že bys neměl nic říct.{#soego_s29_1}'
 
     menu:
         '"Slyšel jsem, že jsi divný, Soego. Že máš rád krysy."{#soego_s29_r4856}':
@@ -659,7 +659,7 @@ label soego_s29: # from 26.5
 
 # s30 # say4860
 label soego_s30: # from 26.4 29.0
-    nr 'Soego je chvíli zticha a pečlivě si tě prohlíží. Oči mu rudě září a z koutku úst mu vychází tiché syčení. "Myslím, že tvá návštěva je už u konce." Překvapil tě, protože ustoupil a rychle třikrát zatleskal. Jako odpověď se začíná Márnicí rozléhat zvonění ohromného železného zvonu.{#soego_s30_}'
+    nr 'Soego je chvíli zticha a pečlivě si tě prohlíží. Oči mu rudě září a z koutku úst mu vychází tiché syčení. "Myslím, že tvá návštěva je už u konce." Překvapil tě, protože ustoupil a rychle třikrát zatleskal. Jako odpověď se začíná Márnicí rozléhat zvonění ohromného železného zvonu.{#soego_s30_1}'
 
     menu:
         '"Co to…? Co to děláš?"{#soego_s30_r4861}':
@@ -675,7 +675,7 @@ label soego_s30: # from 26.4 29.0
 
 # s31 # say4863
 label soego_s31: # from 26.3
-    nr 'Soegovi se podařilo vykouzlit chabý úsměv, koutky úst se mu cukají. "Nedávno jsem onemocněl… jenom zvýšená teplota, nic vážného. Někdy se mi špatně… spí."{#soego_s31_}'
+    nr 'Soegovi se podařilo vykouzlit chabý úsměv, koutky úst se mu cukají. "Nedávno jsem onemocněl… jenom zvýšená teplota, nic vážného. Někdy se mi špatně… spí."{#soego_s31_1}'
 
     menu:
         '"Mohl bych nějak pomoci?"{#soego_s31_r4864}':
@@ -698,7 +698,7 @@ label soego_s31: # from 26.3
 
 # s32 # say4868
 label soego_s32: # from 31.0
-    nr 'Soego zavrtěl hlavou. "Ne, ne, ale díky za starost… Vydržím to." Zamračil se. "Chtěl jsi ještě něco?"{#soego_s32_}'
+    nr 'Soego zavrtěl hlavou. "Ne, ne, ale díky za starost… Vydržím to." Zamračil se. "Chtěl jsi ještě něco?"{#soego_s32_1}'
 
     menu:
         '"Ano. Mám ještě nějaké otázky…"{#soego_s32_r4869}':
@@ -716,7 +716,7 @@ label soego_s32: # from 31.0
 
 # s33 # say4872
 label soego_s33: # from 26.6
-    nr '"Pharod? Samozřejmě že ho znám." Zamračil se a jeho oči rudě zazářily. "Zvrhlý muž. Nemá žádný respekt k mrtvým a k živým toho cítí ještě méně. Je to mrchožrout. Sběrač."{#soego_s33_}'
+    nr '"Pharod? Samozřejmě že ho znám." Zamračil se a jeho oči rudě zazářily. "Zvrhlý muž. Nemá žádný respekt k mrtvým a k živým toho cítí ještě méně. Je to mrchožrout. Sběrač."{#soego_s33_1}'
 
     menu:
         '"Sběrač?"{#soego_s33_r4873}':
@@ -742,7 +742,7 @@ label soego_s33: # from 26.6
 
 # s34 # say4878
 label soego_s34: # from 33.0 36.0
-    nr '"Sběrači si vydělávají na živobytí tak, že sbírají mrtvé a nosí je sem do Márnice. My se pak postaráme, že se tělům dostane správného pohřbu."{#soego_s34_}'
+    nr '"Sběrači si vydělávají na živobytí tak, že sbírají mrtvé a nosí je sem do Márnice. My se pak postaráme, že se tělům dostane správného pohřbu."{#soego_s34_1}'
 
     menu:
         '"Takže kdyby Sběrač našel tělo… například moje… tak by ho sem přinesl a prodal vám ho?"{#soego_s34_r4879}' if soegoLogic.r4879_condition():
@@ -768,7 +768,7 @@ label soego_s34: # from 33.0 36.0
 
 # s35 # say4884
 label soego_s35: # from 34.0
-    nr '"Ano."{#soego_s35_}'
+    nr '"Ano."{#soego_s35_1}'
 
     menu:
         '"Hmmmm. Najednou je extrémně důležité, abych toho Pharoda našel. Nevíš, kde bych ho měl hledat?"{#soego_s35_r4885}':
@@ -790,7 +790,7 @@ label soego_s35: # from 34.0
 
 # s36 # say4889
 label soego_s36: # from 33.1 34.1 35.0
-    nr '"Vím, že přebývá v Úlu, ve slumech kolem Márnice, ale nevím kde přesně. Někteří ze Sběračů by to ale vědět mohli, pokud s tebou budou chtít ovšem mluvit."{#soego_s36_}'
+    nr '"Vím, že přebývá v Úlu, ve slumech kolem Márnice, ale nevím kde přesně. Někteří ze Sběračů by to ale vědět mohli, pokud s tebou budou chtít ovšem mluvit."{#soego_s36_1}'
 
     menu:
         '"Co to ti Sběrači dělají?"{#soego_s36_r4890}':
@@ -812,7 +812,7 @@ label soego_s36: # from 33.1 34.1 35.0
 
 # s37 # say4894
 label soego_s37: # from 26.7
-    nr '"Deník?" Soego se tváří zmateně. "Ne, žádný jsem neviděl."{#soego_s37_}'
+    nr '"Deník?" Soego se tváří zmateně. "Ne, žádný jsem neviděl."{#soego_s37_1}'
 
     menu:
         '"No tak to nic. Mám ještě nějaké otázky…"{#soego_s37_r4895}':
@@ -830,7 +830,7 @@ label soego_s37: # from 26.7
 
 # s38 # say4898
 label soego_s38: # - # IF WEIGHT #9 /* Triggers after states #: 59 58 63 108 79 82 95 even though they appear after this state */ ~  CreatureInArea("AR0201") !Global("Appearance","GLOBAL",1) Global("Gate_Open","GLOBAL",0) Global("Soego","GLOBAL",0)
-    nr 'Vidíš unaveného muže v černém rouchu. Má úzkou a velice bledou tvář a vypadá to, že se asi v poslední době moc nevyspal: má svěšená ramena a pod krvavýma očima váčky. Je ztracený ve svých myšlenkách, vůbec si tě nevšiml.{#soego_s38_}'
+    nr 'Vidíš unaveného muže v černém rouchu. Má úzkou a velice bledou tvář a vypadá to, že se asi v poslední době moc nevyspal: má svěšená ramena a pod krvavýma očima váčky. Je ztracený ve svých myšlenkách, vůbec si tě nevšiml.{#soego_s38_1}'
 
     menu:
         '"Zdravím…"{#soego_s38_r66706}' if soegoLogic.r66706_condition():
@@ -850,7 +850,7 @@ label soego_s38: # - # IF WEIGHT #9 /* Triggers after states #: 59 58 63 108 79 
 
 # s39 # say4904
 label soego_s39: # from 38.0
-    nr '"Zdravím…" Muž se k tobě otočil a mírně se uklonil. Najednou sis uvědomil, že nemá oči podlité krví, ale že mu rudě září. "Jsem Soego. Jak ti mohu…" Najednou si všiml tvých jizev a jeho ústa sebou zaškubala. "Omlouvám se, pane, ale ztratil ses?"{#soego_s39_}'
+    nr '"Zdravím…" Muž se k tobě otočil a mírně se uklonil. Najednou sis uvědomil, že nemá oči podlité krví, ale že mu rudě září. "Jsem Soego. Jak ti mohu…" Najednou si všiml tvých jizev a jeho ústa sebou zaškubala. "Omlouvám se, pane, ale ztratil ses?"{#soego_s39_1}'
 
     menu:
         '"Ano."{#soego_s39_r4905}':
@@ -872,7 +872,7 @@ label soego_s39: # from 38.0
 
 # s40 # say4909
 label soego_s40: # from 39.0
-    nr '"Tak dobrá tedy…" Koutky Soegových úst sebou zaškubaly, jakoby v nějaké předtuše. "Tak v tom případě zavolám stráže, aby tě odvedly. Počkej chvíli." Opravdu to vypadá, že se chystá volat stráže.{#soego_s40_}'
+    nr '"Tak dobrá tedy…" Koutky Soegových úst sebou zaškubaly, jakoby v nějaké předtuše. "Tak v tom případě zavolám stráže, aby tě odvedly. Počkej chvíli." Opravdu to vypadá, že se chystá volat stráže.{#soego_s40_1}'
 
     menu:
         '"Počkej chvíli! Prosím… Není nutné volat stráže. Přišel jsem na pohřeb a teď jsem se tady nějak zamotal… Můžeš mě prosím tě vyvést ven?"{#soego_s40_r4910}' if soegoLogic.r4910_condition():
@@ -902,7 +902,7 @@ label soego_s40: # from 39.0
 
 # s41 # say4916
 label soego_s41: # from 39.1 39.2 39.3
-    nr '"Nevzpomínám si, že bych tě přijímal." Soego si tě podezřívavě prohlíží, jeho oči ve světle loučí rudě září. "Mohu se tě zeptat, co tady děláš?"{#soego_s41_}'
+    nr '"Nevzpomínám si, že bych tě přijímal." Soego si tě podezřívavě prohlíží, jeho oči ve světle loučí rudě září. "Mohu se tě zeptat, co tady děláš?"{#soego_s41_1}'
 
     menu:
         '"Přišel jsem sem na pohřeb, vzdát úctu zesnulému. Chystám se odejít… ale nějak jsem se tady zamotal. Můžeš mi poradit, jak se dostanu k východu?"{#soego_s41_r4917}' if soegoLogic.r4917_condition():
@@ -936,7 +936,7 @@ label soego_s41: # from 39.1 39.2 39.3
 
 # s42 # say4924
 label soego_s42: # from 41.2 50.2 115.0
-    nr 'Tváří se překvapeně. "Ty… ses probral na stole v preparační místnosti?"{#soego_s42_}'
+    nr 'Tváří se překvapeně. "Ty… ses probral na stole v preparační místnosti?"{#soego_s42_1}'
 
     menu:
         '"Uh, ne. Přeřekl jsem se."{#soego_s42_r4925}':
@@ -951,7 +951,7 @@ label soego_s42: # from 41.2 50.2 115.0
 
 # s43 # say4927
 label soego_s43: # from 41.3 50.3
-    nr 'Soego přikývl. "Za kým jsi přišel? S potěšením ti ukážu cestu."{#soego_s43_}'
+    nr 'Soego přikývl. "Za kým jsi přišel? S potěšením ti ukážu cestu."{#soego_s43_1}'
 
     menu:
         '"Po tom ti nic není."{#soego_s43_r4928}':
@@ -982,7 +982,7 @@ label soego_s43: # from 41.3 50.3
 
 # s44 # say4934
 label soego_s44: # from 43.1
-    nr '"Dhall? Dhalla najdeš v přijímací místnosti o patro výš." Koutek Soegových úst sebou zaškubal. "Má dost práce a s jeho zdravím to není moc slavné. Pokud to není opravdu nutné, raději ho neobtěžuj."{#soego_s44_}'
+    nr '"Dhall? Dhalla najdeš v přijímací místnosti o patro výš." Koutek Soegových úst sebou zaškubal. "Má dost práce a s jeho zdravím to není moc slavné. Pokud to není opravdu nutné, raději ho neobtěžuj."{#soego_s44_1}'
 
     menu:
         '"Co je s Dhallem špatného?"{#soego_s44_r4935}':
@@ -1000,7 +1000,7 @@ label soego_s44: # from 43.1
 
 # s45 # say4938
 label soego_s45: # from 44.1
-    nr '"Ano… do Přijímací místnosti se přinášejí mrtvoly nalezené ve městě. Jsou tam zapsány a připraveny na pohřeb."{#soego_s45_}'
+    nr '"Ano… do Přijímací místnosti se přinášejí mrtvoly nalezené ve městě. Jsou tam zapsány a připraveny na pohřeb."{#soego_s45_1}'
 
     menu:
         '"Co je s Dhallem špatného?"{#soego_s45_r4939}':
@@ -1014,7 +1014,7 @@ label soego_s45: # from 44.1
 
 # s46 # say4941
 label soego_s46: # from 44.0 45.0
-    nr '"Oh, není s ním nic špatného. Dhall je…" Soego zacvakal zuby. "…*starý.* Jeho nadšení pro katalogizování mrtvých už brzy skončí. Trpí chorobou, po které bude bez pochyby brzy následovat smrt."{#soego_s46_}'
+    nr '"Oh, není s ním nic špatného. Dhall je…" Soego zacvakal zuby. "…*starý.* Jeho nadšení pro katalogizování mrtvých už brzy skončí. Trpí chorobou, po které bude bez pochyby brzy následovat smrt."{#soego_s46_1}'
 
     menu:
         '"Dobrá tedy. Budu se snažit, aby byla má návštěva co nejkratší. Sbohem."{#soego_s46_r4942}':
@@ -1024,7 +1024,7 @@ label soego_s46: # from 44.0 45.0
 
 # s47 # say4943
 label soego_s47: # from 43.2 53.2
-    nr '"Deionarra? V severozápadní pamětní hale je pohřbena žena tohoto jména. To jí hledáš?"{#soego_s47_}'
+    nr '"Deionarra? V severozápadní pamětní hale je pohřbena žena tohoto jména. To jí hledáš?"{#soego_s47_1}'
 
     menu:
         '"Ano… můžeš mi říct, co se jí stalo?"{#soego_s47_r4944}':
@@ -1038,7 +1038,7 @@ label soego_s47: # from 43.2 53.2
 
 # s48 # say4946
 label soego_s48: # from 47.0
-    nr '"Nevím, ale už je tady nějaký čas. Její otec by mohl vědět, co jí potkalo… často sem přichází ze své kanceláře v Horní čtvrti. Bylo to jeho přání, aby byla umístěna zde v pamětní hale."{#soego_s48_}'
+    nr '"Nevím, ale už je tady nějaký čas. Její otec by mohl vědět, co jí potkalo… často sem přichází ze své kanceláře v Horní čtvrti. Bylo to jeho přání, aby byla umístěna zde v pamětní hale."{#soego_s48_1}'
 
     menu:
         '"Děkuju za informace. Půjdu jí vzdát úctu."{#soego_s48_r4947}':
@@ -1048,7 +1048,7 @@ label soego_s48: # from 47.0
 
 # s49 # say4948
 label soego_s49: # from 43.3 43.4 53.3 53.4
-    nr '"Adahn…" Soegovy oči se zúžily a rudý nádech, kterého sis všiml již předtím, zesílil. "Nikdo tohoto jména v halách Márnice nepřebývá, ať živý či mrtvý." Jeho ústa sebou zaškubala a pak najednou překvapivě zavětřil.{#soego_s49_}'
+    nr '"Adahn…" Soegovy oči se zúžily a rudý nádech, kterého sis všiml již předtím, zesílil. "Nikdo tohoto jména v halách Márnice nepřebývá, ať živý či mrtvý." Jeho ústa sebou zaškubala a pak najednou překvapivě zavětřil.{#soego_s49_1}'
 
     menu:
         '"Uh… tak to jsem se musel přeřeknout."{#soego_s49_r4949}':
@@ -1058,7 +1058,7 @@ label soego_s49: # from 43.3 43.4 53.3 53.4
 
 # s50 # say4950
 label soego_s50: # from 40.1 42.0 43.5 49.0 53.1 57.1
-    nr 'Soegovy ústa sebou znovu zaškubala a jeho oči začaly zářit. "Tak co tady tedy pohledáváš?"{#soego_s50_}'
+    nr 'Soegovy ústa sebou znovu zaškubala a jeho oči začaly zářit. "Tak co tady tedy pohledáváš?"{#soego_s50_1}'
 
     menu:
         '"Byl jsem tady na pohřbu, vzdát úctu. Chystám se odejít, ale nějak jsem se ztratil. Můžeš mi poradit, jak najdu východ?"{#soego_s50_r4951}' if soegoLogic.r4951_condition():
@@ -1092,7 +1092,7 @@ label soego_s50: # from 40.1 42.0 43.5 49.0 53.1 57.1
 
 # s51 # say4957
 label soego_s51: # from 41.5 50.5 53.5
-    nr 'Soego se zamračil, když ses naklonil. Všiml sis, že zavětřil. Oči se mu náhle zúžily a vypadá to, že začne volat stráže.{#soego_s51_}'
+    nr 'Soego se zamračil, když ses naklonil. Všiml sis, že zavětřil. Oči se mu náhle zúžily a vypadá to, že začne volat stráže.{#soego_s51_1}'
 
     menu:
         'Zlom mu vaz, než stačí zařvat.{#soego_s51_r4958}' if soegoLogic.r4958_condition():
@@ -1106,7 +1106,7 @@ label soego_s51: # from 41.5 50.5 53.5
 
 # s52 # say4960
 label soego_s52: # from 51.1
-    nr 'Vrhl ses po něm. Soego uskočil, oči mu rudě září a má vyceněné zuby. Se zasyčením třikrát zatleskal. Jako odpověď se začíná Márnicí rozléhat zvonění ohromného železného zvonu.{#soego_s52_}'
+    nr 'Vrhl ses po něm. Soego uskočil, oči mu rudě září a má vyceněné zuby. Se zasyčením třikrát zatleskal. Jako odpověď se začíná Márnicí rozléhat zvonění ohromného železného zvonu.{#soego_s52_1}'
 
     menu:
         '"Dobrá tedy…"{#soego_s52_r4961}':
@@ -1117,7 +1117,7 @@ label soego_s52: # from 51.1
 
 # s53 # say4962
 label soego_s53: # from 41.4 50.4
-    nr '"Koho pohřbívali? Možná, že se obřad odehrává na nějakém jiném místě Márnice."{#soego_s53_}'
+    nr '"Koho pohřbívali? Možná, že se obřad odehrává na nějakém jiném místě Márnice."{#soego_s53_1}'
 
     menu:
         '"Nerozuměl jsi mi… to MĚ pohřbívali."{#soego_s53_r4963}':
@@ -1152,7 +1152,7 @@ label soego_s53: # from 41.4 50.4
 
 # s54 # say4966
 label soego_s54: # from 7.0 25.0
-    nr '"Dobrá…" Soego zašilhal. Vypadá zmateně. "Určitě tady došlo k omylu. Buď tě sem přivedli pokrevní příbuzní, nějaký Spalovač, nebo…" Soego najednou zasyčel, jako by ho napadlo něco nepříjemného. "Nebo jeden ze *Sběračů*."{#soego_s54_}'
+    nr '"Dobrá…" Soego zašilhal. Vypadá zmateně. "Určitě tady došlo k omylu. Buď tě sem přivedli pokrevní příbuzní, nějaký Spalovač, nebo…" Soego najednou zasyčel, jako by ho napadlo něco nepříjemného. "Nebo jeden ze *Sběračů*."{#soego_s54_1}'
 
     menu:
         '"Sběrači?"{#soego_s54_r4971}':
@@ -1162,7 +1162,7 @@ label soego_s54: # from 7.0 25.0
 
 # s55 # say4972
 label soego_s55: # from 54.0
-    nr '"Ano, Sběrači… banda mrchožroutů, kteří sem přinášejí mrtvoly. Možná si mysleli, že jsi mrtvý…" Soego zasyčel a v očích se mu zablesklo. "… a byli tak zaslepení blýskáním měďáků, že je ani nenapadlo ověřit si to, než tě sem přitáhli." Soego si tě prohlíží. "Máš štěstí, že ses probral… jinak by ses možná dočkal Pravé Smrti dřív, než by nastal tvůj čas."{#soego_s55_}'
+    nr '"Ano, Sběrači… banda mrchožroutů, kteří sem přinášejí mrtvoly. Možná si mysleli, že jsi mrtvý…" Soego zasyčel a v očích se mu zablesklo. "… a byli tak zaslepení blýskáním měďáků, že je ani nenapadlo ověřit si to, než tě sem přitáhli." Soego si tě prohlíží. "Máš štěstí, že ses probral… jinak by ses možná dočkal Pravé Smrti dřív, než by nastal tvůj čas."{#soego_s55_1}'
 
     menu:
         '"Tak v tom případě došlo k omylu… a já bych rád odešel. Teď."{#soego_s55_r4973}':
@@ -1172,7 +1172,7 @@ label soego_s55: # from 54.0
 
 # s56 # say4974
 label soego_s56: # from 55.0 59.1
-    nr 'Soego přikývl a v koutcích úst mu zacukalo. "Proč… jistě, jistě. Počkej, otevřu ti bránu."{#soego_s56_}'
+    nr 'Soego přikývl a v koutcích úst mu zacukalo. "Proč… jistě, jistě. Počkej, otevřu ti bránu."{#soego_s56_1}'
 
     menu:
         '"Dobrá."{#soego_s56_r4975}' if soegoLogic.r4975_condition():
@@ -1187,7 +1187,7 @@ label soego_s56: # from 55.0 59.1
 
 # s57 # say4977
 label soego_s57: # from 53.0
-    nr '"Ty?"{#soego_s57_}'
+    nr '"Ty?"{#soego_s57_1}'
 
     menu:
         '"Ano, *já*. Probral jsem se na jednom stole nahoře."{#soego_s57_r4978}':
@@ -1201,7 +1201,7 @@ label soego_s57: # from 53.0
 
 # s58 # say4980
 label soego_s58: # - # IF WEIGHT #6 /* Triggers after states #: 63 108 79 82 95 even though they appear after this state */ ~  CreatureInArea("AR0201") Global("Gate_Open","GLOBAL",1)
-    nr 'Když ses přiblížil, Soego zavětřil a vzhlédnul. Když tě uviděl, zamračil se. "Odemknul jsem ti bránu. Proč tady ještě pořád jsi?"{#soego_s58_}'
+    nr 'Když ses přiblížil, Soego zavětřil a vzhlédnul. Když tě uviděl, zamračil se. "Odemknul jsem ti bránu. Proč tady ještě pořád jsi?"{#soego_s58_1}'
 
     menu:
         '"Než odejdu, mám pro tebe pár otázek."{#soego_s58_r4981}':
@@ -1215,7 +1215,7 @@ label soego_s58: # - # IF WEIGHT #6 /* Triggers after states #: 63 108 79 82 95 
 
 # s59 # say4983
 label soego_s59: # - # IF WEIGHT #7 /* Triggers after states #: 63 108 79 82 95 even though they appear after this state */ ~  CreatureInArea("AR0201") Global("Soego","GLOBAL",1) Global("Gate_Open","GLOBAL",0)
-    nr 'Když ses přiblížil, Soego zavětřil a vzhlédnul. Když tě uviděl, lehce se uklonil. "Našel jsi, cos hledal?"{#soego_s59_}'
+    nr 'Když ses přiblížil, Soego zavětřil a vzhlédnul. Když tě uviděl, lehce se uklonil. "Našel jsi, cos hledal?"{#soego_s59_1}'
 
     menu:
         '"Ano, děkuji ti. Omlouvám se, ale nějak jsem se zamotal… můžeš mě navést k východu?"{#soego_s59_r4984}' if soegoLogic.r4984_condition():
@@ -1233,7 +1233,7 @@ label soego_s59: # - # IF WEIGHT #7 /* Triggers after states #: 63 108 79 82 95 
 
 # s60 # say4987
 label soego_s60: # from 59.0
-    nr 'Soego přikývl a koutek úst mu zacukal. "Proč… jistě. Tohle místo může návštěvníky zmást. Pojď, otevřu ti bránu ven."{#soego_s60_}'
+    nr 'Soego přikývl a koutek úst mu zacukal. "Proč… jistě. Tohle místo může návštěvníky zmást. Pojď, otevřu ti bránu ven."{#soego_s60_1}'
 
     menu:
         '"Děkuju ti."{#soego_s60_r4988}' if soegoLogic.r4988_condition():
@@ -1248,7 +1248,7 @@ label soego_s60: # from 59.0
 
 # s61 # say4990
 label soego_s61: # from 13.2
-    nr '"To je podivné." V Soegovýh očích se rudě zablesklo a koutek jeho úst sebou zaškubal, jakoby v nějaké předtuše. "Možná…" Odfrkl si a odhalil řadu ostrých a špinavých zubů. Možná bych měl zavolat stráže? Ano… ano, myslím, že to udělám."{#soego_s61_}'
+    nr '"To je podivné." V Soegovýh očích se rudě zablesklo a koutek jeho úst sebou zaškubal, jakoby v nějaké předtuše. "Možná…" Odfrkl si a odhalil řadu ostrých a špinavých zubů. Možná bych měl zavolat stráže? Ano… ano, myslím, že to udělám."{#soego_s61_1}'
 
     menu:
         '"Počkej chvíli! Ztratil jsem se… nějak jsem se tady zamotal a teď nemůžu najít východ. Můžeš mi pomoct?"{#soego_s61_r4991}' if soegoLogic.r4991_condition():
@@ -1274,7 +1274,7 @@ label soego_s61: # from 13.2
 
 # s62 # say4996
 label soego_s62: # from 44.2 45.1 46.0 47.1 48.0
-    nr 'Soego přikývl… a v koutcích úst mu znovu zacukalo. Zřejmě si to ani neuvědomuje. "Vrať se, až vzdáš úctu zesnulému a já ti pak otevřu bránu. Je po devíti zazvoněních, takže budeš muset odejít, jakmile si vyřídíš svou věc."{#soego_s62_}'
+    nr 'Soego přikývl… a v koutcích úst mu znovu zacukalo. Zřejmě si to ani neuvědomuje. "Vrať se, až vzdáš úctu zesnulému a já ti pak otevřu bránu. Je po devíti zazvoněních, takže budeš muset odejít, jakmile si vyřídíš svou věc."{#soego_s62_1}'
 
     menu:
         '"Víš, vlastně bych to mohl udělat jindy. Můžeš mě pustit ven?"{#soego_s62_r4997}':
@@ -1288,7 +1288,7 @@ label soego_s62: # from 44.2 45.1 46.0 47.1 48.0
 
 # s63 # say21653
 label soego_s63: # - # IF WEIGHT #4 /* Triggers after states #: 108 79 82 95 even though they appear after this state */ ~  CreatureInArea("AR1500") !Global("CR_Vic","GLOBAL",1)
-    nr '"Hele, další živý člověk. Většinu zabijou ghúlové, takhle daleko v katakombách; měl jsi štěstí."{#soego_s63_}'
+    nr '"Hele, další živý člověk. Většinu zabijou ghúlové, takhle daleko v katakombách; měl jsi štěstí."{#soego_s63_1}'
 
     menu:
         '"Ty jsi Soego, z Márnice. Co tady děláš?"{#soego_s63_r21655}' if soegoLogic.r21655_condition():
@@ -1319,7 +1319,7 @@ label soego_s63: # - # IF WEIGHT #4 /* Triggers after states #: 108 79 82 95 eve
 
 # s64 # say21661
 label soego_s64: # from 63.1 77.0 78.0
-    nr '"Já jsem Soego, ze Společenství Spalovačů. Jsem tady jako misionář." Uklání se.{#soego_s64_}'
+    nr '"Já jsem Soego, ze Společenství Spalovačů. Jsem tady jako misionář." Uklání se.{#soego_s64_1}'
 
     menu:
         '"Misionář?"{#soego_s64_r21662}':
@@ -1345,7 +1345,7 @@ label soego_s64: # from 63.1 77.0 78.0
 
 # s65 # say21666
 label soego_s65: # from 64.0 72.2 73.2 74.0 101.3 104.1
-    nr '"Ano, přišel jsem do těchto katakomb poté, co jsem slyšel pověsti o nemrtvých, kteří jsou v těchto končinách. Doufám, že je zachráním."{#soego_s65_}'
+    nr '"Ano, přišel jsem do těchto katakomb poté, co jsem slyšel pověsti o nemrtvých, kteří jsou v těchto končinách. Doufám, že je zachráním."{#soego_s65_1}'
 
     menu:
         '"Zachráníš?"{#soego_s65_r21667}':
@@ -1367,7 +1367,7 @@ label soego_s65: # from 64.0 72.2 73.2 74.0 101.3 104.1
 
 # s66 # say21670
 label soego_s66: # from 64.1 72.3 73.3 74.1 101.4 104.2 109.2
-    nr '"Jsem tu sám. Přišel jsem do těchto katakomb poté, co jsem slyšel pověsti o nemrtvých kteří jsou v těchto končinách. Doufám, že je zachráním."{#soego_s66_}'
+    nr '"Jsem tu sám. Přišel jsem do těchto katakomb poté, co jsem slyšel pověsti o nemrtvých kteří jsou v těchto končinách. Doufám, že je zachráním."{#soego_s66_1}'
 
     menu:
         '"Zachráníš?"{#soego_s66_r21671}':
@@ -1389,7 +1389,7 @@ label soego_s66: # from 64.1 72.3 73.3 74.1 101.4 104.2 109.2
 
 # s67 # say21674
 label soego_s67: # from 65.0 66.0
-    nr '"Ano, vášeň je váže k tomuto falešnému životu. Doufám, že je naučím zapomenout tyto vášně, opustit tento falešný život a dosáhnout Pravé smrti."{#soego_s67_}'
+    nr '"Ano, vášeň je váže k tomuto falešnému životu. Doufám, že je naučím zapomenout tyto vášně, opustit tento falešný život a dosáhnout Pravé smrti."{#soego_s67_1}'
 
     menu:
         '"Falešný život?"{#soego_s67_r21675}':
@@ -1419,7 +1419,7 @@ label soego_s67: # from 65.0 66.0
 
 # s68 # say21771
 label soego_s68: # from 67.0 69.0 70.0
-    nr '"Tito… mrtví… jsou tak blízko Pravé smrti… ale přesto tíhnou k tomuto životu. Tento falešný život je slepá ulička existence v této sféře."{#soego_s68_}'
+    nr '"Tito… mrtví… jsou tak blízko Pravé smrti… ale přesto tíhnou k tomuto životu. Tento falešný život je slepá ulička existence v této sféře."{#soego_s68_1}'
 
     menu:
         '"Pravá smrt?"{#soego_s68_r21772}':
@@ -1445,7 +1445,7 @@ label soego_s68: # from 67.0 69.0 70.0
 
 # s69 # say21777
 label soego_s69: # from 67.1 68.0 70.1
-    nr '"Úplná nepřítomnost vášně, pravá smrt je pravý život za tímto stínem bytí. To je to místo, kam se tito mrtví musí dostat, aby se osvobodili."{#soego_s69_}'
+    nr '"Úplná nepřítomnost vášně, pravá smrt je pravý život za tímto stínem bytí. To je to místo, kam se tito mrtví musí dostat, aby se osvobodili."{#soego_s69_1}'
 
     menu:
         '"Co je ten „falešný život,“ o kterém jsi mluvil?"{#soego_s69_r21779}':
@@ -1471,7 +1471,7 @@ label soego_s69: # from 67.1 68.0 70.1
 
 # s70 # say21786
 label soego_s70: # from 67.2 68.1 69.1
-    nr '"Já po nich chci, aby překonali tuto sféru existence a oddělili se od vášní. To je může zachránit."{#soego_s70_}'
+    nr '"Já po nich chci, aby překonali tuto sféru existence a oddělili se od vášní. To je může zachránit."{#soego_s70_1}'
 
     menu:
         '"Co byl ten „falešný život“ o kterém jsi mluvil?"{#soego_s70_r21788}':
@@ -1497,7 +1497,7 @@ label soego_s70: # from 67.2 68.1 69.1
 
 # s71 # say21799
 label soego_s71: # from 63.4 64.4 65.3 66.3 67.5 68.4 69.4 70.4 72.6 73.6 74.4 77.2 78.2 79.5 80.1 81.0 101.5 104.3 109.5 110.3 112.1
-    nr '"Ještě trochu tvého času, před tím než půjdeš. Neútoč na žádné nemrtvé tady v katakombách; nezaútočí na tebe, dokud zůstaneš mírumilovný. Když se ukážeš být nepřátelský, tak se budou bránit, a je jich tady… mnoho. Nakonec, můžeš se sem vrátit, když si budeš chtít odpočinout."{#soego_s71_}'
+    nr '"Ještě trochu tvého času, před tím než půjdeš. Neútoč na žádné nemrtvé tady v katakombách; nezaútočí na tebe, dokud zůstaneš mírumilovný. Když se ukážeš být nepřátelský, tak se budou bránit, a je jich tady… mnoho. Nakonec, můžeš se sem vrátit, když si budeš chtít odpočinout."{#soego_s71_1}'
 
     menu:
         '"Počkej… můžu si teď odpočinout?"{#soego_s71_r21800}' if soegoLogic.r21800_condition():
@@ -1518,7 +1518,7 @@ label soego_s71: # from 63.4 64.4 65.3 66.3 67.5 68.4 69.4 70.4 72.6 73.6 74.4 7
 
 # s72 # say21806
 label soego_s72: # from 63.0
-    nr '"Paměť ti slouží dobře. Já už nejsem zařazen v Márnici… místo toho, jsem se stal misionářem v těchto končinách."{#soego_s72_}'
+    nr '"Paměť ti slouží dobře. Já už nejsem zařazen v Márnici… místo toho, jsem se stal misionářem v těchto končinách."{#soego_s72_1}'
 
     menu:
         '"Ale já jsem myslel, že jsem ti zlomil krk…"{#soego_s72_r64547}' if soegoLogic.r64547_condition():
@@ -1552,7 +1552,7 @@ label soego_s72: # from 63.0
 
 # s73 # say21814
 label soego_s73: # from 72.0 72.1 109.0 109.1
-    nr '"Zranění, které jsi mi způsobil, nebylo smrtelné. Rychle jsem se uzdravil… a zjistil jsem, že bych měl odejít z Márnice."{#soego_s73_}'
+    nr '"Zranění, které jsi mi způsobil, nebylo smrtelné. Rychle jsem se uzdravil… a zjistil jsem, že bych měl odejít z Márnice."{#soego_s73_1}'
 
     menu:
         '"Soego, zlomil jsem ti vaz… to nebyla smrtelná rána?"{#soego_s73_r21815}' if soegoLogic.r21815_condition():
@@ -1586,7 +1586,7 @@ label soego_s73: # from 72.0 72.1 109.0 109.1
 
 # s74 # say21821
 label soego_s74: # from 73.1 101.2 104.0
-    nr '"Ne… mělo by? Jsem poněkud zklamaný, že jsem odtamtud musel odejít. Nicméně, už by ses neměl vracet do Márnice, protože mnoho z mých bližních by tě nerado vidělo."{#soego_s74_}'
+    nr '"Ne… mělo by? Jsem poněkud zklamaný, že jsem odtamtud musel odejít. Nicméně, už by ses neměl vracet do Márnice, protože mnoho z mých bližních by tě nerado vidělo."{#soego_s74_1}'
 
     menu:
         '"Říkal si, že jsi misionář?"{#soego_s74_r64614}':
@@ -1612,21 +1612,21 @@ label soego_s74: # from 73.1 101.2 104.0
 
 # s75 # say21716
 label soego_s75: # -
-    nr 'Null node.{#soego_s75_}'
+    nr 'Null node.{#soego_s75_1}'
 
     jump soego_dispose
 
 
 # s76 # say21832
 label soego_s76: # -
-    nr 'Null node.{#soego_s76_}'
+    nr 'Null node.{#soego_s76_1}'
 
     jump soego_dispose
 
 
 # s77 # say21837
 label soego_s77: # from 63.2 64.2 65.1 66.1 67.3 68.2 69.2 70.2 72.4 73.4 74.2 78.1 109.3
-    nr '"Jsi v katakombách Mrtvých národů. Stráže tě sem přivedly."{#soego_s77_}'
+    nr '"Jsi v katakombách Mrtvých národů. Stráže tě sem přivedly."{#soego_s77_1}'
 
     menu:
         '"A kdopak jsi byl ty?"{#soego_s77_r21840}':
@@ -1644,7 +1644,7 @@ label soego_s77: # from 63.2 64.2 65.1 66.1 67.3 68.2 69.2 70.2 72.4 73.4 74.2 7
 
 # s78 # say21844
 label soego_s78: # from 63.3 64.3 65.2 66.2 67.4 68.3 69.3 70.3 72.5 73.5 74.3 77.1 109.4
-    nr '"To já nevím. Zeptej se někoho ze zdejších „občanů“."{#soego_s78_}'
+    nr '"To já nevím. Zeptej se někoho ze zdejších „občanů“."{#soego_s78_1}'
 
     menu:
         '"A kdopak jsi ty?"{#soego_s78_r21847}':
@@ -1662,7 +1662,7 @@ label soego_s78: # from 63.3 64.3 65.2 66.2 67.4 68.3 69.3 70.3 72.5 73.5 74.3 7
 
 # s79 # say21851
 label soego_s79: # - # IF WEIGHT #2 /* Triggers after states #: 82 95 even though they appear after this state */ ~  CreatureInArea("AR1500") Global("CR_Vic","GLOBAL",1)
-    nr '"Á, někdo na pomoc naší věci! Já, jako agent Mnohojednoho, jsem byl informován, že přijdeš. Potřebujeme, abys zkusil najít cestu do trůnního sálu Tichého krále a zabil ho. Udělej to, a Mnohojeden tě dobře odmění."{#soego_s79_}'
+    nr '"Á, někdo na pomoc naší věci! Já, jako agent Mnohojednoho, jsem byl informován, že přijdeš. Potřebujeme, abys zkusil najít cestu do trůnního sálu Tichého krále a zabil ho. Udělej to, a Mnohojeden tě dobře odmění."{#soego_s79_1}'
 
     menu:
         '"Soego… Emoric chtěl vědět, kde jsi."{#soego_s79_r66181}' if soegoLogic.r66181_condition():
@@ -1698,7 +1698,7 @@ label soego_s79: # - # IF WEIGHT #2 /* Triggers after states #: 82 95 even thoug
 
 # s80 # say21858
 label soego_s80: # from 79.4 110.2 112.0
-    nr '"Já nevím… Už jsem tady nějakou dobu, a stejně nemůžu najít cestu do jeho trůnního sálu. Třeba budeš mít víc štěstí ty, nezatížen záští a fanatismem jako já."{#soego_s80_}'
+    nr '"Já nevím… Už jsem tady nějakou dobu, a stejně nemůžu najít cestu do jeho trůnního sálu. Třeba budeš mít víc štěstí ty, nezatížen záští a fanatismem jako já."{#soego_s80_1}'
 
     menu:
         '"Záští a fanatismem?"{#soego_s80_r21860}':
@@ -1712,7 +1712,7 @@ label soego_s80: # from 79.4 110.2 112.0
 
 # s81 # say21864
 label soego_s81: # from 80.0
-    nr '"Názory našeho společenství jsou pro některé lidi oblíbené, ale ne pro všechny. Nejdůležitější vůdci této civilizace je nemají příliš v oblibě."{#soego_s81_}'
+    nr '"Názory našeho společenství jsou pro některé lidi oblíbené, ale ne pro všechny. Nejdůležitější vůdci této civilizace je nemají příliš v oblibě."{#soego_s81_1}'
 
     menu:
         '"Aha. Sbohem."{#soego_s81_r21870}':
@@ -1722,7 +1722,7 @@ label soego_s81: # from 80.0
 
 # s82 # say21913
 label soego_s82: # - # IF WEIGHT #1 /* Triggers after states #: 95 even though they appear after this state */ ~  CreatureInArea("AR1500") Global("Met_Soego2","GLOBAL",1)
-    nr '"Á, vítej zpět."{#soego_s82_}'
+    nr '"Á, vítej zpět."{#soego_s82_1}'
 
     menu:
         '"Tichý král je mrtev, a to už nějaký čas. Tichý král už *není* ."{#soego_s82_r24206}' if soegoLogic.r24206_condition():
@@ -1769,7 +1769,7 @@ label soego_s82: # - # IF WEIGHT #1 /* Triggers after states #: 95 even though t
 
 # s83 # say21943
 label soego_s83: # from 82.7 88.0 89.1 90.0 91.1 92.0 94.1 94.3 111.0
-    nr '"Jestli to budu vědět, tak ti odpovím."{#soego_s83_}'
+    nr '"Jestli to budu vědět, tak ti odpovím."{#soego_s83_1}'
 
     menu:
         '"Řekni mi něco o Hargrimmovi."{#soego_s83_r21944}' if soegoLogic.r21944_condition():
@@ -1803,7 +1803,7 @@ label soego_s83: # from 82.7 88.0 89.1 90.0 91.1 92.0 94.1 94.3 111.0
 
 # s84 # say21954
 label soego_s84: # from 71.0 71.1 82.5 82.6
-    nr '"Samozřejmě. V této místnosti budeš během spánku v bezpečí."{#soego_s84_}'
+    nr '"Samozřejmě. V této místnosti budeš během spánku v bezpečí."{#soego_s84_1}'
 
     menu:
         '"Díky…"{#soego_s84_r21956}':
@@ -1814,28 +1814,28 @@ label soego_s84: # from 71.0 71.1 82.5 82.6
 
 # s85 # say21958
 label soego_s85: # -
-    nr 'Null Node.{#soego_s85_}'
+    nr 'Null Node.{#soego_s85_1}'
 
     jump soego_dispose
 
 
 # s86 # say21963
 label soego_s86: # -
-    nr 'Null Node.{#soego_s86_}'
+    nr 'Null Node.{#soego_s86_1}'
 
     jump soego_dispose
 
 
 # s87 # say21969
 label soego_s87: # -
-    nr 'Null Node.{#soego_s87_}'
+    nr 'Null Node.{#soego_s87_1}'
 
     jump soego_dispose
 
 
 # s88 # say21975
 label soego_s88: # from 83.0 91.0
-    nr '"Tvrdohlavý, ale obdivuhodný ve své zbožnosti a oddanosti povinnostem. Je to můj největší rival tady, a držel tuto civilizaci pohromadě po mnoho let. Jeho vášně pramení z jeho zbožnosti a oddanosti povinnostem… obdivuhodné kvality, ale na špatném místě."{#soego_s88_}'
+    nr '"Tvrdohlavý, ale obdivuhodný ve své zbožnosti a oddanosti povinnostem. Je to můj největší rival tady, a držel tuto civilizaci pohromadě po mnoho let. Jeho vášně pramení z jeho zbožnosti a oddanosti povinnostem… obdivuhodné kvality, ale na špatném místě."{#soego_s88_1}'
 
     menu:
         '"Ještě bych se chtěl zeptat…"{#soego_s88_r21976}':
@@ -1849,7 +1849,7 @@ label soego_s88: # from 83.0 91.0
 
 # s89 # say21978
 label soego_s89: # from 83.1
-    nr '"Acaste je hovado. Obávám se, že jenom Tichý král ji drží na uzdě. Kdyby tady nebyl, ghúlové by blbnuli po katakombách"{#soego_s89_}'
+    nr '"Acaste je hovado. Obávám se, že jenom Tichý král ji drží na uzdě. Kdyby tady nebyl, ghúlové by blbnuli po katakombách"{#soego_s89_1}'
 
     menu:
         '"Řekni mi něco o Tichém Králi."{#soego_s89_r21979}':
@@ -1868,7 +1868,7 @@ label soego_s89: # from 83.1
 
 # s90 # say21982
 label soego_s90: # from 83.2
-    nr '"Ošuntělá Mary je dobrosrdečná duše, když zpomalí. Nerozumím mnohému z toho co povídá, ale ona a zombie nejsou náchylní k násilí."{#soego_s90_}'
+    nr '"Ošuntělá Mary je dobrosrdečná duše, když zpomalí. Nerozumím mnohému z toho co povídá, ale ona a zombie nejsou náchylní k násilí."{#soego_s90_1}'
 
     menu:
         '"Ještě bych se chtěl zeptat…"{#soego_s90_r21983}':
@@ -1882,7 +1882,7 @@ label soego_s90: # from 83.2
 
 # s91 # say21985
 label soego_s91: # from 83.3 89.0
-    nr '"Já jsem nikdy Tichého Krále neviděl. Myslím, že ti o něm mohu něco říct, ale nikdy jsem ho neviděl na vlastní oči. Pravděpodobně jeho trůnní sál leží za karmínovými dveřmi, ale já tam nemám přístup… Hargrimm, kostliveckej kněz, mě tam nepustí."{#soego_s91_}'
+    nr '"Já jsem nikdy Tichého Krále neviděl. Myslím, že ti o něm mohu něco říct, ale nikdy jsem ho neviděl na vlastní oči. Pravděpodobně jeho trůnní sál leží za karmínovými dveřmi, ale já tam nemám přístup… Hargrimm, kostliveckej kněz, mě tam nepustí."{#soego_s91_1}'
 
     menu:
         '"Řekni mi něco o Hargrimmovi."{#soego_s91_r21986}':
@@ -1901,7 +1901,7 @@ label soego_s91: # from 83.3 89.0
 
 # s92 # say21989
 label soego_s92: # from 83.4
-    nr '"Byli tu po mnoho století, myslím, starali se o ty, kteří pominuli v jejich halách. Taková oddanost k povinnostem není dále třeba… je to téměř zločin."{#soego_s92_}'
+    nr '"Byli tu po mnoho století, myslím, starali se o ty, kteří pominuli v jejich halách. Taková oddanost k povinnostem není dále třeba… je to téměř zločin."{#soego_s92_1}'
 
     menu:
         '"Ještě bych se chtěl zeptat…"{#soego_s92_r21990}':
@@ -1915,14 +1915,14 @@ label soego_s92: # from 83.4
 
 # s93 # say21992
 label soego_s93: # from 83.5
-    nr '"Byli tu po mnoho století, myslím, starali se o ty, kteří pominuli v jejich halách. Taková oddanost k povinnostem není dále třeba… je to téměř zločin."{#soego_s93_}'
+    nr '"Byli tu po mnoho století, myslím, starali se o ty, kteří pominuli v jejich halách. Taková oddanost k povinnostem není dále třeba… je to téměř zločin."{#soego_s93_1}'
 
     jump morte_s220  # EXTERN
 
 
 # s94 # say21993
 label soego_s94: # from 82.0 82.1
-    nr '"Cože? To snad není pravda? Á, Mnohojeden tě za tuhle informaci určitě odmění…"{#soego_s94_}'
+    nr '"Cože? To snad není pravda? Á, Mnohojeden tě za tuhle informaci určitě odmění…"{#soego_s94_1}'
 
     menu:
         '"Mnohojeden?"{#soego_s94_r25248}' if soegoLogic.r25248_condition():
@@ -1953,7 +1953,7 @@ label soego_s94: # from 82.0 82.1
 
 # s95 # say21997
 label soego_s95: # - # IF WEIGHT #0 ~  CreatureInArea("AR1500") GlobalGT("Soego_Exposed","GLOBAL",0)
-    nr '"Ty… parchante!"{#soego_s95_}'
+    nr '"Ty… parchante!"{#soego_s95_1}'
 
     menu:
         '"Co-"{#soego_s95_r21998}':
@@ -1964,7 +1964,7 @@ label soego_s95: # - # IF WEIGHT #0 ~  CreatureInArea("AR1500") GlobalGT("Soego_
 
 # s96 # say22003
 label soego_s96: # -
-    nr '"Hé… tyto dveře vedou do soukromých pokojů. Musím vás požádat, abyste tam nechodil."{#soego_s96_}'
+    nr '"Hé… tyto dveře vedou do soukromých pokojů. Musím vás požádat, abyste tam nechodil."{#soego_s96_1}'
 
     menu:
         'Odejdi.{#soego_s96_r22004}':
@@ -1974,7 +1974,7 @@ label soego_s96: # -
 
 # s97 # say22005
 label soego_s97: # from 82.4
-    nr '"Oh! Hned si s ním půjdu promluvit!"{#soego_s97_}'
+    nr '"Oh! Hned si s ním půjdu promluvit!"{#soego_s97_1}'
 
     menu:
         '"Sbohem."{#soego_s97_r22006}':
@@ -1984,7 +1984,7 @@ label soego_s97: # from 82.4
 
 # s98 # say22007
 label soego_s98: # -
-    nr '"Ne, já zas jdu."{#soego_s98_}'
+    nr '"Ne, já zas jdu."{#soego_s98_1}'
 
     menu:
         '"Sbohem."{#soego_s98_r22008}':
@@ -1994,7 +1994,7 @@ label soego_s98: # -
 
 # s99 # say22009
 label soego_s99: # -
-    nr '"Bohužel, ne. Může přijít okolo."{#soego_s99_}'
+    nr '"Bohužel, ne. Může přijít okolo."{#soego_s99_1}'
 
     menu:
         '"Aha. Sbohem."{#soego_s99_r22010}':
@@ -2004,7 +2004,7 @@ label soego_s99: # -
 
 # s100 # say22011
 label soego_s100: # from 82.3
-    nr 'Soego se na chvíli odmlčí. "Aha." Náhle začne překvapivá přeměna…{#soego_s100_}'
+    nr 'Soego se na chvíli odmlčí. "Aha." Náhle začne překvapivá přeměna…{#soego_s100_1}'
 
     menu:
         '"Co t…?"{#soego_s100_r22012}':
@@ -2015,7 +2015,7 @@ label soego_s100: # from 82.3
 
 # s101 # say22014
 label soego_s101: # from 73.0
-    nr '"Éé… tvoje paměť ti prokázala špatnou službu. Můj krk byl poškozen, jistě… vymknutý. Ale zlomený? Těžko."{#soego_s101_}'
+    nr '"Éé… tvoje paměť ti prokázala špatnou službu. Můj krk byl poškozen, jistě… vymknutý. Ale zlomený? Těžko."{#soego_s101_1}'
 
     menu:
         '"Já mám jiný názor. Co jsi, Soego?"{#soego_s101_r22015}' if soegoLogic.r22015_condition():
@@ -2045,7 +2045,7 @@ label soego_s101: # from 73.0
 
 # s102 # say22023
 label soego_s102: # -
-    nr 'Vytrhává se z tvého sevření nadpřirozenou rychlostí. Prskající a plivající, zasyčí "Bláznivá věc, zaútočit na agenta společného vědomí psionických krys!" Náhle začíná překvapivá proměna…{#soego_s102_}'
+    nr 'Vytrhává se z tvého sevření nadpřirozenou rychlostí. Prskající a plivající, zasyčí "Bláznivá věc, zaútočit na agenta společného vědomí psionických krys!" Náhle začíná překvapivá proměna…{#soego_s102_1}'
 
     menu:
         '"Co…?"{#soego_s102_r22024}':
@@ -2056,7 +2056,7 @@ label soego_s102: # -
 
 # s103 # say22026
 label soego_s103: # from 101.1
-    nr '"Legrační otázka! Probudil ses na přípravném stole, v Márnici… sám jsi mi to řekl. Jistě mé zranění nemohlo být horší než ty, diky kterým si tě Sběrači spletli s mrtvolou, ne?"{#soego_s103_}'
+    nr '"Legrační otázka! Probudil ses na přípravném stole, v Márnici… sám jsi mi to řekl. Jistě mé zranění nemohlo být horší než ty, diky kterým si tě Sběrači spletli s mrtvolou, ne?"{#soego_s103_1}'
 
     menu:
         '"Máš pravdu, ale… nevadí."{#soego_s103_r22027}':
@@ -2074,7 +2074,7 @@ label soego_s103: # from 101.1
 
 # s104 # say22032
 label soego_s104: # from 103.0 103.2 105.0 105.1 106.1 107.0
-    nr 'Krčí rameny. "Výborně."{#soego_s104_}'
+    nr 'Krčí rameny. "Výborně."{#soego_s104_1}'
 
     menu:
         '"Nejsi rozzlobený kvůli tomu co se stalo?"{#soego_s104_r22033}':
@@ -2096,7 +2096,7 @@ label soego_s104: # from 103.0 103.2 105.0 105.1 106.1 107.0
 
 # s105 # say22039
 label soego_s105: # from 103.1
-    nr 'Usmívá se. "Každý je jedinečný. Každý. Určitě to nebudeš popírat?"{#soego_s105_}'
+    nr 'Usmívá se. "Každý je jedinečný. Každý. Určitě to nebudeš popírat?"{#soego_s105_1}'
 
     menu:
         '"Pravdaže ne, ale… nevadí."{#soego_s105_r22040}':
@@ -2110,7 +2110,7 @@ label soego_s105: # from 103.1
 
 # s106 # say22043
 label soego_s106: # from 101.0
-    nr '"Co jsem-? Co je to za otázku?"{#soego_s106_}'
+    nr '"Co jsem-? Co je to za otázku?"{#soego_s106_1}'
 
     menu:
         '"Slyšel jsi mě. Ty nejsi žádný řádný Spalovač… co *jsi*, Soego?"{#soego_s106_r22044}':
@@ -2124,7 +2124,7 @@ label soego_s106: # from 101.0
 
 # s107 # say22047
 label soego_s107: # from 106.0
-    nr 'Soego se na tebe zamračí. "Já nevím, *o čem* to mluvíš."{#soego_s107_}'
+    nr 'Soego se na tebe zamračí. "Já nevím, *o čem* to mluvíš."{#soego_s107_1}'
 
     menu:
         '"Něco tady je špatně a už brzy přijdu na to, co to je."{#soego_s107_r22048}':
@@ -2134,7 +2134,7 @@ label soego_s107: # from 106.0
 
 # s108 # say22050
 label soego_s108: # - # IF WEIGHT #3 ~  Global("Dustman_Initiation","GLOBAL",5) GlobalLT("Soego","GLOBAL",3) !Global("CR_Vic","GLOBAL",1)
-    nr '"Ah, další člen živých. Většina je zavražděna ghúly, takhle hluboko v katakombách; jsi šťastlivec."{#soego_s108_}'
+    nr '"Ah, další člen živých. Většina je zavražděna ghúly, takhle hluboko v katakombách; jsi šťastlivec."{#soego_s108_1}'
 
     menu:
         '"Ty jsi Soego? Emoric potřeboval vědět, kde jsi."{#soego_s108_r22051}' if soegoLogic.r22051_condition():
@@ -2150,7 +2150,7 @@ label soego_s108: # - # IF WEIGHT #3 ~  Global("Dustman_Initiation","GLOBAL",5) 
 
 # s109 # say22053
 label soego_s109: # from 82.2 108.0 108.1
-    nr '"Ano, já jsem on. Dělám tu misionářskou práci pro Spalovače."{#soego_s109_}'
+    nr '"Ano, já jsem on. Dělám tu misionářskou práci pro Spalovače."{#soego_s109_1}'
 
     menu:
         '"Dobrá. Ale… Myslel jsem, že jsem ti zlomil krk…"{#soego_s109_r64617}' if soegoLogic.r64617_condition():
@@ -2180,7 +2180,7 @@ label soego_s109: # from 82.2 108.0 108.1
 
 # s110 # say22057
 label soego_s110: # from 79.0 79.1
-    nr '"Ano, já jsem on."{#soego_s110_}'
+    nr '"Ano, já jsem on."{#soego_s110_1}'
 
     menu:
         '"Moment… nezlomil jsem ti vaz v Márnici?"{#soego_s110_r64625}' if soegoLogic.r64625_condition():
@@ -2203,7 +2203,7 @@ label soego_s110: # from 79.0 79.1
 
 # s111 # say25249
 label soego_s111: # from 94.0
-    nr '"Jasně, společná mysl kraniových krys. Běž do katakomb jižně od Truchlícího kamene. Jistě najdeš cestu."{#soego_s111_}'
+    nr '"Jasně, společná mysl kraniových krys. Běž do katakomb jižně od Truchlícího kamene. Jistě najdeš cestu."{#soego_s111_1}'
 
     menu:
         '"Zajímavý. Mám nějaké další otázky…"{#soego_s111_r25250}':
@@ -2217,7 +2217,7 @@ label soego_s111: # from 94.0
 
 # s112 # say64620
 label soego_s112: # from 79.2 79.3 110.0 110.1
-    nr 'Odvane tvá slova pryč. "Nic; to není nic pro mě. Já už jsem byl obdařen lykantropií; zranění hojivšími se v krátké chvíli."{#soego_s112_}'
+    nr 'Odvane tvá slova pryč. "Nic; to není nic pro mě. Já už jsem byl obdařen lykantropií; zranění hojivšími se v krátké chvíli."{#soego_s112_1}'
 
     menu:
         '"Já… vím. Tak, jak se dostanu k Tichému králi?"{#soego_s112_r64621}':
@@ -2231,7 +2231,7 @@ label soego_s112: # from 79.2 79.3 110.0 110.1
 
 # s113 # say66709
 label soego_s113: # from 38.1
-    nr '"Zdravím…" Muž se k tobě otočil a mírně se uklonil. Všiml sis, že jeho oči nejsou podlité krví, jak se ti zdálo na první pohled. Spíše to vypadá, že jsou narudlé od přírody. "Jsem Soego. Jak ti mohu pomoci?"{#soego_s113_}'
+    nr '"Zdravím…" Muž se k tobě otočil a mírně se uklonil. Všiml sis, že jeho oči nejsou podlité krví, jak se ti zdálo na první pohled. Spíše to vypadá, že jsou narudlé od přírody. "Jsem Soego. Jak ti mohu pomoci?"{#soego_s113_1}'
 
     menu:
         '"Chtěl bych opustit Márnici. Můžeš mi pomoct?"{#soego_s113_r66712}':
@@ -2249,7 +2249,7 @@ label soego_s113: # from 38.1
 
 # s114 # say66710
 label soego_s114: # from 113.0 113.1
-    nr 'Během tvé řeči se náhle Soegovy rty shrnuly a odhalily řadu špinavých ostrých zubů. Naklonil se k tobě a očichává tě.{#soego_s114_}'
+    nr 'Během tvé řeči se náhle Soegovy rty shrnuly a odhalily řadu špinavých ostrých zubů. Naklonil se k tobě a očichává tě.{#soego_s114_1}'
 
     menu:
         '"Uh… proč mě ksakru očicháváš?"{#soego_s114_r66715}':
@@ -2271,7 +2271,7 @@ label soego_s114: # from 113.0 113.1
 
 # s115 # say66711
 label soego_s115: # from 114.0
-    nr '"Tvé oblečení… ta róba. Páchnou někým jiným. Nejsou tvoje." Soego stiskl rty a podivně se usmívá, jeho oči září podivným světlem. "Kdo *jsi*?"{#soego_s115_}'
+    nr '"Tvé oblečení… ta róba. Páchnou někým jiným. Nejsou tvoje." Soego stiskl rty a podivně se usmívá, jeho oči září podivným světlem. "Kdo *jsi*?"{#soego_s115_1}'
 
     menu:
         '"Já… jenom jsem si vzal tu róbu, abych mohl v klidu odejít. Probudil jsem se nahoře v jedné z přípraven."{#soego_s115_r66719}':

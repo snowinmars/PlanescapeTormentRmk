@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say46745
 label zm1508_s0: # - # IF ~  True()
-    nr 'Le front de ce cadavre musclé n„est qu“un tissu de cicatrices, comme s„il avait pour habitude d“affronter ses adversaires à coups de tête. Le numéro „1508“ a été tissé sur son front au fil rouge et ses lèvres ont été cousues à l„aide d“un épais fil noir. Il sent légèrement la lotion d„embaumement.{#zm1508_s0_}'
+    nr 'Le front de ce cadavre musclé n„est qu“un tissu de cicatrices, comme s„il avait pour habitude d“affronter ses adversaires à coups de tête. Le numéro „1508“ a été tissé sur son front au fil rouge et ses lèvres ont été cousues à l„aide d“un épais fil noir. Il sent légèrement la lotion d„embaumement.{#zm1508_s0_1}'
 
     menu:
         '"Alors… as-tu vu quelque chose d„intéressant ?"{#zm1508_s0_r46746}' if zm1508Logic.r46746_condition():
@@ -42,7 +42,7 @@ label zm1508_s0: # - # IF ~  True()
 
 # s1 # say46747
 label zm1508_s1: # from 0.0 0.1 0.2
-    nr 'Le cadavre continue à te regarder.{#zm1508_s1_}'
+    nr 'Le cadavre continue à te regarder.{#zm1508_s1_1}'
 
     menu:
         'Laisse le cadavre tranquille.{#zm1508_s1_r46748}':
@@ -52,7 +52,7 @@ label zm1508_s1: # from 0.0 0.1 0.2
 
 # s2 # say46752
 label zm1508_s2: # from 0.3
-    nr 'Le cadavre ne répond pas. Il semble qu„il soit incapable de répondre à tes questions.{#zm1508_s2_}'
+    nr 'Le cadavre ne répond pas. Il semble qu„il soit incapable de répondre à tes questions.{#zm1508_s2_1}'
 
     menu:
         'Laisse le cadavre tranquille.{#zm1508_s2_r46753}':

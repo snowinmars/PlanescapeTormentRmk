@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say34975
 label zm199_s0: # - # IF ~  True()
-    nr 'Oživená mrtvola za sebou táhne pach spáleného masa a textilu. Po celé pravé straně má stopy čerstvých popálenin, možná stála příliš blízko ohně a začala doutnat. Do čela má vyryto číslo "199" a má pevně sešité rty.{#zm199_s0_}'
+    nr 'Oživená mrtvola za sebou táhne pach spáleného masa a textilu. Po celé pravé straně má stopy čerstvých popálenin, možná stála příliš blízko ohně a začala doutnat. Do čela má vyryto číslo "199" a má pevně sešité rty.{#zm199_s0_1}'
 
     menu:
         '"Takže… děje se tady poslední dobou něco zajímavého?"{#zm199_s0_r34976}' if zm199Logic.r34976_condition():
@@ -42,7 +42,7 @@ label zm199_s0: # - # IF ~  True()
 
 # s1 # say34977
 label zm199_s1: # from 0.0 0.1 0.2
-    nr 'Mrtvola na tebe dál zírá.{#zm199_s1_}'
+    nr 'Mrtvola na tebe dál zírá.{#zm199_s1_1}'
 
     menu:
         'Nechej mrtvolu být.{#zm199_s1_r34978}':
@@ -52,7 +52,7 @@ label zm199_s1: # from 0.0 0.1 0.2
 
 # s2 # say34982
 label zm199_s2: # from 0.3
-    nr 'Mrtvola neodpovídá. Asi už shnila příliš, aby byla schopná odpovídat na otázky.{#zm199_s2_}'
+    nr 'Mrtvola neodpovídá. Asi už shnila příliš, aby byla schopná odpovídat na otázky.{#zm199_s2_1}'
 
     menu:
         'Nechej mrtvolu být.{#zm199_s2_r34983}':

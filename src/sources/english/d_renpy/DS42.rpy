@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say6595
 label s42_s0: # - # IF ~  True()
-    nr 'The skeleton turns to face you. "42" has been chiseled into its forehead, and a number of its bones, mostly the jaws and the joints, have been bound with leather straps. A black smock is draped over its body.{#s42_s0_}'
+    nr 'The skeleton turns to face you. "42" has been chiseled into its forehead, and a number of its bones, mostly the jaws and the joints, have been bound with leather straps. A black smock is draped over its body.{#s42_s0_1}'
 
     menu:
         '"I *think* this is the corpse I had that memory about…"{#s42_s0_r6612}' if s42Logic.r6612_condition():
@@ -73,7 +73,7 @@ label s42_s0: # - # IF ~  True()
 
 # s1 # say6596
 label s42_s1: # from 0.0 0.1 0.2 0.3 0.9 3.0 3.3
-    nr 'At the sound of your voice, the skeleton suddenly straightens up. It crosses its arms over its chest, and its fingers hook into its rib cage.{#s42_s1_}'
+    nr 'At the sound of your voice, the skeleton suddenly straightens up. It crosses its arms over its chest, and its fingers hook into its rib cage.{#s42_s1_1}'
 
     menu:
         'Cross your arms over your chest.{#s42_s1_r6625}' if s42Logic.r6625_condition():
@@ -95,7 +95,7 @@ label s42_s1: # from 0.0 0.1 0.2 0.3 0.9 3.0 3.3
 
 # s2 # say6597
 label s42_s2: # from 0.4
-    nr 'This skeleton makes no reply. It looks like it is too far gone to answer any of your questions.{#s42_s2_}'
+    nr 'This skeleton makes no reply. It looks like it is too far gone to answer any of your questions.{#s42_s2_1}'
 
     menu:
         'Leave the skeleton in peace.{#s42_s2_r6629}' if s42Logic.r6629_condition():
@@ -114,7 +114,7 @@ label s42_s2: # from 0.4
 
 # s3 # say6598
 label s42_s3: # from 0.5 10.2
-    nr 'You„re amazed this rack of bones is still in one piece. Its yellowed bones are smeared with plaster and several layers of foul-smelling glues… what little you can see of the bones reveals hundreds of hairline fractures. Although someone has taken care to bind this skeleton with leather straps and bolt its joints together, the straps are frayed and the bolts look like they are about to fall out.{#s42_s3_}'
+    nr 'You„re amazed this rack of bones is still in one piece. Its yellowed bones are smeared with plaster and several layers of foul-smelling glues… what little you can see of the bones reveals hundreds of hairline fractures. Although someone has taken care to bind this skeleton with leather straps and bolt its joints together, the straps are frayed and the bolts look like they are about to fall out.{#s42_s3_1}'
 
     menu:
         '"I *think* this is the corpse I had that memory about…"{#s42_s3_r63495}' if s42Logic.r63495_condition():
@@ -150,7 +150,7 @@ label s42_s3: # from 0.5 10.2
 
 # s4 # say6599
 label s42_s4: # from 1.0 12.0
-    nr 'In response, the skeleton drops its arms to its sides. The leather cords securing the skeleton„s torso snap, and the rib cage folds outward like a pair of double doors.{#s42_s4_}'
+    nr 'In response, the skeleton drops its arms to its sides. The leather cords securing the skeleton„s torso snap, and the rib cage folds outward like a pair of double doors.{#s42_s4_1}'
 
     menu:
         'Reach into the rib cage, feel around.{#s42_s4_r6638}':
@@ -164,7 +164,7 @@ label s42_s4: # from 1.0 12.0
 
 # s5 # say6600
 label s42_s5: # from 4.0 9.0
-    nr 'To your surprise, your hand vanishes as you reach inside the rib cage… you have a strange feeling it„s somewhere *else.* As you reach inside the rib cage, your hand bumps against an invisible object. It“s about the size of a fist and seems to be attached to the skeleton„s spine.{#s42_s5_}'
+    nr 'To your surprise, your hand vanishes as you reach inside the rib cage… you have a strange feeling it„s somewhere *else.* As you reach inside the rib cage, your hand bumps against an invisible object. It“s about the size of a fist and seems to be attached to the skeleton„s spine.{#s42_s5_1}'
 
     menu:
         'Take the item out.{#s42_s5_r6640}':
@@ -179,7 +179,7 @@ label s42_s5: # from 4.0 9.0
 
 # s6 # say6601
 label s42_s6: # from 0.7 0.8 3.2
-    nr 'The bolts slide easily out of the skeleton„s joints. The skeleton collapses, some of its bones still twitching.{#s42_s6_}'
+    nr 'The bolts slide easily out of the skeleton„s joints. The skeleton collapses, some of its bones still twitching.{#s42_s6_1}'
 
     menu:
         '"Sorry about that, Bones…"{#s42_s6_r6642}':
@@ -190,7 +190,7 @@ label s42_s6: # from 0.7 0.8 3.2
 
 # s7 # say6602
 label s42_s7: # from 5.0
-    nr 'As you pull the item out, the skeleton suddenly disintegrates, and the iron bolts securing its joints clatter to the floor. Whatever this item was, it seems to have been the only thing holding it together.{#s42_s7_}'
+    nr 'As you pull the item out, the skeleton suddenly disintegrates, and the iron bolts securing its joints clatter to the floor. Whatever this item was, it seems to have been the only thing holding it together.{#s42_s7_1}'
 
     menu:
         'Examine the item.{#s42_s7_r6643}' if s42Logic.r6643_condition():
@@ -204,7 +204,7 @@ label s42_s7: # from 5.0
 
 # s8 # say6603
 label s42_s8: # from 7.0 7.1
-    nr 'It looks like an unremarkable lump of iron. You can„t imagine why someone would hide it inside the rib cage of a skeleton.{#s42_s8_}'
+    nr 'It looks like an unremarkable lump of iron. You can„t imagine why someone would hide it inside the rib cage of a skeleton.{#s42_s8_1}'
 
     menu:
         'Examine the piece of iron.{#s42_s8_r6645}':
@@ -215,7 +215,7 @@ label s42_s8: # from 7.0 7.1
 
 # s9 # say6604
 label s42_s9: # from 1.1 12.1
-    nr 'In response, the skeleton drops its arms to its sides. The leather cords securing the skeleton„s torso snap, and the rib cage folds outward like a pair of double doors. You can“t explain why, but you have a sudden urge to reach inside the rib cage.{#s42_s9_}'
+    nr 'In response, the skeleton drops its arms to its sides. The leather cords securing the skeleton„s torso snap, and the rib cage folds outward like a pair of double doors. You can“t explain why, but you have a sudden urge to reach inside the rib cage.{#s42_s9_1}'
 
     menu:
         'Reach into the rib cage, feel around.{#s42_s9_r6646}':
@@ -229,7 +229,7 @@ label s42_s9: # from 1.1 12.1
 
 # s10 # say6605
 label s42_s10: # from 1.2 12.2
-    nr 'The skeleton„s arms drop to its sides.{#s42_s10_}'
+    nr 'The skeleton„s arms drop to its sides.{#s42_s10_1}'
 
     menu:
         '"Uh… hello?"{#s42_s10_r6648}' if s42Logic.r6648_condition():
@@ -252,7 +252,7 @@ label s42_s10: # from 1.2 12.2
 
 # s11 # say6606
 label s42_s11: # -
-    nr 'It looks like an unremarkable lump of iron. Your previous incarnation must have had a reason for hiding it here.{#s42_s11_}'
+    nr 'It looks like an unremarkable lump of iron. Your previous incarnation must have had a reason for hiding it here.{#s42_s11_1}'
 
     menu:
         'Examine the piece of iron carefully.{#s42_s11_r6652}':
@@ -263,7 +263,7 @@ label s42_s11: # -
 
 # s12 # say6607
 label s42_s12: # from 10.0
-    nr 'The skeleton crosses its arms across its chest again.{#s42_s12_}'
+    nr 'The skeleton crosses its arms across its chest again.{#s42_s12_1}'
 
     menu:
         'Cross your arms over your chest.{#s42_s12_r6653}' if s42Logic.r6653_condition():
@@ -285,14 +285,14 @@ label s42_s12: # from 10.0
 
 # s13 # say6608
 label s42_s13: # from 10.1
-    nr 'The skeleton crosses its arms across its chest again.{#s42_s13_}'
+    nr 'The skeleton crosses its arms across its chest again.{#s42_s13_1}'
 
     jump morte_s112  # EXTERN
 
 
 # s14 # say58983
 label s42_s14: # from 8.0 11.0
-    nr 'As you place both your hands on the lump of iron to examine it, there is a *hssssss,* and the metal evaporates, leaving behind a strange dagger, a handful of coins wrapped in a dirty cloth, and two bloody teardrops - these look like they were *inside* the lump of iron.{#s42_s14_}'
+    nr 'As you place both your hands on the lump of iron to examine it, there is a *hssssss,* and the metal evaporates, leaving behind a strange dagger, a handful of coins wrapped in a dirty cloth, and two bloody teardrops - these look like they were *inside* the lump of iron.{#s42_s14_1}'
 
     menu:
         'Take the items and leave.{#s42_s14_r58984}':

@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say34953
 label zm1201_s0: # - # IF ~  Global("1201_Note_Retrieved","GLOBAL",0)
-    nr 'The number "1201" has been inked on the forehead of this corpse, and the ink has run down its eyes, cheeks and jaw. As you follow the ink tears down the corpse„s face, you notice it has run into the stitching sealing the corpse“s lips and has caught on what looks like the corner of a note stuck in the corpse„s mouth.{#zm1201_s0_}'
+    nr 'The number "1201" has been inked on the forehead of this corpse, and the ink has run down its eyes, cheeks and jaw. As you follow the ink tears down the corpse„s face, you notice it has run into the stitching sealing the corpse“s lips and has caught on what looks like the corner of a note stuck in the corpse„s mouth.{#zm1201_s0_1}'
 
     menu:
         'Try and pull the note out.{#zm1201_s0_r34954}' if zm1201Logic.r34954_condition():
@@ -37,7 +37,7 @@ label zm1201_s0: # - # IF ~  Global("1201_Note_Retrieved","GLOBAL",0)
 
 # s1 # say34955
 label zm1201_s1: # from 0.0
-    nr 'The note has mingled with the ichor in the zombie„s mouth. If you tried to pull the paper out through the cross-stitches, it would tear the paper to shreds. Hacking up the corpse to get at it looks like it will destroy the note - you“ll need to find a delicate way to remove the stitches before removing the note.{#zm1201_s1_}'
+    nr 'The note has mingled with the ichor in the zombie„s mouth. If you tried to pull the paper out through the cross-stitches, it would tear the paper to shreds. Hacking up the corpse to get at it looks like it will destroy the note - you“ll need to find a delicate way to remove the stitches before removing the note.{#zm1201_s1_1}'
 
     menu:
         'Use the scalpel to cut through the stitches.{#zm1201_s1_r34956}' if zm1201Logic.r34956_condition():
@@ -52,7 +52,7 @@ label zm1201_s1: # from 0.0
 
 # s2 # say34960
 label zm1201_s2: # from 1.0
-    nr 'You deftly slice through the stitches sealing the corpse„s mouth, and the jaw sags open. You carefully pull the note from the corpse“s mouth… despite the condition of the paper, the writing on it still appears legible.  ^NNOTE: <READSTUFF>^-{#zm1201_s2_}'
+    nr 'You deftly slice through the stitches sealing the corpse„s mouth, and the jaw sags open. You carefully pull the note from the corpse“s mouth… despite the condition of the paper, the writing on it still appears legible.  ^NNOTE: <READSTUFF>^-{#zm1201_s2_1}'
 
     menu:
         'Examine the corpse again.{#zm1201_s2_r34961}':
@@ -66,7 +66,7 @@ label zm1201_s2: # from 1.0
 
 # s3 # say45124
 label zm1201_s3: # from 0.1 5.0 5.1 5.2
-    nr 'The corpse„s milky-white eyes stare at you vacantly.{#zm1201_s3_}'
+    nr 'The corpse„s milky-white eyes stare at you vacantly.{#zm1201_s3_1}'
 
     menu:
         'Leave the corpse in peace.{#zm1201_s3_r45125}':
@@ -76,7 +76,7 @@ label zm1201_s3: # from 0.1 5.0 5.1 5.2
 
 # s4 # say45126
 label zm1201_s4: # from 0.2 5.3
-    nr 'The corpse does not stir. It looks like it is too far gone to answer any of your questions.{#zm1201_s4_}'
+    nr 'The corpse does not stir. It looks like it is too far gone to answer any of your questions.{#zm1201_s4_1}'
 
     menu:
         'Leave the corpse in peace.{#zm1201_s4_r45127}':
@@ -86,7 +86,7 @@ label zm1201_s4: # from 0.2 5.3
 
 # s5 # say45128
 label zm1201_s5: # from 2.0 # IF ~  Global("1201_Note_Retrieved","GLOBAL",1)
-    nr 'The number "1201" has been inked on the forehead of this corpse, and the ink has run down across its eyes, cheeks and jaw, making it look as if it is crying. Its jaw is hanging open, and a trail of ichor is trickling from the corner of its mouth.{#zm1201_s5_}'
+    nr 'The number "1201" has been inked on the forehead of this corpse, and the ink has run down across its eyes, cheeks and jaw, making it look as if it is crying. Its jaw is hanging open, and a trail of ichor is trickling from the corner of its mouth.{#zm1201_s5_1}'
 
     menu:
         '"Sorry about slicing those stitches… I just had to see what was in your mouth."{#zm1201_s5_r45129}' if zm1201Logic.r45129_condition():

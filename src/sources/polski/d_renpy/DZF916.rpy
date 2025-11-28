@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say24719
 label zf916_s0: # - # IF ~  True()
-    nr 'Ten trup kobiety wpatruje się w ciebie nic nie widzącymi oczyma. Na czole wygrawerowano jej numer "916", a wargi zszyto. Słaba woń formaliny unosi się znad jej ciała.{#zf916_s0_}'
+    nr 'Ten trup kobiety wpatruje się w ciebie nic nie widzącymi oczyma. Na czole wygrawerowano jej numer "916", a wargi zszyto. Słaba woń formaliny unosi się znad jej ciała.{#zf916_s0_1}'
 
     menu:
         '"Więc jak… masz jakieś plany na później?"{#zf916_s0_r24720}' if zf916Logic.r24720_condition():
@@ -58,7 +58,7 @@ label zf916_s0: # - # IF ~  True()
 
 # s1 # say24721
 label zf916_s1: # from 0.0 0.1 0.2
-    nr 'Trup wciąż się w ciebie wpatruje.{#zf916_s1_}'
+    nr 'Trup wciąż się w ciebie wpatruje.{#zf916_s1_1}'
 
     menu:
         '"A zatem żegnaj."{#zf916_s1_r24722}' if zf916Logic.r24722_condition():
@@ -76,7 +76,7 @@ label zf916_s1: # from 0.0 0.1 0.2
 
 # s2 # say24740
 label zf916_s2: # from 0.3
-    nr 'Trup nie odpowiada. Wygląda na to, że jest w zbyt daleko posuniętym stadium rozkładu, aby odpowiedzieć na twoje pytania.{#zf916_s2_}'
+    nr 'Trup nie odpowiada. Wygląda na to, że jest w zbyt daleko posuniętym stadium rozkładu, aby odpowiedzieć na twoje pytania.{#zf916_s2_1}'
 
     menu:
         '"A zatem żegnaj."{#zf916_s2_r24741}' if zf916Logic.r24741_condition():
@@ -94,6 +94,6 @@ label zf916_s2: # from 0.3
 
 # s3 # say24750
 label zf916_s3: # - # IF ~  False()
-    nr 'Trup nie odpowiada. Wygląda na to, że jest w zbyt daleko posuniętym stadium rozkładu, aby odpowiedzieć na twoje pytania.{#zf916_s3_}'
+    nr 'Trup nie odpowiada. Wygląda na to, że jest w zbyt daleko posuniętym stadium rozkładu, aby odpowiedzieć na twoje pytania.{#zf916_s3_1}'
 
     menu:

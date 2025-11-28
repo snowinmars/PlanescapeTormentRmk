@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say46756
 label zm1445_s0: # - # IF ~  True()
-    nr 'Ciało tego truposza jest całe pokryte krostami, a jego uszy, czubek nosa i niektóre palce przegniły na amen… człowiek ten padł najprawdopodobniej ofiarą jakiejś straszliwej choroby. Na jego czole ktoś wytatuował numer "1445"; jego usta są zaszyte.{#zm1445_s0_}'
+    nr 'Ciało tego truposza jest całe pokryte krostami, a jego uszy, czubek nosa i niektóre palce przegniły na amen… człowiek ten padł najprawdopodobniej ofiarą jakiejś straszliwej choroby. Na jego czole ktoś wytatuował numer "1445"; jego usta są zaszyte.{#zm1445_s0_1}'
 
     menu:
         '"Więc jak… widziałeś, żeby działo się tu coś interesującego?"{#zm1445_s0_r46757}' if zm1445Logic.r46757_condition():
@@ -42,7 +42,7 @@ label zm1445_s0: # - # IF ~  True()
 
 # s1 # say46758
 label zm1445_s1: # from 0.0 0.1 0.2
-    nr 'Trup wciąż się w ciebie wpatruje.{#zm1445_s1_}'
+    nr 'Trup wciąż się w ciebie wpatruje.{#zm1445_s1_1}'
 
     menu:
         'Zostaw truposza w spokoju.{#zm1445_s1_r46759}':
@@ -52,7 +52,7 @@ label zm1445_s1: # from 0.0 0.1 0.2
 
 # s2 # say46763
 label zm1445_s2: # from 0.3
-    nr 'Trup nie odpowiada. Wygląda na to, że jest w zbyt daleko posuniętym stadium rozkładu, aby odpowiedzieć na twoje pytania.{#zm1445_s2_}'
+    nr 'Trup nie odpowiada. Wygląda na to, że jest w zbyt daleko posuniętym stadium rozkładu, aby odpowiedzieć na twoje pytania.{#zm1445_s2_1}'
 
     menu:
         'Zostaw truposza w spokoju.{#zm1445_s2_r46764}':

@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say35274
 label zf891_s0: # - # IF ~  True()
-    nr 'The especially ghastly-looking female corpse is missing its ears, nose and lips. In order to sew her jaw closed, whoever prepared her had to draw the skin especially tight around her mouth; you can still see a line of crooked, yellowed teeth through the open slit that remains. The number "891" has been carved into the flesh of her brow.{#zf891_s0_}'
+    nr 'The especially ghastly-looking female corpse is missing its ears, nose and lips. In order to sew her jaw closed, whoever prepared her had to draw the skin especially tight around her mouth; you can still see a line of crooked, yellowed teeth through the open slit that remains. The number "891" has been carved into the flesh of her brow.{#zf891_s0_1}'
 
     menu:
         '"So… doing anything later?"{#zf891_s0_r35275}' if zf891Logic.r35275_condition():
@@ -58,7 +58,7 @@ label zf891_s0: # - # IF ~  True()
 
 # s1 # say35276
 label zf891_s1: # from 0.0 0.1 0.2
-    nr 'The corpse continues to stare at you.{#zf891_s1_}'
+    nr 'The corpse continues to stare at you.{#zf891_s1_1}'
 
     menu:
         '"Farewell then."{#zf891_s1_r35277}' if zf891Logic.r35277_condition():
@@ -76,7 +76,7 @@ label zf891_s1: # from 0.0 0.1 0.2
 
 # s2 # say35295
 label zf891_s2: # from 0.3
-    nr 'This corpse makes no reply. It looks like it is too far gone to answer any of your questions.{#zf891_s2_}'
+    nr 'This corpse makes no reply. It looks like it is too far gone to answer any of your questions.{#zf891_s2_1}'
 
     menu:
         '"Farewell then."{#zf891_s2_r35296}' if zf891Logic.r35296_condition():
@@ -94,6 +94,6 @@ label zf891_s2: # from 0.3
 
 # s3 # say35305
 label zf891_s3: # - # IF ~  False()
-    nr 'This corpse makes no reply. It looks like it is too far gone to answer any of your questions.{#zf891_s3_}'
+    nr 'This corpse makes no reply. It looks like it is too far gone to answer any of your questions.{#zf891_s3_1}'
 
     menu:

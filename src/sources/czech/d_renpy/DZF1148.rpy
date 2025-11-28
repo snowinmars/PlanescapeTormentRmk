@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say35242
 label zf1148_s0: # - # IF ~  True()
-    nr 'Kůže tohoto ženského těla je hustě potetovaná složitými vzory. Kůže u jejího obočí je stáhnutá, takže do kosti někdo mohl vyrýt číslo "1148". Její pusa je pevně sešita hrubými, neumělými stehy.{#zf1148_s0_}'
+    nr 'Kůže tohoto ženského těla je hustě potetovaná složitými vzory. Kůže u jejího obočí je stáhnutá, takže do kosti někdo mohl vyrýt číslo "1148". Její pusa je pevně sešita hrubými, neumělými stehy.{#zf1148_s0_1}'
 
     menu:
         '"Takže… cos dělala poslední dobou?"{#zf1148_s0_r35243}' if zf1148Logic.r35243_condition():
@@ -58,7 +58,7 @@ label zf1148_s0: # - # IF ~  True()
 
 # s1 # say35244
 label zf1148_s1: # from 0.0 0.1 0.2
-    nr 'Mrtvola na tebe dál zírá.{#zf1148_s1_}'
+    nr 'Mrtvola na tebe dál zírá.{#zf1148_s1_1}'
 
     menu:
         '"Sbohem tedy."{#zf1148_s1_r35245}' if zf1148Logic.r35245_condition():
@@ -76,7 +76,7 @@ label zf1148_s1: # from 0.0 0.1 0.2
 
 # s2 # say35263
 label zf1148_s2: # from 0.3
-    nr 'Mrtvola neodpovídá. Asi už shnila příliš, aby byla schopná odpovídat na otázky.{#zf1148_s2_}'
+    nr 'Mrtvola neodpovídá. Asi už shnila příliš, aby byla schopná odpovídat na otázky.{#zf1148_s2_1}'
 
     menu:
         '"Sbohem tedy."{#zf1148_s2_r35264}' if zf1148Logic.r35264_condition():
@@ -94,6 +94,6 @@ label zf1148_s2: # from 0.3
 
 # s3 # say35273
 label zf1148_s3: # - # IF ~  False()
-    nr 'Mrtvola neodpovídá. Asi už shnila příliš, aby byla schopná odpovídat na otázky.{#zf1148_s3_}'
+    nr 'Mrtvola neodpovídá. Asi už shnila příliš, aby byla schopná odpovídat na otázky.{#zf1148_s3_1}'
 
     menu:

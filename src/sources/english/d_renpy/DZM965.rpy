@@ -11,14 +11,14 @@ init 10 python:
 
 # s0 # say34920
 label zm965_s0: # - # IF ~  NearbyDialog("Dmorte")
-    nr 'This corpse is lumbering along a triangular path. Once it reaches one of the corners of the triangle, it pauses, then turns and staggers towards the next corner. It has "965" tattooed on the side of its skull. As you approach, it halts and stares at you.{#zm965_s0_}'
+    nr 'This corpse is lumbering along a triangular path. Once it reaches one of the corners of the triangle, it pauses, then turns and staggers towards the next corner. It has "965" tattooed on the side of its skull. As you approach, it halts and stares at you.{#zm965_s0_1}'
 
     jump morte_s477  # EXTERN
 
 
 # s1 # say34922
 label zm965_s1: # externs morte_s481 morte_s480 # IF ~  !NearbyDialog("Dmorte")
-    nr 'This corpse is lumbering along a triangular path. Once it reaches one of the corners of the triangle, it pauses, then turns and staggers towards the next corner. It has "965" tattooed on the side of its skull. As you approach, it halts and stares at you.{#zm965_s1_}'
+    nr 'This corpse is lumbering along a triangular path. Once it reaches one of the corners of the triangle, it pauses, then turns and staggers towards the next corner. It has "965" tattooed on the side of its skull. As you approach, it halts and stares at you.{#zm965_s1_1}'
 
     menu:
         '"So… why are you walking in a triangle?"{#zm965_s1_r34923}' if zm965Logic.r34923_condition():
@@ -49,7 +49,7 @@ label zm965_s1: # externs morte_s481 morte_s480 # IF ~  !NearbyDialog("Dmorte")
 
 # s2 # say34927
 label zm965_s2: # from 1.0 1.1 1.2
-    nr 'The corpse stares at you blankly.{#zm965_s2_}'
+    nr 'The corpse stares at you blankly.{#zm965_s2_1}'
 
     menu:
         'Leave the corpse in peace.{#zm965_s2_r34928}':
@@ -59,7 +59,7 @@ label zm965_s2: # from 1.0 1.1 1.2
 
 # s3 # say45069
 label zm965_s3: # from 1.3
-    nr 'The corpse does not stir. It looks like it is too far gone to answer any of your questions.{#zm965_s3_}'
+    nr 'The corpse does not stir. It looks like it is too far gone to answer any of your questions.{#zm965_s3_1}'
 
     menu:
         'Leave the corpse in peace.{#zm965_s3_r45075}':

@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say35050
 label zf626_s0: # - # IF ~  True()
-    nr 'Die linke Seite des Gesichts dieser Frau sieht so aus, als ob sie mit einer Keule eingeschlagen worden ist, und ihr Fleisch hängt in wunden, geschwollenen Klumpen über ihren kaputten Schädel. Die Zahl "626" ist kurz unter dem Auge auf die rechte Wange der Leiche gestickt worden.{#zf626_s0_}'
+    nr 'Die linke Seite des Gesichts dieser Frau sieht so aus, als ob sie mit einer Keule eingeschlagen worden ist, und ihr Fleisch hängt in wunden, geschwollenen Klumpen über ihren kaputten Schädel. Die Zahl "626" ist kurz unter dem Auge auf die rechte Wange der Leiche gestickt worden.{#zf626_s0_1}'
 
     menu:
         '"Äh… Schlimme Wunde, die du da hast."{#zf626_s0_r35051}' if zf626Logic.r35051_condition():
@@ -58,7 +58,7 @@ label zf626_s0: # - # IF ~  True()
 
 # s1 # say35052
 label zf626_s1: # from 0.0 0.1 0.2
-    nr 'Die Leiche starrt dich weiterhin mit ihrem einen guten Auge an.{#zf626_s1_}'
+    nr 'Die Leiche starrt dich weiterhin mit ihrem einen guten Auge an.{#zf626_s1_1}'
 
     menu:
         '"Dann leb wohl."{#zf626_s1_r35053}' if zf626Logic.r35053_condition():
@@ -76,7 +76,7 @@ label zf626_s1: # from 0.0 0.1 0.2
 
 # s2 # say35071
 label zf626_s2: # from 0.3
-    nr 'Diese Leiche regt sich nicht. Sie sieht so aus, als sei sie bereits zu hinüber, um deine Fragen zu beantworten.{#zf626_s2_}'
+    nr 'Diese Leiche regt sich nicht. Sie sieht so aus, als sei sie bereits zu hinüber, um deine Fragen zu beantworten.{#zf626_s2_1}'
 
     menu:
         '"Dann leb wohl."{#zf626_s2_r35072}' if zf626Logic.r35072_condition():
@@ -94,6 +94,6 @@ label zf626_s2: # from 0.3
 
 # s3 # say35081
 label zf626_s3: # - # IF ~  False()
-    nr 'Diese Leiche antwortet nicht. Es sieht so aus, als ob sie schon zu tot ist, um noch auf irgendeine deiner Fragen zu antworten.{#zf626_s3_}'
+    nr 'Diese Leiche antwortet nicht. Es sieht so aus, als ob sie schon zu tot ist, um noch auf irgendeine deiner Fragen zu antworten.{#zf626_s3_1}'
 
     menu:

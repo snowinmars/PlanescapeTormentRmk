@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say35306
 label s1221_s0: # - # IF ~  True()
-    nr 'Oživený kostlivec příšerně páchne, jako by ho někdo stáhl a vypreparoval teprve před nedávnem. Jeho čelist a hlavní klouby drží pohromadě pevnými koženými pásy. Kostlivec má na sobě hrubé šaty. Do jeho čela je vytesáno číslo "1221".{#s1221_s0_}'
+    nr 'Oživený kostlivec příšerně páchne, jako by ho někdo stáhl a vypreparoval teprve před nedávnem. Jeho čelist a hlavní klouby drží pohromadě pevnými koženými pásy. Kostlivec má na sobě hrubé šaty. Do jeho čela je vytesáno číslo "1221".{#s1221_s0_1}'
 
     menu:
         '"Promiň, neviděl jsi tady někde chodit nějaké kostlivce?"{#s1221_s0_r35307}' if s1221Logic.r35307_condition():
@@ -90,7 +90,7 @@ label s1221_s0: # - # IF ~  True()
 
 # s1 # say35308
 label s1221_s1: # from 0.0 0.1 0.2 0.3
-    nr 'Kostlivec neodpovídá.{#s1221_s1_}'
+    nr 'Kostlivec neodpovídá.{#s1221_s1_1}'
 
     menu:
         '"Rád jsem si s tebou pokecal, Kostro. Buď zdráv."{#s1221_s1_r35309}' if s1221Logic.r35309_condition():
@@ -109,7 +109,7 @@ label s1221_s1: # from 0.0 0.1 0.2 0.3
 
 # s2 # say35334
 label s1221_s2: # from 0.4
-    nr 'Kostlivec neodpovídá. Asi už se dostal příliš daleko, aby byl ještě schopný odpovídat na tvé otázky.{#s1221_s2_}'
+    nr 'Kostlivec neodpovídá. Asi už se dostal příliš daleko, aby byl ještě schopný odpovídat na tvé otázky.{#s1221_s2_1}'
 
     menu:
         'Nechej kostlivce být.{#s1221_s2_r35335}' if s1221Logic.r35335_condition():
@@ -128,7 +128,7 @@ label s1221_s2: # from 0.4
 
 # s3 # say35339
 label s1221_s3: # from 0.5
-    nr 'Někdo si dal práci a spojil kosti tohoto kostlivce koženými pásky, omotanými kolem těla tak, že připomínají svaly a šlachy. Pásky jsou připevněné na kovových svorkách, vražených do kloubů kostlivce. Kostlivec vypadá, že už si svoje odsloužil: Mnoho kostí je oštípáno a početné fraktury jsou slepeny zapáchajícím lepidlem.{#s1221_s3_}'
+    nr 'Někdo si dal práci a spojil kosti tohoto kostlivce koženými pásky, omotanými kolem těla tak, že připomínají svaly a šlachy. Pásky jsou připevněné na kovových svorkách, vražených do kloubů kostlivce. Kostlivec vypadá, že už si svoje odsloužil: Mnoho kostí je oštípáno a početné fraktury jsou slepeny zapáchajícím lepidlem.{#s1221_s3_1}'
 
     menu:
         'Zkus kostlivci vytáhnout svorky z kloubů.{#s1221_s3_r35340}' if s1221Logic.r35340_condition():
@@ -176,7 +176,7 @@ label s1221_s3: # from 0.5
 
 # s4 # say35345
 label s1221_s4: # from 0.7 0.10 3.1 3.4
-    nr 'Zaškubal jsi železnými svorkami, ale nemáš dost síly na to, abys je vyrval. Jsou pořádně upevněné.{#s1221_s4_}'
+    nr 'Zaškubal jsi železnými svorkami, ale nemáš dost síly na to, abys je vyrval. Jsou pořádně upevněné.{#s1221_s4_1}'
 
     menu:
         '"Kdybych měl správný nástroj, dokázal bych je vytáhnout… hmmm. Vrátím se, Kostro."{#s1221_s4_r35346}' if s1221Logic.r35346_condition():
@@ -208,7 +208,7 @@ label s1221_s4: # from 0.7 0.10 3.1 3.4
 
 # s5 # say35353
 label s1221_s5: # from 0.8 0.11 3.2 3.5
-    nr 'Zabral jsi veškerou svou silou. Po chvíli námahy jsi vyrval svorky z kostlivcových kloubů. Kostlivec se rozpadl, některé z kostí sebou stále škubají.{#s1221_s5_}'
+    nr 'Zabral jsi veškerou svou silou. Po chvíli námahy jsi vyrval svorky z kostlivcových kloubů. Kostlivec se rozpadl, některé z kostí sebou stále škubají.{#s1221_s5_1}'
 
     menu:
         '"Promiň, Kostro…"{#s1221_s5_r35354}':
@@ -219,7 +219,7 @@ label s1221_s5: # from 0.8 0.11 3.2 3.5
 
 # s6 # say35356
 label s1221_s6: # from 0.9 0.12 3.3 3.6
-    nr 'Pomocí svého páčidla jsi vyrval svorky z kostlivcových kloubů. Kostlivec se rozpadl, některé z kostí sebou stále škubají.{#s1221_s6_}'
+    nr 'Pomocí svého páčidla jsi vyrval svorky z kostlivcových kloubů. Kostlivec se rozpadl, některé z kostí sebou stále škubají.{#s1221_s6_1}'
 
     menu:
         '"Promiň, Kostro…"{#s1221_s6_r35357}':
@@ -230,6 +230,6 @@ label s1221_s6: # from 0.9 0.12 3.3 3.6
 
 # s7 # say35382
 label s1221_s7: # - # IF ~  False()
-    nr 'Kostlivec neodpovídá. Asi už se dostal příliš daleko, aby byl ještě schopný odpovídat na tvé otázky.{#s1221_s7_}'
+    nr 'Kostlivec neodpovídá. Asi už se dostal příliš daleko, aby byl ještě schopný odpovídat na tvé otázky.{#s1221_s7_1}'
 
     menu:

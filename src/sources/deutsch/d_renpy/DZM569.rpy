@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say24575
 label zm569_s0: # - # IF ~  True()
-    nr 'Diese trottende Leiche sieht so aus, als sei sie bereits seit mehreren Jahren tot. Die Haut auf ihrer Stirn ist zurückgepellt und legt den kalkweißen Schädel frei. Jemand hat die Zahl "569" in den freigelegten Knochen gemeißelt.{#zm569_s0_}'
+    nr 'Diese trottende Leiche sieht so aus, als sei sie bereits seit mehreren Jahren tot. Die Haut auf ihrer Stirn ist zurückgepellt und legt den kalkweißen Schädel frei. Jemand hat die Zahl "569" in den freigelegten Knochen gemeißelt.{#zm569_s0_1}'
 
     menu:
         '"Ich suche nach einem Schlüssel… Hast du zufällig einen?"{#zm569_s0_r24576}' if zm569Logic.r24576_condition():
@@ -49,7 +49,7 @@ label zm569_s0: # - # IF ~  True()
 
 # s1 # say24577
 label zm569_s1: # from 0.1 0.2 0.3 3.1
-    nr 'Die Leiche starrt dich stumm an.{#zm569_s1_}'
+    nr 'Die Leiche starrt dich stumm an.{#zm569_s1_1}'
 
     menu:
         '"Ach, vergiß es. Leb wohl."{#zm569_s1_r24578}':
@@ -63,7 +63,7 @@ label zm569_s1: # from 0.1 0.2 0.3 3.1
 
 # s2 # say24582
 label zm569_s2: # from 0.4
-    nr 'Die Leiche rührt sich nicht. Sie sieht so aus, als sei sie schon ein bißchen zu weit hinüber, um deine Fragen zu beantworten.{#zm569_s2_}'
+    nr 'Die Leiche rührt sich nicht. Sie sieht so aus, als sei sie schon ein bißchen zu weit hinüber, um deine Fragen zu beantworten.{#zm569_s2_1}'
 
     menu:
         'Laß die Leiche in Ruhe.{#zm569_s2_r24583}':
@@ -73,7 +73,7 @@ label zm569_s2: # from 0.4
 
 # s3 # say42293
 label zm569_s3: # from 0.5
-    nr 'Diese Leiche scheint keinen Schlüssel bei sich zu haben… Und selbst wenn sie einen hätte, würde sie ihn wahrscheinlich gar nicht verwenden können. Ihre Finger sind gebrochen, als hätte sie jemand mit einem Hammer zertrümmert. Zufällig bemerkst du, daß ihre linke Schulter dick bandagiert ist… Den Verband könnte man sicher noch gebrauchen, wenn man vorher die Leiche loswerden könnte.{#zm569_s3_}'
+    nr 'Diese Leiche scheint keinen Schlüssel bei sich zu haben… Und selbst wenn sie einen hätte, würde sie ihn wahrscheinlich gar nicht verwenden können. Ihre Finger sind gebrochen, als hätte sie jemand mit einem Hammer zertrümmert. Zufällig bemerkst du, daß ihre linke Schulter dick bandagiert ist… Den Verband könnte man sicher noch gebrauchen, wenn man vorher die Leiche loswerden könnte.{#zm569_s3_1}'
 
     menu:
         '"Ich vermute, du hast ihn nicht… Weißt du zufällig, wer von deinen Leichenfreunden den Schlüssel hat, mit dem man hier rauskommt?"{#zm569_s3_r42294}' if zm569Logic.r42294_condition():

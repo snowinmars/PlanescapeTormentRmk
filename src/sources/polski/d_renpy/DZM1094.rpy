@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say6562
 label zm1094_s0: # - # IF ~  Global("Asonje","GLOBAL",0)
-    nr 'Ten chodzący trup ma numer "1094" wygrawerowany na czole, usta zaszyte mocną nicią, a w unoszącej się wokół niego chmurze można wyczuć smród świeżej formaliny. Pomimo bladych i zapadłych rysów twarzy, oraz pozbawionych życia białych oczu, jest rzeczą oczywistą, że kiedyś był to przystojny młodzieniec.{#zm1094_s0_}'
+    nr 'Ten chodzący trup ma numer "1094" wygrawerowany na czole, usta zaszyte mocną nicią, a w unoszącej się wokół niego chmurze można wyczuć smród świeżej formaliny. Pomimo bladych i zapadłych rysów twarzy, oraz pozbawionych życia białych oczu, jest rzeczą oczywistą, że kiedyś był to przystojny młodzieniec.{#zm1094_s0_1}'
 
     menu:
         '"Więc jak… widziałeś, aby działo się tutaj coś interesującego?"{#zm1094_s0_r6565}' if zm1094Logic.r6565_condition():
@@ -43,7 +43,7 @@ label zm1094_s0: # - # IF ~  Global("Asonje","GLOBAL",0)
 
 # s1 # say6563
 label zm1094_s1: # from 0.0 0.1 0.2
-    nr 'Trup wciąż się w ciebie wpatruje.{#zm1094_s1_}'
+    nr 'Trup wciąż się w ciebie wpatruje.{#zm1094_s1_1}'
 
     menu:
         'Zostaw truposza w spokoju.{#zm1094_s1_r6571}':
@@ -53,7 +53,7 @@ label zm1094_s1: # from 0.0 0.1 0.2
 
 # s2 # say6564
 label zm1094_s2: # from 0.3
-    nr 'Trup drży przez chwilę, potem uspokaja się, a jego dusza z powrotem wlatuje do swej niegdysiejszej powłoki. W mgnieniu oka jakiś pozór życia pojawia się w oczach zombiaka i zaczyna on rozglądać się z wyrazem zdumienia na twarzy. Całe jego ciało wydaje się spowijać miękka, złocista poświata.{#zm1094_s2_}'
+    nr 'Trup drży przez chwilę, potem uspokaja się, a jego dusza z powrotem wlatuje do swej niegdysiejszej powłoki. W mgnieniu oka jakiś pozór życia pojawia się w oczach zombiaka i zaczyna on rozglądać się z wyrazem zdumienia na twarzy. Całe jego ciało wydaje się spowijać miękka, złocista poświata.{#zm1094_s2_1}'
 
     menu:
         '"Pragnę ci zadać pytanie…"{#zm1094_s2_r6572}':
@@ -67,7 +67,7 @@ label zm1094_s2: # from 0.3
 
 # s3 # say9224
 label zm1094_s3: # from 2.0
-    nr 'Wydaje się, że duch nagle cię dostrzega. Posyła ci rozbrajająco przyjazny, szeroki uśmiech, przez co puszczają mu wszystkie szwy wokół ust. Przez chwilę jest zaskoczony. Ręką dotyka ust, wzrusza ramionami i kiwa głową na powitanie. "Gdzie… gdzie ja jestem? To takie dziwaczne miejsce. Czy ja cię znam?" Cicho pokasłuje, pocierając swoje zesztywniałe gardło.{#zm1094_s3_}'
+    nr 'Wydaje się, że duch nagle cię dostrzega. Posyła ci rozbrajająco przyjazny, szeroki uśmiech, przez co puszczają mu wszystkie szwy wokół ust. Przez chwilę jest zaskoczony. Ręką dotyka ust, wzrusza ramionami i kiwa głową na powitanie. "Gdzie… gdzie ja jestem? To takie dziwaczne miejsce. Czy ja cię znam?" Cicho pokasłuje, pocierając swoje zesztywniałe gardło.{#zm1094_s3_1}'
 
     menu:
         '"Duchu, jesteś tu, aby odpowiadać na *moje* pytania."{#zm1094_s3_r9247}':
@@ -90,7 +90,7 @@ label zm1094_s3: # from 2.0
 
 # s4 # say9225
 label zm1094_s4: # from 3.0
-    nr 'Przyjazne zachowanie ducha znika w mgnieniu oka. Przez chwilę marszczy brwi, a z jego szarych, uschniętych ust zwisają strzępy porwanych szwów. "Doskonale, pytaj o co chcesz." Odwraca wzrok, ewidentnie znudzony.{#zm1094_s4_}'
+    nr 'Przyjazne zachowanie ducha znika w mgnieniu oka. Przez chwilę marszczy brwi, a z jego szarych, uschniętych ust zwisają strzępy porwanych szwów. "Doskonale, pytaj o co chcesz." Odwraca wzrok, ewidentnie znudzony.{#zm1094_s4_1}'
 
     menu:
         '"Kim jesteś?"{#zm1094_s4_r9251}':
@@ -124,7 +124,7 @@ label zm1094_s4: # from 3.0
 
 # s5 # say9226
 label zm1094_s5: # from 4.0 11.0
-    nr '"Nazywałem się Asonje. Czy mogę odejść?"{#zm1094_s5_}'
+    nr '"Nazywałem się Asonje. Czy mogę odejść?"{#zm1094_s5_1}'
 
     menu:
         '"Nie, mam następne pytanie…"{#zm1094_s5_r9258}':
@@ -138,7 +138,7 @@ label zm1094_s5: # from 4.0 11.0
 
 # s6 # say9227
 label zm1094_s6: # from 4.1 11.1
-    nr '"Nie pamiętam. Coś jeszcze?"{#zm1094_s6_}'
+    nr '"Nie pamiętam. Coś jeszcze?"{#zm1094_s6_1}'
 
     menu:
         '"Tak, mam następne pytanie…"{#zm1094_s6_r9260}':
@@ -152,7 +152,7 @@ label zm1094_s6: # from 4.1 11.1
 
 # s7 # say9228
 label zm1094_s7: # from 4.2 11.2
-    nr 'Duch wzrusza ramionami i patrzy do góry, na niebo. "Nie powiedziałbym. Ale jakie to ma znaczenie?" Zaciska usta nieszczęśliwie i patrzy na ciebie twardo, zaś w jego oczach dostrzegasz groźne błyski. "Czy potrzebujesz ode mnie czegoś jeszcze?"{#zm1094_s7_}'
+    nr 'Duch wzrusza ramionami i patrzy do góry, na niebo. "Nie powiedziałbym. Ale jakie to ma znaczenie?" Zaciska usta nieszczęśliwie i patrzy na ciebie twardo, zaś w jego oczach dostrzegasz groźne błyski. "Czy potrzebujesz ode mnie czegoś jeszcze?"{#zm1094_s7_1}'
 
     menu:
         '"Tak, mam następne pytanie…"{#zm1094_s7_r9262}':
@@ -166,7 +166,7 @@ label zm1094_s7: # from 4.2 11.2
 
 # s8 # say9229
 label zm1094_s8: # from 4.3 11.3
-    nr '"Moja dusza przebywa w Arborei…" Na chwilę przerywa, zagubiony w czułym wspomnieniu. "Nawet teraz tęskno mi do tamtejszego domu, z dala od twojego samolubnego, nierozważnego i raczej nudnego węszenia. Czy wolno mi tam powrócić?"{#zm1094_s8_}'
+    nr '"Moja dusza przebywa w Arborei…" Na chwilę przerywa, zagubiony w czułym wspomnieniu. "Nawet teraz tęskno mi do tamtejszego domu, z dala od twojego samolubnego, nierozważnego i raczej nudnego węszenia. Czy wolno mi tam powrócić?"{#zm1094_s8_1}'
 
     menu:
         '"Nie, mam następne pytanie…"{#zm1094_s8_r9264}':
@@ -180,7 +180,7 @@ label zm1094_s8: # from 4.3 11.3
 
 # s9 # say9230
 label zm1094_s9: # from 4.4 11.4
-    nr 'Duch spogląda na ciebie z rozpaczą. "Oczywiście, że nic!" Potrząsa głową, zagniewany, a zerwane szwy kołyszą się wraz z ruchem jego głowy.{#zm1094_s9_}'
+    nr 'Duch spogląda na ciebie z rozpaczą. "Oczywiście, że nic!" Potrząsa głową, zagniewany, a zerwane szwy kołyszą się wraz z ruchem jego głowy.{#zm1094_s9_1}'
 
     menu:
         '"W takim razie jak to się stało, że twoje zwłoki są tutaj i pracują w tych posępnych gmaszyskach?"{#zm1094_s9_r9266}':
@@ -198,7 +198,7 @@ label zm1094_s9: # from 4.4 11.4
 
 # s10 # say9231
 label zm1094_s10: # from 4.5 11.5
-    nr '"Nie." Nie wydaje się, aby duch zwracał na ciebie uwagę.{#zm1094_s10_}'
+    nr '"Nie." Nie wydaje się, aby duch zwracał na ciebie uwagę.{#zm1094_s10_1}'
 
     menu:
         '"W takim razie mam następne pytanie…"{#zm1094_s10_r9269}':
@@ -212,7 +212,7 @@ label zm1094_s10: # from 4.5 11.5
 
 # s11 # say9232
 label zm1094_s11: # from 5.0 6.0 7.0 8.0 9.1 10.0 12.0 27.0
-    nr 'Duch wydaje głośne westchnienie, wraz z którym powietrze wypełnia woń formaliny z jego płuc. "Tak… tak… pytaj."{#zm1094_s11_}'
+    nr 'Duch wydaje głośne westchnienie, wraz z którym powietrze wypełnia woń formaliny z jego płuc. "Tak… tak… pytaj."{#zm1094_s11_1}'
 
     menu:
         '"Kim jesteś?"{#zm1094_s11_r9271}':
@@ -246,7 +246,7 @@ label zm1094_s11: # from 5.0 6.0 7.0 8.0 9.1 10.0 12.0 27.0
 
 # s12 # say9233
 label zm1094_s12: # from 9.0
-    nr '"Zgadujesz równie dobrze jak ja, prostaku. Chciałbym już odejść, za twym przyzwoleniem."{#zm1094_s12_}'
+    nr '"Zgadujesz równie dobrze jak ja, prostaku. Chciałbym już odejść, za twym przyzwoleniem."{#zm1094_s12_1}'
 
     menu:
         '"Nie, mam następne pytanie…"{#zm1094_s12_r9278}':
@@ -260,7 +260,7 @@ label zm1094_s12: # from 9.0
 
 # s13 # say9234
 label zm1094_s13: # from 3.1
-    nr 'Trawi to przez chwilę w myśli, potem śmieje się. "Tak! To miałoby sens, nieprawdaż? No dobrze, czy ja ciebie znam?" Przekrzywia głowę w jedną stronę, wpatrując się w ciebie intensywnie. Wydaje się, że rozpoznanie twojej tożsamości jest dla niego czymś w rodzaju zabawnej gry.{#zm1094_s13_}'
+    nr 'Trawi to przez chwilę w myśli, potem śmieje się. "Tak! To miałoby sens, nieprawdaż? No dobrze, czy ja ciebie znam?" Przekrzywia głowę w jedną stronę, wpatrując się w ciebie intensywnie. Wydaje się, że rozpoznanie twojej tożsamości jest dla niego czymś w rodzaju zabawnej gry.{#zm1094_s13_1}'
 
     menu:
         '"Nie, wątpię, byś mnie znał. A teraz mam dla ciebie następne pytanie…"{#zm1094_s13_r9280}':
@@ -274,7 +274,7 @@ label zm1094_s13: # from 3.1
 
 # s14 # say9235
 label zm1094_s14: # from 3.2 13.0
-    nr 'Duch wzrusza ramionami i uśmiecha się, chichocząc łagodnie. "Być może masz rację! O co to chcesz mnie spytać?" W roztargnieniu zaczyna szarpać za porwane szwy z warg i zrzuca je na podłogę, jedną po drugiej.{#zm1094_s14_}'
+    nr 'Duch wzrusza ramionami i uśmiecha się, chichocząc łagodnie. "Być może masz rację! O co to chcesz mnie spytać?" W roztargnieniu zaczyna szarpać za porwane szwy z warg i zrzuca je na podłogę, jedną po drugiej.{#zm1094_s14_1}'
 
     menu:
         '"Kim jesteś?"{#zm1094_s14_r9282}' if zm1094Logic.r9282_condition():
@@ -312,7 +312,7 @@ label zm1094_s14: # from 3.2 13.0
 
 # s15 # say9236
 label zm1094_s15: # from 14.0 22.0
-    nr '"Nazywałem się Asonje. Czy mógłbym poznać twoje imię?"{#zm1094_s15_}'
+    nr '"Nazywałem się Asonje. Czy mógłbym poznać twoje imię?"{#zm1094_s15_1}'
 
     menu:
         '"Ja… ja nie wiem."{#zm1094_s15_r9289}':
@@ -333,7 +333,7 @@ label zm1094_s15: # from 14.0 22.0
 
 # s16 # say9237
 label zm1094_s16: # from 14.2 22.2
-    nr '"Pochodzę z wielu miejsc! Tak naprawdę, nie znam swego miejsca urodzenia. W mym życiu sporo podróżowałem i wiele miejsc nazywałem swoim domem. A teraz cała Arborea jest przedmiotem mych badań…" Wydaje się, że duch jest z siebie zadowolony.{#zm1094_s16_}'
+    nr '"Pochodzę z wielu miejsc! Tak naprawdę, nie znam swego miejsca urodzenia. W mym życiu sporo podróżowałem i wiele miejsc nazywałem swoim domem. A teraz cała Arborea jest przedmiotem mych badań…" Wydaje się, że duch jest z siebie zadowolony.{#zm1094_s16_1}'
 
     menu:
         '"Rozumiem. Mam następne pytanie…"{#zm1094_s16_r9292}':
@@ -347,7 +347,7 @@ label zm1094_s16: # from 14.2 22.2
 
 # s17 # say9238
 label zm1094_s17: # from 14.3 22.3
-    nr 'Uśmiech ducha gaśnie i przez chwilę wygląda na zmartwionego. "Dziwne… Nie wiem! Naprawdę nie jestem pewny, w jaki sposób umarłem." Wzrusza ramionami. "Nieważne!" Jego ucieszny szeroki uśmiech powraca, jakiś taki rozjaśniony, mimo że wydaje się przyklejony do jego wyschniętej twarzy.{#zm1094_s17_}'
+    nr 'Uśmiech ducha gaśnie i przez chwilę wygląda na zmartwionego. "Dziwne… Nie wiem! Naprawdę nie jestem pewny, w jaki sposób umarłem." Wzrusza ramionami. "Nieważne!" Jego ucieszny szeroki uśmiech powraca, jakiś taki rozjaśniony, mimo że wydaje się przyklejony do jego wyschniętej twarzy.{#zm1094_s17_1}'
 
     menu:
         '"Mam następne pytanie…"{#zm1094_s17_r9294}':
@@ -361,7 +361,7 @@ label zm1094_s17: # from 14.3 22.3
 
 # s18 # say9239
 label zm1094_s18: # from 14.4 22.4
-    nr '"Arborea! Nie śmiałbym prosić o cudowniejsze miejsce. Nigdzie w trakcie mojego śmiertelnego życia nie znalazłem miejsca o tak wielkiej namiętności… takiej wspaniałości…" Na chwilę przerywa, zagubiony w przyjemnym wspomnieniu. "Piękno tej krainy, ludzie - to po prostu wspaniałe. Zaprawdę powiadam ci, tęsknię doń nawet teraz!"{#zm1094_s18_}'
+    nr '"Arborea! Nie śmiałbym prosić o cudowniejsze miejsce. Nigdzie w trakcie mojego śmiertelnego życia nie znalazłem miejsca o tak wielkiej namiętności… takiej wspaniałości…" Na chwilę przerywa, zagubiony w przyjemnym wspomnieniu. "Piękno tej krainy, ludzie - to po prostu wspaniałe. Zaprawdę powiadam ci, tęsknię doń nawet teraz!"{#zm1094_s18_1}'
 
     menu:
         '"Rozumiem. Mam następne pytanie…"{#zm1094_s18_r9296}':
@@ -375,7 +375,7 @@ label zm1094_s18: # from 14.4 22.4
 
 # s19 # say9240
 label zm1094_s19: # from 14.5 22.5
-    nr '"Niewiele. Podpisałem kontrakt z Grabarzem pod wpływem kaprysu… wskazała mi to straszliwe miejsce i powiedziała, że kiedyś moje ciało zostanie wskrzeszone i będzie używane jako pracownik. Pomyślałem sobie: Nie będzie mi ono już potrzebne, kiedy zacznę inne życie - więc czemu nie? Równie dobrze mogę wziąć miedziaki i wydać je na kobiety i wino!" Chichocze na samą myśl o tym, a w jego oczach błyskają wesołe ogniki.{#zm1094_s19_}'
+    nr '"Niewiele. Podpisałem kontrakt z Grabarzem pod wpływem kaprysu… wskazała mi to straszliwe miejsce i powiedziała, że kiedyś moje ciało zostanie wskrzeszone i będzie używane jako pracownik. Pomyślałem sobie: Nie będzie mi ono już potrzebne, kiedy zacznę inne życie - więc czemu nie? Równie dobrze mogę wziąć miedziaki i wydać je na kobiety i wino!" Chichocze na samą myśl o tym, a w jego oczach błyskają wesołe ogniki.{#zm1094_s19_1}'
 
     menu:
         '"Czy wiesz coś na temat miasta wokół Kostnicy?"{#zm1094_s19_r9298}':
@@ -393,7 +393,7 @@ label zm1094_s19: # from 14.5 22.5
 
 # s20 # say9241
 label zm1094_s20: # from 14.6 22.6
-    nr 'Duch zastanawia się przez chwilę. "Nie, obawiam się, że nie słyszałem o tym człowieku. To twój przyjaciel?"{#zm1094_s20_}'
+    nr 'Duch zastanawia się przez chwilę. "Nie, obawiam się, że nie słyszałem o tym człowieku. To twój przyjaciel?"{#zm1094_s20_1}'
 
     menu:
         '"Być może. Mam następne pytanie…"{#zm1094_s20_r9301}':
@@ -407,7 +407,7 @@ label zm1094_s20: # from 14.6 22.6
 
 # s21 # say9242
 label zm1094_s21: # from 15.0
-    nr 'Wydaje się być zdziwiony. "To dziwne! Wstyd, doprawdy. Muszę cię *jakoś* nazywać, nieprawdaż?" Duch spogląda na ciebie wyczekująco.{#zm1094_s21_}'
+    nr 'Wydaje się być zdziwiony. "To dziwne! Wstyd, doprawdy. Muszę cię *jakoś* nazywać, nieprawdaż?" Duch spogląda na ciebie wyczekująco.{#zm1094_s21_1}'
 
     menu:
         '"Z pewnością coś wymyślisz. Mam pytanie…"{#zm1094_s21_r9303}':
@@ -426,7 +426,7 @@ label zm1094_s21: # from 15.0
 
 # s22 # say9243
 label zm1094_s22: # from 15.1 16.0 17.0 18.0 19.1 20.0 21.0 23.0 24.0 25.0 26.0
-    nr '"Naturalnie. Pytaj!" Uśmiecha się z zadowoleniem, oczekując na twoje pytania z zainteresowaniem. Jako że ostatnie szwy już popuściły, jego szeroki uśmiech nie jest już niesamowity.{#zm1094_s22_}'
+    nr '"Naturalnie. Pytaj!" Uśmiecha się z zadowoleniem, oczekując na twoje pytania z zainteresowaniem. Jako że ostatnie szwy już popuściły, jego szeroki uśmiech nie jest już niesamowity.{#zm1094_s22_1}'
 
     menu:
         '"Kim jesteś?"{#zm1094_s22_r9306}' if zm1094Logic.r9306_condition():
@@ -464,7 +464,7 @@ label zm1094_s22: # from 15.1 16.0 17.0 18.0 19.1 20.0 21.0 23.0 24.0 25.0 26.0
 
 # s23 # say9244
 label zm1094_s23: # from 21.1
-    nr 'Wyczuwając twoją frustrację, duch śmieje się serdecznie. "Biedny skurl! W takim razie niech będzie Adahn, przyjacielu. No, masz dla mnie jakieś pytanie?"{#zm1094_s23_}'
+    nr 'Wyczuwając twoją frustrację, duch śmieje się serdecznie. "Biedny skurl! W takim razie niech będzie Adahn, przyjacielu. No, masz dla mnie jakieś pytanie?"{#zm1094_s23_1}'
 
     menu:
         '"Tak…"{#zm1094_s23_r9313}':
@@ -478,7 +478,7 @@ label zm1094_s23: # from 21.1
 
 # s24 # say9245
 label zm1094_s24: # from 19.0
-    nr '"Co, Sigil?" Widząc twoje potakujące skinienie głowy, uśmiech truposza przeistacza się w szeroki, szelmowski grymas. "O, nie zepsuję ci tej przyjemności! Idź zbadaj to miejsce samemu! Zgub się w tych uliczkach, oberżach, wśród tych ludzi… ale uważaj! Może to być zarówno niebezpieczne, jak i wspaniałe miejsce. To właśnie czyni je tak ekscytującym, nieprawdaż?"{#zm1094_s24_}'
+    nr '"Co, Sigil?" Widząc twoje potakujące skinienie głowy, uśmiech truposza przeistacza się w szeroki, szelmowski grymas. "O, nie zepsuję ci tej przyjemności! Idź zbadaj to miejsce samemu! Zgub się w tych uliczkach, oberżach, wśród tych ludzi… ale uważaj! Może to być zarówno niebezpieczne, jak i wspaniałe miejsce. To właśnie czyni je tak ekscytującym, nieprawdaż?"{#zm1094_s24_1}'
 
     menu:
         '"Chyba… chyba tak. Mam następne pytanie…"{#zm1094_s24_r9315}':
@@ -492,7 +492,7 @@ label zm1094_s24: # from 19.0
 
 # s25 # say9283
 label zm1094_s25: # from 14.1 22.1
-    nr '"Nazywałem się Asonje."{#zm1094_s25_}'
+    nr '"Nazywałem się Asonje."{#zm1094_s25_1}'
 
     menu:
         '"Mam następne pytanie…"{#zm1094_s25_r9284}':
@@ -506,7 +506,7 @@ label zm1094_s25: # from 14.1 22.1
 
 # s26 # say20061
 label zm1094_s26: # - # IF ~  GlobalGT("Asonje","GLOBAL",0) GlobalLT("Asonje","GLOBAL",3)
-    nr '"Znów tu jesteś, co?" Uśmiecha się szeroko.{#zm1094_s26_}'
+    nr '"Znów tu jesteś, co?" Uśmiecha się szeroko.{#zm1094_s26_1}'
 
     menu:
         '"Mam kilka pytań…"{#zm1094_s26_r20063}':
@@ -520,7 +520,7 @@ label zm1094_s26: # - # IF ~  GlobalGT("Asonje","GLOBAL",0) GlobalLT("Asonje","G
 
 # s27 # say20062
 label zm1094_s27: # - # IF ~  Global("Asonje","GLOBAL",3)
-    nr '"Och, to ty… znowu." Marszczy brwi i odwraca wzrok.{#zm1094_s27_}'
+    nr '"Och, to ty… znowu." Marszczy brwi i odwraca wzrok.{#zm1094_s27_1}'
 
     menu:
         '"Mam kilka pytań…"{#zm1094_s27_r20065}':

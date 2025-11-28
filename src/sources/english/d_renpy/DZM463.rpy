@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say6484
 label zm463_s0: # - # IF ~  True()
-    nr 'The shambling corpse gazes at you with vacant eyes. The number "463" is carved into his forehead, and his lips have been stitched closed. The faint smell of formaldehyde emanates from the body.{#zm463_s0_}'
+    nr 'The shambling corpse gazes at you with vacant eyes. The number "463" is carved into his forehead, and his lips have been stitched closed. The faint smell of formaldehyde emanates from the body.{#zm463_s0_1}'
 
     menu:
         '"So… seen anything interesting going on?"{#zm463_s0_r6485}' if zm463Logic.r6485_condition():
@@ -42,7 +42,7 @@ label zm463_s0: # - # IF ~  True()
 
 # s1 # say6486
 label zm463_s1: # from 0.0 0.1 0.2
-    nr 'The corpse continues to stare at you.{#zm463_s1_}'
+    nr 'The corpse continues to stare at you.{#zm463_s1_1}'
 
     menu:
         'Leave the corpse in peace.{#zm463_s1_r6493}':
@@ -52,7 +52,7 @@ label zm463_s1: # from 0.0 0.1 0.2
 
 # s2 # say6487
 label zm463_s2: # from 0.3
-    nr 'The corpse makes no reply. It looks like it is too far gone to answer any of your questions.{#zm463_s2_}'
+    nr 'The corpse makes no reply. It looks like it is too far gone to answer any of your questions.{#zm463_s2_1}'
 
     menu:
         'Leave the corpse in peace.{#zm463_s2_r6494}':

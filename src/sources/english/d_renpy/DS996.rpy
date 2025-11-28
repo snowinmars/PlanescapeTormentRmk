@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say35460
 label s996_s0: # - # IF ~  True()
-    nr 'This skeleton seems particularly old, the leather straps binding it together cracked and worn. The word "REPENT" has been carefully engraved into its forehead with some amount of skill; a rougher hand later chiseled "996" onto both its temples.{#s996_s0_}'
+    nr 'This skeleton seems particularly old, the leather straps binding it together cracked and worn. The word "REPENT" has been carefully engraved into its forehead with some amount of skill; a rougher hand later chiseled "996" onto both its temples.{#s996_s0_1}'
 
     menu:
         '"Pardon me, have you seen any skeletons walking around here?"{#s996_s0_r35461}' if s996Logic.r35461_condition():
@@ -90,7 +90,7 @@ label s996_s0: # - # IF ~  True()
 
 # s1 # say35462
 label s996_s1: # from 0.0 0.1 0.2 0.3
-    nr 'The skeleton makes no reply.{#s996_s1_}'
+    nr 'The skeleton makes no reply.{#s996_s1_1}'
 
     menu:
         '"Great talking to you, Bones. Stay healthy."{#s996_s1_r35463}' if s996Logic.r35463_condition():
@@ -109,7 +109,7 @@ label s996_s1: # from 0.0 0.1 0.2 0.3
 
 # s2 # say35488
 label s996_s2: # from 0.4
-    nr 'This skeleton makes no reply. It looks like it is too far gone to answer any of your questions.{#s996_s2_}'
+    nr 'This skeleton makes no reply. It looks like it is too far gone to answer any of your questions.{#s996_s2_1}'
 
     menu:
         'Leave the skeleton in peace.{#s996_s2_r35489}' if s996Logic.r35489_condition():
@@ -128,7 +128,7 @@ label s996_s2: # from 0.4
 
 # s3 # say35493
 label s996_s3: # from 0.5
-    nr 'Someone has taken care to bind the bones of this skeleton with leather straps, woven around the body in such a pattern that they resemble muscles and tendons. The straps are secured to metal bolts punched into the skeleton„s joints. This skeleton looks like it has seen a great deal of service: many of its bones are chipped and its numerous fractures are bound with sealant and foul-smelling glues.{#s996_s3_}'
+    nr 'Someone has taken care to bind the bones of this skeleton with leather straps, woven around the body in such a pattern that they resemble muscles and tendons. The straps are secured to metal bolts punched into the skeleton„s joints. This skeleton looks like it has seen a great deal of service: many of its bones are chipped and its numerous fractures are bound with sealant and foul-smelling glues.{#s996_s3_1}'
 
     menu:
         'Try and pry out the skeleton„s joint bolts.{#s996_s3_r35494}' if s996Logic.r35494_condition():
@@ -176,7 +176,7 @@ label s996_s3: # from 0.5
 
 # s4 # say35499
 label s996_s4: # from 0.7 0.10 3.1 3.4
-    nr 'You pull at the iron bolts, but you„re not strong enough to pull them out. They“ve been hammered in pretty tight.{#s996_s4_}'
+    nr 'You pull at the iron bolts, but you„re not strong enough to pull them out. They“ve been hammered in pretty tight.{#s996_s4_1}'
 
     menu:
         '"Maybe if I had the right tool, I could get them out… hmmmm. I may be back, Bones."{#s996_s4_r35500}' if s996Logic.r35500_condition():
@@ -208,7 +208,7 @@ label s996_s4: # from 0.7 0.10 3.1 3.4
 
 # s5 # say35507
 label s996_s5: # from 0.8 0.11 3.2 3.5
-    nr 'You pull at the iron bolts with all your strength, and after a few moments of tugging, you rip the bolts from the joints. The skeleton collapses, some of its bones still twitching.{#s996_s5_}'
+    nr 'You pull at the iron bolts with all your strength, and after a few moments of tugging, you rip the bolts from the joints. The skeleton collapses, some of its bones still twitching.{#s996_s5_1}'
 
     menu:
         '"Sorry about that, Bones…"{#s996_s5_r35508}':
@@ -219,7 +219,7 @@ label s996_s5: # from 0.8 0.11 3.2 3.5
 
 # s6 # say35510
 label s996_s6: # from 0.9 0.12 3.3 3.6
-    nr 'Using your prybar, you rip the bolts from the skeleton„s joints. The skeleton collapses, some of its bones still twitching.{#s996_s6_}'
+    nr 'Using your prybar, you rip the bolts from the skeleton„s joints. The skeleton collapses, some of its bones still twitching.{#s996_s6_1}'
 
     menu:
         '"Sorry about that, Bones…"{#s996_s6_r35511}':
@@ -230,6 +230,6 @@ label s996_s6: # from 0.9 0.12 3.3 3.6
 
 # s7 # say35536
 label s996_s7: # - # IF ~  False()
-    nr 'This skeleton makes no reply. It looks like it is too far gone to answer any of your questions.{#s996_s7_}'
+    nr 'This skeleton makes no reply. It looks like it is too far gone to answer any of your questions.{#s996_s7_1}'
 
     menu:

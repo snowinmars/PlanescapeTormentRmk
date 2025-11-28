@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say24708
 label zm782_s0: # - # IF ~  True()
-    nr 'Když ses přiblížil, mrtvola se zastavila a nepřítomně na tebe pohlédla. Na čele má vyřezáno číslo "782" a její rty jsou pevně sešity. Kolem sebe šíří slabý zápach formaldehydu.{#zm782_s0_}'
+    nr 'Když ses přiblížil, mrtvola se zastavila a nepřítomně na tebe pohlédla. Na čele má vyřezáno číslo "782" a její rty jsou pevně sešity. Kolem sebe šíří slabý zápach formaldehydu.{#zm782_s0_1}'
 
     menu:
         '"Hledám klíč… nemáš ho náhodou ty?"{#zm782_s0_r24709}' if zm782Logic.r24709_condition():
@@ -37,7 +37,7 @@ label zm782_s0: # - # IF ~  True()
 
 # s1 # say24710
 label zm782_s1: # from 0.1
-    nr 'Mrtvola nereaguje.{#zm782_s1_}'
+    nr 'Mrtvola nereaguje.{#zm782_s1_1}'
 
     menu:
         '"V pořádku. Sbohem."{#zm782_s1_r24711}':
@@ -51,7 +51,7 @@ label zm782_s1: # from 0.1
 
 # s2 # say24715
 label zm782_s2: # from 0.2 0.3
-    nr 'Tahle mrtvola vypadá, že ten klíč má. Drží jej pevně v levé ruce, palcem a ukazováčkem jej svírá dokola se smrtící silou. Vypadá to, že budeš muset nebožtíkovi odříznout ruku, abys jej dostal.{#zm782_s2_}'
+    nr 'Tahle mrtvola vypadá, že ten klíč má. Drží jej pevně v levé ruce, palcem a ukazováčkem jej svírá dokola se smrtící silou. Vypadá to, že budeš muset nebožtíkovi odříznout ruku, abys jej dostal.{#zm782_s2_1}'
 
     menu:
         '"Potřebuji tenhle klíč, mrtvolo… vypadá to, že se na tomto světě už moc neohřeješ."{#zm782_s2_r24716}':

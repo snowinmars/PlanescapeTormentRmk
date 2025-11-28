@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say24564
 label zm825_s0: # - # IF ~  True()
-    nr 'La tête du cadavre bascule d„avant en arrière sur ses épaules. À en juger par l“angle du cou, tu en déduis que cet homme a été pendu. Le numéro „825“ a été peint sur sa tempe.{#zm825_s0_}'
+    nr 'La tête du cadavre bascule d„avant en arrière sur ses épaules. À en juger par l“angle du cou, tu en déduis que cet homme a été pendu. Le numéro „825“ a été peint sur sa tempe.{#zm825_s0_1}'
 
     menu:
         '"Je cherche une clé… tu n„en aurais pas une, par hasard ?"{#zm825_s0_r24565}' if zm825Logic.r24565_condition():
@@ -49,7 +49,7 @@ label zm825_s0: # - # IF ~  True()
 
 # s1 # say24566
 label zm825_s1: # from 0.1 0.2 0.3 3.1
-    nr 'Le cadavre fixe le sol sans répondre.{#zm825_s1_}'
+    nr 'Le cadavre fixe le sol sans répondre.{#zm825_s1_1}'
 
     menu:
         '"Bon, peu importe. Au revoir."{#zm825_s1_r24567}':
@@ -63,7 +63,7 @@ label zm825_s1: # from 0.1 0.2 0.3 3.1
 
 # s2 # say24571
 label zm825_s2: # from 0.4
-    nr 'Le cadavre ne bouge pas. Il a l„air trop absent pour répondre à tes questions.{#zm825_s2_}'
+    nr 'Le cadavre ne bouge pas. Il a l„air trop absent pour répondre à tes questions.{#zm825_s2_1}'
 
     menu:
         'Laisse le cadavre tranquille.{#zm825_s2_r24572}':
@@ -73,7 +73,7 @@ label zm825_s2: # from 0.4
 
 # s3 # say42311
 label zm825_s3: # from 0.5
-    nr 'Ce cadavre n„a rien… mais tu remarques que ses mains sont bandées. Une fois enlevés du cadavre, ces bandages pourraient resservir.{#zm825_s3_}'
+    nr 'Ce cadavre n„a rien… mais tu remarques que ses mains sont bandées. Une fois enlevés du cadavre, ces bandages pourraient resservir.{#zm825_s3_1}'
 
     menu:
         '"Je suppose que tu n„as pas la clé… Tu ne saurais pas lequel de tes amis cadavres a fait sortir cette clé d“ici, par hasard ?"{#zm825_s3_r42312}' if zm825Logic.r42312_condition():

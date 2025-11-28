@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say35178
 label zf679_s0: # - # IF ~  True()
-    nr 'Toto je tělo staré, možná dokonce prastaré ženy. Kromě zápachu balzamovací tekutiny, stehů, držících ústa a čísla "679" vyšitého na její pravé tváři, vypadá nejspíš skoro stejně, jako vypadala během svých posledních dnů.{#zf679_s0_}'
+    nr 'Toto je tělo staré, možná dokonce prastaré ženy. Kromě zápachu balzamovací tekutiny, stehů, držících ústa a čísla "679" vyšitého na její pravé tváři, vypadá nejspíš skoro stejně, jako vypadala během svých posledních dnů.{#zf679_s0_1}'
 
     menu:
         '"Takže… cos dělala poslední dobou?"{#zf679_s0_r35179}' if zf679Logic.r35179_condition():
@@ -58,7 +58,7 @@ label zf679_s0: # - # IF ~  True()
 
 # s1 # say35180
 label zf679_s1: # from 0.0 0.1 0.2
-    nr 'Mrtvola na tebe dál zírá.{#zf679_s1_}'
+    nr 'Mrtvola na tebe dál zírá.{#zf679_s1_1}'
 
     menu:
         '"Sbohem tedy."{#zf679_s1_r35181}' if zf679Logic.r35181_condition():
@@ -76,7 +76,7 @@ label zf679_s1: # from 0.0 0.1 0.2
 
 # s2 # say35199
 label zf679_s2: # from 0.3
-    nr 'Mrtvola neodpovídá. Asi už shnila příliš, aby byla schopná odpovídat na otázky.{#zf679_s2_}'
+    nr 'Mrtvola neodpovídá. Asi už shnila příliš, aby byla schopná odpovídat na otázky.{#zf679_s2_1}'
 
     menu:
         '"Sbohem tedy."{#zf679_s2_r35200}' if zf679Logic.r35200_condition():
@@ -94,6 +94,6 @@ label zf679_s2: # from 0.3
 
 # s3 # say35209
 label zf679_s3: # - # IF ~  False()
-    nr 'Mrtvola neodpovídá. Asi už shnila příliš, aby byla schopná odpovídat na otázky.{#zf679_s3_}'
+    nr 'Mrtvola neodpovídá. Asi už shnila příliš, aby byla schopná odpovídat na otázky.{#zf679_s3_1}'
 
     menu:

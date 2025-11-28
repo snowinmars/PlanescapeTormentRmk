@@ -1,6 +1,7 @@
 import re
 
 NUMBER_QUOTE_PATTERN = re.compile(r'[^\d][\d]+»\.$')
+TRANSLATION_POSTFIX_PATTERN = re.compile(r'\{#.*?\}$')
 known_npc = [
     'the_nameless_one',
     'morte_unknown',
@@ -107,6 +108,7 @@ def check_dialogue_rules_for_narrator(line):
     words = line.split()
     rest = ' '.join(words[1:])
     clear_line = rest[1:-1] if len(rest) >= 2 else rest
+    clear_line = TRANSLATION_POSTFIX_PATTERN.sub('', clear_line)
 
     startsWith0171 = clear_line.startswith('«')
     endsWth0187 = clear_line.endswith('»')
@@ -144,6 +146,7 @@ def check_dialogue_rules_for_npc(line):
         return True
     rest = ' '.join(words[1:])
     clear_line = rest[1:-1] if len(rest) >= 2 else rest
+    clear_line = TRANSLATION_POSTFIX_PATTERN.sub('', clear_line)
 
     startsWith0171 = clear_line.startswith('«')
     endsWth0187 = clear_line.endswith('»')

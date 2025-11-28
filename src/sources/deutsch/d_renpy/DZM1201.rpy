@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say34953
 label zm1201_s0: # - # IF ~  Global("1201_Note_Retrieved","GLOBAL",0)
-    nr 'Die Zahl "1201" ist mit Tinte auf die Stirn dieser Leiche geschrieben worden, und die Tinte ist in die Augen, über die Wangen und den Kiefer heruntergelaufen. Als du mit den Augen den Tintentränen auf dem Gesicht der Leiche nach unten folgst, bemerkst du, daß sie in die Naht gelaufen ist, die die Lippen der Leiche versiegelt, und daß sie sich in etwas gefangen hat, was wie eine Notiz aussieht, die der Leiche in den Mund gesteckt wurde.{#zm1201_s0_}'
+    nr 'Die Zahl "1201" ist mit Tinte auf die Stirn dieser Leiche geschrieben worden, und die Tinte ist in die Augen, über die Wangen und den Kiefer heruntergelaufen. Als du mit den Augen den Tintentränen auf dem Gesicht der Leiche nach unten folgst, bemerkst du, daß sie in die Naht gelaufen ist, die die Lippen der Leiche versiegelt, und daß sie sich in etwas gefangen hat, was wie eine Notiz aussieht, die der Leiche in den Mund gesteckt wurde.{#zm1201_s0_1}'
 
     menu:
         'Versuch, die Notiz herauszuziehen.{#zm1201_s0_r34954}' if zm1201Logic.r34954_condition():
@@ -37,7 +37,7 @@ label zm1201_s0: # - # IF ~  Global("1201_Note_Retrieved","GLOBAL",0)
 
 # s1 # say34955
 label zm1201_s1: # from 0.0
-    nr 'Die Notiz hat sich mit dem Blutsaft im Mund des Zombies vermischt. Wenn du versuchen würdest, das Papier durch die Kreuzstiche hindurchzuziehen, würde es das Papier zerfetzen. Wenn du die Leiche in Stücke hacken würdest, würde die Notiz wohl ebenfalls zerstört werden. Du mußt also einen behutsamen Weg finden, die Stiche aufzulösen, bevor du die Notiz entfernst.{#zm1201_s1_}'
+    nr 'Die Notiz hat sich mit dem Blutsaft im Mund des Zombies vermischt. Wenn du versuchen würdest, das Papier durch die Kreuzstiche hindurchzuziehen, würde es das Papier zerfetzen. Wenn du die Leiche in Stücke hacken würdest, würde die Notiz wohl ebenfalls zerstört werden. Du mußt also einen behutsamen Weg finden, die Stiche aufzulösen, bevor du die Notiz entfernst.{#zm1201_s1_1}'
 
     menu:
         'Schneid die Naht mit dem Skalpell durch.{#zm1201_s1_r34956}' if zm1201Logic.r34956_condition():
@@ -52,7 +52,7 @@ label zm1201_s1: # from 0.0
 
 # s2 # say34960
 label zm1201_s2: # from 1.0
-    nr 'Geschickt schneidest du die Naht durch, die den Mund der Leiche versiegelte, und der Unterkiefer sackt herab. Vorsichtig nimmst du den Zettel aus dem Mund der Leiche… Obschon sich das Papier nicht im besten Zustand befindet, scheint der Text immer noch lesbar zu sein.  ^NHINWEIS: <READSTUFF>^-{#zm1201_s2_}'
+    nr 'Geschickt schneidest du die Naht durch, die den Mund der Leiche versiegelte, und der Unterkiefer sackt herab. Vorsichtig nimmst du den Zettel aus dem Mund der Leiche… Obschon sich das Papier nicht im besten Zustand befindet, scheint der Text immer noch lesbar zu sein.  ^NHINWEIS: <READSTUFF>^-{#zm1201_s2_1}'
 
     menu:
         'Untersuche die Leiche noch einmal.{#zm1201_s2_r34961}':
@@ -66,7 +66,7 @@ label zm1201_s2: # from 1.0
 
 # s3 # say45124
 label zm1201_s3: # from 0.1 5.0 5.1 5.2
-    nr 'Die milchig-weißen Augen dieser Leiche starren dich mit leerem Blick an.{#zm1201_s3_}'
+    nr 'Die milchig-weißen Augen dieser Leiche starren dich mit leerem Blick an.{#zm1201_s3_1}'
 
     menu:
         'Laß die Leiche in Ruhe.{#zm1201_s3_r45125}':
@@ -76,7 +76,7 @@ label zm1201_s3: # from 0.1 5.0 5.1 5.2
 
 # s4 # say45126
 label zm1201_s4: # from 0.2 5.3
-    nr 'Die Leiche rührt sich nicht. Sie sieht so aus, als sei sie schon ein bißchen zu weit hinüber, um deine Fragen zu beantworten.{#zm1201_s4_}'
+    nr 'Die Leiche rührt sich nicht. Sie sieht so aus, als sei sie schon ein bißchen zu weit hinüber, um deine Fragen zu beantworten.{#zm1201_s4_1}'
 
     menu:
         'Laß die Leiche in Ruhe.{#zm1201_s4_r45127}':
@@ -86,7 +86,7 @@ label zm1201_s4: # from 0.2 5.3
 
 # s5 # say45128
 label zm1201_s5: # from 2.0 # IF ~  Global("1201_Note_Retrieved","GLOBAL",1)
-    nr 'Die Zahl "1201" steht in Tinte auf der Stirn dieser Leiche. Sie sieht aus, als würde sie weinen, da die Tinte über die Augen, die Wangen und das Kinn hinuntergelaufen ist. Ihre Kinnlade hängt herab, und eine blutige Flüssigkeit tröpfelt ihr aus dem Mund.{#zm1201_s5_}'
+    nr 'Die Zahl "1201" steht in Tinte auf der Stirn dieser Leiche. Sie sieht aus, als würde sie weinen, da die Tinte über die Augen, die Wangen und das Kinn hinuntergelaufen ist. Ihre Kinnlade hängt herab, und eine blutige Flüssigkeit tröpfelt ihr aus dem Mund.{#zm1201_s5_1}'
 
     menu:
         '"Tut mir leid, wenn ich an dir rumschnipple.Wollt nur mal sehn, was du im Mund hast."{#zm1201_s5_r45129}' if zm1201Logic.r45129_condition():

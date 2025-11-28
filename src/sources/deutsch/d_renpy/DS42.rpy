@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say6595
 label s42_s0: # - # IF ~  True()
-    nr 'Das Skelett dreht sich um und steht dir gegenüber. Die Nummer "42" ist in seine Stirn gemeißelt, und einige seiner Knochen, besonders der Kiefer und die Gelenke, sind mit Lederriemen zusammengebunden. Sein Körper ist in einen schwarzen Kittel gehüllt.{#s42_s0_}'
+    nr 'Das Skelett dreht sich um und steht dir gegenüber. Die Nummer "42" ist in seine Stirn gemeißelt, und einige seiner Knochen, besonders der Kiefer und die Gelenke, sind mit Lederriemen zusammengebunden. Sein Körper ist in einen schwarzen Kittel gehüllt.{#s42_s0_1}'
 
     menu:
         '"Ich *glaube*, daß das die Leiche aus dieser Erinnerung ist, die ich hatte…"{#s42_s0_r6612}' if s42Logic.r6612_condition():
@@ -73,7 +73,7 @@ label s42_s0: # - # IF ~  True()
 
 # s1 # say6596
 label s42_s1: # from 0.0 0.1 0.2 0.3 0.9 3.0 3.3
-    nr 'Durch deine Stimme aufgeschreckt, richtet sich das Skelett plötzlich auf. Es verschränkt seine Arme, und seine Finger haken sich in den Rippen ein.{#s42_s1_}'
+    nr 'Durch deine Stimme aufgeschreckt, richtet sich das Skelett plötzlich auf. Es verschränkt seine Arme, und seine Finger haken sich in den Rippen ein.{#s42_s1_1}'
 
     menu:
         'Verschränk die Arme vor der Brust.{#s42_s1_r6625}' if s42Logic.r6625_condition():
@@ -95,7 +95,7 @@ label s42_s1: # from 0.0 0.1 0.2 0.3 0.9 3.0 3.3
 
 # s2 # say6597
 label s42_s2: # from 0.4
-    nr 'Dieses Skelett antwortet nicht. Es sieht so aus, als ob es schon zu tot ist, um noch auf irgendeine deiner Fragen zu antworten.{#s42_s2_}'
+    nr 'Dieses Skelett antwortet nicht. Es sieht so aus, als ob es schon zu tot ist, um noch auf irgendeine deiner Fragen zu antworten.{#s42_s2_1}'
 
     menu:
         'Laß das Skelett in Ruhe.{#s42_s2_r6629}' if s42Logic.r6629_condition():
@@ -114,7 +114,7 @@ label s42_s2: # from 0.4
 
 # s3 # say6598
 label s42_s3: # from 0.5 10.2
-    nr 'Du bist erstaunt, daß dieser Knochenhaufen noch in einem Stück ist. Seine vergilbten Knochen sind mit Gips und mehreren Lagen übelriechendem Leim verunstaltet… das, was du von den Knochen sehen kannst, ist von unzähligen feinen Rissen durchzogen. Obwohl sich irgend jemand die Mühe gemacht hat, dieses Skelett mit Lederriemen und Schrauben zusammenzuhalten, sind die Riemen jetzt ausgefranst und die Schrauben sehen so aus, als würden sie jeden Moment herausfallen.{#s42_s3_}'
+    nr 'Du bist erstaunt, daß dieser Knochenhaufen noch in einem Stück ist. Seine vergilbten Knochen sind mit Gips und mehreren Lagen übelriechendem Leim verunstaltet… das, was du von den Knochen sehen kannst, ist von unzähligen feinen Rissen durchzogen. Obwohl sich irgend jemand die Mühe gemacht hat, dieses Skelett mit Lederriemen und Schrauben zusammenzuhalten, sind die Riemen jetzt ausgefranst und die Schrauben sehen so aus, als würden sie jeden Moment herausfallen.{#s42_s3_1}'
 
     menu:
         '"Ich *glaube*, daß das die Leiche aus dieser Erinnerung ist, die ich hatte…"{#s42_s3_r63495}' if s42Logic.r63495_condition():
@@ -150,7 +150,7 @@ label s42_s3: # from 0.5 10.2
 
 # s4 # say6599
 label s42_s4: # from 1.0 12.0
-    nr 'Daraufhin läßt das Skelett die Arme nach unten fallen. Die Lederschnüre, die den Torso zusammenhalten, reißen, und der Brustkorb öffnet sich wie eine Doppeltür.{#s42_s4_}'
+    nr 'Daraufhin läßt das Skelett die Arme nach unten fallen. Die Lederschnüre, die den Torso zusammenhalten, reißen, und der Brustkorb öffnet sich wie eine Doppeltür.{#s42_s4_1}'
 
     menu:
         'Greif in den Brustkorb und taste ein bißchen herum.{#s42_s4_r6638}':
@@ -164,7 +164,7 @@ label s42_s4: # from 1.0 12.0
 
 # s5 # say6600
 label s42_s5: # from 4.0 9.0
-    nr 'Zu deiner Überraschung verschwindet deine Hand, als du in den Brustkorb faßt… Du hast das seltsame Gefühl, daß sie *woanders* ist. Als du in den Brustkorb faßt, stößt deine Hand an einen unsichtbaren Gegenstand. Er hat etwa die Größe einer Faust und scheint an der Wirbelsäule des Skeletts befestigt zu sein.{#s42_s5_}'
+    nr 'Zu deiner Überraschung verschwindet deine Hand, als du in den Brustkorb faßt… Du hast das seltsame Gefühl, daß sie *woanders* ist. Als du in den Brustkorb faßt, stößt deine Hand an einen unsichtbaren Gegenstand. Er hat etwa die Größe einer Faust und scheint an der Wirbelsäule des Skeletts befestigt zu sein.{#s42_s5_1}'
 
     menu:
         'Nimm den Gegenstand heraus.{#s42_s5_r6640}':
@@ -179,7 +179,7 @@ label s42_s5: # from 4.0 9.0
 
 # s6 # say6601
 label s42_s6: # from 0.7 0.8 3.2
-    nr 'Die Schrauben rutschen leicht aus den Gelenken. Das Skelett bricht zusammen, einige seiner Knocken zucken noch immer.{#s42_s6_}'
+    nr 'Die Schrauben rutschen leicht aus den Gelenken. Das Skelett bricht zusammen, einige seiner Knocken zucken noch immer.{#s42_s6_1}'
 
     menu:
         '"Tut mir echt leid, Gerippe…"{#s42_s6_r6642}':
@@ -190,7 +190,7 @@ label s42_s6: # from 0.7 0.8 3.2
 
 # s7 # say6602
 label s42_s7: # from 5.0
-    nr 'Als du den Gegenstand herausziehst, fällt das Skelett plötzlich zusammen, und die Schrauben, mit denen die Gelenke gesichert wurden, fallen auf den Boden. Was immer dieser Gegenstand auch war - er scheint die einzige Sache gewesen zu sein, die das Skelett zusammengehalten hat.{#s42_s7_}'
+    nr 'Als du den Gegenstand herausziehst, fällt das Skelett plötzlich zusammen, und die Schrauben, mit denen die Gelenke gesichert wurden, fallen auf den Boden. Was immer dieser Gegenstand auch war - er scheint die einzige Sache gewesen zu sein, die das Skelett zusammengehalten hat.{#s42_s7_1}'
 
     menu:
         'Sieh dir den Gegenstand genau an.{#s42_s7_r6643}' if s42Logic.r6643_condition():
@@ -204,7 +204,7 @@ label s42_s7: # from 5.0
 
 # s8 # say6603
 label s42_s8: # from 7.0 7.1
-    nr 'Es sieht wie ein unscheinbarer Eisenbrocken aus. Du kannst dir nicht vorstellen, warum irgend jemand ihn im Brustkorb eines Skeletts verstecken sollte.{#s42_s8_}'
+    nr 'Es sieht wie ein unscheinbarer Eisenbrocken aus. Du kannst dir nicht vorstellen, warum irgend jemand ihn im Brustkorb eines Skeletts verstecken sollte.{#s42_s8_1}'
 
     menu:
         'Untersuche das Stück Eisen.{#s42_s8_r6645}':
@@ -215,7 +215,7 @@ label s42_s8: # from 7.0 7.1
 
 # s9 # say6604
 label s42_s9: # from 1.1 12.1
-    nr 'Daraufhin läßt das Skelett die Arme nach unten fallen. Die Lederschnüre, die den Torso zusammenhalten, reißen, und der Brustkorb öffnet sich wie eine Doppeltür. Du kannst dir nicht erklären warum, aber du verspürst plötzlich den Drang, in den Brustkorb hineinzugreifen.{#s42_s9_}'
+    nr 'Daraufhin läßt das Skelett die Arme nach unten fallen. Die Lederschnüre, die den Torso zusammenhalten, reißen, und der Brustkorb öffnet sich wie eine Doppeltür. Du kannst dir nicht erklären warum, aber du verspürst plötzlich den Drang, in den Brustkorb hineinzugreifen.{#s42_s9_1}'
 
     menu:
         'Greif in den Brustkorb und taste ein bißchen herum.{#s42_s9_r6646}':
@@ -229,7 +229,7 @@ label s42_s9: # from 1.1 12.1
 
 # s10 # say6605
 label s42_s10: # from 1.2 12.2
-    nr 'Das Skelett läßt die Arme fallen.{#s42_s10_}'
+    nr 'Das Skelett läßt die Arme fallen.{#s42_s10_1}'
 
     menu:
         '"Ähh… hallo?"{#s42_s10_r6648}' if s42Logic.r6648_condition():
@@ -252,7 +252,7 @@ label s42_s10: # from 1.2 12.2
 
 # s11 # say6606
 label s42_s11: # -
-    nr 'Er sieht wie ein unscheinbarer Eisenbrocken aus. Deine vorherige Inkarnation muß einen Grund gehabt haben, ihn hier zu verstecken.{#s42_s11_}'
+    nr 'Er sieht wie ein unscheinbarer Eisenbrocken aus. Deine vorherige Inkarnation muß einen Grund gehabt haben, ihn hier zu verstecken.{#s42_s11_1}'
 
     menu:
         'Sieh dir das das Stück Eisen sorgfältig an.{#s42_s11_r6652}':
@@ -263,7 +263,7 @@ label s42_s11: # -
 
 # s12 # say6607
 label s42_s12: # from 10.0
-    nr 'Das Skelett verschränkt wieder seine Arme vor der Brust.{#s42_s12_}'
+    nr 'Das Skelett verschränkt wieder seine Arme vor der Brust.{#s42_s12_1}'
 
     menu:
         'Verschränk die Arme vor der Brust.{#s42_s12_r6653}' if s42Logic.r6653_condition():
@@ -285,14 +285,14 @@ label s42_s12: # from 10.0
 
 # s13 # say6608
 label s42_s13: # from 10.1
-    nr 'Das Skelett verschränkt wieder seine Arme vor der Brust.{#s42_s13_}'
+    nr 'Das Skelett verschränkt wieder seine Arme vor der Brust.{#s42_s13_1}'
 
     jump morte_s112  # EXTERN
 
 
 # s14 # say58983
 label s42_s14: # from 8.0 11.0
-    nr 'Als du den Eisenklumpen mit beiden Händen berührst, um ihn zu untersuchen, hörst du ein *Hssssss*, und das Metall verdunstet. Zurück bleiben ein merkwürdiger Dolch, eine Handvoll Münzen in einem schmutzigen Tuch und zwei blutige Tränen. Es sieht aus, als käme das alles aus dem *Innern* des Eisenklumpens.{#s42_s14_}'
+    nr 'Als du den Eisenklumpen mit beiden Händen berührst, um ihn zu untersuchen, hörst du ein *Hssssss*, und das Metall verdunstet. Zurück bleiben ein merkwürdiger Dolch, eine Handvoll Münzen in einem schmutzigen Tuch und zwei blutige Tränen. Es sieht aus, als käme das alles aus dem *Innern* des Eisenklumpens.{#s42_s14_1}'
 
     menu:
         'Nimm die Sachen an dich und geh.{#s42_s14_r58984}':

@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say6573
 label zm1041_s0: # - # IF ~  Global("Bei","GLOBAL",0)
-    nr 'This re-animated, male corpse has the numbers "1041" carved into its forehead. Despite its taut, desiccated flesh, it is apparent that its features once had a rather „exotic“ cast to them. The zombie„s lips have been stitched closed - most likely to prevent it from moaning incessantly - and it smells strongly of formaldehyde.{#zm1041_s0_}'
+    nr 'This re-animated, male corpse has the numbers "1041" carved into its forehead. Despite its taut, desiccated flesh, it is apparent that its features once had a rather „exotic“ cast to them. The zombie„s lips have been stitched closed - most likely to prevent it from moaning incessantly - and it smells strongly of formaldehyde.{#zm1041_s0_1}'
 
     menu:
         '"So… seen anything interesting going on?"{#zm1041_s0_r6576}' if zm1041Logic.r6576_condition():
@@ -46,7 +46,7 @@ label zm1041_s0: # - # IF ~  Global("Bei","GLOBAL",0)
 
 # s1 # say6574
 label zm1041_s1: # from 0.0 0.1 0.2
-    nr 'The corpse continues to stare at you.{#zm1041_s1_}'
+    nr 'The corpse continues to stare at you.{#zm1041_s1_1}'
 
     menu:
         'Leave the corpse in peace.{#zm1041_s1_r6582}':
@@ -56,7 +56,7 @@ label zm1041_s1: # from 0.0 0.1 0.2
 
 # s2 # say6575
 label zm1041_s2: # from 0.3
-    nr 'The corpse reels for a moment as the spirit revisits its one-time home. Its almond-shaped eyes become dark once more, a faint bronze cast creeping over the pale flesh. It straightens itself, brushing the dust off its clothes.  At last noticing its caller, the ghost peers at you for a moment with curious eyes, then bows slightly.{#zm1041_s2_}'
+    nr 'The corpse reels for a moment as the spirit revisits its one-time home. Its almond-shaped eyes become dark once more, a faint bronze cast creeping over the pale flesh. It straightens itself, brushing the dust off its clothes.  At last noticing its caller, the ghost peers at you for a moment with curious eyes, then bows slightly.{#zm1041_s2_1}'
 
     menu:
         'Bow in return.{#zm1041_s2_r6583}':
@@ -77,7 +77,7 @@ label zm1041_s2: # from 0.3
 
 # s3 # say9060
 label zm1041_s3: # from 2.0
-    nr 'The spirit smiles for a moment, as if pleased. He composes himself, standing with one hand behind him as he begins to speak in a soft, lilting tone:  "Suiang jianne shyr nan bye yih nan; "Dong feng wu lih bay hua tsarn; "Chuen tsarn daw syy sy fang jinn; "Lah Jiuh cherng huei ley shyy gan."  That being said, he appears content to stand and wait patiently for your reply.{#zm1041_s3_}'
+    nr 'The spirit smiles for a moment, as if pleased. He composes himself, standing with one hand behind him as he begins to speak in a soft, lilting tone:  "Suiang jianne shyr nan bye yih nan; "Dong feng wu lih bay hua tsarn; "Chuen tsarn daw syy sy fang jinn; "Lah Jiuh cherng huei ley shyy gan."  That being said, he appears content to stand and wait patiently for your reply.{#zm1041_s3_1}'
 
     menu:
         '"I… er…"{#zm1041_s3_r9098}':
@@ -95,7 +95,7 @@ label zm1041_s3: # from 2.0
 
 # s4 # say9061
 label zm1041_s4: # from 2.1
-    nr 'You open your mouth to voice a question, but before you can begin the spirit begins to speak in a soft, lilting tone:  "Suiang jianne shyr nan bye yih nan; "Dong feng wu lih bay hua tsarn; "Chuen tsarn daw syy sy fang jinn; "Lah Jiuh cherng huei ley shyy gan."  That being said, he appears content to stand and wait patiently for your reply.{#zm1041_s4_}'
+    nr 'You open your mouth to voice a question, but before you can begin the spirit begins to speak in a soft, lilting tone:  "Suiang jianne shyr nan bye yih nan; "Dong feng wu lih bay hua tsarn; "Chuen tsarn daw syy sy fang jinn; "Lah Jiuh cherng huei ley shyy gan."  That being said, he appears content to stand and wait patiently for your reply.{#zm1041_s4_1}'
 
     menu:
         '"I… er…"{#zm1041_s4_r9101}':
@@ -113,7 +113,7 @@ label zm1041_s4: # from 2.1
 
 # s5 # say9062
 label zm1041_s5: # from 3.0 3.1 4.0 4.1
-    nr 'The spirit pauses for a moment, as if to think. He then begins to speak again in a thickly accented, yet deeply refined voice. "You must forgive me, honorable sir. It has been no small length of time since I have had to speak your language. No doubt my spirit has been summoned here to answer your questions; what is it you would know of me?"{#zm1041_s5_}'
+    nr 'The spirit pauses for a moment, as if to think. He then begins to speak again in a thickly accented, yet deeply refined voice. "You must forgive me, honorable sir. It has been no small length of time since I have had to speak your language. No doubt my spirit has been summoned here to answer your questions; what is it you would know of me?"{#zm1041_s5_1}'
 
     menu:
         '"Who are you?"{#zm1041_s5_r9104}':
@@ -147,7 +147,7 @@ label zm1041_s5: # from 3.0 3.1 4.0 4.1
 
 # s6 # say9063
 label zm1041_s6: # from 5.0 14.0
-    nr '"Who I am is a difficult question to answer… who I *was* is not. I was known as Zhuang Bei, tutor and bodyguard to Liu Xixi, daughter of Censor Chi„an.{#zm1041_s6_}'
+    nr '"Who I am is a difficult question to answer… who I *was* is not. I was known as Zhuang Bei, tutor and bodyguard to Liu Xixi, daughter of Censor Chi„an.{#zm1041_s6_1}'
 
     menu:
         '"Tutor *and* bodyguard?"{#zm1041_s6_r9111}':
@@ -169,7 +169,7 @@ label zm1041_s6: # from 5.0 14.0
 
 # s7 # say9064
 label zm1041_s7: # from 5.1 14.1
-    nr '"I was from a place called Shou Lung… a place I once regarded as the center of the Universe." He seems to find mild amusement at the thought. "So many places, so many worlds. I once considered myself a truly learned man, yet truly knew so little when I died…"{#zm1041_s7_}'
+    nr '"I was from a place called Shou Lung… a place I once regarded as the center of the Universe." He seems to find mild amusement at the thought. "So many places, so many worlds. I once considered myself a truly learned man, yet truly knew so little when I died…"{#zm1041_s7_1}'
 
     menu:
         '"How did you arrive from this „Shou Lung“?"{#zm1041_s7_r9115}':
@@ -187,7 +187,7 @@ label zm1041_s7: # from 5.1 14.1
 
 # s8 # say9065
 label zm1041_s8: # from 5.2 14.2
-    nr '"I was murdered by one of the men I fell into this world with. I had been hunting him in this city for many, many weeks - it was during this time that I learned your language - but he found me first. A professional assassin, he caught me unawares and slew me as I slept."{#zm1041_s8_}'
+    nr '"I was murdered by one of the men I fell into this world with. I had been hunting him in this city for many, many weeks - it was during this time that I learned your language - but he found me first. A professional assassin, he caught me unawares and slew me as I slept."{#zm1041_s8_1}'
 
     menu:
         '"Fell into this world?"{#zm1041_s8_r9118}':
@@ -217,7 +217,7 @@ label zm1041_s8: # from 5.2 14.2
 
 # s9 # say9066
 label zm1041_s9: # from 5.4 14.4
-    nr '"This building? Nothing at all; I had heard of it, knew my corpse was to serve here, but that is all."  "I know almost as little about this great city, „Sigil.“ My weeks here were spent searching for the men I fell into this world with and learning the language; though it pained me, I had time for little else. I could have learned so much from the myriad wonders of such a place…"{#zm1041_s9_}'
+    nr '"This building? Nothing at all; I had heard of it, knew my corpse was to serve here, but that is all."  "I know almost as little about this great city, „Sigil.“ My weeks here were spent searching for the men I fell into this world with and learning the language; though it pained me, I had time for little else. I could have learned so much from the myriad wonders of such a place…"{#zm1041_s9_1}'
 
     menu:
         '"Your corpse was to serve here? How did that come about?"{#zm1041_s9_r9124}':
@@ -243,7 +243,7 @@ label zm1041_s9: # from 5.4 14.4
 
 # s10 # say9067
 label zm1041_s10: # from 5.5 14.5
-    nr '"No, the name means nothing to me. I am sorry I could not aid you in this."{#zm1041_s10_}'
+    nr '"No, the name means nothing to me. I am sorry I could not aid you in this."{#zm1041_s10_1}'
 
     menu:
         '"I understand. I had more questions…"{#zm1041_s10_r9129}':
@@ -257,7 +257,7 @@ label zm1041_s10: # from 5.5 14.5
 
 # s11 # say9068
 label zm1041_s11: # from 5.3 14.3
-    nr 'The spirit seems pained for a moment.  "I… My spirit resides in the realm of the Illustrious Magistrate, Yen-Wang-Yeh: the Palace of Judgement."{#zm1041_s11_}'
+    nr 'The spirit seems pained for a moment.  "I… My spirit resides in the realm of the Illustrious Magistrate, Yen-Wang-Yeh: the Palace of Judgement."{#zm1041_s11_1}'
 
     menu:
         '"Is something wrong? Is it such a bad place?"{#zm1041_s11_r9131}':
@@ -275,7 +275,7 @@ label zm1041_s11: # from 5.3 14.3
 
 # s12 # say9069
 label zm1041_s12: # from 6.0 16.1
-    nr '"Yes; it is not so uncommon where I hail from. It was my duty to stay by Miss Liu at all times, not only to keep her from harm, but to educate her. I was regarded as a scholar of some repute as well as a swordsman, you see. Perhaps I would have served her better were I a better swordsman, though…"{#zm1041_s12_}'
+    nr '"Yes; it is not so uncommon where I hail from. It was my duty to stay by Miss Liu at all times, not only to keep her from harm, but to educate her. I was regarded as a scholar of some repute as well as a swordsman, you see. Perhaps I would have served her better were I a better swordsman, though…"{#zm1041_s12_1}'
 
     menu:
         '"Served her better? Did you fail her somehow?"{#zm1041_s12_r9134}':
@@ -293,7 +293,7 @@ label zm1041_s12: # from 6.0 16.1
 
 # s13 # say9070
 label zm1041_s13: # from 6.1
-    nr '"Impressive? Yes, perhaps too much so for me. I… I failed Miss Liu and the Censor in my task."{#zm1041_s13_}'
+    nr '"Impressive? Yes, perhaps too much so for me. I… I failed Miss Liu and the Censor in my task."{#zm1041_s13_1}'
 
     menu:
         '"How so?"{#zm1041_s13_r9137}':
@@ -311,7 +311,7 @@ label zm1041_s13: # from 6.1
 
 # s14 # say9071
 label zm1041_s14: # from 6.2 7.1 8.4 9.3 10.0 11.1 12.1 13.1 15.2 17.1 18.0 19.0 20.1 21.1 22.0 23.1 24.0 25.0 26.0 27.1 28.0 29.0 30.0 31.2 32.1 33.2 34.0 35.2 36.0 37.0 38.1
-    nr 'The spirit nods, an unexpectedly graceful movement for a wizened corpse to make. "Please, ask what you will."{#zm1041_s14_}'
+    nr 'The spirit nods, an unexpectedly graceful movement for a wizened corpse to make. "Please, ask what you will."{#zm1041_s14_1}'
 
     menu:
         '"Who are you?"{#zm1041_s14_r9140}':
@@ -349,7 +349,7 @@ label zm1041_s14: # from 6.2 7.1 8.4 9.3 10.0 11.1 12.1 13.1 15.2 17.1 18.0 19.0
 
 # s15 # say9072
 label zm1041_s15: # from 11.0
-    nr '"Well, you see…" The spirit stops for a moment to think, rubbing the corpse„s withered hands together. "When I arrived, after a short period of waiting I was to be ushered to my final, *true* destination. However, there was some sort of commotion during my escort through the Palace, and I was left alone in a side room with the promise that I would be attended to in a moment."{#zm1041_s15_}'
+    nr '"Well, you see…" The spirit stops for a moment to think, rubbing the corpse„s withered hands together. "When I arrived, after a short period of waiting I was to be ushered to my final, *true* destination. However, there was some sort of commotion during my escort through the Palace, and I was left alone in a side room with the promise that I would be attended to in a moment."{#zm1041_s15_1}'
 
     menu:
         '"And…?"{#zm1041_s15_r9148}':
@@ -371,7 +371,7 @@ label zm1041_s15: # from 11.0
 
 # s16 # say9073
 label zm1041_s16: # from 7.0 8.0 8.1 9.1 12.0 13.0
-    nr '"I will tell you the entire tale. As the tutor and bodyguard of Liu Xixi, I am of course charged with both her education and defense. One fair evening we were standing on a balcony over the Courtyard, where I was teaching her about the various constellations."{#zm1041_s16_}'
+    nr '"I will tell you the entire tale. As the tutor and bodyguard of Liu Xixi, I am of course charged with both her education and defense. One fair evening we were standing on a balcony over the Courtyard, where I was teaching her about the various constellations."{#zm1041_s16_1}'
 
     menu:
         '"Please, go on."{#zm1041_s16_r9152}':
@@ -389,7 +389,7 @@ label zm1041_s16: # from 7.0 8.0 8.1 9.1 12.0 13.0
 
 # s17 # say9074
 label zm1041_s17: # from 8.2 9.0
-    nr '"Ah, that. I was approached one night by a young woman on the street; she was from an organization called the Dustmen, the same that oversees this complex." "She proposed to me that, in return for a small sum of money, that my corpse could be… used… here upon my demise."{#zm1041_s17_}'
+    nr '"Ah, that. I was approached one night by a young woman on the street; she was from an organization called the Dustmen, the same that oversees this complex." "She proposed to me that, in return for a small sum of money, that my corpse could be… used… here upon my demise."{#zm1041_s17_1}'
 
     menu:
         '"And that didn„t seem a bit odd to you?"{#zm1041_s17_r9155}':
@@ -407,7 +407,7 @@ label zm1041_s17: # from 8.2 9.0
 
 # s18 # say9075
 label zm1041_s18: # from 8.3 9.2
-    nr '"Linguistics, in fact, is an area of great interest to me. When I became a scholar I found I could learn new tongues with little trouble at all."{#zm1041_s18_}'
+    nr '"Linguistics, in fact, is an area of great interest to me. When I became a scholar I found I could learn new tongues with little trouble at all."{#zm1041_s18_1}'
 
     menu:
         '"That would explain things. Another question…"{#zm1041_s18_r9158}':
@@ -421,7 +421,7 @@ label zm1041_s18: # from 8.3 9.2
 
 # s19 # say9076
 label zm1041_s19: # from 15.0 20.0
-    nr '"Well, you see… no one ever returned for me. I waited quietly for what seemed like days, but it was to no avail. I eventually left the room to wander the Palace, hoping to find someone to direct me…" He sighs softly, the faint scent of embalming fluid carried with his exhalation. "There are 9,001 rooms here; in each one I have passed through I was merely directed to another. I seem to have fallen between the cracks, for the time being."{#zm1041_s19_}'
+    nr '"Well, you see… no one ever returned for me. I waited quietly for what seemed like days, but it was to no avail. I eventually left the room to wander the Palace, hoping to find someone to direct me…" He sighs softly, the faint scent of embalming fluid carried with his exhalation. "There are 9,001 rooms here; in each one I have passed through I was merely directed to another. I seem to have fallen between the cracks, for the time being."{#zm1041_s19_1}'
 
     menu:
         '"I see. I had another question, though…"{#zm1041_s19_r9160}':
@@ -445,7 +445,7 @@ label zm1041_s19: # from 15.0 20.0
 
 # s20 # say9077
 label zm1041_s20: # from 15.1
-    nr '"I couldn„t say. It is all so very frustrating!" He pauses for a moment to regain his composure, the stiffened joints and tendons of the cadaver creaking softly as they relax once more.{#zm1041_s20_}'
+    nr '"I couldn„t say. It is all so very frustrating!" He pauses for a moment to regain his composure, the stiffened joints and tendons of the cadaver creaking softly as they relax once more.{#zm1041_s20_1}'
 
     menu:
         '"Please continue your tale."{#zm1041_s20_r9164}':
@@ -463,7 +463,7 @@ label zm1041_s20: # from 15.1
 
 # s21 # say9078
 label zm1041_s21: # from 16.0
-    nr '"Of course. As we stood there, two assassins suddenly burst down from the rooftop to the balcony, most likely there to slay or kidnap Miss Liu. Shouting for the guards, I drew my blade and leapt to her defense. In the ensuing battle, the balcony„s railing was shattered and the four of us fell into the Jade Portal."{#zm1041_s21_}'
+    nr '"Of course. As we stood there, two assassins suddenly burst down from the rooftop to the balcony, most likely there to slay or kidnap Miss Liu. Shouting for the guards, I drew my blade and leapt to her defense. In the ensuing battle, the balcony„s railing was shattered and the four of us fell into the Jade Portal."{#zm1041_s21_1}'
 
     menu:
         '"The what? Jade Portal?"{#zm1041_s21_r9167}':
@@ -481,7 +481,7 @@ label zm1041_s21: # from 16.0
 
 # s22 # say9079
 label zm1041_s22: # from 17.0
-    nr '"Perhaps at first… the idea is a bit macabre after all. But after speaking with her for some time, I realized that they - the Dustmen - feel much the same way I do regarding death. My body? A vehicle only, nothing more. I believe their „True Death“ to be the exalted state that I, personally, seek to attain… total release and detachment from the material world. Should my corpse, having served its purpose as my mortal shell, manage to serve some small purpose here, so much the better." The spirit smiles at you politely.{#zm1041_s22_}'
+    nr '"Perhaps at first… the idea is a bit macabre after all. But after speaking with her for some time, I realized that they - the Dustmen - feel much the same way I do regarding death. My body? A vehicle only, nothing more. I believe their „True Death“ to be the exalted state that I, personally, seek to attain… total release and detachment from the material world. Should my corpse, having served its purpose as my mortal shell, manage to serve some small purpose here, so much the better." The spirit smiles at you politely.{#zm1041_s22_1}'
 
     menu:
         '"I see your reasoning. Another question…"{#zm1041_s22_r9170}':
@@ -495,7 +495,7 @@ label zm1041_s22: # from 17.0
 
 # s23 # say9080
 label zm1041_s23: # from 21.0
-    nr '"Oh! Pardon the assumption on my part… the Jade Portal is a circular pool that lies in the Courtyard. Paved with tiles of green and white soapstone, it is called the Portal because it is said, at times, glimpses of another place appear reflected in its shimmering waters."{#zm1041_s23_}'
+    nr '"Oh! Pardon the assumption on my part… the Jade Portal is a circular pool that lies in the Courtyard. Paved with tiles of green and white soapstone, it is called the Portal because it is said, at times, glimpses of another place appear reflected in its shimmering waters."{#zm1041_s23_1}'
 
     menu:
         '"I see. Please, continue your story."{#zm1041_s23_r9172}':
@@ -513,7 +513,7 @@ label zm1041_s23: # from 21.0
 
 # s24 # say9081
 label zm1041_s24: # from 19.1
-    nr '"Your offer is too kind. I am afraid, however, that there is nothing you can do… I am sure that, in time, I will be sped on my way. Again, though, thank you."{#zm1041_s24_}'
+    nr '"Your offer is too kind. I am afraid, however, that there is nothing you can do… I am sure that, in time, I will be sped on my way. Again, though, thank you."{#zm1041_s24_1}'
 
     menu:
         '"Of course. Say, I had another question…"{#zm1041_s24_r9175}':
@@ -527,7 +527,7 @@ label zm1041_s24: # from 19.1
 
 # s25 # say9082
 label zm1041_s25: # from 19.2 33.1 35.1
-    nr 'The spirit stares at you coldly, ghost-lights burning deep within the corpse„s eyes; you seem to have offended him.{#zm1041_s25_}'
+    nr 'The spirit stares at you coldly, ghost-lights burning deep within the corpse„s eyes; you seem to have offended him.{#zm1041_s25_1}'
 
     menu:
         '"My apologies. May I ask you something else?"{#zm1041_s25_r9177}':
@@ -541,7 +541,7 @@ label zm1041_s25: # from 19.2 33.1 35.1
 
 # s26 # say9083
 label zm1041_s26: # from 14.6
-    nr '"Oh, that… ah… it was a poem. Difficult to translate. Did you have another question, perhaps?" He smiles at you uneasily.{#zm1041_s26_}'
+    nr '"Oh, that… ah… it was a poem. Difficult to translate. Did you have another question, perhaps?" He smiles at you uneasily.{#zm1041_s26_1}'
 
     menu:
         '"Yes… yes, I did."{#zm1041_s26_r9179}':
@@ -559,7 +559,7 @@ label zm1041_s26: # from 14.6
 
 # s27 # say9084
 label zm1041_s27: # from 23.0
-    nr '"As I was saying, we fell into the Jade Portal. I had never imagined it actually *was* a portal in any sense of the word, but surely enough it was! I suddenly found myself lying in an unfamiliar alleyway, my leg broken. I reoriented myself only in time to see the assassins fleeing, Liu Xixi tossed over one of their shoulders."{#zm1041_s27_}'
+    nr '"As I was saying, we fell into the Jade Portal. I had never imagined it actually *was* a portal in any sense of the word, but surely enough it was! I suddenly found myself lying in an unfamiliar alleyway, my leg broken. I reoriented myself only in time to see the assassins fleeing, Liu Xixi tossed over one of their shoulders."{#zm1041_s27_1}'
 
     menu:
         '"Strange indeed. Go on, please."{#zm1041_s27_r9182}':
@@ -577,7 +577,7 @@ label zm1041_s27: # from 23.0
 
 # s28 # say9085
 label zm1041_s28: # from 26.1
-    nr '"Very well." He thinks for a moment, tapping the ends of the corpse„s long, bony fingers together. Soon, he begins to speak once more in a steady, measured rhythm:  "It is difficult to meet as it is difficult to part. "The north wind has weakened; hundreds of flowers fade away. "When the Spring worms die, the silk shall never come again. "When the candle wax becomes ash, tears shall stop."  He smiles at you politely.{#zm1041_s28_}'
+    nr '"Very well." He thinks for a moment, tapping the ends of the corpse„s long, bony fingers together. Soon, he begins to speak once more in a steady, measured rhythm:  "It is difficult to meet as it is difficult to part. "The north wind has weakened; hundreds of flowers fade away. "When the Spring worms die, the silk shall never come again. "When the candle wax becomes ash, tears shall stop."  He smiles at you politely.{#zm1041_s28_1}'
 
     menu:
         '"Ah… I had another question."{#zm1041_s28_r9185}':
@@ -599,7 +599,7 @@ label zm1041_s28: # from 26.1
 
 # s29 # say9086
 label zm1041_s29: # from 28.1
-    nr '"Well, I am ashamed to say it was a subtle attempt at saying… well, saying that perhaps you„d best let the spirits of the dead alone. I no longer desire to have any part in this…" The spirit makes a sweeping gesture to indicate everything around him. "…world."{#zm1041_s29_}'
+    nr '"Well, I am ashamed to say it was a subtle attempt at saying… well, saying that perhaps you„d best let the spirits of the dead alone. I no longer desire to have any part in this…" The spirit makes a sweeping gesture to indicate everything around him. "…world."{#zm1041_s29_1}'
 
     menu:
         '"Hmm. I see. I had something else to ask of you."{#zm1041_s29_r9189}':
@@ -613,7 +613,7 @@ label zm1041_s29: # from 28.1
 
 # s30 # say9087
 label zm1041_s30: # from 28.2
-    nr '"Ah… well… no. I had hoped not to be so direct; avoid a confrontation, you see. It is only that I no longer desire to have any part in this…" The spirit makes a sweeping gesture to indicate everything around him. "…world."{#zm1041_s30_}'
+    nr '"Ah… well… no. I had hoped not to be so direct; avoid a confrontation, you see. It is only that I no longer desire to have any part in this…" The spirit makes a sweeping gesture to indicate everything around him. "…world."{#zm1041_s30_1}'
 
     menu:
         '"Hmm. I see. I had something else to ask of you…"{#zm1041_s30_r9191}':
@@ -627,7 +627,7 @@ label zm1041_s30: # from 28.2
 
 # s31 # say9088
 label zm1041_s31: # from 27.0
-    nr '"Well, that is mostly all. I limped about painfully until I found someone to heal my leg; they took what little coin I had as payment. From that healer and others I learned the tongue of the people here, all the while scouring the place for the two assassins and my charge."{#zm1041_s31_}'
+    nr '"Well, that is mostly all. I limped about painfully until I found someone to heal my leg; they took what little coin I had as payment. From that healer and others I learned the tongue of the people here, all the while scouring the place for the two assassins and my charge."{#zm1041_s31_1}'
 
     menu:
         '"You never found them, then?"{#zm1041_s31_r9193}':
@@ -649,7 +649,7 @@ label zm1041_s31: # from 27.0
 
 # s32 # say9089
 label zm1041_s32: # from 31.0 38.0
-    nr '"I hunted down one of them, but he would not speak. I executed him and kept his head in a silk bag, so that I could bring it back for the Censor when I returned his daughter to him." He frowns for a moment before he continues. "The other assassin… eluded me. He did more than that, in fact; he slew me before I could kill him and rescue my charge. Sad, but it is all behind me, now."{#zm1041_s32_}'
+    nr '"I hunted down one of them, but he would not speak. I executed him and kept his head in a silk bag, so that I could bring it back for the Censor when I returned his daughter to him." He frowns for a moment before he continues. "The other assassin… eluded me. He did more than that, in fact; he slew me before I could kill him and rescue my charge. Sad, but it is all behind me, now."{#zm1041_s32_1}'
 
     menu:
         '"Would you have known how to return to your land, had you rescued this… „Xi-xi“?"{#zm1041_s32_r9197}':
@@ -667,7 +667,7 @@ label zm1041_s32: # from 31.0 38.0
 
 # s33 # say9090
 label zm1041_s33: # from 32.0
-    nr '"No, but I am confident I would have found a way. A moot point now, really."{#zm1041_s33_}'
+    nr '"No, but I am confident I would have found a way. A moot point now, really."{#zm1041_s33_1}'
 
     menu:
         '"I wonder if they are still in the city. Perhaps I could find and help this girl."{#zm1041_s33_r9200}':
@@ -691,7 +691,7 @@ label zm1041_s33: # from 32.0
 
 # s34 # say9091
 label zm1041_s34: # from 33.0
-    nr '"Your offer marks you as a noble man… however, no less than seventy-five years have passed since I was slain. The man who assassinated me is long dead by now, and most likely Xixi as well."{#zm1041_s34_}'
+    nr '"Your offer marks you as a noble man… however, no less than seventy-five years have passed since I was slain. The man who assassinated me is long dead by now, and most likely Xixi as well."{#zm1041_s34_1}'
 
     menu:
         '"Hmm. No matter, then. I had another question…"{#zm1041_s34_r9205}':
@@ -705,7 +705,7 @@ label zm1041_s34: # from 33.0
 
 # s35 # say9092
 label zm1041_s35: # -
-    nr '"The assassin would have features similar to mine, and a Lotus Blossom tattooed upon his brow." Seeing your confusion, he adds "It„s a sort of flower, with seven petals. Liu Xixi is a young girl; only fourteen years of age. Perhaps she or the assassin would know where the way back was, and how to activate it again."{#zm1041_s35_}'
+    nr '"The assassin would have features similar to mine, and a Lotus Blossom tattooed upon his brow." Seeing your confusion, he adds "It„s a sort of flower, with seven petals. Liu Xixi is a young girl; only fourteen years of age. Perhaps she or the assassin would know where the way back was, and how to activate it again."{#zm1041_s35_1}'
 
     menu:
         '"If I see her, I will do my best to aid her in your memory."{#zm1041_s35_r9207}':
@@ -731,7 +731,7 @@ label zm1041_s35: # -
 
 # s36 # say9093
 label zm1041_s36: # from 35.0
-    nr '"You are a kind and honorable man. Do not do it for me, however… it is the girl and the father you help most greatly."{#zm1041_s36_}'
+    nr '"You are a kind and honorable man. Do not do it for me, however… it is the girl and the father you help most greatly."{#zm1041_s36_1}'
 
     menu:
         '"Very well. I had another question…"{#zm1041_s36_r9211}':
@@ -745,7 +745,7 @@ label zm1041_s36: # from 35.0
 
 # s37 # say9094
 label zm1041_s37: # from 0.4 # IF ~  Global("Bei","GLOBAL",1)
-    nr '"I certainly did not expect to see you again." The spirit bows politely, but his expression remains blank. "What is it you would have of me?"{#zm1041_s37_}'
+    nr '"I certainly did not expect to see you again." The spirit bows politely, but his expression remains blank. "What is it you would have of me?"{#zm1041_s37_1}'
 
     menu:
         '"A question…"{#zm1041_s37_r9213}':
@@ -759,7 +759,7 @@ label zm1041_s37: # from 0.4 # IF ~  Global("Bei","GLOBAL",1)
 
 # s38 # say9718
 label zm1041_s38: # from 31.1
-    nr '"Linguistics, in fact, is an area of great interest to me. When I became a scholar I found I could learn new tongues with little trouble at all."{#zm1041_s38_}'
+    nr '"Linguistics, in fact, is an area of great interest to me. When I became a scholar I found I could learn new tongues with little trouble at all."{#zm1041_s38_1}'
 
     menu:
         '"That would explain things. So you never found the assassins?"{#zm1041_s38_r9719}':

@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say6518
 label zm1146_s0: # - # IF ~  Global("Crispy","GLOBAL",0)
-    nr 'Le numéro „1146“ est gravé sur le front de ce cadavre errant ; ses lèvres ont été cousues à l„aide d“un fil noir grossier. Tout le corps est recouvert d„horribles cicatrices, pires encore que les tiennes, comme s“il avait été brûlé vif. Le nez, les oreilles et plusieurs doigts manquent, sans doute à la suite d„une très vieille conflagration. Lorsque tu lui barres le chemin pour attirer son “attention„, il s“arrête et te regarde d„un air hagard.{#zm1146_s0_}'
+    nr 'Le numéro „1146“ est gravé sur le front de ce cadavre errant ; ses lèvres ont été cousues à l„aide d“un fil noir grossier. Tout le corps est recouvert d„horribles cicatrices, pires encore que les tiennes, comme s“il avait été brûlé vif. Le nez, les oreilles et plusieurs doigts manquent, sans doute à la suite d„une très vieille conflagration. Lorsque tu lui barres le chemin pour attirer son “attention„, il s“arrête et te regarde d„un air hagard.{#zm1146_s0_1}'
 
     menu:
         '"Alors… Tu as vu quelque chose d„intéressant ?"{#zm1146_s0_r6521}' if zm1146Logic.r6521_condition():
@@ -43,7 +43,7 @@ label zm1146_s0: # - # IF ~  Global("Crispy","GLOBAL",0)
 
 # s1 # say6519
 label zm1146_s1: # from 0.0 0.1 0.2
-    nr 'Le cadavre continue à te fixer.{#zm1146_s1_}'
+    nr 'Le cadavre continue à te fixer.{#zm1146_s1_1}'
 
     menu:
         'Laisse le cadavre tranquille.{#zm1146_s1_r6527}':
@@ -53,7 +53,7 @@ label zm1146_s1: # from 0.0 0.1 0.2
 
 # s2 # say6520
 label zm1146_s2: # from 0.3
-    nr 'Les odeurs de soufre fumant, de cheveux brûlés et de sang roussi te prennent à la gorge tandis que l„esprit retourne dans son ancienne demeure. Le cadavre s“effondre presque immédiatement sur le sol avec un choc violent, en poussant un râle. Tu peux presque voir de fines volutes de fumée nauséabonde dégouliner de ses membres.{#zm1146_s2_}'
+    nr 'Les odeurs de soufre fumant, de cheveux brûlés et de sang roussi te prennent à la gorge tandis que l„esprit retourne dans son ancienne demeure. Le cadavre s“effondre presque immédiatement sur le sol avec un choc violent, en poussant un râle. Tu peux presque voir de fines volutes de fumée nauséabonde dégouliner de ses membres.{#zm1146_s2_1}'
 
     menu:
         '"Est-ce que… ça va ?"{#zm1146_s2_r6528}':
@@ -71,7 +71,7 @@ label zm1146_s2: # from 0.3
 
 # s3 # say9398
 label zm1146_s3: # from 2.0
-    nr 'L„esprit soulève une paupière ; le globe oculaire, tout blanc, se détache dans son nid de chair grise. Il lève lentement la tête pour te toiser, la chair brûlée et scarifiée de son visage s“étire sur ses os et sa gorge détruite forme quelques mots : "Non. Non, pas du tout… espèce de… pauvre… enfumé."{#zm1146_s3_}'
+    nr 'L„esprit soulève une paupière ; le globe oculaire, tout blanc, se détache dans son nid de chair grise. Il lève lentement la tête pour te toiser, la chair brûlée et scarifiée de son visage s“étire sur ses os et sa gorge détruite forme quelques mots : "Non. Non, pas du tout… espèce de… pauvre… enfumé."{#zm1146_s3_1}'
 
     menu:
         '"Je peux faire quelque chose pour toi ?"{#zm1146_s3_r9415}':
@@ -94,7 +94,7 @@ label zm1146_s3: # from 2.0
 
 # s4 # say9399
 label zm1146_s4: # from 3.0
-    nr '"Hé-hé-HEURK !" Un spasme d„une rare violence secoue l“esprit, qui s„était mis à rire, et il vomit un torrent de pourriture noire et de lotion d“embaumement. Tordu de douleur, il ne s„arrête de tousser que pour cracher des glaires jaunâtres et des bouts de fil de suture.{#zm1146_s4_}'
+    nr '"Hé-hé-HEURK !" Un spasme d„une rare violence secoue l“esprit, qui s„était mis à rire, et il vomit un torrent de pourriture noire et de lotion d“embaumement. Tordu de douleur, il ne s„arrête de tousser que pour cracher des glaires jaunâtres et des bouts de fil de suture.{#zm1146_s4_1}'
 
     menu:
         'Attends patiemment la fin de la crise.{#zm1146_s4_r9419}':
@@ -112,7 +112,7 @@ label zm1146_s4: # from 3.0
 
 # s5 # say9400
 label zm1146_s5: # from 4.0
-    nr 'L„horrible quinte de toux se calme enfin. "Non, bige… tu… peux pas. À moins… à moins que tu viennes à Baator histoire de me… secourir, j“ai… plus rien à espérer. L„heure de… de l“expiation a sonné." Il ferme les yeux et sa tête retombe par terre.{#zm1146_s5_}'
+    nr 'L„horrible quinte de toux se calme enfin. "Non, bige… tu… peux pas. À moins… à moins que tu viennes à Baator histoire de me… secourir, j“ai… plus rien à espérer. L„heure de… de l“expiation a sonné." Il ferme les yeux et sa tête retombe par terre.{#zm1146_s5_1}'
 
     menu:
         '"Je vois. J„ai une autre question…"{#zm1146_s5_r9423}':
@@ -126,7 +126,7 @@ label zm1146_s5: # from 4.0
 
 # s6 # say9401
 label zm1146_s6: # from 3.2 17.0
-    nr 'Dans un ricanement glaireux, ses lèvres craquelées et noircies découvrent des dents jaunies, toutes de guingois. "Attends… attends un peu que je me… sorte de cette Fosse… tu… tu seras le premier sur ma liste, bige…"{#zm1146_s6_}'
+    nr 'Dans un ricanement glaireux, ses lèvres craquelées et noircies découvrent des dents jaunies, toutes de guingois. "Attends… attends un peu que je me… sorte de cette Fosse… tu… tu seras le premier sur ma liste, bige…"{#zm1146_s6_1}'
 
     menu:
         '"C„est ça. Je n“ai pas peur de toi, ni de tes semblables."{#zm1146_s6_r9425}':
@@ -145,21 +145,21 @@ label zm1146_s6: # from 3.2 17.0
 
 # s7 # say9402
 label zm1146_s7: # from 6.0
-    nr 'Il s„arrache un grognement guttural et crache vers toi - la glaire puante rate tes pieds de vingt bons centimètres. Épuisé, il laisse alors retomber sa tête et la vie, ou ce qui lui en tient lieu, se retire une fois de plus de son corps.{#zm1146_s7_}'
+    nr 'Il s„arrache un grognement guttural et crache vers toi - la glaire puante rate tes pieds de vingt bons centimètres. Épuisé, il laisse alors retomber sa tête et la vie, ou ce qui lui en tient lieu, se retire une fois de plus de son corps.{#zm1146_s7_1}'
 
     jump zm1146_dispose
 
 
 # s8 # say9403
 label zm1146_s8: # from 6.1
-    nr 'Tu lui décoches un coup de pied dans les reins, en vain ; il n„a pas l“air de s„en porter plus mal. "Hé ! hé ! hé !" ricane l“esprit, avant de se retirer de son corps une bonne fois pour toutes. Tu en restes un peu frustré.{#zm1146_s8_}'
+    nr 'Tu lui décoches un coup de pied dans les reins, en vain ; il n„a pas l“air de s„en porter plus mal. "Hé ! hé ! hé !" ricane l“esprit, avant de se retirer de son corps une bonne fois pour toutes. Tu en restes un peu frustré.{#zm1146_s8_1}'
 
     jump zm1146_dispose
 
 
 # s9 # say9404
 label zm1146_s9: # from 2.1 3.1 4.1 5.0 10.0 11.0 12.1 13.1 14.1 15.0 16.0 17.1 18.1 19.0 20.0
-    nr '"Que… Qu„est-ce que tu veux *encore*, bige ?" L“esprit se tortille et se tapote pour éteindre les petits foyers qui brûlent en divers endroits de son corps.{#zm1146_s9_}'
+    nr '"Que… Qu„est-ce que tu veux *encore*, bige ?" L“esprit se tortille et se tapote pour éteindre les petits foyers qui brûlent en divers endroits de son corps.{#zm1146_s9_1}'
 
     menu:
         '"Qui es-tu ?"{#zm1146_s9_r9428}':
@@ -197,7 +197,7 @@ label zm1146_s9: # from 2.1 3.1 4.1 5.0 10.0 11.0 12.1 13.1 14.1 15.0 16.0 17.1 
 
 # s10 # say9405
 label zm1146_s10: # from 9.0
-    nr '"C„est pas tes oignons… Fous-moi… la paix…{#zm1146_s10_}'
+    nr '"C„est pas tes oignons… Fous-moi… la paix…{#zm1146_s10_1}'
 
     menu:
         '"Non. J„ai une autre question…"{#zm1146_s10_r9436}':
@@ -211,7 +211,7 @@ label zm1146_s10: # from 9.0
 
 # s11 # say9406
 label zm1146_s11: # from 9.1
-    nr '"Hein ? Par les puissances… qu„est-c“qu„on en a… à fiche ? De Sigil, pauvre… idiot."{#zm1146_s11_}'
+    nr '"Hein ? Par les puissances… qu„est-c“qu„on en a… à fiche ? De Sigil, pauvre… idiot."{#zm1146_s11_1}'
 
     menu:
         '"J„ai une autre question…"{#zm1146_s11_r9438}':
@@ -225,7 +225,7 @@ label zm1146_s11: # from 9.1
 
 # s12 # say9407
 label zm1146_s12: # from 9.2
-    nr '"À ton avis, béjaune ?" Il est de nouveau secoué par une violente quinte de toux. "J„ai vendu ma viande… pour un peu de jonc… à ces fichus Hommes-Poussière, et de suite après - DE SUITE APRÈS, t“imagines ? - un foutu magicien complètement azimuté décide de faire flamber la Ruche, avec moi coincé au milieu !" L„esprit part à marmonner d“un air mauvais. Un liquide fumant coule à gros bouillons des commissures de ses lèvres déchiquetées.{#zm1146_s12_}'
+    nr '"À ton avis, béjaune ?" Il est de nouveau secoué par une violente quinte de toux. "J„ai vendu ma viande… pour un peu de jonc… à ces fichus Hommes-Poussière, et de suite après - DE SUITE APRÈS, t“imagines ? - un foutu magicien complètement azimuté décide de faire flamber la Ruche, avec moi coincé au milieu !" L„esprit part à marmonner d“un air mauvais. Un liquide fumant coule à gros bouillons des commissures de ses lèvres déchiquetées.{#zm1146_s12_1}'
 
     menu:
         '"Un magicien a brûlé la Ruche ?"{#zm1146_s12_r9440}':
@@ -243,7 +243,7 @@ label zm1146_s12: # from 9.2
 
 # s13 # say9408
 label zm1146_s13: # from 9.3
-    nr '"Où c„que tu crois… quoqueret de lascar ? Sur Baator, dans ce trou à rats appelé Phlegetos. Nom de nom, brûler… brûler… je fais qu“ça. J„crève en brûlant, pis j“brûle dans l„au-d“là." De rage, il grince des dents. "Vrai de vrai, l„ironie du truc, c“est à s„tordre ! Quand j“sortirai de là, j„en balancerai, des bougres, au fond de c“trou d„malheur, crois-moi. Hé ! hé ! hé ! *glup*."{#zm1146_s13_}'
+    nr '"Où c„que tu crois… quoqueret de lascar ? Sur Baator, dans ce trou à rats appelé Phlegetos. Nom de nom, brûler… brûler… je fais qu“ça. J„crève en brûlant, pis j“brûle dans l„au-d“là." De rage, il grince des dents. "Vrai de vrai, l„ironie du truc, c“est à s„tordre ! Quand j“sortirai de là, j„en balancerai, des bougres, au fond de c“trou d„malheur, crois-moi. Hé ! hé ! hé ! *glup*."{#zm1146_s13_1}'
 
     menu:
         '"Pourquoi voudrais-tu infliger ton destin aux autres ?"{#zm1146_s13_r9442}':
@@ -261,7 +261,7 @@ label zm1146_s13: # from 9.3
 
 # s14 # say9409
 label zm1146_s14: # from 9.4
-    nr '"Mériter ? MÉRI ? Rien ! Je… j„ai rien fait. J“essayais de m„en sortir… comme tout l“monde… et puis… ffchchch !… ce fils de bouc, voilà qu„y fiche le feu à la Ruche, mage de mes deux !"{#zm1146_s14_}'
+    nr '"Mériter ? MÉRI ? Rien ! Je… j„ai rien fait. J“essayais de m„en sortir… comme tout l“monde… et puis… ffchchch !… ce fils de bouc, voilà qu„y fiche le feu à la Ruche, mage de mes deux !"{#zm1146_s14_1}'
 
     menu:
         '"Un mage… a brûlé… la Ruche ?"{#zm1146_s14_r9445}':
@@ -279,7 +279,7 @@ label zm1146_s14: # from 9.4
 
 # s15 # say9410
 label zm1146_s15: # from 9.5
-    nr '"Rien. Rien du tout, j„te l“dis, bige. Laisse-moi… laisse-moi brûler en paix…"{#zm1146_s15_}'
+    nr '"Rien. Rien du tout, j„te l“dis, bige. Laisse-moi… laisse-moi brûler en paix…"{#zm1146_s15_1}'
 
     menu:
         '"Très bien. Alors, j„aurais une autre question…"{#zm1146_s15_r9447}':
@@ -293,7 +293,7 @@ label zm1146_s15: # from 9.5
 
 # s16 # say9411
 label zm1146_s16: # from 9.6
-    nr '"Qui ? Quoi ? Non ! Qu„est-ce qui t“fait croire que j„te l“dirais si j„le connaissais, hein… bougre de bige ? Pff…"{#zm1146_s16_}'
+    nr '"Qui ? Quoi ? Non ! Qu„est-ce qui t“fait croire que j„te l“dirais si j„le connaissais, hein… bougre de bige ? Pff…"{#zm1146_s16_1}'
 
     menu:
         '"Très bien. J„ai une autre question…"{#zm1146_s16_r9449}':
@@ -307,7 +307,7 @@ label zm1146_s16: # from 9.6
 
 # s17 # say9412
 label zm1146_s17: # from 13.0
-    nr '"La vengeance, enfumé ! J„les… j“les aurai tous, ceux qui m„ont refait. Surtout c“magicien ! J„lui arracherai ses parties intimes et j“les lui fourrerai dans la gorge ! Puis j„le jetterai dans ce fichu trou, et ses parties intimes avec ! Lui et tout plein d“autres… pour faire bon poids ! Hé ! hé ! hé !"{#zm1146_s17_}'
+    nr '"La vengeance, enfumé ! J„les… j“les aurai tous, ceux qui m„ont refait. Surtout c“magicien ! J„lui arracherai ses parties intimes et j“les lui fourrerai dans la gorge ! Puis j„le jetterai dans ce fichu trou, et ses parties intimes avec ! Lui et tout plein d“autres… pour faire bon poids ! Hé ! hé ! hé !"{#zm1146_s17_1}'
 
     menu:
         '"Tu es un petit homme méchant et insignifiant. Apparemment, tu as mérité ton sort."{#zm1146_s17_r9420}':
@@ -325,7 +325,7 @@ label zm1146_s17: # from 13.0
 
 # s18 # say9458
 label zm1146_s18: # from 12.0 14.0
-    nr '"Ouais, la Ruche… le pire coin d„Sigil. Jamais vu autant d“feu de toute ma vie… J„ai couru partout, je voulais m“tirer, mais tout brûlait ! Les baraques, les rues, les gens et leurs mômes… Et ce foutu magicien qui riait et qui riait ! J„ai tourné un coin de rue et j“ai cru qu„j“en étais sorti, mais non ! Voilà-t-y pas que ma foutue tête prend feu ?! À partir de là, ç„a été… de mal en pis…" Ses yeux flamboient d“un éclat mauvais.{#zm1146_s18_}'
+    nr '"Ouais, la Ruche… le pire coin d„Sigil. Jamais vu autant d“feu de toute ma vie… J„ai couru partout, je voulais m“tirer, mais tout brûlait ! Les baraques, les rues, les gens et leurs mômes… Et ce foutu magicien qui riait et qui riait ! J„ai tourné un coin de rue et j“ai cru qu„j“en étais sorti, mais non ! Voilà-t-y pas que ma foutue tête prend feu ?! À partir de là, ç„a été… de mal en pis…" Ses yeux flamboient d“un éclat mauvais.{#zm1146_s18_1}'
 
     menu:
         '"Qui était ce magicien ?"{#zm1146_s18_r9459}':
@@ -343,7 +343,7 @@ label zm1146_s18: # from 12.0 14.0
 
 # s19 # say9744
 label zm1146_s19: # from 18.0
-    nr '"J„sais pas. Le temps qu“on l„arrête, si on l“a fait, j„étais cuit et recuit, de toute façon. J“crois m„rappeler qu“y„en a qui l“ont poursuivi au début en criant son nom… heu… oh ! Ignis, je crois bien qu„c“était. Ignis. Ou un truc dans c„genre-là. C“que j„espère, c“est que c„cagueur s“r„trouve dans un pire trou que moi !"{#zm1146_s19_}'
+    nr '"J„sais pas. Le temps qu“on l„arrête, si on l“a fait, j„étais cuit et recuit, de toute façon. J“crois m„rappeler qu“y„en a qui l“ont poursuivi au début en criant son nom… heu… oh ! Ignis, je crois bien qu„c“était. Ignis. Ou un truc dans c„genre-là. C“que j„espère, c“est que c„cagueur s“r„trouve dans un pire trou que moi !"{#zm1146_s19_1}'
 
     menu:
         '"Je vois. J„ai d“autres questions à te poser…"{#zm1146_s19_r9747}':
@@ -357,7 +357,7 @@ label zm1146_s19: # from 18.0
 
 # s20 # say20099
 label zm1146_s20: # - # IF ~  Global("Crispy","GLOBAL",1)
-    nr '"Encore ?!"{#zm1146_s20_}'
+    nr '"Encore ?!"{#zm1146_s20_1}'
 
     menu:
         '"J„ai quelques questions…"{#zm1146_s20_r20100}':

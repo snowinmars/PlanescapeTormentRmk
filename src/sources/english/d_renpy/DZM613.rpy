@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say6540
 label zm613_s0: # - # IF ~  True()
-    nr 'The numbers "613" are cut deeply into this plodding corpse„s forehead, but an inch of shredded, leathery skin separates the "1" and the "3." Looking closely, you can barely make out a "2" carved there.{#zm613_s0_}'
+    nr 'The numbers "613" are cut deeply into this plodding corpse„s forehead, but an inch of shredded, leathery skin separates the "1" and the "3." Looking closely, you can barely make out a "2" carved there.{#zm613_s0_1}'
 
     menu:
         '"So… seen anything interesting going on?"{#zm613_s0_r6543}' if zm613Logic.r6543_condition():
@@ -42,7 +42,7 @@ label zm613_s0: # - # IF ~  True()
 
 # s1 # say6541
 label zm613_s1: # from 0.0 0.1 0.2
-    nr 'The corpse continues to stare at you.{#zm613_s1_}'
+    nr 'The corpse continues to stare at you.{#zm613_s1_1}'
 
     menu:
         'Leave the corpse in peace.{#zm613_s1_r6549}':
@@ -52,7 +52,7 @@ label zm613_s1: # from 0.0 0.1 0.2
 
 # s2 # say6542
 label zm613_s2: # from 0.3
-    nr 'The corpse makes no reply. It looks like it is too far gone to answer any of your questions.{#zm613_s2_}'
+    nr 'The corpse makes no reply. It looks like it is too far gone to answer any of your questions.{#zm613_s2_1}'
 
     menu:
         'Leave the corpse in peace.{#zm613_s2_r6550}':

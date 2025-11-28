@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say35178
 label zf679_s0: # - # IF ~  True()
-    nr 'On dirait le cadavre d„une très vieille femme. Hormis la puanteur de la lotion d“embaumement, les coutures qui ferment la bouche et le numéro „679“ cousu sur la joue droite, il est probable que son apparence actuelle ne diffère guère de celle qu„elle avait à la fin de sa vie.{#zf679_s0_}'
+    nr 'On dirait le cadavre d„une très vieille femme. Hormis la puanteur de la lotion d“embaumement, les coutures qui ferment la bouche et le numéro „679“ cousu sur la joue droite, il est probable que son apparence actuelle ne diffère guère de celle qu„elle avait à la fin de sa vie.{#zf679_s0_1}'
 
     menu:
         '"Alors… Tu fais quelque chose plus tard ?"{#zf679_s0_r35179}' if zf679Logic.r35179_condition():
@@ -58,7 +58,7 @@ label zf679_s0: # - # IF ~  True()
 
 # s1 # say35180
 label zf679_s1: # from 0.0 0.1 0.2
-    nr 'Le cadavre continue à te fixer.{#zf679_s1_}'
+    nr 'Le cadavre continue à te fixer.{#zf679_s1_1}'
 
     menu:
         '"Alors, au revoir."{#zf679_s1_r35181}' if zf679Logic.r35181_condition():
@@ -76,7 +76,7 @@ label zf679_s1: # from 0.0 0.1 0.2
 
 # s2 # say35199
 label zf679_s2: # from 0.3
-    nr 'Ce cadavre ne répond pas. Il semble qu„il soit trop absent pour répondre à tes questions.{#zf679_s2_}'
+    nr 'Ce cadavre ne répond pas. Il semble qu„il soit trop absent pour répondre à tes questions.{#zf679_s2_1}'
 
     menu:
         '"Alors, au revoir."{#zf679_s2_r35200}' if zf679Logic.r35200_condition():
@@ -94,6 +94,6 @@ label zf679_s2: # from 0.3
 
 # s3 # say35209
 label zf679_s3: # - # IF ~  False()
-    nr 'Ce cadavre ne répond pas. Il semble qu„il soit trop absent pour répondre à tes questions.{#zf679_s3_}'
+    nr 'Ce cadavre ne répond pas. Il semble qu„il soit trop absent pour répondre à tes questions.{#zf679_s3_1}'
 
     menu:

@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say35018
 label zf594_s0: # - # IF ~  True()
-    nr 'Les yeux vides du cadavre de femme te fixent. Sa peau est aussi fine que du papier, presque translucide… comme si le cadavre était drapé d„un manteau de toiles d“araignée. Le numéro „594“ est gravé au fusain sur son front.{#zf594_s0_}'
+    nr 'Les yeux vides du cadavre de femme te fixent. Sa peau est aussi fine que du papier, presque translucide… comme si le cadavre était drapé d„un manteau de toiles d“araignée. Le numéro „594“ est gravé au fusain sur son front.{#zf594_s0_1}'
 
     menu:
         '"Alors… Tu fais quelque chose plus tard ?"{#zf594_s0_r35019}' if zf594Logic.r35019_condition():
@@ -58,7 +58,7 @@ label zf594_s0: # - # IF ~  True()
 
 # s1 # say35020
 label zf594_s1: # from 0.0 0.1 0.2
-    nr 'Le cadavre continue à te fixer.{#zf594_s1_}'
+    nr 'Le cadavre continue à te fixer.{#zf594_s1_1}'
 
     menu:
         '"Alors, au revoir."{#zf594_s1_r35021}' if zf594Logic.r35021_condition():
@@ -76,7 +76,7 @@ label zf594_s1: # from 0.0 0.1 0.2
 
 # s2 # say35039
 label zf594_s2: # from 0.3
-    nr 'Ce cadavre ne répond pas. Il semble qu„il soit trop absent pour répondre à tes questions.{#zf594_s2_}'
+    nr 'Ce cadavre ne répond pas. Il semble qu„il soit trop absent pour répondre à tes questions.{#zf594_s2_1}'
 
     menu:
         '"Alors, au revoir."{#zf594_s2_r35040}' if zf594Logic.r35040_condition():
@@ -94,6 +94,6 @@ label zf594_s2: # from 0.3
 
 # s3 # say35049
 label zf594_s3: # - # IF ~  False()
-    nr 'Ce cadavre ne répond pas. Il semble qu„il soit trop absent pour répondre à tes questions.{#zf594_s3_}'
+    nr 'Ce cadavre ne répond pas. Il semble qu„il soit trop absent pour répondre à tes questions.{#zf594_s3_1}'
 
     menu:

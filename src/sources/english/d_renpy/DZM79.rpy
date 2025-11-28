@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say34942
 label zm79_s0: # - # IF ~  True()
-    nr 'The corpse„s meaty head was clearly severed at some point and hastily sewn back on. Several different sets of stitching - all in various states of unraveling - seem to indicate that the head is constantly being knocked back off and reattached during the course of its work. A number - "79" - has been cut into its temple, circumscribed by a fanged circle that appears to have been branded on its forehead.{#zm79_s0_}'
+    nr 'The corpse„s meaty head was clearly severed at some point and hastily sewn back on. Several different sets of stitching - all in various states of unraveling - seem to indicate that the head is constantly being knocked back off and reattached during the course of its work. A number - "79" - has been cut into its temple, circumscribed by a fanged circle that appears to have been branded on its forehead.{#zm79_s0_1}'
 
     menu:
         '"So… seen anything interesting going on?"{#zm79_s0_r34943}':
@@ -43,7 +43,7 @@ label zm79_s0: # - # IF ~  True()
 
 # s1 # say34944
 label zm79_s1: # from 0.0 0.2
-    nr 'The corpse continues to stare at you.{#zm79_s1_}'
+    nr 'The corpse continues to stare at you.{#zm79_s1_1}'
 
     menu:
         'Leave the corpse in peace.{#zm79_s1_r34945}':
@@ -53,7 +53,7 @@ label zm79_s1: # from 0.0 0.2
 
 # s2 # say34949
 label zm79_s2: # from 0.3 3.0 3.1
-    nr 'The corpse makes no reply. It looks like it is too far gone to answer any of your questions.{#zm79_s2_}'
+    nr 'The corpse makes no reply. It looks like it is too far gone to answer any of your questions.{#zm79_s2_1}'
 
     menu:
         'Leave the corpse in peace.{#zm79_s2_r34950}':
@@ -63,7 +63,7 @@ label zm79_s2: # from 0.3 3.0 3.1
 
 # s3 # say64278
 label zm79_s3: # from 0.1
-    nr 'The fanged circle looks like it was branded on the corpse„s forehead long ago, presumably before it died. It might be a religious icon of some sort, or a rite of passage. You notice that one of the recesses between the inner “fangs„ has a small triangle within it, as if it has some special significance.{#zm79_s3_}'
+    nr 'The fanged circle looks like it was branded on the corpse„s forehead long ago, presumably before it died. It might be a religious icon of some sort, or a rite of passage. You notice that one of the recesses between the inner “fangs„ has a small triangle within it, as if it has some special significance.{#zm79_s3_1}'
 
     menu:
         '"Hmmm. Interesting… how did that mark get there, corpse?"{#zm79_s3_r64279}' if zm79Logic.r64279_condition():

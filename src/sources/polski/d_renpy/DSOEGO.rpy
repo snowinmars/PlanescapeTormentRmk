@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say1431
 label soego_s0: # - # IF WEIGHT #8 /* Triggers after states #: 59 58 12 63 108 79 82 95 even though they appear after this state */ ~  CreatureInArea("AR0201") Global("Appearance","GLOBAL",1) Global("Gate_Open","GLOBAL",0) Global("Soego","GLOBAL",0)
-    nr 'Twoim oczom ukazuje się człowiek odziany w spłowiałe czarne szaty. Jego sylwetka i ruchy świadczą o głębokim znużeniu. Wygląda, jakby nigdy nie zaznał snu. Plecy ma zgarbione, ramiona ciężko pochylone ku sobie. Szczupła twarz tchnie niesamowitą bladością, a spod podkrążonych, nabiegłych krwią oczu zwisają fałdy powiek. Zdaje się, że w ogóle cię nie zauważył. A może bierze cię za któregoś z tutejszych, makabrycznych robotników?{#soego_s0_}'
+    nr 'Twoim oczom ukazuje się człowiek odziany w spłowiałe czarne szaty. Jego sylwetka i ruchy świadczą o głębokim znużeniu. Wygląda, jakby nigdy nie zaznał snu. Plecy ma zgarbione, ramiona ciężko pochylone ku sobie. Szczupła twarz tchnie niesamowitą bladością, a spod podkrążonych, nabiegłych krwią oczu zwisają fałdy powiek. Zdaje się, że w ogóle cię nie zauważył. A może bierze cię za któregoś z tutejszych, makabrycznych robotników?{#soego_s0_1}'
 
     menu:
         '"Witaj!"{#soego_s0_r1432}':
@@ -37,7 +37,7 @@ label soego_s0: # - # IF WEIGHT #8 /* Triggers after states #: 59 58 12 63 108 7
 
 # s1 # say1437
 label soego_s1: # from 0.0 0.1 0.2 0.3
-    nr 'Kiedy twoje słowa docierają doń, Grabarz gwałtownym ruchem obraca głowę. "Wy… wybaczcie, panie… Do mnie te słowa?"{#soego_s1_}'
+    nr 'Kiedy twoje słowa docierają doń, Grabarz gwałtownym ruchem obraca głowę. "Wy… wybaczcie, panie… Do mnie te słowa?"{#soego_s1_1}'
 
     menu:
         '"Tak, to prawda. Mam kilka pytań."{#soego_s1_r1438}':
@@ -65,7 +65,7 @@ label soego_s1: # from 0.0 0.1 0.2 0.3
 
 # s2 # say1443
 label soego_s2: # from 1.0 1.1 3.0 3.3 4.0 4.1
-    nr '"Na Wszelkie Moce!" Grabarz drży na całym ciele, a zaraz potem wbija w ciebie bystre spojrzenie. Teraz dopiero dostrzegasz, że krwawy odcień jego źrenic, to nie tyle rezultat wyczerpania, co intensywnego czerwonego barwnika do oczu. "O panie! Twe słowa zmuszają mnie, niegodnego, do haniebnego wyznania: wedle wszelkiego prawdopodobieństwa wydajesz mi się być zombie." Pochyla się w lekkim ukłonie "Jam jest zaś Soe. A czyli wolno mi spytać - twej obecności tutaj… jakiż cel przyświeca?…" Jego bystre spojrzenie omiata twoje blizny… "O ile w ogóle przyświeca…"{#soego_s2_}'
+    nr '"Na Wszelkie Moce!" Grabarz drży na całym ciele, a zaraz potem wbija w ciebie bystre spojrzenie. Teraz dopiero dostrzegasz, że krwawy odcień jego źrenic, to nie tyle rezultat wyczerpania, co intensywnego czerwonego barwnika do oczu. "O panie! Twe słowa zmuszają mnie, niegodnego, do haniebnego wyznania: wedle wszelkiego prawdopodobieństwa wydajesz mi się być zombie." Pochyla się w lekkim ukłonie "Jam jest zaś Soe. A czyli wolno mi spytać - twej obecności tutaj… jakiż cel przyświeca?…" Jego bystre spojrzenie omiata twoje blizny… "O ile w ogóle przyświeca…"{#soego_s2_1}'
 
     menu:
         '"To nie twój interes."{#soego_s2_r1444}':
@@ -96,7 +96,7 @@ label soego_s2: # from 1.0 1.1 3.0 3.3 4.0 4.1
 
 # s3 # say1449
 label soego_s3: # from 1.2
-    nr 'Grabarz wpatruje się w ciebie przez chwilę, a potem z dezaprobatą kręci głową. "Trzeba więcej obrazów mentalnych…" Wzdycha ciężko i przeciera powieki. "Te czary przeciwgorączkowe są coraz gorsze…"{#soego_s3_}'
+    nr 'Grabarz wpatruje się w ciebie przez chwilę, a potem z dezaprobatą kręci głową. "Trzeba więcej obrazów mentalnych…" Wzdycha ciężko i przeciera powieki. "Te czary przeciwgorączkowe są coraz gorsze…"{#soego_s3_1}'
 
     menu:
         '"Nie, nie wydawało ci się. Mam kilka pytań…"{#soego_s3_r1450}':
@@ -124,7 +124,7 @@ label soego_s3: # from 1.2
 
 # s4 # say1455
 label soego_s4: # from 1.3
-    nr 'Grabarz patrzy na ciebie ze skupieniem, potem zaś pochyla się… jego wargi rozstępują się, odsłaniając rząd brudnych, ostrych zębów i oto twój rozmówca zaczyna obwąchiwać cię jak szczur.{#soego_s4_}'
+    nr 'Grabarz patrzy na ciebie ze skupieniem, potem zaś pochyla się… jego wargi rozstępują się, odsłaniając rząd brudnych, ostrych zębów i oto twój rozmówca zaczyna obwąchiwać cię jak szczur.{#soego_s4_1}'
 
     menu:
         '"Uch… Dlaczegóż, u stu diabłów, obwąchujesz mnie?"{#soego_s4_r1456}':
@@ -152,7 +152,7 @@ label soego_s4: # from 1.3
 
 # s5 # say1461
 label soego_s5: # from 1.4
-    nr 'Kiedy zbierasz się do odejścia, Grabarz wydaje ciche syknięcie, potem zaś pochyla się ku tobie i węszy przez chwilę. "Na Wszelkie Moce!" - wykrzykuje. Cofa się, a jego oczy rozszerzają się ze zdumienia. Teraz dopiero dostrzegasz, że krwawy odcień jego źrenic, to nie tyle rezultat wyczerpania, co intensywnego czerwonego barwnika do oczu. "O panie! Twe słowa zmuszają mnie, niegodnego, do haniebnego wyznania: wedle wszelkiego prawdopodobieństwa wydajesz mi się być zombie." Pochyla się w lekkim ukłonie "Jam jest zaś Soe. A czyli wolno mi spytać - twej obecności tutaj… jakiż cel przyświeca?… O ile w ogóle przyświeca…"{#soego_s5_}'
+    nr 'Kiedy zbierasz się do odejścia, Grabarz wydaje ciche syknięcie, potem zaś pochyla się ku tobie i węszy przez chwilę. "Na Wszelkie Moce!" - wykrzykuje. Cofa się, a jego oczy rozszerzają się ze zdumienia. Teraz dopiero dostrzegasz, że krwawy odcień jego źrenic, to nie tyle rezultat wyczerpania, co intensywnego czerwonego barwnika do oczu. "O panie! Twe słowa zmuszają mnie, niegodnego, do haniebnego wyznania: wedle wszelkiego prawdopodobieństwa wydajesz mi się być zombie." Pochyla się w lekkim ukłonie "Jam jest zaś Soe. A czyli wolno mi spytać - twej obecności tutaj… jakiż cel przyświeca?… O ile w ogóle przyświeca…"{#soego_s5_1}'
 
     menu:
         '"To nie twój interes."{#soego_s5_r1462}':
@@ -183,7 +183,7 @@ label soego_s5: # from 1.4
 
 # s6 # say1468
 label soego_s6: # from 2.0 5.0 15.0 41.1 43.0 50.1 115.1
-    nr '"Oj, obawiam się, że to jednak *jest* moja sprawa." Oczy Soego rozbłyskują czerwienią, a kąciki jego ust poczynają nieznacznie drżeć, jak gdyby w oczekiwaniu. "Zatem…" Na jego twarz wstępuje złośliwy uśmieszek, w którym odsłania rząd ostrych, brudnych zębów. "Zatem może powinienem zawołać straże…? O tak, sądzę, że tak właśnie uczynię."{#soego_s6_}'
+    nr '"Oj, obawiam się, że to jednak *jest* moja sprawa." Oczy Soego rozbłyskują czerwienią, a kąciki jego ust poczynają nieznacznie drżeć, jak gdyby w oczekiwaniu. "Zatem…" Na jego twarz wstępuje złośliwy uśmieszek, w którym odsłania rząd ostrych, brudnych zębów. "Zatem może powinienem zawołać straże…? O tak, sądzę, że tak właśnie uczynię."{#soego_s6_1}'
 
     menu:
         '"Poczekaj! Zgubiłem się… Błąkam się w tych pomieszczeniach i nie mogę znaleźć wyjścia. Czy zechcesz mi pomóc?"{#soego_s6_r1469}' if soegoLogic.r1469_condition():
@@ -209,7 +209,7 @@ label soego_s6: # from 2.0 5.0 15.0 41.1 43.0 50.1 115.1
 
 # s7 # say1474
 label soego_s7: # from 2.1 5.1 13.3 15.1 42.1 57.0
-    nr '"Doprawdy?" Grabarz studiuje twoją postać w zamyśleniu. "Faktycznie wyglądasz, jakbyś przeszedł przygotowanie do pochówku. Sam nie wiem, jakżeś w ogóle mógł przeżyć tak ogromne boleści… Czy cierpisz? Czy czujesz bóle? Wyglądasz na takiego."{#soego_s7_}'
+    nr '"Doprawdy?" Grabarz studiuje twoją postać w zamyśleniu. "Faktycznie wyglądasz, jakbyś przeszedł przygotowanie do pochówku. Sam nie wiem, jakżeś w ogóle mógł przeżyć tak ogromne boleści… Czy cierpisz? Czy czujesz bóle? Wyglądasz na takiego."{#soego_s7_1}'
 
     menu:
         '"Po pierwsze chciałbym wiedzieć, jakim cudem się tutaj w ogóle znalazłem.{#soego_s7_r1475}':
@@ -223,7 +223,7 @@ label soego_s7: # from 2.1 5.1 13.3 15.1 42.1 57.0
 
 # s8 # say1477
 label soego_s8: # from 2.2 5.2 6.0 13.0 15.2 16.0 17.0 26.0 40.0 41.0 50.0 61.0 62.0
-    nr 'Soe kiwa głową, a kąciki jego ust poczynają nieznacznie drżeć. "Dobrze, już dobrze, nie denerwuj się. Zaraz cię stąd wypuszczę. Cóż, naturalnie, te pomieszczenia mogą budzić mieszane uczucia u gości. Bez obrazy, ale po dziewiątym dzwonie obcym nie wolno przebywać w Kostnicy. Pozwolisz, że otworzę ci frontową bramę."{#soego_s8_}'
+    nr 'Soe kiwa głową, a kąciki jego ust poczynają nieznacznie drżeć. "Dobrze, już dobrze, nie denerwuj się. Zaraz cię stąd wypuszczę. Cóż, naturalnie, te pomieszczenia mogą budzić mieszane uczucia u gości. Bez obrazy, ale po dziewiątym dzwonie obcym nie wolno przebywać w Kostnicy. Pozwolisz, że otworzę ci frontową bramę."{#soego_s8_1}'
 
     menu:
         '"Dziękuję."{#soego_s8_r1478}' if soegoLogic.r1478_condition():
@@ -238,7 +238,7 @@ label soego_s8: # from 2.2 5.2 6.0 13.0 15.2 16.0 17.0 26.0 40.0 41.0 50.0 61.0 
 
 # s9 # say1480
 label soego_s9: # from 8.1 56.1 60.1
-    nr 'Soe sięga do swego pasa, obłapuje go nerwowo przez chwilę, a potem syka. "Klucz!". Oczy Grabarza rozbłyskują czerwienią, a wargi wykrzywiają się w grymasie wściekłości… Wygląda teraz nieomal jak zwierzę. "Ktoś ukradł mój klucz!". Obraca się ku tobie i warczy "To ty! To ty to uczyniłeś!"{#soego_s9_}'
+    nr 'Soe sięga do swego pasa, obłapuje go nerwowo przez chwilę, a potem syka. "Klucz!". Oczy Grabarza rozbłyskują czerwienią, a wargi wykrzywiają się w grymasie wściekłości… Wygląda teraz nieomal jak zwierzę. "Ktoś ukradł mój klucz!". Obraca się ku tobie i warczy "To ty! To ty to uczyniłeś!"{#soego_s9_1}'
 
     menu:
         'Blef: "Och poczekaj! Gdybym faktycznie skradł twój klucz, po cóż bym miał o niego pytać?"{#soego_s9_r1481}':
@@ -265,7 +265,7 @@ label soego_s9: # from 8.1 56.1 60.1
 
 # s10 # say1486
 label soego_s10: # -
-    nr 'Soe zdejmuje ze swojego pasa pokaźnych rozmiarów klucz i podąża ku frontowej bramie. Jego chód jest nad wyraz osobliwy. Grabarz posuwa się naprzód w chwiejnej, przygarbionej pozycji, jakby w obawie przed utratą równowagi.{#soego_s10_}'
+    nr 'Soe zdejmuje ze swojego pasa pokaźnych rozmiarów klucz i podąża ku frontowej bramie. Jego chód jest nad wyraz osobliwy. Grabarz posuwa się naprzód w chwiejnej, przygarbionej pozycji, jakby w obawie przed utratą równowagi.{#soego_s10_1}'
 
     menu:
         '"Dziwny ma facet chód. Nie ma co…"{#soego_s10_r1487}' if soegoLogic.r1487_condition():
@@ -279,7 +279,7 @@ label soego_s10: # -
 
 # s11 # say1489
 label soego_s11: # from 10.1
-    nr 'Znalazłszy się w pobliżu bramy, Soe wkłada klucz w zamek i przekręca go. W chwilę później, z wnętrza komory zamka wydobywa się przeraźliwy zgrzyt i zwielokrotniony echem odbitym się od marmurowych posadzek wypełnia całe pomieszczenie jękliwym łoskotem.{#soego_s11_}'
+    nr 'Znalazłszy się w pobliżu bramy, Soe wkłada klucz w zamek i przekręca go. W chwilę później, z wnętrza komory zamka wydobywa się przeraźliwy zgrzyt i zwielokrotniony echem odbitym się od marmurowych posadzek wypełnia całe pomieszczenie jękliwym łoskotem.{#soego_s11_1}'
 
     menu:
         'Poczekaj, aż wróci.{#soego_s11_r1490}':
@@ -290,7 +290,7 @@ label soego_s11: # from 10.1
 
 # s12 # say1491
 label soego_s12: # from 11.0 # IF WEIGHT #5 /* Triggers after states #: 63 108 79 82 95 even though they appear after this state */ ~  CreatureInArea("AR0201") Global("Gate_Open","GLOBAL",1) Global("Gate_Cut_Scene","AR0201",1)
-    nr '"Dobrze więc. Oto i frontowa brama stoi przed tobą otworem. Pamiętaj wszakże, że nie będziesz miał już więcej wstępu do tego przybytku."{#soego_s12_}'
+    nr '"Dobrze więc. Oto i frontowa brama stoi przed tobą otworem. Pamiętaj wszakże, że nie będziesz miał już więcej wstępu do tego przybytku."{#soego_s12_1}'
 
     menu:
         '"Czy mogę jeszcze o coś spytać, zanim odejdę?"{#soego_s12_r1492}':
@@ -306,7 +306,7 @@ label soego_s12: # from 11.0 # IF WEIGHT #5 /* Triggers after states #: 63 108 7
 
 # s13 # say1494
 label soego_s13: # from 2.3 5.3 6.1 15.3 16.1 17.1 26.1 61.1
-    nr '"Chcesz się stąd wydostać?" Soe marszczy brwi w zastanowieniu. "Najpierw zdradź mi, jakżeś się tu dostał?"{#soego_s13_}'
+    nr '"Chcesz się stąd wydostać?" Soe marszczy brwi w zastanowieniu. "Najpierw zdradź mi, jakżeś się tu dostał?"{#soego_s13_1}'
 
     menu:
         '"Przyszedłem tu już wcześniej na ceremonię pochówku i oddawałem szacunek zmarłym. Teraz zaś chcę już odejść, ale błąkam się w tych pomieszczeniach. Czy pomożesz mi znaleźć wyjście?"{#soego_s13_r1495}' if soegoLogic.r1495_condition():
@@ -332,7 +332,7 @@ label soego_s13: # from 2.3 5.3 6.1 15.3 16.1 17.1 26.1 61.1
 
 # s14 # say1500
 label soego_s14: # from 13.1
-    nr 'Soe cmoka ze zdziwienia. "Wielce osobliwe." Znów ogląda cię w skupieniu. "Czyż możliwe, abyś był jednym z Zakontraktowanych?"{#soego_s14_}'
+    nr 'Soe cmoka ze zdziwienia. "Wielce osobliwe." Znów ogląda cię w skupieniu. "Czyż możliwe, abyś był jednym z Zakontraktowanych?"{#soego_s14_1}'
 
     menu:
         '"Hmm… „Zakontraktowanych“…?{#soego_s14_r1501}':
@@ -346,7 +346,7 @@ label soego_s14: # from 13.1
 
 # s15 # say1503
 label soego_s15: # from 4.4
-    nr 'Kiedy zbierasz się do odejścia, Grabarz przestaje cię obwąchiwać i wydaje ciche syknięcie. "Na Wszelkie Moce!" - wykrzykuje. Cofa się, a jego oczy rozszerzają się ze zdumienia. Teraz dopiero dostrzegasz, że krwawy odcień jego źrenic, to nie tyle rezultat wyczerpania, co intensywnego czerwonego barwnika do oczu. "O panie! Twe słowa zmuszają mnie, niegodnego, do haniebnego wyznania: wedle wszelkiego prawdopodobieństwa wydajesz mi się być zombie." Pochyla się w lekkim ukłonie "Jam jest zaś Soe. A czyli wolno mi spytać - twej obecności tutaj… jakiż cel przyświeca?"{#soego_s15_}'
+    nr 'Kiedy zbierasz się do odejścia, Grabarz przestaje cię obwąchiwać i wydaje ciche syknięcie. "Na Wszelkie Moce!" - wykrzykuje. Cofa się, a jego oczy rozszerzają się ze zdumienia. Teraz dopiero dostrzegasz, że krwawy odcień jego źrenic, to nie tyle rezultat wyczerpania, co intensywnego czerwonego barwnika do oczu. "O panie! Twe słowa zmuszają mnie, niegodnego, do haniebnego wyznania: wedle wszelkiego prawdopodobieństwa wydajesz mi się być zombie." Pochyla się w lekkim ukłonie "Jam jest zaś Soe. A czyli wolno mi spytać - twej obecności tutaj… jakiż cel przyświeca?"{#soego_s15_1}'
 
     menu:
         '"Nie twoja sprawa."{#soego_s15_r1504}':
@@ -377,7 +377,7 @@ label soego_s15: # from 4.4
 
 # s16 # say1511
 label soego_s16: # from 2.4 5.4 15.4
-    nr '"Ach tak…" Oczy Soego rozbłyskują czerwienią, a kąciki jego ust poczynają nieznacznie drżeć, jak gdyby w oczekiwaniu. "Zatem…" Na jego twarz wstępuje złośliwy uśmieszek, w którym odsłania rząd ostrych, brudnych zębów. "Zatem może powinienem zawołać straże…? O tak, sądzę, że tak właśnie uczynię."{#soego_s16_}'
+    nr '"Ach tak…" Oczy Soego rozbłyskują czerwienią, a kąciki jego ust poczynają nieznacznie drżeć, jak gdyby w oczekiwaniu. "Zatem…" Na jego twarz wstępuje złośliwy uśmieszek, w którym odsłania rząd ostrych, brudnych zębów. "Zatem może powinienem zawołać straże…? O tak, sądzę, że tak właśnie uczynię."{#soego_s16_1}'
 
     menu:
         '"Poczekaj! Zgubiłem się… Błąkam się w tych pomieszczeniach i nie mogę znaleźć wyjścia. Czy zechcesz mi pomóc?"{#soego_s16_r1512}' if soegoLogic.r1512_condition():
@@ -403,7 +403,7 @@ label soego_s16: # from 2.4 5.4 15.4
 
 # s17 # say1517
 label soego_s17: # from 2.5 5.5 7.1 13.4 14.1 15.5 23.2 24.2 25.2 26.9 27.4 28.2 29.3 31.3 32.2 33.4 34.4 35.3 36.3 37.2 114.3 115.4
-    nr 'Kiedy zbierasz się do odejścia, z ust Soego wydobywa się wściekły syk… Potem jednak zaraz Grabarz opanowuje się i wznosi dłoń. "Nie, nie… Obawiam się, że nie możesz tak po prostu odejść. Coś tutaj nie gra. Myślę, że najlepiej będzie, jeżeli sobie tę sprawę zaraz wyjaśnimy… Kąciki jego ust poczynają nieznacznie drżeć a oczy zajmują się blaskiem. "Zatem może straże coś na to poradzą… Tak… Chyba powinienem wezwać straże."{#soego_s17_}'
+    nr 'Kiedy zbierasz się do odejścia, z ust Soego wydobywa się wściekły syk… Potem jednak zaraz Grabarz opanowuje się i wznosi dłoń. "Nie, nie… Obawiam się, że nie możesz tak po prostu odejść. Coś tutaj nie gra. Myślę, że najlepiej będzie, jeżeli sobie tę sprawę zaraz wyjaśnimy… Kąciki jego ust poczynają nieznacznie drżeć a oczy zajmują się blaskiem. "Zatem może straże coś na to poradzą… Tak… Chyba powinienem wezwać straże."{#soego_s17_1}'
 
     menu:
         '"Poczekaj! Zgubiłem się… Błąkam się w tych pomieszczeniach i nie mogę znaleźć wyjścia. Czy zechcesz mi w tym pomóc?"{#soego_s17_r1518}' if soegoLogic.r1518_condition():
@@ -429,7 +429,7 @@ label soego_s17: # from 2.5 5.5 7.1 13.4 14.1 15.5 23.2 24.2 25.2 26.9 27.4 28.2
 
 # s18 # say1524
 label soego_s18: # from 6.4 9.0 9.1 9.4 16.4 17.4 40.4 40.5 41.6 50.6 53.6 61.4
-    nr 'Soe cofa się, a potem zaś trzykrotnie klaszcze w dłonie. W odpowiedzi całą Kostnicę napełnia grzmot wielkiego żelaznego dzwonu.{#soego_s18_}'
+    nr 'Soe cofa się, a potem zaś trzykrotnie klaszcze w dłonie. W odpowiedzi całą Kostnicę napełnia grzmot wielkiego żelaznego dzwonu.{#soego_s18_1}'
 
     menu:
         '"No dobrze…"{#soego_s18_r1525}':
@@ -440,7 +440,7 @@ label soego_s18: # from 6.4 9.0 9.1 9.4 16.4 17.4 40.4 40.5 41.6 50.6 53.6 61.4
 
 # s19 # say1526
 label soego_s19: # from 3.1 4.2 6.2 9.2 16.2 17.2 40.2 51.0 61.2 114.2 115.3
-    nr 'Zanim Grabarz jest w stanie wydać z siebie jeden choćby dźwięk, twoje dłonie zaciskają się na jego skroniach i z wielką siłą wykręcają jego głowę.{#soego_s19_}'
+    nr 'Zanim Grabarz jest w stanie wydać z siebie jeden choćby dźwięk, twoje dłonie zaciskają się na jego skroniach i z wielką siłą wykręcają jego głowę.{#soego_s19_1}'
 
     menu:
         '"Nie musisz zaraz wzywać swoich towarzyszy…"{#soego_s19_r1528}':
@@ -451,7 +451,7 @@ label soego_s19: # from 3.1 4.2 6.2 9.2 16.2 17.2 40.2 51.0 61.2 114.2 115.3
 
 # s20 # say1529
 label soego_s20: # from 19.0
-    nr 'Rozlega się krótki chrzest łamanego karku… Ale Grabarz, zamiast bezwładnie runąć na posadzkę, wydaje z siebie zduszony krzyk i wydziera się z uścisku twoich rąk!{#soego_s20_}'
+    nr 'Rozlega się krótki chrzest łamanego karku… Ale Grabarz, zamiast bezwładnie runąć na posadzkę, wydaje z siebie zduszony krzyk i wydziera się z uścisku twoich rąk!{#soego_s20_1}'
 
     menu:
         '"A cóż to..?!"{#soego_s20_r1530}' if soegoLogic.r1530_condition():
@@ -467,7 +467,7 @@ label soego_s20: # from 19.0
 
 # s21 # say1532
 label soego_s21: # from 20.1
-    nr 'Grabarz wygląda na równie przerażonego jak ty: jego oczy połyskują dziko, a z gardła wydobywa się głuche rzężenie… Mógłbyś przysiąc, że przed chwilą skręciłeś mu kark, bo jego głowa wystaje pod nienaturalnym kątem, ale Soe jest cały czas żywy! Patrzysz w oniemieniu, jak Grabarz o przetrąconym karku klaszcze trzykrotnie osłabłymi dłońmi. W odpowiedzi całą Kostnicę napełnia grzmot wielkiego żelaznego dzwonu.{#soego_s21_}'
+    nr 'Grabarz wygląda na równie przerażonego jak ty: jego oczy połyskują dziko, a z gardła wydobywa się głuche rzężenie… Mógłbyś przysiąc, że przed chwilą skręciłeś mu kark, bo jego głowa wystaje pod nienaturalnym kątem, ale Soe jest cały czas żywy! Patrzysz w oniemieniu, jak Grabarz o przetrąconym karku klaszcze trzykrotnie osłabłymi dłońmi. W odpowiedzi całą Kostnicę napełnia grzmot wielkiego żelaznego dzwonu.{#soego_s21_1}'
 
     menu:
         '"No dobrze…"{#soego_s21_r1533}':
@@ -478,7 +478,7 @@ label soego_s21: # from 20.1
 
 # s22 # say1534
 label soego_s22: # from 3.2 4.3 6.3 9.3 16.3 17.3 40.3 61.3 114.1 115.2
-    nr 'Coś musiało zaalarmować Grabarza… Zanim zdążyłeś rzucić się na niego, cofnął się ze szkarłatnym błyskiem w oczach i odsłonił zęby. Teraz zaś syknąwszy, trzykrotnie donośnie klasnął w dłonie. W odpowiedzi całą Kostnicę napełnia grzmot wielkiego żelaznego dzwonu.{#soego_s22_}'
+    nr 'Coś musiało zaalarmować Grabarza… Zanim zdążyłeś rzucić się na niego, cofnął się ze szkarłatnym błyskiem w oczach i odsłonił zęby. Teraz zaś syknąwszy, trzykrotnie donośnie klasnął w dłonie. W odpowiedzi całą Kostnicę napełnia grzmot wielkiego żelaznego dzwonu.{#soego_s22_1}'
 
     menu:
         '"No dobrze…"{#soego_s22_r1535}':
@@ -489,7 +489,7 @@ label soego_s22: # from 3.2 4.3 6.3 9.3 16.3 17.3 40.3 61.3 114.1 115.2
 
 # s23 # say4792
 label soego_s23: # from 14.0
-    nr '"Zakontraktowani to ci, którzy spisali umowę, w której pośmiertnie powierzyli swoje ciała Grabarzom. Wygląda na to, że tobie przydarzyło się coś w rodzaju niezwykłego stanu zawieszenia między życiem a śmiercią. Wyglądasz zresztą znacznie lepiej niżeli zwykły zombie."{#soego_s23_}'
+    nr '"Zakontraktowani to ci, którzy spisali umowę, w której pośmiertnie powierzyli swoje ciała Grabarzom. Wygląda na to, że tobie przydarzyło się coś w rodzaju niezwykłego stanu zawieszenia między życiem a śmiercią. Wyglądasz zresztą znacznie lepiej niżeli zwykły zombie."{#soego_s23_1}'
 
     menu:
         '"Ludzie sprzedają wam pośmiertnie swoje ciała?"{#soego_s23_r4793}':
@@ -507,7 +507,7 @@ label soego_s23: # from 14.0
 
 # s24 # say4796
 label soego_s24: # from 23.0
-    nr '"O tak, w zamian za garść miedziaków, niejeden chętnie sprzeda swoje ciało. Szczególnie, że z chwilą spotkania Prawdziwej Śmierci, nie będzie mu ono do niczego potrzebne."{#soego_s24_}'
+    nr '"O tak, w zamian za garść miedziaków, niejeden chętnie sprzeda swoje ciało. Szczególnie, że z chwilą spotkania Prawdziwej Śmierci, nie będzie mu ono do niczego potrzebne."{#soego_s24_1}'
 
     menu:
         '"Co robicie z tymi ciałami?"{#soego_s24_r4797}':
@@ -525,7 +525,7 @@ label soego_s24: # from 23.0
 
 # s25 # say4800
 label soego_s25: # from 24.0 24.1
-    nr '"Żywe trupy pełnią tutaj w Kostnicy obowiązki służących. Przenoszą zwłoki, czyszczą posadzki, uczestniczą w przygotowaniu zmarłych do pochówku… Spoczywają na nich generalnie najprostsze powinności. Niestety, nie są w stanie wywiązywać się z bardziej skomplikowanych rozkazów."{#soego_s25_}'
+    nr '"Żywe trupy pełnią tutaj w Kostnicy obowiązki służących. Przenoszą zwłoki, czyszczą posadzki, uczestniczą w przygotowaniu zmarłych do pochówku… Spoczywają na nich generalnie najprostsze powinności. Niestety, nie są w stanie wywiązywać się z bardziej skomplikowanych rozkazów."{#soego_s25_1}'
 
     menu:
         '"No cóż, Zakontraktowany, czy też nie, jakimż cudem się tutaj znalazłem, skoro nie jestem martwy?"{#soego_s25_r4801}':
@@ -543,7 +543,7 @@ label soego_s25: # from 24.0 24.1
 
 # s26 # say4804
 label soego_s26: # from 12.0 23.1 25.1 27.2 28.0 29.1 31.1 32.0 33.2 34.2 35.1 36.1 37.0 58.0
-    nr 'Soe kiwa głową. "Tak, możesz zadać swoje pytania."{#soego_s26_}'
+    nr 'Soe kiwa głową. "Tak, możesz zadać swoje pytania."{#soego_s26_1}'
 
     menu:
         '"Teraz już czas na mnie. Czy zechcesz wskazać mi drogę do wyjścia?"{#soego_s26_r4805}' if soegoLogic.r4805_condition():
@@ -591,7 +591,7 @@ label soego_s26: # from 12.0 23.1 25.1 27.2 28.0 29.1 31.1 32.0 33.2 34.2 35.1 3
 
 # s27 # say4808
 label soego_s27: # from 26.2
-    nr '"Co proszę?"{#soego_s27_}'
+    nr '"Co proszę?"{#soego_s27_1}'
 
     menu:
         '"Na górze jest człowiek udający trupa. Myślę, że ma on za zadanie szpiegować Grabarzy."{#soego_s27_r4836}' if soegoLogic.r4836_condition():
@@ -619,7 +619,7 @@ label soego_s27: # from 26.2
 
 # s28 # say4840
 label soego_s28: # from 27.0 27.1
-    nr '"Co? Czemu miałby ktokolwiek…?" Głos Soego przeistacza się nagle w syk. Wargi Grabarza cofają się i odsłaniają rząd poszczerbionych zębów. "Anarchista!" Oczy Soego zajmują się szkarłatnym blaskiem. "Anarchista! Tutaj!". Coś sprawia, że wnet wraca mu świadomość twojej obecności i opanowuje się prędko. "Dzięki za informacje. Zadbam o to, aby straże zajęły się tą sprawą."{#soego_s28_}'
+    nr '"Co? Czemu miałby ktokolwiek…?" Głos Soego przeistacza się nagle w syk. Wargi Grabarza cofają się i odsłaniają rząd poszczerbionych zębów. "Anarchista!" Oczy Soego zajmują się szkarłatnym blaskiem. "Anarchista! Tutaj!". Coś sprawia, że wnet wraca mu świadomość twojej obecności i opanowuje się prędko. "Dzięki za informacje. Zadbam o to, aby straże zajęły się tą sprawą."{#soego_s28_1}'
 
     menu:
         '"Nie ma problemu. Mam kilka innych pytań."{#soego_s28_r4852}':
@@ -637,7 +637,7 @@ label soego_s28: # from 27.0 27.1
 
 # s29 # say4855
 label soego_s29: # from 26.5
-    nr 'Masz zamiar mu o tym napomknąć, kiedy nagle coś cię przed tym powstrzymuje. Kiedy zerkasz na Soego, twoje ciało przeszywa dziwny dreszcz… Z niejasnych ci bliżej powodów, dochodzisz do wniosku, że najlepiej będzie, jeżeli w ogóle nie będziesz się odzywał.{#soego_s29_}'
+    nr 'Masz zamiar mu o tym napomknąć, kiedy nagle coś cię przed tym powstrzymuje. Kiedy zerkasz na Soego, twoje ciało przeszywa dziwny dreszcz… Z niejasnych ci bliżej powodów, dochodzisz do wniosku, że najlepiej będzie, jeżeli w ogóle nie będziesz się odzywał.{#soego_s29_1}'
 
     menu:
         '"Doszły mnie słuchy, że jesteś dziwakiem, Soe. Mówiono mi, że lubisz szczury."{#soego_s29_r4856}':
@@ -659,7 +659,7 @@ label soego_s29: # from 26.5
 
 # s30 # say4860
 label soego_s30: # from 26.4 29.0
-    nr 'Soe milknie na chwilę, lustrując bez słowa twoją postać. Jego oczy zajmują się szkarłatnym blaskiem, a z gardła wydobywa się stłumiony syk. "Sądzę, że nadużyłeś już mojej uprzejmości." Ku twojemu zdziwieniu Grabarz cofa się i trzykrotnie donośnie klaszcze w dłonie. W odpowiedzi całą Kostnicę napełnia grzmot wielkiego żelaznego dzwonu.{#soego_s30_}'
+    nr 'Soe milknie na chwilę, lustrując bez słowa twoją postać. Jego oczy zajmują się szkarłatnym blaskiem, a z gardła wydobywa się stłumiony syk. "Sądzę, że nadużyłeś już mojej uprzejmości." Ku twojemu zdziwieniu Grabarz cofa się i trzykrotnie donośnie klaszcze w dłonie. W odpowiedzi całą Kostnicę napełnia grzmot wielkiego żelaznego dzwonu.{#soego_s30_1}'
 
     menu:
         '"Coż to u diaska? Cóż ty wyczyniasz?"{#soego_s30_r4861}':
@@ -675,7 +675,7 @@ label soego_s30: # from 26.4 29.0
 
 # s31 # say4863
 label soego_s31: # from 26.3
-    nr 'Soe zdobywa się na lekki uśmiech, a kąciki jego ust drżą nieznacznie "Ostatnio trochę niedomagałem… Niewielkie gorączki. Nic poważnego. Czasem tylko utrudniają sen."{#soego_s31_}'
+    nr 'Soe zdobywa się na lekki uśmiech, a kąciki jego ust drżą nieznacznie "Ostatnio trochę niedomagałem… Niewielkie gorączki. Nic poważnego. Czasem tylko utrudniają sen."{#soego_s31_1}'
 
     menu:
         '"Mogę ci jakoś pomóc?"{#soego_s31_r4864}':
@@ -698,7 +698,7 @@ label soego_s31: # from 26.3
 
 # s32 # say4868
 label soego_s32: # from 31.0
-    nr 'Soe kręci głową. "Nie, nie, wielkie dzięki za troskę… Dam sobie radę." Grabarz lekko marszczy brwi. "Może masz jeszcze jakieś inne pytania?"{#soego_s32_}'
+    nr 'Soe kręci głową. "Nie, nie, wielkie dzięki za troskę… Dam sobie radę." Grabarz lekko marszczy brwi. "Może masz jeszcze jakieś inne pytania?"{#soego_s32_1}'
 
     menu:
         '"Tak, mam jeszcze kilka innych pytań"{#soego_s32_r4869}':
@@ -716,7 +716,7 @@ label soego_s32: # from 31.0
 
 # s33 # say4872
 label soego_s33: # from 26.6
-    nr '"Farod? Naturalnie, że go znam." Marszczy brwi, a jego oczy zajmują się szkarłatnym blaskiem. "Diabelski człowiek. Za grosz w nim szacunku dla zmarłych, a jeszcze mniej dla żyjących. To padlinożerca. Zbieracz."{#soego_s33_}'
+    nr '"Farod? Naturalnie, że go znam." Marszczy brwi, a jego oczy zajmują się szkarłatnym blaskiem. "Diabelski człowiek. Za grosz w nim szacunku dla zmarłych, a jeszcze mniej dla żyjących. To padlinożerca. Zbieracz."{#soego_s33_1}'
 
     menu:
         '"Zbieracz?"{#soego_s33_r4873}':
@@ -742,7 +742,7 @@ label soego_s33: # from 26.6
 
 # s34 # say4878
 label soego_s34: # from 33.0 36.0
-    nr '"Tak, Zbieracze zarabiają na życie zbierając zwłoki i przywożąc je tutaj - do Kostnicy. My zaś dbamy o to, aby ciała te znalazły godny pochówek."{#soego_s34_}'
+    nr '"Tak, Zbieracze zarabiają na życie zbierając zwłoki i przywożąc je tutaj - do Kostnicy. My zaś dbamy o to, aby ciała te znalazły godny pochówek."{#soego_s34_1}'
 
     menu:
         '"Więc, gdyby Zbieracz natknął się na zwłoki… moje, na przykład… wówczas przywiózłby je tutaj, żeby je wam sprzedać?"{#soego_s34_r4879}' if soegoLogic.r4879_condition():
@@ -768,7 +768,7 @@ label soego_s34: # from 33.0 36.0
 
 # s35 # say4884
 label soego_s35: # from 34.0
-    nr '"Tak."{#soego_s35_}'
+    nr '"Tak."{#soego_s35_1}'
 
     menu:
         '"Hmm… Tak się akurat składa, że bardzo mi zależy na odnalezieniu tego Faroda. Czy wiesz, gdzie mogę go znaleźć?{#soego_s35_r4885}':
@@ -790,7 +790,7 @@ label soego_s35: # from 34.0
 
 # s36 # say4889
 label soego_s36: # from 33.1 34.1 35.0
-    nr '"Wiem, że Farod mieszka w Ulu, w slumsach sąsiadujących z Kostnicą, ale nie znam jego dokładnego adresu. Może mogliby ci w tym pomóc inni Zbieracze, jeżeli byś zechciał ich o to zagadnąć."{#soego_s36_}'
+    nr '"Wiem, że Farod mieszka w Ulu, w slumsach sąsiadujących z Kostnicą, ale nie znam jego dokładnego adresu. Może mogliby ci w tym pomóc inni Zbieracze, jeżeli byś zechciał ich o to zagadnąć."{#soego_s36_1}'
 
     menu:
         '"Powiedz mi jeszcze raz, czym się w końcu zajmują ci Zbieracze?"{#soego_s36_r4890}':
@@ -812,7 +812,7 @@ label soego_s36: # from 33.1 34.1 35.0
 
 # s37 # say4894
 label soego_s37: # from 26.7
-    nr '"Dziennika?" Twoje słowa wprawiły Soego w zakłopotanie. "Nie, nie widziałem niczego takiego."{#soego_s37_}'
+    nr '"Dziennika?" Twoje słowa wprawiły Soego w zakłopotanie. "Nie, nie widziałem niczego takiego."{#soego_s37_1}'
 
     menu:
         '"Zatem mniejsza o to. Mam jeszcze kilka innych pytań…"{#soego_s37_r4895}':
@@ -830,7 +830,7 @@ label soego_s37: # from 26.7
 
 # s38 # say4898
 label soego_s38: # - # IF WEIGHT #9 /* Triggers after states #: 59 58 63 108 79 82 95 even though they appear after this state */ ~  CreatureInArea("AR0201") !Global("Appearance","GLOBAL",1) Global("Gate_Open","GLOBAL",0) Global("Soego","GLOBAL",0)
-    nr 'Twoim oczom ukazuje się człowiek odziany w spłowiałe czarne szaty. Jego sylwetka i ruchy świadczą o głębokim znużeniu. Wygląda, jakby nigdy nie zaznał snu. Plecy ma zgarbione, ramiona ciężko pochylone ku sobie. Szczupła twarz tchnie niesamowitą bladością, a spod podkrążonych, nabiegłych krwią oczu zwisają fałdy powiek. Przybysz wydaje się być zatopiony w rozmyślaniach, że chyba w ogóle nie zauważył twojej obecności.{#soego_s38_}'
+    nr 'Twoim oczom ukazuje się człowiek odziany w spłowiałe czarne szaty. Jego sylwetka i ruchy świadczą o głębokim znużeniu. Wygląda, jakby nigdy nie zaznał snu. Plecy ma zgarbione, ramiona ciężko pochylone ku sobie. Szczupła twarz tchnie niesamowitą bladością, a spod podkrążonych, nabiegłych krwią oczu zwisają fałdy powiek. Przybysz wydaje się być zatopiony w rozmyślaniach, że chyba w ogóle nie zauważył twojej obecności.{#soego_s38_1}'
 
     menu:
         '"Witaj…"{#soego_s38_r66706}' if soegoLogic.r66706_condition():
@@ -850,7 +850,7 @@ label soego_s38: # - # IF WEIGHT #9 /* Triggers after states #: 59 58 63 108 79 
 
 # s39 # say4904
 label soego_s39: # from 38.0
-    nr '"Witaj…" Człowiek zwraca ku tobie oblicze i chyli się w lekkim ukłonie. Nagle dostrzegasz, że krwawy odcień jego źrenic, to nie tyle rezultat wyczerpania, co intensywnego czerwonego barwnika do oczu. "Jam jest Soe. W czym mogę…" Soe nagle zauważa twoje blizny i kąciki jego ust poczynają nieznacznie drżeć. "Przepraszam, panie, nie poznałem… Czy zgubiłeś się?"{#soego_s39_}'
+    nr '"Witaj…" Człowiek zwraca ku tobie oblicze i chyli się w lekkim ukłonie. Nagle dostrzegasz, że krwawy odcień jego źrenic, to nie tyle rezultat wyczerpania, co intensywnego czerwonego barwnika do oczu. "Jam jest Soe. W czym mogę…" Soe nagle zauważa twoje blizny i kąciki jego ust poczynają nieznacznie drżeć. "Przepraszam, panie, nie poznałem… Czy zgubiłeś się?"{#soego_s39_1}'
 
     menu:
         '"Tak."{#soego_s39_r4905}':
@@ -872,7 +872,7 @@ label soego_s39: # from 38.0
 
 # s40 # say4909
 label soego_s40: # from 39.0
-    nr '"Dobrze więc…" Kąciki jego Soego poczynają znowu nieznacznie drżeć, jak gdyby w oczekiwaniu. "Pozwól, niechaj wezwę straże, aby cię stąd wyprowadziły." Wygląda na to, że zaraz zawoła straże.{#soego_s40_}'
+    nr '"Dobrze więc…" Kąciki jego Soego poczynają znowu nieznacznie drżeć, jak gdyby w oczekiwaniu. "Pozwól, niechaj wezwę straże, aby cię stąd wyprowadziły." Wygląda na to, że zaraz zawoła straże.{#soego_s40_1}'
 
     menu:
         '"Powstrzymaj się! Proszę… Nie ma potrzeby wzywać straży. Przyszedłem tu już wcześniej na ceremonię pochówku i oddawałem szacunek zmarłym. Teraz zaś chcę już odejść, ale błąkam się w tych pomieszczeniach. Czy zechcesz wskazać mi drogę do wyjścia?"{#soego_s40_r4910}' if soegoLogic.r4910_condition():
@@ -902,7 +902,7 @@ label soego_s40: # from 39.0
 
 # s41 # say4916
 label soego_s41: # from 39.1 39.2 39.3
-    nr '"Nie przypominam sobie, abym cię tutaj wpuszczał." Soe spogląda nie ciebie podejrzliwie, a jego oczy w blasku pochodni zdają się płonąć szkarłatem. "Czy wolno mi spytać, czego tutaj szukasz?{#soego_s41_}'
+    nr '"Nie przypominam sobie, abym cię tutaj wpuszczał." Soe spogląda nie ciebie podejrzliwie, a jego oczy w blasku pochodni zdają się płonąć szkarłatem. "Czy wolno mi spytać, czego tutaj szukasz?{#soego_s41_1}'
 
     menu:
         '"Przyszedłem tu już wcześniej na ceremonię pochówku i oddawałem szacunek zmarłym. Teraz zaś chcę już odejść, ale błąkam się w tych pomieszczeniach. Czy zechcesz wskazać mi drogę do wyjścia?"{#soego_s41_r4917}' if soegoLogic.r4917_condition():
@@ -936,7 +936,7 @@ label soego_s41: # from 39.1 39.2 39.3
 
 # s42 # say4924
 label soego_s42: # from 41.2 50.2 115.0
-    nr 'Soe wydaje się zdumiony. "Twierdzisz, że… że obudziłeś, na którymś z katafalków na górze?"{#soego_s42_}'
+    nr 'Soe wydaje się zdumiony. "Twierdzisz, że… że obudziłeś, na którymś z katafalków na górze?"{#soego_s42_1}'
 
     menu:
         '"Nie. Przejęzyczyłem się."{#soego_s42_r4925}':
@@ -951,7 +951,7 @@ label soego_s42: # from 41.2 50.2 115.0
 
 # s43 # say4927
 label soego_s43: # from 41.3 50.3
-    nr 'Soe kiwa głową. "Z kim chcesz się tutaj spotkać? Powiedz tylko, a z ogromną przyjemnością wskażę ci drogę."{#soego_s43_}'
+    nr 'Soe kiwa głową. "Z kim chcesz się tutaj spotkać? Powiedz tylko, a z ogromną przyjemnością wskażę ci drogę."{#soego_s43_1}'
 
     menu:
         '"Nie twoja sprawa."{#soego_s43_r4928}':
@@ -982,7 +982,7 @@ label soego_s43: # from 41.3 50.3
 
 # s44 # say4934
 label soego_s44: # from 43.1
-    nr '"Z Dhallem? Skrybę Dhalla znajdziesz w komnacie odbiorczej na wyższym piętrze." Kąciki ust Soego poczynają nieznacznie drżeć, "Dhall jest wszakże osobą wielce zajętą, a poza tym jego zdrowie coraz częściej odmawia mu posłuszeństwa. Jeśli nie przyszedłeś ze sprawą nie cierpiącą zwłoki, nie radziłbym ci przeszkadzać mu w pracy."{#soego_s44_}'
+    nr '"Z Dhallem? Skrybę Dhalla znajdziesz w komnacie odbiorczej na wyższym piętrze." Kąciki ust Soego poczynają nieznacznie drżeć, "Dhall jest wszakże osobą wielce zajętą, a poza tym jego zdrowie coraz częściej odmawia mu posłuszeństwa. Jeśli nie przyszedłeś ze sprawą nie cierpiącą zwłoki, nie radziłbym ci przeszkadzać mu w pracy."{#soego_s44_1}'
 
     menu:
         '"Co dolega Dhallowi?"{#soego_s44_r4935}':
@@ -1000,7 +1000,7 @@ label soego_s44: # from 43.1
 
 # s45 # say4938
 label soego_s45: # from 44.1
-    nr '"Tak… komnata odbiorcza to pomieszczenie, gdzie gromadzone są zwłoki przywożone z miasta. Tam się je spisuje i przygotowuje do pochówku."{#soego_s45_}'
+    nr '"Tak… komnata odbiorcza to pomieszczenie, gdzie gromadzone są zwłoki przywożone z miasta. Tam się je spisuje i przygotowuje do pochówku."{#soego_s45_1}'
 
     menu:
         '"Co dolega Dhallowi?"{#soego_s45_r4939}':
@@ -1014,7 +1014,7 @@ label soego_s45: # from 44.1
 
 # s46 # say4941
 label soego_s46: # from 44.0 45.0
-    nr '"O, nie. Nic mu nie dolega. Dhall jest po prostu…" Soe szczęka zębami. "…stary. Jego długa służba pełna poświęcenie sprawom ewidencjonowania zmarłych ma się już ku końcowi. Już wkrótce śmierć przyjdzie śladem wyniszczającej choroby czasu, która go toczy."{#soego_s46_}'
+    nr '"O, nie. Nic mu nie dolega. Dhall jest po prostu…" Soe szczęka zębami. "…stary. Jego długa służba pełna poświęcenie sprawom ewidencjonowania zmarłych ma się już ku końcowi. Już wkrótce śmierć przyjdzie śladem wyniszczającej choroby czasu, która go toczy."{#soego_s46_1}'
 
     menu:
         '"Bardzo dobrze. Nie zabawię u niego zbyt długo. Bywaj zdrów."{#soego_s46_r4942}':
@@ -1024,7 +1024,7 @@ label soego_s46: # from 44.0 45.0
 
 # s47 # say4943
 label soego_s47: # from 43.2 53.2
-    nr '"Deionarra? Kobieta o tym imieniu rzeczywiście spoczywa w północno-zachodniej sali pamięci. Czy to właśnie jej poszukujesz?"{#soego_s47_}'
+    nr '"Deionarra? Kobieta o tym imieniu rzeczywiście spoczywa w północno-zachodniej sali pamięci. Czy to właśnie jej poszukujesz?"{#soego_s47_1}'
 
     menu:
         '"Tak… Czy mógłbyś mi powiedzieć, co jej się przydarzyło?{#soego_s47_r4944}':
@@ -1038,7 +1038,7 @@ label soego_s47: # from 43.2 53.2
 
 # s48 # say4946
 label soego_s48: # from 47.0
-    nr '"Trudno mi powiedzieć, ale wiem, że jej szczątki spoczywają tutaj od dłuższego czasu. Jej ojciec na pewno będzie wiedział, co jej się przytrafiło… Schodzi tutaj tu często ze Wyższych Dzielnic. To wolą ojca Deionarry było, aby jego córka spoczęła w tej sali pamięci."{#soego_s48_}'
+    nr '"Trudno mi powiedzieć, ale wiem, że jej szczątki spoczywają tutaj od dłuższego czasu. Jej ojciec na pewno będzie wiedział, co jej się przytrafiło… Schodzi tutaj tu często ze Wyższych Dzielnic. To wolą ojca Deionarry było, aby jego córka spoczęła w tej sali pamięci."{#soego_s48_1}'
 
     menu:
         '"Dzięki za twoje instrukcje. Teraz odejdę, aby oddać należny szacunek zmarłym."{#soego_s48_r4947}':
@@ -1048,7 +1048,7 @@ label soego_s48: # from 47.0
 
 # s49 # say4948
 label soego_s49: # from 43.3 43.4 53.3 53.4
-    nr '"Adahn…" Oczy Soego zwężają się, a czerwony barwnik, który wcześniej w nich dostrzegłeś staje się jeszcze bardziej wyrazisty. "Nikt o takim imieniu nie zamieszkuje w komnatach Kostnicy, żywy czy też martwy." Kąciki ust twojego rozmówcy poczynają nieznacznie drżeć, i Grabarz, ku twojemu zdziwieniu, przez chwilę wciąga nozdrzami powietrze, jak węszące zwierzę.{#soego_s49_}'
+    nr '"Adahn…" Oczy Soego zwężają się, a czerwony barwnik, który wcześniej w nich dostrzegłeś staje się jeszcze bardziej wyrazisty. "Nikt o takim imieniu nie zamieszkuje w komnatach Kostnicy, żywy czy też martwy." Kąciki ust twojego rozmówcy poczynają nieznacznie drżeć, i Grabarz, ku twojemu zdziwieniu, przez chwilę wciąga nozdrzami powietrze, jak węszące zwierzę.{#soego_s49_1}'
 
     menu:
         '"Hm… Wobec tego musiałem się przejęzyczyć."{#soego_s49_r4949}':
@@ -1058,7 +1058,7 @@ label soego_s49: # from 43.3 43.4 53.3 53.4
 
 # s50 # say4950
 label soego_s50: # from 40.1 42.0 43.5 49.0 53.1 57.1
-    nr 'Kąciki ust Soego znowu drżą a oczy rozbłyskują. "Więc, czego tutaj szukasz?"{#soego_s50_}'
+    nr 'Kąciki ust Soego znowu drżą a oczy rozbłyskują. "Więc, czego tutaj szukasz?"{#soego_s50_1}'
 
     menu:
         '"Przyszedłem tu już wcześniej na ceremonię pochówku i oddawałem szacunek zmarłym. Teraz zaś chcę już odejść, ale błąkam się w tych pomieszczeniach. Czy zechcesz mi wskazać drogę do wyjścia?"{#soego_s50_r4951}' if soegoLogic.r4951_condition():
@@ -1092,7 +1092,7 @@ label soego_s50: # from 40.1 42.0 43.5 49.0 53.1 57.1
 
 # s51 # say4957
 label soego_s51: # from 41.5 50.5 53.5
-    nr 'Soe marszczy brwi, kiedy się doń zbliżasz, a wtedy zauważasz, że Grabarz wciąga nozdrzami powietrze, jakby coś w nim badał. Jego oczy nagle zwężają się i wygląda na to, że zaraz zawoła straże.{#soego_s51_}'
+    nr 'Soe marszczy brwi, kiedy się doń zbliżasz, a wtedy zauważasz, że Grabarz wciąga nozdrzami powietrze, jakby coś w nim badał. Jego oczy nagle zwężają się i wygląda na to, że zaraz zawoła straże.{#soego_s51_1}'
 
     menu:
         'Skręć mu kark, zanim zdąży zawołać.{#soego_s51_r4958}' if soegoLogic.r4958_condition():
@@ -1106,7 +1106,7 @@ label soego_s51: # from 41.5 50.5 53.5
 
 # s52 # say4960
 label soego_s52: # from 51.1
-    nr 'Kiedy próbujesz rzucić się na niego, Soe cofa się ze szkarłatnym błyskiem w oczach i odsłania zęby. Wydobywszy z siebie stłumiony syk, trzykrotnie donośnie klaszcze w dłonie. W odpowiedzi całą Kostnicę napełnia grzmot wielkiego żelaznego dzwonu.{#soego_s52_}'
+    nr 'Kiedy próbujesz rzucić się na niego, Soe cofa się ze szkarłatnym błyskiem w oczach i odsłania zęby. Wydobywszy z siebie stłumiony syk, trzykrotnie donośnie klaszcze w dłonie. W odpowiedzi całą Kostnicę napełnia grzmot wielkiego żelaznego dzwonu.{#soego_s52_1}'
 
     menu:
         '"No dobrze…"{#soego_s52_r4961}':
@@ -1117,7 +1117,7 @@ label soego_s52: # from 51.1
 
 # s53 # say4962
 label soego_s53: # from 41.4 50.4
-    nr '"Kto miał zostać pochowany? Być może posługi te odbywają się w innym miejscu Kostnicy."{#soego_s53_}'
+    nr '"Kto miał zostać pochowany? Być może posługi te odbywają się w innym miejscu Kostnicy."{#soego_s53_1}'
 
     menu:
         '"Źle mnie zrozumiałeś… To JA miałem być pochowany."{#soego_s53_r4963}':
@@ -1152,7 +1152,7 @@ label soego_s53: # from 41.4 50.4
 
 # s54 # say4966
 label soego_s54: # from 7.0 25.0
-    nr '"Hm…" Soe spogląda przez zmrużone oczy. Twoje słowa wprawiły go w zakłopotanie. "Naturalnie doszło do pomyłki. Przywieźli cię tutaj albo twoi krewniacy, albo inni Grabarze, albo też…" Soe syczy gwałtownie, jakby przez jego umysł przebiegła wyjątkowo odrażająca myśl. "Albo też któryś ze Zbieraczy."{#soego_s54_}'
+    nr '"Hm…" Soe spogląda przez zmrużone oczy. Twoje słowa wprawiły go w zakłopotanie. "Naturalnie doszło do pomyłki. Przywieźli cię tutaj albo twoi krewniacy, albo inni Grabarze, albo też…" Soe syczy gwałtownie, jakby przez jego umysł przebiegła wyjątkowo odrażająca myśl. "Albo też któryś ze Zbieraczy."{#soego_s54_1}'
 
     menu:
         '"Ze Zbieraczy?"{#soego_s54_r4971}':
@@ -1162,7 +1162,7 @@ label soego_s54: # from 7.0 25.0
 
 # s55 # say4972
 label soego_s55: # from 54.0
-    nr '"Tak, Zbieracze… Bandy padlinożerców, którzy przywożą do nas ciała zmarłych. Pewnie sądzili, że jesteś martwy…" Soe syczy, a jego oczy rozbłyskują ponuro "…A Zbieracze to istoty tak oślepione nikczemnym blaskiem miedziaków, że nikomu z nich nie chciało się nawet sprawdzić przed przywiezieniem cię tutaj, czy jesteś całkiem martwy." Soe w zadumie studiuje twoją postać. "To duże szczęście, że się tutaj ocknąłeś. Inaczej spotkałbyś Prawdziwą Śmierć wcześniej, niżeli ci to było sądzone."{#soego_s55_}'
+    nr '"Tak, Zbieracze… Bandy padlinożerców, którzy przywożą do nas ciała zmarłych. Pewnie sądzili, że jesteś martwy…" Soe syczy, a jego oczy rozbłyskują ponuro "…A Zbieracze to istoty tak oślepione nikczemnym blaskiem miedziaków, że nikomu z nich nie chciało się nawet sprawdzić przed przywiezieniem cię tutaj, czy jesteś całkiem martwy." Soe w zadumie studiuje twoją postać. "To duże szczęście, że się tutaj ocknąłeś. Inaczej spotkałbyś Prawdziwą Śmierć wcześniej, niżeli ci to było sądzone."{#soego_s55_1}'
 
     menu:
         '"Wobec tego faktycznie doszło do grubego nieporozumienia. Dlatego chcę już opuścić to miejsce. Jak najszybciej."{#soego_s55_r4973}':
@@ -1172,7 +1172,7 @@ label soego_s55: # from 54.0
 
 # s56 # say4974
 label soego_s56: # from 55.0 59.1
-    nr 'Soe kiwa głową, a kąciki jego ust poczynają nieznacznie drżeć. "Ależ oczywiście, oczywiście. Pozwolisz, że otworzę ci frontową bramę."{#soego_s56_}'
+    nr 'Soe kiwa głową, a kąciki jego ust poczynają nieznacznie drżeć. "Ależ oczywiście, oczywiście. Pozwolisz, że otworzę ci frontową bramę."{#soego_s56_1}'
 
     menu:
         '"W porządku."{#soego_s56_r4975}' if soegoLogic.r4975_condition():
@@ -1187,7 +1187,7 @@ label soego_s56: # from 55.0 59.1
 
 # s57 # say4977
 label soego_s57: # from 53.0
-    nr '"Ty?"{#soego_s57_}'
+    nr '"Ty?"{#soego_s57_1}'
 
     menu:
         '"Tak, ja. Obudziłem się na jednym z twoich katafalków na górze."{#soego_s57_r4978}':
@@ -1201,7 +1201,7 @@ label soego_s57: # from 53.0
 
 # s58 # say4980
 label soego_s58: # - # IF WEIGHT #6 /* Triggers after states #: 63 108 79 82 95 even though they appear after this state */ ~  CreatureInArea("AR0201") Global("Gate_Open","GLOBAL",1)
-    nr 'Kiedy się przybliżasz, Soe pociąga nozdrzami powietrze i podnosi oczy. Kiedy dostrzega cię, marszczy brwi w poirytowaniu. "Przecie otworzyłem ci bramę! Co tutaj jeszcze robisz?"{#soego_s58_}'
+    nr 'Kiedy się przybliżasz, Soe pociąga nozdrzami powietrze i podnosi oczy. Kiedy dostrzega cię, marszczy brwi w poirytowaniu. "Przecie otworzyłem ci bramę! Co tutaj jeszcze robisz?"{#soego_s58_1}'
 
     menu:
         '"Chcę o coś spytać przed odejściem."{#soego_s58_r4981}':
@@ -1215,7 +1215,7 @@ label soego_s58: # - # IF WEIGHT #6 /* Triggers after states #: 63 108 79 82 95 
 
 # s59 # say4983
 label soego_s59: # - # IF WEIGHT #7 /* Triggers after states #: 63 108 79 82 95 even though they appear after this state */ ~  CreatureInArea("AR0201") Global("Soego","GLOBAL",1) Global("Gate_Open","GLOBAL",0)
-    nr 'Kiedy się przybliżasz, Soe chłonie nozdrzami powietrze i podnosi oczy. Kiedy dostrzega cię, pochyla się nieznacznie "Czyż znalazłeś, to czego szukałeś?"{#soego_s59_}'
+    nr 'Kiedy się przybliżasz, Soe chłonie nozdrzami powietrze i podnosi oczy. Kiedy dostrzega cię, pochyla się nieznacznie "Czyż znalazłeś, to czego szukałeś?"{#soego_s59_1}'
 
     menu:
         '"Tak, dziękuję. Wybacz, błąkam się w tych pomieszczeniach… Czy zechcesz wskazać mi drogę do wyjścia?"{#soego_s59_r4984}' if soegoLogic.r4984_condition():
@@ -1233,7 +1233,7 @@ label soego_s59: # - # IF WEIGHT #7 /* Triggers after states #: 63 108 79 82 95 
 
 # s60 # say4987
 label soego_s60: # from 59.0
-    nr 'Soe kiwa głową, kąciki jego ust poczynają nieznacznie drżeć. "Cóż, naturalnie, te wnętrza mogą budzić mieszane uczucia u gości. Pozwolisz, że otworzę ci frontową bramę."{#soego_s60_}'
+    nr 'Soe kiwa głową, kąciki jego ust poczynają nieznacznie drżeć. "Cóż, naturalnie, te wnętrza mogą budzić mieszane uczucia u gości. Pozwolisz, że otworzę ci frontową bramę."{#soego_s60_1}'
 
     menu:
         '"Dziękuję."{#soego_s60_r4988}' if soegoLogic.r4988_condition():
@@ -1248,7 +1248,7 @@ label soego_s60: # from 59.0
 
 # s61 # say4990
 label soego_s61: # from 13.2
-    nr '"To nad wyraz osobliwe." Oczy Soego rozbłyskują czerwienią, a kąciki jego ust poczynają nieznacznie drżeć, jak gdyby w oczekiwaniu. "Zatem…" Na jego twarz wstępuje złośliwy uśmieszek, w którym odsłania rząd ostrych, brudnych zębów. "Zatem może powinienem zawołać straże…? O tak, sądzę, że tak właśnie uczynię."{#soego_s61_}'
+    nr '"To nad wyraz osobliwe." Oczy Soego rozbłyskują czerwienią, a kąciki jego ust poczynają nieznacznie drżeć, jak gdyby w oczekiwaniu. "Zatem…" Na jego twarz wstępuje złośliwy uśmieszek, w którym odsłania rząd ostrych, brudnych zębów. "Zatem może powinienem zawołać straże…? O tak, sądzę, że tak właśnie uczynię."{#soego_s61_1}'
 
     menu:
         '"Poczekaj. Zgubiłem się tutaj… Po prostu błąkam się w tych pomieszczeniach i nie mogę znaleźć wyjścia. Czy zechcesz wskazać mi drogę do wyjścia?"{#soego_s61_r4991}' if soegoLogic.r4991_condition():
@@ -1274,7 +1274,7 @@ label soego_s61: # from 13.2
 
 # s62 # say4996
 label soego_s62: # from 44.2 45.1 46.0 47.1 48.0
-    nr 'Soe kiwa głową, a jego usta znowu poczynają drżeć. Zapewne nie jest nawet tego świadom. "Tedy wracaj do świata żywych, jak tylko oddasz szacunek swym zmarłym. Otworzę ci frontową bramę. Jest już po dziewiątym dzwonie, więc powinieneś opuścić to miejsce zaraz po tym, jak załatwisz tutaj swoje sprawy."{#soego_s62_}'
+    nr 'Soe kiwa głową, a jego usta znowu poczynają drżeć. Zapewne nie jest nawet tego świadom. "Tedy wracaj do świata żywych, jak tylko oddasz szacunek swym zmarłym. Otworzę ci frontową bramę. Jest już po dziewiątym dzwonie, więc powinieneś opuścić to miejsce zaraz po tym, jak załatwisz tutaj swoje sprawy."{#soego_s62_1}'
 
     menu:
         '"Wiesz co, może innym razem? A teraz już wypuścisz mnie?"{#soego_s62_r4997}':
@@ -1288,7 +1288,7 @@ label soego_s62: # from 44.2 45.1 46.0 47.1 48.0
 
 # s63 # say21653
 label soego_s63: # - # IF WEIGHT #4 /* Triggers after states #: 108 79 82 95 even though they appear after this state */ ~  CreatureInArea("AR1500") !Global("CR_Vic","GLOBAL",1)
-    nr '"O, kolejny przybysz ze świata żywych. Większość z was pada ofiarą ghuli. Ale żeby aż tak daleko zapuścić się w katakumby? Proszę, proszę. Miałeś dużo szczęścia, śmiałku."{#soego_s63_}'
+    nr '"O, kolejny przybysz ze świata żywych. Większość z was pada ofiarą ghuli. Ale żeby aż tak daleko zapuścić się w katakumby? Proszę, proszę. Miałeś dużo szczęścia, śmiałku."{#soego_s63_1}'
 
     menu:
         '"Tyś jest Soe, człowiek z Kostnicy. Co robisz w tych okolicach?"{#soego_s63_r21655}' if soegoLogic.r21655_condition():
@@ -1319,7 +1319,7 @@ label soego_s63: # - # IF WEIGHT #4 /* Triggers after states #: 108 79 82 95 eve
 
 # s64 # say21661
 label soego_s64: # from 63.1 77.0 78.0
-    nr '"Jam jest Soe, faktotum Grabarzy. Jestem misjonarzem w tych okolicach." Oddaje ci lekki ukłon.{#soego_s64_}'
+    nr '"Jam jest Soe, faktotum Grabarzy. Jestem misjonarzem w tych okolicach." Oddaje ci lekki ukłon.{#soego_s64_1}'
 
     menu:
         '"Misjonarzem?"{#soego_s64_r21662}':
@@ -1345,7 +1345,7 @@ label soego_s64: # from 63.1 77.0 78.0
 
 # s65 # say21666
 label soego_s65: # from 64.0 72.2 73.2 74.0 101.3 104.1
-    nr '"Tak, przybyłem do tych katakumb, kiedy doszły mnie pogłoski o nieumarłych, którzy zachowali świadomość swego żywota i błąkają się w tych okolicach. Moja rola to próbować ich ocalić."{#soego_s65_}'
+    nr '"Tak, przybyłem do tych katakumb, kiedy doszły mnie pogłoski o nieumarłych, którzy zachowali świadomość swego żywota i błąkają się w tych okolicach. Moja rola to próbować ich ocalić."{#soego_s65_1}'
 
     menu:
         '"Ocalić?"{#soego_s65_r21667}':
@@ -1367,7 +1367,7 @@ label soego_s65: # from 64.0 72.2 73.2 74.0 101.3 104.1
 
 # s66 # say21670
 label soego_s66: # from 64.1 72.3 73.3 74.1 101.4 104.2 109.2
-    nr '"Działam w pojedynkę. Przybyłem do tych katakumb, kiedy doszły mnie pogłoski o nieumarłych, którzy zachowali świadomość swego żywota i błąkają się w tych okolicach Moja rola to próbować ich ocalić."{#soego_s66_}'
+    nr '"Działam w pojedynkę. Przybyłem do tych katakumb, kiedy doszły mnie pogłoski o nieumarłych, którzy zachowali świadomość swego żywota i błąkają się w tych okolicach Moja rola to próbować ich ocalić."{#soego_s66_1}'
 
     menu:
         '"Ocalić?"{#soego_s66_r21671}':
@@ -1389,7 +1389,7 @@ label soego_s66: # from 64.1 72.3 73.3 74.1 101.4 104.2 109.2
 
 # s67 # say21674
 label soego_s67: # from 65.0 66.0
-    nr '"Tak, zgubne żądze przywiązują ich do tego fałszywego żywota. Ja zaś chcę nauczyć ich sztuki poświęcenia tych namiętności i odrzucenia fałszywego bytu dla chwały spotkania z Prawdziwą Śmiercią."{#soego_s67_}'
+    nr '"Tak, zgubne żądze przywiązują ich do tego fałszywego żywota. Ja zaś chcę nauczyć ich sztuki poświęcenia tych namiętności i odrzucenia fałszywego bytu dla chwały spotkania z Prawdziwą Śmiercią."{#soego_s67_1}'
 
     menu:
         '"Fałszywego żywota?"{#soego_s67_r21675}':
@@ -1419,7 +1419,7 @@ label soego_s67: # from 65.0 66.0
 
 # s68 # say21771
 label soego_s68: # from 67.0 69.0 70.0
-    nr '"Ci… martwi… Są tak bliscy Prawdziwej Śmierci… Wszelako wciąż kurczowo trzymają się śladów życia. Ten kłamliwy byt skrywa wielką prawdę o istnieniu w tej sferze."{#soego_s68_}'
+    nr '"Ci… martwi… Są tak bliscy Prawdziwej Śmierci… Wszelako wciąż kurczowo trzymają się śladów życia. Ten kłamliwy byt skrywa wielką prawdę o istnieniu w tej sferze."{#soego_s68_1}'
 
     menu:
         '"Prawdziwej Śmierć?"{#soego_s68_r21772}':
@@ -1445,7 +1445,7 @@ label soego_s68: # from 67.0 69.0 70.0
 
 # s69 # say21777
 label soego_s69: # from 67.1 68.0 70.1
-    nr '"To kompletne oczyszczenie ze wszelkich żądz. Prawdziwa Śmierć to prawdziwe życie, poza tym cieniem egzystencji. Ci martwi muszą ku niej sięgnąć, by się uwolnić."{#soego_s69_}'
+    nr '"To kompletne oczyszczenie ze wszelkich żądz. Prawdziwa Śmierć to prawdziwe życie, poza tym cieniem egzystencji. Ci martwi muszą ku niej sięgnąć, by się uwolnić."{#soego_s69_1}'
 
     menu:
         '"Co rozumiesz przez „fałszywy żywot“, o którym wspomniałeś?"{#soego_s69_r21779}':
@@ -1471,7 +1471,7 @@ label soego_s69: # from 67.1 68.0 70.1
 
 # s70 # say21786
 label soego_s70: # from 67.2 68.1 69.1
-    nr '"Moim zadaniem jest pomóc im w wyjściu poza sferę doczesnej egzystencji i w wyrzeczeniu się wszelkich żądz. To może ich ocalić."{#soego_s70_}'
+    nr '"Moim zadaniem jest pomóc im w wyjściu poza sferę doczesnej egzystencji i w wyrzeczeniu się wszelkich żądz. To może ich ocalić."{#soego_s70_1}'
 
     menu:
         '"Co rozumiesz przez „fałszywy żywot“, o którym wspomniałeś?"{#soego_s70_r21788}':
@@ -1497,7 +1497,7 @@ label soego_s70: # from 67.2 68.1 69.1
 
 # s71 # say21799
 label soego_s71: # from 63.4 64.4 65.3 66.3 67.5 68.4 69.4 70.4 72.6 73.6 74.4 77.2 78.2 79.5 80.1 81.0 101.5 104.3 109.5 110.3 112.1
-    nr '"Poświęć mi jeszcze krótką chwilę, zanim odejdziesz. Nie próbuj atakować żadnego z nieumarłych, jakiego napotkasz w tych katakumbach. Przekonałem ich, by aby ani tobie, ani żadnemu z twoich towarzyszy nie uczynili żadnej krzywdy, tak więc paktu tego nie próbuj łamać i nie nastawaj na ich życie. Wiedz, że oni potrafią się obronić i jest ich… niemało. Na koniec możesz wrócić tutaj, jeżeli przyjdzie ci ochota na odpoczynek."{#soego_s71_}'
+    nr '"Poświęć mi jeszcze krótką chwilę, zanim odejdziesz. Nie próbuj atakować żadnego z nieumarłych, jakiego napotkasz w tych katakumbach. Przekonałem ich, by aby ani tobie, ani żadnemu z twoich towarzyszy nie uczynili żadnej krzywdy, tak więc paktu tego nie próbuj łamać i nie nastawaj na ich życie. Wiedz, że oni potrafią się obronić i jest ich… niemało. Na koniec możesz wrócić tutaj, jeżeli przyjdzie ci ochota na odpoczynek."{#soego_s71_1}'
 
     menu:
         '"Poczekaj… Czy mogę teraz odpocząć?"{#soego_s71_r21800}' if soegoLogic.r21800_condition():
@@ -1518,7 +1518,7 @@ label soego_s71: # from 63.4 64.4 65.3 66.3 67.5 68.4 69.4 70.4 72.6 73.6 74.4 7
 
 # s72 # say21806
 label soego_s72: # from 63.0
-    nr '"Twoja pamięć cię nie zawodzi. Ja już wszakże nie stacjonuję w Kostnicy. Jestem w tych okolicach misjonarzem."{#soego_s72_}'
+    nr '"Twoja pamięć cię nie zawodzi. Ja już wszakże nie stacjonuję w Kostnicy. Jestem w tych okolicach misjonarzem."{#soego_s72_1}'
 
     menu:
         '"Ale wydawało mi się, że złamałem ci kark…"{#soego_s72_r64547}' if soegoLogic.r64547_condition():
@@ -1552,7 +1552,7 @@ label soego_s72: # from 63.0
 
 # s73 # say21814
 label soego_s73: # from 72.0 72.1 109.0 109.1
-    nr '"Rana, jaką mi zadałeś, nie należała do śmiertelnych. Szybko wróciłem do sił… I stwierdziłem, że chciałbym oddalić się od Kostnicy."{#soego_s73_}'
+    nr '"Rana, jaką mi zadałeś, nie należała do śmiertelnych. Szybko wróciłem do sił… I stwierdziłem, że chciałbym oddalić się od Kostnicy."{#soego_s73_1}'
 
     menu:
         '"Soe. Złamałem ci kark… to nie był cios śmiertelny?"{#soego_s73_r21815}' if soegoLogic.r21815_condition():
@@ -1586,7 +1586,7 @@ label soego_s73: # from 72.0 72.1 109.0 109.1
 
 # s74 # say21821
 label soego_s74: # from 73.1 101.2 104.0
-    nr '"Nie… a czy powinienem? Jestem nieco rozczarowany, że nie było mi dane opuścić tego miejsca. Tak czy siak, nie radziłbym ci wracać do Kostnicy, albowiem wielu moich towarzyszy - faktotumów nie byłoby zachwyconych twoim widokiem."{#soego_s74_}'
+    nr '"Nie… a czy powinienem? Jestem nieco rozczarowany, że nie było mi dane opuścić tego miejsca. Tak czy siak, nie radziłbym ci wracać do Kostnicy, albowiem wielu moich towarzyszy - faktotumów nie byłoby zachwyconych twoim widokiem."{#soego_s74_1}'
 
     menu:
         '"Powiadasz, że jesteś misjonarzem?"{#soego_s74_r64614}':
@@ -1612,21 +1612,21 @@ label soego_s74: # from 73.1 101.2 104.0
 
 # s75 # say21716
 label soego_s75: # -
-    nr '.{#soego_s75_}'
+    nr '.{#soego_s75_1}'
 
     jump soego_dispose
 
 
 # s76 # say21832
 label soego_s76: # -
-    nr '.{#soego_s76_}'
+    nr '.{#soego_s76_1}'
 
     jump soego_dispose
 
 
 # s77 # say21837
 label soego_s77: # from 63.2 64.2 65.1 66.1 67.3 68.2 69.2 70.2 72.4 73.4 74.2 78.1 109.3
-    nr '"Znajdujesz w katakumbach Ziem Umarłych. Przyprowadziły cię tutaj straże."{#soego_s77_}'
+    nr '"Znajdujesz w katakumbach Ziem Umarłych. Przyprowadziły cię tutaj straże."{#soego_s77_1}'
 
     menu:
         '"Kim jesteś?"{#soego_s77_r21840}':
@@ -1644,7 +1644,7 @@ label soego_s77: # from 63.2 64.2 65.1 66.1 67.3 68.2 69.2 70.2 72.4 73.4 74.2 7
 
 # s78 # say21844
 label soego_s78: # from 63.3 64.3 65.2 66.2 67.4 68.3 69.3 70.3 72.5 73.5 74.3 77.1 109.4
-    nr '"Nie wiem. Spytaj któregoś z obywateli."{#soego_s78_}'
+    nr '"Nie wiem. Spytaj któregoś z obywateli."{#soego_s78_1}'
 
     menu:
         '"Kim jesteś?"{#soego_s78_r21847}':
@@ -1662,7 +1662,7 @@ label soego_s78: # from 63.3 64.3 65.2 66.2 67.4 68.3 69.3 70.3 72.5 73.5 74.3 7
 
 # s79 # say21851
 label soego_s79: # - # IF WEIGHT #2 /* Triggers after states #: 82 95 even though they appear after this state */ ~  CreatureInArea("AR1500") Global("CR_Vic","GLOBAL",1)
-    nr '"O, zdaje się, że mamy nowego sprzymierzeńca! Ja, pełniący zaszczytną funkcję agenta Wielojedności, miałem informacje o twoim przybyciu. Chcemy, abyś spróbował odszukać drogę do sali tronowej Milczącego Króla, a uczyniwszy to, zakradł się i zgładził monarchę. Jeżeli ci się to uda, Jego Wielojedność nie omieszka cię wynagrodzić."{#soego_s79_}'
+    nr '"O, zdaje się, że mamy nowego sprzymierzeńca! Ja, pełniący zaszczytną funkcję agenta Wielojedności, miałem informacje o twoim przybyciu. Chcemy, abyś spróbował odszukać drogę do sali tronowej Milczącego Króla, a uczyniwszy to, zakradł się i zgładził monarchę. Jeżeli ci się to uda, Jego Wielojedność nie omieszka cię wynagrodzić."{#soego_s79_1}'
 
     menu:
         '"Soe… Emorik pytał o miejsce twojego pobytu."{#soego_s79_r66181}' if soegoLogic.r66181_condition():
@@ -1698,7 +1698,7 @@ label soego_s79: # - # IF WEIGHT #2 /* Triggers after states #: 82 95 even thoug
 
 # s80 # say21858
 label soego_s80: # from 79.4 110.2 112.0
-    nr '"Nie wiem. Mieszkam w tych okolicach już od pewnego czasu, ale wciąż nie potrafię znaleźć drogi do jego sali tronowej. Może ty będziesz miał więcej szczęścia, bowiem nie dźwigasz brzemienia nienawiści i dewocji, o jakie mnie się posądza."{#soego_s80_}'
+    nr '"Nie wiem. Mieszkam w tych okolicach już od pewnego czasu, ale wciąż nie potrafię znaleźć drogi do jego sali tronowej. Może ty będziesz miał więcej szczęścia, bowiem nie dźwigasz brzemienia nienawiści i dewocji, o jakie mnie się posądza."{#soego_s80_1}'
 
     menu:
         '"Brzemienia nienawiści i dewocji?"{#soego_s80_r21860}':
@@ -1712,7 +1712,7 @@ label soego_s80: # from 79.4 110.2 112.0
 
 # s81 # say21864
 label soego_s81: # from 80.0
-    nr '"Poglądy mojej frakcji bywają popularne, choć nie wszystkie z nich, i nie pośród wszystkich. Większość poważniejszych osobistości tej cywilizacji nie podpisuje się pod nimi."{#soego_s81_}'
+    nr '"Poglądy mojej frakcji bywają popularne, choć nie wszystkie z nich, i nie pośród wszystkich. Większość poważniejszych osobistości tej cywilizacji nie podpisuje się pod nimi."{#soego_s81_1}'
 
     menu:
         '"Ach tak. W takim razie żegnaj."{#soego_s81_r21870}':
@@ -1722,7 +1722,7 @@ label soego_s81: # from 80.0
 
 # s82 # say21913
 label soego_s82: # - # IF WEIGHT #1 /* Triggers after states #: 95 even though they appear after this state */ ~  CreatureInArea("AR1500") Global("Met_Soego2","GLOBAL",1)
-    nr '"Och, witaj ponownie."{#soego_s82_}'
+    nr '"Och, witaj ponownie."{#soego_s82_1}'
 
     menu:
         '"Milczący Król nie żyje i to już od pewnego czasu. Nie ma już Milczącego Króla."{#soego_s82_r24206}' if soegoLogic.r24206_condition():
@@ -1769,7 +1769,7 @@ label soego_s82: # - # IF WEIGHT #1 /* Triggers after states #: 95 even though t
 
 # s83 # say21943
 label soego_s83: # from 82.7 88.0 89.1 90.0 91.1 92.0 94.1 94.3 111.0
-    nr '"O ile tylko będę mógł, odpowiem na wszystkie pytania."{#soego_s83_}'
+    nr '"O ile tylko będę mógł, odpowiem na wszystkie pytania."{#soego_s83_1}'
 
     menu:
         '"Opowiedz mi o Hargrimmie."{#soego_s83_r21944}' if soegoLogic.r21944_condition():
@@ -1803,7 +1803,7 @@ label soego_s83: # from 82.7 88.0 89.1 90.0 91.1 92.0 94.1 94.3 111.0
 
 # s84 # say21954
 label soego_s84: # from 71.0 71.1 82.5 82.6
-    nr '"Oczywiście. Możesz odpocząć w tej komnacie. Będziesz bezpieczny."{#soego_s84_}'
+    nr '"Oczywiście. Możesz odpocząć w tej komnacie. Będziesz bezpieczny."{#soego_s84_1}'
 
     menu:
         '"Dzięki…"{#soego_s84_r21956}':
@@ -1814,28 +1814,28 @@ label soego_s84: # from 71.0 71.1 82.5 82.6
 
 # s85 # say21958
 label soego_s85: # -
-    nr '.{#soego_s85_}'
+    nr '.{#soego_s85_1}'
 
     jump soego_dispose
 
 
 # s86 # say21963
 label soego_s86: # -
-    nr '.{#soego_s86_}'
+    nr '.{#soego_s86_1}'
 
     jump soego_dispose
 
 
 # s87 # say21969
 label soego_s87: # -
-    nr '.{#soego_s87_}'
+    nr '.{#soego_s87_1}'
 
     jump soego_dispose
 
 
 # s88 # say21975
 label soego_s88: # from 83.0 91.0
-    nr '"Wielki uparciuch, ale godny podziwu w swojej pobożności i poświęceniu obowiązkom. To mój główny rywal. To on utrzymywał tę cywilizację w ryzach przez wiele lat. Jego namiętności biorą swoje źródło z pobożności i bezgranicznym oddaniu służbie… Wartości godne uszanowania, chociaż niewłaściwie ulokowane."{#soego_s88_}'
+    nr '"Wielki uparciuch, ale godny podziwu w swojej pobożności i poświęceniu obowiązkom. To mój główny rywal. To on utrzymywał tę cywilizację w ryzach przez wiele lat. Jego namiętności biorą swoje źródło z pobożności i bezgranicznym oddaniu służbie… Wartości godne uszanowania, chociaż niewłaściwie ulokowane."{#soego_s88_1}'
 
     menu:
         '"Mam kilka innych pytań."{#soego_s88_r21976}':
@@ -1849,7 +1849,7 @@ label soego_s88: # from 83.0 91.0
 
 # s89 # say21978
 label soego_s89: # from 83.1
-    nr '"Akasta to brutalna istota. Chyba tylko Milczący Król ma nad nią władzę. Gdyby więc usunąć monarchę, ghule wezmą w swoje dzikie władanie całe katakumby."{#soego_s89_}'
+    nr '"Akasta to brutalna istota. Chyba tylko Milczący Król ma nad nią władzę. Gdyby więc usunąć monarchę, ghule wezmą w swoje dzikie władanie całe katakumby."{#soego_s89_1}'
 
     menu:
         '"Opowiedz mi o Milczącym Królu."{#soego_s89_r21979}':
@@ -1868,7 +1868,7 @@ label soego_s89: # from 83.1
 
 # s90 # say21982
 label soego_s90: # from 83.2
-    nr '"Czerstwa Mary to stworzenie o dobrym sercu, choć wielce powolne. Niewiele można pojąć z tego, co Mary rzecze, ale i ona, i inne zombie, dalecy są od gwałtowności."{#soego_s90_}'
+    nr '"Czerstwa Mary to stworzenie o dobrym sercu, choć wielce powolne. Niewiele można pojąć z tego, co Mary rzecze, ale i ona, i inne zombie, dalecy są od gwałtowności."{#soego_s90_1}'
 
     menu:
         '"Mam kilka innych pytań.."{#soego_s90_r21983}':
@@ -1882,7 +1882,7 @@ label soego_s90: # from 83.2
 
 # s91 # say21985
 label soego_s91: # from 83.3 89.0
-    nr '"Nigdy w życiu nie widziałem Milczącego Władcy. Bardzo chciałbym móc powiedzieć ci coś o nim, ale naprawdę nigdy go nie spotkałem. Jego sala tronowa przypuszczalnie znajduje się gdzieś za karmazynowymi wrotami, lecz ja nie mam poza nie wstępu… Hargrimm, kapłan-szkielet, nie zezwala mi na to."{#soego_s91_}'
+    nr '"Nigdy w życiu nie widziałem Milczącego Władcy. Bardzo chciałbym móc powiedzieć ci coś o nim, ale naprawdę nigdy go nie spotkałem. Jego sala tronowa przypuszczalnie znajduje się gdzieś za karmazynowymi wrotami, lecz ja nie mam poza nie wstępu… Hargrimm, kapłan-szkielet, nie zezwala mi na to."{#soego_s91_1}'
 
     menu:
         '"Opowiedz mi o Hargrimmie."{#soego_s91_r21986}':
@@ -1901,7 +1901,7 @@ label soego_s91: # from 83.3 89.0
 
 # s92 # say21989
 label soego_s92: # from 83.4
-    nr '"Są tutaj od wielu stuleci, zajmując się tymi, którzy zmarli w ich komnatach. Ale tak bezgraniczne oddanie służbie nie jest już konieczne… To niemal zbrodnia."{#soego_s92_}'
+    nr '"Są tutaj od wielu stuleci, zajmując się tymi, którzy zmarli w ich komnatach. Ale tak bezgraniczne oddanie służbie nie jest już konieczne… To niemal zbrodnia."{#soego_s92_1}'
 
     menu:
         '"Mam kilka innych pytań.."{#soego_s92_r21990}':
@@ -1915,14 +1915,14 @@ label soego_s92: # from 83.4
 
 # s93 # say21992
 label soego_s93: # from 83.5
-    nr '"Są tutaj od wielu stuleci, zajmując tymi, którzy zmarli w ich komnatach. Ale tak bezgraniczne oddanie służbie nie jest już konieczne… To niemal zbrodnia."{#soego_s93_}'
+    nr '"Są tutaj od wielu stuleci, zajmując tymi, którzy zmarli w ich komnatach. Ale tak bezgraniczne oddanie służbie nie jest już konieczne… To niemal zbrodnia."{#soego_s93_1}'
 
     jump morte_s220  # EXTERN
 
 
 # s94 # say21993
 label soego_s94: # from 82.0 82.1
-    nr '"Co? Czy to prawda? Och, jeśli tak jest, bądź pewien, że Wielojedność nagrodzi cię za takie nowiny."{#soego_s94_}'
+    nr '"Co? Czy to prawda? Och, jeśli tak jest, bądź pewien, że Wielojedność nagrodzi cię za takie nowiny."{#soego_s94_1}'
 
     menu:
         '"Wielojedność?"{#soego_s94_r25248}' if soegoLogic.r25248_condition():
@@ -1953,7 +1953,7 @@ label soego_s94: # from 82.0 82.1
 
 # s95 # say21997
 label soego_s95: # - # IF WEIGHT #0 ~  CreatureInArea("AR1500") GlobalGT("Soego_Exposed","GLOBAL",0)
-    nr '"Ach ty… łotrze!"{#soego_s95_}'
+    nr '"Ach ty… łotrze!"{#soego_s95_1}'
 
     menu:
         '"Co się…?"{#soego_s95_r21998}':
@@ -1964,7 +1964,7 @@ label soego_s95: # - # IF WEIGHT #0 ~  CreatureInArea("AR1500") GlobalGT("Soego_
 
 # s96 # say22003
 label soego_s96: # -
-    nr '"Eee… te drzwi prowadzą do moich prywatnych komnat. Proszę, abyś tam nie zaglądał."{#soego_s96_}'
+    nr '"Eee… te drzwi prowadzą do moich prywatnych komnat. Proszę, abyś tam nie zaglądał."{#soego_s96_1}'
 
     menu:
         'Odejdź.{#soego_s96_r22004}':
@@ -1974,7 +1974,7 @@ label soego_s96: # -
 
 # s97 # say22005
 label soego_s97: # from 82.4
-    nr '"Och! Zaraz pójdę z nim pomówić."{#soego_s97_}'
+    nr '"Och! Zaraz pójdę z nim pomówić."{#soego_s97_1}'
 
     menu:
         '"Żegnaj."{#soego_s97_r22006}':
@@ -1984,7 +1984,7 @@ label soego_s97: # from 82.4
 
 # s98 # say22007
 label soego_s98: # -
-    nr '"Nie, jestem w drodze."{#soego_s98_}'
+    nr '"Nie, jestem w drodze."{#soego_s98_1}'
 
     menu:
         '"Żegnaj."{#soego_s98_r22008}':
@@ -1994,7 +1994,7 @@ label soego_s98: # -
 
 # s99 # say22009
 label soego_s99: # -
-    nr '"Nie, niestety nie. Ale może się pojawić w pobliżu."{#soego_s99_}'
+    nr '"Nie, niestety nie. Ale może się pojawić w pobliżu."{#soego_s99_1}'
 
     menu:
         '"Ach tak. Bywaj zdrów."{#soego_s99_r22010}':
@@ -2004,7 +2004,7 @@ label soego_s99: # -
 
 # s100 # say22011
 label soego_s100: # from 82.3
-    nr 'Soe przerywa na chwilę. "Ach tak." Nagle zaczyna przechodzić przerażającą przemianę…{#soego_s100_}'
+    nr 'Soe przerywa na chwilę. "Ach tak." Nagle zaczyna przechodzić przerażającą przemianę…{#soego_s100_1}'
 
     menu:
         '"Co się…?"{#soego_s100_r22012}':
@@ -2015,7 +2015,7 @@ label soego_s100: # from 82.3
 
 # s101 # say22014
 label soego_s101: # from 73.0
-    nr '"Ech… Twoja pamięć cię zawodzi. Uszkodziłeś mi szyję, to prawda, skręciłeś. Ale żeby złamać? Nic z tych rzeczy."{#soego_s101_}'
+    nr '"Ech… Twoja pamięć cię zawodzi. Uszkodziłeś mi szyję, to prawda, skręciłeś. Ale żeby złamać? Nic z tych rzeczy."{#soego_s101_1}'
 
     menu:
         '"Pozwolę sobie mieć inne zdanie w tej materii. Czym ty jesteś, Soe?"{#soego_s101_r22015}' if soegoLogic.r22015_condition():
@@ -2045,7 +2045,7 @@ label soego_s101: # from 73.0
 
 # s102 # say22023
 label soego_s102: # -
-    nr 'Grabarz uwalnia się ze twojego uścisku z nadnaturalną szybkością. Złośliwie chichocząc i spluwając syczy "Atakować agenta zbiorowej jaźni czaszkoszczurów! Jakaż to głupota z twojej strony!" Nagle zaczyna gwałtowną przemianę…{#soego_s102_}'
+    nr 'Grabarz uwalnia się ze twojego uścisku z nadnaturalną szybkością. Złośliwie chichocząc i spluwając syczy "Atakować agenta zbiorowej jaźni czaszkoszczurów! Jakaż to głupota z twojej strony!" Nagle zaczyna gwałtowną przemianę…{#soego_s102_1}'
 
     menu:
         '"Co się…?"{#soego_s102_r22024}':
@@ -2056,7 +2056,7 @@ label soego_s102: # -
 
 # s103 # say22026
 label soego_s103: # from 101.1
-    nr '"Śmieszne pytanie! Obudziłeś się na katafalku przedpogrzebowym, w Kostnicy. Sam mi to powiedziałaś. Rzecz jasna, moja rana nie mogła wyglądać gorzej niżeli twoje obrażenia, które sprawiły, że Zbieracze wzięli cię za trupa, czyż nie?"{#soego_s103_}'
+    nr '"Śmieszne pytanie! Obudziłeś się na katafalku przedpogrzebowym, w Kostnicy. Sam mi to powiedziałaś. Rzecz jasna, moja rana nie mogła wyglądać gorzej niżeli twoje obrażenia, które sprawiły, że Zbieracze wzięli cię za trupa, czyż nie?"{#soego_s103_1}'
 
     menu:
         '"To bliskie prawdy, ale… mniejsza o to."{#soego_s103_r22027}':
@@ -2074,7 +2074,7 @@ label soego_s103: # from 101.1
 
 # s104 # say22032
 label soego_s104: # from 103.0 103.2 105.0 105.1 106.1 107.0
-    nr 'Soe wzrusza ramionami. "Bardzo dobrze."{#soego_s104_}'
+    nr 'Soe wzrusza ramionami. "Bardzo dobrze."{#soego_s104_1}'
 
     menu:
         '"Nie chowasz do mnie urazy za to, co się stało?"{#soego_s104_r22033}':
@@ -2096,7 +2096,7 @@ label soego_s104: # from 103.0 103.2 105.0 105.1 106.1 107.0
 
 # s105 # say22039
 label soego_s105: # from 103.1
-    nr 'Soe uśmiecha się. "Każdy jest unikalny. Każdy, bez wyjątku. Chyba temu nie zaprzeczysz?"{#soego_s105_}'
+    nr 'Soe uśmiecha się. "Każdy jest unikalny. Każdy, bez wyjątku. Chyba temu nie zaprzeczysz?"{#soego_s105_1}'
 
     menu:
         '"To bliskie prawdy, ale… mniejsza o to."{#soego_s105_r22040}':
@@ -2110,7 +2110,7 @@ label soego_s105: # from 103.1
 
 # s106 # say22043
 label soego_s106: # from 101.0
-    nr '"Czym ja jestem? A cóż to znowu za zapytanie?"{#soego_s106_}'
+    nr '"Czym ja jestem? A cóż to znowu za zapytanie?"{#soego_s106_1}'
 
     menu:
         '"Usłyszałeś mnie. Nie jesteś zwykłym Grabarzem… Czym ty jesteś, Soe?"{#soego_s106_r22044}':
@@ -2124,7 +2124,7 @@ label soego_s106: # from 101.0
 
 # s107 # say22047
 label soego_s107: # from 106.0
-    nr 'Soe krzywi się z niesmakiem "Naprawdę nie wiem, o co ci chodzi."{#soego_s107_}'
+    nr 'Soe krzywi się z niesmakiem "Naprawdę nie wiem, o co ci chodzi."{#soego_s107_1}'
 
     menu:
         '"Nie. Coś tutaj jest nie tak, i wkrótce dojdę do tego, co to jest."{#soego_s107_r22048}':
@@ -2134,7 +2134,7 @@ label soego_s107: # from 106.0
 
 # s108 # say22050
 label soego_s108: # - # IF WEIGHT #3 ~  Global("Dustman_Initiation","GLOBAL",5) GlobalLT("Soego","GLOBAL",3) !Global("CR_Vic","GLOBAL",1)
-    nr '"O, kolejny przybysz ze świata żywych. Większość z was pada ofiarą ghuli. Ale żeby aż tak daleko zapuścić się w katakumby? Proszę, proszę. Miałeś dużo szczęścia, śmiałku."{#soego_s108_}'
+    nr '"O, kolejny przybysz ze świata żywych. Większość z was pada ofiarą ghuli. Ale żeby aż tak daleko zapuścić się w katakumby? Proszę, proszę. Miałeś dużo szczęścia, śmiałku."{#soego_s108_1}'
 
     menu:
         '"Czyś ty nie jest Soe? Emorik wypytywał o ciebie."{#soego_s108_r22051}' if soegoLogic.r22051_condition():
@@ -2150,7 +2150,7 @@ label soego_s108: # - # IF WEIGHT #3 ~  Global("Dustman_Initiation","GLOBAL",5) 
 
 # s109 # say22053
 label soego_s109: # from 82.2 108.0 108.1
-    nr '"Tak, to ja. Pełnie tutaj obowiązki misjonarza z ramienia Grabarzy."{#soego_s109_}'
+    nr '"Tak, to ja. Pełnie tutaj obowiązki misjonarza z ramienia Grabarzy."{#soego_s109_1}'
 
     menu:
         '"No dobrze. Ale… Sądziłem, że złamałem ci kark…"{#soego_s109_r64617}' if soegoLogic.r64617_condition():
@@ -2180,7 +2180,7 @@ label soego_s109: # from 82.2 108.0 108.1
 
 # s110 # say22057
 label soego_s110: # from 79.0 79.1
-    nr '"Tak, to ja."{#soego_s110_}'
+    nr '"Tak, to ja."{#soego_s110_1}'
 
     menu:
         '"Poczekaj chwilę… Czy ja przypadkiem nie złamałem ci karku w Kostnicy?"{#soego_s110_r64625}' if soegoLogic.r64625_condition():
@@ -2203,7 +2203,7 @@ label soego_s110: # from 79.0 79.1
 
 # s111 # say25249
 label soego_s111: # from 94.0
-    nr '"Owszem, zbiorowa jaźń czaszkoszczurów. Idź do katakumb, na wschód od Łkających Kamieni. Tam znajdziesz drogę."{#soego_s111_}'
+    nr '"Owszem, zbiorowa jaźń czaszkoszczurów. Idź do katakumb, na wschód od Łkających Kamieni. Tam znajdziesz drogę."{#soego_s111_1}'
 
     menu:
         '"Interesujące. Mam kilka pytań…"{#soego_s111_r25250}':
@@ -2217,7 +2217,7 @@ label soego_s111: # from 94.0
 
 # s112 # say64620
 label soego_s112: # from 79.2 79.3 110.0 110.1
-    nr 'Soe macha ręką z lekceważeniem. "Ależ to nic! To był dla mnie zupełny drobiazg! Musisz wiedzieć, że spoczywa na mnie likantropiczne błogosławieństwo. Wszystkie rany goją się w mgnieniu oka."{#soego_s112_}'
+    nr 'Soe macha ręką z lekceważeniem. "Ależ to nic! To był dla mnie zupełny drobiazg! Musisz wiedzieć, że spoczywa na mnie likantropiczne błogosławieństwo. Wszystkie rany goją się w mgnieniu oka."{#soego_s112_1}'
 
     menu:
         '"Ach tak… Zatem, jak mogę dostać się do Milczącego Króla?"{#soego_s112_r64621}':
@@ -2231,7 +2231,7 @@ label soego_s112: # from 79.2 79.3 110.0 110.1
 
 # s113 # say66709
 label soego_s113: # from 38.1
-    nr '"Witaj…" Człowiek zwraca ku tobie oblicze i chyli się w lekkim ukłonie. Nagle dostrzegasz, że krwawy odcień jego źrenic, to nie tyle rezultat wyczerpania, co intensywnego czerwonego barwnika do oczu. "Jestem Soe. W czym mogę ci pomóc?"{#soego_s113_}'
+    nr '"Witaj…" Człowiek zwraca ku tobie oblicze i chyli się w lekkim ukłonie. Nagle dostrzegasz, że krwawy odcień jego źrenic, to nie tyle rezultat wyczerpania, co intensywnego czerwonego barwnika do oczu. "Jestem Soe. W czym mogę ci pomóc?"{#soego_s113_1}'
 
     menu:
         '"Chciałbym opuścić Kostnicę. Mógłbyś mi w tym pomóc?"{#soego_s113_r66712}':
@@ -2249,7 +2249,7 @@ label soego_s113: # from 38.1
 
 # s114 # say66710
 label soego_s114: # from 113.0 113.1
-    nr 'Ledwo zdążyłeś zacząć wypowiedź, kiedy wargi Soego nagle rozstępują się, odsłaniając rząd brudnych, ostrych zębów. I oto twój rozmówca pochyla się i zaczyna obwąchiwać cię jak szczur.{#soego_s114_}'
+    nr 'Ledwo zdążyłeś zacząć wypowiedź, kiedy wargi Soego nagle rozstępują się, odsłaniając rząd brudnych, ostrych zębów. I oto twój rozmówca pochyla się i zaczyna obwąchiwać cię jak szczur.{#soego_s114_1}'
 
     menu:
         '"Ech… Czemu, u wszystkich diabłów, tak mnie obwąchujesz?"{#soego_s114_r66715}':
@@ -2271,7 +2271,7 @@ label soego_s114: # from 113.0 113.1
 
 # s115 # say66711
 label soego_s115: # from 114.0
-    nr '"Twój ubiór… Te szaty. One pachną kimś innym. To nie są twoje szaty." Na ustach Soego wykwita osobliwy uśmiech, a oczy zajmują się niemal dzikim blaskiem. "*Kim* ty jesteś?"{#soego_s115_}'
+    nr '"Twój ubiór… Te szaty. One pachną kimś innym. To nie są twoje szaty." Na ustach Soego wykwita osobliwy uśmiech, a oczy zajmują się niemal dzikim blaskiem. "*Kim* ty jesteś?"{#soego_s115_1}'
 
     menu:
         '"E… Ja tylko sobie pożyczyłem te szaty, abym móc opuścić to miejsce bez przeszkód. Obudziłem się w jednej z komnat sekcyjnych na górze."{#soego_s115_r66719}':

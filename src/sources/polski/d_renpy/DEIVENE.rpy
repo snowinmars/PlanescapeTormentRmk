@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say3404
 label eivene_s0: # - # IF ~  Global("EiVene","GLOBAL",0)
-    nr 'Widzisz młodą, drobną kobietę o bladej cerze. Zapadnięte policzki i skóra na szyi sprawiają, że wygląda jakby od dawna głodowała. Wydaje się być skupiona na rozczłonkowaniu leżącego przed nią ciała. Dźga palcami jego pierś.{#eivene_s0_}'
+    nr 'Widzisz młodą, drobną kobietę o bladej cerze. Zapadnięte policzki i skóra na szyi sprawiają, że wygląda jakby od dawna głodowała. Wydaje się być skupiona na rozczłonkowaniu leżącego przed nią ciała. Dźga palcami jego pierś.{#eivene_s0_1}'
 
     menu:
         '"Witaj."{#eivene_s0_r3406}':
@@ -25,7 +25,7 @@ label eivene_s0: # - # IF ~  Global("EiVene","GLOBAL",0)
 
 # s1 # say3410
 label eivene_s1: # from 0.0
-    nr 'Kobieta nie reaguje… Wygląda na zbyt pochłoniętą leżącym przed nią ciałem. Gdy tak przyglądasz się jej pracy, nagle zwracasz uwagę na jej dłonie… zamiast palców ma szpony. Nagłymi ruchami rozcina klatkę piersiową ciała, wyciąga organy.{#eivene_s1_}'
+    nr 'Kobieta nie reaguje… Wygląda na zbyt pochłoniętą leżącym przed nią ciałem. Gdy tak przyglądasz się jej pracy, nagle zwracasz uwagę na jej dłonie… zamiast palców ma szpony. Nagłymi ruchami rozcina klatkę piersiową ciała, wyciąga organy.{#eivene_s1_1}'
 
     menu:
         '"Powiedziałem „witaj“."{#eivene_s1_r3412}' if eiveneLogic.r3412_condition():
@@ -51,7 +51,7 @@ label eivene_s1: # from 0.0
 
 # s2 # say3417
 label eivene_s2: # from 1.0 1.2
-    nr 'Kobieta nie reaguje.{#eivene_s2_}'
+    nr 'Kobieta nie reaguje.{#eivene_s2_1}'
 
     menu:
         'Klepnij ją w ramię, ściągnij jej uwagę.{#eivene_s2_r3418}':
@@ -66,14 +66,14 @@ label eivene_s2: # from 1.0 1.2
 
 # s3 # say3420
 label eivene_s3: # from 1.1
-    nr 'Kobieta nie reaguje.{#eivene_s3_}'
+    nr 'Kobieta nie reaguje.{#eivene_s3_1}'
 
     jump morte_s55  # EXTERN
 
 
 # s4 # say3421
 label eivene_s4: # from 2.0
-    nr 'Nagle kobieta podskakuje i odwraca się w waszą stronę… jej oczy są koloru zgniłej żółci, z małymi pomarańczowymi plamkami źrenic. Gdy cię dostrzega, wyraz jej twarzy zmienia się z zaskoczonego na rozdrażniony, krzywo na ciebie patrzy.{#eivene_s4_}'
+    nr 'Nagle kobieta podskakuje i odwraca się w waszą stronę… jej oczy są koloru zgniłej żółci, z małymi pomarańczowymi plamkami źrenic. Gdy cię dostrzega, wyraz jej twarzy zmienia się z zaskoczonego na rozdrażniony, krzywo na ciebie patrzy.{#eivene_s4_1}'
 
     menu:
         '"Uch… witaj."{#eivene_s4_r3422}':
@@ -84,7 +84,7 @@ label eivene_s4: # from 2.0
 
 # s5 # say3423
 label eivene_s5: # from 4.0
-    nr 'Wygląda na to, że cię nie usłyszała. Pochyla się do przodu, patrząc przez zmrużone oczy, jakby nie mogła cię dostrzec… Cokolwiek stało się z jej oczami, musiało sprawić, że jest niemal ślepa. "Ty…" klaszcze, łącząc zakończone pazurami palce, wykonuje dziwny ruch rękami. "Znajdź NIĆ i płyn do balsamowania, przynieś TUTAJ, do Ei-Vene. Idź-idź."  Uwaga: Przydzielono ci zadanie. Zadania są wyświetlone w dzienniku, w części "Zadania". Aby zobaczyć wszystkie przydzielone ci zadania (i ich stan) wybierz po prostu w menu dziennika "Zadania".{#eivene_s5_}'
+    nr 'Wygląda na to, że cię nie usłyszała. Pochyla się do przodu, patrząc przez zmrużone oczy, jakby nie mogła cię dostrzec… Cokolwiek stało się z jej oczami, musiało sprawić, że jest niemal ślepa. "Ty…" klaszcze, łącząc zakończone pazurami palce, wykonuje dziwny ruch rękami. "Znajdź NIĆ i płyn do balsamowania, przynieś TUTAJ, do Ei-Vene. Idź-idź."  Uwaga: Przydzielono ci zadanie. Zadania są wyświetlone w dzienniku, w części "Zadania". Aby zobaczyć wszystkie przydzielone ci zadania (i ich stan) wybierz po prostu w menu dziennika "Zadania".{#eivene_s5_1}'
 
     menu:
         'Daj jej nić i płyn do balsamowania.{#eivene_s5_r3424}' if eiveneLogic.r3424_condition():
@@ -120,7 +120,7 @@ label eivene_s5: # from 4.0
 
 # s6 # say3430
 label eivene_s6: # from 5.1 5.3
-    nr 'Odwraca się… nie daje po sobie poznać, że cię usłyszała. Jej słuch musi być tak samo słaby jak jej wzrok.{#eivene_s6_}'
+    nr 'Odwraca się… nie daje po sobie poznać, że cię usłyszała. Jej słuch musi być tak samo słaby jak jej wzrok.{#eivene_s6_1}'
 
     menu:
         'Klepnij ją w ramię, ściągnij jej uwagę.{#eivene_s6_r3431}':
@@ -134,7 +134,7 @@ label eivene_s6: # from 5.1 5.3
 
 # s7 # say3433
 label eivene_s7: # from 5.0 17.0
-    nr 'Nie marnując ani chwili, Ei-Vene szybko zabiera nić z twojej ręki, nabija na jeden ze szponów i zaczyna zszywać klatkę piersiową leżących przed nią zwłok. Następnie bierze płyn do balsamowania i zaczyna preparować ciało.{#eivene_s7_}'
+    nr 'Nie marnując ani chwili, Ei-Vene szybko zabiera nić z twojej ręki, nabija na jeden ze szponów i zaczyna zszywać klatkę piersiową leżących przed nią zwłok. Następnie bierze płyn do balsamowania i zaczyna preparować ciało.{#eivene_s7_1}'
 
     menu:
         'Poczekaj.{#eivene_s7_r3434}':
@@ -148,7 +148,7 @@ label eivene_s7: # from 5.0 17.0
 
 # s8 # say3436
 label eivene_s8: # from 7.1
-    nr 'Gdy już chcesz odejść, Ei-Vene odzywa się: "Zostań. Ty - następny."{#eivene_s8_}'
+    nr 'Gdy już chcesz odejść, Ei-Vene odzywa się: "Zostań. Ty - następny."{#eivene_s8_1}'
 
     menu:
         'Poczekaj.{#eivene_s8_r3437}':
@@ -162,7 +162,7 @@ label eivene_s8: # from 7.1
 
 # s9 # say3439
 label eivene_s9: # from 7.0 8.0
-    nr 'Kończy w ciągu kilku minut. Klaszcze szponami i obraca się w twoją stronę. Ku twojemu zdziwieniu wyciąga ręce i obejmuje szponami twoje ramiona i klatkę piersiową.{#eivene_s9_}'
+    nr 'Kończy w ciągu kilku minut. Klaszcze szponami i obraca się w twoją stronę. Ku twojemu zdziwieniu wyciąga ręce i obejmuje szponami twoje ramiona i klatkę piersiową.{#eivene_s9_1}'
 
     menu:
         '"Eee, nie żeby mi to nie schlebiało, ale…"{#eivene_s9_r3440}' if eiveneLogic.r3440_condition():
@@ -188,7 +188,7 @@ label eivene_s9: # from 7.0 8.0
 
 # s10 # say3445
 label eivene_s10: # from 9.4 12.1
-    nr 'Wygląda na zaskoczoną, gdy ją odpychasz. "Zombi? Ty nie zombi!" Cofa się o krok i zanim zdążysz zareagować klaszcze trzy razy. W odpowiedzi w całej Kostnicy odbija się echem bicie wielkiego dzwonu.{#eivene_s10_}'
+    nr 'Wygląda na zaskoczoną, gdy ją odpychasz. "Zombi? Ty nie zombi!" Cofa się o krok i zanim zdążysz zareagować klaszcze trzy razy. W odpowiedzi w całej Kostnicy odbija się echem bicie wielkiego dzwonu.{#eivene_s10_1}'
 
     menu:
         '"No dobrze…"{#eivene_s10_r3491}':
@@ -199,7 +199,7 @@ label eivene_s10: # from 9.4 12.1
 
 # s11 # say3446
 label eivene_s11: # from 9.0 9.2
-    nr 'Gdy bada twoje ramiona i klatkę piersiową, nagle zauważasz, że chyba ogląda blizny. Cofa szpony, klaszcze nimi dwa razy, pochyla się do przodu i zaczyna studiować niektóre z tatuaży, które masz na piersiach. "Hmmf. Kto pisać na ty? Mieszkańcy Ula to zrobić? Nie mieć szacunek dla zombi. Zombi nie trzeba obrazy." Pociąga nosem i dotyka jednej z twoich blizn. "Ten być w kiepski stan, wiele blizn, bez konserwantów."{#eivene_s11_}'
+    nr 'Gdy bada twoje ramiona i klatkę piersiową, nagle zauważasz, że chyba ogląda blizny. Cofa szpony, klaszcze nimi dwa razy, pochyla się do przodu i zaczyna studiować niektóre z tatuaży, które masz na piersiach. "Hmmf. Kto pisać na ty? Mieszkańcy Ula to zrobić? Nie mieć szacunek dla zombi. Zombi nie trzeba obrazy." Pociąga nosem i dotyka jednej z twoich blizn. "Ten być w kiepski stan, wiele blizn, bez konserwantów."{#eivene_s11_1}'
 
     menu:
         'Poczekaj.{#eivene_s11_r3447}':
@@ -209,7 +209,7 @@ label eivene_s11: # from 9.0 9.2
 
 # s12 # say3448
 label eivene_s12: # from 11.0
-    nr 'Nagle nabija na szpon przyniesioną przez ciebie nić i z szybkością błyskawicy wbija inny w skórę obok jednej z twoich blizn. Nie czujesz nic więcej niż przy ukłuciu szpilką, ale wygląda na to, że zaraz zacznie cię zszywać.{#eivene_s12_}'
+    nr 'Nagle nabija na szpon przyniesioną przez ciebie nić i z szybkością błyskawicy wbija inny w skórę obok jednej z twoich blizn. Nie czujesz nic więcej niż przy ukłuciu szpilką, ale wygląda na to, że zaraz zacznie cię zszywać.{#eivene_s12_1}'
 
     menu:
         'Pozwól jej robić swoje.{#eivene_s12_r3449}':
@@ -224,7 +224,7 @@ label eivene_s12: # from 11.0
 
 # s13 # say3451
 label eivene_s13: # from 12.0
-    nr 'Co ciekawe, nie czujesz żadnego bólu, gdy Ei-Vene zaczyna zszywać twe blizny.  Po skończeniu obwąchuje cię, marszczy brwi i zanurza palce w płynie do balsamowania. W ciągu kilku minut przemywa nim twoje ciało… To dziwne, ale czujesz się *lepiej*.{#eivene_s13_}'
+    nr 'Co ciekawe, nie czujesz żadnego bólu, gdy Ei-Vene zaczyna zszywać twe blizny.  Po skończeniu obwąchuje cię, marszczy brwi i zanurza palce w płynie do balsamowania. W ciągu kilku minut przemywa nim twoje ciało… To dziwne, ale czujesz się *lepiej*.{#eivene_s13_1}'
 
     menu:
         'Pozwól jej robić swoje.{#eivene_s13_r3452}' if eiveneLogic.r3452_condition():
@@ -238,7 +238,7 @@ label eivene_s13: # from 12.0
 
 # s14 # say3454
 label eivene_s14: # from 13.0
-    nr 'Ei-Vene dotyka cię po raz ostatni, jeszcze raz cię obwąchuje, kiwa głową i szponami robi ruch, jakby chciała coś pokazać. "Zrobione. Idź - idź."{#eivene_s14_}'
+    nr 'Ei-Vene dotyka cię po raz ostatni, jeszcze raz cię obwąchuje, kiwa głową i szponami robi ruch, jakby chciała coś pokazać. "Zrobione. Idź - idź."{#eivene_s14_1}'
 
     menu:
         '"Poczekaj chwilę." (Robisz ręką ruch jakbyś obracał klucz.) "Potrzebuję klucza, masz taki?"{#eivene_s14_r3456}' if eiveneLogic.r3456_condition():
@@ -257,7 +257,7 @@ label eivene_s14: # from 13.0
 
 # s15 # say3458
 label eivene_s15: # - # IF ~  Global("EiVene","GLOBAL",1)
-    nr 'Widzisz Ei-Vene. Wciąż jest zajęta rozczłonkowywaniem leżących przed nią zwłok. Rytm, w jakim poruszają się jej szpony, coś ci przypomina, ale nie wiesz co.{#eivene_s15_}'
+    nr 'Widzisz Ei-Vene. Wciąż jest zajęta rozczłonkowywaniem leżących przed nią zwłok. Rytm, w jakim poruszają się jej szpony, coś ci przypomina, ale nie wiesz co.{#eivene_s15_1}'
 
     menu:
         'Obserwuj ją, zwróć uwagę na ruchy jej dłoni.{#eivene_s15_r3459}' if eiveneLogic.r3459_condition():
@@ -280,7 +280,7 @@ label eivene_s15: # - # IF ~  Global("EiVene","GLOBAL",1)
 
 # s16 # say3464
 label eivene_s16: # from 15.0
-    nr 'Gdy tak przyglądasz się ruchom dłoni Ei-Vene, czujesz ciarki z tyłu głowy i nagle twoja wizja wiruje, zamazuje się aż…{#eivene_s16_}'
+    nr 'Gdy tak przyglądasz się ruchom dłoni Ei-Vene, czujesz ciarki z tyłu głowy i nagle twoja wizja wiruje, zamazuje się aż…{#eivene_s16_1}'
 
     $ eiveneLogic.s16_action()
     jump eivene_s26
@@ -288,7 +288,7 @@ label eivene_s16: # from 15.0
 
 # s17 # say3468
 label eivene_s17: # from 6.0 15.1 25.0 27.0
-    nr 'Odwraca się, zauważa cię i marszczy brwi. "Głupie zombi." Niecierpliwie klaszcze szponami i robi ruch jakby coś zszywała. "Znajdź nić i płyn do balsamowania, przynieś tutaj, do Ei-Vene. Idź - idź."{#eivene_s17_}'
+    nr 'Odwraca się, zauważa cię i marszczy brwi. "Głupie zombi." Niecierpliwie klaszcze szponami i robi ruch jakby coś zszywała. "Znajdź nić i płyn do balsamowania, przynieś tutaj, do Ei-Vene. Idź - idź."{#eivene_s17_1}'
 
     menu:
         'Daj jej nić i płyn do balsamowania.{#eivene_s17_r3469}' if eiveneLogic.r3469_condition():
@@ -312,7 +312,7 @@ label eivene_s17: # from 6.0 15.1 25.0 27.0
 
 # s18 # say3471
 label eivene_s18: # from 14.0 17.1 22.0
-    nr 'Pochyla się, patrzy na ruchy twoich dłoni, pociąga nosem. Jej dłoń znika w fałdach togi, po chwili pojawia się z powrotem. Na ostrym jak brzytwa palcu wisi klucz. Strząsa go w twoją dłoń. "Przynieś z powrotem gdy skończysz. Idź - idź."{#eivene_s18_}'
+    nr 'Pochyla się, patrzy na ruchy twoich dłoni, pociąga nosem. Jej dłoń znika w fałdach togi, po chwili pojawia się z powrotem. Na ostrym jak brzytwa palcu wisi klucz. Strząsa go w twoją dłoń. "Przynieś z powrotem gdy skończysz. Idź - idź."{#eivene_s18_1}'
 
     menu:
         '"Co stało się z twoimi rękami?"{#eivene_s18_r3494}' if eiveneLogic.r3494_condition():
@@ -333,7 +333,7 @@ label eivene_s18: # from 14.0 17.1 22.0
 
 # s19 # say3472
 label eivene_s19: # from 1.3
-    nr 'Kobieta nie reaguje.{#eivene_s19_}'
+    nr 'Kobieta nie reaguje.{#eivene_s19_1}'
 
     $ eiveneLogic.j38205_s19_action()
     jump morte_s56  # EXTERN
@@ -341,14 +341,14 @@ label eivene_s19: # from 1.3
 
 # s20 # say3485
 label eivene_s20: # from 5.2 5.4
-    nr 'Odwraca się… nie daje po sobie poznać, że cię usłyszała.{#eivene_s20_}'
+    nr 'Odwraca się… nie daje po sobie poznać, że cię usłyszała.{#eivene_s20_1}'
 
     jump morte_s57  # EXTERN
 
 
 # s21 # say3486
 label eivene_s21: # from 18.1
-    nr 'Odwraca się… nie daje po sobie poznać, że cię usłyszała. Jej słuch musi być tak samo słaby jak jej wzrok.{#eivene_s21_}'
+    nr 'Odwraca się… nie daje po sobie poznać, że cię usłyszała. Jej słuch musi być tak samo słaby jak jej wzrok.{#eivene_s21_1}'
 
     $ eiveneLogic.j38205_s21_action()
     jump morte_s58  # EXTERN
@@ -356,7 +356,7 @@ label eivene_s21: # from 18.1
 
 # s22 # say3493
 label eivene_s22: # from 15.2 25.1 27.1
-    nr 'Odwraca się, zauważa cię i marszczy brwi. "Głupie zombi." Niecierpliwie klaszcze szponiastymi palcami, robi ruch jakby coś zszywała. "Ty skończony. Wszystko zszyte. Idź - idź."{#eivene_s22_}'
+    nr 'Odwraca się, zauważa cię i marszczy brwi. "Głupie zombi." Niecierpliwie klaszcze szponiastymi palcami, robi ruch jakby coś zszywała. "Ty skończony. Wszystko zszyte. Idź - idź."{#eivene_s22_1}'
 
     menu:
         '"Poczekaj chwilę." (Robisz ręką ruch jakbyś obracał klucz.) "Potrzebuję klucza, masz taki?"{#eivene_s22_r3501}' if eiveneLogic.r3501_condition():
@@ -375,7 +375,7 @@ label eivene_s22: # from 15.2 25.1 27.1
 
 # s23 # say3498
 label eivene_s23: # from 18.0
-    nr 'Odwraca się… nie daje po sobie poznać, że cię usłyszała. Jej słuch musi być tak samo słaby jak jej wzrok.{#eivene_s23_}'
+    nr 'Odwraca się… nie daje po sobie poznać, że cię usłyszała. Jej słuch musi być tak samo słaby jak jej wzrok.{#eivene_s23_1}'
 
     menu:
         'Odejdź.{#eivene_s23_r3499}':
@@ -385,7 +385,7 @@ label eivene_s23: # from 18.0
 
 # s24 # say4200
 label eivene_s24: # from 14.1 17.2 22.1
-    nr 'Pochyla się, patrzy na ruchy twoich dłoni, pociąga nosem. Jej dłoń znika w fałdach togi, szpera tam przez chwilę i wzrusza ramionami. "Nie mieć klucz." Robi ruch, jakby chciała coś pokazać. "Idź - idź - idź".{#eivene_s24_}'
+    nr 'Pochyla się, patrzy na ruchy twoich dłoni, pociąga nosem. Jej dłoń znika w fałdach togi, szpera tam przez chwilę i wzrusza ramionami. "Nie mieć klucz." Robi ruch, jakby chciała coś pokazać. "Idź - idź - idź".{#eivene_s24_1}'
 
     menu:
         'Odejdź.{#eivene_s24_r4201}':
@@ -395,7 +395,7 @@ label eivene_s24: # from 14.1 17.2 22.1
 
 # s25 # say4353
 label eivene_s25: # -
-    nr 'Przyglądasz jej się przez chwilę, a rytm jej dłoni wywołuje dwa wspomnienia. Pierwsze - gry na jakimś instrumencie strunowym, może na harfie. Drugie o kradzieży sakiewki… ku twemu zdumieniu to wspomnienie wywołuje nagłą pokusę, by dobrać się do kieszeni Ei-Vene.  Uwaga: Odzyskałeś część pamięci. Wspomnienia mogą przynieść ci dodatkowe punkty doświadczenia, umiejętności, a nawet umożliwić dalsze odzyskiwanie pamięci.{#eivene_s25_}'
+    nr 'Przyglądasz jej się przez chwilę, a rytm jej dłoni wywołuje dwa wspomnienia. Pierwsze - gry na jakimś instrumencie strunowym, może na harfie. Drugie o kradzieży sakiewki… ku twemu zdumieniu to wspomnienie wywołuje nagłą pokusę, by dobrać się do kieszeni Ei-Vene.  Uwaga: Odzyskałeś część pamięci. Wspomnienia mogą przynieść ci dodatkowe punkty doświadczenia, umiejętności, a nawet umożliwić dalsze odzyskiwanie pamięci.{#eivene_s25_1}'
 
     menu:
         'Klepnij ją w ramię, ściągnij jej uwagę.{#eivene_s25_r4354}' if eiveneLogic.r4354_condition():
@@ -413,7 +413,7 @@ label eivene_s25: # -
 
 # s26 # say63477
 label eivene_s26: # from 16.0
-    nr '…stoisz przed świeżymi zwłokami, ich wargi wykrzywia stężenie pośmiertne; na głowie wydrapany został numer „42“. Zombi leży na płycie, a ty właśnie skończyłeś zszywać jego klatkę piersiową. Włożyłeś coś do środka, coś, co może okazać się przydatne, gdybyś jeszcze tędy przechodził…{#eivene_s26_}'
+    nr '…stoisz przed świeżymi zwłokami, ich wargi wykrzywia stężenie pośmiertne; na głowie wydrapany został numer „42“. Zombi leży na płycie, a ty właśnie skończyłeś zszywać jego klatkę piersiową. Włożyłeś coś do środka, coś, co może okazać się przydatne, gdybyś jeszcze tędy przechodził…{#eivene_s26_1}'
 
     menu:
         'Echo: "Pilnuj tych rzeczy i poczekaj, aż wrócę."{#eivene_s26_r63478}' if eiveneLogic.r63478_condition():
@@ -428,7 +428,7 @@ label eivene_s26: # from 16.0
 
 # s27 # say63480
 label eivene_s27: # from 26.0 26.1
-    nr 'Wspomnienie głosu to dziwne puste echo w twych uszach. Krzyżujesz ramiona na piersiach i ku twemu zdumieniu zwłoki robią to samo. Po chwili jego ręce opadają z powrotem i wizja znika… do czasu, gdy jeszcze raz obserwujesz jak Ei-Vene robi ruchy jakby coś zszywała.{#eivene_s27_}'
+    nr 'Wspomnienie głosu to dziwne puste echo w twych uszach. Krzyżujesz ramiona na piersiach i ku twemu zdumieniu zwłoki robią to samo. Po chwili jego ręce opadają z powrotem i wizja znika… do czasu, gdy jeszcze raz obserwujesz jak Ei-Vene robi ruchy jakby coś zszywała.{#eivene_s27_1}'
 
     menu:
         'Klepnij ją w ramię, ściągnij jej uwagę.{#eivene_s27_r63482}' if eiveneLogic.r63482_condition():

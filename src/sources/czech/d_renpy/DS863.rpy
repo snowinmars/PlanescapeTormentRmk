@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say35537
 label s863_s0: # from 10.0 # IF ~  !HasItem("DRemind","S863")
-    nr 'Tenhle kostlivec už si toho určitě hodně prožil, ať už v boji, nebo spadl z příliš mnoha schodů. Všechny čtyři končetiny byly polámány a opraveny pomocí kožených pásků a tenkých železných tyčí. Předek lebky je ozdobený číslem "863", ale zadní část lebky se někde ztratila.{#s863_s0_}'
+    nr 'Tenhle kostlivec už si toho určitě hodně prožil, ať už v boji, nebo spadl z příliš mnoha schodů. Všechny čtyři končetiny byly polámány a opraveny pomocí kožených pásků a tenkých železných tyčí. Předek lebky je ozdobený číslem "863", ale zadní část lebky se někde ztratila.{#s863_s0_1}'
 
     menu:
         '"Sorry, že jsem si vzal ten pergamen, ale pochybuju, že bys ho někdy v brzké době doručil."{#s863_s0_r35538}' if s863Logic.r35538_condition():
@@ -90,7 +90,7 @@ label s863_s0: # from 10.0 # IF ~  !HasItem("DRemind","S863")
 
 # s1 # say35539
 label s863_s1: # from 0.0 0.1 0.2 0.3
-    nr 'Kostlivec neodpovídá.{#s863_s1_}'
+    nr 'Kostlivec neodpovídá.{#s863_s1_1}'
 
     menu:
         '"Rád jsem si s tebou pokecal, Kostro. Buď zdráv."{#s863_s1_r35540}' if s863Logic.r35540_condition():
@@ -109,7 +109,7 @@ label s863_s1: # from 0.0 0.1 0.2 0.3
 
 # s2 # say35565
 label s863_s2: # from 0.4
-    nr 'Kostlivec neodpovídá. Asi už se dostal příliš daleko, aby byl ještě schopný odpovídat na tvé otázky.{#s863_s2_}'
+    nr 'Kostlivec neodpovídá. Asi už se dostal příliš daleko, aby byl ještě schopný odpovídat na tvé otázky.{#s863_s2_1}'
 
     menu:
         'Nechej kostlivce být.{#s863_s2_r35566}' if s863Logic.r35566_condition():
@@ -128,7 +128,7 @@ label s863_s2: # from 0.4
 
 # s3 # say35570
 label s863_s3: # from 0.5
-    nr 'Někdo si dal práci a spojil kosti tohoto kostlivce koženými pásky, omotanými kolem těla tak, že připomínají svaly a šlachy. Pásky jsou připevněné na kovových svorkách, vražených do kloubů kostlivce. Kostlivec vypadá, že už si svoje odsloužil: Mnoho kostí je oštípáno a početné fraktury jsou slepeny zapáchajícím lepidlem.{#s863_s3_}'
+    nr 'Někdo si dal práci a spojil kosti tohoto kostlivce koženými pásky, omotanými kolem těla tak, že připomínají svaly a šlachy. Pásky jsou připevněné na kovových svorkách, vražených do kloubů kostlivce. Kostlivec vypadá, že už si svoje odsloužil: Mnoho kostí je oštípáno a početné fraktury jsou slepeny zapáchajícím lepidlem.{#s863_s3_1}'
 
     menu:
         'Zkus kostlivci vytáhnout svorky z kloubů.{#s863_s3_r35571}' if s863Logic.r35571_condition():
@@ -176,7 +176,7 @@ label s863_s3: # from 0.5
 
 # s4 # say35576
 label s863_s4: # from 0.7 0.10 3.1 3.4
-    nr 'Zaškubal jsi železnými svorkami, ale nemáš dost síly na to, abys je vyrval. Jsou pořádně upevněné.{#s863_s4_}'
+    nr 'Zaškubal jsi železnými svorkami, ale nemáš dost síly na to, abys je vyrval. Jsou pořádně upevněné.{#s863_s4_1}'
 
     menu:
         '"Kdybych měl správný nástroj, dokázal bych je vytáhnout… hmmm. Vrátím se, Kostro."{#s863_s4_r35577}' if s863Logic.r35577_condition():
@@ -208,7 +208,7 @@ label s863_s4: # from 0.7 0.10 3.1 3.4
 
 # s5 # say35584
 label s863_s5: # from 0.8 0.11 3.2 3.5
-    nr 'Zarval jsi veškerou svou silou. Po chvíli námahy jsi vyrval svorky z kostlivcových kloubů. Kostlivec se rozpadl, některé z kostí sebou stále škubají.{#s863_s5_}'
+    nr 'Zarval jsi veškerou svou silou. Po chvíli námahy jsi vyrval svorky z kostlivcových kloubů. Kostlivec se rozpadl, některé z kostí sebou stále škubají.{#s863_s5_1}'
 
     menu:
         '"Promiň, Kostro…"{#s863_s5_r35585}':
@@ -219,7 +219,7 @@ label s863_s5: # from 0.8 0.11 3.2 3.5
 
 # s6 # say35587
 label s863_s6: # from 0.9 0.12 3.3 3.6
-    nr 'Pomocí svého páčidla jsi vyrval svorky z kostlivcových kloubů. Kostlivec se rozpadl, některé z kostí sebou stále škubají.{#s863_s6_}'
+    nr 'Pomocí svého páčidla jsi vyrval svorky z kostlivcových kloubů. Kostlivec se rozpadl, některé z kostí sebou stále škubají.{#s863_s6_1}'
 
     menu:
         '"Promiň, Kostro…"{#s863_s6_r35588}':
@@ -230,13 +230,13 @@ label s863_s6: # from 0.9 0.12 3.3 3.6
 
 # s7 # say35613
 label s863_s7: # - # IF ~  False()
-    nr 'Kostlivec neodpovídá. Asi už se dostal příliš daleko, aby byl ještě schopný odpovídat na tvé otázky.{#s863_s7_}'
+    nr 'Kostlivec neodpovídá. Asi už se dostal příliš daleko, aby byl ještě schopný odpovídat na tvé otázky.{#s863_s7_1}'
 
     menu:
 
 # s8 # say64262
 label s863_s8: # - # IF ~  HasItem("DRemind","S863")
-    nr 'Tenhle kostlivec buď prošel obrovským bojem, nebo se zřítil z hodně vysokých schodů; obě jeho paže i nohy byly zlomeny a znovu dány dohromady pomocí kožených popruhů a ocelových tyčí. Na předku lebky je vyraženo číslo "863"… ale zadek jeho lebky se propadl a vytvořil dutinu. Vidíš, že toho někdo využil a vyspároval jí kusem srolovaného pergamenu.{#s863_s8_}'
+    nr 'Tenhle kostlivec buď prošel obrovským bojem, nebo se zřítil z hodně vysokých schodů; obě jeho paže i nohy byly zlomeny a znovu dány dohromady pomocí kožených popruhů a ocelových tyčí. Na předku lebky je vyraženo číslo "863"… ale zadek jeho lebky se propadl a vytvořil dutinu. Vidíš, že toho někdo využil a vyspároval jí kusem srolovaného pergamenu.{#s863_s8_1}'
 
     menu:
         'Vyjmout kostlivci z lebky pergamen.{#s863_s8_r64263}':
@@ -250,7 +250,7 @@ label s863_s8: # - # IF ~  HasItem("DRemind","S863")
 
 # s9 # say64265
 label s863_s9: # from 8.0
-    nr 'Vykrádáš pergamen z dělníkovy lebky - dokonce to vypadá, že dutina v lebce přímo *slouží* pro ukládání zpráv; pergamen je tenounkou strunou přichycen k háku uvnitř lebky, zřejmě aby nemohl nechtěně vypadnout.{#s863_s9_}'
+    nr 'Vykrádáš pergamen z dělníkovy lebky - dokonce to vypadá, že dutina v lebce přímo *slouží* pro ukládání zpráv; pergamen je tenounkou strunou přichycen k háku uvnitř lebky, zřejmě aby nemohl nechtěně vypadnout.{#s863_s9_1}'
 
     menu:
         'Odháknout strunu, vzít pergamen.{#s863_s9_r64266}':
@@ -261,7 +261,7 @@ label s863_s9: # from 8.0
 
 # s10 # say64267
 label s863_s10: # from 9.0
-    nr 'Odhákneš strunu a pohlédneš na pergamen -- vypadá to jako poznámky jednoho ze strážců Márnice. Soudě dle poznámek, tento kostlivec je zřejmě nějaký druh posla. Jak se na něj chvíli díváš, uvědomuješ si, že se kostlivec zastavil před kamenou deskou, zřejmě si není schopný vypočítat, jak se přes ní dostat.  POZNÁMKA: Pro "přečtení" poznámek, knih nebo svitků je vlož do svého inventáře a pak na ně klikni pravým tlačítkem myši, vyvolá se informační panel.{#s863_s10_}'
+    nr 'Odhákneš strunu a pohlédneš na pergamen -- vypadá to jako poznámky jednoho ze strážců Márnice. Soudě dle poznámek, tento kostlivec je zřejmě nějaký druh posla. Jak se na něj chvíli díváš, uvědomuješ si, že se kostlivec zastavil před kamenou deskou, zřejmě si není schopný vypočítat, jak se přes ní dostat.  POZNÁMKA: Pro "přečtení" poznámek, knih nebo svitků je vlož do svého inventáře a pak na ně klikni pravým tlačítkem myši, vyvolá se informační panel.{#s863_s10_1}'
 
     menu:
         'Prozkoumat kostlivce znovu.{#s863_s10_r64268}':

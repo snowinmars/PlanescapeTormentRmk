@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say35114
 label zf1072_s0: # - # IF ~  True()
-    nr 'Der Geruch nach Formaldehyd, der von dieser Leiche ausgeht, ist besonders stark… Es riecht so, als sei es erst kürzlich angewendet worden, und das aus gutem Grund: Diese Leiche scheint sich in einem fortgeschrittenen Zustand der Verwesung zu befinden. Ihr Unterkiefer fehlt, und das Fleisch ist teilweise von ihrem Schädel geglitten, so daß die Zahl "1072" freigelegt ist, die in den Knochen gemeißelt wurde.{#zf1072_s0_}'
+    nr 'Der Geruch nach Formaldehyd, der von dieser Leiche ausgeht, ist besonders stark… Es riecht so, als sei es erst kürzlich angewendet worden, und das aus gutem Grund: Diese Leiche scheint sich in einem fortgeschrittenen Zustand der Verwesung zu befinden. Ihr Unterkiefer fehlt, und das Fleisch ist teilweise von ihrem Schädel geglitten, so daß die Zahl "1072" freigelegt ist, die in den Knochen gemeißelt wurde.{#zf1072_s0_1}'
 
     menu:
         '"Ich denke mal, diese hier hat auch schon mal bessere Zeiten gesehen…"{#zf1072_s0_r35115}' if zf1072Logic.r35115_condition():
@@ -58,7 +58,7 @@ label zf1072_s0: # - # IF ~  True()
 
 # s1 # say35116
 label zf1072_s1: # from 0.0 0.1 0.2
-    nr 'Die Leiche antwortet nicht auf deine Stimme, was teilweise daran liegen kann, daß sie keinen Unterkiefer hat. Entweder ist es das, oder sie hat einfach nichts zu sagen.{#zf1072_s1_}'
+    nr 'Die Leiche antwortet nicht auf deine Stimme, was teilweise daran liegen kann, daß sie keinen Unterkiefer hat. Entweder ist es das, oder sie hat einfach nichts zu sagen.{#zf1072_s1_1}'
 
     menu:
         '"Dann leb wohl."{#zf1072_s1_r35117}' if zf1072Logic.r35117_condition():
@@ -76,7 +76,7 @@ label zf1072_s1: # from 0.0 0.1 0.2
 
 # s2 # say35135
 label zf1072_s2: # from 0.3
-    nr 'Die Leiche rührt sich nicht. Sie sieht so aus, als sei sie schon ein bißchen zu weit hinüber, um deine Fragen zu beantworten.{#zf1072_s2_}'
+    nr 'Die Leiche rührt sich nicht. Sie sieht so aus, als sei sie schon ein bißchen zu weit hinüber, um deine Fragen zu beantworten.{#zf1072_s2_1}'
 
     menu:
         '"Dann leb wohl."{#zf1072_s2_r35136}' if zf1072Logic.r35136_condition():
@@ -94,6 +94,6 @@ label zf1072_s2: # from 0.3
 
 # s3 # say35145
 label zf1072_s3: # - # IF ~  False()
-    nr 'Die Leiche rührt sich nicht. Sie sieht so aus, als sei sie schon ein bißchen zu weit hinüber, um deine Fragen zu beantworten.{#zf1072_s3_}'
+    nr 'Die Leiche rührt sich nicht. Sie sieht so aus, als sei sie schon ein bißchen zu weit hinüber, um deine Fragen zu beantworten.{#zf1072_s3_1}'
 
     menu:

@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say46756
 label zm1445_s0: # - # IF ~  True()
-    nr 'La chair de ce cadavre est grêlée et ses oreilles, le bout de son nez et plusieurs de ses doigts ont pourri. Nul doute que le pauvre bougre a succombé à une terrible maladie. Le numéro „1445“ est tatoué sur son front et ses lèvres ont été cousues.{#zm1445_s0_}'
+    nr 'La chair de ce cadavre est grêlée et ses oreilles, le bout de son nez et plusieurs de ses doigts ont pourri. Nul doute que le pauvre bougre a succombé à une terrible maladie. Le numéro „1445“ est tatoué sur son front et ses lèvres ont été cousues.{#zm1445_s0_1}'
 
     menu:
         '"Alors… as-tu vu quelque chose d„intéressant ?"{#zm1445_s0_r46757}' if zm1445Logic.r46757_condition():
@@ -42,7 +42,7 @@ label zm1445_s0: # - # IF ~  True()
 
 # s1 # say46758
 label zm1445_s1: # from 0.0 0.1 0.2
-    nr 'Le cadavre continue à te regarder.{#zm1445_s1_}'
+    nr 'Le cadavre continue à te regarder.{#zm1445_s1_1}'
 
     menu:
         'Laisse le cadavre tranquille.{#zm1445_s1_r46759}':
@@ -52,7 +52,7 @@ label zm1445_s1: # from 0.0 0.1 0.2
 
 # s2 # say46763
 label zm1445_s2: # from 0.3
-    nr 'Le cadavre ne répond pas. Il semble qu„il soit incapable de répondre à tes questions.{#zm1445_s2_}'
+    nr 'Le cadavre ne répond pas. Il semble qu„il soit incapable de répondre à tes questions.{#zm1445_s2_1}'
 
     menu:
         'Laisse le cadavre tranquille.{#zm1445_s2_r46764}':

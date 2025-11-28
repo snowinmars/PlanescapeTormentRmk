@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say6507
 label zm257_s0: # - # IF ~  True()
-    nr 'The eyes of this corpse are set close together and the eyeballs themselves are slightly askew; one faces to the left and the other to the right. You can barely make out the number „257“ traced into its bruised forehead - it looks like the corpse has taken several blows to the head, making the number difficult to read.{#zm257_s0_}'
+    nr 'The eyes of this corpse are set close together and the eyeballs themselves are slightly askew; one faces to the left and the other to the right. You can barely make out the number „257“ traced into its bruised forehead - it looks like the corpse has taken several blows to the head, making the number difficult to read.{#zm257_s0_1}'
 
     menu:
         '"Don„t you get dizzy with your eyeballs facing like that?"{#zm257_s0_r6510}' if zm257Logic.r6510_condition():
@@ -42,7 +42,7 @@ label zm257_s0: # - # IF ~  True()
 
 # s1 # say6508
 label zm257_s1: # from 0.0 0.1 0.2
-    nr 'There is no flicker of understanding in the corpse„s eyes; they stare silently off to the left and right.{#zm257_s1_}'
+    nr 'There is no flicker of understanding in the corpse„s eyes; they stare silently off to the left and right.{#zm257_s1_1}'
 
     menu:
         'Leave the corpse in peace.{#zm257_s1_r6516}':
@@ -52,7 +52,7 @@ label zm257_s1: # from 0.0 0.1 0.2
 
 # s2 # say6509
 label zm257_s2: # from 0.3
-    nr 'The spirit blasts back into the body with such violence that, with a single great muscular contraction, the corpse is hurtled backwards! The body is on its feet again in an instant, dancing and thrashing about madly, waving its arms and popping its stitches, flaps of loosened flesh flopping about as it prances to and fro, eyes goggling and rolling about in its head, giggling madly all the while…{#zm257_s2_}'
+    nr 'The spirit blasts back into the body with such violence that, with a single great muscular contraction, the corpse is hurtled backwards! The body is on its feet again in an instant, dancing and thrashing about madly, waving its arms and popping its stitches, flaps of loosened flesh flopping about as it prances to and fro, eyes goggling and rolling about in its head, giggling madly all the while…{#zm257_s2_1}'
 
     menu:
         '"Er… I have a question for you, spirit…"{#zm257_s2_r6517}':
@@ -66,7 +66,7 @@ label zm257_s2: # from 0.3
 
 # s3 # say9553
 label zm257_s3: # from 2.0
-    nr 'The possessed corpse sings as it leaps and whirls about, the volume and pitch of its voice rising and falling in random patterns. "YOU are the SPIRIT I, the LIVING, answer my questions YOU SHALL!" Your confused expression seems to please it; it hooks its bony fingers into its mouth and pulls it into a ghastly grin, laughing maniacally and waggling its pasty, white tongue.{#zm257_s3_}'
+    nr 'The possessed corpse sings as it leaps and whirls about, the volume and pitch of its voice rising and falling in random patterns. "YOU are the SPIRIT I, the LIVING, answer my questions YOU SHALL!" Your confused expression seems to please it; it hooks its bony fingers into its mouth and pulls it into a ghastly grin, laughing maniacally and waggling its pasty, white tongue.{#zm257_s3_1}'
 
     menu:
         '"Very well… ask your questions."{#zm257_s3_r9559}':
@@ -84,7 +84,7 @@ label zm257_s3: # from 2.0
 
 # s4 # say9554
 label zm257_s4: # from 3.0 4.0 5.0
-    nr 'The spirit seems to become calm for a moment before exploding into a stream of mind-numbingly loud, babbled nonsense. The cacophony is almost maddening; it threatens to drive you to your knees. And as abruptly as it began… it stops. The corpse stands there, twitching quietly.{#zm257_s4_}'
+    nr 'The spirit seems to become calm for a moment before exploding into a stream of mind-numbingly loud, babbled nonsense. The cacophony is almost maddening; it threatens to drive you to your knees. And as abruptly as it began… it stops. The corpse stands there, twitching quietly.{#zm257_s4_1}'
 
     menu:
         '"I didn„t quite catch that. Could you repeat it for me?"{#zm257_s4_r9562}':
@@ -103,7 +103,7 @@ label zm257_s4: # from 3.0 4.0 5.0
 
 # s5 # say9555
 label zm257_s5: # from 3.1 4.1 5.1
-    nr 'Again the spirit sings: "Questions OF THE living shall the DEAD answer THE; SO it was, is IT so, shall so IT BE. You my ANSWER will questions!" The look on your face seems to please it wildly; it begins to cavort so madly that you wonder if the corpse can take the abuse. You can almost hear its bones creak and fracture, tendons snapping, as it spins and hurls itself about.{#zm257_s5_}'
+    nr 'Again the spirit sings: "Questions OF THE living shall the DEAD answer THE; SO it was, is IT so, shall so IT BE. You my ANSWER will questions!" The look on your face seems to please it wildly; it begins to cavort so madly that you wonder if the corpse can take the abuse. You can almost hear its bones creak and fracture, tendons snapping, as it spins and hurls itself about.{#zm257_s5_1}'
 
     menu:
         '"All right… ask your questions."{#zm257_s5_r9565}':
@@ -121,7 +121,7 @@ label zm257_s5: # from 3.1 4.1 5.1
 
 # s6 # say9556
 label zm257_s6: # from 3.2 4.2 5.2
-    nr 'As the spirit fades away from the corpse, its jabbering mouth twists into a knowing smile. Its wild, flashing eyes bore into you with the piercing glare of a psychopath, and it whispers a single, carefully-formed word, drawn out like a string of precious pearls: "Limbo…"{#zm257_s6_}'
+    nr 'As the spirit fades away from the corpse, its jabbering mouth twists into a knowing smile. Its wild, flashing eyes bore into you with the piercing glare of a psychopath, and it whispers a single, carefully-formed word, drawn out like a string of precious pearls: "Limbo…"{#zm257_s6_1}'
 
     menu:
         '"What?"{#zm257_s6_r9568}':
@@ -135,6 +135,6 @@ label zm257_s6: # from 3.2 4.2 5.2
 
 # s7 # say9557
 label zm257_s7: # from 6.0
-    nr '…and with that it is gone, leaving you no better off and feeling slightly unsettled. The zombie quietly resumes its work.{#zm257_s7_}'
+    nr '…and with that it is gone, leaving you no better off and feeling slightly unsettled. The zombie quietly resumes its work.{#zm257_s7_1}'
 
     jump zm257_dispose

@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say39792
 label morte1_s0: # - # IF WEIGHT #1 /* Triggers after states #: 26 even though they appear after this state */ ~  !InParty("Morte") Global("Morte","GLOBAL",0)
-    nr '"Hey, chief. You okay? You playing corpse or you putting the blinds on the Dusties? I thought you were a deader for sure."~ [MRT001]{#morte1_s0_}'
+    nr '"Hey, chief. You okay? You playing corpse or you putting the blinds on the Dusties? I thought you were a deader for sure."~ [MRT001]{#morte1_s0_1}'
 
     menu:
         '"Wh…? Who are you?"{#morte1_s0_r39793}':
@@ -22,7 +22,7 @@ label morte1_s0: # - # IF WEIGHT #1 /* Triggers after states #: 26 even though t
 
 # s1 # say39795
 label morte1_s1: # from 0.0
-    nr '"Uh… who am *I?* How about *you* start? Who„re you?"{#morte1_s1_}'
+    nr '"Uh… who am *I?* How about *you* start? Who„re you?"{#morte1_s1_1}'
 
     menu:
         '"I… don„t know. I can“t remember."{#morte1_s1_r39796}':
@@ -36,7 +36,7 @@ label morte1_s1: # from 0.0
 
 # s2 # say39798
 label morte1_s2: # from 1.0 3.0 4.0
-    nr '"You can„t remember your *name?* Heh. Well, NEXT time you spend a night in this berg, go easy on the bub. Name“s Morte. I„m trapped in here, too."{#morte1_s2_}'
+    nr '"You can„t remember your *name?* Heh. Well, NEXT time you spend a night in this berg, go easy on the bub. Name“s Morte. I„m trapped in here, too."{#morte1_s2_1}'
 
     menu:
         '"Trapped?"{#morte1_s2_r39799}':
@@ -46,7 +46,7 @@ label morte1_s2: # from 1.0 3.0 4.0
 
 # s3 # say39800
 label morte1_s3: # from 1.1
-    nr '"Yeah, „an I asked you *second.* What“s your name?"{#morte1_s3_}'
+    nr '"Yeah, „an I asked you *second.* What“s your name?"{#morte1_s3_1}'
 
     menu:
         '"I… don„t know. I can“t remember."{#morte1_s3_r39801}':
@@ -60,7 +60,7 @@ label morte1_s3: # from 1.1
 
 # s4 # say39803
 label morte1_s4: # from 3.1
-    nr '"Tchhhh… you„re tighter than a wet rope. All right, *I“ll* be the nice guy here. Name„s Morte. Who“re you?"{#morte1_s4_}'
+    nr '"Tchhhh… you„re tighter than a wet rope. All right, *I“ll* be the nice guy here. Name„s Morte. Who“re you?"{#morte1_s4_1}'
 
     menu:
         '"I… don„t know. I can“t remember."{#morte1_s4_r39804}':
@@ -70,7 +70,7 @@ label morte1_s4: # from 3.1
 
 # s5 # say39805
 label morte1_s5: # from 2.0
-    nr '"Yeah, since you haven„t had time to get your legs yet, here“s the chant: I„ve tried all the doors, and this room is locked tighter than a chastity belt."{#morte1_s5_}'
+    nr '"Yeah, since you haven„t had time to get your legs yet, here“s the chant: I„ve tried all the doors, and this room is locked tighter than a chastity belt."{#morte1_s5_1}'
 
     menu:
         '"We„re locked in… where? What is this place?"{#morte1_s5_r39806}':
@@ -80,7 +80,7 @@ label morte1_s5: # from 2.0
 
 # s6 # say39807
 label morte1_s6: # from 5.0
-    nr '"It„s called the “Mortuary„… it“s a big black structure with all the architectural charm of a pregnant spider."{#morte1_s6_}'
+    nr '"It„s called the “Mortuary„… it“s a big black structure with all the architectural charm of a pregnant spider."{#morte1_s6_1}'
 
     menu:
         '"„The Mortuary“? What… am I dead?"{#morte1_s6_r39808}':
@@ -90,7 +90,7 @@ label morte1_s6: # from 5.0
 
 # s7 # say39809
 label morte1_s7: # from 6.0
-    nr '"Not from where I„m standing. You got scars a-plenty, though… looks like some berk painted you with a knife. All the more reason to give this place the laugh before whoever carved you up comes back to finish the job."{#morte1_s7_}'
+    nr '"Not from where I„m standing. You got scars a-plenty, though… looks like some berk painted you with a knife. All the more reason to give this place the laugh before whoever carved you up comes back to finish the job."{#morte1_s7_1}'
 
     menu:
         '"Scars? How bad are they?"{#morte1_s7_r39810}':
@@ -100,7 +100,7 @@ label morte1_s7: # from 6.0
 
 # s8 # say39811
 label morte1_s8: # from 7.0
-    nr '"Well… the carvings on your chest aren„t TOO bad… but the ones on your back…" Morte pauses. "Say, looks like you got a whole tattoo gallery on your back, chief. Spells out something…"{#morte1_s8_}'
+    nr '"Well… the carvings on your chest aren„t TOO bad… but the ones on your back…" Morte pauses. "Say, looks like you got a whole tattoo gallery on your back, chief. Spells out something…"{#morte1_s8_1}'
 
     menu:
         '"Tattoos on my back? What do they say?"{#morte1_s8_r39812}':
@@ -110,7 +110,7 @@ label morte1_s8: # from 7.0
 
 # s9 # say39813
 label morte1_s9: # from 8.0
-    nr '"Heh! Looks like you come with directions…" Morte clears his throat. "Let„s see… it starts with…"  "“I know you feel like you„ve been drinking a few kegs of Styx wash, but you need to CENTER yourself. Among your possessions is a JOURNAL that“ll shed some light on the dark of the matter. PHAROD can fill you in on the rest of the chant, if he„s not in the dead-book already.“"{#morte1_s9_}'
+    nr '"Heh! Looks like you come with directions…" Morte clears his throat. "Let„s see… it starts with…"  "“I know you feel like you„ve been drinking a few kegs of Styx wash, but you need to CENTER yourself. Among your possessions is a JOURNAL that“ll shed some light on the dark of the matter. PHAROD can fill you in on the rest of the chant, if he„s not in the dead-book already.“"{#morte1_s9_1}'
 
     menu:
         '"Pharod…? Does it say anything else?"{#morte1_s9_r39814}':
@@ -120,7 +120,7 @@ label morte1_s9: # from 8.0
 
 # s10 # say39815
 label morte1_s10: # from 9.0
-    nr '"Yeah, there„s a bit more…" Morte pauses. "Let“s see… it goes on…"  „Don“t lose the journal or we„ll be up the Styx again. And whatever you do, DO NOT tell anyone WHO you are or WHAT happens to you, or they“ll put you on a quick pilgrimage to the crematorium. Do what I tell you: READ the journal, then FIND Pharod.„{#morte1_s10_}'
+    nr '"Yeah, there„s a bit more…" Morte pauses. "Let“s see… it goes on…"  „Don“t lose the journal or we„ll be up the Styx again. And whatever you do, DO NOT tell anyone WHO you are or WHAT happens to you, or they“ll put you on a quick pilgrimage to the crematorium. Do what I tell you: READ the journal, then FIND Pharod.„{#morte1_s10_1}'
 
     menu:
         '"No wonder my back hurts; there„s a damn novel written there. As for that journal I“m supposed to have with me… was there one with me while I was lying here?"{#morte1_s10_r39816}':
@@ -130,7 +130,7 @@ label morte1_s10: # from 9.0
 
 # s11 # say39817
 label morte1_s11: # from 10.0
-    nr '"No… you were stripped to the skins when you arrived here. „Sides, looks like you got enough of a journal penned on your body."{#morte1_s11_}'
+    nr '"No… you were stripped to the skins when you arrived here. „Sides, looks like you got enough of a journal penned on your body."{#morte1_s11_1}'
 
     menu:
         '"What about Pharod? Do you know him?"{#morte1_s11_r39818}':
@@ -140,7 +140,7 @@ label morte1_s11: # from 10.0
 
 # s12 # say39819
 label morte1_s12: # from 11.0
-    nr '"Nobody I know… but then again, I don„t know many people. Still, SOME berk“s got to know where to find Pharod… uh, once we get out of here, that is."{#morte1_s12_}'
+    nr '"Nobody I know… but then again, I don„t know many people. Still, SOME berk“s got to know where to find Pharod… uh, once we get out of here, that is."{#morte1_s12_1}'
 
     menu:
         '"How *do* we get out of here?"{#morte1_s12_r39820}':
@@ -150,7 +150,7 @@ label morte1_s12: # from 11.0
 
 # s13 # say39821
 label morte1_s13: # from 12.0
-    nr '"Well, all the doors are locked, so we„ll need the key. Chances are, one of the walking corpses in this room has it."{#morte1_s13_}'
+    nr '"Well, all the doors are locked, so we„ll need the key. Chances are, one of the walking corpses in this room has it."{#morte1_s13_1}'
 
     menu:
         '"Walking corpses?"{#morte1_s13_r39822}':
@@ -160,7 +160,7 @@ label morte1_s13: # from 12.0
 
 # s14 # say39823
 label morte1_s14: # from 13.0
-    nr '"Yeah, the Mortuary keepers use dead bodies as cheap labor. The corpses are dumb as stones, but they„re harmless, and won“t attack you unless you attack first."{#morte1_s14_}'
+    nr '"Yeah, the Mortuary keepers use dead bodies as cheap labor. The corpses are dumb as stones, but they„re harmless, and won“t attack you unless you attack first."{#morte1_s14_1}'
 
     menu:
         '"Is there some other way? I don„t want to kill them just for a key."{#morte1_s14_r39824}':
@@ -175,7 +175,7 @@ label morte1_s14: # from 13.0
 
 # s15 # say39826
 label morte1_s15: # from 14.0
-    nr '"What, you think it„s going to hurt their feelings? They“re DEAD. But if you want a bright side to this: if you kill them, at least they„ll have a rest before their keepers raise them up to work again."{#morte1_s15_}'
+    nr '"What, you think it„s going to hurt their feelings? They“re DEAD. But if you want a bright side to this: if you kill them, at least they„ll have a rest before their keepers raise them up to work again."{#morte1_s15_1}'
 
     menu:
         '"Well, all right… I„ll take one of them down and get the key."{#morte1_s15_r39827}':
@@ -185,7 +185,7 @@ label morte1_s15: # from 14.0
 
 # s16 # say39828
 label morte1_s16: # from 14.1 15.0
-    nr '"Well, before you do that, arm yourself first. I think there„s a scalpel on one of the shelves around here."  ^NNOTE: Search the shelves in the room for a weapon to attack the zombies with. <SEARCH_WEAPON>^-{#morte1_s16_}'
+    nr '"Well, before you do that, arm yourself first. I think there„s a scalpel on one of the shelves around here."  ^NNOTE: Search the shelves in the room for a weapon to attack the zombies with. <SEARCH_WEAPON>^-{#morte1_s16_1}'
 
     menu:
         '"All right, I„ll look for one."{#morte1_s16_r39829}':
@@ -195,7 +195,7 @@ label morte1_s16: # from 14.1 15.0
 
 # s17 # say39830
 label morte1_s17: # from 16.0
-    nr '"One last thing: Those corpses are as slow as molasses, but getting punched by one of them is like being kissed by a battering ram. If they start getting an edge on you, remember you can RUN, and they can„t. Use it to keep some distance if you need to recover."  ^NNOTE: <RUNAWAY> If you are in danger of dying, use running to keep your distance from the zombies while you recover.^-{#morte1_s17_}'
+    nr '"One last thing: Those corpses are as slow as molasses, but getting punched by one of them is like being kissed by a battering ram. If they start getting an edge on you, remember you can RUN, and they can„t. Use it to keep some distance if you need to recover."  ^NNOTE: <RUNAWAY> If you are in danger of dying, use running to keep your distance from the zombies while you recover.^-{#morte1_s17_1}'
 
     menu:
         '"All right. Thanks for the advice."{#morte1_s17_r39831}':
@@ -206,7 +206,7 @@ label morte1_s17: # from 16.0
 
 # s18 # say39832
 label morte1_s18: # - # IF WEIGHT #2 /* Triggers after states #: 26 even though they appear after this state */ ~  Global("Mortuary_Walkthrough","GLOBAL",0) !PartyHasItem("Scalpel") Global("ZM782_Dead_KAPUTZ","GLOBAL",0)
-    nr '"There should be a scalpel on one of the shelves around here. I„d find it before locking horns with any of the corpses around here."  ^NNOTE: Search the shelves in the room for a weapon to attack the zombies with. <SEARCH_WEAPON>^-{#morte1_s18_}'
+    nr '"There should be a scalpel on one of the shelves around here. I„d find it before locking horns with any of the corpses around here."  ^NNOTE: Search the shelves in the room for a weapon to attack the zombies with. <SEARCH_WEAPON>^-{#morte1_s18_1}'
 
     menu:
         '"All right… I„ll keep searching."{#morte1_s18_r39833}':
@@ -216,7 +216,7 @@ label morte1_s18: # - # IF WEIGHT #2 /* Triggers after states #: 26 even though 
 
 # s19 # say39834
 label morte1_s19: # - # IF WEIGHT #3 /* Triggers after states #: 26 even though they appear after this state */ ~  Global("Mortuary_Walkthrough","GLOBAL",0) PartyHasItem("Scalpel") Global("ZM782_Dead_KAPUTZ","GLOBAL",0)
-    nr '"All right, you found the scalpel! Now, go get those corpses… and don„t worry, I“ll stay back and provide valuable tactical advice."{#morte1_s19_}'
+    nr '"All right, you found the scalpel! Now, go get those corpses… and don„t worry, I“ll stay back and provide valuable tactical advice."{#morte1_s19_1}'
 
     menu:
         '"Maybe you could *help* me, Morte."{#morte1_s19_r39835}':
@@ -230,7 +230,7 @@ label morte1_s19: # - # IF WEIGHT #3 /* Triggers after states #: 26 even though 
 
 # s20 # say39837
 label morte1_s20: # from 19.0
-    nr '"I WILL be helping you. Good advice is hard to come by."{#morte1_s20_}'
+    nr '"I WILL be helping you. Good advice is hard to come by."{#morte1_s20_1}'
 
     menu:
         '"I meant help in attacking the *corpse.*"{#morte1_s20_r39838}':
@@ -244,7 +244,7 @@ label morte1_s20: # from 19.0
 
 # s21 # say39840
 label morte1_s21: # from 20.0
-    nr '"Me? I„m a romantic, not a soldier. I“d just get in the way."{#morte1_s21_}'
+    nr '"Me? I„m a romantic, not a soldier. I“d just get in the way."{#morte1_s21_1}'
 
     menu:
         '"When I attack this corpse, you better be right there with me or you„ll be the next thing that I plunge this scalpel in."{#morte1_s21_r39841}':
@@ -258,7 +258,7 @@ label morte1_s21: # from 20.0
 
 # s22 # say39843
 label morte1_s22: # from 21.0
-    nr '"Eh… all right. I„ll help you."  ^NNOTE: If you wish Morte to help you attack, simply make sure the both of you are selected when you attack the corpse. Morte will join in the attack.^-{#morte1_s22_}'
+    nr '"Eh… all right. I„ll help you."  ^NNOTE: If you wish Morte to help you attack, simply make sure the both of you are selected when you attack the corpse. Morte will join in the attack.^-{#morte1_s22_1}'
 
     menu:
         '"I„m glad we understand each other."{#morte1_s22_r39844}':
@@ -268,7 +268,7 @@ label morte1_s22: # from 21.0
 
 # s23 # say39845
 label morte1_s23: # from 19.1 20.1 21.1 22.0
-    nr '"Time to introduce these corpses to the second death, then…"  ^NNOTE: <ATTACKNOTE>^-{#morte1_s23_}'
+    nr '"Time to introduce these corpses to the second death, then…"  ^NNOTE: <ATTACKNOTE>^-{#morte1_s23_1}'
 
     menu:
         '"Let„s go."{#morte1_s23_r39846}':
@@ -278,7 +278,7 @@ label morte1_s23: # from 19.1 20.1 21.1 22.0
 
 # s24 # say39847
 label morte1_s24: # - # IF WEIGHT #4 /* Triggers after states #: 26 even though they appear after this state */ ~  Global("Mortuary_Walkthrough","GLOBAL",0) !PartyHasItem("KeyPr") Global("ZM782_Dead_KAPUTZ","GLOBAL",1)
-    nr '"All right, you took care of the right corpse, looks like. Now you gotta find the key. It should have been on its body. Once we have it, we can get out of here."  ^NNOTE: <DEADPILE>^-{#morte1_s24_}'
+    nr '"All right, you took care of the right corpse, looks like. Now you gotta find the key. It should have been on its body. Once we have it, we can get out of here."  ^NNOTE: <DEADPILE>^-{#morte1_s24_1}'
 
     menu:
         '"All right."{#morte1_s24_r39848}':
@@ -288,7 +288,7 @@ label morte1_s24: # - # IF WEIGHT #4 /* Triggers after states #: 26 even though 
 
 # s25 # say39849
 label morte1_s25: # - # IF WEIGHT #5 /* Triggers after states #: 26 even though they appear after this state */ ~  Global("Mortuary_Walkthrough","GLOBAL",0) PartyHasItem("KeyPr")
-    nr '"All right, that„s the key. It must fit the lock of one of the doors in the room."{#morte1_s25_}'
+    nr '"All right, that„s the key. It must fit the lock of one of the doors in the room."{#morte1_s25_1}'
 
     menu:
         '"I„ll try all the doors, then."{#morte1_s25_r39850}':
@@ -298,7 +298,7 @@ label morte1_s25: # - # IF WEIGHT #5 /* Triggers after states #: 26 even though 
 
 # s26 # say39851
 label morte1_s26: # - # IF WEIGHT #0 ~  !InParty("Morte") GlobalGT("Morte","GLOBAL",0)
-    nr '"I knew you„d be back, chief! Finally realized you needed me, huh?"~ [MRT516]{#morte1_s26_}'
+    nr '"I knew you„d be back, chief! Finally realized you needed me, huh?"~ [MRT516]{#morte1_s26_1}'
 
     menu:
         '"Yeah… let„s go."{#morte1_s26_r39852}':
@@ -313,7 +313,7 @@ label morte1_s26: # - # IF WEIGHT #0 ~  !InParty("Morte") GlobalGT("Morte","GLOB
 
 # s27 # say39854
 label morte1_s27: # from 26.1
-    nr '"Hmmmph. Well, I don„t know how long I“m going to wait here, so I„m going to give you one LAST chance. You sure you don“t want my sage advice and quick wit?"{#morte1_s27_}'
+    nr '"Hmmmph. Well, I don„t know how long I“m going to wait here, so I„m going to give you one LAST chance. You sure you don“t want my sage advice and quick wit?"{#morte1_s27_1}'
 
     menu:
         '"Morte, you don„t have EITHER of those things."{#morte1_s27_r39855}':
@@ -332,7 +332,7 @@ label morte1_s27: # from 26.1
 
 # s28 # say39858
 label morte1_s28: # from 27.0 27.2
-    nr '"Are you trying to hurt my feelings, chief? What, was it something I said? The fact I don„t have arms? What?"{#morte1_s28_}'
+    nr '"Are you trying to hurt my feelings, chief? What, was it something I said? The fact I don„t have arms? What?"{#morte1_s28_1}'
 
     menu:
         '"All right, I changed my mind. Come on, let„s go."{#morte1_s28_r39859}':
@@ -347,7 +347,7 @@ label morte1_s28: # from 27.0 27.2
 
 # s29 # say39861
 label morte1_s29: # from 28.1
-    nr '"Well, I„m not going to wait FOREVER, so you better come back as soon as you change your mind."{#morte1_s29_}'
+    nr '"Well, I„m not going to wait FOREVER, so you better come back as soon as you change your mind."{#morte1_s29_1}'
 
     menu:
         '"I will. Farewell, Morte."{#morte1_s29_r39862}':
@@ -357,7 +357,7 @@ label morte1_s29: # from 28.1
 
 # s30 # say39863
 label morte1_s30: # - # IF WEIGHT #6 ~  Global("Mortuary_Walkthrough","GLOBAL",1)
-    nr '"What„s eating you, chief?"~ [MRT515]{#morte1_s30_}'
+    nr '"What„s eating you, chief?"~ [MRT515]{#morte1_s30_1}'
 
     menu:
         '"Nothing at the moment, Morte. Just checking to see if you were still with me."{#morte1_s30_r39864}':
@@ -367,7 +367,7 @@ label morte1_s30: # - # IF WEIGHT #6 ~  Global("Mortuary_Walkthrough","GLOBAL",1
 
 # s31 # say42298
 label morte1_s31: # externs zm825_s3 zm825_s0 zm569_s3 zm569_s0
-    nr '"Uh, chief… they can„t hear you, all right? They“re dead."{#morte1_s31_}'
+    nr '"Uh, chief… they can„t hear you, all right? They“re dead."{#morte1_s31_1}'
 
     menu:
         '"But you„re dead. And you“re talking to me."{#morte1_s31_r42299}':
@@ -377,7 +377,7 @@ label morte1_s31: # externs zm825_s3 zm825_s0 zm569_s3 zm569_s0
 
 # s32 # say42300
 label morte1_s32: # from 31.0
-    nr '"Yeah, but *I„m* special. Death couldn“t kill my zest for life. These corpses here…" Morte rolls his eyes. "They probably didn„t have much personality to begin with."{#morte1_s32_}'
+    nr '"Yeah, but *I„m* special. Death couldn“t kill my zest for life. These corpses here…" Morte rolls his eyes. "They probably didn„t have much personality to begin with."{#morte1_s32_1}'
 
     menu:
         '"I… see."{#morte1_s32_r42301}':
@@ -387,7 +387,7 @@ label morte1_s32: # from 31.0
 
 # s33 # say42302
 label morte1_s33: # from 32.0
-    nr '"Look, chief… watching you trying to swap the chant with these corpses isn„t doing much for my morale. Let“s leave the corpse-talk for the barmies, all right?"{#morte1_s33_}'
+    nr '"Look, chief… watching you trying to swap the chant with these corpses isn„t doing much for my morale. Let“s leave the corpse-talk for the barmies, all right?"{#morte1_s33_1}'
 
     menu:
         '"All right, then. Let„s go."{#morte1_s33_r42303}':
@@ -397,6 +397,6 @@ label morte1_s33: # from 32.0
 
 # s34 # say42306
 label morte1_s34: # externs zm782_s0
-    nr '"This looks like the lucky petitioner here, chief. Look… he„s got the key there in his hand."{#morte1_s34_}'
+    nr '"This looks like the lucky petitioner here, chief. Look… he„s got the key there in his hand."{#morte1_s34_1}'
 
     jump zm782_s2  # EXTERN

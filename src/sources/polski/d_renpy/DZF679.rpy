@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say35178
 label zf679_s0: # - # IF ~  True()
-    nr 'Ten trup, to ciało stareńkiej kobiety. Oprócz odoru płynu balsamującego, szwów spinających usta i numeru "679" wyszytego na prawym policzku, wygląda najprawdopodobniej niewiele inaczej niż w ostatnich latach swego życia.{#zf679_s0_}'
+    nr 'Ten trup, to ciało stareńkiej kobiety. Oprócz odoru płynu balsamującego, szwów spinających usta i numeru "679" wyszytego na prawym policzku, wygląda najprawdopodobniej niewiele inaczej niż w ostatnich latach swego życia.{#zf679_s0_1}'
 
     menu:
         '"Więc jak… masz jakieś plany na później?"{#zf679_s0_r35179}' if zf679Logic.r35179_condition():
@@ -58,7 +58,7 @@ label zf679_s0: # - # IF ~  True()
 
 # s1 # say35180
 label zf679_s1: # from 0.0 0.1 0.2
-    nr 'Trup wciąż się w ciebie wpatruje.{#zf679_s1_}'
+    nr 'Trup wciąż się w ciebie wpatruje.{#zf679_s1_1}'
 
     menu:
         '"A zatem żegnaj."{#zf679_s1_r35181}' if zf679Logic.r35181_condition():
@@ -76,7 +76,7 @@ label zf679_s1: # from 0.0 0.1 0.2
 
 # s2 # say35199
 label zf679_s2: # from 0.3
-    nr 'Trup nie odpowiada. Wygląda na to, że jest w zbyt daleko posuniętym stadium rozkładu, aby odpowiedzieć na twoje pytania.{#zf679_s2_}'
+    nr 'Trup nie odpowiada. Wygląda na to, że jest w zbyt daleko posuniętym stadium rozkładu, aby odpowiedzieć na twoje pytania.{#zf679_s2_1}'
 
     menu:
         '"A zatem żegnaj."{#zf679_s2_r35200}' if zf679Logic.r35200_condition():
@@ -94,6 +94,6 @@ label zf679_s2: # from 0.3
 
 # s3 # say35209
 label zf679_s3: # - # IF ~  False()
-    nr 'Trup nie odpowiada. Wygląda na to, że jest w zbyt daleko posuniętym stadium rozkładu, aby odpowiedzieć na twoje pytania.{#zf679_s3_}'
+    nr 'Trup nie odpowiada. Wygląda na to, że jest w zbyt daleko posuniętym stadium rozkładu, aby odpowiedzieć na twoje pytania.{#zf679_s3_1}'
 
     menu:

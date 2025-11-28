@@ -11,14 +11,14 @@ init 10 python:
 
 # s0 # say822
 label dhall_s0: # externs morte_s103
-    nr 'Předtím, než Morte dokončí své řečnění, písař začne mohutně kašlat. Po chvíli se kašel uklidní a písařovo dýchání začne znovu provázet ošklivé sípání.{#dhall_s0_}'
+    nr 'Předtím, než Morte dokončí své řečnění, písař začne mohutně kašlat. Po chvíli se kašel uklidní a písařovo dýchání začne znovu provázet ošklivé sípání.{#dhall_s0_1}'
 
     jump morte_s104  # EXTERN
 
 
 # s1 # say826
 label dhall_s1: # externs morte_s104
-    nr 'Ještě předtím, než Morte skončí svou řeč, tě přejedou písařovy šedé oči. "Už léta mě tíží toto břemeno, Neklidný." Odložil psací brk. "…a to teď nepočítám hluchotu jako jednu ze svých nemocí."{#dhall_s1_}'
+    nr 'Ještě předtím, než Morte skončí svou řeč, tě přejedou písařovy šedé oči. "Už léta mě tíží toto břemeno, Neklidný." Odložil psací brk. "…a to teď nepočítám hluchotu jako jednu ze svých nemocí."{#dhall_s1_1}'
 
     menu:
         '"„Neklidný?“ Ty mě snad znáš?"{#dhall_s1_r827}':
@@ -29,7 +29,7 @@ label dhall_s1: # externs morte_s104
 
 # s2 # say829
 label dhall_s2: # from 21.0
-    nr '"Neznáš tu ženu, která byla pohřbena dole v pamětní síni? Myslel jsem, že v minulosti cestovala s tebou…" Dhall vypadá, jako by ho chytal další záchvat kašle, ale pak znovu popadne dech. "Nebo se mýlím?"{#dhall_s2_}'
+    nr '"Neznáš tu ženu, která byla pohřbena dole v pamětní síni? Myslel jsem, že v minulosti cestovala s tebou…" Dhall vypadá, jako by ho chytal další záchvat kašle, ale pak znovu popadne dech. "Nebo se mýlím?"{#dhall_s2_1}'
 
     menu:
         '"Kde je její tělo?"{#dhall_s2_r5070}' if dhallLogic.r5070_condition():
@@ -67,7 +67,7 @@ label dhall_s2: # from 21.0
 
 # s3 # say832
 label dhall_s3: # from 9.0
-    nr 'Dhall na tebe kouká. "Víš to jistě?"{#dhall_s3_}'
+    nr 'Dhall na tebe kouká. "Víš to jistě?"{#dhall_s3_1}'
 
     menu:
         '"Ano. To je dobrý převlek."{#dhall_s3_r830}' if dhallLogic.r830_condition():
@@ -87,7 +87,7 @@ label dhall_s3: # from 9.0
 
 # s4 # say833
 label dhall_s4: # from 3.0 3.1
-    nr '"Já…" Dhalla popadl úporný kašel. Po minutě nebo dvou, zase chytil dech a povídá. "Já… bych měl hned informovat stráže."{#dhall_s4_}'
+    nr '"Já…" Dhalla popadl úporný kašel. Po minutě nebo dvou, zase chytil dech a povídá. "Já… bych měl hned informovat stráže."{#dhall_s4_1}'
 
     menu:
         '"Díky. Měl bych nějaké další otázky…"{#dhall_s4_r836}':
@@ -101,7 +101,7 @@ label dhall_s4: # from 3.0 3.1
 
 # s5 # say838
 label dhall_s5: # - # IF ~  Global("Dhall","GLOBAL",0)
-    nr 'Písař vypadá velice staře… jeho kůže je vrásčitá a má barvu starého pergamenu. Šedé oči jsou vsazeny do hranatého obličeje a velká bílá bradka mu splývá po šatech jako vodopád. Jeho dech je trhaný a nepravidelný, ale ani tak občasné záchvaty kašle nezpomalují pohyb jeho psacího brku.{#dhall_s5_}'
+    nr 'Písař vypadá velice staře… jeho kůže je vrásčitá a má barvu starého pergamenu. Šedé oči jsou vsazeny do hranatého obličeje a velká bílá bradka mu splývá po šatech jako vodopád. Jeho dech je trhaný a nepravidelný, ale ani tak občasné záchvaty kašle nezpomalují pohyb jeho psacího brku.{#dhall_s5_1}'
 
     menu:
         '"Zdravím."{#dhall_s5_r839}' if dhallLogic.r839_condition():
@@ -123,7 +123,7 @@ label dhall_s5: # - # IF ~  Global("Dhall","GLOBAL",0)
 
 # s6 # say841
 label dhall_s6: # from 5.2
-    nr 'Jeho šedé oči tě přejely, když zvedl hlavu od své knihy. "Obával jsem se, že to budeš ty, kdo je zodpovědný za útoky tady v Márnici. Tohle…" lehce zakašlal, pak se mu podařilo nadechnout se. "Tohle není pro tebe cesta, jak vstoupit do dalšího života."{#dhall_s6_}'
+    nr 'Jeho šedé oči tě přejely, když zvedl hlavu od své knihy. "Obával jsem se, že to budeš ty, kdo je zodpovědný za útoky tady v Márnici. Tohle…" lehce zakašlal, pak se mu podařilo nadechnout se. "Tohle není pro tebe cesta, jak vstoupit do dalšího života."{#dhall_s6_1}'
 
     menu:
         '"Jenom sem se bránil. Mám pro tebe nějaké otázky než se ze mne stane vzácnost…"{#dhall_s6_r842}' if dhallLogic.r842_condition():
@@ -146,7 +146,7 @@ label dhall_s6: # from 5.2
 
 # s7 # say844
 label dhall_s7: # from 5.1
-    nr 'Písař přestal psát do knihy před ním a pak se na tebe podíval. Jeho oči jsou jako dva hřebíky zaražené do lebky. "Tak…" Jeho hlas zní unaveně, jako kdyby tu samou věc opakoval již mnohokrát předtím. "Probudil ses ze svého spánku a vrátil ses do svého snu." Pokračuje uctivě dál. "Vítej… znovu, Neklidný."{#dhall_s7_}'
+    nr 'Písař přestal psát do knihy před ním a pak se na tebe podíval. Jeho oči jsou jako dva hřebíky zaražené do lebky. "Tak…" Jeho hlas zní unaveně, jako kdyby tu samou věc opakoval již mnohokrát předtím. "Probudil ses ze svého spánku a vrátil ses do svého snu." Pokračuje uctivě dál. "Vítej… znovu, Neklidný."{#dhall_s7_1}'
 
     menu:
         '"„Neklidný?“ Ty mne snad znáš?"{#dhall_s7_r845}':
@@ -156,7 +156,7 @@ label dhall_s7: # from 5.1
 
 # s8 # say851
 label dhall_s8: # from 22.0
-    nr '"Musíš pochopit. Tvá existence je pro nás rouháním. Mnoho členů z našeho společenství by nejraděj poručilo tě zpopelnit… kdyby věděli o tvém strádání."{#dhall_s8_}'
+    nr '"Musíš pochopit. Tvá existence je pro nás rouháním. Mnoho členů z našeho společenství by nejraděj poručilo tě zpopelnit… kdyby věděli o tvém strádání."{#dhall_s8_1}'
 
     menu:
         '"Jsi Spalovač. Ale nevypadá to, že bys mi udělal tu laskavost a zabil mne. Proč ne?"{#dhall_s8_r940}':
@@ -178,7 +178,7 @@ label dhall_s8: # from 22.0
 
 # s9 # say852
 label dhall_s9: # from 2.5 3.2 4.0 6.0 6.1 8.2 10.5 12.1 13.0 14.4 15.2 16.3 17.3 18.2 19.2 20.2 21.1 22.2 23.2 24.1 25.2 26.2 27.0 28.1 29.2 30.0 31.1 32.6 33.3 34.2 35.2 36.2 37.1 38.2 39.0 40.0 41.3 42.4 43.3 45.0 47.4 48.2 49.2 51.2 52.2 53.1
-    nr '"Dobře. Co si tedy přeješ vědět?"{#dhall_s9_}'
+    nr '"Dobře. Co si tedy přeješ vědět?"{#dhall_s9_1}'
 
     menu:
         '"Věděl si, ze ve východních komnatách se pohybuje někdo, kdo se svým převlekem maskuje jako zombie?"{#dhall_s9_r854}' if dhallLogic.r854_condition():
@@ -217,7 +217,7 @@ label dhall_s9: # from 2.5 3.2 4.0 6.0 6.1 8.2 10.5 12.1 13.0 14.4 15.2 16.3 17.
 
 # s10 # say859
 label dhall_s10: # from 9.1
-    nr '"Jsi v Márnici, Neklidný. Znovu jsi… přišel…" Předtím, než dokončí větu, dá se Dhall do úporného kašle. Po chvilce se zklidní a začne znovu při dýchání sípat. "…toto je vyčkávací místnost pro ty, kteří odejdou ze stínu tohoto života."{#dhall_s10_}'
+    nr '"Jsi v Márnici, Neklidný. Znovu jsi… přišel…" Předtím, než dokončí větu, dá se Dhall do úporného kašle. Po chvilce se zklidní a začne znovu při dýchání sípat. "…toto je vyčkávací místnost pro ty, kteří odejdou ze stínu tohoto života."{#dhall_s10_1}'
 
     menu:
         '"Řekni mi o Márnici."{#dhall_s10_r861}':
@@ -251,7 +251,7 @@ label dhall_s10: # from 9.1
 
 # s11 # say867
 label dhall_s11: # from 2.6 2.7 4.1 8.3 9.7 10.6 12.2 14.5 15.3 16.4 19.3 20.3 21.2 22.3 23.3 24.2 25.3 26.3 27.1 28.2 29.4 30.1 31.3 32.7 33.4 34.3 35.3 36.3 37.2 38.3 41.4 42.5 43.4 47.5 48.3 49.3 51.3 52.3 53.2
-    nr 'Když už se chystáš k odchodu, Dhall ti říká. "Věz toto: Nezávidím ti, Neklidný. Kdybych byl znovuzrozený jako ty, tak bych to považoval za kletbu, kterou bych nemohl nést. Musíš se s tím vyrovnat. Za nějakou dobu se sem zase vrátíš…" Dhall kašle a z jeho hrdla vychází chraptivý zvuk. "Je to úděl všech věcí složených z masa a kostí."{#dhall_s11_}'
+    nr 'Když už se chystáš k odchodu, Dhall ti říká. "Věz toto: Nezávidím ti, Neklidný. Kdybych byl znovuzrozený jako ty, tak bych to považoval za kletbu, kterou bych nemohl nést. Musíš se s tím vyrovnat. Za nějakou dobu se sem zase vrátíš…" Dhall kašle a z jeho hrdla vychází chraptivý zvuk. "Je to úděl všech věcí složených z masa a kostí."{#dhall_s11_1}'
 
     menu:
         '"Snad se ještě setkáme, Dhalle."{#dhall_s11_r41564}':
@@ -261,7 +261,7 @@ label dhall_s11: # from 2.6 2.7 4.1 8.3 9.7 10.6 12.2 14.5 15.3 16.4 19.3 20.3 2
 
 # s12 # say868
 label dhall_s12: # from 2.3 2.4 42.2 42.3 43.1 43.2
-    nr '"Nepochybně jsou, ale já neznám jejich jména a ani nevím, kde leží. Mnoho takových, jako jsi ty, sem přišlo způsobem, kterým se sem dostává většina těl. Pár jich přežilo. " Dhall ukazuje na tebe. "Všichni mrtví přicházejí sem. Někteří museli jednou přijít s tebou."{#dhall_s12_}'
+    nr '"Nepochybně jsou, ale já neznám jejich jména a ani nevím, kde leží. Mnoho takových, jako jsi ty, sem přišlo způsobem, kterým se sem dostává většina těl. Pár jich přežilo. " Dhall ukazuje na tebe. "Všichni mrtví přicházejí sem. Někteří museli jednou přijít s tebou."{#dhall_s12_1}'
 
     menu:
         '"Kde je ta žena, o které ses zmínil?"{#dhall_s12_r870}' if dhallLogic.r870_condition():
@@ -279,7 +279,7 @@ label dhall_s12: # from 2.3 2.4 42.2 42.3 43.1 43.2
 
 # s13 # say875
 label dhall_s13: # from 9.3
-    nr '"Hmmm… vstupní brána je zcela jistě východ, ale tam zase nedovolí projít nikomu jinému než Spalovači…" Dhall se pustil do úporného kašle a po chvilce pokračuje. "…jeden ze strážných u vstupní brány má k bráně i klíč, ale určitě ti ji neotevře, pokud nebudeš hodně přesvědčivý."{#dhall_s13_}'
+    nr '"Hmmm… vstupní brána je zcela jistě východ, ale tam zase nedovolí projít nikomu jinému než Spalovači…" Dhall se pustil do úporného kašle a po chvilce pokračuje. "…jeden ze strážných u vstupní brány má k bráně i klíč, ale určitě ti ji neotevře, pokud nebudeš hodně přesvědčivý."{#dhall_s13_1}'
 
     menu:
         '"Aha. Měl bych nějaké další otázky…"{#dhall_s13_r876}':
@@ -293,7 +293,7 @@ label dhall_s13: # from 9.3
 
 # s14 # say878
 label dhall_s14: # from 10.3
-    nr '"Ano, *znovu.* Už jsi sem byl přinesen mnohokrát, Neklidný. Doufal jsem, že tentokrát to bylo naposledy, když jsem uvážil ta hrozná poranění na tvém těle." Nadechne se. "Kdy se konečně vzdáš svého vzteku a odejdeš ze stínů tohoto života?"{#dhall_s14_}'
+    nr '"Ano, *znovu.* Už jsi sem byl přinesen mnohokrát, Neklidný. Doufal jsem, že tentokrát to bylo naposledy, když jsem uvážil ta hrozná poranění na tvém těle." Nadechne se. "Kdy se konečně vzdáš svého vzteku a odejdeš ze stínů tohoto života?"{#dhall_s14_1}'
 
     menu:
         '"*Neklidný?*"{#dhall_s14_r880}':
@@ -323,7 +323,7 @@ label dhall_s14: # from 10.3
 
 # s15 # say885
 label dhall_s15: # from 9.2 10.4 32.5
-    nr 'Dhall si pohrdavě odfrkne, jako kdyby se to protivilo jeho mysli. "Tvoje rezavá kára tě dopravila do Márnice, Neklidný. Měl bys pomyslit na to, že v tom voze, co tě sem dovezl, jsi ležel jako král na povrchu na to, kolik lidí uvnitř smrdělo a hnilo."{#dhall_s15_}'
+    nr 'Dhall si pohrdavě odfrkne, jako kdyby se to protivilo jeho mysli. "Tvoje rezavá kára tě dopravila do Márnice, Neklidný. Měl bys pomyslit na to, že v tom voze, co tě sem dovezl, jsi ležel jako král na povrchu na to, kolik lidí uvnitř smrdělo a hnilo."{#dhall_s15_1}'
 
     menu:
         '"Přijel jsem sem vozem?"{#dhall_s15_r886}':
@@ -346,7 +346,7 @@ label dhall_s15: # from 9.2 10.4 32.5
 
 # s16 # say890
 label dhall_s16: # from 15.0
-    nr '"Ano… tvé tělo bylo někde mezi hromadou zbytků mrtvých těl." Dhalla přepadl ostrý nával kašle, po minutě konečně znovu chytil dech. "Tvůj „nosič“ Pharod byl, ostatně jako vždy, potěšen, že dostal zase pár měďáků za odvezení hromady z vás před brány Márnice."{#dhall_s16_}'
+    nr '"Ano… tvé tělo bylo někde mezi hromadou zbytků mrtvých těl." Dhalla přepadl ostrý nával kašle, po minutě konečně znovu chytil dech. "Tvůj „nosič“ Pharod byl, ostatně jako vždy, potěšen, že dostal zase pár měďáků za odvezení hromady z vás před brány Márnice."{#dhall_s16_1}'
 
     menu:
         '"Kdo je tenhle Pharod?"{#dhall_s16_r891}' if dhallLogic.r891_condition():
@@ -372,7 +372,7 @@ label dhall_s16: # from 15.0
 
 # s17 # say895
 label dhall_s17: # from 16.0
-    nr '"On je… sběrač mrtvých." Dhall se zhluboka nadechne a pak pokračuje. "Máme v našem městě takové lidi, kteří odklízejí mrtvá těla těch, kdož prošli cestou Pravé smrti, a přináší je k nám, aby jejich ostatky mohly být důstojně pohřbeny."{#dhall_s17_}'
+    nr '"On je… sběrač mrtvých." Dhall se zhluboka nadechne a pak pokračuje. "Máme v našem městě takové lidi, kteří odklízejí mrtvá těla těch, kdož prošli cestou Pravé smrti, a přináší je k nám, aby jejich ostatky mohly být důstojně pohřbeny."{#dhall_s17_1}'
 
     menu:
         '"Kde můžu najít tohohle „Pharoda?“"{#dhall_s17_r897}':
@@ -398,7 +398,7 @@ label dhall_s17: # from 16.0
 
 # s18 # say900
 label dhall_s18: # from 17.0 29.1 31.0 35.1 36.1
-    nr '"Jestli události půjdou tak jak mají, Neklidný, je tu mnohem větší šance, že tě Pharod najde a znovu přinese ještě předtím, než ty zjistíš, v které stoce momentálně Pharod žije."{#dhall_s18_}'
+    nr '"Jestli události půjdou tak jak mají, Neklidný, je tu mnohem větší šance, že tě Pharod najde a znovu přinese ještě předtím, než ty zjistíš, v které stoce momentálně Pharod žije."{#dhall_s18_1}'
 
     menu:
         '"Nicméně musím ho najít."{#dhall_s18_r902}':
@@ -420,7 +420,7 @@ label dhall_s18: # from 17.0 29.1 31.0 35.1 36.1
 
 # s19 # say901
 label dhall_s19: # from 17.4 18.0 18.3 29.3 31.2
-    nr 'Do Dhallova tónu se vkradlo lehké varování. "Nehledej Pharoda, Neklidný. Jsem si jistý, že kruh by se opět uzavřel, s tebou bez žádných zkušeností a Pharodem o pár měďáků bohatším. Přijmi smrt, Neklidný. Nezachovávej na věky svůj kruh utrpení."{#dhall_s19_}'
+    nr 'Do Dhallova tónu se vkradlo lehké varování. "Nehledej Pharoda, Neklidný. Jsem si jistý, že kruh by se opět uzavřel, s tebou bez žádných zkušeností a Pharodem o pár měďáků bohatším. Přijmi smrt, Neklidný. Nezachovávej na věky svůj kruh utrpení."{#dhall_s19_1}'
 
     menu:
         '"*Musím* ho najít. Víš, kde ho najdu?"{#dhall_s19_r906}':
@@ -443,7 +443,7 @@ label dhall_s19: # from 17.4 18.0 18.3 29.3 31.2
 
 # s20 # say908
 label dhall_s20: # from 19.0
-    nr 'Dhall se na chvíli odmlčí. Když konečně začne mluvit, vypadá to, že tak činí neochotně. "Nevím, v jakém kanálu teď zrovna Pharod bydlí, ale měl bys ho najít někde za branami Márnice, v Úlu. Snad tam někdo bude vědět, kde ho najdeš."{#dhall_s20_}'
+    nr 'Dhall se na chvíli odmlčí. Když konečně začne mluvit, vypadá to, že tak činí neochotně. "Nevím, v jakém kanálu teď zrovna Pharod bydlí, ale měl bys ho najít někde za branami Márnice, v Úlu. Snad tam někdo bude vědět, kde ho najdeš."{#dhall_s20_1}'
 
     menu:
         '"To zní, jako bys neměl Pharoda moc v lásce."{#dhall_s20_r910}' if dhallLogic.r910_condition():
@@ -465,7 +465,7 @@ label dhall_s20: # from 19.0
 
 # s21 # say914
 label dhall_s21: # from 9.4
-    nr '"Já o tobě vím opravdu málo, Neklidný. O něco více vím o těch, kdož putovali s tebou, a kteří jsou nyní v našem držení." Dhall se nadechne. "Žádám tě, aby se k tobě už nikdo do party nepřipojoval, Neklidný -- kam půjdeš ty, půjde i neštěstí. Nes si své břímě úplně sám."{#dhall_s21_}'
+    nr '"Já o tobě vím opravdu málo, Neklidný. O něco více vím o těch, kdož putovali s tebou, a kteří jsou nyní v našem držení." Dhall se nadechne. "Žádám tě, aby se k tobě už nikdo do party nepřipojoval, Neklidný -- kam půjdeš ty, půjde i neštěstí. Nes si své břímě úplně sám."{#dhall_s21_1}'
 
     menu:
         '"Jsou tu i ostatní, kteří se mnou putovali? Jsou tady?"{#dhall_s21_r921}':
@@ -484,7 +484,7 @@ label dhall_s21: # from 9.4
 
 # s22 # say915
 label dhall_s22: # from 47.0
-    nr 'Dhall si povzdychne. "Říká se, že existují duše, které nikdy nedocílí Pravé smrti. Smrt je opustila a jejich jména nikdy nebudou zapsána do Knihy mrtvých. Probudit se ze smrti, jako se to stalo tobě… naznačuje, že jsi jednou z těchto duší. Tvá existence není v našem společenství vítána."{#dhall_s22_}'
+    nr 'Dhall si povzdychne. "Říká se, že existují duše, které nikdy nedocílí Pravé smrti. Smrt je opustila a jejich jména nikdy nebudou zapsána do Knihy mrtvých. Probudit se ze smrti, jako se to stalo tobě… naznačuje, že jsi jednou z těchto duší. Tvá existence není v našem společenství vítána."{#dhall_s22_1}'
 
     menu:
         '"„Není vítána?“ To nezní, jako bych se zrovna nacházel v dobré situaci."{#dhall_s22_r917}':
@@ -506,7 +506,7 @@ label dhall_s22: # from 47.0
 
 # s23 # say924
 label dhall_s23: # from 8.0
-    nr '"Protože vnutit ti naši pravdu není správné. Musíš se vzdát těchto stínů života sám, a to ne proto, že jsme tě donutili." Dhall vypadá, jako by měl propadnout dalšímu návalu kašle, ale dokázal jej s vypětím sil zadržet. "Dokud budu zastávat tento post, budu chránit tvé právo najít skutečnou pravdu."{#dhall_s23_}'
+    nr '"Protože vnutit ti naši pravdu není správné. Musíš se vzdát těchto stínů života sám, a to ne proto, že jsme tě donutili." Dhall vypadá, jako by měl propadnout dalšímu návalu kašle, ale dokázal jej s vypětím sil zadržet. "Dokud budu zastávat tento post, budu chránit tvé právo najít skutečnou pravdu."{#dhall_s23_1}'
 
     menu:
         '"Jaké je tvoje místo tady?"{#dhall_s23_r927}':
@@ -528,7 +528,7 @@ label dhall_s23: # from 8.0
 
 # s24 # say929
 label dhall_s24: # from 25.0
-    nr '"Jsem písař, co dělá seznamy schránek, které přicházejí do našich hal, Neklidný." Dhall se dal do úporného kašle a pak se uklidnil. "Znám pouze obličeje těch, kteří leží na našich kamenných deskách. Tajemství tvé existence je bezpečně uloženo u mne."{#dhall_s24_}'
+    nr '"Jsem písař, co dělá seznamy schránek, které přicházejí do našich hal, Neklidný." Dhall se dal do úporného kašle a pak se uklidnil. "Znám pouze obličeje těch, kteří leží na našich kamenných deskách. Tajemství tvé existence je bezpečně uloženo u mne."{#dhall_s24_1}'
 
     menu:
         '"Řekni mi více o Márnici."{#dhall_s24_r1305}':
@@ -546,7 +546,7 @@ label dhall_s24: # from 25.0
 
 # s25 # say930
 label dhall_s25: # from 9.5 23.0
-    nr '"Jsem písař, co dělá seznamy všech schránek, které přicházejí do Márnice." Dhall si znovu odkašlal, pak se zhluboka nadýchl. "Dokud Márnicí poteče proud mrtvých těl, budu zastávat toto místo."{#dhall_s25_}'
+    nr '"Jsem písař, co dělá seznamy všech schránek, které přicházejí do Márnice." Dhall si znovu odkašlal, pak se zhluboka nadýchl. "Dokud Márnicí poteče proud mrtvých těl, budu zastávat toto místo."{#dhall_s25_1}'
 
     menu:
         '"Říkal jsi, že jsem tu byl víckrát než jednou. Jak to, že mne tedy Spalovači nepoznali?"{#dhall_s25_r931}' if dhallLogic.r931_condition():
@@ -569,7 +569,7 @@ label dhall_s25: # from 9.5 23.0
 
 # s26 # say934
 label dhall_s26: # from 9.6
-    nr '"Nyní jsem blízko Pravé smrti, Neklidný. Nebude to dlouho trvat a já se dostanu za Nekonečnou hranici, kde konečně najdu klid, který hledám. Už jsem moc unavený…" Dhall se hluboce nadechl. "Sféry už nebude zajímat někdo takový, jako jsem já."{#dhall_s26_}'
+    nr '"Nyní jsem blízko Pravé smrti, Neklidný. Nebude to dlouho trvat a já se dostanu za Nekonečnou hranici, kde konečně najdu klid, který hledám. Už jsem moc unavený…" Dhall se hluboce nadechl. "Sféry už nebude zajímat někdo takový, jako jsem já."{#dhall_s26_1}'
 
     menu:
         '"Nekonečná hranice?"{#dhall_s26_r935}':
@@ -592,7 +592,7 @@ label dhall_s26: # from 9.6
 
 # s27 # say938
 label dhall_s27: # from 26.1
-    nr '"Nepřeji si žít věčně nebo žít znovu, Neklidný. Nesnesl bych to."{#dhall_s27_}'
+    nr '"Nepřeji si žít věčně nebo žít znovu, Neklidný. Nesnesl bych to."{#dhall_s27_1}'
 
     menu:
         '"Dobře. Měl bych nějaké další otázky…"{#dhall_s27_r1303}':
@@ -606,7 +606,7 @@ label dhall_s27: # from 26.1
 
 # s28 # say939
 label dhall_s28: # from 2.2 42.1
-    nr '"Ona s tebou *mluvila*?" Dhallův hlas zašeptá. "Máš snad *horečku*, Neklidný? Ona dosáhla Pravé smrti a přešla hranici ještě před tebou."{#dhall_s28_}'
+    nr '"Ona s tebou *mluvila*?" Dhallův hlas zašeptá. "Máš snad *horečku*, Neklidný? Ona dosáhla Pravé smrti a přešla hranici ještě před tebou."{#dhall_s28_1}'
 
     menu:
         '"Mluvila se mnou, Dhalle. Její duše tu přebývá."{#dhall_s28_r981}':
@@ -624,7 +624,7 @@ label dhall_s28: # from 2.2 42.1
 
 # s29 # say941
 label dhall_s29: # from 36.0
-    nr 'Dhall se pozastavil. "Nejspíše. Postrádáš něco… zvláště cenného?" Jeho hlas poklesl a zamračil se. "Pharod nedělá výjimky, vezme si od tebe všechno, co není pevně spojeno k tvému tělu a někdy ani dokonce tohle nestačí k uspokojení jeho nenasytné duše."{#dhall_s29_}'
+    nr 'Dhall se pozastavil. "Nejspíše. Postrádáš něco… zvláště cenného?" Jeho hlas poklesl a zamračil se. "Pharod nedělá výjimky, vezme si od tebe všechno, co není pevně spojeno k tvému tělu a někdy ani dokonce tohle nestačí k uspokojení jeho nenasytné duše."{#dhall_s29_1}'
 
     menu:
         '"Postrádám deník."{#dhall_s29_r942}' if dhallLogic.r942_condition():
@@ -650,7 +650,7 @@ label dhall_s29: # from 36.0
 
 # s30 # say945
 label dhall_s30: # from 28.0
-    nr 'Dhall nakreslil před sebou prstem půlkruh. "To je nemocná duše, Neklidný. Modlím se, aby se ti ten rozhovor zdál… ale teď se obávám, že se ti nezdál."{#dhall_s30_}'
+    nr 'Dhall nakreslil před sebou prstem půlkruh. "To je nemocná duše, Neklidný. Modlím se, aby se ti ten rozhovor zdál… ale teď se obávám, že se ti nezdál."{#dhall_s30_1}'
 
     menu:
         '"Snad jsem si to vybavil. Měl bych nějaké další otázky."{#dhall_s30_r946}':
@@ -664,7 +664,7 @@ label dhall_s30: # from 28.0
 
 # s31 # say850
 label dhall_s31: # from 29.0
-    nr '"Deník? Jestli to mělo nějakou cenu, pak to zcela určitě uvízlo v rukou Pharoda."{#dhall_s31_}'
+    nr '"Deník? Jestli to mělo nějakou cenu, pak to zcela určitě uvízlo v rukou Pharoda."{#dhall_s31_1}'
 
     menu:
         '"Kde bych mohl najít toho Pharoda?"{#dhall_s31_r948}' if dhallLogic.r948_condition():
@@ -686,7 +686,7 @@ label dhall_s31: # from 29.0
 
 # s32 # say950
 label dhall_s32: # from 8.1 10.0 14.3 15.1 16.2 17.2 18.1 19.1 20.1 22.1 23.1 24.0 25.1 33.2 34.1 37.0 38.1 41.2 47.3 48.1 49.1 51.1 52.1 53.0
-    nr '"Je to místo, kam jsou přinášeni mrtví, aby byli pohřbeni nebo zpopelněni. Je to naše zodpovědnost coby Spalovačů, postarat se o mrtvé, o ty, kteří opustili tento stín života a došli cestou k Pravé smrti." Dhallův hlas poklesl. "Tvá zranění jsou asi mnohem horší, když nepoznáváš tohle místo. Vždyť je tohle skoro tvůj domov."{#dhall_s32_}'
+    nr '"Je to místo, kam jsou přinášeni mrtví, aby byli pohřbeni nebo zpopelněni. Je to naše zodpovědnost coby Spalovačů, postarat se o mrtvé, o ty, kteří opustili tento stín života a došli cestou k Pravé smrti." Dhallův hlas poklesl. "Tvá zranění jsou asi mnohem horší, když nepoznáváš tohle místo. Vždyť je tohle skoro tvůj domov."{#dhall_s32_1}'
 
     menu:
         '"Stín života?"{#dhall_s32_r951}':
@@ -725,7 +725,7 @@ label dhall_s32: # from 8.1 10.0 14.3 15.1 16.2 17.2 18.1 19.1 20.1 22.1 23.1 24
 
 # s33 # say957
 label dhall_s33: # from 10.2 14.2 32.0 41.0 47.2 49.0
-    nr '"Ano, stín. Víš, Neklidný, tento život… není skutečný. Tvůj život, můj život, to jsou stíny, jiskry toho, čím kdysi život býval. Tento „život“ je tam, kde skončíme *potom*, co zemřeme. A tady zůstaneme… uvězněni. V pasti. Dokud nedosáhneme Pravé smrti."{#dhall_s33_}'
+    nr '"Ano, stín. Víš, Neklidný, tento život… není skutečný. Tvůj život, můj život, to jsou stíny, jiskry toho, čím kdysi život býval. Tento „život“ je tam, kde skončíme *potom*, co zemřeme. A tady zůstaneme… uvězněni. V pasti. Dokud nedosáhneme Pravé smrti."{#dhall_s33_1}'
 
     menu:
         '"Pravé smrti?"{#dhall_s33_r958}':
@@ -752,7 +752,7 @@ label dhall_s33: # from 10.2 14.2 32.0 41.0 47.2 49.0
 
 # s34 # say961
 label dhall_s34: # from 14.1 32.4
-    nr '"Ano, ta zranění, která zdobí tvé tělo… vypadají, jako by už poslala nějakého muže cestou Pravé smrti. Teď se zdá, že mnohé z těchto ran se již uzdravily." Dhall se nahlas na chvíli rozkašlal a pak se uklidnil. "Ale toto jsou pouze povrchová zranění."{#dhall_s34_}'
+    nr '"Ano, ta zranění, která zdobí tvé tělo… vypadají, jako by už poslala nějakého muže cestou Pravé smrti. Teď se zdá, že mnohé z těchto ran se již uzdravily." Dhall se nahlas na chvíli rozkašlal a pak se uklidnil. "Ale toto jsou pouze povrchová zranění."{#dhall_s34_1}'
 
     menu:
         '"Pouze povrchová zranění? Co tím máš na mysli?"{#dhall_s34_r1301}':
@@ -775,7 +775,7 @@ label dhall_s34: # from 14.1 32.4
 
 # s35 # say962
 label dhall_s35: # from 16.1 17.1 20.0
-    nr '"Je tu několik lidí, kterých si vážím, Neklidný." Dhall se úporně rozkašle a pak se zklidní. "Pharod není jedním z nich. Nosí svůj zkažený věhlas jako jakýsi odznak čestnosti a přitom volně okrádá mrtvé. Je to vrchní přemísťovač, křižující darebák toho nejnižšího řádu."{#dhall_s35_}'
+    nr '"Je tu několik lidí, kterých si vážím, Neklidný." Dhall se úporně rozkašle a pak se zklidní. "Pharod není jedním z nich. Nosí svůj zkažený věhlas jako jakýsi odznak čestnosti a přitom volně okrádá mrtvé. Je to vrchní přemísťovač, křižující darebák toho nejnižšího řádu."{#dhall_s35_1}'
 
     menu:
         '"„Vrchní přemísťovač?“"{#dhall_s35_r963}':
@@ -797,7 +797,7 @@ label dhall_s35: # from 16.1 17.1 20.0
 
 # s36 # say966
 label dhall_s36: # from 35.0
-    nr '"Vrchní přemísťovač…" Dhall se rozkašle. "…no, zloděj. Všichni mrtví, které Pharod přinese k našim zdím, už přijdou oloupeni o tu trochu, co měli u sebe, což je připraví i o důstojnost, kterou měli za svého skutečného života. Pharod si vezme cokoliv, co může vydolovat z jejich ztuhlých prstů."{#dhall_s36_}'
+    nr '"Vrchní přemísťovač…" Dhall se rozkašle. "…no, zloděj. Všichni mrtví, které Pharod přinese k našim zdím, už přijdou oloupeni o tu trochu, co měli u sebe, což je připraví i o důstojnost, kterou měli za svého skutečného života. Pharod si vezme cokoliv, co může vydolovat z jejich ztuhlých prstů."{#dhall_s36_1}'
 
     menu:
         '"Vzal si ten Pharod taky něco ode *mne?*"{#dhall_s36_r967}':
@@ -819,7 +819,7 @@ label dhall_s36: # from 35.0
 
 # s37 # say970
 label dhall_s37: # from 32.3
-    nr '"Sigil je naše krásné město, Neklidný."{#dhall_s37_}'
+    nr '"Sigil je naše krásné město, Neklidný."{#dhall_s37_1}'
 
     menu:
         '"Řekni mi něco více o Márnici."{#dhall_s37_r971}':
@@ -837,7 +837,7 @@ label dhall_s37: # from 32.3
 
 # s38 # say973
 label dhall_s38: # from 10.1 14.0
-    nr '"Neklidný je jméno jako každé jiné…" Dhall zakašle. "Něco tě drží tady, že ano? Něco, co musí být vysvětleno, nějaký chtíč, který musí být potlačen předtím než budeš moci dosáhnout Pravé smrti?"{#dhall_s38_}'
+    nr '"Neklidný je jméno jako každé jiné…" Dhall zakašle. "Něco tě drží tady, že ano? Něco, co musí být vysvětleno, nějaký chtíč, který musí být potlačen předtím než budeš moci dosáhnout Pravé smrti?"{#dhall_s38_1}'
 
     menu:
         '"Pravé smrti?"{#dhall_s38_r974}':
@@ -860,7 +860,7 @@ label dhall_s38: # from 10.1 14.0
 
 # s39 # say884
 label dhall_s39: # -
-    nr '"Uděláš to, co jsi udělal vždycky, Neklidný. Najdeš toho popudlivého srabáckého blbce, Pharoda Červovlasa, a požádáš ho o to, co ti vzal. A pak znovu začneš marně pátrat, budeš se pokoušet plnit nesmyslné úkoly, sbírat ty zbytečné věci a nakonec tě někdo zase sejme a ty se ocitneš tady. Ušetři si čas a promluv si teď se mnou, aspoň nebudeme muset tuhle konverzaci muset opakovat, až se ti zase ztratí paměť."{#dhall_s39_}'
+    nr '"Uděláš to, co jsi udělal vždycky, Neklidný. Najdeš toho popudlivého srabáckého blbce, Pharoda Červovlasa, a požádáš ho o to, co ti vzal. A pak znovu začneš marně pátrat, budeš se pokoušet plnit nesmyslné úkoly, sbírat ty zbytečné věci a nakonec tě někdo zase sejme a ty se ocitneš tady. Ušetři si čas a promluv si teď se mnou, aspoň nebudeme muset tuhle konverzaci muset opakovat, až se ti zase ztratí paměť."{#dhall_s39_1}'
 
     menu:
         '"Měl bych nějaké další otázky…"{#dhall_s39_r976}':
@@ -874,7 +874,7 @@ label dhall_s39: # -
 
 # s40 # say978
 label dhall_s40: # - # IF ~  Global("Dhall","GLOBAL",1)
-    nr 'Dhall na tebe prohlédl, když ses přiblížil." Tak ses vrátil…" Dhall se těžce nadýchne, najednou se hlasitě rozkašle. Po chvíli se uklidní a začne znovu těžce oddychovat. "… znovu tě vítám, Neklidný."{#dhall_s40_}'
+    nr 'Dhall na tebe prohlédl, když ses přiblížil." Tak ses vrátil…" Dhall se těžce nadýchne, najednou se hlasitě rozkašle. Po chvíli se uklidní a začne znovu těžce oddychovat. "… znovu tě vítám, Neklidný."{#dhall_s40_1}'
 
     menu:
         '"Měl bych na tebe nějaké další otázky, Dhalle."{#dhall_s40_r979}':
@@ -888,7 +888,7 @@ label dhall_s40: # - # IF ~  Global("Dhall","GLOBAL",1)
 
 # s41 # say983
 label dhall_s41: # from 26.0 52.0
-    nr '"Hranice mezi stínem života a Pravou smrtí."{#dhall_s41_}'
+    nr '"Hranice mezi stínem života a Pravou smrtí."{#dhall_s41_1}'
 
     menu:
         '"Stín života?"{#dhall_s41_r984}':
@@ -915,7 +915,7 @@ label dhall_s41: # from 26.0 52.0
 
 # s42 # say5075
 label dhall_s42: # from 2.0 12.0 43.0
-    nr '"V severovýchodní pamětní hale o patro níž. Podívej se na tamní katafalky… na některé desce by mělo být její jméno. Možná že to ti osvěží paměť."{#dhall_s42_}'
+    nr '"V severovýchodní pamětní hale o patro níž. Podívej se na tamní katafalky… na některé desce by mělo být její jméno. Možná že to ti osvěží paměť."{#dhall_s42_1}'
 
     menu:
         '"Nevím. Ani si nepamatuju, že bych cestoval s nějakou ženou."{#dhall_s42_r5076}' if dhallLogic.r5076_condition():
@@ -945,7 +945,7 @@ label dhall_s42: # from 2.0 12.0 43.0
 
 # s43 # say5080
 label dhall_s43: # from 2.1 42.0
-    nr 'Dhall na to neodpověděl. Jenom na tebe tiše zírá.{#dhall_s43_}'
+    nr 'Dhall na to neodpověděl. Jenom na tebe tiše zírá.{#dhall_s43_1}'
 
     menu:
         '"Kde ji můžu najít?"{#dhall_s43_r5081}' if dhallLogic.r5081_condition():
@@ -971,7 +971,7 @@ label dhall_s43: # from 2.1 42.0
 
 # s44 # say840
 label dhall_s44: # from 1.0 6.2 7.0
-    nr '"Znát tě? Já…" v písařově hlase je znát trochu zahořklosti, když mluví. "*Nikdy* jsem tě neznal, Neklidný. Ne víc než jak jsi ty znal sám sebe." Na chvíli se odmlčí. "Co se tebe týče, tys zapomněl, že ano?"{#dhall_s44_}'
+    nr '"Znát tě? Já…" v písařově hlase je znát trochu zahořklosti, když mluví. "*Nikdy* jsem tě neznal, Neklidný. Ne víc než jak jsi ty znal sám sebe." Na chvíli se odmlčí. "Co se tebe týče, tys zapomněl, že ano?"{#dhall_s44_1}'
 
     menu:
         '"*Kdo* jsi?"{#dhall_s44_r1327}':
@@ -982,7 +982,7 @@ label dhall_s44: # from 1.0 6.2 7.0
 
 # s45 # say5728
 label dhall_s45: # from 44.0
-    nr '"Jako vždy, otázka. A špatná otázka, jako vždy." Lehce se uklonil, ale pohyb v něm vyvolal záchvat kašle. "Já…" Na chvíli se odmlčel a snaží se dýchat pravidelně. "Já… jsem Dhall."{#dhall_s45_}'
+    nr '"Jako vždy, otázka. A špatná otázka, jako vždy." Lehce se uklonil, ale pohyb v něm vyvolal záchvat kašle. "Já…" Na chvíli se odmlčel a snaží se dýchat pravidelně. "Já… jsem Dhall."{#dhall_s45_1}'
 
     menu:
         '"Možná bys mi mohl odpovědět na pár otázek, Dhalle…"{#dhall_s45_r5731}':
@@ -998,7 +998,7 @@ label dhall_s45: # from 44.0
 
 # s46 # say5730
 label dhall_s46: # from 45.1
-    nr '"Dobrá tedy, Neklidný." Dhall přikývl. "Ale myslím si, že v tomto případě není čas tvým nepřítelem." Zvedl své pero. "Až si budeš chtít znovu promluvit, budu zde."{#dhall_s46_}'
+    nr '"Dobrá tedy, Neklidný." Dhall přikývl. "Ale myslím si, že v tomto případě není čas tvým nepřítelem." Zvedl své pero. "Až si budeš chtít znovu promluvit, budu zde."{#dhall_s46_1}'
 
     menu:
         '"Snad se ještě uvidíme. Sbohem."{#dhall_s46_r40005}':
@@ -1008,7 +1008,7 @@ label dhall_s46: # from 45.1
 
 # s47 # say847
 label dhall_s47: # from 32.2
-    nr '"My Spalovači jsme společenstvím, které sdružuje ty z lidí, kteří jsou schopni rozpoznat klam tohoto života. Očekáváme další život a pomáháme ostatním na jejich cestě."{#dhall_s47_}'
+    nr '"My Spalovači jsme společenstvím, které sdružuje ty z lidí, kteří jsou schopni rozpoznat klam tohoto života. Očekáváme další život a pomáháme ostatním na jejich cestě."{#dhall_s47_1}'
 
     menu:
         '"Možná bys mi mohl vysvětlit, proč mě chtějí Spalovači zabít."{#dhall_s47_r6032}' if dhallLogic.r6032_condition():
@@ -1039,7 +1039,7 @@ label dhall_s47: # from 32.2
 
 # s48 # say848
 label dhall_s48: # from 32.1 33.0 38.0 41.1 47.1
-    nr '"Pravá smrt je nebytí. Je to stav postrádající smysl, city, hněv." Dhall si odkašlal, pak se nadechl. "Stav nevinnosti."{#dhall_s48_}'
+    nr '"Pravá smrt je nebytí. Je to stav postrádající smysl, city, hněv." Dhall si odkašlal, pak se nadechl. "Stav nevinnosti."{#dhall_s48_1}'
 
     menu:
         '"To zní jako konec, zapomnění, nicota. Proč by to někdo chtěl?"{#dhall_s48_r6043}':
@@ -1061,7 +1061,7 @@ label dhall_s48: # from 32.1 33.0 38.0 41.1 47.1
 
 # s49 # say849
 label dhall_s49: # from 48.0
-    nr '"Je to horší než zůstat ve stínu toho života, který už jsem jednou zažil? To si nemyslím."{#dhall_s49_}'
+    nr '"Je to horší než zůstat ve stínu toho života, který už jsem jednou zažil? To si nemyslím."{#dhall_s49_1}'
 
     menu:
         '"Stín života?"{#dhall_s49_r6047}':
@@ -1083,7 +1083,7 @@ label dhall_s49: # from 48.0
 
 # s50 # say853
 label dhall_s50: # from 33.1
-    nr '"Co tě přivádí k myšlence, že *je* tento život skutečný? Podívej se do sebe. Necítíš, že tam něco chybí?" Dhall potřásl hlavou. "Toto je očistec. Zde je jenom žal. Neštěstí. Trápení. To nejsou prvky, které tvoří „život.“ Jsou to části klece, která nás zadržuje v tomto stínu."{#dhall_s50_}'
+    nr '"Co tě přivádí k myšlence, že *je* tento život skutečný? Podívej se do sebe. Necítíš, že tam něco chybí?" Dhall potřásl hlavou. "Toto je očistec. Zde je jenom žal. Neštěstí. Trápení. To nejsou prvky, které tvoří „život.“ Jsou to části klece, která nás zadržuje v tomto stínu."{#dhall_s50_1}'
 
     menu:
         '"Myslím, že tě dostal tvůj fatalismus. Ty elementy jsou částí života, ale ne celkem."{#dhall_s50_r6051}':
@@ -1103,7 +1103,7 @@ label dhall_s50: # from 33.1
 
 # s51 # say5733
 label dhall_s51: # from 50.0 50.1 50.2
-    nr 'Dhall zavrtěl hlavou. "Vášně mají váhu, moc. Mnozí jsou jimi připoutáni k tomuto stínu života. Dokud se někdo drží emocí, bude se neustále znovuoživovat v tomto „životě,“ stále trpět, nikdy nepoznaje čistotu Pravé Smrti."{#dhall_s51_}'
+    nr 'Dhall zavrtěl hlavou. "Vášně mají váhu, moc. Mnozí jsou jimi připoutáni k tomuto stínu života. Dokud se někdo drží emocí, bude se neustále znovuoživovat v tomto „životě,“ stále trpět, nikdy nepoznaje čistotu Pravé Smrti."{#dhall_s51_1}'
 
     menu:
         '"Já… Aha. A jak se dá uniknout tomu cyklu ožívání a dosáhnout té… Pravé Smrti?"{#dhall_s51_r6054}':
@@ -1125,7 +1125,7 @@ label dhall_s51: # from 50.0 50.1 50.2
 
 # s52 # say5734
 label dhall_s52: # from 51.0
-    nr '"Zruš své vášně. Zbav se touhy po citech. Až budeš doopravdy očištěn, pak cyklus ožívání skončí a dosáhneš míru." Dhall si povzdychl… zní to, jako by v jeho hrdle rachotila sama smrt. "Za těmito našimi skořápkami, za Věčnou Hranicí, leží mír, který každá duše hledá."{#dhall_s52_}'
+    nr '"Zruš své vášně. Zbav se touhy po citech. Až budeš doopravdy očištěn, pak cyklus ožívání skončí a dosáhneš míru." Dhall si povzdychl… zní to, jako by v jeho hrdle rachotila sama smrt. "Za těmito našimi skořápkami, za Věčnou Hranicí, leží mír, který každá duše hledá."{#dhall_s52_1}'
 
     menu:
         '"Věčná Hranice?"{#dhall_s52_r6058}':
@@ -1147,7 +1147,7 @@ label dhall_s52: # from 51.0
 
 # s53 # say5742
 label dhall_s53: # from 34.0
-    nr '"Mluvím o zraněních mysli. Zapomněl jsi mnoho, že? Možná pravá zranění zasahují mnohem hlouběji než jizvy, co zdobí tvůj povrch." Dhall znovu zakašlal. "Ale to je něco, co můžeš jistě vědět jenom ty."{#dhall_s53_}'
+    nr '"Mluvím o zraněních mysli. Zapomněl jsi mnoho, že? Možná pravá zranění zasahují mnohem hlouběji než jizvy, co zdobí tvůj povrch." Dhall znovu zakašlal. "Ale to je něco, co můžeš jistě vědět jenom ty."{#dhall_s53_1}'
 
     menu:
         '"Řekni mi víc o Márnici."{#dhall_s53_r5743}':

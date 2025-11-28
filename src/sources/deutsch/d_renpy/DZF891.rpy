@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say35274
 label zf891_s0: # - # IF ~  True()
-    nr 'Diese besonders grauenhaft aussehende weibliche Leiche hat keine Ohren, Nase und Lippen mehr. Um ihren Mund zuzunähen, mußte derjenige, der dies getan hat, die Haut besonders straff um ihren Mund ziehen. Du kannst noch immer eine Reihe schiefer, gelber Zähne durch den verbleibenden offenen Schlitz sehen. Die Zahl "891" ist in das Fleisch ihrer Braue geschnitzt worden.{#zf891_s0_}'
+    nr 'Diese besonders grauenhaft aussehende weibliche Leiche hat keine Ohren, Nase und Lippen mehr. Um ihren Mund zuzunähen, mußte derjenige, der dies getan hat, die Haut besonders straff um ihren Mund ziehen. Du kannst noch immer eine Reihe schiefer, gelber Zähne durch den verbleibenden offenen Schlitz sehen. Die Zahl "891" ist in das Fleisch ihrer Braue geschnitzt worden.{#zf891_s0_1}'
 
     menu:
         '"Sag mal… hast du nachher schon was vor?"{#zf891_s0_r35275}' if zf891Logic.r35275_condition():
@@ -58,7 +58,7 @@ label zf891_s0: # - # IF ~  True()
 
 # s1 # say35276
 label zf891_s1: # from 0.0 0.1 0.2
-    nr 'Die Leiche starrt dich weiter an.{#zf891_s1_}'
+    nr 'Die Leiche starrt dich weiter an.{#zf891_s1_1}'
 
     menu:
         '"Dann leb wohl."{#zf891_s1_r35277}' if zf891Logic.r35277_condition():
@@ -76,7 +76,7 @@ label zf891_s1: # from 0.0 0.1 0.2
 
 # s2 # say35295
 label zf891_s2: # from 0.3
-    nr 'Diese Leiche antwortet nicht. Es sieht so aus, als ob sie schon zu tot ist, um noch auf irgendeine deiner Fragen zu antworten.{#zf891_s2_}'
+    nr 'Diese Leiche antwortet nicht. Es sieht so aus, als ob sie schon zu tot ist, um noch auf irgendeine deiner Fragen zu antworten.{#zf891_s2_1}'
 
     menu:
         '"Dann leb wohl."{#zf891_s2_r35296}' if zf891Logic.r35296_condition():
@@ -94,6 +94,6 @@ label zf891_s2: # from 0.3
 
 # s3 # say35305
 label zf891_s3: # - # IF ~  False()
-    nr 'Diese Leiche antwortet nicht. Es sieht so aus, als ob sie schon zu tot ist, um noch auf irgendeine deiner Fragen zu antworten.{#zf891_s3_}'
+    nr 'Diese Leiche antwortet nicht. Es sieht so aus, als ob sie schon zu tot ist, um noch auf irgendeine deiner Fragen zu antworten.{#zf891_s3_1}'
 
     menu:

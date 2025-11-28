@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say35274
 label zf891_s0: # - # IF ~  True()
-    nr 'Ten szczególnie odrażająco wyglądający trup kobiety nie ma uszu, nosa i warg. Ktokolwiek go przygotowywał, musiał bardzo mocno naciągnąć skórę wokół ust, aby zszyć szczęki razem; poprzez otwartą szparę wciąż widać rząd krzywych, pożółkłych zębów. Na czole wygrawerowano jej numer "891".{#zf891_s0_}'
+    nr 'Ten szczególnie odrażająco wyglądający trup kobiety nie ma uszu, nosa i warg. Ktokolwiek go przygotowywał, musiał bardzo mocno naciągnąć skórę wokół ust, aby zszyć szczęki razem; poprzez otwartą szparę wciąż widać rząd krzywych, pożółkłych zębów. Na czole wygrawerowano jej numer "891".{#zf891_s0_1}'
 
     menu:
         '"Więc jak… masz jakieś plany na później?"{#zf891_s0_r35275}' if zf891Logic.r35275_condition():
@@ -58,7 +58,7 @@ label zf891_s0: # - # IF ~  True()
 
 # s1 # say35276
 label zf891_s1: # from 0.0 0.1 0.2
-    nr 'Trup wciąż się w ciebie wpatruje.{#zf891_s1_}'
+    nr 'Trup wciąż się w ciebie wpatruje.{#zf891_s1_1}'
 
     menu:
         '"A zatem żegnaj."{#zf891_s1_r35277}' if zf891Logic.r35277_condition():
@@ -76,7 +76,7 @@ label zf891_s1: # from 0.0 0.1 0.2
 
 # s2 # say35295
 label zf891_s2: # from 0.3
-    nr 'Trup nie odpowiada. Wygląda na to, że jest w zbyt daleko posuniętym stadium rozkładu, aby odpowiedzieć na twoje pytania.{#zf891_s2_}'
+    nr 'Trup nie odpowiada. Wygląda na to, że jest w zbyt daleko posuniętym stadium rozkładu, aby odpowiedzieć na twoje pytania.{#zf891_s2_1}'
 
     menu:
         '"A zatem żegnaj."{#zf891_s2_r35296}' if zf891Logic.r35296_condition():
@@ -94,6 +94,6 @@ label zf891_s2: # from 0.3
 
 # s3 # say35305
 label zf891_s3: # - # IF ~  False()
-    nr 'Trup nie odpowiada. Wygląda na to, że jest w zbyt daleko posuniętym stadium rozkładu, aby odpowiedzieć na twoje pytania.{#zf891_s3_}'
+    nr 'Trup nie odpowiada. Wygląda na to, że jest w zbyt daleko posuniętym stadium rozkładu, aby odpowiedzieć na twoje pytania.{#zf891_s3_1}'
 
     menu:

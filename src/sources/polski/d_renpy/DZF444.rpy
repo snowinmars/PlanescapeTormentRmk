@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say35210
 label zf444_s0: # - # IF ~  True()
-    nr 'Ten trup kobiety jest w strasznym stanie. Skórę konserwowaną odczynnikiem pokrywają setki maluteńkich ukąszeń - prawdopodobnie od szczurów - niczym krosty po ospie. Sądząc po zmarszczonej skórze wokół ranek, pojawiły się one zanim przygotowano ciało. Usta ma zszyte, a na twarzy niebieskim atramentem ktoś napisał numer "444".{#zf444_s0_}'
+    nr 'Ten trup kobiety jest w strasznym stanie. Skórę konserwowaną odczynnikiem pokrywają setki maluteńkich ukąszeń - prawdopodobnie od szczurów - niczym krosty po ospie. Sądząc po zmarszczonej skórze wokół ranek, pojawiły się one zanim przygotowano ciało. Usta ma zszyte, a na twarzy niebieskim atramentem ktoś napisał numer "444".{#zf444_s0_1}'
 
     menu:
         '"Więc jak… masz jakieś plany na później?"{#zf444_s0_r35211}' if zf444Logic.r35211_condition():
@@ -58,7 +58,7 @@ label zf444_s0: # - # IF ~  True()
 
 # s1 # say35212
 label zf444_s1: # from 0.0 0.1 0.2
-    nr 'Trup wciąż się w ciebie wpatruje.{#zf444_s1_}'
+    nr 'Trup wciąż się w ciebie wpatruje.{#zf444_s1_1}'
 
     menu:
         '"A zatem żegnaj."{#zf444_s1_r35213}' if zf444Logic.r35213_condition():
@@ -76,7 +76,7 @@ label zf444_s1: # from 0.0 0.1 0.2
 
 # s2 # say35231
 label zf444_s2: # from 0.3
-    nr 'Trup nie odpowiada. Wygląda na to, że jest w zbyt daleko posuniętym stadium rozkładu, aby odpowiedzieć na twoje pytania.{#zf444_s2_}'
+    nr 'Trup nie odpowiada. Wygląda na to, że jest w zbyt daleko posuniętym stadium rozkładu, aby odpowiedzieć na twoje pytania.{#zf444_s2_1}'
 
     menu:
         '"A zatem żegnaj."{#zf444_s2_r35232}' if zf444Logic.r35232_condition():
@@ -94,6 +94,6 @@ label zf444_s2: # from 0.3
 
 # s3 # say35241
 label zf444_s3: # - # IF ~  False()
-    nr 'Trup nie odpowiada. Wygląda na to, że jest w zbyt daleko posuniętym stadium rozkładu, aby odpowiedzieć na twoje pytania.{#zf444_s3_}'
+    nr 'Trup nie odpowiada. Wygląda na to, że jest w zbyt daleko posuniętym stadium rozkładu, aby odpowiedzieć na twoje pytania.{#zf444_s3_1}'
 
     menu:

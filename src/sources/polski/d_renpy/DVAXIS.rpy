@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say453
 label vaxis_s0: # - # IF ~  Global("Vaxis","GLOBAL",0)
-    nr 'Człapiący niezdarnie nieumarły ogarnia cię nieobecnym spojrzeniem. Spostrzegasz, że na jego czole wyryto numer "821", zaś jego usta starannie zaszyto. Bije od niego lekki odór formaliny.{#vaxis_s0_}'
+    nr 'Człapiący niezdarnie nieumarły ogarnia cię nieobecnym spojrzeniem. Spostrzegasz, że na jego czole wyryto numer "821", zaś jego usta starannie zaszyto. Bije od niego lekki odór formaliny.{#vaxis_s0_1}'
 
     menu:
         '"Więc, cóż? Jakieś ciekawe wrażenia z podróży po okolicy?"{#vaxis_s0_r454}' if vaxisLogic.r454_condition():
@@ -42,7 +42,7 @@ label vaxis_s0: # - # IF ~  Global("Vaxis","GLOBAL",0)
 
 # s1 # say460
 label vaxis_s1: # from 0.3 # IF ~  False()
-    nr 'Ku twojemu zdziwieniu, twoje umiejętności wydają się być bezużyteczne w odniesieniu do tego truposza.{#vaxis_s1_}'
+    nr 'Ku twojemu zdziwieniu, twoje umiejętności wydają się być bezużyteczne w odniesieniu do tego truposza.{#vaxis_s1_1}'
 
     menu:
         'Dziabnij truposza w oko.{#vaxis_s1_r461}':
@@ -57,7 +57,7 @@ label vaxis_s1: # from 0.3 # IF ~  False()
 
 # s2 # say463
 label vaxis_s2: # from 1.0
-    nr 'Kiedy zadajesz mu cios w oko, żywy truposz wydaje stłumiony skowyt i zmartwiałymi rękami próbuje nakryć twarz. Mamrocze pod nosem coś, co z bardzo dużą dozą prawdopodobieństwa możesz uznać za przekleństwa pod twoim adresem.{#vaxis_s2_}'
+    nr 'Kiedy zadajesz mu cios w oko, żywy truposz wydaje stłumiony skowyt i zmartwiałymi rękami próbuje nakryć twarz. Mamrocze pod nosem coś, co z bardzo dużą dozą prawdopodobieństwa możesz uznać za przekleństwa pod twoim adresem.{#vaxis_s2_1}'
 
     menu:
         '"Ty nie jesteś zombie! Kim jesteś?"{#vaxis_s2_r464}':
@@ -78,7 +78,7 @@ label vaxis_s2: # from 1.0
 
 # s3 # say467
 label vaxis_s3: # from 2.2 5.2
-    nr 'Kiedy odwracasz się, aby odejść, zombie poczyna coś mamrotać… Wygląda na to, że próbuje coś powiedzieć, ale jest to niejako kłopotliwe, biorąc pod uwagę, że truposz ma zasznurowane usta. "Ktyyy tyyy? Czyygyy chcyysz?"{#vaxis_s3_}'
+    nr 'Kiedy odwracasz się, aby odejść, zombie poczyna coś mamrotać… Wygląda na to, że próbuje coś powiedzieć, ale jest to niejako kłopotliwe, biorąc pod uwagę, że truposz ma zasznurowane usta. "Ktyyy tyyy? Czyygyy chcyysz?"{#vaxis_s3_1}'
 
     menu:
         '"Szukam stąd wyjścia. Możesz mi pomóc?"{#vaxis_s3_r468}' if vaxisLogic.r468_condition():
@@ -110,7 +110,7 @@ label vaxis_s3: # from 2.2 5.2
 
 # s4 # say471
 label vaxis_s4: # from 3.5 6.5 7.8 8.5 10.4 11.4 12.2 13.5 14.4 15.2 16.4 17.2 18.1 19.3 20.1 25.6 27.6 31.6 32.5 34.2 35.6 59.1 74.1 75.3 76.1
-    nr 'Kiedy odwracasz się, aby odejść, zombie wydobywa ze swojego gardła głuchy warkot. "Nic nie myyyw o mnie. Nic nie myyw. Nic nie myyw Graabom." Przykłada palce do zasznurowanych ust. "Szaaa!". Potem przeciąga palcem po twojej szyi. "Bo jaak powiesz, wypaaatroszę cię we śnie. Zrozyymiano?"{#vaxis_s4_}'
+    nr 'Kiedy odwracasz się, aby odejść, zombie wydobywa ze swojego gardła głuchy warkot. "Nic nie myyyw o mnie. Nic nie myyw. Nic nie myyw Graabom." Przykłada palce do zasznurowanych ust. "Szaaa!". Potem przeciąga palcem po twojej szyi. "Bo jaak powiesz, wypaaatroszę cię we śnie. Zrozyymiano?"{#vaxis_s4_1}'
 
     menu:
         '"Czy to miała być pogróżka? Jeśli tak… bądź gotowy na śmierć."{#vaxis_s4_r475}':
@@ -135,7 +135,7 @@ label vaxis_s4: # from 3.5 6.5 7.8 8.5 10.4 11.4 12.2 13.5 14.4 15.2 16.4 17.2 1
 
 # s5 # say479
 label vaxis_s5: # from 0.0 0.1 0.2 0.4
-    nr 'Kiedy zwracasz się do truposza, ten sprawia wrażenie zdziwionego. "Ech? Cooo?"{#vaxis_s5_}'
+    nr 'Kiedy zwracasz się do truposza, ten sprawia wrażenie zdziwionego. "Ech? Cooo?"{#vaxis_s5_1}'
 
     menu:
         '"Ty nie jesteś zombie! Kim jesteś?"{#vaxis_s5_r480}':
@@ -156,7 +156,7 @@ label vaxis_s5: # from 0.0 0.1 0.2 0.4
 
 # s6 # say483
 label vaxis_s6: # from 2.0 2.1 5.0 5.1
-    nr 'Pomimo zasznurowanych warg, zombie próbuje wydobyć z siebie odpowiedź. Jego twarz wykręca się w przedziwnym, na poły lękliwym, na poły gniewnym grymasie. "Ktoo tyyy? Czyygo chcyysz?"{#vaxis_s6_}'
+    nr 'Pomimo zasznurowanych warg, zombie próbuje wydobyć z siebie odpowiedź. Jego twarz wykręca się w przedziwnym, na poły lękliwym, na poły gniewnym grymasie. "Ktoo tyyy? Czyygo chcyysz?"{#vaxis_s6_1}'
 
     menu:
         '"Szukam stąd wyjścia. Możesz mi pomóc?"{#vaxis_s6_r484}' if vaxisLogic.r484_condition():
@@ -188,7 +188,7 @@ label vaxis_s6: # from 2.0 2.1 5.0 5.1
 
 # s7 # say490
 label vaxis_s7: # from 3.0 3.1 3.2 3.4 6.0 6.1 6.2 6.4
-    nr 'Wydaje się, że twoje słowa nie dotarły do uszu zombie. Mierzy cię spojrzeniem przez kilka chwil, potem zaś marszczy brwi. "Czego tuu szuukasz?" Jego oczy zwężają się podejrzliwie. "Szpiegyyjesz Grabów?"{#vaxis_s7_}'
+    nr 'Wydaje się, że twoje słowa nie dotarły do uszu zombie. Mierzy cię spojrzeniem przez kilka chwil, potem zaś marszczy brwi. "Czego tuu szuukasz?" Jego oczy zwężają się podejrzliwie. "Szpiegyyjesz Grabów?"{#vaxis_s7_1}'
 
     menu:
         '"Nie. Próbuję stąd uciec."{#vaxis_s7_r491}' if vaxisLogic.r491_condition():
@@ -234,7 +234,7 @@ label vaxis_s7: # from 3.0 3.1 3.2 3.4 6.0 6.1 6.2 6.4
 
 # s8 # say1350
 label vaxis_s8: # from 7.2
-    nr 'Truposz spogląda na ciebie z rosnącą uwagą. "Ty szpieg? Ktyyra koommmórka?"{#vaxis_s8_}'
+    nr 'Truposz spogląda na ciebie z rosnącą uwagą. "Ty szpieg? Ktyyra koommmórka?"{#vaxis_s8_1}'
 
     menu:
         '"Słucham?"{#vaxis_s8_r4671}':
@@ -267,7 +267,7 @@ label vaxis_s8: # from 7.2
 
 # s9 # say1363
 label vaxis_s9: # from 7.3
-    nr 'Truposz spogląda na ciebie z rosnącą uwagą. "Ty szpieg? Ktyyra koommmórka?"{#vaxis_s9_}'
+    nr 'Truposz spogląda na ciebie z rosnącą uwagą. "Ty szpieg? Ktyyra koommmórka?"{#vaxis_s9_1}'
 
     menu:
         '"Słucham?"{#vaxis_s9_r4359}':
@@ -281,7 +281,7 @@ label vaxis_s9: # from 7.3
 
 # s10 # say4361
 label vaxis_s10: # from 8.0 8.1
-    nr 'Truposz marszczy brwi a potem syka. "Ty nie szpieg!". Zombie wykonuje teraz dziwne ruchy, które mają zapewne na celu przepędzenie cię precz i to możliwie jak najszybciej. "Odyyyjdź! Odyyyjdź!"{#vaxis_s10_}'
+    nr 'Truposz marszczy brwi a potem syka. "Ty nie szpieg!". Zombie wykonuje teraz dziwne ruchy, które mają zapewne na celu przepędzenie cię precz i to możliwie jak najszybciej. "Odyyyjdź! Odyyyjdź!"{#vaxis_s10_1}'
 
     menu:
         '"Najpierw powiesz mi, co tutaj robisz albo zawołam straże."{#vaxis_s10_r4362}' if vaxisLogic.r4362_condition():
@@ -309,7 +309,7 @@ label vaxis_s10: # from 8.0 8.1
 
 # s11 # say4366
 label vaxis_s11: # externs morte_s86
-    nr 'Zombie kiwa głową na twe słowa i odnosisz wrażenie, że połaskotałeś nieznacznie jego dumę, uczucie jak widać nieobce nawet żywym trupom.{#vaxis_s11_}'
+    nr 'Zombie kiwa głową na twe słowa i odnosisz wrażenie, że połaskotałeś nieznacznie jego dumę, uczucie jak widać nieobce nawet żywym trupom.{#vaxis_s11_1}'
 
     menu:
         '"Czy możesz pomóc mi w ucieczce?"{#vaxis_s11_r4368}' if vaxisLogic.r4368_condition():
@@ -337,7 +337,7 @@ label vaxis_s11: # externs morte_s86
 
 # s12 # say4373
 label vaxis_s12: # from 7.0 11.0
-    nr 'Zombie sprawia wrażenie zainteresowanego twoim położeniem. "Masz kłyypyyty? A jakie?"{#vaxis_s12_}'
+    nr 'Zombie sprawia wrażenie zainteresowanego twoim położeniem. "Masz kłyypyyty? A jakie?"{#vaxis_s12_1}'
 
     menu:
         '"Obudziłem się na jednej z płyt na wyższym poziomie."{#vaxis_s12_r4374}':
@@ -355,7 +355,7 @@ label vaxis_s12: # from 7.0 11.0
 
 # s13 # say4377
 label vaxis_s13: # from 12.0
-    nr 'Zombie patrzy na ciebie jak na zdrowo stukniętego. "Tyy wariaat?"{#vaxis_s13_}'
+    nr 'Zombie patrzy na ciebie jak na zdrowo stukniętego. "Tyy wariaat?"{#vaxis_s13_1}'
 
     menu:
         '"Tak, ja wyyriat. Wielki wyyriat."{#vaxis_s13_r4378}':
@@ -386,7 +386,7 @@ label vaxis_s13: # from 12.0
 
 # s14 # say4384
 label vaxis_s14: # from 13.0 13.3 15.0
-    nr 'Spogląda na ciebie przez chwilę, potem syczy, następnie zaś zaczyna wykonywać dziwne ruchy, które mają zapewne na celu przepędzenie cię precz i to możliwie jak najszybciej. "Tyy wariaat! Odyyyjdź, odyyyjdź ode mniee!"{#vaxis_s14_}'
+    nr 'Spogląda na ciebie przez chwilę, potem syczy, następnie zaś zaczyna wykonywać dziwne ruchy, które mają zapewne na celu przepędzenie cię precz i to możliwie jak najszybciej. "Tyy wariaat! Odyyyjdź, odyyyjdź ode mniee!"{#vaxis_s14_1}'
 
     menu:
         '"Nigdzie nie odejdę. Albo powiesz mi co tutaj robisz, albo zawołam straże."{#vaxis_s14_r4385}' if vaxisLogic.r4385_condition():
@@ -414,7 +414,7 @@ label vaxis_s14: # from 13.0 13.3 15.0
 
 # s15 # say4390
 label vaxis_s15: # externs morte_s88
-    nr 'Fałszywy zombie spogląda na was obu bardzo podejrzliwie.{#vaxis_s15_}'
+    nr 'Fałszywy zombie spogląda na was obu bardzo podejrzliwie.{#vaxis_s15_1}'
 
     menu:
         '"To prawda – obudziłem się na katafalku."{#vaxis_s15_r4391}':
@@ -433,7 +433,7 @@ label vaxis_s15: # externs morte_s88
 
 # s16 # say4394
 label vaxis_s16: # from 13.1
-    nr 'Spogląda na ciebie przez chwilę, potem syczy, następnie zaś zaczyna wykonywać dziwne ruchy, które mają zapewne na celu przepędzenie cię precz i to możliwie jak najszybciej. "Pomyyleeniec! Idioota! Odyyyjdź, odyyyjdź ode mniee, trypie! Preecz!"{#vaxis_s16_}'
+    nr 'Spogląda na ciebie przez chwilę, potem syczy, następnie zaś zaczyna wykonywać dziwne ruchy, które mają zapewne na celu przepędzenie cię precz i to możliwie jak najszybciej. "Pomyyleeniec! Idioota! Odyyyjdź, odyyyjdź ode mniee, trypie! Preecz!"{#vaxis_s16_1}'
 
     menu:
         '"Nigdzie nie odejdę. Albo powiesz mi co tutaj robisz, albo zawołam straże."{#vaxis_s16_r4395}' if vaxisLogic.r4395_condition():
@@ -461,7 +461,7 @@ label vaxis_s16: # from 13.1
 
 # s17 # say4400
 label vaxis_s17: # from 7.5 10.1 14.1 16.1 25.3 27.3
-    nr 'Przez chwilę wygląda na poważnie wstrząśniętego, potem zaś długo mierzy cię badawczym spojrzeniem i jego martwą twarz okrasza coś w rodzaju uśmiechu: "Ty mi wyyjywiłeś syykryyet, to i ja ci powiem syykryyet. Ja mam tutaj swoich przyyjyyciół w ukryciu, a ty nikogo. Nie powinieneś tutaj byyć. Graby zabiją cię. Ja uciyyknę."{#vaxis_s17_}'
+    nr 'Przez chwilę wygląda na poważnie wstrząśniętego, potem zaś długo mierzy cię badawczym spojrzeniem i jego martwą twarz okrasza coś w rodzaju uśmiechu: "Ty mi wyyjywiłeś syykryyet, to i ja ci powiem syykryyet. Ja mam tutaj swoich przyyjyyciół w ukryciu, a ty nikogo. Nie powinieneś tutaj byyć. Graby zabiją cię. Ja uciyyknę."{#vaxis_s17_1}'
 
     menu:
         '"Jeżeli cię ZABIJĘ, to nigdzie nie uciekniesz. A teraz zacznij odpowiadać na moje pytania, albo sprawię, że nie będziesz się musiał przebierać, żeby wyglądać na truposza."{#vaxis_s17_r4401}' if vaxisLogic.r4401_condition():
@@ -481,7 +481,7 @@ label vaxis_s17: # from 7.5 10.1 14.1 16.1 25.3 27.3
 
 # s18 # say4404
 label vaxis_s18: # from 17.0
-    nr 'Oczy truposza zwężają się, gdy syczy na ciebie wściekle. "Próbujesz mnie wpyykyywać do księgi umarłych? Myym tutaj ukrytych przyjaciół, a ty nikyygo. Dotknij mnie, a moi kumple zabiją cię."{#vaxis_s18_}'
+    nr 'Oczy truposza zwężają się, gdy syczy na ciebie wściekle. "Próbujesz mnie wpyykyywać do księgi umarłych? Myym tutaj ukrytych przyjaciół, a ty nikyygo. Dotknij mnie, a moi kumple zabiją cię."{#vaxis_s18_1}'
 
     menu:
         '"Zaryzykuję. Przygotuj się na śmierć."{#vaxis_s18_r4405}':
@@ -496,7 +496,7 @@ label vaxis_s18: # from 17.0
 
 # s19 # say4407
 label vaxis_s19: # from 7.6 10.2 14.2 16.2 25.4 27.4
-    nr 'Przez chwilę wygląda na poważnie wstrząśniętego, potem zaś długo mierzy twoją postać badawczym spojrzeniem i jego martwą twarz okrasza coś w rodzaju uśmiechu: "TY próbujesz wpakować MNIE do księgi umarłych? Myym tutaj ukrytych przyjaciół, a ty nikyygo. Dotknij mnie, a moi kumple zabiją cię."{#vaxis_s19_}'
+    nr 'Przez chwilę wygląda na poważnie wstrząśniętego, potem zaś długo mierzy twoją postać badawczym spojrzeniem i jego martwą twarz okrasza coś w rodzaju uśmiechu: "TY próbujesz wpakować MNIE do księgi umarłych? Myym tutaj ukrytych przyjaciół, a ty nikyygo. Dotknij mnie, a moi kumple zabiją cię."{#vaxis_s19_1}'
 
     menu:
         '"Zaryzykuję. Przygotuj się na śmierć."{#vaxis_s19_r4408}':
@@ -519,7 +519,7 @@ label vaxis_s19: # from 7.6 10.2 14.2 16.2 25.4 27.4
 
 # s20 # say4412
 label vaxis_s20: # from 19.2
-    nr 'Oczy truposza zwężają się i syczy: "Ty mi wyjawiłeś syykyyet, to i ja ci powiem syykryyet. Ja mam tutaj swoich przyjaciół w ukryciu, a ty nikogo. Nie powinieneś tutaj być. Graby zabiją cię. Ja ucieknę."{#vaxis_s20_}'
+    nr 'Oczy truposza zwężają się i syczy: "Ty mi wyjawiłeś syykyyet, to i ja ci powiem syykryyet. Ja mam tutaj swoich przyjaciół w ukryciu, a ty nikogo. Nie powinieneś tutaj być. Graby zabiją cię. Ja ucieknę."{#vaxis_s20_1}'
 
     menu:
         '"Właśnie zaprzepaściłeś swoją ostatnią szansę, truposzu. Przygotuj się na śmierć."{#vaxis_s20_r4413}':
@@ -534,7 +534,7 @@ label vaxis_s20: # from 19.2
 
 # s21 # say4415
 label vaxis_s21: # from 7.4 10.0 14.0 16.0 19.1 25.2 27.2
-    nr 'Zombie musiał coś dostrzec w twoim spojrzeniu, bo jego mina szybko zrzedłą. "Nie-Nie-Nie! Nie wyyłyyj strażników!" Wygląda na mocno podenerwowanego. "Ja szpieguję Gryybów. Jeśli co podpatrzę, zaraz donoszę. Nic poza tym."{#vaxis_s21_}'
+    nr 'Zombie musiał coś dostrzec w twoim spojrzeniu, bo jego mina szybko zrzedłą. "Nie-Nie-Nie! Nie wyyłyyj strażników!" Wygląda na mocno podenerwowanego. "Ja szpieguję Gryybów. Jeśli co podpatrzę, zaraz donoszę. Nic poza tym."{#vaxis_s21_1}'
 
     menu:
         '"Szpiegujesz? Niby z czyjego polecenia?"{#vaxis_s21_r4416}':
@@ -556,7 +556,7 @@ label vaxis_s21: # from 7.4 10.0 14.0 16.0 19.1 25.2 27.2
 
 # s22 # say4420
 label vaxis_s22: # from 7.7 10.3 14.3 16.3 17.1 25.5 27.5
-    nr '"Nie-nie-nie Nie krzywdź mnie!" Chyba podziałał tu na zombie fakt, że jesteś od niego cięższy o te kilka kilogramów masy mięśniowej. Mina zombie zrzedła zupełnie. "Nie krzywdź mnie! Ja szpieguję Grabów. Jeśli co podpatrzę, zaraz donoszę. Nic poza tym."{#vaxis_s22_}'
+    nr '"Nie-nie-nie Nie krzywdź mnie!" Chyba podziałał tu na zombie fakt, że jesteś od niego cięższy o te kilka kilogramów masy mięśniowej. Mina zombie zrzedła zupełnie. "Nie krzywdź mnie! Ja szpieguję Grabów. Jeśli co podpatrzę, zaraz donoszę. Nic poza tym."{#vaxis_s22_1}'
 
     menu:
         '"Szpiegujesz? Niby z czyjego polecenia?"{#vaxis_s22_r4421}':
@@ -578,7 +578,7 @@ label vaxis_s22: # from 7.7 10.3 14.3 16.3 17.1 25.5 27.5
 
 # s23 # say4425
 label vaxis_s23: # from 21.0 22.0
-    nr 'Zombie milknie i zapada długa cisza, wypełniona jego namacalnym lękiem. Nie wydaje się, aby w tym momencie zombie miał cokolwiek więcej do dodania.{#vaxis_s23_}'
+    nr 'Zombie milknie i zapada długa cisza, wypełniona jego namacalnym lękiem. Nie wydaje się, aby w tym momencie zombie miał cokolwiek więcej do dodania.{#vaxis_s23_1}'
 
     menu:
         '"No, gadaj. Dlaczego obserwujesz to miejsce?"{#vaxis_s23_r4426}' if vaxisLogic.r4426_condition():
@@ -614,7 +614,7 @@ label vaxis_s23: # from 21.0 22.0
 
 # s24 # say4433
 label vaxis_s24: # from 3.3 6.3 8.2
-    nr '"Szuuukałeeś mnie? Dlaaaczyygo?" Zombie patrzy na ciebie przez zmrużone powieki. "Maaasz dlyyy mmnie wiaadyyymyyść?"{#vaxis_s24_}'
+    nr '"Szuuukałeeś mnie? Dlaaaczyygo?" Zombie patrzy na ciebie przez zmrużone powieki. "Maaasz dlyyy mmnie wiaadyyymyyść?"{#vaxis_s24_1}'
 
     menu:
         'Kłamstwo: "Tak, mam dla ciebie wiadomość."{#vaxis_s24_r4434}':
@@ -633,7 +633,7 @@ label vaxis_s24: # from 3.3 6.3 8.2
 
 # s25 # say4437
 label vaxis_s25: # from 24.2
-    nr 'Zanosi się gniewnym sykiem "Więc czego chcesz, trypie?"{#vaxis_s25_}'
+    nr 'Zanosi się gniewnym sykiem "Więc czego chcesz, trypie?"{#vaxis_s25_1}'
 
     menu:
         '"Szukam stąd wyjścia. Możesz mi pomóc?"{#vaxis_s25_r4438}' if vaxisLogic.r4438_condition():
@@ -669,7 +669,7 @@ label vaxis_s25: # from 24.2
 
 # s26 # say4445
 label vaxis_s26: # from 24.0
-    nr '"Jaką wiadomość?"{#vaxis_s26_}'
+    nr '"Jaką wiadomość?"{#vaxis_s26_1}'
 
     menu:
         '"Masz mi powiedzieć o swojej misji."{#vaxis_s26_r4446}' if vaxisLogic.r4446_condition():
@@ -697,7 +697,7 @@ label vaxis_s26: # from 24.0
 
 # s27 # say4451
 label vaxis_s27: # from 24.1 26.3 26.4
-    nr 'Jego oczy zwężają się wściekle "Nie jesteś posłańcem. Kim jesteś?"{#vaxis_s27_}'
+    nr 'Jego oczy zwężają się wściekle "Nie jesteś posłańcem. Kim jesteś?"{#vaxis_s27_1}'
 
     menu:
         '"Szukam stąd wyjścia. Możesz mi pomóc?"{#vaxis_s27_r4452}' if vaxisLogic.r4452_condition():
@@ -733,7 +733,7 @@ label vaxis_s27: # from 24.1 26.3 26.4
 
 # s28 # say4459
 label vaxis_s28: # from 8.3 8.4 11.1 11.2 11.3 26.0 30.0 43.5
-    nr '"Szpieeegyyję Gryybów. Jeśli cyy podpatrzę, zaraz donoszę. Nic poza tym."{#vaxis_s28_}'
+    nr '"Szpieeegyyję Gryybów. Jeśli cyy podpatrzę, zaraz donoszę. Nic poza tym."{#vaxis_s28_1}'
 
     menu:
         '"I co takiego podpatrzyłeś u Grabarzy? Co oni robią?"{#vaxis_s28_r4460}':
@@ -751,7 +751,7 @@ label vaxis_s28: # from 8.3 8.4 11.1 11.2 11.3 26.0 30.0 43.5
 
 # s29 # say4463
 label vaxis_s29: # from 21.1 22.1 23.4 28.0 70.1 71.2
-    nr '"Nic! Onyy nic niee ryybią! Niczeeego nie szukyyją! To martwi, martwi, martwi luudzie. Gryyby nic nie robią." Oczy truposza tchną szczerością. "Ale całyy czyys czyywam."{#vaxis_s29_}'
+    nr '"Nic! Onyy nic niee ryybią! Niczeeego nie szukyyją! To martwi, martwi, martwi luudzie. Gryyby nic nie robią." Oczy truposza tchną szczerością. "Ale całyy czyys czyywam."{#vaxis_s29_1}'
 
     menu:
         '"Rozumiem. Chciałbym cię spytać jeszcze o coś innego…"{#vaxis_s29_r4464}':
@@ -765,7 +765,7 @@ label vaxis_s29: # from 21.1 22.1 23.4 28.0 70.1 71.2
 
 # s30 # say4466
 label vaxis_s30: # from 26.1 26.2
-    nr 'Jego oczy zwężają się, jakby próbował przeniknąć twoje słowa. "Jakie rozkazy?"{#vaxis_s30_}'
+    nr 'Jego oczy zwężają się, jakby próbował przeniknąć twoje słowa. "Jakie rozkazy?"{#vaxis_s30_1}'
 
     menu:
         '"Opowiedz mi o swojej misji."{#vaxis_s30_r4467}':
@@ -792,7 +792,7 @@ label vaxis_s30: # from 26.1 26.2
 
 # s31 # say4472
 label vaxis_s31: # from 7.1 12.1 13.4 15.1 25.0 27.0 50.0
-    nr 'Milknie na chwilę, a potem kiwa głową, jakby w zrozumieniu: "Dlaczego miyyłbym ci pomyygać?"{#vaxis_s31_}'
+    nr 'Milknie na chwilę, a potem kiwa głową, jakby w zrozumieniu: "Dlaczego miyyłbym ci pomyygać?"{#vaxis_s31_1}'
 
     menu:
         '"Ponieważ potrzebujesz pomocy."{#vaxis_s31_r4473}':
@@ -829,7 +829,7 @@ label vaxis_s31: # from 7.1 12.1 13.4 15.1 25.0 27.0 50.0
 
 # s32 # say4480
 label vaxis_s32: # from 31.0
-    nr 'Zombie uśmiecha się półgębkiem. "Każdy czegoś potrzyybuje, ale nikt niczego nie daje. Dasz mi coś, może ci pyymyygę."{#vaxis_s32_}'
+    nr 'Zombie uśmiecha się półgębkiem. "Każdy czegoś potrzyybuje, ale nikt niczego nie daje. Dasz mi coś, może ci pyymyygę."{#vaxis_s32_1}'
 
     menu:
         '"Więc czego potrzebujesz?"{#vaxis_s32_r4481}':
@@ -861,7 +861,7 @@ label vaxis_s32: # from 31.0
 
 # s33 # say4487
 label vaxis_s33: # from 31.2 31.5 32.1 32.4 34.1 35.2 35.5 75.0
-    nr 'Mierzy cię badawczym wzrokiem od stóp do głów, jakby rozważał czy mógł dać ci radę, ogląda twoje blizny, a potem podejmuje decyzję. "Hm… Mógłbyyś próbyywać ucieeczki przez portyyle."{#vaxis_s33_}'
+    nr 'Mierzy cię badawczym wzrokiem od stóp do głów, jakby rozważał czy mógł dać ci radę, ogląda twoje blizny, a potem podejmuje decyzję. "Hm… Mógłbyyś próbyywać ucieeczki przez portyyle."{#vaxis_s33_1}'
 
     menu:
         '"Portale?"{#vaxis_s33_r4672}':
@@ -872,7 +872,7 @@ label vaxis_s33: # from 31.2 31.5 32.1 32.4 34.1 35.2 35.5 75.0
 
 # s34 # say4491
 label vaxis_s34: # from 31.3 32.2 35.3
-    nr 'Przez chwilę wygląda na poważnie wstrząśniętego, potem zaś długo mierzy cię badawczym spojrzeniem i jego martwą twarz okrasza coś w rodzaju uśmiechu: "Ty mi wyjawyyłeś syykryyet, to i ja ci powiem syykryyet. Ja mam tutaj swyyich przyjaciół w ukryyciu, a ty nikyygo. Nie powinieneś tyytaj być. Graby zabyyją cię. Ja uciyyknę."{#vaxis_s34_}'
+    nr 'Przez chwilę wygląda na poważnie wstrząśniętego, potem zaś długo mierzy cię badawczym spojrzeniem i jego martwą twarz okrasza coś w rodzaju uśmiechu: "Ty mi wyjawyyłeś syykryyet, to i ja ci powiem syykryyet. Ja mam tutaj swyyich przyjaciół w ukryyciu, a ty nikyygo. Nie powinieneś tyytaj być. Graby zabyyją cię. Ja uciyyknę."{#vaxis_s34_1}'
 
     menu:
         '"Jeżeli cię zabiję, nie uciekniesz nigdzie. A teraz zacznij mówić, albo sprawię, że nie będziesz się już musiał już przebierać, żeby wyglądać na truposza."{#vaxis_s34_r4489}' if vaxisLogic.r4489_condition():
@@ -892,7 +892,7 @@ label vaxis_s34: # from 31.3 32.2 35.3
 
 # s35 # say4493
 label vaxis_s35: # from 30.3 31.1 32.0
-    nr '"Uch… Muszę znyyleźć dla mnie klyycz. Potrzyybuję żelyyznego klucza od byylsyymowni."{#vaxis_s35_}'
+    nr '"Uch… Muszę znyyleźć dla mnie klyycz. Potrzyybuję żelyyznego klucza od byylsyymowni."{#vaxis_s35_1}'
 
     menu:
         '"Mówisz o tym kluczu?"{#vaxis_s35_r4494}' if vaxisLogic.r4494_condition():
@@ -931,7 +931,7 @@ label vaxis_s35: # from 30.3 31.1 32.0
 
 # s36 # say4501
 label vaxis_s36: # from 35.1 58.2
-    nr '"Ma go kobiyyta od Grabów." Wymownie pokazuje swoje oczy. "Tyyka z żółtymi oczyymi…" Teraz zombie wykonuje swoimi dłońmi gesty, które przywodzą ci na pamięć pracę nożyc ogrodniczych "Ma noże na palcach."{#vaxis_s36_}'
+    nr '"Ma go kobiyyta od Grabów." Wymownie pokazuje swoje oczy. "Tyyka z żółtymi oczyymi…" Teraz zombie wykonuje swoimi dłońmi gesty, które przywodzą ci na pamięć pracę nożyc ogrodniczych "Ma noże na palcach."{#vaxis_s36_1}'
 
     menu:
         '"Tak, już się spotkaliśmy wcześniej. A oto i klucz."{#vaxis_s36_r4502}' if vaxisLogic.r4502_condition():
@@ -957,7 +957,7 @@ label vaxis_s36: # from 35.1 58.2
 
 # s37 # say4505
 label vaxis_s37: # from 36.3
-    nr 'Truposz mruga powiekami. Chyba cię nie zrozumiał.{#vaxis_s37_}'
+    nr 'Truposz mruga powiekami. Chyba cię nie zrozumiał.{#vaxis_s37_1}'
 
     menu:
         '"Ach, to tylko żart. Zawsze wszystko bierzesz na poważnie? No nic, idę poszukać tego klucza."{#vaxis_s37_r4506}' if vaxisLogic.r4506_condition():
@@ -973,7 +973,7 @@ label vaxis_s37: # from 36.3
 
 # s38 # say4507
 label vaxis_s38: # from 36.1 36.2 37.0 37.1
-    nr 'Zombie patrzy na ciebie przez zmrużone ślepia. "Jak cię złyypią, nie mów im nic yy mnie, bo wypatryyyyszę cię we śnie."{#vaxis_s38_}'
+    nr 'Zombie patrzy na ciebie przez zmrużone ślepia. "Jak cię złyypią, nie mów im nic yy mnie, bo wypatryyyyszę cię we śnie."{#vaxis_s38_1}'
 
     menu:
         '"Znajdę ten przeklęty klucz… A ty lepiej głęboko zastanów cię nad swoimi pogróżkami, zrozumiano?"{#vaxis_s38_r4508}' if vaxisLogic.r4508_condition():
@@ -997,14 +997,14 @@ label vaxis_s38: # from 36.1 36.2 37.0 37.1
 
 # s39 # say4512
 label vaxis_s39: # from 43.12
-    nr '"Myje przybranie dybre… Ja tyż mam blizny. Mam na sybie dużo płynu balsymujyncego. Ja dybrze udaję zombie." Chichocze za zasznurowanymi wargami, a potem klepie się po głowie "Graby bardzo głuu-pie."{#vaxis_s39_}'
+    nr '"Myje przybranie dybre… Ja tyż mam blizny. Mam na sybie dużo płynu balsymujyncego. Ja dybrze udaję zombie." Chichocze za zasznurowanymi wargami, a potem klepie się po głowie "Graby bardzo głuu-pie."{#vaxis_s39_1}'
 
     jump morte_s93  # EXTERN
 
 
 # s40 # say4514
 label vaxis_s40: # -
-    nr '"Poczyykam tu na ciyybie. Znajdź klyycz." Zombie posyła ci uśmiech, od którego widoku może się zrobić niedobrze. "Pyytyym ci pyymyygę."{#vaxis_s40_}'
+    nr '"Poczyykam tu na ciyybie. Znajdź klyycz." Zombie posyła ci uśmiech, od którego widoku może się zrobić niedobrze. "Pyytyym ci pyymyygę."{#vaxis_s40_1}'
 
     menu:
         '"Jeżeli go znajdę, to go tutaj przyniosę."{#vaxis_s40_r4515}':
@@ -1018,7 +1018,7 @@ label vaxis_s40: # -
 
 # s41 # say4517
 label vaxis_s41: # -
-    nr 'Oczy zombie rozszerzają się, a potem wyciąga rękę i rozcapierza palce. "Daj mi to."{#vaxis_s41_}'
+    nr 'Oczy zombie rozszerzają się, a potem wyciąga rękę i rozcapierza palce. "Daj mi to."{#vaxis_s41_1}'
 
     menu:
         '"Poczekaj na chwilę. Chciałbym o coś spytać."{#vaxis_s41_r4518}':
@@ -1033,7 +1033,7 @@ label vaxis_s41: # -
 
 # s42 # say4520
 label vaxis_s42: # from 35.0 36.0 58.0 58.1
-    nr 'Oczy zombie rozszerzają się i porywa klucz z twojej dłoni. Ogląda go przez chwilę, kiwając głową. "Dobrze… Dobrze."{#vaxis_s42_}'
+    nr 'Oczy zombie rozszerzają się i porywa klucz z twojej dłoni. Ogląda go przez chwilę, kiwając głową. "Dobrze… Dobrze."{#vaxis_s42_1}'
 
     menu:
         '"Dobra… A jak mogę się stąd wydostać?"{#vaxis_s42_r4521}' if vaxisLogic.r4521_condition():
@@ -1049,7 +1049,7 @@ label vaxis_s42: # from 35.0 36.0 58.0 58.1
 
 # s43 # say4523
 label vaxis_s43: # from 21.2 22.2 23.5 25.1 27.1 28.1 29.0 42.1 44.2 45.1 46.2 47.2 48.0 51.1 52.0 53.0 54.0 56.0 58.3 59.0 60.3 61.4 62.3 63.1 64.0 70.2 71.3 77.0
-    nr '"Czyygo chcyysz?"{#vaxis_s43_}'
+    nr '"Czyygo chcyysz?"{#vaxis_s43_1}'
 
     menu:
         '"Jak mogę stąd uciec?"{#vaxis_s43_r64508}' if vaxisLogic.r64508_condition():
@@ -1111,7 +1111,7 @@ label vaxis_s43: # from 21.2 22.2 23.5 25.1 27.1 28.1 29.0 42.1 44.2 45.1 46.2 4
 
 # s44 # say4537
 label vaxis_s44: # from 43.6
-    nr '"Faa-rod?" Zombie mruga oczami, namyślając się przez chwilę. "Słyszałem, że mieszka gdzieś w Ulu." Potrząsa głową. "Nie wiem gdzie." Znowu mruży oczy. "Graby bardzo złe. Nie lubią Faroda."{#vaxis_s44_}'
+    nr '"Faa-rod?" Zombie mruga oczami, namyślając się przez chwilę. "Słyszałem, że mieszka gdzieś w Ulu." Potrząsa głową. "Nie wiem gdzie." Znowu mruży oczy. "Graby bardzo złe. Nie lubią Faroda."{#vaxis_s44_1}'
 
     menu:
         '"W Ulu?"{#vaxis_s44_r4538}':
@@ -1134,7 +1134,7 @@ label vaxis_s44: # from 43.6
 
 # s45 # say4542
 label vaxis_s45: # from 44.0
-    nr '"Pobliskie slumsy."{#vaxis_s45_}'
+    nr '"Pobliskie slumsy."{#vaxis_s45_1}'
 
     menu:
         '"Dlaczego Grabarze nie lubią Faroda?"{#vaxis_s45_r4543}':
@@ -1153,7 +1153,7 @@ label vaxis_s45: # from 44.0
 
 # s46 # say4546
 label vaxis_s46: # from 44.1 45.0
-    nr '"On jest Zbieraczem. Przywozi umarłych do Kostnicy, sprzedaje ich ciała Grabarzom. Przywozi dużo umarłych. Graby nie wiedzą, skąd bierze tyle umarłych. Chyba pakuje trepów do księgi umarłych."{#vaxis_s46_}'
+    nr '"On jest Zbieraczem. Przywozi umarłych do Kostnicy, sprzedaje ich ciała Grabarzom. Przywozi dużo umarłych. Graby nie wiedzą, skąd bierze tyle umarłych. Chyba pakuje trepów do księgi umarłych."{#vaxis_s46_1}'
 
     menu:
         '"Uch… Co?"{#vaxis_s46_r4547}' if vaxisLogic.r4547_condition():
@@ -1175,7 +1175,7 @@ label vaxis_s46: # from 44.1 45.0
 
 # s47 # say4551
 label vaxis_s47: # from 43.7
-    nr '"Nie wiem. Jakiś trep cię oskórował?"{#vaxis_s47_}'
+    nr '"Nie wiem. Jakiś trep cię oskórował?"{#vaxis_s47_1}'
 
     menu:
         '"Uch… Co?"{#vaxis_s47_r4552}' if vaxisLogic.r4552_condition():
@@ -1197,7 +1197,7 @@ label vaxis_s47: # from 43.7
 
 # s48 # say4556
 label vaxis_s48: # from 46.0 47.0
-    nr 'Zombie próbuje coś mówić, potem milknie, próbuje jeszcze raz i wzrusza ramionami. Zapewne doszedł do wniosku, że nie umie tego lepiej wyjaśnić.{#vaxis_s48_}'
+    nr 'Zombie próbuje coś mówić, potem milknie, próbuje jeszcze raz i wzrusza ramionami. Zapewne doszedł do wniosku, że nie umie tego lepiej wyjaśnić.{#vaxis_s48_1}'
 
     menu:
         '"Och. Chciałbym cię spytać jeszcze o coś innego…"{#vaxis_s48_r4557}':
@@ -1211,7 +1211,7 @@ label vaxis_s48: # from 46.0 47.0
 
 # s49 # say4559
 label vaxis_s49: # from 30.1 42.0 43.0 43.1
-    nr 'Zombie burczy. "Możeesz uuciec przyyz portalyy." Macha rękami. "Puuff."{#vaxis_s49_}'
+    nr 'Zombie burczy. "Możeesz uuciec przyyz portalyy." Macha rękami. "Puuff."{#vaxis_s49_1}'
 
     menu:
         '"Portale? Jakie portale?"{#vaxis_s49_r4560}':
@@ -1221,7 +1221,7 @@ label vaxis_s49: # from 30.1 42.0 43.0 43.1
 
 # s50 # say4563
 label vaxis_s50: # from 33.0 49.0
-    nr '"Poorrtyyle…" Zombie ogarnia ruchem rąk wszystko w pobliżu. "Porrtyyle są wszędziie."{#vaxis_s50_}'
+    nr '"Poorrtyyle…" Zombie ogarnia ruchem rąk wszystko w pobliżu. "Porrtyyle są wszędziie."{#vaxis_s50_1}'
 
     menu:
         '"Możesz wskazać mi drogę do któregoś z takich portali?"{#vaxis_s50_r4564}' if vaxisLogic.r4564_condition():
@@ -1243,7 +1243,7 @@ label vaxis_s50: # from 33.0 49.0
 
 # s51 # say4567
 label vaxis_s51: # from 50.1 50.2 50.3 72.0
-    nr 'Zombie kiwa głową. "Chcesz stąd wyjść… Idź do łuku na pierwszym poziomie. Północno-zachodnia komnata. Musisz mieć przy sobie kość z palca, skrzywioną." Podnosi swój wskazujący palec do góry i malowniczo wygina go. "Jak będziesz miał ten klucz. Podejdź do łuku, wejdź do sekretnej krypty, a stamtąd możesz uciec. To tajna droga ucieczki." Kiwa głową z dużą żywością. "Możesz też tam ODPOCZĄĆ."{#vaxis_s51_}'
+    nr 'Zombie kiwa głową. "Chcesz stąd wyjść… Idź do łuku na pierwszym poziomie. Północno-zachodnia komnata. Musisz mieć przy sobie kość z palca, skrzywioną." Podnosi swój wskazujący palec do góry i malowniczo wygina go. "Jak będziesz miał ten klucz. Podejdź do łuku, wejdź do sekretnej krypty, a stamtąd możesz uciec. To tajna droga ucieczki." Kiwa głową z dużą żywością. "Możesz też tam ODPOCZĄĆ."{#vaxis_s51_1}'
 
     menu:
         '"Skrzywiona kość z palca? A gdzież ja będę mógł znaleźć coś takiego?"{#vaxis_s51_r64527}' if vaxisLogic.r64527_condition():
@@ -1264,7 +1264,7 @@ label vaxis_s51: # from 50.1 50.2 50.3 72.0
 
 # s52 # say4570
 label vaxis_s52: # from 43.2
-    nr '"Słuchaj! Pamiętaj!" Zombie sprawia wrażenie wkurzonego. "Łuk, na pierwszym poziomie, komnata północno-zachodnia…" Podnosi swój wskazujący palec i wygina go. "Potrzebujesz kości palca, zgiętej. Idziesz do tajnej krypty. Tam droga ucieczki. Ta można ODPOCZĄĆ."{#vaxis_s52_}'
+    nr '"Słuchaj! Pamiętaj!" Zombie sprawia wrażenie wkurzonego. "Łuk, na pierwszym poziomie, komnata północno-zachodnia…" Podnosi swój wskazujący palec i wygina go. "Potrzebujesz kości palca, zgiętej. Idziesz do tajnej krypty. Tam droga ucieczki. Ta można ODPOCZĄĆ."{#vaxis_s52_1}'
 
     menu:
         '"Chciałbym cię spytać jeszcze o coś innego…"{#vaxis_s52_r4571}':
@@ -1278,7 +1278,7 @@ label vaxis_s52: # from 43.2
 
 # s53 # say4573
 label vaxis_s53: # from 43.8
-    nr '"Skryba." Zombie wzrusza ramionami. "Stary. Żółty."{#vaxis_s53_}'
+    nr '"Skryba." Zombie wzrusza ramionami. "Stary. Żółty."{#vaxis_s53_1}'
 
     menu:
         '"Przypuszczam, że nie ma już chyba co rozwodzić się nad tym tematem. Chciałbym natomiast spytać o coś innego…"{#vaxis_s53_r4574}':
@@ -1292,7 +1292,7 @@ label vaxis_s53: # from 43.8
 
 # s54 # say4576
 label vaxis_s54: # from 43.9
-    nr '"Kto?" Truposz marszczy brwi. "Ona kto?"{#vaxis_s54_}'
+    nr '"Kto?" Truposz marszczy brwi. "Ona kto?"{#vaxis_s54_1}'
 
     menu:
         '"Zapomnij o tym. Chciałbym natomiast spytać o coś innego…"{#vaxis_s54_r4577}':
@@ -1306,7 +1306,7 @@ label vaxis_s54: # from 43.9
 
 # s55 # say4579
 label vaxis_s55: # from 43.10
-    nr '"Przewodnik. On jest przy drzwiach wejściowych do Kostnicy. Czego od niego chcesz?"{#vaxis_s55_}'
+    nr '"Przewodnik. On jest przy drzwiach wejściowych do Kostnicy. Czego od niego chcesz?"{#vaxis_s55_1}'
 
     menu:
         '"Co możesz o nim powiedzieć?"{#vaxis_s55_r4580}':
@@ -1321,7 +1321,7 @@ label vaxis_s55: # from 43.10
 
 # s56 # say4582
 label vaxis_s56: # from 55.0
-    nr '"Zachowyyje się dziwnie. Nie z Gryybów. Nie z Anarchyystów, ma zmieniyyne oczyy…" Wzrusza. "Lubi szczyyyry. Dziwny on."{#vaxis_s56_}'
+    nr '"Zachowyyje się dziwnie. Nie z Gryybów. Nie z Anarchyystów, ma zmieniyyne oczyy…" Wzrusza. "Lubi szczyyyry. Dziwny on."{#vaxis_s56_1}'
 
     menu:
         '"Nie on jeden jest dziwny w tym miejscu. Ale chciałbym spytać o coś innego…"{#vaxis_s56_r4583}':
@@ -1335,7 +1335,7 @@ label vaxis_s56: # from 55.0
 
 # s57 # say4585
 label vaxis_s57: # - # IF ~  GlobalGT("Vaxis","GLOBAL",0)
-    nr 'Widzisz fałszywego zombie. Przebranie tego człowieka naprawdę potrafi wprawić w zdumienie… Jego oddech jest tak stłumiony, że ledwie go zauważasz.{#vaxis_s57_}'
+    nr 'Widzisz fałszywego zombie. Przebranie tego człowieka naprawdę potrafi wprawić w zdumienie… Jego oddech jest tak stłumiony, że ledwie go zauważasz.{#vaxis_s57_1}'
 
     menu:
         '"Witaj."{#vaxis_s57_r4586}' if vaxisLogic.r4586_condition():
@@ -1361,7 +1361,7 @@ label vaxis_s57: # - # IF ~  GlobalGT("Vaxis","GLOBAL",0)
 
 # s58 # say4591
 label vaxis_s58: # from 57.0 57.1 57.3
-    nr 'Zombie rzuca wokół szybkie spojrzenie, kontrolując, czy kogoś nie ma pobliżu, a potem obraca się do ciebie. "I co?"{#vaxis_s58_}'
+    nr 'Zombie rzuca wokół szybkie spojrzenie, kontrolując, czy kogoś nie ma pobliżu, a potem obraca się do ciebie. "I co?"{#vaxis_s58_1}'
 
     menu:
         '"Oto i klucz, którego poszukiwałeś."{#vaxis_s58_r4592}' if vaxisLogic.r4592_condition():
@@ -1389,7 +1389,7 @@ label vaxis_s58: # from 57.0 57.1 57.3
 
 # s59 # say4597
 label vaxis_s59: # from 57.2
-    nr 'Zombie rzuca wokół szybkie spojrzenie, kontrolując, czy kogoś nie ma pobliżu, a potem obraca się do ciebie i wykonuje dziwne ruchy, które mają zapewne na celu przepędzenie cię precz i to możliwie jak najszybciej. Syczy "Odyyjdź stąd, Oddyjdź!"{#vaxis_s59_}'
+    nr 'Zombie rzuca wokół szybkie spojrzenie, kontrolując, czy kogoś nie ma pobliżu, a potem obraca się do ciebie i wykonuje dziwne ruchy, które mają zapewne na celu przepędzenie cię precz i to możliwie jak najszybciej. Syczy "Odyyjdź stąd, Oddyjdź!"{#vaxis_s59_1}'
 
     menu:
         '"Nie. Najpierw chciałbym zadać kilka pytań…"{#vaxis_s59_r4598}':
@@ -1407,7 +1407,7 @@ label vaxis_s59: # from 57.2
 
 # s60 # say4601
 label vaxis_s60: # from 43.11
-    nr '"Myje przybranie dybre… Ja tyż mam blizny. Mam na sybie dużo płynu balsymujyncego. Ja dybrze udaję zombie." Chichocze za zasznurowanymi wargami, a potem klepie się po głowie "Graby bardzo głuu-pie."{#vaxis_s60_}'
+    nr '"Myje przybranie dybre… Ja tyż mam blizny. Mam na sybie dużo płynu balsymujyncego. Ja dybrze udaję zombie." Chichocze za zasznurowanymi wargami, a potem klepie się po głowie "Graby bardzo głuu-pie."{#vaxis_s60_1}'
 
     menu:
         '"Tak, oni nie są zbyt lotni, masz rację."{#vaxis_s60_r4602}':
@@ -1433,7 +1433,7 @@ label vaxis_s60: # from 43.11
 
 # s61 # say4607
 label vaxis_s61: # from 60.0
-    nr 'Zombie szybko chowa swój sarkazm do kieszeni. Kiwa głową z zapałem. "Graby bardzo głupie. Ja dobrze udaję zombie."{#vaxis_s61_}'
+    nr 'Zombie szybko chowa swój sarkazm do kieszeni. Kiwa głową z zapałem. "Graby bardzo głupie. Ja dobrze udaję zombie."{#vaxis_s61_1}'
 
     menu:
         '"A czy to nie boli?"{#vaxis_s61_r4608}':
@@ -1463,7 +1463,7 @@ label vaxis_s61: # from 60.0
 
 # s62 # say4614
 label vaxis_s62: # from 60.1 61.0
-    nr 'Zombie patrzy na twoje blizny. "Spytam się o to samo. Mnie to nie boli." Uderza się po piersi. "Ja twardy."{#vaxis_s62_}'
+    nr 'Zombie patrzy na twoje blizny. "Spytam się o to samo. Mnie to nie boli." Uderza się po piersi. "Ja twardy."{#vaxis_s62_1}'
 
     menu:
         '"To przebranie jest całkiem niezłe. Słuchaj… A czy nie mógłbyś i mnie ucharakteryzować na zombie?"{#vaxis_s62_r4615}' if vaxisLogic.r4615_condition():
@@ -1489,7 +1489,7 @@ label vaxis_s62: # from 60.1 61.0
 
 # s63 # say4619
 label vaxis_s63: # from 43.3 43.4 60.2 61.1 62.0 64.1 64.2
-    nr 'Zombie mierzy cię przez chwilę badawczym wzrokiem od stóp do głów, mrucząc do samego siebie, a potem kiwa głową. "Um… Potrzyyba mi słoja płynu byylsyymującego." Pokazuje na blizny na twojej piersi. "I tryychę igieł i nici."{#vaxis_s63_}'
+    nr 'Zombie mierzy cię przez chwilę badawczym wzrokiem od stóp do głów, mrucząc do samego siebie, a potem kiwa głową. "Um… Potrzyyba mi słoja płynu byylsyymującego." Pokazuje na blizny na twojej piersi. "I tryychę igieł i nici."{#vaxis_s63_1}'
 
     menu:
         '"Proszę."{#vaxis_s63_r4620}' if vaxisLogic.r4620_condition():
@@ -1515,7 +1515,7 @@ label vaxis_s63: # from 43.3 43.4 60.2 61.1 62.0 64.1 64.2
 
 # s64 # say4624
 label vaxis_s64: # from 61.2 61.3 62.1 62.2
-    nr 'Zombie mierzy cię przez chwilę badawczym wzrokiem od stóp do głów z dziwnym wyrazem twarzy. "Ty dyybry zombie. Myygę zryybić z ciebie zombie. Dyybre przebranie."{#vaxis_s64_}'
+    nr 'Zombie mierzy cię przez chwilę badawczym wzrokiem od stóp do głów z dziwnym wyrazem twarzy. "Ty dyybry zombie. Myygę zryybić z ciebie zombie. Dyybre przebranie."{#vaxis_s64_1}'
 
     menu:
         '"Tak, czy siak dziękuję. Mam jeszcze kilka innych pytań…"{#vaxis_s64_r4625}':
@@ -1539,7 +1539,7 @@ label vaxis_s64: # from 61.2 61.3 62.1 62.2
 
 # s65 # say4629
 label vaxis_s65: # from 63.0
-    nr 'Zombie bierze od ciebie rzeczy, i bierze się do roboty…{#vaxis_s65_}'
+    nr 'Zombie bierze od ciebie rzeczy, i bierze się do roboty…{#vaxis_s65_1}'
 
     menu:
         'Próbuj stać nieruchomo.{#vaxis_s65_r4630}' if vaxisLogic.r4630_condition():
@@ -1565,7 +1565,7 @@ label vaxis_s65: # from 63.0
 
 # s66 # say4633
 label vaxis_s66: # from 65.0 65.2 65.3
-    nr 'Zombie hojnie umieszcza na twoim ciele płyn balsamujący, a potem zaś zgrabnie zaszywa kilka twoich blizn. Począwszy od twoich stóp, idzie w górę i zaszywa twoje blizny, a potem kończy twoją charakteryzację zaszywając ci usta."{#vaxis_s66_}'
+    nr 'Zombie hojnie umieszcza na twoim ciele płyn balsamujący, a potem zaś zgrabnie zaszywa kilka twoich blizn. Począwszy od twoich stóp, idzie w górę i zaszywa twoje blizny, a potem kończy twoją charakteryzację zaszywając ci usta."{#vaxis_s66_1}'
 
     menu:
         '"Mmm-hmmph-mmm… Dziu-ku-ju."{#vaxis_s66_r4634}' if vaxisLogic.r4634_condition():
@@ -1584,7 +1584,7 @@ label vaxis_s66: # from 65.0 65.2 65.3
 
 # s67 # say4637
 label vaxis_s67: # from 66.0 66.2
-    nr 'Zombie unosi dłoń. "Ostryyżnie. Nie mów nic. Kiedy mówisz, szwy w twyyich bliznach pękyyją. Zombie nie mówią. Jeśli już myysisz mówić, mów powoli, ostryyżnie."  UWAGA: Weź pod uwagę, że nikt tutaj nie spodziewa się spotkać mówiącego zombie. Jeżeli będąc w przebraniu zombie zdecydujesz się na rozmowę z kimkolwiek, narazisz się dekonspirację.{#vaxis_s67_}'
+    nr 'Zombie unosi dłoń. "Ostryyżnie. Nie mów nic. Kiedy mówisz, szwy w twyyich bliznach pękyyją. Zombie nie mówią. Jeśli już myysisz mówić, mów powoli, ostryyżnie."  UWAGA: Weź pod uwagę, że nikt tutaj nie spodziewa się spotkać mówiącego zombie. Jeżeli będąc w przebraniu zombie zdecydujesz się na rozmowę z kimkolwiek, narazisz się dekonspirację.{#vaxis_s67_1}'
 
     menu:
         '"Mmph… mmm… Rozumiem."{#vaxis_s67_r4638}':
@@ -1595,7 +1595,7 @@ label vaxis_s67: # from 66.0 66.2
 
 # s68 # say4639
 label vaxis_s68: # from 67.0
-    nr 'Zombie marszczy brwi. "Przebryynie nie utrzyymuje się dłyyygo… Płyn balsamyyyjący wysycha, szwy wypadyyyją." Wzrusza ramionami. "Przebryyynie zapewne nie trzyma się długo pyyza Kostnicą. I nie biegaj! Zaczniesz biegać, zniszczysz całe przebryyynie."  UWAGA: Wprowadzenie do twojego ekwipunku broni oraz / lub podjęcie biegu natychmiast kasuje twoje przebranie zombie. Dlatego, jeżeli znajdziesz nową broń, powstrzymaj się przed wprowadzeniem jej do twojego ekwipunku do chwili, kiedy nie będziesz już potrzebował przebrania. Jeżeli masz uruchomioną opcję Ciągłego Biegu, pamiętaj o tym, żeby ją wyłączyć, zaraz po tym, jak skończysz rozmowę z Vaxisem.{#vaxis_s68_}'
+    nr 'Zombie marszczy brwi. "Przebryynie nie utrzyymuje się dłyyygo… Płyn balsamyyyjący wysycha, szwy wypadyyyją." Wzrusza ramionami. "Przebryyynie zapewne nie trzyma się długo pyyza Kostnicą. I nie biegaj! Zaczniesz biegać, zniszczysz całe przebryyynie."  UWAGA: Wprowadzenie do twojego ekwipunku broni oraz / lub podjęcie biegu natychmiast kasuje twoje przebranie zombie. Dlatego, jeżeli znajdziesz nową broń, powstrzymaj się przed wprowadzeniem jej do twojego ekwipunku do chwili, kiedy nie będziesz już potrzebował przebrania. Jeżeli masz uruchomioną opcję Ciągłego Biegu, pamiętaj o tym, żeby ją wyłączyć, zaraz po tym, jak skończysz rozmowę z Vaxisem.{#vaxis_s68_1}'
 
     menu:
         'Skiń jeszcze raz głową i odejdź.{#vaxis_s68_r4640}':
@@ -1605,7 +1605,7 @@ label vaxis_s68: # from 67.0
 
 # s69 # say4641
 label vaxis_s69: # -
-    nr 'Zombie marszczy brwi. "Wydyyjesz mi się znajyymy? Widziyyyłem cię wczyyśniej?"{#vaxis_s69_}'
+    nr 'Zombie marszczy brwi. "Wydyyjesz mi się znajyymy? Widziyyyłem cię wczyyśniej?"{#vaxis_s69_1}'
 
     menu:
         '"Możliwe. A gdzie mnie spotkałeś?"{#vaxis_s69_r4642}':
@@ -1619,7 +1619,7 @@ label vaxis_s69: # -
 
 # s70 # say4644
 label vaxis_s70: # from 23.0 23.2 71.0 71.1
-    nr 'Ku twemu zdziwieniu, zombie odwraca się od ciebie… i zaczyna bacznym wzrokiem lustrować otoczenie.{#vaxis_s70_}'
+    nr 'Ku twemu zdziwieniu, zombie odwraca się od ciebie… i zaczyna bacznym wzrokiem lustrować otoczenie.{#vaxis_s70_1}'
 
     menu:
         '"Nie chcesz mówić, tak? Wobec tego zaraz będziesz krzyczał z bólu."{#vaxis_s70_r4645}':
@@ -1642,7 +1642,7 @@ label vaxis_s70: # from 23.0 23.2 71.0 71.1
 
 # s71 # say4649
 label vaxis_s71: # externs morte_s90
-    nr 'Zombie patrzy na was obu wzrokiem pełnym obawy. Jest niemy… ale coś w jego wyglądzie mówi ci, że spostrzeżenie Mortego było słuszne.{#vaxis_s71_}'
+    nr 'Zombie patrzy na was obu wzrokiem pełnym obawy. Jest niemy… ale coś w jego wyglądzie mówi ci, że spostrzeżenie Mortego było słuszne.{#vaxis_s71_1}'
 
     menu:
         '"Anarchiści, co? To dla nich tutaj węszysz?"{#vaxis_s71_r4650}':
@@ -1669,7 +1669,7 @@ label vaxis_s71: # externs morte_s90
 
 # s72 # say4655
 label vaxis_s72: # from 30.2
-    nr 'Zombie wygląda na rozczarowanego, ale wzrusza ramionami i zaczyna grzebać w połach swojej splamionej tuniki. "Było spyykojnie. Gryyby były spyykojne. Nic nyywego od czasu poprzyydniego raportu." Po kilku chwilach, wręcza ci parę przedmiotów "Pryyszę." Sądząc po zapachu, przedmioty te musiały być schowane tak głęboko, aby nie dostały się w cudze ręce w przypadku rewizji. "Odyyjdę niebyywem."{#vaxis_s72_}'
+    nr 'Zombie wygląda na rozczarowanego, ale wzrusza ramionami i zaczyna grzebać w połach swojej splamionej tuniki. "Było spyykojnie. Gryyby były spyykojne. Nic nyywego od czasu poprzyydniego raportu." Po kilku chwilach, wręcza ci parę przedmiotów "Pryyszę." Sądząc po zapachu, przedmioty te musiały być schowane tak głęboko, aby nie dostały się w cudze ręce w przypadku rewizji. "Odyyjdę niebyywem."{#vaxis_s72_1}'
 
     menu:
         '"Odejść? Jak?"{#vaxis_s72_r4656}' if vaxisLogic.r4656_condition():
@@ -1683,7 +1683,7 @@ label vaxis_s72: # from 30.2
 
 # s73 # say4658
 label vaxis_s73: # -
-    nr 'Zombie mruczy: "Pyyyrtal to łuk. Parter, kyymnata półnyycno-zachyyydnia, potrzyyba ci kości palca ze szkyyyletu, żeby otwyyyrzyć pyyrtal." Kiwa głową na pożegnanie. "Powyyydzenia."{#vaxis_s73_}'
+    nr 'Zombie mruczy: "Pyyyrtal to łuk. Parter, kyymnata półnyycno-zachyyydnia, potrzyyba ci kości palca ze szkyyyletu, żeby otwyyyrzyć pyyrtal." Kiwa głową na pożegnanie. "Powyyydzenia."{#vaxis_s73_1}'
 
     menu:
         '"Uch… Dobra."{#vaxis_s73_r4659}':
@@ -1693,7 +1693,7 @@ label vaxis_s73: # -
 
 # s74 # say4660
 label vaxis_s74: # from 34.0
-    nr 'Oczy truposza zwężają się, gdy syczy na ciebie wściekle. "Próbujesz mnie wpyykyywać do księgi umyyrłych? Myym tutaj ukryytych przyjaciół, a ty nikyygo. Dotknij mnie, a myyi kumple zabiją cię."{#vaxis_s74_}'
+    nr 'Oczy truposza zwężają się, gdy syczy na ciebie wściekle. "Próbujesz mnie wpyykyywać do księgi umyyrłych? Myym tutaj ukryytych przyjaciół, a ty nikyygo. Dotknij mnie, a myyi kumple zabiją cię."{#vaxis_s74_1}'
 
     menu:
         '"Właśnie zaprzepaściłeś swoją ostatnią szansę, aby ujść z życiem, truposzu. Przygotuj się na śmierć."{#vaxis_s74_r4661}':
@@ -1708,7 +1708,7 @@ label vaxis_s74: # from 34.0
 
 # s75 # say4663
 label vaxis_s75: # from 31.4 32.3 35.4
-    nr 'Przez chwilę wygląda na poważnie wstrząśniętego, potem zaś długo mierzy twoją postać badawczym spojrzeniem i jego martwą twarz okrasza coś w rodzaju uśmiechu: "TY próbujesz wpakować MNIE do księgi umarłych? Myym tutaj ukrytych przyjaciół, a ty nikyygo. Dotknij mnie, a moi kumple zabiją cię."{#vaxis_s75_}'
+    nr 'Przez chwilę wygląda na poważnie wstrząśniętego, potem zaś długo mierzy twoją postać badawczym spojrzeniem i jego martwą twarz okrasza coś w rodzaju uśmiechu: "TY próbujesz wpakować MNIE do księgi umarłych? Myym tutaj ukrytych przyjaciół, a ty nikyygo. Dotknij mnie, a moi kumple zabiją cię."{#vaxis_s75_1}'
 
     menu:
         '"A co będzie, jeżeli zdecyduję się poinformować strażników o twoim przebraniu?"{#vaxis_s75_r4664}' if vaxisLogic.r4664_condition():
@@ -1731,7 +1731,7 @@ label vaxis_s75: # from 31.4 32.3 35.4
 
 # s76 # say4668
 label vaxis_s76: # from 75.1
-    nr 'Oczy truposza zwężają i syczy: "Ty mi wyjawiłeś syykyyet, to i ja ci powiem syykryyet. Ja mam tutaj swoich przyjaciół w ukryciu, a ty nikogo. Nie powinieneś tutaj być. Graby zabiją cię. Ja ucieknę."{#vaxis_s76_}'
+    nr 'Oczy truposza zwężają i syczy: "Ty mi wyjawiłeś syykyyet, to i ja ci powiem syykryyet. Ja mam tutaj swoich przyjaciół w ukryciu, a ty nikogo. Nie powinieneś tutaj być. Graby zabiją cię. Ja ucieknę."{#vaxis_s76_1}'
 
     menu:
         '"Właśnie zaprzepaściłeś swoją ostatnią szansę, truposzu. Przygotuj się na śmierć."{#vaxis_s76_r4669}':
@@ -1746,7 +1746,7 @@ label vaxis_s76: # from 75.1
 
 # s77 # say64523
 label vaxis_s77: # from 51.0
-    nr 'Fałszywy zombie wzrusza ramionami. "Musi być gdzieś tutaj… Poszukaj w magazynach na wyższym poziomie. Może tam będzie."{#vaxis_s77_}'
+    nr 'Fałszywy zombie wzrusza ramionami. "Musi być gdzieś tutaj… Poszukaj w magazynach na wyższym poziomie. Może tam będzie."{#vaxis_s77_1}'
 
     menu:
         '"Dobrze. Mam jeszcze kilka innych pytań…"{#vaxis_s77_r64524}':

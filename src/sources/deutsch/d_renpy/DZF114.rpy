@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say34986
 label zf114_s0: # - # IF ~  True()
-    nr 'Die Leiche dieser Frau hält in ihrem trottenden Gang inne, als du dich näherst. Du bemerkst, daß die Zahl "114" auf ihre Stirn geritzt ist. Ihr Mund ist zugenäht worden, aber die Fäden lösen sich langsam, und zwischen ihren Lippen dringt schwaches Stöhnen hervor.{#zf114_s0_}'
+    nr 'Die Leiche dieser Frau hält in ihrem trottenden Gang inne, als du dich näherst. Du bemerkst, daß die Zahl "114" auf ihre Stirn geritzt ist. Ihr Mund ist zugenäht worden, aber die Fäden lösen sich langsam, und zwischen ihren Lippen dringt schwaches Stöhnen hervor.{#zf114_s0_1}'
 
     menu:
         '"Sag mal… hast du nachher schon was vor?"{#zf114_s0_r34987}' if zf114Logic.r34987_condition():
@@ -58,7 +58,7 @@ label zf114_s0: # - # IF ~  True()
 
 # s1 # say34988
 label zf114_s1: # from 0.0 0.1 0.2
-    nr 'Die Leiche starrt dich weiter an.{#zf114_s1_}'
+    nr 'Die Leiche starrt dich weiter an.{#zf114_s1_1}'
 
     menu:
         '"Dann leb wohl."{#zf114_s1_r34989}' if zf114Logic.r34989_condition():
@@ -76,7 +76,7 @@ label zf114_s1: # from 0.0 0.1 0.2
 
 # s2 # say35007
 label zf114_s2: # from 0.3
-    nr 'Diese Leiche antwortet nicht. Es sieht so aus, als ob sie schon zu tot ist, um noch auf irgendeine deiner Fragen zu antworten.{#zf114_s2_}'
+    nr 'Diese Leiche antwortet nicht. Es sieht so aus, als ob sie schon zu tot ist, um noch auf irgendeine deiner Fragen zu antworten.{#zf114_s2_1}'
 
     menu:
         '"Dann leb wohl."{#zf114_s2_r35008}' if zf114Logic.r35008_condition():
@@ -94,6 +94,6 @@ label zf114_s2: # from 0.3
 
 # s3 # say35017
 label zf114_s3: # - # IF ~  False()
-    nr 'Diese Leiche antwortet nicht. Es sieht so aus, als ob sie schon zu tot ist, um noch auf irgendeine deiner Fragen zu antworten.{#zf114_s3_}'
+    nr 'Diese Leiche antwortet nicht. Es sieht so aus, als ob sie schon zu tot ist, um noch auf irgendeine deiner Fragen zu antworten.{#zf114_s3_1}'
 
     menu:

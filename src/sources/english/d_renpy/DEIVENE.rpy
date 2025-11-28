@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say3404
 label eivene_s0: # - # IF ~  Global("EiVene","GLOBAL",0)
-    nr 'You see a slight young woman with pale features. The sunken flesh around her cheeks and neck makes her appear as if she is starving. She seems intent on dissecting the corpse in front of her, prodding the chest with a finger.{#eivene_s0_}'
+    nr 'You see a slight young woman with pale features. The sunken flesh around her cheeks and neck makes her appear as if she is starving. She seems intent on dissecting the corpse in front of her, prodding the chest with a finger.{#eivene_s0_1}'
 
     menu:
         '"Greetings."{#eivene_s0_r3406}':
@@ -25,7 +25,7 @@ label eivene_s0: # - # IF ~  Global("EiVene","GLOBAL",0)
 
 # s1 # say3410
 label eivene_s1: # from 0.0
-    nr 'The woman does not respond… she seems too intent on the body in front of her. As you watch her work, you suddenly notice her hands… her fingers are talons. They are darting in and out of the corpse„s chest cavity like knives, removing organs.{#eivene_s1_}'
+    nr 'The woman does not respond… she seems too intent on the body in front of her. As you watch her work, you suddenly notice her hands… her fingers are talons. They are darting in and out of the corpse„s chest cavity like knives, removing organs.{#eivene_s1_1}'
 
     menu:
         '"I said, Greetings."{#eivene_s1_r3412}' if eiveneLogic.r3412_condition():
@@ -51,7 +51,7 @@ label eivene_s1: # from 0.0
 
 # s2 # say3417
 label eivene_s2: # from 1.0 1.2
-    nr 'The woman makes no response.{#eivene_s2_}'
+    nr 'The woman makes no response.{#eivene_s2_1}'
 
     menu:
         'Tap the woman, get her attention.{#eivene_s2_r3418}':
@@ -66,14 +66,14 @@ label eivene_s2: # from 1.0 1.2
 
 # s3 # say3420
 label eivene_s3: # from 1.1
-    nr 'The woman makes no response.{#eivene_s3_}'
+    nr 'The woman makes no response.{#eivene_s3_1}'
 
     jump morte_s55  # EXTERN
 
 
 # s4 # say3421
 label eivene_s4: # from 2.0
-    nr 'The woman jumps and whips around to face you… her eyes are a rotting yellow, with small orange dots for pupils. As she sees you, her expression changes from surprise to irritation, and she frowns at you.{#eivene_s4_}'
+    nr 'The woman jumps and whips around to face you… her eyes are a rotting yellow, with small orange dots for pupils. As she sees you, her expression changes from surprise to irritation, and she frowns at you.{#eivene_s4_1}'
 
     menu:
         '"Uh… greetings."{#eivene_s4_r3422}':
@@ -84,7 +84,7 @@ label eivene_s4: # from 2.0
 
 # s5 # say3423
 label eivene_s5: # from 4.0
-    nr 'She doesn„t seem to have heard you. She leans forward, squinting, as if she can“t quite make you out… whatever is wrong with her eyes must make her terribly near-sighted. "You -" She clacks her taloned fingers together, then makes a strange motion with her hands. "Find THREAD and EM-balming juice, bring HERE, to Ei-Vene. Go - Go - Go."  ^NNOTE: You have been assigned a quest. Quests are displayed in your diary and in the "Quests" portion of your journal. To see all the quests you„ve been assigned (and their status), simply select "quests" from the journal menu.^-{#eivene_s5_}'
+    nr 'She doesn„t seem to have heard you. She leans forward, squinting, as if she can“t quite make you out… whatever is wrong with her eyes must make her terribly near-sighted. "You -" She clacks her taloned fingers together, then makes a strange motion with her hands. "Find THREAD and EM-balming juice, bring HERE, to Ei-Vene. Go - Go - Go."  ^NNOTE: You have been assigned a quest. Quests are displayed in your diary and in the "Quests" portion of your journal. To see all the quests you„ve been assigned (and their status), simply select "quests" from the journal menu.^-{#eivene_s5_1}'
 
     menu:
         'Give her the thread and embalming fluid.{#eivene_s5_r3424}' if eiveneLogic.r3424_condition():
@@ -121,7 +121,7 @@ label eivene_s5: # from 4.0
 
 # s6 # say3430
 label eivene_s6: # from 5.1 5.3
-    nr 'She turns away… she makes no sign that she heard you. Her hearing must be as poor as her eyesight.{#eivene_s6_}'
+    nr 'She turns away… she makes no sign that she heard you. Her hearing must be as poor as her eyesight.{#eivene_s6_1}'
 
     menu:
         'Tap her on the shoulder, get her attention.{#eivene_s6_r3431}':
@@ -135,7 +135,7 @@ label eivene_s6: # from 5.1 5.3
 
 # s7 # say3433
 label eivene_s7: # from 5.0 17.0
-    nr 'Without missing a beat, Ei-Vene snaps the thread from your hands and hooks it around one of her talons, then begins sewing up the corpse„s chest. She then takes the embalming fluid, and begins to apply a layer to the corpse.{#eivene_s7_}'
+    nr 'Without missing a beat, Ei-Vene snaps the thread from your hands and hooks it around one of her talons, then begins sewing up the corpse„s chest. She then takes the embalming fluid, and begins to apply a layer to the corpse.{#eivene_s7_1}'
 
     menu:
         'Wait.{#eivene_s7_r3434}':
@@ -149,7 +149,7 @@ label eivene_s7: # from 5.0 17.0
 
 # s8 # say3436
 label eivene_s8: # from 7.1
-    nr 'As you are about to leave, Ei-Vene speaks: "Stay. You - next."{#eivene_s8_}'
+    nr 'As you are about to leave, Ei-Vene speaks: "Stay. You - next."{#eivene_s8_1}'
 
     menu:
         'Wait.{#eivene_s8_r3437}':
@@ -163,7 +163,7 @@ label eivene_s8: # from 7.1
 
 # s9 # say3439
 label eivene_s9: # from 7.0 8.0
-    nr 'Within minutes, she is finished. She clicks her talons, then turns to face you. To your surprise, she extends her hand and drags her talons along your arms and chest.{#eivene_s9_}'
+    nr 'Within minutes, she is finished. She clicks her talons, then turns to face you. To your surprise, she extends her hand and drags her talons along your arms and chest.{#eivene_s9_1}'
 
     menu:
         '"Uh, it„s not that I“m not flattered, but…"{#eivene_s9_r3440}' if eiveneLogic.r3440_condition():
@@ -189,7 +189,7 @@ label eivene_s9: # from 7.0 8.0
 
 # s10 # say3445
 label eivene_s10: # from 9.4 12.1
-    nr 'She looks shocked as you push her away. "Zomfie? You no zomfie!" She takes a step back, then before you can react, she claps her hands three times. In response, the tolling of a huge bell echoes throughout the Mortuary.{#eivene_s10_}'
+    nr 'She looks shocked as you push her away. "Zomfie? You no zomfie!" She takes a step back, then before you can react, she claps her hands three times. In response, the tolling of a huge bell echoes throughout the Mortuary.{#eivene_s10_1}'
 
     menu:
         '"All right then…"{#eivene_s10_r3491}':
@@ -200,7 +200,7 @@ label eivene_s10: # from 9.4 12.1
 
 # s11 # say3446
 label eivene_s11: # from 9.0 9.2
-    nr 'As she traces your arms and chest, you suddenly notice she seems to be examining your scars. She withdraws her talons, clicks them twice, then bends forward and examines some of the tattoos on your chest. "Hmmph. Who write on you? Hivers do that? No respect for zomfies. Zomfies, not paintings." She sniffs, then pokes one of your scars. "This one bad shape, many scars, no preserfs."{#eivene_s11_}'
+    nr 'As she traces your arms and chest, you suddenly notice she seems to be examining your scars. She withdraws her talons, clicks them twice, then bends forward and examines some of the tattoos on your chest. "Hmmph. Who write on you? Hivers do that? No respect for zomfies. Zomfies, not paintings." She sniffs, then pokes one of your scars. "This one bad shape, many scars, no preserfs."{#eivene_s11_1}'
 
     menu:
         'Wait.{#eivene_s11_r3447}':
@@ -210,7 +210,7 @@ label eivene_s11: # from 9.0 9.2
 
 # s12 # say3448
 label eivene_s12: # from 11.0
-    nr 'Her talons suddenly hook into the thread you brought her, and lightning-like, she jabs another talon into the skin near one of your scars. It feels barely more than a pin-prick, but it looks like she„s about to start stitching you up.{#eivene_s12_}'
+    nr 'Her talons suddenly hook into the thread you brought her, and lightning-like, she jabs another talon into the skin near one of your scars. It feels barely more than a pin-prick, but it looks like she„s about to start stitching you up.{#eivene_s12_1}'
 
     menu:
         'Let her work.{#eivene_s12_r3449}':
@@ -225,7 +225,7 @@ label eivene_s12: # from 11.0
 
 # s13 # say3451
 label eivene_s13: # from 12.0
-    nr 'The sensation is curiously painless as Ei-Vene begins to stitch up your scars.  When she is done, she sniffs you, frowns, then stabs her fingers into the embalming fluid. Within minutes, she has dabbed your body with the fluid… and strangely enough, it makes you feel *better.*{#eivene_s13_}'
+    nr 'The sensation is curiously painless as Ei-Vene begins to stitch up your scars.  When she is done, she sniffs you, frowns, then stabs her fingers into the embalming fluid. Within minutes, she has dabbed your body with the fluid… and strangely enough, it makes you feel *better.*{#eivene_s13_1}'
 
     menu:
         'Let her work.{#eivene_s13_r3452}' if eiveneLogic.r3452_condition():
@@ -239,7 +239,7 @@ label eivene_s13: # from 12.0
 
 # s14 # say3454
 label eivene_s14: # from 13.0
-    nr 'Ei-Vene puts the last touches on your body, gives you another sniff, nods, then makes a shooing motion with her talons. "Done. Go - go."{#eivene_s14_}'
+    nr 'Ei-Vene puts the last touches on your body, gives you another sniff, nods, then makes a shooing motion with her talons. "Done. Go - go."{#eivene_s14_1}'
 
     menu:
         '"Wait a minute." (You make the motion of a key turning with your hand.) "I need an embalming key. Do you have one?"{#eivene_s14_r3456}' if eiveneLogic.r3456_condition():
@@ -258,7 +258,7 @@ label eivene_s14: # from 13.0
 
 # s15 # say3458
 label eivene_s15: # - # IF ~  Global("EiVene","GLOBAL",1)
-    nr 'You see Ei-Vene. She is still dissecting the corpse„s chest with her talons. The rhythm of the talons reminds you of something, but you can“t quite recall what.{#eivene_s15_}'
+    nr 'You see Ei-Vene. She is still dissecting the corpse„s chest with her talons. The rhythm of the talons reminds you of something, but you can“t quite recall what.{#eivene_s15_1}'
 
     menu:
         'Watch her, study the motions of her hands.{#eivene_s15_r3459}' if eiveneLogic.r3459_condition():
@@ -282,7 +282,7 @@ label eivene_s15: # - # IF ~  Global("EiVene","GLOBAL",1)
 
 # s16 # say3464
 label eivene_s16: # from 15.0
-    nr 'As you study the motion of Ei-Vene„s hands, you feel a prickling along your scalp, and then suddenly, you find your vision swimming, blurring, until…{#eivene_s16_}'
+    nr 'As you study the motion of Ei-Vene„s hands, you feel a prickling along your scalp, and then suddenly, you find your vision swimming, blurring, until…{#eivene_s16_1}'
 
     $ eiveneLogic.s16_action()
     jump eivene_s26
@@ -290,7 +290,7 @@ label eivene_s16: # from 15.0
 
 # s17 # say3468
 label eivene_s17: # from 6.0 15.1 25.0 27.0
-    nr 'She turns, sees you, then frowns. "Dum zomfies." She clacks her taloned fingers together impatiently, then makes a stitching motion with her fingers. "Find thread and embalming fluid, bring here, to Ei-Vene. Go - Go - Go."{#eivene_s17_}'
+    nr 'She turns, sees you, then frowns. "Dum zomfies." She clacks her taloned fingers together impatiently, then makes a stitching motion with her fingers. "Find thread and embalming fluid, bring here, to Ei-Vene. Go - Go - Go."{#eivene_s17_1}'
 
     menu:
         'Give her the thread and embalming fluid.{#eivene_s17_r3469}' if eiveneLogic.r3469_condition():
@@ -315,7 +315,7 @@ label eivene_s17: # from 6.0 15.1 25.0 27.0
 
 # s18 # say3471
 label eivene_s18: # from 14.0 17.1 22.0
-    nr 'She leans forward, looks at your hand motions, then sniffs. Her hand darts into her robe, then emerges, a key hanging from her wickedly sharp index finger. She flicks it into your hand. "Bring back when done. Go - go."{#eivene_s18_}'
+    nr 'She leans forward, looks at your hand motions, then sniffs. Her hand darts into her robe, then emerges, a key hanging from her wickedly sharp index finger. She flicks it into your hand. "Bring back when done. Go - go."{#eivene_s18_1}'
 
     menu:
         '"What„s wrong with your hands?"{#eivene_s18_r3494}' if eiveneLogic.r3494_condition():
@@ -336,7 +336,7 @@ label eivene_s18: # from 14.0 17.1 22.0
 
 # s19 # say3472
 label eivene_s19: # from 1.3
-    nr 'The woman makes no response.{#eivene_s19_}'
+    nr 'The woman makes no response.{#eivene_s19_1}'
 
     $ eiveneLogic.j38205_s19_action()
     jump morte_s56  # EXTERN
@@ -344,14 +344,14 @@ label eivene_s19: # from 1.3
 
 # s20 # say3485
 label eivene_s20: # from 5.2 5.4
-    nr 'She turns away… she makes no sign that she heard you.{#eivene_s20_}'
+    nr 'She turns away… she makes no sign that she heard you.{#eivene_s20_1}'
 
     jump morte_s57  # EXTERN
 
 
 # s21 # say3486
 label eivene_s21: # from 18.1
-    nr 'She turns away… she makes no sign that she heard you. Her hearing must be as poor as her eyesight.{#eivene_s21_}'
+    nr 'She turns away… she makes no sign that she heard you. Her hearing must be as poor as her eyesight.{#eivene_s21_1}'
 
     $ eiveneLogic.j38205_s21_action()
     jump morte_s58  # EXTERN
@@ -359,7 +359,7 @@ label eivene_s21: # from 18.1
 
 # s22 # say3493
 label eivene_s22: # from 15.2 25.1 27.1
-    nr 'She turns, sees you, then frowns. "Dum zomfies." She clacks her taloned fingers together impatiently, then makes a stitching motion with her fingers. "You done. All stich up. Go - Go - Go."{#eivene_s22_}'
+    nr 'She turns, sees you, then frowns. "Dum zomfies." She clacks her taloned fingers together impatiently, then makes a stitching motion with her fingers. "You done. All stich up. Go - Go - Go."{#eivene_s22_1}'
 
     menu:
         '"Wait a minute." (You make the motion of a key turning with your hand.) "I need an embalming key. Do you have one?"{#eivene_s22_r3501}' if eiveneLogic.r3501_condition():
@@ -378,7 +378,7 @@ label eivene_s22: # from 15.2 25.1 27.1
 
 # s23 # say3498
 label eivene_s23: # from 18.0
-    nr 'She turns away… she makes no sign that she heard you. Her hearing must be as poor as her eyesight.{#eivene_s23_}'
+    nr 'She turns away… she makes no sign that she heard you. Her hearing must be as poor as her eyesight.{#eivene_s23_1}'
 
     menu:
         'Leave.{#eivene_s23_r3499}':
@@ -388,7 +388,7 @@ label eivene_s23: # from 18.0
 
 # s24 # say4200
 label eivene_s24: # from 14.1 17.2 22.1
-    nr 'She leans forward, looks at your hand motions, then sniffs. Her hand darts into her robe, rummages around for a moment, then she shrugs. "No key." She makes a shooing motion. "Go - go - go."{#eivene_s24_}'
+    nr 'She leans forward, looks at your hand motions, then sniffs. Her hand darts into her robe, rummages around for a moment, then she shrugs. "No key." She makes a shooing motion. "Go - go - go."{#eivene_s24_1}'
 
     menu:
         'Leave.{#eivene_s24_r4201}':
@@ -398,7 +398,7 @@ label eivene_s24: # from 14.1 17.2 22.1
 
 # s25 # say4353
 label eivene_s25: # -
-    nr 'You watch her for a while, and the rhythm of her hands causes two memories to surface - one of you playing some sort of stringed instrument, perhaps a harp. The other memory is that of stealing a purse… to your surprise, this last memory gives you a sudden temptation to pick Ei-Vene„s pocket.  ^NNOTE: You have regained a memory. Memories can give you additional experience points, skills, and may even lead to you gaining more memories later on.^-{#eivene_s25_}'
+    nr 'You watch her for a while, and the rhythm of her hands causes two memories to surface - one of you playing some sort of stringed instrument, perhaps a harp. The other memory is that of stealing a purse… to your surprise, this last memory gives you a sudden temptation to pick Ei-Vene„s pocket.  ^NNOTE: You have regained a memory. Memories can give you additional experience points, skills, and may even lead to you gaining more memories later on.^-{#eivene_s25_1}'
 
     menu:
         'Tap her, get her attention.{#eivene_s25_r4354}' if eiveneLogic.r4354_condition():
@@ -416,7 +416,7 @@ label eivene_s25: # -
 
 # s26 # say63477
 label eivene_s26: # from 16.0
-    nr '…you are standing in front of a freshly-slain corpse, rigor mortis making a mockery of its smile; the number „42“ has been stitched onto its scalp. The zombie is lying on a slab, and you have just finished stitching up its chest. You have placed something inside, something that may prove useful if you come this way again…{#eivene_s26_}'
+    nr '…you are standing in front of a freshly-slain corpse, rigor mortis making a mockery of its smile; the number „42“ has been stitched onto its scalp. The zombie is lying on a slab, and you have just finished stitching up its chest. You have placed something inside, something that may prove useful if you come this way again…{#eivene_s26_1}'
 
     menu:
         'Echo: "Keep these things safe and wait for my return."{#eivene_s26_r63478}' if eiveneLogic.r63478_condition():
@@ -431,7 +431,7 @@ label eivene_s26: # from 16.0
 
 # s27 # say63480
 label eivene_s27: # from 26.0 26.1
-    nr 'The memory of your voice is an echo, strange and hollow to your ears. You cross your arms in front of your chest, and to your surprise, the corpse does, too. After a moment, its hands fall back to its sides, and as it does, the vision fades… until you are watching Ei-Vene„s hands make their stitching motions once more.  ^NNOTE: You have regained a memory. Memories can give you additional experience points, skills, and may even lead to you gaining something else of value later on.^-{#eivene_s27_}'
+    nr 'The memory of your voice is an echo, strange and hollow to your ears. You cross your arms in front of your chest, and to your surprise, the corpse does, too. After a moment, its hands fall back to its sides, and as it does, the vision fades… until you are watching Ei-Vene„s hands make their stitching motions once more.  ^NNOTE: You have regained a memory. Memories can give you additional experience points, skills, and may even lead to you gaining something else of value later on.^-{#eivene_s27_1}'
 
     menu:
         'Tap her, get her attention.{#eivene_s27_r63482}' if eiveneLogic.r63482_condition():

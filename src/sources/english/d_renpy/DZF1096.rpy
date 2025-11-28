@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say35082
 label zf1096_s0: # - # IF ~  True()
-    nr 'This female corpse is making the rounds from slab to slab in the room. Her hair is knotted into a long braid and looped around her neck like a noose. Someone has stenciled the number "1096" onto her forehead, and her lips have been stitched closed.{#zf1096_s0_}'
+    nr 'This female corpse is making the rounds from slab to slab in the room. Her hair is knotted into a long braid and looped around her neck like a noose. Someone has stenciled the number "1096" onto her forehead, and her lips have been stitched closed.{#zf1096_s0_1}'
 
     menu:
         '"Uh… nice braid."{#zf1096_s0_r35083}' if zf1096Logic.r35083_condition():
@@ -58,7 +58,7 @@ label zf1096_s0: # - # IF ~  True()
 
 # s1 # say35084
 label zf1096_s1: # from 0.0 0.1 0.2
-    nr 'The corpse does not respond. You doubt it even knows you„re there.{#zf1096_s1_}'
+    nr 'The corpse does not respond. You doubt it even knows you„re there.{#zf1096_s1_1}'
 
     menu:
         '"Farewell then."{#zf1096_s1_r35085}' if zf1096Logic.r35085_condition():
@@ -76,7 +76,7 @@ label zf1096_s1: # from 0.0 0.1 0.2
 
 # s2 # say35103
 label zf1096_s2: # from 0.3
-    nr 'The corpse does not stir. It looks like it is too far gone to answer any of your questions.{#zf1096_s2_}'
+    nr 'The corpse does not stir. It looks like it is too far gone to answer any of your questions.{#zf1096_s2_1}'
 
     menu:
         '"Farewell then."{#zf1096_s2_r35104}' if zf1096Logic.r35104_condition():
@@ -94,6 +94,6 @@ label zf1096_s2: # from 0.3
 
 # s3 # say35113
 label zf1096_s3: # - # IF ~  False()
-    nr 'The corpse does not stir. It looks like it is too far gone to answer any of your questions.{#zf1096_s3_}'
+    nr 'The corpse does not stir. It looks like it is too far gone to answer any of your questions.{#zf1096_s3_1}'
 
     menu:

@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say34942
 label zm79_s0: # - # IF ~  True()
-    nr 'La grosse tête de ce cadavre a été tranchée, puis recousue à la hâte. Divers types de sutures semblent indiquer que sa tête ne cesse de tomber et d„être rattachée ensuite. Un numéro - “79„ - est gravé sur sa tempe, entouré d“un cercle denté pyrogravé dans sa chair.{#zm79_s0_}'
+    nr 'La grosse tête de ce cadavre a été tranchée, puis recousue à la hâte. Divers types de sutures semblent indiquer que sa tête ne cesse de tomber et d„être rattachée ensuite. Un numéro - “79„ - est gravé sur sa tempe, entouré d“un cercle denté pyrogravé dans sa chair.{#zm79_s0_1}'
 
     menu:
         '"Alors… Tu as vu quelque chose d„intéressant ?"{#zm79_s0_r34943}':
@@ -43,7 +43,7 @@ label zm79_s0: # - # IF ~  True()
 
 # s1 # say34944
 label zm79_s1: # from 0.0 0.2
-    nr 'Le cadavre continue à te fixer.{#zm79_s1_}'
+    nr 'Le cadavre continue à te fixer.{#zm79_s1_1}'
 
     menu:
         'Laisse le cadavre tranquille.{#zm79_s1_r34945}':
@@ -53,7 +53,7 @@ label zm79_s1: # from 0.0 0.2
 
 # s2 # say34949
 label zm79_s2: # from 0.3 3.0 3.1
-    nr 'Le cadavre ne répond pas. Il semble qu„il soit trop absent pour répondre à tes questions.{#zm79_s2_}'
+    nr 'Le cadavre ne répond pas. Il semble qu„il soit trop absent pour répondre à tes questions.{#zm79_s2_1}'
 
     menu:
         'Laisse le cadavre tranquille.{#zm79_s2_r34950}':
@@ -63,7 +63,7 @@ label zm79_s2: # from 0.3 3.0 3.1
 
 # s3 # say64278
 label zm79_s3: # from 0.1
-    nr 'Il semble que le cercle ait été tatoué sur le front du cadavre il y a bien longtemps, certainement avant sa mort. Cela peut être une sorte de symbole religieux ou un rite d„initiation. Tu remarques qu“il y a un petit triangle dans un des espaces entre les „canines“ intérieures, comme s„il avait une signification particulière{#zm79_s3_}'
+    nr 'Il semble que le cercle ait été tatoué sur le front du cadavre il y a bien longtemps, certainement avant sa mort. Cela peut être une sorte de symbole religieux ou un rite d„initiation. Tu remarques qu“il y a un petit triangle dans un des espaces entre les „canines“ intérieures, comme s„il avait une signification particulière{#zm79_s3_1}'
 
     menu:
         '"Hmmm. Intéressant… comment cette marque est-elle arrivée là, cadavre ?"{#zm79_s3_r64279}' if zm79Logic.r64279_condition():

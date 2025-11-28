@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say34942
 label zm79_s0: # - # IF ~  True()
-    nr 'Jest oczywiste, że mięsista głowa truposza została w którymś miejscu odrąbana i pośpiesznie przyszyta z powrotem. Różne rodzaje szwów - każdy w jakiś sposób postrzępiony - wydają się wskazywać na to, że głowa wciąż za bardzo odchyla się do tyłu i z powrotem jest przytwierdzana w trakcie pracy truposza. Na skroni ktoś wyciął numer "79". Jest otaczony kręgiem kłów. Takie same znaki znajdują się na jego czole.{#zm79_s0_}'
+    nr 'Jest oczywiste, że mięsista głowa truposza została w którymś miejscu odrąbana i pośpiesznie przyszyta z powrotem. Różne rodzaje szwów - każdy w jakiś sposób postrzępiony - wydają się wskazywać na to, że głowa wciąż za bardzo odchyla się do tyłu i z powrotem jest przytwierdzana w trakcie pracy truposza. Na skroni ktoś wyciął numer "79". Jest otaczony kręgiem kłów. Takie same znaki znajdują się na jego czole.{#zm79_s0_1}'
 
     menu:
         '"Więc jak… widziałeś, aby działo się tu coś interesującego?"{#zm79_s0_r34943}':
@@ -43,7 +43,7 @@ label zm79_s0: # - # IF ~  True()
 
 # s1 # say34944
 label zm79_s1: # from 0.0 0.2
-    nr 'Trup wciąż się w ciebie wpatruje.{#zm79_s1_}'
+    nr 'Trup wciąż się w ciebie wpatruje.{#zm79_s1_1}'
 
     menu:
         'Zostaw truposza w spokoju.{#zm79_s1_r34945}':
@@ -53,7 +53,7 @@ label zm79_s1: # from 0.0 0.2
 
 # s2 # say34949
 label zm79_s2: # from 0.3 3.0 3.1
-    nr 'Truposz nie odpowiada. Wygląda na to, że jest w zbyt daleko posuniętym stadium rozkładu, aby odpowiedzieć na twoje pytania.{#zm79_s2_}'
+    nr 'Truposz nie odpowiada. Wygląda na to, że jest w zbyt daleko posuniętym stadium rozkładu, aby odpowiedzieć na twoje pytania.{#zm79_s2_1}'
 
     menu:
         'Zostaw truposza w spokoju.{#zm79_s2_r34950}':
@@ -63,7 +63,7 @@ label zm79_s2: # from 0.3 3.0 3.1
 
 # s3 # say64278
 label zm79_s3: # from 0.1
-    nr 'Krąg kłów wygląda tak, jakby oznakowano nim czoło truposza dawno temu, przypuszczalnie przed jego śmiercią. Być może jest to jakiś religijny znak, lub rytuał przejścia. Zauważasz, że jedna z przerw pomiędzy wewnętrznymi „kłami“ ma niewielki trójkącik w środku, jakby miało to jakieś specjalne znaczenie.{#zm79_s3_}'
+    nr 'Krąg kłów wygląda tak, jakby oznakowano nim czoło truposza dawno temu, przypuszczalnie przed jego śmiercią. Być może jest to jakiś religijny znak, lub rytuał przejścia. Zauważasz, że jedna z przerw pomiędzy wewnętrznymi „kłami“ ma niewielki trójkącik w środku, jakby miało to jakieś specjalne znaczenie.{#zm79_s3_1}'
 
     menu:
         '"Hmmm. Interesujące… w jaki sposób znalazło się tu to znamię, trupku?"{#zm79_s3_r64279}' if zm79Logic.r64279_condition():

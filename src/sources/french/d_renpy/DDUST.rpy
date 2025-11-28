@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say300
 label dust_s0: # - # IF ~  Global("Appearance","GLOBAL",1)
-    nr 'L„Homme-Poussière ne t“a pas remarqué. Il a dû te confondre avec l„un des ouvriers cadavériques.{#dust_s0_}'
+    nr 'L„Homme-Poussière ne t“a pas remarqué. Il a dû te confondre avec l„un des ouvriers cadavériques.{#dust_s0_1}'
 
     menu:
         '"Bonjour."{#dust_s0_r302}':
@@ -37,7 +37,7 @@ label dust_s0: # - # IF ~  Global("Appearance","GLOBAL",1)
 
 # s1 # say307
 label dust_s1: # from 0.0 0.1 0.2 0.3
-    nr 'L„Homme-Poussière saute, tourne brusquement la tête et te regarde. Il a l“air choqué.{#dust_s1_}'
+    nr 'L„Homme-Poussière saute, tourne brusquement la tête et te regarde. Il a l“air choqué.{#dust_s1_1}'
 
     menu:
         'Brise-lui la nuque avant qu„il se mette à crier.{#dust_s1_r310}':
@@ -55,7 +55,7 @@ label dust_s1: # from 0.0 0.1 0.2 0.3
 
 # s2 # say309
 label dust_s2: # from 1.1 1.2 5.2 5.3 19.6 20.4 47.2 47.3 51.4
-    nr 'L„Homme-Poussière recule d“un pas, puis frappe trois fois dans ses mains. Une grande cloche en fer lui répond en sonnant dans la Morgue.{#dust_s2_}'
+    nr 'L„Homme-Poussière recule d“un pas, puis frappe trois fois dans ses mains. Une grande cloche en fer lui répond en sonnant dans la Morgue.{#dust_s2_1}'
 
     menu:
         '"Alors très bien…"{#dust_s2_r313}':
@@ -66,7 +66,7 @@ label dust_s2: # from 1.1 1.2 5.2 5.3 19.6 20.4 47.2 47.3 51.4
 
 # s3 # say314
 label dust_s3: # externs morte_s64
-    nr 'L„homme pâle est vêtu d“un habit long et sombre. Il sent légèrement le moisi. Son visage est sans expression et il semble absorbé dans son travail.{#dust_s3_}'
+    nr 'L„homme pâle est vêtu d“un habit long et sombre. Il sent légèrement le moisi. Son visage est sans expression et il semble absorbé dans son travail.{#dust_s3_1}'
 
     menu:
         '"Bonjour."{#dust_s3_r315}':
@@ -92,7 +92,7 @@ label dust_s3: # externs morte_s64
 
 # s4 # say321
 label dust_s4: # from 3.0 3.1 3.2 3.3 40.2 40.3
-    nr 'L„Homme-Poussière relève lentement la tête et se tourne vers toi. "Es-tu perdu ?"{#dust_s4_}'
+    nr 'L„Homme-Poussière relève lentement la tête et se tourne vers toi. "Es-tu perdu ?"{#dust_s4_1}'
 
     menu:
         '"Oui."{#dust_s4_r322}':
@@ -114,7 +114,7 @@ label dust_s4: # from 3.0 3.1 3.2 3.3 40.2 40.3
 
 # s5 # say326
 label dust_s5: # from 4.0 4.3 6.4 16.2 51.1
-    nr '"J„appelle un garde pour te guider vers la sortie. Attends."{#dust_s5_}'
+    nr '"J„appelle un garde pour te guider vers la sortie. Attends."{#dust_s5_1}'
 
     menu:
         'Brise-lui la nuque avant qu„il se mette à crier.{#dust_s5_r327}' if dustLogic.r327_condition():
@@ -136,7 +136,7 @@ label dust_s5: # from 4.0 4.3 6.4 16.2 51.1
 
 # s6 # say330
 label dust_s6: # from 4.1 4.2 51.2 51.3
-    nr '"Si tu n„es pas perdu, que fais-tu ici ?"{#dust_s6_}'
+    nr '"Si tu n„es pas perdu, que fais-tu ici ?"{#dust_s6_1}'
 
     menu:
         '"Ça ne te regarde pas."{#dust_s6_r331}':
@@ -162,7 +162,7 @@ label dust_s6: # from 4.1 4.2 51.2 51.3
 
 # s7 # say335
 label dust_s7: # from 6.0 9.0 20.0
-    nr '"Si, ça me regarde. Les gardes réussiront peut-être à te délier la langue." L„Homme-Poussière recule d“un pas ; il semble prêt à appeler les gardes.{#dust_s7_}'
+    nr '"Si, ça me regarde. Les gardes réussiront peut-être à te délier la langue." L„Homme-Poussière recule d“un pas ; il semble prêt à appeler les gardes.{#dust_s7_1}'
 
     menu:
         'Brise-lui la nuque avant qu„il se mette à crier.{#dust_s7_r344}' if dustLogic.r344_condition():
@@ -181,7 +181,7 @@ label dust_s7: # from 6.0 9.0 20.0
 
 # s8 # say336
 label dust_s8: # from 6.1 16.0 20.1
-    nr '"Tu plaisantes ? Tu désires peut-être en faire profiter les gardes." L„Homme-Poussière recule d“un pas ; il semble prêt à appeler les gardes.{#dust_s8_}'
+    nr '"Tu plaisantes ? Tu désires peut-être en faire profiter les gardes." L„Homme-Poussière recule d“un pas ; il semble prêt à appeler les gardes.{#dust_s8_1}'
 
     menu:
         'Brise-lui la nuque avant qu„il se mette à crier.{#dust_s8_r358}' if dustLogic.r358_condition():
@@ -200,7 +200,7 @@ label dust_s8: # from 6.1 16.0 20.1
 
 # s9 # say338
 label dust_s9: # from 6.2 20.2
-    nr '"À qui viens-tu rendre visite ?"{#dust_s9_}'
+    nr '"À qui viens-tu rendre visite ?"{#dust_s9_1}'
 
     menu:
         '"Ça ne te regarde pas."{#dust_s9_r3922}':
@@ -247,7 +247,7 @@ label dust_s9: # from 6.2 20.2
 
 # s10 # say345
 label dust_s10: # from 9.1
-    nr '"Dhall est dans la salle de réception à cet étage. Je te préviens… Dhall est très occupé et il ne se porte pas très bien. Si tes affaires ne sont pas urgentes, je te suggère de ne pas le déranger."{#dust_s10_}'
+    nr '"Dhall est dans la salle de réception à cet étage. Je te préviens… Dhall est très occupé et il ne se porte pas très bien. Si tes affaires ne sont pas urgentes, je te suggère de ne pas le déranger."{#dust_s10_1}'
 
     menu:
         '"Très bien. Merci du renseignement."{#dust_s10_r347}':
@@ -257,7 +257,7 @@ label dust_s10: # from 9.1
 
 # s11 # say346
 label dust_s11: # from 9.2
-    nr '"Dhall doit être dans la salle de réception au premier étage. Il est très occupé et ne se porte pas très bien. Si tes affaires ne sont pas urgentes, je te suggère de ne pas le déranger."{#dust_s11_}'
+    nr '"Dhall doit être dans la salle de réception au premier étage. Il est très occupé et ne se porte pas très bien. Si tes affaires ne sont pas urgentes, je te suggère de ne pas le déranger."{#dust_s11_1}'
 
     menu:
         '"Très bien. Merci du renseignement."{#dust_s11_r348}':
@@ -267,7 +267,7 @@ label dust_s11: # from 9.2
 
 # s12 # say349
 label dust_s12: # from 9.4 19.1
-    nr '"Deionarra ? Je sais qu„une femme est enterrée dans la Salle de Commémoration au rez-de-chaussée. C“est peut-être elle."{#dust_s12_}'
+    nr '"Deionarra ? Je sais qu„une femme est enterrée dans la Salle de Commémoration au rez-de-chaussée. C“est peut-être elle."{#dust_s12_1}'
 
     menu:
         '"Très probablement. Merci."{#dust_s12_r352}':
@@ -277,7 +277,7 @@ label dust_s12: # from 9.4 19.1
 
 # s13 # say350
 label dust_s13: # from 9.3
-    nr '"Deionarra ? Je sais qu„une femme est enterrée dans la Salle de Commémoration du nord-ouest. C“est peut-être elle."{#dust_s13_}'
+    nr '"Deionarra ? Je sais qu„une femme est enterrée dans la Salle de Commémoration du nord-ouest. C“est peut-être elle."{#dust_s13_1}'
 
     menu:
         '"Très probablement. Merci."{#dust_s13_r353}':
@@ -287,7 +287,7 @@ label dust_s13: # from 9.3
 
 # s14 # say351
 label dust_s14: # from 9.6
-    nr '"Je crois que Soego est près de la porte d„entrée au rez-de-chaussée. Il sert de guide pendant les heures d“anti-pic."{#dust_s14_}'
+    nr '"Je crois que Soego est près de la porte d„entrée au rez-de-chaussée. Il sert de guide pendant les heures d“anti-pic."{#dust_s14_1}'
 
     menu:
         '"Très bien. Merci."{#dust_s14_r354}':
@@ -297,7 +297,7 @@ label dust_s14: # from 9.6
 
 # s15 # say355
 label dust_s15: # from 9.5
-    nr '"Je crois que Soego est près de la porte d„entrée. Il sert de guide pendant les heures d“anti-pic."{#dust_s15_}'
+    nr '"Je crois que Soego est près de la porte d„entrée. Il sert de guide pendant les heures d“anti-pic."{#dust_s15_1}'
 
     menu:
         '"Très bien. Merci."{#dust_s15_r356}':
@@ -307,7 +307,7 @@ label dust_s15: # from 9.5
 
 # s16 # say357
 label dust_s16: # from 6.3 20.3
-    nr '"Qui enterre-t-on ? Le service funèbre doit probablement avoir lieu ailleurs dans la Morgue."{#dust_s16_}'
+    nr '"Qui enterre-t-on ? Le service funèbre doit probablement avoir lieu ailleurs dans la Morgue."{#dust_s16_1}'
 
     menu:
         '"Tu ne comprends pas… L„erreur d“enterrement, c„était MOI."{#dust_s16_r359}':
@@ -325,7 +325,7 @@ label dust_s16: # from 6.3 20.3
 
 # s17 # say362
 label dust_s17: # from 16.1
-    nr '"Plusieurs chambres funéraires bordent le périmètre de la Morgue. Elles suivent la courbe du mur du rez-de-chaussée et du premier étage. Connais-tu l„identité du mort ?"{#dust_s17_}'
+    nr '"Plusieurs chambres funéraires bordent le périmètre de la Morgue. Elles suivent la courbe du mur du rez-de-chaussée et du premier étage. Connais-tu l„identité du mort ?"{#dust_s17_1}'
 
     menu:
         '"Non."{#dust_s17_r363}':
@@ -339,7 +339,7 @@ label dust_s17: # from 16.1
 
 # s18 # say365
 label dust_s18: # from 17.0
-    nr '"Alors vérifie auprès de l„un des guides à la porte d“entrée. Il sera en mesure de t„aider."{#dust_s18_}'
+    nr '"Alors vérifie auprès de l„un des guides à la porte d“entrée. Il sera en mesure de t„aider."{#dust_s18_1}'
 
     menu:
         '"Très bien. Merci."{#dust_s18_r366}':
@@ -349,7 +349,7 @@ label dust_s18: # from 17.0
 
 # s19 # say367
 label dust_s19: # from 17.1
-    nr 'L„Homme-Poussière attend.{#dust_s19_}'
+    nr 'L„Homme-Poussière attend.{#dust_s19_1}'
 
     menu:
         '"Pardon… Ce n„est pas ce que je voulais dire. Je ne connais pas le nom du défunt."{#dust_s19_r369}':
@@ -384,7 +384,7 @@ label dust_s19: # from 17.1
 
 # s20 # say374
 label dust_s20: # from 9.9 19.0
-    nr '"Je vois. Mais que veux-tu ?"{#dust_s20_}'
+    nr '"Je vois. Mais que veux-tu ?"{#dust_s20_1}'
 
     menu:
         '"Ça ne te regarde pas."{#dust_s20_r375}':
@@ -410,7 +410,7 @@ label dust_s20: # from 9.9 19.0
 
 # s21 # say368
 label dust_s21: # from 9.7 9.8 19.2 19.3
-    nr '"Ce nom ne m„est pas familier. Vérifie auprès de l“un des guides, à la porte d„entrée… Il saura mieux te renseigner que moi."{#dust_s21_}'
+    nr '"Ce nom ne m„est pas familier. Vérifie auprès de l“un des guides, à la porte d„entrée… Il saura mieux te renseigner que moi."{#dust_s21_1}'
 
     menu:
         '"Très bien. C„est ce que je vais faire. Au revoir."{#dust_s21_r380}':
@@ -420,7 +420,7 @@ label dust_s21: # from 9.7 9.8 19.2 19.3
 
 # s22 # say294
 label dust_s22: # - # IF ~  Global("Appearance","GLOBAL",2)
-    nr 'L„homme pâle est vêtu d“une robe longue et sombre. Il sent légèrement le moisi. Son visage est sans expression et il semble absorbé par sa tâche.{#dust_s22_}'
+    nr 'L„homme pâle est vêtu d“une robe longue et sombre. Il sent légèrement le moisi. Son visage est sans expression et il semble absorbé par sa tâche.{#dust_s22_1}'
 
     menu:
         '"Bonjour."{#dust_s22_r295}':
@@ -434,7 +434,7 @@ label dust_s22: # - # IF ~  Global("Appearance","GLOBAL",2)
 
 # s23 # say381
 label dust_s23: # from 22.0
-    nr 'Il se retourne lentement et ses yeux se mettent à clignoter à la vue de ta robe. "Bonjour, initié."{#dust_s23_}'
+    nr 'Il se retourne lentement et ses yeux se mettent à clignoter à la vue de ta robe. "Bonjour, initié."{#dust_s23_1}'
 
     menu:
         '"Qui es-tu ?"{#dust_s23_r383}':
@@ -456,7 +456,7 @@ label dust_s23: # from 22.0
 
 # s24 # say393
 label dust_s24: # from 23.0
-    nr '"Je pourrais te retourner la question. Ton visage m„est inconnu. Qui es-tu ?"{#dust_s24_}'
+    nr '"Je pourrais te retourner la question. Ton visage m„est inconnu. Qui es-tu ?"{#dust_s24_1}'
 
     menu:
         'Mensonge : "Le nom est… euh, Adahn."{#dust_s24_r450}' if dustLogic.r450_condition():
@@ -479,7 +479,7 @@ label dust_s24: # from 23.0
 
 # s25 # say394
 label dust_s25: # from 23.1
-    nr '"Voici la Morgue…" L„Homme-Poussière t“observe un instant ; comme s„il digérait tes paroles. "C“est quoi ton nom déjà… ?"{#dust_s25_}'
+    nr '"Voici la Morgue…" L„Homme-Poussière t“observe un instant ; comme s„il digérait tes paroles. "C“est quoi ton nom déjà… ?"{#dust_s25_1}'
 
     menu:
         'Mensonge : "Le nom est… euh, Adahn."{#dust_s25_r399}' if dustLogic.r399_condition():
@@ -502,7 +502,7 @@ label dust_s25: # from 23.1
 
 # s26 # say400
 label dust_s26: # from 23.2 27.0 28.2 30.3 31.3 34.2 36.1 39.0 50.0
-    nr 'L„Homme-Poussière attend patiemment que tu continues.{#dust_s26_}'
+    nr 'L„Homme-Poussière attend patiemment que tu continues.{#dust_s26_1}'
 
     menu:
         '"Peux-tu me dire comment sortir d„ici ?"{#dust_s26_r401}':
@@ -524,7 +524,7 @@ label dust_s26: # from 23.2 27.0 28.2 30.3 31.3 34.2 36.1 39.0 50.0
 
 # s27 # say405
 label dust_s27: # from 26.0
-    nr '"Tu peux sortir tout simplement par la porte d„entrée, au rez-de-chaussée."{#dust_s27_}'
+    nr '"Tu peux sortir tout simplement par la porte d„entrée, au rez-de-chaussée."{#dust_s27_1}'
 
     menu:
         '"J„ai d“autres questions…"{#dust_s27_r406}':
@@ -538,7 +538,7 @@ label dust_s27: # from 26.0
 
 # s28 # say408
 label dust_s28: # from 26.1
-    nr '"Ce nom…" L„Homme-Poussière hésite un instant. "Ce nom me *dit* quelque chose… Un Récupérateur portait le même. Dhall le Scribe le connaît peut-être."{#dust_s28_}'
+    nr '"Ce nom…" L„Homme-Poussière hésite un instant. "Ce nom me *dit* quelque chose… Un Récupérateur portait le même. Dhall le Scribe le connaît peut-être."{#dust_s28_1}'
 
     menu:
         '"Un Récupérateur ?"{#dust_s28_r409}':
@@ -560,7 +560,7 @@ label dust_s28: # from 26.1
 
 # s29 # say412
 label dust_s29: # from 28.0
-    nr '"Les Récupérateurs sont ceux qui ramassent les cadavres dans les rues de Sigil et qui les portent à la Morgue…" L„Homme-Poussière fait une pause, puis fronce les sourcils. "Tu n“es pas du coin. Qui es-tu ?"{#dust_s29_}'
+    nr '"Les Récupérateurs sont ceux qui ramassent les cadavres dans les rues de Sigil et qui les portent à la Morgue…" L„Homme-Poussière fait une pause, puis fronce les sourcils. "Tu n“es pas du coin. Qui es-tu ?"{#dust_s29_1}'
 
     menu:
         '"Mon initiation est récente. Pardonne mon ignorance."{#dust_s29_r413}' if dustLogic.r413_condition():
@@ -582,7 +582,7 @@ label dust_s29: # from 28.0
 
 # s30 # say414
 label dust_s30: # from 28.1
-    nr '"Dhall est hautement respecté dans notre faction. Personne n„a médité autant que lui sur la nature de la Vraie Mort et personne n“en est plus digne que lui. Il a tant de sagesse à donner. Si tu ne le connais pas encore, tu devrais saisir une occasion de lui parler. Il ne séjournera plus longtemps dans l„ombre de cette existence."{#dust_s30_}'
+    nr '"Dhall est hautement respecté dans notre faction. Personne n„a médité autant que lui sur la nature de la Vraie Mort et personne n“en est plus digne que lui. Il a tant de sagesse à donner. Si tu ne le connais pas encore, tu devrais saisir une occasion de lui parler. Il ne séjournera plus longtemps dans l„ombre de cette existence."{#dust_s30_1}'
 
     menu:
         '"*Il ne traînera pas longtemps dans l„ombre de cette existence ?*"{#dust_s30_r415}':
@@ -608,7 +608,7 @@ label dust_s30: # from 28.1
 
 # s31 # say419
 label dust_s31: # from 30.0 32.0 33.0
-    nr 'Il acquiesce. "Dhall est malade. Il est âgé, même selon les standards githzeraïs. La mort succédera sans nul doute à la maladie dévastatrice qu„il a contracté. Il est chanceux."{#dust_s31_}'
+    nr 'Il acquiesce. "Dhall est malade. Il est âgé, même selon les standards githzeraïs. La mort succédera sans nul doute à la maladie dévastatrice qu„il a contracté. Il est chanceux."{#dust_s31_1}'
 
     menu:
         '"Les standards githzeraïs ?"{#dust_s31_r420}':
@@ -634,7 +634,7 @@ label dust_s31: # from 30.0 32.0 33.0
 
 # s32 # say427
 label dust_s32: # from 30.1
-    nr '"Dhall est dans la salle de réception, dans l„aile nord-ouest, à cet étage. Je te préviens… Dhall est absorbé par ses affaires et la maladie qui le ronge occupe le reste de son temps."{#dust_s32_}'
+    nr '"Dhall est dans la salle de réception, dans l„aile nord-ouest, à cet étage. Je te préviens… Dhall est absorbé par ses affaires et la maladie qui le ronge occupe le reste de son temps."{#dust_s32_1}'
 
     menu:
         '"Dhall est malade ?"{#dust_s32_r428}':
@@ -648,7 +648,7 @@ label dust_s32: # from 30.1
 
 # s33 # say426
 label dust_s33: # from 30.2
-    nr '"Dhall est très probablement dans la salle de réception au premier étage. Ne l„accapare pas trop. Il est très pris par ses affaires et la maladie qui le ronge occupe le reste de son temps."{#dust_s33_}'
+    nr '"Dhall est très probablement dans la salle de réception au premier étage. Ne l„accapare pas trop. Il est très pris par ses affaires et la maladie qui le ronge occupe le reste de son temps."{#dust_s33_1}'
 
     menu:
         '"Dhall est malade ?"{#dust_s33_r430}':
@@ -662,7 +662,7 @@ label dust_s33: # from 30.2
 
 # s34 # say432
 label dust_s34: # from 31.0
-    nr '"Oui, les githzeraïs ont une durée de vie plus longue que les humains."{#dust_s34_}'
+    nr '"Oui, les githzeraïs ont une durée de vie plus longue que les humains."{#dust_s34_1}'
 
     menu:
         '"C„est quoi un *githzeraï* ?"{#dust_s34_r433}':
@@ -684,7 +684,7 @@ label dust_s34: # from 31.0
 
 # s35 # say435
 label dust_s35: # from 31.1 34.0
-    nr '"Les githzeraïs sont…" L„Homme-Poussière fait une pause, puis fronce les sourcils et t“observe. "Tu n„es pas d“ici. Qui es-tu ?"{#dust_s35_}'
+    nr '"Les githzeraïs sont…" L„Homme-Poussière fait une pause, puis fronce les sourcils et t“observe. "Tu n„es pas d“ici. Qui es-tu ?"{#dust_s35_1}'
 
     menu:
         '"Mon initiation est récente. Pardonne mon ignorance."{#dust_s35_r436}' if dustLogic.r436_condition():
@@ -706,7 +706,7 @@ label dust_s35: # from 31.1 34.0
 
 # s36 # say439
 label dust_s36: # from 31.2 34.1
-    nr '"Il est chanceux car il atteindra la Vraie Mort. Il n„aura plus à vivre dans l“ombre de cette existence."{#dust_s36_}'
+    nr '"Il est chanceux car il atteindra la Vraie Mort. Il n„aura plus à vivre dans l“ombre de cette existence."{#dust_s36_1}'
 
     menu:
         '"Et… c„est une bonne chose ?"{#dust_s36_r441}':
@@ -724,7 +724,7 @@ label dust_s36: # from 31.2 34.1
 
 # s37 # say444
 label dust_s37: # from 36.0
-    nr 'L„Homme-Poussière acquiesce. "Oui." Il fronce les sourcils puis te dévisage. "Tu n“es pas d„ici. Qui es-tu ?"{#dust_s37_}'
+    nr 'L„Homme-Poussière acquiesce. "Oui." Il fronce les sourcils puis te dévisage. "Tu n“es pas d„ici. Qui es-tu ?"{#dust_s37_1}'
 
     menu:
         '"Mon initiation est récente. Pardonne mon ignorance."{#dust_s37_r445}' if dustLogic.r445_condition():
@@ -746,7 +746,7 @@ label dust_s37: # from 36.0
 
 # s38 # say447
 label dust_s38: # -
-    nr '"Tu n„es pas l“un des nôtres. Que fais-tu ici ? Es-tu un membre des Anarchistes ? Un espion d„une autre faction ? Gardes ! Gardes !"{#dust_s38_}'
+    nr '"Tu n„es pas l“un des nôtres. Que fais-tu ici ? Es-tu un membre des Anarchistes ? Un espion d„une autre faction ? Gardes ! Gardes !"{#dust_s38_1}'
 
     menu:
         '"Bon sang !"{#dust_s38_r448}':
@@ -767,7 +767,7 @@ label dust_s38: # -
 
 # s39 # say398
 label dust_s39: # from 26.2
-    nr '"Un journal ? Je n„en ai vu aucun."{#dust_s39_}'
+    nr '"Un journal ? Je n„en ai vu aucun."{#dust_s39_1}'
 
     menu:
         '"J„ai d“autres questions…"{#dust_s39_r451}':
@@ -781,7 +781,7 @@ label dust_s39: # from 26.2
 
 # s40 # say1419
 label dust_s40: # -
-    nr 'L„homme pâle est vêtu d“un habit long et sombre. Il sent légèrement le moisi. Son visage est sans expression et il semble absorbé par sa tâche.{#dust_s40_}'
+    nr 'L„homme pâle est vêtu d“un habit long et sombre. Il sent légèrement le moisi. Son visage est sans expression et il semble absorbé par sa tâche.{#dust_s40_1}'
 
     menu:
         '"Bonjour."{#dust_s40_r1420}' if dustLogic.r1420_condition():
@@ -807,7 +807,7 @@ label dust_s40: # -
 
 # s41 # say1425
 label dust_s41: # from 1.0 5.1 7.1 8.1 47.1
-    nr 'Avant que l„Homme-Poussière ait eu le temps de dire un mot, tu lui bloques les tempes entre tes mains, et tu lui retournes la tête vers la gauche d“un coup sec.{#dust_s41_}'
+    nr 'Avant que l„Homme-Poussière ait eu le temps de dire un mot, tu lui bloques les tempes entre tes mains, et tu lui retournes la tête vers la gauche d“un coup sec.{#dust_s41_1}'
 
     menu:
         '"Je ne peux pas te laisser prévenir tes amis…"{#dust_s41_r1426}':
@@ -818,7 +818,7 @@ label dust_s41: # from 1.0 5.1 7.1 8.1 47.1
 
 # s42 # say1427
 label dust_s42: # from 41.0 45.0
-    nr 'Un *craquement* retentit ; le corps inerte de l„Homme-Poussière tombe dans tes bras.{#dust_s42_}'
+    nr 'Un *craquement* retentit ; le corps inerte de l„Homme-Poussière tombe dans tes bras.{#dust_s42_1}'
 
     menu:
         '"Je préfère que ce soit toi que moi, Homme-Poussière."{#dust_s42_r1428}' if dustLogic.r1428_condition():
@@ -834,7 +834,7 @@ label dust_s42: # from 41.0 45.0
 
 # s43 # say1430
 label dust_s43: # from 42.0
-    nr 'À ta grande surprise, cette action t„a paru instinctive, comme si tu l“avais déjà réalisée plusieurs fois… cela te rappelle vaguement quelque chose, mais le souvenir n„est pas assez fort pour refaire surface.{#dust_s43_}'
+    nr 'À ta grande surprise, cette action t„a paru instinctive, comme si tu l“avais déjà réalisée plusieurs fois… cela te rappelle vaguement quelque chose, mais le souvenir n„est pas assez fort pour refaire surface.{#dust_s43_1}'
 
     menu:
         'Laisse le corps, continue.{#dust_s43_r3882}':
@@ -845,7 +845,7 @@ label dust_s43: # from 42.0
 
 # s44 # say3883
 label dust_s44: # from 5.0 7.0 8.0 19.4 47.0
-    nr 'Tu n„es pas assez rapide et l“Homme-Poussière évite ton mouvement. Il recule d„un pas, frappe trois fois dans ses mains. Une grande cloche en fer lui répond en sonnant dans la Morgue.{#dust_s44_}'
+    nr 'Tu n„es pas assez rapide et l“Homme-Poussière évite ton mouvement. Il recule d„un pas, frappe trois fois dans ses mains. Une grande cloche en fer lui répond en sonnant dans la Morgue.{#dust_s44_1}'
 
     menu:
         '"Alors très bien…"{#dust_s44_r3884}':
@@ -856,7 +856,7 @@ label dust_s44: # from 5.0 7.0 8.0 19.4 47.0
 
 # s45 # say3889
 label dust_s45: # from 19.5
-    nr 'Tu te penches vers lui pour lui „murmurer“ quelque chose ; il se penche aussi. Quand il arrive à portée de mains, tu lui bloques les tempes entre tes mains, et tu lui retournes la tête vers la gauche d„un coup sec.{#dust_s45_}'
+    nr 'Tu te penches vers lui pour lui „murmurer“ quelque chose ; il se penche aussi. Quand il arrive à portée de mains, tu lui bloques les tempes entre tes mains, et tu lui retournes la tête vers la gauche d„un coup sec.{#dust_s45_1}'
 
     menu:
         '"Je ne peux pas te laisser prévenir tes amis…"{#dust_s45_r3890}':
@@ -867,7 +867,7 @@ label dust_s45: # from 19.5
 
 # s46 # say3891
 label dust_s46: # from 24.3 25.3 29.3 35.3 37.3 49.3 50.1
-    nr 'L„Homme-Poussière a l“air méfiant. Il s„apprête à dire quelque chose, puis secoue légèrement la tête et retourne à sa tâche.{#dust_s46_}'
+    nr 'L„Homme-Poussière a l“air méfiant. Il s„apprête à dire quelque chose, puis secoue légèrement la tête et retourne à sa tâche.{#dust_s46_1}'
 
     menu:
         'Éloigne-toi.{#dust_s46_r3892}':
@@ -877,7 +877,7 @@ label dust_s46: # from 24.3 25.3 29.3 35.3 37.3 49.3 50.1
 
 # s47 # say3893
 label dust_s47: # from 24.2 25.2 29.1 29.2 35.1 35.2 37.1 37.2 49.1 49.2
-    nr 'L„Homme-Poussière t“observe avec attention. "Tu n„es pas l“un des nôtres. Que fais-tu ici ? Es-tu membre des Anarchistes ? Ou un espion d„une autre faction ? Cela me semble être du ressort des gardes…"{#dust_s47_}'
+    nr 'L„Homme-Poussière t“observe avec attention. "Tu n„es pas l“un des nôtres. Que fais-tu ici ? Es-tu membre des Anarchistes ? Ou un espion d„une autre faction ? Cela me semble être du ressort des gardes…"{#dust_s47_1}'
 
     menu:
         'Brise-lui la nuque avant qu„il se mette à crier.{#dust_s47_r3914}' if dustLogic.r3914_condition():
@@ -899,7 +899,7 @@ label dust_s47: # from 24.2 25.2 29.1 29.2 35.1 35.2 37.1 37.2 49.1 49.2
 
 # s48 # say3894
 label dust_s48: # from 10.0 11.0 12.0 13.0 14.0 15.0 21.0 26.3 27.1 28.3 30.4 31.4 32.1 33.1 34.3 36.2 39.1
-    nr 'L„Homme-Poussière hoche la tête, puis retourne à sa tâche.{#dust_s48_}'
+    nr 'L„Homme-Poussière hoche la tête, puis retourne à sa tâche.{#dust_s48_1}'
 
     menu:
         'Éloigne-toi.{#dust_s48_r3895}':
@@ -909,7 +909,7 @@ label dust_s48: # from 10.0 11.0 12.0 13.0 14.0 15.0 21.0 26.3 27.1 28.3 30.4 31
 
 # s49 # say3896
 label dust_s49: # from 24.0 24.1 25.0 25.1
-    nr 'L„Homme-Poussière fronce les sourcils. "Ce nom ne me dit rien."{#dust_s49_}'
+    nr 'L„Homme-Poussière fronce les sourcils. "Ce nom ne me dit rien."{#dust_s49_1}'
 
     menu:
         '"Mon initiation est récente. Pardonne mon ignorance."{#dust_s49_r3898}' if dustLogic.r3898_condition():
@@ -931,7 +931,7 @@ label dust_s49: # from 24.0 24.1 25.0 25.1
 
 # s50 # say3897
 label dust_s50: # from 29.0 35.0 37.0 49.0
-    nr 'L„Homme-Poussière fronce toujours les sourcils, mais il hoche légèrement la tête. "Très bien. Comment puis-je t“aider, initié ?"{#dust_s50_}'
+    nr 'L„Homme-Poussière fronce toujours les sourcils, mais il hoche légèrement la tête. "Très bien. Comment puis-je t“aider, initié ?"{#dust_s50_1}'
 
     menu:
         '"J„ai des questions…"{#dust_s50_r3902}':
@@ -945,7 +945,7 @@ label dust_s50: # from 29.0 35.0 37.0 49.0
 
 # s51 # say66674
 label dust_s51: # - # IF ~  Global("Appearance","GLOBAL",0)
-    nr 'L„Homme-Poussière te dédie un regard dénué d“expression. "Tu es perdu ?"{#dust_s51_}'
+    nr 'L„Homme-Poussière te dédie un regard dénué d“expression. "Tu es perdu ?"{#dust_s51_1}'
 
     menu:
         '"Non, je suis membre de la faction. Je fais juste le tour de la Morgue."{#dust_s51_r66675}' if dustLogic.r66675_condition():
@@ -971,7 +971,7 @@ label dust_s51: # - # IF ~  Global("Appearance","GLOBAL",0)
 
 # s52 # say66681
 label dust_s52: # from 51.0
-    nr 'L„Homme-Poussière te regarde fixement puis hoche la tête. "Très bien. Si tu a besoin d“aide, fais-le moi savoir."{#dust_s52_}'
+    nr 'L„Homme-Poussière te regarde fixement puis hoche la tête. "Très bien. Si tu a besoin d“aide, fais-le moi savoir."{#dust_s52_1}'
 
     menu:
         '"Je n„y manquerai pas. Au revoir."{#dust_s52_r66682}':

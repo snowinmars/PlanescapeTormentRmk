@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say24564
 label zm825_s0: # - # IF ~  True()
-    nr 'Głowa tego truposza kołysze się w przód i w tył na ramionach… sądząc po kącie pochylenia karku, człowiek ten najprawdopodobniej został powieszony. Z boku głowy ktoś wymalował mu numer "825".{#zm825_s0_}'
+    nr 'Głowa tego truposza kołysze się w przód i w tył na ramionach… sądząc po kącie pochylenia karku, człowiek ten najprawdopodobniej został powieszony. Z boku głowy ktoś wymalował mu numer "825".{#zm825_s0_1}'
 
     menu:
         '"Poszukuję klucza… czy przypadkiem to nie ty go masz?"{#zm825_s0_r24565}' if zm825Logic.r24565_condition():
@@ -49,7 +49,7 @@ label zm825_s0: # - # IF ~  True()
 
 # s1 # say24566
 label zm825_s1: # from 0.1 0.2 0.3 3.1
-    nr 'Trup spogląda na ziemię i nie odpowiada.{#zm825_s1_}'
+    nr 'Trup spogląda na ziemię i nie odpowiada.{#zm825_s1_1}'
 
     menu:
         '"W takim razie trudno. Żegnaj."{#zm825_s1_r24567}':
@@ -63,7 +63,7 @@ label zm825_s1: # from 0.1 0.2 0.3 3.1
 
 # s2 # say24571
 label zm825_s2: # from 0.4
-    nr 'Truposz nie rusza się. Wygląda na to, że jest w zbyt daleko posuniętym stadium rozkładu, aby odpowiedzieć na twoje pytania.{#zm825_s2_}'
+    nr 'Truposz nie rusza się. Wygląda na to, że jest w zbyt daleko posuniętym stadium rozkładu, aby odpowiedzieć na twoje pytania.{#zm825_s2_1}'
 
     menu:
         'Zostaw truposza w spokoju.{#zm825_s2_r24572}':
@@ -73,7 +73,7 @@ label zm825_s2: # from 0.4
 
 # s3 # say42311
 label zm825_s3: # from 0.5
-    nr 'Truposz nie ma przy sobie niczego… ale przypadkiem zauważasz, że jego ręce są mocno zabandażowane. Bandaże mogłyby się przydać, gdyby udało ci się pozbyć truposza.{#zm825_s3_}'
+    nr 'Truposz nie ma przy sobie niczego… ale przypadkiem zauważasz, że jego ręce są mocno zabandażowane. Bandaże mogłyby się przydać, gdyby udało ci się pozbyć truposza.{#zm825_s3_1}'
 
     menu:
         '"Chyba go nie masz… nie wiesz przypadkiem, który to z twoich kościstych przyjaciół ma klucz do wyjścia stąd?"{#zm825_s3_r42312}' if zm825Logic.r42312_condition():

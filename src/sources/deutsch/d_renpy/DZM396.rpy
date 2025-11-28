@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say34931
 label zm396_s0: # - # IF ~  HasItem("Bandage","ZM396")
-    nr 'Diese Leiche schlurft von Totenbank zu Totenbank und bandagiert die darauf liegenden Leichen. In ihre linke Schläfe ist die Zahl "396" geritzt, und ihre Lippen sind zugenäht. Du merkst, daß die Leiche in ihrer Hand eine Rolle Bandagen trägt… Die Bandagen sehen brauchbar aus.{#zm396_s0_}'
+    nr 'Diese Leiche schlurft von Totenbank zu Totenbank und bandagiert die darauf liegenden Leichen. In ihre linke Schläfe ist die Zahl "396" geritzt, und ihre Lippen sind zugenäht. Du merkst, daß die Leiche in ihrer Hand eine Rolle Bandagen trägt… Die Bandagen sehen brauchbar aus.{#zm396_s0_1}'
 
     menu:
         '"Hast du was dagegen, wenn ich mir mal diese Bandagen ausleihe?"{#zm396_s0_r34932}' if zm396Logic.r34932_condition():
@@ -47,7 +47,7 @@ label zm396_s0: # - # IF ~  HasItem("Bandage","ZM396")
 
 # s1 # say34933
 label zm396_s1: # from 0.0 0.1 0.3 4.0 4.1 4.2
-    nr 'Die Leiche starrt dich weiter an.{#zm396_s1_}'
+    nr 'Die Leiche starrt dich weiter an.{#zm396_s1_1}'
 
     menu:
         'Versuch, dem Zombie die Bandagen abzunehmen.{#zm396_s1_r34934}' if zm396Logic.r34934_condition():
@@ -62,7 +62,7 @@ label zm396_s1: # from 0.0 0.1 0.3 4.0 4.1 4.2
 
 # s2 # say34938
 label zm396_s2: # from 0.4 4.3
-    nr 'Die Leiche rührt sich nicht. Sie sieht so aus, als sei sie schon ein bißchen zu weit hinüber, um deine Fragen zu beantworten.{#zm396_s2_}'
+    nr 'Die Leiche rührt sich nicht. Sie sieht so aus, als sei sie schon ein bißchen zu weit hinüber, um deine Fragen zu beantworten.{#zm396_s2_1}'
 
     menu:
         'Laß die Leiche in Ruhe.{#zm396_s2_r34939}':
@@ -72,7 +72,7 @@ label zm396_s2: # from 0.4 4.3
 
 # s3 # say45108
 label zm396_s3: # from 0.2 1.0
-    nr 'Geschickt stibitzt du der Leiche die Verbandsrolle aus der Hand. Sie scheint nichts zu bemerken und fährt unbeirrt mit derselben Handbewegung fort - als würde sie weiter Leichen bandagieren.{#zm396_s3_}'
+    nr 'Geschickt stibitzt du der Leiche die Verbandsrolle aus der Hand. Sie scheint nichts zu bemerken und fährt unbeirrt mit derselben Handbewegung fort - als würde sie weiter Leichen bandagieren.{#zm396_s3_1}'
 
     menu:
         'Untersuche die Leiche noch einmal.{#zm396_s3_r45109}':
@@ -86,7 +86,7 @@ label zm396_s3: # from 0.2 1.0
 
 # s4 # say45111
 label zm396_s4: # from 3.0 # IF ~  !HasItem("Bandage","ZM396")
-    nr 'Diese Leiche schlurft von einer Totenbank zur nächsten und umwickelt die dort liegenden Leichen mit Bandagen. Sie erledigt fleißig ihre Pflicht, obwohl sie gar keine Bandagen mehr hat. Auf der linken Schläfe ist die Zahl "396" eingeritzt, und ihre Lippen sind zugenäht.{#zm396_s4_}'
+    nr 'Diese Leiche schlurft von einer Totenbank zur nächsten und umwickelt die dort liegenden Leichen mit Bandagen. Sie erledigt fleißig ihre Pflicht, obwohl sie gar keine Bandagen mehr hat. Auf der linken Schläfe ist die Zahl "396" eingeritzt, und ihre Lippen sind zugenäht.{#zm396_s4_1}'
 
     menu:
         '"Tut mir leid, wenn ich dir die Bandagen wegnehme. Aber ich brauch sie dringender als diese Leichen."{#zm396_s4_r45112}' if zm396Logic.r45112_condition():

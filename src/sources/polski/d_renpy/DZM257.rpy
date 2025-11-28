@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say6507
 label zm257_s0: # - # IF ~  True()
-    nr 'Oczy tego truposza są osadzone blisko siebie, natomiast same gałki oczne są nieco krzywe: jedna spogląda w lewo, druga w prawo. Ledwie możesz odczytać numer "257" nakreślony na jego czole - wygląda na to, że truposz otrzymał kilkanaście uderzeń w głowę, przez co jego numer jest tak trudno czytelny.{#zm257_s0_}'
+    nr 'Oczy tego truposza są osadzone blisko siebie, natomiast same gałki oczne są nieco krzywe: jedna spogląda w lewo, druga w prawo. Ledwie możesz odczytać numer "257" nakreślony na jego czole - wygląda na to, że truposz otrzymał kilkanaście uderzeń w głowę, przez co jego numer jest tak trudno czytelny.{#zm257_s0_1}'
 
     menu:
         '"Czy nie kręci ci się w głowie od tego rozbieżnego patrzenia?"{#zm257_s0_r6510}' if zm257Logic.r6510_condition():
@@ -42,7 +42,7 @@ label zm257_s0: # - # IF ~  True()
 
 # s1 # say6508
 label zm257_s1: # from 0.0 0.1 0.2
-    nr 'W oczach trupa nie ma nawet iskierki zrozumienia; wpatrują się nieruchomo w lewo i prawo.{#zm257_s1_}'
+    nr 'W oczach trupa nie ma nawet iskierki zrozumienia; wpatrują się nieruchomo w lewo i prawo.{#zm257_s1_1}'
 
     menu:
         'Zostaw truposza w spokoju.{#zm257_s1_r6516}':
@@ -52,7 +52,7 @@ label zm257_s1: # from 0.0 0.1 0.2
 
 # s2 # say6509
 label zm257_s2: # from 0.3
-    nr 'Dusza wkracza z powrotem w ciało z taką gwałtownością, że jeden wielki skurcz mięśni odrzuca ciało w tył! W mgnieniu oka jednak ciało staje na nogi, tańcząc i rzucając się szaleńczo, machając rękami i zrywając szwy, a w miarę jak truposz skacze w przód i w tył, kawałki porwanego ciała fruwają dookoła. Trup wybałusza oczy, przewraca nimi i chichocze cały czas niczym szaleniec…{#zm257_s2_}'
+    nr 'Dusza wkracza z powrotem w ciało z taką gwałtownością, że jeden wielki skurcz mięśni odrzuca ciało w tył! W mgnieniu oka jednak ciało staje na nogi, tańcząc i rzucając się szaleńczo, machając rękami i zrywając szwy, a w miarę jak truposz skacze w przód i w tył, kawałki porwanego ciała fruwają dookoła. Trup wybałusza oczy, przewraca nimi i chichocze cały czas niczym szaleniec…{#zm257_s2_1}'
 
     menu:
         '"Ee… Mam dla ciebie pytanie, duchu…"{#zm257_s2_r6517}':
@@ -66,7 +66,7 @@ label zm257_s2: # from 0.3
 
 # s3 # say9553
 label zm257_s3: # from 2.0
-    nr 'Opętany truposz śpiewa w miarę jak skacze i wije się dookoła. Głośność i wysokość jego głosu wznoszą się i opadają, poddane przypadkowemu rytmowi. "TY jesteś DUCH JA ŻYWY odpowiesz na moje pytania TY!" Twój zmieszany wyraz twarzy zdaje się sprawiać mu przyjemność; zahacza swoje kościste palce o wargi i rozszerza je w upiornym uśmiechu. Śmieje się niczym szaleniec i wywija swym upiornie bladym jęzorem.{#zm257_s3_}'
+    nr 'Opętany truposz śpiewa w miarę jak skacze i wije się dookoła. Głośność i wysokość jego głosu wznoszą się i opadają, poddane przypadkowemu rytmowi. "TY jesteś DUCH JA ŻYWY odpowiesz na moje pytania TY!" Twój zmieszany wyraz twarzy zdaje się sprawiać mu przyjemność; zahacza swoje kościste palce o wargi i rozszerza je w upiornym uśmiechu. Śmieje się niczym szaleniec i wywija swym upiornie bladym jęzorem.{#zm257_s3_1}'
 
     menu:
         '"Doskonale… pytaj."{#zm257_s3_r9559}':
@@ -84,7 +84,7 @@ label zm257_s3: # from 2.0
 
 # s4 # say9554
 label zm257_s4: # from 3.0 4.0 5.0
-    nr 'Wydaje się, że duch uspokoił się na chwilę, ale znów wybucha stekiem głośnych, porażających umysł, bełkotliwych bredni. Kakofonia przyprawia niemal o szaleństwo i może rzucić cię na kolana. Tak nagle, jak się rozpoczęła… tak szybko zamiera. Truposz stoi, drżąc cichutko.{#zm257_s4_}'
+    nr 'Wydaje się, że duch uspokoił się na chwilę, ale znów wybucha stekiem głośnych, porażających umysł, bełkotliwych bredni. Kakofonia przyprawia niemal o szaleństwo i może rzucić cię na kolana. Tak nagle, jak się rozpoczęła… tak szybko zamiera. Truposz stoi, drżąc cichutko.{#zm257_s4_1}'
 
     menu:
         '"Nie do końca zrozumiałem. Czy mógłbyś mi to powtórzyć?"{#zm257_s4_r9562}':
@@ -103,7 +103,7 @@ label zm257_s4: # from 3.0 4.0 5.0
 
 # s5 # say9555
 label zm257_s5: # from 3.1 4.1 5.1
-    nr 'Duch ponownie śpiewa: "Na pytania ŻYWYCH odpowiedzą UMARLI; TAK było, TAK jest, i TAK będzie. Ty moje ODPOWIESZ pytania na!" Wyraz twojej twarzy wydaje sprawiać mu dziką rozkosz; rozpoczyna tak szaleńcze baraszkowanie, że zaczynasz się zastanawiać, czy truposz może to wytrzymać. Prawie że słyszysz trzask i pękanie jego kości oraz łamanie ścięgien, kiedy tak wije się i rzuca dookoła.{#zm257_s5_}'
+    nr 'Duch ponownie śpiewa: "Na pytania ŻYWYCH odpowiedzą UMARLI; TAK było, TAK jest, i TAK będzie. Ty moje ODPOWIESZ pytania na!" Wyraz twojej twarzy wydaje sprawiać mu dziką rozkosz; rozpoczyna tak szaleńcze baraszkowanie, że zaczynasz się zastanawiać, czy truposz może to wytrzymać. Prawie że słyszysz trzask i pękanie jego kości oraz łamanie ścięgien, kiedy tak wije się i rzuca dookoła.{#zm257_s5_1}'
 
     menu:
         '"W porządku… pytaj."{#zm257_s5_r9565}':
@@ -121,7 +121,7 @@ label zm257_s5: # from 3.1 4.1 5.1
 
 # s6 # say9556
 label zm257_s6: # from 3.2 4.2 5.2
-    nr 'Gdy dusza ulatuje z ciała, jego paplające usta wykrzywiają się w porozumiewawczy uśmiech. Jego dzikie, błyszczące oczy przewiercają cię na wylot niczym spojrzenie psychopaty. Truposz szepce jedno, uważnie wypowiadane słowo, przeciągając je niczym sznur cennych pereł: "Limbo…"{#zm257_s6_}'
+    nr 'Gdy dusza ulatuje z ciała, jego paplające usta wykrzywiają się w porozumiewawczy uśmiech. Jego dzikie, błyszczące oczy przewiercają cię na wylot niczym spojrzenie psychopaty. Truposz szepce jedno, uważnie wypowiadane słowo, przeciągając je niczym sznur cennych pereł: "Limbo…"{#zm257_s6_1}'
 
     menu:
         '"Co?"{#zm257_s6_r9568}':
@@ -135,6 +135,6 @@ label zm257_s6: # from 3.2 4.2 5.2
 
 # s7 # say9557
 label zm257_s7: # from 6.0
-    nr '…i odchodzi, zostawiając cię w nie lepszym położeniu i samopoczuciu. Zombiak cicho wraca do pracy.{#zm257_s7_}'
+    nr '…i odchodzi, zostawiając cię w nie lepszym położeniu i samopoczuciu. Zombiak cicho wraca do pracy.{#zm257_s7_1}'
 
     jump zm257_dispose

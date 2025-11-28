@@ -11,14 +11,14 @@ init 10 python:
 
 # s0 # say822
 label dhall_s0: # externs morte_s103
-    nr 'Avant que Morte finisse sa phrase, le scribe tousse violemment. Après un moment, sa toux se calme et la respiration du scribe reprend son sifflement saccadé.{#dhall_s0_}'
+    nr 'Avant que Morte finisse sa phrase, le scribe tousse violemment. Après un moment, sa toux se calme et la respiration du scribe reprend son sifflement saccadé.{#dhall_s0_1}'
 
     jump morte_s104  # EXTERN
 
 
 # s1 # say826
 label dhall_s1: # externs morte_s104
-    nr 'Avant que Morte finisse sa phrase, les yeux gris du scribe se posent sur toi. "Le poids des ans se fait lourdement ressentir, le Sans Repos." Il pose sa plume. "… mais je ne suis pas encore atteint de surdité."{#dhall_s1_}'
+    nr 'Avant que Morte finisse sa phrase, les yeux gris du scribe se posent sur toi. "Le poids des ans se fait lourdement ressentir, le Sans Repos." Il pose sa plume. "… mais je ne suis pas encore atteint de surdité."{#dhall_s1_1}'
 
     menu:
         '"„Le Sans Repos“ ? Tu me connais ?"{#dhall_s1_r827}':
@@ -29,7 +29,7 @@ label dhall_s1: # externs morte_s104
 
 # s2 # say829
 label dhall_s2: # from 21.0
-    nr '"Tu ne connais pas le cadavre de la femme enterrée dans la Salle de Commémoration ? Je pensais qu„elle avait voyagé avec toi dans le passé…" Dhall semble prêt à tousser, puis il reprend son souffle. "Est-ce que je me trompe ?"{#dhall_s2_}'
+    nr '"Tu ne connais pas le cadavre de la femme enterrée dans la Salle de Commémoration ? Je pensais qu„elle avait voyagé avec toi dans le passé…" Dhall semble prêt à tousser, puis il reprend son souffle. "Est-ce que je me trompe ?"{#dhall_s2_1}'
 
     menu:
         '"Où est son corps ?"{#dhall_s2_r5070}' if dhallLogic.r5070_condition():
@@ -67,7 +67,7 @@ label dhall_s2: # from 21.0
 
 # s3 # say832
 label dhall_s3: # from 9.0
-    nr 'Dhall te fixe du regard. "En es-tu certain ?"{#dhall_s3_}'
+    nr 'Dhall te fixe du regard. "En es-tu certain ?"{#dhall_s3_1}'
 
     menu:
         '"Oui. C„est un bon déguisement."{#dhall_s3_r830}' if dhallLogic.r830_condition():
@@ -88,7 +88,7 @@ label dhall_s3: # from 9.0
 
 # s4 # say833
 label dhall_s4: # from 3.0 3.1
-    nr '"Je…" Dhall est repris d„une quinte de toux. Après quelques minutes, il reprend son souffle. "Je… je vais en informer les gardes sur-le-champ."{#dhall_s4_}'
+    nr '"Je…" Dhall est repris d„une quinte de toux. Après quelques minutes, il reprend son souffle. "Je… je vais en informer les gardes sur-le-champ."{#dhall_s4_1}'
 
     menu:
         '"Merci. J„ai d“autres questions…"{#dhall_s4_r836}':
@@ -102,7 +102,7 @@ label dhall_s4: # from 3.0 3.1
 
 # s5 # say838
 label dhall_s5: # - # IF ~  Global("Dhall","GLOBAL",0)
-    nr 'Ce scribe a l„air très âgé… sa peau ridée a une légère teinte jaune, telle un vieux parchemin. Ses yeux gris foncé brillent au milieu d“un visage anguleux et une grande barbe blanche tombe telle une cascade sur sa robe noire. Il a le souffle court et saccadé, mais même ses quintes de toux occasionnelles ne ralentissent pas la cadence de sa plume sur le parchemin.{#dhall_s5_}'
+    nr 'Ce scribe a l„air très âgé… sa peau ridée a une légère teinte jaune, telle un vieux parchemin. Ses yeux gris foncé brillent au milieu d“un visage anguleux et une grande barbe blanche tombe telle une cascade sur sa robe noire. Il a le souffle court et saccadé, mais même ses quintes de toux occasionnelles ne ralentissent pas la cadence de sa plume sur le parchemin.{#dhall_s5_1}'
 
     menu:
         '"Bonjour."{#dhall_s5_r839}' if dhallLogic.r839_condition():
@@ -124,7 +124,7 @@ label dhall_s5: # - # IF ~  Global("Dhall","GLOBAL",0)
 
 # s6 # say841
 label dhall_s6: # from 5.2
-    nr 'Il te dévisage par-dessus son livre et ses yeux gris cillent. "Je te suspectais d„être responsable des attaques dans la Morgue…" Il tousse légèrement, puis anhèle. "Ce n“est pas une façon d„entrer dans la prochaine vie."{#dhall_s6_}'
+    nr 'Il te dévisage par-dessus son livre et ses yeux gris cillent. "Je te suspectais d„être responsable des attaques dans la Morgue…" Il tousse légèrement, puis anhèle. "Ce n“est pas une façon d„entrer dans la prochaine vie."{#dhall_s6_1}'
 
     menu:
         '"Je ne faisais que me défendre. J„ai d“autres questions à te poser avant de m„éclipser…"{#dhall_s6_r842}' if dhallLogic.r842_condition():
@@ -147,7 +147,7 @@ label dhall_s6: # from 5.2
 
 # s7 # say844
 label dhall_s7: # from 5.1
-    nr 'Le scribe arrête de griffonner son livre et lève les yeux, qui sont comme deux clous enfoncés dans son crâne. "Bon…" Il a l„air fatigué, comme s“il avait répété la même chose bien des fois. "Tu es sorti de ton sommeil et tu es retourné dans ton rêve." Il continue avec plus de respect. "Bienvenue… à nouveau, le Sans Repos."{#dhall_s7_}'
+    nr 'Le scribe arrête de griffonner son livre et lève les yeux, qui sont comme deux clous enfoncés dans son crâne. "Bon…" Il a l„air fatigué, comme s“il avait répété la même chose bien des fois. "Tu es sorti de ton sommeil et tu es retourné dans ton rêve." Il continue avec plus de respect. "Bienvenue… à nouveau, le Sans Repos."{#dhall_s7_1}'
 
     menu:
         '"„Le Sans Repos“ ? Tu me connais ?"{#dhall_s7_r845}':
@@ -157,7 +157,7 @@ label dhall_s7: # from 5.1
 
 # s8 # say851
 label dhall_s8: # from 22.0
-    nr '"Essaye de comprendre. Ton existence est un blasphème pour eux. Plusieurs personnes de notre faction voudraient te voir incinéré… s„ils connaissaient ta détresse."{#dhall_s8_}'
+    nr '"Essaye de comprendre. Ton existence est un blasphème pour eux. Plusieurs personnes de notre faction voudraient te voir incinéré… s„ils connaissaient ta détresse."{#dhall_s8_1}'
 
     menu:
         '"Tu es un Homme-Poussière. Mais tu n„as pas l“air de vouloir me tuer. Pourquoi ?"{#dhall_s8_r940}':
@@ -179,7 +179,7 @@ label dhall_s8: # from 22.0
 
 # s9 # say852
 label dhall_s9: # from 2.5 3.2 4.0 6.0 6.1 8.2 10.5 12.1 13.0 14.4 15.2 16.3 17.3 18.2 19.2 20.2 21.1 22.2 23.2 24.1 25.2 26.2 27.0 28.1 29.2 30.0 31.1 32.6 33.3 34.2 35.2 36.2 37.1 38.2 39.0 40.0 41.3 42.4 43.3 45.0 47.4 48.2 49.2 51.2 52.2 53.1
-    nr '"Très bien. Que désires-tu savoir ?"{#dhall_s9_}'
+    nr '"Très bien. Que désires-tu savoir ?"{#dhall_s9_1}'
 
     menu:
         '"Tu savais qu„il y avait quelqu“un déguisé en zombi dans les chambres de l„est ?"{#dhall_s9_r854}' if dhallLogic.r854_condition():
@@ -218,7 +218,7 @@ label dhall_s9: # from 2.5 3.2 4.0 6.0 6.1 8.2 10.5 12.1 13.0 14.4 15.2 16.3 17.
 
 # s10 # say859
 label dhall_s10: # from 9.1
-    nr '"Tu es dans la Morgue, le Sans Repos. Tu es… revenu." Avant d„avoir pu finir, Dhall est pris d“une quinte de toux. Après quelques instants, il se calme et sa respiration reprend son sifflement saccadé. "… voici la salle d„attente pour ceux qui sont sur le point de quitter l“ombre de cette vie."{#dhall_s10_}'
+    nr '"Tu es dans la Morgue, le Sans Repos. Tu es… revenu." Avant d„avoir pu finir, Dhall est pris d“une quinte de toux. Après quelques instants, il se calme et sa respiration reprend son sifflement saccadé. "… voici la salle d„attente pour ceux qui sont sur le point de quitter l“ombre de cette vie."{#dhall_s10_1}'
 
     menu:
         '"Parle-moi de la Morgue."{#dhall_s10_r861}':
@@ -252,7 +252,7 @@ label dhall_s10: # from 9.1
 
 # s11 # say867
 label dhall_s11: # from 2.6 2.7 4.1 8.3 9.7 10.6 12.2 14.5 15.3 16.4 19.3 20.3 21.2 22.3 23.3 24.2 25.3 26.3 27.1 28.2 29.4 30.1 31.3 32.7 33.4 34.3 35.3 36.3 37.2 38.3 41.4 42.5 43.4 47.5 48.3 49.3 51.3 52.3 53.2
-    nr 'Tu te retournes, prêt à partir, lorsque Dhall dit : "Sache une chose : je ne t„envie pas, le Sans Repos. Me réincarner ainsi serait une malédiction que je ne supporterais pas. Tu dois l“accepter. Un jour, ton parcours te ramènera ici." Dhall tousse. Ses paroles s„étranglent dans sa gorge. "C“est le sort de tout ce qui est fait de chair et d„os."{#dhall_s11_}'
+    nr 'Tu te retournes, prêt à partir, lorsque Dhall dit : "Sache une chose : je ne t„envie pas, le Sans Repos. Me réincarner ainsi serait une malédiction que je ne supporterais pas. Tu dois l“accepter. Un jour, ton parcours te ramènera ici." Dhall tousse. Ses paroles s„étranglent dans sa gorge. "C“est le sort de tout ce qui est fait de chair et d„os."{#dhall_s11_1}'
 
     menu:
         '"Alors, on se reverra peut-être, Dhall."{#dhall_s11_r41564}':
@@ -262,7 +262,7 @@ label dhall_s11: # from 2.6 2.7 4.1 8.3 9.7 10.6 12.2 14.5 15.3 16.4 19.3 20.3 2
 
 # s12 # say868
 label dhall_s12: # from 2.3 2.4 42.2 42.3 43.1 43.2
-    nr '"Je suis sûr qu„il doit y en avoir, mais je ne connais ni leur nom, ni leur emplacement. Un être tel que toi a quitté le chemin que beaucoup ont suivi, et auquel peu ont survécu." Dhall gesticule autour de toi. "Tous les morts viennent ici. Certains d“entre eux ont dû voyager avec toi."{#dhall_s12_}'
+    nr '"Je suis sûr qu„il doit y en avoir, mais je ne connais ni leur nom, ni leur emplacement. Un être tel que toi a quitté le chemin que beaucoup ont suivi, et auquel peu ont survécu." Dhall gesticule autour de toi. "Tous les morts viennent ici. Certains d“entre eux ont dû voyager avec toi."{#dhall_s12_1}'
 
     menu:
         '"Où est cette femme dont tu as parlé ?"{#dhall_s12_r870}' if dhallLogic.r870_condition():
@@ -280,7 +280,7 @@ label dhall_s12: # from 2.3 2.4 42.2 42.3 43.1 43.2
 
 # s13 # say875
 label dhall_s13: # from 9.3
-    nr '"Hmmm… l„entrée principale est la sortie la plus évidente, mais ils ne laissent passer personne, à part les Hommes-Poussière…" Dhall est pris d“une quinte de toux violente, puis il continue. "… l„un des guides de l“entrée principale a une clé, mais ça m„étonnerait qu“il t„ouvre, à moins que tu ne sois extrêmement persuasif."{#dhall_s13_}'
+    nr '"Hmmm… l„entrée principale est la sortie la plus évidente, mais ils ne laissent passer personne, à part les Hommes-Poussière…" Dhall est pris d“une quinte de toux violente, puis il continue. "… l„un des guides de l“entrée principale a une clé, mais ça m„étonnerait qu“il t„ouvre, à moins que tu ne sois extrêmement persuasif."{#dhall_s13_1}'
 
     menu:
         '"Je vois. J„ai d“autres questions…"{#dhall_s13_r876}':
@@ -294,7 +294,7 @@ label dhall_s13: # from 9.3
 
 # s14 # say878
 label dhall_s14: # from 10.3
-    nr '"Oui, *encore.* On t„a amené ici bien des fois déjà, le Sans Repos. J“espérais que cette fois-ci serait la dernière, vu les blessures que tu as reçues." Il soupire. "Quand vas-tu enfin abandonner tes passions et quitter cette ombre de vie ?"{#dhall_s14_}'
+    nr '"Oui, *encore.* On t„a amené ici bien des fois déjà, le Sans Repos. J“espérais que cette fois-ci serait la dernière, vu les blessures que tu as reçues." Il soupire. "Quand vas-tu enfin abandonner tes passions et quitter cette ombre de vie ?"{#dhall_s14_1}'
 
     menu:
         '"*Le Sans Repos* ?"{#dhall_s14_r880}':
@@ -324,7 +324,7 @@ label dhall_s14: # from 10.3
 
 # s15 # say885
 label dhall_s15: # from 9.2 10.4 32.5
-    nr 'Dhall grogne de mépris, comme s„il trouvait ce souvenir répugnant. "Ton chariot moisi t“a conduit jusqu„à la Morgue, le Sans Repos. On aurait dit que tu étais un roi soutenu par ses sujets, empestant et suppurant, sur le chariot qui t“a mené ici."{#dhall_s15_}'
+    nr 'Dhall grogne de mépris, comme s„il trouvait ce souvenir répugnant. "Ton chariot moisi t“a conduit jusqu„à la Morgue, le Sans Repos. On aurait dit que tu étais un roi soutenu par ses sujets, empestant et suppurant, sur le chariot qui t“a mené ici."{#dhall_s15_1}'
 
     menu:
         '"J„ai atterri ici en chariot ?"{#dhall_s15_r886}':
@@ -347,7 +347,7 @@ label dhall_s15: # from 9.2 10.4 32.5
 
 # s16 # say890
 label dhall_s16: # from 15.0
-    nr '"Oui… ton cadavre était au milieu d„un tas, et échangeait ses fluides avec les autres corps amoncelés." Dhall est repris d“une violente quinte de toux. Enfin, il reprend son souffle. "Ton „Sénéchal“, Pharod, était comme toujours heureux d„accepter quelques malheureuses pièces pour porter ce tas devant l“entrée de la Morgue."{#dhall_s16_}'
+    nr '"Oui… ton cadavre était au milieu d„un tas, et échangeait ses fluides avec les autres corps amoncelés." Dhall est repris d“une violente quinte de toux. Enfin, il reprend son souffle. "Ton „Sénéchal“, Pharod, était comme toujours heureux d„accepter quelques malheureuses pièces pour porter ce tas devant l“entrée de la Morgue."{#dhall_s16_1}'
 
     menu:
         '"C„est qui ce Pharod ?"{#dhall_s16_r891}' if dhallLogic.r891_condition():
@@ -373,7 +373,7 @@ label dhall_s16: # from 15.0
 
 # s17 # say895
 label dhall_s17: # from 16.0
-    nr '"C„est un… Récupérateur. Il ramasse les morts." Dhall anhèle, puis continue. "Dans cette cité, des personnes ramassent les corps de ceux qui ont pris le chemin de la Vraie Mort et nous les ramènent afin qu“ils soient enterrés comme il se doit."{#dhall_s17_}'
+    nr '"C„est un… Récupérateur. Il ramasse les morts." Dhall anhèle, puis continue. "Dans cette cité, des personnes ramassent les corps de ceux qui ont pris le chemin de la Vraie Mort et nous les ramènent afin qu“ils soient enterrés comme il se doit."{#dhall_s17_1}'
 
     menu:
         '"Où est-ce que je peux trouver ce „Pharod“ ?"{#dhall_s17_r897}':
@@ -399,7 +399,7 @@ label dhall_s17: # from 16.0
 
 # s18 # say900
 label dhall_s18: # from 17.0 29.1 31.0 35.1 36.1
-    nr '"Si rien ne change, le Sans Repos, il y a plus de chance que Pharod te trouve et te ramène à nous avant que tu ne découvres dans quelle mare boueuse il se vautre à cet instant."{#dhall_s18_}'
+    nr '"Si rien ne change, le Sans Repos, il y a plus de chance que Pharod te trouve et te ramène à nous avant que tu ne découvres dans quelle mare boueuse il se vautre à cet instant."{#dhall_s18_1}'
 
     menu:
         '"Pourtant, je dois le trouver."{#dhall_s18_r902}':
@@ -421,7 +421,7 @@ label dhall_s18: # from 17.0 29.1 31.0 35.1 36.1
 
 # s19 # say901
 label dhall_s19: # from 17.4 18.0 18.3 29.3 31.2
-    nr '"Ne cherche pas Pharod, le Sans Repos," te prévient Dhall. "Je suis sûr que tout recommencera encore ; toi, tu n„en seras pas plus avancé, et Pharod sera riche de quelques pièces de cuivre de plus. Accepte la mort, le Sans Repos. Ne perpétue pas ton cercle de douleur."{#dhall_s19_}'
+    nr '"Ne cherche pas Pharod, le Sans Repos," te prévient Dhall. "Je suis sûr que tout recommencera encore ; toi, tu n„en seras pas plus avancé, et Pharod sera riche de quelques pièces de cuivre de plus. Accepte la mort, le Sans Repos. Ne perpétue pas ton cercle de douleur."{#dhall_s19_1}'
 
     menu:
         '"Je *dois* le trouver. Tu sais où il est ?"{#dhall_s19_r906}':
@@ -444,7 +444,7 @@ label dhall_s19: # from 17.4 18.0 18.3 29.3 31.2
 
 # s20 # say908
 label dhall_s20: # from 19.0
-    nr 'Dhall reste silencieux. Puis, il reprend la parole, semble-t-il à contrecœur. "Je ne sais pas dans quel coupe-gorge Pharod a établi son repère, mais j„imagine qu“on peut le trouver quelque part, passé l„entrée de la Morgue, dans la Ruche. Là-bas, quelqu“un sera peut-être en mesure de te dire où il se trouve."{#dhall_s20_}'
+    nr 'Dhall reste silencieux. Puis, il reprend la parole, semble-t-il à contrecœur. "Je ne sais pas dans quel coupe-gorge Pharod a établi son repère, mais j„imagine qu“on peut le trouver quelque part, passé l„entrée de la Morgue, dans la Ruche. Là-bas, quelqu“un sera peut-être en mesure de te dire où il se trouve."{#dhall_s20_1}'
 
     menu:
         '"On dirait que tu n„apprécies guère Pharod."{#dhall_s20_r910}' if dhallLogic.r910_condition():
@@ -466,7 +466,7 @@ label dhall_s20: # from 19.0
 
 # s21 # say914
 label dhall_s21: # from 9.4
-    nr '"Je te connais peu, le Sans Repos. Je ne connais pas beaucoup plus ceux qui ont voyagé avec toi et qui reposent aujourd„hui sous notre garde." Dhall soupire. "Je te prie de ne plus demander aux autres de se joindre à toi, le Sans Repos - partout où tu vas, la souffrance t“accompagne. Garde ton fardeau pour toi."{#dhall_s21_}'
+    nr '"Je te connais peu, le Sans Repos. Je ne connais pas beaucoup plus ceux qui ont voyagé avec toi et qui reposent aujourd„hui sous notre garde." Dhall soupire. "Je te prie de ne plus demander aux autres de se joindre à toi, le Sans Repos - partout où tu vas, la souffrance t“accompagne. Garde ton fardeau pour toi."{#dhall_s21_1}'
 
     menu:
         '"D„autres ont voyagé avec moi ? Et ils sont ici ?"{#dhall_s21_r921}':
@@ -485,7 +485,7 @@ label dhall_s21: # from 9.4
 
 # s22 # say915
 label dhall_s22: # from 47.0
-    nr 'Dhall soupire. "Il est dit qu„il existe des âmes qui n“atteignent jamais la Vraie Mort. La mort les a abandonnées et leur nom ne sera jamais inscrit dans le livre des morts. Le fait que tu te sois réveillé comme tu l„as fait après ton décès… laisse à penser que tu es l“une de ces âmes. Ton existence est inacceptable pour notre faction."{#dhall_s22_}'
+    nr 'Dhall soupire. "Il est dit qu„il existe des âmes qui n“atteignent jamais la Vraie Mort. La mort les a abandonnées et leur nom ne sera jamais inscrit dans le livre des morts. Le fait que tu te sois réveillé comme tu l„as fait après ton décès… laisse à penser que tu es l“une de ces âmes. Ton existence est inacceptable pour notre faction."{#dhall_s22_1}'
 
     menu:
         '"„Inacceptable“ ? Ça ne me laisse pas dans une position avantageuse, on dirait."{#dhall_s22_r917}':
@@ -507,7 +507,7 @@ label dhall_s22: # from 47.0
 
 # s23 # say924
 label dhall_s23: # from 8.0
-    nr '"Parce que t„imposer nos croyances serait injuste. Tu dois abandonner l“ombre de cette vie de ton propre chef, non parce que l„on t“y aura forcé." Dhall semble être repris d„une quinte de toux mais, non sans difficulté, il parvient à la réprimer. "Tant que je serai à mon poste, je protégerai ton droit de chercher ta vérité."{#dhall_s23_}'
+    nr '"Parce que t„imposer nos croyances serait injuste. Tu dois abandonner l“ombre de cette vie de ton propre chef, non parce que l„on t“y aura forcé." Dhall semble être repris d„une quinte de toux mais, non sans difficulté, il parvient à la réprimer. "Tant que je serai à mon poste, je protégerai ton droit de chercher ta vérité."{#dhall_s23_1}'
 
     menu:
         '"C„est quoi ta fonction ?"{#dhall_s23_r927}':
@@ -529,7 +529,7 @@ label dhall_s23: # from 8.0
 
 # s24 # say929
 label dhall_s24: # from 25.0
-    nr '"Je suis celui qui classe les dépouilles qui arrivent dans nos salles, le Sans Repos." Dhall est pris d„une quinte de toux, puis se calme. "Je suis le seul à voir les visages de ceux qui reposent sur nos dalles. Les noirs secrets de ton existence sont en bonnes mains avec moi."{#dhall_s24_}'
+    nr '"Je suis celui qui classe les dépouilles qui arrivent dans nos salles, le Sans Repos." Dhall est pris d„une quinte de toux, puis se calme. "Je suis le seul à voir les visages de ceux qui reposent sur nos dalles. Les noirs secrets de ton existence sont en bonnes mains avec moi."{#dhall_s24_1}'
 
     menu:
         '"Dis-m„en plus sur la Morgue."{#dhall_s24_r1305}':
@@ -547,7 +547,7 @@ label dhall_s24: # from 25.0
 
 # s25 # say930
 label dhall_s25: # from 9.5 23.0
-    nr '"Je suis scribe, je répertorie toutes les dépouilles qui arrivent à la Morgue." Dhall tousse de nouveau, puis inspire profondément. "Tant que le flot de cadavres passera par la Morgue, je resterai à mon poste."{#dhall_s25_}'
+    nr '"Je suis scribe, je répertorie toutes les dépouilles qui arrivent à la Morgue." Dhall tousse de nouveau, puis inspire profondément. "Tant que le flot de cadavres passera par la Morgue, je resterai à mon poste."{#dhall_s25_1}'
 
     menu:
         '"Tu dis que ce n„est pas la première fois que je me retrouve ici. Alors pourquoi les Hommes-Poussière ne me reconnaissent-ils pas ?"{#dhall_s25_r931}' if dhallLogic.r931_condition():
@@ -570,7 +570,7 @@ label dhall_s25: # from 9.5 23.0
 
 # s26 # say934
 label dhall_s26: # from 9.6
-    nr '"Je me rapproche de la Vraie Mort, le Sans Repos. Bientôt, je traverserai la Frontière Éternelle et je trouverai la paix que j„ai toujours recherchée. Je suis fatigué de cette sphère mortelle…" Dhall lâche un râle. "Les plans n“ont plus aucun secret pour quelqu„un comme moi."{#dhall_s26_}'
+    nr '"Je me rapproche de la Vraie Mort, le Sans Repos. Bientôt, je traverserai la Frontière Éternelle et je trouverai la paix que j„ai toujours recherchée. Je suis fatigué de cette sphère mortelle…" Dhall lâche un râle. "Les plans n“ont plus aucun secret pour quelqu„un comme moi."{#dhall_s26_1}'
 
     menu:
         '"La Frontière Éternelle ?"{#dhall_s26_r935}':
@@ -593,7 +593,7 @@ label dhall_s26: # from 9.6
 
 # s27 # say938
 label dhall_s27: # from 26.1
-    nr '"Je ne désire ni vivre éternellement, ni ressusciter, le Sans Repos. Je ne le supporterai pas."{#dhall_s27_}'
+    nr '"Je ne désire ni vivre éternellement, ni ressusciter, le Sans Repos. Je ne le supporterai pas."{#dhall_s27_1}'
 
     menu:
         '"Très bien. J„ai d“autres questions…"{#dhall_s27_r1303}':
@@ -607,7 +607,7 @@ label dhall_s27: # from 26.1
 
 # s28 # say939
 label dhall_s28: # from 2.2 42.1
-    nr '"Elle t„a *parlé* ?" Dhall murmure : "La *fièvre* se serait-elle emparée de toi, le Sans Repos ? Elle a rejoint la Vraie Mort et se trouve hors de ta portée."{#dhall_s28_}'
+    nr '"Elle t„a *parlé* ?" Dhall murmure : "La *fièvre* se serait-elle emparée de toi, le Sans Repos ? Elle a rejoint la Vraie Mort et se trouve hors de ta portée."{#dhall_s28_1}'
 
     menu:
         '"Elle m„a parlé, Dhall. Son esprit vit ici."{#dhall_s28_r981}':
@@ -625,7 +625,7 @@ label dhall_s28: # from 2.2 42.1
 
 # s29 # say941
 label dhall_s29: # from 36.0
-    nr 'Dhall s„arrête et réfléchit. "Très probablement. Te manque-t-il quelque chose… quelque chose de valeur ?" Sa voix tombe et il fronce les sourcils. "Pharod ne ferait aucune exception à moins que la chose ne soit greffée directement sur ton corps. Et parfois, cela ne suffit pas à calmer son esprit vorace."{#dhall_s29_}'
+    nr 'Dhall s„arrête et réfléchit. "Très probablement. Te manque-t-il quelque chose… quelque chose de valeur ?" Sa voix tombe et il fronce les sourcils. "Pharod ne ferait aucune exception à moins que la chose ne soit greffée directement sur ton corps. Et parfois, cela ne suffit pas à calmer son esprit vorace."{#dhall_s29_1}'
 
     menu:
         '"J„ai perdu un journal."{#dhall_s29_r942}' if dhallLogic.r942_condition():
@@ -651,7 +651,7 @@ label dhall_s29: # from 36.0
 
 # s30 # say945
 label dhall_s30: # from 28.0
-    nr 'Dhall dessine un demi-cercle imaginaire en l„air. "C“est un mauvais présage, le Sans Repos. Je prie pour que tu aies imaginé cette conversation… mais j„ai bien peur que ce ne soit pas le cas."{#dhall_s30_}'
+    nr 'Dhall dessine un demi-cercle imaginaire en l„air. "C“est un mauvais présage, le Sans Repos. Je prie pour que tu aies imaginé cette conversation… mais j„ai bien peur que ce ne soit pas le cas."{#dhall_s30_1}'
 
     menu:
         '"Je l„ai peut-être imaginé. J“ai d„autres questions."{#dhall_s30_r946}':
@@ -665,7 +665,7 @@ label dhall_s30: # from 28.0
 
 # s31 # say850
 label dhall_s31: # from 29.0
-    nr '"Un journal ? S„il a de la valeur, il doit se trouver entre les mains de Pharod."{#dhall_s31_}'
+    nr '"Un journal ? S„il a de la valeur, il doit se trouver entre les mains de Pharod."{#dhall_s31_1}'
 
     menu:
         '"Où est-ce que je peux trouver ce Pharod ?"{#dhall_s31_r948}' if dhallLogic.r948_condition():
@@ -687,7 +687,7 @@ label dhall_s31: # from 29.0
 
 # s32 # say950
 label dhall_s32: # from 8.1 10.0 14.3 15.1 16.2 17.2 18.1 19.1 20.1 22.1 23.1 24.0 25.1 33.2 34.1 37.0 38.1 41.2 47.3 48.1 49.1 51.1 52.1 53.0
-    nr '"C„est ici que l“on apporte les morts qui doivent être enterrés ou incinérés. Il est de notre devoir, en tant qu„Hommes-Poussière, de nous occuper des morts, ceux qui ont quitté cette ombre de vie et pris le chemin de la Vraie Mort." Dhall baisse le ton ; il se fait du souci pour toi. "Tes blessures t“ont fait payer un lourd tribut si tu ne reconnais pas ce lieu. C„est presque chez toi."{#dhall_s32_}'
+    nr '"C„est ici que l“on apporte les morts qui doivent être enterrés ou incinérés. Il est de notre devoir, en tant qu„Hommes-Poussière, de nous occuper des morts, ceux qui ont quitté cette ombre de vie et pris le chemin de la Vraie Mort." Dhall baisse le ton ; il se fait du souci pour toi. "Tes blessures t“ont fait payer un lourd tribut si tu ne reconnais pas ce lieu. C„est presque chez toi."{#dhall_s32_1}'
 
     menu:
         '"L„ombre de la vie ?"{#dhall_s32_r951}':
@@ -726,7 +726,7 @@ label dhall_s32: # from 8.1 10.0 14.3 15.1 16.2 17.2 18.1 19.1 20.1 22.1 23.1 24
 
 # s33 # say957
 label dhall_s33: # from 10.2 14.2 32.0 41.0 47.2 49.0
-    nr '"Oui, une ombre. Tu comprends, le Sans Repos, cette vie… elle n„est pas réelle. Ton existence ou la mienne ne sont que des ombres vacillantes de ce qu“était autrefois la vie. Cette „vie“, c„est là que nous finissons *après* la mort. Et c“est là que nous restons… piégés. En cage. Jusqu„à ce que nous puissions parvenir à la Vraie Mort."{#dhall_s33_}'
+    nr '"Oui, une ombre. Tu comprends, le Sans Repos, cette vie… elle n„est pas réelle. Ton existence ou la mienne ne sont que des ombres vacillantes de ce qu“était autrefois la vie. Cette „vie“, c„est là que nous finissons *après* la mort. Et c“est là que nous restons… piégés. En cage. Jusqu„à ce que nous puissions parvenir à la Vraie Mort."{#dhall_s33_1}'
 
     menu:
         '"La Vraie Mort ?"{#dhall_s33_r958}':
@@ -753,7 +753,7 @@ label dhall_s33: # from 10.2 14.2 32.0 41.0 47.2 49.0
 
 # s34 # say961
 label dhall_s34: # from 14.1 32.4
-    nr '"Oui, les blessures qui ornent ton corps… il semble qu„elles auraient envoyé un simple mortel sur le chemin de la Vraie Mort. Mais on dirait que beaucoup d“entre elles ont déjà cicatrisé." Dhall tousse violemment, puis se calme. "Mais ce ne sont que des blessures visibles."{#dhall_s34_}'
+    nr '"Oui, les blessures qui ornent ton corps… il semble qu„elles auraient envoyé un simple mortel sur le chemin de la Vraie Mort. Mais on dirait que beaucoup d“entre elles ont déjà cicatrisé." Dhall tousse violemment, puis se calme. "Mais ce ne sont que des blessures visibles."{#dhall_s34_1}'
 
     menu:
         '"Des blessures visibles ? Qu„est-ce que tu veux dire ?"{#dhall_s34_r1301}':
@@ -776,7 +776,7 @@ label dhall_s34: # from 14.1 32.4
 
 # s35 # say962
 label dhall_s35: # from 16.1 17.1 20.0
-    nr '"Il y en a certains que je respecte, le Sans Repos." Dhall anhèle puis se calme. "Pharod n„en fait pas partie. Il porte sa mauvaise réputation comme une médaille d“honneur et prend certaines libertés avec les biens des morts. C„est un chevalier de la gueuserie qui commerce des ordures de la pire sorte."{#dhall_s35_}'
+    nr '"Il y en a certains que je respecte, le Sans Repos." Dhall anhèle puis se calme. "Pharod n„en fait pas partie. Il porte sa mauvaise réputation comme une médaille d“honneur et prend certaines libertés avec les biens des morts. C„est un chevalier de la gueuserie qui commerce des ordures de la pire sorte."{#dhall_s35_1}'
 
     menu:
         '"Un „chevalier de la gueuserie“ ?"{#dhall_s35_r963}':
@@ -798,7 +798,7 @@ label dhall_s35: # from 16.1 17.1 20.0
 
 # s36 # say966
 label dhall_s36: # from 35.0
-    nr '"Un chevalier de la gueuserie…" Dhall tousse. "… un escroc. Tous ceux que Pharod apporte dans ces murs sont dépouillés du peu de dignité qui leur restait. Pharod s„empare de tout ce qu“il peut arracher à leurs doigts crispés."{#dhall_s36_}'
+    nr '"Un chevalier de la gueuserie…" Dhall tousse. "… un escroc. Tous ceux que Pharod apporte dans ces murs sont dépouillés du peu de dignité qui leur restait. Pharod s„empare de tout ce qu“il peut arracher à leurs doigts crispés."{#dhall_s36_1}'
 
     menu:
         '"Ce Pharod m„a pris quelque chose ?"{#dhall_s36_r967}':
@@ -820,7 +820,7 @@ label dhall_s36: # from 35.0
 
 # s37 # say970
 label dhall_s37: # from 32.3
-    nr '"Sigil est notre bonne cité, le Sans Repos."{#dhall_s37_}'
+    nr '"Sigil est notre bonne cité, le Sans Repos."{#dhall_s37_1}'
 
     menu:
         '"Dis-m„en plus sur la Morgue."{#dhall_s37_r971}':
@@ -838,7 +838,7 @@ label dhall_s37: # from 32.3
 
 # s38 # say973
 label dhall_s38: # from 10.1 14.0
-    nr '"Sans Repos est un nom aussi convenable qu„un autre." Dhall anhèle. "Quelque chose te retient ici, n“est-ce pas ? Quelque chose que tu dois accomplir, une passion que tu dois assouvir avant de rejoindre la Vraie Mort ?"{#dhall_s38_}'
+    nr '"Sans Repos est un nom aussi convenable qu„un autre." Dhall anhèle. "Quelque chose te retient ici, n“est-ce pas ? Quelque chose que tu dois accomplir, une passion que tu dois assouvir avant de rejoindre la Vraie Mort ?"{#dhall_s38_1}'
 
     menu:
         '"La Vraie Mort ?"{#dhall_s38_r974}':
@@ -861,7 +861,7 @@ label dhall_s38: # from 10.1 14.0
 
 # s39 # say884
 label dhall_s39: # -
-    nr '"Tu feras ce que tu as toujours fait, le Sans Repos. Tu chercheras cet idiot de Poil-d„asticot et lui demanderas de te restituer tes biens. Puis, tu reprendras ta quête inutile, tu tenteras d“accomplir des tâches inutiles, tu rassembleras des objets inutiles, et tu seras terrassé et tu nous reviendras. Gagne du temps et parle-moi. Cela nous évitera de reprendre cette conversation quand tu auras à nouveau perdu la mémoire."{#dhall_s39_}'
+    nr '"Tu feras ce que tu as toujours fait, le Sans Repos. Tu chercheras cet idiot de Poil-d„asticot et lui demanderas de te restituer tes biens. Puis, tu reprendras ta quête inutile, tu tenteras d“accomplir des tâches inutiles, tu rassembleras des objets inutiles, et tu seras terrassé et tu nous reviendras. Gagne du temps et parle-moi. Cela nous évitera de reprendre cette conversation quand tu auras à nouveau perdu la mémoire."{#dhall_s39_1}'
 
     menu:
         '"J„ai d“autres questions…"{#dhall_s39_r976}':
@@ -875,7 +875,7 @@ label dhall_s39: # -
 
 # s40 # say978
 label dhall_s40: # - # IF ~  Global("Dhall","GLOBAL",1)
-    nr 'Dhall lève les yeux à ton approche. "Alors, tu es revenu…" Dhall anhèle, puis est pris d„une violente quinte de toux. Après quelques instants, sa toux se calme et Dhall reprend son souffle saccadé. "Sois le bienvenu, une nouvelle fois, le Sans Repos."{#dhall_s40_}'
+    nr 'Dhall lève les yeux à ton approche. "Alors, tu es revenu…" Dhall anhèle, puis est pris d„une violente quinte de toux. Après quelques instants, sa toux se calme et Dhall reprend son souffle saccadé. "Sois le bienvenu, une nouvelle fois, le Sans Repos."{#dhall_s40_1}'
 
     menu:
         '"J„ai d“autres questions pour toi, Dhall."{#dhall_s40_r979}':
@@ -889,7 +889,7 @@ label dhall_s40: # - # IF ~  Global("Dhall","GLOBAL",1)
 
 # s41 # say983
 label dhall_s41: # from 26.0 52.0
-    nr '"La frontière entre l„ombre de cette vie et la Vraie Mort."{#dhall_s41_}'
+    nr '"La frontière entre l„ombre de cette vie et la Vraie Mort."{#dhall_s41_1}'
 
     menu:
         '"L„ombre de cette vie ?"{#dhall_s41_r984}':
@@ -916,7 +916,7 @@ label dhall_s41: # from 26.0 52.0
 
 # s42 # say5075
 label dhall_s42: # from 2.0 12.0 43.0
-    nr '"Dans la Salle de Commémoration du nord-ouest à l„étage en dessous. Vérifie les cercueils… son nom doit figurer sur l“une des plaques commémoratives. Peut-être que ça te rafraîchira la mémoire."{#dhall_s42_}'
+    nr '"Dans la Salle de Commémoration du nord-ouest à l„étage en dessous. Vérifie les cercueils… son nom doit figurer sur l“une des plaques commémoratives. Peut-être que ça te rafraîchira la mémoire."{#dhall_s42_1}'
 
     menu:
         '"Je ne sais pas. Je ne me souviens pas avoir jamais voyagé avec une femme."{#dhall_s42_r5076}' if dhallLogic.r5076_condition():
@@ -946,7 +946,7 @@ label dhall_s42: # from 2.0 12.0 43.0
 
 # s43 # say5080
 label dhall_s43: # from 2.1 42.0
-    nr 'Dhall ne répond pas. Il se contente de t„observer en silence.{#dhall_s43_}'
+    nr 'Dhall ne répond pas. Il se contente de t„observer en silence.{#dhall_s43_1}'
 
     menu:
         '"Où est-ce que je peux la trouver ?"{#dhall_s43_r5081}' if dhallLogic.r5081_condition():
@@ -972,7 +972,7 @@ label dhall_s43: # from 2.1 42.0
 
 # s44 # say840
 label dhall_s44: # from 1.0 6.2 7.0
-    nr '"Si je te connais ? Je…" Il y a de l„amertume dans la voix du scribe. "Je ne te connais *pas*, le Sans Repos. Pas plus que tu ne te connais toi-même." Il reste un moment sans rien dire. "Car tu l“as oublié, n„est-ce pas ?"{#dhall_s44_}'
+    nr '"Si je te connais ? Je…" Il y a de l„amertume dans la voix du scribe. "Je ne te connais *pas*, le Sans Repos. Pas plus que tu ne te connais toi-même." Il reste un moment sans rien dire. "Car tu l“as oublié, n„est-ce pas ?"{#dhall_s44_1}'
 
     menu:
         '"*Qui* es-tu ?"{#dhall_s44_r1327}':
@@ -983,7 +983,7 @@ label dhall_s44: # from 1.0 6.2 7.0
 
 # s45 # say5728
 label dhall_s45: # from 44.0
-    nr '"Comme toujours, la question. Et la mauvaise question, comme toujours." Dhall s„incline légèrement, mais ce mouvement lui donne soudain une quinte de toux. "Je…" Il s“arrête un instant pour reprendre son souffle. "Je… m„appelle Dhall."{#dhall_s45_}'
+    nr '"Comme toujours, la question. Et la mauvaise question, comme toujours." Dhall s„incline légèrement, mais ce mouvement lui donne soudain une quinte de toux. "Je…" Il s“arrête un instant pour reprendre son souffle. "Je… m„appelle Dhall."{#dhall_s45_1}'
 
     menu:
         '"Tu peux peut-être répondre à quelques questions pour moi, Dhall…"{#dhall_s45_r5731}':
@@ -999,7 +999,7 @@ label dhall_s45: # from 44.0
 
 # s46 # say5730
 label dhall_s46: # from 45.1
-    nr '"D„accord, le Sans Repos." acquiesce Dhall. "Mais j“ai peur que le temps ne soit pas ton ennemi dans cette affaire." Il reprend sa plume. "Quand tu voudras parler, je serai là."{#dhall_s46_}'
+    nr '"D„accord, le Sans Repos." acquiesce Dhall. "Mais j“ai peur que le temps ne soit pas ton ennemi dans cette affaire." Il reprend sa plume. "Quand tu voudras parler, je serai là."{#dhall_s46_1}'
 
     menu:
         '"Je reviendrai peut-être. Au revoir."{#dhall_s46_r40005}':
@@ -1009,7 +1009,7 @@ label dhall_s46: # from 45.1
 
 # s47 # say847
 label dhall_s47: # from 32.2
-    nr '"Nous autres Hommes-Poussière sommes une faction, un rassemblement de ceux d„entre nous qui reconnaissons l“illusion de cette vie. Nous attendons la vie ultérieure et assistons les autres dans leur voyage."{#dhall_s47_}'
+    nr '"Nous autres Hommes-Poussière sommes une faction, un rassemblement de ceux d„entre nous qui reconnaissons l“illusion de cette vie. Nous attendons la vie ultérieure et assistons les autres dans leur voyage."{#dhall_s47_1}'
 
     menu:
         '"Tu peux peut-être m„expliquer pourquoi les Hommes-Poussière veulent ma mort."{#dhall_s47_r6032}' if dhallLogic.r6032_condition():
@@ -1040,7 +1040,7 @@ label dhall_s47: # from 32.2
 
 # s48 # say848
 label dhall_s48: # from 32.1 33.0 38.0 41.1 47.1
-    nr '"La Vraie Mort est une non-existence. Un état dépourvu de raison, de sensations, de passion." Dhall tousse, puis respire de façon saccadée. "Un état de pureté."{#dhall_s48_}'
+    nr '"La Vraie Mort est une non-existence. Un état dépourvu de raison, de sensations, de passion." Dhall tousse, puis respire de façon saccadée. "Un état de pureté."{#dhall_s48_1}'
 
     menu:
         '"Ça ressemble à l„état d“oubli. Comment peut-on vouloir ça ?"{#dhall_s48_r6043}':
@@ -1062,7 +1062,7 @@ label dhall_s48: # from 32.1 33.0 38.0 41.1 47.1
 
 # s49 # say849
 label dhall_s49: # from 48.0
-    nr '"Est-ce que c„est pire que de rester dans cette ombre de vie ? Je ne pense pas."{#dhall_s49_}'
+    nr '"Est-ce que c„est pire que de rester dans cette ombre de vie ? Je ne pense pas."{#dhall_s49_1}'
 
     menu:
         '"L„ombre de la vie ?"{#dhall_s49_r6047}':
@@ -1084,7 +1084,7 @@ label dhall_s49: # from 48.0
 
 # s50 # say853
 label dhall_s50: # from 33.1
-    nr '"Qu„est-ce qui te fait croire que cette vie *est* vraie ? Regarde en toi. Tu ne sens pas qu“il manque quelque chose ?" Dhall secoue la tête. "Ici, c„est un purgatoire. On n“y trouve que le chagrin, la douleur, les tourments… ce ne sont pas les éléments qui constituent la „vie“. Ils font partie de la cage qui nous retient prisonniers de cette ombre."{#dhall_s50_}'
+    nr '"Qu„est-ce qui te fait croire que cette vie *est* vraie ? Regarde en toi. Tu ne sens pas qu“il manque quelque chose ?" Dhall secoue la tête. "Ici, c„est un purgatoire. On n“y trouve que le chagrin, la douleur, les tourments… ce ne sont pas les éléments qui constituent la „vie“. Ils font partie de la cage qui nous retient prisonniers de cette ombre."{#dhall_s50_1}'
 
     menu:
         '"Je crois que ton fatalisme a eu raison de toi. Ces choses font partie de la vie, mais pas de toute la vie."{#dhall_s50_r6051}':
@@ -1104,7 +1104,7 @@ label dhall_s50: # from 33.1
 
 # s51 # say5733
 label dhall_s51: # from 50.0 50.1 50.2
-    nr 'Dhall secoue la tête. "Les passions sont un véritable fardeau. Nombreux sont ceux qui leur doivent de se retrouver enterrés dans cette ombre de vie. Tant qu„on se cramponne à ses émotions, on renaît continuellement dans cette “vie„, souffrant éternellement, sans jamais connaître la pureté de la Vraie Mort."{#dhall_s51_}'
+    nr 'Dhall secoue la tête. "Les passions sont un véritable fardeau. Nombreux sont ceux qui leur doivent de se retrouver enterrés dans cette ombre de vie. Tant qu„on se cramponne à ses émotions, on renaît continuellement dans cette “vie„, souffrant éternellement, sans jamais connaître la pureté de la Vraie Mort."{#dhall_s51_1}'
 
     menu:
         '"Je… je vois. Comment échappe-t-on au cycle de la renaissance pour atteindre cette… Vraie Mort ?"{#dhall_s51_r6054}':
@@ -1126,7 +1126,7 @@ label dhall_s51: # from 50.0 50.1 50.2
 
 # s52 # say5734
 label dhall_s52: # from 51.0
-    nr '"Débarrasse-toi de tes passions et de ton besoin de sensations. Lorsque tu seras complètement nettoyé, le cycle de la renaissance prendra alors fin, et la paix pourra enfin s„installer." Dhall émet un soupir… tel un râle d“agonie dans sa gorge. "Au-delà de la carapace qui nous enferme, de la Frontière Éternelle, gît la paix que toute âme recherche."{#dhall_s52_}'
+    nr '"Débarrasse-toi de tes passions et de ton besoin de sensations. Lorsque tu seras complètement nettoyé, le cycle de la renaissance prendra alors fin, et la paix pourra enfin s„installer." Dhall émet un soupir… tel un râle d“agonie dans sa gorge. "Au-delà de la carapace qui nous enferme, de la Frontière Éternelle, gît la paix que toute âme recherche."{#dhall_s52_1}'
 
     menu:
         '"La Frontière Éternelle ?"{#dhall_s52_r6058}':
@@ -1148,7 +1148,7 @@ label dhall_s52: # from 51.0
 
 # s53 # say5742
 label dhall_s53: # from 34.0
-    nr '"Je parle des blessures de l„esprit. Tu as oublié bien des choses, n“est-ce pas ? Peut-être que tes véritables blessures sont bien plus profondes que les cicatrices que tu portes à la surface…" Dhall tousse de nouveau. "… mais c„est quelque chose que tu es le seul à savoir."{#dhall_s53_}'
+    nr '"Je parle des blessures de l„esprit. Tu as oublié bien des choses, n“est-ce pas ? Peut-être que tes véritables blessures sont bien plus profondes que les cicatrices que tu portes à la surface…" Dhall tousse de nouveau. "… mais c„est quelque chose que tu es le seul à savoir."{#dhall_s53_1}'
 
     menu:
         '"Dis-m„en plus sur la Morgue."{#dhall_s53_r5743}':

@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say34942
 label zm79_s0: # - # IF ~  True()
-    nr 'Masitá hlava mrtvoly byla čistě odseknutá a úspěšně přišitá zpět. Několik různých druhů stehů - všechny v různém stádiu rozmotání - ukazují, že hlavu neustále někdo uráží a pak zase přišívá. Do spánku je vyryto číslo "79", obkroužené zubatou kružnicí, která byla do kůže asi vypálená cejchem.{#zm79_s0_}'
+    nr 'Masitá hlava mrtvoly byla čistě odseknutá a úspěšně přišitá zpět. Několik různých druhů stehů - všechny v různém stádiu rozmotání - ukazují, že hlavu neustále někdo uráží a pak zase přišívá. Do spánku je vyryto číslo "79", obkroužené zubatou kružnicí, která byla do kůže asi vypálená cejchem.{#zm79_s0_1}'
 
     menu:
         '"Takže… děje se tady poslední dobou něco zajímavého?"{#zm79_s0_r34943}':
@@ -43,7 +43,7 @@ label zm79_s0: # - # IF ~  True()
 
 # s1 # say34944
 label zm79_s1: # from 0.0 0.2
-    nr 'Mrtvola na tebe dál zírá.{#zm79_s1_}'
+    nr 'Mrtvola na tebe dál zírá.{#zm79_s1_1}'
 
     menu:
         'Nechej mrtvolu být.{#zm79_s1_r34945}':
@@ -53,7 +53,7 @@ label zm79_s1: # from 0.0 0.2
 
 # s2 # say34949
 label zm79_s2: # from 0.3 3.0 3.1
-    nr 'Mrtvola neodpovídá. Asi už shnila příliš, aby byla schopná odpovídat na otázky.{#zm79_s2_}'
+    nr 'Mrtvola neodpovídá. Asi už shnila příliš, aby byla schopná odpovídat na otázky.{#zm79_s2_1}'
 
     menu:
         'Nechej mrtvolu být.{#zm79_s2_r34950}':
@@ -63,7 +63,7 @@ label zm79_s2: # from 0.3 3.0 3.1
 
 # s3 # say64278
 label zm79_s3: # from 0.1
-    nr 'Zubatý kruh na nebožtíkově čele vypadá, že byl vypálen před dlouhými roky, pravděpodobně dříve než zemřel. Mohl by to být nějaký druh náboženské ikony, nebo pasáž obřadu. Všimneš si, že jedna z mezer mezi vnitřími „zuby“ má uvnitř malý trojúhelník, jako by měl nějaký zvláštní význam.{#zm79_s3_}'
+    nr 'Zubatý kruh na nebožtíkově čele vypadá, že byl vypálen před dlouhými roky, pravděpodobně dříve než zemřel. Mohl by to být nějaký druh náboženské ikony, nebo pasáž obřadu. Všimneš si, že jedna z mezer mezi vnitřími „zuby“ má uvnitř malý trojúhelník, jako by měl nějaký zvláštní význam.{#zm79_s3_1}'
 
     menu:
         '"Hmmm. Zajímavé… jak si k té k značce přišel, umrlče?"{#zm79_s3_r64279}' if zm79Logic.r64279_condition():

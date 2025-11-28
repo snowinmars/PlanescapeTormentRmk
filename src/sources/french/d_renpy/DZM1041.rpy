@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say6573
 label zm1041_s0: # - # IF ~  Global("Bei","GLOBAL",0)
-    nr 'Le numéro „1041“ est gravé sur le front de ce cadavre mâle réanimé. Malgré sa chair tendue et desséchée, l„ensemble devait autrefois avoir quelque aspect “exotique„. Les lèvres de ce zombi sont cousues, probablement pour empêcher tout gémissement, et l“ensemble dégage une forte odeur de formol.{#zm1041_s0_}'
+    nr 'Le numéro „1041“ est gravé sur le front de ce cadavre mâle réanimé. Malgré sa chair tendue et desséchée, l„ensemble devait autrefois avoir quelque aspect “exotique„. Les lèvres de ce zombi sont cousues, probablement pour empêcher tout gémissement, et l“ensemble dégage une forte odeur de formol.{#zm1041_s0_1}'
 
     menu:
         '"Alors… Tu as vu quelque chose d„intéressant ?"{#zm1041_s0_r6576}' if zm1041Logic.r6576_condition():
@@ -46,7 +46,7 @@ label zm1041_s0: # - # IF ~  Global("Bei","GLOBAL",0)
 
 # s1 # say6574
 label zm1041_s1: # from 0.0 0.1 0.2
-    nr 'Le cadavre continue à te fixer.{#zm1041_s1_}'
+    nr 'Le cadavre continue à te fixer.{#zm1041_s1_1}'
 
     menu:
         'Laisse le cadavre tranquille.{#zm1041_s1_r6582}':
@@ -56,7 +56,7 @@ label zm1041_s1: # from 0.0 0.1 0.2
 
 # s2 # say6575
 label zm1041_s2: # from 0.3
-    nr 'Le cadavre chancelle quelque peu tandis que l„esprit regagne son ancienne demeure. Ses yeux en forme d“amandes s„assombrissent de nouveau, une légère ombre couleur bronze recouvrant la chair pâle. Le corps se redresse et époussette ses vêtements.  Remarquant enfin son interlocuteur, le fantôme te regarde pendant un moment d“un air intrigué, puis s„incline légèrement.{#zm1041_s2_}'
+    nr 'Le cadavre chancelle quelque peu tandis que l„esprit regagne son ancienne demeure. Ses yeux en forme d“amandes s„assombrissent de nouveau, une légère ombre couleur bronze recouvrant la chair pâle. Le corps se redresse et époussette ses vêtements.  Remarquant enfin son interlocuteur, le fantôme te regarde pendant un moment d“un air intrigué, puis s„incline légèrement.{#zm1041_s2_1}'
 
     menu:
         'Réponds à son salut.{#zm1041_s2_r6583}':
@@ -77,7 +77,7 @@ label zm1041_s2: # from 0.3
 
 # s3 # say9060
 label zm1041_s3: # from 2.0
-    nr 'L„esprit sourit l“espace d„un instant, visiblement satisfait. Puis il prend la pose, une main derrière lui, et prend la parole d“une voix douce et chantante.  "Suiang jianne shyr nan bye yih nan ; Dong feng wu lih bay hua tsarn ; Chuen tsarn daw syy sy fang jinn ; Lah Jiuh cherng huei ley shyy gan."  Cela dit, il reste là, immobile, à attendre ta réponse d„un air patient.{#zm1041_s3_}'
+    nr 'L„esprit sourit l“espace d„un instant, visiblement satisfait. Puis il prend la pose, une main derrière lui, et prend la parole d“une voix douce et chantante.  "Suiang jianne shyr nan bye yih nan ; Dong feng wu lih bay hua tsarn ; Chuen tsarn daw syy sy fang jinn ; Lah Jiuh cherng huei ley shyy gan."  Cela dit, il reste là, immobile, à attendre ta réponse d„un air patient.{#zm1041_s3_1}'
 
     menu:
         '"Je… euh…"{#zm1041_s3_r9098}':
@@ -95,7 +95,7 @@ label zm1041_s3: # from 2.0
 
 # s4 # say9061
 label zm1041_s4: # from 2.1
-    nr 'Tu ouvres la bouche pour lui poser une question, mais l„esprit te coupe la parole d“une voix douce et chantante :  "Suiang jianne shyr nan bye yih nan ; Dong feng wu lih bay hua tsarn ; Chuen tsarn daw syy sy fang jinn ; Lah Jiuh cherng huei ley shyy gan."  Cela dit, il reste là, immobile, à attendre ta réponse d„un air patient.{#zm1041_s4_}'
+    nr 'Tu ouvres la bouche pour lui poser une question, mais l„esprit te coupe la parole d“une voix douce et chantante :  "Suiang jianne shyr nan bye yih nan ; Dong feng wu lih bay hua tsarn ; Chuen tsarn daw syy sy fang jinn ; Lah Jiuh cherng huei ley shyy gan."  Cela dit, il reste là, immobile, à attendre ta réponse d„un air patient.{#zm1041_s4_1}'
 
     menu:
         '"Je… euh…"{#zm1041_s4_r9101}':
@@ -113,7 +113,7 @@ label zm1041_s4: # from 2.1
 
 # s5 # say9062
 label zm1041_s5: # from 3.0 3.1 4.0 4.1
-    nr 'L„esprit s“interrompt, comme pour réfléchir, puis il reprend la parole d„une voix dont l“accent très marqué ne dissimule pas le raffinement. "Je vous en prie, cher monsieur, pardonnez-moi. Voici bien longtemps que je n„ai pas dû parler votre langue. Sans doute mon esprit s“est-il retrouvé convoqué ici pour répondre à vos questions. Qu„aimeriez-vous donc savoir ?"{#zm1041_s5_}'
+    nr 'L„esprit s“interrompt, comme pour réfléchir, puis il reprend la parole d„une voix dont l“accent très marqué ne dissimule pas le raffinement. "Je vous en prie, cher monsieur, pardonnez-moi. Voici bien longtemps que je n„ai pas dû parler votre langue. Sans doute mon esprit s“est-il retrouvé convoqué ici pour répondre à vos questions. Qu„aimeriez-vous donc savoir ?"{#zm1041_s5_1}'
 
     menu:
         '"Qui es-tu ?"{#zm1041_s5_r9104}':
@@ -147,7 +147,7 @@ label zm1041_s5: # from 3.0 3.1 4.0 4.1
 
 # s6 # say9063
 label zm1041_s6: # from 5.0 14.0
-    nr '"C„est une question difficile… il m“est plus aisé de vous dire qui *j„étais*. En l“espèce, Zhuang Bei, tuteur et garde du corps de Liu Xixi, fille du Censeur Chi„an."{#zm1041_s6_}'
+    nr '"C„est une question difficile… il m“est plus aisé de vous dire qui *j„étais*. En l“espèce, Zhuang Bei, tuteur et garde du corps de Liu Xixi, fille du Censeur Chi„an."{#zm1041_s6_1}'
 
     menu:
         '"Tuteur *et* garde du corps ?"{#zm1041_s6_r9111}':
@@ -169,7 +169,7 @@ label zm1041_s6: # from 5.0 14.0
 
 # s7 # say9064
 label zm1041_s7: # from 5.1 14.1
-    nr '"Je vivais en un lieu appelé Shou Lung… que je considérais jadis comme le centre de l„univers." L“idée paraît l„amuser. "Il y a tant de lieux, tant de mondes… Je me considérais alors comme un fin lettré, et pourtant j“en savais si peu à ma mort…"{#zm1041_s7_}'
+    nr '"Je vivais en un lieu appelé Shou Lung… que je considérais jadis comme le centre de l„univers." L“idée paraît l„amuser. "Il y a tant de lieux, tant de mondes… Je me considérais alors comme un fin lettré, et pourtant j“en savais si peu à ma mort…"{#zm1041_s7_1}'
 
     menu:
         '"Comment es-tu arrivé ici depuis ce „Shou Lung“ ?"{#zm1041_s7_r9115}':
@@ -187,7 +187,7 @@ label zm1041_s7: # from 5.1 14.1
 
 # s8 # say9065
 label zm1041_s8: # from 5.2 14.2
-    nr '"J„ai été assassiné par l“un des hommes que j„ai accompagné par hasard ici. Je l“ai cherché dans cette cité des semaines durant - apprenant ainsi votre langue - et c„est lui qui m“a trouvé. Assassin patenté, il a déjoué mes précautions et m„a tué durant mon sommeil."{#zm1041_s8_}'
+    nr '"J„ai été assassiné par l“un des hommes que j„ai accompagné par hasard ici. Je l“ai cherché dans cette cité des semaines durant - apprenant ainsi votre langue - et c„est lui qui m“a trouvé. Assassin patenté, il a déjoué mes précautions et m„a tué durant mon sommeil."{#zm1041_s8_1}'
 
     menu:
         '"Accompagné par hasard ?"{#zm1041_s8_r9118}':
@@ -217,7 +217,7 @@ label zm1041_s8: # from 5.2 14.2
 
 # s9 # say9066
 label zm1041_s9: # from 5.4 14.4
-    nr '"Ce bâtiment ? Oh, j„en avais entendu parler, je savais que mon cadavre devait y travailler, voilà tout." "Je n“en sais pas plus sur cette vaste cité, „Sigil“. J„ai passé des semaines à chercher ceux avec lesquels je me suis trouvé ici et à apprendre la langue ; cela me désolait, mais je n“ai eu de temps pour rien d„autre. Les merveilles innombrables de ce lieu auraient pu m“en apprendre tellement…"{#zm1041_s9_}'
+    nr '"Ce bâtiment ? Oh, j„en avais entendu parler, je savais que mon cadavre devait y travailler, voilà tout." "Je n“en sais pas plus sur cette vaste cité, „Sigil“. J„ai passé des semaines à chercher ceux avec lesquels je me suis trouvé ici et à apprendre la langue ; cela me désolait, mais je n“ai eu de temps pour rien d„autre. Les merveilles innombrables de ce lieu auraient pu m“en apprendre tellement…"{#zm1041_s9_1}'
 
     menu:
         '"Ton cadavre devait servir ici ? Comment est-ce arrivé ?"{#zm1041_s9_r9124}':
@@ -243,7 +243,7 @@ label zm1041_s9: # from 5.4 14.4
 
 # s10 # say9067
 label zm1041_s10: # from 5.5 14.5
-    nr '"Non, ce nom ne me dit rien, je regrette."{#zm1041_s10_}'
+    nr '"Non, ce nom ne me dit rien, je regrette."{#zm1041_s10_1}'
 
     menu:
         '"Je comprends. J„ai d“autres questions…"{#zm1041_s10_r9129}':
@@ -257,7 +257,7 @@ label zm1041_s10: # from 5.5 14.5
 
 # s11 # say9068
 label zm1041_s11: # from 5.3 14.3
-    nr 'L„esprit prend un air chagrin. "Je… Mon esprit réside dans le royaume de l“Illustre Magistrat Yen-Wang-Yeh, le Palais du Jugement."{#zm1041_s11_}'
+    nr 'L„esprit prend un air chagrin. "Je… Mon esprit réside dans le royaume de l“Illustre Magistrat Yen-Wang-Yeh, le Palais du Jugement."{#zm1041_s11_1}'
 
     menu:
         '"Quelque chose ne va pas ? Cet endroit est-il si terrible ?"{#zm1041_s11_r9131}':
@@ -275,7 +275,7 @@ label zm1041_s11: # from 5.3 14.3
 
 # s12 # say9069
 label zm1041_s12: # from 6.0 16.1
-    nr '"Oui ; ce n„est pas rare, là d“où je viens. Ma tâche consistait à escorter mademoiselle Liu en toutes circonstances, pour la protéger, et aussi pour l„éduquer. J“avais une certaine réputation, et comme soldat, et comme érudit, voyez-vous. Un meilleur soldat lui aurait peut-être davantage servi, cependant…"{#zm1041_s12_}'
+    nr '"Oui ; ce n„est pas rare, là d“où je viens. Ma tâche consistait à escorter mademoiselle Liu en toutes circonstances, pour la protéger, et aussi pour l„éduquer. J“avais une certaine réputation, et comme soldat, et comme érudit, voyez-vous. Un meilleur soldat lui aurait peut-être davantage servi, cependant…"{#zm1041_s12_1}'
 
     menu:
         '"Davantage servi ? As-tu échoué ?"{#zm1041_s12_r9134}':
@@ -293,7 +293,7 @@ label zm1041_s12: # from 6.0 16.1
 
 # s13 # say9070
 label zm1041_s13: # from 6.1
-    nr '"Oui. Trop, peut-être. J„ai… manqué à mon devoir envers mademoiselle Liu et le Censeur.{#zm1041_s13_}'
+    nr '"Oui. Trop, peut-être. J„ai… manqué à mon devoir envers mademoiselle Liu et le Censeur.{#zm1041_s13_1}'
 
     menu:
         '"Comment cela ?"{#zm1041_s13_r9137}':
@@ -311,7 +311,7 @@ label zm1041_s13: # from 6.1
 
 # s14 # say9071
 label zm1041_s14: # from 6.2 7.1 8.4 9.3 10.0 11.1 12.1 13.1 15.2 17.1 18.0 19.0 20.1 21.1 22.0 23.1 24.0 25.0 26.0 27.1 28.0 29.0 30.0 31.2 32.1 33.2 34.0 35.2 36.0 37.0 38.1
-    nr 'L„esprit hoche la tête avec une grâce étonnante pour un cadavre décati. "N“hésitez pas, posez-moi les questions que vous voulez."{#zm1041_s14_}'
+    nr 'L„esprit hoche la tête avec une grâce étonnante pour un cadavre décati. "N“hésitez pas, posez-moi les questions que vous voulez."{#zm1041_s14_1}'
 
     menu:
         '"Qui es-tu ?"{#zm1041_s14_r9140}':
@@ -349,7 +349,7 @@ label zm1041_s14: # from 6.2 7.1 8.4 9.3 10.0 11.1 12.1 13.1 15.2 17.1 18.0 19.0
 
 # s15 # say9072
 label zm1041_s15: # from 11.0
-    nr '"Voyez-vous…" L„esprit se frotte les mains - des mains desséchées -, perdu dans ses réflexions. "À mon arrivée, je devais rejoindre ma *véritable* destination finale dans de brefs délais. Mais il s“est produit un incident alors qu„on m“escortait à travers le Palais, et on m„a laissé seul dans une petite pièce en promettant de s“occuper de moi sous peu."{#zm1041_s15_}'
+    nr '"Voyez-vous…" L„esprit se frotte les mains - des mains desséchées -, perdu dans ses réflexions. "À mon arrivée, je devais rejoindre ma *véritable* destination finale dans de brefs délais. Mais il s“est produit un incident alors qu„on m“escortait à travers le Palais, et on m„a laissé seul dans une petite pièce en promettant de s“occuper de moi sous peu."{#zm1041_s15_1}'
 
     menu:
         '"Et alors… ?"{#zm1041_s15_r9148}':
@@ -371,7 +371,7 @@ label zm1041_s15: # from 11.0
 
 # s16 # say9073
 label zm1041_s16: # from 7.0 8.0 8.1 9.1 12.0 13.0
-    nr '"Voilà toute l„histoire. En tant que tuteur et garde du corps de Liu Xixi, je suis bien sûr chargé et de son éducation et de sa protection. Un soir où le ciel était dégagé, nous nous tenions sur un balcon dominant la Cour intérieure. Je lui apprenais les diverses constellations.{#zm1041_s16_}'
+    nr '"Voilà toute l„histoire. En tant que tuteur et garde du corps de Liu Xixi, je suis bien sûr chargé et de son éducation et de sa protection. Un soir où le ciel était dégagé, nous nous tenions sur un balcon dominant la Cour intérieure. Je lui apprenais les diverses constellations.{#zm1041_s16_1}'
 
     menu:
         '"S„il te plaît, continue."{#zm1041_s16_r9152}':
@@ -389,7 +389,7 @@ label zm1041_s16: # from 7.0 8.0 8.1 9.1 12.0 13.0
 
 # s17 # say9074
 label zm1041_s17: # from 8.2 9.0
-    nr '"Ah, ça. Un soir, une jeune femme a pris contact avec moi dans la rue ; elle faisait partie des Hommes-Poussière, l„organisation qui gère ces installations." "Elle m“a proposé un marché : en échange d„une petite somme d“argent, mon cadavre pourrait être… utilisé… ici après mon trépas."{#zm1041_s17_}'
+    nr '"Ah, ça. Un soir, une jeune femme a pris contact avec moi dans la rue ; elle faisait partie des Hommes-Poussière, l„organisation qui gère ces installations." "Elle m“a proposé un marché : en échange d„une petite somme d“argent, mon cadavre pourrait être… utilisé… ici après mon trépas."{#zm1041_s17_1}'
 
     menu:
         '"Et ça ne t„a pas paru un peu étrange ?"{#zm1041_s17_r9155}':
@@ -407,7 +407,7 @@ label zm1041_s17: # from 8.2 9.0
 
 # s18 # say9075
 label zm1041_s18: # from 8.3 9.2
-    nr '"La linguistique est un de mes principaux centres d„intérêt. Une fois lettré, j“ai constaté que j„apprenais de nouvelles langues sans aucun problème."{#zm1041_s18_}'
+    nr '"La linguistique est un de mes principaux centres d„intérêt. Une fois lettré, j“ai constaté que j„apprenais de nouvelles langues sans aucun problème."{#zm1041_s18_1}'
 
     menu:
         '"Ceci expliquerait cela. Une autre question…"{#zm1041_s18_r9158}':
@@ -421,7 +421,7 @@ label zm1041_s18: # from 8.3 9.2
 
 # s19 # say9076
 label zm1041_s19: # from 15.0 20.0
-    nr '"Et bien… nul n„est jamais revenu me chercher. J“ai attendu durant des jours entiers, en vain. J„ai fini par explorer le Palais, dans l“espoir de rencontrer quelqu„un qui m“indiquerait le chemin…" Il pousse un soupir chargé de fragrance de lotion d„embaumement. "Il y a 9001 pièces, ici ; de chacune de celles que j“ai visitées, on m„a renvoyé vers une autre. À ce qu“il semble, je suis égaré, et tout le monde m„a oublié."{#zm1041_s19_}'
+    nr '"Et bien… nul n„est jamais revenu me chercher. J“ai attendu durant des jours entiers, en vain. J„ai fini par explorer le Palais, dans l“espoir de rencontrer quelqu„un qui m“indiquerait le chemin…" Il pousse un soupir chargé de fragrance de lotion d„embaumement. "Il y a 9001 pièces, ici ; de chacune de celles que j“ai visitées, on m„a renvoyé vers une autre. À ce qu“il semble, je suis égaré, et tout le monde m„a oublié."{#zm1041_s19_1}'
 
     menu:
         '"Je vois. Mais j„ai une autre question…"{#zm1041_s19_r9160}':
@@ -445,7 +445,7 @@ label zm1041_s19: # from 15.0 20.0
 
 # s20 # say9077
 label zm1041_s20: # from 15.1
-    nr '"Je ne saurais dire. Tout cela est si frustrant !" Il s„interrompt, le temps de retrouver son calme ; les articulations et les tendons du cadavre crissent doucement tout en se relâchant.{#zm1041_s20_}'
+    nr '"Je ne saurais dire. Tout cela est si frustrant !" Il s„interrompt, le temps de retrouver son calme ; les articulations et les tendons du cadavre crissent doucement tout en se relâchant.{#zm1041_s20_1}'
 
     menu:
         '"Je t„en prie, continue ton histoire."{#zm1041_s20_r9164}':
@@ -463,7 +463,7 @@ label zm1041_s20: # from 15.1
 
 # s21 # say9078
 label zm1041_s21: # from 16.0
-    nr '"Certes. Nous observions donc le ciel quand deux assassins se sont laissés tomber du toit sur le balcon, sans doute pour tuer ou enlever mademoiselle Liu. Tout en criant à la garde, j„ai pris ma lame et je me suis jeté devant elle pour la protéger. Au cours du combat, la balustrade a cédé et nous sommes tombés tous les quatre dans le Portail de Jade."{#zm1041_s21_}'
+    nr '"Certes. Nous observions donc le ciel quand deux assassins se sont laissés tomber du toit sur le balcon, sans doute pour tuer ou enlever mademoiselle Liu. Tout en criant à la garde, j„ai pris ma lame et je me suis jeté devant elle pour la protéger. Au cours du combat, la balustrade a cédé et nous sommes tombés tous les quatre dans le Portail de Jade."{#zm1041_s21_1}'
 
     menu:
         '"Le quoi ? Le Portail de Jade ?"{#zm1041_s21_r9167}':
@@ -481,7 +481,7 @@ label zm1041_s21: # from 16.0
 
 # s22 # say9079
 label zm1041_s22: # from 17.0
-    nr '"Au début, peut-être… l„idée est assez macabre, somme toute. Mais après avoir parlé avec elle un moment, il m“est apparu que les Hommes-Poussière ont une vision de la mort semblable à la mienne. Mon corps ? Un simple véhicule. Selon moi, la „Vraie Mort“ dont ils parlent est l„état supérieur que je veux atteindre… détaché du monde matériel. Si mon corps, une fois sa fonction de réceptacle mortel achevée, peut servir à quoi que ce soit ici, tant mieux." L“esprit te dédie un sourire cordial.{#zm1041_s22_}'
+    nr '"Au début, peut-être… l„idée est assez macabre, somme toute. Mais après avoir parlé avec elle un moment, il m“est apparu que les Hommes-Poussière ont une vision de la mort semblable à la mienne. Mon corps ? Un simple véhicule. Selon moi, la „Vraie Mort“ dont ils parlent est l„état supérieur que je veux atteindre… détaché du monde matériel. Si mon corps, une fois sa fonction de réceptacle mortel achevée, peut servir à quoi que ce soit ici, tant mieux." L“esprit te dédie un sourire cordial.{#zm1041_s22_1}'
 
     menu:
         '"Je vois ce que tu veux dire. Une autre question…"{#zm1041_s22_r9170}':
@@ -495,7 +495,7 @@ label zm1041_s22: # from 17.0
 
 # s23 # say9080
 label zm1041_s23: # from 21.0
-    nr '"Oh ! Pardonnez-moi. J„avais présumé que vous saviez… Le Portail de Jade est un bassin dallé de carreaux de stéatite verts et blancs situé dans la Cour Intérieure. On l“appelle le Portail car, à ce qui se dit, des images fugitives d„un autre lieu apparaissent parfois dans ses eaux scintillantes."{#zm1041_s23_}'
+    nr '"Oh ! Pardonnez-moi. J„avais présumé que vous saviez… Le Portail de Jade est un bassin dallé de carreaux de stéatite verts et blancs situé dans la Cour Intérieure. On l“appelle le Portail car, à ce qui se dit, des images fugitives d„un autre lieu apparaissent parfois dans ses eaux scintillantes."{#zm1041_s23_1}'
 
     menu:
         '"Je vois. Je t„en prie, continue ton histoire."{#zm1041_s23_r9172}':
@@ -513,7 +513,7 @@ label zm1041_s23: # from 21.0
 
 # s24 # say9081
 label zm1041_s24: # from 19.1
-    nr '"Trop aimable. Je crains hélas que vous n„y puissiez rien… Je gage que, le moment venu, on me mettra sur le bon chemin. Je ne saurais trop vous remercier, toutefois."{#zm1041_s24_}'
+    nr '"Trop aimable. Je crains hélas que vous n„y puissiez rien… Je gage que, le moment venu, on me mettra sur le bon chemin. Je ne saurais trop vous remercier, toutefois."{#zm1041_s24_1}'
 
     menu:
         '"Bien sûr. Dis-moi, j„ai une autre question…"{#zm1041_s24_r9175}':
@@ -527,7 +527,7 @@ label zm1041_s24: # from 19.1
 
 # s25 # say9082
 label zm1041_s25: # from 19.2 33.1 35.1
-    nr 'L„esprit te dévisage froidement, et ses yeux s“illuminent d„une lueur spectrale ; il semble que tu l“aies froissé.{#zm1041_s25_}'
+    nr 'L„esprit te dévisage froidement, et ses yeux s“illuminent d„une lueur spectrale ; il semble que tu l“aies froissé.{#zm1041_s25_1}'
 
     menu:
         '"Toutes mes excuses. Puis-je te demander autre chose ?"{#zm1041_s25_r9177}':
@@ -541,7 +541,7 @@ label zm1041_s25: # from 19.2 33.1 35.1
 
 # s26 # say9083
 label zm1041_s26: # from 14.6
-    nr '"Oh, ça… ah… c„était un poème. Difficile à traduire. Vous avez peut-être d“autres questions ?" Il te sourit d„un air gêné.{#zm1041_s26_}'
+    nr '"Oh, ça… ah… c„était un poème. Difficile à traduire. Vous avez peut-être d“autres questions ?" Il te sourit d„un air gêné.{#zm1041_s26_1}'
 
     menu:
         '"Oui… Oui."{#zm1041_s26_r9179}':
@@ -559,7 +559,7 @@ label zm1041_s26: # from 14.6
 
 # s27 # say9084
 label zm1041_s27: # from 23.0
-    nr '"Comme je le disais, nous sommes tombés dans le Portail de Jade. Je n„avais jamais cru qu“il s„agissait d“un *véritable* portail, mais c„était le cas ! Je me suis retrouvé allongé dans une ruelle inconnue, la jambe brisée. Le temps que je reprenne mes esprits, les assassins s“enfuyaient, l„un d“eux portant Liu Xixi sur son épaule."{#zm1041_s27_}'
+    nr '"Comme je le disais, nous sommes tombés dans le Portail de Jade. Je n„avais jamais cru qu“il s„agissait d“un *véritable* portail, mais c„était le cas ! Je me suis retrouvé allongé dans une ruelle inconnue, la jambe brisée. Le temps que je reprenne mes esprits, les assassins s“enfuyaient, l„un d“eux portant Liu Xixi sur son épaule."{#zm1041_s27_1}'
 
     menu:
         '"Étrange. Continue, je t„en prie."{#zm1041_s27_r9182}':
@@ -577,7 +577,7 @@ label zm1041_s27: # from 23.0
 
 # s28 # say9085
 label zm1041_s28: # from 26.1
-    nr '"Très bien." Il réfléchit, en se tapotant le bout des doigts - de longs doigts osseux. Lorsqu„il reprend la parole ensuite, c“est sur un ton mesuré et cadencé :  "Il est aussi difficile de se rencontrer que de se séparer. Le vent du nord faiblit ; des centaines de fleurs se fanent. Meurent les vers printaniers, et la soie ne revient plus. La cire des bougies devient cendres, et les larmes cessent."  Il t„adresse un petit sourire poli.{#zm1041_s28_}'
+    nr '"Très bien." Il réfléchit, en se tapotant le bout des doigts - de longs doigts osseux. Lorsqu„il reprend la parole ensuite, c“est sur un ton mesuré et cadencé :  "Il est aussi difficile de se rencontrer que de se séparer. Le vent du nord faiblit ; des centaines de fleurs se fanent. Meurent les vers printaniers, et la soie ne revient plus. La cire des bougies devient cendres, et les larmes cessent."  Il t„adresse un petit sourire poli.{#zm1041_s28_1}'
 
     menu:
         '"Ah… j„ai une autre question."{#zm1041_s28_r9185}':
@@ -599,7 +599,7 @@ label zm1041_s28: # from 26.1
 
 # s29 # say9086
 label zm1041_s29: # from 28.1
-    nr '"Et bien, j„ai honte d“admettre que je tentais subtilement de dire… que tu ferais mieux de laisser les esprits des morts en paix. Je n„ai plus aucun désir de prendre part à ce…" D“un grand geste de la main, l„esprit indique tout ce qui l“entoure. "… monde."{#zm1041_s29_}'
+    nr '"Et bien, j„ai honte d“admettre que je tentais subtilement de dire… que tu ferais mieux de laisser les esprits des morts en paix. Je n„ai plus aucun désir de prendre part à ce…" D“un grand geste de la main, l„esprit indique tout ce qui l“entoure. "… monde."{#zm1041_s29_1}'
 
     menu:
         '"Hmm. Je vois. J„avais autre chose à te demander."{#zm1041_s29_r9189}':
@@ -613,7 +613,7 @@ label zm1041_s29: # from 28.1
 
 # s30 # say9087
 label zm1041_s30: # from 28.2
-    nr '"Euh… et bien… non. J„espérais me montrer moins direct ; éviter la confrontation, voyez-vous. Il se trouve que je n“ai plus aucun désir de prendre part à ce…" D„un grand geste de la main, l“esprit indique tout ce qui l„entoure. "… monde."{#zm1041_s30_}'
+    nr '"Euh… et bien… non. J„espérais me montrer moins direct ; éviter la confrontation, voyez-vous. Il se trouve que je n“ai plus aucun désir de prendre part à ce…" D„un grand geste de la main, l“esprit indique tout ce qui l„entoure. "… monde."{#zm1041_s30_1}'
 
     menu:
         '"Hmm. Je vois. J„avais autre chose à te demander…"{#zm1041_s30_r9191}':
@@ -627,7 +627,7 @@ label zm1041_s30: # from 28.2
 
 # s31 # say9088
 label zm1041_s31: # from 27.0
-    nr '"Oh, c„est tout. J“ai arpenté la ville en boitant bas jusqu„à ce que je trouve quelqu“un pour soigner ma jambe ; le peu d„argent que j“avais y est passé. J„ai appris la langue locale au contact de ce guérisseur et d“autres personnes, tout en cherchant partout les deux assassins et ma pupille."{#zm1041_s31_}'
+    nr '"Oh, c„est tout. J“ai arpenté la ville en boitant bas jusqu„à ce que je trouve quelqu“un pour soigner ma jambe ; le peu d„argent que j“avais y est passé. J„ai appris la langue locale au contact de ce guérisseur et d“autres personnes, tout en cherchant partout les deux assassins et ma pupille."{#zm1041_s31_1}'
 
     menu:
         '"Et tu ne les as jamais retrouvés ?"{#zm1041_s31_r9193}':
@@ -649,7 +649,7 @@ label zm1041_s31: # from 27.0
 
 # s32 # say9089
 label zm1041_s32: # from 31.0 38.0
-    nr '"J„en ai retrouvé un, mais il a refusé de parler. Je l“ai exécuté et j„ai gardé sa tête dans un sac de soie, afin de la rapporter au Censeur quand je lui ramènerais sa fille." Il fronce les sourcils. "Quant à l“autre, il m„a échappé, et, surtout… il m“a assassiné avant que je puisse le tuer et secourir ma pupille. C„est triste, mais tout cela appartient au passé, désormais."{#zm1041_s32_}'
+    nr '"J„en ai retrouvé un, mais il a refusé de parler. Je l“ai exécuté et j„ai gardé sa tête dans un sac de soie, afin de la rapporter au Censeur quand je lui ramènerais sa fille." Il fronce les sourcils. "Quant à l“autre, il m„a échappé, et, surtout… il m“a assassiné avant que je puisse le tuer et secourir ma pupille. C„est triste, mais tout cela appartient au passé, désormais."{#zm1041_s32_1}'
 
     menu:
         '"Aurais-tu su comment retourner dans ton pays, si tu avais sauvé… „Xixi“ ?"{#zm1041_s32_r9197}':
@@ -667,7 +667,7 @@ label zm1041_s32: # from 31.0 38.0
 
 # s33 # say9090
 label zm1041_s33: # from 32.0
-    nr '"Non, mais je pense que j„aurais trouvé un moyen. Peu importe, à présent."{#zm1041_s33_}'
+    nr '"Non, mais je pense que j„aurais trouvé un moyen. Peu importe, à présent."{#zm1041_s33_1}'
 
     menu:
         '"Je me demande s„ils sont toujours dans la cité. Je pourrais peut-être les trouver et aider cette fille."{#zm1041_s33_r9200}':
@@ -691,7 +691,7 @@ label zm1041_s33: # from 32.0
 
 # s34 # say9091
 label zm1041_s34: # from 33.0
-    nr '"Ton offre te marque comme un esprit noble, mais… il s„est écoulé plus de soixante-quinze ans depuis mon assassinat. Mon meurtrier doit être mort depuis longtemps, et Xixi aussi, sans doute."{#zm1041_s34_}'
+    nr '"Ton offre te marque comme un esprit noble, mais… il s„est écoulé plus de soixante-quinze ans depuis mon assassinat. Mon meurtrier doit être mort depuis longtemps, et Xixi aussi, sans doute."{#zm1041_s34_1}'
 
     menu:
         '"Hmm. Peu importe. J„ai une autre question…"{#zm1041_s34_r9205}':
@@ -705,7 +705,7 @@ label zm1041_s34: # from 33.0
 
 # s35 # say9092
 label zm1041_s35: # -
-    nr '"L„assassin a des traits comparables aux miens, et un lotus tatoué sur le front." Voyant ta perplexité, il ajoute : "C“est une sorte de fleur, à sept pétales. Liu Xixi est une jeune fille ; elle n„a que quatorze ans. Elle saurait peut-être où trouver le portail, et comment l“activer. Il se peut que l„assassin le sache également."{#zm1041_s35_}'
+    nr '"L„assassin a des traits comparables aux miens, et un lotus tatoué sur le front." Voyant ta perplexité, il ajoute : "C“est une sorte de fleur, à sept pétales. Liu Xixi est une jeune fille ; elle n„a que quatorze ans. Elle saurait peut-être où trouver le portail, et comment l“activer. Il se peut que l„assassin le sache également."{#zm1041_s35_1}'
 
     menu:
         '"Si je la vois, je ferai mon possible pour l„aider en souvenir de toi."{#zm1041_s35_r9207}':
@@ -731,7 +731,7 @@ label zm1041_s35: # -
 
 # s36 # say9093
 label zm1041_s36: # from 35.0
-    nr '"Vous êtes généreux, et vous avez le sens de l„honneur. Ne le faites pas pour moi, cependant… c“est la jeune fille et son père que vous aidez."{#zm1041_s36_}'
+    nr '"Vous êtes généreux, et vous avez le sens de l„honneur. Ne le faites pas pour moi, cependant… c“est la jeune fille et son père que vous aidez."{#zm1041_s36_1}'
 
     menu:
         '"Très bien. J„ai une autre question…"{#zm1041_s36_r9211}':
@@ -745,7 +745,7 @@ label zm1041_s36: # from 35.0
 
 # s37 # say9094
 label zm1041_s37: # from 0.4 # IF ~  Global("Bei","GLOBAL",1)
-    nr '"Je ne m„attendais certes pas à vous revoir." L“esprit s„incline poliment, mais son visage reste fermé. "Que voulez-vous de moi ?"{#zm1041_s37_}'
+    nr '"Je ne m„attendais certes pas à vous revoir." L“esprit s„incline poliment, mais son visage reste fermé. "Que voulez-vous de moi ?"{#zm1041_s37_1}'
 
     menu:
         '"Une question…"{#zm1041_s37_r9213}':
@@ -759,7 +759,7 @@ label zm1041_s37: # from 0.4 # IF ~  Global("Bei","GLOBAL",1)
 
 # s38 # say9718
 label zm1041_s38: # from 31.1
-    nr '"La linguistique est un de mes principaux centres d„intérêt. Une fois lettré, j“ai constaté que j„apprenais de nouvelles langues sans aucun problème."{#zm1041_s38_}'
+    nr '"La linguistique est un de mes principaux centres d„intérêt. Une fois lettré, j“ai constaté que j„apprenais de nouvelles langues sans aucun problème."{#zm1041_s38_1}'
 
     menu:
         '"Ceci expliquerait cela. Alors, tu n„as jamais trouvé les assassins ?"{#zm1041_s38_r9719}':

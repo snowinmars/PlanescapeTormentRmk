@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say35274
 label zf891_s0: # - # IF ~  True()
-    nr 'Sur ce cadavre de femme particulièrement horrible à voir, il manque les oreilles, le nez et les lèvres. Pour pouvoir fermer la mâchoire par une couture, il a fallu que celui ou celle qui l„a préparé étire bien la peau autour de la bouche ; on voit encore une ligne de dents jaunies et mal rangées à travers ce qu“il reste de la fente. Le numéro „891“ est gravé dans la chair du front.{#zf891_s0_}'
+    nr 'Sur ce cadavre de femme particulièrement horrible à voir, il manque les oreilles, le nez et les lèvres. Pour pouvoir fermer la mâchoire par une couture, il a fallu que celui ou celle qui l„a préparé étire bien la peau autour de la bouche ; on voit encore une ligne de dents jaunies et mal rangées à travers ce qu“il reste de la fente. Le numéro „891“ est gravé dans la chair du front.{#zf891_s0_1}'
 
     menu:
         '"Alors… Tu fais quelque chose plus tard ?"{#zf891_s0_r35275}' if zf891Logic.r35275_condition():
@@ -58,7 +58,7 @@ label zf891_s0: # - # IF ~  True()
 
 # s1 # say35276
 label zf891_s1: # from 0.0 0.1 0.2
-    nr 'Le cadavre continue à te fixer.{#zf891_s1_}'
+    nr 'Le cadavre continue à te fixer.{#zf891_s1_1}'
 
     menu:
         '"Alors, au revoir."{#zf891_s1_r35277}' if zf891Logic.r35277_condition():
@@ -76,7 +76,7 @@ label zf891_s1: # from 0.0 0.1 0.2
 
 # s2 # say35295
 label zf891_s2: # from 0.3
-    nr 'Ce cadavre ne répond pas. Il semble qu„il soit trop absent pour répondre à tes questions.{#zf891_s2_}'
+    nr 'Ce cadavre ne répond pas. Il semble qu„il soit trop absent pour répondre à tes questions.{#zf891_s2_1}'
 
     menu:
         '"Alors, au revoir."{#zf891_s2_r35296}' if zf891Logic.r35296_condition():
@@ -94,6 +94,6 @@ label zf891_s2: # from 0.3
 
 # s3 # say35305
 label zf891_s3: # - # IF ~  False()
-    nr 'Ce cadavre ne répond pas. Il semble qu„il soit trop absent pour répondre à tes questions.{#zf891_s3_}'
+    nr 'Ce cadavre ne répond pas. Il semble qu„il soit trop absent pour répondre à tes questions.{#zf891_s3_1}'
 
     menu:

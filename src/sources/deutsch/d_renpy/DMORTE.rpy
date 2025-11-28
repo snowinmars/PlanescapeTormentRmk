@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say986
 label morte_s0: # -
-    nr '"He, Meister. Du okay? Du spielen Leiche oder führen Staubmenschen in die Irre? Ich dachte wirklich, du seist ein Totenbüchler."{#morte_s0_}'
+    nr '"He, Meister. Du okay? Du spielen Leiche oder führen Staubmenschen in die Irre? Ich dachte wirklich, du seist ein Totenbüchler."{#morte_s0_1}'
 
     menu:
         '"Wer bist du?"{#morte_s0_r987}':
@@ -34,7 +34,7 @@ label morte_s0: # -
 
 # s1 # say990
 label morte_s1: # from 0.0 29.0 31.0
-    nr '"Ich?" Der Totenschädel ist entrüstet. "Und *du*, Krätzegestalt? Wer bist du?"{#morte_s1_}'
+    nr '"Ich?" Der Totenschädel ist entrüstet. "Und *du*, Krätzegestalt? Wer bist du?"{#morte_s1_1}'
 
     menu:
         '"Ich… weiß es nicht."{#morte_s1_r992}':
@@ -56,7 +56,7 @@ label morte_s1: # from 0.0 29.0 31.0
 
 # s2 # say997
 label morte_s2: # from 1.0 4.0 5.0
-    nr '"Du weißt nicht, wer du bist, wie? *Hättest* doch einfach sagen können, „pack ein, Dussel“. Na, ist schon in Ordnung… tu ruhig so, als wüßtest du von nichts. Soll mich nicht weiter kratzen. Ich bin Morte. Sei gegrüßt, freut mich… und das ganze Gewäsch."{#morte_s2_}'
+    nr '"Du weißt nicht, wer du bist, wie? *Hättest* doch einfach sagen können, „pack ein, Dussel“. Na, ist schon in Ordnung… tu ruhig so, als wüßtest du von nichts. Soll mich nicht weiter kratzen. Ich bin Morte. Sei gegrüßt, freut mich… und das ganze Gewäsch."{#morte_s2_1}'
 
     menu:
         '"Wo bin ich, Morte?"{#morte_s2_r998}':
@@ -78,7 +78,7 @@ label morte_s2: # from 1.0 4.0 5.0
 
 # s3 # say999
 label morte_s3: # from 1.1 4.1 5.1
-    nr '"Du *erinnerst* dich nicht? Mußt ja ganz schön was durchgemacht haben letzte Nacht. Hoffentlich hast du niemandem wehgetan… ich bin Morte. Sei gegrüßt, freut mich, und das ganze Gewäsch." Er hält kurz inne. "Aber *sag*: bist du etwa einer dieser Sinnsaten mit diesem Selbstverstümmelungs-Tick oder woher hast du diese Narben?"{#morte_s3_}'
+    nr '"Du *erinnerst* dich nicht? Mußt ja ganz schön was durchgemacht haben letzte Nacht. Hoffentlich hast du niemandem wehgetan… ich bin Morte. Sei gegrüßt, freut mich, und das ganze Gewäsch." Er hält kurz inne. "Aber *sag*: bist du etwa einer dieser Sinnsaten mit diesem Selbstverstümmelungs-Tick oder woher hast du diese Narben?"{#morte_s3_1}'
 
     menu:
         '"Sinnsaten?"{#morte_s3_r1000}':
@@ -96,7 +96,7 @@ label morte_s3: # from 1.1 4.1 5.1
 
 # s4 # say1003
 label morte_s4: # from 1.2
-    nr '"Ja, und ich hab„ dich als zweites gefragt. Wie heißt du?"{#morte_s4_}'
+    nr '"Ja, und ich hab„ dich als zweites gefragt. Wie heißt du?"{#morte_s4_1}'
 
     menu:
         '"Ich… weiß nicht."{#morte_s4_r1004}':
@@ -118,7 +118,7 @@ label morte_s4: # from 1.2
 
 # s5 # say1008
 label morte_s5: # from 4.2
-    nr '"Mann, du bist ja stur wie ein Ochse. Na schön, na schön… Lassen wir den *netten* Typ raushängen… ich bin Morte. Morte Grinsbacke. Und du? Welcher Name hat das Pech, zu dir zu gehören?"{#morte_s5_}'
+    nr '"Mann, du bist ja stur wie ein Ochse. Na schön, na schön… Lassen wir den *netten* Typ raushängen… ich bin Morte. Morte Grinsbacke. Und du? Welcher Name hat das Pech, zu dir zu gehören?"{#morte_s5_1}'
 
     menu:
         '"Ich… weiß nicht."{#morte_s5_r1009}':
@@ -136,7 +136,7 @@ label morte_s5: # from 4.2
 
 # s6 # say1012
 label morte_s6: # from 2.0 29.1 31.1
-    nr '"Du bist in dieser Müllhalde namens Leichenhalle… diesem großen schwarzen Bau mit dem architektonischen Charme einer schwangeren Spinne."{#morte_s6_}'
+    nr '"Du bist in dieser Müllhalde namens Leichenhalle… diesem großen schwarzen Bau mit dem architektonischen Charme einer schwangeren Spinne."{#morte_s6_1}'
 
     menu:
         '"In der „Leichenhalle“? Bin ich tot?"{#morte_s6_r1013}':
@@ -154,7 +154,7 @@ label morte_s6: # from 2.0 29.1 31.1
 
 # s7 # say1014
 label morte_s7: # from 6.0 9.0
-    nr '"Das kann ich dir nicht sagen… jedenfalls ist die Leichenhalle der Ort, an dem du die meisten Toten in dieser Gegend findest… Irgendwelche Dussel schleppen sie hier an und begraben oder verbrennen sie. Und wenn du *wirkliches* Glück hast, wirst du als Sklave wiederbelebt. Die Leichenhalle ist nicht gerade der lauschigste Ort auf den Ebenen. An deiner Stelle würde ich den nächsten Ausgang aufsuchen und diesem Ort eins grinsen."{#morte_s7_}'
+    nr '"Das kann ich dir nicht sagen… jedenfalls ist die Leichenhalle der Ort, an dem du die meisten Toten in dieser Gegend findest… Irgendwelche Dussel schleppen sie hier an und begraben oder verbrennen sie. Und wenn du *wirkliches* Glück hast, wirst du als Sklave wiederbelebt. Die Leichenhalle ist nicht gerade der lauschigste Ort auf den Ebenen. An deiner Stelle würde ich den nächsten Ausgang aufsuchen und diesem Ort eins grinsen."{#morte_s7_1}'
 
     menu:
         '"Wie bitte… die „Leichenhalle“? Was ist dies für ein Ort?"{#morte_s7_r1016}':
@@ -180,7 +180,7 @@ label morte_s7: # from 6.0 9.0
 
 # s8 # say1021
 label morte_s8: # from 7.3
-    nr 'Zögernd. "Schon möglich. Irgendso ein Einödner hat dich wohl für einen Totenbüchler gehalten und dich hier abgeladen. Von deiner Leiche hab„ selbst *ich* mich täuschen lassen… aber schnapp dir doch einfach den Dussel, der dich hier angeschleppt hat, und frag ihn selber." Morte nickt. "Gar nicht so dumm für einen, der gerade noch tot war… schön, daß deine Rübe noch intakt ist."{#morte_s8_}'
+    nr 'Zögernd. "Schon möglich. Irgendso ein Einödner hat dich wohl für einen Totenbüchler gehalten und dich hier abgeladen. Von deiner Leiche hab„ selbst *ich* mich täuschen lassen… aber schnapp dir doch einfach den Dussel, der dich hier angeschleppt hat, und frag ihn selber." Morte nickt. "Gar nicht so dumm für einen, der gerade noch tot war… schön, daß deine Rübe noch intakt ist."{#morte_s8_1}'
 
     menu:
         '"Warum sollte mich jemand hierhergebracht haben?"{#morte_s8_r1029}':
@@ -198,7 +198,7 @@ label morte_s8: # from 7.3
 
 # s9 # say1022
 label morte_s9: # from 7.1
-    nr '"Ja, läßt sich schon aushalten hier… wenn sie dir nicht ständig Formaldehyd verpassen und deine abfallenden Glieder zusammenflicken würden, wär es das reinste Paradies."{#morte_s9_}'
+    nr '"Ja, läßt sich schon aushalten hier… wenn sie dir nicht ständig Formaldehyd verpassen und deine abfallenden Glieder zusammenflicken würden, wär es das reinste Paradies."{#morte_s9_1}'
 
     menu:
         '"Ist das richtig, daß ich hier bin? Bin ich tot?"{#morte_s9_r1113}':
@@ -220,7 +220,7 @@ label morte_s9: # from 7.1
 
 # s10 # say1023
 label morte_s10: # from 7.0
-    nr '"Sagte ich doch schon… die Leichenhalle. Alles klar, Meister? Hast schon besser ausgesehen."{#morte_s10_}'
+    nr '"Sagte ich doch schon… die Leichenhalle. Alles klar, Meister? Hast schon besser ausgesehen."{#morte_s10_1}'
 
     menu:
         '"Ist das richtig, daß ich hier bin? Bin ich tot?"{#morte_s10_r1109}':
@@ -242,7 +242,7 @@ label morte_s10: # from 7.0
 
 # s11 # say1024
 label morte_s11: # from 7.2
-    nr '"Meister, so wahr ich Morte heiße, daß du von dieser Totenbank gekrochen bist, war ein Wunder. Du siehst aus, als würdest du gleich deine Zeche bezahlen, wenn du verstehst, was ich meine."{#morte_s11_}'
+    nr '"Meister, so wahr ich Morte heiße, daß du von dieser Totenbank gekrochen bist, war ein Wunder. Du siehst aus, als würdest du gleich deine Zeche bezahlen, wenn du verstehst, was ich meine."{#morte_s11_1}'
 
     menu:
         '"Sollte ich etwa tot sein? Bin ich deshalb hier?"{#morte_s11_r1133}':
@@ -264,7 +264,7 @@ label morte_s11: # from 7.2
 
 # s12 # say1025
 label morte_s12: # from 3.0 33.0
-    nr '"Was, du weißt nicht, wer die Sinnsaten sind? Dann hör mal gut zu! Das sind diese Knochenbrecher, die alles ausprobieren müssen, was die Ebenen zu bieten haben, sogar… ach, lassen wir das. Was ist mit diesen Narben?"{#morte_s12_}'
+    nr '"Was, du weißt nicht, wer die Sinnsaten sind? Dann hör mal gut zu! Das sind diese Knochenbrecher, die alles ausprobieren müssen, was die Ebenen zu bieten haben, sogar… ach, lassen wir das. Was ist mit diesen Narben?"{#morte_s12_1}'
 
     menu:
         '"Narben?"{#morte_s12_r1027}':
@@ -282,7 +282,7 @@ label morte_s12: # from 3.0 33.0
 
 # s13 # say1026
 label morte_s13: # from 3.1 9.1 10.1 11.1 12.0 33.1
-    nr '"Als hätte irgendein Knochenbrecher beschlossen, dir ein Muster einzuritzen. Du bist ja voll davon… selbst auf dem Rücken, außer…" Er zögert. "He, du hast ja „ne ganze Galerie auf deinem Rücken eintätowiert, Dussel. Wenn das nichts zu bedeuten hat…"{#morte_s13_}'
+    nr '"Als hätte irgendein Knochenbrecher beschlossen, dir ein Muster einzuritzen. Du bist ja voll davon… selbst auf dem Rücken, außer…" Er zögert. "He, du hast ja „ne ganze Galerie auf deinem Rücken eintätowiert, Dussel. Wenn das nichts zu bedeuten hat…"{#morte_s13_1}'
 
     menu:
         '"Was denn?"{#morte_s13_r1088}':
@@ -301,7 +301,7 @@ label morte_s13: # from 3.1 9.1 10.1 11.1 12.0 33.1
 
 # s14 # say1031
 label morte_s14: # from 8.0 29.3
-    nr '"Es gibt Leute, die lesen die Totenbüchler von der Straße auf und verkaufen sie hier für etwas Klimper. Reich wird man davon nicht, aber wenn man im übelsten Loch der Ebenen lebt, kann man sich„s nicht immer aussuchen."{#morte_s14_}'
+    nr '"Es gibt Leute, die lesen die Totenbüchler von der Straße auf und verkaufen sie hier für etwas Klimper. Reich wird man davon nicht, aber wenn man im übelsten Loch der Ebenen lebt, kann man sich„s nicht immer aussuchen."{#morte_s14_1}'
 
     menu:
         '"Klimper? Was ist „Klimper“?"{#morte_s14_r1032}':
@@ -319,7 +319,7 @@ label morte_s14: # from 8.0 29.3
 
 # s15 # say1034
 label morte_s15: # from 14.0
-    nr '"Geld. Klimper ist Geld. Gibt„s so was nicht, wo du herkommst?"{#morte_s15_}'
+    nr '"Geld. Klimper ist Geld. Gibt„s so was nicht, wo du herkommst?"{#morte_s15_1}'
 
     menu:
         '"Ich kann mich nicht erinnern, woher ich komme."{#morte_s15_r1035}':
@@ -337,7 +337,7 @@ label morte_s15: # from 14.0
 
 # s16 # say1037
 label morte_s16: # from 10.0 11.0
-    nr 'Er zögert. "Keine Ahnung. Du *sprichst* mit mir… was man von den wandelnden Toten hier nicht unbedingt behaupten kann. Ich würde sagen, die Staubies haben sich ganz einfach geirrt, und du warst gar nicht tot. Erinnerst du dich, irgendeinen Vertrag unterschrieben zu haben? Ich meine, sie müssen normalerweise jede Menge Formulare ausfüllen, bevor sie einen aus dem Totenbuch holen können."{#morte_s16_}'
+    nr 'Er zögert. "Keine Ahnung. Du *sprichst* mit mir… was man von den wandelnden Toten hier nicht unbedingt behaupten kann. Ich würde sagen, die Staubies haben sich ganz einfach geirrt, und du warst gar nicht tot. Erinnerst du dich, irgendeinen Vertrag unterschrieben zu haben? Ich meine, sie müssen normalerweise jede Menge Formulare ausfüllen, bevor sie einen aus dem Totenbuch holen können."{#morte_s16_1}'
 
     menu:
         '"Ähh… Vertrag? Nein, ich wüßte nicht, daß ich einen unterzeichnet hätte. Ich… erinnere mich überhaupt nicht an viel."{#morte_s16_r1038}':
@@ -363,7 +363,7 @@ label morte_s16: # from 10.0 11.0
 
 # s17 # say1042
 label morte_s17: # from 16.1 18.0
-    nr '"Ja, das „Totenbuch“. Weißt du? Na ja, vielleicht auch nicht. Vergiß das „Totenbuch.“ Du lebst ja, also steckst du nicht drin."{#morte_s17_}'
+    nr '"Ja, das „Totenbuch“. Weißt du? Na ja, vielleicht auch nicht. Vergiß das „Totenbuch.“ Du lebst ja, also steckst du nicht drin."{#morte_s17_1}'
 
     menu:
         '"Was war das doch gleich… was du über Formulare… und Verträge erzählt hast?"{#morte_s17_r1151}':
@@ -381,7 +381,7 @@ label morte_s17: # from 16.1 18.0
 
 # s18 # say1043
 label morte_s18: # from 16.2 17.0
-    nr '"Ja, macht dich das nicht fuchsteufelswild? In Sigil dreht sich alles nur um Gesetze und Vorschriften, nicht mal auf den Pott kannst du gehen, ohne erst irgendeinen Vertrag zu unterschreiben."{#morte_s18_}'
+    nr '"Ja, macht dich das nicht fuchsteufelswild? In Sigil dreht sich alles nur um Gesetze und Vorschriften, nicht mal auf den Pott kannst du gehen, ohne erst irgendeinen Vertrag zu unterschreiben."{#morte_s18_1}'
 
     menu:
         '"Was hast du noch über das „Totenbuch“ gesagt?"{#morte_s18_r1154}':
@@ -399,7 +399,7 @@ label morte_s18: # from 16.2 17.0
 
 # s19 # say1044
 label morte_s19: # from 15.0
-    nr '"Bei allen Göttern und ihren Müttern, *du* weißt ja überhaupt nichts. Hast du irgendeine Ahnung, woher du kommst? Irgendwo vermißt ein Land der Planlosen seinen König. Hast du deinen Verstand an der Pforte abgegeben oder warst du schon immer so blöd?"{#morte_s19_}'
+    nr '"Bei allen Göttern und ihren Müttern, *du* weißt ja überhaupt nichts. Hast du irgendeine Ahnung, woher du kommst? Irgendwo vermißt ein Land der Planlosen seinen König. Hast du deinen Verstand an der Pforte abgegeben oder warst du schon immer so blöd?"{#morte_s19_1}'
 
     menu:
         '"Ich weiß es nicht… Ich kann mich an nichts erinnern."{#morte_s19_r1139}':
@@ -417,7 +417,7 @@ label morte_s19: # from 15.0
 
 # s20 # say1045
 label morte_s20: # from 2.2 31.2
-    nr '"Meister, ich hab„ keinen blassen Schimmer. Aber du verstehst es, dich tot zu stellen. Als du dort lagst, habe ich kein einziges Mal gesehen, daß sich deine Brust bewegt hätte oder du geblinzelt hättest… nichts. Hast du getrunken? Ist es so passiert?"{#morte_s20_}'
+    nr '"Meister, ich hab„ keinen blassen Schimmer. Aber du verstehst es, dich tot zu stellen. Als du dort lagst, habe ich kein einziges Mal gesehen, daß sich deine Brust bewegt hätte oder du geblinzelt hättest… nichts. Hast du getrunken? Ist es so passiert?"{#morte_s20_1}'
 
     menu:
         '"Ich weiß es nicht… Ich kann mich an nichts erinnern."{#morte_s20_r1097}':
@@ -435,7 +435,7 @@ label morte_s20: # from 2.2 31.2
 
 # s21 # say1046
 label morte_s21: # from 2.1 6.1 29.2 30.0 31.3 34.2 35.1 36.1
-    nr '"Das *ist* wirklich eine gute Frage. Die Zeit rinnt dir durch die Finger, Meister. Wenn die Staubmenschen dich finden, werden sie versuchen, dein "Auferstehungsproblem" zu lösen, indem sie dich ins Krematorium werfen. Wenn du dich weiter tot stellst, wirst du ebenfalls eingeäschert. Eine Modronen-Entscheidung, was? Was nun?"{#morte_s21_}'
+    nr '"Das *ist* wirklich eine gute Frage. Die Zeit rinnt dir durch die Finger, Meister. Wenn die Staubmenschen dich finden, werden sie versuchen, dein "Auferstehungsproblem" zu lösen, indem sie dich ins Krematorium werfen. Wenn du dich weiter tot stellst, wirst du ebenfalls eingeäschert. Eine Modronen-Entscheidung, was? Was nun?"{#morte_s21_1}'
 
     menu:
         '"Staubmenschen?"{#morte_s21_r1047}':
@@ -465,7 +465,7 @@ label morte_s21: # from 2.1 6.1 29.2 30.0 31.3 34.2 35.1 36.1
 
 # s22 # say1052
 label morte_s22: # from 21.1
-    nr '"Oh, *gute* Idee, Meister! Warum bin *ich* da nicht selbst drauf gekommen? Wie du hier rauskommst? Ich geb dir „nen Tip: Es erfordert etwas Zusammenarbeit."{#morte_s22_}'
+    nr '"Oh, *gute* Idee, Meister! Warum bin *ich* da nicht selbst drauf gekommen? Wie du hier rauskommst? Ich geb dir „nen Tip: Es erfordert etwas Zusammenarbeit."{#morte_s22_1}'
 
     menu:
         '"Ich bin interessiert. Red„ weiter."{#morte_s22_r1053}':
@@ -483,7 +483,7 @@ label morte_s22: # from 21.1
 
 # s23 # say1055
 label morte_s23: # from 21.3 21.4 22.0 26.0
-    nr '"Wenn du mich fragst, bist du es, der hier raus muß. Ich selbst kann noch ein Weilchen warten. Die einzige Gefahr für mich ist, daß *ich* vor Langeweile sterbe. Wir könnten einander helfen."{#morte_s23_}'
+    nr '"Wenn du mich fragst, bist du es, der hier raus muß. Ich selbst kann noch ein Weilchen warten. Die einzige Gefahr für mich ist, daß *ich* vor Langeweile sterbe. Wir könnten einander helfen."{#morte_s23_1}'
 
     menu:
         'Red„ weiter…"{#morte_s23_r1058}':
@@ -505,7 +505,7 @@ label morte_s23: # from 21.3 21.4 22.0 26.0
 
 # s24 # say1061
 label morte_s24: # from 23.0 23.1
-    nr '"Auch wenn es nicht so aussieht, ich könnte dir hier raus helfen, und du könntest dasselbe für mich tun. Ich bin in einer etwas mißlichen Lage, weil ich keine Hände habe. Du hast wenig Grips im Schädel, während ich erfahren genug bin, um zu wissen, wie ich dich aus diesem Loch rausbringen kann. Wir helfen uns gegenseitig, und wir haben *beide* was davon. Abgemacht, Dussel?"{#morte_s24_}'
+    nr '"Auch wenn es nicht so aussieht, ich könnte dir hier raus helfen, und du könntest dasselbe für mich tun. Ich bin in einer etwas mißlichen Lage, weil ich keine Hände habe. Du hast wenig Grips im Schädel, während ich erfahren genug bin, um zu wissen, wie ich dich aus diesem Loch rausbringen kann. Wir helfen uns gegenseitig, und wir haben *beide* was davon. Abgemacht, Dussel?"{#morte_s24_1}'
 
     menu:
         '"Abgemacht."{#morte_s24_r1057}':
@@ -527,7 +527,7 @@ label morte_s24: # from 23.0 23.1
 
 # s25 # say1064
 label morte_s25: # from 21.2
-    nr '"Oh, *gute* Idee, Meister. Wieso bin *ich* da nicht selbst drauf gekommen?" Sein Ton wird spöttelnd. "Übrigens, Herr Staubmensch, ich bin gestorben und auf einer Totenbank in Eurer entzückenden Leichenhalle aufgewacht. Würdet Ihr mir vielleicht helfen?" Sie werden dir schon „helfen“: dich kurz anschauen, die Wachen rufen und dich in deinen ganz privaten Ofen stecken."{#morte_s25_}'
+    nr '"Oh, *gute* Idee, Meister. Wieso bin *ich* da nicht selbst drauf gekommen?" Sein Ton wird spöttelnd. "Übrigens, Herr Staubmensch, ich bin gestorben und auf einer Totenbank in Eurer entzückenden Leichenhalle aufgewacht. Würdet Ihr mir vielleicht helfen?" Sie werden dir schon „helfen“: dich kurz anschauen, die Wachen rufen und dich in deinen ganz privaten Ofen stecken."{#morte_s25_1}'
 
     menu:
         '"Das hört sich aber etwas extrem an… warum sollten sie so was tun?"{#morte_s25_r1065}':
@@ -549,7 +549,7 @@ label morte_s25: # from 21.2
 
 # s26 # say1068
 label morte_s26: # from 25.0 25.1
-    nr '"Vertrau mir einfach… es spielt keine Rolle, für wie stark du dich hältst, oder was du ihnen sagst. Sie kriegen dich. Du bist nicht stark genug, aus einem mit Mauern umgebenen Grab auszubrechen oder die Hitze der Feuerebene zu überstehen. Von den Toten aufzuwachen ist schlimm genug, was die Verwalter hier betrifft. Sei doch nicht blöd."{#morte_s26_}'
+    nr '"Vertrau mir einfach… es spielt keine Rolle, für wie stark du dich hältst, oder was du ihnen sagst. Sie kriegen dich. Du bist nicht stark genug, aus einem mit Mauern umgebenen Grab auszubrechen oder die Hitze der Feuerebene zu überstehen. Von den Toten aufzuwachen ist schlimm genug, was die Verwalter hier betrifft. Sei doch nicht blöd."{#morte_s26_1}'
 
     menu:
         '"Und dein Plan ist also…?"{#morte_s26_r1069}':
@@ -567,7 +567,7 @@ label morte_s26: # from 25.0 25.1
 
 # s27 # say1071
 label morte_s27: # from 24.1
-    nr '"Ich pfeif auf das Schicksal. Paß auf, Meister. Achte mal drauf, wie oft „böse“ und „Schicksal“ im selben Satz vorkommen, vielleicht hilft dir das, eines der kleinen Geheimnisse des Lebens zu lüften. Das Schicksal kann sich von mir aus in Klingenranken einhüllen; es gibt *immer* eine Möglichkeit, die das Schicksal nicht vorsieht."{#morte_s27_}'
+    nr '"Ich pfeif auf das Schicksal. Paß auf, Meister. Achte mal drauf, wie oft „böse“ und „Schicksal“ im selben Satz vorkommen, vielleicht hilft dir das, eines der kleinen Geheimnisse des Lebens zu lüften. Das Schicksal kann sich von mir aus in Klingenranken einhüllen; es gibt *immer* eine Möglichkeit, die das Schicksal nicht vorsieht."{#morte_s27_1}'
 
     menu:
         '"Ich werd„s mir merken."{#morte_s27_r1073}':
@@ -581,7 +581,7 @@ label morte_s27: # from 24.1
 
 # s28 # say1072
 label morte_s28: # from 24.0 27.0 27.1
-    nr '"Nun denn… komm schon. Grinsen wir diesem Ort eins. Die Türen nach draußen sind verschlossen; wir brauchen also den Schlüssel. Kann sein, daß eine der wandelnden Leichen in diesem Raum ihn hat."{#morte_s28_}'
+    nr '"Nun denn… komm schon. Grinsen wir diesem Ort eins. Die Türen nach draußen sind verschlossen; wir brauchen also den Schlüssel. Kann sein, daß eine der wandelnden Leichen in diesem Raum ihn hat."{#morte_s28_1}'
 
     menu:
         '"Wandelnde Leichen?"{#morte_s28_r1079}':
@@ -592,7 +592,7 @@ label morte_s28: # from 24.0 27.0 27.1
 
 # s29 # say996
 label morte_s29: # -
-    nr '"Ach, *jetzt* möchtest du also wieder mit Morte sprechen?"{#morte_s29_}'
+    nr '"Ach, *jetzt* möchtest du also wieder mit Morte sprechen?"{#morte_s29_1}'
 
     menu:
         '"Wer bist du?"{#morte_s29_r1075}':
@@ -618,7 +618,7 @@ label morte_s29: # -
 
 # s30 # say1082
 label morte_s30: # from 21.0
-    nr '"Die Staubies? Sie passen hier auf. Du kannst sie gar nicht verfehlen… sie sind verrückt nach schwarz und haben totenstarre Gesichter. Sie nennen sich „die Staubmenschen“ und tun so, als wären sie ein Bund. In Wirklichkeit sind sie nichts als ein übler Haufen makabrer Todesanbeter. Geh ihnen aus dem Weg."{#morte_s30_}'
+    nr '"Die Staubies? Sie passen hier auf. Du kannst sie gar nicht verfehlen… sie sind verrückt nach schwarz und haben totenstarre Gesichter. Sie nennen sich „die Staubmenschen“ und tun so, als wären sie ein Bund. In Wirklichkeit sind sie nichts als ein übler Haufen makabrer Todesanbeter. Geh ihnen aus dem Weg."{#morte_s30_1}'
 
     menu:
         '"Und wie komme ich hier raus?"{#morte_s30_r1083}' if morteLogic.r1083_condition():
@@ -636,7 +636,7 @@ label morte_s30: # from 21.0
 
 # s31 # say1091
 label morte_s31: # from 8.1 9.2 10.2 11.2 12.1 13.1 14.1 15.1 16.3 17.1 18.1 19.1 20.1 22.1 23.2 24.2 25.2 26.1 30.1 32.1 33.2 34.3 35.2 36.2
-    nr '"So? *Was* sind das denn für Fragen?"{#morte_s31_}'
+    nr '"So? *Was* sind das denn für Fragen?"{#morte_s31_1}'
 
     menu:
         '"Wer bist du?"{#morte_s31_r1092}':
@@ -662,7 +662,7 @@ label morte_s31: # from 8.1 9.2 10.2 11.2 12.1 13.1 14.1 15.1 16.3 17.1 18.1 19.
 
 # s32 # say1100
 label morte_s32: # from 16.0 19.0 20.0
-    nr '"Du erinnerst dich an *gar* nichts? Komm schon, das ist doch ein Haufen Tanar-Ri-Mist. Meinst du das ernst?"{#morte_s32_}'
+    nr '"Du erinnerst dich an *gar* nichts? Komm schon, das ist doch ein Haufen Tanar-Ri-Mist. Meinst du das ernst?"{#morte_s32_1}'
 
     menu:
         '"Ja."{#morte_s32_r1101}':
@@ -680,7 +680,7 @@ label morte_s32: # from 16.0 19.0 20.0
 
 # s33 # say1104
 label morte_s33: # from 32.0
-    nr '"Bei allen Göttern und ihren Müttern… Tja, Meister, deine Erinnerungen scheinen sich ganz tief in deiner Rübe vergraben zu haben. Mit etwas Glück kommen sie ja bald nach oben, um Luft zu schnappen, glaub„s mir. Muß ja ne ganz schöne Nacht gewesen sein für dich. Hoffen wir mal besser, daß du niemandem wehgetan hast oder mit dem Gesetz in Konflikt gekommen bist… Sag mal, wo wir gerade davon sprechen, bist du etwa einer von diesen Sinnsaten, die Selbstverstümmelung ganz toll finden, oder hat dir irgend jemand diese Narben zugefügt?"{#morte_s33_}'
+    nr '"Bei allen Göttern und ihren Müttern… Tja, Meister, deine Erinnerungen scheinen sich ganz tief in deiner Rübe vergraben zu haben. Mit etwas Glück kommen sie ja bald nach oben, um Luft zu schnappen, glaub„s mir. Muß ja ne ganz schöne Nacht gewesen sein für dich. Hoffen wir mal besser, daß du niemandem wehgetan hast oder mit dem Gesetz in Konflikt gekommen bist… Sag mal, wo wir gerade davon sprechen, bist du etwa einer von diesen Sinnsaten, die Selbstverstümmelung ganz toll finden, oder hat dir irgend jemand diese Narben zugefügt?"{#morte_s33_1}'
 
     menu:
         '"Sinnsaten?"{#morte_s33_r1105}':
@@ -702,7 +702,7 @@ label morte_s33: # from 32.0
 
 # s34 # say1117
 label morte_s34: # from 13.0
-    nr '"Sehen nach irgendwelchen Anweisungen aus…" Morte räuspert sich. "Schauen wir mal. Es geht los mit…"  HINWEIS: "Ich weiß, daß du dich so fühlst, als hättest du „n paar Eimer Styx-Wasser getrunken, aber du mußt dein Zentrum finden. In deinem Besitz sollte sich ein JOURNAL befinden, das ein wenig Licht in das Dunkel dieser Angelegenheit bringen kann. PHAROD sollte dir den restlichen Plausch liefern können, wenn er nicht bereits im Totenbuch steht.  Verlier dieses Stück Fleisch ODER das Journal nicht, sonst sind wir schon wieder den Styx hoch, verstanden? Und vertrau mir, was immer du tust, erzähl NIEMANDEM, WER du bist oder WOHER du stammst, denn sonst findest du dich im Handumdrehen im Krematorium wieder."{#morte_s34_}'
+    nr '"Sehen nach irgendwelchen Anweisungen aus…" Morte räuspert sich. "Schauen wir mal. Es geht los mit…"  HINWEIS: "Ich weiß, daß du dich so fühlst, als hättest du „n paar Eimer Styx-Wasser getrunken, aber du mußt dein Zentrum finden. In deinem Besitz sollte sich ein JOURNAL befinden, das ein wenig Licht in das Dunkel dieser Angelegenheit bringen kann. PHAROD sollte dir den restlichen Plausch liefern können, wenn er nicht bereits im Totenbuch steht.  Verlier dieses Stück Fleisch ODER das Journal nicht, sonst sind wir schon wieder den Styx hoch, verstanden? Und vertrau mir, was immer du tust, erzähl NIEMANDEM, WER du bist oder WOHER du stammst, denn sonst findest du dich im Handumdrehen im Krematorium wieder."{#morte_s34_1}'
 
     menu:
         '"Kein Wunder, daß mir der Rücken weh tut. Kennst du jemanden namens Pharod?"{#morte_s34_r1118}':
@@ -728,7 +728,7 @@ label morte_s34: # from 13.0
 
 # s35 # say1123
 label morte_s35: # from 34.1 36.0
-    nr '"Nein… du warst nackt bis auf die Haut, als du hier ankamst. Es sieht allerdings so aus, als hätte man dir ein ganzes Journal auf den Körper geschrieben."{#morte_s35_}'
+    nr '"Nein… du warst nackt bis auf die Haut, als du hier ankamst. Es sieht allerdings so aus, als hätte man dir ein ganzes Journal auf den Körper geschrieben."{#morte_s35_1}'
 
     menu:
         '"Kennst du jemanden mit dem Namen Pharod?"{#morte_s35_r1124}':
@@ -750,7 +750,7 @@ label morte_s35: # from 34.1 36.0
 
 # s36 # say1128
 label morte_s36: # from 34.0 35.0
-    nr '"Kenn ich nicht. Na ja, ich kenn auch nicht gerade viele Leute. Aber irgendein Dussel muß doch wissen, wo wir diesen Kerl finden… sobald wir hier raus sind, natürlich."{#morte_s36_}'
+    nr '"Kenn ich nicht. Na ja, ich kenn auch nicht gerade viele Leute. Aber irgendein Dussel muß doch wissen, wo wir diesen Kerl finden… sobald wir hier raus sind, natürlich."{#morte_s36_1}'
 
     menu:
         '"Hast du vielleicht gesehen, ob ich ein Journal bei mir hatte, als ich hier lag?"{#morte_s36_r1129}':
@@ -772,7 +772,7 @@ label morte_s36: # from 34.0 35.0
 
 # s37 # say1818
 label morte_s37: # -
-    nr '"Was für ein Glück! Wahrscheinlich haben wir das, wonach wir gesucht haben, in deiner Absteige verloren, Fräulein."{#morte_s37_}'
+    nr '"Was für ein Glück! Wahrscheinlich haben wir das, wonach wir gesucht haben, in deiner Absteige verloren, Fräulein."{#morte_s37_1}'
 
     menu:
         '"Ehrlich gesagt: Ich vermisse ein Journal."{#morte_s37_r1820}':
@@ -794,7 +794,7 @@ label morte_s37: # -
 
 # s38 # say1844
 label morte_s38: # -
-    nr '"Meister, hast du nicht „n bißchen Klimper übrig… is“… äh… is„ schon “n Weilchen her."{#morte_s38_}'
+    nr '"Meister, hast du nicht „n bißchen Klimper übrig… is“… äh… is„ schon “n Weilchen her."{#morte_s38_1}'
 
     menu:
         '"Oh… na gut, ich denke, das wird mir nicht *wehtun*…"{#morte_s38_r1845}':
@@ -815,7 +815,7 @@ label morte_s38: # -
 
 # s39 # say2000
 label morte_s39: # -
-    nr '"Sie meint Geld."{#morte_s39_}'
+    nr '"Sie meint Geld."{#morte_s39_1}'
 
     menu:
         '"Oh."{#morte_s39_r2001}':
@@ -825,7 +825,7 @@ label morte_s39: # -
 
 # s40 # say2048
 label morte_s40: # -
-    nr '"Um so besser für dich, daß weder du noch dein Schwanz zu haben sind. Damit könntest du dir ohnehin keinen Lebensunterhalt verdienen."{#morte_s40_}'
+    nr '"Um so besser für dich, daß weder du noch dein Schwanz zu haben sind. Damit könntest du dir ohnehin keinen Lebensunterhalt verdienen."{#morte_s40_1}'
 
     menu:
         '"Äh…"{#morte_s40_r2049}':
@@ -835,7 +835,7 @@ label morte_s40: # -
 
 # s41 # say2067
 label morte_s41: # -
-    nr '"Sie ist ein Tiefling, Meister. In ihren Adern fließt Teufelsblut, das sie paranoid und widerspenstig macht… aber der Schwanz ist nicht ohne. Ein Jammer, daß er an einem so häßlichen Körper klebt."{#morte_s41_}'
+    nr '"Sie ist ein Tiefling, Meister. In ihren Adern fließt Teufelsblut, das sie paranoid und widerspenstig macht… aber der Schwanz ist nicht ohne. Ein Jammer, daß er an einem so häßlichen Körper klebt."{#morte_s41_1}'
 
     menu:
         '"Also, nun…"{#morte_s41_r2068}':
@@ -849,7 +849,7 @@ label morte_s41: # -
 
 # s42 # say2074
 label morte_s42: # -
-    nr '"Na, warum *traust* du dich denn nicht, du Rotzgöre?! Ich hör nichts als leeres Geschwätz von irgend einem Mistding aus dem Stock! Schlag doch zu! Trau dich! Dann beiß ich dir die Beine ab!"{#morte_s42_}'
+    nr '"Na, warum *traust* du dich denn nicht, du Rotzgöre?! Ich hör nichts als leeres Geschwätz von irgend einem Mistding aus dem Stock! Schlag doch zu! Trau dich! Dann beiß ich dir die Beine ab!"{#morte_s42_1}'
 
     menu:
         '"Genug!"{#morte_s42_r2076}':
@@ -863,7 +863,7 @@ label morte_s42: # -
 
 # s43 # say2079
 label morte_s43: # -
-    nr '"Ein Mimir ist ein wandelndes Lexikon. So was wie ich, Meister."{#morte_s43_}'
+    nr '"Ein Mimir ist ein wandelndes Lexikon. So was wie ich, Meister."{#morte_s43_1}'
 
     menu:
         '"Schon kapiert."{#morte_s43_r2080}':
@@ -874,7 +874,7 @@ label morte_s43: # -
 
 # s44 # say2348
 label morte_s44: # -
-    nr '"Gib„s auf, Meister. Mit einem Gith zu sprechen ist genauso sinnlos, wie an einer Klingenranke hochzuklettern. Laß uns gehen."{#morte_s44_}'
+    nr '"Gib„s auf, Meister. Mit einem Gith zu sprechen ist genauso sinnlos, wie an einer Klingenranke hochzuklettern. Laß uns gehen."{#morte_s44_1}'
 
     menu:
         '"Gith?"{#morte_s44_r9029}' if morteLogic.r9029_condition():
@@ -897,7 +897,7 @@ label morte_s44: # -
 
 # s45 # say2354
 label morte_s45: # -
-    nr '"Ich würde meine Zeit nicht damit verschwenden, den König der Unwissenden zur Raison bringen zu wollen. Laß uns verschwinden, Meister."{#morte_s45_}'
+    nr '"Ich würde meine Zeit nicht damit verschwenden, den König der Unwissenden zur Raison bringen zu wollen. Laß uns verschwinden, Meister."{#morte_s45_1}'
 
     menu:
         '"Ich kann jetzt noch nicht gehen. Ich werde ihm erst ein paar Fragen stellen…"{#morte_s45_r9033}':
@@ -911,7 +911,7 @@ label morte_s45: # -
 
 # s46 # say2601
 label morte_s46: # externs zf916_s2 zf916_s1 zf916_s0
-    nr '"Psssst. Hast du gesehen, wie sie mich angeschaut hat? Hm? Siehst du? Wie ihre Augen der Rundung meines Hinterkopfes gefolgt sind?"{#morte_s46_}'
+    nr '"Psssst. Hast du gesehen, wie sie mich angeschaut hat? Hm? Siehst du? Wie ihre Augen der Rundung meines Hinterkopfes gefolgt sind?"{#morte_s46_1}'
 
     menu:
         '"Wovon *redest* du überhaupt?"{#morte_s46_r2603}':
@@ -927,7 +927,7 @@ label morte_s46: # externs zf916_s2 zf916_s1 zf916_s0
 
 # s47 # say2604
 label morte_s47: # from 46.0 46.1 121.1 121.2
-    nr '"Wa… bist du BLIND?! Hast du nicht gesehen, wie sie mich begutachtet hat! Dieses VERLANGEN in ihrem Blick war geradezu unverschämt."{#morte_s47_}'
+    nr '"Wa… bist du BLIND?! Hast du nicht gesehen, wie sie mich begutachtet hat! Dieses VERLANGEN in ihrem Blick war geradezu unverschämt."{#morte_s47_1}'
 
     menu:
         '"Wollte vielleicht, daß du WEGgehst. Sie war doch ganz eindeutig zu sehr mit mir beschäftigt, als daß sie so„n blöden Wackelkopf mit großer Klappe beachtet hätte.{#morte_s47_r2605}':
@@ -950,7 +950,7 @@ label morte_s47: # from 46.0 46.1 121.1 121.2
 
 # s48 # say2609
 label morte_s48: # from 47.1 47.2
-    nr '"Ja, ja, red„ du nur. Wenn du einmal so lang tot bin wie ich, dann kennst du die Signale. Sie sind vielleicht zu SUBTIL, als daß du sie bemerken könntest, aber deshalb verbringe ich MEINE Nächte mit einer knackigen Frischverstorbenen, während du hier rumstehst und winselst: “Hä? „Wasss ist los?“ „Wo ist me-me-meine Erinnerung?“"{#morte_s48_}'
+    nr '"Ja, ja, red„ du nur. Wenn du einmal so lang tot bin wie ich, dann kennst du die Signale. Sie sind vielleicht zu SUBTIL, als daß du sie bemerken könntest, aber deshalb verbringe ich MEINE Nächte mit einer knackigen Frischverstorbenen, während du hier rumstehst und winselst: “Hä? „Wasss ist los?“ „Wo ist me-me-meine Erinnerung?“"{#morte_s48_1}'
 
     menu:
         '"Wie du willst, Morte. Laß uns gehen."{#morte_s48_r2610}':
@@ -960,7 +960,7 @@ label morte_s48: # from 47.1 47.2
 
 # s49 # say2611
 label morte_s49: # from 47.0
-    nr '"Du? Klar doch! Glaube mir, wenn so „ne Tussi mal das Zeitliche gesegnet hat, dann macht sie sich nicht mehr so viel aus “Äußerlichkeiten„ und Sprüchen wie “Schau mal, was ich für einen Body habe„ und “ich bin voller Narben und hart im Nehmen.„ Sie stehen auf Typen, die GEISTREICH sind. Und das bin ich, Meister. Du? Knochengerüste wie DEINES gibt es wie Sand am Meer."{#morte_s49_}'
+    nr '"Du? Klar doch! Glaube mir, wenn so „ne Tussi mal das Zeitliche gesegnet hat, dann macht sie sich nicht mehr so viel aus “Äußerlichkeiten„ und Sprüchen wie “Schau mal, was ich für einen Body habe„ und “ich bin voller Narben und hart im Nehmen.„ Sie stehen auf Typen, die GEISTREICH sind. Und das bin ich, Meister. Du? Knochengerüste wie DEINES gibt es wie Sand am Meer."{#morte_s49_1}'
 
     menu:
         '"Wie du willst, Morte. Laß uns gehen."{#morte_s49_r2612}':
@@ -970,21 +970,21 @@ label morte_s49: # from 47.0
 
 # s50 # say2709
 label morte_s50: # -
-    nr '"Was? Was ist los? Belästigt dich diese Tussi etwa?"{#morte_s50_}'
+    nr '"Was? Was ist los? Belästigt dich diese Tussi etwa?"{#morte_s50_1}'
 
     jump test_s7  # EXTERN
 
 
 # s51 # say2711
 label morte_s51: # -
-    nr '"Meinetwegen. Vielleicht sollte er lieber in dein Hauptmenü zurückkehren und mich aus dem Spiel lassen."{#morte_s51_}'
+    nr '"Meinetwegen. Vielleicht sollte er lieber in dein Hauptmenü zurückkehren und mich aus dem Spiel lassen."{#morte_s51_1}'
 
     jump test_s0  # EXTERN
 
 
 # s52 # say2782
 label morte_s52: # -
-    nr '"Oh, bei den Mächten! Ein verfluchter Dabus."{#morte_s52_}'
+    nr '"Oh, bei den Mächten! Ein verfluchter Dabus."{#morte_s52_1}'
 
     menu:
         '"Was ist los?"{#morte_s52_r2783}':
@@ -994,7 +994,7 @@ label morte_s52: # -
 
 # s53 # say2788
 label morte_s53: # from 52.0
-    nr '"Er ist ein Dabus. Sie „sprechen“ in Rebussen, diesen bescheuerten Worträtseln. Wenn *du* nicht verstehst, was er sagt, finden wir besser einen Einheimischen oder eine andere Möglichkeit, mit ihm zu kommunizieren… falls wir dies wünschen. Ein lästiger Haufen. Ich wette, sie *können* sprechen, gehen aber lieber allen auf die Nerven mit ihren Rätseln, über die man sich den Kopf zerbrechen muß."{#morte_s53_}'
+    nr '"Er ist ein Dabus. Sie „sprechen“ in Rebussen, diesen bescheuerten Worträtseln. Wenn *du* nicht verstehst, was er sagt, finden wir besser einen Einheimischen oder eine andere Möglichkeit, mit ihm zu kommunizieren… falls wir dies wünschen. Ein lästiger Haufen. Ich wette, sie *können* sprechen, gehen aber lieber allen auf die Nerven mit ihren Rätseln, über die man sich den Kopf zerbrechen muß."{#morte_s53_1}'
 
     menu:
         '"Was ist ein Dabus?"{#morte_s53_r2791}':
@@ -1004,7 +1004,7 @@ label morte_s53: # from 52.0
 
 # s54 # say2789
 label morte_s54: # from 53.0
-    nr '"Man sagt, sie arbeiten als Hausmeister für die Dame der Schmerzen. Sie schwirren durch die Gegend, um Sigil nach ihren Launen abzureißen, zu reparieren und wieder aufzubauen. Sie sind schlimmer als Leichenfliegen." Morte seufzt. "Totschlagen darf man sie leider nicht, sonst wird die Dame… wütend."{#morte_s54_}'
+    nr '"Man sagt, sie arbeiten als Hausmeister für die Dame der Schmerzen. Sie schwirren durch die Gegend, um Sigil nach ihren Launen abzureißen, zu reparieren und wieder aufzubauen. Sie sind schlimmer als Leichenfliegen." Morte seufzt. "Totschlagen darf man sie leider nicht, sonst wird die Dame… wütend."{#morte_s54_1}'
 
     menu:
         '"„Die Dame der Schmerzen“? Wer ist das?"{#morte_s54_r6952}' if morteLogic.r6952_condition():
@@ -1023,7 +1023,7 @@ label morte_s54: # from 53.0
 
 # s55 # say3473
 label morte_s55: # externs eivene_s3
-    nr '"Ich glaube, diese Staubie-Tussi hat Tomaten auf den Ohren, Meister. Lassen wir sie doch in Ruhe, ja?"{#morte_s55_}'
+    nr '"Ich glaube, diese Staubie-Tussi hat Tomaten auf den Ohren, Meister. Lassen wir sie doch in Ruhe, ja?"{#morte_s55_1}'
 
     menu:
         '"Was ist denn mit ihren Händen los?"{#morte_s55_r3474}':
@@ -1042,7 +1042,7 @@ label morte_s55: # externs eivene_s3
 
 # s56 # say3477
 label morte_s56: # from 55.0
-    nr '"He… sie ist ein *Tiefling*, Meister. In Tiefling-Adern fließt Scheusalsblut, ganz einfach deshalb, weil irgendwelche Vorfahren mit dem einen oder anderen Dämonen in die Kiste gestiegen sind. Manche werden davon ganz hohl im Kopf… und sehen auch hohlköpfig aus."{#morte_s56_}'
+    nr '"He… sie ist ein *Tiefling*, Meister. In Tiefling-Adern fließt Scheusalsblut, ganz einfach deshalb, weil irgendwelche Vorfahren mit dem einen oder anderen Dämonen in die Kiste gestiegen sind. Manche werden davon ganz hohl im Kopf… und sehen auch hohlköpfig aus."{#morte_s56_1}'
 
     menu:
         'Klopf der Frau auf die Schulter, damit sie dich bemerkt.{#morte_s56_r3478}':
@@ -1056,7 +1056,7 @@ label morte_s56: # from 55.0
 
 # s57 # say3480
 label morte_s57: # externs eivene_s20
-    nr '"Ich glaube, diese Staubie-Tussi hat Tomaten auf den Ohren, Meister. Lassen wir sie doch in Ruhe, ja?"{#morte_s57_}'
+    nr '"Ich glaube, diese Staubie-Tussi hat Tomaten auf den Ohren, Meister. Lassen wir sie doch in Ruhe, ja?"{#morte_s57_1}'
 
     menu:
         '"Was ist denn mit ihren Händen los?"{#morte_s57_r3483}':
@@ -1071,7 +1071,7 @@ label morte_s57: # externs eivene_s20
 
 # s58 # say3481
 label morte_s58: # from 57.0
-    nr '"He… sie ist ein *Tiefling*, Meister. In Tiefling-Adern fließt ein Schuß Scheusalsblut, ganz einfach deshalb, weil irgendwelche Vorfahren mit dem einen oder anderen Dämonen in die Kiste gestiegen sind. Manche werden davon ganz hohl im Kopf… und sehen normalerweise auch hohlköpfig aus."{#morte_s58_}'
+    nr '"He… sie ist ein *Tiefling*, Meister. In Tiefling-Adern fließt ein Schuß Scheusalsblut, ganz einfach deshalb, weil irgendwelche Vorfahren mit dem einen oder anderen Dämonen in die Kiste gestiegen sind. Manche werden davon ganz hohl im Kopf… und sehen normalerweise auch hohlköpfig aus."{#morte_s58_1}'
 
     menu:
         'Verschwinde.{#morte_s58_r3482}':
@@ -1081,7 +1081,7 @@ label morte_s58: # from 57.0
 
 # s59 # say3487
 label morte_s59: # externs eivene_s9
-    nr '"Sieht aus, als hättest du eine neue Freundin, Meister. Ihr beiden braucht doch etwas Zeit füreinander, oder…?"{#morte_s59_}'
+    nr '"Sieht aus, als hättest du eine neue Freundin, Meister. Ihr beiden braucht doch etwas Zeit füreinander, oder…?"{#morte_s59_1}'
 
     menu:
         '"Halt„s Maul, Morte."{#morte_s59_r3488}':
@@ -1099,14 +1099,14 @@ label morte_s59: # externs eivene_s9
 
 # s60 # say3492
 label morte_s60: # externs eivene_s13
-    nr '"Dies könnte das zweite Mal in meinem Leben sein, daß ich dankbar dafür bin, keine Nase zu haben."{#morte_s60_}'
+    nr '"Dies könnte das zweite Mal in meinem Leben sein, daß ich dankbar dafür bin, keine Nase zu haben."{#morte_s60_1}'
 
     jump eivene_s14  # EXTERN
 
 
 # s61 # say3870
 label morte_s61: # externs dust_s40
-    nr '"He! Was machst du da?"{#morte_s61_}'
+    nr '"He! Was machst du da?"{#morte_s61_1}'
 
     menu:
         '"Ich war *gerade* dabei, mit diesem Typen zu reden. Was dagegen?"{#morte_s61_r3871}':
@@ -1121,7 +1121,7 @@ label morte_s61: # externs dust_s40
 
 # s62 # say3873
 label morte_s62: # from 61.0
-    nr '"Wenn du schon mit den Staubies plaudern mußt, dann halte mich da gefälligst raus. Ich vertrag mich nicht allzu gut mit ihnen… und du solltest es auch nicht tun. Bevor sie dir Gehör schenken, verbrennen oder vergraben sie dich eher. Komm, sei nicht so bescheuert; laß uns abhauen."{#morte_s62_}'
+    nr '"Wenn du schon mit den Staubies plaudern mußt, dann halte mich da gefälligst raus. Ich vertrag mich nicht allzu gut mit ihnen… und du solltest es auch nicht tun. Bevor sie dir Gehör schenken, verbrennen oder vergraben sie dich eher. Komm, sei nicht so bescheuert; laß uns abhauen."{#morte_s62_1}'
 
     menu:
         '"Danke für den Rat, aber ich werde *trotzdem* mit diesem Typen reden."{#morte_s62_r3874}':
@@ -1136,7 +1136,7 @@ label morte_s62: # from 61.0
 
 # s63 # say3876
 label morte_s63: # externs dust_s40
-    nr '"He! Du bist wohl taub, was? Was machst du da?"{#morte_s63_}'
+    nr '"He! Du bist wohl taub, was? Was machst du da?"{#morte_s63_1}'
 
     menu:
         '"Paß auf, ich werde mit dem Typen reden. Was dagegen?"{#morte_s63_r3877}':
@@ -1151,7 +1151,7 @@ label morte_s63: # externs dust_s40
 
 # s64 # say3879
 label morte_s64: # from 62.0 63.0
-    nr '"Gut, dann hör halt *nicht* auf mich - es ist schließlich deine Beerdigung."{#morte_s64_}'
+    nr '"Gut, dann hör halt *nicht* auf mich - es ist schließlich deine Beerdigung."{#morte_s64_1}'
 
     menu:
         '"Jaa, dann kannst du gleich ein Trauerlied anstimmen. Jetzt sei endlich still."{#morte_s64_r3880}':
@@ -1165,7 +1165,7 @@ label morte_s64: # from 62.0 63.0
 
 # s65 # say3964
 label morte_s65: # -
-    nr '"Uh, Meister. Das ist ja reiner Vandalismus. Dieses Knochengerüst wird doch nur durch die paar Bolzen zusammengehalten. So weit geht sonst nur die Nekromantie mit diesen alten Knackern, was?"{#morte_s65_}'
+    nr '"Uh, Meister. Das ist ja reiner Vandalismus. Dieses Knochengerüst wird doch nur durch die paar Bolzen zusammengehalten. So weit geht sonst nur die Nekromantie mit diesen alten Knackern, was?"{#morte_s65_1}'
 
     menu:
         '"Und?"{#morte_s65_r3965}':
@@ -1185,7 +1185,7 @@ label morte_s65: # -
 
 # s66 # say3968
 label morte_s66: # from 65.0 65.1 65.2
-    nr '"Ach was, ist doch überhaupt kein Problem." Morte macht eine merkwürdige Bewegung, die du als Achselzucken interpretierst. "Ich war einfach nicht sicher, ob du es weißt oder nicht. Und jetzt mach schon."{#morte_s66_}'
+    nr '"Ach was, ist doch überhaupt kein Problem." Morte macht eine merkwürdige Bewegung, die du als Achselzucken interpretierst. "Ich war einfach nicht sicher, ob du es weißt oder nicht. Und jetzt mach schon."{#morte_s66_1}'
 
     menu:
         'Versuch dem Skelett die Gelenkbolzen herauszunehmen.{#morte_s66_r3969}' if morteLogic.r3969_condition():
@@ -1212,7 +1212,7 @@ label morte_s66: # from 65.0 65.1 65.2
 
 # s67 # say3974
 label morte_s67: # from 66.3
-    nr '"Hmmmm. Ob dieser Graubart wohl was dagegen hat, daß *ich* mir sein Knochengerüst ausleihe…"{#morte_s67_}'
+    nr '"Hmmmm. Ob dieser Graubart wohl was dagegen hat, daß *ich* mir sein Knochengerüst ausleihe…"{#morte_s67_1}'
 
     menu:
         '"Graubart?"{#morte_s67_r3975}':
@@ -1230,7 +1230,7 @@ label morte_s67: # from 66.3
 
 # s68 # say3978
 label morte_s68: # from 67.0
-    nr '"Graubart… verstehst du, ein Opa, ein alter Knacker… ein Tattergreis."{#morte_s68_}'
+    nr '"Graubart… verstehst du, ein Opa, ein alter Knacker… ein Tattergreis."{#morte_s68_1}'
 
     menu:
         '"Nun, ich glaube nicht, daß er auch nur die Chance hätte, was dagegen zu haben. Warum sollten wir sein Knochengerüst nicht nehmen?"{#morte_s68_r3979}':
@@ -1244,7 +1244,7 @@ label morte_s68: # from 67.0
 
 # s69 # say3981
 label morte_s69: # from 67.1 68.0
-    nr 'Morte mustert kurz das Skelett, dann schüttelt er den Kopf. "Na ja… er sollte schon etwas frischer sein. Und vielleicht auch etwas würdevoller… der hier ist ja völlig kaputt und klapperig."{#morte_s69_}'
+    nr 'Morte mustert kurz das Skelett, dann schüttelt er den Kopf. "Na ja… er sollte schon etwas frischer sein. Und vielleicht auch etwas würdevoller… der hier ist ja völlig kaputt und klapperig."{#morte_s69_1}'
 
     menu:
         '"Du etwa nicht?"{#morte_s69_r3982}':
@@ -1258,7 +1258,7 @@ label morte_s69: # from 67.1 68.0
 
 # s70 # say3984
 label morte_s70: # from 67.2 68.1 69.0 127.0
-    nr '"Ach, sehr witzig." Morte starrt dich an. "Und gerade DU MUSST so was sagen, Dussel. Du bist so häßlich, da laufen sogar die Spiegel an."{#morte_s70_}'
+    nr '"Ach, sehr witzig." Morte starrt dich an. "Und gerade DU MUSST so was sagen, Dussel. Du bist so häßlich, da laufen sogar die Spiegel an."{#morte_s70_1}'
 
     menu:
         '"Oh, wirklich? Zumindest hab„ *ich* alle meine Teile."{#morte_s70_r3985}':
@@ -1272,7 +1272,7 @@ label morte_s70: # from 67.2 68.1 69.0 127.0
 
 # s71 # say3987
 label morte_s71: # from 70.0
-    nr 'Morte schnaubt. Wie er das macht, so ganz ohne Lungen, ist dir ein ziemliches Rätsel.{#morte_s71_}'
+    nr 'Morte schnaubt. Wie er das macht, so ganz ohne Lungen, ist dir ein ziemliches Rätsel.{#morte_s71_1}'
 
     menu:
         '"Laß dir gesagt sein, Morte, daß es nichts Befriedigenderes gibt, als umherzugehen, die Arme schwingen zu lassen, frische Luft durch die Lungen zu atmen. Einfach KLASSE, einen Körper zu haben."{#morte_s71_r3988}':
@@ -1287,7 +1287,7 @@ label morte_s71: # from 70.0
 
 # s72 # say3990
 label morte_s72: # from 71.0
-    nr '"Daß ich dir damals geholfen habe, aus dem Vorbereitungsraum zu entkommen, ist eines der Dinge, die ich aufs Bitterste bereue." Morte schnaubt nochmals. "Ich hätte dich verrotten lassen sollen… noch mehr, meine ich."{#morte_s72_}'
+    nr '"Daß ich dir damals geholfen habe, aus dem Vorbereitungsraum zu entkommen, ist eines der Dinge, die ich aufs Bitterste bereue." Morte schnaubt nochmals. "Ich hätte dich verrotten lassen sollen… noch mehr, meine ich."{#morte_s72_1}'
 
     menu:
         '"Schön, daß du so empfindest. Gehen wir."{#morte_s72_r3991}':
@@ -1297,7 +1297,7 @@ label morte_s72: # from 71.0
 
 # s73 # say4018
 label morte_s73: # externs giantsk_s9 giantsk_s8 giantsk_s7 giantsk_s6 giantsk_s5 giantsk_s4 giantsk_s1 giantsk_s0
-    nr 'Morte grinst.{#morte_s73_}'
+    nr 'Morte grinst.{#morte_s73_1}'
 
     menu:
         '"Äh, war das ein „ja“ oder…?"{#morte_s73_r4019}':
@@ -1307,7 +1307,7 @@ label morte_s73: # externs giantsk_s9 giantsk_s8 giantsk_s7 giantsk_s6 giantsk_s
 
 # s74 # say4020
 label morte_s74: # from 73.0
-    nr '"Oh… Verzeihung." Morte schwebt zum Kopf des Skeletts hinauf, begutachtet ihn und kommt wieder runter. Dabei mustert er die Rüstung und die Klinge. "Oh, ja. Oh, ja. Ich glaube, dieses hier ist ganz brauchbar.{#morte_s74_}'
+    nr '"Oh… Verzeihung." Morte schwebt zum Kopf des Skeletts hinauf, begutachtet ihn und kommt wieder runter. Dabei mustert er die Rüstung und die Klinge. "Oh, ja. Oh, ja. Ich glaube, dieses hier ist ganz brauchbar.{#morte_s74_1}'
 
     menu:
         '"Also gut… gib mir „ne Sekunde, ich muß von diesem Ding hier den Kopf runterkriegen."{#morte_s74_r4023}' if morteLogic.r4023_condition():
@@ -1329,7 +1329,7 @@ label morte_s74: # from 73.0
 
 # s75 # say4021
 label morte_s75: # from 74.2 74.3
-    nr '"Zu Baator mit dir! Weshalb hast du mich dann GEFRAGT, ob ich es brauche? Nur um zu testen, wie grausam du sein kannst?" Morte zuckt wütend. "Nach alledem, was ich für dich getan habe…"{#morte_s75_}'
+    nr '"Zu Baator mit dir! Weshalb hast du mich dann GEFRAGT, ob ich es brauche? Nur um zu testen, wie grausam du sein kannst?" Morte zuckt wütend. "Nach alledem, was ich für dich getan habe…"{#morte_s75_1}'
 
     menu:
         '"Also gut… gib mir „ne Sekunde, ich muß von diesem Ding hier den Kopf runterkriegen."{#morte_s75_r4027}' if morteLogic.r4027_condition():
@@ -1352,7 +1352,7 @@ label morte_s75: # from 74.2 74.3
 
 # s76 # say4022
 label morte_s76: # from 75.2
-    nr 'Morte starrt dich kurz an. "Sag mal, hab„ ich da was verpaßt? Sind wir etwa VERHEIRATET? Was soll dieses “Ich-will-nicht-daß-dir-was-zustößt"-Gejammer?" Morte starrt dich an. "Wenn ich dir WIRKLICH wichtig wäre, hättest du schon längst dran gedacht, meinen Kopf auf dieses Riesenskelett zu setzen."{#morte_s76_}'
+    nr 'Morte starrt dich kurz an. "Sag mal, hab„ ich da was verpaßt? Sind wir etwa VERHEIRATET? Was soll dieses “Ich-will-nicht-daß-dir-was-zustößt"-Gejammer?" Morte starrt dich an. "Wenn ich dir WIRKLICH wichtig wäre, hättest du schon längst dran gedacht, meinen Kopf auf dieses Riesenskelett zu setzen."{#morte_s76_1}'
 
     menu:
         '"Also gut… gib mir „ne Sekunde, ich muß von diesem Ding hier den Kopf runterkriegen."{#morte_s76_r4031}' if morteLogic.r4031_condition():
@@ -1374,7 +1374,7 @@ label morte_s76: # from 75.2
 
 # s77 # say4134
 label morte_s77: # -
-    nr '"He! Was machst du da?"{#morte_s77_}'
+    nr '"He! Was machst du da?"{#morte_s77_1}'
 
     menu:
         '"Ich war *gerade* dabei, mit diesem Typen zu reden. Was dagegen?"{#morte_s77_r4144}':
@@ -1390,7 +1390,7 @@ label morte_s77: # -
 
 # s78 # say4135
 label morte_s78: # from 77.0
-    nr '"Wenn du schon mit den Staubies plaudern mußt, dann halte mich da gefälligst raus. Ich vertrag mich nicht allzu gut mit ihnen… und du solltest es auch nicht tun. Bevor sie dir Gehör schenken, verbrennen oder vergraben sie dich eher. Komm, sei nicht so bescheuert; laß uns abhauen."{#morte_s78_}'
+    nr '"Wenn du schon mit den Staubies plaudern mußt, dann halte mich da gefälligst raus. Ich vertrag mich nicht allzu gut mit ihnen… und du solltest es auch nicht tun. Bevor sie dir Gehör schenken, verbrennen oder vergraben sie dich eher. Komm, sei nicht so bescheuert; laß uns abhauen."{#morte_s78_1}'
 
     menu:
         '"Danke für den Rat, aber ich werde *trotzdem* mit diesem Typen reden."{#morte_s78_r4142}':
@@ -1406,7 +1406,7 @@ label morte_s78: # from 77.0
 
 # s79 # say4136
 label morte_s79: # -
-    nr '"He! Du bist wohl taub, was? Was machst du da?"{#morte_s79_}'
+    nr '"He! Du bist wohl taub, was? Was machst du da?"{#morte_s79_1}'
 
     menu:
         '"Paß auf, ich werde mit dem Typen reden. Was dagegen?"{#morte_s79_r4140}':
@@ -1421,7 +1421,7 @@ label morte_s79: # -
 
 # s80 # say4137
 label morte_s80: # from 78.0 79.0
-    nr '"Gut, dann hör halt *nicht* auf mich - es ist schließlich deine Beerdigung."{#morte_s80_}'
+    nr '"Gut, dann hör halt *nicht* auf mich - es ist schließlich deine Beerdigung."{#morte_s80_1}'
 
     menu:
         '"Jaa, dann kannst du gleich ein Trauerlied anstimmen. Jetzt sei endlich still."{#morte_s80_r4138}':
@@ -1435,7 +1435,7 @@ label morte_s80: # from 78.0 79.0
 
 # s81 # say4338
 label morte_s81: # externs dustfem_s40
-    nr '"He! Was machst du da?"{#morte_s81_}'
+    nr '"He! Was machst du da?"{#morte_s81_1}'
 
     menu:
         '"Ich war *gerade* dabei, mit dieser Dame zu reden. Was dagegen?"{#morte_s81_r4339}':
@@ -1450,7 +1450,7 @@ label morte_s81: # externs dustfem_s40
 
 # s82 # say4341
 label morte_s82: # from 81.0
-    nr '"Wenn du schon mit den Staubies plaudern mußt, dann halte mich da gefälligst raus. Ich vertrag mich nicht allzu gut mit ihnen… und du solltest es auch nicht tun. Bevor sie dir Gehör schenken, verbrennen oder vergraben sie dich eher. Komm, sei nicht so bescheuert; laß uns abhauen."{#morte_s82_}'
+    nr '"Wenn du schon mit den Staubies plaudern mußt, dann halte mich da gefälligst raus. Ich vertrag mich nicht allzu gut mit ihnen… und du solltest es auch nicht tun. Bevor sie dir Gehör schenken, verbrennen oder vergraben sie dich eher. Komm, sei nicht so bescheuert; laß uns abhauen."{#morte_s82_1}'
 
     menu:
         '"Danke für den Rat, aber ich werde *trotzdem* mit dieser Dame reden."{#morte_s82_r4342}':
@@ -1465,7 +1465,7 @@ label morte_s82: # from 81.0
 
 # s83 # say4344
 label morte_s83: # externs dustfem_s40
-    nr '"He! Du bist wohl taub, was? Was machst du da?"{#morte_s83_}'
+    nr '"He! Du bist wohl taub, was? Was machst du da?"{#morte_s83_1}'
 
     menu:
         '"Sieh mal, ich wollte nur mit dieser Dame reden. Was dagegen?"{#morte_s83_r4345}':
@@ -1480,7 +1480,7 @@ label morte_s83: # externs dustfem_s40
 
 # s84 # say4347
 label morte_s84: # from 82.0 83.0
-    nr '"Gut, dann hör halt *nicht* auf mich - es ist schließlich deine Beerdigung."{#morte_s84_}'
+    nr '"Gut, dann hör halt *nicht* auf mich - es ist schließlich deine Beerdigung."{#morte_s84_1}'
 
     menu:
         '"Jaa, dann kannst du gleich ein Trauerlied anstimmen. Jetzt sei endlich still."{#morte_s84_r4348}':
@@ -1494,7 +1494,7 @@ label morte_s84: # from 82.0 83.0
 
 # s85 # say4675
 label morte_s85: # externs vaxis_s9
-    nr 'Morte flüstert dazwischen: "Bei den Mächten… dieser Dussel ist ein *Anarchist.* Daß er sich als Zombie ausgibt, muß für diese Hohlköpfe wohl ganz was Neues sein."{#morte_s85_}'
+    nr 'Morte flüstert dazwischen: "Bei den Mächten… dieser Dussel ist ein *Anarchist.* Daß er sich als Zombie ausgibt, muß für diese Hohlköpfe wohl ganz was Neues sein."{#morte_s85_1}'
 
     menu:
         '"Anarchist?"{#morte_s85_r4676}':
@@ -1505,7 +1505,7 @@ label morte_s85: # externs vaxis_s9
 
 # s86 # say4677
 label morte_s86: # from 85.0
-    nr '"Die Anarchisten… sie sind ein Bund…" Morte sieht aus, als würde er gleich eine Schimpftirade starten. Dann bemerkt er, daß der Zombie euch anschaut und aufmerksam zuhört. "…sie, äh, sie wollen alle von den Fesseln des Staates *befreien*. Die alte Ordnung zerstören und eine neue Ordnung errichten, die jeglicher Ordnung entbehrt."{#morte_s86_}'
+    nr '"Die Anarchisten… sie sind ein Bund…" Morte sieht aus, als würde er gleich eine Schimpftirade starten. Dann bemerkt er, daß der Zombie euch anschaut und aufmerksam zuhört. "…sie, äh, sie wollen alle von den Fesseln des Staates *befreien*. Die alte Ordnung zerstören und eine neue Ordnung errichten, die jeglicher Ordnung entbehrt."{#morte_s86_1}'
 
     menu:
         'Wahrheit: "Das scheint mir ein edles Streben. Die Ordnung sollte ruhig ab und zu mal richtig durcheinander geraten."{#morte_s86_r4678}':
@@ -1534,7 +1534,7 @@ label morte_s86: # from 85.0
 
 # s87 # say4683
 label morte_s87: # externs vaxis_s13
-    nr 'Im Flüsterton: "Er fragt sich, ob du verrückt bist, plemplem, hohl in der Birne… und ich frage mich dasselbe. Setzt du jetzt endlich einen Punkt unter dein Auferstehungs-Geschwätz?! Das ist ja peinlich."{#morte_s87_}'
+    nr 'Im Flüsterton: "Er fragt sich, ob du verrückt bist, plemplem, hohl in der Birne… und ich frage mich dasselbe. Setzt du jetzt endlich einen Punkt unter dein Auferstehungs-Geschwätz?! Das ist ja peinlich."{#morte_s87_1}'
 
     menu:
         '"Ich bringe DICH in Verlegenheit?"{#morte_s87_r4684}':
@@ -1557,7 +1557,7 @@ label morte_s87: # externs vaxis_s13
 
 # s88 # say4688
 label morte_s88: # from 87.0 87.1 87.2 87.3
-    nr 'Morte seufzt. "Hör mal zu, Meister… du mußt deine Gehirnzellen schon etwas anstrengen. Du kannst nicht allen ständig die WAHRHEIT sagen. Wir dürfen doch nicht zulassen, daß uns jeder Grinser, der uns über den Weg läuft, auf„s Korn nimmt, klar?"{#morte_s88_}'
+    nr 'Morte seufzt. "Hör mal zu, Meister… du mußt deine Gehirnzellen schon etwas anstrengen. Du kannst nicht allen ständig die WAHRHEIT sagen. Wir dürfen doch nicht zulassen, daß uns jeder Grinser, der uns über den Weg läuft, auf„s Korn nimmt, klar?"{#morte_s88_1}'
 
     menu:
         '"„Grinser?“ „Auf“s Korn?„ Was zum - ach, schon gut."{#morte_s88_r4689}':
@@ -1575,7 +1575,7 @@ label morte_s88: # from 87.0 87.1 87.2 87.3
 
 # s89 # say4692
 label morte_s89: # externs vaxis_s23
-    nr '"Warte…" Morte wirkt überrascht. "Dieser Dussel muß ein *Anarchist* sein. Daß er sich als Zombie ausgibt, muß für diese Hohlköpfe ja ganz was Neues sein."{#morte_s89_}'
+    nr '"Warte…" Morte wirkt überrascht. "Dieser Dussel muß ein *Anarchist* sein. Daß er sich als Zombie ausgibt, muß für diese Hohlköpfe ja ganz was Neues sein."{#morte_s89_1}'
 
     menu:
         '"Anarchist?"{#morte_s89_r4693}':
@@ -1586,7 +1586,7 @@ label morte_s89: # externs vaxis_s23
 
 # s90 # say4694
 label morte_s90: # from 89.0
-    nr '"Die Anarchisten… sind ein Bund, der seine Zeit damit verschwendet, den Vertretern irgendwelcher Behörden nachzuspionieren und zu versuchen, alles niederzureißen, was nach Ordnung oder Kontrolle riecht." Morte schnaubt. "Die Anarchisten denken, daß jeder Dussel auf den Ebenen frei und glücklich sein wird, wenn er nach der Beseitigung des Establishments seine eigene „Wahrheit“ finden darf. Die Anarchisten wollen eine neue Ordnung errichten, die jeglicher Ordnung entbehrt."{#morte_s90_}'
+    nr '"Die Anarchisten… sind ein Bund, der seine Zeit damit verschwendet, den Vertretern irgendwelcher Behörden nachzuspionieren und zu versuchen, alles niederzureißen, was nach Ordnung oder Kontrolle riecht." Morte schnaubt. "Die Anarchisten denken, daß jeder Dussel auf den Ebenen frei und glücklich sein wird, wenn er nach der Beseitigung des Establishments seine eigene „Wahrheit“ finden darf. Die Anarchisten wollen eine neue Ordnung errichten, die jeglicher Ordnung entbehrt."{#morte_s90_1}'
 
     menu:
         'Wahrheit: "Das scheint mir ein edles Streben. Die Ordnung sollte ruhig ab und zu mal richtig durcheinander geraten."{#morte_s90_r4695}':
@@ -1614,7 +1614,7 @@ label morte_s90: # from 89.0
 
 # s91 # say4700
 label morte_s91: # externs vaxis_s46
-    nr '"Er meint, daß dieser Dussel namens Pharod den Staubmenschen schon viele Totenbüchler… Leichen… verkauft hat. Genau das ist auch die Aufgabe der Sammler: Sie sammeln tote Körper und verkaufen sie den Staubmenschen. Sieht aus, als hätte dieser Pharod schon so viele Totenbüchler verkauft, daß die Staubmenschen davon ausgehen, daß er einfach irgendwelche Stockbewohner ins Totenbuch steckt, bevor ihre Stunde geschlagen hat… das heißt, daß er sie tötet."{#morte_s91_}'
+    nr '"Er meint, daß dieser Dussel namens Pharod den Staubmenschen schon viele Totenbüchler… Leichen… verkauft hat. Genau das ist auch die Aufgabe der Sammler: Sie sammeln tote Körper und verkaufen sie den Staubmenschen. Sieht aus, als hätte dieser Pharod schon so viele Totenbüchler verkauft, daß die Staubmenschen davon ausgehen, daß er einfach irgendwelche Stockbewohner ins Totenbuch steckt, bevor ihre Stunde geschlagen hat… das heißt, daß er sie tötet."{#morte_s91_1}'
 
     menu:
         '"Ich verstehe. "Da war noch was, was ich wissen wollte…"{#morte_s91_r4701}':
@@ -1628,7 +1628,7 @@ label morte_s91: # externs vaxis_s46
 
 # s92 # say4703
 label morte_s92: # externs vaxis_s47
-    nr '"Er möchte wissen, ob du ausgeraubt wurdest, was wahrscheinlich der Fall ist."{#morte_s92_}'
+    nr '"Er möchte wissen, ob du ausgeraubt wurdest, was wahrscheinlich der Fall ist."{#morte_s92_1}'
 
     menu:
         '"Ich verstehe. "Da war noch was, was ich wissen wollte…"{#morte_s92_r4704}':
@@ -1642,14 +1642,14 @@ label morte_s92: # externs vaxis_s47
 
 # s93 # say4706
 label morte_s93: # externs vaxis_s39
-    nr '"Ja, *sie* sind hier die Blöden, klar."{#morte_s93_}'
+    nr '"Ja, *sie* sind hier die Blöden, klar."{#morte_s93_1}'
 
     jump vaxis_s61  # EXTERN
 
 
 # s94 # say4708
 label morte_s94: # externs vaxis_s65
-    nr '"Ich kann einfach nicht glauben, daß du das tust. Sag mal, wie übergeschnappt BIST du eigentlich?"{#morte_s94_}'
+    nr '"Ich kann einfach nicht glauben, daß du das tust. Sag mal, wie übergeschnappt BIST du eigentlich?"{#morte_s94_1}'
 
     menu:
         '"Ganz schön übergeschnappt, nehme ich an…"{#morte_s94_r64535}' if morteLogic.r64535_condition():
@@ -1665,7 +1665,7 @@ label morte_s94: # externs vaxis_s65
 
 # s95 # say4710
 label morte_s95: # externs vaxis_s66
-    nr '"Kannst du seine Lippen nicht etwas fester zusammennähen?"{#morte_s95_}'
+    nr '"Kannst du seine Lippen nicht etwas fester zusammennähen?"{#morte_s95_1}'
 
     menu:
         '"Hult„s Muul, Murte -"{#morte_s95_r4711}':
@@ -1679,7 +1679,7 @@ label morte_s95: # externs vaxis_s66
 
 # s96 # say5029
 label morte_s96: # -
-    nr '"He! Was machst du da?"{#morte_s96_}'
+    nr '"He! Was machst du da?"{#morte_s96_1}'
 
     menu:
         '"Ich war *gerade* dabei, mit diesem Typen zu reden. Was dagegen?"{#morte_s96_r5030}':
@@ -1694,7 +1694,7 @@ label morte_s96: # -
 
 # s97 # say5032
 label morte_s97: # from 96.0
-    nr '"Wenn du schon mit den Staubies plaudern mußt, dann halte mich da gefälligst raus. Ich vertrag mich nicht allzu gut mit ihnen… und du solltest es auch nicht tun. Bevor sie dir Gehör schenken, verbrennen oder vergraben sie dich eher. Komm, sei nicht so bescheuert; laß uns abhauen."{#morte_s97_}'
+    nr '"Wenn du schon mit den Staubies plaudern mußt, dann halte mich da gefälligst raus. Ich vertrag mich nicht allzu gut mit ihnen… und du solltest es auch nicht tun. Bevor sie dir Gehör schenken, verbrennen oder vergraben sie dich eher. Komm, sei nicht so bescheuert; laß uns abhauen."{#morte_s97_1}'
 
     menu:
         '"Danke für den Rat, aber ich werde *trotzdem* mit diesem Typen reden."{#morte_s97_r5033}':
@@ -1709,7 +1709,7 @@ label morte_s97: # from 96.0
 
 # s98 # say5035
 label morte_s98: # -
-    nr '"He! Du bist wohl taub, was? Was machst du da?"{#morte_s98_}'
+    nr '"He! Du bist wohl taub, was? Was machst du da?"{#morte_s98_1}'
 
     menu:
         '"Paß auf, ich werde mit dem Typen reden. Was dagegen?"{#morte_s98_r5036}':
@@ -1724,7 +1724,7 @@ label morte_s98: # -
 
 # s99 # say5038
 label morte_s99: # from 97.0 98.0
-    nr '"Gut, dann hör halt *nicht* auf mich - es ist schließlich deine Beerdigung."{#morte_s99_}'
+    nr '"Gut, dann hör halt *nicht* auf mich - es ist schließlich deine Beerdigung."{#morte_s99_1}'
 
     menu:
         '"Jaa, dann kannst du gleich ein Trauerlied anstimmen. Jetzt sei endlich still."{#morte_s99_r5039}':
@@ -1738,7 +1738,7 @@ label morte_s99: # from 97.0 98.0
 
 # s100 # say5041
 label morte_s100: # externs soego_s20
-    nr '"Was *machst* du da?! Wenn du ihn töten willst, dann bitte richtig!"{#morte_s100_}'
+    nr '"Was *machst* du da?! Wenn du ihn töten willst, dann bitte richtig!"{#morte_s100_1}'
 
     menu:
         '"*Hab„* ich doch! Ich hab“ ihm den Hals umgedreht! Der sollte sich nicht mehr rühren!"{#morte_s100_r5042}':
@@ -1748,14 +1748,14 @@ label morte_s100: # externs soego_s20
 
 # s101 # say5043
 label morte_s101: # externs soego_s10
-    nr '"Er *kann* wenigstens gehen." Morte schnaubt. "Dieses Herumschweben geht einem ganz schön auf den Keks, wenn man jemanden treten möchte."{#morte_s101_}'
+    nr '"Er *kann* wenigstens gehen." Morte schnaubt. "Dieses Herumschweben geht einem ganz schön auf den Keks, wenn man jemanden treten möchte."{#morte_s101_1}'
 
     jump soego_s11  # EXTERN
 
 
 # s102 # say5049
 label morte_s102: # externs dhall_s5
-    nr '"He, Meister! Was machst du?!"{#morte_s102_}'
+    nr '"He, Meister! Was machst du?!"{#morte_s102_1}'
 
     menu:
         '"Wollt„ nur grade mit diesem Schreiber reden. Der weiß vielleicht, wie ich hierhergekommen bin."{#morte_s102_r5050}':
@@ -1765,21 +1765,21 @@ label morte_s102: # externs dhall_s5
 
 # s103 # say5052
 label morte_s103: # from 102.0
-    nr '"Sich mit den Staubies abzugeben ist doch das ALLERLETZTE… "{#morte_s103_}'
+    nr '"Sich mit den Staubies abzugeben ist doch das ALLERLETZTE… "{#morte_s103_1}'
 
     jump dhall_s0  # EXTERN
 
 
 # s104 # say5053
 label morte_s104: # externs dhall_s0
-    nr '"Und wir sollten *vor allem* keinen Plausch mit kranken Staubies halten. Komm schon, haun wir ab. Je schneller wir diesem Ort eins grinsen, desto bess…"{#morte_s104_}'
+    nr '"Und wir sollten *vor allem* keinen Plausch mit kranken Staubies halten. Komm schon, haun wir ab. Je schneller wir diesem Ort eins grinsen, desto bess…"{#morte_s104_1}'
 
     jump dhall_s1  # EXTERN
 
 
 # s105 # say6071
 label morte_s105: # externs deionarra_s8 deionarra_s48 deionarra_s26 deionarra_s19 deionarra_s0
-    nr '"Hörst du mir also wieder zu, Meister? Irgendwie schienst du den Faden verloren zu haben."{#morte_s105_}'
+    nr '"Hörst du mir also wieder zu, Meister? Irgendwie schienst du den Faden verloren zu haben."{#morte_s105_1}'
 
     menu:
         '"Nein, mir geht„s gut. Weißt du, wer dieser Geist war?"{#morte_s105_r6075}':
@@ -1794,7 +1794,7 @@ label morte_s105: # externs deionarra_s8 deionarra_s48 deionarra_s26 deionarra_s
 
 # s106 # say6072
 label morte_s106: # from 105.0
-    nr '"Hä? Geist?"{#morte_s106_}'
+    nr '"Hä? Geist?"{#morte_s106_1}'
 
     menu:
         '"Das Gespenst, mit dem ich mich gerade unterhalten habe. Die Frau."{#morte_s106_r6077}':
@@ -1804,7 +1804,7 @@ label morte_s106: # from 105.0
 
 # s107 # say6073
 label morte_s107: # from 106.0
-    nr '"Du hast dich mit einer Frau unterhalten? Wo?" Morte sieht sich aufgeregt um. "Wie hat sie ausgesehen?"{#morte_s107_}'
+    nr '"Du hast dich mit einer Frau unterhalten? Wo?" Morte sieht sich aufgeregt um. "Wie hat sie ausgesehen?"{#morte_s107_1}'
 
     menu:
         '"Sie war grade hier oben auf der Bahre. Hast du sie denn nicht gesehen?"{#morte_s107_r6078}':
@@ -1814,7 +1814,7 @@ label morte_s107: # from 106.0
 
 # s108 # say6074
 label morte_s108: # from 107.0
-    nr '"Äh… nein, du hast einfach den Faden verloren, hast einfach dagestanden, fast wie eine Statue. Ich hatte schon ein wenig Angst, daß du wieder übergeschnappt bist."{#morte_s108_}'
+    nr '"Äh… nein, du hast einfach den Faden verloren, hast einfach dagestanden, fast wie eine Statue. Ich hatte schon ein wenig Angst, daß du wieder übergeschnappt bist."{#morte_s108_1}'
 
     menu:
         '"Nein, mir geht„s gut… glaub ich jedenfalls. Laß uns weiterziehn."{#morte_s108_r6079}':
@@ -1824,7 +1824,7 @@ label morte_s108: # from 107.0
 
 # s109 # say6324
 label morte_s109: # -
-    nr '"Erinnert mich an einen Job, den ich mal hatte." Er sieht peinlich berührt aus. "Naja, ich meine…ohne die Arme."{#morte_s109_}'
+    nr '"Erinnert mich an einen Job, den ich mal hatte." Er sieht peinlich berührt aus. "Naja, ich meine…ohne die Arme."{#morte_s109_1}'
 
     menu:
         'Untersuche die Leiche.{#morte_s109_r6325}' if morteLogic.r6325_condition():
@@ -1858,7 +1858,7 @@ label morte_s109: # -
 
 # s110 # say6609
 label morte_s110: # externs s42_s3 s42_s0
-    nr '"Mann oh Mann, Meister. Das ist Vandalismus. Diese Bolzen hier sind wohl das einzige, was dieses Knochengerüst noch zusammenhält. Selbst die Nekromantie hat ihre Grenzen, findest du nicht?"{#morte_s110_}'
+    nr '"Mann oh Mann, Meister. Das ist Vandalismus. Diese Bolzen hier sind wohl das einzige, was dieses Knochengerüst noch zusammenhält. Selbst die Nekromantie hat ihre Grenzen, findest du nicht?"{#morte_s110_1}'
 
     menu:
         '"Und?"{#morte_s110_r6658}':
@@ -1878,7 +1878,7 @@ label morte_s110: # externs s42_s3 s42_s0
 
 # s111 # say6610
 label morte_s111: # externs s42_s3 s42_s2 s42_s0
-    nr '"Hmmmm. Ob dieser Graubart wohl was dagegen hat, daß *ich* mir sein Knochengerüst ausleihe…"{#morte_s111_}'
+    nr '"Hmmmm. Ob dieser Graubart wohl was dagegen hat, daß *ich* mir sein Knochengerüst ausleihe…"{#morte_s111_1}'
 
     menu:
         '"„Graubart“?"{#morte_s111_r6661}':
@@ -1896,7 +1896,7 @@ label morte_s111: # externs s42_s3 s42_s2 s42_s0
 
 # s112 # say6611
 label morte_s112: # externs s42_s13
-    nr '"Könntest du damit aufhören? Seine Arme werden abbrechen."{#morte_s112_}'
+    nr '"Könntest du damit aufhören? Seine Arme werden abbrechen."{#morte_s112_1}'
 
     menu:
         'Verschränk die Arme vor der Brust.{#morte_s112_r6664}' if morteLogic.r6664_condition():
@@ -1918,7 +1918,7 @@ label morte_s112: # externs s42_s13
 
 # s113 # say6771
 label morte_s113: # from 54.0 54.1
-    nr '"Sie hat in dieser Stadt die Macht. Du würdest sie gleich erkennen: Ihr Gesicht wird von Klingen umrahmt, sie hat die Größe eines Riesen und schwebt über der Erde, genau wie diese Kerle hier." Morte nickt in Richtung des Dabus, der euch beide anschaut. "Keiner weiß etwas genaues über sie… sie redet nicht viel. Das einzige, was du wissen mußt, ist, daß du sie besser nie wütend machst. Wenn du sie siehst, dann lautet mein Ratschlag: Lauf."{#morte_s113_}'
+    nr '"Sie hat in dieser Stadt die Macht. Du würdest sie gleich erkennen: Ihr Gesicht wird von Klingen umrahmt, sie hat die Größe eines Riesen und schwebt über der Erde, genau wie diese Kerle hier." Morte nickt in Richtung des Dabus, der euch beide anschaut. "Keiner weiß etwas genaues über sie… sie redet nicht viel. Das einzige, was du wissen mußt, ist, daß du sie besser nie wütend machst. Wenn du sie siehst, dann lautet mein Ratschlag: Lauf."{#morte_s113_1}'
 
     menu:
         '"Ich verstehe."{#morte_s113_r2784}':
@@ -1928,7 +1928,7 @@ label morte_s113: # from 54.0 54.1
 
 # s114 # say6784
 label morte_s114: # -
-    nr 'Morte spöttelt: "Eher soll mich ein Tanar-Ri fressen, als daß ich versuche herauszufinden, was diese schwebenden Ziegenköpfe sagen wollen. Du brauchst einen Übersetzer? Such dir einen Einwohner von Sigil."{#morte_s114_}'
+    nr 'Morte spöttelt: "Eher soll mich ein Tanar-Ri fressen, als daß ich versuche herauszufinden, was diese schwebenden Ziegenköpfe sagen wollen. Du brauchst einen Übersetzer? Such dir einen Einwohner von Sigil."{#morte_s114_1}'
 
     menu:
         '"Aha."{#morte_s114_r6955}':
@@ -1938,14 +1938,14 @@ label morte_s114: # -
 
 # s115 # say6786
 label morte_s115: # -
-    nr '"Oh, *natürlich* haben sie Namen. Da bin ich mir sicher."{#morte_s115_}'
+    nr '"Oh, *natürlich* haben sie Namen. Da bin ich mir sicher."{#morte_s115_1}'
 
     jump annah_s43  # EXTERN
 
 
 # s116 # say6790
 label morte_s116: # -
-    nr '"Das glaubst *du*, du kleines Scheusal."{#morte_s116_}'
+    nr '"Das glaubst *du*, du kleines Scheusal."{#morte_s116_1}'
 
     menu:
         '"Halt„s Maul, Morte - kannst du ihm noch ein paar andere Fragen stellen, Annah?"{#morte_s116_r6956}':
@@ -1960,7 +1960,7 @@ label morte_s116: # -
 
 # s117 # say6794
 label morte_s117: # -
-    nr 'Morte spöttelt: "Eher soll mich ein Tanar-Ri fressen, als daß ich versuche herauszufinden, was diese schwebenden Bocksköpfe sagen wollen. Du brauchst einen Übersetzer? Soll doch das kleine Scheusal-Mädel hier den Job machen." Er nickt Annah zu. "Sie ist im Stock heimisch."{#morte_s117_}'
+    nr 'Morte spöttelt: "Eher soll mich ein Tanar-Ri fressen, als daß ich versuche herauszufinden, was diese schwebenden Bocksköpfe sagen wollen. Du brauchst einen Übersetzer? Soll doch das kleine Scheusal-Mädel hier den Job machen." Er nickt Annah zu. "Sie ist im Stock heimisch."{#morte_s117_1}'
 
     menu:
         '"Vielleicht…"{#morte_s117_r6958}':
@@ -1970,7 +1970,7 @@ label morte_s117: # -
 
 # s118 # say6797
 label morte_s118: # -
-    nr 'Morte spöttelt: "Eher soll mich ein Tanar-Ri fressen, als daß ich versuche herauszufinden, was diese schwebenden Bocksköpfe sagen wollen. Du brauchst einen Übersetzer?" Er nickt Dak„kon zu. "Sag “Heiliger-als-du-und-doppelt-so-schweigsam„, er soll übersetzen."{#morte_s118_}'
+    nr 'Morte spöttelt: "Eher soll mich ein Tanar-Ri fressen, als daß ich versuche herauszufinden, was diese schwebenden Bocksköpfe sagen wollen. Du brauchst einen Übersetzer?" Er nickt Dak„kon zu. "Sag “Heiliger-als-du-und-doppelt-so-schweigsam„, er soll übersetzen."{#morte_s118_1}'
 
     menu:
         '"Vielleicht…"{#morte_s118_r6959}':
@@ -1980,7 +1980,7 @@ label morte_s118: # -
 
 # s119 # say6800
 label morte_s119: # -
-    nr 'Morte spöttelt: "Eher soll mich ein Tanar-Ri fressen, als daß ich versuche herauszufinden, was diese schwebenden Bocksköpfe sagen wollen. Brauchst du einen Übersetzer? Soll das doch die Tanar-Ri tun." Er nickt Grace zu. "Wahrscheinlich mußte sie sich sowieso die ganze Zeit mit dem Geschwätz dieser Kerle herumschlagen."{#morte_s119_}'
+    nr 'Morte spöttelt: "Eher soll mich ein Tanar-Ri fressen, als daß ich versuche herauszufinden, was diese schwebenden Bocksköpfe sagen wollen. Brauchst du einen Übersetzer? Soll das doch die Tanar-Ri tun." Er nickt Grace zu. "Wahrscheinlich mußte sie sich sowieso die ganze Zeit mit dem Geschwätz dieser Kerle herumschlagen."{#morte_s119_1}'
 
     menu:
         '"Vielleicht…"{#morte_s119_r6960}':
@@ -1990,7 +1990,7 @@ label morte_s119: # -
 
 # s120 # say7040
 label morte_s120: # -
-    nr 'Als du dich abwendest, bemerkst du, daß Morte dich anstarrt. "He? He?"{#morte_s120_}'
+    nr 'Als du dich abwendest, bemerkst du, daß Morte dich anstarrt. "He? He?"{#morte_s120_1}'
 
     menu:
         '"Was?"{#morte_s120_r7055}':
@@ -2000,7 +2000,7 @@ label morte_s120: # -
 
 # s121 # say7041
 label morte_s121: # from 120.0
-    nr '"Hast du *gesehen* wie diese leichenstarre Schönheit mich angeschaut hat?" Mortes Zähnen fangen wie in freudiger Erwartung an zu klappern. "Sie hat nach irgendeinem Schleifer gesucht, der die Kälte aus ihrem Sarg vertreibt."{#morte_s121_}'
+    nr '"Hast du *gesehen* wie diese leichenstarre Schönheit mich angeschaut hat?" Mortes Zähnen fangen wie in freudiger Erwartung an zu klappern. "Sie hat nach irgendeinem Schleifer gesucht, der die Kälte aus ihrem Sarg vertreibt."{#morte_s121_1}'
 
     menu:
         '"Nun fang *bitte* nicht schon wieder damit an."{#morte_s121_r7056}' if morteLogic.r7056_condition():
@@ -2021,7 +2021,7 @@ label morte_s121: # from 120.0
 
 # s122 # say7042
 label morte_s122: # from 121.0
-    nr 'Morte ignoriert dich und wird nachdenklich. "Ich habe eigentlich nichts gegen Aufmerksamkeit… es ist nur so, daß ich als mehr als nur ein Totenschädel angesehen werden möchte, verstehst du? Ich habe Gefühle, die über meine einfachen, animalischen Instinkte hinausgehen. Ich möchte umworben werden, und keine kurze Affäre im Mausoleum."{#morte_s122_}'
+    nr 'Morte ignoriert dich und wird nachdenklich. "Ich habe eigentlich nichts gegen Aufmerksamkeit… es ist nur so, daß ich als mehr als nur ein Totenschädel angesehen werden möchte, verstehst du? Ich habe Gefühle, die über meine einfachen, animalischen Instinkte hinausgehen. Ich möchte umworben werden, und keine kurze Affäre im Mausoleum."{#morte_s122_1}'
 
     menu:
         '"Wenn du weiter so dumm rumquatschst, verschaff ich dir ne dauerhafte Beziehung mit der nächstbesten Häuserwand ."{#morte_s122_r7059}':
@@ -2039,7 +2039,7 @@ label morte_s122: # from 121.0
 
 # s123 # say7043
 label morte_s123: # from 122.0
-    nr '"Whoa, Meister…" Morte weicht etwas zurück. "Frauen - die wollen Liebhaber und keine Muskelmänner."{#morte_s123_}'
+    nr '"Whoa, Meister…" Morte weicht etwas zurück. "Frauen - die wollen Liebhaber und keine Muskelmänner."{#morte_s123_1}'
 
     menu:
         '"Du bist wahrscheinlich der *Letzte*, von dem ich je Ratschläge in Liebesdingen annehmen würde."{#morte_s123_r7062}':
@@ -2053,7 +2053,7 @@ label morte_s123: # from 122.0
 
 # s124 # say7044
 label morte_s124: # from 122.1
-    nr '"Ja, ich bin vielleicht nur ein Totenschädel, aber ich habe ein großes Herz."{#morte_s124_}'
+    nr '"Ja, ich bin vielleicht nur ein Totenschädel, aber ich habe ein großes Herz."{#morte_s124_1}'
 
     menu:
         '"Naja, eigentlich *hast* du ja gar keins."{#morte_s124_r7064}':
@@ -2067,7 +2067,7 @@ label morte_s124: # from 122.1
 
 # s125 # say7045
 label morte_s125: # from 124.0
-    nr '"Was, bist du in mein Leben geplatzt, um auf meine Träume und Hoffnungen zu spucken?! Gut, dann soll es wohl so sein. Ich habe zwar kein Herz, *dafür* aber eine Seele."{#morte_s125_}'
+    nr '"Was, bist du in mein Leben geplatzt, um auf meine Träume und Hoffnungen zu spucken?! Gut, dann soll es wohl so sein. Ich habe zwar kein Herz, *dafür* aber eine Seele."{#morte_s125_1}'
 
     menu:
         '"Nun, ehrlich gesagt wette ich, daß du k… ach, vergiß es. Laß uns gehen."{#morte_s125_r7066}':
@@ -2081,7 +2081,7 @@ label morte_s125: # from 124.0
 
 # s126 # say7046
 label morte_s126: # from 123.0
-    nr '"Wenn du halb soviel Grips hättest wie zu deinen Lebzeiten, dann wüßtest du es besser." Mortes Stimme nimmt einen süffisanten Ton an. "In Sachen Liebe macht mir keiner etwas vor."{#morte_s126_}'
+    nr '"Wenn du halb soviel Grips hättest wie zu deinen Lebzeiten, dann wüßtest du es besser." Mortes Stimme nimmt einen süffisanten Ton an. "In Sachen Liebe macht mir keiner etwas vor."{#morte_s126_1}'
 
     menu:
         '"Wie du meinst, Morte. Gehen wir."{#morte_s126_r7068}':
@@ -2091,7 +2091,7 @@ label morte_s126: # from 123.0
 
 # s127 # say7071
 label morte_s127: # -
-    nr 'Morte schaut sich das Skelett einen Moment lang an und schüttelt dann seinen Kopf. "Nein… es ist zu sauber… da ist fast überhaupt kein Fleisch mehr dran. Außerdem krieg ich nie die ganze Tünche von den Knochen."{#morte_s127_}'
+    nr 'Morte schaut sich das Skelett einen Moment lang an und schüttelt dann seinen Kopf. "Nein… es ist zu sauber… da ist fast überhaupt kein Fleisch mehr dran. Außerdem krieg ich nie die ganze Tünche von den Knochen."{#morte_s127_1}'
 
     menu:
         '"Ich weiß ja nicht, ob„s “zu sauber„ ist… du könntest noch das eine oder andre über Reinheit lernen."{#morte_s127_r7076}':
@@ -2105,14 +2105,14 @@ label morte_s127: # -
 
 # s128 # say7130
 label morte_s128: # -
-    nr '"Jaa!"{#morte_s128_}'
+    nr '"Jaa!"{#morte_s128_1}'
 
     jump hivef1_s8  # EXTERN
 
 
 # s129 # say7187
 label morte_s129: # -
-    nr '"Ein Mimir ist ein wandelndes Lexikon. So was wie ich, Meister."{#morte_s129_}'
+    nr '"Ein Mimir ist ein wandelndes Lexikon. So was wie ich, Meister."{#morte_s129_1}'
 
     menu:
         '"Verstehe ich gut. Nun, Morte, steiger dich da lieber nicht rein. So wie die aussieht, rette ich dich hier bestimmt vor einem zweiten Sterben."{#morte_s129_r7483}':
@@ -2127,7 +2127,7 @@ label morte_s129: # -
 
 # s130 # say7188
 label morte_s130: # -
-    nr 'Morte starrt wie hypnotisiert auf die Frau, über deren Lippen sich ein Schwall von Obszönitäten ergießt. Nach dem Ende des verbalen Ausbruchs schweigt Morte für einen Augenblick und wendet sich dann dir zu. "Wow, Meister. Ich hab„ ein paar neue Flüche für meine Sammlung." Er wendet sich wieder der Frau zu, die eine Atempause eingelegt hat. "Außerdem bin ich verliebt."~ [MRT387]{#morte_s130_}'
+    nr 'Morte starrt wie hypnotisiert auf die Frau, über deren Lippen sich ein Schwall von Obszönitäten ergießt. Nach dem Ende des verbalen Ausbruchs schweigt Morte für einen Augenblick und wendet sich dann dir zu. "Wow, Meister. Ich hab„ ein paar neue Flüche für meine Sammlung." Er wendet sich wieder der Frau zu, die eine Atempause eingelegt hat. "Außerdem bin ich verliebt."~ [MRT387]{#morte_s130_1}'
 
     menu:
         'Verschwinde.{#morte_s130_r7485}':
@@ -2138,7 +2138,7 @@ label morte_s130: # -
 
 # s131 # say7775
 label morte_s131: # -
-    nr '"Whoa, Meister." Du willst mit dem Geschöpf sprechen, aber Morte unterbricht dich. "Schließ ab! Du solltest nicht mit jedem Scheusal auf der Straße schwafeln. Laß es sein."{#morte_s131_}'
+    nr '"Whoa, Meister." Du willst mit dem Geschöpf sprechen, aber Morte unterbricht dich. "Schließ ab! Du solltest nicht mit jedem Scheusal auf der Straße schwafeln. Laß es sein."{#morte_s131_1}'
 
     menu:
         '"Ich wollt„ ihm ein paar Fragen stellen…"{#morte_s131_r7776}':
@@ -2152,7 +2152,7 @@ label morte_s131: # -
 
 # s132 # say7778
 label morte_s132: # from 131.0
-    nr '"Nein, lieber nicht." Morte wirft einen Blick auf das Geschöpf, wendet sich wieder zu dir und flüstert dir zu: "Die sind leicht reizbar. Laß uns einfach gehen."{#morte_s132_}'
+    nr '"Nein, lieber nicht." Morte wirft einen Blick auf das Geschöpf, wendet sich wieder zu dir und flüstert dir zu: "Die sind leicht reizbar. Laß uns einfach gehen."{#morte_s132_1}'
 
     menu:
         '"Ich werd„s wagen."{#morte_s132_r7779}':
@@ -2166,7 +2166,7 @@ label morte_s132: # from 131.0
 
 # s133 # say7805
 label morte_s133: # -
-    nr 'Morte seufzt, als du Anstalten machst, mit dem Geschöpf zu reden.{#morte_s133_}'
+    nr 'Morte seufzt, als du Anstalten machst, mit dem Geschöpf zu reden.{#morte_s133_1}'
 
     menu:
         '"Ja?"{#morte_s133_r7806}':
@@ -2176,7 +2176,7 @@ label morte_s133: # -
 
 # s134 # say7807
 label morte_s134: # from 133.0
-    nr '"Oh, nichts… das Leben ist der beste Lehrmeister, weißt du." Er nickt in Richtung des Geschöpfs. "Mach weiter."{#morte_s134_}'
+    nr '"Oh, nichts… das Leben ist der beste Lehrmeister, weißt du." Er nickt in Richtung des Geschöpfs. "Mach weiter."{#morte_s134_1}'
 
     menu:
         '"Das werde ich."{#morte_s134_r7808}':
@@ -2190,7 +2190,7 @@ label morte_s134: # from 133.0
 
 # s135 # say2349
 label morte_s135: # from 44.0 44.1
-    nr '"Ja, „n “Gith„…" Morte sieht kurz zum Gith hinüber, der dich immer noch anstarrt. "Darüber sprechen wir “n anderes Mal."{#morte_s135_}'
+    nr '"Ja, „n “Gith„…" Morte sieht kurz zum Gith hinüber, der dich immer noch anstarrt. "Darüber sprechen wir “n anderes Mal."{#morte_s135_1}'
 
     menu:
         '"Ich kann jetzt noch nicht gehen. Ich werde ihm erst ein paar Fragen stellen…"{#morte_s135_r9035}':
@@ -2204,7 +2204,7 @@ label morte_s135: # from 44.0 44.1
 
 # s136 # say9860
 label morte_s136: # -
-    nr '"He, Meister… du bringst den Fussler eher um, als daß du ihn aufweckst!"{#morte_s136_}'
+    nr '"He, Meister… du bringst den Fussler eher um, als daß du ihn aufweckst!"{#morte_s136_1}'
 
     menu:
         '"Du hast Recht, Morte - laß uns gehen."{#morte_s136_r9882}':
@@ -2214,7 +2214,7 @@ label morte_s136: # -
 
 # s137 # say11946
 label morte_s137: # -
-    nr 'Morte schwebt zu dir herüber. "Was gibt„s, Meister?"{#morte_s137_}'
+    nr 'Morte schwebt zu dir herüber. "Was gibt„s, Meister?"{#morte_s137_1}'
 
     menu:
         '"Siehst du diese Zähne?"{#morte_s137_r11974}':
@@ -2228,14 +2228,14 @@ label morte_s137: # -
 
 # s138 # say11947
 label morte_s138: # from 137.0
-    nr 'Morte betrachtet deine Handfläche. "Iiihhh." Er scheint von einer morbiden Faszination ergriffen zu werden. "Lauter häßliche, kleine Dussel, was?"{#morte_s138_}'
+    nr 'Morte betrachtet deine Handfläche. "Iiihhh." Er scheint von einer morbiden Faszination ergriffen zu werden. "Lauter häßliche, kleine Dussel, was?"{#morte_s138_1}'
 
     jump morte_dispose
 
 
 # s139 # say11948
 label morte_s139: # -
-    nr '"Das fehlte ja gerade noch." Morte schaudert. "Würdest du die Dinger etwa in *dir* haben wollen?"{#morte_s139_}'
+    nr '"Das fehlte ja gerade noch." Morte schaudert. "Würdest du die Dinger etwa in *dir* haben wollen?"{#morte_s139_1}'
 
     menu:
         '"Komm schon, Morte, sie scheinen dich zu mögen. Sieh mal, wie sie dich anstarren."{#morte_s139_r11976}':
@@ -2254,7 +2254,7 @@ label morte_s139: # -
 
 # s140 # say11949
 label morte_s140: # from 139.0
-    nr '"Bleib mir bloß mit diesen ekligen Dingern vom Hals, sonst…" Morte zögert. "Ich hab„ keine Ahnung, wie man Zähnen drohen könnte."{#morte_s140_}'
+    nr '"Bleib mir bloß mit diesen ekligen Dingern vom Hals, sonst…" Morte zögert. "Ich hab„ keine Ahnung, wie man Zähnen drohen könnte."{#morte_s140_1}'
 
     menu:
         'Untersuche die Zähne.{#morte_s140_r11979}':
@@ -2273,7 +2273,7 @@ label morte_s140: # from 139.0
 
 # s141 # say11950
 label morte_s141: # from 139.1 140.1
-    nr 'Es geht alles ganz schnell. Du nimmst Morte in den Schwitzkasten, weil das der einzige Griff ist, den du wirklich beherrschst. Als er sich losbeißen will, springen die Zähne aus deiner Hand heraus, hinein in seinen Kiefer. Morte heult vor Schmerz, als Ingress„ Zähne seine alten Zähne herausreißen und in die entstandenen Hohlräume springen.{#morte_s141_}'
+    nr 'Es geht alles ganz schnell. Du nimmst Morte in den Schwitzkasten, weil das der einzige Griff ist, den du wirklich beherrschst. Als er sich losbeißen will, springen die Zähne aus deiner Hand heraus, hinein in seinen Kiefer. Morte heult vor Schmerz, als Ingress„ Zähne seine alten Zähne herausreißen und in die entstandenen Hohlräume springen.{#morte_s141_1}'
 
     menu:
         '"Na, Morte. Das war doch gar nicht so schlimm, oder?"{#morte_s141_r11982}':
@@ -2284,7 +2284,7 @@ label morte_s141: # from 139.1 140.1
 
 # s142 # say11951
 label morte_s142: # from 149.0
-    nr 'Morte heult noch immer. Die Zähne passen sich seinem Mund an und verankern ihre Wurzeln mit einem schrecklichen Bohrgeräusch.{#morte_s142_}'
+    nr 'Morte heult noch immer. Die Zähne passen sich seinem Mund an und verankern ihre Wurzeln mit einem schrecklichen Bohrgeräusch.{#morte_s142_1}'
 
     menu:
         '"Morte? Bist du okay?"{#morte_s142_r11983}':
@@ -2295,7 +2295,7 @@ label morte_s142: # from 149.0
 
 # s143 # say11952
 label morte_s143: # from 141.0 142.0
-    nr 'Morte scheint dich nicht zu hören… er heult und heult. Plötzlich schlägt er seine Zähne aufeinander. Er beißt dreimal fest zu, bevor obere und untere Zahnreihe wieder aufeinanderschlagen, und Morte den Mund nicht mehr aufkriegt.{#morte_s143_}'
+    nr 'Morte scheint dich nicht zu hören… er heult und heult. Plötzlich schlägt er seine Zähne aufeinander. Er beißt dreimal fest zu, bevor obere und untere Zahnreihe wieder aufeinanderschlagen, und Morte den Mund nicht mehr aufkriegt.{#morte_s143_1}'
 
     menu:
         '"Wow."{#morte_s143_r11984}':
@@ -2305,7 +2305,7 @@ label morte_s143: # from 141.0 142.0
 
 # s144 # say11953
 label morte_s144: # from 143.0
-    nr 'Morte murmelt dir mit weit aufgerissenen Augen etwas zu.{#morte_s144_}'
+    nr 'Morte murmelt dir mit weit aufgerissenen Augen etwas zu.{#morte_s144_1}'
 
     menu:
         '"Also… gefallen sie dir?"{#morte_s144_r11985}' if morteLogic.r11985_condition():
@@ -2319,7 +2319,7 @@ label morte_s144: # from 143.0
 
 # s145 # say11954
 label morte_s145: # from 144.0
-    nr 'Die Zähne öffnen sich plötzlich wieder, und Morte holt tief Luft. "Dafür *bring ich dich um*," sagt er. "Das war echt mies von dir."{#morte_s145_}'
+    nr 'Die Zähne öffnen sich plötzlich wieder, und Morte holt tief Luft. "Dafür *bring ich dich um*," sagt er. "Das war echt mies von dir."{#morte_s145_1}'
 
     menu:
         '"Wie fühlen sie sich an?"{#morte_s145_r11987}':
@@ -2329,7 +2329,7 @@ label morte_s145: # from 144.0
 
 # s146 # say11955
 label morte_s146: # from 145.0 150.0
-    nr 'Morte spielt mit seinem Kiefer. "Ungewohnt. Aber nicht schlecht." Plötzlich verlängern sich die Zähne zu Fängen. "Ooooooh! Sie verändern sich!" Dann schrumpfen sie wieder auf ihre normale Größe zurück, werden wieder zu Fängen, dann wieder normal… "Ich glaube, sie werden mir gefallen."{#morte_s146_}'
+    nr 'Morte spielt mit seinem Kiefer. "Ungewohnt. Aber nicht schlecht." Plötzlich verlängern sich die Zähne zu Fängen. "Ooooooh! Sie verändern sich!" Dann schrumpfen sie wieder auf ihre normale Größe zurück, werden wieder zu Fängen, dann wieder normal… "Ich glaube, sie werden mir gefallen."{#morte_s146_1}'
 
     menu:
         '"Es tut mir leid, Morte. Ich wollte dir nichts Böses tun."{#morte_s146_r11988}' if morteLogic.r11988_condition():
@@ -2343,7 +2343,7 @@ label morte_s146: # from 145.0 150.0
 
 # s147 # say11956
 label morte_s147: # from 146.0 146.1
-    nr '"Oh, ganz ungeschoren kommst du mir trotzdem nicht davon," antwortet Morte. Als er grinst, werden seine Zähne wieder zu Fängen. "Wart„s nur ab."{#morte_s147_}'
+    nr '"Oh, ganz ungeschoren kommst du mir trotzdem nicht davon," antwortet Morte. Als er grinst, werden seine Zähne wieder zu Fängen. "Wart„s nur ab."{#morte_s147_1}'
 
     menu:
         '"Hey… Rache hat noch nie jemandem genützt, Morte… Komm, laß uns gehen."{#morte_s147_r11990}' if morteLogic.r11990_condition():
@@ -2357,7 +2357,7 @@ label morte_s147: # from 146.0 146.1
 
 # s148 # say11957
 label morte_s148: # -
-    nr '"Was ist?" Morte schwebt näher heran und schaut auf deine Handfläche. "Hey… die führen doch irgendwas im Schilde, oder?"{#morte_s148_}'
+    nr '"Was ist?" Morte schwebt näher heran und schaut auf deine Handfläche. "Hey… die führen doch irgendwas im Schilde, oder?"{#morte_s148_1}'
 
     menu:
         '"Ja, du hast re-"{#morte_s148_r11992}':
@@ -2367,7 +2367,7 @@ label morte_s148: # -
 
 # s149 # say11958
 label morte_s149: # from 148.0
-    nr 'Was als nächstes passiert, ist schwer zu beschreiben… und schmerzvoll mit anzusehen. Bevor du deine Handfläche schließen kannst, springen die Zähne aus deiner Hand heraus, hinein in Mortes Kiefer. Morte heult vor Schmerz, als Ingress„ Zähne seine alten Zähne herausreißen und in die entstandenen Hohlräume springen.{#morte_s149_}'
+    nr 'Was als nächstes passiert, ist schwer zu beschreiben… und schmerzvoll mit anzusehen. Bevor du deine Handfläche schließen kannst, springen die Zähne aus deiner Hand heraus, hinein in Mortes Kiefer. Morte heult vor Schmerz, als Ingress„ Zähne seine alten Zähne herausreißen und in die entstandenen Hohlräume springen.{#morte_s149_1}'
 
     menu:
         '"Morte!"{#morte_s149_r11993}':
@@ -2377,7 +2377,7 @@ label morte_s149: # from 148.0
 
 # s150 # say11959
 label morte_s150: # from 144.1
-    nr 'Die Zähne öffnen sich plötzlich wieder. Morte ringt nach Luft. "Dafür *bring ich dich um*! Du hast es geplant! Ich weiß es!"{#morte_s150_}'
+    nr 'Die Zähne öffnen sich plötzlich wieder. Morte ringt nach Luft. "Dafür *bring ich dich um*! Du hast es geplant! Ich weiß es!"{#morte_s150_1}'
 
     menu:
         '"Schau, ich wollte nicht, daß das passiert… Ich habe dich sogar gewarnt. Äh… wie fühlen sie sich an?"{#morte_s150_r11994}':
@@ -2387,14 +2387,14 @@ label morte_s150: # from 144.1
 
 # s151 # say12389
 label morte_s151: # -
-    nr 'Morte flüstert dir zu: "Meister, mir gefällt das gar nicht. Die sollten hier gar nicht sein. Der Blutkrieg hat den Himmelskreaturen nicht genug in den Hintern getreten, daß jedes Scheusal jederzeit in Urlaub gehen kann. Die *wollen* was. Sei vorsichtig." Inzwischen antwortet Tegar„in seinem Begleiter…{#morte_s151_}'
+    nr 'Morte flüstert dir zu: "Meister, mir gefällt das gar nicht. Die sollten hier gar nicht sein. Der Blutkrieg hat den Himmelskreaturen nicht genug in den Hintern getreten, daß jedes Scheusal jederzeit in Urlaub gehen kann. Die *wollen* was. Sei vorsichtig." Inzwischen antwortet Tegar„in seinem Begleiter…{#morte_s151_1}'
 
     jump tegarin_s12  # EXTERN
 
 
 # s152 # say12449
 label morte_s152: # -
-    nr '"Meister, ich bin sicherer denn je, daß diese Dussel nicht ganz sauber sind. Klingt mir ganz so, als seien sie desertiert, als seien sie auf der Suche nach einem Winkel, der ihren Status in Baator erhöht. Mit denen solltest du nicht reden, Meister… du weißt ja nicht, was die für„n Spiel spielen, und du könntest dir die Pfoten verbrennen… im wahrsten Sinne des Wortes."{#morte_s152_}'
+    nr '"Meister, ich bin sicherer denn je, daß diese Dussel nicht ganz sauber sind. Klingt mir ganz so, als seien sie desertiert, als seien sie auf der Suche nach einem Winkel, der ihren Status in Baator erhöht. Mit denen solltest du nicht reden, Meister… du weißt ja nicht, was die für„n Spiel spielen, und du könntest dir die Pfoten verbrennen… im wahrsten Sinne des Wortes."{#morte_s152_1}'
 
     menu:
         '"In Ordnung, Morte. Nur noch ein paar Fragen an diese beiden…"{#morte_s152_r12450}':
@@ -2408,7 +2408,7 @@ label morte_s152: # -
 
 # s153 # say12466
 label morte_s153: # -
-    nr 'Morte schwebt dicht an dich heran und flüstert dir ins Ohr: "Er *hat* recht, Meister… Ich weiß wirklich nicht, worüber du dich so aufregst."{#morte_s153_}'
+    nr 'Morte schwebt dicht an dich heran und flüstert dir ins Ohr: "Er *hat* recht, Meister… Ich weiß wirklich nicht, worüber du dich so aufregst."{#morte_s153_1}'
 
     menu:
         '"Wie du meinst… Ich wollte nur eine Frage stellen…"{#morte_s153_r12553}':
@@ -2433,14 +2433,14 @@ label morte_s153: # -
 
 # s154 # say12467
 label morte_s154: # -
-    nr '"Ja ja! Das gute Zeug!"{#morte_s154_}'
+    nr '"Ja ja! Das gute Zeug!"{#morte_s154_1}'
 
     jump baria_s20  # EXTERN
 
 
 # s155 # say12621
 label morte_s155: # -
-    nr 'Morte scheint erstaunt, als sich alle Blicke auf ihn richten. "Was? Was?" Du hast den Eindruck, daß er, wenn er Lippen hätte, unschuldig pfeifen würde.{#morte_s155_}'
+    nr 'Morte scheint erstaunt, als sich alle Blicke auf ihn richten. "Was? Was?" Du hast den Eindruck, daß er, wenn er Lippen hätte, unschuldig pfeifen würde.{#morte_s155_1}'
 
     menu:
         '"Hast du eine Erklärung dafür, Morte?"{#morte_s155_r12854}':
@@ -2459,7 +2459,7 @@ label morte_s155: # -
 
 # s156 # say12622
 label morte_s156: # from 155.0
-    nr '"Tja, ich würd„ sagen, wir hören uns an, was dieser Mann zu sagen hat. Ja?" Morte dreht sich um und starrt den Rattenfänger eindringlich an.{#morte_s156_}'
+    nr '"Tja, ich würd„ sagen, wir hören uns an, was dieser Mann zu sagen hat. Ja?" Morte dreht sich um und starrt den Rattenfänger eindringlich an.{#morte_s156_1}'
 
     menu:
         '"Nein… laß uns hören, was du dazu zu sagen hast, Morte."{#morte_s156_r12857}':
@@ -2478,7 +2478,7 @@ label morte_s156: # from 155.0
 
 # s157 # say12623
 label morte_s157: # from 155.1 156.1
-    nr 'Morte rollt seine Augen, als sei es ihm peinlich. "Das ist… ne sprechende Enzyklopädie. Nichts, worauf ich stolz wäre. Und jetzt laß uns anhören, was dieser Kerl zu sagen hat, in Ordnung?"{#morte_s157_}'
+    nr 'Morte rollt seine Augen, als sei es ihm peinlich. "Das ist… ne sprechende Enzyklopädie. Nichts, worauf ich stolz wäre. Und jetzt laß uns anhören, was dieser Kerl zu sagen hat, in Ordnung?"{#morte_s157_1}'
 
     menu:
         '"Wie du meinst."{#morte_s157_r12860}':
@@ -2494,7 +2494,7 @@ label morte_s157: # from 155.1 156.1
 
 # s158 # say12624
 label morte_s158: # from 156.0
-    nr '"Ach, nun komm schon, Meister… warum sollte ich dir etwas verheimlichen? Ich hab„ dir alles Nützliche erzählt, das *ich* weiß. Jetzt laß uns mal den Dussel hier die ganze Sache übernehmen."{#morte_s158_}'
+    nr '"Ach, nun komm schon, Meister… warum sollte ich dir etwas verheimlichen? Ich hab„ dir alles Nützliche erzählt, das *ich* weiß. Jetzt laß uns mal den Dussel hier die ganze Sache übernehmen."{#morte_s158_1}'
 
     menu:
         '"Wie du meinst."{#morte_s158_r12862}':
@@ -2508,14 +2508,14 @@ label morte_s158: # from 156.0
 
 # s159 # say12625
 label morte_s159: # -
-    nr '"Ja, Meister! So isses richtig!"{#morte_s159_}'
+    nr '"Ja, Meister! So isses richtig!"{#morte_s159_1}'
 
     jump creed_s40  # EXTERN
 
 
 # s160 # say12626
 label morte_s160: # -
-    nr '"Tot, Meister… tot."{#morte_s160_}'
+    nr '"Tot, Meister… tot."{#morte_s160_1}'
 
     menu:
         '"Du scheinst aber ganz in Ordnung zu sein, Rattenfänger…"{#morte_s160_r12864}':
@@ -2533,7 +2533,7 @@ label morte_s160: # -
 
 # s161 # say12627
 label morte_s161: # -
-    nr '"Tot, Meister… tot."{#morte_s161_}'
+    nr '"Tot, Meister… tot."{#morte_s161_1}'
 
     menu:
         '"Ah… Was war das nochmal für eine Geschichte über Leute, die für tote Ratten zahlen?"{#morte_s161_r12867}':
@@ -2551,7 +2551,7 @@ label morte_s161: # -
 
 # s162 # say13748
 label morte_s162: # -
-    nr '"Tja, da haben wir einen Baum, dem ein Ast zu viel abgebrochen ist." Morte rollt die Augen. "Hat gar keinen Zweck, mit Xaositekten zu plaudern, Meister. Das ist „n völlig verrückter Haufen."{#morte_s162_}'
+    nr '"Tja, da haben wir einen Baum, dem ein Ast zu viel abgebrochen ist." Morte rollt die Augen. "Hat gar keinen Zweck, mit Xaositekten zu plaudern, Meister. Das ist „n völlig verrückter Haufen."{#morte_s162_1}'
 
     menu:
         '"Xaositekten?"{#morte_s162_r13774}' if morteLogic.r13774_condition():
@@ -2572,7 +2572,7 @@ label morte_s162: # -
 
 # s163 # say13749
 label morte_s163: # from 162.0 162.1
-    nr '"Das ist „n “Bund„ ganz ohne Regeln… außer, keinen Gedanken zu lange im Kopf zu behalten. Manchmal werden sie auch “Chaoten„ genannt. Warum, muß ich wohl nicht erst erklären."{#morte_s163_}'
+    nr '"Das ist „n “Bund„ ganz ohne Regeln… außer, keinen Gedanken zu lange im Kopf zu behalten. Manchmal werden sie auch “Chaoten„ genannt. Warum, muß ich wohl nicht erst erklären."{#morte_s163_1}'
 
     menu:
         '"Wie rekrutieren sie neue Mitglieder?"{#morte_s163_r13777}':
@@ -2586,7 +2586,7 @@ label morte_s163: # from 162.0 162.1
 
 # s164 # say13750
 label morte_s164: # from 163.0
-    nr '"Die scheinen einfach Mitglieder wie die Fliegen anzulocken… na ja, Mitglieder, die verrückt oder chaotisch genug sind, denk ich mal. Ich glaub nicht, daß die Leute haben, die extra rekrutieren… obwohl es nicht so einfach ist, sich bei denen über irgend etwas ganz sicher zu sein."{#morte_s164_}'
+    nr '"Die scheinen einfach Mitglieder wie die Fliegen anzulocken… na ja, Mitglieder, die verrückt oder chaotisch genug sind, denk ich mal. Ich glaub nicht, daß die Leute haben, die extra rekrutieren… obwohl es nicht so einfach ist, sich bei denen über irgend etwas ganz sicher zu sein."{#morte_s164_1}'
 
     menu:
         '"Ich verstehe. Vielen Dank für die Informationen."{#morte_s164_r13779}':
@@ -2596,7 +2596,7 @@ label morte_s164: # from 163.0
 
 # s165 # say13828
 label morte_s165: # -
-    nr '"Tja, da haben wir einen Baum, dem ein Ast zu viel abgebrochen ist." Morte rollt die Augen. "Hat gar keinen Zweck, mit Xaositekten zu plaudern, Meister. Das ist „n völlig verrückter Haufen."{#morte_s165_}'
+    nr '"Tja, da haben wir einen Baum, dem ein Ast zu viel abgebrochen ist." Morte rollt die Augen. "Hat gar keinen Zweck, mit Xaositekten zu plaudern, Meister. Das ist „n völlig verrückter Haufen."{#morte_s165_1}'
 
     menu:
         '"Xaositekten?"{#morte_s165_r13986}' if morteLogic.r13986_condition():
@@ -2617,7 +2617,7 @@ label morte_s165: # -
 
 # s166 # say13829
 label morte_s166: # from 165.0 165.1
-    nr '"Das ist „n “Bund„ ganz ohne Regeln… außer, keinen Gedanken zu lange im Kopf zu behalten. Manchmal werden sie auch “Chaoten„ genannt. Warum, muß ich wohl nicht erst erklären."{#morte_s166_}'
+    nr '"Das ist „n “Bund„ ganz ohne Regeln… außer, keinen Gedanken zu lange im Kopf zu behalten. Manchmal werden sie auch “Chaoten„ genannt. Warum, muß ich wohl nicht erst erklären."{#morte_s166_1}'
 
     menu:
         '"Wie rekrutieren sie neue Mitglieder?"{#morte_s166_r13989}' if morteLogic.r13989_condition():
@@ -2631,7 +2631,7 @@ label morte_s166: # from 165.0 165.1
 
 # s167 # say13830
 label morte_s167: # from 166.0
-    nr '"Die scheinen einfach Mitglieder wie die Fliegen anzulocken… na ja, Mitglieder, die verrückt oder chaotisch genug sind, denk ich mal. Ich glaub nicht, daß die Leute haben, die extra rekrutieren… obwohl es nicht so einfach ist, sich bei denen über irgend etwas ganz sicher zu sein."{#morte_s167_}'
+    nr '"Die scheinen einfach Mitglieder wie die Fliegen anzulocken… na ja, Mitglieder, die verrückt oder chaotisch genug sind, denk ich mal. Ich glaub nicht, daß die Leute haben, die extra rekrutieren… obwohl es nicht so einfach ist, sich bei denen über irgend etwas ganz sicher zu sein."{#morte_s167_1}'
 
     menu:
         '"Ich verstehe. Vielen Dank für die Informationen."{#morte_s167_r13991}':
@@ -2641,7 +2641,7 @@ label morte_s167: # from 166.0
 
 # s168 # say14075
 label morte_s168: # -
-    nr '"Also gut…" Morte zischt dich an. "Gehen wir, Meister. Dieser Staubie könnte genausogut Wurmfutter sein."{#morte_s168_}'
+    nr '"Also gut…" Morte zischt dich an. "Gehen wir, Meister. Dieser Staubie könnte genausogut Wurmfutter sein."{#morte_s168_1}'
 
     menu:
         '"Das ist nur gerecht. Verschwinden wir von hier."{#morte_s168_r14275}' if morteLogic.r14275_condition():
@@ -2663,42 +2663,42 @@ label morte_s168: # -
 
 # s169 # say15339
 label morte_s169: # -
-    nr '"Spieß ihn auf, diesen polierten Affenarsch! Gib„s ihm!"{#morte_s169_}'
+    nr '"Spieß ihn auf, diesen polierten Affenarsch! Gib„s ihm!"{#morte_s169_1}'
 
     jump adyzoel_s19  # EXTERN
 
 
 # s170 # say15340
 label morte_s170: # -
-    nr '"Ja, du sollst antworten!"{#morte_s170_}'
+    nr '"Ja, du sollst antworten!"{#morte_s170_1}'
 
     jump adyzoel_s13  # EXTERN
 
 
 # s171 # say15341
 label morte_s171: # -
-    nr '"Ich setze zehn Kupfermünzen auf das Narbengesicht!" Morte schwebt heran und flüstert: "Das bist du, Meister. Ich hoffe, du enttäuschst uns nicht."{#morte_s171_}'
+    nr '"Ich setze zehn Kupfermünzen auf das Narbengesicht!" Morte schwebt heran und flüstert: "Das bist du, Meister. Ich hoffe, du enttäuschst uns nicht."{#morte_s171_1}'
 
     jump adyzoel_s20  # EXTERN
 
 
 # s172 # say15342
 label morte_s172: # -
-    nr '"Gut, Meister. Diesmal hast du ihn erwischt! Zeig„s ihm!"{#morte_s172_}'
+    nr '"Gut, Meister. Diesmal hast du ihn erwischt! Zeig„s ihm!"{#morte_s172_1}'
 
     jump adyzoel_s19  # EXTERN
 
 
 # s173 # say15343
 label morte_s173: # -
-    nr '"Richtig, du hochglanzpoliertes Backpfeifengesicht… Du hast gehört, was er gesagt hat!"{#morte_s173_}'
+    nr '"Richtig, du hochglanzpoliertes Backpfeifengesicht… Du hast gehört, was er gesagt hat!"{#morte_s173_1}'
 
     jump adyzoel_s32  # EXTERN
 
 
 # s174 # say15344
 label morte_s174: # -
-    nr '"Wer *ich* bin? Ha! Ich hätte dein Vater sein können, aber dieser Affe hat mich die Treppen hochgeprügelt!"{#morte_s174_}'
+    nr '"Wer *ich* bin? Ha! Ich hätte dein Vater sein können, aber dieser Affe hat mich die Treppen hochgeprügelt!"{#morte_s174_1}'
 
     menu:
         '"Morte, sei ruhig."{#morte_s174_r15490}':
@@ -2712,7 +2712,7 @@ label morte_s174: # -
 
 # s175 # say15345
 label morte_s175: # from 174.0 174.1
-    nr '"Was ist los, Prinzessin? Hat es dir die Sprache verschlagen? Und mach deine Klappe zu, bevor dir was in den Hals fliegt! Hast du nicht gehört? Pack deinen rosa Büstenhalter ein und verkriech dich unter dem schmutzigen Rock deiner Mutter, wo du hingehörst! Und grüß sie recht schön von mir, wenn du dort bist!"{#morte_s175_}'
+    nr '"Was ist los, Prinzessin? Hat es dir die Sprache verschlagen? Und mach deine Klappe zu, bevor dir was in den Hals fliegt! Hast du nicht gehört? Pack deinen rosa Büstenhalter ein und verkriech dich unter dem schmutzigen Rock deiner Mutter, wo du hingehörst! Und grüß sie recht schön von mir, wenn du dort bist!"{#morte_s175_1}'
 
     menu:
         '"Morte: Halt„ *jetzt* die Klappe."{#morte_s175_r15492}':
@@ -2727,21 +2727,21 @@ label morte_s175: # from 174.0 174.1
 
 # s176 # say15346
 label morte_s176: # from 175.0
-    nr '"Was? Oh… Tschuldigung, Meister. Bei solchen Typen kann ich einfach nur ausrasten…"{#morte_s176_}'
+    nr '"Was? Oh… Tschuldigung, Meister. Bei solchen Typen kann ich einfach nur ausrasten…"{#morte_s176_1}'
 
     jump adyzoel_s33  # EXTERN
 
 
 # s177 # say15347
 label morte_s177: # from 175.1
-    nr '"Hm, wenn ich es nicht besser wüßte, würde ich sagen-"{#morte_s177_}'
+    nr '"Hm, wenn ich es nicht besser wüßte, würde ich sagen-"{#morte_s177_1}'
 
     jump adyzoel_s33  # EXTERN
 
 
 # s178 # say15348
 label morte_s178: # -
-    nr '"Was? Ich bin nur ein Mimir, Meister! Ich kann mich nicht „duellieren“!„"{#morte_s178_}'
+    nr '"Was? Ich bin nur ein Mimir, Meister! Ich kann mich nicht „duellieren“!„"{#morte_s178_1}'
 
     $ morteLogic.s178_action()
     jump adyzoel_s35  # EXTERN
@@ -2749,7 +2749,7 @@ label morte_s178: # -
 
 # s179 # say15349
 label morte_s179: # -
-    nr '"Ein Mimir ist, äh… eine Art wandelndes Lexikon. Aber es ist mir wirklich peinlich, darüber zu sprechen."{#morte_s179_}'
+    nr '"Ein Mimir ist, äh… eine Art wandelndes Lexikon. Aber es ist mir wirklich peinlich, darüber zu sprechen."{#morte_s179_1}'
 
     if morteLogic.s179_condition():
         $ morteLogic.s179_action()
@@ -2762,7 +2762,7 @@ label morte_s179: # -
 
 # s180 # say15350
 label morte_s180: # -
-    nr '"Los, Meister… das wirst du ihm doch nicht durchgehen lassen? Dem Schnösel werden wir„s zeigen! Ich kümmere mich um seine Augen, schaufel du nur in ihn rein!"{#morte_s180_}'
+    nr '"Los, Meister… das wirst du ihm doch nicht durchgehen lassen? Dem Schnösel werden wir„s zeigen! Ich kümmere mich um seine Augen, schaufel du nur in ihn rein!"{#morte_s180_1}'
 
     menu:
         '"Du hast recht… greifen wir ihn uns."{#morte_s180_r15494}':
@@ -2777,7 +2777,7 @@ label morte_s180: # -
 
 # s181 # say16613
 label morte_s181: # from 185.0
-    nr '"Was? Oh, ja, Meister, klar - was auch immer du sagst."{#morte_s181_}'
+    nr '"Was? Oh, ja, Meister, klar - was auch immer du sagst."{#morte_s181_1}'
 
     menu:
         '"Danke. Ich hätte da ein paar Fragen, Der um die Bäume trauert…"{#morte_s181_r16881}' if morteLogic.r16881_condition():
@@ -2796,7 +2796,7 @@ label morte_s181: # from 185.0
 
 # s182 # say16614
 label morte_s182: # from 181.1
-    nr 'Morte schaut dich eine Weile stumm an - dann nickt er. "Ja, kann ich. Wenn es dir so viel bedeutet, mach„ ich“s."{#morte_s182_}'
+    nr 'Morte schaut dich eine Weile stumm an - dann nickt er. "Ja, kann ich. Wenn es dir so viel bedeutet, mach„ ich“s."{#morte_s182_1}'
 
     menu:
         '"Danke. Annah? Könntest du„s?"{#morte_s182_r16884}' if morteLogic.r16884_condition():
@@ -2845,21 +2845,21 @@ label morte_s182: # from 181.1
 
 # s183 # say16615
 label morte_s183: # -
-    nr '"Hey, ich weiß *wirklich* nicht, was das bringen soll. Ich halte nichts von solchen Wunderheilungsgeschichten, Meister - so einfach ist es nicht."{#morte_s183_}'
+    nr '"Hey, ich weiß *wirklich* nicht, was das bringen soll. Ich halte nichts von solchen Wunderheilungsgeschichten, Meister - so einfach ist es nicht."{#morte_s183_1}'
 
     jump nordom_s2  # EXTERN
 
 
 # s184 # say16616
 label morte_s184: # -
-    nr '"Oh, Mann, das darf nicht wahr sein. Ich kann nicht *glauben*, daß du deine Zeit so vergeudest, Meister!"{#morte_s184_}'
+    nr '"Oh, Mann, das darf nicht wahr sein. Ich kann nicht *glauben*, daß du deine Zeit so vergeudest, Meister!"{#morte_s184_1}'
 
     jump nordom_s3  # EXTERN
 
 
 # s185 # say16617
 label morte_s185: # -
-    nr '"Hey, Meister, ich hab„ ja schon so einiges erlebt… Aber daß so etwas *möglich* ist, gibt mir den Rest."{#morte_s185_}'
+    nr '"Hey, Meister, ich hab„ ja schon so einiges erlebt… Aber daß so etwas *möglich* ist, gibt mir den Rest."{#morte_s185_1}'
 
     menu:
         '"Ich danke dir, Nordom. Morte? Was denkst du?"{#morte_s185_r16893}' if morteLogic.r16893_condition():
@@ -2908,14 +2908,14 @@ label morte_s185: # -
 
 # s186 # say16618
 label morte_s186: # -
-    nr '"Mann! Ich darf gar nicht hinsehen!"{#morte_s186_}'
+    nr '"Mann! Ich darf gar nicht hinsehen!"{#morte_s186_1}'
 
     jump ignus_s13  # EXTERN
 
 
 # s187 # say17533
 label morte_s187: # -
-    nr '"Warum nicht, Meister? Man kann sich an denen bestimmt prima abreagieren, oder? Hmm… Na ja, du müßtest für mich das Treten und Werfen übernehmen. Außerdem würde ich gerne den fünf-Meter-Sprung mit den heißen Kohlen sehen!"{#morte_s187_}'
+    nr '"Warum nicht, Meister? Man kann sich an denen bestimmt prima abreagieren, oder? Hmm… Na ja, du müßtest für mich das Treten und Werfen übernehmen. Außerdem würde ich gerne den fünf-Meter-Sprung mit den heißen Kohlen sehen!"{#morte_s187_1}'
 
     menu:
         '"Was meinst du, Annah?"{#morte_s187_r17583}' if morteLogic.r17583_condition():
@@ -2946,7 +2946,7 @@ label morte_s187: # -
 
 # s188 # say18801
 label morte_s188: # -
-    nr 'Morte dreht sich zu dem Stockbewohner um. "Hau ab."{#morte_s188_}'
+    nr 'Morte dreht sich zu dem Stockbewohner um. "Hau ab."{#morte_s188_1}'
 
     menu:
         '"Du kriegst diesen Schädel nicht."{#morte_s188_r18802}':
@@ -2983,7 +2983,7 @@ label morte_s188: # -
 
 # s189 # say18809
 label morte_s189: # -
-    nr 'Morte hat einen Finger des Mannes wie eine Zigarre makaber zwischen die Zähne geklemmt. Er spricht um den Finger herum: "Wenn du mich nochmal anfaßt, geht„s deiner ganzen Hand so wie dem Finger hier, Dussel."{#morte_s189_}'
+    nr 'Morte hat einen Finger des Mannes wie eine Zigarre makaber zwischen die Zähne geklemmt. Er spricht um den Finger herum: "Wenn du mich nochmal anfaßt, geht„s deiner ganzen Hand so wie dem Finger hier, Dussel."{#morte_s189_1}'
 
     menu:
         '"Morte! Gib dem Mann seinen Finger zurück."{#morte_s189_r18810}':
@@ -3001,7 +3001,7 @@ label morte_s189: # -
 
 # s190 # say18813
 label morte_s190: # from 189.0
-    nr 'Morte spuckt den Finger auf den Mann. Er prallt an dessen Brust ab und fällt zu Boden.{#morte_s190_}'
+    nr 'Morte spuckt den Finger auf den Mann. Er prallt an dessen Brust ab und fällt zu Boden.{#morte_s190_1}'
 
     menu:
         '"Pech. Verzieh dich, Köter."{#morte_s190_r18814}':
@@ -3015,7 +3015,7 @@ label morte_s190: # from 189.0
 
 # s191 # say18816
 label morte_s191: # -
-    nr 'Morte dreht sich schnell zu dir um: "Meister, gib dieser Ratte nichts."{#morte_s191_}'
+    nr 'Morte dreht sich schnell zu dir um: "Meister, gib dieser Ratte nichts."{#morte_s191_1}'
 
     menu:
         '"Ich…"{#morte_s191_r18817}':
@@ -3025,14 +3025,14 @@ label morte_s191: # -
 
 # s192 # say18818
 label morte_s192: # -
-    nr 'Morte herrscht den Mann an: "Ich *hab nicht* mit dir geredet, du Rindvieh. Wenn ich mit dir rede, merkst du das daran, daß ich muhe und blöke. Damit du mich besser verstehen kannst."{#morte_s192_}'
+    nr 'Morte herrscht den Mann an: "Ich *hab nicht* mit dir geredet, du Rindvieh. Wenn ich mit dir rede, merkst du das daran, daß ich muhe und blöke. Damit du mich besser verstehen kannst."{#morte_s192_1}'
 
     jump colylfn_s16  # EXTERN
 
 
 # s193 # say18819
 label morte_s193: # -
-    nr '"Meister, *nicht*."{#morte_s193_}'
+    nr '"Meister, *nicht*."{#morte_s193_1}'
 
     menu:
         'Gib ihm fünf Kupfermünzen.{#morte_s193_r18820}' if morteLogic.r18820_condition():
@@ -3066,7 +3066,7 @@ label morte_s193: # -
 
 # s194 # say18826
 label morte_s194: # -
-    nr '"Ich schwebe mit dem größten Idioten durch das Multiversum."{#morte_s194_}'
+    nr '"Ich schwebe mit dem größten Idioten durch das Multiversum."{#morte_s194_1}'
 
     menu:
         '"…wie, Gelbfinger? Ich bestehle dich und du tust *was*?"{#morte_s194_r18827}':
@@ -3089,14 +3089,14 @@ label morte_s194: # -
 
 # s195 # say18831
 label morte_s195: # -
-    nr '"Meister! Komm!"{#morte_s195_}'
+    nr '"Meister! Komm!"{#morte_s195_1}'
 
     jump colylfn_s52  # EXTERN
 
 
 # s196 # say18832
 label morte_s196: # -
-    nr '"Das Leben über den Straßen Sigils auch nicht."{#morte_s196_}'
+    nr '"Das Leben über den Straßen Sigils auch nicht."{#morte_s196_1}'
 
     menu:
         'Gib ihm fünf Kupfermünzen.{#morte_s196_r18833}' if morteLogic.r18833_condition():
@@ -3126,14 +3126,14 @@ label morte_s196: # -
 
 # s197 # say19031
 label morte_s197: # -
-    nr '"Hey du, Schläger! Wie geht„s deinem Freund in der Wand?"{#morte_s197_}'
+    nr '"Hey du, Schläger! Wie geht„s deinem Freund in der Wand?"{#morte_s197_1}'
 
     jump ojo_s11  # EXTERN
 
 
 # s198 # say19032
 label morte_s198: # -
-    nr 'Morte zieht den Kopf ein. "Was immer du sagst, Meister."{#morte_s198_}'
+    nr 'Morte zieht den Kopf ein. "Was immer du sagst, Meister."{#morte_s198_1}'
 
     menu:
         '"Okay. Ojo, ich hätte da ein paar Fragen."{#morte_s198_r19033}':
@@ -3147,7 +3147,7 @@ label morte_s198: # -
 
 # s199 # say19551
 label morte_s199: # -
-    nr '"Wow, Meister… was für „ne Schönheit, nicht? So süße, kleine Mädels trifft man nicht überall, weißt du."{#morte_s199_}'
+    nr '"Wow, Meister… was für „ne Schönheit, nicht? So süße, kleine Mädels trifft man nicht überall, weißt du."{#morte_s199_1}'
 
     menu:
         '"Ich kann wenig Attraktives an verrottenden Leichen finden, Morte, sei sie nun weiblich oder nicht."{#morte_s199_r19666}':
@@ -3161,7 +3161,7 @@ label morte_s199: # -
 
 # s200 # say19552
 label morte_s200: # from 199.0
-    nr 'Mortes Augen rollen. "Hah! Eines Tages wirst du verstehen, was ich meine."{#morte_s200_}'
+    nr 'Mortes Augen rollen. "Hah! Eines Tages wirst du verstehen, was ich meine."{#morte_s200_1}'
 
     menu:
         'Ignoriere ihn und begrüß den Zombie.{#morte_s200_r19668}' if morteLogic.r19668_condition():
@@ -3175,7 +3175,7 @@ label morte_s200: # from 199.0
 
 # s201 # say19553
 label morte_s201: # from 199.1
-    nr '"Ja, siehst du, das ist, was ich… hey!" Morte dreht sich abrupt zu dir um. "Kommst du mir jetzt etwa mit Sarkasmus?"{#morte_s201_}'
+    nr '"Ja, siehst du, das ist, was ich… hey!" Morte dreht sich abrupt zu dir um. "Kommst du mir jetzt etwa mit Sarkasmus?"{#morte_s201_1}'
 
     menu:
         'Ignoriere ihn und begrüß den Zombie.{#morte_s201_r19670}' if morteLogic.r19670_condition():
@@ -3189,7 +3189,7 @@ label morte_s201: # from 199.1
 
 # s202 # say19681
 label morte_s202: # -
-    nr '"Eh… weiß nicht, ob du gerne mit diesem… Ding da reden willst."{#morte_s202_}'
+    nr '"Eh… weiß nicht, ob du gerne mit diesem… Ding da reden willst."{#morte_s202_1}'
 
     menu:
         '"Warum nicht, Morte?"{#morte_s202_r19691}':
@@ -3207,7 +3207,7 @@ label morte_s202: # -
 
 # s203 # say19682
 label morte_s203: # from 202.0
-    nr '"Sie waren mal Menschen… sie, oder ihre Vorfahren, haben sich von Leichen ernährt, und das ist aus ihnen geworden. Ganz schön übles Zeug, Meister… sie sind wirklich nicht viel mehr als Tiere. *Gefährliche* Tiere."{#morte_s203_}'
+    nr '"Sie waren mal Menschen… sie, oder ihre Vorfahren, haben sich von Leichen ernährt, und das ist aus ihnen geworden. Ganz schön übles Zeug, Meister… sie sind wirklich nicht viel mehr als Tiere. *Gefährliche* Tiere."{#morte_s203_1}'
 
     menu:
         '"Also gut. Gehen wir."{#morte_s203_r19694}':
@@ -3221,7 +3221,7 @@ label morte_s203: # from 202.0
 
 # s204 # say19702
 label morte_s204: # -
-    nr '"Eh… weiß nicht, ob du gerne mit diesem… Ding da reden willst."{#morte_s204_}'
+    nr '"Eh… weiß nicht, ob du gerne mit diesem… Ding da reden willst."{#morte_s204_1}'
 
     menu:
         '"Ich bin überrascht, Morte… Hauptsache untot und weiblich. Mehr verlangst du doch normalerweise nicht."{#morte_s204_r19713}':
@@ -3243,7 +3243,7 @@ label morte_s204: # -
 
 # s205 # say19703
 label morte_s205: # from 204.1 206.0
-    nr '"Sie waren mal Menschen… sie, oder ihre Vorfahren, haben sich von Leichen ernährt, und das ist aus ihnen geworden. Ganz schön übles Zeug, Meister… sie sind wirklich nicht viel mehr als Tiere. *Gefährliche* Tiere."{#morte_s205_}'
+    nr '"Sie waren mal Menschen… sie, oder ihre Vorfahren, haben sich von Leichen ernährt, und das ist aus ihnen geworden. Ganz schön übles Zeug, Meister… sie sind wirklich nicht viel mehr als Tiere. *Gefährliche* Tiere."{#morte_s205_1}'
 
     menu:
         '"Also gut. Gehen wir."{#morte_s205_r19717}':
@@ -3257,28 +3257,28 @@ label morte_s205: # from 204.1 206.0
 
 # s206 # say19704
 label morte_s206: # from 204.0
-    nr '"Das ist nicht ganz Dasselbe, Meister…"{#morte_s206_}'
+    nr '"Das ist nicht ganz Dasselbe, Meister…"{#morte_s206_1}'
 
     jump morte_s205
 
 
 # s207 # say20469
 label morte_s207: # -
-    nr '"Diese Grabräuberin ist blind und fast taub."{#morte_s207_}'
+    nr '"Diese Grabräuberin ist blind und fast taub."{#morte_s207_1}'
 
     jump marta_s9  # EXTERN
 
 
 # s208 # say20470
 label morte_s208: # -
-    nr '"Ich glaube, sie meint Organe. Ich hoffe, sie meint Organe."{#morte_s208_}'
+    nr '"Ich glaube, sie meint Organe. Ich hoffe, sie meint Organe."{#morte_s208_1}'
 
     jump marta_s15  # EXTERN
 
 
 # s209 # say20471
 label morte_s209: # -
-    nr 'Morte dreht sich zu Marta um. "Ja, „Dingerchen“." Dann dreht er sich zu dir. "Alles eine Frage der Semantik."{#morte_s209_}'
+    nr 'Morte dreht sich zu Marta um. "Ja, „Dingerchen“." Dann dreht er sich zu dir. "Alles eine Frage der Semantik."{#morte_s209_1}'
 
     menu:
         '"Marta, warum ziehst du der Leiche Zähne und Fäden?"{#morte_s209_r20612}' if morteLogic.r20612_condition():
@@ -3298,14 +3298,14 @@ label morte_s209: # -
 
 # s210 # say20472
 label morte_s210: # -
-    nr '"Ich werde mir das *nicht* ansehen."{#morte_s210_}'
+    nr '"Ich werde mir das *nicht* ansehen."{#morte_s210_1}'
 
     jump marta_s24  # EXTERN
 
 
 # s211 # say21602
 label morte_s211: # -
-    nr '"Oh, bei allen Mächten…! Gräßlicher Dabus."{#morte_s211_}'
+    nr '"Oh, bei allen Mächten…! Gräßlicher Dabus."{#morte_s211_1}'
 
     menu:
         '"Was ist los?"{#morte_s211_r24695}':
@@ -3315,7 +3315,7 @@ label morte_s211: # -
 
 # s212 # say21603
 label morte_s212: # from 211.0
-    nr '"Er ist ein Dabus. Sie „sprechen“ in Rebussen, diesen bescheuerten Worträtseln. Wenn *du* nicht verstehst, was er sagt, finden wir besser einen Einheimischen oder eine andere Möglichkeit, mit ihm zu kommunizieren… falls wir dies wünschen. Ein lästiger Haufen. Ich wette, sie *können* sprechen, gehen aber lieber allen auf die Nerven mit ihren Rätseln, über die man sich den Kopf zerbrechen muß."{#morte_s212_}'
+    nr '"Er ist ein Dabus. Sie „sprechen“ in Rebussen, diesen bescheuerten Worträtseln. Wenn *du* nicht verstehst, was er sagt, finden wir besser einen Einheimischen oder eine andere Möglichkeit, mit ihm zu kommunizieren… falls wir dies wünschen. Ein lästiger Haufen. Ich wette, sie *können* sprechen, gehen aber lieber allen auf die Nerven mit ihren Rätseln, über die man sich den Kopf zerbrechen muß."{#morte_s212_1}'
 
     menu:
         '"Was ist ein „Dabus“?"{#morte_s212_r24696}':
@@ -3325,7 +3325,7 @@ label morte_s212: # from 211.0
 
 # s213 # say21604
 label morte_s213: # from 212.0
-    nr '"Man sagt, sie arbeiten als Hausmeister für die Dame der Schmerzen. Sie schwirren durch die Gegend, um Sigil nach ihren Launen abzureißen, zu reparieren und wieder aufzubauen. Sie sind schlimmer als Leichenfliegen." Morte seufzt. "Totschlagen darf man sie leider nicht, sonst wird die Dame… wütend."{#morte_s213_}'
+    nr '"Man sagt, sie arbeiten als Hausmeister für die Dame der Schmerzen. Sie schwirren durch die Gegend, um Sigil nach ihren Launen abzureißen, zu reparieren und wieder aufzubauen. Sie sind schlimmer als Leichenfliegen." Morte seufzt. "Totschlagen darf man sie leider nicht, sonst wird die Dame… wütend."{#morte_s213_1}'
 
     menu:
         '"„Die Dame der Schmerzen“? Wer ist das?"{#morte_s213_r24697}' if morteLogic.r24697_condition():
@@ -3344,7 +3344,7 @@ label morte_s213: # from 212.0
 
 # s214 # say21605
 label morte_s214: # from 213.0 213.1
-    nr '"Sie hat in dieser Stadt die Macht. Du wirst sie gleich erkennen: Ihr Gesicht wird von Klingen umrahmt, sie hat die Größe eines Riesen und schwebt über der Erde, genau wie diese Kerle hier." Morte nickt dem Dabus zu, der euch beide anschaut. "Keiner weiß etwas genaues über sie… sie redet nicht viel. Das einzige, was du wissen mußt, ist, daß du sie besser nie wütend machst. Wenn du sie siehst, dann lautet mein Ratschlag: Lauf."{#morte_s214_}'
+    nr '"Sie hat in dieser Stadt die Macht. Du wirst sie gleich erkennen: Ihr Gesicht wird von Klingen umrahmt, sie hat die Größe eines Riesen und schwebt über der Erde, genau wie diese Kerle hier." Morte nickt dem Dabus zu, der euch beide anschaut. "Keiner weiß etwas genaues über sie… sie redet nicht viel. Das einzige, was du wissen mußt, ist, daß du sie besser nie wütend machst. Wenn du sie siehst, dann lautet mein Ratschlag: Lauf."{#morte_s214_1}'
 
     menu:
         '"Äh… Moment mal. Du hast gesagt, die Dabus würden schweben, stimmt„s? Nun, dieser läuft ganz normal auf der Erde."{#morte_s214_r24700}' if morteLogic.r24700_condition():
@@ -3362,7 +3362,7 @@ label morte_s214: # from 213.0 213.1
 
 # s215 # say21606
 label morte_s215: # from 214.0 214.1
-    nr 'Morte wirft einen Blick auf den Dabus, und seine Augen weiten sich. "Ah-ha! Ich hab„ gewußt, daß ihr Bocksköpfe gehen könnt! Ich hab“s gewußt!" Morte wendet sich fröhlich wieder dir zu. "Ha! Dieser hier ist wohl nicht abgehoben genug, um vom Boden wegzukommen."{#morte_s215_}'
+    nr 'Morte wirft einen Blick auf den Dabus, und seine Augen weiten sich. "Ah-ha! Ich hab„ gewußt, daß ihr Bocksköpfe gehen könnt! Ich hab“s gewußt!" Morte wendet sich fröhlich wieder dir zu. "Ha! Dieser hier ist wohl nicht abgehoben genug, um vom Boden wegzukommen."{#morte_s215_1}'
 
     menu:
         '"Ja, vielleicht…"{#morte_s215_r24703}':
@@ -3372,7 +3372,7 @@ label morte_s215: # from 214.0 214.1
 
 # s216 # say21607
 label morte_s216: # -
-    nr 'Morte spricht verächtlich: "Ich würde eher durch die Eingeweide eines Tanar-Ris gehen, als zu interpretieren, was dieser Bockskopf zu sagen versucht. Du brauchst einen Übersetzer? Dann such dir einen Einheimischen Sigils."{#morte_s216_}'
+    nr 'Morte spricht verächtlich: "Ich würde eher durch die Eingeweide eines Tanar-Ris gehen, als zu interpretieren, was dieser Bockskopf zu sagen versucht. Du brauchst einen Übersetzer? Dann such dir einen Einheimischen Sigils."{#morte_s216_1}'
 
     menu:
         '"Verstehe."{#morte_s216_r24704}':
@@ -3382,7 +3382,7 @@ label morte_s216: # -
 
 # s217 # say21608
 label morte_s217: # -
-    nr 'Morte spricht verächtlich: "Ich würde eher durch die Eingeweide eines Tanar-Ris gehen, als zu interpretieren, was diese schwebenden Bocksköpfe zu sagen versuchen. Willst du einen Übersetzer? Laß dieses kleine Scheusal es machen." Er nickt in Richtung Annah. "Sie stammt aus dem Stock."{#morte_s217_}'
+    nr 'Morte spricht verächtlich: "Ich würde eher durch die Eingeweide eines Tanar-Ris gehen, als zu interpretieren, was diese schwebenden Bocksköpfe zu sagen versuchen. Willst du einen Übersetzer? Laß dieses kleine Scheusal es machen." Er nickt in Richtung Annah. "Sie stammt aus dem Stock."{#morte_s217_1}'
 
     menu:
         '"Vielleicht werde ich das tun…"{#morte_s217_r24705}':
@@ -3392,7 +3392,7 @@ label morte_s217: # -
 
 # s218 # say21609
 label morte_s218: # -
-    nr 'Morte spricht verächtlich: "Ich würde eher durch die Eingeweide eines Tanar-Ris gehen, als zu interpretieren, was diese schwebenden Bocksköpfe zu sagen versuchen. Willst du einen Übersetzer?" Er nickt in Richtung Dak„kon. "Laß “Der heiliger ist als du und doppelt so schweigsam„ übersetzen."{#morte_s218_}'
+    nr 'Morte spricht verächtlich: "Ich würde eher durch die Eingeweide eines Tanar-Ris gehen, als zu interpretieren, was diese schwebenden Bocksköpfe zu sagen versuchen. Willst du einen Übersetzer?" Er nickt in Richtung Dak„kon. "Laß “Der heiliger ist als du und doppelt so schweigsam„ übersetzen."{#morte_s218_1}'
 
     menu:
         '"Vielleicht werde ich das tun…"{#morte_s218_r24706}':
@@ -3402,7 +3402,7 @@ label morte_s218: # -
 
 # s219 # say21610
 label morte_s219: # -
-    nr 'Morte spöttelt: "Eher soll mich ein Tanar-Ri fressen, als daß ich versuche herauszufinden, was diese schwebenden Bocksköpfe sagen wollen. Brauchst du einen Übersetzer? Soll das doch die Tanar-Ri tun." Er nickt Grace zu. "Wahrscheinlich mußte sie sich sowieso die ganze Zeit mit dem Geschwätz dieser Kerle herumschlagen."{#morte_s219_}'
+    nr 'Morte spöttelt: "Eher soll mich ein Tanar-Ri fressen, als daß ich versuche herauszufinden, was diese schwebenden Bocksköpfe sagen wollen. Brauchst du einen Übersetzer? Soll das doch die Tanar-Ri tun." Er nickt Grace zu. "Wahrscheinlich mußte sie sich sowieso die ganze Zeit mit dem Geschwätz dieser Kerle herumschlagen."{#morte_s219_1}'
 
     menu:
         '"Vielleicht werde ich das tun…"{#morte_s219_r24707}':
@@ -3412,7 +3412,7 @@ label morte_s219: # -
 
 # s220 # say22061
 label morte_s220: # externs soego_s93
-    nr '"Du willst sie einfach töten. Vorahnung bedroht die Staubmenschen."{#morte_s220_}'
+    nr '"Du willst sie einfach töten. Vorahnung bedroht die Staubmenschen."{#morte_s220_1}'
 
     menu:
         '"Ich hätte da noch ein paar Fragen…"{#morte_s220_r22062}':
@@ -3426,7 +3426,7 @@ label morte_s220: # externs soego_s93
 
 # s221 # say22849
 label morte_s221: # -
-    nr 'Morte starrt dich an und schüttelt mit dem Kopf.{#morte_s221_}'
+    nr 'Morte starrt dich an und schüttelt mit dem Kopf.{#morte_s221_1}'
 
     menu:
         '"Was hast du gesagt, Würfelheld? „Morte ist ein dummer Schädel?“ Ja, sicher ist er das, nicht wahr, Würfelheld?"{#morte_s221_r22850}':
@@ -3441,7 +3441,7 @@ label morte_s221: # -
 
 # s222 # say22852
 label morte_s222: # from 221.0
-    nr '"Hey! Das hat es nicht gesagt!"{#morte_s222_}'
+    nr '"Hey! Das hat es nicht gesagt!"{#morte_s222_1}'
 
     menu:
         '"Und ob! Gerade eben hat er das gesagt!"{#morte_s222_r22853}':
@@ -3456,7 +3456,7 @@ label morte_s222: # from 221.0
 
 # s223 # say22855
 label morte_s223: # from 222.0
-    nr '"W --?! Gib mir das Ding!"{#morte_s223_}'
+    nr '"W --?! Gib mir das Ding!"{#morte_s223_1}'
 
     menu:
         '"Nein, das ist meiner. Er will sowieso nur bei mir sein. Nicht wahr, Würfelheld? Genau!"{#morte_s223_r22856}':
@@ -3471,7 +3471,7 @@ label morte_s223: # from 222.0
 
 # s224 # say22858
 label morte_s224: # from 223.0
-    nr '"Ich. Will. Es. Nur. Mal. Kurz. In. Der. Hand. Halten."{#morte_s224_}'
+    nr '"Ich. Will. Es. Nur. Mal. Kurz. In. Der. Hand. Halten."{#morte_s224_1}'
 
     menu:
         '"Aber du hast doch gar keine Hände."{#morte_s224_r22859}':
@@ -3485,7 +3485,7 @@ label morte_s224: # from 223.0
 
 # s225 # say22861
 label morte_s225: # from 224.0
-    nr '"Dann halt„ ich es eben mit meinen ZÄHNEN."{#morte_s225_}'
+    nr '"Dann halt„ ich es eben mit meinen ZÄHNEN."{#morte_s225_1}'
 
     menu:
         '"Nein, ich denke, ich steck ihn erst einmal ein."{#morte_s225_r22862}':
@@ -3495,7 +3495,7 @@ label morte_s225: # from 224.0
 
 # s226 # say22863
 label morte_s226: # from 225.0
-    nr '"Ich werde diesen Modronwürfel in Stücke schlagen."~ [MRT251]{#morte_s226_}'
+    nr '"Ich werde diesen Modronwürfel in Stücke schlagen."~ [MRT251]{#morte_s226_1}'
 
     menu:
         '"Hast du was gehört, Würfelheld? Nein, ich auch nicht!"{#morte_s226_r22864}':
@@ -3505,14 +3505,14 @@ label morte_s226: # from 225.0
 
 # s227 # say22892
 label morte_s227: # -
-    nr '"Oooooh!" Morte beißt seine Zähne zusammen, als Craddock vor Wut zu kochen anfängt… Man kann förmlich sehen, wie sich seine Gehirnwindungen verbiegen.~ [MRT387]{#morte_s227_}'
+    nr '"Oooooh!" Morte beißt seine Zähne zusammen, als Craddock vor Wut zu kochen anfängt… Man kann förmlich sehen, wie sich seine Gehirnwindungen verbiegen.~ [MRT387]{#morte_s227_1}'
 
     jump craddo_s15  # EXTERN
 
 
 # s228 # say24174
 label morte_s228: # -
-    nr '"Weißt du, Meister, ich konnte seine… ständigen… Pausen… eh nicht mehr ertragen. Jedenfalls… es ist… gut, daß er… jetzt… den Rand hält."{#morte_s228_}'
+    nr '"Weißt du, Meister, ich konnte seine… ständigen… Pausen… eh nicht mehr ertragen. Jedenfalls… es ist… gut, daß er… jetzt… den Rand hält."{#morte_s228_1}'
 
     menu:
         '"Sehr lustig, Morte. Gehen wir."{#morte_s228_r24175}':
@@ -3522,7 +3522,7 @@ label morte_s228: # -
 
 # s229 # say24176
 label morte_s229: # -
-    nr '"Meister, wozu brauchen wir einen unerschöpflichen Vorrat an Wasser? Wo brennt„s denn, hm?"{#morte_s229_}'
+    nr '"Meister, wozu brauchen wir einen unerschöpflichen Vorrat an Wasser? Wo brennt„s denn, hm?"{#morte_s229_1}'
 
     menu:
         '"Es könnte später von Nutzen sein, Morte. Gehen wir."{#morte_s229_r24177}':
@@ -3536,7 +3536,7 @@ label morte_s229: # -
 
 # s230 # say24179
 label morte_s230: # from 229.1
-    nr '"Schon in Ordnung? Falls du es schon vergessen hast, Meister, bist du selbst mit einer Aufgabe beschäftigt! Aber du hast ja letztendlich das Sagen hier. Puhh…"{#morte_s230_}'
+    nr '"Schon in Ordnung? Falls du es schon vergessen hast, Meister, bist du selbst mit einer Aufgabe beschäftigt! Aber du hast ja letztendlich das Sagen hier. Puhh…"{#morte_s230_1}'
 
     menu:
         '"Danke, daß du mir da zustimmst, Morte. Gehen wir."{#morte_s230_r24180}':
@@ -3546,7 +3546,7 @@ label morte_s230: # from 229.1
 
 # s231 # say24903
 label morte_s231: # -
-    nr '"He… geht„s dir gut? Ich dachte wirklich, du seist ein Totenbüchler."{#morte_s231_}'
+    nr '"He… geht„s dir gut? Ich dachte wirklich, du seist ein Totenbüchler."{#morte_s231_1}'
 
     menu:
         '"W…? Wer bist du?"{#morte_s231_r24904}':
@@ -3562,7 +3562,7 @@ label morte_s231: # -
 
 # s232 # say24906
 label morte_s232: # from 231.0
-    nr '"Äh… wer ich bin? Wie wär„s, wenn *du* dich zuerst vorstellst? Wer bist du?"{#morte_s232_}'
+    nr '"Äh… wer ich bin? Wie wär„s, wenn *du* dich zuerst vorstellst? Wer bist du?"{#morte_s232_1}'
 
     menu:
         '"Ich… weiß nicht. Ich kann mich nicht erinnern."{#morte_s232_r24907}':
@@ -3576,7 +3576,7 @@ label morte_s232: # from 231.0
 
 # s233 # say24909
 label morte_s233: # from 232.0 234.0 235.0
-    nr '"Du kannst dich nicht an deinen *Namen* erinnern? Heh. Also, wenn du das nächste Mal in der Stadt einen draufmachst, dann trink nicht so viel Fusel. Ich bin Morte. Ich bin auch hier gefangen."{#morte_s233_}'
+    nr '"Du kannst dich nicht an deinen *Namen* erinnern? Heh. Also, wenn du das nächste Mal in der Stadt einen draufmachst, dann trink nicht so viel Fusel. Ich bin Morte. Ich bin auch hier gefangen."{#morte_s233_1}'
 
     menu:
         '"Gefangen?"{#morte_s233_r24910}':
@@ -3586,7 +3586,7 @@ label morte_s233: # from 232.0 234.0 235.0
 
 # s234 # say24911
 label morte_s234: # from 232.1
-    nr '"Ja, und ich hab„ dich als *Zweiter* gefragt. Wie heißt du?"{#morte_s234_}'
+    nr '"Ja, und ich hab„ dich als *Zweiter* gefragt. Wie heißt du?"{#morte_s234_1}'
 
     menu:
         '"Ich… weiß nicht. Ich kann mich nicht erinnern."{#morte_s234_r24912}':
@@ -3600,7 +3600,7 @@ label morte_s234: # from 232.1
 
 # s235 # say24914
 label morte_s235: # from 234.1
-    nr '"Tchhhh… du bist sturer als ein Esel. Also gut, dann spiel *ich* mal den Höflichen hier. Ich heiße Morte. Wer bist du?"{#morte_s235_}'
+    nr '"Tchhhh… du bist sturer als ein Esel. Also gut, dann spiel *ich* mal den Höflichen hier. Ich heiße Morte. Wer bist du?"{#morte_s235_1}'
 
     menu:
         '"Ich… weiß nicht. Ich kann mich nicht erinnern."{#morte_s235_r24915}':
@@ -3610,7 +3610,7 @@ label morte_s235: # from 234.1
 
 # s236 # say24916
 label morte_s236: # from 233.0
-    nr '"Ja, da du dir noch nicht die Beine vertreten konntest, sag ich dir, was los ist: Ich hab„s schon an jeder Tür probiert. Dieser Raum ist fester verschlossen als ein Keuschheitsgürtel."{#morte_s236_}'
+    nr '"Ja, da du dir noch nicht die Beine vertreten konntest, sag ich dir, was los ist: Ich hab„s schon an jeder Tür probiert. Dieser Raum ist fester verschlossen als ein Keuschheitsgürtel."{#morte_s236_1}'
 
     menu:
         '"Und… wo sind wir hier eingesperrt? Was ist dies für ein Ort?"{#morte_s236_r24917}':
@@ -3620,7 +3620,7 @@ label morte_s236: # from 233.0
 
 # s237 # say24918
 label morte_s237: # from 236.0
-    nr '"Man nennt diesen Ort die „Leichenhalle“… Es ist ein großer schwarzer Bau mit dem architektonischen Charme einer schwangeren Spinne."{#morte_s237_}'
+    nr '"Man nennt diesen Ort die „Leichenhalle“… Es ist ein großer schwarzer Bau mit dem architektonischen Charme einer schwangeren Spinne."{#morte_s237_1}'
 
     menu:
         '"„Die Leichenhalle“? Was… bin ich tot?"{#morte_s237_r24919}':
@@ -3630,7 +3630,7 @@ label morte_s237: # from 236.0
 
 # s238 # say24920
 label morte_s238: # from 237.0
-    nr '"Soweit ich weiß nicht. Du hast aber ganz schön viele Narben, du… sieht aus, als ob dich irgendein Dussel mit einem Messer verziert hat. Ein Grund mehr, diesem Ort eins zu grinsen, bevor derjenige, der dich so zugerichtet hat, wiederkommt, um sein Kunstwerk zu vollenden."{#morte_s238_}'
+    nr '"Soweit ich weiß nicht. Du hast aber ganz schön viele Narben, du… sieht aus, als ob dich irgendein Dussel mit einem Messer verziert hat. Ein Grund mehr, diesem Ort eins zu grinsen, bevor derjenige, der dich so zugerichtet hat, wiederkommt, um sein Kunstwerk zu vollenden."{#morte_s238_1}'
 
     menu:
         '"Wie kommen wir hier wieder raus?"{#morte_s238_r24921}':
@@ -3640,7 +3640,7 @@ label morte_s238: # from 237.0
 
 # s239 # say24922
 label morte_s239: # from 238.0
-    nr '"Nun, alle Türen sind verriegelt. Wir brauchen also den Schlüssel. Die Chancen stehen nicht schlecht, daß einer dieser wandelnden Leichen in diesem Raum ihn hat."{#morte_s239_}'
+    nr '"Nun, alle Türen sind verriegelt. Wir brauchen also den Schlüssel. Die Chancen stehen nicht schlecht, daß einer dieser wandelnden Leichen in diesem Raum ihn hat."{#morte_s239_1}'
 
     menu:
         '"Wandelnde Leichen?"{#morte_s239_r24923}':
@@ -3650,7 +3650,7 @@ label morte_s239: # from 238.0
 
 # s240 # say24924
 label morte_s240: # from 28.0 239.0
-    nr '"Ja, die Leichenhallenwärter setzen die toten Körper als billige Arbeitskräfte ein. Die Leichen sind stumm wie Steine, aber völlig harmlos, und würden einen erst angreifen, wenn man ihnen zuerst auf die Pelle rückt."{#morte_s240_}'
+    nr '"Ja, die Leichenhallenwärter setzen die toten Körper als billige Arbeitskräfte ein. Die Leichen sind stumm wie Steine, aber völlig harmlos, und würden einen erst angreifen, wenn man ihnen zuerst auf die Pelle rückt."{#morte_s240_1}'
 
     menu:
         '"Gib„s keinen anderen Weg? Ich will sie nicht für einen Schlüssel umbringen."{#morte_s240_r24925}':
@@ -3665,7 +3665,7 @@ label morte_s240: # from 28.0 239.0
 
 # s241 # say24927
 label morte_s241: # from 240.0
-    nr '"Was, du glaubst, das verletzt ihre Gefühle? Sie sind TOT. Aber von der positiven Seite gesehen: Wenn du sie umbringst, haben sie wenigstens ein Weilchen Ruhe, bevor ihre Wärter sie wieder zum Arbeiten aufpäppeln."{#morte_s241_}'
+    nr '"Was, du glaubst, das verletzt ihre Gefühle? Sie sind TOT. Aber von der positiven Seite gesehen: Wenn du sie umbringst, haben sie wenigstens ein Weilchen Ruhe, bevor ihre Wärter sie wieder zum Arbeiten aufpäppeln."{#morte_s241_1}'
 
     menu:
         '"Nun, also gut… Ich mach eine von ihnen platt und hol den Schlüssel."{#morte_s241_r24928}':
@@ -3675,7 +3675,7 @@ label morte_s241: # from 240.0
 
 # s242 # say24929
 label morte_s242: # from 240.1 241.0
-    nr '"Nun, bewaffne dich lieber erst, bevor du das tust. Ich glaub, in einem der Regale hier liegt ein Skalpell."  ^NHINWEIS: Such in den Regalen dieses Raums nach einer Waffe, mit der du die Zombies angreifen kannst.^-{#morte_s242_}'
+    nr '"Nun, bewaffne dich lieber erst, bevor du das tust. Ich glaub, in einem der Regale hier liegt ein Skalpell."  ^NHINWEIS: Such in den Regalen dieses Raums nach einer Waffe, mit der du die Zombies angreifen kannst.^-{#morte_s242_1}'
 
     menu:
         '"In Ordnung. Ich such mir eine aus."{#morte_s242_r24930}':
@@ -3685,7 +3685,7 @@ label morte_s242: # from 240.1 241.0
 
 # s243 # say24931
 label morte_s243: # from 242.0
-    nr '"Eine letzte Sache: Diese Leichen sind langsam wie Schnecken, aber von einem von ihnen geschlagen zu werden fühlt sich an, wie von einem Rammbock geküsst zu werden. Wenn sie beginnen, Oberhand über dich zu gewinnen, solltest du daran denken, dass du RENNEN kannst, sie aber nicht. Nutze diesen, um Abstand zu halten, wenn du dich erholen musst."  ^NHINWEIS: <RUNAWAY> Falls Gefahr besteht, dass du stirbst, solltest du rennen, um Abstand zu den Zombies zu halten, während du dich erholst.^-{#morte_s243_}'
+    nr '"Eine letzte Sache: Diese Leichen sind langsam wie Schnecken, aber von einem von ihnen geschlagen zu werden fühlt sich an, wie von einem Rammbock geküsst zu werden. Wenn sie beginnen, Oberhand über dich zu gewinnen, solltest du daran denken, dass du RENNEN kannst, sie aber nicht. Nutze diesen, um Abstand zu halten, wenn du dich erholen musst."  ^NHINWEIS: <RUNAWAY> Falls Gefahr besteht, dass du stirbst, solltest du rennen, um Abstand zu den Zombies zu halten, während du dich erholst.^-{#morte_s243_1}'
 
     menu:
         '"OK. Danke für den Tip."{#morte_s243_r24932}':
@@ -3696,7 +3696,7 @@ label morte_s243: # from 242.0
 
 # s244 # say25962
 label morte_s244: # -
-    nr '"Eine Art sprechendes Lexikon, Meister. Ich mag wirklich nicht darüber sprechen."{#morte_s244_}'
+    nr '"Eine Art sprechendes Lexikon, Meister. Ich mag wirklich nicht darüber sprechen."{#morte_s244_1}'
 
     if morteLogic.s244_condition():
         $ morteLogic.s244_action()
@@ -3709,7 +3709,7 @@ label morte_s244: # -
 
 # s245 # say25964
 label morte_s245: # -
-    nr 'Morte wackelt mit seinen Augenbrauen und fängt an, der Frau entgegenzuschweben. "Das ist noch nicht alles, was ich -"{#morte_s245_}'
+    nr 'Morte wackelt mit seinen Augenbrauen und fängt an, der Frau entgegenzuschweben. "Das ist noch nicht alles, was ich -"{#morte_s245_1}'
 
     menu:
         '"Das reicht, Morte."{#morte_s245_r25965}':
@@ -3719,7 +3719,7 @@ label morte_s245: # -
 
 # s246 # say25966
 label morte_s246: # from 245.0
-    nr '"Ja, ja. Gut." Morte verdreht die Augen und fängt an zu murmeln. "Psst, ich schweige wie ein *Grab*…"{#morte_s246_}'
+    nr '"Ja, ja. Gut." Morte verdreht die Augen und fängt an zu murmeln. "Psst, ich schweige wie ein *Grab*…"{#morte_s246_1}'
 
     menu:
         '"Sag mal,… was hast du mit „von alleine“ gemeint? Tun sie das sonst nicht?"{#morte_s246_r25967}' if morteLogic.r25967_condition():
@@ -3737,7 +3737,7 @@ label morte_s246: # from 245.0
 
 # s247 # say25970
 label morte_s247: # -
-    nr 'Morte unterbricht sie: "Nun, weißt du, Meister, es gibt Unterschiede in der *Qualität* eines Mimir. Manche - wie ich - besitzen eben eine einnehmendere Persönlichkeit als andere. Sind eben… äh… „selbstbewußter“. Das ist das richtige Wort."{#morte_s247_}'
+    nr 'Morte unterbricht sie: "Nun, weißt du, Meister, es gibt Unterschiede in der *Qualität* eines Mimir. Manche - wie ich - besitzen eben eine einnehmendere Persönlichkeit als andere. Sind eben… äh… „selbstbewußter“. Das ist das richtige Wort."{#morte_s247_1}'
 
     menu:
         '"Hmm."{#morte_s247_r25971}':
@@ -3751,14 +3751,14 @@ label morte_s247: # -
 
 # s248 # say25973
 label morte_s248: # -
-    nr '"Hey! Ich will hier doch nur ein bißchen Spaß haben, Meister!"{#morte_s248_}'
+    nr '"Hey! Ich will hier doch nur ein bißchen Spaß haben, Meister!"{#morte_s248_1}'
 
     jump cwrushf_s27  # EXTERN
 
 
 # s249 # say27285
 label morte_s249: # -
-    nr '"Nur ein Tip, Meister: Ich würd„s jetzt ruhig angehen lassen. Es müssen ja nicht mehr Tote ins Totenbuch geschrieben werden als nötig… vor allem keine Frauen. Wenn sie getötet werden, könnte das außerdem die Verwalter anlocken."{#morte_s249_}'
+    nr '"Nur ein Tip, Meister: Ich würd„s jetzt ruhig angehen lassen. Es müssen ja nicht mehr Tote ins Totenbuch geschrieben werden als nötig… vor allem keine Frauen. Wenn sie getötet werden, könnte das außerdem die Verwalter anlocken."{#morte_s249_1}'
 
     menu:
         '"Ich glaube nicht, daß du„s schon mal gesagt hast… *Wer* sind diese Verwalter?"{#morte_s249_r27303}':
@@ -3780,7 +3780,7 @@ label morte_s249: # -
 
 # s250 # say27286
 label morte_s250: # from 249.0 252.0 256.0
-    nr '"Sie nennen sich selbst die „Staubmenschen“. Sie sind gar nicht zu übersehen: Sie stehen auf Schwarz und totenstarre Gesichter. Sie sind eine reudige Bande ghulischer Todesanbeter, die glauben, daß jeder sterben sollte… je früher desto besser."{#morte_s250_}'
+    nr '"Sie nennen sich selbst die „Staubmenschen“. Sie sind gar nicht zu übersehen: Sie stehen auf Schwarz und totenstarre Gesichter. Sie sind eine reudige Bande ghulischer Todesanbeter, die glauben, daß jeder sterben sollte… je früher desto besser."{#morte_s250_1}'
 
     menu:
         '"Das versteh ich nicht… Was können diese Staubmenschen dagegen haben, wenn ich mich hier aus dem Staub mache?"{#morte_s250_r27307}':
@@ -3790,7 +3790,7 @@ label morte_s250: # from 249.0 252.0 256.0
 
 # s251 # say27287
 label morte_s251: # from 250.0
-    nr '"Hast du nicht zugehört?! Ich sagte, daß die Staubies glauben, daß JEDER sterben muß, je früher desto besser. Glaubst du, daß die Leichen, die du gesehen hast, sich im Totenbuch besser fühlen als außerhalb des Buchs?"{#morte_s251_}'
+    nr '"Hast du nicht zugehört?! Ich sagte, daß die Staubies glauben, daß JEDER sterben muß, je früher desto besser. Glaubst du, daß die Leichen, die du gesehen hast, sich im Totenbuch besser fühlen als außerhalb des Buchs?"{#morte_s251_1}'
 
     menu:
         '"Die Leichen hier… Wo kommen die alle her?"{#morte_s251_r27308}':
@@ -3808,7 +3808,7 @@ label morte_s251: # from 250.0
 
 # s252 # say27288
 label morte_s252: # from 249.1 251.0 256.1
-    nr '"Der Tod sucht die Ebenen jeden Tag heim, Meister. Diese Tölpel sind alles, was von den armen Schweinen übriggeblieben ist, die ihre Körper nach dem Tod an die Verwalter verkauft haben."{#morte_s252_}'
+    nr '"Der Tod sucht die Ebenen jeden Tag heim, Meister. Diese Tölpel sind alles, was von den armen Schweinen übriggeblieben ist, die ihre Körper nach dem Tod an die Verwalter verkauft haben."{#morte_s252_1}'
 
     menu:
         '"Klär mich mal auf… *Wer* sind diese Verwalter?"{#morte_s252_r27311}':
@@ -3826,7 +3826,7 @@ label morte_s252: # from 249.1 251.0 256.1
 
 # s253 # say27289
 label morte_s253: # from 249.2 251.1 252.1
-    nr '"Wa… im *Ernst*? Hör zu, Meister, diese toten Dinger sind die letzte Chance für ein paar hartgesottene Typen wie uns. Wir müssen *nett* sein… und nicht wegen ein paar Schlüsseln Kleinholz aus ihnen machen, ihnen die Gliedmaßen abhacken oder etwas Ähnliches tun."{#morte_s253_}'
+    nr '"Wa… im *Ernst*? Hör zu, Meister, diese toten Dinger sind die letzte Chance für ein paar hartgesottene Typen wie uns. Wir müssen *nett* sein… und nicht wegen ein paar Schlüsseln Kleinholz aus ihnen machen, ihnen die Gliedmaßen abhacken oder etwas Ähnliches tun."{#morte_s253_1}'
 
     menu:
         '"Letzte Chance? Wovon… wovon *redest* du?"{#morte_s253_r27314}':
@@ -3836,7 +3836,7 @@ label morte_s253: # from 249.2 251.1 252.1
 
 # s254 # say27290
 label morte_s254: # from 253.0
-    nr '"Meister, SIE sind tot, WIR sind tot… verstehst du, worauf ich hinaus will? Nun?"{#morte_s254_}'
+    nr '"Meister, SIE sind tot, WIR sind tot… verstehst du, worauf ich hinaus will? Nun?"{#morte_s254_1}'
 
     menu:
         '"Nein… nein, eigentlich nicht."{#morte_s254_r27315}':
@@ -3850,7 +3850,7 @@ label morte_s254: # from 253.0
 
 # s255 # say27291
 label morte_s255: # from 254.0 254.1
-    nr '"Meister, wir haben bereits etwas mit diesen hinkenden Damen gemein. Wir sind *alle* mindestens einmal gestorben: da haben wir doch schon Gesprächsstoff. Sie schätzen Männer mit dieser Art von Erfahrung."{#morte_s255_}'
+    nr '"Meister, wir haben bereits etwas mit diesen hinkenden Damen gemein. Wir sind *alle* mindestens einmal gestorben: da haben wir doch schon Gesprächsstoff. Sie schätzen Männer mit dieser Art von Erfahrung."{#morte_s255_1}'
 
     menu:
         '"Aber… Moment… hast du nicht vorhin gesagt, daß ich *nicht* tot bin?"{#morte_s255_r27317}':
@@ -3860,7 +3860,7 @@ label morte_s255: # from 254.0 254.1
 
 # s256 # say27292
 label morte_s256: # from 255.0
-    nr '"Nun… okay, *du* bist vielleicht nicht tot, aber *ich* bin„s. Und von mir aus hätte ich nichts dagegen, einen Sarg mit einem dieser sehnigen Kadaver hier zu teilen." Morte fängt an, in freudiger Erwartung mit den Zähnen zu klappern. "Natürlich müßten die Verwalter sich erst von ihnen trennen, und das ist ziemlich unwahrscheinlich…"{#morte_s256_}'
+    nr '"Nun… okay, *du* bist vielleicht nicht tot, aber *ich* bin„s. Und von mir aus hätte ich nichts dagegen, einen Sarg mit einem dieser sehnigen Kadaver hier zu teilen." Morte fängt an, in freudiger Erwartung mit den Zähnen zu klappern. "Natürlich müßten die Verwalter sich erst von ihnen trennen, und das ist ziemlich unwahrscheinlich…"{#morte_s256_1}'
 
     menu:
         '"Wer sind diese Verwalter noch gleich?"{#morte_s256_r27318}':
@@ -3878,7 +3878,7 @@ label morte_s256: # from 255.0
 
 # s257 # say27293
 label morte_s257: # from 249.3 251.2 252.2 256.2
-    nr '"Sieh mal, Meister. Du bist immer noch etwas verwirrt nach deinem Kuss mit dem Tod. Also gebe ich dir zwei kleine Ratschläge: Erstens, wenn du Fragen hast, *fragst* du mich, in Ordnung?"  ^NHINWEIS: <SPEAKTO>^-{#morte_s257_}'
+    nr '"Sieh mal, Meister. Du bist immer noch etwas verwirrt nach deinem Kuss mit dem Tod. Also gebe ich dir zwei kleine Ratschläge: Erstens, wenn du Fragen hast, *fragst* du mich, in Ordnung?"  ^NHINWEIS: <SPEAKTO>^-{#morte_s257_1}'
 
     menu:
         '"In Ordnung… Wenn ich Fragen hab„, wende ich mich an dich."{#morte_s257_r27321}':
@@ -3888,7 +3888,7 @@ label morte_s257: # from 249.3 251.2 252.2 256.2
 
 # s258 # say27294
 label morte_s258: # from 257.0
-    nr '"Zweitens, wenn du nur *halb* so vergeßlich bist, wie du scheinst, mußt du dir eben alles notieren. Damit du„s nicht vergißt."{#morte_s258_}'
+    nr '"Zweitens, wenn du nur *halb* so vergeßlich bist, wie du scheinst, mußt du dir eben alles notieren. Damit du„s nicht vergißt."{#morte_s258_1}'
 
     menu:
         '"Zum Beispiel in ein Journal?"{#morte_s258_r27322}':
@@ -3898,7 +3898,7 @@ label morte_s258: # from 257.0
 
 # s259 # say27295
 label morte_s259: # from 258.0
-    nr '"Ja, wie ein Tagebuch. Falls du wichtige Dinge wie deinen gegenwärtigen Aufenthaltsort nicht mehr genau weißt, blättere darin und frische deine Erinnerung auf. Verstanden?"  ^NHINWEIS: Um auf das Tagebuch zuzugreifen, wählst du die Tagebuch-Taste im Schnellmenü. Dein Tagebuch wird während des Spiels automatisch aktualisiert.^-{#morte_s259_}'
+    nr '"Ja, wie ein Tagebuch. Falls du wichtige Dinge wie deinen gegenwärtigen Aufenthaltsort nicht mehr genau weißt, blättere darin und frische deine Erinnerung auf. Verstanden?"  ^NHINWEIS: Um auf das Tagebuch zuzugreifen, wählst du die Tagebuch-Taste im Schnellmenü. Dein Tagebuch wird während des Spiels automatisch aktualisiert.^-{#morte_s259_1}'
 
     menu:
         '"OK… Ich hab„s kapiert. Gehen wir."{#morte_s259_r27323}':
@@ -3908,7 +3908,7 @@ label morte_s259: # from 258.0
 
 # s260 # say27296
 label morte_s260: # -
-    nr '"Auf einem der Regale müßte ein Skalpell rumliegen. Hol dir das, bevor du mit einer der Leichen hier die Klingen kreuzt."{#morte_s260_}'
+    nr '"Auf einem der Regale müßte ein Skalpell rumliegen. Hol dir das, bevor du mit einer der Leichen hier die Klingen kreuzt."{#morte_s260_1}'
 
     menu:
         '"OK… Ich such weiter."{#morte_s260_r27324}':
@@ -3918,7 +3918,7 @@ label morte_s260: # -
 
 # s261 # say27297
 label morte_s261: # - # IF WEIGHT #8 /* Triggers after states #: 729 444 325 281 742 737 733 487 even though they appear after this state */ ~  Global("Mortuary_Walkthrough","GLOBAL",0) PartyHasItem("Scalpel") Global("ZM782_Dead_KAPUTZ","GLOBAL",0)
-    nr '"Prima, du hast das Skalpell gefunden! Und jetzt schnapp dir diese Leichen… und keine Bange, ich bleibe im Hintergrund und gebe dir taktische Ratschläge."{#morte_s261_}'
+    nr '"Prima, du hast das Skalpell gefunden! Und jetzt schnapp dir diese Leichen… und keine Bange, ich bleibe im Hintergrund und gebe dir taktische Ratschläge."{#morte_s261_1}'
 
     menu:
         '"Vielleicht könntest du mir *helfen,* Morte."{#morte_s261_r27325}':
@@ -3932,7 +3932,7 @@ label morte_s261: # - # IF WEIGHT #8 /* Triggers after states #: 729 444 325 281
 
 # s262 # say27298
 label morte_s262: # from 261.0
-    nr '"Ich WERDE dir helfen. Guten Rat bekommt man nicht leicht."{#morte_s262_}'
+    nr '"Ich WERDE dir helfen. Guten Rat bekommt man nicht leicht."{#morte_s262_1}'
 
     menu:
         '"Ich meinte beim Angriff auf die *Leiche* helfen."{#morte_s262_r27327}':
@@ -3946,7 +3946,7 @@ label morte_s262: # from 261.0
 
 # s263 # say27299
 label morte_s263: # from 262.0
-    nr '"Ich? Ich bin ein Romantiker und kein Soldat. Ich würde dir nur im Weg stehen."{#morte_s263_}'
+    nr '"Ich? Ich bin ein Romantiker und kein Soldat. Ich würde dir nur im Weg stehen."{#morte_s263_1}'
 
     menu:
         '"Wenn ich die Leiche angreife, dann stehst du mir besser nicht im Weg rum, oder du bist der Nächste, dem ich dieses Skalpell reinjage."{#morte_s263_r27329}':
@@ -3960,7 +3960,7 @@ label morte_s263: # from 262.0
 
 # s264 # say27300
 label morte_s264: # from 263.0
-    nr '"Äh… okay. Ich helfe dir."  ^NHINWEIS: Wenn Morte mit dir kämpfen soll, müßt ihr beide angewählt sein, wenn du die Leiche angreifst. Morte greift dann mit an.^-{#morte_s264_}'
+    nr '"Äh… okay. Ich helfe dir."  ^NHINWEIS: Wenn Morte mit dir kämpfen soll, müßt ihr beide angewählt sein, wenn du die Leiche angreifst. Morte greift dann mit an.^-{#morte_s264_1}'
 
     menu:
         '"Freut mich, daß wir uns verstehen. Und jetzt an die Arbeit."{#morte_s264_r27331}':
@@ -3970,7 +3970,7 @@ label morte_s264: # from 263.0
 
 # s265 # say27301
 label morte_s265: # -
-    nr '"Prima, du hast wohl die richtige Leiche kaltgemacht. Jetzt mußt du nur noch den Schlüssel finden. Er müßte irgendwo an der Leiche sein. Sobald wir ihn haben, hauen wir ab."{#morte_s265_}'
+    nr '"Prima, du hast wohl die richtige Leiche kaltgemacht. Jetzt mußt du nur noch den Schlüssel finden. Er müßte irgendwo an der Leiche sein. Sobald wir ihn haben, hauen wir ab."{#morte_s265_1}'
 
     menu:
         '"In Ordnung."{#morte_s265_r27332}':
@@ -3980,7 +3980,7 @@ label morte_s265: # -
 
 # s266 # say27302
 label morte_s266: # -
-    nr '"Prima, das ist der Schlüssel. Er muß in eine der Türen im Raum passen."{#morte_s266_}'
+    nr '"Prima, das ist der Schlüssel. Er muß in eine der Türen im Raum passen."{#morte_s266_1}'
 
     menu:
         '"Ich probier dann mal sämtliche Türen."{#morte_s266_r27333}':
@@ -3990,14 +3990,14 @@ label morte_s266: # -
 
 # s267 # say27911
 label morte_s267: # -
-    nr 'Morte zischt dir ins Ohr: "Anwalt."{#morte_s267_}'
+    nr 'Morte zischt dir ins Ohr: "Anwalt."{#morte_s267_1}'
 
     jump cwcafef_s15  # EXTERN
 
 
 # s268 # say27912
 label morte_s268: # -
-    nr '"Eine Art sprechendes Lexikon, Meister. Ich mag wirklich nicht darüber sprechen."{#morte_s268_}'
+    nr '"Eine Art sprechendes Lexikon, Meister. Ich mag wirklich nicht darüber sprechen."{#morte_s268_1}'
 
     if morteLogic.s268_condition():
         $ morteLogic.s268_action()
@@ -4010,7 +4010,7 @@ label morte_s268: # -
 
 # s269 # say27913
 label morte_s269: # -
-    nr 'Morte wackelt mit seinen Augenbrauen und fängt an, der Frau entgegenzuschweben. "Das ist noch nicht alles, was ich -"{#morte_s269_}'
+    nr 'Morte wackelt mit seinen Augenbrauen und fängt an, der Frau entgegenzuschweben. "Das ist noch nicht alles, was ich -"{#morte_s269_1}'
 
     menu:
         '"Das reicht, Morte."{#morte_s269_r27914}':
@@ -4020,7 +4020,7 @@ label morte_s269: # -
 
 # s270 # say27915
 label morte_s270: # from 269.0
-    nr '"Ja, ja. Gut." Morte verdreht die Augen und fängt an zu murmeln. "Psst, ich schweige wie ein *Grab*…"{#morte_s270_}'
+    nr '"Ja, ja. Gut." Morte verdreht die Augen und fängt an zu murmeln. "Psst, ich schweige wie ein *Grab*…"{#morte_s270_1}'
 
     menu:
         '"Sag mal,… was hast du mit „von alleine“ gemeint? Tun sie das sonst nicht?"{#morte_s270_r27916}' if morteLogic.r27916_condition():
@@ -4038,7 +4038,7 @@ label morte_s270: # from 269.0
 
 # s271 # say27919
 label morte_s271: # -
-    nr 'Morte unterbricht sie: "Nun, weißt du, Meister, es gibt Unterschiede in der *Qualität* eines Mimir. Manche - wie ich - besitzen eben eine einnehmendere Persönlichkeit als andere. Sind eben… äh… „selbstbewußter“. Das ist das richtige Wort."{#morte_s271_}'
+    nr 'Morte unterbricht sie: "Nun, weißt du, Meister, es gibt Unterschiede in der *Qualität* eines Mimir. Manche - wie ich - besitzen eben eine einnehmendere Persönlichkeit als andere. Sind eben… äh… „selbstbewußter“. Das ist das richtige Wort."{#morte_s271_1}'
 
     menu:
         '"Hmm."{#morte_s271_r27920}':
@@ -4052,14 +4052,14 @@ label morte_s271: # -
 
 # s272 # say27922
 label morte_s272: # -
-    nr '"Hey! Ich will hier doch nur ein bißchen Spaß haben, Meister!"{#morte_s272_}'
+    nr '"Hey! Ich will hier doch nur ein bißchen Spaß haben, Meister!"{#morte_s272_1}'
 
     jump cwcafef_s50  # EXTERN
 
 
 # s273 # say28036
 label morte_s273: # -
-    nr 'Morte nickt anerkennend. "He, der Bursche ist nicht schlecht!"{#morte_s273_}'
+    nr 'Morte nickt anerkennend. "He, der Bursche ist nicht schlecht!"{#morte_s273_1}'
 
     menu:
         '"Gut… Hier hast du dein Geld zurück, Malmaner."{#morte_s273_r28041}':
@@ -4079,7 +4079,7 @@ label morte_s273: # -
 
 # s274 # say28037
 label morte_s274: # -
-    nr 'Morte nickt anerkennend. "He, der Bursche ist nicht schlecht!"{#morte_s274_}'
+    nr 'Morte nickt anerkennend. "He, der Bursche ist nicht schlecht!"{#morte_s274_1}'
 
     menu:
         '"Gut… hier hast du dein Geld zurück, Malmaner."{#morte_s274_r28038}' if morteLogic.r28038_condition():
@@ -4129,28 +4129,28 @@ label morte_s274: # -
 
 # s275 # say28630
 label morte_s275: # -
-    nr '"Hört sich langweilig an."{#morte_s275_}'
+    nr '"Hört sich langweilig an."{#morte_s275_1}'
 
     jump grace_s60  # EXTERN
 
 
 # s276 # say28631
 label morte_s276: # -
-    nr '"Sie ist „ne Tanar-Ri… ein Sukkubus, Meister."{#morte_s276_}'
+    nr '"Sie ist „ne Tanar-Ri… ein Sukkubus, Meister."{#morte_s276_1}'
 
     jump grace_s72  # EXTERN
 
 
 # s277 # say28632
 label morte_s277: # -
-    nr '"Schließ ab, du Scheusal!" Morte läßt seine Kiefer zusammenschnappen. "Ich bin völlig DAFÜR, daß der Sukkubus mitkommt… die Mächte wissen, daß *du* ungefähr so witzig bist, als ob man sich einen Reißnagel durch den Darm schieben würde."{#morte_s277_}'
+    nr '"Schließ ab, du Scheusal!" Morte läßt seine Kiefer zusammenschnappen. "Ich bin völlig DAFÜR, daß der Sukkubus mitkommt… die Mächte wissen, daß *du* ungefähr so witzig bist, als ob man sich einen Reißnagel durch den Darm schieben würde."{#morte_s277_1}'
 
     jump annah_s166  # EXTERN
 
 
 # s278 # say28633
 label morte_s278: # -
-    nr '"He, warte! *Ich* bin hier derjenige, der sich mit den Ebenen auskennt! Das ist mein Job, Meister!"{#morte_s278_}'
+    nr '"He, warte! *Ich* bin hier derjenige, der sich mit den Ebenen auskennt! Das ist mein Job, Meister!"{#morte_s278_1}'
 
     menu:
         '"Ich finde, daß es eine ziemlich gute Idee ist, zwei Leute in der Gruppe zu haben, die sich mit den Ebenen auskennen. Außerdem hab„ ich auch “angenehm„ gesagt, Morte."{#morte_s278_r28634}':
@@ -4160,7 +4160,7 @@ label morte_s278: # -
 
 # s279 # say28635
 label morte_s279: # from 278.0
-    nr '"Angenehm fürs Auge vielleicht! Es scheint MIR fast so, als ob ein Mädel nur„n bißchen Haut zeigen muß, um dich um den Finger zu wickeln!" Morte schweigt. "Nicht, daß ich was dagegen hätte. Ich wollt“ es nur mal gesagt haben."{#morte_s279_}'
+    nr '"Angenehm fürs Auge vielleicht! Es scheint MIR fast so, als ob ein Mädel nur„n bißchen Haut zeigen muß, um dich um den Finger zu wickeln!" Morte schweigt. "Nicht, daß ich was dagegen hätte. Ich wollt“ es nur mal gesagt haben."{#morte_s279_1}'
 
     menu:
         '"Okay Morte, ich hab„s zur Kenntnis genommen. Liebe Grace… verzeih mir, wenn ich ein bißchen zu direkt bin, aber hättest du Lust, mit uns zu reisen?"{#morte_s279_r28636}':
@@ -4170,14 +4170,14 @@ label morte_s279: # from 278.0
 
 # s280 # say28637
 label morte_s280: # -
-    nr '"Was mein vernarbter Gefährte meinte, war, mit UNS… Ich bin übrigens Morte. Bitte vergib meinem Gefährten dafür, uns nicht vorgestellt zu haben… ich halte es für eine AUSGEZEICHNETE Idee, wenn due mitkämst. Wir haben jede Menge Platz für einen Sukkubus. VIEL Platz."{#morte_s280_}'
+    nr '"Was mein vernarbter Gefährte meinte, war, mit UNS… Ich bin übrigens Morte. Bitte vergib meinem Gefährten dafür, uns nicht vorgestellt zu haben… ich halte es für eine AUSGEZEICHNETE Idee, wenn due mitkämst. Wir haben jede Menge Platz für einen Sukkubus. VIEL Platz."{#morte_s280_1}'
 
     jump grace_s119  # EXTERN
 
 
 # s281 # say28738
 label morte_s281: # - # IF WEIGHT #4 /* Triggers after states #: 742 737 733 487 even though they appear after this state */ ~  Global("Morte_Stolen","GLOBAL",2) !GlobalGT("Fortress_Morte","GLOBAL",2)
-    nr '"Danke, Meister! Ich kann dir gar nicht sagen, wie froh ich bin, wieder bei dir zu sein." Seine Stimme trieft vor Sarkasmus. "Und ich hab„ hier sogar noch “n neuen Trick gelernt."{#morte_s281_}'
+    nr '"Danke, Meister! Ich kann dir gar nicht sagen, wie froh ich bin, wieder bei dir zu sein." Seine Stimme trieft vor Sarkasmus. "Und ich hab„ hier sogar noch “n neuen Trick gelernt."{#morte_s281_1}'
 
     menu:
         '"Ich bin auch froh, dich wiederzuhaben."{#morte_s281_r28743}':
@@ -4198,7 +4198,7 @@ label morte_s281: # - # IF WEIGHT #4 /* Triggers after states #: 742 737 733 487
 
 # s282 # say28739
 label morte_s282: # from 281.1
-    nr '"Wirklich? Das ist nett von dir, Meister. Ich will dir noch mal verzeihen. Aber tu„s ja nicht wieder."{#morte_s282_}'
+    nr '"Wirklich? Das ist nett von dir, Meister. Ich will dir noch mal verzeihen. Aber tu„s ja nicht wieder."{#morte_s282_1}'
 
     menu:
         '"Okay, Morte. Laß uns gehen."{#morte_s282_r28746}':
@@ -4208,7 +4208,7 @@ label morte_s282: # from 281.1
 
 # s283 # say28740
 label morte_s283: # from 281.2
-    nr '"Irgendwie glaub„ ich dir das nicht. Aber Schwamm drüber! Laß uns gehen!"{#morte_s283_}'
+    nr '"Irgendwie glaub„ ich dir das nicht. Aber Schwamm drüber! Laß uns gehen!"{#morte_s283_1}'
 
     menu:
         '"Schön."{#morte_s283_r28747}':
@@ -4222,7 +4222,7 @@ label morte_s283: # from 281.2
 
 # s284 # say28741
 label morte_s284: # -
-    nr '"Danke, Meister. Laß uns von hier verschwinden!" Morte hält inne. "Oh, übrigens, Meister… diese Typen waren wirklich nicht auf den Kopf gefallen. Die haben mir was Verschärftes beigebracht."{#morte_s284_}'
+    nr '"Danke, Meister. Laß uns von hier verschwinden!" Morte hält inne. "Oh, übrigens, Meister… diese Typen waren wirklich nicht auf den Kopf gefallen. Die haben mir was Verschärftes beigebracht."{#morte_s284_1}'
 
     menu:
         '"Laß uns gehen."{#morte_s284_r28749}':
@@ -4232,7 +4232,7 @@ label morte_s284: # -
 
 # s285 # say28962
 label morte_s285: # -
-    nr '"Äh… Meister? Du hast doch schon mal „ne Statue geseh“n, oder? Weißt du dann nicht, daß Statuen nicht sprechen können?"{#morte_s285_}'
+    nr '"Äh… Meister? Du hast doch schon mal „ne Statue geseh“n, oder? Weißt du dann nicht, daß Statuen nicht sprechen können?"{#morte_s285_1}'
 
     menu:
         '"Du bist vielleicht ein Witzbold, Morte: Du bist ein schwebender, sprechender Totenkopf und streitest ab, daß Statuen leben können."{#morte_s285_r28967}' if morteLogic.r28967_condition():
@@ -4255,7 +4255,7 @@ label morte_s285: # -
 
 # s286 # say28963
 label morte_s286: # from 285.0
-    nr '"Nun… äh… hmm. Okay, okay, Meister."{#morte_s286_}'
+    nr '"Nun… äh… hmm. Okay, okay, Meister."{#morte_s286_1}'
 
     menu:
         '"Ich habe einen Magier namens Salabesh getroffen, der mir von einem Steinmann erzählte, der hier sein sollte. Bist du das?"{#morte_s286_r28971}' if morteLogic.r28971_condition():
@@ -4274,7 +4274,7 @@ label morte_s286: # from 285.0
 
 # s287 # say28964
 label morte_s287: # -
-    nr '"Vielleicht ist sie anatomisch ein bißchen zu korrekt, Meister?"{#morte_s287_}'
+    nr '"Vielleicht ist sie anatomisch ein bißchen zu korrekt, Meister?"{#morte_s287_1}'
 
     menu:
         '"War nur „ne rhetorische Frage, Morte."{#morte_s287_r28974}':
@@ -4284,7 +4284,7 @@ label morte_s287: # -
 
 # s288 # say28965
 label morte_s288: # from 287.0
-    nr '"Klar, Meister. Wußte ich doch."{#morte_s288_}'
+    nr '"Klar, Meister. Wußte ich doch."{#morte_s288_1}'
 
     menu:
         '"Ich habe einen Magier namens Salabesh getroffen, der mir von einem Steinmann erzählte, der hier sein sollte. Bist du das?"{#morte_s288_r28975}' if morteLogic.r28975_condition():
@@ -4304,7 +4304,7 @@ label morte_s288: # from 287.0
 
 # s289 # say28966
 label morte_s289: # -
-    nr 'Morte rollt mit den Augen und gibt Geräusche von sich, als ob er erstickt. "Bei allen Mächten! Bitte nicht schon wieder so ein Dussel, der… so… spricht!"{#morte_s289_}'
+    nr 'Morte rollt mit den Augen und gibt Geräusche von sich, als ob er erstickt. "Bei allen Mächten! Bitte nicht schon wieder so ein Dussel, der… so… spricht!"{#morte_s289_1}'
 
     menu:
         '"Ich will dich was über dich fragen"…{#morte_s289_r28978}':
@@ -4326,28 +4326,28 @@ label morte_s289: # -
 
 # s290 # say29677
 label morte_s290: # -
-    nr '"He, Meister. Er hat seine Finger gekreuzt! Er lügt!"{#morte_s290_}'
+    nr '"He, Meister. Er hat seine Finger gekreuzt! Er lügt!"{#morte_s290_1}'
 
     jump quell_s21  # EXTERN
 
 
 # s291 # say30527
 label morte_s291: # -
-    nr 'Morte meldet sich flüsternd zu Wort. "Er sagt, er ist Anwalt. Ein Berater in rechtlichen Angelegenheiten. Einer von diesen Dusseln, die vor Gericht labern."{#morte_s291_}'
+    nr 'Morte meldet sich flüsternd zu Wort. "Er sagt, er ist Anwalt. Ein Berater in rechtlichen Angelegenheiten. Einer von diesen Dusseln, die vor Gericht labern."{#morte_s291_1}'
 
     jump iannis_s10  # EXTERN
 
 
 # s292 # say30816
 label morte_s292: # -
-    nr 'Morte dreht sich um und schaut hinter sich. "Wo?! Wo?!"{#morte_s292_}'
+    nr 'Morte dreht sich um und schaut hinter sich. "Wo?! Wo?!"{#morte_s292_1}'
 
     jump able_s2  # EXTERN
 
 
 # s293 # say30817
 label morte_s293: # -
-    nr 'Morte schnappt nach Luft. "Da, hinter dir! Da ist noch ein schwebender Schädel!"{#morte_s293_}'
+    nr 'Morte schnappt nach Luft. "Da, hinter dir! Da ist noch ein schwebender Schädel!"{#morte_s293_1}'
 
     menu:
         'Guck dich nach dem Schädel um.{#morte_s293_r30822}' if morteLogic.r30822_condition():
@@ -4365,21 +4365,21 @@ label morte_s293: # -
 
 # s294 # say30818
 label morte_s294: # -
-    nr '"Da, wo ich hinzeige! Da!"{#morte_s294_}'
+    nr '"Da, wo ich hinzeige! Da!"{#morte_s294_1}'
 
     jump able_s11  # EXTERN
 
 
 # s295 # say30819
 label morte_s295: # -
-    nr 'Morte spricht in gespielter Verzweiflung: "Du hast sie gerade verpaßt! Eine ganze *Parade* von ihnen! So was wird wahrscheinlich in einer Million Umdrehungen des Großen Rings nicht wieder vorkommen!"{#morte_s295_}'
+    nr 'Morte spricht in gespielter Verzweiflung: "Du hast sie gerade verpaßt! Eine ganze *Parade* von ihnen! So was wird wahrscheinlich in einer Million Umdrehungen des Großen Rings nicht wieder vorkommen!"{#morte_s295_1}'
 
     jump able_s12  # EXTERN
 
 
 # s296 # say30820
 label morte_s296: # -
-    nr 'Morte wippt leicht, als ob er die Schultern zucken würde. "Ich würde es lieber als tiefe Einsichten in das Wesen des Menschen bezeichnen."{#morte_s296_}'
+    nr 'Morte wippt leicht, als ob er die Schultern zucken würde. "Ich würde es lieber als tiefe Einsichten in das Wesen des Menschen bezeichnen."{#morte_s296_1}'
 
     menu:
         '"Ich hätte ein paar Fragen…"{#morte_s296_r30825}' if morteLogic.r30825_condition():
@@ -4394,14 +4394,14 @@ label morte_s296: # -
 
 # s297 # say30821
 label morte_s297: # -
-    nr '"Weißt du, Meister, das IST VIELLEICHT GERADE VERRÜCKT GENUG, UM ZU FUNKTIONIEREN!"{#morte_s297_}'
+    nr '"Weißt du, Meister, das IST VIELLEICHT GERADE VERRÜCKT GENUG, UM ZU FUNKTIONIEREN!"{#morte_s297_1}'
 
     jump able_s65  # EXTERN
 
 
 # s298 # say31566
 label morte_s298: # -
-    nr '"Bei den Klingenbrüsten der Dame, was…"  Plötzlich wird alles still, als deine letzten Sinne flackern und zu Nichts ersterben. ~ [MRT387]{#morte_s298_}'
+    nr '"Bei den Klingenbrüsten der Dame, was…"  Plötzlich wird alles still, als deine letzten Sinne flackern und zu Nichts ersterben. ~ [MRT387]{#morte_s298_1}'
 
     menu:
         'Stirb einen grausamen Tod. Du bist ein Opfer von Gangroighydrons Schrecklichem Fluch geworden.{#morte_s298_r31567}':
@@ -4412,7 +4412,7 @@ label morte_s298: # -
 
 # s299 # say32367
 label morte_s299: # -
-    nr '"So ein Quatsch! Wir werden uns diesen Schwätzer doch nicht wirklich *anhören*, oder? Los… laß uns ein paar Sinnsaten-Mädels besuchen, die noch nie das Vergnügen hatten, die feurigen Lippen eines Totenschädels zu küssen." Er wackelt vor Freude mit den Augenbrauen.{#morte_s299_}'
+    nr '"So ein Quatsch! Wir werden uns diesen Schwätzer doch nicht wirklich *anhören*, oder? Los… laß uns ein paar Sinnsaten-Mädels besuchen, die noch nie das Vergnügen hatten, die feurigen Lippen eines Totenschädels zu küssen." Er wackelt vor Freude mit den Augenbrauen.{#morte_s299_1}'
 
     menu:
         '"Sei ruhig, Morte. Wir bleiben… zumindest noch ein bißchen."{#morte_s299_r32368}':
@@ -4431,7 +4431,7 @@ label morte_s299: # -
 
 # s300 # say32371
 label morte_s300: # -
-    nr 'Morte flüstert: "Der Anfang von noch mehr Leid."{#morte_s300_}'
+    nr 'Morte flüstert: "Der Anfang von noch mehr Leid."{#morte_s300_1}'
 
     menu:
         'Nicke Morte zu, ohne etwas zu sagen.{#morte_s300_r32372}':
@@ -4454,7 +4454,7 @@ label morte_s300: # -
 
 # s301 # say32376
 label morte_s301: # -
-    nr 'Morte flüstert: "Da kannst du Gift drauf nehmen."{#morte_s301_}'
+    nr 'Morte flüstert: "Da kannst du Gift drauf nehmen."{#morte_s301_1}'
 
     menu:
         'Nicke Morte zu, ohne etwas zu sagen.{#morte_s301_r32377}':
@@ -4477,7 +4477,7 @@ label morte_s301: # -
 
 # s302 # say32381
 label morte_s302: # -
-    nr 'Morte flüstert: "Und euch ewig langweilen."{#morte_s302_}'
+    nr 'Morte flüstert: "Und euch ewig langweilen."{#morte_s302_1}'
 
     menu:
         'Nicke Morte zu, ohne etwas zu sagen.{#morte_s302_r32382}':
@@ -4500,7 +4500,7 @@ label morte_s302: # -
 
 # s303 # say32386
 label morte_s303: # from 301.2
-    nr 'Morte flüstert: "Dann weiß ich schon, wo wir beide mal hinkommen."{#morte_s303_}'
+    nr 'Morte flüstert: "Dann weiß ich schon, wo wir beide mal hinkommen."{#morte_s303_1}'
 
     menu:
         'Nicke Morte zu, ohne etwas zu sagen.{#morte_s303_r32387}':
@@ -4523,7 +4523,7 @@ label morte_s303: # from 301.2
 
 # s304 # say32391
 label morte_s304: # -
-    nr 'Morte flüstert: "Wenn man Glück hat."{#morte_s304_}'
+    nr 'Morte flüstert: "Wenn man Glück hat."{#morte_s304_1}'
 
     menu:
         'Nicke Morte zu, ohne etwas zu sagen.{#morte_s304_r32392}':
@@ -4546,7 +4546,7 @@ label morte_s304: # -
 
 # s305 # say32396
 label morte_s305: # -
-    nr 'Morte flüstert: "Und das soll so toll sein? Daß wir das alles *noch mal* durchmachen? He, ich kann„s kaum abwarten, wieder ein schwebender Schädel zu werden. Was für ein Dummkopf. Klingt wie einer, der noch nie gestorben ist, ne?"{#morte_s305_}'
+    nr 'Morte flüstert: "Und das soll so toll sein? Daß wir das alles *noch mal* durchmachen? He, ich kann„s kaum abwarten, wieder ein schwebender Schädel zu werden. Was für ein Dummkopf. Klingt wie einer, der noch nie gestorben ist, ne?"{#morte_s305_1}'
 
     menu:
         'Nicke Morte zu, ohne etwas zu sagen.{#morte_s305_r32397}':
@@ -4569,7 +4569,7 @@ label morte_s305: # -
 
 # s306 # say32401
 label morte_s306: # -
-    nr 'Morte flüstert: "Mann, was für ein Blödsinn."{#morte_s306_}'
+    nr 'Morte flüstert: "Mann, was für ein Blödsinn."{#morte_s306_1}'
 
     menu:
         'Nicke Morte zu, ohne etwas zu sagen.{#morte_s306_r32402}':
@@ -4592,14 +4592,14 @@ label morte_s306: # -
 
 # s307 # say32406
 label morte_s307: # -
-    nr 'Morte sagt laut: "Was für ein Geschwätz!"{#morte_s307_}'
+    nr 'Morte sagt laut: "Was für ein Geschwätz!"{#morte_s307_1}'
 
     jump deathad_s15  # EXTERN
 
 
 # s308 # say32407
 label morte_s308: # -
-    nr 'Morte duckt sich aus dem Blickfeld des Dozenten, dreht sich zu dir um und flüstert: "Los, Meister. Erzähl das Dunkel darüber."{#morte_s308_}'
+    nr 'Morte duckt sich aus dem Blickfeld des Dozenten, dreht sich zu dir um und flüstert: "Los, Meister. Erzähl das Dunkel darüber."{#morte_s308_1}'
 
     menu:
         '"Ja, ich habe eine Frage…"{#morte_s308_r32408}':
@@ -4613,7 +4613,7 @@ label morte_s308: # -
 
 # s309 # say32410
 label morte_s309: # -
-    nr '"Toll! Noch mal sterben! Ich bin dabei" Das Publikum lacht. Der Sprecher sieht verärgert aus.{#morte_s309_}'
+    nr '"Toll! Noch mal sterben! Ich bin dabei" Das Publikum lacht. Der Sprecher sieht verärgert aus.{#morte_s309_1}'
 
     menu:
         '"Was passiert, wenn sie sterben?"{#morte_s309_r32411}':
@@ -4631,7 +4631,7 @@ label morte_s309: # -
 
 # s310 # say32651
 label morte_s310: # -
-    nr '"Soll ich diesem übergeschnappten jungen Ding eins über die Rübe ziehen, Meister?"{#morte_s310_}'
+    nr '"Soll ich diesem übergeschnappten jungen Ding eins über die Rübe ziehen, Meister?"{#morte_s310_1}'
 
     menu:
         '"Sei erbarmungslos, Morte."{#morte_s310_r32661}':
@@ -4645,14 +4645,14 @@ label morte_s310: # -
 
 # s311 # say32652
 label morte_s311: # -
-    nr '"Mir gefällt deine benebelte Vorgehensweise, Meister."{#morte_s311_}'
+    nr '"Mir gefällt deine benebelte Vorgehensweise, Meister."{#morte_s311_1}'
 
     jump sarhava_s4  # EXTERN
 
 
 # s312 # say32653
 label morte_s312: # -
-    nr 'Als du vor der Frau niederkniest, schreit Morte: "Meister! Das kann ja wohl nicht wahr sein! Außer du *stehst* auf so was…"{#morte_s312_}'
+    nr 'Als du vor der Frau niederkniest, schreit Morte: "Meister! Das kann ja wohl nicht wahr sein! Außer du *stehst* auf so was…"{#morte_s312_1}'
 
     menu:
         'Ignoriere Morte und lecke am Stiefel der Frau.{#morte_s312_r32663}':
@@ -4670,7 +4670,7 @@ label morte_s312: # -
 
 # s313 # say32654
 label morte_s313: # from 312.1
-    nr '"Naja, da muß ich dir recht geben… aber trotzdem…"{#morte_s313_}'
+    nr '"Naja, da muß ich dir recht geben… aber trotzdem…"{#morte_s313_1}'
 
     menu:
         '"Vergiß es, Morte. Meine liebe Frau… laß uns hiermit Schluß machen, bevor ich selbst die Wachen rufe."{#morte_s313_r32666}':
@@ -4684,49 +4684,49 @@ label morte_s313: # from 312.1
 
 # s314 # say32655
 label morte_s314: # -
-    nr 'Morte kichert und klappert mit den Zähnen. "Du bist ein richtiger Charmeur, was?"{#morte_s314_}'
+    nr 'Morte kichert und klappert mit den Zähnen. "Du bist ein richtiger Charmeur, was?"{#morte_s314_1}'
 
     jump morte_dispose
 
 
 # s315 # say32656
 label morte_s315: # -
-    nr '"Äh… oh…"{#morte_s315_}'
+    nr '"Äh… oh…"{#morte_s315_1}'
 
     jump morte_dispose
 
 
 # s316 # say32657
 label morte_s316: # from 310.0
-    nr 'Morte zwinkert dir zu und ruft der Frau zu: "He, du! Ja du, du freches kleines Flittchen… guck mich an, wenn ich mit dir rede! Wieso sind wir denn so verbiestert, hmm?"{#morte_s316_}'
+    nr 'Morte zwinkert dir zu und ruft der Frau zu: "He, du! Ja du, du freches kleines Flittchen… guck mich an, wenn ich mit dir rede! Wieso sind wir denn so verbiestert, hmm?"{#morte_s316_1}'
 
     jump sarhava_s39  # EXTERN
 
 
 # s317 # say32658
 label morte_s317: # -
-    nr '"Oh, ist die kleine Wüstenprinzessin vielleicht traurig, weil der Sultan lieber einen Sohn wollte? Sag mir, „Wüstenprinzessin“: Bist du jede Nacht betrunken und streitlustig? Und wirst du immer von einer Schar lüsternder Speichellecker verfolgt? Und versuchst du auf jämmerliche Weise, deine Existenz vor deinem Vater zu rechtfertigen, der dich nicht haben wollte?"{#morte_s317_}'
+    nr '"Oh, ist die kleine Wüstenprinzessin vielleicht traurig, weil der Sultan lieber einen Sohn wollte? Sag mir, „Wüstenprinzessin“: Bist du jede Nacht betrunken und streitlustig? Und wirst du immer von einer Schar lüsternder Speichellecker verfolgt? Und versuchst du auf jämmerliche Weise, deine Existenz vor deinem Vater zu rechtfertigen, der dich nicht haben wollte?"{#morte_s317_1}'
 
     jump sarhava_s40  # EXTERN
 
 
 # s318 # say32659
 label morte_s318: # -
-    nr '"Glaubst du wirklich, daß du dich durch deine lächerlichen Schlägereien besser fühlen wirst? *Wertvoller*? IRRTUM, MEINE LIEBE! Wenn das deine armselige Art ist, besser damit klarzukommen, wer du *bist*, schlage ich vor, du gibst gleich auf, gehst nach Hause und heiratest in den Harem von irgendeinem Höfling ein!"{#morte_s318_}'
+    nr '"Glaubst du wirklich, daß du dich durch deine lächerlichen Schlägereien besser fühlen wirst? *Wertvoller*? IRRTUM, MEINE LIEBE! Wenn das deine armselige Art ist, besser damit klarzukommen, wer du *bist*, schlage ich vor, du gibst gleich auf, gehst nach Hause und heiratest in den Harem von irgendeinem Höfling ein!"{#morte_s318_1}'
 
     jump sarhava_s41  # EXTERN
 
 
 # s319 # say32660
 label morte_s319: # -
-    nr 'Morte wendet sich an dich. "Siehst du, Meister, ich *weiß*, was hier abgeht. Wir *alle* wissen, daß Morte genau ins Schwarze getroffen hat. Aber oh nein, die stolze kleine Wüstenprinzessin, öffentlich zurechtgestutzt, ernied…"{#morte_s319_}'
+    nr 'Morte wendet sich an dich. "Siehst du, Meister, ich *weiß*, was hier abgeht. Wir *alle* wissen, daß Morte genau ins Schwarze getroffen hat. Aber oh nein, die stolze kleine Wüstenprinzessin, öffentlich zurechtgestutzt, ernied…"{#morte_s319_1}'
 
     jump sarhava_s42  # EXTERN
 
 
 # s320 # say33073
 label morte_s320: # -
-    nr '"Über den Blutkrieg? Das ist ja noch langweiliger, als einem Herrschner zuzuhören, der Gesetze runterlabert. Laß uns ein paar junge Sinnsaten finden, die noch in die Doktrin der Leidenschaft eingeweiht werden müssen!" Er wackelt vor Freude mit den Augenbrauen.{#morte_s320_}'
+    nr '"Über den Blutkrieg? Das ist ja noch langweiliger, als einem Herrschner zuzuhören, der Gesetze runterlabert. Laß uns ein paar junge Sinnsaten finden, die noch in die Doktrin der Leidenschaft eingeweiht werden müssen!" Er wackelt vor Freude mit den Augenbrauen.{#morte_s320_1}'
 
     menu:
         '"Nein, Morte… ich will mir das anhören."{#morte_s320_r33074}':
@@ -4745,14 +4745,14 @@ label morte_s320: # -
 
 # s321 # say33300
 label morte_s321: # -
-    nr 'Morte verdreht die Augen und schreit: "Oh! Da! Ein sprechender Scheißhaufen!"{#morte_s321_}'
+    nr 'Morte verdreht die Augen und schreit: "Oh! Da! Ein sprechender Scheißhaufen!"{#morte_s321_1}'
 
     jump ghivem_s49  # EXTERN
 
 
 # s322 # say33301
 label morte_s322: # -
-    nr 'Morte hoppelt in deine Richtung und sagt zu dem Mann: "Ich meinte diesen großen narbenübersäten Dussel hier, Vollblut… nicht dich! Friede Freude Eierkuchen, ja?"{#morte_s322_}'
+    nr 'Morte hoppelt in deine Richtung und sagt zu dem Mann: "Ich meinte diesen großen narbenübersäten Dussel hier, Vollblut… nicht dich! Friede Freude Eierkuchen, ja?"{#morte_s322_1}'
 
     menu:
         '"Paß auf, Morte…"{#morte_s322_r33302}':
@@ -4766,14 +4766,14 @@ label morte_s322: # -
 
 # s323 # say33423
 label morte_s323: # -
-    nr 'Morte verdreht die Augen und schreit: "Oh! Da! Ein sprechender Scheißhaufen!"{#morte_s323_}'
+    nr 'Morte verdreht die Augen und schreit: "Oh! Da! Ein sprechender Scheißhaufen!"{#morte_s323_1}'
 
     jump ghivef_s47  # EXTERN
 
 
 # s324 # say33429
 label morte_s324: # -
-    nr 'Morte hoppelt in deine Richtung und sagt zu dem Mann: "Ich meinte diesen großen narbenübersäten Dussel hier, Vollblut… nicht dich! Friede Freude Eierkuchen, ja?"{#morte_s324_}'
+    nr 'Morte hoppelt in deine Richtung und sagt zu dem Mann: "Ich meinte diesen großen narbenübersäten Dussel hier, Vollblut… nicht dich! Friede Freude Eierkuchen, ja?"{#morte_s324_1}'
 
     menu:
         '"Paß auf, Morte…"{#morte_s324_r33430}':
@@ -4787,7 +4787,7 @@ label morte_s324: # -
 
 # s325 # say33958
 label morte_s325: # - # IF WEIGHT #5 /* Triggers after states #: 742 737 733 487 even though they appear after this state */ ~  !InParty("Morte") !GlobalGT("Fortress_Morte","GLOBAL",2)
-    nr '"Ich wusste, du würdest zurückkommen, Meister! Endlich eingesehen, dass du mich brauchst, was?"~ [MRT516]{#morte_s325_}'
+    nr '"Ich wusste, du würdest zurückkommen, Meister! Endlich eingesehen, dass du mich brauchst, was?"~ [MRT516]{#morte_s325_1}'
 
     menu:
         '"Ja… laß uns gehen."{#morte_s325_r33959}':
@@ -4802,7 +4802,7 @@ label morte_s325: # - # IF WEIGHT #5 /* Triggers after states #: 742 737 733 487
 
 # s326 # say33961
 label morte_s326: # from 325.1
-    nr '"Hmmm. Nun, ich werde hier nicht ewig warten. Also werde ich dir noch eine LETZTE Chance geben. Bist du sicher, daß du meine weisen Ratschläge und meinen scharfen Verstand nicht brauchst?"{#morte_s326_}'
+    nr '"Hmmm. Nun, ich werde hier nicht ewig warten. Also werde ich dir noch eine LETZTE Chance geben. Bist du sicher, daß du meine weisen Ratschläge und meinen scharfen Verstand nicht brauchst?"{#morte_s326_1}'
 
     menu:
         '"Morte, du hast WEDER das eine noch das andere."{#morte_s326_r33962}':
@@ -4821,7 +4821,7 @@ label morte_s326: # from 325.1
 
 # s327 # say33965
 label morte_s327: # from 326.0 326.2
-    nr '"Willst du mich beleidigen, Meister? Habe ich was Falsches gesagt? Liegt es daran, daß ich keine Arme habe? Nun sag„s mir schon!"{#morte_s327_}'
+    nr '"Willst du mich beleidigen, Meister? Habe ich was Falsches gesagt? Liegt es daran, daß ich keine Arme habe? Nun sag„s mir schon!"{#morte_s327_1}'
 
     menu:
         '"Na gut, ich hab„s mir anders überlegt. Komm, laß uns gehen."{#morte_s327_r33966}':
@@ -4836,7 +4836,7 @@ label morte_s327: # from 326.0 326.2
 
 # s328 # say33968
 label morte_s328: # from 327.1
-    nr '"Also, ich werde hier nicht EWIG warten. Solltest du„s dir noch noch anders überlegen, dann mußt du dich beeilen."{#morte_s328_}'
+    nr '"Also, ich werde hier nicht EWIG warten. Solltest du„s dir noch noch anders überlegen, dann mußt du dich beeilen."{#morte_s328_1}'
 
     menu:
         '"Okay. Leb wohl, Morte."{#morte_s328_r33969}':
@@ -4846,7 +4846,7 @@ label morte_s328: # from 327.1
 
 # s329 # say33970
 label morte_s329: # from 649.2 650.2 651.3 652.2 653.1 654.1 655.1 656.1 657.1 658.0 659.1 660.1 661.1 662.0 663.2 664.1 665.2 666.1 667.1 668.0 669.9 670.0 671.0 672.0 673.0 674.0 675.1 676.0 677.2 678.1 679.0 680.0 681.0 682.1 683.0 684.1 685.1 686.2 687.1 688.2 689.1 690.1 695.2 696.1 697.1 699.1 700.1 706.1 707.1 708.1 709.1 710.1 711.1 712.1 714.1 715.1 721.0 722.0 723.1 725.0 726.1 727.0
-    nr '"Was hast du denn, Meister?"{#morte_s329_}'
+    nr '"Was hast du denn, Meister?"{#morte_s329_1}'
 
     menu:
         '"Kannst du mir noch einmal vorlesen, was auf meinen Rücken tätowiert ist?"{#morte_s329_r65539}':
@@ -4904,7 +4904,7 @@ label morte_s329: # from 649.2 650.2 651.3 652.2 653.1 654.1 655.1 656.1 657.1 6
 
 # s330 # say34990
 label morte_s330: # externs zf114_s2 zf114_s1 zf114_s0
-    nr '"Psssst. Hast du gesehen, wie sie mich angeschaut hat? Hm? Siehst du? Wie ihre Augen der Rundung meines Hinterkopfes gefolgt sind?"{#morte_s330_}'
+    nr '"Psssst. Hast du gesehen, wie sie mich angeschaut hat? Hm? Siehst du? Wie ihre Augen der Rundung meines Hinterkopfes gefolgt sind?"{#morte_s330_1}'
 
     menu:
         '"Wovon *redest* du überhaupt?"{#morte_s330_r34991}':
@@ -4920,7 +4920,7 @@ label morte_s330: # externs zf114_s2 zf114_s1 zf114_s0
 
 # s331 # say34992
 label morte_s331: # from 330.0 330.1
-    nr '"Wa… bist du BLIND?! Hast du nicht gesehen, wie sie mich begutachtet hat! Dieses VERLANGEN in ihrem Blick war geradezu unverschämt."{#morte_s331_}'
+    nr '"Wa… bist du BLIND?! Hast du nicht gesehen, wie sie mich begutachtet hat! Dieses VERLANGEN in ihrem Blick war geradezu unverschämt."{#morte_s331_1}'
 
     menu:
         '"Vielleicht wollte sie, daß du *abhaust*. Sie war offensichtlich zu sehr abgelenkt durch MICH, um sich um einen albernen Flummikopf mit einem großen Mundwerk zu kümmern."{#morte_s331_r34993}':
@@ -4943,7 +4943,7 @@ label morte_s331: # from 330.0 330.1
 
 # s332 # say34994
 label morte_s332: # from 331.0
-    nr '"Du? Klar doch! Glaub mir, wenn so „ne Tussi mal das Zeitliche gesegnet hat, dann macht sie sich nicht mehr so viel aus “Äußerlichkeiten„ und Sprüchen wie “Schau mal, was ich für einen Body habe„ und “ich bin voller Narben und hart im Nehmen.„ Sie stehen auf Typen, die GEISTREICH sind. Und das bin ich, Meister. Du? Knochengerüste wie DEINES gibt es wie Sand am Meer."{#morte_s332_}'
+    nr '"Du? Klar doch! Glaub mir, wenn so „ne Tussi mal das Zeitliche gesegnet hat, dann macht sie sich nicht mehr so viel aus “Äußerlichkeiten„ und Sprüchen wie “Schau mal, was ich für einen Body habe„ und “ich bin voller Narben und hart im Nehmen.„ Sie stehen auf Typen, die GEISTREICH sind. Und das bin ich, Meister. Du? Knochengerüste wie DEINES gibt es wie Sand am Meer."{#morte_s332_1}'
 
     menu:
         '"Wie du meinst, Morte. Gehen wir."{#morte_s332_r34995}':
@@ -4953,7 +4953,7 @@ label morte_s332: # from 331.0
 
 # s333 # say34997
 label morte_s333: # from 331.1 331.2
-    nr '"Na klar, wie Du meinst. Wenn du erstmal so lange tot bist wie ich, erkennst du die Zeichen. Sie mögen vielleicht zu SUBTIL für Leute wie dich sein, aber während ich MEINE Nächte mit so„n paar süßen, gerade erst gestorbenen jungen Mädels verbringe, stehst du draußen und machst nur “Hä?„ “Was issn los?„ “Wo sind meine Er-Er-Erinnerungen?„"{#morte_s333_}'
+    nr '"Na klar, wie Du meinst. Wenn du erstmal so lange tot bist wie ich, erkennst du die Zeichen. Sie mögen vielleicht zu SUBTIL für Leute wie dich sein, aber während ich MEINE Nächte mit so„n paar süßen, gerade erst gestorbenen jungen Mädels verbringe, stehst du draußen und machst nur “Hä?„ “Was issn los?„ “Wo sind meine Er-Er-Erinnerungen?„"{#morte_s333_1}'
 
     menu:
         '"Wie du willst, Morte. Laß uns gehen."{#morte_s333_r34998}':
@@ -4963,7 +4963,7 @@ label morte_s333: # from 331.1 331.2
 
 # s334 # say35022
 label morte_s334: # externs zf594_s2 zf594_s1 zf594_s0
-    nr '"Psssst. Hast du gesehen, wie sie mich angeschaut hat? Hm? Siehst du? Wie ihre Augen der Rundung meines Hinterkopfes gefolgt sind?"{#morte_s334_}'
+    nr '"Psssst. Hast du gesehen, wie sie mich angeschaut hat? Hm? Siehst du? Wie ihre Augen der Rundung meines Hinterkopfes gefolgt sind?"{#morte_s334_1}'
 
     menu:
         '"Wovon *redest* du überhaupt?"{#morte_s334_r35023}':
@@ -4979,7 +4979,7 @@ label morte_s334: # externs zf594_s2 zf594_s1 zf594_s0
 
 # s335 # say35024
 label morte_s335: # from 334.0 334.1
-    nr '"Wa… bist du BLIND?! Hast du nicht gesehen, wie sie mich begutachtet hat! Dieses VERLANGEN in ihrem Blick war geradezu unverschämt."{#morte_s335_}'
+    nr '"Wa… bist du BLIND?! Hast du nicht gesehen, wie sie mich begutachtet hat! Dieses VERLANGEN in ihrem Blick war geradezu unverschämt."{#morte_s335_1}'
 
     menu:
         '"Vielleicht wollte sie, daß du *abhaust*. Sie war offensichtlich zu sehr abgelenkt durch MICH, um sich um einen albernen Flummikopf mit einem großen Mundwerk zu kümmern."{#morte_s335_r35025}':
@@ -5002,7 +5002,7 @@ label morte_s335: # from 334.0 334.1
 
 # s336 # say35026
 label morte_s336: # from 335.0
-    nr '"Du? Klar doch! Glaub mir, wenn so „ne Tussi mal das Zeitliche gesegnet hat, dann macht sie sich nicht mehr so viel aus “Äußerlichkeiten„ und Sprüchen wie “Schau mal, was ich für einen Body habe„ und “ich bin voller Narben und hart im Nehmen.„ Sie stehen auf Typen, die GEISTREICH sind. Und das bin ich, Meister. Du? Knochengerüste wie DEINES gibt es wie Sand am Meer."{#morte_s336_}'
+    nr '"Du? Klar doch! Glaub mir, wenn so „ne Tussi mal das Zeitliche gesegnet hat, dann macht sie sich nicht mehr so viel aus “Äußerlichkeiten„ und Sprüchen wie “Schau mal, was ich für einen Body habe„ und “ich bin voller Narben und hart im Nehmen.„ Sie stehen auf Typen, die GEISTREICH sind. Und das bin ich, Meister. Du? Knochengerüste wie DEINES gibt es wie Sand am Meer."{#morte_s336_1}'
 
     menu:
         '"Wie du meinst, Morte. Gehen wir."{#morte_s336_r35027}':
@@ -5012,7 +5012,7 @@ label morte_s336: # from 335.0
 
 # s337 # say35029
 label morte_s337: # from 335.1 335.2
-    nr '"Na klar, wie Du meinst. Wenn du erstmal so lange tot bist wie ich, erkennst du die Zeichen. Sie mögen vielleicht zu SUBTIL für Leute wie dich sein, aber während ich MEINE Nächte mit so„n paar süßen, gerade erst gestorbenen jungen Mädels verbringe, stehst du draußen und machst nur “Hä?„ “Was issn los?„ “Wo sind meine Er-Er-Erinnerungen?„"{#morte_s337_}'
+    nr '"Na klar, wie Du meinst. Wenn du erstmal so lange tot bist wie ich, erkennst du die Zeichen. Sie mögen vielleicht zu SUBTIL für Leute wie dich sein, aber während ich MEINE Nächte mit so„n paar süßen, gerade erst gestorbenen jungen Mädels verbringe, stehst du draußen und machst nur “Hä?„ “Was issn los?„ “Wo sind meine Er-Er-Erinnerungen?„"{#morte_s337_1}'
 
     menu:
         '"Wie du willst, Morte. Laß uns gehen."{#morte_s337_r35030}':
@@ -5022,7 +5022,7 @@ label morte_s337: # from 335.1 335.2
 
 # s338 # say35054
 label morte_s338: # externs zf626_s2 zf626_s1 zf626_s0
-    nr '"Psssst. Hast du gesehen, wie sie mich angeschaut hat? Hm? Siehst du? Wie ihre Augen der Rundung meines Hinterkopfes gefolgt sind?"{#morte_s338_}'
+    nr '"Psssst. Hast du gesehen, wie sie mich angeschaut hat? Hm? Siehst du? Wie ihre Augen der Rundung meines Hinterkopfes gefolgt sind?"{#morte_s338_1}'
 
     menu:
         '"Wovon *redest* du überhaupt?"{#morte_s338_r35055}':
@@ -5038,7 +5038,7 @@ label morte_s338: # externs zf626_s2 zf626_s1 zf626_s0
 
 # s339 # say35056
 label morte_s339: # from 338.0 338.1
-    nr '"Wa… bist du BLIND?! Hast du nicht gesehen, wie sie mich begutachtet hat! Dieses VERLANGEN in ihrem Blick war geradezu unverschämt."{#morte_s339_}'
+    nr '"Wa… bist du BLIND?! Hast du nicht gesehen, wie sie mich begutachtet hat! Dieses VERLANGEN in ihrem Blick war geradezu unverschämt."{#morte_s339_1}'
 
     menu:
         '"Vielleicht wollte sie, daß du *abhaust*. Sie war offensichtlich zu sehr abgelenkt durch MICH, um sich um einen albernen Flummikopf mit einem großen Mundwerk zu kümmern."{#morte_s339_r35057}':
@@ -5061,7 +5061,7 @@ label morte_s339: # from 338.0 338.1
 
 # s340 # say35058
 label morte_s340: # from 339.0
-    nr '"Du? Klar doch! Glaub mir, wenn so „ne Tussi mal das Zeitliche gesegnet hat, dann macht sie sich nicht mehr so viel aus “Äußerlichkeiten„ und Sprüchen wie “Schau mal, was ich für einen Body habe„ und “ich bin voller Narben und hart im Nehmen.„ Sie stehen auf Typen, die GEISTREICH sind. Und das bin ich, Meister. Du? Knochengerüste wie DEINES gibt es wie Sand am Meer."{#morte_s340_}'
+    nr '"Du? Klar doch! Glaub mir, wenn so „ne Tussi mal das Zeitliche gesegnet hat, dann macht sie sich nicht mehr so viel aus “Äußerlichkeiten„ und Sprüchen wie “Schau mal, was ich für einen Body habe„ und “ich bin voller Narben und hart im Nehmen.„ Sie stehen auf Typen, die GEISTREICH sind. Und das bin ich, Meister. Du? Knochengerüste wie DEINES gibt es wie Sand am Meer."{#morte_s340_1}'
 
     menu:
         '"Wie du meinst, Morte. Gehen wir."{#morte_s340_r35059}':
@@ -5071,7 +5071,7 @@ label morte_s340: # from 339.0
 
 # s341 # say35061
 label morte_s341: # from 339.1 339.2
-    nr '"Na klar, wie Du meinst. Wenn du erstmal so lange tot bist wie ich, erkennst du die Zeichen. Sie mögen vielleicht zu SUBTIL für Leute wie dich sein, aber während ich MEINE Nächte mit so„n paar süßen, gerade erst gestorbenen jungen Mädels verbringe, stehst du draußen und machst nur “Hä?„ “Was issn los?„ “Wo sind meine Er-Er-Erinnerungen?„"{#morte_s341_}'
+    nr '"Na klar, wie Du meinst. Wenn du erstmal so lange tot bist wie ich, erkennst du die Zeichen. Sie mögen vielleicht zu SUBTIL für Leute wie dich sein, aber während ich MEINE Nächte mit so„n paar süßen, gerade erst gestorbenen jungen Mädels verbringe, stehst du draußen und machst nur “Hä?„ “Was issn los?„ “Wo sind meine Er-Er-Erinnerungen?„"{#morte_s341_1}'
 
     menu:
         '"Wie du willst, Morte. Laß uns gehen."{#morte_s341_r35062}':
@@ -5081,7 +5081,7 @@ label morte_s341: # from 339.1 339.2
 
 # s342 # say35086
 label morte_s342: # externs zf1096_s2 zf1096_s1 zf1096_s0
-    nr '"Psssst. Hast du gesehen, wie sie mich angeschaut hat? Hm? Siehst du? Wie ihre Augen der Rundung meines Hinterkopfes gefolgt sind?"{#morte_s342_}'
+    nr '"Psssst. Hast du gesehen, wie sie mich angeschaut hat? Hm? Siehst du? Wie ihre Augen der Rundung meines Hinterkopfes gefolgt sind?"{#morte_s342_1}'
 
     menu:
         '"Wovon *redest* du überhaupt?"{#morte_s342_r35087}':
@@ -5097,7 +5097,7 @@ label morte_s342: # externs zf1096_s2 zf1096_s1 zf1096_s0
 
 # s343 # say35088
 label morte_s343: # from 342.0 342.1
-    nr '"Wa… bist du BLIND?! Hast du nicht gesehen, wie sie mich begutachtet hat! Dieses VERLANGEN in ihrem Blick war geradezu unverschämt."{#morte_s343_}'
+    nr '"Wa… bist du BLIND?! Hast du nicht gesehen, wie sie mich begutachtet hat! Dieses VERLANGEN in ihrem Blick war geradezu unverschämt."{#morte_s343_1}'
 
     menu:
         '"Vielleicht wollte sie, daß du *abhaust*. Sie war offensichtlich zu sehr abgelenkt durch MICH, um sich um einen albernen Flummikopf mit einem großen Mundwerk zu kümmern."{#morte_s343_r35089}':
@@ -5120,7 +5120,7 @@ label morte_s343: # from 342.0 342.1
 
 # s344 # say35090
 label morte_s344: # from 343.0
-    nr '"Du? Klar doch! Glaub mir, wenn so „ne Tussi mal das Zeitliche gesegnet hat, dann macht sie sich nicht mehr so viel aus “Äußerlichkeiten„ und Sprüchen wie “Schau mal, was ich für einen Body habe„ und “ich bin voller Narben und hart im Nehmen.„ Sie stehen auf Typen, die GEISTREICH sind. Und das bin ich, Meister. Du? Knochengerüste wie DEINES gibt es wie Sand am Meer."{#morte_s344_}'
+    nr '"Du? Klar doch! Glaub mir, wenn so „ne Tussi mal das Zeitliche gesegnet hat, dann macht sie sich nicht mehr so viel aus “Äußerlichkeiten„ und Sprüchen wie “Schau mal, was ich für einen Body habe„ und “ich bin voller Narben und hart im Nehmen.„ Sie stehen auf Typen, die GEISTREICH sind. Und das bin ich, Meister. Du? Knochengerüste wie DEINES gibt es wie Sand am Meer."{#morte_s344_1}'
 
     menu:
         '"Wie du meinst, Morte. Gehen wir."{#morte_s344_r35091}':
@@ -5130,7 +5130,7 @@ label morte_s344: # from 343.0
 
 # s345 # say35093
 label morte_s345: # from 343.1 343.2
-    nr '"Na klar, wie Du meinst. Wenn du erstmal so lange tot bist wie ich, erkennst du die Zeichen. Sie mögen vielleicht zu SUBTIL für Leute wie dich sein, aber während ich MEINE Nächte mit so„n paar süßen, gerade erst gestorbenen jungen Mädels verbringe, stehst du draußen und machst nur “Hä?„ “Was issn los?„ “Wo sind meine Er-Er-Erinnerungen?„"{#morte_s345_}'
+    nr '"Na klar, wie Du meinst. Wenn du erstmal so lange tot bist wie ich, erkennst du die Zeichen. Sie mögen vielleicht zu SUBTIL für Leute wie dich sein, aber während ich MEINE Nächte mit so„n paar süßen, gerade erst gestorbenen jungen Mädels verbringe, stehst du draußen und machst nur “Hä?„ “Was issn los?„ “Wo sind meine Er-Er-Erinnerungen?„"{#morte_s345_1}'
 
     menu:
         '"Wie du willst, Morte. Laß uns gehen."{#morte_s345_r35094}':
@@ -5140,7 +5140,7 @@ label morte_s345: # from 343.1 343.2
 
 # s346 # say35118
 label morte_s346: # externs zf1072_s2 zf1072_s1 zf1072_s0
-    nr '"Psssst. Hast du gesehen, wie sie mich angeschaut hat? Hm? Siehst du? Wie ihre Augen der Rundung meines Hinterkopfes gefolgt sind?"{#morte_s346_}'
+    nr '"Psssst. Hast du gesehen, wie sie mich angeschaut hat? Hm? Siehst du? Wie ihre Augen der Rundung meines Hinterkopfes gefolgt sind?"{#morte_s346_1}'
 
     menu:
         '"Wovon *redest* du überhaupt?"{#morte_s346_r35119}':
@@ -5156,7 +5156,7 @@ label morte_s346: # externs zf1072_s2 zf1072_s1 zf1072_s0
 
 # s347 # say35120
 label morte_s347: # from 346.0 346.1
-    nr '"Wa… bist du BLIND?! Hast du nicht gesehen, wie sie mich begutachtet hat! Dieses VERLANGEN in ihrem Blick war geradezu unverschämt."{#morte_s347_}'
+    nr '"Wa… bist du BLIND?! Hast du nicht gesehen, wie sie mich begutachtet hat! Dieses VERLANGEN in ihrem Blick war geradezu unverschämt."{#morte_s347_1}'
 
     menu:
         '"Vielleicht wollte sie, daß du *abhaust*. Sie war offensichtlich zu sehr abgelenkt durch MICH, um sich um einen albernen Flummikopf mit einem großen Mundwerk zu kümmern."{#morte_s347_r35121}':
@@ -5179,7 +5179,7 @@ label morte_s347: # from 346.0 346.1
 
 # s348 # say35122
 label morte_s348: # from 347.0
-    nr '"Du? Klar doch! Glaub mir, wenn so „ne Tussi mal das Zeitliche gesegnet hat, dann macht sie sich nicht mehr so viel aus “Äußerlichkeiten„ und Sprüchen wie “Schau mal, was ich für einen Body habe„ und “ich bin voller Narben und hart im Nehmen.„ Sie stehen auf Typen, die GEISTREICH sind. Und das bin ich, Meister. Du? Knochengerüste wie DEINES gibt es wie Sand am Meer."{#morte_s348_}'
+    nr '"Du? Klar doch! Glaub mir, wenn so „ne Tussi mal das Zeitliche gesegnet hat, dann macht sie sich nicht mehr so viel aus “Äußerlichkeiten„ und Sprüchen wie “Schau mal, was ich für einen Body habe„ und “ich bin voller Narben und hart im Nehmen.„ Sie stehen auf Typen, die GEISTREICH sind. Und das bin ich, Meister. Du? Knochengerüste wie DEINES gibt es wie Sand am Meer."{#morte_s348_1}'
 
     menu:
         '"Wie du meinst, Morte. Gehen wir."{#morte_s348_r35123}':
@@ -5189,7 +5189,7 @@ label morte_s348: # from 347.0
 
 # s349 # say35125
 label morte_s349: # from 347.1 347.2
-    nr '"Na klar, wie Du meinst. Wenn du erstmal so lange tot bist wie ich, erkennst du die Zeichen. Sie mögen vielleicht zu SUBTIL für Leute wie dich sein, aber während ich MEINE Nächte mit so„n paar süßen, gerade erst gestorbenen jungen Mädels verbringe, stehst du draußen und machst nur “Hä?„ “Was issn los?„ “Wo sind meine Er-Er-Erinnerungen?„"{#morte_s349_}'
+    nr '"Na klar, wie Du meinst. Wenn du erstmal so lange tot bist wie ich, erkennst du die Zeichen. Sie mögen vielleicht zu SUBTIL für Leute wie dich sein, aber während ich MEINE Nächte mit so„n paar süßen, gerade erst gestorbenen jungen Mädels verbringe, stehst du draußen und machst nur “Hä?„ “Was issn los?„ “Wo sind meine Er-Er-Erinnerungen?„"{#morte_s349_1}'
 
     menu:
         '"Wie du willst, Morte. Laß uns gehen."{#morte_s349_r35126}':
@@ -5199,7 +5199,7 @@ label morte_s349: # from 347.1 347.2
 
 # s350 # say35150
 label morte_s350: # externs zf832_s2 zf832_s1 zf832_s0
-    nr '"Psssst. Hast du gesehen, wie sie mich angeschaut hat? Hm? Siehst du? Wie ihre Augen der Rundung meines Hinterkopfes gefolgt sind?"{#morte_s350_}'
+    nr '"Psssst. Hast du gesehen, wie sie mich angeschaut hat? Hm? Siehst du? Wie ihre Augen der Rundung meines Hinterkopfes gefolgt sind?"{#morte_s350_1}'
 
     menu:
         '"Wovon *redest* du überhaupt?"{#morte_s350_r35151}':
@@ -5215,7 +5215,7 @@ label morte_s350: # externs zf832_s2 zf832_s1 zf832_s0
 
 # s351 # say35152
 label morte_s351: # from 350.0 350.1
-    nr '"Wa… bist du BLIND?! Hast du nicht gesehen, wie sie mich begutachtet hat! Dieses VERLANGEN in ihrem Blick war geradezu unverschämt."{#morte_s351_}'
+    nr '"Wa… bist du BLIND?! Hast du nicht gesehen, wie sie mich begutachtet hat! Dieses VERLANGEN in ihrem Blick war geradezu unverschämt."{#morte_s351_1}'
 
     menu:
         '"Vielleicht wollte sie, daß du *abhaust*. Sie war offensichtlich zu sehr abgelenkt durch MICH, um sich um einen albernen Flummikopf mit einem großen Mundwerk zu kümmern."{#morte_s351_r35153}':
@@ -5238,7 +5238,7 @@ label morte_s351: # from 350.0 350.1
 
 # s352 # say35154
 label morte_s352: # from 351.0
-    nr '"Du? Klar doch! Glaub mir, wenn so „ne Tussi mal das Zeitliche gesegnet hat, dann macht sie sich nicht mehr so viel aus “Äußerlichkeiten„ und Sprüchen wie “Schau mal, was ich für einen Body habe„ und “ich bin voller Narben und hart im Nehmen.„ Sie stehen auf Typen, die GEISTREICH sind. Und das bin ich, Meister. Du? Knochengerüste wie DEINES gibt es wie Sand am Meer."{#morte_s352_}'
+    nr '"Du? Klar doch! Glaub mir, wenn so „ne Tussi mal das Zeitliche gesegnet hat, dann macht sie sich nicht mehr so viel aus “Äußerlichkeiten„ und Sprüchen wie “Schau mal, was ich für einen Body habe„ und “ich bin voller Narben und hart im Nehmen.„ Sie stehen auf Typen, die GEISTREICH sind. Und das bin ich, Meister. Du? Knochengerüste wie DEINES gibt es wie Sand am Meer."{#morte_s352_1}'
 
     menu:
         '"Wie du meinst, Morte. Gehen wir."{#morte_s352_r35155}':
@@ -5248,7 +5248,7 @@ label morte_s352: # from 351.0
 
 # s353 # say35157
 label morte_s353: # from 351.1 351.2
-    nr '"Na klar, wie Du meinst. Wenn du erstmal so lange tot bist wie ich, erkennst du die Zeichen. Sie mögen vielleicht zu SUBTIL für Leute wie dich sein, aber während ich MEINE Nächte mit so„n paar süßen, gerade erst gestorbenen jungen Mädels verbringe, stehst du draußen und machst nur “Hä?„ “Was issn los?„ “Wo sind meine Er-Er-Erinnerungen?„"{#morte_s353_}'
+    nr '"Na klar, wie Du meinst. Wenn du erstmal so lange tot bist wie ich, erkennst du die Zeichen. Sie mögen vielleicht zu SUBTIL für Leute wie dich sein, aber während ich MEINE Nächte mit so„n paar süßen, gerade erst gestorbenen jungen Mädels verbringe, stehst du draußen und machst nur “Hä?„ “Was issn los?„ “Wo sind meine Er-Er-Erinnerungen?„"{#morte_s353_1}'
 
     menu:
         '"Wie du willst, Morte. Laß uns gehen."{#morte_s353_r35158}':
@@ -5258,7 +5258,7 @@ label morte_s353: # from 351.1 351.2
 
 # s354 # say35182
 label morte_s354: # externs zf679_s2 zf679_s1 zf679_s0
-    nr '"Psssst. Hast du gesehen, wie sie mich angeschaut hat? Hm? Siehst du? Wie ihre Augen der Rundung meines Hinterkopfes gefolgt sind?"{#morte_s354_}'
+    nr '"Psssst. Hast du gesehen, wie sie mich angeschaut hat? Hm? Siehst du? Wie ihre Augen der Rundung meines Hinterkopfes gefolgt sind?"{#morte_s354_1}'
 
     menu:
         '"Wovon *redest* du überhaupt?"{#morte_s354_r35183}':
@@ -5274,7 +5274,7 @@ label morte_s354: # externs zf679_s2 zf679_s1 zf679_s0
 
 # s355 # say35184
 label morte_s355: # from 354.0 354.1
-    nr '"Wa… bist du BLIND?! Hast du nicht gesehen, wie sie mich begutachtet hat! Dieses VERLANGEN in ihrem Blick war geradezu unverschämt."{#morte_s355_}'
+    nr '"Wa… bist du BLIND?! Hast du nicht gesehen, wie sie mich begutachtet hat! Dieses VERLANGEN in ihrem Blick war geradezu unverschämt."{#morte_s355_1}'
 
     menu:
         '"Vielleicht wollte sie, daß du *abhaust*. Sie war offensichtlich zu sehr abgelenkt durch MICH, um sich um einen albernen Flummikopf mit einem großen Mundwerk zu kümmern."{#morte_s355_r35185}':
@@ -5297,7 +5297,7 @@ label morte_s355: # from 354.0 354.1
 
 # s356 # say35186
 label morte_s356: # from 355.0
-    nr '"Du? Klar doch! Glaub mir, wenn so „ne Tussi mal das Zeitliche gesegnet hat, dann macht sie sich nicht mehr so viel aus “Äußerlichkeiten„ und Sprüchen wie “Schau mal, was ich für einen Body habe„ und “ich bin voller Narben und hart im Nehmen.„ Sie stehen auf Typen, die GEISTREICH sind. Und das bin ich, Meister. Du? Knochengerüste wie DEINES gibt es wie Sand am Meer."{#morte_s356_}'
+    nr '"Du? Klar doch! Glaub mir, wenn so „ne Tussi mal das Zeitliche gesegnet hat, dann macht sie sich nicht mehr so viel aus “Äußerlichkeiten„ und Sprüchen wie “Schau mal, was ich für einen Body habe„ und “ich bin voller Narben und hart im Nehmen.„ Sie stehen auf Typen, die GEISTREICH sind. Und das bin ich, Meister. Du? Knochengerüste wie DEINES gibt es wie Sand am Meer."{#morte_s356_1}'
 
     menu:
         '"Wie du meinst, Morte. Gehen wir."{#morte_s356_r35187}':
@@ -5307,7 +5307,7 @@ label morte_s356: # from 355.0
 
 # s357 # say35189
 label morte_s357: # from 355.1 355.2
-    nr '"Na klar, wie Du meinst. Wenn du erstmal so lange tot bist wie ich, erkennst du die Zeichen. Sie mögen vielleicht zu SUBTIL für Leute wie dich sein, aber während ich MEINE Nächte mit so„n paar süßen, gerade erst gestorbenen jungen Mädels verbringe, stehst du draußen und machst nur “Hä?„ “Was issn los?„ “Wo sind meine Er-Er-Erinnerungen?„"{#morte_s357_}'
+    nr '"Na klar, wie Du meinst. Wenn du erstmal so lange tot bist wie ich, erkennst du die Zeichen. Sie mögen vielleicht zu SUBTIL für Leute wie dich sein, aber während ich MEINE Nächte mit so„n paar süßen, gerade erst gestorbenen jungen Mädels verbringe, stehst du draußen und machst nur “Hä?„ “Was issn los?„ “Wo sind meine Er-Er-Erinnerungen?„"{#morte_s357_1}'
 
     menu:
         '"Wie du willst, Morte. Laß uns gehen."{#morte_s357_r35190}':
@@ -5317,7 +5317,7 @@ label morte_s357: # from 355.1 355.2
 
 # s358 # say35214
 label morte_s358: # externs zf444_s2 zf444_s1 zf444_s0
-    nr '"Psssst. Hast du gesehen, wie sie mich angeschaut hat? Hm? Siehst du? Wie ihre Augen der Rundung meines Hinterkopfes gefolgt sind?"{#morte_s358_}'
+    nr '"Psssst. Hast du gesehen, wie sie mich angeschaut hat? Hm? Siehst du? Wie ihre Augen der Rundung meines Hinterkopfes gefolgt sind?"{#morte_s358_1}'
 
     menu:
         '"Wovon *redest* du überhaupt?"{#morte_s358_r35215}':
@@ -5333,7 +5333,7 @@ label morte_s358: # externs zf444_s2 zf444_s1 zf444_s0
 
 # s359 # say35216
 label morte_s359: # from 358.0 358.1
-    nr '"Wa… bist du BLIND?! Hast du nicht gesehen, wie sie mich begutachtet hat! Dieses VERLANGEN in ihrem Blick war geradezu unverschämt."{#morte_s359_}'
+    nr '"Wa… bist du BLIND?! Hast du nicht gesehen, wie sie mich begutachtet hat! Dieses VERLANGEN in ihrem Blick war geradezu unverschämt."{#morte_s359_1}'
 
     menu:
         '"Vielleicht wollte sie, daß du *abhaust*. Sie war offensichtlich zu sehr abgelenkt durch MICH, um sich um einen albernen Flummikopf mit einem großen Mundwerk zu kümmern."{#morte_s359_r35217}':
@@ -5356,7 +5356,7 @@ label morte_s359: # from 358.0 358.1
 
 # s360 # say35218
 label morte_s360: # from 359.0
-    nr '"Du? Klar doch! Glaub mir, wenn so „ne Tussi mal das Zeitliche gesegnet hat, dann macht sie sich nicht mehr so viel aus “Äußerlichkeiten„ und Sprüchen wie “Schau mal, was ich für einen Body habe„ und “ich bin voller Narben und hart im Nehmen.„ Sie stehen auf Typen, die GEISTREICH sind. Und das bin ich, Meister. Du? Knochengerüste wie DEINES gibt es wie Sand am Meer."{#morte_s360_}'
+    nr '"Du? Klar doch! Glaub mir, wenn so „ne Tussi mal das Zeitliche gesegnet hat, dann macht sie sich nicht mehr so viel aus “Äußerlichkeiten„ und Sprüchen wie “Schau mal, was ich für einen Body habe„ und “ich bin voller Narben und hart im Nehmen.„ Sie stehen auf Typen, die GEISTREICH sind. Und das bin ich, Meister. Du? Knochengerüste wie DEINES gibt es wie Sand am Meer."{#morte_s360_1}'
 
     menu:
         '"Wie du meinst, Morte. Gehen wir."{#morte_s360_r35219}':
@@ -5366,7 +5366,7 @@ label morte_s360: # from 359.0
 
 # s361 # say35221
 label morte_s361: # from 359.1 359.2
-    nr '"Na klar, wie Du meinst. Wenn du erstmal so lange tot bist wie ich, erkennst du die Zeichen. Sie mögen vielleicht zu SUBTIL für Leute wie dich sein, aber während ich MEINE Nächte mit so„n paar süßen, gerade erst gestorbenen jungen Mädels verbringe, stehst du draußen und machst nur “Hä?„ “Was issn los?„ “Wo sind meine Er-Er-Erinnerungen?„"{#morte_s361_}'
+    nr '"Na klar, wie Du meinst. Wenn du erstmal so lange tot bist wie ich, erkennst du die Zeichen. Sie mögen vielleicht zu SUBTIL für Leute wie dich sein, aber während ich MEINE Nächte mit so„n paar süßen, gerade erst gestorbenen jungen Mädels verbringe, stehst du draußen und machst nur “Hä?„ “Was issn los?„ “Wo sind meine Er-Er-Erinnerungen?„"{#morte_s361_1}'
 
     menu:
         '"Wie du willst, Morte. Laß uns gehen."{#morte_s361_r35222}':
@@ -5376,7 +5376,7 @@ label morte_s361: # from 359.1 359.2
 
 # s362 # say35246
 label morte_s362: # externs zf1148_s2 zf1148_s1 zf1148_s0
-    nr '"Psssst. Hast du gesehen, wie sie mich angeschaut hat? Hm? Siehst du? Wie ihre Augen der Rundung meines Hinterkopfes gefolgt sind?"{#morte_s362_}'
+    nr '"Psssst. Hast du gesehen, wie sie mich angeschaut hat? Hm? Siehst du? Wie ihre Augen der Rundung meines Hinterkopfes gefolgt sind?"{#morte_s362_1}'
 
     menu:
         '"Wovon *redest* du überhaupt?"{#morte_s362_r35247}':
@@ -5392,7 +5392,7 @@ label morte_s362: # externs zf1148_s2 zf1148_s1 zf1148_s0
 
 # s363 # say35248
 label morte_s363: # from 362.0 362.1
-    nr '"Wa… bist du BLIND?! Hast du nicht gesehen, wie sie mich begutachtet hat! Dieses VERLANGEN in ihrem Blick war geradezu unverschämt."{#morte_s363_}'
+    nr '"Wa… bist du BLIND?! Hast du nicht gesehen, wie sie mich begutachtet hat! Dieses VERLANGEN in ihrem Blick war geradezu unverschämt."{#morte_s363_1}'
 
     menu:
         '"Vielleicht wollte sie, daß du *abhaust*. Sie war offensichtlich zu sehr abgelenkt durch MICH, um sich um einen albernen Flummikopf mit einem großen Mundwerk zu kümmern."{#morte_s363_r35249}':
@@ -5415,7 +5415,7 @@ label morte_s363: # from 362.0 362.1
 
 # s364 # say35250
 label morte_s364: # from 363.0
-    nr '"Du? Klar doch! Glaub mir, wenn so „ne Tussi mal das Zeitliche gesegnet hat, dann macht sie sich nicht mehr so viel aus “Äußerlichkeiten„ und Sprüchen wie “Schau mal, was ich für einen Body habe„ und “ich bin voller Narben und hart im Nehmen.„ Sie stehen auf Typen, die GEISTREICH sind. Und das bin ich, Meister. Du? Knochengerüste wie DEINES gibt es wie Sand am Meer."{#morte_s364_}'
+    nr '"Du? Klar doch! Glaub mir, wenn so „ne Tussi mal das Zeitliche gesegnet hat, dann macht sie sich nicht mehr so viel aus “Äußerlichkeiten„ und Sprüchen wie “Schau mal, was ich für einen Body habe„ und “ich bin voller Narben und hart im Nehmen.„ Sie stehen auf Typen, die GEISTREICH sind. Und das bin ich, Meister. Du? Knochengerüste wie DEINES gibt es wie Sand am Meer."{#morte_s364_1}'
 
     menu:
         '"Wie du meinst, Morte. Gehen wir."{#morte_s364_r35251}':
@@ -5425,7 +5425,7 @@ label morte_s364: # from 363.0
 
 # s365 # say35253
 label morte_s365: # from 363.1 363.2
-    nr '"Na klar, wie Du meinst. Wenn du erstmal so lange tot bist wie ich, erkennst du die Zeichen. Sie mögen vielleicht zu SUBTIL für Leute wie dich sein, aber während ich MEINE Nächte mit so„n paar süßen, gerade erst gestorbenen jungen Mädels verbringe, stehst du draußen und machst nur “Hä?„ “Was issn los?„ “Wo sind meine Er-Er-Erinnerungen?„"{#morte_s365_}'
+    nr '"Na klar, wie Du meinst. Wenn du erstmal so lange tot bist wie ich, erkennst du die Zeichen. Sie mögen vielleicht zu SUBTIL für Leute wie dich sein, aber während ich MEINE Nächte mit so„n paar süßen, gerade erst gestorbenen jungen Mädels verbringe, stehst du draußen und machst nur “Hä?„ “Was issn los?„ “Wo sind meine Er-Er-Erinnerungen?„"{#morte_s365_1}'
 
     menu:
         '"Wie du willst, Morte. Laß uns gehen."{#morte_s365_r35254}':
@@ -5435,7 +5435,7 @@ label morte_s365: # from 363.1 363.2
 
 # s366 # say35278
 label morte_s366: # externs zf891_s2 zf891_s1 zf891_s0
-    nr '"Psssst. Hast du gesehen, wie sie mich angeschaut hat? Hm? Siehst du? Wie ihre Augen der Rundung meines Hinterkopfes gefolgt sind?"{#morte_s366_}'
+    nr '"Psssst. Hast du gesehen, wie sie mich angeschaut hat? Hm? Siehst du? Wie ihre Augen der Rundung meines Hinterkopfes gefolgt sind?"{#morte_s366_1}'
 
     menu:
         '"Wovon *redest* du überhaupt?"{#morte_s366_r35279}':
@@ -5451,7 +5451,7 @@ label morte_s366: # externs zf891_s2 zf891_s1 zf891_s0
 
 # s367 # say35280
 label morte_s367: # from 366.0 366.1
-    nr '"Wa… bist du BLIND?! Hast du nicht gesehen, wie sie mich begutachtet hat! Dieses VERLANGEN in ihrem Blick war geradezu unverschämt."{#morte_s367_}'
+    nr '"Wa… bist du BLIND?! Hast du nicht gesehen, wie sie mich begutachtet hat! Dieses VERLANGEN in ihrem Blick war geradezu unverschämt."{#morte_s367_1}'
 
     menu:
         '"Vielleicht wollte sie, daß du *abhaust*. Sie war offensichtlich zu sehr abgelenkt durch MICH, um sich um einen albernen Flummikopf mit einem großen Mundwerk zu kümmern."{#morte_s367_r35281}':
@@ -5474,7 +5474,7 @@ label morte_s367: # from 366.0 366.1
 
 # s368 # say35282
 label morte_s368: # from 367.0
-    nr '"Du? Klar doch! Glaub mir, wenn so „ne Tussi mal das Zeitliche gesegnet hat, dann macht sie sich nicht mehr so viel aus “Äußerlichkeiten„ und Sprüchen wie “Schau mal, was ich für einen Body habe„ und “ich bin voller Narben und hart im Nehmen.„ Sie stehen auf Typen, die GEISTREICH sind. Und das bin ich, Meister. Du? Knochengerüste wie DEINES gibt es wie Sand am Meer."{#morte_s368_}'
+    nr '"Du? Klar doch! Glaub mir, wenn so „ne Tussi mal das Zeitliche gesegnet hat, dann macht sie sich nicht mehr so viel aus “Äußerlichkeiten„ und Sprüchen wie “Schau mal, was ich für einen Body habe„ und “ich bin voller Narben und hart im Nehmen.„ Sie stehen auf Typen, die GEISTREICH sind. Und das bin ich, Meister. Du? Knochengerüste wie DEINES gibt es wie Sand am Meer."{#morte_s368_1}'
 
     menu:
         '"Wie du meinst, Morte. Gehen wir."{#morte_s368_r35283}':
@@ -5484,7 +5484,7 @@ label morte_s368: # from 367.0
 
 # s369 # say35285
 label morte_s369: # from 367.1 367.2
-    nr '"Na klar, wie Du meinst. Wenn du erstmal so lange tot bist wie ich, erkennst du die Zeichen. Sie mögen vielleicht zu SUBTIL für Leute wie dich sein, aber während ich MEINE Nächte mit so„n paar süßen, gerade erst gestorbenen jungen Mädels verbringe, stehst du draußen und machst nur “Hä?„ “Was issn los?„ “Wo sind meine Er-Er-Erinnerungen?„"{#morte_s369_}'
+    nr '"Na klar, wie Du meinst. Wenn du erstmal so lange tot bist wie ich, erkennst du die Zeichen. Sie mögen vielleicht zu SUBTIL für Leute wie dich sein, aber während ich MEINE Nächte mit so„n paar süßen, gerade erst gestorbenen jungen Mädels verbringe, stehst du draußen und machst nur “Hä?„ “Was issn los?„ “Wo sind meine Er-Er-Erinnerungen?„"{#morte_s369_1}'
 
     menu:
         '"Wie du willst, Morte. Laß uns gehen."{#morte_s369_r35286}':
@@ -5494,7 +5494,7 @@ label morte_s369: # from 367.1 367.2
 
 # s370 # say35310
 label morte_s370: # from 377.3
-    nr '"Hmmmm. Ob dieser Graubart wohl etwas dagegen hat, wenn *ich* mir dieses Knochengerüst mal ausborge…"{#morte_s370_}'
+    nr '"Hmmmm. Ob dieser Graubart wohl etwas dagegen hat, wenn *ich* mir dieses Knochengerüst mal ausborge…"{#morte_s370_1}'
 
     menu:
         '"Graubart?"{#morte_s370_r35311}':
@@ -5512,7 +5512,7 @@ label morte_s370: # from 377.3
 
 # s371 # say35312
 label morte_s371: # from 370.0
-    nr '"Graubart… du weißt schon, Opa, alter Knacker, grauer Köter… Alter."{#morte_s371_}'
+    nr '"Graubart… du weißt schon, Opa, alter Knacker, grauer Köter… Alter."{#morte_s371_1}'
 
     menu:
         '"Also ich glaube kaum, daß er in seiner Lage etwas dagegen einzuwenden hat. Warum solltest du seinen Körper also nicht nehmen?"{#morte_s371_r35313}':
@@ -5526,7 +5526,7 @@ label morte_s371: # from 370.0
 
 # s372 # say35314
 label morte_s372: # from 370.1 371.0
-    nr 'Morte guckt sich das Skelett genau an und schüttelt dann den Kopf. "Nee… Ich bräuchte schon ein frischeres als dies hier. Und eins mit ein bißchen mehr Würde… das hier ist ja ganz klapprig und kaputt."{#morte_s372_}'
+    nr 'Morte guckt sich das Skelett genau an und schüttelt dann den Kopf. "Nee… Ich bräuchte schon ein frischeres als dies hier. Und eins mit ein bißchen mehr Würde… das hier ist ja ganz klapprig und kaputt."{#morte_s372_1}'
 
     menu:
         '"Und du etwa nicht?"{#morte_s372_r35315}':
@@ -5540,7 +5540,7 @@ label morte_s372: # from 370.1 371.0
 
 # s373 # say35316
 label morte_s373: # from 370.2 371.1 372.0
-    nr '"Oh Mann, ich lach mich tot." Morte starrt dich wütend an. "Und überhaupt, das mußt DU sagen, Dussel. Selbst die Spiegel flehen um Gnade, wenn du in der Nähe bist."{#morte_s373_}'
+    nr '"Oh Mann, ich lach mich tot." Morte starrt dich wütend an. "Und überhaupt, das mußt DU sagen, Dussel. Selbst die Spiegel flehen um Gnade, wenn du in der Nähe bist."{#morte_s373_1}'
 
     menu:
         '"Ach ja? Zumindest habe *ich* noch alle meine Teile beisammen."{#morte_s373_r35317}':
@@ -5554,7 +5554,7 @@ label morte_s373: # from 370.2 371.1 372.0
 
 # s374 # say35318
 label morte_s374: # from 373.0
-    nr 'Morte schnaubt verächtlich. Da fragst du dich, wie er das macht, so ohne Lungen.{#morte_s374_}'
+    nr 'Morte schnaubt verächtlich. Da fragst du dich, wie er das macht, so ohne Lungen.{#morte_s374_1}'
 
     menu:
         '"Eines kann ich dir sagen, Morte, es gibt nichts Besseres als so herumzulaufen, mit den Armen zu schlenkern und die frische Luft in den Lungen zu spüren. Es ist WUNDERBAR, einen Körper zu haben."{#morte_s374_r35319}':
@@ -5569,7 +5569,7 @@ label morte_s374: # from 373.0
 
 # s375 # say35320
 label morte_s375: # from 374.0
-    nr '"Also wirklich, daß ich dir geholfen habe, dem Vorbereitungsraum zu entkommen, habe ich schon längst bereut." Morte schnaubt noch einmal verächtlich. "Ich hätte dich verrotten lassen sollen… noch ein bißchen mehr, meine ich."{#morte_s375_}'
+    nr '"Also wirklich, daß ich dir geholfen habe, dem Vorbereitungsraum zu entkommen, habe ich schon längst bereut." Morte schnaubt noch einmal verächtlich. "Ich hätte dich verrotten lassen sollen… noch ein bißchen mehr, meine ich."{#morte_s375_1}'
 
     menu:
         '"Schön, daß du so empfindest. Gehen wir."{#morte_s375_r35321}':
@@ -5579,7 +5579,7 @@ label morte_s375: # from 374.0
 
 # s376 # say35341
 label morte_s376: # externs s1221_s3 s1221_s0
-    nr '"Mann oh Mann, Meister. Das ist Vandalismus. Diese Bolzen hier sind wohl das einzige, was dieses Knochengerüst noch zusammenhält. Selbst die Nekromantie hat ihre Grenzen, findest du nicht?"{#morte_s376_}'
+    nr '"Mann oh Mann, Meister. Das ist Vandalismus. Diese Bolzen hier sind wohl das einzige, was dieses Knochengerüst noch zusammenhält. Selbst die Nekromantie hat ihre Grenzen, findest du nicht?"{#morte_s376_1}'
 
     menu:
         '"Und?"{#morte_s376_r35342}':
@@ -5599,7 +5599,7 @@ label morte_s376: # externs s1221_s3 s1221_s0
 
 # s377 # say35343
 label morte_s377: # from 376.0 376.1 376.2
-    nr '"Oh, macht nichts." Morte macht eine seltsam ruckartige Bewegung, und du denkst es könnte ein Schulterzucken sein. "Ich war mir nur nicht ganz sicher, ob du das weißt oder nicht. Aber klar doch, versuchs."{#morte_s377_}'
+    nr '"Oh, macht nichts." Morte macht eine seltsam ruckartige Bewegung, und du denkst es könnte ein Schulterzucken sein. "Ich war mir nur nicht ganz sicher, ob du das weißt oder nicht. Aber klar doch, versuchs."{#morte_s377_1}'
 
     menu:
         'Versuch, die Bolzen aus den Gelenken des Skeletts herauszuhebeln.{#morte_s377_r35344}' if morteLogic.r35344_condition():
@@ -5626,7 +5626,7 @@ label morte_s377: # from 376.0 376.1 376.2
 
 # s378 # say35387
 label morte_s378: # from 385.3
-    nr '"Hmmmm. Ob dieser Graubart wohl was dagegen hat, daß *ich* mir sein Knochengerüst ausleihe…"{#morte_s378_}'
+    nr '"Hmmmm. Ob dieser Graubart wohl was dagegen hat, daß *ich* mir sein Knochengerüst ausleihe…"{#morte_s378_1}'
 
     menu:
         '"Graubart?"{#morte_s378_r35388}':
@@ -5644,7 +5644,7 @@ label morte_s378: # from 385.3
 
 # s379 # say35389
 label morte_s379: # from 378.0
-    nr '"Graubart… verstehst du, ein Opa, ein alter Knacker… ein Tattergreis."{#morte_s379_}'
+    nr '"Graubart… verstehst du, ein Opa, ein alter Knacker… ein Tattergreis."{#morte_s379_1}'
 
     menu:
         '"Also ich glaube kaum, daß er in seiner Lage etwas dagegen einzuwenden hat. Warum solltest du seinen Körper also nicht nehmen?"{#morte_s379_r35390}':
@@ -5658,7 +5658,7 @@ label morte_s379: # from 378.0
 
 # s380 # say35391
 label morte_s380: # from 378.1 379.0
-    nr 'Morte mustert kurz das Skelett, dann schüttelt er den Kopf. "Na ja… er sollte schon etwas frischer sein. Und vielleicht auch etwas würdevoller… der hier ist ja völlig kaputt und klapperig."{#morte_s380_}'
+    nr 'Morte mustert kurz das Skelett, dann schüttelt er den Kopf. "Na ja… er sollte schon etwas frischer sein. Und vielleicht auch etwas würdevoller… der hier ist ja völlig kaputt und klapperig."{#morte_s380_1}'
 
     menu:
         '"Und du etwa nicht?"{#morte_s380_r35392}':
@@ -5672,7 +5672,7 @@ label morte_s380: # from 378.1 379.0
 
 # s381 # say35393
 label morte_s381: # from 378.2 379.1 380.0
-    nr '"Ach, sehr witzig." Morte starrt dich an. "Und gerade DU MUSST so was sagen, Dussel. Du bist so häßlich, da laufen sogar die Spiegel an."{#morte_s381_}'
+    nr '"Ach, sehr witzig." Morte starrt dich an. "Und gerade DU MUSST so was sagen, Dussel. Du bist so häßlich, da laufen sogar die Spiegel an."{#morte_s381_1}'
 
     menu:
         '"Ach ja? Zumindest habe *ich* noch alle meine Teile beisammen."{#morte_s381_r35394}':
@@ -5686,7 +5686,7 @@ label morte_s381: # from 378.2 379.1 380.0
 
 # s382 # say35395
 label morte_s382: # from 381.0
-    nr 'Morte schnaubt. Wie er das macht, so ganz ohne Lungen, ist dir ein ziemliches Rätsel.{#morte_s382_}'
+    nr 'Morte schnaubt. Wie er das macht, so ganz ohne Lungen, ist dir ein ziemliches Rätsel.{#morte_s382_1}'
 
     menu:
         '"Eines kann ich dir sagen, Morte, es gibt nichts Besseres als so herumzulaufen, mit den Armen zu schlenkern und die frische Luft in den Lungen zu spüren. Es ist WUNDERBAR, einen Körper zu haben."{#morte_s382_r35396}':
@@ -5701,7 +5701,7 @@ label morte_s382: # from 381.0
 
 # s383 # say35397
 label morte_s383: # from 382.0
-    nr '"Meine Beihilfe zu deiner Flucht aus dem Vorbereitungsraum steht sowieso schon ganz oben auf der Liste meiner persönlichen Irrtümer." Morte schnaubt erneut. "Ich hätte dich verrotten lassen sollen… noch mehr, als du es bereits bist, versteht sich."{#morte_s383_}'
+    nr '"Meine Beihilfe zu deiner Flucht aus dem Vorbereitungsraum steht sowieso schon ganz oben auf der Liste meiner persönlichen Irrtümer." Morte schnaubt erneut. "Ich hätte dich verrotten lassen sollen… noch mehr, als du es bereits bist, versteht sich."{#morte_s383_1}'
 
     menu:
         '"Schön, daß du so empfindest. Gehen wir."{#morte_s383_r35398}':
@@ -5711,7 +5711,7 @@ label morte_s383: # from 382.0
 
 # s384 # say35418
 label morte_s384: # externs s748_s3 s748_s0
-    nr '"Mann oh Mann, Meister. Das ist Vandalismus. Diese Bolzen hier sind wohl das einzige, was dieses Knochengerüst noch zusammenhält. Selbst die Nekromantie hat ihre Grenzen, findest du nicht?"{#morte_s384_}'
+    nr '"Mann oh Mann, Meister. Das ist Vandalismus. Diese Bolzen hier sind wohl das einzige, was dieses Knochengerüst noch zusammenhält. Selbst die Nekromantie hat ihre Grenzen, findest du nicht?"{#morte_s384_1}'
 
     menu:
         '"Und?"{#morte_s384_r35419}':
@@ -5731,7 +5731,7 @@ label morte_s384: # externs s748_s3 s748_s0
 
 # s385 # say35420
 label morte_s385: # from 384.0 384.1 384.2
-    nr '"Oh, macht nichts." Morte macht eine seltsam ruckartige Bewegung, und du denkst es könnte ein Schulterzucken sein. "Ich war mir nur nicht ganz sicher, ob du das weißt oder nicht. Aber klar doch, versuchs."{#morte_s385_}'
+    nr '"Oh, macht nichts." Morte macht eine seltsam ruckartige Bewegung, und du denkst es könnte ein Schulterzucken sein. "Ich war mir nur nicht ganz sicher, ob du das weißt oder nicht. Aber klar doch, versuchs."{#morte_s385_1}'
 
     menu:
         'Versuch, die Bolzen aus den Gelenken des Skeletts herauszuhebeln.{#morte_s385_r35421}' if morteLogic.r35421_condition():
@@ -5758,7 +5758,7 @@ label morte_s385: # from 384.0 384.1 384.2
 
 # s386 # say35464
 label morte_s386: # from 393.3
-    nr '"Hmmmm. Ob dieser Graubart wohl was dagegen hat, daß *ich* mir sein Knochengerüst ausleihe…"{#morte_s386_}'
+    nr '"Hmmmm. Ob dieser Graubart wohl was dagegen hat, daß *ich* mir sein Knochengerüst ausleihe…"{#morte_s386_1}'
 
     menu:
         '"Graubart?"{#morte_s386_r35465}':
@@ -5776,7 +5776,7 @@ label morte_s386: # from 393.3
 
 # s387 # say35466
 label morte_s387: # from 386.0
-    nr '"Graubart… verstehst du, ein Opa, ein alter Knacker… ein Tattergreis."{#morte_s387_}'
+    nr '"Graubart… verstehst du, ein Opa, ein alter Knacker… ein Tattergreis."{#morte_s387_1}'
 
     menu:
         '"Also ich glaube kaum, daß er in seiner Lage etwas dagegen einzuwenden hat. Warum solltest du seinen Körper also nicht nehmen?"{#morte_s387_r35467}':
@@ -5790,7 +5790,7 @@ label morte_s387: # from 386.0
 
 # s388 # say35468
 label morte_s388: # from 386.1 387.0
-    nr 'Morte mustert kurz das Skelett, dann schüttelt er den Kopf. "Na ja… er sollte schon etwas frischer sein. Und vielleicht auch etwas würdevoller… der hier ist ja völlig kaputt und klapperig."{#morte_s388_}'
+    nr 'Morte mustert kurz das Skelett, dann schüttelt er den Kopf. "Na ja… er sollte schon etwas frischer sein. Und vielleicht auch etwas würdevoller… der hier ist ja völlig kaputt und klapperig."{#morte_s388_1}'
 
     menu:
         '"Und du etwa nicht?"{#morte_s388_r35469}':
@@ -5804,7 +5804,7 @@ label morte_s388: # from 386.1 387.0
 
 # s389 # say35470
 label morte_s389: # from 386.2 387.1 388.0
-    nr '"Ach, sehr witzig." Morte starrt dich an. "Und gerade DU MUSST so was sagen, Dussel. Du bist so häßlich, da laufen sogar die Spiegel an."{#morte_s389_}'
+    nr '"Ach, sehr witzig." Morte starrt dich an. "Und gerade DU MUSST so was sagen, Dussel. Du bist so häßlich, da laufen sogar die Spiegel an."{#morte_s389_1}'
 
     menu:
         '"Ach ja? Zumindest habe *ich* noch alle meine Teile beisammen."{#morte_s389_r35471}':
@@ -5818,7 +5818,7 @@ label morte_s389: # from 386.2 387.1 388.0
 
 # s390 # say35472
 label morte_s390: # from 389.0
-    nr 'Morte schnaubt. Wie er das macht, so ganz ohne Lungen, ist dir ein ziemliches Rätsel.{#morte_s390_}'
+    nr 'Morte schnaubt. Wie er das macht, so ganz ohne Lungen, ist dir ein ziemliches Rätsel.{#morte_s390_1}'
 
     menu:
         '"Eines kann ich dir sagen, Morte, es gibt nichts Besseres als so herumzulaufen, mit den Armen zu schlenkern und die frische Luft in den Lungen zu spüren. Es ist WUNDERBAR, einen Körper zu haben."{#morte_s390_r35473}':
@@ -5833,7 +5833,7 @@ label morte_s390: # from 389.0
 
 # s391 # say35474
 label morte_s391: # from 390.0
-    nr '"Meine Beihilfe zu deiner Flucht aus dem Vorbereitungsraum steht sowieso schon ganz oben auf der Liste meiner persönlichen Irrtümer." Morte schnaubt erneut. "Ich hätte dich verrotten lassen sollen… noch mehr, als du es bereits bist, versteht sich."{#morte_s391_}'
+    nr '"Meine Beihilfe zu deiner Flucht aus dem Vorbereitungsraum steht sowieso schon ganz oben auf der Liste meiner persönlichen Irrtümer." Morte schnaubt erneut. "Ich hätte dich verrotten lassen sollen… noch mehr, als du es bereits bist, versteht sich."{#morte_s391_1}'
 
     menu:
         '"Schön, daß du so empfindest. Gehen wir."{#morte_s391_r35475}':
@@ -5843,7 +5843,7 @@ label morte_s391: # from 390.0
 
 # s392 # say35495
 label morte_s392: # externs s996_s3 s996_s0
-    nr '"Mann oh Mann, Meister. Das ist Vandalismus. Diese Bolzen hier sind wohl das einzige, was dieses Knochengerüst noch zusammenhält. Selbst die Nekromantie hat ihre Grenzen, findest du nicht?"{#morte_s392_}'
+    nr '"Mann oh Mann, Meister. Das ist Vandalismus. Diese Bolzen hier sind wohl das einzige, was dieses Knochengerüst noch zusammenhält. Selbst die Nekromantie hat ihre Grenzen, findest du nicht?"{#morte_s392_1}'
 
     menu:
         '"Und?"{#morte_s392_r35496}':
@@ -5863,7 +5863,7 @@ label morte_s392: # externs s996_s3 s996_s0
 
 # s393 # say35497
 label morte_s393: # from 392.0 392.1 392.2
-    nr '"Oh, macht nichts." Morte macht eine seltsam ruckartige Bewegung, und du denkst es könnte ein Schulterzucken sein. "Ich war mir nur nicht ganz sicher, ob du das weißt oder nicht. Aber klar doch, versuchs."{#morte_s393_}'
+    nr '"Oh, macht nichts." Morte macht eine seltsam ruckartige Bewegung, und du denkst es könnte ein Schulterzucken sein. "Ich war mir nur nicht ganz sicher, ob du das weißt oder nicht. Aber klar doch, versuchs."{#morte_s393_1}'
 
     menu:
         'Versuch, die Bolzen aus den Gelenken des Skeletts herauszuhebeln.{#morte_s393_r35498}' if morteLogic.r35498_condition():
@@ -5890,7 +5890,7 @@ label morte_s393: # from 392.0 392.1 392.2
 
 # s394 # say35541
 label morte_s394: # from 401.3
-    nr '"Hmmmm. Ob dieser Graubart wohl was dagegen hat, daß *ich* mir sein Knochengerüst ausleihe…"{#morte_s394_}'
+    nr '"Hmmmm. Ob dieser Graubart wohl was dagegen hat, daß *ich* mir sein Knochengerüst ausleihe…"{#morte_s394_1}'
 
     menu:
         '"Graubart?"{#morte_s394_r35542}':
@@ -5908,7 +5908,7 @@ label morte_s394: # from 401.3
 
 # s395 # say35543
 label morte_s395: # from 394.0
-    nr '"Graubart… verstehst du, ein Opa, ein alter Knacker… ein Tattergreis."{#morte_s395_}'
+    nr '"Graubart… verstehst du, ein Opa, ein alter Knacker… ein Tattergreis."{#morte_s395_1}'
 
     menu:
         '"Also ich glaube kaum, daß er in seiner Lage etwas dagegen einzuwenden hat. Warum solltest du seinen Körper also nicht nehmen?"{#morte_s395_r35544}':
@@ -5922,7 +5922,7 @@ label morte_s395: # from 394.0
 
 # s396 # say35545
 label morte_s396: # from 394.1 395.0
-    nr 'Morte mustert kurz das Skelett, dann schüttelt er den Kopf. "Na ja… er sollte schon etwas frischer sein. Und vielleicht auch etwas würdevoller… der hier ist ja völlig kaputt und klapperig."{#morte_s396_}'
+    nr 'Morte mustert kurz das Skelett, dann schüttelt er den Kopf. "Na ja… er sollte schon etwas frischer sein. Und vielleicht auch etwas würdevoller… der hier ist ja völlig kaputt und klapperig."{#morte_s396_1}'
 
     menu:
         '"Und du etwa nicht?"{#morte_s396_r35546}':
@@ -5936,7 +5936,7 @@ label morte_s396: # from 394.1 395.0
 
 # s397 # say35547
 label morte_s397: # from 394.2 395.1 396.0
-    nr '"Ach, sehr witzig." Morte starrt dich an. "Und gerade DU MUSST so was sagen, Dussel. Du bist so häßlich, da laufen sogar die Spiegel an."{#morte_s397_}'
+    nr '"Ach, sehr witzig." Morte starrt dich an. "Und gerade DU MUSST so was sagen, Dussel. Du bist so häßlich, da laufen sogar die Spiegel an."{#morte_s397_1}'
 
     menu:
         '"Ach ja? Zumindest habe *ich* noch alle meine Teile beisammen."{#morte_s397_r35548}':
@@ -5950,7 +5950,7 @@ label morte_s397: # from 394.2 395.1 396.0
 
 # s398 # say35549
 label morte_s398: # from 397.0
-    nr 'Morte schnaubt. Wie er das macht, so ganz ohne Lungen, ist dir ein ziemliches Rätsel.{#morte_s398_}'
+    nr 'Morte schnaubt. Wie er das macht, so ganz ohne Lungen, ist dir ein ziemliches Rätsel.{#morte_s398_1}'
 
     menu:
         '"Eines kann ich dir sagen, Morte, es gibt nichts Besseres als so herumzulaufen, mit den Armen zu schlenkern und die frische Luft in den Lungen zu spüren. Es ist WUNDERBAR, einen Körper zu haben."{#morte_s398_r35550}':
@@ -5965,7 +5965,7 @@ label morte_s398: # from 397.0
 
 # s399 # say35551
 label morte_s399: # from 398.0
-    nr '"Meine Beihilfe zu deiner Flucht aus dem Vorbereitungsraum steht sowieso schon ganz oben auf der Liste meiner persönlichen Irrtümer." Morte schnaubt erneut. "Ich hätte dich verrotten lassen sollen… noch mehr, als du es bereits bist, versteht sich."{#morte_s399_}'
+    nr '"Meine Beihilfe zu deiner Flucht aus dem Vorbereitungsraum steht sowieso schon ganz oben auf der Liste meiner persönlichen Irrtümer." Morte schnaubt erneut. "Ich hätte dich verrotten lassen sollen… noch mehr, als du es bereits bist, versteht sich."{#morte_s399_1}'
 
     menu:
         '"Schön, daß du so empfindest. Gehen wir."{#morte_s399_r35552}':
@@ -5975,7 +5975,7 @@ label morte_s399: # from 398.0
 
 # s400 # say35572
 label morte_s400: # externs s863_s3 s863_s0
-    nr '"Mann oh Mann, Meister. Das ist Vandalismus. Diese Bolzen hier sind wohl das einzige, was dieses Knochengerüst noch zusammenhält. Selbst die Nekromantie hat ihre Grenzen, findest du nicht?"{#morte_s400_}'
+    nr '"Mann oh Mann, Meister. Das ist Vandalismus. Diese Bolzen hier sind wohl das einzige, was dieses Knochengerüst noch zusammenhält. Selbst die Nekromantie hat ihre Grenzen, findest du nicht?"{#morte_s400_1}'
 
     menu:
         '"Und?"{#morte_s400_r35573}':
@@ -5995,7 +5995,7 @@ label morte_s400: # externs s863_s3 s863_s0
 
 # s401 # say35574
 label morte_s401: # from 400.0 400.1 400.2
-    nr '"Oh, macht nichts." Morte macht eine seltsam ruckartige Bewegung, und du denkst es könnte ein Schulterzucken sein. "Ich war mir nur nicht ganz sicher, ob du das weißt oder nicht. Aber klar doch, versuchs."{#morte_s401_}'
+    nr '"Oh, macht nichts." Morte macht eine seltsam ruckartige Bewegung, und du denkst es könnte ein Schulterzucken sein. "Ich war mir nur nicht ganz sicher, ob du das weißt oder nicht. Aber klar doch, versuchs."{#morte_s401_1}'
 
     menu:
         'Versuch, die Bolzen aus den Gelenken des Skeletts herauszuhebeln.{#morte_s401_r35575}' if morteLogic.r35575_condition():
@@ -6022,7 +6022,7 @@ label morte_s401: # from 400.0 400.1 400.2
 
 # s402 # say38265
 label morte_s402: # -
-    nr '"Ich liebe diese Kleine schon jetzt!"{#morte_s402_}'
+    nr '"Ich liebe diese Kleine schon jetzt!"{#morte_s402_1}'
 
     menu:
         '"Kannst du wenigstens schreiben? Oder Pantomime?"{#morte_s402_r38267}':
@@ -6032,7 +6032,7 @@ label morte_s402: # -
 
 # s403 # say38266
 label morte_s403: # -
-    nr '"Igitt!!"{#morte_s403_}'
+    nr '"Igitt!!"{#morte_s403_1}'
 
     menu:
         '"Hä?"{#morte_s403_r38268}':
@@ -6042,35 +6042,35 @@ label morte_s403: # -
 
 # s404 # say39000
 label morte_s404: # -
-    nr 'Morte flüstert: "Das ist nicht gut, Meister. Paß auf, wo du hintrittst, oder die wischen dir dein Hirn einfach so aus dem Dasein… Die sind in größeren Gruppen mächtiger - jede einzelne ist dann Teil des Gruppenhirns. Die sind *tödlich*."{#morte_s404_}'
+    nr 'Morte flüstert: "Das ist nicht gut, Meister. Paß auf, wo du hintrittst, oder die wischen dir dein Hirn einfach so aus dem Dasein… Die sind in größeren Gruppen mächtiger - jede einzelne ist dann Teil des Gruppenhirns. Die sind *tödlich*."{#morte_s404_1}'
 
     jump manyas1_s5  # EXTERN
 
 
 # s405 # say39001
 label morte_s405: # -
-    nr 'Morte flüstert: "Das ist nicht gut, Meister. Paß auf, wo du hintrittst, oder die wischen dir dein Hirn einfach so aus dem Dasein… Die sind in größeren Gruppen mächtiger - jede einzelne ist dann Teil des Gruppenhirns. Die sind *tödlich*."{#morte_s405_}'
+    nr 'Morte flüstert: "Das ist nicht gut, Meister. Paß auf, wo du hintrittst, oder die wischen dir dein Hirn einfach so aus dem Dasein… Die sind in größeren Gruppen mächtiger - jede einzelne ist dann Teil des Gruppenhirns. Die sind *tödlich*."{#morte_s405_1}'
 
     jump manyas1_s58  # EXTERN
 
 
 # s406 # say39002
 label morte_s406: # -
-    nr 'Morte flüstert: "Ich weiß ja nicht, was die vorhaben, Meister, aber paß besser auf, was du so denkst. Die sind ein Gruppenhirn, und jede Ratte kommt noch zu diesem Gruppenhirn dazu, und die kämpfen wie - wenn du mir den Ausdruck mal verzeihst - in die Enge getriebene Ratten. Wir sind jetzt bei denen zu Hause, Meister, und die können nirgendwo hin. Mach jetzt nix Falsches."{#morte_s406_}'
+    nr 'Morte flüstert: "Ich weiß ja nicht, was die vorhaben, Meister, aber paß besser auf, was du so denkst. Die sind ein Gruppenhirn, und jede Ratte kommt noch zu diesem Gruppenhirn dazu, und die kämpfen wie - wenn du mir den Ausdruck mal verzeihst - in die Enge getriebene Ratten. Wir sind jetzt bei denen zu Hause, Meister, und die können nirgendwo hin. Mach jetzt nix Falsches."{#morte_s406_1}'
 
     jump manyas1_s78  # EXTERN
 
 
 # s407 # say39564
 label morte_s407: # -
-    nr '"Was für ein Zufall! Ich bin auch hinter hübschen Geschichten her."{#morte_s407_}'
+    nr '"Was für ein Zufall! Ich bin auch hinter hübschen Geschichten her."{#morte_s407_1}'
 
     jump yves_s2  # EXTERN
 
 
 # s408 # say39565
 label morte_s408: # -
-    nr '"Ich? Warum soll *ich* denn eine Geschichte erzählen?"{#morte_s408_}'
+    nr '"Ich? Warum soll *ich* denn eine Geschichte erzählen?"{#morte_s408_1}'
 
     menu:
         '"Dann vergiß es."{#morte_s408_r39713}':
@@ -6084,7 +6084,7 @@ label morte_s408: # -
 
 # s409 # say39566
 label morte_s409: # from 408.0
-    nr '"Nein, nein, ich tu„s ja… Ich dachte bloß, ich beschwer mich ein bißchen, weil sich das so gehört. Außerdem liebe ich die Aufmerksamkeit."{#morte_s409_}'
+    nr '"Nein, nein, ich tu„s ja… Ich dachte bloß, ich beschwer mich ein bißchen, weil sich das so gehört. Außerdem liebe ich die Aufmerksamkeit."{#morte_s409_1}'
 
     menu:
         '"Nein, Morte - auf keinen Fall. Ich möchte sie nicht hören."{#morte_s409_r39715}':
@@ -6099,7 +6099,7 @@ label morte_s409: # from 408.0
 
 # s410 # say39567
 label morte_s410: # from 409.0
-    nr '"Bitte! Komm schon? Biiitte? Das is ne tolle Geschichte! Viele Personen, Action, retardierende Elemente und eine überraschende Auflösung!"{#morte_s410_}'
+    nr '"Bitte! Komm schon? Biiitte? Das is ne tolle Geschichte! Viele Personen, Action, retardierende Elemente und eine überraschende Auflösung!"{#morte_s410_1}'
 
     menu:
         '"So toll kann sie gar nicht sein."{#morte_s410_r39717}':
@@ -6118,7 +6118,7 @@ label morte_s410: # from 409.0
 
 # s411 # say39568
 label morte_s411: # from 410.0
-    nr '"Wirklich! Echt! *Komm* schon!"{#morte_s411_}'
+    nr '"Wirklich! Echt! *Komm* schon!"{#morte_s411_1}'
 
     menu:
         '"Warte… Was sind denn „retardierende Elemente“?"{#morte_s411_r39720}':
@@ -6133,7 +6133,7 @@ label morte_s411: # from 410.0
 
 # s412 # say39569
 label morte_s412: # from 410.1 411.0
-    nr '"Keine Ahnung! Aber es *klingt* jedenfalls beeindruckend!"{#morte_s412_}'
+    nr '"Keine Ahnung! Aber es *klingt* jedenfalls beeindruckend!"{#morte_s412_1}'
 
     menu:
         '"Also gut, erzähl."{#morte_s412_r39722}':
@@ -6144,7 +6144,7 @@ label morte_s412: # from 410.1 411.0
 
 # s413 # say39570
 label morte_s413: # from 408.1
-    nr '"Na gut, na gut…"{#morte_s413_}'
+    nr '"Na gut, na gut…"{#morte_s413_1}'
 
     $ morteLogic.s413_action()
     jump morte_s414
@@ -6152,7 +6152,7 @@ label morte_s413: # from 408.1
 
 # s414 # say39571
 label morte_s414: # from 409.1 410.2 411.1 412.0 413.0
-    nr '"Da saß einmal ein älterer Mann allein auf einem dunklen Pfad, OK? Er war sich nicht sicher, in welche Richtung er gehen sollte, und er hatte vergessen, wohin er reiste und wer er war. Er hatte sich „n Moment hingesetzt, um seine müden Beine auszuruhen, als er plötzlich aufblickte und eine ältere Frau vor sich sah. Sie grinste zahnlos und sprach mit einem Gackern: “Und jetzt zu deinem *dritten* Wunsch. Was wünschst du dir also?„"{#morte_s414_}'
+    nr '"Da saß einmal ein älterer Mann allein auf einem dunklen Pfad, OK? Er war sich nicht sicher, in welche Richtung er gehen sollte, und er hatte vergessen, wohin er reiste und wer er war. Er hatte sich „n Moment hingesetzt, um seine müden Beine auszuruhen, als er plötzlich aufblickte und eine ältere Frau vor sich sah. Sie grinste zahnlos und sprach mit einem Gackern: “Und jetzt zu deinem *dritten* Wunsch. Was wünschst du dir also?„"{#morte_s414_1}'
 
     menu:
         '"Erzähl weiter, Morte…"{#morte_s414_r39724}':
@@ -6170,7 +6170,7 @@ label morte_s414: # from 409.1 410.2 411.1 412.0 413.0
 
 # s415 # say39572
 label morte_s415: # from 414.0
-    nr '"„Dritter Wunsch?“ Der Mann war perplex. „Wie kann das denn ein dritter Wunsch sein, wenn ich noch keinen ersten und zweiten Wunsch hatte?“"{#morte_s415_}'
+    nr '"„Dritter Wunsch?“ Der Mann war perplex. „Wie kann das denn ein dritter Wunsch sein, wenn ich noch keinen ersten und zweiten Wunsch hatte?“"{#morte_s415_1}'
 
     menu:
         '"Erzähl weiter, Morte…"{#morte_s415_r39727}':
@@ -6188,7 +6188,7 @@ label morte_s415: # from 414.0
 
 # s416 # say39573
 label morte_s416: # from 415.0
-    nr '"„Du hattest schon zwei Wünsche“, sagte die Hexe, „aber dein zweiter Wunsch war, daß alles wieder wie vor deinem ersten Wunsch sein sollte. Deshalb erinnerst du dich auch an nichts, weil alles wieder genauso ist wie vorher, bevor du deine Wünsche ausgesprochen hast.“ Sie gackerte den armen Dussel an. „Und deshalb hast du jetzt nur noch einen Wunsch übrig.“"{#morte_s416_}'
+    nr '"„Du hattest schon zwei Wünsche“, sagte die Hexe, „aber dein zweiter Wunsch war, daß alles wieder wie vor deinem ersten Wunsch sein sollte. Deshalb erinnerst du dich auch an nichts, weil alles wieder genauso ist wie vorher, bevor du deine Wünsche ausgesprochen hast.“ Sie gackerte den armen Dussel an. „Und deshalb hast du jetzt nur noch einen Wunsch übrig.“"{#morte_s416_1}'
 
     menu:
         '"Erzähl weiter, Morte…"{#morte_s416_r39752}':
@@ -6206,35 +6206,35 @@ label morte_s416: # from 415.0
 
 # s417 # say39574
 label morte_s417: # from 416.0
-    nr '"„Also gut“, sagte der Mann, "ich glaub das zwar nicht, aber es kann ja nicht schaden, wenn ich mir was wünsche. Ich möchte wissen, wer ich bin.„"  "“Putzig„, sagte die alte Frau, “Das war auch dein erster Wunsch gewesen.„ Sprach“s und verschwand für immer."{#morte_s417_}'
+    nr '"„Also gut“, sagte der Mann, "ich glaub das zwar nicht, aber es kann ja nicht schaden, wenn ich mir was wünsche. Ich möchte wissen, wer ich bin.„"  "“Putzig„, sagte die alte Frau, “Das war auch dein erster Wunsch gewesen.„ Sprach“s und verschwand für immer."{#morte_s417_1}'
 
     jump yves_s55  # EXTERN
 
 
 # s418 # say39575
 label morte_s418: # -
-    nr '"Was zum Teufel war das denn, du blödes Vieleck?! Das war ja die langweiligste Geschichte, die ich je gehört hab!"{#morte_s418_}'
+    nr '"Was zum Teufel war das denn, du blödes Vieleck?! Das war ja die langweiligste Geschichte, die ich je gehört hab!"{#morte_s418_1}'
 
     jump nordom_s11  # EXTERN
 
 
 # s419 # say39576
 label morte_s419: # -
-    nr '"Ausschmückungen?"{#morte_s419_}'
+    nr '"Ausschmückungen?"{#morte_s419_1}'
 
     jump nordom_s12  # EXTERN
 
 
 # s420 # say39577
 label morte_s420: # -
-    nr '"*Komm* schon, kleines Scheusal. Mach hier keine Geschichten, sondern erzähl lieber eine, ja?"{#morte_s420_}'
+    nr '"*Komm* schon, kleines Scheusal. Mach hier keine Geschichten, sondern erzähl lieber eine, ja?"{#morte_s420_1}'
 
     jump annah_s196  # EXTERN
 
 
 # s421 # say40068
 label morte_s421: # -
-    nr 'Morte wirbelt um dich herum und macht sich über die offensichtliche Bemerkung des Mädchens lustig. "Bei allen Heiligen, Meister… sie hat recht! Das hab ich ja noch nie bemerkt… Du bist ja voller *Narben*!"{#morte_s421_}'
+    nr 'Morte wirbelt um dich herum und macht sich über die offensichtliche Bemerkung des Mädchens lustig. "Bei allen Heiligen, Meister… sie hat recht! Das hab ich ja noch nie bemerkt… Du bist ja voller *Narben*!"{#morte_s421_1}'
 
     menu:
         '"Das sind alles alte Narben. Mir geht„s gut."{#morte_s421_r40069}' if morteLogic.r40069_condition():
@@ -6260,7 +6260,7 @@ label morte_s421: # -
 
 # s422 # say40074
 label morte_s422: # -
-    nr 'Morte wackelt mit den Augenbrauen. "Du bist allerdings zu „dreist“… Hat sicher was zu tun mit diesen schwingenden, hängenden Br-"{#morte_s422_}'
+    nr 'Morte wackelt mit den Augenbrauen. "Du bist allerdings zu „dreist“… Hat sicher was zu tun mit diesen schwingenden, hängenden Br-"{#morte_s422_1}'
 
     menu:
         '"Morte, das reicht."{#morte_s422_r40075}':
@@ -6270,7 +6270,7 @@ label morte_s422: # -
 
 # s423 # say40076
 label morte_s423: # from 422.0
-    nr 'Morte hält die Klappe.{#morte_s423_}'
+    nr 'Morte hält die Klappe.{#morte_s423_1}'
 
     menu:
         '"Das ist kein Problem, Nenny."{#morte_s423_r40077}' if morteLogic.r40077_condition():
@@ -6292,14 +6292,14 @@ label morte_s423: # from 422.0
 
 # s424 # say40081
 label morte_s424: # -
-    nr '"Hey!"{#morte_s424_}'
+    nr '"Hey!"{#morte_s424_1}'
 
     jump nenny_s27  # EXTERN
 
 
 # s425 # say40082
 label morte_s425: # -
-    nr 'Morte murmelt vor sich hin. "Ich denke mal, es ist gut, daß *irgendwas* da drin is."{#morte_s425_}'
+    nr 'Morte murmelt vor sich hin. "Ich denke mal, es ist gut, daß *irgendwas* da drin is."{#morte_s425_1}'
 
     menu:
         '"Ich hätte da noch eine Frage, Nenny…"{#morte_s425_r40083}':
@@ -6313,7 +6313,7 @@ label morte_s425: # -
 
 # s426 # say40222
 label morte_s426: # -
-    nr '"Oooh, nein… Jetzt *mußt* du es uns erzählen."{#morte_s426_}'
+    nr '"Oooh, nein… Jetzt *mußt* du es uns erzählen."{#morte_s426_1}'
 
     menu:
         '"Ja… Bitte: Erzähl es mir."{#morte_s426_r40223}':
@@ -6331,7 +6331,7 @@ label morte_s426: # -
 
 # s427 # say40275
 label morte_s427: # -
-    nr 'Morte schwebt dicht an dich heran und flüstert dir zu: "Ich hab ja Mitleid mit ihrem Liebhaber. Der hat keine Ahnung, wie schlecht er es hat. „N Mädel wie das hier bringt nichts als Ärger."{#morte_s427_}'
+    nr 'Morte schwebt dicht an dich heran und flüstert dir zu: "Ich hab ja Mitleid mit ihrem Liebhaber. Der hat keine Ahnung, wie schlecht er es hat. „N Mädel wie das hier bringt nichts als Ärger."{#morte_s427_1}'
 
     menu:
         '"Das klingt nicht sehr klug, Juliette. Sei doch einfach froh über das, was du hast."{#morte_s427_r40276}':
@@ -6353,7 +6353,7 @@ label morte_s427: # -
 
 # s428 # say40685
 label morte_s428: # -
-    nr 'Morte flüstert leise: "Wow… unheimliche Braut."{#morte_s428_}'
+    nr 'Morte flüstert leise: "Wow… unheimliche Braut."{#morte_s428_1}'
 
     menu:
         '"Ich entschuldige mich, meine Dame… Ich war nicht sicher, ob hier jemand drin ist."{#morte_s428_r40686}':
@@ -6371,7 +6371,7 @@ label morte_s428: # -
 
 # s429 # say40846
 label morte_s429: # -
-    nr '"Komm schon, Meister! Wir sind in „nem Gebäude, das von einigen der aufregendsten Dinger auf dieser Seite des Multiversums wimmelt, und du hältst an, um mit *Modronen* zu sprechen?"{#morte_s429_}'
+    nr '"Komm schon, Meister! Wir sind in „nem Gebäude, das von einigen der aufregendsten Dinger auf dieser Seite des Multiversums wimmelt, und du hältst an, um mit *Modronen* zu sprechen?"{#morte_s429_1}'
 
     menu:
         '"Was kannst du mir über sie erzählen, Morte?"{#morte_s429_r40847}':
@@ -6394,7 +6394,7 @@ label morte_s429: # -
 
 # s430 # say40851
 label morte_s430: # from 429.0
-    nr 'Morte macht ein Geräusch des absoluten Ekels. "Was kann man da schon sagen? Nervendes kleines Uhrwerk-Ungeziefer… die arbeiten ständig daran, dem Multiversum Gesetz und Ordnung aufzudrücken. Nicht *Gutes*, wie gesagt, sondern nur das *Gesetz*. Vergessen wir sie einfach und reißen ein paar Mädels auf, OK?"{#morte_s430_}'
+    nr 'Morte macht ein Geräusch des absoluten Ekels. "Was kann man da schon sagen? Nervendes kleines Uhrwerk-Ungeziefer… die arbeiten ständig daran, dem Multiversum Gesetz und Ordnung aufzudrücken. Nicht *Gutes*, wie gesagt, sondern nur das *Gesetz*. Vergessen wir sie einfach und reißen ein paar Mädels auf, OK?"{#morte_s430_1}'
 
     menu:
         'Ignoriere Morte, grüße den Modron.{#morte_s430_r40852}':
@@ -6413,7 +6413,7 @@ label morte_s430: # from 429.0
 
 # s431 # say40855
 label morte_s431: # from 429.2 430.1
-    nr 'Morte seufzt laut. "Also gut, wie du willst - aber sag dann nicht, ich hätte dich nicht gewarnt. Du wirst allerdings wahrscheinlich nicht weit mit ihnen kommen, Meister… Das is ne ganz komische Sorte zum Unterhalten."{#morte_s431_}'
+    nr 'Morte seufzt laut. "Also gut, wie du willst - aber sag dann nicht, ich hätte dich nicht gewarnt. Du wirst allerdings wahrscheinlich nicht weit mit ihnen kommen, Meister… Das is ne ganz komische Sorte zum Unterhalten."{#morte_s431_1}'
 
     menu:
         '"Sei gegrüßt…"{#morte_s431_r40856}':
@@ -6424,28 +6424,28 @@ label morte_s431: # from 429.2 430.1
 
 # s432 # say41135
 label morte_s432: # -
-    nr '"Alles!" schreit Morte. "Tu alles, was du willst, mit mir!"{#morte_s432_}'
+    nr '"Alles!" schreit Morte. "Tu alles, was du willst, mit mir!"{#morte_s432_1}'
 
     jump kesai_s2  # EXTERN
 
 
 # s433 # say41136
 label morte_s433: # -
-    nr '"Das ist doch zum Heulen… Wo war diese Schnecke, als ich noch einen *Körper* hatte?!"{#morte_s433_}'
+    nr '"Das ist doch zum Heulen… Wo war diese Schnecke, als ich noch einen *Körper* hatte?!"{#morte_s433_1}'
 
     jump kesai_s11  # EXTERN
 
 
 # s434 # say41632
 label morte_s434: # -
-    nr '"Mein Freund dachte, du seist attraktiv, aber *wow*! Da hat er sich ja wohl schrecklich geirrt!"{#morte_s434_}'
+    nr '"Mein Freund dachte, du seist attraktiv, aber *wow*! Da hat er sich ja wohl schrecklich geirrt!"{#morte_s434_1}'
 
     jump kimasxi_s2  # EXTERN
 
 
 # s435 # say41633
 label morte_s435: # from 436.0
-    nr '"Klar, Meister, wie du willst. Was für ne Hexe, was?" Morte macht *hmph* und wackelt dann mit den Augenbrauen. "Ich *mag* das!"{#morte_s435_}'
+    nr '"Klar, Meister, wie du willst. Was für ne Hexe, was?" Morte macht *hmph* und wackelt dann mit den Augenbrauen. "Ich *mag* das!"{#morte_s435_1}'
 
     menu:
         '"Ich bin sicher, daß du das tust, Morte, aber ich muß mit ihr sprechen."{#morte_s435_r41634}':
@@ -6459,7 +6459,7 @@ label morte_s435: # from 436.0
 
 # s436 # say41636
 label morte_s436: # -
-    nr '"Als ob ich meinen irgendwo hier in der Nähe sehen lassen würde, wenn ich einen hätte! Was, hast du das Wort „Bordell“ gehört und gedacht, du könntest hier ein bißchen Klimper machen, du flohgeplagte Gossenhure? Ich kann nicht glauben, daß die dich auch nur zu Tür reinlassen, mit all den Zecken, die aus deinen zotteligen Beinen hüpfen!"{#morte_s436_}'
+    nr '"Als ob ich meinen irgendwo hier in der Nähe sehen lassen würde, wenn ich einen hätte! Was, hast du das Wort „Bordell“ gehört und gedacht, du könntest hier ein bißchen Klimper machen, du flohgeplagte Gossenhure? Ich kann nicht glauben, daß die dich auch nur zu Tür reinlassen, mit all den Zecken, die aus deinen zotteligen Beinen hüpfen!"{#morte_s436_1}'
 
     menu:
         '"Das reicht jetzt, ihr zwei."{#morte_s436_r41637}':
@@ -6473,21 +6473,21 @@ label morte_s436: # -
 
 # s437 # say41639
 label morte_s437: # -
-    nr '"*Er*! Das heißt „*ER* kommt mir schon ziemlich großmäulig vor“, Kimasxi „Flatterdung“… du zottelige, hammelbeinige Hure!"{#morte_s437_}'
+    nr '"*Er*! Das heißt „*ER* kommt mir schon ziemlich großmäulig vor“, Kimasxi „Flatterdung“… du zottelige, hammelbeinige Hure!"{#morte_s437_1}'
 
     jump kimasxi_s18  # EXTERN
 
 
 # s438 # say41640
 label morte_s438: # -
-    nr '"Besser als du vielleicht?" Morte blinzelt sie mit den Augenbrauen an. "Eh? Eh?"{#morte_s438_}'
+    nr '"Besser als du vielleicht?" Morte blinzelt sie mit den Augenbrauen an. "Eh? Eh?"{#morte_s438_1}'
 
     jump kimasxi_s20  # EXTERN
 
 
 # s439 # say41641
 label morte_s439: # -
-    nr '"Werd ich nicht tun, *Tiefling*. Ich geb aber zu, daß ich vielleicht ein oder zwei Dinge gelernt habe… guter Einfall, Meister!"~ [MRT387]{#morte_s439_}'
+    nr '"Werd ich nicht tun, *Tiefling*. Ich geb aber zu, daß ich vielleicht ein oder zwei Dinge gelernt habe… guter Einfall, Meister!"~ [MRT387]{#morte_s439_1}'
 
     menu:
         '"Klar, Morte."{#morte_s439_r41642}':
@@ -6497,7 +6497,7 @@ label morte_s439: # -
 
 # s440 # say41830
 label morte_s440: # from 444.7 445.2 446.2 447.2 448.2 449.1 450.1 451.2 452.1 453.1 454.1
-    nr '"Sieh mal, Meister. Offensichtlich bist du nach deinem Kuss mit dem Tod immer noch etwas verwirrt, sodass ich dir zwei kleine Ratschläge erteilen will: Erstens, wenn du Fragen hast, *fragst* du mich, in Ordnung?"  ^NHINWEIS: <SPEAKTO>^-{#morte_s440_}'
+    nr '"Sieh mal, Meister. Offensichtlich bist du nach deinem Kuss mit dem Tod immer noch etwas verwirrt, sodass ich dir zwei kleine Ratschläge erteilen will: Erstens, wenn du Fragen hast, *fragst* du mich, in Ordnung?"  ^NHINWEIS: <SPEAKTO>^-{#morte_s440_1}'
 
     menu:
         '"Also gut… Wenn ich irgendwelche Fragen habe, wende ich mich an dich."{#morte_s440_r41831}':
@@ -6507,7 +6507,7 @@ label morte_s440: # from 444.7 445.2 446.2 447.2 448.2 449.1 450.1 451.2 452.1 4
 
 # s441 # say41832
 label morte_s441: # from 440.0
-    nr '"Zweitens, wenn du nur *halb* so vergeßlich bist, wie du den Eindruck machst, fang lieber an, dir Notizen zu machen - immer, wenn dir etwas begegnet, das wichtig sein *könnte*, schreib„s dir auf, damit du es nicht wieder vergißt."{#morte_s441_}'
+    nr '"Zweitens, wenn du nur *halb* so vergeßlich bist, wie du den Eindruck machst, fang lieber an, dir Notizen zu machen - immer, wenn dir etwas begegnet, das wichtig sein *könnte*, schreib„s dir auf, damit du es nicht wieder vergißt."{#morte_s441_1}'
 
     menu:
         '"Wenn ich dieses Journal hätte, das ich eigentlich bei mir haben *sollte*, würde ich das tun."{#morte_s441_r41833}':
@@ -6517,7 +6517,7 @@ label morte_s441: # from 440.0
 
 # s442 # say41834
 label morte_s442: # from 441.0
-    nr '"Dann fang ein neues an, Meister. Ist doch kein Verlust. Hier gibt„s genug Pergament und Tinte für dich."{#morte_s442_}'
+    nr '"Dann fang ein neues an, Meister. Ist doch kein Verlust. Hier gibt„s genug Pergament und Tinte für dich."{#morte_s442_1}'
 
     menu:
         '"Hmmmm. Also gut. Kann ja nicht schaden… Dann mache ich halt ein neues."{#morte_s442_r41835}':
@@ -6527,7 +6527,7 @@ label morte_s442: # from 441.0
 
 # s443 # say41836
 label morte_s443: # from 442.0
-    nr '"Benutze es, um deine Bewegungen im Blick zu behalten. Falls du wichtige Dinge nicht mehr genau weißt, wie, wer du bist… oder viel wichtiger, wer *ich* bin… kannst du es benutzen, um deine Erinnerung aufzufrischen."  ^NHINWEIS: Um auf das Tagebuch zuzugreifen, wählst du die Tagebuch-Taste im Schnellmenü. Dein Tagebuch wird während des Spiels automatisch aktualisiert.^-{#morte_s443_}'
+    nr '"Benutze es, um deine Bewegungen im Blick zu behalten. Falls du wichtige Dinge nicht mehr genau weißt, wie, wer du bist… oder viel wichtiger, wer *ich* bin… kannst du es benutzen, um deine Erinnerung aufzufrischen."  ^NHINWEIS: Um auf das Tagebuch zuzugreifen, wählst du die Tagebuch-Taste im Schnellmenü. Dein Tagebuch wird während des Spiels automatisch aktualisiert.^-{#morte_s443_1}'
 
     menu:
         '"OK… Ich hab„s kapiert. Gehn wir."{#morte_s443_r41837}':
@@ -6538,7 +6538,7 @@ label morte_s443: # from 442.0
 
 # s444 # say41838
 label morte_s444: # from 445.1 446.1 447.1 448.1 449.0 450.0 451.1 452.0 453.0 454.0 455.1 456.2 457.1 458.0 # IF WEIGHT #6 /* Triggers after states #: 742 737 733 487 even though they appear after this state */ ~  !Global("Mortuary_Walkthrough","GLOBAL",0) !Global("Mortuary_Walkthrough","GLOBAL",1) Global("AR0200_Visited","GLOBAL",0) InParty("Morte") !GlobalGT("Fortress_Morte","GLOBAL",2)
-    nr '"Was nagt an dir, Meister?"~ [MRT515]{#morte_s444_}'
+    nr '"Was nagt an dir, Meister?"~ [MRT515]{#morte_s444_1}'
 
     menu:
         '"Kannst du mir noch mal vorlesen, was auf meinen Rücken tätowiert ist?{#morte_s444_r41840}':
@@ -6580,7 +6580,7 @@ label morte_s444: # from 445.1 446.1 447.1 448.1 449.0 450.0 451.1 452.0 453.0 4
 
 # s445 # say41849
 label morte_s445: # from 444.0
-    nr '"Ah, nun *komm* schon, Meister. Erzähl„ mir nicht, daß du es schon vergessen hast."{#morte_s445_}'
+    nr '"Ah, nun *komm* schon, Meister. Erzähl„ mir nicht, daß du es schon vergessen hast."{#morte_s445_1}'
 
     menu:
         '"Ich muß einfach nur mein Gedächtnis auffrischen."{#morte_s445_r41850}':
@@ -6602,7 +6602,7 @@ label morte_s445: # from 444.0
 
 # s446 # say41854
 label morte_s446: # from 445.0
-    nr '"Ich wette, daß ich DAS oft zu hören bekommen werde." Morte räuspert sich. "Laß mal sehen…"  „Ich weiß, daß du dich so fühlst, als hättest du “n paar Eimer Styx-Wasser getrunken, aber du mußt dich KONZENTRIEREN. In deinem Besitz sollte sich ein JOURNAL befinden, das ein wenig Licht in das Dunkel dieser Angelegenheit bringen kann. PHAROD sollte dir den restlichen Plausch liefern können, wenn er nicht bereits im Totenbuch steht.„{#morte_s446_}'
+    nr '"Ich wette, daß ich DAS oft zu hören bekommen werde." Morte räuspert sich. "Laß mal sehen…"  „Ich weiß, daß du dich so fühlst, als hättest du “n paar Eimer Styx-Wasser getrunken, aber du mußt dich KONZENTRIEREN. In deinem Besitz sollte sich ein JOURNAL befinden, das ein wenig Licht in das Dunkel dieser Angelegenheit bringen kann. PHAROD sollte dir den restlichen Plausch liefern können, wenn er nicht bereits im Totenbuch steht.„{#morte_s446_1}'
 
     menu:
         '"Pharod… hmmm. Lies weiter."{#morte_s446_r41855}':
@@ -6624,7 +6624,7 @@ label morte_s446: # from 445.0
 
 # s447 # say41859
 label morte_s447: # from 446.0
-    nr '"Mach ich ja, mach ich ja, warte." Morte hält einen Augenblick lang inne. "Also gut, das letzte Stück…"  „Verlier das Journal nicht, sonst sind wir schon wieder den Styx hoch. Und was auch immer du tust, erzähl NIEMANDEM, WER du bist oder WAS mit dir geschieht, denn sonst wirst du auf eine schnelle Pilgerfahrt zum Krematorium geschickt. Tu, was ich dir sage: LIES das Journal, und dann FINDE Pharod.“{#morte_s447_}'
+    nr '"Mach ich ja, mach ich ja, warte." Morte hält einen Augenblick lang inne. "Also gut, das letzte Stück…"  „Verlier das Journal nicht, sonst sind wir schon wieder den Styx hoch. Und was auch immer du tust, erzähl NIEMANDEM, WER du bist oder WAS mit dir geschieht, denn sonst wirst du auf eine schnelle Pilgerfahrt zum Krematorium geschickt. Tu, was ich dir sage: LIES das Journal, und dann FINDE Pharod.“{#morte_s447_1}'
 
     menu:
         '"Und ich hatte kein Journal bei mir, als ich aufgewacht bin?"{#morte_s447_r41860}':
@@ -6646,7 +6646,7 @@ label morte_s447: # from 446.0
 
 # s448 # say41864
 label morte_s448: # from 447.0
-    nr '"Nein… du warst nackt bis auf die Haut. Wie ich bereits gesagt habe, sieht so aus, als ob genug von einem Journal direkt auf deinen Körper geschrieben ist."{#morte_s448_}'
+    nr '"Nein… du warst nackt bis auf die Haut. Wie ich bereits gesagt habe, sieht so aus, als ob genug von einem Journal direkt auf deinen Körper geschrieben ist."{#morte_s448_1}'
 
     menu:
         '"Und du bist sicher, daß du niemanden namens Pharod kennst?"{#morte_s448_r41865}':
@@ -6668,7 +6668,7 @@ label morte_s448: # from 447.0
 
 # s449 # say41869
 label morte_s449: # from 448.0
-    nr '"Nee. Trotzdem, irgendein Dussel muß ja wissen, wo man ihn finden kann. Fragen wir doch einfach rum… NACHDEM wir hier raus sind."{#morte_s449_}'
+    nr '"Nee. Trotzdem, irgendein Dussel muß ja wissen, wo man ihn finden kann. Fragen wir doch einfach rum… NACHDEM wir hier raus sind."{#morte_s449_1}'
 
     menu:
         '"Bevor wir gehen hätte ich noch ein paar Fragen…"{#morte_s449_r41870}':
@@ -6686,7 +6686,7 @@ label morte_s449: # from 448.0
 
 # s450 # say41873
 label morte_s450: # from 444.1
-    nr '"Man nennt diesen Ort die „Leichenhalle“… Es ist ein großer schwarzer Bau mit dem architektonischen Charme einer schwangeren Spinne."{#morte_s450_}'
+    nr '"Man nennt diesen Ort die „Leichenhalle“… Es ist ein großer schwarzer Bau mit dem architektonischen Charme einer schwangeren Spinne."{#morte_s450_1}'
 
     menu:
         '"Verstehe. Ich hätte da noch ein paar Fragen an dich…"{#morte_s450_r41874}':
@@ -6704,7 +6704,7 @@ label morte_s450: # from 444.1
 
 # s451 # say41877
 label morte_s451: # from 444.2 444.3
-    nr '"Sie nennen sich selbst die „Staubmenschen“. Sie sind gar nicht zu übersehen: Sie stehen auf Schwarz und totenstarre Gesichter. Sie sind eine räudige Bande ghulischer Todesanbeter, die glauben, daß jeder sterben sollte… je früher, desto besser."{#morte_s451_}'
+    nr '"Sie nennen sich selbst die „Staubmenschen“. Sie sind gar nicht zu übersehen: Sie stehen auf Schwarz und totenstarre Gesichter. Sie sind eine räudige Bande ghulischer Todesanbeter, die glauben, daß jeder sterben sollte… je früher, desto besser."{#morte_s451_1}'
 
     menu:
         '"Das verstehe ich nicht… Was können diese Staubmenschen dagegen haben, wenn ich mich hier aus dem Staub mache?"{#morte_s451_r41878}':
@@ -6726,7 +6726,7 @@ label morte_s451: # from 444.2 444.3
 
 # s452 # say41882
 label morte_s452: # from 451.0
-    nr '"Hast du nicht zugehört?! Ich sagte, daß die Staubies glauben, daß JEDER sterben muß, je früher, desto besser. Glaubst du, daß die Leichen, die du gesehen hast, sich im Totenbuch besser fühlen als außerhalb des Buchs?"{#morte_s452_}'
+    nr '"Hast du nicht zugehört?! Ich sagte, daß die Staubies glauben, daß JEDER sterben muß, je früher, desto besser. Glaubst du, daß die Leichen, die du gesehen hast, sich im Totenbuch besser fühlen als außerhalb des Buchs?"{#morte_s452_1}'
 
     menu:
         '"Verstehe. Ich hätte da noch ein paar Fragen an dich…"{#morte_s452_r41883}':
@@ -6744,7 +6744,7 @@ label morte_s452: # from 451.0
 
 # s453 # say41886
 label morte_s453: # from 444.6
-    nr '"Nun, du… du *benutzt* sie. Blutung stillen, und so."  ^NHINWEIS: <BANDAGES2>^-{#morte_s453_}'
+    nr '"Nun, du… du *benutzt* sie. Blutung stillen, und so."  ^NHINWEIS: <BANDAGES2>^-{#morte_s453_1}'
 
     menu:
         '"Verstehe. Ich hätte da noch ein paar Fragen an dich…"{#morte_s453_r41887}':
@@ -6762,7 +6762,7 @@ label morte_s453: # from 444.6
 
 # s454 # say41890
 label morte_s454: # from 444.4
-    nr '"Der Tod sucht die Ebenen jeden Tag heim, Meister. Diese watschelnden Gerüste hier sind alles, was von den armen Schluckern übriggeblieben ist, die ihre Leichen nach ihrem Tod an die Verwalter verkauft haben."{#morte_s454_}'
+    nr '"Der Tod sucht die Ebenen jeden Tag heim, Meister. Diese watschelnden Gerüste hier sind alles, was von den armen Schluckern übriggeblieben ist, die ihre Leichen nach ihrem Tod an die Verwalter verkauft haben."{#morte_s454_1}'
 
     menu:
         '"Verstehe. Ich hätte da noch ein paar Fragen an dich…"{#morte_s454_r41891}':
@@ -6780,7 +6780,7 @@ label morte_s454: # from 444.4
 
 # s455 # say41894
 label morte_s455: # from 444.5
-    nr '"Wa… im *Ernst*? Hör zu, Meister, diese toten Dinger sind die letzte Chance für ein paar hartgesottene Typen wie uns. Wir müssen *nett* sein… und nicht wegen ein paar Schlüsseln Kleinholz aus ihnen machen, ihnen die Gliedmaßen abhacken oder etwas Ähnliches tun."{#morte_s455_}'
+    nr '"Wa… im *Ernst*? Hör zu, Meister, diese toten Dinger sind die letzte Chance für ein paar hartgesottene Typen wie uns. Wir müssen *nett* sein… und nicht wegen ein paar Schlüsseln Kleinholz aus ihnen machen, ihnen die Gliedmaßen abhacken oder etwas Ähnliches tun."{#morte_s455_1}'
 
     menu:
         '"Letzte Chance? Wovon *redest* du denn?"{#morte_s455_r41895}':
@@ -6798,7 +6798,7 @@ label morte_s455: # from 444.5
 
 # s456 # say41898
 label morte_s456: # from 455.0
-    nr '"Meister, SIE sind tot, WIR sind tot… verstehst du, worauf ich hinaus will? Nun?"{#morte_s456_}'
+    nr '"Meister, SIE sind tot, WIR sind tot… verstehst du, worauf ich hinaus will? Nun?"{#morte_s456_1}'
 
     menu:
         '"Nein… nein, eigentlich nicht."{#morte_s456_r41899}':
@@ -6820,7 +6820,7 @@ label morte_s456: # from 455.0
 
 # s457 # say41903
 label morte_s457: # from 456.0 456.1
-    nr '"Meister, wir haben bereits etwas mit diesen hinkenden Damen gemein. Wir sind *alle* mindestens einmal gestorben: da haben wir doch schon Gesprächsstoff. Sie schätzen Männer mit dieser Art von Erfahrung."{#morte_s457_}'
+    nr '"Meister, wir haben bereits etwas mit diesen hinkenden Damen gemein. Wir sind *alle* mindestens einmal gestorben: da haben wir doch schon Gesprächsstoff. Sie schätzen Männer mit dieser Art von Erfahrung."{#morte_s457_1}'
 
     menu:
         '"Warte… Hast du vorhin nicht gesagt, daß ich *nicht* tot bin?"{#morte_s457_r41904}':
@@ -6838,7 +6838,7 @@ label morte_s457: # from 456.0 456.1
 
 # s458 # say41907
 label morte_s458: # from 457.0
-    nr '"Tja… okay, *du* bist vielleicht nicht tot, aber *ich* bin„s. Und ich für meinen Teil hätte nichts dagegen, einen Sarg mit einem dieser sehnigen Kadaver hier zu teilen." Morte fängt an, in freudiger Erwartung mit den Zähnen zu klappern. "Natürlich müßten die Verwalter sich erst von ihnen trennen, und das ist ziemlich unwahrscheinlich…"{#morte_s458_}'
+    nr '"Tja… okay, *du* bist vielleicht nicht tot, aber *ich* bin„s. Und ich für meinen Teil hätte nichts dagegen, einen Sarg mit einem dieser sehnigen Kadaver hier zu teilen." Morte fängt an, in freudiger Erwartung mit den Zähnen zu klappern. "Natürlich müßten die Verwalter sich erst von ihnen trennen, und das ist ziemlich unwahrscheinlich…"{#morte_s458_1}'
 
     menu:
         '"Ich hätte da noch ein paar Fragen an dich, Morte…"{#morte_s458_r41908}':
@@ -6852,7 +6852,7 @@ label morte_s458: # from 457.0
 
 # s459 # say41910
 label morte_s459: # -
-    nr '"Du Heiligster. Das ist ein HÖLLISCHES Buch."{#morte_s459_}'
+    nr '"Du Heiligster. Das ist ein HÖLLISCHES Buch."{#morte_s459_1}'
 
     menu:
         '"Was ist es?"{#morte_s459_r41911}':
@@ -6863,7 +6863,7 @@ label morte_s459: # -
 
 # s460 # say41913
 label morte_s460: # from 459.0
-    nr '"Wenn ich raten müßte, würde ich sagen, das ist das Buch, in das sie die Namen jedes armen Schluckers ritzen, der das Pech hat, hier abgeladen zu werden."{#morte_s460_}'
+    nr '"Wenn ich raten müßte, würde ich sagen, das ist das Buch, in das sie die Namen jedes armen Schluckers ritzen, der das Pech hat, hier abgeladen zu werden."{#morte_s460_1}'
 
     menu:
         '"Könnte mein Name da drin sein?"{#morte_s460_r41914}':
@@ -6873,7 +6873,7 @@ label morte_s460: # from 459.0
 
 # s461 # say41915
 label morte_s461: # from 460.0
-    nr '"Äh… tja… *könnte* sein. Um das herauszufinden, mußt du deine Knochenschüssel mit dem schwebenden Staubie da drüben rasseln lassen. Ich bin aber nicht sicher, ob das so ne gute Idee ist."{#morte_s461_}'
+    nr '"Äh… tja… *könnte* sein. Um das herauszufinden, mußt du deine Knochenschüssel mit dem schwebenden Staubie da drüben rasseln lassen. Ich bin aber nicht sicher, ob das so ne gute Idee ist."{#morte_s461_1}'
 
     menu:
         '"Na ja, ich brauche Antworten. Ich werde mit ihm sprechen."{#morte_s461_r41916}':
@@ -6883,7 +6883,7 @@ label morte_s461: # from 460.0
 
 # s462 # say41919
 label morte_s462: # -
-    nr 'Morte flüstert: "In irgendeiner Klapsmühle fehlt jetzt ein Übergeschnappter."{#morte_s462_}'
+    nr 'Morte flüstert: "In irgendeiner Klapsmühle fehlt jetzt ein Übergeschnappter."{#morte_s462_1}'
 
     menu:
         '"Ich hätte da ein paar Fragen, Jumble…"{#morte_s462_r41920}':
@@ -6906,7 +6906,7 @@ label morte_s462: # -
 
 # s463 # say41923
 label morte_s463: # -
-    nr '"Äh, oh… Siehst so aus, als ob du gerade mit einem Fluch belegt worden bist, Meister…"{#morte_s463_}'
+    nr '"Äh, oh… Siehst so aus, als ob du gerade mit einem Fluch belegt worden bist, Meister…"{#morte_s463_1}'
 
     menu:
         '"Was hast du mit mir gemacht, Jumble?"{#morte_s463_r41924}':
@@ -6928,14 +6928,14 @@ label morte_s463: # -
 
 # s464 # say42929
 label morte_s464: # -
-    nr '"Ich würde sagen, ignoriere die Tussi… Bleib einfach cool. Das macht dich viel interessanter!"{#morte_s464_}'
+    nr '"Ich würde sagen, ignoriere die Tussi… Bleib einfach cool. Das macht dich viel interessanter!"{#morte_s464_1}'
 
     jump montagu_s29  # EXTERN
 
 
 # s465 # say42930
 label morte_s465: # -
-    nr '"Vertrau mir, Kleiner. Beachte sie einfach nicht, mach es ein wenig spannend und irritier sie. Ich sag dir, sie werden wie Kletten an dir hängen, um herauszufinden, was los ist. Nicht wahr, Meister?"{#morte_s465_}'
+    nr '"Vertrau mir, Kleiner. Beachte sie einfach nicht, mach es ein wenig spannend und irritier sie. Ich sag dir, sie werden wie Kletten an dir hängen, um herauszufinden, was los ist. Nicht wahr, Meister?"{#morte_s465_1}'
 
     menu:
         '"Ja… Dann wird sie glauben, daß was nicht stimmt, und er wird zur Abwechslung mal bestimmen, nach welchen Regeln gespielt wird."{#morte_s465_r42931}':
@@ -6949,14 +6949,14 @@ label morte_s465: # -
 
 # s466 # say43543
 label morte_s466: # -
-    nr '"Genau deshalb sollten Giths sich nicht vermehren. Sie reden ständig davon und grübeln, „wo man noch einen Gedankenschinder oder einen Githyanki töten könnte“, und so weiter und so fort. Dabei tun sie„s wahrscheinlich nicht mal gerne. Sie schnappen mit der Zeit alle über oder sind so verbissen, daß sie ihren Sinn für Humor verlieren. Sie schwafeln die ganze Zeit von Konzentration, von einem geeinten Geist, von gegenseitigem Vertrauen. Aber ist dir schon mal aufgefallen, daß die Rasse mit jedem davon gebrochen hat, sobald sie sich von den Gedankensaugern befreit hatte. Und da sage noch einer, Religion und Ideologie seien keine Gefahr für die Ebenen."{#morte_s466_}'
+    nr '"Genau deshalb sollten Giths sich nicht vermehren. Sie reden ständig davon und grübeln, „wo man noch einen Gedankenschinder oder einen Githyanki töten könnte“, und so weiter und so fort. Dabei tun sie„s wahrscheinlich nicht mal gerne. Sie schnappen mit der Zeit alle über oder sind so verbissen, daß sie ihren Sinn für Humor verlieren. Sie schwafeln die ganze Zeit von Konzentration, von einem geeinten Geist, von gegenseitigem Vertrauen. Aber ist dir schon mal aufgefallen, daß die Rasse mit jedem davon gebrochen hat, sobald sie sich von den Gedankensaugern befreit hatte. Und da sage noch einer, Religion und Ideologie seien keine Gefahr für die Ebenen."{#morte_s466_1}'
 
     jump kiina_s35  # EXTERN
 
 
 # s467 # say43908
 label morte_s467: # -
-    nr '"Wow."{#morte_s467_}'
+    nr '"Wow."{#morte_s467_1}'
 
     menu:
         '"Bist du Nemelle? Ich habe gehört, du kennst das Befehlswort für diese Karaffe."{#morte_s467_r43909}' if morteLogic.r43909_condition():
@@ -6983,21 +6983,21 @@ label morte_s467: # -
 
 # s468 # say43914
 label morte_s468: # -
-    nr '"Wow."{#morte_s468_}'
+    nr '"Wow."{#morte_s468_1}'
 
     jump annah_s209  # EXTERN
 
 
 # s469 # say43915
 label morte_s469: # -
-    nr '"Ui. Du bist mir vielleicht „ne heißblütige Braut! Und wohl scharf auf Aufmerksamkeit? Falls du eifersüchtig bist, kann ich dich auch etwas abschlabbern…" Morte schwebt auf Annah zu und macht dabei feuchte, sabbernde Geräusche…{#morte_s469_}'
+    nr '"Ui. Du bist mir vielleicht „ne heißblütige Braut! Und wohl scharf auf Aufmerksamkeit? Falls du eifersüchtig bist, kann ich dich auch etwas abschlabbern…" Morte schwebt auf Annah zu und macht dabei feuchte, sabbernde Geräusche…{#morte_s469_1}'
 
     jump annah_s210  # EXTERN
 
 
 # s470 # say43916
 label morte_s470: # -
-    nr 'Morte hält plötzlich inne. Er dreht sich weg und murmelt irgendwelches unverständliche Zeug vor sich hin.{#morte_s470_}'
+    nr 'Morte hält plötzlich inne. Er dreht sich weg und murmelt irgendwelches unverständliche Zeug vor sich hin.{#morte_s470_1}'
 
     menu:
         '"Bist du Nemelle? Ich habe gehört, du kennst das Befehlswort für diese Karaffe."{#morte_s470_r43917}' if morteLogic.r43917_condition():
@@ -7024,7 +7024,7 @@ label morte_s470: # -
 
 # s471 # say43922
 label morte_s471: # -
-    nr '"Komm, Meister… Ich bin mir sicher, daß *uns* schon was einfällt. Was?"{#morte_s471_}'
+    nr '"Komm, Meister… Ich bin mir sicher, daß *uns* schon was einfällt. Was?"{#morte_s471_1}'
 
     menu:
         '"Vergiß es, Morte. Gehn wir."{#morte_s471_r43923}':
@@ -7034,35 +7034,35 @@ label morte_s471: # -
 
 # s472 # say44244
 label morte_s472: # -
-    nr 'Morte schwebt näher und flüstert: "Also ich hab damit kein Problem. Was, Meister? Zwinker-zwinker…"{#morte_s472_}'
+    nr 'Morte schwebt näher und flüstert: "Also ich hab damit kein Problem. Was, Meister? Zwinker-zwinker…"{#morte_s472_1}'
 
     jump goncal_s20  # EXTERN
 
 
 # s473 # say44245
 label morte_s473: # -
-    nr 'Morte geht dazwischen, völlig entsetzt. "Nein!!! Bist du *wahnsinnig*, Mann?! Du mußt übergeschnappt sein!"{#morte_s473_}'
+    nr 'Morte geht dazwischen, völlig entsetzt. "Nein!!! Bist du *wahnsinnig*, Mann?! Du mußt übergeschnappt sein!"{#morte_s473_1}'
 
     jump annah_s214  # EXTERN
 
 
 # s474 # say44677
 label morte_s474: # -
-    nr 'Morte rollt mit den Augen. "Blinder Eifer schadet nur…"{#morte_s474_}'
+    nr 'Morte rollt mit den Augen. "Blinder Eifer schadet nur…"{#morte_s474_1}'
 
     jump yi'minn_s47  # EXTERN
 
 
 # s475 # say44944
 label morte_s475: # -
-    nr '"Ich liiiiiebe die Festhalle."{#morte_s475_}'
+    nr '"Ich liiiiiebe die Festhalle."{#morte_s475_1}'
 
     jump udesire_s2  # EXTERN
 
 
 # s476 # say45026
 label morte_s476: # -
-    nr 'Morte seufzt laut hörbar. "Komm, Meister. Müssen wir uns das wirklich mitanhören?"{#morte_s476_}'
+    nr 'Morte seufzt laut hörbar. "Komm, Meister. Müssen wir uns das wirklich mitanhören?"{#morte_s476_1}'
 
     menu:
         '"Sei mal still, Morte. Ich will da zuhören."{#morte_s476_r45027}':
@@ -7081,7 +7081,7 @@ label morte_s476: # -
 
 # s477 # say45088
 label morte_s477: # externs zm965_s0
-    nr '"He. Sieht ganz so aus, als hätte man diesem Schlucker vergessen zu sagen, daß er mit der Regel der Drei aufhören kann."{#morte_s477_}'
+    nr '"He. Sieht ganz so aus, als hätte man diesem Schlucker vergessen zu sagen, daß er mit der Regel der Drei aufhören kann."{#morte_s477_1}'
 
     menu:
         '"Was meinst du?"{#morte_s477_r45089}':
@@ -7091,7 +7091,7 @@ label morte_s477: # externs zm965_s0
 
 # s478 # say45091
 label morte_s478: # from 477.0
-    nr '"Diese Leichen haben nicht mehr so viel im Oberstübchen. Sie können immer nur eine Aufgabe auf einmal erledigen… Wenn man ihnen was aufträgt, tun sie es so lange, bis man ihnen sagt, daß sie aufhören können. Ich schätze, dieser arme Schlucker hat seine Aufgabe längst erfüllt, aber niemand hat es ihm gesagt."{#morte_s478_}'
+    nr '"Diese Leichen haben nicht mehr so viel im Oberstübchen. Sie können immer nur eine Aufgabe auf einmal erledigen… Wenn man ihnen was aufträgt, tun sie es so lange, bis man ihnen sagt, daß sie aufhören können. Ich schätze, dieser arme Schlucker hat seine Aufgabe längst erfüllt, aber niemand hat es ihm gesagt."{#morte_s478_1}'
 
     menu:
         '"Wer sagt ihnen, was sie tun sollen?"{#morte_s478_r45092}':
@@ -7110,7 +7110,7 @@ label morte_s478: # from 477.0
 
 # s479 # say45095
 label morte_s479: # from 478.1 481.0
-    nr '"Was? Na ja, die Regel der Drei ist eines dieser „Gesetze“ über die Ebenen. Es besagt, daß immer alles dreimal vorkommt oder aus drei Teilen besteht, oder daß es immer drei Möglichkeiten gibt, und so weiter und so fort."{#morte_s479_}'
+    nr '"Was? Na ja, die Regel der Drei ist eines dieser „Gesetze“ über die Ebenen. Es besagt, daß immer alles dreimal vorkommt oder aus drei Teilen besteht, oder daß es immer drei Möglichkeiten gibt, und so weiter und so fort."{#morte_s479_1}'
 
     menu:
         '"Hört sich nicht an, als würdest du allzu viel davon halten."{#morte_s479_r45096}':
@@ -7120,7 +7120,7 @@ label morte_s479: # from 478.1 481.0
 
 # s480 # say45098
 label morte_s480: # from 479.0
-    nr '"Ach, Kokolores! Man kann jede Zahl nehmen und eine Bedeutung in sie hineininterpretieren - irgendeine zufällige Übereinstimmung findet man immer."{#morte_s480_}'
+    nr '"Ach, Kokolores! Man kann jede Zahl nehmen und eine Bedeutung in sie hineininterpretieren - irgendeine zufällige Übereinstimmung findet man immer."{#morte_s480_1}'
 
     menu:
         '"Verstehe. Vorhin sagtest du, jemand hätte dieser Leiche etwas aufgetragen und vergessen, ihr zu sagen, daß sie aufhören kann. Wer sagt den Leichen, was sie tun sollen?"{#morte_s480_r45099}':
@@ -7138,7 +7138,7 @@ label morte_s480: # from 479.0
 
 # s481 # say45102
 label morte_s481: # from 478.0 480.0
-    nr '"Einer der Verwalter hier oder irgendein Nekromant, der sie aus dem Totenbuch geholt hat. Ich tippe auf die Verwalter… Schließlich sind sie es, die die ganzen billigen Arbeitskräfte brauchen."{#morte_s481_}'
+    nr '"Einer der Verwalter hier oder irgendein Nekromant, der sie aus dem Totenbuch geholt hat. Ich tippe auf die Verwalter… Schließlich sind sie es, die die ganzen billigen Arbeitskräfte brauchen."{#morte_s481_1}'
 
     menu:
         '"Verstehe. Und was hast du da vorhin über diese … „Regel der Drei“ gesagt?"{#morte_s481_r45103}':
@@ -7157,28 +7157,28 @@ label morte_s481: # from 478.0 480.0
 
 # s482 # say45540
 label morte_s482: # externs zm985_s4 zm985_s0
-    nr '"He… Meister… vielleicht solltest du n-"{#morte_s482_}'
+    nr '"He… Meister… vielleicht solltest du n-"{#morte_s482_1}'
 
     jump zm985_s3  # EXTERN
 
 
 # s483 # say45709
 label morte_s483: # -
-    nr '"Ooh, eine Auktion! Vielleicht können wir da ja Annah versteigern."{#morte_s483_}'
+    nr '"Ooh, eine Auktion! Vielleicht können wir da ja Annah versteigern."{#morte_s483_1}'
 
     jump annah_s215  # EXTERN
 
 
 # s484 # say45710
 label morte_s484: # -
-    nr '"Ooh, eine Auktion! Vielleicht können wir da ja Dak„kon versteigern."{#morte_s484_}'
+    nr '"Ooh, eine Auktion! Vielleicht können wir da ja Dak„kon versteigern."{#morte_s484_1}'
 
     jump dakkon_s163  # EXTERN
 
 
 # s485 # say45711
 label morte_s485: # -
-    nr '"Ooh, eine Auktion! Vielleicht können wir da ja irgendein Knochengerüst für mich ersteigern."{#morte_s485_}'
+    nr '"Ooh, eine Auktion! Vielleicht können wir da ja irgendein Knochengerüst für mich ersteigern."{#morte_s485_1}'
 
     menu:
         '"OK, Morte. Ich frag mal."{#morte_s485_r45712}':
@@ -7192,7 +7192,7 @@ label morte_s485: # -
 
 # s486 # say45714
 label morte_s486: # -
-    nr '"Das muß Liebe sein. Ist es Liebe, Meister?"{#morte_s486_}'
+    nr '"Das muß Liebe sein. Ist es Liebe, Meister?"{#morte_s486_1}'
 
     menu:
         '"Hört auf, ihr beiden. Ich muß hier ein paar Fragen stellen."{#morte_s486_r45715}':
@@ -7206,14 +7206,14 @@ label morte_s486: # -
 
 # s487 # say45996
 label morte_s487: # - # IF WEIGHT #0 ~  NumTimesTalkedTo(0) InParty("Morte") !GlobalGT("Fortress_Morte","GLOBAL",2)
-    nr '"He, sieh mal! Noch so ein schwebender Schädel."{#morte_s487_}'
+    nr '"He, sieh mal! Noch so ein schwebender Schädel."{#morte_s487_1}'
 
     jump vault9_s0  # EXTERN
 
 
 # s488 # say47813
 label morte_s488: # -
-    nr '"Klingt so, als ob dieser Streitkolben irgendwie neidisch auf anderer Leute Klugheit ist. Zisch ab, Waffe!"{#morte_s488_}'
+    nr '"Klingt so, als ob dieser Streitkolben irgendwie neidisch auf anderer Leute Klugheit ist. Zisch ab, Waffe!"{#morte_s488_1}'
 
     menu:
         '"Sei still! Ich hätte da noch ein paar Fragen…"{#morte_s488_r47814}':
@@ -7227,7 +7227,7 @@ label morte_s488: # -
 
 # s489 # say49443
 label morte_s489: # -
-    nr '"Ooh, ein Githyanki. Ich wette, Dak„kon wird bestimmt *gerne* helfen."{#morte_s489_}'
+    nr '"Ooh, ein Githyanki. Ich wette, Dak„kon wird bestimmt *gerne* helfen."{#morte_s489_1}'
 
     menu:
         '"Vielen Dank für deinen wertvollen Beitrag, Morte. Geh„n wir."{#morte_s489_r49444}':
@@ -7237,14 +7237,14 @@ label morte_s489: # -
 
 # s490 # say50162
 label morte_s490: # -
-    nr '"Oh, sie *haben* Namen. Da bin ich mir sicher."{#morte_s490_}'
+    nr '"Oh, sie *haben* Namen. Da bin ich mir sicher."{#morte_s490_1}'
 
     jump annah_s242  # EXTERN
 
 
 # s491 # say50164
 label morte_s491: # -
-    nr '"Das glaubst *du*, du kleines Scheusal."{#morte_s491_}'
+    nr '"Das glaubst *du*, du kleines Scheusal."{#morte_s491_1}'
 
     menu:
         '"Halt„s Maul, Morte - kannst du ihm noch ein paar andere Fragen stellen, Annah?"{#morte_s491_r50165}':
@@ -7259,7 +7259,7 @@ label morte_s491: # -
 
 # s492 # say50263
 label morte_s492: # -
-    nr 'Morte spöttelt: "Eher soll mich ein Tanar-Ri fressen, als daß ich versuche herauszufinden, was diese schwebenden Ziegenköpfe sagen wollen. Du brauchst einen Übersetzer? Such dir einen Einwohner von Sigil."{#morte_s492_}'
+    nr 'Morte spöttelt: "Eher soll mich ein Tanar-Ri fressen, als daß ich versuche herauszufinden, was diese schwebenden Ziegenköpfe sagen wollen. Du brauchst einen Übersetzer? Such dir einen Einwohner von Sigil."{#morte_s492_1}'
 
     menu:
         '"Aha."{#morte_s492_r50264}':
@@ -7269,7 +7269,7 @@ label morte_s492: # -
 
 # s493 # say50266
 label morte_s493: # -
-    nr 'Morte spöttelt: "Eher soll mich ein Tanar-Ri fressen, als daß ich versuche herauszufinden, was diese schwebenden Bocksköpfe sagen wollen. Du brauchst einen Übersetzer? Soll doch das kleine Scheusal-Mädel hier den Job machen." Er nickt Annah zu. "Sie ist im Stock heimisch."{#morte_s493_}'
+    nr 'Morte spöttelt: "Eher soll mich ein Tanar-Ri fressen, als daß ich versuche herauszufinden, was diese schwebenden Bocksköpfe sagen wollen. Du brauchst einen Übersetzer? Soll doch das kleine Scheusal-Mädel hier den Job machen." Er nickt Annah zu. "Sie ist im Stock heimisch."{#morte_s493_1}'
 
     menu:
         '"Vielleicht werde ich das tun…"{#morte_s493_r50267}':
@@ -7279,7 +7279,7 @@ label morte_s493: # -
 
 # s494 # say50269
 label morte_s494: # -
-    nr 'Morte spöttelt: "Eher soll mich ein Tanar-Ri fressen, als daß ich versuche herauszufinden, was diese schwebenden Bocksköpfe sagen wollen. Du brauchst einen Übersetzer?" Er nickt Dak„kon zu. "Sag “Heiliger-als-du-und-doppelt-so-schweigsam„, er soll übersetzen."{#morte_s494_}'
+    nr 'Morte spöttelt: "Eher soll mich ein Tanar-Ri fressen, als daß ich versuche herauszufinden, was diese schwebenden Bocksköpfe sagen wollen. Du brauchst einen Übersetzer?" Er nickt Dak„kon zu. "Sag “Heiliger-als-du-und-doppelt-so-schweigsam„, er soll übersetzen."{#morte_s494_1}'
 
     menu:
         '"Vielleicht werde ich das tun…"{#morte_s494_r50270}':
@@ -7289,7 +7289,7 @@ label morte_s494: # -
 
 # s495 # say50272
 label morte_s495: # -
-    nr 'Morte spöttelt: "Eher soll mich ein Tanar-Ri fressen, als daß ich versuche herauszufinden, was diese schwebenden Bocksköpfe sagen wollen. Brauchst du einen Übersetzer? Soll das doch die Tanar-Ri tun." Er nickt Grace zu. "Wahrscheinlich mußte sie sich sowieso die ganze Zeit mit dem Geschwätz dieser Kerle herumschlagen."{#morte_s495_}'
+    nr 'Morte spöttelt: "Eher soll mich ein Tanar-Ri fressen, als daß ich versuche herauszufinden, was diese schwebenden Bocksköpfe sagen wollen. Brauchst du einen Übersetzer? Soll das doch die Tanar-Ri tun." Er nickt Grace zu. "Wahrscheinlich mußte sie sich sowieso die ganze Zeit mit dem Geschwätz dieser Kerle herumschlagen."{#morte_s495_1}'
 
     menu:
         '"Vielleicht werde ich das tun…"{#morte_s495_r50273}':
@@ -7299,7 +7299,7 @@ label morte_s495: # -
 
 # s496 # say50320
 label morte_s496: # -
-    nr '"Oh, bei den Mächten! Ein verfluchter Dabus."{#morte_s496_}'
+    nr '"Oh, bei den Mächten! Ein verfluchter Dabus."{#morte_s496_1}'
 
     menu:
         '"Was ist los?"{#morte_s496_r50321}':
@@ -7309,7 +7309,7 @@ label morte_s496: # -
 
 # s497 # say50322
 label morte_s497: # from 496.0
-    nr '"Er ist ein Dabus. Sie „sprechen“ in Rebussen, diesen bescheuerten Worträtseln. Wenn *du* nicht verstehst, was er sagt, finden wir besser einen Einheimischen oder eine andere Möglichkeit, mit ihm zu kommunizieren… falls wir dies wünschen. Ein lästiger Haufen. Ich wette, sie *können* sprechen, gehen aber lieber allen auf die Nerven mit ihren Rätseln, über die man sich den Kopf zerbrechen muß."{#morte_s497_}'
+    nr '"Er ist ein Dabus. Sie „sprechen“ in Rebussen, diesen bescheuerten Worträtseln. Wenn *du* nicht verstehst, was er sagt, finden wir besser einen Einheimischen oder eine andere Möglichkeit, mit ihm zu kommunizieren… falls wir dies wünschen. Ein lästiger Haufen. Ich wette, sie *können* sprechen, gehen aber lieber allen auf die Nerven mit ihren Rätseln, über die man sich den Kopf zerbrechen muß."{#morte_s497_1}'
 
     menu:
         '"Was ist ein Dabus?"{#morte_s497_r50323}':
@@ -7319,7 +7319,7 @@ label morte_s497: # from 496.0
 
 # s498 # say50324
 label morte_s498: # from 497.0
-    nr '"Man sagt, sie arbeiten als Hausmeister für die Dame der Schmerzen. Sie schwirren durch die Gegend, um Sigil nach ihren Launen abzureißen, zu reparieren und wieder aufzubauen. Sie sind schlimmer als Leichenfliegen." Morte seufzt. "Totschlagen darf man sie leider nicht, sonst wird die Dame… wütend."{#morte_s498_}'
+    nr '"Man sagt, sie arbeiten als Hausmeister für die Dame der Schmerzen. Sie schwirren durch die Gegend, um Sigil nach ihren Launen abzureißen, zu reparieren und wieder aufzubauen. Sie sind schlimmer als Leichenfliegen." Morte seufzt. "Totschlagen darf man sie leider nicht, sonst wird die Dame… wütend."{#morte_s498_1}'
 
     menu:
         '"„Die Dame der Schmerzen“? Wer ist das?"{#morte_s498_r50325}' if morteLogic.r50325_condition():
@@ -7338,7 +7338,7 @@ label morte_s498: # from 497.0
 
 # s499 # say50326
 label morte_s499: # from 498.0 498.1
-    nr '"Sie hat in dieser Stadt die Macht. Du würdest sie gleich erkennen: Ihr Gesicht wird von Klingen umrahmt, sie hat die Größe eines Riesen und schwebt über der Erde, genau wie diese Kerle hier." Morte nickt in Richtung des Dabus, der euch beide anschaut. "Keiner weiß etwas genaues über sie… sie redet nicht viel. Das einzige, was du wissen mußt, ist, daß du sie besser nie wütend machst. Wenn du sie siehst, dann lautet mein Ratschlag: Lauf."{#morte_s499_}'
+    nr '"Sie hat in dieser Stadt die Macht. Du würdest sie gleich erkennen: Ihr Gesicht wird von Klingen umrahmt, sie hat die Größe eines Riesen und schwebt über der Erde, genau wie diese Kerle hier." Morte nickt in Richtung des Dabus, der euch beide anschaut. "Keiner weiß etwas genaues über sie… sie redet nicht viel. Das einzige, was du wissen mußt, ist, daß du sie besser nie wütend machst. Wenn du sie siehst, dann lautet mein Ratschlag: Lauf."{#morte_s499_1}'
 
     menu:
         '"Aha."{#morte_s499_r50327}':
@@ -7348,7 +7348,7 @@ label morte_s499: # from 498.0 498.1
 
 # s500 # say50410
 label morte_s500: # -
-    nr '"Was? Was? Was steht drin, Meister?"{#morte_s500_}'
+    nr '"Was? Was? Was steht drin, Meister?"{#morte_s500_1}'
 
     menu:
         '"Ich weiß nicht, was ich sagen soll, Morte…"{#morte_s500_r50411}':
@@ -7366,7 +7366,7 @@ label morte_s500: # -
 
 # s501 # say50414
 label morte_s501: # from 500.0 500.1
-    nr '"WAS?! Du machst bestimmt nur Witze, oder? Komm schon! Laß mich mal sehen!"{#morte_s501_}'
+    nr '"WAS?! Du machst bestimmt nur Witze, oder? Komm schon! Laß mich mal sehen!"{#morte_s501_1}'
 
     menu:
         'Zeig ihm den Kodex.{#morte_s501_r50415}':
@@ -7381,21 +7381,21 @@ label morte_s501: # from 500.0 500.1
 
 # s502 # say50417
 label morte_s502: # from 501.1
-    nr 'Morte murrt sauer vor sich hin… aber akzeptiert deine Antwort.{#morte_s502_}'
+    nr 'Morte murrt sauer vor sich hin… aber akzeptiert deine Antwort.{#morte_s502_1}'
 
     jump codexi_s2  # EXTERN
 
 
 # s503 # say50418
 label morte_s503: # from 500.2 501.0
-    nr 'Morte schwebt über deine Schulter, um den Inhalt des Kodex zu studieren. Seine Augen springen fast aus ihren Höhlen heraus, als sie die Seiten überfliegen: "Ooh. Ooooooh. Oh, ich… aber… Mann!"{#morte_s503_}'
+    nr 'Morte schwebt über deine Schulter, um den Inhalt des Kodex zu studieren. Seine Augen springen fast aus ihren Höhlen heraus, als sie die Seiten überfliegen: "Ooh. Ooooooh. Oh, ich… aber… Mann!"{#morte_s503_1}'
 
     jump codexi_s2  # EXTERN
 
 
 # s504 # say50697
 label morte_s504: # -
-    nr '"Ha! Ha! Ha! Das ist doch wohl ein *Witz*, oder? Das kannst du *nicht* ernst meinen, Meister!"{#morte_s504_}'
+    nr '"Ha! Ha! Ha! Das ist doch wohl ein *Witz*, oder? Das kannst du *nicht* ernst meinen, Meister!"{#morte_s504_1}'
 
     menu:
         '"Ja. Nimmst du ihn, Vrischika?"{#morte_s504_r50698}':
@@ -7413,7 +7413,7 @@ label morte_s504: # -
 
 # s505 # say50701
 label morte_s505: # -
-    nr '"Ich kann es nicht glauben… Dein Niveau ist ja vorher schon mal ganz schön tief gesunken, Meister, aber das ist die Krönung. Ich sehe *dich* dann in Baator, du verrücktes, kurzgewachsenes, hinterhältiges, undankbares, pockennarbiges, mistfressendes, fetthaariges, krummzähniges, armseliges Stück hirnloser Abfall! Hör gut zu, blöder Schlucker: Mach weiter so, und du wirst bald genug *wirklich* tot sein… Und dann wirst du bekommen, was dir zusteht!"{#morte_s505_}'
+    nr '"Ich kann es nicht glauben… Dein Niveau ist ja vorher schon mal ganz schön tief gesunken, Meister, aber das ist die Krönung. Ich sehe *dich* dann in Baator, du verrücktes, kurzgewachsenes, hinterhältiges, undankbares, pockennarbiges, mistfressendes, fetthaariges, krummzähniges, armseliges Stück hirnloser Abfall! Hör gut zu, blöder Schlucker: Mach weiter so, und du wirst bald genug *wirklich* tot sein… Und dann wirst du bekommen, was dir zusteht!"{#morte_s505_1}'
 
     $ morteLogic.s505_action()
     jump vrisch_s46  # EXTERN
@@ -7421,7 +7421,7 @@ label morte_s505: # -
 
 # s506 # say52571
 label morte_s506: # -
-    nr '"Es hat ihn verschluckt, aber ich weiß nicht, ob er an *jenem* Ende rauskam."{#morte_s506_}'
+    nr '"Es hat ihn verschluckt, aber ich weiß nicht, ob er an *jenem* Ende rauskam."{#morte_s506_1}'
 
     menu:
         '"Es reicht. Hör zu, Ravel, du hast mir meine Sterblichkeit genommen, und es hat mehr geschadet als genützt. Ich möchte sie jetzt zurückhaben - du hattest sie nun lang genug, schon zu lang, wie ich finde."{#morte_s506_r52572}':
@@ -7431,14 +7431,14 @@ label morte_s506: # -
 
 # s507 # say52573
 label morte_s507: # -
-    nr '"Ich glaube, ich weiß, wer in einem Käfig sein sollte…"{#morte_s507_}'
+    nr '"Ich glaube, ich weiß, wer in einem Käfig sein sollte…"{#morte_s507_1}'
 
     jump ravel_s189  # EXTERN
 
 
 # s508 # say52574
 label morte_s508: # -
-    nr '"Also, ich hatte nichts BESSERES zu tun, als zu einem der Irrgänge der Dame zu gehen und eines der bösesten Wesen zu treffen, das jemals seinen Fuß auf Sigil gesetzt hat, also habe ich gesagt „Sicher! Warum n-?“"{#morte_s508_}'
+    nr '"Also, ich hatte nichts BESSERES zu tun, als zu einem der Irrgänge der Dame zu gehen und eines der bösesten Wesen zu treffen, das jemals seinen Fuß auf Sigil gesetzt hat, also habe ich gesagt „Sicher! Warum n-?“"{#morte_s508_1}'
 
     menu:
         '"Morte, sei still. Ravel, tu ich nicht…"{#morte_s508_r52575}':
@@ -7448,7 +7448,7 @@ label morte_s508: # -
 
 # s509 # say52576
 label morte_s509: # from 508.0
-    nr '"„Sei still?!“" Morte klappert mit den Zähnen. "Den Teufel werde ich! Ich glaube, wir haben dieser Alten genug beim Klappern ihrer Knochenschüssel zugehört, und jetzt mokiert sie sich darüber, daß ich keine Haut habe! Na UND?! Offensichtlich hat die Tatsache, daß SIE Haut hat, bei IHREM Aussehen Wunder gewirkt! Meint sie, ich bin *gerne* ständig NACKT? Und *noch* etwas -"{#morte_s509_}'
+    nr '"„Sei still?!“" Morte klappert mit den Zähnen. "Den Teufel werde ich! Ich glaube, wir haben dieser Alten genug beim Klappern ihrer Knochenschüssel zugehört, und jetzt mokiert sie sich darüber, daß ich keine Haut habe! Na UND?! Offensichtlich hat die Tatsache, daß SIE Haut hat, bei IHREM Aussehen Wunder gewirkt! Meint sie, ich bin *gerne* ständig NACKT? Und *noch* etwas -"{#morte_s509_1}'
 
     menu:
         '"Morte! Schluß jetzt! Ravel, hör…"{#morte_s509_r52577}' if morteLogic.r52577_condition():
@@ -7468,7 +7468,7 @@ label morte_s509: # from 508.0
 
 # s510 # say52644
 label morte_s510: # -
-    nr '"Verrückt. Wo stehen wir also theoretisch gesehen im Moment?"{#morte_s510_}'
+    nr '"Verrückt. Wo stehen wir also theoretisch gesehen im Moment?"{#morte_s510_1}'
 
     menu:
         '"Die Antwort darauf will ich wirklich nicht wissen, Morte."{#morte_s510_r52771}':
@@ -7478,14 +7478,14 @@ label morte_s510: # -
 
 # s511 # say53623
 label morte_s511: # -
-    nr '"Oh, das ist ja *fantastisch*."{#morte_s511_}'
+    nr '"Oh, das ist ja *fantastisch*."{#morte_s511_1}'
 
     jump pillar_s5  # EXTERN
 
 
 # s512 # say53624
 label morte_s512: # from 522.0 523.0 524.0
-    nr 'Als du einen Schritt näher an die Säule herantrittst, zischt dir Morte zu: "Pssst! Meister! Meister… Hör zu, das Ding darf mich nicht sehen. Du mußt mich hier wegschaffen, setz mich irgendwo ab und hol mich später wieder ab, oder so…"{#morte_s512_}'
+    nr 'Als du einen Schritt näher an die Säule herantrittst, zischt dir Morte zu: "Pssst! Meister! Meister… Hör zu, das Ding darf mich nicht sehen. Du mußt mich hier wegschaffen, setz mich irgendwo ab und hol mich später wieder ab, oder so…"{#morte_s512_1}'
 
     menu:
         '"Vergiß es, Morte. Ich werde jetzt mit ihr sprechen…"{#morte_s512_r53625}' if morteLogic.r53625_condition():
@@ -7504,7 +7504,7 @@ label morte_s512: # from 522.0 523.0 524.0
 
 # s513 # say53626
 label morte_s513: # from 512.1
-    nr '"Ähh… Ich spreche da nicht so gern drüber. Gehen wir einfach, ja?" Mortes Stimme zittert vor Angst, seine Augen flackern unruhig zwischen dir und der massiven Schädelsäule hin und her.{#morte_s513_}'
+    nr '"Ähh… Ich spreche da nicht so gern drüber. Gehen wir einfach, ja?" Mortes Stimme zittert vor Angst, seine Augen flackern unruhig zwischen dir und der massiven Schädelsäule hin und her.{#morte_s513_1}'
 
     menu:
         '"Es geht nicht, daß du so viele Geheimnisse vor mir hast, Morte. Du mußt mir sagen, was hier los ist."{#morte_s513_r53629}':
@@ -7524,7 +7524,7 @@ label morte_s513: # from 512.1
 
 # s514 # say53632
 label morte_s514: # from 513.0 513.1
-    nr 'Morte seufzt und kann deinem Blick nicht länger standhalten. Schließlich fügt er sich. "Okay, okay… Ich sag„s dir. Da ist diese Säule auf Avernus, der ersten Unterebene von Baator. Sie ist aus den Köpfen derer gebaut, die andere durch ihre Lügen in den Tod gestürzt haben. Nun ja… da drüben steht sie. Und da bin ich damals gelandet. Den Rest kannst du dir zusammenreimen."{#morte_s514_}'
+    nr 'Morte seufzt und kann deinem Blick nicht länger standhalten. Schließlich fügt er sich. "Okay, okay… Ich sag„s dir. Da ist diese Säule auf Avernus, der ersten Unterebene von Baator. Sie ist aus den Köpfen derer gebaut, die andere durch ihre Lügen in den Tod gestürzt haben. Nun ja… da drüben steht sie. Und da bin ich damals gelandet. Den Rest kannst du dir zusammenreimen."{#morte_s514_1}'
 
     menu:
         '"Dann… warst du einer von diesen Köpfen?"{#morte_s514_r53662}' if morteLogic.r53662_condition():
@@ -7538,7 +7538,7 @@ label morte_s514: # from 513.0 513.1
 
 # s515 # say53664
 label morte_s515: # from 514.1
-    nr '"Ja. Ich habe ein oder zweimal etwas… übertrieben. Nur leider hat eine meiner Äußerungen deinen Tod herbeigeführt. Eine von ihnen. Vielleicht auch mehrere. Ich weiß es nicht genau, die Erinnerungen sind jetzt verblaßt."{#morte_s515_}'
+    nr '"Ja. Ich habe ein oder zweimal etwas… übertrieben. Nur leider hat eine meiner Äußerungen deinen Tod herbeigeführt. Eine von ihnen. Vielleicht auch mehrere. Ich weiß es nicht genau, die Erinnerungen sind jetzt verblaßt."{#morte_s515_1}'
 
     menu:
         '"Ich verstehe…"{#morte_s515_r53665}':
@@ -7548,21 +7548,21 @@ label morte_s515: # from 514.1
 
 # s516 # say53666
 label morte_s516: # from 514.0
-    nr '"Ja. Ich habe einmal oder zweimal etwas… übertrieben, vielleicht auch zweimal. Leider hat eine meiner Äußerungen-"{#morte_s516_}'
+    nr '"Ja. Ich habe einmal oder zweimal etwas… übertrieben, vielleicht auch zweimal. Leider hat eine meiner Äußerungen-"{#morte_s516_1}'
 
     jump annah_s269  # EXTERN
 
 
 # s517 # say53667
 label morte_s517: # -
-    nr 'Morte fährt ruhig fort: "… Eine meiner *Andeutungen* hat zu deinem Tod geführt. Eine von ihnen. Vielleicht auch mehrere. Ich weiß nicht genau, diese Erinnerungen sind jetzt verblaßt."{#morte_s517_}'
+    nr 'Morte fährt ruhig fort: "… Eine meiner *Andeutungen* hat zu deinem Tod geführt. Eine von ihnen. Vielleicht auch mehrere. Ich weiß nicht genau, diese Erinnerungen sind jetzt verblaßt."{#morte_s517_1}'
 
     jump morte_s518
 
 
 # s518 # say53668
 label morte_s518: # from 515.0 517.0
-    nr 'Morte starrt auf deine Füße - noch nie hast du ihn so unglücklich gesehen. "Diese Erinnerungen, sie… Sieh mal, Meister, ich kann mich nicht einmal mehr daran erinnern, ein Mensch *gewesen* zu sein. Ich weiß nicht, wie mein Leben vor der Säule war…"{#morte_s518_}'
+    nr 'Morte starrt auf deine Füße - noch nie hast du ihn so unglücklich gesehen. "Diese Erinnerungen, sie… Sieh mal, Meister, ich kann mich nicht einmal mehr daran erinnern, ein Mensch *gewesen* zu sein. Ich weiß nicht, wie mein Leben vor der Säule war…"{#morte_s518_1}'
 
     if morteLogic.s518_condition():
         jump dakkon_s183  # EXTERN
@@ -7574,7 +7574,7 @@ label morte_s518: # from 515.0 517.0
 
 # s519 # say53794
 label morte_s519: # -
-    nr 'Morte blickt zu Dak„kon, dann zu dir. "Ja, ich glaube schon. So ist das, wenn man stirbt. Man… vergißt. Ich nehme an, ich war auch zu Lebzeiten kein Mustermitglied der Gemeinschaft… Aber wer ist das schon, zum Teufel?" Morte seufzt noch einmal. "Ich kann halt einfach nichts daran ändern. Nichts ist schlimmer, als immer die Wahrheit zu sagen. Aber sieh mal, Meister: Wenn dieser Haufen Köpfe mich sieht, dann will er mich wiederhaben - *unbedingt*. Das kannst du nicht zulassen!"{#morte_s519_}'
+    nr 'Morte blickt zu Dak„kon, dann zu dir. "Ja, ich glaube schon. So ist das, wenn man stirbt. Man… vergißt. Ich nehme an, ich war auch zu Lebzeiten kein Mustermitglied der Gemeinschaft… Aber wer ist das schon, zum Teufel?" Morte seufzt noch einmal. "Ich kann halt einfach nichts daran ändern. Nichts ist schlimmer, als immer die Wahrheit zu sagen. Aber sieh mal, Meister: Wenn dieser Haufen Köpfe mich sieht, dann will er mich wiederhaben - *unbedingt*. Das kannst du nicht zulassen!"{#morte_s519_1}'
 
     menu:
         '"Vergiß es, Morte. Ich werde jetzt mit ihr sprechen…"{#morte_s519_r53795}':
@@ -7601,7 +7601,7 @@ label morte_s519: # -
 
 # s520 # say53800
 label morte_s520: # from 518.1
-    nr '"Naja, ich glaube, ich war zu Lebzeiten auch nicht gerade ein Mustermitglied der Gemeinschaft… Aber wer ist das schon, zum Teufel?" Morte seufzt wieder. "Ich kann einfach nichts machen. Nichts ist schlimmer, als die ganze Zeit ehrlich zu sein. Aber sieh mal, Meister: Wenn dieser Haufen Köpfe mich zu Gesicht kriegt, dann will er mich wiederhaben - *unbedingt*. Das kannst du nicht zulassen!"{#morte_s520_}'
+    nr '"Naja, ich glaube, ich war zu Lebzeiten auch nicht gerade ein Mustermitglied der Gemeinschaft… Aber wer ist das schon, zum Teufel?" Morte seufzt wieder. "Ich kann einfach nichts machen. Nichts ist schlimmer, als die ganze Zeit ehrlich zu sein. Aber sieh mal, Meister: Wenn dieser Haufen Köpfe mich zu Gesicht kriegt, dann will er mich wiederhaben - *unbedingt*. Das kannst du nicht zulassen!"{#morte_s520_1}'
 
     menu:
         '"Vergiß es, Morte. Ich werde jetzt mit ihr sprechen…"{#morte_s520_r53801}':
@@ -7628,7 +7628,7 @@ label morte_s520: # from 518.1
 
 # s521 # say53806
 label morte_s521: # from 519.1 520.1 523.1 524.1
-    nr '"Nun… du hast mich rausgezogen, Meister. Ich hab mich an die Oberfläche gekämpft - du warst schon einmal hier, weißt du - ich hab„ gejammert und geschrien, bis du mich bemerkt hast. Ich habe dich angefleht, mich zu retten, und hab“ geschworen, daß ich dir folgen und mein Wissen mit dir teilen würde, bis zu deiner letzten Stunde. Mir wurde aber erst, nachdem du mich rausgerissen hattest, klar, wie lang das sein würde."{#morte_s521_}'
+    nr '"Nun… du hast mich rausgezogen, Meister. Ich hab mich an die Oberfläche gekämpft - du warst schon einmal hier, weißt du - ich hab„ gejammert und geschrien, bis du mich bemerkt hast. Ich habe dich angefleht, mich zu retten, und hab“ geschworen, daß ich dir folgen und mein Wissen mit dir teilen würde, bis zu deiner letzten Stunde. Mir wurde aber erst, nachdem du mich rausgerissen hattest, klar, wie lang das sein würde."{#morte_s521_1}'
 
     menu:
         '"Und das ganze Wissen der Säule…?"{#morte_s521_r53807}':
@@ -7639,7 +7639,7 @@ label morte_s521: # from 519.1 520.1 523.1 524.1
 
 # s522 # say53808
 label morte_s522: # from 521.0
-    nr '"Oh, das… Naja, mir war auch nicht klar, daß ich das meiste des angesammelten Wissens der Säule verlieren würde, wenn ich erst mal aus ihr raus wäre. Verdammte Mächte, *du* hast vielleicht getobt! Aber du hast mich trotzdem bei dir behalten. Zuerst habe ich mich an dich „gebunden“ gefühlt… Vielleicht dadurch, daß deine Zauberkräfte mich zu einer Art Vertrautem gemacht hätten. Ein paar hundert Jahre später habe ich gemerkt, daß es *mehr* als das war. Etwas Tieferes. Auch mehr als nur eine Schuld, obwohl das todsicher auch etwas damit zu tun hatte. Ich habe mich irgendwie mit dir *verbunden* gefühlt. Vielleicht ist es dein Leid, Meister… deine Qualen. Ich weiß es nicht. Vielleicht habe ich sie mit meinen verglichen, als ich in dieser Säule steckte."{#morte_s522_}'
+    nr '"Oh, das… Naja, mir war auch nicht klar, daß ich das meiste des angesammelten Wissens der Säule verlieren würde, wenn ich erst mal aus ihr raus wäre. Verdammte Mächte, *du* hast vielleicht getobt! Aber du hast mich trotzdem bei dir behalten. Zuerst habe ich mich an dich „gebunden“ gefühlt… Vielleicht dadurch, daß deine Zauberkräfte mich zu einer Art Vertrautem gemacht hätten. Ein paar hundert Jahre später habe ich gemerkt, daß es *mehr* als das war. Etwas Tieferes. Auch mehr als nur eine Schuld, obwohl das todsicher auch etwas damit zu tun hatte. Ich habe mich irgendwie mit dir *verbunden* gefühlt. Vielleicht ist es dein Leid, Meister… deine Qualen. Ich weiß es nicht. Vielleicht habe ich sie mit meinen verglichen, als ich in dieser Säule steckte."{#morte_s522_1}'
 
     menu:
         '"Ich werde jetzt mit der Säule reden…"{#morte_s522_r53809}':
@@ -7661,7 +7661,7 @@ label morte_s522: # from 521.0
 
 # s523 # say53813
 label morte_s523: # from 519.2 520.2 522.1 524.2
-    nr 'Morte beginnt plötzlich, sich zu verteidigen. "Weil ich nie *weiß*, wer du sein wirst! Einige von deinen Inkarnationen waren echt total verrückt! Einmal bist du aufgewacht und warst davon überzeugt, daß *ich* dein Schädel wäre. Du hast mich um den Turm gejagt und wolltest mich fertigmachen und verschlingen… Gott sei Dank bist du dabei von einem Karren überfahren worden. Ein anderes Mal warst du „gut und rechtschaffen“ und wolltest mich zurück in die Säule zu stopfen, weil das der Ort sei, „wo ich hingehöre“." Morte grinst. "*Deshalb*. Außerdem hat es nie etwas geschadet, daß du„s nicht gewußt hast…"{#morte_s523_}'
+    nr 'Morte beginnt plötzlich, sich zu verteidigen. "Weil ich nie *weiß*, wer du sein wirst! Einige von deinen Inkarnationen waren echt total verrückt! Einmal bist du aufgewacht und warst davon überzeugt, daß *ich* dein Schädel wäre. Du hast mich um den Turm gejagt und wolltest mich fertigmachen und verschlingen… Gott sei Dank bist du dabei von einem Karren überfahren worden. Ein anderes Mal warst du „gut und rechtschaffen“ und wolltest mich zurück in die Säule zu stopfen, weil das der Ort sei, „wo ich hingehöre“." Morte grinst. "*Deshalb*. Außerdem hat es nie etwas geschadet, daß du„s nicht gewußt hast…"{#morte_s523_1}'
 
     menu:
         '"Ich werde jetzt mit der Säule reden…"{#morte_s523_r53814}':
@@ -7683,7 +7683,7 @@ label morte_s523: # from 519.2 520.2 522.1 524.2
 
 # s524 # say53818
 label morte_s524: # from 519.3 520.3 522.2 523.2
-    nr '"Ich weiß nicht. Jahrtausende, vermutlich. Ich habe jedesmal getan, was ich konnte, um dir zu helfen, den Weg zu finden, aber…" Morte seufzt, dann schwebt er auf Augenhöhe und schaut dich fest an. "So weit schaffst du es selten, Meister. Ehrlich, nur vier oder fünf mal, glaube ich. Diesmal könntest du es schaffen…. Das „du“, das es schafft, findet heraus, was los ist."{#morte_s524_}'
+    nr '"Ich weiß nicht. Jahrtausende, vermutlich. Ich habe jedesmal getan, was ich konnte, um dir zu helfen, den Weg zu finden, aber…" Morte seufzt, dann schwebt er auf Augenhöhe und schaut dich fest an. "So weit schaffst du es selten, Meister. Ehrlich, nur vier oder fünf mal, glaube ich. Diesmal könntest du es schaffen…. Das „du“, das es schafft, findet heraus, was los ist."{#morte_s524_1}'
 
     menu:
         '"Ich werde jetzt mit der Säule reden…"{#morte_s524_r53819}':
@@ -7705,14 +7705,14 @@ label morte_s524: # from 519.3 520.3 522.2 523.2
 
 # s525 # say53823
 label morte_s525: # -
-    nr '"Oh, nein…"{#morte_s525_}'
+    nr '"Oh, nein…"{#morte_s525_1}'
 
     jump pillar_s10  # EXTERN
 
 
 # s526 # say53824
 label morte_s526: # -
-    nr 'Morte zittert vor Angst, seine Zähne klappern. "Ich kann nicht zurück, Meister! Ich kann nicht! Ich kann nicht! Ich kann nicht!"{#morte_s526_}'
+    nr 'Morte zittert vor Angst, seine Zähne klappern. "Ich kann nicht zurück, Meister! Ich kann nicht! Ich kann nicht! Ich kann nicht!"{#morte_s526_1}'
 
     menu:
         '"Er ist nicht zu dir zurückgekommen. Aber ich habe ein paar Fragen, Schädelsäule…"{#morte_s526_r53825}' if morteLogic.r53825_condition():
@@ -7736,21 +7736,21 @@ label morte_s526: # -
 
 # s527 # say53829
 label morte_s527: # -
-    nr '"Na *los*, Meister, hab„ ich dir nicht gerade *gesagt*, was das ist?! Sie besteht aus den Köpfen von Lügnern, deren “Ratschläge„ diejenigen, denen sie rieten, in den Tod führten. Sie kann fast jede Frage beantworten - sie weiß wahnsinnig viel - aber sie erwartet auch viel für ihre Dienste. Frag sie nicht einfach irgendwelche Fragen!"{#morte_s527_}'
+    nr '"Na *los*, Meister, hab„ ich dir nicht gerade *gesagt*, was das ist?! Sie besteht aus den Köpfen von Lügnern, deren “Ratschläge„ diejenigen, denen sie rieten, in den Tod führten. Sie kann fast jede Frage beantworten - sie weiß wahnsinnig viel - aber sie erwartet auch viel für ihre Dienste. Frag sie nicht einfach irgendwelche Fragen!"{#morte_s527_1}'
 
     jump pillar_s14  # EXTERN
 
 
 # s528 # say53830
 label morte_s528: # -
-    nr '"Ich will nicht wieder da rein, Meister. Bitte!"{#morte_s528_}'
+    nr '"Ich will nicht wieder da rein, Meister. Bitte!"{#morte_s528_1}'
 
     jump pillar_s17  # EXTERN
 
 
 # s529 # say53831
 label morte_s529: # -
-    nr '"Meister?! Nein! Nein! Das *kannst* du nicht tun! Bitte nicht!"{#morte_s529_}'
+    nr '"Meister?! Nein! Nein! Das *kannst* du nicht tun! Bitte nicht!"{#morte_s529_1}'
 
     menu:
         '"Keine Sorge, Morte - ich hol„ dich nachher wieder raus."{#morte_s529_r53832}' if morteLogic.r53832_condition():
@@ -7797,7 +7797,7 @@ label morte_s529: # -
 
 # s530 # say53842
 label morte_s530: # from 529.0 529.1 529.2
-    nr 'Morte sieht dich skeptisch an. "Bist du *sicher?* *Schwörst* du es? He, was sag ich da?! Nein! Auf keinen Fall! Bitte, ich will da nicht wieder rein!"{#morte_s530_}'
+    nr 'Morte sieht dich skeptisch an. "Bist du *sicher?* *Schwörst* du es? He, was sag ich da?! Nein! Auf keinen Fall! Bitte, ich will da nicht wieder rein!"{#morte_s530_1}'
 
     menu:
         'Schnapp dir Morte und wirf ihn in die Schädelsäule.{#morte_s530_r53843}':
@@ -7833,7 +7833,7 @@ label morte_s530: # from 529.0 529.1 529.2
 
 # s531 # say53849
 label morte_s531: # from 529.3
-    nr 'Morte starrt dich mit weit aufgerissenem Mund stumm an. "WAS?! Keine Chance! Du bist nicht so stark wie damals. Paß auf, vergiß es, das schaffst du nie, das wird nicht geschehen! Bitte, ich *will* da nicht mehr rein!"{#morte_s531_}'
+    nr 'Morte starrt dich mit weit aufgerissenem Mund stumm an. "WAS?! Keine Chance! Du bist nicht so stark wie damals. Paß auf, vergiß es, das schaffst du nie, das wird nicht geschehen! Bitte, ich *will* da nicht mehr rein!"{#morte_s531_1}'
 
     menu:
         'Schnapp dir Morte und wirf ihn in die Schädelsäule.{#morte_s531_r53850}':
@@ -7869,7 +7869,7 @@ label morte_s531: # from 529.3
 
 # s532 # say53857
 label morte_s532: # -
-    nr '"Heh… Moment mal! Nicht so schnell! Säule… Ich könnte dir sagen, wo Fjhull Schlangenzunge ist! Komm schon, willst du das nicht wissen? Wie wär„s, wenn er dir das gibt und nicht mich? Na? Was sagst du dazu?"{#morte_s532_}'
+    nr '"Heh… Moment mal! Nicht so schnell! Säule… Ich könnte dir sagen, wo Fjhull Schlangenzunge ist! Komm schon, willst du das nicht wissen? Wie wär„s, wenn er dir das gibt und nicht mich? Na? Was sagst du dazu?"{#morte_s532_1}'
 
     menu:
         '"Moment mal, Morte. Wir verraten Fhjull nicht."{#morte_s532_r53858}':
@@ -7883,7 +7883,7 @@ label morte_s532: # -
 
 # s533 # say53860
 label morte_s533: # from 532.0
-    nr '"Was? Bist du *übergeschnappt*?! Du würdest *mich* opfern, aber nicht das *SCHEUSAL*?! Der einzige Grund, warum er dir geholfen hat, ist, daß er dazu verpflichtet, ja verflucht ist! Was ist mit *mir*? Wer hat dir aus der Leichenhalle geholfen, Kumpel? Wer steht - äh, schwebt - neben dir, wenn du den Gefahren in dieser Festung Soundso ins Auge siehst?! Hä?! Hä?! NICHT FHJULL DICKARSCH, DAS IST JA WOHL KLAR!"{#morte_s533_}'
+    nr '"Was? Bist du *übergeschnappt*?! Du würdest *mich* opfern, aber nicht das *SCHEUSAL*?! Der einzige Grund, warum er dir geholfen hat, ist, daß er dazu verpflichtet, ja verflucht ist! Was ist mit *mir*? Wer hat dir aus der Leichenhalle geholfen, Kumpel? Wer steht - äh, schwebt - neben dir, wenn du den Gefahren in dieser Festung Soundso ins Auge siehst?! Hä?! Hä?! NICHT FHJULL DICKARSCH, DAS IST JA WOHL KLAR!"{#morte_s533_1}'
 
     menu:
         '"Gut, gut. Was meinst du dazu, Säule?"{#morte_s533_r53861}':
@@ -7897,7 +7897,7 @@ label morte_s533: # from 532.0
 
 # s534 # say54155
 label morte_s534: # from 540.3 541.2 542.2 543.1 544.1 545.2 546.1 547.1 548.4 549.2 550.2 551.1 552.1 553.2 554.2 555.2 556.1 557.1 562.0 563.0 564.0
-    nr '"Warum nicht, Meister?" Morte schüttelt den Kopf. "Ich meine, wir sind auf jeder ANDEREN furchtbaren Ebene in diesem Multiversum gewesen, die ich kenne. Warum sollten wir also nicht über den Rand der Klippe schreiten?" Er seufzt klappernd. "Bist DU bereit? Wenn nicht…"{#morte_s534_}'
+    nr '"Warum nicht, Meister?" Morte schüttelt den Kopf. "Ich meine, wir sind auf jeder ANDEREN furchtbaren Ebene in diesem Multiversum gewesen, die ich kenne. Warum sollten wir also nicht über den Rand der Klippe schreiten?" Er seufzt klappernd. "Bist DU bereit? Wenn nicht…"{#morte_s534_1}'
 
     menu:
         '"Kannst du mir noch mal sagen, was du von der Gegend hinter dem Portal weißt?"{#morte_s534_r54156}':
@@ -7915,7 +7915,7 @@ label morte_s534: # from 540.3 541.2 542.2 543.1 544.1 545.2 546.1 547.1 548.4 5
 
 # s535 # say54159
 label morte_s535: # from 534.1
-    nr '"Nun, ich…" Morte schielt auf den leuchtenden blauen Vorhang und seufzt noch einmal klappernd. "Klar. Gehen wir. Ich meine, es ist wahrscheinlich alles besser, als in der Leichenhalle zu versauern, oder?"{#morte_s535_}'
+    nr '"Nun, ich…" Morte schielt auf den leuchtenden blauen Vorhang und seufzt noch einmal klappernd. "Klar. Gehen wir. Ich meine, es ist wahrscheinlich alles besser, als in der Leichenhalle zu versauern, oder?"{#morte_s535_1}'
 
     menu:
         '"In Ordnung…"{#morte_s535_r54160}':
@@ -7926,7 +7926,7 @@ label morte_s535: # from 534.1
 
 # s536 # say54161
 label morte_s536: # -
-    nr '"Äh…" Morte zögert. Er blickt zum Portal, dann zu dir, dann wieder zum Portal, dann seufzt er klappernd. "Sieh mal, ich will jetzt nicht *ZU* viel sagen, aber äh… naja, da ist etwas, was ich dir sagen muß…"{#morte_s536_}'
+    nr '"Äh…" Morte zögert. Er blickt zum Portal, dann zu dir, dann wieder zum Portal, dann seufzt er klappernd. "Sieh mal, ich will jetzt nicht *ZU* viel sagen, aber äh… naja, da ist etwas, was ich dir sagen muß…"{#morte_s536_1}'
 
     menu:
         '"Was ist los, Morte?"{#morte_s536_r54162}':
@@ -7940,7 +7940,7 @@ label morte_s536: # -
 
 # s537 # say54164
 label morte_s537: # from 536.0 536.1
-    nr '"Naja, es geht darum, wo wir hingehen… oder, äh, besser gesagt, wo wir… *waren*."{#morte_s537_}'
+    nr '"Naja, es geht darum, wo wir hingehen… oder, äh, besser gesagt, wo wir… *waren*."{#morte_s537_1}'
 
     menu:
         '"„Wo WIR gewesen sind?“ Was erzählst du da?"{#morte_s537_r54165}' if morteLogic.r54165_condition():
@@ -7958,7 +7958,7 @@ label morte_s537: # from 536.0 536.1
 
 # s538 # say54168
 label morte_s538: # -
-    nr '"Äh… Meister?" Morte zögert, sieht zum Portal, dann zu dir, dann wieder zum Portal, dann seufzt er klappernd. "Sieh mal, ich will jetzt nicht *ZU* viel sagen, aber… naja, da ist etwas, was ich dir sagen muß…"{#morte_s538_}'
+    nr '"Äh… Meister?" Morte zögert, sieht zum Portal, dann zu dir, dann wieder zum Portal, dann seufzt er klappernd. "Sieh mal, ich will jetzt nicht *ZU* viel sagen, aber… naja, da ist etwas, was ich dir sagen muß…"{#morte_s538_1}'
 
     menu:
         '"Was ist los, Morte?"{#morte_s538_r54169}':
@@ -7972,7 +7972,7 @@ label morte_s538: # -
 
 # s539 # say54171
 label morte_s539: # from 538.0 538.1
-    nr '"Naja, es geht darum, wohin wir gehen… oder, äh, besser gesagt, wo du… wo wir… *waren*."{#morte_s539_}'
+    nr '"Naja, es geht darum, wohin wir gehen… oder, äh, besser gesagt, wo du… wo wir… *waren*."{#morte_s539_1}'
 
     menu:
         '"„Wo WIR gewesen sind?“ Was erzählst du da?"{#morte_s539_r54172}' if morteLogic.r54172_condition():
@@ -7990,7 +7990,7 @@ label morte_s539: # from 538.0 538.1
 
 # s540 # say54175
 label morte_s540: # from 537.0 537.2 539.0 539.2
-    nr '"Wir… äh, wir sind nicht zum ERSTEN Mal hier. Sieh mal, wir waren schon einmal in dieser „Festung der Reue“… Aber wir… ich… habe es damals nicht gewußt."{#morte_s540_}'
+    nr '"Wir… äh, wir sind nicht zum ERSTEN Mal hier. Sieh mal, wir waren schon einmal in dieser „Festung der Reue“… Aber wir… ich… habe es damals nicht gewußt."{#morte_s540_1}'
 
     menu:
         '"Du hast es nicht *gewußt*? Wie ist das möglich?"{#morte_s540_r54176}':
@@ -8017,7 +8017,7 @@ label morte_s540: # from 537.0 537.2 539.0 539.2
 
 # s541 # say54181
 label morte_s541: # from 540.0 540.2
-    nr '"Das ist schwer zu erklären, wenn man nicht dort *gewesen* ist. Außerdem kanntest du dein *anderes* Ich nicht - er war nicht gerade ein sehr MITTEILSAMER Knochenbrecher. Ich meine, ich wußte, daß er einen BESTIMMTEN Ort gesucht hat, aber ich wußte weder warum, noch wo, noch WAS es war. Deshalb konnte ich dir NICHTS sagen: weil ich NICHTS wußte! Ich… weiß nur, was passiert ist, als wir ANKAMEN…"{#morte_s541_}'
+    nr '"Das ist schwer zu erklären, wenn man nicht dort *gewesen* ist. Außerdem kanntest du dein *anderes* Ich nicht - er war nicht gerade ein sehr MITTEILSAMER Knochenbrecher. Ich meine, ich wußte, daß er einen BESTIMMTEN Ort gesucht hat, aber ich wußte weder warum, noch wo, noch WAS es war. Deshalb konnte ich dir NICHTS sagen: weil ich NICHTS wußte! Ich… weiß nur, was passiert ist, als wir ANKAMEN…"{#morte_s541_1}'
 
     menu:
         '"Und… was ist passiert?"{#morte_s541_r54189}' if morteLogic.r54189_condition():
@@ -8040,7 +8040,7 @@ label morte_s541: # from 540.0 540.2
 
 # s542 # say54193
 label morte_s542: # from 540.1
-    nr 'Morte sieht erschrocken aus. "Nein! Nein! Wir… ich… habe davon nichts GEWUSST! Schließlich warst du nicht immer der mitteilsamste Kerl auf den Ebenen! Dein… dein *anderes* Ich hat VIEL vom Plausch für sich behalten, und wir haben nicht einmal gewußt, WARUM wir an diesen Ort gegangen sind und WAS das für ein Ort war! Ich weiß nur, was passiert ist, als wir dort ANKAMEN…"{#morte_s542_}'
+    nr 'Morte sieht erschrocken aus. "Nein! Nein! Wir… ich… habe davon nichts GEWUSST! Schließlich warst du nicht immer der mitteilsamste Kerl auf den Ebenen! Dein… dein *anderes* Ich hat VIEL vom Plausch für sich behalten, und wir haben nicht einmal gewußt, WARUM wir an diesen Ort gegangen sind und WAS das für ein Ort war! Ich weiß nur, was passiert ist, als wir dort ANKAMEN…"{#morte_s542_1}'
 
     menu:
         '"Und… was ist passiert?"{#morte_s542_r54194}' if morteLogic.r54194_condition():
@@ -8063,7 +8063,7 @@ label morte_s542: # from 540.1
 
 # s543 # say54198
 label morte_s543: # from 541.1 542.1
-    nr '"Nun, wir sind zu dieser - dieser FESTUNG gegangen, und bevor wir sie überhaupt betreten haben, wurden wir alle GETRENNT und haben um unser Leben gekämpft. Deshalb will ich dir *vor allem* folgendes sagen: Wenn du das wirklich durchziehen willst, dann ist es gut möglich, daß jeder, der durch das Portal geht, irgendwo *ganz* weit weg von den anderen landet. Die Sache ist nur die, daß du dort trotzdem Leute bei dir brauchst…"{#morte_s543_}'
+    nr '"Nun, wir sind zu dieser - dieser FESTUNG gegangen, und bevor wir sie überhaupt betreten haben, wurden wir alle GETRENNT und haben um unser Leben gekämpft. Deshalb will ich dir *vor allem* folgendes sagen: Wenn du das wirklich durchziehen willst, dann ist es gut möglich, daß jeder, der durch das Portal geht, irgendwo *ganz* weit weg von den anderen landet. Die Sache ist nur die, daß du dort trotzdem Leute bei dir brauchst…"{#morte_s543_1}'
 
     menu:
         '"Warum sagst du das?"{#morte_s543_r54199}':
@@ -8082,7 +8082,7 @@ label morte_s543: # from 541.1 542.1
 
 # s544 # say54202
 label morte_s544: # from 534.0 541.0 542.0
-    nr '"Nun, wir sind zu dieser - dieser FESTUNG gegangen, und bevor wir sie überhaupt betreten haben, wurden wir alle GETRENNT haben um unser Leben gekämpft…" Er fröstelt. "Deshalb will ich dir *vor allem* folgendes sagen: Wenn du das wirklich durchziehen willst, dann ist es gut möglich, daß jeder, der durch das Portal geht, irgendwo *ganz* weit weg von den anderen landet. Die Sache ist nur die: Selbst wenn wir getrennt werden, sind wir womöglich deine einzige Hoffnung…"{#morte_s544_}'
+    nr '"Nun, wir sind zu dieser - dieser FESTUNG gegangen, und bevor wir sie überhaupt betreten haben, wurden wir alle GETRENNT haben um unser Leben gekämpft…" Er fröstelt. "Deshalb will ich dir *vor allem* folgendes sagen: Wenn du das wirklich durchziehen willst, dann ist es gut möglich, daß jeder, der durch das Portal geht, irgendwo *ganz* weit weg von den anderen landet. Die Sache ist nur die: Selbst wenn wir getrennt werden, sind wir womöglich deine einzige Hoffnung…"{#morte_s544_1}'
 
     menu:
         '"Warum sagst du das?"{#morte_s544_r54203}':
@@ -8101,7 +8101,7 @@ label morte_s544: # from 534.0 541.0 542.0
 
 # s545 # say54206
 label morte_s545: # from 543.0 544.0
-    nr '"Weil was auch immer in der Festung auf dich wartet, Meister, dich bereits einmal besiegt hat. Ich weiß bis heute nicht, wie du das überlebt hast, aber wenn du wieder verlierst, dann brauchst du jemanden, der dich aus der Festung schafft…"{#morte_s545_}'
+    nr '"Weil was auch immer in der Festung auf dich wartet, Meister, dich bereits einmal besiegt hat. Ich weiß bis heute nicht, wie du das überlebt hast, aber wenn du wieder verlierst, dann brauchst du jemanden, der dich aus der Festung schafft…"{#morte_s545_1}'
 
     menu:
         '"Morte, du mußt mir alles sagen, was du über die Festung weißt… Es ist wichtig."{#morte_s545_r54207}' if morteLogic.r54207_condition():
@@ -8124,7 +8124,7 @@ label morte_s545: # from 543.0 544.0
 
 # s546 # say54211
 label morte_s546: # from 545.1
-    nr '"Diese „Festung der Reue“… die erstreckt sich über MEILEN, Meister. Es ist eine Festung, aber es ist mehr wie eine eigene Ebene, ganz aus Stein, vollkommen dunkel, und voller Schatten - überall Schatten. Wenn du dahingehst, dann mußt du gut vorbereitet sein."{#morte_s546_}'
+    nr '"Diese „Festung der Reue“… die erstreckt sich über MEILEN, Meister. Es ist eine Festung, aber es ist mehr wie eine eigene Ebene, ganz aus Stein, vollkommen dunkel, und voller Schatten - überall Schatten. Wenn du dahingehst, dann mußt du gut vorbereitet sein."{#morte_s546_1}'
 
     menu:
         '"Was ist passiert, als wir zum ersten Mal dorthin gegangen sind?"{#morte_s546_r54212}':
@@ -8143,7 +8143,7 @@ label morte_s546: # from 545.1
 
 # s547 # say54215
 label morte_s547: # from 545.0
-    nr '"Diese „Festung der Reue“… die erstreckt sich über MEILEN, Meister. Es ist eine Festung, aber es ist mehr wie eine eigene Ebene, ganz aus Stein, vollkommen dunkel, und voller Schatten - überall Schatten. Wenn wir dahingehen, dann müssen wir gut vorbereitet sein."{#morte_s547_}'
+    nr '"Diese „Festung der Reue“… die erstreckt sich über MEILEN, Meister. Es ist eine Festung, aber es ist mehr wie eine eigene Ebene, ganz aus Stein, vollkommen dunkel, und voller Schatten - überall Schatten. Wenn wir dahingehen, dann müssen wir gut vorbereitet sein."{#morte_s547_1}'
 
     menu:
         '"Was ist passiert, als wir zum ersten Mal dorthin gegangen sind?"{#morte_s547_r54216}':
@@ -8162,7 +8162,7 @@ label morte_s547: # from 545.0
 
 # s548 # say54219
 label morte_s548: # from 546.0 547.0
-    nr '"Meister, ich weiß nicht, was mit DIR geschehen ist, aber ich weiß, was mit MIR geschehen ist… Ich bin von Gewölbe zu Gewölbe gelaufen, diese Schatten waren überall, sie haben versucht, mich fertigzumachen… Dann… plötzlich waren wir „draußen“, als ob uns jemand zurückgeholt hätte…"{#morte_s548_}'
+    nr '"Meister, ich weiß nicht, was mit DIR geschehen ist, aber ich weiß, was mit MIR geschehen ist… Ich bin von Gewölbe zu Gewölbe gelaufen, diese Schatten waren überall, sie haben versucht, mich fertigzumachen… Dann… plötzlich waren wir „draußen“, als ob uns jemand zurückgeholt hätte…"{#morte_s548_1}'
 
     menu:
         '"Einen Moment mal. Wenn du „wir“ sagst, klingt das nicht, als ob du nur uns beide meinst."{#morte_s548_r54220}' if morteLogic.r54220_condition():
@@ -8193,7 +8193,7 @@ label morte_s548: # from 546.0 547.0
 
 # s549 # say54229
 label morte_s549: # from 548.1
-    nr 'Morte verstummt einen Moment lang. "Nein… Da waren noch mehr. Da war… Dak„kon, diese Sinnsaten-Braut, Deionarra, dieser blinde Bogenschütze, der die ganze Zeit halb betrunken war, und du und ich. Und dann ging“s einmal in die Hölle und zurück. Anscheinend haben du, ich und Dak„kon es geschafft, aber die beiden anderen nicht. Ich weiß nicht, was mit ihnen passiert ist."{#morte_s549_}'
+    nr 'Morte verstummt einen Moment lang. "Nein… Da waren noch mehr. Da war… Dak„kon, diese Sinnsaten-Braut, Deionarra, dieser blinde Bogenschütze, der die ganze Zeit halb betrunken war, und du und ich. Und dann ging“s einmal in die Hölle und zurück. Anscheinend haben du, ich und Dak„kon es geschafft, aber die beiden anderen nicht. Ich weiß nicht, was mit ihnen passiert ist."{#morte_s549_1}'
 
     menu:
         '"Dak„kon? Aber warum… Ich muß ihn fragen. Aber du sagst, daß Deionarra und der Bogenschütze nicht von der Festung zurückgekehrt sind?"{#morte_s549_r54230}' if morteLogic.r54230_condition():
@@ -8216,7 +8216,7 @@ label morte_s549: # from 548.1
 
 # s550 # say54234
 label morte_s550: # from 548.2
-    nr 'Morte verstummt einen Moment lang. "Nein… Da waren noch mehr. Da war… dieser alte Gith, Dak„kon, diese Sinnsaten-Braut, Deionarra, dieser blinde Bogenschütze, der die ganze Zeit halb betrunken war, und du und ich. Und dann ging“s einmal in die Hölle und zurück. Anscheinend haben du, ich und Dak„kon es geschafft, aber die beiden anderen nicht. Ich weiß nicht, was mit ihnen passiert ist."{#morte_s550_}'
+    nr 'Morte verstummt einen Moment lang. "Nein… Da waren noch mehr. Da war… dieser alte Gith, Dak„kon, diese Sinnsaten-Braut, Deionarra, dieser blinde Bogenschütze, der die ganze Zeit halb betrunken war, und du und ich. Und dann ging“s einmal in die Hölle und zurück. Anscheinend haben du, ich und Dak„kon es geschafft, aber die beiden anderen nicht. Ich weiß nicht, was mit ihnen passiert ist."{#morte_s550_1}'
 
     menu:
         '"Du sagst, daß Deionarra und dieser Bogenschütze nie von der Festung zurückgekehrt sind?"{#morte_s550_r54235}' if morteLogic.r54235_condition():
@@ -8239,7 +8239,7 @@ label morte_s550: # from 548.2
 
 # s551 # say54239
 label morte_s551: # from 549.0 549.1 550.0 550.1
-    nr 'Morte schüttelt den Kopf. "Nicht daß ich wüßte."{#morte_s551_}'
+    nr 'Morte schüttelt den Kopf. "Nicht daß ich wüßte."{#morte_s551_1}'
 
     menu:
         '"Kannst du mir noch mehr über die Festung erzählen?"{#morte_s551_r54240}':
@@ -8258,7 +8258,7 @@ label morte_s551: # from 549.0 549.1 550.0 550.1
 
 # s552 # say54243
 label morte_s552: # from 548.3 551.0
-    nr '"Mehr kann ich dir nicht sagen, Meister… Nur, daß wir unter Garantie getrennt werden, wenn wir ankommen, der Ort ist RIESIG, und es wimmelt dort nur so vor Schatten… Und irgendwo in der Festung ist etwas, das mächtiger ist als *jeder* von uns. Mehr gibt es nicht zu sagen…"{#morte_s552_}'
+    nr '"Mehr kann ich dir nicht sagen, Meister… Nur, daß wir unter Garantie getrennt werden, wenn wir ankommen, der Ort ist RIESIG, und es wimmelt dort nur so vor Schatten… Und irgendwo in der Festung ist etwas, das mächtiger ist als *jeder* von uns. Mehr gibt es nicht zu sagen…"{#morte_s552_1}'
 
     menu:
         '"Bist du *sicher*? Das ist vielleicht unsere letzte Gelegenheit, miteinander zu reden…"{#morte_s552_r54244}':
@@ -8278,7 +8278,7 @@ label morte_s552: # from 548.3 551.0
 
 # s553 # say54249
 label morte_s553: # from 552.0
-    nr '"Tja…" Morte hält eine Augenblick inne. "Ja, eine Sache solltest du noch wissen: Dein Ich, das ich früher gekannt habe, das Ich, das uns hierher geführt hat - der war nicht wie du. Überhaupt nicht."{#morte_s553_}'
+    nr '"Tja…" Morte hält eine Augenblick inne. "Ja, eine Sache solltest du noch wissen: Dein Ich, das ich früher gekannt habe, das Ich, das uns hierher geführt hat - der war nicht wie du. Überhaupt nicht."{#morte_s553_1}'
 
     menu:
         '"Was meinst du?"{#morte_s553_r54250}' if morteLogic.r54250_condition():
@@ -8301,7 +8301,7 @@ label morte_s553: # from 552.0
 
 # s554 # say54263
 label morte_s554: # from 553.0
-    nr '"Dein anderes Ich, dem… dem waren die andern egal. Eigentlich alle. Wir hätten ALLE in der Festung draufgehen können, und er hätte nicht mit der Wimper gezuckt. Darum… möchte ich, daß du so bleibst, wie du bist… ich mag dich *so* nämlich lieber. VIEL lieber."{#morte_s554_}'
+    nr '"Dein anderes Ich, dem… dem waren die andern egal. Eigentlich alle. Wir hätten ALLE in der Festung draufgehen können, und er hätte nicht mit der Wimper gezuckt. Darum… möchte ich, daß du so bleibst, wie du bist… ich mag dich *so* nämlich lieber. VIEL lieber."{#morte_s554_1}'
 
     menu:
         '"Aber das ist nicht alles, was du sagen willst, stimmt„s?"{#morte_s554_r54264}' if morteLogic.r54264_condition():
@@ -8324,7 +8324,7 @@ label morte_s554: # from 553.0
 
 # s555 # say54268
 label morte_s555: # from 553.1
-    nr '"Was ich sagen will ist, daß DU, trotz deines eselshaften Benehmens, mehr Geist besitzt, als er je hatte. Dein anderes Ich, der… der war so distanziert. Darum… will ich, daß du das nicht vergißt."{#morte_s555_}'
+    nr '"Was ich sagen will ist, daß DU, trotz deines eselshaften Benehmens, mehr Geist besitzt, als er je hatte. Dein anderes Ich, der… der war so distanziert. Darum… will ich, daß du das nicht vergißt."{#morte_s555_1}'
 
     menu:
         '"Aber das ist nicht alles, was du sagen willst, stimmt„s?"{#morte_s555_r54269}' if morteLogic.r54269_condition():
@@ -8347,7 +8347,7 @@ label morte_s555: # from 553.1
 
 # s556 # say54273
 label morte_s556: # from 554.0 554.1 555.0 555.1
-    nr '"Nein…" Morte hält inne. "Da ist noch etwas. Ich habe dieses *andere* Ich von dir damals vielleicht nicht besonders gemocht, aber er war ein ziemlich schlauer Kerl - der schlaueste, den ich je kannte. Der ging immer auf Nummer sicher. Wenn er in der Festung gestorben ist, dann heißt das… naja…"{#morte_s556_}'
+    nr '"Nein…" Morte hält inne. "Da ist noch etwas. Ich habe dieses *andere* Ich von dir damals vielleicht nicht besonders gemocht, aber er war ein ziemlich schlauer Kerl - der schlaueste, den ich je kannte. Der ging immer auf Nummer sicher. Wenn er in der Festung gestorben ist, dann heißt das… naja…"{#morte_s556_1}'
 
     menu:
         '"Du glaubst nicht, daß ich es schaffen kann, was?"{#morte_s556_r54274}':
@@ -8366,7 +8366,7 @@ label morte_s556: # from 554.0 554.1 555.0 555.1
 
 # s557 # say54277
 label morte_s557: # from 556.0
-    nr '"Nein…" Morte schüttelt den Kopf. "Das ist es nicht, Meister. Weil es nicht immer darum geht, wer der Cleverste ist, oder wer der Mächtigste ist, oder wer der Härteste ist… Manchmal geht es einfach nur darum, wer du bist und was du *wirklich* willst. Ich meine, du wolltest einmal unsterblich werden - aber nach allem, ist das *wirklich*, was du wolltest? Sei dir diesmal einfach wirklich sicher, was du willst, mehr sag ich gar nicht."{#morte_s557_}'
+    nr '"Nein…" Morte schüttelt den Kopf. "Das ist es nicht, Meister. Weil es nicht immer darum geht, wer der Cleverste ist, oder wer der Mächtigste ist, oder wer der Härteste ist… Manchmal geht es einfach nur darum, wer du bist und was du *wirklich* willst. Ich meine, du wolltest einmal unsterblich werden - aber nach allem, ist das *wirklich*, was du wolltest? Sei dir diesmal einfach wirklich sicher, was du willst, mehr sag ich gar nicht."{#morte_s557_1}'
 
     menu:
         '"In Ordnung. Sieh mal, Morte… Wir haben noch nie darüber gesprochen, aber du mußt nicht mit mir mitkommen, okay? Ich verstehe, wenn du nicht willst."{#morte_s557_r54278}' if morteLogic.r54278_condition():
@@ -8386,7 +8386,7 @@ label morte_s557: # from 556.0
 
 # s558 # say54281
 label morte_s558: # from 557.0
-    nr '"Ja… ich weiß, Meister. Und ich kann dich nicht anlügen… Ich will nicht gehen… aber ich werde. Du mußt wissen: Wenn wir erst durch dieses Portal geschritten sind, dann dreht sich nicht mehr alles um *dich*. Du spielst mit *unserem* Leben, und uns stellt keiner wieder her, wenn wir sterben."{#morte_s558_}'
+    nr '"Ja… ich weiß, Meister. Und ich kann dich nicht anlügen… Ich will nicht gehen… aber ich werde. Du mußt wissen: Wenn wir erst durch dieses Portal geschritten sind, dann dreht sich nicht mehr alles um *dich*. Du spielst mit *unserem* Leben, und uns stellt keiner wieder her, wenn wir sterben."{#morte_s558_1}'
 
     menu:
         '"Warum bist du dann…"{#morte_s558_r54282}' if morteLogic.r54282_condition():
@@ -8412,28 +8412,28 @@ label morte_s558: # from 557.0
 
 # s559 # say54762
 label morte_s559: # -
-    nr 'Morte entgegnet: "Du riechst auch nicht besser. Wann hast du denn zum letzten Mal gebadet?"{#morte_s559_}'
+    nr 'Morte entgegnet: "Du riechst auch nicht besser. Wann hast du denn zum letzten Mal gebadet?"{#morte_s559_1}'
 
     jump grace_s176  # EXTERN
 
 
 # s560 # say54763
 label morte_s560: # -
-    nr 'Morte entgegnet: "Du riechst auch nicht besser. Wann hast du denn zum letzten Mal gebadet?"{#morte_s560_}'
+    nr 'Morte entgegnet: "Du riechst auch nicht besser. Wann hast du denn zum letzten Mal gebadet?"{#morte_s560_1}'
 
     jump grace_s177  # EXTERN
 
 
 # s561 # say54764
 label morte_s561: # -
-    nr 'Morte entgegnet: "Du riechst auch nicht besser. Wann hast du denn zum letzten Mal gebadet?"{#morte_s561_}'
+    nr 'Morte entgegnet: "Du riechst auch nicht besser. Wann hast du denn zum letzten Mal gebadet?"{#morte_s561_1}'
 
     jump trias_s8  # EXTERN
 
 
 # s562 # say54831
 label morte_s562: # from 558.2
-    nr '"Was Ravel sagte, im Irrgang - sie sagte, du ziehst Leute, die leiden, an wie ein Magnet." Morte schüttelt den Kopf. "Vielleicht ist es, weil *du* schon so lange leidest. Und vielleicht werden *wir*, wenn du das alles geregelt hast, auch ein bißchen Frieden finden. Vielleicht."{#morte_s562_}'
+    nr '"Was Ravel sagte, im Irrgang - sie sagte, du ziehst Leute, die leiden, an wie ein Magnet." Morte schüttelt den Kopf. "Vielleicht ist es, weil *du* schon so lange leidest. Und vielleicht werden *wir*, wenn du das alles geregelt hast, auch ein bißchen Frieden finden. Vielleicht."{#morte_s562_1}'
 
     menu:
         '"Vielleicht. Dann… bist du dabei, Morte?"{#morte_s562_r54832}' if morteLogic.r54832_condition():
@@ -8448,7 +8448,7 @@ label morte_s562: # from 558.2
 
 # s563 # say54834
 label morte_s563: # from 558.3
-    nr '"Was Ravel gesagt hat, im Irrgang - und was Fell über das Symbol, Folter, gesagt hat? Sie sagen, du ziehst Leute, die leiden, an wie ein Magnet." Morte schüttelt den Kopf. "Vielleicht ist es, weil *du* schon so lange leidest. Und vielleicht werden *wir*, wenn du das alles geregelt hast, auch ein bißchen Frieden finden. Vielleicht."{#morte_s563_}'
+    nr '"Was Ravel gesagt hat, im Irrgang - und was Fell über das Symbol, Folter, gesagt hat? Sie sagen, du ziehst Leute, die leiden, an wie ein Magnet." Morte schüttelt den Kopf. "Vielleicht ist es, weil *du* schon so lange leidest. Und vielleicht werden *wir*, wenn du das alles geregelt hast, auch ein bißchen Frieden finden. Vielleicht."{#morte_s563_1}'
 
     menu:
         '"Vielleicht. Dann… bist du dabei, Morte?"{#morte_s563_r54835}' if morteLogic.r54835_condition():
@@ -8463,7 +8463,7 @@ label morte_s563: # from 558.3
 
 # s564 # say54837
 label morte_s564: # from 558.4
-    nr '"Ich kenne Dich jetzt schon sehr lange, Meister, und du hast *irgend etwas* an dir, das Leute, die leiden, anzieht wie ein Magnet." Morte schüttelt den Kopf. "Vielleicht ist es deshalb, weil *du* schon so lange leidest. Vielleicht werden *wir*, wenn du das alles geregelt hast, auch ein bißchen Frieden finden. Vielleicht."{#morte_s564_}'
+    nr '"Ich kenne Dich jetzt schon sehr lange, Meister, und du hast *irgend etwas* an dir, das Leute, die leiden, anzieht wie ein Magnet." Morte schüttelt den Kopf. "Vielleicht ist es deshalb, weil *du* schon so lange leidest. Vielleicht werden *wir*, wenn du das alles geregelt hast, auch ein bißchen Frieden finden. Vielleicht."{#morte_s564_1}'
 
     menu:
         '"Vielleicht. Dann… bist du dabei, Morte?"{#morte_s564_r54838}' if morteLogic.r54838_condition():
@@ -8478,28 +8478,28 @@ label morte_s564: # from 558.4
 
 # s565 # say54840
 label morte_s565: # from 548.0
-    nr 'Morte verstummt.{#morte_s565_}'
+    nr 'Morte verstummt.{#morte_s565_1}'
 
     jump dakkon_s175  # EXTERN
 
 
 # s566 # say54841
 label morte_s566: # -
-    nr '"Der Schädel, das war ich," sagt Morte leise. "Die Frau war so eine Braut, die Deionarra hieß. Den Bogenschützen hab„ ich nicht gekannt…"{#morte_s566_}'
+    nr '"Der Schädel, das war ich," sagt Morte leise. "Die Frau war so eine Braut, die Deionarra hieß. Den Bogenschützen hab„ ich nicht gekannt…"{#morte_s566_1}'
 
     jump dakkon_s177  # EXTERN
 
 
 # s567 # say54842
 label morte_s567: # -
-    nr '"Ja…" Morte klappert, als würde er frieren. "Meister, in dieser Festung sind *überall* Schatten…"{#morte_s567_}'
+    nr '"Ja…" Morte klappert, als würde er frieren. "Meister, in dieser Festung sind *überall* Schatten…"{#morte_s567_1}'
 
     jump dakkon_s178  # EXTERN
 
 
 # s568 # say54843
 label morte_s568: # -
-    nr '"Sie haben mit mir gesprochen wie die Schädelsäule…" Morte senkt die Stimme. "Sie *wußten*…"{#morte_s568_}'
+    nr '"Sie haben mit mir gesprochen wie die Schädelsäule…" Morte senkt die Stimme. "Sie *wußten*…"{#morte_s568_1}'
 
     menu:
         '"Also, ihr beiden: Ich muß alles wissen, was ihr mir über diese Festung sagen könnt…{#morte_s568_r54844}':
@@ -8509,21 +8509,21 @@ label morte_s568: # -
 
 # s569 # say54845
 label morte_s569: # -
-    nr '"Mehr kann ich dir nicht sagen, Meister - außer, daß wir unter Garantie getrennt werden, sobald wir dort ankommen. Der Ort ist RIESIG, und er wimmelt von Schatten… Und irgendwo in dieser Festung ist etwas, das mächtiger ist als wir *alle*."{#morte_s569_}'
+    nr '"Mehr kann ich dir nicht sagen, Meister - außer, daß wir unter Garantie getrennt werden, sobald wir dort ankommen. Der Ort ist RIESIG, und er wimmelt von Schatten… Und irgendwo in dieser Festung ist etwas, das mächtiger ist als wir *alle*."{#morte_s569_1}'
 
     jump dakkon_s182  # EXTERN
 
 
 # s570 # say54846
 label morte_s570: # -
-    nr '"Ich kann dir nicht mehr sagen, Meister - nur, daß eine Gruppe, die da reingeht, unter Garantie getrennt wird, sobald sie dort ankommt. Der Ort ist RIESIG, und er wimmelt von Schatten… Und irgendwo in dieser Festung ist etwas, das mächtiger ist als alles, was du je getroffen hast."{#morte_s570_}'
+    nr '"Ich kann dir nicht mehr sagen, Meister - nur, daß eine Gruppe, die da reingeht, unter Garantie getrennt wird, sobald sie dort ankommt. Der Ort ist RIESIG, und er wimmelt von Schatten… Und irgendwo in dieser Festung ist etwas, das mächtiger ist als alles, was du je getroffen hast."{#morte_s570_1}'
 
     jump dakkon_s182  # EXTERN
 
 
 # s571 # say55832
 label morte_s571: # -
-    nr '"Meister, hier ist Ärger vorprogrammiert - dieser Modron ist abtrünnig geworden."{#morte_s571_}'
+    nr '"Meister, hier ist Ärger vorprogrammiert - dieser Modron ist abtrünnig geworden."{#morte_s571_1}'
 
     menu:
         '"Abtrünnig?"{#morte_s571_r55833}':
@@ -8533,7 +8533,7 @@ label morte_s571: # -
 
 # s572 # say55834
 label morte_s572: # from 571.0
-    nr '"Ja, weißt du, manchmal bricht in so einem Modron so ein kleines Chaos aus, und wenn das passiert,… Naja., man könnte sagen, daß diese abtrünnigen Einzelgänger-Modronen eine Art… Rückwärts-Modronen sind."{#morte_s572_}'
+    nr '"Ja, weißt du, manchmal bricht in so einem Modron so ein kleines Chaos aus, und wenn das passiert,… Naja., man könnte sagen, daß diese abtrünnigen Einzelgänger-Modronen eine Art… Rückwärts-Modronen sind."{#morte_s572_1}'
 
     menu:
         '"Dann ist das ein… Rückwärts-Modron?"{#morte_s572_r55836}':
@@ -8543,7 +8543,7 @@ label morte_s572: # from 571.0
 
 # s573 # say55837
 label morte_s573: # -
-    nr '"Meister, so viel Spaß das hier auch macht, ich schätze, einem Baatezu einen Barhocker unter dem Hintern wegzuziehen macht mehr Sinn, als mit diesem blöden Polygon mit unserer Knochenkiste zu klappern."{#morte_s573_}'
+    nr '"Meister, so viel Spaß das hier auch macht, ich schätze, einem Baatezu einen Barhocker unter dem Hintern wegzuziehen macht mehr Sinn, als mit diesem blöden Polygon mit unserer Knochenkiste zu klappern."{#morte_s573_1}'
 
     menu:
         '"Weißt *du*, was Getriebegeister sind, Morte?"{#morte_s573_r55839}':
@@ -8553,7 +8553,7 @@ label morte_s573: # -
 
 # s574 # say55841
 label morte_s574: # from 573.0
-    nr '"Meister, ich habe keine Ahnung, was dieser Würfel da herumklappert."{#morte_s574_}'
+    nr '"Meister, ich habe keine Ahnung, was dieser Würfel da herumklappert."{#morte_s574_1}'
 
     menu:
         '"Ich dachte, du wärst der *Experte* zu den Ebenen."{#morte_s574_r55842}':
@@ -8571,7 +8571,7 @@ label morte_s574: # from 573.0
 
 # s575 # say55845
 label morte_s575: # from 574.0
-    nr '"W - Ich weiß mehr als *du*, du stolpernder, krächzender Gedächtnisloser! Außerdem hab ich noch drei Wissensstückchen für dich, die dann in deiner leeren Hirnschachtel rumrasseln können: Erstens gibt es zu den Ebenen KEINE Experten, zweitens, ich komme so einem Experten mit Sicherheit am nächsten, und drittens, behandle mich mit etwas Respekt. Warum? Siehe Punkt zwei."{#morte_s575_}'
+    nr '"W - Ich weiß mehr als *du*, du stolpernder, krächzender Gedächtnisloser! Außerdem hab ich noch drei Wissensstückchen für dich, die dann in deiner leeren Hirnschachtel rumrasseln können: Erstens gibt es zu den Ebenen KEINE Experten, zweitens, ich komme so einem Experten mit Sicherheit am nächsten, und drittens, behandle mich mit etwas Respekt. Warum? Siehe Punkt zwei."{#morte_s575_1}'
 
     menu:
         '"Na gut. Nordom, ich wollte dir noch ein paar Fragen stellen…"{#morte_s575_r55846}':
@@ -8585,7 +8585,7 @@ label morte_s575: # from 574.0
 
 # s576 # say55848
 label morte_s576: # -
-    nr '"Mechanus? Sterbenslangweilig, Meister. Stell dir eine Ebene voller Modronen und riesiger Zahnradgetriebe vor, und du hast die große, LANGWEILIGE Ebene Mechanus. Zu viele Gesetze, zu nervig. Ein Ort, an den man nicht einmal denken will, geschweige denn, ihn besuchen.{#morte_s576_}'
+    nr '"Mechanus? Sterbenslangweilig, Meister. Stell dir eine Ebene voller Modronen und riesiger Zahnradgetriebe vor, und du hast die große, LANGWEILIGE Ebene Mechanus. Zu viele Gesetze, zu nervig. Ein Ort, an den man nicht einmal denken will, geschweige denn, ihn besuchen.{#morte_s576_1}'
 
     if morteLogic.s576_condition():
         $ morteLogic.s576_action()
@@ -8602,7 +8602,7 @@ label morte_s576: # -
 
 # s577 # say55855
 label morte_s577: # -
-    nr '"ENTSCHULDIGE, du Priesterin der Frömmigkeit, aber Mechanus IST die langweiligste Ebene im Universum… Das einzig Interessante daran wäre, wenn *du* zu Besuch kämst…" Morte rollt die Augen. "Aber ich glaube, auch *das* würde nach einer Weile seinen Reiz verlieren."{#morte_s577_}'
+    nr '"ENTSCHULDIGE, du Priesterin der Frömmigkeit, aber Mechanus IST die langweiligste Ebene im Universum… Das einzig Interessante daran wäre, wenn *du* zu Besuch kämst…" Morte rollt die Augen. "Aber ich glaube, auch *das* würde nach einer Weile seinen Reiz verlieren."{#morte_s577_1}'
 
     menu:
         '"Nordom, was hast du mit „Null Heimat“ gemeint?"{#morte_s577_r55857}':
@@ -8616,7 +8616,7 @@ label morte_s577: # -
 
 # s578 # say55860
 label morte_s578: # -
-    nr '"Alle Modronen sind Teil dieser Quelle, Meister, ist so wie eine riesige Energiebank… Wenn einer von ihnen stirbt, wird die Energie, die man zu seiner Herstellung benötigt hat, in die Bank zurückabsorbiert, und ein neuer wird ausgespuckt. Die Sache ist… wenn so ein Modron ein bißchen plemplem wird, dann bricht er die Verbindung ab, behält aber ein bißchen Energie."{#morte_s578_}'
+    nr '"Alle Modronen sind Teil dieser Quelle, Meister, ist so wie eine riesige Energiebank… Wenn einer von ihnen stirbt, wird die Energie, die man zu seiner Herstellung benötigt hat, in die Bank zurückabsorbiert, und ein neuer wird ausgespuckt. Die Sache ist… wenn so ein Modron ein bißchen plemplem wird, dann bricht er die Verbindung ab, behält aber ein bißchen Energie."{#morte_s578_1}'
 
     if morteLogic.s578_condition():
         jump grace_s186  # EXTERN
@@ -8636,28 +8636,28 @@ label morte_s578: # -
 
 # s579 # say55867
 label morte_s579: # -
-    nr 'Morte funkelt Grace, die Gefallene, zornig an. "Also *entschuldige* mal! Ich hatte die Frage bereits beantwortet, danke vielmals. *Ich* bin hier die Informationsquelle, NICHT du, ist das klar?"{#morte_s579_}'
+    nr 'Morte funkelt Grace, die Gefallene, zornig an. "Also *entschuldige* mal! Ich hatte die Frage bereits beantwortet, danke vielmals. *Ich* bin hier die Informationsquelle, NICHT du, ist das klar?"{#morte_s579_1}'
 
     jump grace_s187  # EXTERN
 
 
 # s580 # say55870
 label morte_s580: # -
-    nr '"Oh, *schon* kapiert! Wenn ich vielleicht ein Sukkubus wäre, dann würdest du häufiger auf MICH hören, ja? Wenn ich vielleicht ab und zu ein bißchen mehr Haut zeigen würde, dann würdest du mir mehr Respekt entgegenbringen, was? Das ist ziemlich oberflächlich, Meister, Ziemlich oberflächlich! Ich sollte…"{#morte_s580_}'
+    nr '"Oh, *schon* kapiert! Wenn ich vielleicht ein Sukkubus wäre, dann würdest du häufiger auf MICH hören, ja? Wenn ich vielleicht ab und zu ein bißchen mehr Haut zeigen würde, dann würdest du mir mehr Respekt entgegenbringen, was? Das ist ziemlich oberflächlich, Meister, Ziemlich oberflächlich! Ich sollte…"{#morte_s580_1}'
 
     jump grace_s191  # EXTERN
 
 
 # s581 # say55871
 label morte_s581: # -
-    nr 'NULL NODE{#morte_s581_}'
+    nr 'NULL NODE{#morte_s581_1}'
 
     jump morte_dispose
 
 
 # s582 # say55873
 label morte_s582: # -
-    nr '"Ach wirklich?! Ich…?! Naja…! Ja, du hast… hast du das gehört, Meister? Was die Sukkubusfrau gesagt hat? Sie hat recht. Ich bin leichter zu verstehen, redegewandter, verstehst du? Du bist also auf mich angewiesen, siehst du?"{#morte_s582_}'
+    nr '"Ach wirklich?! Ich…?! Naja…! Ja, du hast… hast du das gehört, Meister? Was die Sukkubusfrau gesagt hat? Sie hat recht. Ich bin leichter zu verstehen, redegewandter, verstehst du? Du bist also auf mich angewiesen, siehst du?"{#morte_s582_1}'
 
     menu:
         '"In Ordnung, dann noch eine Frage: Ihr sagt beide, daß Nordom ein Teil der Quelle, aber von ihr abgeschnitten ist. Und wenn ein Modron stirbt, wird er zurückabsorbiert. Gilt das auch für Nordom?"{#morte_s582_r55875}' if morteLogic.r55875_condition():
@@ -8679,7 +8679,7 @@ label morte_s582: # -
 
 # s583 # say55882
 label morte_s583: # from 582.0
-    nr 'Morte nickt.{#morte_s583_}'
+    nr 'Morte nickt.{#morte_s583_1}'
 
     menu:
         '"Und wenn er stirbt, wird ein neuer Nordom erschaffen."{#morte_s583_r55884}':
@@ -8689,7 +8689,7 @@ label morte_s583: # from 582.0
 
 # s584 # say55886
 label morte_s584: # from 583.0
-    nr '"Äh… nein."{#morte_s584_}'
+    nr '"Äh… nein."{#morte_s584_1}'
 
     menu:
         '"Was passiert?"{#morte_s584_r55887}':
@@ -8699,7 +8699,7 @@ label morte_s584: # from 583.0
 
 # s585 # say55890
 label morte_s585: # from 584.0
-    nr '"Naja, sie nehmen seine Energie, Meister, und dann spucken sie einen anderen Modron aus, aber das ist dann nicht Nordom, weil er eigentlich kein *richtiger* Modron mehr ist. Er hat zu viel von den Ebenen in sich. Sie würden ihn durch einen Nicht-Nordom ersetzen.{#morte_s585_}'
+    nr '"Naja, sie nehmen seine Energie, Meister, und dann spucken sie einen anderen Modron aus, aber das ist dann nicht Nordom, weil er eigentlich kein *richtiger* Modron mehr ist. Er hat zu viel von den Ebenen in sich. Sie würden ihn durch einen Nicht-Nordom ersetzen.{#morte_s585_1}'
 
     menu:
         '"Also… dadurch, daß er abtrünnig geworden ist, ist er… sterblich geworden?"{#morte_s585_r55892}':
@@ -8717,7 +8717,7 @@ label morte_s585: # from 584.0
 
 # s586 # say55897
 label morte_s586: # from 585.0
-    nr 'Morte ist einen Moment still. "Naja… so könnte man es sagen. Ich meine, wenn er nicht diese kleine Abtrünnigen-Rebellion abgezogen hätte, dann wäre alles in Ordnung… Wenn er stirbt, wird er einfach durch einen anderen Modron ersetzt. Aber wo er jetzt „rückwärts“ geworden ist, tja, dieser Teil von ihm verschwindet, wenn er stirbt."{#morte_s586_}'
+    nr 'Morte ist einen Moment still. "Naja… so könnte man es sagen. Ich meine, wenn er nicht diese kleine Abtrünnigen-Rebellion abgezogen hätte, dann wäre alles in Ordnung… Wenn er stirbt, wird er einfach durch einen anderen Modron ersetzt. Aber wo er jetzt „rückwärts“ geworden ist, tja, dieser Teil von ihm verschwindet, wenn er stirbt."{#morte_s586_1}'
 
     menu:
         '"In Ordnung. Nordom, ich wollte dich noch was fragen…"{#morte_s586_r55898}':
@@ -8731,7 +8731,7 @@ label morte_s586: # from 585.0
 
 # s587 # say55901
 label morte_s587: # -
-    nr '"Ahhhhhh! Bei allen Kräften und meinem Verstand, hör auf damit! Er wird noch völlig durchdrehen, wenn du ihn das immer wieder fragst!"{#morte_s587_}'
+    nr '"Ahhhhhh! Bei allen Kräften und meinem Verstand, hör auf damit! Er wird noch völlig durchdrehen, wenn du ihn das immer wieder fragst!"{#morte_s587_1}'
 
     menu:
         '"Das hatte ich eigentlich *bezweckt*, Morte."{#morte_s587_r55902}':
@@ -8754,7 +8754,7 @@ label morte_s587: # -
 
 # s588 # say55909
 label morte_s588: # from 587.0
-    nr '"Oh." Morte „grinst“. "Du hättest ja etwas SAGEN können. Mach doch bitte weiter. Natürlich…" Morte *klickt* mit den Zähnen in einer Imitation von Nordom. "Wenn du etwas über Modronen wissen willst, solltest du MICH fragen."{#morte_s588_}'
+    nr '"Oh." Morte „grinst“. "Du hättest ja etwas SAGEN können. Mach doch bitte weiter. Natürlich…" Morte *klickt* mit den Zähnen in einer Imitation von Nordom. "Wenn du etwas über Modronen wissen willst, solltest du MICH fragen."{#morte_s588_1}'
 
     menu:
         '"Okay, Morte… Was kannst du mir über Modronen sagen?"{#morte_s588_r55910}':
@@ -8772,7 +8772,7 @@ label morte_s588: # from 587.0
 
 # s589 # say55914
 label morte_s589: # from 587.1
-    nr '"Paß auf, Meister, NORMALE Modronen kapieren fast gar nichts außer ihren Grundaufgaben, und dieses blöde Polygon hier kommt obendrein gerade aus den Ebenen. Verwirre diesen Würfel also nicht, okay? Zumindest nicht, solange er bewaffnet ist. Wenn du was über Modronen wissen willst, dann frag nicht ihn, sondern mich."{#morte_s589_}'
+    nr '"Paß auf, Meister, NORMALE Modronen kapieren fast gar nichts außer ihren Grundaufgaben, und dieses blöde Polygon hier kommt obendrein gerade aus den Ebenen. Verwirre diesen Würfel also nicht, okay? Zumindest nicht, solange er bewaffnet ist. Wenn du was über Modronen wissen willst, dann frag nicht ihn, sondern mich."{#morte_s589_1}'
 
     menu:
         '"Okay, Morte… Was kannst du mir über Modronen sagen?"{#morte_s589_r55915}':
@@ -8790,7 +8790,7 @@ label morte_s589: # from 587.1
 
 # s590 # say55921
 label morte_s590: # from 588.0 589.0
-    nr '"Das ist so, Meister: Modronen sind diese blöden geometrischen Figuren, die auf ihrer Heimatebene, Mechanus, herumrattern. Sie sind echt sauber, ordentlich, und sie wollen, daß der REST des Multiversums auch so ist. Deshalb sind sie so eine Plage."{#morte_s590_}'
+    nr '"Das ist so, Meister: Modronen sind diese blöden geometrischen Figuren, die auf ihrer Heimatebene, Mechanus, herumrattern. Sie sind echt sauber, ordentlich, und sie wollen, daß der REST des Multiversums auch so ist. Deshalb sind sie so eine Plage."{#morte_s590_1}'
 
     menu:
         '"Was ist falsch daran, das Multiversum ordentlicher machen zu wollen?"{#morte_s590_r55923}':
@@ -8813,7 +8813,7 @@ label morte_s590: # from 588.0 589.0
 
 # s591 # say55930
 label morte_s591: # from 590.1
-    nr '"Das ist der Ort, wo diese ganzen Uhrwerksdrohnen herkommen. Frag ihn ruhig danach und sieh mal, was er dazu sagt. Sie sitzen da herum und räumen die ganze Zeit nur auf… Dies katalogisieren, *das* in Ordnung bringen, *jenes* in Ordnung bringen, dieses neue Gesetz machen und so weiter und so weiter."{#morte_s591_}'
+    nr '"Das ist der Ort, wo diese ganzen Uhrwerksdrohnen herkommen. Frag ihn ruhig danach und sieh mal, was er dazu sagt. Sie sitzen da herum und räumen die ganze Zeit nur auf… Dies katalogisieren, *das* in Ordnung bringen, *jenes* in Ordnung bringen, dieses neue Gesetz machen und so weiter und so weiter."{#morte_s591_1}'
 
     menu:
         'Wahrheit: "Das scheint mir ein edles Ziel zu sein. Was ist falsch daran, das Multiversum ordentlicher machen zu wollen?"{#morte_s591_r55931}':
@@ -8836,14 +8836,14 @@ label morte_s591: # from 590.1
 
 # s592 # say55938
 label morte_s592: # from 590.0 591.0 591.1
-    nr 'Morte blickt zu Nordom hinüber, der seine linke Armbrust an die Seite seines Kopfes hält, als würde er ihr zuhören.{#morte_s592_}'
+    nr 'Morte blickt zu Nordom hinüber, der seine linke Armbrust an die Seite seines Kopfes hält, als würde er ihr zuhören.{#morte_s592_1}'
 
     jump morte_s593
 
 
 # s593 # say55940
 label morte_s593: # from 592.0
-    nr '"Weil, Meister, das Chaos seinen Platz hat. Und wenn alles so wäre, wie ein *Modron* es sieht, dann wäre das hier kein richtiges Leben… oder zumindest kein Leben, das ich führen wollte. Sie wollen immer alles nur *strukturieren*. Bäh."{#morte_s593_}'
+    nr '"Weil, Meister, das Chaos seinen Platz hat. Und wenn alles so wäre, wie ein *Modron* es sieht, dann wäre das hier kein richtiges Leben… oder zumindest kein Leben, das ich führen wollte. Sie wollen immer alles nur *strukturieren*. Bäh."{#morte_s593_1}'
 
     menu:
         'Wahrheit: "Das sehe ich auch so. Es muß auch Chaos geben…. Zu viele Gesetze, und wir würden völlig stagnieren. Hör mal, ich hätte da noch ein paar Fragen an Nordom…"{#morte_s593_r55941}':
@@ -8862,14 +8862,14 @@ label morte_s593: # from 592.0
 
 # s594 # say56029
 label morte_s594: # -
-    nr '"Ich *mag* es, wie sie riecht. Das ist schön."{#morte_s594_}'
+    nr '"Ich *mag* es, wie sie riecht. Das ist schön."{#morte_s594_1}'
 
     jump fhjull_s27  # EXTERN
 
 
 # s595 # say56030
 label morte_s595: # -
-    nr '"Moment mal Meister… Baator, das hört sich GAR NICHT GUT an. Dieses Scheusal verheimlicht uns bestimmt etwas… Und selbst wenn es diese „Schädelsäule“ gibt, finden wir wahrscheinlich jemand anders, der weiß, wie wir zu der Festung kommen, *ohne* uns in eine der gefährlichsten Ebenen des Multiversums zu begeben.{#morte_s595_}'
+    nr '"Moment mal Meister… Baator, das hört sich GAR NICHT GUT an. Dieses Scheusal verheimlicht uns bestimmt etwas… Und selbst wenn es diese „Schädelsäule“ gibt, finden wir wahrscheinlich jemand anders, der weiß, wie wir zu der Festung kommen, *ohne* uns in eine der gefährlichsten Ebenen des Multiversums zu begeben.{#morte_s595_1}'
 
     menu:
         '"Verheimlichst du uns etwas, Schlangenzunge?"{#morte_s595_r56031}':
@@ -8883,7 +8883,7 @@ label morte_s595: # -
 
 # s596 # say56033
 label morte_s596: # from 595.1
-    nr '"Das ist ein gefährlicher Ort, Meister. Ich würde da lieber nicht hingehen. Ich war mal dort, und es ist echt nicht nett da. In Ordnung?"{#morte_s596_}'
+    nr '"Das ist ein gefährlicher Ort, Meister. Ich würde da lieber nicht hingehen. Ich war mal dort, und es ist echt nicht nett da. In Ordnung?"{#morte_s596_1}'
 
     menu:
         '"Wir sprechen später darüber, Schlangenzunge. Ich hätte ein paar Fragen…"{#morte_s596_r56034}':
@@ -8893,7 +8893,7 @@ label morte_s596: # from 595.1
 
 # s597 # say56936
 label morte_s597: # -
-    nr '"Dieser Kerl taucht auch *überall* auf!"{#morte_s597_}'
+    nr '"Dieser Kerl taucht auch *überall* auf!"{#morte_s597_1}'
 
     menu:
         '"Ja, aber er hat uns geholfen. Gehen wir."{#morte_s597_r56937}':
@@ -8903,14 +8903,14 @@ label morte_s597: # -
 
 # s598 # say59827
 label morte_s598: # -
-    nr '(NULL NODE){#morte_s598_}'
+    nr '(NULL NODE){#morte_s598_1}'
 
     jump morte_dispose
 
 
 # s599 # say60950
 label morte_s599: # -
-    nr '"He, tot sein ist gar nicht so übel. Betrachte es doch mal von der positiven Seite… Wenigstens mußt du nicht mehr mit diesen lächerlichen Schnörkeln reden."{#morte_s599_}'
+    nr '"He, tot sein ist gar nicht so übel. Betrachte es doch mal von der positiven Seite… Wenigstens mußt du nicht mehr mit diesen lächerlichen Schnörkeln reden."{#morte_s599_1}'
 
     menu:
         '"Still, Morte. Ich regele das. Erzähl mir, was passiert ist."{#morte_s599_r61111}':
@@ -8924,7 +8924,7 @@ label morte_s599: # -
 
 # s600 # say61408
 label morte_s600: # -
-    nr '"Ähm… also, Meister… Was meinst du? Wie wär„s, dem alten Morte ein bißchen Klimper zu geben? Es ist schon ein bißchen länger als eine Weile her, weißt du…"{#morte_s600_}'
+    nr '"Ähm… also, Meister… Was meinst du? Wie wär„s, dem alten Morte ein bißchen Klimper zu geben? Es ist schon ein bißchen länger als eine Weile her, weißt du…"{#morte_s600_1}'
 
     menu:
         '"Sicher, warum nicht. Madam?"{#morte_s600_r61411}' if morteLogic.r61411_condition():
@@ -8942,7 +8942,7 @@ label morte_s600: # -
 
 # s601 # say61409
 label morte_s601: # -
-    nr '"In Ordnung! Danke, Meister!" Morte dreht sich um und folgt der Frau hinaus.{#morte_s601_}'
+    nr '"In Ordnung! Danke, Meister!" Morte dreht sich um und folgt der Frau hinaus.{#morte_s601_1}'
 
     menu:
         'Warte, daß er zurückkommt.{#morte_s601_r61414}':
@@ -8953,7 +8953,7 @@ label morte_s601: # -
 
 # s602 # say61410
 label morte_s602: # -
-    nr 'Morte scheint deine Anwesenheit nur halb wahrzunehmen. Abwechselnd kichert er vor sich hin oder seufzt zufrieden.{#morte_s602_}'
+    nr 'Morte scheint deine Anwesenheit nur halb wahrzunehmen. Abwechselnd kichert er vor sich hin oder seufzt zufrieden.{#morte_s602_1}'
 
     menu:
         '"In Ordnung… Ich nehme also an, daß alles gut gelaufen ist. Lebt wohl, Madam."{#morte_s602_r61415}':
@@ -8963,7 +8963,7 @@ label morte_s602: # -
 
 # s603 # say61481
 label morte_s603: # -
-    nr '"Ich? Ich bin der Kopf des Vecna."~ [MRT562]{#morte_s603_}'
+    nr '"Ich? Ich bin der Kopf des Vecna."~ [MRT562]{#morte_s603_1}'
 
     $ morteLogic.s603_action()
     jump morte_dispose
@@ -8971,7 +8971,7 @@ label morte_s603: # -
 
 # s604 # say61482
 label morte_s604: # -
-    nr '"Die Götter sind gnädig!!"~ [MRT485]{#morte_s604_}'
+    nr '"Die Götter sind gnädig!!"~ [MRT485]{#morte_s604_1}'
 
     $ morteLogic.s604_action()
     jump morte_dispose
@@ -8979,14 +8979,14 @@ label morte_s604: # -
 
 # s605 # say61483
 label morte_s605: # -
-    nr '"Das ist eine lange Geschichte, in der es um den Kopf des Vecna geht. Ich will nicht darüber reden."~ [MRT559A]{#morte_s605_}'
+    nr '"Das ist eine lange Geschichte, in der es um den Kopf des Vecna geht. Ich will nicht darüber reden."~ [MRT559A]{#morte_s605_1}'
 
     jump grace_s3  # EXTERN
 
 
 # s606 # say61484
 label morte_s606: # -
-    nr '"Könnten wir *bitte* das Thema wechseln?"~ [MRT559B]{#morte_s606_}'
+    nr '"Könnten wir *bitte* das Thema wechseln?"~ [MRT559B]{#morte_s606_1}'
 
     $ morteLogic.s606_action()
     jump morte_dispose
@@ -8994,7 +8994,7 @@ label morte_s606: # -
 
 # s607 # say61485
 label morte_s607: # -
-    nr '"Ich? Ich bin *le petit Morte*."~ [MRT560]{#morte_s607_}'
+    nr '"Ich? Ich bin *le petit Morte*."~ [MRT560]{#morte_s607_1}'
 
     $ morteLogic.s607_action()
     jump morte_dispose
@@ -9002,7 +9002,7 @@ label morte_s607: # -
 
 # s608 # say61486
 label morte_s608: # -
-    nr '"Was soll ich erzählen? Ich bin ein *Memento Morte*."~ [MRT561]{#morte_s608_}'
+    nr '"Was soll ich erzählen? Ich bin ein *Memento Morte*."~ [MRT561]{#morte_s608_1}'
 
     $ morteLogic.s608_action()
     jump morte_dispose
@@ -9010,14 +9010,14 @@ label morte_s608: # -
 
 # s609 # say61487
 label morte_s609: # -
-    nr '"Nur, wenn ich mich auf deine Kissen setzen darf."~ [MRT486A]{#morte_s609_}'
+    nr '"Nur, wenn ich mich auf deine Kissen setzen darf."~ [MRT486A]{#morte_s609_1}'
 
     jump grace_s7  # EXTERN
 
 
 # s610 # say61488
 label morte_s610: # -
-    nr '"Nichts! Gar nichts. Überhaupt nichts."~ [MRT486B]{#morte_s610_}'
+    nr '"Nichts! Gar nichts. Überhaupt nichts."~ [MRT486B]{#morte_s610_1}'
 
     $ morteLogic.s610_action()
     jump morte_dispose
@@ -9025,7 +9025,7 @@ label morte_s610: # -
 
 # s611 # say61489
 label morte_s611: # -
-    nr '"Arf! Arf! Heh! Heh! Heh!"~ [MRT484]{#morte_s611_}'
+    nr '"Arf! Arf! Heh! Heh! Heh!"~ [MRT484]{#morte_s611_1}'
 
     $ morteLogic.s611_action()
     jump morte_dispose
@@ -9033,28 +9033,28 @@ label morte_s611: # -
 
 # s612 # say62890
 label morte_s612: # -
-    nr '"Sie ist eine Tanar-Ri… ein Sukkubus, Meister."{#morte_s612_}'
+    nr '"Sie ist eine Tanar-Ri… ein Sukkubus, Meister."{#morte_s612_1}'
 
     jump grace_s213  # EXTERN
 
 
 # s613 # say63454
 label morte_s613: # -
-    nr '"Ich kann nirgends stehen. Hab Probleme mit den Beinen, weißt du."~ [MRT482]{#morte_s613_}'
+    nr '"Ich kann nirgends stehen. Hab Probleme mit den Beinen, weißt du."~ [MRT482]{#morte_s613_1}'
 
     jump annah_s1  # EXTERN
 
 
 # s614 # say63455
 label morte_s614: # -
-    nr '"Ich dachte, du sähest gut aus, aber da hab ich mich wohl geirrt."~ [MRT483]{#morte_s614_}'
+    nr '"Ich dachte, du sähest gut aus, aber da hab ich mich wohl geirrt."~ [MRT483]{#morte_s614_1}'
 
     jump annah_s3  # EXTERN
 
 
 # s615 # say63456
 label morte_s615: # -
-    nr '"Ich hab die Luft angehalten, seit ich dich das erste Mal gesehen habe, Scheusal."~ [MRT524]{#morte_s615_}'
+    nr '"Ich hab die Luft angehalten, seit ich dich das erste Mal gesehen habe, Scheusal."~ [MRT524]{#morte_s615_1}'
 
     $ morteLogic.s615_action()
     jump morte_dispose
@@ -9062,35 +9062,35 @@ label morte_s615: # -
 
 # s616 # say63457
 label morte_s616: # -
-    nr '"Ich habe einen NAMEN, weißt du."~ [MRT526]{#morte_s616_}'
+    nr '"Ich habe einen NAMEN, weißt du."~ [MRT526]{#morte_s616_1}'
 
     jump annah_s6  # EXTERN
 
 
 # s617 # say63458
 label morte_s617: # -
-    nr '"Interessant, daß du das ansprichst… gerade neulich hab ich sie gefragt, was sie für dich bezahlen."~ [MRT531]{#morte_s617_}'
+    nr '"Interessant, daß du das ansprichst… gerade neulich hab ich sie gefragt, was sie für dich bezahlen."~ [MRT531]{#morte_s617_1}'
 
     jump annah_s8  # EXTERN
 
 
 # s618 # say63459
 label morte_s618: # -
-    nr '"Weißt du, du wärst ein ganzes Stück sympathischer, wenn du den Mund zuließest."~ [MRT530]{#morte_s618_}'
+    nr '"Weißt du, du wärst ein ganzes Stück sympathischer, wenn du den Mund zuließest."~ [MRT530]{#morte_s618_1}'
 
     jump annah_s10  # EXTERN
 
 
 # s619 # say63460
 label morte_s619: # -
-    nr '"Aber du hast mein Herz doch schon, Scheusal."~ [MRT532]{#morte_s619_}'
+    nr '"Aber du hast mein Herz doch schon, Scheusal."~ [MRT532]{#morte_s619_1}'
 
     jump annah_s12  # EXTERN
 
 
 # s620 # say63462
 label morte_s620: # -
-    nr '"Ich kann mir schlimmere Arten vorstellen, zu gehen."~ [MRT525]{#morte_s620_}'
+    nr '"Ich kann mir schlimmere Arten vorstellen, zu gehen."~ [MRT525]{#morte_s620_1}'
 
     $ morteLogic.s620_action()
     jump morte_dispose
@@ -9098,14 +9098,14 @@ label morte_s620: # -
 
 # s621 # say63463
 label morte_s621: # -
-    nr '"Weißt du, du *bist* schon ein halbes Scheusal."~ [MRT533A]{#morte_s621_}'
+    nr '"Weißt du, du *bist* schon ein halbes Scheusal."~ [MRT533A]{#morte_s621_1}'
 
     jump annah_s15  # EXTERN
 
 
 # s622 # say63464
 label morte_s622: # -
-    nr '"Von da, wo ich schwebe, sieht sie gut aus."~ [MRT533B]{#morte_s622_}'
+    nr '"Von da, wo ich schwebe, sieht sie gut aus."~ [MRT533B]{#morte_s622_1}'
 
     $ morteLogic.s622_action()
     jump morte_dispose
@@ -9113,7 +9113,7 @@ label morte_s622: # -
 
 # s623 # say63666
 label morte_s623: # -
-    nr '"Ich habe es gemerkt. Warum teilst du deine Erkenntnis nicht dem Meister mit?"~ [MRT563]{#morte_s623_}'
+    nr '"Ich habe es gemerkt. Warum teilst du deine Erkenntnis nicht dem Meister mit?"~ [MRT563]{#morte_s623_1}'
 
     $ morteLogic.s623_action()
     jump morte_dispose
@@ -9121,14 +9121,14 @@ label morte_s623: # -
 
 # s624 # say63667
 label morte_s624: # -
-    nr '"Flatulenz, du blödes Vieleck."~ [MRT468A]{#morte_s624_}'
+    nr '"Flatulenz, du blödes Vieleck."~ [MRT468A]{#morte_s624_1}'
 
     jump nordom_s2  # EXTERN
 
 
 # s625 # say63668
 label morte_s625: # -
-    nr '"Dann tu uns allen einen Gefallen und sei „effizienter.“"~ [MRT469A]{#morte_s625_}'
+    nr '"Dann tu uns allen einen Gefallen und sei „effizienter.“"~ [MRT469A]{#morte_s625_1}'
 
     $ morteLogic.s625_action()
     jump morte_dispose
@@ -9136,21 +9136,21 @@ label morte_s625: # -
 
 # s626 # say63669
 label morte_s626: # -
-    nr '"Ich, äh, habe das nie gesagt!"~ [MRT470B]{#morte_s626_}'
+    nr '"Ich, äh, habe das nie gesagt!"~ [MRT470B]{#morte_s626_1}'
 
     jump annah_s315  # EXTERN
 
 
 # s627 # say63670
 label morte_s627: # -
-    nr '"Hat Annah noch Kleider an?"~ [MRT565A]{#morte_s627_}'
+    nr '"Hat Annah noch Kleider an?"~ [MRT565A]{#morte_s627_1}'
 
     jump nordom_s6  # EXTERN
 
 
 # s628 # say63671
 label morte_s628: # -
-    nr '"Dann ist die Antwort ja."~ [MRT565B]{#morte_s628_}'
+    nr '"Dann ist die Antwort ja."~ [MRT565B]{#morte_s628_1}'
 
     $ morteLogic.s628_action()
     jump morte_dispose
@@ -9158,7 +9158,7 @@ label morte_s628: # -
 
 # s629 # say63672
 label morte_s629: # -
-    nr '"Ich geb dir gleich neunzehn, wenn du nicht die Klappe hältst."~ [MRT564]{#morte_s629_}'
+    nr '"Ich geb dir gleich neunzehn, wenn du nicht die Klappe hältst."~ [MRT564]{#morte_s629_1}'
 
     $ morteLogic.s629_action()
     jump morte_dispose
@@ -9166,14 +9166,14 @@ label morte_s629: # -
 
 # s630 # say63673
 label morte_s630: # -
-    nr '"Wenn freier Wille bedeutet, meinen Befehlen ohne Frage zu gehorchen, dann ja."~ [MRT569A]{#morte_s630_}'
+    nr '"Wenn freier Wille bedeutet, meinen Befehlen ohne Frage zu gehorchen, dann ja."~ [MRT569A]{#morte_s630_1}'
 
     jump nordom_s9  # EXTERN
 
 
 # s631 # say63674
 label morte_s631: # -
-    nr '"Willkommen auf den Ebenen, Kind."~ [MRT569B]{#morte_s631_}'
+    nr '"Willkommen auf den Ebenen, Kind."~ [MRT569B]{#morte_s631_1}'
 
     $ morteLogic.s631_action()
     jump morte_dispose
@@ -9181,14 +9181,14 @@ label morte_s631: # -
 
 # s632 # say63675
 label morte_s632: # -
-    nr '"Ist Fall-From-Grace nackt?"~ [MRT568A]{#morte_s632_}'
+    nr '"Ist Fall-From-Grace nackt?"~ [MRT568A]{#morte_s632_1}'
 
     jump nordom_s11  # EXTERN
 
 
 # s633 # say63676
 label morte_s633: # -
-    nr '"Dann ist die Antwort auf deine Frage ja."~ [MRT568B]{#morte_s633_}'
+    nr '"Dann ist die Antwort auf deine Frage ja."~ [MRT568B]{#morte_s633_1}'
 
     $ morteLogic.s633_action()
     jump morte_dispose
@@ -9196,14 +9196,14 @@ label morte_s633: # -
 
 # s634 # say63677
 label morte_s634: # -
-    nr '"Annah, Fall-From-Grace und ich, wie wir in einer Sumerischen Schlammkulisse baden."~ [MRT571A]{#morte_s634_}'
+    nr '"Annah, Fall-From-Grace und ich, wie wir in einer Sumerischen Schlammkulisse baden."~ [MRT571A]{#morte_s634_1}'
 
     jump nordom_s13  # EXTERN
 
 
 # s635 # say63678
 label morte_s635: # -
-    nr '"Manche lesen Wörterbücher, andere schreiben sie."~ [MRT572B]{#morte_s635_}'
+    nr '"Manche lesen Wörterbücher, andere schreiben sie."~ [MRT572B]{#morte_s635_1}'
 
     $ morteLogic.s635_action()
     jump morte_dispose
@@ -9211,35 +9211,35 @@ label morte_s635: # -
 
 # s636 # say63679
 label morte_s636: # -
-    nr '"Annah, eine Flasche Furyanischen Feuerbernstein und eine Sitzgruppe in der Festhalle."~ [MRT573]{#morte_s636_}'
+    nr '"Annah, eine Flasche Furyanischen Feuerbernstein und eine Sitzgruppe in der Festhalle."~ [MRT573]{#morte_s636_1}'
 
     jump nordom_s15  # EXTERN
 
 
 # s637 # say63680
 label morte_s637: # -
-    nr '"Oh, halt„s *Maul*."~ [MRT471D]{#morte_s637_}'
+    nr '"Oh, halt„s *Maul*."~ [MRT471D]{#morte_s637_1}'
 
     jump nordom_s17  # EXTERN
 
 
 # s638 # say63681
 label morte_s638: # -
-    nr '"Geh jemand anderem auf die Nerven, du blöde Zählschachtel."~ [MRT576A]{#morte_s638_}'
+    nr '"Geh jemand anderem auf die Nerven, du blöde Zählschachtel."~ [MRT576A]{#morte_s638_1}'
 
     jump nordom_s19  # EXTERN
 
 
 # s639 # say63682
 label morte_s639: # -
-    nr '"Ich weiß nicht, okay? Es ist einfach… weg."~ [MRT576B]{#morte_s639_}'
+    nr '"Ich weiß nicht, okay? Es ist einfach… weg."~ [MRT576B]{#morte_s639_1}'
 
     jump nordom_s20  # EXTERN
 
 
 # s640 # say63683
 label morte_s640: # -
-    nr '"Ich werd„s dir zeigen, wenn du nicht die Klappe hältst."~ [MRT576C]{#morte_s640_}'
+    nr '"Ich werd„s dir zeigen, wenn du nicht die Klappe hältst."~ [MRT576C]{#morte_s640_1}'
 
     $ morteLogic.s640_action()
     jump morte_dispose
@@ -9247,14 +9247,14 @@ label morte_s640: # -
 
 # s641 # say63684
 label morte_s641: # -
-    nr '"Geh eine Bärenfalle küssen."~ [MRT575A]{#morte_s641_}'
+    nr '"Geh eine Bärenfalle küssen."~ [MRT575A]{#morte_s641_1}'
 
     jump grace_s373  # EXTERN
 
 
 # s642 # say63685
 label morte_s642: # -
-    nr '"Vertrau mir. Annah hat nichts dagegen."~ [MRT575B]{#morte_s642_}'
+    nr '"Vertrau mir. Annah hat nichts dagegen."~ [MRT575B]{#morte_s642_1}'
 
     $ morteLogic.s642_action()
     jump morte_dispose
@@ -9262,7 +9262,7 @@ label morte_s642: # -
 
 # s643 # say63686
 label morte_s643: # -
-    nr '::pfeift unschuldig::~ [MRT472A]{#morte_s643_}'
+    nr '::pfeift unschuldig::~ [MRT472A]{#morte_s643_1}'
 
     $ morteLogic.s643_action()
     jump morte_dispose
@@ -9270,7 +9270,7 @@ label morte_s643: # -
 
 # s644 # say63688
 label morte_s644: # -
-    nr '"Keiner! Das hat ihm keiner gesagt!"~ [MRT473D]{#morte_s644_}'
+    nr '"Keiner! Das hat ihm keiner gesagt!"~ [MRT473D]{#morte_s644_1}'
 
     $ morteLogic.s644_action()
     jump morte_dispose
@@ -9278,7 +9278,7 @@ label morte_s644: # -
 
 # s645 # say63689
 label morte_s645: # -
-    nr '"Es ist völlig freiwillig von ihrer Seite, du Idiot. Äh… nicht daß ich wüßte."~ [MRT577]{#morte_s645_}'
+    nr '"Es ist völlig freiwillig von ihrer Seite, du Idiot. Äh… nicht daß ich wüßte."~ [MRT577]{#morte_s645_1}'
 
     $ morteLogic.s645_action()
     jump morte_dispose
@@ -9286,14 +9286,14 @@ label morte_s645: # -
 
 # s646 # say63858
 label morte_s646: # -
-    nr '"Vertrau mir, du hast ihn noch nie gesehen."~ [MRT475AA]{#morte_s646_}'
+    nr '"Vertrau mir, du hast ihn noch nie gesehen."~ [MRT475AA]{#morte_s646_1}'
 
     jump vhailor_s1  # EXTERN
 
 
 # s647 # say64990
 label morte_s647: # -
-    nr '"Hey Meister… sieh dir das an." Als du nach unten siehst, bemerkst du eine Reihe von dreckigen Fußabdrücken, die zum Torbogen führen… und nicht zurückkommen. "Dort muß ein Portal oder so etwas sein."{#morte_s647_}'
+    nr '"Hey Meister… sieh dir das an." Als du nach unten siehst, bemerkst du eine Reihe von dreckigen Fußabdrücken, die zum Torbogen führen… und nicht zurückkommen. "Dort muß ein Portal oder so etwas sein."{#morte_s647_1}'
 
     menu:
         '"Ein Portal? Wie kriegen wir es auf?"{#morte_s647_r64991}':
@@ -9307,7 +9307,7 @@ label morte_s647: # -
 
 # s648 # say64992
 label morte_s648: # from 647.0
-    nr '"Keine Ahnung, Meister. Es muß aber ein gewöhnlicher Schlüssel sein. Sie dir den Verkehr an, der hier durchgegangen ist! Vielleicht kann uns eines der niederen Wesen hier helfen…"{#morte_s648_}'
+    nr '"Keine Ahnung, Meister. Es muß aber ein gewöhnlicher Schlüssel sein. Sie dir den Verkehr an, der hier durchgegangen ist! Vielleicht kann uns eines der niederen Wesen hier helfen…"{#morte_s648_1}'
 
     menu:
         '"Dann frag ich mich durch. Los geht„s."{#morte_s648_r64994}':
@@ -9317,7 +9317,7 @@ label morte_s648: # from 647.0
 
 # s649 # say65552
 label morte_s649: # from 329.0 729.0
-    nr '"Ach *komm schon*, Meister. Sag bloß, du hast es schon wieder vergessen."{#morte_s649_}'
+    nr '"Ach *komm schon*, Meister. Sag bloß, du hast es schon wieder vergessen."{#morte_s649_1}'
 
     menu:
         '"Ich muß einfach nur mein Gedächtnis auffrischen."{#morte_s649_r65553}':
@@ -9339,7 +9339,7 @@ label morte_s649: # from 329.0 729.0
 
 # s650 # say65557
 label morte_s650: # from 649.0 649.1
-    nr '"Ich wette, daß ich DAS oft zu hören bekommen werde." Morte räuspert sich. "Laß mal sehen…"  „Ich weiß, daß du dich so fühlst, als hättest du “n paar Eimer Styx-Wasser getrunken, aber du mußt dein ZENTRUM finden. In deinem Besitz sollte sich ein JOURNAL befinden, das ein wenig Licht in das Dunkel dieser Angelegenheit bringen kann. PHAROD sollte dir den restlichen Plausch liefern können, wenn er nicht bereits im Totenbuch steht.„{#morte_s650_}'
+    nr '"Ich wette, daß ich DAS oft zu hören bekommen werde." Morte räuspert sich. "Laß mal sehen…"  „Ich weiß, daß du dich so fühlst, als hättest du “n paar Eimer Styx-Wasser getrunken, aber du mußt dein ZENTRUM finden. In deinem Besitz sollte sich ein JOURNAL befinden, das ein wenig Licht in das Dunkel dieser Angelegenheit bringen kann. PHAROD sollte dir den restlichen Plausch liefern können, wenn er nicht bereits im Totenbuch steht.„{#morte_s650_1}'
 
     menu:
         '"Pharod… hmmm. Lies weiter."{#morte_s650_r65558}' if morteLogic.r65558_condition():
@@ -9361,7 +9361,7 @@ label morte_s650: # from 649.0 649.1
 
 # s651 # say65562
 label morte_s651: # from 650.0 650.1
-    nr '"Mach ich ja, mach ich ja, warte." Morte hält einen Augenblick lang inne. "Also gut, das letzte Stück…"  „Verlier das Journal nicht, sonst sind wir schon wieder den Styx hoch. Und was auch immer du tust, erzähl NIEMANDEM, WER du bist oder WAS mit dir geschieht, denn sonst wirst du auf eine schnelle Pilgerfahrt zum Krematorium geschickt. Tu, was ich dir sage: LIES das Journal, und dann FINDE Pharod.“{#morte_s651_}'
+    nr '"Mach ich ja, mach ich ja, warte." Morte hält einen Augenblick lang inne. "Also gut, das letzte Stück…"  „Verlier das Journal nicht, sonst sind wir schon wieder den Styx hoch. Und was auch immer du tust, erzähl NIEMANDEM, WER du bist oder WAS mit dir geschieht, denn sonst wirst du auf eine schnelle Pilgerfahrt zum Krematorium geschickt. Tu, was ich dir sage: LIES das Journal, und dann FINDE Pharod.“{#morte_s651_1}'
 
     if morteLogic.s651_condition():
         jump morte_s653
@@ -9385,7 +9385,7 @@ label morte_s651: # from 650.0 650.1
 
 # s652 # say65563
 label morte_s652: # from 651.1
-    nr '"Wovon redest du, Meister? Mehr gibt es nicht."{#morte_s652_}'
+    nr '"Wovon redest du, Meister? Mehr gibt es nicht."{#morte_s652_1}'
 
     menu:
         '"Wie wär„s mit “Trau keinem Totenschädel„?"{#morte_s652_r65569}' if morteLogic.r65569_condition():
@@ -9408,7 +9408,7 @@ label morte_s652: # from 651.1
 
 # s653 # say65564
 label morte_s653: # from 651.0
-    nr '"Und natürlich dieser kleine Teil am Ende über „traue keinem Schädel“ und so."{#morte_s653_}'
+    nr '"Und natürlich dieser kleine Teil am Ende über „traue keinem Schädel“ und so."{#morte_s653_1}'
 
     menu:
         '"Was hat dieser Teil zu bedeuten? Glaubst du, es geht um *dich*?"{#morte_s653_r65574}':
@@ -9426,7 +9426,7 @@ label morte_s653: # from 651.0
 
 # s654 # say65577
 label morte_s654: # from 329.4 652.0 652.1 729.4
-    nr '"Oh… *dieser* Teil am Ende? Nun, ich dachte, es sei ein Fleck, also habe ich diese Zeile nicht vorgelesen."{#morte_s654_}'
+    nr '"Oh… *dieser* Teil am Ende? Nun, ich dachte, es sei ein Fleck, also habe ich diese Zeile nicht vorgelesen."{#morte_s654_1}'
 
     menu:
         '"Ach wirklich? Und was bedeutet es? Glaubst du, es geht um *dich*?"{#morte_s654_r65578}':
@@ -9444,7 +9444,7 @@ label morte_s654: # from 329.4 652.0 652.1 729.4
 
 # s655 # say65581
 label morte_s655: # from 653.0 654.0
-    nr '"Ich bezweifle es. Ich meine, du kannst *mir* vertrauen, oder, Meister?"{#morte_s655_}'
+    nr '"Ich bezweifle es. Ich meine, du kannst *mir* vertrauen, oder, Meister?"{#morte_s655_1}'
 
     menu:
         '"Du *lügst* mich doch nicht etwa an, Morte?"{#morte_s655_r65582}':
@@ -9462,7 +9462,7 @@ label morte_s655: # from 653.0 654.0
 
 # s656 # say65585
 label morte_s656: # from 655.0
-    nr '"Nein! Komm schon, was ist los, Meister? Ich habe dich noch nie falsch geleitet."{#morte_s656_}'
+    nr '"Nein! Komm schon, was ist los, Meister? Ich habe dich noch nie falsch geleitet."{#morte_s656_1}'
 
     menu:
         '"*Noch* nicht. Es gefällt mir nicht, daß du mir diese Zeile nicht vorgelesen hast, und wer weiß, was du mir *noch* verschwiegen hast, seitdem wir unterwegs sind."{#morte_s656_r65587}':
@@ -9480,7 +9480,7 @@ label morte_s656: # from 655.0
 
 # s657 # say65589
 label morte_s657: # from 656.0
-    nr '"Nichts! Ich habe dir alles gesagt… nun, FAST alles, aber nichts, sagen wir, *Gefährliches*."{#morte_s657_}'
+    nr '"Nichts! Ich habe dir alles gesagt… nun, FAST alles, aber nichts, sagen wir, *Gefährliches*."{#morte_s657_1}'
 
     menu:
         '"Wenn es NOCH ETWAS gibt, dann erzähl es besser gleich."{#morte_s657_r65590}':
@@ -9498,7 +9498,7 @@ label morte_s657: # from 656.0
 
 # s658 # say65593
 label morte_s658: # from 657.0
-    nr '"Meister, im Ernst, sonst gibt es nichts. Ich würde dir nichts verheimlichen."{#morte_s658_}'
+    nr '"Meister, im Ernst, sonst gibt es nichts. Ich würde dir nichts verheimlichen."{#morte_s658_1}'
 
     menu:
         '"Also gut, Morte. Ich hätte noch ein paar Fragen…"{#morte_s658_r65594}':
@@ -9512,7 +9512,7 @@ label morte_s658: # from 657.0
 
 # s659 # say65596
 label morte_s659: # from 329.1 729.1
-    nr '"Sigil ist eine ringförmige Stadt, die auf einem unendlich hohen Turm liegt, der angeblich im Zentrum der Ebenen steht… Natürlich wirft dies die Frage auf, *wie* sie auf der Spitze eines unendlich hohen Turms und im Zentrum der Ebenen liegen kann."{#morte_s659_}'
+    nr '"Sigil ist eine ringförmige Stadt, die auf einem unendlich hohen Turm liegt, der angeblich im Zentrum der Ebenen steht… Natürlich wirft dies die Frage auf, *wie* sie auf der Spitze eines unendlich hohen Turms und im Zentrum der Ebenen liegen kann."{#morte_s659_1}'
 
     menu:
         '"Sonst noch was?"{#morte_s659_r65597}':
@@ -9530,7 +9530,7 @@ label morte_s659: # from 329.1 729.1
 
 # s660 # say65600
 label morte_s660: # from 659.0
-    nr '"Sigil wird die „Stadt der Tore“ genannt, vor allem weil es dort VIELE unsichtbare Tore gibt, die hinein- und hinausführen - fast jeder Torbogen, jeder Türrahmen, jeder Faßreifen, jedes Bücherregal oder offene Fenster kann unter den entsprechenden Bedingungen ein Portal sein. Es hängt nur davon ab, ob du den passenden Schlüssel hast."{#morte_s660_}'
+    nr '"Sigil wird die „Stadt der Tore“ genannt, vor allem weil es dort VIELE unsichtbare Tore gibt, die hinein- und hinausführen - fast jeder Torbogen, jeder Türrahmen, jeder Faßreifen, jedes Bücherregal oder offene Fenster kann unter den entsprechenden Bedingungen ein Portal sein. Es hängt nur davon ab, ob du den passenden Schlüssel hast."{#morte_s660_1}'
 
     menu:
         '"Schlüssel?"{#morte_s660_r65601}':
@@ -9548,7 +9548,7 @@ label morte_s660: # from 659.0
 
 # s661 # say65604
 label morte_s661: # from 660.0
-    nr '"Nun, wie soll ich das erklären - die meisten Portale „schlafen“, okay? Du könntest durchlaufen, vorbeilaufen, drüberlaufen, und nichts würde geschehen. Aber jedes Portal hat etwas, das es „aufweckt“. Das kann eine Melodie oder ein Summen sein, ein Laib altes bytopianisches Brot, die Erinnerung an deinen ersten Kuß, und - ZACK - das Portal erwacht zum Leben, und du kannst hindurchgehen, wo immer es auch hinführt."{#morte_s661_}'
+    nr '"Nun, wie soll ich das erklären - die meisten Portale „schlafen“, okay? Du könntest durchlaufen, vorbeilaufen, drüberlaufen, und nichts würde geschehen. Aber jedes Portal hat etwas, das es „aufweckt“. Das kann eine Melodie oder ein Summen sein, ein Laib altes bytopianisches Brot, die Erinnerung an deinen ersten Kuß, und - ZACK - das Portal erwacht zum Leben, und du kannst hindurchgehen, wo immer es auch hinführt."{#morte_s661_1}'
 
     menu:
         '"Wo zum Beispiel?"{#morte_s661_r65605}':
@@ -9566,7 +9566,7 @@ label morte_s661: # from 660.0
 
 # s662 # say65608
 label morte_s662: # from 661.0
-    nr '"Überall, Meister. Buchstäblich. An jedem erdenklichen Ort gibt es ein Portal dort. Darum ist Sigil überall in den Ebenen so beliebt."{#morte_s662_}'
+    nr '"Überall, Meister. Buchstäblich. An jedem erdenklichen Ort gibt es ein Portal dort. Darum ist Sigil überall in den Ebenen so beliebt."{#morte_s662_1}'
 
     menu:
         '"Verstehe. Ich hätte da noch ein paar Fragen…"{#morte_s662_r65609}':
@@ -9580,7 +9580,7 @@ label morte_s662: # from 661.0
 
 # s663 # say65611
 label morte_s663: # from 329.2 729.2
-    nr '"Hey! Plappern ist meine Spezialität." Er klappert kurz mit den Zähnen, dann „grinst“ er. "Hä? Hä?"{#morte_s663_}'
+    nr '"Hey! Plappern ist meine Spezialität." Er klappert kurz mit den Zähnen, dann „grinst“ er. "Hä? Hä?"{#morte_s663_1}'
 
     menu:
         '"Oh, *das* freut mich zu hören."{#morte_s663_r65612}':
@@ -9602,7 +9602,7 @@ label morte_s663: # from 329.2 729.2
 
 # s664 # say65616
 label morte_s664: # from 663.0
-    nr '"Nein, aber jetzt im Ernst, Meister - Ich habe ein Talent für das immer passende Geplapper. Ich kann jemandem wirklich das Ohr heißreden, wenn du verstehst, was ich meine. Ich habe Beleidigungen auf Lager, Frechheiten - Sachen, die einem das Ohr in den Schädel schraubt, weißt du?"{#morte_s664_}'
+    nr '"Nein, aber jetzt im Ernst, Meister - Ich habe ein Talent für das immer passende Geplapper. Ich kann jemandem wirklich das Ohr heißreden, wenn du verstehst, was ich meine. Ich habe Beleidigungen auf Lager, Frechheiten - Sachen, die einem das Ohr in den Schädel schraubt, weißt du?"{#morte_s664_1}'
 
     menu:
         '"Ah… was soll *das* nützen?"{#morte_s664_r65617}':
@@ -9620,7 +9620,7 @@ label morte_s664: # from 663.0
 
 # s665 # say65620
 label morte_s665: # from 664.0
-    nr '"Es ist eines meiner vielen Talente… Ich nenne es meine „Litanei der Flüche“. Weißt du, manchmal kann ich jemanden mit *genau* der richtigen Bemerkung vollsülzen. Natürlich muß ich mich danach meistens ziemlich schnell aus dem Staub machen… aber du verstehst, was ich meine."{#morte_s665_}'
+    nr '"Es ist eines meiner vielen Talente… Ich nenne es meine „Litanei der Flüche“. Weißt du, manchmal kann ich jemanden mit *genau* der richtigen Bemerkung vollsülzen. Natürlich muß ich mich danach meistens ziemlich schnell aus dem Staub machen… aber du verstehst, was ich meine."{#morte_s665_1}'
 
     menu:
         '"Wie funktioniert das?"{#morte_s665_r65621}':
@@ -9643,7 +9643,7 @@ label morte_s665: # from 664.0
 
 # s666 # say65626
 label morte_s666: # from 329.3 665.0 729.3
-    nr '"Nun, ich kann jemandem Beleidigungen ins Gesicht schleudern, bis er durchdreht und mich verfolgt."  ^NHINWEIS: Morte besitzt eine Fähigkeit, die „Litanei der Flüche“ genannt wird. Dies ist eine Verspottung ohne Zauber, und wenn der Gegner ihr nicht widerstehen kann, erhält er Strafpunkte auf Rüstungsklasse und Angriffsstärke, und er wird nichts anderes mehr tun als zu versuchen, Morte in einen Nahkampf zu verwickeln. Je mehr Beleidigungen Morte hört, desto besser wird seine Litanei der Flüche. Die Litanei der Flüche ist SEHR wirksam gegen Magier.^-{#morte_s666_}'
+    nr '"Nun, ich kann jemandem Beleidigungen ins Gesicht schleudern, bis er durchdreht und mich verfolgt."  ^NHINWEIS: Morte besitzt eine Fähigkeit, die „Litanei der Flüche“ genannt wird. Dies ist eine Verspottung ohne Zauber, und wenn der Gegner ihr nicht widerstehen kann, erhält er Strafpunkte auf Rüstungsklasse und Angriffsstärke, und er wird nichts anderes mehr tun als zu versuchen, Morte in einen Nahkampf zu verwickeln. Je mehr Beleidigungen Morte hört, desto besser wird seine Litanei der Flüche. Die Litanei der Flüche ist SEHR wirksam gegen Magier.^-{#morte_s666_1}'
 
     menu:
         '"Kannst du noch etwas anderes?"{#morte_s666_r65627}' if morteLogic.r65627_condition():
@@ -9661,7 +9661,7 @@ label morte_s666: # from 329.3 665.0 729.3
 
 # s667 # say65630
 label morte_s667: # from 663.1 665.1 666.0
-    nr '"Nun, ich habe ein paar Freunde kennengelernt, als ich bei Lothar im Regal stand und darauf wartete, daß du mich befreist - danke übrigens, daß du deine wertvolle Zeit geopfert hast - und sie sagten, wenn ich jemals Hilfe bräuchte, könne ich sie rufen."{#morte_s667_}'
+    nr '"Nun, ich habe ein paar Freunde kennengelernt, als ich bei Lothar im Regal stand und darauf wartete, daß du mich befreist - danke übrigens, daß du deine wertvolle Zeit geopfert hast - und sie sagten, wenn ich jemals Hilfe bräuchte, könne ich sie rufen."{#morte_s667_1}'
 
     menu:
         '"Freunde? Was meinst du?"{#morte_s667_r65631}':
@@ -9680,7 +9680,7 @@ label morte_s667: # from 663.1 665.1 666.0
 
 # s668 # say65634
 label morte_s668: # from 667.0
-    nr '"Ich muß nur pfeifen, und dann tauchen sie irgendwie auf. Sie sind eine ganz nette Truppe von Knochenbrechern - und giftig wie *Schlangen*."  ^NHINWEIS: Morte besitzt (inzwischen) eine spezielle Fähigkeit, den "Schädelmob". Wenn er sie beschwört, kann er eine Horde von Schädeln aus dem Hintergrund herbeirufen, die den Gegner mehrmals beißen. Stärke und Schadenspunkte der Schädel schwanken je nach Mortes Stufe, und die Macht kann pro Tag nur eine begrenzte Anzahl von Malen eingesetzt werden.^-{#morte_s668_}'
+    nr '"Ich muß nur pfeifen, und dann tauchen sie irgendwie auf. Sie sind eine ganz nette Truppe von Knochenbrechern - und giftig wie *Schlangen*."  ^NHINWEIS: Morte besitzt (inzwischen) eine spezielle Fähigkeit, den "Schädelmob". Wenn er sie beschwört, kann er eine Horde von Schädeln aus dem Hintergrund herbeirufen, die den Gegner mehrmals beißen. Stärke und Schadenspunkte der Schädel schwanken je nach Mortes Stufe, und die Macht kann pro Tag nur eine begrenzte Anzahl von Malen eingesetzt werden.^-{#morte_s668_1}'
 
     menu:
         '"Verstehe. Ich hätte da noch ein paar Fragen…"{#morte_s668_r65635}':
@@ -9694,7 +9694,7 @@ label morte_s668: # from 667.0
 
 # s669 # say65638
 label morte_s669: # from 329.5 729.5
-    nr '"Also, ich sag dir mal, wie *ich* die Sache sehe…"{#morte_s669_}'
+    nr '"Also, ich sag dir mal, wie *ich* die Sache sehe…"{#morte_s669_1}'
 
     menu:
         '"Erzähl weiter…"{#morte_s669_r65639}' if morteLogic.r65639_condition():
@@ -9744,7 +9744,7 @@ label morte_s669: # from 329.5 729.5
 
 # s670 # say65650
 label morte_s670: # from 669.3
-    nr '"Wenn du mich fragst, dann ist das hier deine Show, Meister. Ich kann im Moment nicht viel sagen, was uns weiterbringen könnte."{#morte_s670_}'
+    nr '"Wenn du mich fragst, dann ist das hier deine Show, Meister. Ich kann im Moment nicht viel sagen, was uns weiterbringen könnte."{#morte_s670_1}'
 
     menu:
         '"*Das* ist mal eine Abwechslung. Ich hätte noch ein paar Fragen…"{#morte_s670_r65651}':
@@ -9758,7 +9758,7 @@ label morte_s670: # from 669.3
 
 # s671 # say65653
 label morte_s671: # from 669.0
-    nr '"Ich glaube, du solltest diesen „Pharod“ aufspüren, wo immer er auch sein mag. Du hättest nicht diese tätowierten Anweisungen auf dem Rücken, wenn er nicht eine Ahnung hätte, was mit dir los ist. Irgend jemand hier MUSS doch wissen, wo er ist."{#morte_s671_}'
+    nr '"Ich glaube, du solltest diesen „Pharod“ aufspüren, wo immer er auch sein mag. Du hättest nicht diese tätowierten Anweisungen auf dem Rücken, wenn er nicht eine Ahnung hätte, was mit dir los ist. Irgend jemand hier MUSS doch wissen, wo er ist."{#morte_s671_1}'
 
     menu:
         '"Gutes Argument. Ich hätte noch ein paar Fragen…"{#morte_s671_r65654}':
@@ -9772,7 +9772,7 @@ label morte_s671: # from 669.0
 
 # s672 # say65656
 label morte_s672: # from 669.1
-    nr '"Ich würde sagen, wir versuchen diese „Bronzekugel“ so schnell wie möglich zu klauen und sie dem alten Stotterer zurückzubringen."{#morte_s672_}'
+    nr '"Ich würde sagen, wir versuchen diese „Bronzekugel“ so schnell wie möglich zu klauen und sie dem alten Stotterer zurückzubringen."{#morte_s672_1}'
 
     menu:
         '"Gutes Argument. Ich hätte noch ein paar Fragen…"{#morte_s672_r65657}':
@@ -9786,7 +9786,7 @@ label morte_s672: # from 669.1
 
 # s673 # say65659
 label morte_s673: # from 669.2
-    nr '"Ich würde sagen, wir finden heraus, wo deine Leiche geblieben ist. Vielleicht finden wir heraus, wie du ins Totenbuch geraten bist."{#morte_s673_}'
+    nr '"Ich würde sagen, wir finden heraus, wo deine Leiche geblieben ist. Vielleicht finden wir heraus, wie du ins Totenbuch geraten bist."{#morte_s673_1}'
 
     menu:
         '"Gutes Argument. Ich hätte noch ein paar Fragen…"{#morte_s673_r65660}':
@@ -9800,7 +9800,7 @@ label morte_s673: # from 669.2
 
 # s674 # say65662
 label morte_s674: # from 669.4
-    nr '"Ich würde sagen, wir suchen jemanden, der mehr über dich weiß - und darüber, wie du hierher gekommen bist. Es muß doch in einem der Bezirke ein paar schlaue Knochenbrecher geben, die etwas mehr über dich wissen."{#morte_s674_}'
+    nr '"Ich würde sagen, wir suchen jemanden, der mehr über dich weiß - und darüber, wie du hierher gekommen bist. Es muß doch in einem der Bezirke ein paar schlaue Knochenbrecher geben, die etwas mehr über dich wissen."{#morte_s674_1}'
 
     menu:
         '"Gutes Argument. Ich hätte noch ein paar Fragen…"{#morte_s674_r65663}':
@@ -9814,7 +9814,7 @@ label morte_s674: # from 669.4
 
 # s675 # say65665
 label morte_s675: # from 669.5
-    nr '"Es sieht so aus, als müßten wir mehr über diese Nachthexe Ravel herausfinden - Und ich muß dir sagen, Meister, daß ich mich darauf *nicht* gerade freue. Aber vielleicht können uns die Weisen der Festhalle und die Sinnessteine etwas sagen."{#morte_s675_}'
+    nr '"Es sieht so aus, als müßten wir mehr über diese Nachthexe Ravel herausfinden - Und ich muß dir sagen, Meister, daß ich mich darauf *nicht* gerade freue. Aber vielleicht können uns die Weisen der Festhalle und die Sinnessteine etwas sagen."{#morte_s675_1}'
 
     menu:
         '"Festhalle? Sinnessteine?"{#morte_s675_r65666}' if morteLogic.r65666_condition():
@@ -9833,7 +9833,7 @@ label morte_s675: # from 669.5
 
 # s676 # say65670
 label morte_s676: # from 675.0
-    nr '"Sorry, Meister. Ich vergesse immer, daß du das Wissen eines Grünschnabels hast. Paß auf, die Festhalle ist der Hauptstützpunkt der Sinnsaten im Bezirk der Kuratoren. Sie haben Bibliotheken aus Sinnessteinen, die Erfahrungen speichern, und sie haben jede Menge Weise, Lehrer und Trainer, die uns vielleicht Näheres über Ravel erzählen können."{#morte_s676_}'
+    nr '"Sorry, Meister. Ich vergesse immer, daß du das Wissen eines Grünschnabels hast. Paß auf, die Festhalle ist der Hauptstützpunkt der Sinnsaten im Bezirk der Kuratoren. Sie haben Bibliotheken aus Sinnessteinen, die Erfahrungen speichern, und sie haben jede Menge Weise, Lehrer und Trainer, die uns vielleicht Näheres über Ravel erzählen können."{#morte_s676_1}'
 
     menu:
         '"Gutes Argument. Ich hätte noch ein paar Fragen…"{#morte_s676_r65671}':
@@ -9847,7 +9847,7 @@ label morte_s676: # from 675.0
 
 # s677 # say65673
 label morte_s677: # from 669.6
-    nr '"Nun, Ravel ist in einem Irrgang gefangen. Aber wahrscheinlich gibt es EINEN Schlüssel und EIN Portal, das uns zu ihr führt, wenn du immer noch gehen willst."{#morte_s677_}'
+    nr '"Nun, Ravel ist in einem Irrgang gefangen. Aber wahrscheinlich gibt es EINEN Schlüssel und EIN Portal, das uns zu ihr führt, wenn du immer noch gehen willst."{#morte_s677_1}'
 
     menu:
         '"Weißt du, was der Schlüssel zu ihrem Irrgang sein könnte?"{#morte_s677_r65674}' if morteLogic.r65674_condition():
@@ -9870,7 +9870,7 @@ label morte_s677: # from 669.6
 
 # s678 # say65679
 label morte_s678: # from 677.0
-    nr '"Keine Ahnung - Ich meine, ein „Stückchen Ravel“? Das könnte alles sein, von einer ihrer vertrockneten Warzen bis zu einem Kunstwerk, das sie angefertigt hat, oder ein bißchen Sabber aus ihrem Mund. Das ist zu vage. Und trotzdem: Ich wette, daß IRGEND JEMAND im Bezirk etwas darüber wissen muß, wie man an ein Stück dieser blödsinnigen Hexe kommt. Und wenn das nicht klappt, dann können wir die Sinnessteine in der Festhalle benutzen. Vielleicht kann uns einer der Steine etwas Nützliches mitteilen."{#morte_s678_}'
+    nr '"Keine Ahnung - Ich meine, ein „Stückchen Ravel“? Das könnte alles sein, von einer ihrer vertrockneten Warzen bis zu einem Kunstwerk, das sie angefertigt hat, oder ein bißchen Sabber aus ihrem Mund. Das ist zu vage. Und trotzdem: Ich wette, daß IRGEND JEMAND im Bezirk etwas darüber wissen muß, wie man an ein Stück dieser blödsinnigen Hexe kommt. Und wenn das nicht klappt, dann können wir die Sinnessteine in der Festhalle benutzen. Vielleicht kann uns einer der Steine etwas Nützliches mitteilen."{#morte_s678_1}'
 
     menu:
         '"Weißt du, wo ich ein Portal zu ihrem Irrgang finde?"{#morte_s678_r65680}':
@@ -9888,7 +9888,7 @@ label morte_s678: # from 677.0
 
 # s679 # say65683
 label morte_s679: # from 677.1 678.0
-    nr '"Keine Ahnung, Meister. Es gibt haufenweise Portale in Sigil. Ich würde sagen, wir versuchen es in der Festhalle. Ich glaube zwar nicht, daß dort das Portal ist, aber vielleicht kann uns einer der Sinnessteine etwas sagen. Wenn das nichts nützt, dann sollten wir vielleicht aufhören herumzusuchen und uns von jemandem ein Portal BAUEN lassen."{#morte_s679_}'
+    nr '"Keine Ahnung, Meister. Es gibt haufenweise Portale in Sigil. Ich würde sagen, wir versuchen es in der Festhalle. Ich glaube zwar nicht, daß dort das Portal ist, aber vielleicht kann uns einer der Sinnessteine etwas sagen. Wenn das nichts nützt, dann sollten wir vielleicht aufhören herumzusuchen und uns von jemandem ein Portal BAUEN lassen."{#morte_s679_1}'
 
     menu:
         '"Gut. Ich hätte noch ein paar andere Fragen…"{#morte_s679_r65684}':
@@ -9902,7 +9902,7 @@ label morte_s679: # from 677.1 678.0
 
 # s680 # say65686
 label morte_s680: # from 669.7
-    nr '"Ich würde sagen, wir holen uns, was wir brauchen, und dann nichts wie raus, Meister. Dieser Ort macht mir Gänsehaut, dabei habe ich noch nicht mal Haut. Einverstanden?"{#morte_s680_}'
+    nr '"Ich würde sagen, wir holen uns, was wir brauchen, und dann nichts wie raus, Meister. Dieser Ort macht mir Gänsehaut, dabei habe ich noch nicht mal Haut. Einverstanden?"{#morte_s680_1}'
 
     menu:
         '"Wie wahr. Ich hätte da noch ein paar Fragen…"{#morte_s680_r65687}':
@@ -9916,7 +9916,7 @@ label morte_s680: # from 669.7
 
 # s681 # say65689
 label morte_s681: # from 669.8
-    nr '"Genau, Meister. Das hier ist deine Show. Ich folge dir nur."{#morte_s681_}'
+    nr '"Genau, Meister. Das hier ist deine Show. Ich folge dir nur."{#morte_s681_1}'
 
     menu:
         '"Wie wahr. Ich hätte da noch ein paar Fragen…"{#morte_s681_r65690}':
@@ -9930,7 +9930,7 @@ label morte_s681: # from 669.8
 
 # s682 # say65692
 label morte_s682: # from 651.2
-    nr '"Nein… du warst nackt bis auf die Haut. Wie ich bereits gesagt habe, sieht so aus, als ob genug von einem Journal direkt auf deinen Körper geschrieben ist."{#morte_s682_}'
+    nr '"Nein… du warst nackt bis auf die Haut. Wie ich bereits gesagt habe, sieht so aus, als ob genug von einem Journal direkt auf deinen Körper geschrieben ist."{#morte_s682_1}'
 
     menu:
         '"Und du bist sicher, daß du niemanden namens Pharod kennst?"{#morte_s682_r65693}' if morteLogic.r65693_condition():
@@ -9948,7 +9948,7 @@ label morte_s682: # from 651.2
 
 # s683 # say65696
 label morte_s683: # from 682.0
-    nr '"Nein. Und trotzdem muß doch irgendein Dussel wissen, wo er ist. Fragen wir ein paar Einheimische."{#morte_s683_}'
+    nr '"Nein. Und trotzdem muß doch irgendein Dussel wissen, wo er ist. Fragen wir ein paar Einheimische."{#morte_s683_1}'
 
     menu:
         '"Bevor wir gehen hätte ich noch ein paar Fragen…"{#morte_s683_r65697}':
@@ -9962,7 +9962,7 @@ label morte_s683: # from 682.0
 
 # s684 # say65699
 label morte_s684: # from 329.6 729.6
-    nr '"Ja… ein Mimir ist eine wandelnde Enzyklopädie. Du gibst Informationen hinein, und du bekommst Informationen heraus."{#morte_s684_}'
+    nr '"Ja… ein Mimir ist eine wandelnde Enzyklopädie. Du gibst Informationen hinein, und du bekommst Informationen heraus."{#morte_s684_1}'
 
     menu:
         '"Aber sind denn Mimiren nicht aus silbrigem Metall?"{#morte_s684_r65700}' if morteLogic.r65700_condition():
@@ -9980,7 +9980,7 @@ label morte_s684: # from 329.6 729.6
 
 # s685 # say65703
 label morte_s685: # from 684.0
-    nr '"Und? Manche vielleicht, aber *ich* nicht. Und es gibt seltsamere Dinge auf den Ebenen als das, Meister."{#morte_s685_}'
+    nr '"Und? Manche vielleicht, aber *ich* nicht. Und es gibt seltsamere Dinge auf den Ebenen als das, Meister."{#morte_s685_1}'
 
     menu:
         '"Ich glaube kaum, daß du ein Mimir bist, Morte. Was also bist du?"{#morte_s685_r65704}':
@@ -9998,7 +9998,7 @@ label morte_s685: # from 684.0
 
 # s686 # say65707
 label morte_s686: # from 685.0
-    nr '"Was soll die Fragerei? Was weißt *du* denn überhaupt über Mimiren?"{#morte_s686_}'
+    nr '"Was soll die Fragerei? Was weißt *du* denn überhaupt über Mimiren?"{#morte_s686_1}'
 
     menu:
         '"Ich weiß genug, um zu glauben, daß du mich anlügst."{#morte_s686_r65708}' if morteLogic.r65708_condition():
@@ -10022,7 +10022,7 @@ label morte_s686: # from 685.0
 
 # s687 # say65713
 label morte_s687: # from 686.0 686.1
-    nr '"Okay, ich bin *kein* Mimir, aber ich weiß viele Dinge, also *könnte* ich auch einer sein."{#morte_s687_}'
+    nr '"Okay, ich bin *kein* Mimir, aber ich weiß viele Dinge, also *könnte* ich auch einer sein."{#morte_s687_1}'
 
     menu:
         '"Was *bist* du denn dann?"{#morte_s687_r65714}':
@@ -10040,7 +10040,7 @@ label morte_s687: # from 686.0 686.1
 
 # s688 # say65717
 label morte_s688: # from 687.0
-    nr '"Ich bin ein wandelnder Schädel, der einen Haufen weiß."{#morte_s688_}'
+    nr '"Ich bin ein wandelnder Schädel, der einen Haufen weiß."{#morte_s688_1}'
 
     menu:
         '"Was hat„s mit deinem baatorischen Geruch auf sich?"{#morte_s688_r65718}' if morteLogic.r65718_condition():
@@ -10062,7 +10062,7 @@ label morte_s688: # from 687.0
 
 # s689 # say65722
 label morte_s689: # from 688.1
-    nr '"Woher weißt DU schon, wie Baator riecht?!"{#morte_s689_}'
+    nr '"Woher weißt DU schon, wie Baator riecht?!"{#morte_s689_1}'
 
     menu:
         '"Weil ich dort schon *war*, Morte. Ich war auf Avernus."{#morte_s689_r65723}':
@@ -10080,7 +10080,7 @@ label morte_s689: # from 688.1
 
 # s690 # say65726
 label morte_s690: # from 688.0
-    nr '"Woher weißt DU schon, wie Baator riecht? Es sei denn - hey, du hast mit dieser Tanar-Ri über mich gesprochen, oder?! Was weiß sie?!"{#morte_s690_}'
+    nr '"Woher weißt DU schon, wie Baator riecht? Es sei denn - hey, du hast mit dieser Tanar-Ri über mich gesprochen, oder?! Was weiß sie?!"{#morte_s690_1}'
 
     menu:
         '"Nun, sie ist offenbar auf etwas gestoßen. Das riecht nach Baator, oder?"{#morte_s690_r65727}':
@@ -10098,7 +10098,7 @@ label morte_s690: # from 688.0
 
 # s691 # say65730
 label morte_s691: # from 689.0 690.0
-    nr '"Nun, ja, aber - also, ja. Also rieche ich ein bißchen. *Entschuldige* bitte."{#morte_s691_}'
+    nr '"Nun, ja, aber - also, ja. Also rieche ich ein bißchen. *Entschuldige* bitte."{#morte_s691_1}'
 
     menu:
         '"*Warum* riechst du nach Baator?"{#morte_s691_r65731}':
@@ -10109,7 +10109,7 @@ label morte_s691: # from 689.0 690.0
 
 # s692 # say65732
 label morte_s692: # from 691.0
-    nr '"Ich war eine Zeit in den Höllen. Ziemlich lange. Man nimmt den Gestank mit der Zeit an."{#morte_s692_}'
+    nr '"Ich war eine Zeit in den Höllen. Ziemlich lange. Man nimmt den Gestank mit der Zeit an."{#morte_s692_1}'
 
     menu:
         '"Du warst in den Höllen? Was hast du dort GEMACHT?"{#morte_s692_r65733}':
@@ -10120,14 +10120,14 @@ label morte_s692: # from 691.0
 
 # s693 # say65734
 label morte_s693: # from 329.7 692.0 729.7
-    nr '"Weißt du, nun, da ist diese *Säule* auf Avernus, der ersten Ebene von Baator. Man nennt sie die Schädelsäule, aber es ist mehr eine Säule aus Köpfen."{#morte_s693_}'
+    nr '"Weißt du, nun, da ist diese *Säule* auf Avernus, der ersten Ebene von Baator. Man nennt sie die Schädelsäule, aber es ist mehr eine Säule aus Köpfen."{#morte_s693_1}'
 
     jump morte_s694
 
 
 # s694 # say65735
 label morte_s694: # from 693.0
-    nr '"Manche Knochenbrecher sagen, sie besteht *angeblich* aus den Köpfen von Dusseln, vorwiegend Weise und Gelehrte, die ihr Wissen zu Lebzeiten nutzten, um die Wahrheit ein bißchen zu verbiegen… so sehr, daß sie dadurch sogar jemanden verletzt oder, äh, getötet haben könnten. Jedenfalls, als ich *gestorben* bin, bin ich dort gelandet. Komisch, oder?"{#morte_s694_}'
+    nr '"Manche Knochenbrecher sagen, sie besteht *angeblich* aus den Köpfen von Dusseln, vorwiegend Weise und Gelehrte, die ihr Wissen zu Lebzeiten nutzten, um die Wahrheit ein bißchen zu verbiegen… so sehr, daß sie dadurch sogar jemanden verletzt oder, äh, getötet haben könnten. Jedenfalls, als ich *gestorben* bin, bin ich dort gelandet. Komisch, oder?"{#morte_s694_1}'
 
     menu:
         '"Nö."{#morte_s694_r65846}':
@@ -10137,7 +10137,7 @@ label morte_s694: # from 693.0
 
 # s695 # say65736
 label morte_s695: # from 694.0
-    nr '"Äh…" Morte schweigt kurz. "Ja, du hast Recht. Es ist überhaupt nicht komisch. Weißt du, ich glaube, daß ich viel wußte, als ich noch am Leben war. Und vielleicht habe ich nicht immer die Wahrheit über das gesagt, was ich wußte. Ich glaube, als ich die Wahrheit ein- zweimal verdreht habe, könnte das dazu geführt haben, daß jemand vorzeitig ins Totenbuch aufgenommen wurde."{#morte_s695_}'
+    nr '"Äh…" Morte schweigt kurz. "Ja, du hast Recht. Es ist überhaupt nicht komisch. Weißt du, ich glaube, daß ich viel wußte, als ich noch am Leben war. Und vielleicht habe ich nicht immer die Wahrheit über das gesagt, was ich wußte. Ich glaube, als ich die Wahrheit ein- zweimal verdreht habe, könnte das dazu geführt haben, daß jemand vorzeitig ins Totenbuch aufgenommen wurde."{#morte_s695_1}'
 
     menu:
         '"Weißt du noch, wer?"{#morte_s695_r65737}':
@@ -10159,7 +10159,7 @@ label morte_s695: # from 694.0
 
 # s696 # say65741
 label morte_s696: # from 695.1
-    nr 'Morte sieht dich kurz an. "Ja. Ich kann nicht sagen, *woher* ich es weiß, Meister, aber ich weiß es eben. Ich glaube, daß du der Grund bist, warum ich hergeschickt wurde. Das letzte Puzzlesteinchen im Mosaik. Das Dumme ist nur: Ich kann mich nicht daran erinnern, was geschehen ist. Ich kann mich nicht einmal daran erinnern, Mensch gewesen zu sein, oder wie mein Leben war, bevor ich auf der Säule aufgewacht bin."{#morte_s696_}'
+    nr 'Morte sieht dich kurz an. "Ja. Ich kann nicht sagen, *woher* ich es weiß, Meister, aber ich weiß es eben. Ich glaube, daß du der Grund bist, warum ich hergeschickt wurde. Das letzte Puzzlesteinchen im Mosaik. Das Dumme ist nur: Ich kann mich nicht daran erinnern, was geschehen ist. Ich kann mich nicht einmal daran erinnern, Mensch gewesen zu sein, oder wie mein Leben war, bevor ich auf der Säule aufgewacht bin."{#morte_s696_1}'
 
     menu:
         '"Warum hast du das vergessen?"{#morte_s696_r65742}':
@@ -10177,7 +10177,7 @@ label morte_s696: # from 695.1
 
 # s697 # say65745
 label morte_s697: # from 695.0
-    nr '"Ich kann nicht sagen, woher ich es weiß, Meister, aber ich glaube, *du* warst es. Zumindest einmal. Das Dumme ist nur: Ich kann mich nicht daran erinnern, was geschehen ist. Ich kann mich nicht einmal daran erinnern, Mensch gewesen zu sein, oder wie mein Leben war, bevor ich auf der Säule aufgewacht bin."{#morte_s697_}'
+    nr '"Ich kann nicht sagen, woher ich es weiß, Meister, aber ich glaube, *du* warst es. Zumindest einmal. Das Dumme ist nur: Ich kann mich nicht daran erinnern, was geschehen ist. Ich kann mich nicht einmal daran erinnern, Mensch gewesen zu sein, oder wie mein Leben war, bevor ich auf der Säule aufgewacht bin."{#morte_s697_1}'
 
     menu:
         '"Warum hast du das vergessen?"{#morte_s697_r65746}':
@@ -10195,7 +10195,7 @@ label morte_s697: # from 695.0
 
 # s698 # say65749
 label morte_s698: # from 696.0 697.0
-    nr '"So läuft das nun mal, wenn man stirbt, wie du ja sicher selbst weißt. Du… vergißt einfach. Ich denke, ich war im Leben wohl kein gediegenes Mitglied der Gemeinschaft… aber wer ist das schon?" Morte seufzt. "Ich kann nicht anders. Es gibt nichts Schlimmeres, als die ganze Zeit *ehrlich* zu sein."{#morte_s698_}'
+    nr '"So läuft das nun mal, wenn man stirbt, wie du ja sicher selbst weißt. Du… vergißt einfach. Ich denke, ich war im Leben wohl kein gediegenes Mitglied der Gemeinschaft… aber wer ist das schon?" Morte seufzt. "Ich kann nicht anders. Es gibt nichts Schlimmeres, als die ganze Zeit *ehrlich* zu sein."{#morte_s698_1}'
 
     menu:
         '"Außer man wird in die Höllen geschickt. Das klingt schlimmer als die Wahrheit zu erzählen."{#morte_s698_r65750}' if morteLogic.r65750_condition():
@@ -10211,7 +10211,7 @@ label morte_s698: # from 696.0 697.0
 
 # s699 # say65752
 label morte_s699: # from 698.0 698.1
-    nr '"Ja… du hast Recht. *Schon wieder*." Morte klappert mit den Zähnen. Er tut das so, wie jemand anders, der mit den Fingern trommelt. "Ich glaube, daß alles Gute und Böse, alles Lügen und Betrügen einen eines Tages einholt. Und als ich ins Totenbuch gesteckt wurde, war ich eben an der Reihe."{#morte_s699_}'
+    nr '"Ja… du hast Recht. *Schon wieder*." Morte klappert mit den Zähnen. Er tut das so, wie jemand anders, der mit den Fingern trommelt. "Ich glaube, daß alles Gute und Böse, alles Lügen und Betrügen einen eines Tages einholt. Und als ich ins Totenbuch gesteckt wurde, war ich eben an der Reihe."{#morte_s699_1}'
 
     menu:
         '"Also wie bist du dann der Säule entkommen?"{#morte_s699_r65753}':
@@ -10230,7 +10230,7 @@ label morte_s699: # from 698.0 698.1
 
 # s700 # say65757
 label morte_s700: # from 699.0
-    nr '"Nun… du hast mir geholfen, Meister. Als du an der Schädelsäule aufgekreuzt bist, habe ich mich nach vorne gedrängelt. Mein offensichtlicher Wissensschatz und Charme haben deine Aufmerksamkeit erregt. Du wußtest, daß *ich* der Schädel war, der am meisten wußte. Also habe ich eine Abmachung mit dir getroffen."{#morte_s700_}'
+    nr '"Nun… du hast mir geholfen, Meister. Als du an der Schädelsäule aufgekreuzt bist, habe ich mich nach vorne gedrängelt. Mein offensichtlicher Wissensschatz und Charme haben deine Aufmerksamkeit erregt. Du wußtest, daß *ich* der Schädel war, der am meisten wußte. Also habe ich eine Abmachung mit dir getroffen."{#morte_s700_1}'
 
     menu:
         '"Abmachung…?"{#morte_s700_r65758}':
@@ -10249,7 +10249,7 @@ label morte_s700: # from 699.0
 
 # s701 # say65761
 label morte_s701: # from 700.0
-    nr 'Während Morte spricht, wird dir ganz Rot vor Augen, und du hörst ein heulendes, ein fürchterlich *schreiendes* Meer von Stimmen, durchdringend, kreischend, hämmernd, und ALLE betteln und schreien nach Befreiung, und Mortes Stimme… blaß, fast nicht zu hören in der Menge. Er klingt verzweifelt, verängstigt und… auf klägliche, tragische Weise *verloren*.{#morte_s701_}'
+    nr 'Während Morte spricht, wird dir ganz Rot vor Augen, und du hörst ein heulendes, ein fürchterlich *schreiendes* Meer von Stimmen, durchdringend, kreischend, hämmernd, und ALLE betteln und schreien nach Befreiung, und Mortes Stimme… blaß, fast nicht zu hören in der Menge. Er klingt verzweifelt, verängstigt und… auf klägliche, tragische Weise *verloren*.{#morte_s701_1}'
 
     menu:
         'Echo: "Du. Schädel. Sprich."{#morte_s701_r65762}':
@@ -10264,7 +10264,7 @@ label morte_s701: # from 700.0
 
 # s702 # say65764
 label morte_s702: # from 701.0
-    nr 'Die heulenden Stimmen verstummen, und du siehst diesen kleinen Schädel, seine rissige Oberfläche in höllisches Licht getaucht, wie er seine Augen auf dich richtet. Blut und Eiter überströmen den Schädel, und seine Zähne klappern, als wäre ihm kalt. "Ich… ich k-k-kann dir helfen. Ich weiß, w-w-was du suchst… all diese Köpfe… all ihr Wissen… aber bitte, ich *flehe* dich an, befreie mich. Laß mich dir *helfen*. Ich sage dir alles, *alles.*"{#morte_s702_}'
+    nr 'Die heulenden Stimmen verstummen, und du siehst diesen kleinen Schädel, seine rissige Oberfläche in höllisches Licht getaucht, wie er seine Augen auf dich richtet. Blut und Eiter überströmen den Schädel, und seine Zähne klappern, als wäre ihm kalt. "Ich… ich k-k-kann dir helfen. Ich weiß, w-w-was du suchst… all diese Köpfe… all ihr Wissen… aber bitte, ich *flehe* dich an, befreie mich. Laß mich dir *helfen*. Ich sage dir alles, *alles.*"{#morte_s702_1}'
 
     menu:
         'Echo: "*Wirklich*? SCHWÖRE es, Schädel. SCHWÖRE, daß du mir bis ans Ende meiner Tage dienst, oder du bleibst für immer hier."{#morte_s702_r65765}':
@@ -10279,7 +10279,7 @@ label morte_s702: # from 701.0
 
 # s703 # say65767
 label morte_s703: # from 702.0
-    nr '"Ich schwöre. Ich schwöre… aber bitte, *bitte* befreie mich… Ich…" Morte schluckt schwer, sein Stolz ist regelrecht greifbar. "Ich… *flehe* dich an. Laß mich dir *helfen*. Bitte."{#morte_s703_}'
+    nr '"Ich schwöre. Ich schwöre… aber bitte, *bitte* befreie mich… Ich…" Morte schluckt schwer, sein Stolz ist regelrecht greifbar. "Ich… *flehe* dich an. Laß mich dir *helfen*. Bitte."{#morte_s703_1}'
 
     menu:
         'Echo: "Sehr gut. Ich werde dich befreien."{#morte_s703_r65768}':
@@ -10294,7 +10294,7 @@ label morte_s703: # from 702.0
 
 # s704 # say65770
 label morte_s704: # from 703.0
-    nr 'Dein Blick verschiebt sich, als ob du dich bewegen würdest, und das heulende, schreiende Stimmengewirr setzt wieder ein, ein Alptraum aus Heulen, Katzenjammer, Flüchen und Beschimpfungen… du fühlst, wie deine Hände in den schleimigen Sumpf der Säule gleiten, die Bisse von Zähnen, Kiefern, und deine Hände umfassen den kleinen Schädel und ziehen, reißen ihn von der Säule wie alten Schorf…{#morte_s704_}'
+    nr 'Dein Blick verschiebt sich, als ob du dich bewegen würdest, und das heulende, schreiende Stimmengewirr setzt wieder ein, ein Alptraum aus Heulen, Katzenjammer, Flüchen und Beschimpfungen… du fühlst, wie deine Hände in den schleimigen Sumpf der Säule gleiten, die Bisse von Zähnen, Kiefern, und deine Hände umfassen den kleinen Schädel und ziehen, reißen ihn von der Säule wie alten Schorf…{#morte_s704_1}'
 
     menu:
         'Echo: "Es ist VOLLBRACHT."{#morte_s704_r65771}':
@@ -10309,7 +10309,7 @@ label morte_s704: # from 703.0
 
 # s705 # say65773
 label morte_s705: # from 704.0
-    nr 'Du siehst den blutigen Schädel in deinen Händen an, seine Augen verklebt vom Eiter der Säule, und seine Zähne klappern, einmal, zweimal. Er erinnert dich an ein schreiendes Neugeborenes, hilflos - und in deinen Augen erbärmlich.{#morte_s705_}'
+    nr 'Du siehst den blutigen Schädel in deinen Händen an, seine Augen verklebt vom Eiter der Säule, und seine Zähne klappern, einmal, zweimal. Er erinnert dich an ein schreiendes Neugeborenes, hilflos - und in deinen Augen erbärmlich.{#morte_s705_1}'
 
     menu:
         'Echo: "Ich habe dich befreit. Nun bestimme ich über dein Leben… und deinen Tod, Morte."{#morte_s705_r65774}' if morteLogic.r65774_condition():
@@ -10325,7 +10325,7 @@ label morte_s705: # from 704.0
 
 # s706 # say65776
 label morte_s706: # from 701.1 702.1 703.1 704.1 705.0 705.1
-    nr 'Deine Sicht wird unscharf, der Nebel der Vergangenheit verzieht sich, und Morte plappert noch immer. "Wir haben eine ganze Zeit darüber geredet, Meister, du und ich, ob die Abmachung funktionieren würde, und ich glaube, wir waren beide voneinander beeindruckt, also hast du mich von der Säule befreit, und seitdem bin ich nun bei dir."{#morte_s706_}'
+    nr 'Deine Sicht wird unscharf, der Nebel der Vergangenheit verzieht sich, und Morte plappert noch immer. "Wir haben eine ganze Zeit darüber geredet, Meister, du und ich, ob die Abmachung funktionieren würde, und ich glaube, wir waren beide voneinander beeindruckt, also hast du mich von der Säule befreit, und seitdem bin ich nun bei dir."{#morte_s706_1}'
 
     menu:
         '"Aha… Und was geschah dann?"{#morte_s706_r65777}':
@@ -10343,7 +10343,7 @@ label morte_s706: # from 701.1 702.1 703.1 704.1 705.0 705.1
 
 # s707 # say65780
 label morte_s707: # from 706.0
-    nr '"Nun, ich habe nicht gewußt, daß ich alles Wissen der Säule verlieren würde, wenn ich sie verlasse… Ich meine, wie hätte ich das wissen können? Ich bin ja noch nie vorher außerhalb dieses verdammten Dings gewesen… Aber du hattest viel Verständnis dafür…"{#morte_s707_}'
+    nr '"Nun, ich habe nicht gewußt, daß ich alles Wissen der Säule verlieren würde, wenn ich sie verlasse… Ich meine, wie hätte ich das wissen können? Ich bin ja noch nie vorher außerhalb dieses verdammten Dings gewesen… Aber du hattest viel Verständnis dafür…"{#morte_s707_1}'
 
     menu:
         '"Du hast all dein Wissen verloren…?"{#morte_s707_r65781}':
@@ -10362,7 +10362,7 @@ label morte_s707: # from 706.0
 
 # s708 # say65784
 label morte_s708: # from 707.0
-    nr 'Deine Sicht wird wieder unscharf, dir wird schwindlig, und dein Magen dreht sich dir um - Du hörst das Knacken und Brechen von Knochen, und Mortes Heulen - Er heult vor Schmerz, schreit jemanden an, daß er aufhören soll, aufhören, ihn zu *töten*… und du schlägst um dich, wieder und wieder und…{#morte_s708_}'
+    nr 'Deine Sicht wird wieder unscharf, dir wird schwindlig, und dein Magen dreht sich dir um - Du hörst das Knacken und Brechen von Knochen, und Mortes Heulen - Er heult vor Schmerz, schreit jemanden an, daß er aufhören soll, aufhören, ihn zu *töten*… und du schlägst um dich, wieder und wieder und…{#morte_s708_1}'
 
     menu:
         'Echo: "VERDAMMT seist du, Schädel, du hast mich BELOGEN. Ich RAMME DICH ZURÜCK IN DIESE VERFLUCHTE SÄULE UND LASS DICH DORT *STERBEN*."{#morte_s708_r65785}':
@@ -10380,7 +10380,7 @@ label morte_s708: # from 707.0
 
 # s709 # say65788
 label morte_s709: # from 708.0
-    nr 'Du hörst das Geräusch von Knochen, die gegen etwas wie Metall schlagen - ein Boden oder eine Wand, und das Klappern von losen Zähnen. Du hörst Morte, der dich wie ein Hund jaulend anfleht aufzu…{#morte_s709_}'
+    nr 'Du hörst das Geräusch von Knochen, die gegen etwas wie Metall schlagen - ein Boden oder eine Wand, und das Klappern von losen Zähnen. Du hörst Morte, der dich wie ein Hund jaulend anfleht aufzu…{#morte_s709_1}'
 
     menu:
         'Echo: "DEIN LEID IN DER SÄULE IST *NICHTS* GEGEN DIE *QUALEN*, DIE DU BEI MIR ERLEIDEN WIRST."{#morte_s709_r65789}':
@@ -10399,7 +10399,7 @@ label morte_s709: # from 708.0
 
 # s710 # say65792
 label morte_s710: # from 709.0
-    nr 'Deine Sicht wird verschwommen, und Mortes Schreie verstummen und blenden sich in den Rhythmus seines Plapperns ein. "Dann hast du gemerkt, daß ich immer noch zu etwas gut bin, also bin ich mit dir gegangen und seitdem immer bei dir geblieben."{#morte_s710_}'
+    nr 'Deine Sicht wird verschwommen, und Mortes Schreie verstummen und blenden sich in den Rhythmus seines Plapperns ein. "Dann hast du gemerkt, daß ich immer noch zu etwas gut bin, also bin ich mit dir gegangen und seitdem immer bei dir geblieben."{#morte_s710_1}'
 
     menu:
         '"Morte, was wollte ich von der Säule? Und wie lange ist es her, daß ich dich befreit habe?"{#morte_s710_r65793}':
@@ -10417,7 +10417,7 @@ label morte_s710: # from 709.0
 
 # s711 # say65796
 label morte_s711: # from 710.0
-    nr 'Morte denkt einen Moment nach. "Nun, ich weiß nicht genau, wie lange… Ewig, würde ich sagen. Ich habe immer alles getan, um dir zu helfen, aber…" Morte seufzt. "Es ist nicht leicht. Und was du an der Säule wolltest, weiß ich auch nicht. In dem Moment, als du mich befreitest, konnte ich mich nicht mehr erinnern."{#morte_s711_}'
+    nr 'Morte denkt einen Moment nach. "Nun, ich weiß nicht genau, wie lange… Ewig, würde ich sagen. Ich habe immer alles getan, um dir zu helfen, aber…" Morte seufzt. "Es ist nicht leicht. Und was du an der Säule wolltest, weiß ich auch nicht. In dem Moment, als du mich befreitest, konnte ich mich nicht mehr erinnern."{#morte_s711_1}'
 
     menu:
         '"Morte, warum hast du nichts GESAGT, als wir in der Leichenhalle waren?"{#morte_s711_r65797}':
@@ -10435,7 +10435,7 @@ label morte_s711: # from 710.0
 
 # s712 # say65800
 label morte_s712: # from 711.0
-    nr 'Morte beginnt plötzlich, sich zu verteidigen. "Weil ich nie *weiß*, wer du sein wirst! Einige von deinen Inkarnationen waren echt total verrückt! Einmal bist du aufgewacht und warst davon überzeugt, daß *ich* dein Schädel wäre. Du hast mich um den Turm gejagt und wolltest mich fertigmachen und verschlingen… Gott sei Dank bist du dabei von einem Karren überfahren worden. Ein anderes Mal warst du „gut und rechtschaffen“ und wolltest mich zurück in die Säule zu stopfen, weil das der Ort sei, „wo ich hingehöre“." Morte grinst. "*Deshalb*. Außerdem hat es nie etwas geschadet, daß du„s nicht gewußt hast…"{#morte_s712_}'
+    nr 'Morte beginnt plötzlich, sich zu verteidigen. "Weil ich nie *weiß*, wer du sein wirst! Einige von deinen Inkarnationen waren echt total verrückt! Einmal bist du aufgewacht und warst davon überzeugt, daß *ich* dein Schädel wäre. Du hast mich um den Turm gejagt und wolltest mich fertigmachen und verschlingen… Gott sei Dank bist du dabei von einem Karren überfahren worden. Ein anderes Mal warst du „gut und rechtschaffen“ und wolltest mich zurück in die Säule zu stopfen, weil das der Ort sei, „wo ich hingehöre“." Morte grinst. "*Deshalb*. Außerdem hat es nie etwas geschadet, daß du„s nicht gewußt hast…"{#morte_s712_1}'
 
     menu:
         '"Und du bist die ganze Zeit über bei mir geblieben?"{#morte_s712_r65801}' if morteLogic.r65801_condition():
@@ -10453,7 +10453,7 @@ label morte_s712: # from 711.0
 
 # s713 # say65804
 label morte_s713: # from 712.0
-    nr '"Ja klar, Meister. Ich hab„s dir doch gesagt. Morte hält immer seine Versprechen." Er macht eine Pause. "Nun, meistens. He-he. Da war dieses junge Ding auf Arborea, die…"{#morte_s713_}'
+    nr '"Ja klar, Meister. Ich hab„s dir doch gesagt. Morte hält immer seine Versprechen." Er macht eine Pause. "Nun, meistens. He-he. Da war dieses junge Ding auf Arborea, die…"{#morte_s713_1}'
 
     $ morteLogic.s713_action()
     jump morte_s714
@@ -10461,7 +10461,7 @@ label morte_s713: # from 712.0
 
 # s714 # say65805
 label morte_s714: # from 713.0
-    nr 'Du merkst plötzlich, daß sich Mortes Tonfall verändert hat. Hinter dem Witz bemerkst du, daß er etwas zu verbergen versucht. Etwas darüber, warum er bei dir ist.{#morte_s714_}'
+    nr 'Du merkst plötzlich, daß sich Mortes Tonfall verändert hat. Hinter dem Witz bemerkst du, daß er etwas zu verbergen versucht. Etwas darüber, warum er bei dir ist.{#morte_s714_1}'
 
     menu:
         '"Morte, mal im Ernst, warum bist du immer noch bei mir?"{#morte_s714_r65806}':
@@ -10479,7 +10479,7 @@ label morte_s714: # from 713.0
 
 # s715 # say65809
 label morte_s715: # from 329.8 714.0 729.8
-    nr '"Meister, ich sagte, es ist, weil ich„s dir versprochen habe, in Ordnung?" Er schaut verstört. "Was soll denn sonst der Grund sein?"{#morte_s715_}'
+    nr '"Meister, ich sagte, es ist, weil ich„s dir versprochen habe, in Ordnung?" Er schaut verstört. "Was soll denn sonst der Grund sein?"{#morte_s715_1}'
 
     menu:
         '"Ich weiß es nicht. Du hättest nicht bei mir bleiben müssen, nachdem ich dich befreit hatte."{#morte_s715_r65810}':
@@ -10497,7 +10497,7 @@ label morte_s715: # from 329.8 714.0 729.8
 
 # s716 # say65813
 label morte_s716: # from 715.0
-    nr '"Nun, natürlich nicht, Meister, aber ich…" Und plötzlich geht dir durch seinen Tonfall ein Licht auf, und du weißt *warum* er all die Zeit über bei dir geblieben ist.{#morte_s716_}'
+    nr '"Nun, natürlich nicht, Meister, aber ich…" Und plötzlich geht dir durch seinen Tonfall ein Licht auf, und du weißt *warum* er all die Zeit über bei dir geblieben ist.{#morte_s716_1}'
 
     menu:
         '"Du fühlst dich *schuldig*, weil du mich vor so langer Zeit in den Tod geführt hast, oder? Und seitdem leidest du darunter."{#morte_s716_r65814}':
@@ -10507,7 +10507,7 @@ label morte_s716: # from 715.0
 
 # s717 # say65815
 label morte_s717: # from 716.0
-    nr '"Ach komm schon, Meister. Ich und *schuldig*? Ich bin„s: Morte."{#morte_s717_}'
+    nr '"Ach komm schon, Meister. Ich und *schuldig*? Ich bin„s: Morte."{#morte_s717_1}'
 
     menu:
         '"Nein, ich glaube, das war alles. Als ich dich vor deinem wohlverdienten Schicksal rettete, *konntest* du einfach nicht anders, als mir helfen zu wollen. Und als du hättest verschwinden können, bist du bei mir geblieben, weil du dich mir verpflichtet fühlst."{#morte_s717_r65816}':
@@ -10517,14 +10517,14 @@ label morte_s717: # from 716.0
 
 # s718 # say65817
 label morte_s718: # from 717.0
-    nr 'Morte schweigt einen Moment und sieht dich an. "Vielleicht. Weißt du, was komisch ist? Am Anfang wußte ich nicht, was für ein Gefühl das ist. Es nagt irgendwie langsam an dir, weißt du?"{#morte_s718_}'
+    nr 'Morte schweigt einen Moment und sieht dich an. "Vielleicht. Weißt du, was komisch ist? Am Anfang wußte ich nicht, was für ein Gefühl das ist. Es nagt irgendwie langsam an dir, weißt du?"{#morte_s718_1}'
 
     jump morte_s719
 
 
 # s719 # say65818
 label morte_s719: # from 718.0
-    nr '"Ich meine, erst dachte ich, es wäre eine Nebenwirkung irgendeines Zaubers, der mich an dich gebunden hat… Aber nach ein paar hundert Jahren merkte ich, es ist *mehr* als das… etwas Tieferes. Ich fühlte mich einfach irgendwie gebunden, *verbunden* mit dir. Vielleicht ist es all dein Leid, Meister… deine Qualen. Ich weiß es nicht. Vielleicht fühlte ich mich… ich weiß es nicht, *verantwortlich* für was auch immer ich getan habe. Was, wenn ich etwas getan habe, das dich in diese Situation gebracht hat?"{#morte_s719_}'
+    nr '"Ich meine, erst dachte ich, es wäre eine Nebenwirkung irgendeines Zaubers, der mich an dich gebunden hat… Aber nach ein paar hundert Jahren merkte ich, es ist *mehr* als das… etwas Tieferes. Ich fühlte mich einfach irgendwie gebunden, *verbunden* mit dir. Vielleicht ist es all dein Leid, Meister… deine Qualen. Ich weiß es nicht. Vielleicht fühlte ich mich… ich weiß es nicht, *verantwortlich* für was auch immer ich getan habe. Was, wenn ich etwas getan habe, das dich in diese Situation gebracht hat?"{#morte_s719_1}'
 
     $ morteLogic.s719_action()
     jump morte_s720
@@ -10532,7 +10532,7 @@ label morte_s719: # from 718.0
 
 # s720 # say65820
 label morte_s720: # from 719.0
-    nr '"Das Dumme ist, ich glaube nicht, daß ich - oder wer immer ich war - jemals *sehen* mußte, welche Auswirkungen meine Lügen und Betrügereien haben, und als ich dich zum ersten Mal gesehen habe, als ich gefangen in der Säule war, da *wußte* ich irgendwie, daß du derjenige warst, den ich verraten habe. Damals… vor langer Zeit." Morte seufzt. "Und das ist alles, was ich weiß."{#morte_s720_}'
+    nr '"Das Dumme ist, ich glaube nicht, daß ich - oder wer immer ich war - jemals *sehen* mußte, welche Auswirkungen meine Lügen und Betrügereien haben, und als ich dich zum ersten Mal gesehen habe, als ich gefangen in der Säule war, da *wußte* ich irgendwie, daß du derjenige warst, den ich verraten habe. Damals… vor langer Zeit." Morte seufzt. "Und das ist alles, was ich weiß."{#morte_s720_1}'
 
     menu:
         '"Verstehe. Danke für die Klärung, Morte."{#morte_s720_r65821}':
@@ -10543,7 +10543,7 @@ label morte_s720: # from 719.0
 
 # s721 # say65822
 label morte_s721: # from 720.0
-    nr '"Pah, dank nicht mir…" Morte seufzt. Und zu deiner Überraschung scheint seine Stimme nun irgendwie stärker zu sein, zuversichtlicher. Einige Risse und Brüche seines Schädels sind verschwunden, als wären sie verheilt. "Ich muß dir danken. Ich fühle mich jetzt von einer tonnenschweren Last befreit…"{#morte_s721_}'
+    nr '"Pah, dank nicht mir…" Morte seufzt. Und zu deiner Überraschung scheint seine Stimme nun irgendwie stärker zu sein, zuversichtlicher. Einige Risse und Brüche seines Schädels sind verschwunden, als wären sie verheilt. "Ich muß dir danken. Ich fühle mich jetzt von einer tonnenschweren Last befreit…"{#morte_s721_1}'
 
     menu:
         '"Ich hätte da noch ein paar Fragen."{#morte_s721_r65823}':
@@ -10557,7 +10557,7 @@ label morte_s721: # from 720.0
 
 # s722 # say65826
 label morte_s722: # from 329.10 729.10
-    nr '"Nun, sie ist eine Nachthexe. Und sie war zweifellos dumm genug, DICH unsterblich zu machen, ausgerechnet dich. Ich meine, sie hätte doch auch mich auswählen können." Morte verdreht die Augen. "Trotzdem: Jemand, der verblödet genug ist, sich mit der Dame der Schmerzen anzulegen, ist nicht unbedingt jemand, den wir suchen sollten."{#morte_s722_}'
+    nr '"Nun, sie ist eine Nachthexe. Und sie war zweifellos dumm genug, DICH unsterblich zu machen, ausgerechnet dich. Ich meine, sie hätte doch auch mich auswählen können." Morte verdreht die Augen. "Trotzdem: Jemand, der verblödet genug ist, sich mit der Dame der Schmerzen anzulegen, ist nicht unbedingt jemand, den wir suchen sollten."{#morte_s722_1}'
 
     menu:
         '"Verstehe. Ich hätte da noch ein paar Fragen…"{#morte_s722_r65827}':
@@ -10571,7 +10571,7 @@ label morte_s722: # from 329.10 729.10
 
 # s723 # say65829
 label morte_s723: # from 329.9 729.9
-    nr '"Es ist ein Krieg. Ein riesiger, blutiger, chaotischer Krieg. Er findet überall statt, obwohl du ihn nicht immer sehen kannst."{#morte_s723_}'
+    nr '"Es ist ein Krieg. Ein riesiger, blutiger, chaotischer Krieg. Er findet überall statt, obwohl du ihn nicht immer sehen kannst."{#morte_s723_1}'
 
     menu:
         '"Erzähl weiter…"{#morte_s723_r65830}':
@@ -10589,14 +10589,14 @@ label morte_s723: # from 329.9 729.9
 
 # s724 # say65833
 label morte_s724: # from 723.0
-    nr '"Also, Meister, es ist ein Krieg zwischen zwei bösen Rassen: Dämonen und Teufel. Vor langer Zeit wußten sie nichts voneinander. Die Teufel waren böse, aber es war eine Art „geregelte“ Bosheit. Die Dämonen waren auch böse, aber sie gingen lockerer damit um - impulsiver, chaotischer, weniger organisiert. Die Teufel waren wie Politiker, die Dämonen waren wie Metzger."{#morte_s724_}'
+    nr '"Also, Meister, es ist ein Krieg zwischen zwei bösen Rassen: Dämonen und Teufel. Vor langer Zeit wußten sie nichts voneinander. Die Teufel waren böse, aber es war eine Art „geregelte“ Bosheit. Die Dämonen waren auch böse, aber sie gingen lockerer damit um - impulsiver, chaotischer, weniger organisiert. Die Teufel waren wie Politiker, die Dämonen waren wie Metzger."{#morte_s724_1}'
 
     jump morte_s725
 
 
 # s725 # say65834
 label morte_s725: # from 724.0
-    nr '"Dann eines Tages trafen sich die beiden Rassen. Sie sahen sich an, und es gefiel ihnen nicht, wie die jeweils andere Rasse mit dem Bösen umging. Und seitdem kämpfen sie. Es ist ein einziger Alptraum. Aber es beschäftigt diese beiden Rassen wenigstens, also fallen sie nicht über die ganzen Ebenen her."{#morte_s725_}'
+    nr '"Dann eines Tages trafen sich die beiden Rassen. Sie sahen sich an, und es gefiel ihnen nicht, wie die jeweils andere Rasse mit dem Bösen umging. Und seitdem kämpfen sie. Es ist ein einziger Alptraum. Aber es beschäftigt diese beiden Rassen wenigstens, also fallen sie nicht über die ganzen Ebenen her."{#morte_s725_1}'
 
     menu:
         '"Verstehe. Ich hätte da noch ein paar Fragen…"{#morte_s725_r65835}':
@@ -10610,7 +10610,7 @@ label morte_s725: # from 724.0
 
 # s726 # say65837
 label morte_s726: # from 329.11 729.11
-    nr '"Keine Ahnung, Meister. Ich hab es irgendwie vergessen, als ich starb. Und es macht mir auch nicht viel aus. Wenigstens hat nach meinem Tod etwas auf mich gewartet, auch wenn es das Leben als wandelnder Schädel ist. Ich glaube, es hätte schlimmer kommen können."{#morte_s726_}'
+    nr '"Keine Ahnung, Meister. Ich hab es irgendwie vergessen, als ich starb. Und es macht mir auch nicht viel aus. Wenigstens hat nach meinem Tod etwas auf mich gewartet, auch wenn es das Leben als wandelnder Schädel ist. Ich glaube, es hätte schlimmer kommen können."{#morte_s726_1}'
 
     menu:
         '"Was ist mit deinem Körper geschehen?"{#morte_s726_r65839}':
@@ -10628,7 +10628,7 @@ label morte_s726: # from 329.11 729.11
 
 # s727 # say65838
 label morte_s727: # from 726.0
-    nr '"Hey… Ich weiß es nicht, okay? Es ist einfach weg." Morte schaut dich böse an. "Glaub bloß nicht, daß ich es VERMISSE. Mir geht es gut, so wie ich bin, und ich brauche deine halbseidenen Urteile und spitzen Bemerkungen nicht, verstanden?"{#morte_s727_}'
+    nr '"Hey… Ich weiß es nicht, okay? Es ist einfach weg." Morte schaut dich böse an. "Glaub bloß nicht, daß ich es VERMISSE. Mir geht es gut, so wie ich bin, und ich brauche deine halbseidenen Urteile und spitzen Bemerkungen nicht, verstanden?"{#morte_s727_1}'
 
     menu:
         '"Verstehe. Ich hätte da noch ein paar Fragen…"{#morte_s727_r65842}':
@@ -10642,7 +10642,7 @@ label morte_s727: # from 726.0
 
 # s728 # say65844
 label morte_s728: # from 727.1
-    nr 'Morte sieht dich böse an. "Ich bin noch nicht überzeugt, daß du nicht eine Art wandelnder Fluch bist, der dazu verdammt wurde, mir zu folgen."{#morte_s728_}'
+    nr 'Morte sieht dich böse an. "Ich bin noch nicht überzeugt, daß du nicht eine Art wandelnder Fluch bist, der dazu verdammt wurde, mir zu folgen."{#morte_s728_1}'
 
     menu:
         '"Wie schön er redet… Gehn wir."{#morte_s728_r65845}':
@@ -10652,7 +10652,7 @@ label morte_s728: # from 727.1
 
 # s729 # say66344
 label morte_s729: # - # IF WEIGHT #7 /* Triggers after states #: 742 737 733 even though they appear after this state */ ~  Global("AR0200_Visited","GLOBAL",1) InParty("Morte") !GlobalGT("Fortress_Morte","GLOBAL",2)
-    nr '"Was nagt an dir, Meister?"~ [MRT515]{#morte_s729_}'
+    nr '"Was nagt an dir, Meister?"~ [MRT515]{#morte_s729_1}'
 
     menu:
         '"Kannst du mir noch einmal vorlesen, was auf meinen Rücken tätowiert ist?"{#morte_s729_r66345}':
@@ -10710,7 +10710,7 @@ label morte_s729: # - # IF WEIGHT #7 /* Triggers after states #: 742 737 733 eve
 
 # s730 # say66816
 label morte_s730: # -
-    nr '"Hey, Meister, nimmst du das diesen beiden ab? Sie könnten *mir* noch das eine oder andere beibringen…"~ [MRT387]{#morte_s730_}'
+    nr '"Hey, Meister, nimmst du das diesen beiden ab? Sie könnten *mir* noch das eine oder andere beibringen…"~ [MRT387]{#morte_s730_1}'
 
     menu:
         '"Ich glaub es, Morte. Geh„n wir."{#morte_s730_r66817}':
@@ -10720,21 +10720,21 @@ label morte_s730: # -
 
 # s731 # say67510
 label morte_s731: # -
-    nr '"Ich möchte hier nur mal eine Bemerkung einschieben und darauf hinweisen, daß ich nichts sagen werde, das die allgemeine Stimmung vernichten könnte, Meister. Ich werde hier einfach schweben und beobachten. Kümmere dich nicht um mich - mich hier drüben,wie ich hier schwebe und beobachte, ja, das bin ich."{#morte_s731_}'
+    nr '"Ich möchte hier nur mal eine Bemerkung einschieben und darauf hinweisen, daß ich nichts sagen werde, das die allgemeine Stimmung vernichten könnte, Meister. Ich werde hier einfach schweben und beobachten. Kümmere dich nicht um mich - mich hier drüben,wie ich hier schwebe und beobachte, ja, das bin ich."{#morte_s731_1}'
 
     jump annah_s418  # EXTERN
 
 
 # s732 # say67600
 label morte_s732: # -
-    nr '"Würdet ihr beide wohl den Quatsch sein lassen, bevor ich gezwungen bin einen Dabus hierherzuholen, um euch auseinanderzubringen!" Morte brummt. "Oder laßt mich zumindest mitquatschen."{#morte_s732_}'
+    nr '"Würdet ihr beide wohl den Quatsch sein lassen, bevor ich gezwungen bin einen Dabus hierherzuholen, um euch auseinanderzubringen!" Morte brummt. "Oder laßt mich zumindest mitquatschen."{#morte_s732_1}'
 
     jump annah_s446  # EXTERN
 
 
 # s733 # say68171
 label morte_s733: # - # IF WEIGHT #1 ~  Global("Fortress_Morte","GLOBAL",3) Global("Absorb","GLOBAL",0)
-    nr 'Als du die Macht anwendest, beginnt Morte plötzlich zu sprechen. "Warte einen Moment, Meister. Da gibt es… ein paar Dinge, die du wissen musst."~ [MRT242]{#morte_s733_}'
+    nr 'Als du die Macht anwendest, beginnt Morte plötzlich zu sprechen. "Warte einen Moment, Meister. Da gibt es… ein paar Dinge, die du wissen musst."~ [MRT242]{#morte_s733_1}'
 
     menu:
         '"Morte…?! Du bist gar nicht tot!"{#morte_s733_r68176}':
@@ -10745,7 +10745,7 @@ label morte_s733: # - # IF WEIGHT #1 ~  Global("Fortress_Morte","GLOBAL",3) Glob
 
 # s734 # say68172
 label morte_s734: # from 733.0
-    nr '"Also, ja…Wenn du erst mal so lange tot bist wie ich, dann kannst du es auch sehr gut imitieren. Ich habe praktisch eure ganze Unterhaltung angehört. Wende deine Macht auf jemand anderen an… Ich brauch„ das nicht."{#morte_s734_}'
+    nr '"Also, ja…Wenn du erst mal so lange tot bist wie ich, dann kannst du es auch sehr gut imitieren. Ich habe praktisch eure ganze Unterhaltung angehört. Wende deine Macht auf jemand anderen an… Ich brauch„ das nicht."{#morte_s734_1}'
 
     menu:
         '"Also wolltest du hier *rumliegen*, während sie mir das Fell über die Ohren ziehen?"{#morte_s734_r68177}':
@@ -10755,7 +10755,7 @@ label morte_s734: # from 733.0
 
 # s735 # say68173
 label morte_s735: # from 734.0
-    nr '"Nun, *ja*, Meister. Es ist nicht so, als ob du stirbst. Ich meine, wenn du versagt hast, dann brauchst du jemanden, der sich für dich erinnert. Und schließlich weißt du, wie nutzlos ich im Kampf bin… zumindest, wenn ich nicht gerade den einen oder anderen Magier beleidige…"{#morte_s735_}'
+    nr '"Nun, *ja*, Meister. Es ist nicht so, als ob du stirbst. Ich meine, wenn du versagt hast, dann brauchst du jemanden, der sich für dich erinnert. Und schließlich weißt du, wie nutzlos ich im Kampf bin… zumindest, wenn ich nicht gerade den einen oder anderen Magier beleidige…"{#morte_s735_1}'
 
     menu:
         '"Dann ist das vielleicht genau das, was du für mich tun mußt. Wir reden *später* darüber, Morte…"{#morte_s735_r68178}' if morteLogic.r68178_condition():
@@ -10819,7 +10819,7 @@ label morte_s735: # from 734.0
 
 # s736 # say68174
 label morte_s736: # from 735.0
-    nr 'Du wendest deine Macht wieder an…{#morte_s736_}'
+    nr 'Du wendest deine Macht wieder an…{#morte_s736_1}'
 
     menu:
         'Belebe Annah wieder.{#morte_s736_r68175}' if morteLogic.r68175_condition():
@@ -10855,7 +10855,7 @@ label morte_s736: # from 735.0
 
 # s737 # say68310
 label morte_s737: # - # IF WEIGHT #2 ~  Global("Fortress_Morte","GLOBAL",3) GlobalGT("Absorb","GLOBAL",0)
-    nr 'Als du deine Macht anwendest, schwebt Morte plötzlich in die Luft. "Äh… Warte, Meister. Du mußt mich nicht zum Leben erwecken. Ich habe hier nur so ein bißchen, äh, rumgelegen und habe eurem Gespräch gelauscht."{#morte_s737_}'
+    nr 'Als du deine Macht anwendest, schwebt Morte plötzlich in die Luft. "Äh… Warte, Meister. Du mußt mich nicht zum Leben erwecken. Ich habe hier nur so ein bißchen, äh, rumgelegen und habe eurem Gespräch gelauscht."{#morte_s737_1}'
 
     menu:
         'DU HAST DEINEN TOD VORGETÄUSCHT.{#morte_s737_r68311}':
@@ -10865,7 +10865,7 @@ label morte_s737: # - # IF WEIGHT #2 ~  Global("Fortress_Morte","GLOBAL",3) Glob
 
 # s738 # say68312
 label morte_s738: # from 737.0
-    nr '"Nun, ja, ich meine, ich *bin* doch schon tot und… äh, Meister, was ist mit deiner *Stimme* los?"{#morte_s738_}'
+    nr '"Nun, ja, ich meine, ich *bin* doch schon tot und… äh, Meister, was ist mit deiner *Stimme* los?"{#morte_s738_1}'
 
     menu:
         'ICH… BIN NUN ETWAS ANDERES. DIE ZEIT WIRD KNAPP, UND BALD WERDEN MICH DIE ZEIT UND DAS SCHICKSAL EINHOLEN. ICH WERDE DICH ZURÜCK NACH SIGIL BRINGEN, MORTE, WENN DU DAS WÜNSCHST.{#morte_s738_r68313}':
@@ -10875,7 +10875,7 @@ label morte_s738: # from 737.0
 
 # s739 # say68314
 label morte_s739: # from 738.0
-    nr '"Wa…? Mich zurückbringen? Und was ist mit *dir*? Komm schon, Meister, ich mag vielleicht ein *Feigling* sein, aber ich werde dich keinesfalls hier zurücklassen."{#morte_s739_}'
+    nr '"Wa…? Mich zurückbringen? Und was ist mit *dir*? Komm schon, Meister, ich mag vielleicht ein *Feigling* sein, aber ich werde dich keinesfalls hier zurücklassen."{#morte_s739_1}'
 
     menu:
         'VIELE VERBRECHEN WURDEN BEGANGEN, ALS ICH UND MEINE STERBLICHKEIT GETRENNT WAREN. DIESE VERBRECHEN HABEN IHREN… PREIS. WO ICH BALD SEIN WERDE, KANNST DU NICHT HINGEHEN.{#morte_s739_r68315}':
@@ -10885,7 +10885,7 @@ label morte_s739: # from 738.0
 
 # s740 # say68316
 label morte_s740: # from 739.0
-    nr '"Nun, ich *könnte* trotzdem mit dir gehen, Meister, wenn du möchtest. Ich meine, wir haben schon Schlimmeres erl…"{#morte_s740_}'
+    nr '"Nun, ich *könnte* trotzdem mit dir gehen, Meister, wenn du möchtest. Ich meine, wir haben schon Schlimmeres erl…"{#morte_s740_1}'
 
     menu:
         'NICHT DIESES MAL. VIELLEICHT TREFFEN WIR UNS EINES TAGES WIEDER, AUF EINER ANDEREN EBENE. ABER NICHT JETZT.{#morte_s740_r68317}':
@@ -10895,7 +10895,7 @@ label morte_s740: # from 739.0
 
 # s741 # say68318
 label morte_s741: # from 740.0
-    nr 'Morte starrt dich kurz an und seufzt. "Ohne jetzt sentimental zu werden… aber es war mir ein Vergnügen, Meister."~ [MRT109]{#morte_s741_}'
+    nr 'Morte starrt dich kurz an und seufzt. "Ohne jetzt sentimental zu werden… aber es war mir ein Vergnügen, Meister."~ [MRT109]{#morte_s741_1}'
 
     menu:
         'LEB WOHL, MORTE.{#morte_s741_r68319}' if morteLogic.r68319_condition():
@@ -10951,7 +10951,7 @@ label morte_s741: # from 740.0
 
 # s742 # say68408
 label morte_s742: # - # IF WEIGHT #3 ~  Global("Fortress_Morte","GLOBAL",4)
-    nr 'Morte starrt dich kurz an und seufzt. "Ohne jetzt sentimental zu werden… aber es war mir ein Vergnügen, Meister."~ [MRT109]{#morte_s742_}'
+    nr 'Morte starrt dich kurz an und seufzt. "Ohne jetzt sentimental zu werden… aber es war mir ein Vergnügen, Meister."~ [MRT109]{#morte_s742_1}'
 
     menu:
         '"Dann machen wir uns an die Arbeit…"{#morte_s742_r68409}':

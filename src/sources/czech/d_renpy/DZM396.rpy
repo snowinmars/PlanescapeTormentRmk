@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say34931
 label zm396_s0: # - # IF ~  HasItem("Bandage","ZM396")
-    nr 'Mrtvola přechází od desky k desce a obvazuje ležící těla. Do levého spánku má vyryto číslo "369", rty má pevně sešité. Všiml sis, že nese v ruce obvazy… vypadají použitelně.{#zm396_s0_}'
+    nr 'Mrtvola přechází od desky k desce a obvazuje ležící těla. Do levého spánku má vyryto číslo "369", rty má pevně sešité. Všiml sis, že nese v ruce obvazy… vypadají použitelně.{#zm396_s0_1}'
 
     menu:
         '"Můžu si půjčit ty obvazy?"{#zm396_s0_r34932}' if zm396Logic.r34932_condition():
@@ -47,7 +47,7 @@ label zm396_s0: # - # IF ~  HasItem("Bandage","ZM396")
 
 # s1 # say34933
 label zm396_s1: # from 0.0 0.1 0.3 4.0 4.1 4.2
-    nr 'Mrtvola na tebe dál zírá.{#zm396_s1_}'
+    nr 'Mrtvola na tebe dál zírá.{#zm396_s1_1}'
 
     menu:
         'Zkus vytrhnout zombie z rukou obvazy.{#zm396_s1_r34934}' if zm396Logic.r34934_condition():
@@ -62,7 +62,7 @@ label zm396_s1: # from 0.0 0.1 0.3 4.0 4.1 4.2
 
 # s2 # say34938
 label zm396_s2: # from 0.4 4.3
-    nr 'Mrtvola se nehýbe. Asi už ti neodpoví na žádnou otázku.{#zm396_s2_}'
+    nr 'Mrtvola se nehýbe. Asi už ti neodpoví na žádnou otázku.{#zm396_s2_1}'
 
     menu:
         'Nechej mrtvolu být.{#zm396_s2_r34939}':
@@ -72,7 +72,7 @@ label zm396_s2: # from 0.4 4.3
 
 # s3 # say45108
 label zm396_s3: # from 0.2 1.0
-    nr 'Nenápadně jsi natáhl ruku a vzal balíček obvazů nebožtíkovi z ruky. Mrtvola to zřejmě vůbec nepostřehla. Pořád dělá pohyby, jako by obvazovala.{#zm396_s3_}'
+    nr 'Nenápadně jsi natáhl ruku a vzal balíček obvazů nebožtíkovi z ruky. Mrtvola to zřejmě vůbec nepostřehla. Pořád dělá pohyby, jako by obvazovala.{#zm396_s3_1}'
 
     menu:
         'Znovu prozkoumej mrtvolu.{#zm396_s3_r45109}':
@@ -86,7 +86,7 @@ label zm396_s3: # from 0.2 1.0
 
 # s4 # say45111
 label zm396_s4: # from 3.0 # IF ~  !HasItem("Bandage","ZM396")
-    nr 'Tahle zombie se přesouvá od stolu ke stolu a obvazuje ležící mrtvoly. Pořád plní svou povinnost, i když už nemá obvazy. Do levého spánku má vyryto číslo "369", rty má sešité dohromady.{#zm396_s4_}'
+    nr 'Tahle zombie se přesouvá od stolu ke stolu a obvazuje ležící mrtvoly. Pořád plní svou povinnost, i když už nemá obvazy. Do levého spánku má vyryto číslo "369", rty má sešité dohromady.{#zm396_s4_1}'
 
     menu:
         '"Omlouvám se, že jsem si vzal ty obvazy, ale já je potřebuju víc než ty mrtvoly tady kolem."{#zm396_s4_r45112}' if zm396Logic.r45112_condition():

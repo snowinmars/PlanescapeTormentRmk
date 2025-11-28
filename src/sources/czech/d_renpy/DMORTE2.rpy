@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say41144
 label morte2_s0: # - # IF WEIGHT #0 ~  Global("Mortuary_Walkthrough","GLOBAL",1) InParty("Morte")
-    nr '"Pssst… Nějaký rady, šéfe: Měli bychom bejt víc potichu - není třeba zapisovat více mrtvol do Knihy mrtvých než je doopravdy nutný… hlavně ženy. A když je zabiješ silou, přiláká to sem hlídače."{#morte2_s0_}'
+    nr '"Pssst… Nějaký rady, šéfe: Měli bychom bejt víc potichu - není třeba zapisovat více mrtvol do Knihy mrtvých než je doopravdy nutný… hlavně ženy. A když je zabiješ silou, přiláká to sem hlídače."{#morte2_s0_1}'
 
     menu:
         '"Nemyslím si, že jsi se o tom předtím zmínil… *kdo* jsou ti hlídači?"{#morte2_s0_r41145}':
@@ -37,7 +37,7 @@ label morte2_s0: # - # IF WEIGHT #0 ~  Global("Mortuary_Walkthrough","GLOBAL",1)
 
 # s1 # say41149
 label morte2_s1: # from 0.0 3.0 7.0
-    nr '"Říkají si „Spalovači.“ Nemůžeš je přehlídnout: maj„ vášeň pro temnotu a ztuhlej posmrtnej škleb ve tváři. Je to jenom přiblblá banda ghúlskejch uctívačů smrti; věřej, že všichni musej“ zemřít… čím dřív, tím líp."{#morte2_s1_}'
+    nr '"Říkají si „Spalovači.“ Nemůžeš je přehlídnout: maj„ vášeň pro temnotu a ztuhlej posmrtnej škleb ve tváři. Je to jenom přiblblá banda ghúlskejch uctívačů smrti; věřej, že všichni musej“ zemřít… čím dřív, tím líp."{#morte2_s1_1}'
 
     menu:
         '"Nechápu to… proč se tihle Spalovači o mne starají, když jsem unikl?"{#morte2_s1_r41150}':
@@ -47,7 +47,7 @@ label morte2_s1: # from 0.0 3.0 7.0
 
 # s2 # say41151
 label morte2_s2: # from 1.0
-    nr '"Ty jsi mě snad neposlouchal?! Říkal jsem, že tihle Spalovači věří, že VŠICHNI musí zemřít, čím dřív, tím líp. Ty si snad myslíš, že ty mrtvoly tady jsou radši v knize mrtvých než mimo ni?"{#morte2_s2_}'
+    nr '"Ty jsi mě snad neposlouchal?! Říkal jsem, že tihle Spalovači věří, že VŠICHNI musí zemřít, čím dřív, tím líp. Ty si snad myslíš, že ty mrtvoly tady jsou radši v knize mrtvých než mimo ni?"{#morte2_s2_1}'
 
     menu:
         '"Ty mrtvoly tady… odkud všechny jsou?"{#morte2_s2_r41152}':
@@ -65,7 +65,7 @@ label morte2_s2: # from 1.0
 
 # s3 # say41155
 label morte2_s3: # from 0.1 2.0 7.1
-    nr '"Smrt navštěvuje sféry každej den, šéfe. Všichni tihle belhalové měli tu smůlu, že po svý smrti někdo hlídačům prodal jejich mrtvoly."{#morte2_s3_}'
+    nr '"Smrt navštěvuje sféry každej den, šéfe. Všichni tihle belhalové měli tu smůlu, že po svý smrti někdo hlídačům prodal jejich mrtvoly."{#morte2_s3_1}'
 
     menu:
         '"Řekni mi… *kdo* jsou tihle hlídači?"{#morte2_s3_r41156}':
@@ -83,7 +83,7 @@ label morte2_s3: # from 0.1 2.0 7.1
 
 # s4 # say41159
 label morte2_s4: # from 0.2 2.1 3.1
-    nr '"Co - to myslíš *vážně?* Podívej, šefe, tyhle mrtvý škvrňata jsou pro takový bouchače jako my poslední šancí, jak se spárovat. Musíme být *rytířští*… žádné rozsekávání kvůli klíči, žádné utínání jejich údů a tak podobně."{#morte2_s4_}'
+    nr '"Co - to myslíš *vážně?* Podívej, šefe, tyhle mrtvý škvrňata jsou pro takový bouchače jako my poslední šancí, jak se spárovat. Musíme být *rytířští*… žádné rozsekávání kvůli klíči, žádné utínání jejich údů a tak podobně."{#morte2_s4_1}'
 
     menu:
         '"Poslední šance? O čem to *mluvíš*?"{#morte2_s4_r41160}':
@@ -93,7 +93,7 @@ label morte2_s4: # from 0.2 2.1 3.1
 
 # s5 # say41161
 label morte2_s5: # from 4.0
-    nr '"Šéfe, ONI SOU mrtví, MY SME mrtví… chápeš, kam směřuju? No? Jo?"{#morte2_s5_}'
+    nr '"Šéfe, ONI SOU mrtví, MY SME mrtví… chápeš, kam směřuju? No? Jo?"{#morte2_s5_1}'
 
     menu:
         '"Ne… ne, vlastně ne."{#morte2_s5_r41162}':
@@ -107,7 +107,7 @@ label morte2_s5: # from 4.0
 
 # s6 # say41164
 label morte2_s6: # from 5.0 5.1
-    nr '"Šéfe, už máme něco společnýho s těma belhajícíma se ženama. *Všichni* jsme mrtvý minimálně jednou: máme spolu o čem mluvit. Budou si vážit mužů, kerý maj zkušenosti se smrtí, jako třeba my."{#morte2_s6_}'
+    nr '"Šéfe, už máme něco společnýho s těma belhajícíma se ženama. *Všichni* jsme mrtvý minimálně jednou: máme spolu o čem mluvit. Budou si vážit mužů, kerý maj zkušenosti se smrtí, jako třeba my."{#morte2_s6_1}'
 
     menu:
         '"Počkej… neříkal jsi snad, že *nejsem* mrtvý?"{#morte2_s6_r41165}':
@@ -117,7 +117,7 @@ label morte2_s6: # from 5.0 5.1
 
 # s7 # say41166
 label morte2_s7: # from 6.0
-    nr '"Dobře… v pořádku, *ty* nemusíš bejt mrtvej, ale *já* sem. A dokud ještě stojím, nehodlám se s nějakou z těchhle krásnejch a silnejch mrtvol, kerý tu vidím, dělit o rakev." Morte začal klapat zubama, jako když na něco čeká. "„Možná, že se s nima budou chtít hlídači spárovat jako první, a to není dobrý…"{#morte2_s7_}'
+    nr '"Dobře… v pořádku, *ty* nemusíš bejt mrtvej, ale *já* sem. A dokud ještě stojím, nehodlám se s nějakou z těchhle krásnejch a silnejch mrtvol, kerý tu vidím, dělit o rakev." Morte začal klapat zubama, jako když na něco čeká. "„Možná, že se s nima budou chtít hlídači spárovat jako první, a to není dobrý…"{#morte2_s7_1}'
 
     menu:
         '"Tak znova, kdo jsou ti hlídači?"{#morte2_s7_r41167}':
@@ -135,7 +135,7 @@ label morte2_s7: # from 6.0
 
 # s8 # say41170
 label morte2_s8: # from 0.3 2.2 3.2 7.2 12.7 13.2 14.2 15.2 16.2 17.1 18.1 19.2 20.1 21.1 22.1
-    nr '"Podívej se, šéfe. Je jasný, že seš pořád jenom kapku popletenej po tvým setkání se smrtí, takže pro tebe mám dvě malý rady: první, když máš nějakou votázku, *zeptej* se mě, jasný?"  POZNÁMKA: Abys mohl rozprávět se členem party, vyber možnost „mluv“ z rychlého menu a potom klikni levým tlačítkem na člena party, se kterým chceš hovořit.{#morte2_s8_}'
+    nr '"Podívej se, šéfe. Je jasný, že seš pořád jenom kapku popletenej po tvým setkání se smrtí, takže pro tebe mám dvě malý rady: první, když máš nějakou votázku, *zeptej* se mě, jasný?"  POZNÁMKA: Abys mohl rozprávět se členem party, vyber možnost „mluv“ z rychlého menu a potom klikni levým tlačítkem na člena party, se kterým chceš hovořit.{#morte2_s8_1}'
 
     menu:
         '"Rozumím… když se budu chtít na něco zeptat, tak se zeptám tebe."{#morte2_s8_r41171}':
@@ -145,7 +145,7 @@ label morte2_s8: # from 0.3 2.2 3.2 7.2 12.7 13.2 14.2 15.2 16.2 17.1 18.1 19.2 
 
 # s9 # say41172
 label morte2_s9: # from 8.0
-    nr '"Za druhé, když seš takovej *trouba* a pořád něco zapomínáš, začni si zapisovat důležitý věci - dycky, když přijdeš na něco, co *může* bejt důležitý, tak si to zapiš a nemusíš si to pamatovat."{#morte2_s9_}'
+    nr '"Za druhé, když seš takovej *trouba* a pořád něco zapomínáš, začni si zapisovat důležitý věci - dycky, když přijdeš na něco, co *může* bejt důležitý, tak si to zapiš a nemusíš si to pamatovat."{#morte2_s9_1}'
 
     menu:
         '"Jestli mám deník, který bych *snad* měl mít s sebou, budu to dělat."{#morte2_s9_r41173}':
@@ -155,7 +155,7 @@ label morte2_s9: # from 8.0
 
 # s10 # say41174
 label morte2_s10: # from 9.0
-    nr '"Tak můžeš začít vod začátku, šéfe. Bez obav. Je tu dost pergamenu a inkoustu, který bys mohl použít."{#morte2_s10_}'
+    nr '"Tak můžeš začít vod začátku, šéfe. Bez obav. Je tu dost pergamenu a inkoustu, který bys mohl použít."{#morte2_s10_1}'
 
     menu:
         '"Hmmmm. V pořádku. Nemohlo se mu nic stát… ale stejně si udělám nový."{#morte2_s10_r41175}':
@@ -165,7 +165,7 @@ label morte2_s10: # from 9.0
 
 # s11 # say41176
 label morte2_s11: # from 10.0
-    nr '"Používej ho, aby sis mohl zapsat své kroky. I když se dokonce mlhavě začneš dostávat k důležitým věcem, například kdo jsi… nebo důležitějším, kdo jsem *já*… použij ho, abys si osvěžil paměť."  POZNÁMKA: Aby ses dostal k deníku, vyber si tlačítko „deník“ v pravém dolním rohu světové obrazovky, nebo si vyber tlačítko „deník“ v rychlém menu. Té zapísky se aktualizují automaticky v průběhu hry.{#morte2_s11_}'
+    nr '"Používej ho, aby sis mohl zapsat své kroky. I když se dokonce mlhavě začneš dostávat k důležitým věcem, například kdo jsi… nebo důležitějším, kdo jsem *já*… použij ho, abys si osvěžil paměť."  POZNÁMKA: Aby ses dostal k deníku, vyber si tlačítko „deník“ v pravém dolním rohu světové obrazovky, nebo si vyber tlačítko „deník“ v rychlém menu. Té zapísky se aktualizují automaticky v průběhu hry.{#morte2_s11_1}'
 
     menu:
         '"Jasně… mám to. Jdeme."{#morte2_s11_r41177}':
@@ -176,7 +176,7 @@ label morte2_s11: # from 10.0
 
 # s12 # say41178
 label morte2_s12: # from 13.1 14.1 15.1 16.1 17.0 18.0 19.1 20.0 21.0 22.0 23.1 24.2 25.1 26.0 # IF WEIGHT #1 ~  !Global("Mortuary_Walkthrough","GLOBAL",0) !Global("Mortuary_Walkthrough","GLOBAL",1) !Global("Mortuary_Walkthrough","GLOBAL",3) InParty("Morte")
-    nr '"Co tě žere, šéfe?"{#morte2_s12_}'
+    nr '"Co tě žere, šéfe?"{#morte2_s12_1}'
 
     menu:
         '"Můžeš mi znova přečíst to tetování na mých zádech?{#morte2_s12_r41179}':
@@ -218,7 +218,7 @@ label morte2_s12: # from 13.1 14.1 15.1 16.1 17.0 18.0 19.1 20.0 21.0 22.0 23.1 
 
 # s13 # say41188
 label morte2_s13: # from 12.0
-    nr '"Ah, *tak pojď,* šéfe. Ale neříkej mi, že jsi to už zapomněl."{#morte2_s13_}'
+    nr '"Ah, *tak pojď,* šéfe. Ale neříkej mi, že jsi to už zapomněl."{#morte2_s13_1}'
 
     menu:
         '"Potřeboval jsem si osvěžit paměť, to je všechno."{#morte2_s13_r41189}':
@@ -240,7 +240,7 @@ label morte2_s13: # from 12.0
 
 # s14 # say41193
 label morte2_s14: # from 13.0
-    nr '"Vsadím se, že se DOZVÍM tak hodně." Morte si čistí hrdlo. "Tak se na to podíváme…"  „Vím, že se cítíš jako kdybys pil pár soudků bahna ze Styxu, ale potřebuješ se SOUSTŘEDIT. Mezi tvými věcmi je i DENÍK, který vnese kapku světla do té temnoty, která zahaluje, co se stalo. PHAROD ti může doplnit zbytek písně, jestli ještě není v knize mrtvých.“{#morte2_s14_}'
+    nr '"Vsadím se, že se DOZVÍM tak hodně." Morte si čistí hrdlo. "Tak se na to podíváme…"  „Vím, že se cítíš jako kdybys pil pár soudků bahna ze Styxu, ale potřebuješ se SOUSTŘEDIT. Mezi tvými věcmi je i DENÍK, který vnese kapku světla do té temnoty, která zahaluje, co se stalo. PHAROD ti může doplnit zbytek písně, jestli ještě není v knize mrtvých.“{#morte2_s14_1}'
 
     menu:
         '"Pharod… hmmm. Pojď dál."{#morte2_s14_r41194}':
@@ -262,7 +262,7 @@ label morte2_s14: # from 13.0
 
 # s15 # say41198
 label morte2_s15: # from 14.0
-    nr '"Jasně, jasně, vydrž." Morte se na chvíli odmlčel. "Jasně, tady je poslední část…"  „Neztrať deník, jinak budeme zase ve Styxu. A ať děláš co chceš, NEŘÍKEJ nikomu KDO jsi nebo CO se ti stalo, nebo ryclhe poputuješ do krematoria. Dělej, co ti říkám: PŘEČTI si deník, potom NAJDI Pharoda.“{#morte2_s15_}'
+    nr '"Jasně, jasně, vydrž." Morte se na chvíli odmlčel. "Jasně, tady je poslední část…"  „Neztrať deník, jinak budeme zase ve Styxu. A ať děláš co chceš, NEŘÍKEJ nikomu KDO jsi nebo CO se ti stalo, nebo ryclhe poputuješ do krematoria. Dělej, co ti říkám: PŘEČTI si deník, potom NAJDI Pharoda.“{#morte2_s15_1}'
 
     menu:
         '"A neměl jsem deník u sebe, když jsem se probudil?"{#morte2_s15_r41199}':
@@ -284,7 +284,7 @@ label morte2_s15: # from 14.0
 
 # s16 # say41202
 label morte2_s16: # from 15.0
-    nr '"Ne… odřel jsi se až na kůži. Jak jsem už říkal, vypadáš jako kdybys měl celkem dost deníku vyryto do těla."{#morte2_s16_}'
+    nr '"Ne… odřel jsi se až na kůži. Jak jsem už říkal, vypadáš jako kdybys měl celkem dost deníku vyryto do těla."{#morte2_s16_1}'
 
     menu:
         '"A jseš si jistý, že neznáš nikoho jménem Pharod?"{#morte2_s16_r41204}':
@@ -306,7 +306,7 @@ label morte2_s16: # from 15.0
 
 # s17 # say41208
 label morte2_s17: # from 16.0
-    nr '"Ne. Ale pořád by tady někdo okolo moh vědět kde ho najít. Poptej se kolem… POTOM, co se odtud dostaneme."{#morte2_s17_}'
+    nr '"Ne. Ale pořád by tady někdo okolo moh vědět kde ho najít. Poptej se kolem… POTOM, co se odtud dostaneme."{#morte2_s17_1}'
 
     menu:
         '"Potřebuji se ještě na něco zeptat než půjdeme…"{#morte2_s17_r41209}':
@@ -324,7 +324,7 @@ label morte2_s17: # from 16.0
 
 # s18 # say41212
 label morte2_s18: # from 12.1
-    nr '"Říká se tomu „Márnice“… je to velká černá budova se všemi stavitelskými půvaby těhotného pavouka."{#morte2_s18_}'
+    nr '"Říká se tomu „Márnice“… je to velká černá budova se všemi stavitelskými půvaby těhotného pavouka."{#morte2_s18_1}'
 
     menu:
         '"Nech to. Mám pár dalších otázek…"{#morte2_s18_r41213}':
@@ -342,7 +342,7 @@ label morte2_s18: # from 12.1
 
 # s19 # say41216
 label morte2_s19: # from 12.2 12.3
-    nr '"Říkají si „Spalovači.“ Nemůžeš je přehlídnout: maj„ vášeň pro temnotu a ztuhlý mrtvoly. Je to jenom přiblblá banda ghúlskejch uctívačů smrti; věřej, že všichni musej“ zemřít… čím dřív, tím líp."{#morte2_s19_}'
+    nr '"Říkají si „Spalovači.“ Nemůžeš je přehlídnout: maj„ vášeň pro temnotu a ztuhlý mrtvoly. Je to jenom přiblblá banda ghúlskejch uctívačů smrti; věřej, že všichni musej“ zemřít… čím dřív, tím líp."{#morte2_s19_1}'
 
     menu:
         '"Jsem zmatený… proč se tyhle Spalovači starají o můj únik?"{#morte2_s19_r41217}':
@@ -364,7 +364,7 @@ label morte2_s19: # from 12.2 12.3
 
 # s20 # say41221
 label morte2_s20: # from 19.0
-    nr '"Ty jsi snad neposlouchal?! Říkal jsem, že Spalovači věří, že všichni musí zemřít, čím dřív, tím líp. Nebo ty si snad myslíš, že ty těla tady okolo jsou raději v knize mrtvých než mimo ni?"{#morte2_s20_}'
+    nr '"Ty jsi snad neposlouchal?! Říkal jsem, že Spalovači věří, že všichni musí zemřít, čím dřív, tím líp. Nebo ty si snad myslíš, že ty těla tady okolo jsou raději v knize mrtvých než mimo ni?"{#morte2_s20_1}'
 
     menu:
         '"Nech to. Mám pár dalších otázek…"{#morte2_s20_r41222}':
@@ -382,7 +382,7 @@ label morte2_s20: # from 19.0
 
 # s21 # say41225
 label morte2_s21: # from 12.6
-    nr '"Ty, dobře… *použij* je. Pořád krvácíš, a všude."  POZNÁMKA: Abys mohl použít obvazy sám na sebe , klikni na ně pravým tlačítkem v obrazovce inventáře. Abys je použil na někoho jiného, umísti je do jednoho ze slotů pro rychlý přístup, zvol tlačítko "použít" z rychlého menu na světové obrazovce, poté klikni na cíl léčení.{#morte2_s21_}'
+    nr '"Ty, dobře… *použij* je. Pořád krvácíš, a všude."  POZNÁMKA: Abys mohl použít obvazy sám na sebe , klikni na ně pravým tlačítkem v obrazovce inventáře. Abys je použil na někoho jiného, umísti je do jednoho ze slotů pro rychlý přístup, zvol tlačítko "použít" z rychlého menu na světové obrazovce, poté klikni na cíl léčení.{#morte2_s21_1}'
 
     menu:
         '"Nech to. Mám pár dalších otázek…"{#morte2_s21_r41226}':
@@ -400,7 +400,7 @@ label morte2_s21: # from 12.6
 
 # s22 # say41229
 label morte2_s22: # from 12.4
-    nr '"Smrt navštěvuje Sféry každým dnem, šéfe. Tyhle belhalové jsou všehno, co zustává ze zlých existencí, kteří zaprodali svou duši po smrti hlídačům."{#morte2_s22_}'
+    nr '"Smrt navštěvuje Sféry každým dnem, šéfe. Tyhle belhalové jsou všehno, co zustává ze zlých existencí, kteří zaprodali svou duši po smrti hlídačům."{#morte2_s22_1}'
 
     menu:
         '"Nech to. Mám pár dalších otázek…"{#morte2_s22_r41230}':
@@ -418,7 +418,7 @@ label morte2_s22: # from 12.4
 
 # s23 # say41233
 label morte2_s23: # from 12.5
-    nr '"Co - to myslíš *vážně?* Podívej, šefe, tyhle mrtvý škvrňata jsou pro silné stydlivky jako my poslední šancí, jak se spárovat. Musíme být *rytířští*… žádné rozsekávání kvůli klíči, žádné utínání jejich údů a tak podobně."{#morte2_s23_}'
+    nr '"Co - to myslíš *vážně?* Podívej, šefe, tyhle mrtvý škvrňata jsou pro silné stydlivky jako my poslední šancí, jak se spárovat. Musíme být *rytířští*… žádné rozsekávání kvůli klíči, žádné utínání jejich údů a tak podobně."{#morte2_s23_1}'
 
     menu:
         '"Poslední šance? O čem to *mluvíš*?"{#morte2_s23_r41234}':
@@ -436,7 +436,7 @@ label morte2_s23: # from 12.5
 
 # s24 # say41237
 label morte2_s24: # from 23.0
-    nr '"Šéfe, ONI JSOU mrtví, MY JSME mrtví… chápeš, kam směřuju? Jo? No?"{#morte2_s24_}'
+    nr '"Šéfe, ONI JSOU mrtví, MY JSME mrtví… chápeš, kam směřuju? Jo? No?"{#morte2_s24_1}'
 
     menu:
         '"Ne… ne, vlastně nechápu."{#morte2_s24_r41238}':
@@ -458,7 +458,7 @@ label morte2_s24: # from 23.0
 
 # s25 # say41242
 label morte2_s25: # from 24.0 24.1
-    nr '"Šéfe, už máme spojovací rys s těma belhajícíma ženama. *Všichni* jsme zemřeli nejméně jednou: máme o čem mluvit. Budou si vážit mužů, kteří mají zkušenosti se smrtí, jako třeba my."{#morte2_s25_}'
+    nr '"Šéfe, už máme spojovací rys s těma belhajícíma ženama. *Všichni* jsme zemřeli nejméně jednou: máme o čem mluvit. Budou si vážit mužů, kteří mají zkušenosti se smrtí, jako třeba my."{#morte2_s25_1}'
 
     menu:
         '"Počkej… neříkal jsi předtím, že já *nejsem* mrtvý?"{#morte2_s25_r41243}':
@@ -476,7 +476,7 @@ label morte2_s25: # from 24.0 24.1
 
 # s26 # say41246
 label morte2_s26: # from 25.0
-    nr '"Dobře… jasný, *ty* nemusíš bejt mrtvej, ale *já* sem. A dokud ještě stojím, nehodlám se s nějakou z těchhle krásnejch a silnejch mrtvol, který tu vidím, dělit o rakev." Morte začal klapat zuby, jako když na něco čeká. "„Možná, že se s nima budou chtít hlídači spárovat jako první, a to není dobrý…"{#morte2_s26_}'
+    nr '"Dobře… jasný, *ty* nemusíš bejt mrtvej, ale *já* sem. A dokud ještě stojím, nehodlám se s nějakou z těchhle krásnejch a silnejch mrtvol, který tu vidím, dělit o rakev." Morte začal klapat zuby, jako když na něco čeká. "„Možná, že se s nima budou chtít hlídači spárovat jako první, a to není dobrý…"{#morte2_s26_1}'
 
     menu:
         '"Chci se tě ještě na něco zeptat, Morte…"{#morte2_s26_r41247}':
@@ -490,7 +490,7 @@ label morte2_s26: # from 25.0
 
 # s27 # say41250
 label morte2_s27: # - # IF WEIGHT #3 /* Triggers after states #: 31 even though they appear after this state */ ~  !InParty("Morte")
-    nr '"Věděl jsem že se vrátíš, šéfe! Konečně jsi zjistil, že mě potřebuješ, huh?"{#morte2_s27_}'
+    nr '"Věděl jsem že se vrátíš, šéfe! Konečně jsi zjistil, že mě potřebuješ, huh?"{#morte2_s27_1}'
 
     menu:
         '"Jasně… jdeme."{#morte2_s27_r41251}':
@@ -505,7 +505,7 @@ label morte2_s27: # - # IF WEIGHT #3 /* Triggers after states #: 31 even though 
 
 # s28 # say41253
 label morte2_s28: # from 27.1
-    nr '"Hmmmph. Dobře, nevím, jak dlouho jsme sem chodil čekat, tak ti dávám JEDNU poslední šanci. Jseš si jistý, že nechceš moje chytré rady a mou rychlou hlavu?"{#morte2_s28_}'
+    nr '"Hmmmph. Dobře, nevím, jak dlouho jsme sem chodil čekat, tak ti dávám JEDNU poslední šanci. Jseš si jistý, že nechceš moje chytré rady a mou rychlou hlavu?"{#morte2_s28_1}'
 
     menu:
         '"Morte, nemáš OBĚ tyhle věci."{#morte2_s28_r41254}':
@@ -524,7 +524,7 @@ label morte2_s28: # from 27.1
 
 # s29 # say41257
 label morte2_s29: # from 28.0 28.2
-    nr '"Snažíš se zranit moje city, šéfe? Co, řekl jsme snad něco? Nebo snad proto, že nemám ruce? Co?"{#morte2_s29_}'
+    nr '"Snažíš se zranit moje city, šéfe? Co, řekl jsme snad něco? Nebo snad proto, že nemám ruce? Co?"{#morte2_s29_1}'
 
     menu:
         '"Jasně, změnil jsem své mínění. Pojď, jdeme."{#morte2_s29_r41258}':
@@ -539,7 +539,7 @@ label morte2_s29: # from 28.0 28.2
 
 # s30 # say41260
 label morte2_s30: # from 29.1
-    nr '"Dobře, nebudu čekat NAVŽDY, takže pro tebe bude lepší přijít hned jak změníš svoje mínění."{#morte2_s30_}'
+    nr '"Dobře, nebudu čekat NAVŽDY, takže pro tebe bude lepší přijít hned jak změníš svoje mínění."{#morte2_s30_1}'
 
     menu:
         '"Příjdu. Sbohem, Morte."{#morte2_s30_r41261}':
@@ -549,7 +549,7 @@ label morte2_s30: # from 29.1
 
 # s31 # say41262
 label morte2_s31: # - # IF WEIGHT #2 ~  Global("Mortuary_Walkthrough","GLOBAL",3) InParty("Morte")
-    nr '"Vysoké mocnosti. To je PEKLO tahleta kniha."{#morte2_s31_}'
+    nr '"Vysoké mocnosti. To je PEKLO tahleta kniha."{#morte2_s31_1}'
 
     menu:
         '"Co je to?"{#morte2_s31_r41263}':
@@ -560,7 +560,7 @@ label morte2_s31: # - # IF WEIGHT #2 ~  Global("Mortuary_Walkthrough","GLOBAL",3
 
 # s32 # say41264
 label morte2_s32: # from 31.0
-    nr '"Jestli tuším správně, říkal jsem, že je to kniha, do které píšou jména všech špatných existencí, které mají tolik smůly, že se jim nepodaří dostat se odsud."{#morte2_s32_}'
+    nr '"Jestli tuším správně, říkal jsem, že je to kniha, do které píšou jména všech špatných existencí, které mají tolik smůly, že se jim nepodaří dostat se odsud."{#morte2_s32_1}'
 
     menu:
         '"Může tam být i moje jméno?"{#morte2_s32_r41265}':
@@ -570,7 +570,7 @@ label morte2_s32: # from 31.0
 
 # s33 # say41266
 label morte2_s33: # from 32.0
-    nr '"Eh… inu… *tuším.* Aby ses odsud dostal, musíš žvanit tou svojí kebulí na toho vznášejícího se Spalovače tady. Ale nejsem si jistý, že je to dobrý nápad."{#morte2_s33_}'
+    nr '"Eh… inu… *tuším.* Aby ses odsud dostal, musíš žvanit tou svojí kebulí na toho vznášejícího se Spalovače tady. Ale nejsem si jistý, že je to dobrý nápad."{#morte2_s33_1}'
 
     menu:
         '"Dobře, potřebuji odpověď. Jdu si s ním promluvit."{#morte2_s33_r41267}':

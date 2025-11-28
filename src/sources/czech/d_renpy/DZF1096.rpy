@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say35082
 label zf1096_s0: # - # IF ~  True()
-    nr 'Mrtvola ženy chodí v místnosti od desky k desce. Její vlasy jsou zapleteny do dlouhého copu, který má obtočen kolem krku jako oprátku. Někdo jí na čelo napsal číslo "1096" a pevně sešil její rty dohromady.{#zf1096_s0_}'
+    nr 'Mrtvola ženy chodí v místnosti od desky k desce. Její vlasy jsou zapleteny do dlouhého copu, který má obtočen kolem krku jako oprátku. Někdo jí na čelo napsal číslo "1096" a pevně sešil její rty dohromady.{#zf1096_s0_1}'
 
     menu:
         '"Uh… hezký cop."{#zf1096_s0_r35083}' if zf1096Logic.r35083_condition():
@@ -58,7 +58,7 @@ label zf1096_s0: # - # IF ~  True()
 
 # s1 # say35084
 label zf1096_s1: # from 0.0 0.1 0.2
-    nr 'Mrtvola neodpovídá. Pochybuješ, že o tobě vůbec ví.{#zf1096_s1_}'
+    nr 'Mrtvola neodpovídá. Pochybuješ, že o tobě vůbec ví.{#zf1096_s1_1}'
 
     menu:
         '"Sbohem tedy."{#zf1096_s1_r35085}' if zf1096Logic.r35085_condition():
@@ -76,7 +76,7 @@ label zf1096_s1: # from 0.0 0.1 0.2
 
 # s2 # say35103
 label zf1096_s2: # from 0.3
-    nr 'Mrtvola se nehýbe. Asi už ti neodpoví na žádnou otázku.{#zf1096_s2_}'
+    nr 'Mrtvola se nehýbe. Asi už ti neodpoví na žádnou otázku.{#zf1096_s2_1}'
 
     menu:
         '"Sbohem tedy."{#zf1096_s2_r35104}' if zf1096Logic.r35104_condition():
@@ -94,6 +94,6 @@ label zf1096_s2: # from 0.3
 
 # s3 # say35113
 label zf1096_s3: # - # IF ~  False()
-    nr 'Mrtvola se nehýbe. Asi už ti neodpoví na žádnou otázku.{#zf1096_s3_}'
+    nr 'Mrtvola se nehýbe. Asi už ti neodpoví na žádnou otázku.{#zf1096_s3_1}'
 
     menu:

@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say44993
 label n1201_s0: # from 1.6 3.0 # IF ~  True()
-    nr 'Na zapáchající poznámce je pod textem nakreslen podivný diagram. Jako by tě vyzýval, ať složíš růžky papíru tak, aby se dotýkaly středu. Na každém rohu je nějaká značka - jedna na horním pravém, dvě značky na dolním pravém, tři na dolním levém a na horním levém není žádná.{#n1201_s0_}'
+    nr 'Na zapáchající poznámce je pod textem nakreslen podivný diagram. Jako by tě vyzýval, ať složíš růžky papíru tak, aby se dotýkaly středu. Na každém rohu je nějaká značka - jedna na horním pravém, dvě značky na dolním pravém, tři na dolním levém a na horním levém není žádná.{#n1201_s0_1}'
 
     menu:
         'Založ pravý horní roh do středu.{#n1201_s0_r44994}':
@@ -42,7 +42,7 @@ label n1201_s0: # from 1.6 3.0 # IF ~  True()
 
 # s1 # say44999
 label n1201_s1: # from 0.0 0.1 0.2 0.3 1.0 1.1 1.2 1.3 1.4
-    nr 'Založil jsi roh tak, že se špička dotýká středu.{#n1201_s1_}'
+    nr 'Založil jsi roh tak, že se špička dotýká středu.{#n1201_s1_1}'
 
     menu:
         'Založ pravý horní roh do středu.{#n1201_s1_r45000}' if n1201Logic.r45000_condition():
@@ -87,7 +87,7 @@ label n1201_s1: # from 0.0 0.1 0.2 0.3 1.0 1.1 1.2 1.3 1.4
 
 # s2 # say45015
 label n1201_s2: # from 1.5
-    nr 'Jak jsi založil horní levý růže do prostřed papíru, všiml sis, jak se sám od sebe rozbalil pravý horní roh.{#n1201_s2_}'
+    nr 'Jak jsi založil horní levý růže do prostřed papíru, všiml sis, jak se sám od sebe rozbalil pravý horní roh.{#n1201_s2_1}'
 
     menu:
         'Založ horní pravý růžek do středu.{#n1201_s2_r45016}':
@@ -107,7 +107,7 @@ label n1201_s2: # from 1.5
 
 # s3 # say45019
 label n1201_s3: # from 2.1
-    nr 'Když jsi založil dolní levý růžek, chvíli tak zůstal a pak se druhé dva růžky rozbalily. Nic se nestalo.{#n1201_s3_}'
+    nr 'Když jsi založil dolní levý růžek, chvíli tak zůstal a pak se druhé dva růžky rozbalily. Nic se nestalo.{#n1201_s3_1}'
 
     menu:
         'Znovu prozkoumej papírek.{#n1201_s3_r45020}':
@@ -121,7 +121,7 @@ label n1201_s3: # from 2.1
 
 # s4 # say45022
 label n1201_s4: # from 2.0
-    nr 'Jak jsi založil horní pravý růžek zpátky do středu, pohnul se i levý dolní růžek, a tak se všechny rohy dotýkají středu. Po chvíli se začal papír zvedat a změnil se na malou čtyřstěnnou pyramidu.{#n1201_s4_}'
+    nr 'Jak jsi založil horní pravý růžek zpátky do středu, pohnul se i levý dolní růžek, a tak se všechny rohy dotýkají středu. Po chvíli se začal papír zvedat a změnil se na malou čtyřstěnnou pyramidu.{#n1201_s4_1}'
 
     menu:
         'Otevři pyramidu-{#n1201_s4_r45023}':
@@ -132,7 +132,7 @@ label n1201_s4: # from 2.0
 
 # s5 # say45024
 label n1201_s5: # from 4.0
-    nr 'Rozevřel jsi stěny pyramidy a papír se rozpadl na prach. Uvnitř je malá náušnice trojúhelníkovitého tvaru. Odráží světlo a vrhá kolem třpytivé paprsky.{#n1201_s5_}'
+    nr 'Rozevřel jsi stěny pyramidy a papír se rozpadl na prach. Uvnitř je malá náušnice trojúhelníkovitého tvaru. Odráží světlo a vrhá kolem třpytivé paprsky.{#n1201_s5_1}'
 
     menu:
         'Vezmi si náušnici…{#n1201_s5_r45025}':

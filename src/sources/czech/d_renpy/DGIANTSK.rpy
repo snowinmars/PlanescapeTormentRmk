@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say292
 label giantsk_s0: # - # IF ~  True()
-    nr 'Před tebou je obří kostlivec v ozdobném bronzovém brnění, které je vpleteno do jeho žeber a přes kostlivcovu hruď bylo vyryto několik propracovaných symbolů. Zajímalo by tě, odkud pochází; nemáš povědomí, že by existovali lidé takových rozměrů. Mohutná šavle v jeho rukou vypadá, jako by vážila tolik, co nákladní vagón.{#giantsk_s0_}'
+    nr 'Před tebou je obří kostlivec v ozdobném bronzovém brnění, které je vpleteno do jeho žeber a přes kostlivcovu hruď bylo vyryto několik propracovaných symbolů. Zajímalo by tě, odkud pochází; nemáš povědomí, že by existovali lidé takových rozměrů. Mohutná šavle v jeho rukou vypadá, jako by vážila tolik, co nákladní vagón.{#giantsk_s0_1}'
 
     menu:
         '"Přemýšlím nad tím, kdybych měl držet tu šavli chvíli v ruce. Asi bych se jejím držením hodně rychle unavil."{#giantsk_s0_r293}':
@@ -63,7 +63,7 @@ label giantsk_s0: # - # IF ~  True()
 
 # s1 # say1166
 label giantsk_s1: # from 0.0 0.1 0.9 # IF ~  False()
-    nr 'Kostlivec vypadá, že je příliš dlouho mrtev na to, aby ti odpověděl na tvou otázku. A dokonce i jeho hlava je příliš vysoko na to, aby tě uslyšel.{#giantsk_s1_}'
+    nr 'Kostlivec vypadá, že je příliš dlouho mrtev na to, aby ti odpověděl na tvou otázku. A dokonce i jeho hlava je příliš vysoko na to, aby tě uslyšel.{#giantsk_s1_1}'
 
     menu:
         'Prozkoumej obřího kostlivce… opatrně.{#giantsk_s1_r1167}':
@@ -101,7 +101,7 @@ label giantsk_s1: # from 0.0 0.1 0.9 # IF ~  False()
 
 # s2 # say4005
 label giantsk_s2: # from 0.4 0.6 1.2 1.4 3.0 4.1 4.3 5.3 5.5 6.2 6.4 7.3 7.5 8.2 8.4 9.4 9.6
-    nr 'Když ses dotkl kostlivce, po celé márnici začaly hlasitě zvonit zvony… a s rychlostí dobře namazaného blesku se kostlivec probudil a pozvedl meč k útoku!{#giantsk_s2_}'
+    nr 'Když ses dotkl kostlivce, po celé márnici začaly hlasitě zvonit zvony… a s rychlostí dobře namazaného blesku se kostlivec probudil a pozvedl meč k útoku!{#giantsk_s2_1}'
 
     menu:
         '"Budeš si přát, abys zůstal mrtvý, Kostro…"{#giantsk_s2_r4042}':
@@ -112,7 +112,7 @@ label giantsk_s2: # from 0.4 0.6 1.2 1.4 3.0 4.1 4.3 5.3 5.5 6.2 6.4 7.3 7.5 8.2
 
 # s3 # say4006
 label giantsk_s3: # from 0.5 0.7 1.3 1.5 4.2 4.4 5.4 5.6 6.3 6.5 7.4 7.6 8.3 8.5 9.5 9.7
-    nr 'Už jsi to skoro udělal, ale náhle ses zarazil… a tvé oči jsou přitahovány ke kostlivcově zbroji. Něco na symbolech vyrytých do hrudního plátu tě zastavilo. Pokud jsou tihle kostlivci stráže, mohl bys je… probudit.{#giantsk_s3_}'
+    nr 'Už jsi to skoro udělal, ale náhle ses zarazil… a tvé oči jsou přitahovány ke kostlivcově zbroji. Něco na symbolech vyrytých do hrudního plátu tě zastavilo. Pokud jsou tihle kostlivci stráže, mohl bys je… probudit.{#giantsk_s3_1}'
 
     menu:
         '"To je riziko, které jsem ochotný podstoupit…"{#giantsk_s3_r4043}':
@@ -130,7 +130,7 @@ label giantsk_s3: # from 0.5 0.7 1.3 1.5 4.2 4.4 5.4 5.6 6.3 6.5 7.4 7.6 8.3 8.5
 
 # s4 # say4007
 label giantsk_s4: # from 0.2 1.0 3.1 7.1 15.1 16.3
-    nr 'Složité bronzové brnění je přišroubováno ke kostlivcovým žebrům a lopatkám. Když si prohlížíš kostru pod zbrojí, všiml sis, že stejné svorky, které drží zbroj, jsou použity i na všech kloubech kostlivce. Kolem jeho rukou a nohou jsou omotané silné kožené pásy, ve vzoru, který připomíná svaly a šlachy.{#giantsk_s4_}'
+    nr 'Složité bronzové brnění je přišroubováno ke kostlivcovým žebrům a lopatkám. Když si prohlížíš kostru pod zbrojí, všiml sis, že stejné svorky, které drží zbroj, jsou použity i na všech kloubech kostlivce. Kolem jeho rukou a nohou jsou omotané silné kožené pásy, ve vzoru, který připomíná svaly a šlachy.{#giantsk_s4_1}'
 
     menu:
         'Prozkoumej brnění.{#giantsk_s4_r4045}':
@@ -164,7 +164,7 @@ label giantsk_s4: # from 0.2 1.0 3.1 7.1 15.1 16.3
 
 # s5 # say4008
 label giantsk_s5: # from 4.0
-    nr 'Navzdory zjevnému věku zbroje vypadá stále dobře. Lehce září, vyryté symboly jakoby plavaly, lehce se pohybují pokaždé, když se na ně pokoušíš zaostřit pohled.{#giantsk_s5_}'
+    nr 'Navzdory zjevnému věku zbroje vypadá stále dobře. Lehce září, vyryté symboly jakoby plavaly, lehce se pohybují pokaždé, když se na ně pokoušíš zaostřit pohled.{#giantsk_s5_1}'
 
     menu:
         'Prostuduj si symboly.{#giantsk_s5_r4054}' if giantskLogic.r4054_condition():
@@ -206,7 +206,7 @@ label giantsk_s5: # from 4.0
 
 # s6 # say4009
 label giantsk_s6: # from 5.0 5.1
-    nr 'Téměř nevědomě jsi uvolnil svůj zrak a zahleděl se na symboly. Po chvíli se symboly přestaly hýbat a změnily se na sérii run. Vzor run ti připomíná řetěz… a s touhle myšlenkou sis náhle uvědomil, že tyto runy tvoří nějaké ochranné očarování.{#giantsk_s6_}'
+    nr 'Téměř nevědomě jsi uvolnil svůj zrak a zahleděl se na symboly. Po chvíli se symboly přestaly hýbat a změnily se na sérii run. Vzor run ti připomíná řetěz… a s touhle myšlenkou sis náhle uvědomil, že tyto runy tvoří nějaké ochranné očarování.{#giantsk_s6_1}'
 
     menu:
         'Prozkoumej runy a zkus si vzpomenout na kouzlo.{#giantsk_s6_r4062}' if giantskLogic.r4062_condition():
@@ -244,7 +244,7 @@ label giantsk_s6: # from 5.0 5.1
 
 # s7 # say4010
 label giantsk_s7: # from 5.2 6.1 7.2
-    nr 'Chvíli studuješ runy, ale nedaří se ti kouzlo rozšifrovat. Vypadá dost komplikovaně a ty máš problémy s koncentrací.{#giantsk_s7_}'
+    nr 'Chvíli studuješ runy, ale nedaří se ti kouzlo rozšifrovat. Vypadá dost komplikovaně a ty máš problémy s koncentrací.{#giantsk_s7_1}'
 
     menu:
         'Porovnat runy s runami v Knize kostí a popela.{#giantsk_s7_r64294}' if giantskLogic.r64294_condition():
@@ -286,7 +286,7 @@ label giantsk_s7: # from 5.2 6.1 7.2
 
 # s8 # say4011
 label giantsk_s8: # from 6.0
-    nr 'Studuješ runy, jak se vlní po povrchu hrudního plátu. Na nejzákladnější úrovni jsou runy očarování slabší zbroje, ale několik run ve tvaru lebky a sférické stopy kolem okrajů zbroje znamenají, že je do kouzla přimotáno další nekromantické a ochranné zaklínadlo. Pokud se kostlivce dotkneš, pravděpodobně ho probudíš… a on se bude bránit.{#giantsk_s8_}'
+    nr 'Studuješ runy, jak se vlní po povrchu hrudního plátu. Na nejzákladnější úrovni jsou runy očarování slabší zbroje, ale několik run ve tvaru lebky a sférické stopy kolem okrajů zbroje znamenají, že je do kouzla přimotáno další nekromantické a ochranné zaklínadlo. Pokud se kostlivce dotkneš, pravděpodobně ho probudíš… a on se bude bránit.{#giantsk_s8_1}'
 
     menu:
         'Podívej se, jestli můžeš kouzla nějak rozrušit.{#giantsk_s8_r4079}' if giantskLogic.r4079_condition():
@@ -325,7 +325,7 @@ label giantsk_s8: # from 6.0
 
 # s9 # say4012
 label giantsk_s9: # from 0.3 1.1 8.0 8.1
-    nr 'Máš podezření že smazání runového vzoru by mohlo uvolnit zaklínadla, ale vypadá to složitě… vzor je komplikovaný a seškrábnutí špatné části by mohlo kostlivce probudit.{#giantsk_s9_}'
+    nr 'Máš podezření že smazání runového vzoru by mohlo uvolnit zaklínadla, ale vypadá to složitě… vzor je komplikovaný a seškrábnutí špatné části by mohlo kostlivce probudit.{#giantsk_s9_1}'
 
     menu:
         'Porovnej vzory s kouzly v Knize kostí a popela, podívej se, jestli se dá určit, jak by mohla být obrana prolomena.{#giantsk_s9_r64296}' if giantskLogic.r64296_condition():
@@ -373,7 +373,7 @@ label giantsk_s9: # from 0.3 1.1 8.0 8.1
 
 # s10 # say4013
 label giantsk_s10: # from 9.1 16.0
-    nr 'Když jsi začal mazat runy, zdobící hrudní plát, začaly po celé márnici zvonit zvony… a s kostlivec bleskově procitá a s napřaženým mečem útočí!{#giantsk_s10_}'
+    nr 'Když jsi začal mazat runy, zdobící hrudní plát, začaly po celé márnici zvonit zvony… a s kostlivec bleskově procitá a s napřaženým mečem útočí!{#giantsk_s10_1}'
 
     menu:
         '"Budeš si přát, abys zůstal mrtvý, Kostro…"{#giantsk_s10_r4095}':
@@ -384,7 +384,7 @@ label giantsk_s10: # from 9.1 16.0
 
 # s11 # say4014
 label giantsk_s11: # from 9.2 16.1
-    nr 'Ze začátku je práce složitá a pořádně ti brnká na nervy, ale tvá mysl se postupně zaostřuje a runy se pod tvým útokem začínají rozplétat. Během několika minut je gigantický skeleton zbaven kouzel, která ho drží pohromadě. Rozpadl se a dopadá na zem za zvuku tříštěných kostí a silného cinkání kovu!{#giantsk_s11_}'
+    nr 'Ze začátku je práce složitá a pořádně ti brnká na nervy, ale tvá mysl se postupně zaostřuje a runy se pod tvým útokem začínají rozplétat. Během několika minut je gigantický skeleton zbaven kouzel, která ho drží pohromadě. Rozpadl se a dopadá na zem za zvuku tříštěných kostí a silného cinkání kovu!{#giantsk_s11_1}'
 
     menu:
         '"Zatracená hromada kostí!"{#giantsk_s11_r4096}':
@@ -395,7 +395,7 @@ label giantsk_s11: # from 9.2 16.1
 
 # s12 # say4015
 label giantsk_s12: # from 11.0
-    nr 'Chvíli čekáš, ale na zvuk nikdo nezareagoval. Rychle jsi rozložil části kostlivce po zemi. Většina je příliš stará anebo příliš těžká, aby se daly použít, ale našel jsi kus kostlivcova prsního plátu s většinou run. Máš pocit, že by se to mohlo hodit.{#giantsk_s12_}'
+    nr 'Chvíli čekáš, ale na zvuk nikdo nezareagoval. Rychle jsi rozložil části kostlivce po zemi. Většina je příliš stará anebo příliš těžká, aby se daly použít, ale našel jsi kus kostlivcova prsního plátu s většinou run. Máš pocit, že by se to mohlo hodit.{#giantsk_s12_1}'
 
     menu:
         '"Tak si to zkrátka vezmu…"{#giantsk_s12_r4097}':
@@ -406,7 +406,7 @@ label giantsk_s12: # from 11.0
 
 # s13 # say4016
 label giantsk_s13: # from 9.3 16.2
-    nr 'Zrušení kouzla je tentokrát jednodušší, runy se pod tvým útokem rychle rozpletly. Během několika minut přišel kostlivec o kouzla, která ho držela pohromadě. Pamatuješ si, co se stalo poprvé, takže kostlivce chytáš, než spadne na zem a pomalu ho pokládáš. Je svinsky těžký.{#giantsk_s13_}'
+    nr 'Zrušení kouzla je tentokrát jednodušší, runy se pod tvým útokem rychle rozpletly. Během několika minut přišel kostlivec o kouzla, která ho držela pohromadě. Pamatuješ si, co se stalo poprvé, takže kostlivce chytáš, než spadne na zem a pomalu ho pokládáš. Je svinsky těžký.{#giantsk_s13_1}'
 
     menu:
         '"Uvidíme, co tady máme tentokrát…"{#giantsk_s13_r4098}':
@@ -417,7 +417,7 @@ label giantsk_s13: # from 9.3 16.2
 
 # s14 # say4017
 label giantsk_s14: # from 13.0
-    nr 'Rychle ses prohrabal zbytky kostlivce a opět jsi našel kus hrudního plátu… stejně jako ten první na sobě ještě má fragment runového nápisu. Mohlo by se to ještě hodit.{#giantsk_s14_}'
+    nr 'Rychle ses prohrabal zbytky kostlivce a opět jsi našel kus hrudního plátu… stejně jako ten první na sobě ještě má fragment runového nápisu. Mohlo by se to ještě hodit.{#giantsk_s14_1}'
 
     menu:
         '"Tak si to zkrátka vezmu…"{#giantsk_s14_r4099}' if giantskLogic.r4099_condition():
@@ -438,7 +438,7 @@ label giantsk_s14: # from 13.0
 
 # s15 # say64295
 label giantsk_s15: # from 7.0
-    nr 'Radíš se se svazkem a porovnáváš nákresy se značkami na hrudním plátu. Pokud to správně chápeš, runy představují kouzlo malé zbroje, ale pár run ve tvaru lebky a kulovité nákresy podél hran zbroje naznačují, že v nich je také vetkáno několik silnějších nekromantických a ochraných kouzel. Dotknutí se kostlivce pravděpodobně způsobí, že se vzbudí… a začne se bránit.{#giantsk_s15_}'
+    nr 'Radíš se se svazkem a porovnáváš nákresy se značkami na hrudním plátu. Pokud to správně chápeš, runy představují kouzlo malé zbroje, ale pár run ve tvaru lebky a kulovité nákresy podél hran zbroje naznačují, že v nich je také vetkáno několik silnějších nekromantických a ochraných kouzel. Dotknutí se kostlivce pravděpodobně způsobí, že se vzbudí… a začne se bránit.{#giantsk_s15_1}'
 
     menu:
         'Poradit se s Knihou kostí a popela, podívej se, jestli se dá určit, jak by mohlo být kouzlo zlomeno.{#giantsk_s15_r64298}':
@@ -452,7 +452,7 @@ label giantsk_s15: # from 7.0
 
 # s16 # say64297
 label giantsk_s16: # from 9.0 15.0
-    nr 'Podle toho co jsi ze svazku zjistil se zdá, že kouzla zbroje platí jen pro hrudní plát, nekromantické kouzlo umožnuje kostlivci obživnout, ale jsou to ochranná kouzla, která mu propůjčí možnost omezeného vnímání svého okolí. Hádáš, že kdyby si poškodil jeho ochranu, bude to chápáno jako útok… ledaže bys ho učinil slepým na tvou přítomnost.{#giantsk_s16_}'
+    nr 'Podle toho co jsi ze svazku zjistil se zdá, že kouzla zbroje platí jen pro hrudní plát, nekromantické kouzlo umožnuje kostlivci obživnout, ale jsou to ochranná kouzla, která mu propůjčí možnost omezeného vnímání svého okolí. Hádáš, že kdyby si poškodil jeho ochranu, bude to chápáno jako útok… ledaže bys ho učinil slepým na tvou přítomnost.{#giantsk_s16_1}'
 
     menu:
         'Nejprve znič runy udržující kouzlo zbroje, pak nekromantické, a pak ochranné.{#giantsk_s16_r64300}':

@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say46745
 label zm1508_s0: # - # IF ~  True()
-    nr 'Die Stirn dieser äußerst muskulösen Leiche ist eine einzige Narbenlandschaft. Sie sieht aus, als hätte die Leiche ihre Gegner zu Lebzeiten mit dem Kopf totgeschlagen. Auf der Stirn ist mit einem roten Faden die Nummer "1508" eingenäht. Ihr Mund ist mit einer groben schwarzen Faser zusammengenäht. Die Leiche riecht leicht nach Balsamierungsöl.{#zm1508_s0_}'
+    nr 'Die Stirn dieser äußerst muskulösen Leiche ist eine einzige Narbenlandschaft. Sie sieht aus, als hätte die Leiche ihre Gegner zu Lebzeiten mit dem Kopf totgeschlagen. Auf der Stirn ist mit einem roten Faden die Nummer "1508" eingenäht. Ihr Mund ist mit einer groben schwarzen Faser zusammengenäht. Die Leiche riecht leicht nach Balsamierungsöl.{#zm1508_s0_1}'
 
     menu:
         '"Und… hast du was Interessantes bemerkt?"{#zm1508_s0_r46746}' if zm1508Logic.r46746_condition():
@@ -42,7 +42,7 @@ label zm1508_s0: # - # IF ~  True()
 
 # s1 # say46747
 label zm1508_s1: # from 0.0 0.1 0.2
-    nr 'Die Leiche starrt dich weiter an.{#zm1508_s1_}'
+    nr 'Die Leiche starrt dich weiter an.{#zm1508_s1_1}'
 
     menu:
         'Laß die Leiche in Ruhe.{#zm1508_s1_r46748}':
@@ -52,7 +52,7 @@ label zm1508_s1: # from 0.0 0.1 0.2
 
 # s2 # say46752
 label zm1508_s2: # from 0.3
-    nr 'Die Leiche gibt keine Antwort. Es scheint, als wäre sie zu weit im Jenseits, um deine Fragen zu beantworten.{#zm1508_s2_}'
+    nr 'Die Leiche gibt keine Antwort. Es scheint, als wäre sie zu weit im Jenseits, um deine Fragen zu beantworten.{#zm1508_s2_1}'
 
     menu:
         'Laß die Leiche in Ruhe.{#zm1508_s2_r46753}':

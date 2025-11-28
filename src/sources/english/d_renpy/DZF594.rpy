@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say35018
 label zf594_s0: # - # IF ~  True()
-    nr 'The shambling corpse gazes at you with vacant eyes. Her skin is paper-thin, almost wispy… it„s like someone draped a sheet of cobwebs across her frame. The number "594" has been scratched onto her forehead with a charcoal pencil.{#zf594_s0_}'
+    nr 'The shambling corpse gazes at you with vacant eyes. Her skin is paper-thin, almost wispy… it„s like someone draped a sheet of cobwebs across her frame. The number "594" has been scratched onto her forehead with a charcoal pencil.{#zf594_s0_1}'
 
     menu:
         '"So… doing anything later?"{#zf594_s0_r35019}' if zf594Logic.r35019_condition():
@@ -58,7 +58,7 @@ label zf594_s0: # - # IF ~  True()
 
 # s1 # say35020
 label zf594_s1: # from 0.0 0.1 0.2
-    nr 'The corpse continues to stare at you.{#zf594_s1_}'
+    nr 'The corpse continues to stare at you.{#zf594_s1_1}'
 
     menu:
         '"Farewell then."{#zf594_s1_r35021}' if zf594Logic.r35021_condition():
@@ -76,7 +76,7 @@ label zf594_s1: # from 0.0 0.1 0.2
 
 # s2 # say35039
 label zf594_s2: # from 0.3
-    nr 'This corpse makes no reply. It looks like it is too far gone to answer any of your questions.{#zf594_s2_}'
+    nr 'This corpse makes no reply. It looks like it is too far gone to answer any of your questions.{#zf594_s2_1}'
 
     menu:
         '"Farewell then."{#zf594_s2_r35040}' if zf594Logic.r35040_condition():
@@ -94,6 +94,6 @@ label zf594_s2: # from 0.3
 
 # s3 # say35049
 label zf594_s3: # - # IF ~  False()
-    nr 'This corpse makes no reply. It looks like it is too far gone to answer any of your questions.{#zf594_s3_}'
+    nr 'This corpse makes no reply. It looks like it is too far gone to answer any of your questions.{#zf594_s3_1}'
 
     menu:

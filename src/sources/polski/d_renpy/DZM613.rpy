@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say6540
 label zm613_s0: # - # IF ~  True()
-    nr 'Numer "613" został głęboko wycięty na czole tego ciężko harującego truposza, ale kawałek postrzępionej, stwardniałej skóry rozdziela "1" i "3". Kiedy przyglądasz się cyfrom, z trudem dostrzegasz wyrytą tam "2".{#zm613_s0_}'
+    nr 'Numer "613" został głęboko wycięty na czole tego ciężko harującego truposza, ale kawałek postrzępionej, stwardniałej skóry rozdziela "1" i "3". Kiedy przyglądasz się cyfrom, z trudem dostrzegasz wyrytą tam "2".{#zm613_s0_1}'
 
     menu:
         '"Więc jak… widziałeś, żeby działo się tu coś interesującego?"{#zm613_s0_r6543}' if zm613Logic.r6543_condition():
@@ -42,7 +42,7 @@ label zm613_s0: # - # IF ~  True()
 
 # s1 # say6541
 label zm613_s1: # from 0.0 0.1 0.2
-    nr 'Trup wciąż się w ciebie wpatruje.{#zm613_s1_}'
+    nr 'Trup wciąż się w ciebie wpatruje.{#zm613_s1_1}'
 
     menu:
         'Zostaw truposza w spokoju.{#zm613_s1_r6549}':
@@ -52,7 +52,7 @@ label zm613_s1: # from 0.0 0.1 0.2
 
 # s2 # say6542
 label zm613_s2: # from 0.3
-    nr 'Truposz nie odpowiada. Wygląda na to, że jest w zbyt daleko posuniętym stadium rozkładu, aby odpowiedzieć na twoje pytania.{#zm613_s2_}'
+    nr 'Truposz nie odpowiada. Wygląda na to, że jest w zbyt daleko posuniętym stadium rozkładu, aby odpowiedzieć na twoje pytania.{#zm613_s2_1}'
 
     menu:
         'Zostaw truposza w spokoju.{#zm613_s2_r6550}':

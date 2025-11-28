@@ -11,14 +11,14 @@ init 10 python:
 
 # s0 # say34920
 label zm965_s0: # - # IF ~  NearbyDialog("Dmorte")
-    nr 'Ce cadavre suit d„un pas lourd un chemin triangulaire. Quand il atteint l“un des angles du triangle, il s„arrête, tourne et continue en titubant jusqu“à l„angle suivant. Il porte le numéro “965„ tatoué sur le côté du crâne. À ton approche, il s“interrompt et te dévisage.{#zm965_s0_}'
+    nr 'Ce cadavre suit d„un pas lourd un chemin triangulaire. Quand il atteint l“un des angles du triangle, il s„arrête, tourne et continue en titubant jusqu“à l„angle suivant. Il porte le numéro “965„ tatoué sur le côté du crâne. À ton approche, il s“interrompt et te dévisage.{#zm965_s0_1}'
 
     jump morte_s477  # EXTERN
 
 
 # s1 # say34922
 label zm965_s1: # externs morte_s481 morte_s480 # IF ~  !NearbyDialog("Dmorte")
-    nr 'Ce cadavre suit d„un pas lourd un chemin triangulaire. Quand il atteint l“un des angles du triangle, il s„arrête, tourne et continue en titubant jusqu“à l„angle suivant. Il porte le numéro “965„ tatoué sur le côté du crâne. À ton approche, il s“interrompt et te dévisage.{#zm965_s1_}'
+    nr 'Ce cadavre suit d„un pas lourd un chemin triangulaire. Quand il atteint l“un des angles du triangle, il s„arrête, tourne et continue en titubant jusqu“à l„angle suivant. Il porte le numéro “965„ tatoué sur le côté du crâne. À ton approche, il s“interrompt et te dévisage.{#zm965_s1_1}'
 
     menu:
         '"Mais… pourquoi tu marches dans un triangle ?"{#zm965_s1_r34923}' if zm965Logic.r34923_condition():
@@ -49,7 +49,7 @@ label zm965_s1: # externs morte_s481 morte_s480 # IF ~  !NearbyDialog("Dmorte")
 
 # s2 # say34927
 label zm965_s2: # from 1.0 1.1 1.2
-    nr 'Le cadavre te fixe d„un regard vide.{#zm965_s2_}'
+    nr 'Le cadavre te fixe d„un regard vide.{#zm965_s2_1}'
 
     menu:
         'Laisse le cadavre tranquille.{#zm965_s2_r34928}':
@@ -59,7 +59,7 @@ label zm965_s2: # from 1.0 1.1 1.2
 
 # s3 # say45069
 label zm965_s3: # from 1.3
-    nr 'Le cadavre ne bouge pas. Il a l„air trop absent pour répondre à tes questions.{#zm965_s3_}'
+    nr 'Le cadavre ne bouge pas. Il a l„air trop absent pour répondre à tes questions.{#zm965_s3_1}'
 
     menu:
         'Laisse le cadavre tranquille.{#zm965_s3_r45075}':

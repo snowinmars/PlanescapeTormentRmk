@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say46745
 label zm1508_s0: # - # IF ~  True()
-    nr 'The forehead of this heavily muscled corpse is a mass of scar tissue, as if in life he had used his head to bludgeon opponents in battle. The number "1508" has been stitched across it in red thread, and his mouth is sewn shut with coarse black fiber. He smells faintly of embalming fluid.{#zm1508_s0_}'
+    nr 'The forehead of this heavily muscled corpse is a mass of scar tissue, as if in life he had used his head to bludgeon opponents in battle. The number "1508" has been stitched across it in red thread, and his mouth is sewn shut with coarse black fiber. He smells faintly of embalming fluid.{#zm1508_s0_1}'
 
     menu:
         '"So… seen anything interesting going on?"{#zm1508_s0_r46746}' if zm1508Logic.r46746_condition():
@@ -42,7 +42,7 @@ label zm1508_s0: # - # IF ~  True()
 
 # s1 # say46747
 label zm1508_s1: # from 0.0 0.1 0.2
-    nr 'The corpse continues to stare at you.{#zm1508_s1_}'
+    nr 'The corpse continues to stare at you.{#zm1508_s1_1}'
 
     menu:
         'Leave the corpse in peace.{#zm1508_s1_r46748}':
@@ -52,7 +52,7 @@ label zm1508_s1: # from 0.0 0.1 0.2
 
 # s2 # say46752
 label zm1508_s2: # from 0.3
-    nr 'The corpse makes no reply. It looks like it is too far gone to answer any of your questions.{#zm1508_s2_}'
+    nr 'The corpse makes no reply. It looks like it is too far gone to answer any of your questions.{#zm1508_s2_1}'
 
     menu:
         'Leave the corpse in peace.{#zm1508_s2_r46753}':

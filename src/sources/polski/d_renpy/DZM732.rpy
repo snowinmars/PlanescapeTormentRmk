@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say6529
 label zm732_s0: # from 4.0 # IF ~  !HasItem("TomeBA","ZM732")
-    nr 'Ten truposz na trzęsących się nogach ma zaszyte oczy i usta, a na czole wyryty numer "732". Szwy na jego oczodołach wyglądają na bardzo stare… zastanawiasz się, czy jego oczy zaszyto przed, czy może po jego śmierci.{#zm732_s0_}'
+    nr 'Ten truposz na trzęsących się nogach ma zaszyte oczy i usta, a na czole wyryty numer "732". Szwy na jego oczodołach wyglądają na bardzo stare… zastanawiasz się, czy jego oczy zaszyto przed, czy może po jego śmierci.{#zm732_s0_1}'
 
     menu:
         '"Przepraszam, że zabrałem ci tę książkę… ale wyglądała zbyt interesująco, aby nie zwrócić na nią uwagi."{#zm732_s0_r6533}' if zm732Logic.r6533_condition():
@@ -42,7 +42,7 @@ label zm732_s0: # from 4.0 # IF ~  !HasItem("TomeBA","ZM732")
 
 # s1 # say6530
 label zm732_s1: # from 0.0 0.1 0.2
-    nr 'Trup wciąż się w ciebie wpatruje.{#zm732_s1_}'
+    nr 'Trup wciąż się w ciebie wpatruje.{#zm732_s1_1}'
 
     menu:
         'Zostaw truposza w spokoju.{#zm732_s1_r6538}':
@@ -52,7 +52,7 @@ label zm732_s1: # from 0.0 0.1 0.2
 
 # s2 # say6531
 label zm732_s2: # from 0.3
-    nr 'Truposz nie odpowiada. Wygląda na to, że jest w zbyt daleko posuniętym stadium rozkładu, aby odpowiedzieć na twoje pytania.{#zm732_s2_}'
+    nr 'Truposz nie odpowiada. Wygląda na to, że jest w zbyt daleko posuniętym stadium rozkładu, aby odpowiedzieć na twoje pytania.{#zm732_s2_1}'
 
     menu:
         'Zostaw truposza w spokoju.{#zm732_s2_r6539}':
@@ -62,7 +62,7 @@ label zm732_s2: # from 0.3
 
 # s3 # say64270
 label zm732_s3: # - # IF ~  HasItem("TomeBA","ZM732")
-    nr 'Ten truposz na trzęsących się nogach ma zaszyte oczy i usta, a na czole wyryty numer "732". Szwy na jego oczodołach wyglądają na bardzo stare… zastanawiasz się, czy jego oczy zaszyto przed, czy może po jego śmierci. Zauważasz, że ma w rękach olbrzymie tomisko. Czyżby miał je gdzieś zanieść?{#zm732_s3_}'
+    nr 'Ten truposz na trzęsących się nogach ma zaszyte oczy i usta, a na czole wyryty numer "732". Szwy na jego oczodołach wyglądają na bardzo stare… zastanawiasz się, czy jego oczy zaszyto przed, czy może po jego śmierci. Zauważasz, że ma w rękach olbrzymie tomisko. Czyżby miał je gdzieś zanieść?{#zm732_s3_1}'
 
     menu:
         'Weź tomisko z jego rąk… ostrożnie.{#zm732_s3_r64271}':
@@ -77,7 +77,7 @@ label zm732_s3: # - # IF ~  HasItem("TomeBA","ZM732")
 
 # s4 # say64273
 label zm732_s4: # from 3.0
-    nr 'Ostrożnie wyjmujesz księgę z dłoni trupa. Nie reaguje. W księdze spisano uroki i symbole ochronne – wypełniają ją diagramy i wykresy przedstawiające różnego rodzaju zaklęcia magii nekromanckiej. Opasłe tomiszcze jest nadzwyczaj ciężkie; zombie wydaje się nieporadny, ale siły mu nie brakuje.  ^NNOTE: <READSTUFF>^-{#zm732_s4_}'
+    nr 'Ostrożnie wyjmujesz księgę z dłoni trupa. Nie reaguje. W księdze spisano uroki i symbole ochronne – wypełniają ją diagramy i wykresy przedstawiające różnego rodzaju zaklęcia magii nekromanckiej. Opasłe tomiszcze jest nadzwyczaj ciężkie; zombie wydaje się nieporadny, ale siły mu nie brakuje.  ^NNOTE: <READSTUFF>^-{#zm732_s4_1}'
 
     menu:
         'Ponownie obejrzyj truposza.{#zm732_s4_r64274}':

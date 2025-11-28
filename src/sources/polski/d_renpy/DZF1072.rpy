@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say35114
 label zf1072_s0: # - # IF ~  True()
-    nr 'Woń formaliny, jaka unosi się od tej martwej kobiety jest szczególnie mocna… cuchnie tak, jakby zastosowano ją niedawno i z bardzo dobrego powodu: ciało wydaje się być w zaawansowanym stadium rozkładu. Trup nie ma szczęki; od czaszki odpadło kilka kawałków ciała, odsłaniając numer "1072" wygrawerowany na kości.{#zf1072_s0_}'
+    nr 'Woń formaliny, jaka unosi się od tej martwej kobiety jest szczególnie mocna… cuchnie tak, jakby zastosowano ją niedawno i z bardzo dobrego powodu: ciało wydaje się być w zaawansowanym stadium rozkładu. Trup nie ma szczęki; od czaszki odpadło kilka kawałków ciała, odsłaniając numer "1072" wygrawerowany na kości.{#zf1072_s0_1}'
 
     menu:
         '"Ta to chyba widywała już lepsze czasy…"{#zf1072_s0_r35115}' if zf1072Logic.r35115_condition():
@@ -58,7 +58,7 @@ label zf1072_s0: # - # IF ~  True()
 
 # s1 # say35116
 label zf1072_s1: # from 0.0 0.1 0.2
-    nr 'Trup nie odpowiada na twoje słowa, co może być spowodowane brakującą szczęką. Albo może nie ma nic do powiedzenia.{#zf1072_s1_}'
+    nr 'Trup nie odpowiada na twoje słowa, co może być spowodowane brakującą szczęką. Albo może nie ma nic do powiedzenia.{#zf1072_s1_1}'
 
     menu:
         '"A zatem żegnaj."{#zf1072_s1_r35117}' if zf1072Logic.r35117_condition():
@@ -76,7 +76,7 @@ label zf1072_s1: # from 0.0 0.1 0.2
 
 # s2 # say35135
 label zf1072_s2: # from 0.3
-    nr 'Trup nie rusza się. Wygląda na to, że jest w zbyt daleko posuniętym stadium rozkładu, aby odpowiedzieć na twoje pytania.{#zf1072_s2_}'
+    nr 'Trup nie rusza się. Wygląda na to, że jest w zbyt daleko posuniętym stadium rozkładu, aby odpowiedzieć na twoje pytania.{#zf1072_s2_1}'
 
     menu:
         '"A zatem żegnaj."{#zf1072_s2_r35136}' if zf1072Logic.r35136_condition():
@@ -94,6 +94,6 @@ label zf1072_s2: # from 0.3
 
 # s3 # say35145
 label zf1072_s3: # - # IF ~  False()
-    nr 'Trup nie rusza się. Wygląda na to, że jest w zbyt daleko posuniętym stadium rozkładu, aby odpowiedzieć na twoje pytania.{#zf1072_s3_}'
+    nr 'Trup nie rusza się. Wygląda na to, że jest w zbyt daleko posuniętym stadium rozkładu, aby odpowiedzieć na twoje pytania.{#zf1072_s3_1}'
 
     menu:

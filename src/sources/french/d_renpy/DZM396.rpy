@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say34931
 label zm396_s0: # - # IF ~  HasItem("Bandage","ZM396")
-    nr 'Ce cadavre va d„une dalle à l“autre en traînant les pieds ; il panse les cadavres étendus là. Le numéro „396“ est gravé sur sa tempe gauche et ses lèvres sont cousues ensemble. Tu vois qu„il porte un rouleau de pansements dans la main… qui te semblent utilisables.{#zm396_s0_}'
+    nr 'Ce cadavre va d„une dalle à l“autre en traînant les pieds ; il panse les cadavres étendus là. Le numéro „396“ est gravé sur sa tempe gauche et ses lèvres sont cousues ensemble. Tu vois qu„il porte un rouleau de pansements dans la main… qui te semblent utilisables.{#zm396_s0_1}'
 
     menu:
         '"Ça te gêne pas si j„emprunte ces pansements ?"{#zm396_s0_r34932}' if zm396Logic.r34932_condition():
@@ -47,7 +47,7 @@ label zm396_s0: # - # IF ~  HasItem("Bandage","ZM396")
 
 # s1 # say34933
 label zm396_s1: # from 0.0 0.1 0.3 4.0 4.1 4.2
-    nr 'Le cadavre continue à te fixer.{#zm396_s1_}'
+    nr 'Le cadavre continue à te fixer.{#zm396_s1_1}'
 
     menu:
         'Essaie de prendre les pansements au zombi.{#zm396_s1_r34934}' if zm396Logic.r34934_condition():
@@ -62,7 +62,7 @@ label zm396_s1: # from 0.0 0.1 0.3 4.0 4.1 4.2
 
 # s2 # say34938
 label zm396_s2: # from 0.4 4.3
-    nr 'Le cadavre ne bouge pas. Il a l„air trop absent pour répondre à tes questions.{#zm396_s2_}'
+    nr 'Le cadavre ne bouge pas. Il a l„air trop absent pour répondre à tes questions.{#zm396_s2_1}'
 
     menu:
         'Laisse le cadavre tranquille.{#zm396_s2_r34939}':
@@ -72,7 +72,7 @@ label zm396_s2: # from 0.4 4.3
 
 # s3 # say45108
 label zm396_s3: # from 0.2 1.0
-    nr 'Tu dégages ta main en prenant les bandages que tenait le cadavre. Ce dernier ne s„en aperçoit même pas. Il continue de panser les autres corps comme si de rien n“était.{#zm396_s3_}'
+    nr 'Tu dégages ta main en prenant les bandages que tenait le cadavre. Ce dernier ne s„en aperçoit même pas. Il continue de panser les autres corps comme si de rien n“était.{#zm396_s3_1}'
 
     menu:
         'Réexamine le cadavre.{#zm396_s3_r45109}':
@@ -86,7 +86,7 @@ label zm396_s3: # from 0.2 1.0
 
 # s4 # say45111
 label zm396_s4: # from 3.0 # IF ~  !HasItem("Bandage","ZM396")
-    nr 'Le mort-vivant passe d„une table à l“autre et panse les cadavres allongés. Ou du moins, il effectue les gestes nécessaires, car il n„a plus le moindre bandage en main. Le numéro “396„ est gravé sur sa tempe gauche et ses lèvres ont été cousues.{#zm396_s4_}'
+    nr 'Le mort-vivant passe d„une table à l“autre et panse les cadavres allongés. Ou du moins, il effectue les gestes nécessaires, car il n„a plus le moindre bandage en main. Le numéro “396„ est gravé sur sa tempe gauche et ses lèvres ont été cousues.{#zm396_s4_1}'
 
     menu:
         '"Désolé de t„avoir pris ces bandages, mais j“en ai davantage besoin que ces cadavres."{#zm396_s4_r45112}' if zm396Logic.r45112_condition():

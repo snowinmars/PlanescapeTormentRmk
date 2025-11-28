@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say24575
 label zm569_s0: # - # IF ~  True()
-    nr 'This shambling corpse looks like it has been dead for several years. The skin along its forehead has peeled back, revealing its chalk-white skull. Someone has chiseled the number "569" into the exposed bone.{#zm569_s0_}'
+    nr 'This shambling corpse looks like it has been dead for several years. The skin along its forehead has peeled back, revealing its chalk-white skull. Someone has chiseled the number "569" into the exposed bone.{#zm569_s0_1}'
 
     menu:
         '"I„m looking for a key… do you happen to have one?"{#zm569_s0_r24576}' if zm569Logic.r24576_condition():
@@ -49,7 +49,7 @@ label zm569_s0: # - # IF ~  True()
 
 # s1 # say24577
 label zm569_s1: # from 0.1 0.2 0.3 3.1
-    nr 'The corpse stares at you in silence.{#zm569_s1_}'
+    nr 'The corpse stares at you in silence.{#zm569_s1_1}'
 
     menu:
         '"Never mind, then. Farewell."{#zm569_s1_r24578}':
@@ -63,7 +63,7 @@ label zm569_s1: # from 0.1 0.2 0.3 3.1
 
 # s2 # say24582
 label zm569_s2: # from 0.4
-    nr 'The corpse does not stir. It looks like it is too far gone to answer any of your questions.{#zm569_s2_}'
+    nr 'The corpse does not stir. It looks like it is too far gone to answer any of your questions.{#zm569_s2_1}'
 
     menu:
         'Leave the corpse in peace.{#zm569_s2_r24583}':
@@ -73,7 +73,7 @@ label zm569_s2: # from 0.4
 
 # s3 # say42293
 label zm569_s3: # from 0.5
-    nr 'This corpse doesn„t appear to be carrying a key… and it doesn“t look like it would be able to use one if it did. Its fingers are broken, as if someone smashed them with a hammer. You do happen to notice that its left shoulder is heavily bandaged… the bandages might be usable if the corpse was disposed of first.{#zm569_s3_}'
+    nr 'This corpse doesn„t appear to be carrying a key… and it doesn“t look like it would be able to use one if it did. Its fingers are broken, as if someone smashed them with a hammer. You do happen to notice that its left shoulder is heavily bandaged… the bandages might be usable if the corpse was disposed of first.{#zm569_s3_1}'
 
     menu:
         '"Guess you don„t have it… you don“t happen to know which of your other corpse friends has the key out of this place?"{#zm569_s3_r42294}' if zm569Logic.r42294_condition():

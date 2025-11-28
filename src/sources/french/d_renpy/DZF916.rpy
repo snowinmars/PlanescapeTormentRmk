@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say24719
 label zf916_s0: # - # IF ~  True()
-    nr 'Le cadavre féminin te jette un regard vide. Le numéro „916“ est gravé sur son front et ses lèvres ont été cousues. Une légère odeur de formol se dégage du corps.{#zf916_s0_}'
+    nr 'Le cadavre féminin te jette un regard vide. Le numéro „916“ est gravé sur son front et ses lèvres ont été cousues. Une légère odeur de formol se dégage du corps.{#zf916_s0_1}'
 
     menu:
         '"Alors… Tu fais quelque chose plus tard ?"{#zf916_s0_r24720}' if zf916Logic.r24720_condition():
@@ -58,7 +58,7 @@ label zf916_s0: # - # IF ~  True()
 
 # s1 # say24721
 label zf916_s1: # from 0.0 0.1 0.2
-    nr 'Le cadavre continue à te fixer.{#zf916_s1_}'
+    nr 'Le cadavre continue à te fixer.{#zf916_s1_1}'
 
     menu:
         '"Alors, au revoir."{#zf916_s1_r24722}' if zf916Logic.r24722_condition():
@@ -76,7 +76,7 @@ label zf916_s1: # from 0.0 0.1 0.2
 
 # s2 # say24740
 label zf916_s2: # from 0.3
-    nr 'Ce cadavre ne répond pas. Il semble qu„il soit trop absent pour répondre à tes questions.{#zf916_s2_}'
+    nr 'Ce cadavre ne répond pas. Il semble qu„il soit trop absent pour répondre à tes questions.{#zf916_s2_1}'
 
     menu:
         '"Alors, au revoir."{#zf916_s2_r24741}' if zf916Logic.r24741_condition():
@@ -94,6 +94,6 @@ label zf916_s2: # from 0.3
 
 # s3 # say24750
 label zf916_s3: # - # IF ~  False()
-    nr 'Ce cadavre ne répond pas. Il semble qu„il soit trop absent pour répondre à tes questions.{#zf916_s3_}'
+    nr 'Ce cadavre ne répond pas. Il semble qu„il soit trop absent pour répondre à tes questions.{#zf916_s3_1}'
 
     menu:

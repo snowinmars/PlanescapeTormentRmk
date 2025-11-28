@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say46745
 label zm1508_s0: # - # IF ~  True()
-    nr 'ČElo této velice svalnaté mrtvoly tvoří masa zjizvené tkáně, jako kdyby zaživa používal svou hlavu na mlácení protivníků, či si v praxi ověřoval, zda platí přísloví Hlavou zeď neprorazíš. Přes čelo je rudou nití vyšito číslo "1508", ústa jsou pevně sešita hrubou černou nití. Lehce páchne balzamovací tekutinou.{#zm1508_s0_}'
+    nr 'ČElo této velice svalnaté mrtvoly tvoří masa zjizvené tkáně, jako kdyby zaživa používal svou hlavu na mlácení protivníků, či si v praxi ověřoval, zda platí přísloví Hlavou zeď neprorazíš. Přes čelo je rudou nití vyšito číslo "1508", ústa jsou pevně sešita hrubou černou nití. Lehce páchne balzamovací tekutinou.{#zm1508_s0_1}'
 
     menu:
         '"Takže… dělo se tady v poslední době něco zajímavého?"{#zm1508_s0_r46746}' if zm1508Logic.r46746_condition():
@@ -42,7 +42,7 @@ label zm1508_s0: # - # IF ~  True()
 
 # s1 # say46747
 label zm1508_s1: # from 0.0 0.1 0.2
-    nr 'Mrtvola na tebe dál zírá.{#zm1508_s1_}'
+    nr 'Mrtvola na tebe dál zírá.{#zm1508_s1_1}'
 
     menu:
         'Nechej mrtvolu být.{#zm1508_s1_r46748}':
@@ -52,7 +52,7 @@ label zm1508_s1: # from 0.0 0.1 0.2
 
 # s2 # say46752
 label zm1508_s2: # from 0.3
-    nr 'Mrtvola neodpovídá. Asi už shnila příliš.{#zm1508_s2_}'
+    nr 'Mrtvola neodpovídá. Asi už shnila příliš.{#zm1508_s2_1}'
 
     menu:
         'Nechej mrtvolu být.{#zm1508_s2_r46753}':

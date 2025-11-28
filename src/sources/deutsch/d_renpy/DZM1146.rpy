@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say6518
 label zm1146_s0: # - # IF ~  Global("Crispy","GLOBAL",0)
-    nr 'Die Nummer "1146" ist in die Stirn dieser wandelnden Leiche geritzt, und ihre Lippen sind mit grobem, schwarzem Zwirn zugenäht. Der gesamte Körper ist mit schrecklichen Narben übersät - schlimmer noch als deine eigenen - so als ob sein Besitzer verbrannt wäre. Nase, Ohren und mehrere Finger sowie Zehen fehlen, wahrscheinlich sind sie in einer verheerenden Feuersbrunst verbrannt. Als du der Leiche den Weg versperrst, um ihre „Aufmerksamkeit“ zu erregen, bleibt sie stehen und starrt dich mit leeren Augen an.{#zm1146_s0_}'
+    nr 'Die Nummer "1146" ist in die Stirn dieser wandelnden Leiche geritzt, und ihre Lippen sind mit grobem, schwarzem Zwirn zugenäht. Der gesamte Körper ist mit schrecklichen Narben übersät - schlimmer noch als deine eigenen - so als ob sein Besitzer verbrannt wäre. Nase, Ohren und mehrere Finger sowie Zehen fehlen, wahrscheinlich sind sie in einer verheerenden Feuersbrunst verbrannt. Als du der Leiche den Weg versperrst, um ihre „Aufmerksamkeit“ zu erregen, bleibt sie stehen und starrt dich mit leeren Augen an.{#zm1146_s0_1}'
 
     menu:
         '"Na… gibt„s hier irgendwas Interessantes zu berichten?"{#zm1146_s0_r6521}' if zm1146Logic.r6521_condition():
@@ -43,7 +43,7 @@ label zm1146_s0: # - # IF ~  Global("Crispy","GLOBAL",0)
 
 # s1 # say6519
 label zm1146_s1: # from 0.0 0.1 0.2
-    nr 'Die Leiche starrt dich weiter an.{#zm1146_s1_}'
+    nr 'Die Leiche starrt dich weiter an.{#zm1146_s1_1}'
 
     menu:
         'Laß die Leiche in Ruhe.{#zm1146_s1_r6527}':
@@ -53,7 +53,7 @@ label zm1146_s1: # from 0.0 0.1 0.2
 
 # s2 # say6520
 label zm1146_s2: # from 0.3
-    nr 'Der Geruch von rauchendem Schwefel, versengtem Haar und verbranntem Blut schlägt dir entgegen, als der Geist in seine frühere menschliche Hülle zurückkehrt. Die Leiche bricht plötzlich zusammen, zuckt heftig und verkrampft, während sie jämmerlich stöhnt. Du kannst fast sehen, wie kleine, übelriechende Rauchwolken aus ihrem Körper und den Gliedmaßen herausquellen.{#zm1146_s2_}'
+    nr 'Der Geruch von rauchendem Schwefel, versengtem Haar und verbranntem Blut schlägt dir entgegen, als der Geist in seine frühere menschliche Hülle zurückkehrt. Die Leiche bricht plötzlich zusammen, zuckt heftig und verkrampft, während sie jämmerlich stöhnt. Du kannst fast sehen, wie kleine, übelriechende Rauchwolken aus ihrem Körper und den Gliedmaßen herausquellen.{#zm1146_s2_1}'
 
     menu:
         '"Bist du… OK?"{#zm1146_s2_r6528}':
@@ -71,7 +71,7 @@ label zm1146_s2: # from 0.3
 
 # s3 # say9398
 label zm1146_s3: # from 2.0
-    nr 'Der Geist öffnet ein Auge. Der weiße Augapfel hebt sich deutlich von der grauen Farbe seines runzligen Gesichts ab. Langsam dreht er den Kopf, bis er zu dir aufblicken kann; seine unregelmäßige, narbige Haut spannt sich über die Knochen seines Gesichts und seines Genicks. Dann krächzt er: "Nein. Nein… überhaupt nicht, du… verdammter… Hohlkopf."{#zm1146_s3_}'
+    nr 'Der Geist öffnet ein Auge. Der weiße Augapfel hebt sich deutlich von der grauen Farbe seines runzligen Gesichts ab. Langsam dreht er den Kopf, bis er zu dir aufblicken kann; seine unregelmäßige, narbige Haut spannt sich über die Knochen seines Gesichts und seines Genicks. Dann krächzt er: "Nein. Nein… überhaupt nicht, du… verdammter… Hohlkopf."{#zm1146_s3_1}'
 
     menu:
         '"Kann ich dir irgendwie helfen?"{#zm1146_s3_r9415}':
@@ -94,7 +94,7 @@ label zm1146_s3: # from 2.0
 
 # s4 # say9399
 label zm1146_s4: # from 3.0
-    nr '"Ha, ha, HA!" Der Geist fängt an zu lachen, doch dann wird er plötzlich von einem Hustenanfall geschüttelt und speit einen Schwall Balsamierungsöl und schwarzen Schmodder aus. Er hustet und röchelt schmerzerfüllt und hält nur manchmal inne, um durch seine ausgefransten Lippen eine gelbliche Flüssigkeit und die Fäden seiner geplatzten Nähte auszuspucken.{#zm1146_s4_}'
+    nr '"Ha, ha, HA!" Der Geist fängt an zu lachen, doch dann wird er plötzlich von einem Hustenanfall geschüttelt und speit einen Schwall Balsamierungsöl und schwarzen Schmodder aus. Er hustet und röchelt schmerzerfüllt und hält nur manchmal inne, um durch seine ausgefransten Lippen eine gelbliche Flüssigkeit und die Fäden seiner geplatzten Nähte auszuspucken.{#zm1146_s4_1}'
 
     menu:
         'Warte geduldig bis der Anfall vorüber ist.{#zm1146_s4_r9419}':
@@ -112,7 +112,7 @@ label zm1146_s4: # from 3.0
 
 # s5 # say9400
 label zm1146_s5: # from 4.0
-    nr 'Der schreckliche Hustenanfall läßt langsam nach. "Nein, Dussel… das geht… nicht. Ich bin am… am Ende… es sei denn… es sei denn, du gehst nach Baator und rettest mich. Zeit für… für meine Buße." Der Geist schließt sein Auge wieder und läßt seinen Kopf auf den Boden sinken.{#zm1146_s5_}'
+    nr 'Der schreckliche Hustenanfall läßt langsam nach. "Nein, Dussel… das geht… nicht. Ich bin am… am Ende… es sei denn… es sei denn, du gehst nach Baator und rettest mich. Zeit für… für meine Buße." Der Geist schließt sein Auge wieder und läßt seinen Kopf auf den Boden sinken.{#zm1146_s5_1}'
 
     menu:
         '"Ich verstehe. Ich hätte noch eine andere Frage…"{#zm1146_s5_r9423}':
@@ -126,7 +126,7 @@ label zm1146_s5: # from 4.0
 
 # s6 # say9401
 label zm1146_s6: # from 3.2 17.0
-    nr 'Der Geist gibt ein röchelndes Geräusch von sich. Dabei geben die schwarzen, rissigen Lippen den Blick auf seine schiefen, gelben Zähne frei. "Warte… warte nur, bis ich… aus diesem Loch rauskomme… Dann bist du als erster dran… Dussel…"{#zm1146_s6_}'
+    nr 'Der Geist gibt ein röchelndes Geräusch von sich. Dabei geben die schwarzen, rissigen Lippen den Blick auf seine schiefen, gelben Zähne frei. "Warte… warte nur, bis ich… aus diesem Loch rauskomme… Dann bist du als erster dran… Dussel…"{#zm1146_s6_1}'
 
     menu:
         '"Wie du meinst. Ich fürchte mich nicht vor deinesgleichen."{#zm1146_s6_r9425}':
@@ -145,21 +145,21 @@ label zm1146_s6: # from 3.2 17.0
 
 # s7 # say9402
 label zm1146_s7: # from 6.0
-    nr 'Der Geist gibt ein schwaches, kehliges Knurren von sich und spuckt dich an - das faulige Zeug landet nur wenige Zentimeter vor deinen Füßen. Erschöpft sinkt er wieder zu Boden, und das Leben beginnt erneut aus seinem Körper zu weichen.{#zm1146_s7_}'
+    nr 'Der Geist gibt ein schwaches, kehliges Knurren von sich und spuckt dich an - das faulige Zeug landet nur wenige Zentimeter vor deinen Füßen. Erschöpft sinkt er wieder zu Boden, und das Leben beginnt erneut aus seinem Körper zu weichen.{#zm1146_s7_1}'
 
     jump zm1146_dispose
 
 
 # s8 # say9403
 label zm1146_s8: # from 6.1
-    nr 'Du versetzt der Leiche einen kurzen Tritt in die Nieren, jedoch ohne Erfolg; der Geist darin scheint unversehrt zu bleiben. "Hi, hi, hi," gluckst der Geist, bevor er endgültig aus dem Körper weicht. Du bleibst mit einem vagen Gefühl der Enttäuschung zurück.{#zm1146_s8_}'
+    nr 'Du versetzt der Leiche einen kurzen Tritt in die Nieren, jedoch ohne Erfolg; der Geist darin scheint unversehrt zu bleiben. "Hi, hi, hi," gluckst der Geist, bevor er endgültig aus dem Körper weicht. Du bleibst mit einem vagen Gefühl der Enttäuschung zurück.{#zm1146_s8_1}'
 
     jump zm1146_dispose
 
 
 # s9 # say9404
 label zm1146_s9: # from 2.1 3.1 4.1 5.0 10.0 11.0 12.1 13.1 14.1 15.0 16.0 17.1 18.1 19.0 20.0
-    nr '"Was… was könntest du *denn* jetzt noch von mir wollen, Dussel?" Der Geist windet sich noch gelegentlich und klopft sich ab, als versuche er, mehrere kleine Flammen auf seinem Körper zu löschen.{#zm1146_s9_}'
+    nr '"Was… was könntest du *denn* jetzt noch von mir wollen, Dussel?" Der Geist windet sich noch gelegentlich und klopft sich ab, als versuche er, mehrere kleine Flammen auf seinem Körper zu löschen.{#zm1146_s9_1}'
 
     menu:
         '"Wer bist du?"{#zm1146_s9_r9428}':
@@ -197,7 +197,7 @@ label zm1146_s9: # from 2.1 3.1 4.1 5.0 10.0 11.0 12.1 13.1 14.1 15.0 16.0 17.1 
 
 # s10 # say9405
 label zm1146_s10: # from 9.0
-    nr '"Geht dich nichts an… laß mich… in Ruhe…"{#zm1146_s10_}'
+    nr '"Geht dich nichts an… laß mich… in Ruhe…"{#zm1146_s10_1}'
 
     menu:
         '"Nein. Ich hätte da noch eine andere Frage…"{#zm1146_s10_r9436}':
@@ -211,7 +211,7 @@ label zm1146_s10: # from 9.0
 
 # s11 # say9406
 label zm1146_s11: # from 9.1
-    nr '"Was? Im Namen der Mächte, wen… interessiert„s? Aus Sigil, du… du Nervtöter."{#zm1146_s11_}'
+    nr '"Was? Im Namen der Mächte, wen… interessiert„s? Aus Sigil, du… du Nervtöter."{#zm1146_s11_1}'
 
     menu:
         '"Ich hätte noch eine Frage…"{#zm1146_s11_r9438}':
@@ -225,7 +225,7 @@ label zm1146_s11: # from 9.1
 
 # s12 # say9407
 label zm1146_s12: # from 9.2
-    nr '"Was denkst du denn, Planloser?" Dieser Gefühlsausbruch beschert dem Geist einen kurzen, schmerzhaften Hustenanfall. "Ich hab„ mein Fleisch und Blut… für etwas Klimper verkauft. An diese verdammten Staubies… und genau dann - wirklich GENAU DANN - hat irgendein bekloppter Magier beschlossen, den Stock abzufackeln, mit mir mittendrin!" Der Geist grummelt böse, und aus den Winkeln seines ausgefransten Mundes quillt eine dampfende Flüssigkeit hervor.{#zm1146_s12_}'
+    nr '"Was denkst du denn, Planloser?" Dieser Gefühlsausbruch beschert dem Geist einen kurzen, schmerzhaften Hustenanfall. "Ich hab„ mein Fleisch und Blut… für etwas Klimper verkauft. An diese verdammten Staubies… und genau dann - wirklich GENAU DANN - hat irgendein bekloppter Magier beschlossen, den Stock abzufackeln, mit mir mittendrin!" Der Geist grummelt böse, und aus den Winkeln seines ausgefransten Mundes quillt eine dampfende Flüssigkeit hervor.{#zm1146_s12_1}'
 
     menu:
         '"Ein Zauberer hat den Stock niedergebrannt?"{#zm1146_s12_r9440}':
@@ -243,7 +243,7 @@ label zm1146_s12: # from 9.2
 
 # s13 # say9408
 label zm1146_s13: # from 9.3
-    nr '"Was glaubst du denn… du stumpfsinniger Knochenbrecher? In Baator, in diesem stinkenden Dreckloch namens Phlegethos. Brennen, brennen… brennen… das ist alles, was ich tue. Ich starb, indem ich verbrannte, und im Tod brenne ich weiter. Arrr!" Die Leiche knirrscht wütend mit den Zähnen. "Diese Ironie macht mich krank! Sobald ich hier raus bin, schmeiß ich die ganzen Schlucker in dieses verdammte Loch. He, he, he… *schluck*"{#zm1146_s13_}'
+    nr '"Was glaubst du denn… du stumpfsinniger Knochenbrecher? In Baator, in diesem stinkenden Dreckloch namens Phlegethos. Brennen, brennen… brennen… das ist alles, was ich tue. Ich starb, indem ich verbrannte, und im Tod brenne ich weiter. Arrr!" Die Leiche knirrscht wütend mit den Zähnen. "Diese Ironie macht mich krank! Sobald ich hier raus bin, schmeiß ich die ganzen Schlucker in dieses verdammte Loch. He, he, he… *schluck*"{#zm1146_s13_1}'
 
     menu:
         '"Warum solltest du dein Schicksal anderen an den Hals wünschen?"{#zm1146_s13_r9442}':
@@ -261,7 +261,7 @@ label zm1146_s13: # from 9.3
 
 # s14 # say9409
 label zm1146_s14: # from 9.4
-    nr '"Verdienen? DAS? Nichts! Ich… *schluck*… habe nichts getan. Ich hab„ doch nur versucht, über die Runden zu kommen… wie alle anderen auch… und dann - “wwwum!„ - hat dieser verfluchte Magier plötzlich den Stock abgefackelt!"{#zm1146_s14_}'
+    nr '"Verdienen? DAS? Nichts! Ich… *schluck*… habe nichts getan. Ich hab„ doch nur versucht, über die Runden zu kommen… wie alle anderen auch… und dann - “wwwum!„ - hat dieser verfluchte Magier plötzlich den Stock abgefackelt!"{#zm1146_s14_1}'
 
     menu:
         '"Ein Magier… hat den Stock… abgefackelt?"{#zm1146_s14_r9445}':
@@ -279,7 +279,7 @@ label zm1146_s14: # from 9.4
 
 # s15 # say9410
 label zm1146_s15: # from 9.5
-    nr '"Nichts. Nichts. Hab„ ich *dir* doch schon gesagt, Dussel. Laß… laß mich einfach nur in Ruhe brennen…"{#zm1146_s15_}'
+    nr '"Nichts. Nichts. Hab„ ich *dir* doch schon gesagt, Dussel. Laß… laß mich einfach nur in Ruhe brennen…"{#zm1146_s15_1}'
 
     menu:
         '"Also schön. Ich hätte dann noch eine andere Frage…"{#zm1146_s15_r9447}':
@@ -293,7 +293,7 @@ label zm1146_s15: # from 9.5
 
 # s16 # say9411
 label zm1146_s16: # from 9.6
-    nr '"Wen? Was? Nein! Und wenn doch … warum sollte ich es dir sagen, du… du jämmerlicher Dussel? Hmpf…"{#zm1146_s16_}'
+    nr '"Wen? Was? Nein! Und wenn doch … warum sollte ich es dir sagen, du… du jämmerlicher Dussel? Hmpf…"{#zm1146_s16_1}'
 
     menu:
         '"Na schön. Ich hätte da noch eine Frage…"{#zm1146_s16_r9449}':
@@ -307,7 +307,7 @@ label zm1146_s16: # from 9.6
 
 # s17 # say9412
 label zm1146_s17: # from 13.0
-    nr '"Aus Rache, du Hohlkopf! Ich krieg sie alle noch… alle, die mir untergekommen sind. Besonders diesen Zauberer! Ich reiß ihm die Eier ab und stopf sie ihm in den Hals, wenn ich ihn finde! Und dann werf„ ich ihn in dieses stinkende Loch! Ihn und ein paar andere auch… damit sich“s auch richtig lohnt! He, he, he…"{#zm1146_s17_}'
+    nr '"Aus Rache, du Hohlkopf! Ich krieg sie alle noch… alle, die mir untergekommen sind. Besonders diesen Zauberer! Ich reiß ihm die Eier ab und stopf sie ihm in den Hals, wenn ich ihn finde! Und dann werf„ ich ihn in dieses stinkende Loch! Ihn und ein paar andere auch… damit sich“s auch richtig lohnt! He, he, he…"{#zm1146_s17_1}'
 
     menu:
         '"Du bist ein verderbter, engstirniger Winzling. Du hast dein Schicksal bestimmt wohlverdient."{#zm1146_s17_r9420}':
@@ -325,7 +325,7 @@ label zm1146_s17: # from 13.0
 
 # s18 # say9458
 label zm1146_s18: # from 12.0 14.0
-    nr '"Ja, den Stock… der schlimmste Ort Sigils. Ich hatte in meinem Leben noch nie so viele Flammen gesehen… ich bin wie ein Irrer umhergerannt und wollte flüchten, aber plötzlich stand alles in Flammen! Häuser, Straßen, Männer, Frauen, Kinder… und dieser dreimal verfluchte Zauberer hat die ganze Zeit nur gelacht! Ich flüchtete mich in eine Ecke und dachte, kurz verschnaufen zu können, doch plötzlich stand mein verdammter Kopf in Flammen! Von diesem Augenblick an… ging alles ziemlich bergab…" Das geöffnete Auge des Geistes funkelt böse.{#zm1146_s18_}'
+    nr '"Ja, den Stock… der schlimmste Ort Sigils. Ich hatte in meinem Leben noch nie so viele Flammen gesehen… ich bin wie ein Irrer umhergerannt und wollte flüchten, aber plötzlich stand alles in Flammen! Häuser, Straßen, Männer, Frauen, Kinder… und dieser dreimal verfluchte Zauberer hat die ganze Zeit nur gelacht! Ich flüchtete mich in eine Ecke und dachte, kurz verschnaufen zu können, doch plötzlich stand mein verdammter Kopf in Flammen! Von diesem Augenblick an… ging alles ziemlich bergab…" Das geöffnete Auge des Geistes funkelt böse.{#zm1146_s18_1}'
 
     menu:
         '"Und wer war dieser Zauberer?"{#zm1146_s18_r9459}':
@@ -343,7 +343,7 @@ label zm1146_s18: # from 12.0 14.0
 
 # s19 # say9744
 label zm1146_s19: # from 18.0
-    nr '"Keine Ahnung. Ich war schon ziemlich fix und fertig, als sie ihn gestoppt haben, wenn überhaupt. Ich erinnere mich dunkel daran, daß er, bevor alles anfing, von irgendwelchen Leuten gejagt wurde, die seinen Namen riefen… äh… oh! Ignis. Ja, ich glaube es war Ignis. Oder so ähnlich. Hoffentlich muß er in einem übleren Loch schmoren als ich!"{#zm1146_s19_}'
+    nr '"Keine Ahnung. Ich war schon ziemlich fix und fertig, als sie ihn gestoppt haben, wenn überhaupt. Ich erinnere mich dunkel daran, daß er, bevor alles anfing, von irgendwelchen Leuten gejagt wurde, die seinen Namen riefen… äh… oh! Ignis. Ja, ich glaube es war Ignis. Oder so ähnlich. Hoffentlich muß er in einem übleren Loch schmoren als ich!"{#zm1146_s19_1}'
 
     menu:
         '"Ich verstehe. Ich hätte da noch ein paar Fragen an dich…"{#zm1146_s19_r9747}':
@@ -357,7 +357,7 @@ label zm1146_s19: # from 18.0
 
 # s20 # say20099
 label zm1146_s20: # - # IF ~  Global("Crispy","GLOBAL",1)
-    nr '"Schon wieder?!"{#zm1146_s20_}'
+    nr '"Schon wieder?!"{#zm1146_s20_1}'
 
     menu:
         '"Ich hätte da ein paar Fragen…"{#zm1146_s20_r20100}':

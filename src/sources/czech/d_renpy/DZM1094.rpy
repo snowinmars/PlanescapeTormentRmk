@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say6562
 label zm1094_s0: # - # IF ~  Global("Asonje","GLOBAL",0)
-    nr 'Tato chodící mrtvola má na čele vyřezáno číslo "1094". Ústa má sešita a kolem ní se povaluje chemický pach čerstvého formaldehydu. Navzdory bledým, propadlým rysům a neživým mléčným očím je jasné, že to byl kdysi pohledný mladík.{#zm1094_s0_}'
+    nr 'Tato chodící mrtvola má na čele vyřezáno číslo "1094". Ústa má sešita a kolem ní se povaluje chemický pach čerstvého formaldehydu. Navzdory bledým, propadlým rysům a neživým mléčným očím je jasné, že to byl kdysi pohledný mladík.{#zm1094_s0_1}'
 
     menu:
         '"Tak… je tam dál vidět něco zajímavého?"{#zm1094_s0_r6565}' if zm1094Logic.r6565_condition():
@@ -43,7 +43,7 @@ label zm1094_s0: # - # IF ~  Global("Asonje","GLOBAL",0)
 
 # s1 # say6563
 label zm1094_s1: # from 0.0 0.1 0.2
-    nr 'Mrtvola na tebe stále zírá.{#zm1094_s1_}'
+    nr 'Mrtvola na tebe stále zírá.{#zm1094_s1_1}'
 
     menu:
         'Nechej mrtvolu být.{#zm1094_s1_r6571}':
@@ -53,7 +53,7 @@ label zm1094_s1: # from 0.0 0.1 0.2
 
 # s2 # say6564
 label zm1094_s2: # from 0.3
-    nr 'Mrtvola se na chvíli zachvěla, jak ještě jednou vnikl duch do této opuštěné smrtelné skořápky. Na vteřinu se v očích zombie objevilo zdání života a začala se kolem sebe rozhlížet s výrazem zvědavé rozpačitosti v obličeji. Celé tělo teď vypadá, jako by bylo obklopeno jemnou, zlatou aurou.{#zm1094_s2_}'
+    nr 'Mrtvola se na chvíli zachvěla, jak ještě jednou vnikl duch do této opuštěné smrtelné skořápky. Na vteřinu se v očích zombie objevilo zdání života a začala se kolem sebe rozhlížet s výrazem zvědavé rozpačitosti v obličeji. Celé tělo teď vypadá, jako by bylo obklopeno jemnou, zlatou aurou.{#zm1094_s2_1}'
 
     menu:
         '"Rád bych se tě na něco zeptal…"{#zm1094_s2_r6572}':
@@ -67,7 +67,7 @@ label zm1094_s2: # from 0.3
 
 # s3 # say9224
 label zm1094_s3: # from 2.0
-    nr 'Náhle se zdá, že tě duch konečně bere na vědomí. Velice vřele a přátelsky se na tebe usmál, čímž očividně překvapil všechny stehy kolem své pusy natolik, že popraskaly úžasem. Do jeho očí se poté vedral udivený výraz a duch si svými prsty přejel přes rty, načež pokrčil rameny a kývl hlavou na pozdrav. "Kde… kde to jsem? Jaké to podivné místo. Z… znám tě?" Z jeho vyschlého hrdla se ozvalo mírné zakašlání.{#zm1094_s3_}'
+    nr 'Náhle se zdá, že tě duch konečně bere na vědomí. Velice vřele a přátelsky se na tebe usmál, čímž očividně překvapil všechny stehy kolem své pusy natolik, že popraskaly úžasem. Do jeho očí se poté vedral udivený výraz a duch si svými prsty přejel přes rty, načež pokrčil rameny a kývl hlavou na pozdrav. "Kde… kde to jsem? Jaké to podivné místo. Z… znám tě?" Z jeho vyschlého hrdla se ozvalo mírné zakašlání.{#zm1094_s3_1}'
 
     menu:
         '"Hele, duchu, *ty* budeš odpovídat na *moje* otázky. Jasný?"{#zm1094_s3_r9247}':
@@ -90,7 +90,7 @@ label zm1094_s3: # from 2.0
 
 # s4 # say9225
 label zm1094_s4: # from 3.0
-    nr 'Duchovo přátelské chování se během okamžiku vypařilo. Na moment se na tebe zamračil, z jeho zchřadlých šedých rtů mu visely cáry rozervaných stehů. "Jak myslíš, ptej se na co chceš." Zadíval se do prázdna, očividně znuděný.{#zm1094_s4_}'
+    nr 'Duchovo přátelské chování se během okamžiku vypařilo. Na moment se na tebe zamračil, z jeho zchřadlých šedých rtů mu visely cáry rozervaných stehů. "Jak myslíš, ptej se na co chceš." Zadíval se do prázdna, očividně znuděný.{#zm1094_s4_1}'
 
     menu:
         '"Kdo vlastně jsi?"{#zm1094_s4_r9251}':
@@ -124,7 +124,7 @@ label zm1094_s4: # from 3.0
 
 # s5 # say9226
 label zm1094_s5: # from 4.0 11.0
-    nr '"Jmenuju se Asonje. Už můžu jít?"{#zm1094_s5_}'
+    nr '"Jmenuju se Asonje. Už můžu jít?"{#zm1094_s5_1}'
 
     menu:
         '"Nemůžeš, chci se tě totiž na něco zeptat…"{#zm1094_s5_r9258}':
@@ -138,7 +138,7 @@ label zm1094_s5: # from 4.0 11.0
 
 # s6 # say9227
 label zm1094_s6: # from 4.1 11.1
-    nr '"Nemůžu si vzpomenout. Ještě něco dalšího?"{#zm1094_s6_}'
+    nr '"Nemůžu si vzpomenout. Ještě něco dalšího?"{#zm1094_s6_1}'
 
     menu:
         '"Ano. Několik dalších otázek…"{#zm1094_s6_r9260}':
@@ -152,7 +152,7 @@ label zm1094_s6: # from 4.1 11.1
 
 # s7 # say9228
 label zm1094_s7: # from 4.2 11.2
-    nr 'Duch pokrčil rameny a zadíval se do neznáma. "To nedovedu říct. Z jakých příčin? Nevím." Pevně sevřel své rty a nešťastně se na tebe podíval, v očích se mu zlostně zablesklo. "Potřebuješ ode mne ještě něco jiného?"{#zm1094_s7_}'
+    nr 'Duch pokrčil rameny a zadíval se do neznáma. "To nedovedu říct. Z jakých příčin? Nevím." Pevně sevřel své rty a nešťastně se na tebe podíval, v očích se mu zlostně zablesklo. "Potřebuješ ode mne ještě něco jiného?"{#zm1094_s7_1}'
 
     menu:
         '"Ano. Několik dalších otázek…"{#zm1094_s7_r9262}':
@@ -166,7 +166,7 @@ label zm1094_s7: # from 4.2 11.2
 
 # s8 # say9229
 label zm1094_s8: # from 4.3 11.3
-    nr '"Má duše existuje v Arborei…" Na chviličku se odmlčel, pevně pohroužen do svých myšlenek. "A teď bych si přál vrátit se zpět do mého domova. Pryč od tvého sobectví, netaktnosti a otravných otázek. Můžu tedy jít?"{#zm1094_s8_}'
+    nr '"Má duše existuje v Arborei…" Na chviličku se odmlčel, pevně pohroužen do svých myšlenek. "A teď bych si přál vrátit se zpět do mého domova. Pryč od tvého sobectví, netaktnosti a otravných otázek. Můžu tedy jít?"{#zm1094_s8_1}'
 
     menu:
         '"Nemůžeš, chci se tě totiž na něco zeptat…"{#zm1094_s8_r9264}':
@@ -180,7 +180,7 @@ label zm1094_s8: # from 4.3 11.3
 
 # s9 # say9230
 label zm1094_s9: # from 4.4 11.4
-    nr 'Byl jsi obdarován popudlivým pohledem. "Samozřejmě že nic!" Zatřásl znuděně hlavou, rozervané stehy se mu houpaly na rtech.{#zm1094_s9_}'
+    nr 'Byl jsi obdarován popudlivým pohledem. "Samozřejmě že nic!" Zatřásl znuděně hlavou, rozervané stehy se mu houpaly na rtech.{#zm1094_s9_1}'
 
     menu:
         '"A jak se tedy tvoje mrtvola dostala k práci tady?"{#zm1094_s9_r9266}':
@@ -198,7 +198,7 @@ label zm1094_s9: # from 4.4 11.4
 
 # s10 # say9231
 label zm1094_s10: # from 4.5 11.5
-    nr '"Ne." Začínáš mít dojem, že o tebe duše nemá ani prachbídný zájem.{#zm1094_s10_}'
+    nr '"Ne." Začínáš mít dojem, že o tebe duše nemá ani prachbídný zájem.{#zm1094_s10_1}'
 
     menu:
         '"Tak se tě ještě na něco zeptám…"{#zm1094_s10_r9269}':
@@ -212,7 +212,7 @@ label zm1094_s10: # from 4.5 11.5
 
 # s11 # say9232
 label zm1094_s11: # from 5.0 6.0 7.0 8.0 9.1 10.0 12.0 27.0
-    nr 'Na tvá slova si duch dlouze povzdychl, čímž nasytil okolní vzduch další dávkou formaldehydu přímo ze svých plic. "Ano, ano… jen se ptej."{#zm1094_s11_}'
+    nr 'Na tvá slova si duch dlouze povzdychl, čímž nasytil okolní vzduch další dávkou formaldehydu přímo ze svých plic. "Ano, ano… jen se ptej."{#zm1094_s11_1}'
 
     menu:
         '"Kdo vlastně jsi?"{#zm1094_s11_r9271}':
@@ -246,7 +246,7 @@ label zm1094_s11: # from 5.0 6.0 7.0 8.0 9.1 10.0 12.0 27.0
 
 # s12 # say9233
 label zm1094_s12: # from 9.0
-    nr '"Mám stejné otázky jako tvá prostá mysl. Pokud dovolíš, vrátím se zase zpět tam, kam patřím."{#zm1094_s12_}'
+    nr '"Mám stejné otázky jako tvá prostá mysl. Pokud dovolíš, vrátím se zase zpět tam, kam patřím."{#zm1094_s12_1}'
 
     menu:
         '"Ne. Mám pro tebe další otázku…"{#zm1094_s12_r9278}':
@@ -260,7 +260,7 @@ label zm1094_s12: # from 9.0
 
 # s13 # say9234
 label zm1094_s13: # from 3.1
-    nr 'Po tvých slovech se zmateně rozhlédl, ale pak se zasmál. "Ano! Tak to už dává smysl?, ne? A teď - znám tě?" Naklonil hlavu na jednu stranu a intenzivně se do tebe zahleděl. Hádání tvé pravé identity nejspíš považuje za nějakou zábavnou hru.{#zm1094_s13_}'
+    nr 'Po tvých slovech se zmateně rozhlédl, ale pak se zasmál. "Ano! Tak to už dává smysl?, ne? A teď - znám tě?" Naklonil hlavu na jednu stranu a intenzivně se do tebe zahleděl. Hádání tvé pravé identity nejspíš považuje za nějakou zábavnou hru.{#zm1094_s13_1}'
 
     menu:
         '"O tom velice pochybuju. A teď, chtěl bych se tě na něco zeptat…"{#zm1094_s13_r9280}':
@@ -274,7 +274,7 @@ label zm1094_s13: # from 3.1
 
 # s14 # say9235
 label zm1094_s14: # from 3.2 13.0
-    nr 'Duch pokrčil rameny a mírně se pousmál. "Nejspíš máš pravdu! Takže… na co ses mě chtěl zeptat?" S nepřítomným pohledem si začal vytahovat zbylé stehy ze rtů a házet je na zem, jeden za druhým.{#zm1094_s14_}'
+    nr 'Duch pokrčil rameny a mírně se pousmál. "Nejspíš máš pravdu! Takže… na co ses mě chtěl zeptat?" S nepřítomným pohledem si začal vytahovat zbylé stehy ze rtů a házet je na zem, jeden za druhým.{#zm1094_s14_1}'
 
     menu:
         '"Kdo vlastně jsi?"{#zm1094_s14_r9282}' if zm1094Logic.r9282_condition():
@@ -312,7 +312,7 @@ label zm1094_s14: # from 3.2 13.0
 
 # s15 # say9236
 label zm1094_s15: # from 14.0 22.0
-    nr '"Jmenoval jsem se Asonje. Mohl bych vědět, jak ty?"{#zm1094_s15_}'
+    nr '"Jmenoval jsem se Asonje. Mohl bych vědět, jak ty?"{#zm1094_s15_1}'
 
     menu:
         '"Já… já nevím."{#zm1094_s15_r9289}':
@@ -333,7 +333,7 @@ label zm1094_s15: # from 14.0 22.0
 
 # s16 # say9237
 label zm1094_s16: # from 14.2 22.2
-    nr '"Jsem z mnoha míst! Ale abych pravdu řekl, kde jsem se narodil, to sám nevím. Ve svém životě jsem mnoho cestoval a mnoha místům jsem říkal domov. Teď tak říkám Aborei…" Zdá se velmi spokojen.{#zm1094_s16_}'
+    nr '"Jsem z mnoha míst! Ale abych pravdu řekl, kde jsem se narodil, to sám nevím. Ve svém životě jsem mnoho cestoval a mnoha místům jsem říkal domov. Teď tak říkám Aborei…" Zdá se velmi spokojen.{#zm1094_s16_1}'
 
     menu:
         '"Aha. Mám ještě další otázky…"{#zm1094_s16_r9292}':
@@ -347,7 +347,7 @@ label zm1094_s16: # from 14.2 22.2
 
 # s17 # say9238
 label zm1094_s17: # from 14.3 22.3
-    nr 'Ze rtů se mu náhle vypařil smích a duch se na tebe zadíval se znepokojeným pohledem. "To je hrozné… já nevím! Vlastně ani nevím, jak jsem umřel." Pokrčil rameny. "A není to nakonec jedno?" Jeho tváři opět dominuje úsměv typu „sýýýýr“ a tobě začíná docházet, proč měl sešité rty.{#zm1094_s17_}'
+    nr 'Ze rtů se mu náhle vypařil smích a duch se na tebe zadíval se znepokojeným pohledem. "To je hrozné… já nevím! Vlastně ani nevím, jak jsem umřel." Pokrčil rameny. "A není to nakonec jedno?" Jeho tváři opět dominuje úsměv typu „sýýýýr“ a tobě začíná docházet, proč měl sešité rty.{#zm1094_s17_1}'
 
     menu:
         '"Měl bych ještě další otázku…"{#zm1094_s17_r9294}':
@@ -361,7 +361,7 @@ label zm1094_s17: # from 14.3 22.3
 
 # s18 # say9239
 label zm1094_s18: # from 14.4 22.4
-    nr '"Na místě zvaném Arborea! Je to nejúžasnější místo, jaké si dovedeš představit. Nikdy za svého života jsem neviděl tak klidné a mírumilovné místo. Tak… tak nádherné…" Na okamžik se odmlčel, ztracen v osidlech svých vzpomínek. "Ta krása té země, těch lidí -- velkolepá. Povím ti, opravdu už mi začíná scházet!"{#zm1094_s18_}'
+    nr '"Na místě zvaném Arborea! Je to nejúžasnější místo, jaké si dovedeš představit. Nikdy za svého života jsem neviděl tak klidné a mírumilovné místo. Tak… tak nádherné…" Na okamžik se odmlčel, ztracen v osidlech svých vzpomínek. "Ta krása té země, těch lidí -- velkolepá. Povím ti, opravdu už mi začíná scházet!"{#zm1094_s18_1}'
 
     menu:
         '"Aha. Můžu se tě zeptat ještě na něco?"{#zm1094_s18_r9296}':
@@ -375,7 +375,7 @@ label zm1094_s18: # from 14.4 22.4
 
 # s19 # say9240
 label zm1094_s19: # from 14.5 22.5
-    nr '"Skoro nic. Ze srandy jsem jisté Spalovačce podepsal smlouvu… vyprávěla mi něco o nějakém hrozném místě a pověděla, že si z mojí mrtvoly udělají pomocníka. Řekl jsem si „vždyť tohle tělo stejně nebudu v příštím životě potřebovat, tak proč ne? Vezmu si to stříbro a utratím ho za nějaké dobré víno nebo ženu“. Pousmál se a v jeho očích vzplanuly radostné plamínky.{#zm1094_s19_}'
+    nr '"Skoro nic. Ze srandy jsem jisté Spalovačce podepsal smlouvu… vyprávěla mi něco o nějakém hrozném místě a pověděla, že si z mojí mrtvoly udělají pomocníka. Řekl jsem si „vždyť tohle tělo stejně nebudu v příštím životě potřebovat, tak proč ne? Vezmu si to stříbro a utratím ho za nějaké dobré víno nebo ženu“. Pousmál se a v jeho očích vzplanuly radostné plamínky.{#zm1094_s19_1}'
 
     menu:
         '"Nevíš náhodou něco o městě mimo Márnici?"{#zm1094_s19_r9298}':
@@ -393,7 +393,7 @@ label zm1094_s19: # from 14.5 22.5
 
 # s20 # say9241
 label zm1094_s20: # from 14.6 22.6
-    nr 'Duch se na chviličku zamyslel. "Ne, obávám se, že o něm jsem nikdy neslyšel. To je nějaký tvůj přítel?"{#zm1094_s20_}'
+    nr 'Duch se na chviličku zamyslel. "Ne, obávám se, že o něm jsem nikdy neslyšel. To je nějaký tvůj přítel?"{#zm1094_s20_1}'
 
     menu:
         '"Asi ano. Ještě na něco bych se tě rád zeptal…"{#zm1094_s20_r9301}':
@@ -407,7 +407,7 @@ label zm1094_s20: # from 14.6 22.6
 
 # s21 # say9242
 label zm1094_s21: # from 15.0
-    nr 'Zaujatě na tebe pohleděl. "To je divné. Ale přece ti musím nějak říkat, ne?" Tentokrát se na tebe podíval s netrpělivostí v očích.{#zm1094_s21_}'
+    nr 'Zaujatě na tebe pohleděl. "To je divné. Ale přece ti musím nějak říkat, ne?" Tentokrát se na tebe podíval s netrpělivostí v očích.{#zm1094_s21_1}'
 
     menu:
         '"Tak si něco vymysli. Teď bych se tě rád na něco zeptal…"{#zm1094_s21_r9303}':
@@ -426,7 +426,7 @@ label zm1094_s21: # from 15.0
 
 # s22 # say9243
 label zm1094_s22: # from 15.1 16.0 17.0 18.0 19.1 20.0 21.0 23.0 24.0 25.0 26.0
-    nr '"Jak si přeješ. Jen se ptej!" Spokojeně se usmál a trpělivě očekával tvůj další dotaz. Ani poslední stehy už nevydržely jeho úsměv, který ti už nepřipadá tak zvláštní, jak dříve.{#zm1094_s22_}'
+    nr '"Jak si přeješ. Jen se ptej!" Spokojeně se usmál a trpělivě očekával tvůj další dotaz. Ani poslední stehy už nevydržely jeho úsměv, který ti už nepřipadá tak zvláštní, jak dříve.{#zm1094_s22_1}'
 
     menu:
         '"Kdo vlastně jsi?"{#zm1094_s22_r9306}' if zm1094Logic.r9306_condition():
@@ -464,7 +464,7 @@ label zm1094_s22: # from 15.1 16.0 17.0 18.0 19.1 20.0 21.0 23.0 24.0 25.0 26.0
 
 # s23 # say9244
 label zm1094_s23: # from 21.1
-    nr 'Když viděl, jak se tváříš, od plic se zasmál. "Tak přece! Takže Adahn, povídáš, příteli. Takže Adahne, máš pro mě snad nějakou otázku?"{#zm1094_s23_}'
+    nr 'Když viděl, jak se tváříš, od plic se zasmál. "Tak přece! Takže Adahn, povídáš, příteli. Takže Adahne, máš pro mě snad nějakou otázku?"{#zm1094_s23_1}'
 
     menu:
         '"Ano, jedna by se našla…"{#zm1094_s23_r9313}':
@@ -478,7 +478,7 @@ label zm1094_s23: # from 21.1
 
 # s24 # say9245
 label zm1094_s24: # from 19.0
-    nr '"O Sigilu?" Když jsi přikývl, úsměv mrtvoly se roztáhl ještě více. "No, o tohle tě nepřipravím! Jen běž a prozkoumej ho sám! Ztrať se v ulicích, v hospodách, v lidech… ale dávej pozor! Sigil dokáže být nebezpečný stejně jako podivuhodný. Ale to ho přece dělá zajímavým, ne?"{#zm1094_s24_}'
+    nr '"O Sigilu?" Když jsi přikývl, úsměv mrtvoly se roztáhl ještě více. "No, o tohle tě nepřipravím! Jen běž a prozkoumej ho sám! Ztrať se v ulicích, v hospodách, v lidech… ale dávej pozor! Sigil dokáže být nebezpečný stejně jako podivuhodný. Ale to ho přece dělá zajímavým, ne?"{#zm1094_s24_1}'
 
     menu:
         '"Jo, taky si myslím. Ale teď bych se tě chtěl zeptat na něco jiného…"{#zm1094_s24_r9315}':
@@ -492,7 +492,7 @@ label zm1094_s24: # from 19.0
 
 # s25 # say9283
 label zm1094_s25: # from 14.1 22.1
-    nr '"Jmenoval jsem se Asonje."{#zm1094_s25_}'
+    nr '"Jmenoval jsem se Asonje."{#zm1094_s25_1}'
 
     menu:
         '"Měl bych ještě další otázku…"{#zm1094_s25_r9284}':
@@ -506,7 +506,7 @@ label zm1094_s25: # from 14.1 22.1
 
 # s26 # say20061
 label zm1094_s26: # - # IF ~  GlobalGT("Asonje","GLOBAL",0) GlobalLT("Asonje","GLOBAL",3)
-    nr '"Zas zpátky, hmm?" Široce se usmál.{#zm1094_s26_}'
+    nr '"Zas zpátky, hmm?" Široce se usmál.{#zm1094_s26_1}'
 
     menu:
         '"Mám pár otázek…"{#zm1094_s26_r20063}':
@@ -520,7 +520,7 @@ label zm1094_s26: # - # IF ~  GlobalGT("Asonje","GLOBAL",0) GlobalLT("Asonje","G
 
 # s27 # say20062
 label zm1094_s27: # - # IF ~  Global("Asonje","GLOBAL",3)
-    nr '"Oh, ty… zase." Zamračil se a sklopil pohled stranou.{#zm1094_s27_}'
+    nr '"Oh, ty… zase." Zamračil se a sklopil pohled stranou.{#zm1094_s27_1}'
 
     menu:
         '"Mám pár otázek…"{#zm1094_s27_r20065}':

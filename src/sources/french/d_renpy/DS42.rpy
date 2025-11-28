@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say6595
 label s42_s0: # - # IF ~  True()
-    nr 'Le squelette se retourne face à toi. Le numéro „42“ a été buriné sur son front et certains os, tels que les maxillaires et les articulations, ont été ficelés à l„aide de lanières de cuir. Une blouse noire recouvre le corps.{#s42_s0_}'
+    nr 'Le squelette se retourne face à toi. Le numéro „42“ a été buriné sur son front et certains os, tels que les maxillaires et les articulations, ont été ficelés à l„aide de lanières de cuir. Une blouse noire recouvre le corps.{#s42_s0_1}'
 
     menu:
         '"Je *crois* que c„est le cadavre dont je me souvenais."{#s42_s0_r6612}' if s42Logic.r6612_condition():
@@ -73,7 +73,7 @@ label s42_s0: # - # IF ~  True()
 
 # s1 # say6596
 label s42_s1: # from 0.0 0.1 0.2 0.3 0.9 3.0 3.3
-    nr 'En entendant ta voix, le squelette se redresse brusquement. Il croise les bras sur sa poitrine et ses doigts sont enfoncés dans sa cage thoracique.{#s42_s1_}'
+    nr 'En entendant ta voix, le squelette se redresse brusquement. Il croise les bras sur sa poitrine et ses doigts sont enfoncés dans sa cage thoracique.{#s42_s1_1}'
 
     menu:
         'Croise les bras sur la poitrine.{#s42_s1_r6625}' if s42Logic.r6625_condition():
@@ -95,7 +95,7 @@ label s42_s1: # from 0.0 0.1 0.2 0.3 0.9 3.0 3.3
 
 # s2 # say6597
 label s42_s2: # from 0.4
-    nr 'Ce squelette ne répond pas. Il semble qu„il soit trop absent pour répondre à tes questions.{#s42_s2_}'
+    nr 'Ce squelette ne répond pas. Il semble qu„il soit trop absent pour répondre à tes questions.{#s42_s2_1}'
 
     menu:
         'Laisse le squelette tranquille.{#s42_s2_r6629}' if s42Logic.r6629_condition():
@@ -114,7 +114,7 @@ label s42_s2: # from 0.4
 
 # s3 # say6598
 label s42_s3: # from 0.5 10.2
-    nr 'Tu t„étonnes que ce tas d“os soit toujours en une seule pièce. Il est recouvert de plâtre et de plusieurs couches de colle puante… Le peu que tu peux voir de ce tas d„ossements révèle des centaines de fêlures. Bien que quelqu“un ait pris la peine d„envelopper ce squelette dans des lanières de cuir et de renforcer les articulations à l“aide de boulons, l„ensemble paraît sur le point de s“écrouler.{#s42_s3_}'
+    nr 'Tu t„étonnes que ce tas d“os soit toujours en une seule pièce. Il est recouvert de plâtre et de plusieurs couches de colle puante… Le peu que tu peux voir de ce tas d„ossements révèle des centaines de fêlures. Bien que quelqu“un ait pris la peine d„envelopper ce squelette dans des lanières de cuir et de renforcer les articulations à l“aide de boulons, l„ensemble paraît sur le point de s“écrouler.{#s42_s3_1}'
 
     menu:
         '"Je *crois* que c„est le cadavre dont je me souvenais."{#s42_s3_r63495}' if s42Logic.r63495_condition():
@@ -150,7 +150,7 @@ label s42_s3: # from 0.5 10.2
 
 # s4 # say6599
 label s42_s4: # from 1.0 12.0
-    nr 'En guise de réponse, le squelette laisse tomber ses bras. Les lanières de cuir qui maintenaient le torse se rompent et la cage thoracique s„ouvre telle une porte battante.{#s42_s4_}'
+    nr 'En guise de réponse, le squelette laisse tomber ses bras. Les lanières de cuir qui maintenaient le torse se rompent et la cage thoracique s„ouvre telle une porte battante.{#s42_s4_1}'
 
     menu:
         'Va jusqu„à la cage thoracique et fouille.{#s42_s4_r6638}':
@@ -164,7 +164,7 @@ label s42_s4: # from 1.0 12.0
 
 # s5 # say6600
 label s42_s5: # from 4.0 9.0
-    nr 'À ta grande surprise, ta main disparaît lorsque tu l„introduis dans la cage thoracique… tu as l“étrange impression qu„elle se trouve *ailleurs*. Une fois à l“intérieur de la cage thoracique, elle se cogne contre un objet invisible. Gros comme un poing, ce dernier semble relié à la colonne vertébrale du squelette.{#s42_s5_}'
+    nr 'À ta grande surprise, ta main disparaît lorsque tu l„introduis dans la cage thoracique… tu as l“étrange impression qu„elle se trouve *ailleurs*. Une fois à l“intérieur de la cage thoracique, elle se cogne contre un objet invisible. Gros comme un poing, ce dernier semble relié à la colonne vertébrale du squelette.{#s42_s5_1}'
 
     menu:
         'Prends l„objet.{#s42_s5_r6640}':
@@ -179,7 +179,7 @@ label s42_s5: # from 4.0 9.0
 
 # s6 # say6601
 label s42_s6: # from 0.7 0.8 3.2
-    nr 'Les boulons sortent facilement des articulations. Le squelette s„effondre, tandis que certains os continuent de bouger.{#s42_s6_}'
+    nr 'Les boulons sortent facilement des articulations. Le squelette s„effondre, tandis que certains os continuent de bouger.{#s42_s6_1}'
 
     menu:
         '"Excuse-moi, Sac d„os…"{#s42_s6_r6642}':
@@ -190,7 +190,7 @@ label s42_s6: # from 0.7 0.8 3.2
 
 # s7 # say6602
 label s42_s7: # from 5.0
-    nr 'Lorsque tu retires l„objet, le squelette se désintègre soudain, et les boulons qui maintenaient les articulations tombent bruyamment par terre. Quel que soit cet objet, il semble que c“était le seul élément qui maintenait l„ensemble.{#s42_s7_}'
+    nr 'Lorsque tu retires l„objet, le squelette se désintègre soudain, et les boulons qui maintenaient les articulations tombent bruyamment par terre. Quel que soit cet objet, il semble que c“était le seul élément qui maintenait l„ensemble.{#s42_s7_1}'
 
     menu:
         'Examine l„objet.{#s42_s7_r6643}' if s42Logic.r6643_condition():
@@ -204,7 +204,7 @@ label s42_s7: # from 5.0
 
 # s8 # say6603
 label s42_s8: # from 7.0 7.1
-    nr 'On dirait un morceau de fer quelconque. Impossible d„imaginer pourquoi quelqu“un voudrait le cacher dans la cage thoracique d„un squelette.{#s42_s8_}'
+    nr 'On dirait un morceau de fer quelconque. Impossible d„imaginer pourquoi quelqu“un voudrait le cacher dans la cage thoracique d„un squelette.{#s42_s8_1}'
 
     menu:
         'Examine le morceau de fer.{#s42_s8_r6645}':
@@ -215,7 +215,7 @@ label s42_s8: # from 7.0 7.1
 
 # s9 # say6604
 label s42_s9: # from 1.1 12.1
-    nr 'En guise de réponse, le squelette laisse tomber ses bras. Les lanières de cuir qui maintenaient le torse se rompent et la cage thoracique s„ouvre telle une porte battante. Sans pouvoir l“expliquer, il te prend une envie soudaine de mettre la main dans la cage thoracique.{#s42_s9_}'
+    nr 'En guise de réponse, le squelette laisse tomber ses bras. Les lanières de cuir qui maintenaient le torse se rompent et la cage thoracique s„ouvre telle une porte battante. Sans pouvoir l“expliquer, il te prend une envie soudaine de mettre la main dans la cage thoracique.{#s42_s9_1}'
 
     menu:
         'Va jusqu„à la cage thoracique et fouille.{#s42_s9_r6646}':
@@ -229,7 +229,7 @@ label s42_s9: # from 1.1 12.1
 
 # s10 # say6605
 label s42_s10: # from 1.2 12.2
-    nr 'Les bras du squelette retombent.{#s42_s10_}'
+    nr 'Les bras du squelette retombent.{#s42_s10_1}'
 
     menu:
         '"Euh… bonjour ?"{#s42_s10_r6648}' if s42Logic.r6648_condition():
@@ -252,7 +252,7 @@ label s42_s10: # from 1.2 12.2
 
 # s11 # say6606
 label s42_s11: # -
-    nr 'On dirait un morceau de fer quelconque. Ton incarnation précédente doit avoir eu intérêt à le cacher à cet endroit.{#s42_s11_}'
+    nr 'On dirait un morceau de fer quelconque. Ton incarnation précédente doit avoir eu intérêt à le cacher à cet endroit.{#s42_s11_1}'
 
     menu:
         'Examine ce morceau de fer attentivement.{#s42_s11_r6652}':
@@ -263,7 +263,7 @@ label s42_s11: # -
 
 # s12 # say6607
 label s42_s12: # from 10.0
-    nr 'Le squelette croise de nouveau les bras sur sa poitrine.{#s42_s12_}'
+    nr 'Le squelette croise de nouveau les bras sur sa poitrine.{#s42_s12_1}'
 
     menu:
         'Croise les bras sur la poitrine.{#s42_s12_r6653}' if s42Logic.r6653_condition():
@@ -285,14 +285,14 @@ label s42_s12: # from 10.0
 
 # s13 # say6608
 label s42_s13: # from 10.1
-    nr 'Le squelette croise de nouveau les bras sur sa poitrine.{#s42_s13_}'
+    nr 'Le squelette croise de nouveau les bras sur sa poitrine.{#s42_s13_1}'
 
     jump morte_s112  # EXTERN
 
 
 # s14 # say58983
 label s42_s14: # from 8.0 11.0
-    nr 'Lorsque que tu mets tes mains sur le morceau métallique pour l„examiner, un *hssssss* se produit, et le métal s“évapore, laissant derrière une étrange dague, une poignée de pièces enrobées dans un chiffon crasseux, et deux larmes de sang. On dirait que tout cela se trouvait *à l„intérieur* du morceau de fer.{#s42_s14_}'
+    nr 'Lorsque que tu mets tes mains sur le morceau métallique pour l„examiner, un *hssssss* se produit, et le métal s“évapore, laissant derrière une étrange dague, une poignée de pièces enrobées dans un chiffon crasseux, et deux larmes de sang. On dirait que tout cela se trouvait *à l„intérieur* du morceau de fer.{#s42_s14_1}'
 
     menu:
         'Prends les objets et pars.{#s42_s14_r58984}':

@@ -11,14 +11,14 @@ init 10 python:
 
 # s0 # say34920
 label zm965_s0: # - # IF ~  NearbyDialog("Dmorte")
-    nr 'Tato mrtvola se belhá kolem po trojúhelníkové dráze. Jakmile dojde do rohu trojúhelníku, zarazí se, pak se otočí a jde do dalšího rohu. Na straně lebky má vytetováno číslo "965". Když se přiblížíš, zastaví se a zírá na tebe.{#zm965_s0_}'
+    nr 'Tato mrtvola se belhá kolem po trojúhelníkové dráze. Jakmile dojde do rohu trojúhelníku, zarazí se, pak se otočí a jde do dalšího rohu. Na straně lebky má vytetováno číslo "965". Když se přiblížíš, zastaví se a zírá na tebe.{#zm965_s0_1}'
 
     jump morte_s477  # EXTERN
 
 
 # s1 # say34922
 label zm965_s1: # externs morte_s481 morte_s480 # IF ~  !NearbyDialog("Dmorte")
-    nr 'Tato mrtvola se belhá kolem po trojúhelníkové dráze. Jakmile dojde do rohu trojúhelníku, zarazí se, pak se otočí a jde do dalšího rohu. Na straně lebky má vytetováno číslo "965". Když se přiblížíš, zastaví se a zírá na tebe.{#zm965_s1_}'
+    nr 'Tato mrtvola se belhá kolem po trojúhelníkové dráze. Jakmile dojde do rohu trojúhelníku, zarazí se, pak se otočí a jde do dalšího rohu. Na straně lebky má vytetováno číslo "965". Když se přiblížíš, zastaví se a zírá na tebe.{#zm965_s1_1}'
 
     menu:
         '"Hele… proč chodíš v trojúhelníku?"{#zm965_s1_r34923}' if zm965Logic.r34923_condition():
@@ -49,7 +49,7 @@ label zm965_s1: # externs morte_s481 morte_s480 # IF ~  !NearbyDialog("Dmorte")
 
 # s2 # say34927
 label zm965_s2: # from 1.0 1.1 1.2
-    nr 'Mrtvola na tebe prázdně zírá.{#zm965_s2_}'
+    nr 'Mrtvola na tebe prázdně zírá.{#zm965_s2_1}'
 
     menu:
         'Nechej mrtvolu být.{#zm965_s2_r34928}':
@@ -59,7 +59,7 @@ label zm965_s2: # from 1.0 1.1 1.2
 
 # s3 # say45069
 label zm965_s3: # from 1.3
-    nr 'Mrtvola se nepohnula. Asi už moc uhnila, anebo nemá náladu na povídání.{#zm965_s3_}'
+    nr 'Mrtvola se nepohnula. Asi už moc uhnila, anebo nemá náladu na povídání.{#zm965_s3_1}'
 
     menu:
         'Nechej mrtvolu v klidu odpočívat.{#zm965_s3_r45075}':

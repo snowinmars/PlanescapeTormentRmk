@@ -11,14 +11,14 @@ init 10 python:
 
 # s0 # say822
 label dhall_s0: # externs morte_s103
-    nr 'Bevor Morte seine Tirade beenden kann, beginnt der Schreiber heftig zu husten. Kurz darauf läßt der Husten nach, und der Schreiber atmet wieder keuchend.{#dhall_s0_}'
+    nr 'Bevor Morte seine Tirade beenden kann, beginnt der Schreiber heftig zu husten. Kurz darauf läßt der Husten nach, und der Schreiber atmet wieder keuchend.{#dhall_s0_1}'
 
     jump morte_s104  # EXTERN
 
 
 # s1 # say826
 label dhall_s1: # externs morte_s104
-    nr 'Bevor Morte seinen Satz beenden kann, blitzen die grauen Augen des Schreibers zu dir herüber. "Die Jahre lasten schwer auf mir, Rastloser." Er legt seinen Federkiel ab. "… doch an Taubheit leide ich noch nicht."{#dhall_s1_}'
+    nr 'Bevor Morte seinen Satz beenden kann, blitzen die grauen Augen des Schreibers zu dir herüber. "Die Jahre lasten schwer auf mir, Rastloser." Er legt seinen Federkiel ab. "… doch an Taubheit leide ich noch nicht."{#dhall_s1_1}'
 
     menu:
         '"„Rastloser“? Kennst du mich?"{#dhall_s1_r827}':
@@ -29,7 +29,7 @@ label dhall_s1: # externs morte_s104
 
 # s2 # say829
 label dhall_s2: # from 21.0
-    nr '"Kennst du die Frau nicht, deren Leiche unten in der Gedenkhalle bestattet ist? Ich dachte, du wärst früher mit ihr gereist…" Dhall scheint gleich wieder husten zu müssen, dann  holt er Luft. "Oder etwa nicht?"{#dhall_s2_}'
+    nr '"Kennst du die Frau nicht, deren Leiche unten in der Gedenkhalle bestattet ist? Ich dachte, du wärst früher mit ihr gereist…" Dhall scheint gleich wieder husten zu müssen, dann  holt er Luft. "Oder etwa nicht?"{#dhall_s2_1}'
 
     menu:
         '"Wo ist ihre Leiche?"{#dhall_s2_r5070}' if dhallLogic.r5070_condition():
@@ -67,7 +67,7 @@ label dhall_s2: # from 21.0
 
 # s3 # say832
 label dhall_s3: # from 9.0
-    nr 'Dhall starrt dich an. "Bist du sicher?"{#dhall_s3_}'
+    nr 'Dhall starrt dich an. "Bist du sicher?"{#dhall_s3_1}'
 
     menu:
         '"Ja. Wirklich eine gute Verkleidung."{#dhall_s3_r830}' if dhallLogic.r830_condition():
@@ -87,7 +87,7 @@ label dhall_s3: # from 9.0
 
 # s4 # say833
 label dhall_s4: # from 3.0 3.1
-    nr '"Ich…" Dhall hat einen neuen Hustenanfall. Nach ein oder zwei Minuten hat er genügend Atem geschöpft, um zu sagen. "Ich… werde sofort die Wachen benachrichtigen."{#dhall_s4_}'
+    nr '"Ich…" Dhall hat einen neuen Hustenanfall. Nach ein oder zwei Minuten hat er genügend Atem geschöpft, um zu sagen. "Ich… werde sofort die Wachen benachrichtigen."{#dhall_s4_1}'
 
     menu:
         '"Vielen Dank." Ich hätte noch ein paar Fragen…"{#dhall_s4_r836}':
@@ -101,7 +101,7 @@ label dhall_s4: # from 3.0 3.1
 
 # s5 # say838
 label dhall_s5: # - # IF ~  Global("Dhall","GLOBAL",0)
-    nr 'Dieser Schreiber sieht sehr alt aus… Seine Haut ist faltig und eine Spur gelb, wie altes Pergament. Dunkelgraue Augen liegen in einem eckigen Gesicht, und ein langer, weißer Bart fließt wie ein Wasserfall an seinen Roben hinunter. Sein Atem geht stoßweise und unregelmäßig, doch selbst sein gelegentliches Husten verlangsamt das Kratzen seines Federfüllers nicht.{#dhall_s5_}'
+    nr 'Dieser Schreiber sieht sehr alt aus… Seine Haut ist faltig und eine Spur gelb, wie altes Pergament. Dunkelgraue Augen liegen in einem eckigen Gesicht, und ein langer, weißer Bart fließt wie ein Wasserfall an seinen Roben hinunter. Sein Atem geht stoßweise und unregelmäßig, doch selbst sein gelegentliches Husten verlangsamt das Kratzen seines Federfüllers nicht.{#dhall_s5_1}'
 
     menu:
         '"Sei gegrüßt."{#dhall_s5_r839}' if dhallLogic.r839_condition():
@@ -123,7 +123,7 @@ label dhall_s5: # - # IF ~  Global("Dhall","GLOBAL",0)
 
 # s6 # say841
 label dhall_s6: # from 5.2
-    nr 'Die grauen Augen funkeln, als er von seinem Buch aufblickt. "Ich ahnte schon, daß du für die Übergriffe in der Leichenhalle verantwortlich bist. So…" Er hüstelt und holt keuchend Luft. "So gelangst du bestimmt nicht ins nächste Leben."{#dhall_s6_}'
+    nr 'Die grauen Augen funkeln, als er von seinem Buch aufblickt. "Ich ahnte schon, daß du für die Übergriffe in der Leichenhalle verantwortlich bist. So…" Er hüstelt und holt keuchend Luft. "So gelangst du bestimmt nicht ins nächste Leben."{#dhall_s6_1}'
 
     menu:
         '"Ich habe mich nur verteidigt. "Ich hätte da ein paar Fragen, bevor ich verschwinde…"{#dhall_s6_r842}' if dhallLogic.r842_condition():
@@ -146,7 +146,7 @@ label dhall_s6: # from 5.2
 
 # s7 # say844
 label dhall_s7: # from 5.1
-    nr 'Der Schreiber hört auf, in sein Buch hineinzukritzeln, dann schaut er auf. Seine Augen gleichen zwei Nägeln, die aus seinem Schädel ragen. "Du…" Er klingt müde, als hätte er dieselben Worte schon oft vorher gesagt. "Du bist also aus deinem Schlaf erwacht und zu deinem Traum zurückgekehrt." In seiner Stimme klingt jetzt etwas Respekt mit. "Freut mich, dich wieder zu sehen, Rastloser."{#dhall_s7_}'
+    nr 'Der Schreiber hört auf, in sein Buch hineinzukritzeln, dann schaut er auf. Seine Augen gleichen zwei Nägeln, die aus seinem Schädel ragen. "Du…" Er klingt müde, als hätte er dieselben Worte schon oft vorher gesagt. "Du bist also aus deinem Schlaf erwacht und zu deinem Traum zurückgekehrt." In seiner Stimme klingt jetzt etwas Respekt mit. "Freut mich, dich wieder zu sehen, Rastloser."{#dhall_s7_1}'
 
     menu:
         '"„Rastloser“? Kennst du mich?"{#dhall_s7_r845}':
@@ -156,7 +156,7 @@ label dhall_s7: # from 5.1
 
 # s8 # say851
 label dhall_s8: # from 22.0
-    nr '"Versteh doch. Deine Existenz ist für sie reine Blasphemie. Viele unseres Bundes würden dich einäschern lassen… wenn sie von deinem Zustand wüßten."{#dhall_s8_}'
+    nr '"Versteh doch. Deine Existenz ist für sie reine Blasphemie. Viele unseres Bundes würden dich einäschern lassen… wenn sie von deinem Zustand wüßten."{#dhall_s8_1}'
 
     menu:
         '"Du bist ein Staubmensch. Aber du scheinst kein Interesse daran zu haben, mich zu töten. Warum nicht?"{#dhall_s8_r940}':
@@ -178,7 +178,7 @@ label dhall_s8: # from 22.0
 
 # s9 # say852
 label dhall_s9: # from 2.5 3.2 4.0 6.0 6.1 8.2 10.5 12.1 13.0 14.4 15.2 16.3 17.3 18.2 19.2 20.2 21.1 22.2 23.2 24.1 25.2 26.2 27.0 28.1 29.2 30.0 31.1 32.6 33.3 34.2 35.2 36.2 37.1 38.2 39.0 40.0 41.3 42.4 43.3 45.0 47.4 48.2 49.2 51.2 52.2 53.1
-    nr '"Gut. Was wolltest du wissen?"{#dhall_s9_}'
+    nr '"Gut. Was wolltest du wissen?"{#dhall_s9_1}'
 
     menu:
         '"Wußtest du schon, daß sich in den östlichen Kammern jemand als Zombie verkleidet hat?"{#dhall_s9_r854}' if dhallLogic.r854_condition():
@@ -217,7 +217,7 @@ label dhall_s9: # from 2.5 3.2 4.0 6.0 6.1 8.2 10.5 12.1 13.0 14.4 15.2 16.3 17.
 
 # s10 # say859
 label dhall_s10: # from 9.1
-    nr '"Du befindest dich in der Leichenhalle, Rastloser. Du bist… wiedergekommen…" Ein Hustenanfall hindert ihn am Weiterreden. Nach einer Weile beruhigt er sich und atmet wieder keuchend. "… hier wartet, wer den Schatten dieses Lebens bald verlassen wird."{#dhall_s10_}'
+    nr '"Du befindest dich in der Leichenhalle, Rastloser. Du bist… wiedergekommen…" Ein Hustenanfall hindert ihn am Weiterreden. Nach einer Weile beruhigt er sich und atmet wieder keuchend. "… hier wartet, wer den Schatten dieses Lebens bald verlassen wird."{#dhall_s10_1}'
 
     menu:
         '"Erzähl mir über die Leichenhalle."{#dhall_s10_r861}':
@@ -251,7 +251,7 @@ label dhall_s10: # from 9.1
 
 # s11 # say867
 label dhall_s11: # from 2.6 2.7 4.1 8.3 9.7 10.6 12.2 14.5 15.3 16.4 19.3 20.3 21.2 22.3 23.3 24.2 25.3 26.3 27.1 28.2 29.4 30.1 31.3 32.7 33.4 34.3 35.3 36.3 37.2 38.3 41.4 42.5 43.4 47.5 48.3 49.3 51.3 52.3 53.2
-    nr 'Als du dich umdrehst, um zu gehen, sagt Dhall: "Glaube mir, ich beneide dich nicht, Rastloser. So wiedergeboren zu werden wie du, wäre für mich ein unerträglicher Fluch. Aber du mußt dich damit abfinden. Irgendwann wird dich dein Pfad wieder hierher führen…" Dhall hustet; dabei rasselt es in seiner Brust. "Dies ist der Weg aller Dinge aus Fleisch und Blut."{#dhall_s11_}'
+    nr 'Als du dich umdrehst, um zu gehen, sagt Dhall: "Glaube mir, ich beneide dich nicht, Rastloser. So wiedergeboren zu werden wie du, wäre für mich ein unerträglicher Fluch. Aber du mußt dich damit abfinden. Irgendwann wird dich dein Pfad wieder hierher führen…" Dhall hustet; dabei rasselt es in seiner Brust. "Dies ist der Weg aller Dinge aus Fleisch und Blut."{#dhall_s11_1}'
 
     menu:
         '"Dann treffen wir uns vielleicht wieder, Dhall."{#dhall_s11_r41564}':
@@ -261,7 +261,7 @@ label dhall_s11: # from 2.6 2.7 4.1 8.3 9.7 10.6 12.2 14.5 15.3 16.4 19.3 20.3 2
 
 # s12 # say868
 label dhall_s12: # from 2.3 2.4 42.2 42.3 43.1 43.2
-    nr '"Die gibt es zweifellos, doch kenne ich ihre Namen nicht, noch weiß ich, wo sie liegen. Ein solcher wie du hat einen Pfad verlassen, den viele gegangen sind, doch nur wenige überlebt haben." Dhall gestikuliert um dich herum. "Alle Toten kommen hierher. Einige müssen einst mit dir gereist sein."{#dhall_s12_}'
+    nr '"Die gibt es zweifellos, doch kenne ich ihre Namen nicht, noch weiß ich, wo sie liegen. Ein solcher wie du hat einen Pfad verlassen, den viele gegangen sind, doch nur wenige überlebt haben." Dhall gestikuliert um dich herum. "Alle Toten kommen hierher. Einige müssen einst mit dir gereist sein."{#dhall_s12_1}'
 
     menu:
         '"Wo ist diese Frau, die du erwähntest"?{#dhall_s12_r870}' if dhallLogic.r870_condition():
@@ -279,7 +279,7 @@ label dhall_s12: # from 2.3 2.4 42.2 42.3 43.1 43.2
 
 # s13 # say875
 label dhall_s13: # from 9.3
-    nr '"Hmmm… Das Haupttor ist der offensichtlichste Ausgang, aber dort wird niemand außer Staubmenschen vorbeigelassen…" Dhall fällt in ein ruckartiges Husten und fährt dann fort. "…Einer der Führer am Haupttor hat einen Schlüssel dafür, aber da müßtest du schon sehr gute Überredungskünste anwenden, damit er es dir öffnet."{#dhall_s13_}'
+    nr '"Hmmm… Das Haupttor ist der offensichtlichste Ausgang, aber dort wird niemand außer Staubmenschen vorbeigelassen…" Dhall fällt in ein ruckartiges Husten und fährt dann fort. "…Einer der Führer am Haupttor hat einen Schlüssel dafür, aber da müßtest du schon sehr gute Überredungskünste anwenden, damit er es dir öffnet."{#dhall_s13_1}'
 
     menu:
         '"Ich verstehe. Ich hätte noch ein paar andere Fragen…"{#dhall_s13_r876}':
@@ -293,7 +293,7 @@ label dhall_s13: # from 9.3
 
 # s14 # say878
 label dhall_s14: # from 10.3
-    nr '"Ja, *wieder*. Du bist bereits viele Male hierher gebracht worden, Rastloser. Ich hatte gehofft, diesmal könnte dein letztes Mal sein, wenn ich mir die Wunden so ansehe, die du erlitten hast." Er seufzt. "Wann gibst du endlich deine Leidenschaften auf und verläßt diesen Schatten eines Lebens?"{#dhall_s14_}'
+    nr '"Ja, *wieder*. Du bist bereits viele Male hierher gebracht worden, Rastloser. Ich hatte gehofft, diesmal könnte dein letztes Mal sein, wenn ich mir die Wunden so ansehe, die du erlitten hast." Er seufzt. "Wann gibst du endlich deine Leidenschaften auf und verläßt diesen Schatten eines Lebens?"{#dhall_s14_1}'
 
     menu:
         '"„Rastloser“?"{#dhall_s14_r880}':
@@ -323,7 +323,7 @@ label dhall_s14: # from 10.3
 
 # s15 # say885
 label dhall_s15: # from 9.2 10.4 32.5
-    nr 'Dhall schnaubt verächtlich, als würde er sich nur ungern erinnern. "Du wurdest auf deinem verrotteten Wagen in die Leichenhalle kutschiert, Rastloser. Angesichts der Anzahl an ergebenen Untertanen, die zusammen mit dir stinkend und eiternd auf dem Wagen lagen, hätte man dich glatt für einen blaublütigen Edelmann halten können."{#dhall_s15_}'
+    nr 'Dhall schnaubt verächtlich, als würde er sich nur ungern erinnern. "Du wurdest auf deinem verrotteten Wagen in die Leichenhalle kutschiert, Rastloser. Angesichts der Anzahl an ergebenen Untertanen, die zusammen mit dir stinkend und eiternd auf dem Wagen lagen, hätte man dich glatt für einen blaublütigen Edelmann halten können."{#dhall_s15_1}'
 
     menu:
         '"Ich kam auf einem Karren hier an?"{#dhall_s15_r886}':
@@ -346,7 +346,7 @@ label dhall_s15: # from 9.2 10.4 32.5
 
 # s16 # say890
 label dhall_s16: # from 15.0
-    nr '"Ja… dein Knochengerüst steckte irgendwo mitten im Haufen und vermischte seine Sekrete mit dem restlichen Leichenberg." Dhall hustet wieder heftig los; nach ein paar Minuten kommt er wieder zu Atem. "Dein „Hofmarschall“ Pharod war wie immer sehr erfreut über die paar lausigen Kupferstücke, die er dafür bekam, daß er euch vor der Leichenhalle ablud."{#dhall_s16_}'
+    nr '"Ja… dein Knochengerüst steckte irgendwo mitten im Haufen und vermischte seine Sekrete mit dem restlichen Leichenberg." Dhall hustet wieder heftig los; nach ein paar Minuten kommt er wieder zu Atem. "Dein „Hofmarschall“ Pharod war wie immer sehr erfreut über die paar lausigen Kupferstücke, die er dafür bekam, daß er euch vor der Leichenhalle ablud."{#dhall_s16_1}'
 
     menu:
         '"Wer ist dieser Pharod?"{#dhall_s16_r891}' if dhallLogic.r891_condition():
@@ -372,7 +372,7 @@ label dhall_s16: # from 15.0
 
 # s17 # say895
 label dhall_s17: # from 16.0
-    nr '"Er ist ein… Totensammler." Dhall holt schwer Atem und fährt fort. "In unserer Stadt gibt es Leute, die die Körper all derer aufstöbern, die den Pfad des Wahren Todes beschritten haben, und sie dann zu uns bringen, um sie bestatten zu lassen."{#dhall_s17_}'
+    nr '"Er ist ein… Totensammler." Dhall holt schwer Atem und fährt fort. "In unserer Stadt gibt es Leute, die die Körper all derer aufstöbern, die den Pfad des Wahren Todes beschritten haben, und sie dann zu uns bringen, um sie bestatten zu lassen."{#dhall_s17_1}'
 
     menu:
         '"Wo kann ich diesen „Pharod“ finden?"{#dhall_s17_r897}':
@@ -398,7 +398,7 @@ label dhall_s17: # from 16.0
 
 # s18 # say900
 label dhall_s18: # from 17.0 29.1 31.0 35.1 36.1
-    nr '"Wenn alles beim Alten bleibt, Rastloser, ist es sehr viel wahrscheinlicher, daß Pharod dich findet und wieder hierher bringt, als daß du die Schlammgrube findest, in der er sich gerade suhlt."{#dhall_s18_}'
+    nr '"Wenn alles beim Alten bleibt, Rastloser, ist es sehr viel wahrscheinlicher, daß Pharod dich findet und wieder hierher bringt, als daß du die Schlammgrube findest, in der er sich gerade suhlt."{#dhall_s18_1}'
 
     menu:
         '"Trotzdem muß ich ihn finden."{#dhall_s18_r902}':
@@ -420,7 +420,7 @@ label dhall_s18: # from 17.0 29.1 31.0 35.1 36.1
 
 # s19 # say901
 label dhall_s19: # from 17.4 18.0 18.3 29.3 31.2
-    nr 'Eine leise Warnung schleicht sich in Dhalls Tonfall. "Suche nicht nach Pharod, Rastloser. Ich bin sicher, daß sich der Kreis einfach wieder schließen wird, du nicht weiser sein wirst und Pharod darum letztendlich um ein paar Kupferstücke reicher. Nimm den Tod an, Rastloser. Setze den Kreis deiner Leiden nicht fort."{#dhall_s19_}'
+    nr 'Eine leise Warnung schleicht sich in Dhalls Tonfall. "Suche nicht nach Pharod, Rastloser. Ich bin sicher, daß sich der Kreis einfach wieder schließen wird, du nicht weiser sein wirst und Pharod darum letztendlich um ein paar Kupferstücke reicher. Nimm den Tod an, Rastloser. Setze den Kreis deiner Leiden nicht fort."{#dhall_s19_1}'
 
     menu:
         '"Ich *muß* ihn einfach finden. Weißt du, wo er ist?"{#dhall_s19_r906}':
@@ -443,7 +443,7 @@ label dhall_s19: # from 17.4 18.0 18.3 29.3 31.2
 
 # s20 # say908
 label dhall_s20: # from 19.0
-    nr 'Dhall hält kurz inne. Dann spricht er, wenn auch scheinbar widerwillig. "Ich weiß ja nicht, unter welchem Rinnstein Pharod sich gerade versteckt, aber ich glaube, er könnte sich irgendwo jenseits der Tore zur Leichenhalle, im Stock, aufhalten. Vielleicht weiß ja dort jemand, wo er steckt."{#dhall_s20_}'
+    nr 'Dhall hält kurz inne. Dann spricht er, wenn auch scheinbar widerwillig. "Ich weiß ja nicht, unter welchem Rinnstein Pharod sich gerade versteckt, aber ich glaube, er könnte sich irgendwo jenseits der Tore zur Leichenhalle, im Stock, aufhalten. Vielleicht weiß ja dort jemand, wo er steckt."{#dhall_s20_1}'
 
     menu:
         '"Hört sich an, als ob du Pharod nicht leiden kannst."{#dhall_s20_r910}' if dhallLogic.r910_condition():
@@ -465,7 +465,7 @@ label dhall_s20: # from 19.0
 
 # s21 # say914
 label dhall_s21: # from 9.4
-    nr '"Ich weiß herzlich wenig von dir, Rastloser. Ich weiß ein wenig mehr von denen, die mit dir gereist sind und sich nun in unserer Obhut befinden." Dhall seufzt. "Ich bitte dich, nicht länger andere zu bitten, sich dir anzuschließen, Rastloser - wo du gehst, da geht das Leid. Trage deine Last allein."{#dhall_s21_}'
+    nr '"Ich weiß herzlich wenig von dir, Rastloser. Ich weiß ein wenig mehr von denen, die mit dir gereist sind und sich nun in unserer Obhut befinden." Dhall seufzt. "Ich bitte dich, nicht länger andere zu bitten, sich dir anzuschließen, Rastloser - wo du gehst, da geht das Leid. Trage deine Last allein."{#dhall_s21_1}'
 
     menu:
         '"Ich bin also mit anderen zusammen gereist? Und sie sind hier?"{#dhall_s21_r921}':
@@ -484,7 +484,7 @@ label dhall_s21: # from 9.4
 
 # s22 # say915
 label dhall_s22: # from 47.0
-    nr 'Dhall seufzt. "Man sagt, es gebe Seelen, die den Wahren Tod niemals erreichen können. Der Tod hat sie aufgegeben, und ihre Namen werden niemals in das Totenbuch eingetragen werden. Vom Tod wiederzuerwachen, wie du es getan hast… deutet darauf hin, daß du eine dieser Seelen bist. Deine Existenz ist in unserem Bund inakzeptabel."{#dhall_s22_}'
+    nr 'Dhall seufzt. "Man sagt, es gebe Seelen, die den Wahren Tod niemals erreichen können. Der Tod hat sie aufgegeben, und ihre Namen werden niemals in das Totenbuch eingetragen werden. Vom Tod wiederzuerwachen, wie du es getan hast… deutet darauf hin, daß du eine dieser Seelen bist. Deine Existenz ist in unserem Bund inakzeptabel."{#dhall_s22_1}'
 
     menu:
         '"„Inakzeptabel“? Das klingt nicht so, als ob ich einen besonders guten Stand hätte."{#dhall_s22_r917}':
@@ -506,7 +506,7 @@ label dhall_s22: # from 47.0
 
 # s23 # say924
 label dhall_s23: # from 8.0
-    nr '"Weil es nicht richtig ist, dir unsere Überzeugungen aufzuzwingen. Du mußt diese Schattendasein aus freien Stücken aufgeben, nicht etwa, weil du gezwungen wirst." Dhall scheint augenblicklich loshusten zu müssen, doch er schafft es, sich zu beherrschen. "Solange ich meinen Posten behalte, werde ich dein Recht schützen, deine eigene Wahrheit zu suchen."{#dhall_s23_}'
+    nr '"Weil es nicht richtig ist, dir unsere Überzeugungen aufzuzwingen. Du mußt diese Schattendasein aus freien Stücken aufgeben, nicht etwa, weil du gezwungen wirst." Dhall scheint augenblicklich loshusten zu müssen, doch er schafft es, sich zu beherrschen. "Solange ich meinen Posten behalte, werde ich dein Recht schützen, deine eigene Wahrheit zu suchen."{#dhall_s23_1}'
 
     menu:
         '"Was ist denn dein Posten?"{#dhall_s23_r927}':
@@ -528,7 +528,7 @@ label dhall_s23: # from 8.0
 
 # s24 # say929
 label dhall_s24: # from 25.0
-    nr '"Ich bin derjenige, der die Hüllen katalogisiert, die in unsere Hallen kommen, Rastloser." Dhall hat einen Hustenanfall, dann fängt er sich wieder. "Nur ich sehe die Gesichter derer, die auf unseren Totenbanken liegen. Das Dunkel deiner Existenz ist bei mir sicher aufgehoben."{#dhall_s24_}'
+    nr '"Ich bin derjenige, der die Hüllen katalogisiert, die in unsere Hallen kommen, Rastloser." Dhall hat einen Hustenanfall, dann fängt er sich wieder. "Nur ich sehe die Gesichter derer, die auf unseren Totenbanken liegen. Das Dunkel deiner Existenz ist bei mir sicher aufgehoben."{#dhall_s24_1}'
 
     menu:
         '"Erzähl mir mehr über die Leichenhalle."{#dhall_s24_r1305}':
@@ -546,7 +546,7 @@ label dhall_s24: # from 25.0
 
 # s25 # say930
 label dhall_s25: # from 9.5 23.0
-    nr '"Ich bin ein Schreiber, ein Katalogisierer aller Hüllen, die in die Leichenhalle kommen." Dhall hustet wieder und atmet dann tief ein. "Solange der Strom der Leichen durch die Leichenhalle fließt, werde ich auf meinem Posten bleiben."{#dhall_s25_}'
+    nr '"Ich bin ein Schreiber, ein Katalogisierer aller Hüllen, die in die Leichenhalle kommen." Dhall hustet wieder und atmet dann tief ein. "Solange der Strom der Leichen durch die Leichenhalle fließt, werde ich auf meinem Posten bleiben."{#dhall_s25_1}'
 
     menu:
         '"Du sagst, daß ich hier schon öfter war. Wie kommt es dann aber, daß die Staubmenschen mich nicht wiedererkennen?"{#dhall_s25_r931}' if dhallLogic.r931_condition():
@@ -569,7 +569,7 @@ label dhall_s25: # from 9.5 23.0
 
 # s26 # say934
 label dhall_s26: # from 9.6
-    nr '"Ich bin dem Wahren Tod jetzt nahe, Rastloser. Nicht mehr lange, und ich werde die Ewige Grenze überschreiten und den ersehnten Frieden finden. Ich bin dieser sterblichen Sphäre überdrüssig…" Dhall seufzt schwer. "Ich habe auf den Ebenen schon alles erlebt, was einer wie ich erleben kann."{#dhall_s26_}'
+    nr '"Ich bin dem Wahren Tod jetzt nahe, Rastloser. Nicht mehr lange, und ich werde die Ewige Grenze überschreiten und den ersehnten Frieden finden. Ich bin dieser sterblichen Sphäre überdrüssig…" Dhall seufzt schwer. "Ich habe auf den Ebenen schon alles erlebt, was einer wie ich erleben kann."{#dhall_s26_1}'
 
     menu:
         '"„Ewige Grenze“?"{#dhall_s26_r935}':
@@ -592,7 +592,7 @@ label dhall_s26: # from 9.6
 
 # s27 # say938
 label dhall_s27: # from 26.1
-    nr '"Ich möchte nicht ewig oder noch einmal leben, Rastloser. Ich könnte es nicht ertragen."{#dhall_s27_}'
+    nr '"Ich möchte nicht ewig oder noch einmal leben, Rastloser. Ich könnte es nicht ertragen."{#dhall_s27_1}'
 
     menu:
         '"Gut. Ich hätte noch ein paar andere Fragen…"{#dhall_s27_r1303}':
@@ -606,7 +606,7 @@ label dhall_s27: # from 26.1
 
 # s28 # say939
 label dhall_s28: # from 2.2 42.1
-    nr '"Sie *sprach* mit dir?" Dhall beginnt zu flüstern. "Hast du *Fieber*, Rastloser? Sie hat den Wahren Tod erreicht und ist für dich unerreichbar."{#dhall_s28_}'
+    nr '"Sie *sprach* mit dir?" Dhall beginnt zu flüstern. "Hast du *Fieber*, Rastloser? Sie hat den Wahren Tod erreicht und ist für dich unerreichbar."{#dhall_s28_1}'
 
     menu:
         '"Sie hat mit mir gesprochen, Dhall. Ihr Geist wohnt hier."{#dhall_s28_r981}':
@@ -624,7 +624,7 @@ label dhall_s28: # from 2.2 42.1
 
 # s29 # say941
 label dhall_s29: # from 36.0
-    nr 'Dhall überlegt kurz. "Kann gut sein. Vermißt du etwas… etwas Wertvolles?" Seine Stimme wird schwächer; er runzelt die Stirn. "Nicht, daß Pharod irgend etwas verschmähen würde, das nicht fest an dein Knochengerüst angewachsen ist, und manchmal reicht auch das nicht aus, um seine Raffgier zu bremsen."{#dhall_s29_}'
+    nr 'Dhall überlegt kurz. "Kann gut sein. Vermißt du etwas… etwas Wertvolles?" Seine Stimme wird schwächer; er runzelt die Stirn. "Nicht, daß Pharod irgend etwas verschmähen würde, das nicht fest an dein Knochengerüst angewachsen ist, und manchmal reicht auch das nicht aus, um seine Raffgier zu bremsen."{#dhall_s29_1}'
 
     menu:
         '"Ich vermisse ein Journal."{#dhall_s29_r942}' if dhallLogic.r942_condition():
@@ -650,7 +650,7 @@ label dhall_s29: # from 36.0
 
 # s30 # say945
 label dhall_s30: # from 28.0
-    nr 'Dhall zeichnet mit einem Finger einen Halbkreis vor sich in die Luft. "Dies ist ein schlechtes Omen, Rastloser. Ich bete, daß du diese Unterhaltung geträumt hast… Und doch fürchte ich, daß das nicht der Fall ist."{#dhall_s30_}'
+    nr 'Dhall zeichnet mit einem Finger einen Halbkreis vor sich in die Luft. "Dies ist ein schlechtes Omen, Rastloser. Ich bete, daß du diese Unterhaltung geträumt hast… Und doch fürchte ich, daß das nicht der Fall ist."{#dhall_s30_1}'
 
     menu:
         '"Vielleicht hab„ ich mir“s auch nur eingebildet. Ich hätte aber noch ein paar Fragen."{#dhall_s30_r946}':
@@ -664,7 +664,7 @@ label dhall_s30: # from 28.0
 
 # s31 # say850
 label dhall_s31: # from 29.0
-    nr '"Ein Journal? Wenn es irgendeinen Wert hatte, hat Pharod es wahrscheinlich ergattert."{#dhall_s31_}'
+    nr '"Ein Journal? Wenn es irgendeinen Wert hatte, hat Pharod es wahrscheinlich ergattert."{#dhall_s31_1}'
 
     menu:
         '"Wo kann ich diesen Pharod finden?"{#dhall_s31_r948}' if dhallLogic.r948_condition():
@@ -686,7 +686,7 @@ label dhall_s31: # from 29.0
 
 # s32 # say950
 label dhall_s32: # from 8.1 10.0 14.3 15.1 16.2 17.2 18.1 19.1 20.1 22.1 23.1 24.0 25.1 33.2 34.1 37.0 38.1 41.2 47.3 48.1 49.1 51.1 52.1 53.0
-    nr '"Hierher werden die Toten gebracht, um beerdigt oder verbrannt zu werden. Es ist unsere Verantwortlichkeit als Staubmenschen, uns um die Toten zu kümmern, um die, die diesen Schatten von einem Leben hinter sich gelassen haben und nun den Pfad des Wahren Todes gehen." Dhalls Stimme senkt sich besorgt. "Deine Wunden müssen dich schwer mitgenommen haben, wenn du diesen Ort nicht wiedererkennst. Er ist ja beinahe ein Zuhause für dich."{#dhall_s32_}'
+    nr '"Hierher werden die Toten gebracht, um beerdigt oder verbrannt zu werden. Es ist unsere Verantwortlichkeit als Staubmenschen, uns um die Toten zu kümmern, um die, die diesen Schatten von einem Leben hinter sich gelassen haben und nun den Pfad des Wahren Todes gehen." Dhalls Stimme senkt sich besorgt. "Deine Wunden müssen dich schwer mitgenommen haben, wenn du diesen Ort nicht wiedererkennst. Er ist ja beinahe ein Zuhause für dich."{#dhall_s32_1}'
 
     menu:
         '"Schatten des Lebens?"{#dhall_s32_r951}':
@@ -725,7 +725,7 @@ label dhall_s32: # from 8.1 10.0 14.3 15.1 16.2 17.2 18.1 19.1 20.1 22.1 23.1 24
 
 # s33 # say957
 label dhall_s33: # from 10.2 14.2 32.0 41.0 47.2 49.0
-    nr '"Ja, ein Schatten. Siehst du, Rastloser, dieses Leben… ist nicht echt. Dein Leben, mein Leben, das sind nur Schatten, ein Aufflackern dessen, was das Leben einmal war. Dieses „Leben“ ist der Ort, wo wir landen, *nachdem* wir gestorben sind. Und hier bleiben wir dann… in der Falle. In einem Käfig. So lange, bis wir den Wahren Tod erreichen können."{#dhall_s33_}'
+    nr '"Ja, ein Schatten. Siehst du, Rastloser, dieses Leben… ist nicht echt. Dein Leben, mein Leben, das sind nur Schatten, ein Aufflackern dessen, was das Leben einmal war. Dieses „Leben“ ist der Ort, wo wir landen, *nachdem* wir gestorben sind. Und hier bleiben wir dann… in der Falle. In einem Käfig. So lange, bis wir den Wahren Tod erreichen können."{#dhall_s33_1}'
 
     menu:
         '"Wahrer Tod?"{#dhall_s33_r958}':
@@ -752,7 +752,7 @@ label dhall_s33: # from 10.2 14.2 32.0 41.0 47.2 49.0
 
 # s34 # say961
 label dhall_s34: # from 14.1 32.4
-    nr '"Ja, die Wunden, die deinen Körper zieren… sie sehen aus, als hätten sie jeden anderen auf den Pfad des Wahren Todes befördert. Und doch scheinen viele bereits verheilt zu sein." Dhall muß kurz heftig husten, dann kann er weitersprechen. "Aber dies sind nur die oberflächlichen Wunden."{#dhall_s34_}'
+    nr '"Ja, die Wunden, die deinen Körper zieren… sie sehen aus, als hätten sie jeden anderen auf den Pfad des Wahren Todes befördert. Und doch scheinen viele bereits verheilt zu sein." Dhall muß kurz heftig husten, dann kann er weitersprechen. "Aber dies sind nur die oberflächlichen Wunden."{#dhall_s34_1}'
 
     menu:
         '"Nur oberflächliche Wunden? Wie meinst du das?"{#dhall_s34_r1301}':
@@ -775,7 +775,7 @@ label dhall_s34: # from 14.1 32.4
 
 # s35 # say962
 label dhall_s35: # from 16.1 17.1 20.0
-    nr '"Einige von ihnen achte ich, Rastloser." Dhall holt tief Atem. "Pharod nicht. Er trägt seinen schlechten Ruf wie ein Ehrenabzeichen zur Schau und geht allzu frei mit dem Hab und Gut der Toten um. Er ist ein Postenritter, der mit dem größten Ramsch noch Querhandel treibt."{#dhall_s35_}'
+    nr '"Einige von ihnen achte ich, Rastloser." Dhall holt tief Atem. "Pharod nicht. Er trägt seinen schlechten Ruf wie ein Ehrenabzeichen zur Schau und geht allzu frei mit dem Hab und Gut der Toten um. Er ist ein Postenritter, der mit dem größten Ramsch noch Querhandel treibt."{#dhall_s35_1}'
 
     menu:
         '"„Postenritter“?"{#dhall_s35_r963}':
@@ -797,7 +797,7 @@ label dhall_s35: # from 16.1 17.1 20.0
 
 # s36 # say966
 label dhall_s36: # from 35.0
-    nr '"Ein Postenritter…" Dhall hustet. "… ein Dieb. Alle, die Pharod an unseren Mauern abliefert, kommen mit weniger Würde zu uns, als sie zu Lebzeiten besessen haben. Pharod streift ihnen alles von den Fingern, was er kriegen kann, bevor die Totenstarre einsetzt."{#dhall_s36_}'
+    nr '"Ein Postenritter…" Dhall hustet. "… ein Dieb. Alle, die Pharod an unseren Mauern abliefert, kommen mit weniger Würde zu uns, als sie zu Lebzeiten besessen haben. Pharod streift ihnen alles von den Fingern, was er kriegen kann, bevor die Totenstarre einsetzt."{#dhall_s36_1}'
 
     menu:
         '"Hat dieser Pharod etwas von mir genommen?"{#dhall_s36_r967}':
@@ -819,7 +819,7 @@ label dhall_s36: # from 35.0
 
 # s37 # say970
 label dhall_s37: # from 32.3
-    nr '"Sigil ist unsere schöne Stadt, Rastloser."{#dhall_s37_}'
+    nr '"Sigil ist unsere schöne Stadt, Rastloser."{#dhall_s37_1}'
 
     menu:
         '"Erzähl mir noch etwas über die Leichenhalle."{#dhall_s37_r971}':
@@ -837,7 +837,7 @@ label dhall_s37: # from 32.3
 
 # s38 # say973
 label dhall_s38: # from 10.1 14.0
-    nr '"Der Name „Rastloser“ ist so gut wie jeder andere…" Dhall atmet schwer. "Irgend etwas hält dich hier fest, nicht wahr? Etwas, das gelöst werden muß, eine Leidenschaft, die gestillt werden muß, bevor du den Wahren Tod erlangen kannst?"{#dhall_s38_}'
+    nr '"Der Name „Rastloser“ ist so gut wie jeder andere…" Dhall atmet schwer. "Irgend etwas hält dich hier fest, nicht wahr? Etwas, das gelöst werden muß, eine Leidenschaft, die gestillt werden muß, bevor du den Wahren Tod erlangen kannst?"{#dhall_s38_1}'
 
     menu:
         '"Den Wahren Tod?"{#dhall_s38_r974}':
@@ -860,7 +860,7 @@ label dhall_s38: # from 10.1 14.0
 
 # s39 # say884
 label dhall_s39: # -
-    nr '"Du wirst das tun, was du immer getan hast, Rastloser. Schnapp dir diesen geldgierigen alten Narren, Wurmhaar, und verlang zurück, was dir gehört. Dann kannst du dich wieder deinem sinnlosen Treiben widmen, dich an sinnlosen Aufgaben versuchen, sinnlose Gegenstände sammeln, nur um erneut geschlagen und zu uns zurückgebracht zu werden. Spar dir die Zeit und sprich jetzt mit mir, dann müssen wir dieselbe Unterhaltung nicht noch einmal führen, wenn deine Erinnerungen wieder weg sind."{#dhall_s39_}'
+    nr '"Du wirst das tun, was du immer getan hast, Rastloser. Schnapp dir diesen geldgierigen alten Narren, Wurmhaar, und verlang zurück, was dir gehört. Dann kannst du dich wieder deinem sinnlosen Treiben widmen, dich an sinnlosen Aufgaben versuchen, sinnlose Gegenstände sammeln, nur um erneut geschlagen und zu uns zurückgebracht zu werden. Spar dir die Zeit und sprich jetzt mit mir, dann müssen wir dieselbe Unterhaltung nicht noch einmal führen, wenn deine Erinnerungen wieder weg sind."{#dhall_s39_1}'
 
     menu:
         '"Ich hätte noch ein paar andere Fragen…"{#dhall_s39_r976}':
@@ -874,7 +874,7 @@ label dhall_s39: # -
 
 # s40 # say978
 label dhall_s40: # - # IF ~  Global("Dhall","GLOBAL",1)
-    nr 'Dhall blickt auf, als du näherkommst. "So. Du bist also zurückgekommen…" Dhall holt keuchend Luft, dann wird er von einem heftigen Hustenanfall geschüttelt. Nach einer Weile beruhigt er sich und atmet wieder schwer. "… ich grüße dich erneut, Rastloser."{#dhall_s40_}'
+    nr 'Dhall blickt auf, als du näherkommst. "So. Du bist also zurückgekommen…" Dhall holt keuchend Luft, dann wird er von einem heftigen Hustenanfall geschüttelt. Nach einer Weile beruhigt er sich und atmet wieder schwer. "… ich grüße dich erneut, Rastloser."{#dhall_s40_1}'
 
     menu:
         '"Ich hätte da noch ein paar Fragen an dich, Dhall."{#dhall_s40_r979}':
@@ -888,7 +888,7 @@ label dhall_s40: # - # IF ~  Global("Dhall","GLOBAL",1)
 
 # s41 # say983
 label dhall_s41: # from 26.0 52.0
-    nr '"Die Grenze zwischen dem Schatten dieses Lebens und dem Wahren Tod."{#dhall_s41_}'
+    nr '"Die Grenze zwischen dem Schatten dieses Lebens und dem Wahren Tod."{#dhall_s41_1}'
 
     menu:
         '"Schatten dieses Lebens?"{#dhall_s41_r984}':
@@ -915,7 +915,7 @@ label dhall_s41: # from 26.0 52.0
 
 # s42 # say5075
 label dhall_s42: # from 2.0 12.0 43.0
-    nr '"Die nordwestliche Gedenkhalle im Stockwerk unter uns. Schau dir diese Totenbahren hier an… ihr Name müßte eigentlich auf einer der Gedenktafeln stehen. Vielleicht hilft das deinem Gedächtnis auf die Sprünge."{#dhall_s42_}'
+    nr '"Die nordwestliche Gedenkhalle im Stockwerk unter uns. Schau dir diese Totenbahren hier an… ihr Name müßte eigentlich auf einer der Gedenktafeln stehen. Vielleicht hilft das deinem Gedächtnis auf die Sprünge."{#dhall_s42_1}'
 
     menu:
         '"Ich weiß nicht. Ich kann mich nicht daran erinnern, jemals mit einer Frau gereist zu sein."{#dhall_s42_r5076}' if dhallLogic.r5076_condition():
@@ -945,7 +945,7 @@ label dhall_s42: # from 2.0 12.0 43.0
 
 # s43 # say5080
 label dhall_s43: # from 2.1 42.0
-    nr 'Dhall gibt dir darauf keine Antwort. Er starrt dich einfach stumm an.{#dhall_s43_}'
+    nr 'Dhall gibt dir darauf keine Antwort. Er starrt dich einfach stumm an.{#dhall_s43_1}'
 
     menu:
         '"Wo kann ich sie finden?"{#dhall_s43_r5081}' if dhallLogic.r5081_condition():
@@ -971,7 +971,7 @@ label dhall_s43: # from 2.1 42.0
 
 # s44 # say840
 label dhall_s44: # from 1.0 6.2 7.0
-    nr '"Dich kennen? Ich…" In der Stimme des Schreibers schwingt Bitterkeit mit. "Ich habe dich *nie* gekannt, Rastloser. Genauso wenig, wie du dich selbst." Er schweigt einen Moment. "Weil du es vergessen hast, nicht wahr?"{#dhall_s44_}'
+    nr '"Dich kennen? Ich…" In der Stimme des Schreibers schwingt Bitterkeit mit. "Ich habe dich *nie* gekannt, Rastloser. Genauso wenig, wie du dich selbst." Er schweigt einen Moment. "Weil du es vergessen hast, nicht wahr?"{#dhall_s44_1}'
 
     menu:
         '"Wer *bist* du?"{#dhall_s44_r1327}':
@@ -982,7 +982,7 @@ label dhall_s44: # from 1.0 6.2 7.0
 
 # s45 # say5728
 label dhall_s45: # from 44.0
-    nr '"Wie immer, die Frage. Und wie immer, die falsche Frage." Dhall beugt sich etwas nach vorn, aber diese Bewegung löst plötzlich einen Hustenanfall aus. "Ich…" Er schweigt einen Augenblick, bis er wieder zu Atem kommt. "Ich… bin Dhall."{#dhall_s45_}'
+    nr '"Wie immer, die Frage. Und wie immer, die falsche Frage." Dhall beugt sich etwas nach vorn, aber diese Bewegung löst plötzlich einen Hustenanfall aus. "Ich…" Er schweigt einen Augenblick, bis er wieder zu Atem kommt. "Ich… bin Dhall."{#dhall_s45_1}'
 
     menu:
         '"Vielleicht kannst du mir ja ein paar Fragen beantworten, Dhall…"{#dhall_s45_r5731}':
@@ -998,7 +998,7 @@ label dhall_s45: # from 44.0
 
 # s46 # say5730
 label dhall_s46: # from 45.1
-    nr '"Also gut, Rastloser." Dhall nickt. "Aber ich fürchte, daß die Zeit in dieser Angelegenhit nicht dein Feind ist." Er nimmt seinen Federfüller wieder auf. "Wenn du noch etwas zu bereden hast, ich werde hier sein."{#dhall_s46_}'
+    nr '"Also gut, Rastloser." Dhall nickt. "Aber ich fürchte, daß die Zeit in dieser Angelegenhit nicht dein Feind ist." Er nimmt seinen Federfüller wieder auf. "Wenn du noch etwas zu bereden hast, ich werde hier sein."{#dhall_s46_1}'
 
     menu:
         '"Ich komme vielleicht wieder. Lebe Wohl."{#dhall_s46_r40005}':
@@ -1008,7 +1008,7 @@ label dhall_s46: # from 45.1
 
 # s47 # say847
 label dhall_s47: # from 32.2
-    nr '"Wir Staubmenschen sind ein Bund, eine Vereinigung jener von uns, die sich der Illusion dieses Lebens bewußt sind. Wir warten auf das kommende Leben und helfen anderen auf ihrer Reise."{#dhall_s47_}'
+    nr '"Wir Staubmenschen sind ein Bund, eine Vereinigung jener von uns, die sich der Illusion dieses Lebens bewußt sind. Wir warten auf das kommende Leben und helfen anderen auf ihrer Reise."{#dhall_s47_1}'
 
     menu:
         '"Vielleicht kannst du mir erklären, warum die Staubmenschen mich tot wissen wollen."{#dhall_s47_r6032}' if dhallLogic.r6032_condition():
@@ -1039,7 +1039,7 @@ label dhall_s47: # from 32.2
 
 # s48 # say848
 label dhall_s48: # from 32.1 33.0 38.0 41.1 47.1
-    nr '"Der Wahre Tod ist die Nicht-Existenz. Ein Zustand ohne Vernunft, ohne Empfindung, ohne Leidenschaft." Dhall hustet und sagt schwer atmend. "Ein Zustand der Reinheit."{#dhall_s48_}'
+    nr '"Der Wahre Tod ist die Nicht-Existenz. Ein Zustand ohne Vernunft, ohne Empfindung, ohne Leidenschaft." Dhall hustet und sagt schwer atmend. "Ein Zustand der Reinheit."{#dhall_s48_1}'
 
     menu:
         '"Hört sich an wie Vergessenheit. Warum sollte jemand so was wollen?"{#dhall_s48_r6043}':
@@ -1061,7 +1061,7 @@ label dhall_s48: # from 32.1 33.0 38.0 41.1 47.1
 
 # s49 # say849
 label dhall_s49: # from 48.0
-    nr '"Ist es schlimmer, als im Schatten dessen zu verweilen, was früher einmal Leben war? Ich glaube nicht."{#dhall_s49_}'
+    nr '"Ist es schlimmer, als im Schatten dessen zu verweilen, was früher einmal Leben war? Ich glaube nicht."{#dhall_s49_1}'
 
     menu:
         '"Schatten des Lebens?"{#dhall_s49_r6047}':
@@ -1083,7 +1083,7 @@ label dhall_s49: # from 48.0
 
 # s50 # say853
 label dhall_s50: # from 33.1
-    nr '"Was läßt dich denken, daß dieses Leben echt *ist*? Schau in dich hinein. Merkst du nicht, daß da etwas fehlt?" Dhall schüttelt seinen Kopf. "Dies ist ein Fegefeuer. Es gibt hier nichts als Leid. Elend. Folter. Das sind doch keine Elemente, die ein „Leben“ ausmachen. Das sind Teile des Käfigs, der uns in diesem Schatten gefangen hält."{#dhall_s50_}'
+    nr '"Was läßt dich denken, daß dieses Leben echt *ist*? Schau in dich hinein. Merkst du nicht, daß da etwas fehlt?" Dhall schüttelt seinen Kopf. "Dies ist ein Fegefeuer. Es gibt hier nichts als Leid. Elend. Folter. Das sind doch keine Elemente, die ein „Leben“ ausmachen. Das sind Teile des Käfigs, der uns in diesem Schatten gefangen hält."{#dhall_s50_1}'
 
     menu:
         '"Ich fürchte du bist ganz und gar dem Fatalismus verfallen. Diese Elemente sind Teil des Lebens, aber doch nicht alles."{#dhall_s50_r6051}':
@@ -1103,7 +1103,7 @@ label dhall_s50: # from 33.1
 
 # s51 # say5733
 label dhall_s51: # from 50.0 50.1 50.2
-    nr 'Dhall schüttelt den Kopf. "Leidenschaften haben Gewicht. Sie verankern viele in diesem Schatten des Lebens. Solange man sich an Gefühle klammert, wird man immer wieder in dieses „Leben“ zurückgeboren, immer leidend, niemals die Reinheit des Wahren Todes kennend."{#dhall_s51_}'
+    nr 'Dhall schüttelt den Kopf. "Leidenschaften haben Gewicht. Sie verankern viele in diesem Schatten des Lebens. Solange man sich an Gefühle klammert, wird man immer wieder in dieses „Leben“ zurückgeboren, immer leidend, niemals die Reinheit des Wahren Todes kennend."{#dhall_s51_1}'
 
     menu:
         '"Ich… verstehe. Wie entkommt man denn dem Zyklus der Wiedergeburt und erreicht diesen… Wahren Tod?"{#dhall_s51_r6054}':
@@ -1125,7 +1125,7 @@ label dhall_s51: # from 50.0 50.1 50.2
 
 # s52 # say5734
 label dhall_s52: # from 51.0
-    nr '"Töte deine Leidenschaften. Befreie dich von dem Bedürfnis nach Empfindung. Wenn du wirklich gereinigt bist, dann endet der Kreis der Wiedergeburt und du findest Frieden. " Dhall seufzt… es klingt wie das Röcheln des Todes in seiner Kehle. "Jenseits unserer Hüllen, hinter der Ewigen Grenze, liegt der Frieden, den alle Seelen suchen."{#dhall_s52_}'
+    nr '"Töte deine Leidenschaften. Befreie dich von dem Bedürfnis nach Empfindung. Wenn du wirklich gereinigt bist, dann endet der Kreis der Wiedergeburt und du findest Frieden. " Dhall seufzt… es klingt wie das Röcheln des Todes in seiner Kehle. "Jenseits unserer Hüllen, hinter der Ewigen Grenze, liegt der Frieden, den alle Seelen suchen."{#dhall_s52_1}'
 
     menu:
         '"„Ewige Grenze“?"{#dhall_s52_r6058}':
@@ -1147,7 +1147,7 @@ label dhall_s52: # from 51.0
 
 # s53 # say5742
 label dhall_s53: # from 34.0
-    nr '"Ich spreche von den Verletzungen der Seele. Du hast vieles vergessen, nicht wahr? Vielleicht sind deine wirklichen Wunden viel tiefer als die Narben, die dein Äußeres zieren…" Dhall hustet erneut. "…aber das ist etwas, das nur du allein weißt."{#dhall_s53_}'
+    nr '"Ich spreche von den Verletzungen der Seele. Du hast vieles vergessen, nicht wahr? Vielleicht sind deine wirklichen Wunden viel tiefer als die Narben, die dein Äußeres zieren…" Dhall hustet erneut. "…aber das ist etwas, das nur du allein weißt."{#dhall_s53_1}'
 
     menu:
         '"Erzähl mir mehr über die Leichenhalle."{#dhall_s53_r5743}':

@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say47002
 label zm1664_s0: # from 5.0 # IF ~  True()
-    nr 'Diese riesige Leiche steht still und mit dem Gesicht zur Wand in einer Ecke des Raums. Sie muß einmal ein Mann gewesen sein, der in jungen Jahren sehr kräftig war. Nach dem Zustand der Leiche zu urteilen ist sie erst vor kurzem gestorben. Die frisch eingenähte Nummer auf der Stirn lautet "1664." Diese Leiche scheint die Funktion eines Bibliothekars zu erfüllen, denn sie trägt einen riesigen Stapel Bücher auf dem Arm.{#zm1664_s0_}'
+    nr 'Diese riesige Leiche steht still und mit dem Gesicht zur Wand in einer Ecke des Raums. Sie muß einmal ein Mann gewesen sein, der in jungen Jahren sehr kräftig war. Nach dem Zustand der Leiche zu urteilen ist sie erst vor kurzem gestorben. Die frisch eingenähte Nummer auf der Stirn lautet "1664." Diese Leiche scheint die Funktion eines Bibliothekars zu erfüllen, denn sie trägt einen riesigen Stapel Bücher auf dem Arm.{#zm1664_s0_1}'
 
     menu:
         'Sieh dir die Bücher genau an.{#zm1664_s0_r47003}' if zm1664Logic.r47003_condition():
@@ -41,7 +41,7 @@ label zm1664_s0: # from 5.0 # IF ~  True()
 
 # s1 # say47009
 label zm1664_s1: # from 0.2 6.0
-    nr 'Die Leiche starrt ausdruckslos gegen die Wand.{#zm1664_s1_}'
+    nr 'Die Leiche starrt ausdruckslos gegen die Wand.{#zm1664_s1_1}'
 
     menu:
         'Laß die Leiche in Ruhe.{#zm1664_s1_r47010}':
@@ -51,7 +51,7 @@ label zm1664_s1: # from 0.2 6.0
 
 # s2 # say47011
 label zm1664_s2: # from 0.3
-    nr 'Die Leiche rührt sich nicht. Obwohl sie aussieht, als wäre sie noch nicht lange tot, scheint sie keine deiner Fragen beantworten zu können.{#zm1664_s2_}'
+    nr 'Die Leiche rührt sich nicht. Obwohl sie aussieht, als wäre sie noch nicht lange tot, scheint sie keine deiner Fragen beantworten zu können.{#zm1664_s2_1}'
 
     menu:
         'Laß die Leiche in Ruhe.{#zm1664_s2_r47012}':
@@ -61,7 +61,7 @@ label zm1664_s2: # from 0.3
 
 # s3 # say47013
 label zm1664_s3: # from 0.0
-    nr 'Die Bücher scheinen alte Dienstbücher der Leichenhalle zu sein, von denen keines besonders auffällig ist. Als du die Eintragungen durchgehst, bemerkst du eine lose Seite, die zusammengefaltet zwischen zwei Büchern liegt. Du hast den Verdacht, daß sie jemand absichtlich dort versteckt hat.{#zm1664_s3_}'
+    nr 'Die Bücher scheinen alte Dienstbücher der Leichenhalle zu sein, von denen keines besonders auffällig ist. Als du die Eintragungen durchgehst, bemerkst du eine lose Seite, die zusammengefaltet zwischen zwei Büchern liegt. Du hast den Verdacht, daß sie jemand absichtlich dort versteckt hat.{#zm1664_s3_1}'
 
     menu:
         'Nimm die Seite.{#zm1664_s3_r47014}':
@@ -72,7 +72,7 @@ label zm1664_s3: # from 0.0
 
 # s4 # say47015
 label zm1664_s4: # from 3.0
-    nr 'Die Seite sieht nicht aus, als gehöre sie zu den Dienstbüchern… Sie scheint eher aus irgendeinem Verzeichnis zu stammen. Die Kante ist so sauber, als wäre die Seite mit einem Messer abgetrennt worden. Sie muß absichtlich herausgenommen worden sein.{#zm1664_s4_}'
+    nr 'Die Seite sieht nicht aus, als gehöre sie zu den Dienstbüchern… Sie scheint eher aus irgendeinem Verzeichnis zu stammen. Die Kante ist so sauber, als wäre die Seite mit einem Messer abgetrennt worden. Sie muß absichtlich herausgenommen worden sein.{#zm1664_s4_1}'
 
     menu:
         'Lies sie durch.{#zm1664_s4_r47016}':
@@ -82,7 +82,7 @@ label zm1664_s4: # from 3.0
 
 # s5 # say47017
 label zm1664_s5: # from 4.0
-    nr 'Du liest dir die Seite kurz durch… Es ist eine Liste von Leichen, die zur Leichenhalle gebracht und im Empfangsraum protokolliert wurden. Alle Einträge scheinen Neuzugänge zu sein.  ^NHINWEIS: <READSTUFF>^-{#zm1664_s5_}'
+    nr 'Du liest dir die Seite kurz durch… Es ist eine Liste von Leichen, die zur Leichenhalle gebracht und im Empfangsraum protokolliert wurden. Alle Einträge scheinen Neuzugänge zu sein.  ^NHINWEIS: <READSTUFF>^-{#zm1664_s5_1}'
 
     menu:
         'Sieh dir den Zombie noch einmal genau an.{#zm1664_s5_r47018}':
@@ -96,7 +96,7 @@ label zm1664_s5: # from 4.0
 
 # s6 # say47021
 label zm1664_s6: # from 0.1
-    nr 'Die Bücher scheinen alte Dienstbücher der Leichenhalle zu sein, von denen keines besonders auffällig ist. Du gehst die Eintragungen noch einmal durch, findest aber nichts mehr.{#zm1664_s6_}'
+    nr 'Die Bücher scheinen alte Dienstbücher der Leichenhalle zu sein, von denen keines besonders auffällig ist. Du gehst die Eintragungen noch einmal durch, findest aber nichts mehr.{#zm1664_s6_1}'
 
     menu:
         '"Wie kommt„s, das du dich ausgerechnet als Bibliothekar verdingst? War sonst nichts frei?"{#zm1664_s6_r47022}':

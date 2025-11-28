@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say24564
 label zm825_s0: # - # IF ~  True()
-    nr 'Der Kopf dieser Leiche rollt auf ihren Schultern vor und zurück. Vom Winkel des Halses zu urteilen, wurde dieser Mann wahrscheinlich aufgehängt. Die Zahl "825" ist auf die Seite seines Kopfes gemalt worden.{#zm825_s0_}'
+    nr 'Der Kopf dieser Leiche rollt auf ihren Schultern vor und zurück. Vom Winkel des Halses zu urteilen, wurde dieser Mann wahrscheinlich aufgehängt. Die Zahl "825" ist auf die Seite seines Kopfes gemalt worden.{#zm825_s0_1}'
 
     menu:
         '"Ich suche nach einem Schlüssel… Hast du zufällig einen?"{#zm825_s0_r24565}' if zm825Logic.r24565_condition():
@@ -49,7 +49,7 @@ label zm825_s0: # - # IF ~  True()
 
 # s1 # say24566
 label zm825_s1: # from 0.1 0.2 0.3 3.1
-    nr 'Die Leiche starrt auf den Boden und antwortet nicht.{#zm825_s1_}'
+    nr 'Die Leiche starrt auf den Boden und antwortet nicht.{#zm825_s1_1}'
 
     menu:
         '"Ach, vergiß es. Leb wohl."{#zm825_s1_r24567}':
@@ -63,7 +63,7 @@ label zm825_s1: # from 0.1 0.2 0.3 3.1
 
 # s2 # say24571
 label zm825_s2: # from 0.4
-    nr 'Die Leiche rührt sich nicht. Sie sieht so aus, als sei sie schon ein bißchen zu weit hinüber, um deine Fragen zu beantworten.{#zm825_s2_}'
+    nr 'Die Leiche rührt sich nicht. Sie sieht so aus, als sei sie schon ein bißchen zu weit hinüber, um deine Fragen zu beantworten.{#zm825_s2_1}'
 
     menu:
         'Laß die Leiche in Ruhe.{#zm825_s2_r24572}':
@@ -73,7 +73,7 @@ label zm825_s2: # from 0.4
 
 # s3 # say42311
 label zm825_s3: # from 0.5
-    nr 'Diese Leiche hat überhaupt nichts bei sich… Zufällig bemerkst du, daß ihre Hände dick bandagiert sind. Den Verband könnte man sicher noch gebrauchen, wenn man vorher die Leiche loswerden könnte.{#zm825_s3_}'
+    nr 'Diese Leiche hat überhaupt nichts bei sich… Zufällig bemerkst du, daß ihre Hände dick bandagiert sind. Den Verband könnte man sicher noch gebrauchen, wenn man vorher die Leiche loswerden könnte.{#zm825_s3_1}'
 
     menu:
         '"Ich vermute, du hast den Schlüssel nicht… Weißt du zufällig, wer von deinen Leichenfreunden den Schlüssel hat, mit dem man hier rauskommt?"{#zm825_s3_r42312}' if zm825Logic.r42312_condition():

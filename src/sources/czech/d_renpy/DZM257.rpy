@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say6507
 label zm257_s0: # - # IF ~  True()
-    nr 'Oči této mrtvoly jsou těsně u sebe a samotné oční bulvy jsou lehce nakřivo; jedna je obrácená nalevo a druhá napravo. Na jejím rozbitém čele stěží rozpoznáváš číslo „257“ - vypadá to, že mrtvola obdržela několik úderů do hlavy, a proto je číslo tak špatně čitelné.{#zm257_s0_}'
+    nr 'Oči této mrtvoly jsou těsně u sebe a samotné oční bulvy jsou lehce nakřivo; jedna je obrácená nalevo a druhá napravo. Na jejím rozbitém čele stěží rozpoznáváš číslo „257“ - vypadá to, že mrtvola obdržela několik úderů do hlavy, a proto je číslo tak špatně čitelné.{#zm257_s0_1}'
 
     menu:
         '"Nemáš závrať, když tohle děláš se svýma očima?"{#zm257_s0_r6510}' if zm257Logic.r6510_condition():
@@ -42,7 +42,7 @@ label zm257_s0: # - # IF ~  True()
 
 # s1 # say6508
 label zm257_s1: # from 0.0 0.1 0.2
-    nr 'V očích mrtvoly se neobjevil ani záblesk pochopení; jen tiše strnule zírá doleva a doprava.{#zm257_s1_}'
+    nr 'V očích mrtvoly se neobjevil ani záblesk pochopení; jen tiše strnule zírá doleva a doprava.{#zm257_s1_1}'
 
     menu:
         'Nechej mrtvolu být.{#zm257_s1_r6516}':
@@ -52,7 +52,7 @@ label zm257_s1: # from 0.0 0.1 0.2
 
 # s2 # say6509
 label zm257_s2: # from 0.3
-    nr 'Duch se vrátil do mrtvoly s takovou zuřivostí, až se jí stáhly svaly a přepadla dozadu! Tělo je okamžitě zase zpět na nohou, tancuje a šíleně sebou trhá, vlní rukama a napíná si stehy. Uvolněné maso plácá, jak skáče sem a tam, oči se koulí a kymácí v hlavě, zatímco se šíleně hihňá…{#zm257_s2_}'
+    nr 'Duch se vrátil do mrtvoly s takovou zuřivostí, až se jí stáhly svaly a přepadla dozadu! Tělo je okamžitě zase zpět na nohou, tancuje a šíleně sebou trhá, vlní rukama a napíná si stehy. Uvolněné maso plácá, jak skáče sem a tam, oči se koulí a kymácí v hlavě, zatímco se šíleně hihňá…{#zm257_s2_1}'
 
     menu:
         '"Ee… Mám na tebe otázku, duchu…"{#zm257_s2_r6517}':
@@ -66,7 +66,7 @@ label zm257_s2: # from 0.3
 
 # s3 # say9553
 label zm257_s3: # from 2.0
-    nr 'Mrtvola zazpívala, jak vyskočila, a rozhlédla se kolem. Hlasitost a výška jejího hlasu stoupá a zase klesá v náhodných intervalech. "TY jsi DUCH JÁ, ŽIJÍCÍ, zodpovědět mé otázky TY SMÍŠ!" Tvůj zmatený výraz ducha očividně potěšil; strčil si své kostěné prsty do pusy a roztáhl ji do příšerného úšklebku. Nato se začal hlasitě smát a v puse se mu při tom kmital bílý, těstovitý jazyk.{#zm257_s3_}'
+    nr 'Mrtvola zazpívala, jak vyskočila, a rozhlédla se kolem. Hlasitost a výška jejího hlasu stoupá a zase klesá v náhodných intervalech. "TY jsi DUCH JÁ, ŽIJÍCÍ, zodpovědět mé otázky TY SMÍŠ!" Tvůj zmatený výraz ducha očividně potěšil; strčil si své kostěné prsty do pusy a roztáhl ji do příšerného úšklebku. Nato se začal hlasitě smát a v puse se mu při tom kmital bílý, těstovitý jazyk.{#zm257_s3_1}'
 
     menu:
         '"Tak fajn… jen se zeptej."{#zm257_s3_r9559}':
@@ -84,7 +84,7 @@ label zm257_s3: # from 2.0
 
 # s4 # say9554
 label zm257_s4: # from 3.0 4.0 5.0
-    nr 'Na chviličku duch umlkl, ale náhle začal hlasitě, nesnesitelně a nesmylně žvatlat. Taková nelibozvučnost je téměř k zbláznění; chvílemi máš pocit, že to nevydržíš a zhroutíš se. Najednou, jak rychle to začalo… tak to i skončilo. Mrtvola stojí před tebou a v tichosti se dloube v nose.{#zm257_s4_}'
+    nr 'Na chviličku duch umlkl, ale náhle začal hlasitě, nesnesitelně a nesmylně žvatlat. Taková nelibozvučnost je téměř k zbláznění; chvílemi máš pocit, že to nevydržíš a zhroutíš se. Najednou, jak rychle to začalo… tak to i skončilo. Mrtvola stojí před tebou a v tichosti se dloube v nose.{#zm257_s4_1}'
 
     menu:
         '"To jsem zrovna nějak nepostřehnul. Mohl bys mi to zopakovat?"{#zm257_s4_r9562}':
@@ -103,7 +103,7 @@ label zm257_s4: # from 3.0 4.0 5.0
 
 # s5 # say9555
 label zm257_s5: # from 3.1 4.1 5.1
-    nr 'A opět začal duch zpívat: "Otázky ŽIJÍCÍHO smí zodpovědět MRTVÝ; TAK to bylo, je TO tak, mělo by tak TO BÝT. Ty ZODPOVÍŠ mé otázky!" Tvůj zmatený pohled ho opět potěšil; začal tak divoce vyvádět, až se divíš, že to jeho mrtvé tělo vydrží. Téměř slyšíš, jak jeho kosti vržou a lámou se, jak jeho šlachy praskají, když se tak točí a hází sebou.{#zm257_s5_}'
+    nr 'A opět začal duch zpívat: "Otázky ŽIJÍCÍHO smí zodpovědět MRTVÝ; TAK to bylo, je TO tak, mělo by tak TO BÝT. Ty ZODPOVÍŠ mé otázky!" Tvůj zmatený pohled ho opět potěšil; začal tak divoce vyvádět, až se divíš, že to jeho mrtvé tělo vydrží. Téměř slyšíš, jak jeho kosti vržou a lámou se, jak jeho šlachy praskají, když se tak točí a hází sebou.{#zm257_s5_1}'
 
     menu:
         '"Tak fajn… jen se ptej."{#zm257_s5_r9565}':
@@ -121,7 +121,7 @@ label zm257_s5: # from 3.1 4.1 5.1
 
 # s6 # say9556
 label zm257_s6: # from 3.2 4.2 5.2
-    nr 'Jak duch s bláznivými nápady opouští své mrtvé tělo, zkroutí se ústa mrtvoly do významného úsměvu. Její nespoutaně blýskající oči se do tebe zavrtávají s pronikavou září divokosti a pak zašeptá osamocené, pečlivě formulované slovo "Limbo…"{#zm257_s6_}'
+    nr 'Jak duch s bláznivými nápady opouští své mrtvé tělo, zkroutí se ústa mrtvoly do významného úsměvu. Její nespoutaně blýskající oči se do tebe zavrtávají s pronikavou září divokosti a pak zašeptá osamocené, pečlivě formulované slovo "Limbo…"{#zm257_s6_1}'
 
     menu:
         '"Co?"{#zm257_s6_r9568}':
@@ -135,6 +135,6 @@ label zm257_s6: # from 3.2 4.2 5.2
 
 # s7 # say9557
 label zm257_s7: # from 6.0
-    nr '…a s těmi slovy opustila duše tento svět a zanechala tě tu o nic bohatšího s pocitem mírného znepokojení. Zombie se tiše vrátila ke své práci.{#zm257_s7_}'
+    nr '…a s těmi slovy opustila duše tento svět a zanechala tě tu o nic bohatšího s pocitem mírného znepokojení. Zombie se tiše vrátila ke své práci.{#zm257_s7_1}'
 
     jump zm257_dispose

@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say3404
 label eivene_s0: # - # IF ~  Global("EiVene","GLOBAL",0)
-    nr 'Tu vois une jeune femme au teint pâle. La peau creusée au niveau des joues et du cou donne l„impression qu“elle souffre de la faim. Elle semble prête à disséquer le cadavre devant elle, tâtant la poitrine avec un doigt.{#eivene_s0_}'
+    nr 'Tu vois une jeune femme au teint pâle. La peau creusée au niveau des joues et du cou donne l„impression qu“elle souffre de la faim. Elle semble prête à disséquer le cadavre devant elle, tâtant la poitrine avec un doigt.{#eivene_s0_1}'
 
     menu:
         '"Bonjour."{#eivene_s0_r3406}':
@@ -25,7 +25,7 @@ label eivene_s0: # - # IF ~  Global("EiVene","GLOBAL",0)
 
 # s1 # say3410
 label eivene_s1: # from 0.0
-    nr 'La femme ne répond pas… elle semble trop absorbée par le cadavre devant elle. Tu l„observes à la tâche, et tu remarques ses mains… ses doigts sont des lames. Elles entrent et sortent de la poitrine du cadavre, comme des couteaux, et en retirent les organes.{#eivene_s1_}'
+    nr 'La femme ne répond pas… elle semble trop absorbée par le cadavre devant elle. Tu l„observes à la tâche, et tu remarques ses mains… ses doigts sont des lames. Elles entrent et sortent de la poitrine du cadavre, comme des couteaux, et en retirent les organes.{#eivene_s1_1}'
 
     menu:
         '"J„ai dit, bonjour."{#eivene_s1_r3412}' if eiveneLogic.r3412_condition():
@@ -51,7 +51,7 @@ label eivene_s1: # from 0.0
 
 # s2 # say3417
 label eivene_s2: # from 1.0 1.2
-    nr 'La femme ne répond pas.{#eivene_s2_}'
+    nr 'La femme ne répond pas.{#eivene_s2_1}'
 
     menu:
         'Donne une petite tape à la femme, attire son attention.{#eivene_s2_r3418}':
@@ -66,14 +66,14 @@ label eivene_s2: # from 1.0 1.2
 
 # s3 # say3420
 label eivene_s3: # from 1.1
-    nr 'La femme ne répond pas.{#eivene_s3_}'
+    nr 'La femme ne répond pas.{#eivene_s3_1}'
 
     jump morte_s55  # EXTERN
 
 
 # s4 # say3421
 label eivene_s4: # from 2.0
-    nr 'La femme saute et se retourne brusquement pour te faire face. Ses yeux ont la couleur du pus ; deux petits points orange forment ses pupilles. Elle t„aperçoit et son expression passe de la surprise à l“agacement. Elle fronce les sourcils.{#eivene_s4_}'
+    nr 'La femme saute et se retourne brusquement pour te faire face. Ses yeux ont la couleur du pus ; deux petits points orange forment ses pupilles. Elle t„aperçoit et son expression passe de la surprise à l“agacement. Elle fronce les sourcils.{#eivene_s4_1}'
 
     menu:
         '"Euh… Bonjour."{#eivene_s4_r3422}':
@@ -84,7 +84,7 @@ label eivene_s4: # from 2.0
 
 # s5 # say3423
 label eivene_s5: # from 4.0
-    nr 'Elle ne semble pas t„avoir entendu. Elle se penche en avant, plisse les yeux, comme si elle ne te voyait pas bien… Quel que soit son problème oculaire, ça la rend terriblement myope. "Toi", elle claque ses doigts griffus, puis fait un geste étrange avec ses mains. "Trouve du FIL et de la LOTION d“embaumement ; apporte ça ICI, à Ei-Vene. Va - va - va."  ^NREMARQUE : on t„a assigné une quête. Les quêtes sont affichées dans ton journal intime et dans la section “Quêtes„ de ton journal. Pour voir toutes les quêtes qui t“ont été assignées (et savoir si tu les as menées à bien ou non), il te suffit de sélectionner „Quêtes“ dans le menu du journal.^-{#eivene_s5_}'
+    nr 'Elle ne semble pas t„avoir entendu. Elle se penche en avant, plisse les yeux, comme si elle ne te voyait pas bien… Quel que soit son problème oculaire, ça la rend terriblement myope. "Toi", elle claque ses doigts griffus, puis fait un geste étrange avec ses mains. "Trouve du FIL et de la LOTION d“embaumement ; apporte ça ICI, à Ei-Vene. Va - va - va."  ^NREMARQUE : on t„a assigné une quête. Les quêtes sont affichées dans ton journal intime et dans la section “Quêtes„ de ton journal. Pour voir toutes les quêtes qui t“ont été assignées (et savoir si tu les as menées à bien ou non), il te suffit de sélectionner „Quêtes“ dans le menu du journal.^-{#eivene_s5_1}'
 
     menu:
         'Donne-lui le fil et la lotion d„embaumement.{#eivene_s5_r3424}' if eiveneLogic.r3424_condition():
@@ -121,7 +121,7 @@ label eivene_s5: # from 4.0
 
 # s6 # say3430
 label eivene_s6: # from 5.1 5.3
-    nr 'Elle se détourne… Rien ne montre qu„elle t“a entendu. Son ouïe doit être aussi mauvaise que sa vue.{#eivene_s6_}'
+    nr 'Elle se détourne… Rien ne montre qu„elle t“a entendu. Son ouïe doit être aussi mauvaise que sa vue.{#eivene_s6_1}'
 
     menu:
         'Donne-lui une tape sur l„épaule, attire son attention.{#eivene_s6_r3431}':
@@ -135,7 +135,7 @@ label eivene_s6: # from 5.1 5.3
 
 # s7 # say3433
 label eivene_s7: # from 5.0 17.0
-    nr 'Sans perdre une seconde, Ei-Vene arrache le fil de tes mains, l„accroche à l“une de ses lames, puis se met à coudre la poitrine du cadavre. Ensuite, elle prend la lotion d„embaumement et en badigeonne le cadavre.{#eivene_s7_}'
+    nr 'Sans perdre une seconde, Ei-Vene arrache le fil de tes mains, l„accroche à l“une de ses lames, puis se met à coudre la poitrine du cadavre. Ensuite, elle prend la lotion d„embaumement et en badigeonne le cadavre.{#eivene_s7_1}'
 
     menu:
         'Attends.{#eivene_s7_r3434}':
@@ -149,7 +149,7 @@ label eivene_s7: # from 5.0 17.0
 
 # s8 # say3436
 label eivene_s8: # from 7.1
-    nr 'Tu es sur le point de partir quand Ei-Vene prend la parole : "Reste. Toi - prochain."{#eivene_s8_}'
+    nr 'Tu es sur le point de partir quand Ei-Vene prend la parole : "Reste. Toi - prochain."{#eivene_s8_1}'
 
     menu:
         'Attends.{#eivene_s8_r3437}':
@@ -163,7 +163,7 @@ label eivene_s8: # from 7.1
 
 # s9 # say3439
 label eivene_s9: # from 7.0 8.0
-    nr 'En quelques minutes, elle a terminé. Elle fait cliqueter ses lames, puis se retourne vers toi. À ta surprise, elle tend la main et entoure tes bras et ta poitrine de ses lames.{#eivene_s9_}'
+    nr 'En quelques minutes, elle a terminé. Elle fait cliqueter ses lames, puis se retourne vers toi. À ta surprise, elle tend la main et entoure tes bras et ta poitrine de ses lames.{#eivene_s9_1}'
 
     menu:
         '"Euh, ça me flatte, mais…"{#eivene_s9_r3440}' if eiveneLogic.r3440_condition():
@@ -189,7 +189,7 @@ label eivene_s9: # from 7.0 8.0
 
 # s10 # say3445
 label eivene_s10: # from 9.4 12.1
-    nr 'Elle a l„air choqué que tu la rejettes. "Zomfi ? Toi pas zomfi !" Elle recule d“un pas, et avant que tu n„aies eu le temps de réagir, elle tape trois fois dans les mains. En réponse, une cloche énorme résonne dans toute la Morgue.{#eivene_s10_}'
+    nr 'Elle a l„air choqué que tu la rejettes. "Zomfi ? Toi pas zomfi !" Elle recule d“un pas, et avant que tu n„aies eu le temps de réagir, elle tape trois fois dans les mains. En réponse, une cloche énorme résonne dans toute la Morgue.{#eivene_s10_1}'
 
     menu:
         '"Alors très bien…"{#eivene_s10_r3491}':
@@ -200,7 +200,7 @@ label eivene_s10: # from 9.4 12.1
 
 # s11 # say3446
 label eivene_s11: # from 9.0 9.2
-    nr 'Alors qu„elle suit le dessin de tes bras et de ta poitrine, tu t“aperçois qu„elle semble examiner tes cicatrices. Elle retire ses lames, les fait cliquer deux fois, puis se penche en avant et examine les tatouages sur ta poitrine. "Hmmpf. Qui écrire sur toi ? Rucheux faire ça ? Aucun respect pour zomfis. Zomfis, pas peintures." Elle renifle, puis elle touche l“une de tes cicatrices. "Celle-là, mauvaise ; beaucoup pas garder."{#eivene_s11_}'
+    nr 'Alors qu„elle suit le dessin de tes bras et de ta poitrine, tu t“aperçois qu„elle semble examiner tes cicatrices. Elle retire ses lames, les fait cliquer deux fois, puis se penche en avant et examine les tatouages sur ta poitrine. "Hmmpf. Qui écrire sur toi ? Rucheux faire ça ? Aucun respect pour zomfis. Zomfis, pas peintures." Elle renifle, puis elle touche l“une de tes cicatrices. "Celle-là, mauvaise ; beaucoup pas garder."{#eivene_s11_1}'
 
     menu:
         'Attends.{#eivene_s11_r3447}':
@@ -210,7 +210,7 @@ label eivene_s11: # from 9.0 9.2
 
 # s12 # say3448
 label eivene_s12: # from 11.0
-    nr 'Soudain, ses lames s„accrochent au fil que tu lui as apporté, et comme un éclair, elle plante une autre lame dans ta peau, près d“une cicatrice. C„est à peine plus douloureux que la piqûre d“une aiguille. Mais elle semble prête à te coudre.{#eivene_s12_}'
+    nr 'Soudain, ses lames s„accrochent au fil que tu lui as apporté, et comme un éclair, elle plante une autre lame dans ta peau, près d“une cicatrice. C„est à peine plus douloureux que la piqûre d“une aiguille. Mais elle semble prête à te coudre.{#eivene_s12_1}'
 
     menu:
         'Laisse-la travailler.{#eivene_s12_r3449}':
@@ -225,7 +225,7 @@ label eivene_s12: # from 11.0
 
 # s13 # say3451
 label eivene_s13: # from 12.0
-    nr 'Elle commence à coudre tes cicatrices, et curieusement, la sensation n„est pas douloureuse.  Après avoir terminé, elle renifle, fronce les sourcils, puis plonge les doigts dans la lotion d“embaumement. En quelques minutes, elle en a badigeonné ton corps. Bizarrement, tu te sens *mieux*.{#eivene_s13_}'
+    nr 'Elle commence à coudre tes cicatrices, et curieusement, la sensation n„est pas douloureuse.  Après avoir terminé, elle renifle, fronce les sourcils, puis plonge les doigts dans la lotion d“embaumement. En quelques minutes, elle en a badigeonné ton corps. Bizarrement, tu te sens *mieux*.{#eivene_s13_1}'
 
     menu:
         'Laisse-la travailler.{#eivene_s13_r3452}' if eiveneLogic.r3452_condition():
@@ -239,7 +239,7 @@ label eivene_s13: # from 12.0
 
 # s14 # say3454
 label eivene_s14: # from 13.0
-    nr 'Ei-Vene ajoute une dernière touche sur ton corps, renifle encore une fois, hoche la tête et fait un mouvement avec ses lames. "Fini. Va - va."{#eivene_s14_}'
+    nr 'Ei-Vene ajoute une dernière touche sur ton corps, renifle encore une fois, hoche la tête et fait un mouvement avec ses lames. "Fini. Va - va."{#eivene_s14_1}'
 
     menu:
         '"Attends une minute." (Tu fais comme si tu tournais une clé dans le vide.) "J„ai besoin d“une clé d„embaumement. Tu en as une ?"{#eivene_s14_r3456}' if eiveneLogic.r3456_condition():
@@ -258,7 +258,7 @@ label eivene_s14: # from 13.0
 
 # s15 # say3458
 label eivene_s15: # - # IF ~  Global("EiVene","GLOBAL",1)
-    nr 'Tu aperçois Ei-Vene. Elle dissèque la poitrine du cadavre avec ses lames. Le rythme de ses lames te rappelle quelque chose, mais tu ne sais pas quoi.{#eivene_s15_}'
+    nr 'Tu aperçois Ei-Vene. Elle dissèque la poitrine du cadavre avec ses lames. Le rythme de ses lames te rappelle quelque chose, mais tu ne sais pas quoi.{#eivene_s15_1}'
 
     menu:
         'Observe-la, étudie sa manière de bouger les mains.{#eivene_s15_r3459}' if eiveneLogic.r3459_condition():
@@ -281,7 +281,7 @@ label eivene_s15: # - # IF ~  Global("EiVene","GLOBAL",1)
 
 # s16 # say3464
 label eivene_s16: # from 15.0
-    nr 'Tandis que tu observes le rythme des mains de Ei-Vene, tu ressens une démangeaison au cuir chevelu, puis soudain ta vision se trouble et…{#eivene_s16_}'
+    nr 'Tandis que tu observes le rythme des mains de Ei-Vene, tu ressens une démangeaison au cuir chevelu, puis soudain ta vision se trouble et…{#eivene_s16_1}'
 
     $ eiveneLogic.s16_action()
     jump eivene_s26
@@ -289,7 +289,7 @@ label eivene_s16: # from 15.0
 
 # s17 # say3468
 label eivene_s17: # from 6.0 15.1 25.0 27.0
-    nr 'Elle se retourne, te voit, et fronce les sourcils. "Zomfis idiots." Elle fait claquer ses lames d„impatience, puis fait le geste de recoudre quelque chose. "Trouve fil et lotion d“embaumement, amène ici, à Ei-Vene. Va - va - va."{#eivene_s17_}'
+    nr 'Elle se retourne, te voit, et fronce les sourcils. "Zomfis idiots." Elle fait claquer ses lames d„impatience, puis fait le geste de recoudre quelque chose. "Trouve fil et lotion d“embaumement, amène ici, à Ei-Vene. Va - va - va."{#eivene_s17_1}'
 
     menu:
         'Donne-lui le fil et la lotion d„embaumement.{#eivene_s17_r3469}' if eiveneLogic.r3469_condition():
@@ -314,7 +314,7 @@ label eivene_s17: # from 6.0 15.1 25.0 27.0
 
 # s18 # say3471
 label eivene_s18: # from 14.0 17.1 22.0
-    nr 'Elle se penche en avant, observe tes gestes, puis renifle. Sa main plonge dans son habit, ressort, une clé pendue à son index méchamment pointu. Elle la jette dans ta main. "Ramène quand fini. Va - va."{#eivene_s18_}'
+    nr 'Elle se penche en avant, observe tes gestes, puis renifle. Sa main plonge dans son habit, ressort, une clé pendue à son index méchamment pointu. Elle la jette dans ta main. "Ramène quand fini. Va - va."{#eivene_s18_1}'
 
     menu:
         '"Qu„est-ce que tu as aux mains ?"{#eivene_s18_r3494}' if eiveneLogic.r3494_condition():
@@ -335,7 +335,7 @@ label eivene_s18: # from 14.0 17.1 22.0
 
 # s19 # say3472
 label eivene_s19: # from 1.3
-    nr 'La femme ne répond pas.{#eivene_s19_}'
+    nr 'La femme ne répond pas.{#eivene_s19_1}'
 
     $ eiveneLogic.j38205_s19_action()
     jump morte_s56  # EXTERN
@@ -343,14 +343,14 @@ label eivene_s19: # from 1.3
 
 # s20 # say3485
 label eivene_s20: # from 5.2 5.4
-    nr 'Elle se détourne et ne montre aucun signe qu„elle t“a entendu.{#eivene_s20_}'
+    nr 'Elle se détourne et ne montre aucun signe qu„elle t“a entendu.{#eivene_s20_1}'
 
     jump morte_s57  # EXTERN
 
 
 # s21 # say3486
 label eivene_s21: # from 18.1
-    nr 'Elle se détourne… Elle ne fait aucun signe qu„elle t“a entendu. Son ouïe doit être aussi mauvaise que sa vue.{#eivene_s21_}'
+    nr 'Elle se détourne… Elle ne fait aucun signe qu„elle t“a entendu. Son ouïe doit être aussi mauvaise que sa vue.{#eivene_s21_1}'
 
     $ eiveneLogic.j38205_s21_action()
     jump morte_s58  # EXTERN
@@ -358,7 +358,7 @@ label eivene_s21: # from 18.1
 
 # s22 # say3493
 label eivene_s22: # from 15.2 25.1 27.1
-    nr 'Elle se retourne, t„aperçoit, puis fronce les sourcils. "Zomfis idiots". Elle fait claquer ses lames d“impatience, puis fait le geste de recoudre quelque chose. "Fini. Tout recousu. Va - va - va."{#eivene_s22_}'
+    nr 'Elle se retourne, t„aperçoit, puis fronce les sourcils. "Zomfis idiots". Elle fait claquer ses lames d“impatience, puis fait le geste de recoudre quelque chose. "Fini. Tout recousu. Va - va - va."{#eivene_s22_1}'
 
     menu:
         '"Attends une minute." (Tu fais comme si tu tournais une clé dans le vide.) "J„ai besoin d“une clé d„embaumement. Tu en as une ?"{#eivene_s22_r3501}' if eiveneLogic.r3501_condition():
@@ -377,7 +377,7 @@ label eivene_s22: # from 15.2 25.1 27.1
 
 # s23 # say3498
 label eivene_s23: # from 18.0
-    nr 'Elle se détourne… Elle ne fait aucun signe qu„elle t“a entendu. Son ouïe doit être aussi mauvaise que sa vue.{#eivene_s23_}'
+    nr 'Elle se détourne… Elle ne fait aucun signe qu„elle t“a entendu. Son ouïe doit être aussi mauvaise que sa vue.{#eivene_s23_1}'
 
     menu:
         'Pars.{#eivene_s23_r3499}':
@@ -387,7 +387,7 @@ label eivene_s23: # from 18.0
 
 # s24 # say4200
 label eivene_s24: # from 14.1 17.2 22.1
-    nr 'Elle se penche en avant, observe tes gestes, puis renifle. Sa main plonge dans son habit, fouille un instant. Elle hausse les épaules. "Pas de clé." Elle te fait signe de partir. "Va - va - va."{#eivene_s24_}'
+    nr 'Elle se penche en avant, observe tes gestes, puis renifle. Sa main plonge dans son habit, fouille un instant. Elle hausse les épaules. "Pas de clé." Elle te fait signe de partir. "Va - va - va."{#eivene_s24_1}'
 
     menu:
         'Pars.{#eivene_s24_r4201}':
@@ -397,7 +397,7 @@ label eivene_s24: # from 14.1 17.2 22.1
 
 # s25 # say4353
 label eivene_s25: # -
-    nr 'Tu l„observes un moment, et le rythme de ses mains fait remonter deux souvenirs à la surface. Dans le premier, tu joues d“un instrument à cordes, peut-être une harpe. Dans le second, tu voles une bourse… À ta grande surprise, ce dernier souvenir suscite en toi l„envie soudaine de voler la bourse de Ei-Vene.  ^NREMARQUE : tu as retrouvé un souvenir. Les souvenirs peuvent t“apporter des points d„expérience supplémentaires ou de nouvelles compétences, et même te permettre de te rappeler davantage de souvenirs plus tard dans le jeu.^-{#eivene_s25_}'
+    nr 'Tu l„observes un moment, et le rythme de ses mains fait remonter deux souvenirs à la surface. Dans le premier, tu joues d“un instrument à cordes, peut-être une harpe. Dans le second, tu voles une bourse… À ta grande surprise, ce dernier souvenir suscite en toi l„envie soudaine de voler la bourse de Ei-Vene.  ^NREMARQUE : tu as retrouvé un souvenir. Les souvenirs peuvent t“apporter des points d„expérience supplémentaires ou de nouvelles compétences, et même te permettre de te rappeler davantage de souvenirs plus tard dans le jeu.^-{#eivene_s25_1}'
 
     menu:
         'Donne-lui une petite tape, attire son attention.{#eivene_s25_r4354}' if eiveneLogic.r4354_condition():
@@ -415,7 +415,7 @@ label eivene_s25: # -
 
 # s26 # say63477
 label eivene_s26: # from 16.0
-    nr '… tu te trouves devant un zombi récemment tué. Son sourire n„est plus qu“un rictus à cause de la raideur cadavérique. Le numéro „42“ a été gravé sur son crâne. Le zombi repose sur une plaque de pierre et tu viens juste de finir d„ouvrir son torse. Tu as mis quelque chose à l“intérieur, quelque chose qui peut t„être utile si tu reviens par là…{#eivene_s26_}'
+    nr '… tu te trouves devant un zombi récemment tué. Son sourire n„est plus qu“un rictus à cause de la raideur cadavérique. Le numéro „42“ a été gravé sur son crâne. Le zombi repose sur une plaque de pierre et tu viens juste de finir d„ouvrir son torse. Tu as mis quelque chose à l“intérieur, quelque chose qui peut t„être utile si tu reviens par là…{#eivene_s26_1}'
 
     menu:
         'Écho : "Prends soin de ces choses et attends mon retour."{#eivene_s26_r63478}' if eiveneLogic.r63478_condition():
@@ -430,7 +430,7 @@ label eivene_s26: # from 16.0
 
 # s27 # say63480
 label eivene_s27: # from 26.0 26.1
-    nr 'Le souvenir de ta voix résonne, étrange et creux à tes oreilles. Tu croises les bras et, à ta grande surprise, le cadavre fait pareil. Après quelques instants, ses bras retombent le long de son corps et la vision s„estompe… jusqu“à ce que tu observes une nouvelle fois le mouvement saccadé des mains d„Ei-Vene.  ^NREMARQUE : Tu t“es remémoré un souvenir. Les souvenirs peuvent te permettre de gagner des points d„expérience supplémentaires, des talents et peuvent même t“amener un peu plus tard à découvrir quelque chose ayant de la valeur.^-{#eivene_s27_}'
+    nr 'Le souvenir de ta voix résonne, étrange et creux à tes oreilles. Tu croises les bras et, à ta grande surprise, le cadavre fait pareil. Après quelques instants, ses bras retombent le long de son corps et la vision s„estompe… jusqu“à ce que tu observes une nouvelle fois le mouvement saccadé des mains d„Ei-Vene.  ^NREMARQUE : Tu t“es remémoré un souvenir. Les souvenirs peuvent te permettre de gagner des points d„expérience supplémentaires, des talents et peuvent même t“amener un peu plus tard à découvrir quelque chose ayant de la valeur.^-{#eivene_s27_1}'
 
     menu:
         'Attire son attention.{#eivene_s27_r63482}' if eiveneLogic.r63482_condition():

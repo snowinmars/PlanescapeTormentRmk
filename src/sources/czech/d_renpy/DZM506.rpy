@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say45419
 label zm506_s0: # from 3.2 # IF ~  Global("506_Thread","GLOBAL",0)
-    nr 'Tato těžce rozpíchaná mrtvola se líně přesouvá tam a zpět mezi dvěma deskami. Číslo "506" má přišito na čele… a straně krku… a pravé paži… dá se říci, že kůže na této loupající se mrtvole byla sešita tolika stehy, že vypadá jako bizarní mapa ulic.{#zm506_s0_}'
+    nr 'Tato těžce rozpíchaná mrtvola se líně přesouvá tam a zpět mezi dvěma deskami. Číslo "506" má přišito na čele… a straně krku… a pravé paži… dá se říci, že kůže na této loupající se mrtvole byla sešita tolika stehy, že vypadá jako bizarní mapa ulic.{#zm506_s0_1}'
 
     menu:
         'Prozkoumej steh.{#zm506_s0_r45420}' if zm506Logic.r45420_condition():
@@ -37,7 +37,7 @@ label zm506_s0: # from 3.2 # IF ~  Global("506_Thread","GLOBAL",0)
 
 # s1 # say45425
 label zm506_s1: # from 0.1 4.0 4.1 5.0 5.1 5.2
-    nr 'Mrtvola tupě zírá přímo dopředu.{#zm506_s1_}'
+    nr 'Mrtvola tupě zírá přímo dopředu.{#zm506_s1_1}'
 
     menu:
         'Nechej mrtvolu být.{#zm506_s1_r45478}':
@@ -47,7 +47,7 @@ label zm506_s1: # from 0.1 4.0 4.1 5.0 5.1 5.2
 
 # s2 # say45426
 label zm506_s2: # from 0.2 5.3
-    nr 'Mrtvola se nehýbá. Vypadá, že je příliš daleko na to, aby ti odpověděla na otázky.{#zm506_s2_}'
+    nr 'Mrtvola se nehýbá. Vypadá, že je příliš daleko na to, aby ti odpověděla na otázky.{#zm506_s2_1}'
 
     menu:
         'Nechej mrtvolu být.{#zm506_s2_r45479}':
@@ -57,7 +57,7 @@ label zm506_s2: # from 0.2 5.3
 
 # s3 # say45427
 label zm506_s3: # from 0.0
-    nr 'Vpichy obkružují celou mrtvolu, jdou z jejích paží, přes hrudník a krk až nahoru do vlhkého chomáče bílých vlasů. Jak sleduješ křižovatky vpichů, všimneš si, že do čela mrtvoly někdo zapíchl jehlu… jehla je připevněna k vláknu našitému ke straně lebky. Mohl bys to pravděpodobně uvolnit, kdybys měl něco, s čím bys mohl přeříznout vlákno.{#zm506_s3_}'
+    nr 'Vpichy obkružují celou mrtvolu, jdou z jejích paží, přes hrudník a krk až nahoru do vlhkého chomáče bílých vlasů. Jak sleduješ křižovatky vpichů, všimneš si, že do čela mrtvoly někdo zapíchl jehlu… jehla je připevněna k vláknu našitému ke straně lebky. Mohl bys to pravděpodobně uvolnit, kdybys měl něco, s čím bys mohl přeříznout vlákno.{#zm506_s3_1}'
 
     menu:
         'Přeřízni stehy skalpelem a pak vytáhni jehlu i s nití.{#zm506_s3_r45480}' if zm506Logic.r45480_condition():
@@ -80,7 +80,7 @@ label zm506_s3: # from 0.0
 
 # s4 # say45428
 label zm506_s4: # from 3.0
-    nr 'Opatrně jsi přeřízl skalpelem nit, vytrhl jsi jehlu a vytáhl stehy. Jakmile jsi to udělal, kůže pokrývající čelo se odchlípla a odhalila křídově bílou lebku mrtvoly - a tam je, k tvému údivu, vyryto číslo "78".{#zm506_s4_}'
+    nr 'Opatrně jsi přeřízl skalpelem nit, vytrhl jsi jehlu a vytáhl stehy. Jakmile jsi to udělal, kůže pokrývající čelo se odchlípla a odhalila křídově bílou lebku mrtvoly - a tam je, k tvému údivu, vyryto číslo "78".{#zm506_s4_1}'
 
     menu:
         '"Mrtvolo, zdá se, že máš dvě rozdílná označení."{#zm506_s4_r45484}' if zm506Logic.r45484_condition():
@@ -103,7 +103,7 @@ label zm506_s4: # from 3.0
 
 # s5 # say45429
 label zm506_s5: # from 4.2 # IF ~  Global("506_Thread","GLOBAL",1)
-    nr 'Tato hustě sestehovaná mrtvola se lenivě belhá sem a tam mezi dvěma deskami. Ačkoliv jsou téměř po celém jejím těle vyšita čísla "506", od lebky se jí na čele odloupla kůže a odkryla tak číslo "78", vyryté do kosti.{#zm506_s5_}'
+    nr 'Tato hustě sestehovaná mrtvola se lenivě belhá sem a tam mezi dvěma deskami. Ačkoliv jsou téměř po celém jejím těle vyšita čísla "506", od lebky se jí na čele odloupla kůže a odkryla tak číslo "78", vyryté do kosti.{#zm506_s5_1}'
 
     menu:
         '"Mrtvolo, zdá se, že máš dvě rozdílná označení."{#zm506_s5_r45502}' if zm506Logic.r45502_condition():

@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say45515
 label zm985_s0: # - # IF ~  Global("Topple_985","GLOBAL",0)
-    nr 'Diese Leiche - "985" - ist auf der Stelle stehengeblieben; nach dem Zustand ihres linken Beins zu urteilen, hat sich die Leichenfäule schon durch das Knie gefressen. Die Leiche schwankt dauernd hin und her, immer kurz davor, das Gleichgewicht zu verlieren.{#zm985_s0_}'
+    nr 'Diese Leiche - "985" - ist auf der Stelle stehengeblieben; nach dem Zustand ihres linken Beins zu urteilen, hat sich die Leichenfäule schon durch das Knie gefressen. Die Leiche schwankt dauernd hin und her, immer kurz davor, das Gleichgewicht zu verlieren.{#zm985_s0_1}'
 
     menu:
         'Gib der Leiche einen Schubs.{#zm985_s0_r45516}' if zm985Logic.r45516_condition():
@@ -53,7 +53,7 @@ label zm985_s0: # - # IF ~  Global("Topple_985","GLOBAL",0)
 
 # s1 # say45524
 label zm985_s1: # from 0.4 5.0 5.1 5.2
-    nr 'Die Leiche starrt wahrnehmungslos geradeaus. Man sieht ihr nicht an, ob sie dich gehört hat.{#zm985_s1_}'
+    nr 'Die Leiche starrt wahrnehmungslos geradeaus. Man sieht ihr nicht an, ob sie dich gehört hat.{#zm985_s1_1}'
 
     menu:
         'Laß die Leiche in Ruhe.{#zm985_s1_r45525}':
@@ -63,7 +63,7 @@ label zm985_s1: # from 0.4 5.0 5.1 5.2
 
 # s2 # say45526
 label zm985_s2: # from 0.5 5.3
-    nr 'Die Leiche rührt sich nicht. Sie sieht so aus, als sei sie schon ein bißchen zu weit hinüber, um deine Fragen zu beantworten.{#zm985_s2_}'
+    nr 'Die Leiche rührt sich nicht. Sie sieht so aus, als sei sie schon ein bißchen zu weit hinüber, um deine Fragen zu beantworten.{#zm985_s2_1}'
 
     menu:
         'Laß die Leiche in Ruhe.{#zm985_s2_r45527}':
@@ -73,7 +73,7 @@ label zm985_s2: # from 0.5 5.3
 
 # s3 # say45528
 label zm985_s3: # from 0.1 6.0
-    nr 'Im linken Bein der Leiche *knackt* es plötzlich, und sie fällt sie um wie ein abgesägter Baum. Ihr Torso prallt auf dem Straßenpflaster auf und platzt auf wie eine verfaulte Melone. Heraus läuft eine dreckige, blutige Brühe. Zu deiner Überraschung scheint niemand bemerkt zu haben, daß die Leiche umgekippt ist… Noch seltsamer ist, daß das linke Bein noch kurz aufrecht stehen bleibt, als würde es strammstehen. Als es umfällt, macht es einen *dumpfen* Schlag.{#zm985_s3_}'
+    nr 'Im linken Bein der Leiche *knackt* es plötzlich, und sie fällt sie um wie ein abgesägter Baum. Ihr Torso prallt auf dem Straßenpflaster auf und platzt auf wie eine verfaulte Melone. Heraus läuft eine dreckige, blutige Brühe. Zu deiner Überraschung scheint niemand bemerkt zu haben, daß die Leiche umgekippt ist… Noch seltsamer ist, daß das linke Bein noch kurz aufrecht stehen bleibt, als würde es strammstehen. Als es umfällt, macht es einen *dumpfen* Schlag.{#zm985_s3_1}'
 
     $ zm985Logic.s3_action()
     jump zm985_s7
@@ -81,7 +81,7 @@ label zm985_s3: # from 0.1 6.0
 
 # s4 # say45530
 label zm985_s4: # from 0.2
-    nr 'Du greifst nach dem linken Arm der Leiche, um sie zu stabilisieren. Doch plötzlich schwankt sie nach rechts, so daß du im Endeffekt eher an ihr zerrst, als daß du sie ruhig hältst…{#zm985_s4_}'
+    nr 'Du greifst nach dem linken Arm der Leiche, um sie zu stabilisieren. Doch plötzlich schwankt sie nach rechts, so daß du im Endeffekt eher an ihr zerrst, als daß du sie ruhig hältst…{#zm985_s4_1}'
 
     $ zm985Logic.s4_action()
     jump morte_s482  # EXTERN
@@ -89,7 +89,7 @@ label zm985_s4: # from 0.2
 
 # s5 # say45531
 label zm985_s5: # - # IF ~  GlobalGT("Topple_985","GLOBAL",0)
-    nr 'Es scheint, als hätte jemand den linken Arm und das linke Bein der Leiche durch Ersatzteile von anderen Leichen ersetzt. Das linke Bein ist kürzer als das rechte, aber wenigstens steht sie jetzt.{#zm985_s5_}'
+    nr 'Es scheint, als hätte jemand den linken Arm und das linke Bein der Leiche durch Ersatzteile von anderen Leichen ersetzt. Das linke Bein ist kürzer als das rechte, aber wenigstens steht sie jetzt.{#zm985_s5_1}'
 
     menu:
         '"Tut mir leid, daß ich dich vorhin umgeschubst habe. War keine Absicht."{#zm985_s5_r45532}' if zm985Logic.r45532_condition():
@@ -120,7 +120,7 @@ label zm985_s5: # - # IF ~  GlobalGT("Topple_985","GLOBAL",0)
 
 # s6 # say45538
 label zm985_s6: # from 0.3
-    nr 'Du greifst nach dem linken Arm der Leiche, um sie zu stabilisieren. Doch plötzlich schwankt sie nach rechts, so daß du im Endeffekt eher an ihr zerrst, als daß du sie ruhig hältst…{#zm985_s6_}'
+    nr 'Du greifst nach dem linken Arm der Leiche, um sie zu stabilisieren. Doch plötzlich schwankt sie nach rechts, so daß du im Endeffekt eher an ihr zerrst, als daß du sie ruhig hältst…{#zm985_s6_1}'
 
     menu:
         '"Ah-oh…"{#zm985_s6_r45539}':
@@ -131,7 +131,7 @@ label zm985_s6: # from 0.3
 
 # s7 # say64205
 label zm985_s7: # from 3.0
-    nr 'Als du die verwesten Überreste der Leiche betrachtest, stellst du fest, daß ihr linker Arm unversehrt zu sein scheint - er hat sich bei dem Sturz vom Körper gelöst und scheint von der Verwesung nicht betroffen zu sein, die den Rest des Körpers befallen hat.{#zm985_s7_}'
+    nr 'Als du die verwesten Überreste der Leiche betrachtest, stellst du fest, daß ihr linker Arm unversehrt zu sein scheint - er hat sich bei dem Sturz vom Körper gelöst und scheint von der Verwesung nicht betroffen zu sein, die den Rest des Körpers befallen hat.{#zm985_s7_1}'
 
     menu:
         '"Hmmm. Ich frage mich, ob ich für diesen Arm Verwendung hätte…"{#zm985_s7_r64206}':

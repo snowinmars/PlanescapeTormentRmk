@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say35050
 label zf626_s0: # - # IF ~  True()
-    nr 'Lewa strona twarzy tej martwej kobiety wygląda tak, jakby zapadła się po uderzeniu pałką. Jej skóra, nad rozwaloną czaszką, jest posiniaczona i nabrzmiała. Na prawym policzku, zaraz pod okiem, ma wyszyty numer "626".{#zf626_s0_}'
+    nr 'Lewa strona twarzy tej martwej kobiety wygląda tak, jakby zapadła się po uderzeniu pałką. Jej skóra, nad rozwaloną czaszką, jest posiniaczona i nabrzmiała. Na prawym policzku, zaraz pod okiem, ma wyszyty numer "626".{#zf626_s0_1}'
 
     menu:
         '"Uch… co za szkaradna rana."{#zf626_s0_r35051}' if zf626Logic.r35051_condition():
@@ -58,7 +58,7 @@ label zf626_s0: # - # IF ~  True()
 
 # s1 # say35052
 label zf626_s1: # from 0.0 0.1 0.2
-    nr 'Trup wciąż patrzy na ciebie swoim jedynym całym okiem.{#zf626_s1_}'
+    nr 'Trup wciąż patrzy na ciebie swoim jedynym całym okiem.{#zf626_s1_1}'
 
     menu:
         '"A zatem żegnaj."{#zf626_s1_r35053}' if zf626Logic.r35053_condition():
@@ -76,7 +76,7 @@ label zf626_s1: # from 0.0 0.1 0.2
 
 # s2 # say35071
 label zf626_s2: # from 0.3
-    nr 'Trup nie rusza się. Wygląda na to, że jest w zbyt daleko posuniętym stadium rozkładu, aby odpowiedzieć na twoje pytania.{#zf626_s2_}'
+    nr 'Trup nie rusza się. Wygląda na to, że jest w zbyt daleko posuniętym stadium rozkładu, aby odpowiedzieć na twoje pytania.{#zf626_s2_1}'
 
     menu:
         '"A zatem żegnaj."{#zf626_s2_r35072}' if zf626Logic.r35072_condition():
@@ -94,6 +94,6 @@ label zf626_s2: # from 0.3
 
 # s3 # say35081
 label zf626_s3: # - # IF ~  False()
-    nr 'Trup nie odpowiada. Wygląda na to, że jest w zbyt daleko posuniętym stadium rozkładu, aby odpowiedzieć na twoje pytania.{#zf626_s3_}'
+    nr 'Trup nie odpowiada. Wygląda na to, że jest w zbyt daleko posuniętym stadium rozkładu, aby odpowiedzieć na twoje pytania.{#zf626_s3_1}'
 
     menu:

@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say69459
 label deionarra_s0: # from 5.2 9.5 10.8 11.3 12.3 13.4 14.2 25.3 27.4 28.4 30.2 31.3 32.2 41.4 41.5 42.3 42.4 43.4 44.4
-    nr '"Budu na Tebe čekat v sálech smrti, má lásko." Usmívá se, ale přesto z jejích očí vyzařuje smutek. Zavřela oči a s lehkým šepotem se rozplynula.~ [DEN008B]{#deionarra_s0_}'
+    nr '"Budu na Tebe čekat v sálech smrti, má lásko." Usmívá se, ale přesto z jejích očí vyzařuje smutek. Zavřela oči a s lehkým šepotem se rozplynula.~ [DEN008B]{#deionarra_s0_1}'
 
     menu:
         'Odejdi.{#deionarra_s0_r701}' if deionarraLogic.r701_condition():
@@ -32,7 +32,7 @@ label deionarra_s0: # from 5.2 9.5 10.8 11.3 12.3 13.4 14.2 25.3 27.4 28.4 30.2 
 
 # s1 # say5
 label deionarra_s1: # - # IF WEIGHT #0 ~  Global("Deionarra","GLOBAL",0) !Global("Current_Area","GLOBAL",1203) !Global("Current_Area","GLOBAL",1200)
-    nr 'Vidíš před sebou přízrak neobyčejně krásné ženy; má zkřížené ruce a zavřené oči, dlouhé plavé vlasy a zdá se, že s jejími šaty si pohrává lehounký vánek. Vidíš, jak se lehounce hýbe a její řasy se chvějí.{#deionarra_s1_}'
+    nr 'Vidíš před sebou přízrak neobyčejně krásné ženy; má zkřížené ruce a zavřené oči, dlouhé plavé vlasy a zdá se, že s jejími šaty si pohrává lehounký vánek. Vidíš, jak se lehounce hýbe a její řasy se chvějí.{#deionarra_s1_1}'
 
     menu:
         '"Zdravím…?"{#deionarra_s1_r703}':
@@ -51,7 +51,7 @@ label deionarra_s1: # - # IF WEIGHT #0 ~  Global("Deionarra","GLOBAL",0) !Global
 
 # s2 # say706
 label deionarra_s2: # from 1.0 1.1
-    nr 'Její oči se pomalu otevírají a v počátečním zmatku zamrká, jakoby si nebyla jistá, kde je. Rozhlíží se pomalu kolem a pak tě uvidí. Její poklidný obličej se náhle změnil. "Ty! Co *tebe* sem přivádí?! Přišel ses snad podívat na výsledek neštěstí, které jsi způsobil? Nebo snad, i po mé smrti, v tobě stále zůstal kousíček ze mne…?" Její hlas se změnil v šepot. "…„má lásko“."~ [DEN001]{#deionarra_s2_}'
+    nr 'Její oči se pomalu otevírají a v počátečním zmatku zamrká, jakoby si nebyla jistá, kde je. Rozhlíží se pomalu kolem a pak tě uvidí. Její poklidný obličej se náhle změnil. "Ty! Co *tebe* sem přivádí?! Přišel ses snad podívat na výsledek neštěstí, které jsi způsobil? Nebo snad, i po mé smrti, v tobě stále zůstal kousíček ze mne…?" Její hlas se změnil v šepot. "…„má lásko“."~ [DEN001]{#deionarra_s2_1}'
 
     menu:
         '"Kdo jsi?"{#deionarra_s2_r707}':
@@ -72,7 +72,7 @@ label deionarra_s2: # from 1.0 1.1
 
 # s3 # say710
 label deionarra_s3: # from 2.0 2.1 2.2 10.0
-    nr 'Duch něco naznačuje rukama, nějaké tobě neznámé pohyby. "Jak se to mohlo stát, že ti zloději mysli ukradli z paměti mé jméno? *Nevzpomínáš* si na mne, má lásko?" Duch k tobě natahuje ruce. "Přemýšlej…" V jejím hlase je cítit zoufalost. "…jméno *Deionarra* musí přece v tobě vyvolávat nějaké vzpomínky."{#deionarra_s3_}'
+    nr 'Duch něco naznačuje rukama, nějaké tobě neznámé pohyby. "Jak se to mohlo stát, že ti zloději mysli ukradli z paměti mé jméno? *Nevzpomínáš* si na mne, má lásko?" Duch k tobě natahuje ruce. "Přemýšlej…" V jejím hlase je cítit zoufalost. "…jméno *Deionarra* musí přece v tobě vyvolávat nějaké vzpomínky."{#deionarra_s3_1}'
 
     menu:
         '"Ne, promiň. Ztratil jsem paměť. "{#deionarra_s3_r711}':
@@ -103,7 +103,7 @@ label deionarra_s3: # from 2.0 2.1 2.2 10.0
 
 # s4 # say715
 label deionarra_s4: # - # IF WEIGHT #1 ~  Global("Deionarra","GLOBAL",2) !Global("Current_Area","GLOBAL",1203) !Global("Current_Area","GLOBAL",1200)
-    nr 'Deionarra se znovu zjevila… tentokrát má obličej naplněn zoufalstvím a ruce natažené vpřed, jakoby se chtěla něčeho dotknout. Když se zjevila úplně, její zoufalství se změnilo v zuřivost. "Už jsi zase přišel! Chceš mě znovu trápit?"~ [DEN002]{#deionarra_s4_}'
+    nr 'Deionarra se znovu zjevila… tentokrát má obličej naplněn zoufalstvím a ruce natažené vpřed, jakoby se chtěla něčeho dotknout. Když se zjevila úplně, její zoufalství se změnilo v zuřivost. "Už jsi zase přišel! Chceš mě znovu trápit?"~ [DEN002]{#deionarra_s4_1}'
 
     menu:
         '"Potřebuju vědět mnohem více. Měl bych pro tebe nějaké otázky…"{#deionarra_s4_r765}':
@@ -117,7 +117,7 @@ label deionarra_s4: # - # IF WEIGHT #1 ~  Global("Deionarra","GLOBAL",2) !Global
 
 # s5 # say716
 label deionarra_s5: # - # IF WEIGHT #2 ~  Global("Deionarra","GLOBAL",1) !Global("Current_Area","GLOBAL",1203) !Global("Current_Area","GLOBAL",1200)
-    nr 'Deionarra se znovu zjevila… tentokrát má obličej naplněn zoufalstvím a ruce natažené vpřed, jakoby se chtěla něčeho dotknout. Když se zjevila úplně, zoufalý výraz v jejím obličeji se změnil v úlevu. "Má lásko… vrátil ses ke mně! Je to snad tím, že se ti vrátila paměť?"~ [DEN003A]{#deionarra_s5_}'
+    nr 'Deionarra se znovu zjevila… tentokrát má obličej naplněn zoufalstvím a ruce natažené vpřed, jakoby se chtěla něčeho dotknout. Když se zjevila úplně, zoufalý výraz v jejím obličeji se změnil v úlevu. "Má lásko… vrátil ses ke mně! Je to snad tím, že se ti vrátila paměť?"~ [DEN003A]{#deionarra_s5_1}'
 
     menu:
         '"Měl bych na tebe nějaké otázky…"{#deionarra_s5_r766}':
@@ -135,7 +135,7 @@ label deionarra_s5: # - # IF WEIGHT #2 ~  Global("Deionarra","GLOBAL",1) !Global
 
 # s6 # say717
 label deionarra_s6: # from 3.0
-    nr '"Toho jsem se obávala. Opravdu jsem se v tobě zmýlila… a pak když máš potíže, použiješ jako omluvu, že si mne nemůžeš vybavit v hlavě proto, žes ztratil paměť!"{#deionarra_s6_}'
+    nr '"Toho jsem se obávala. Opravdu jsem se v tobě zmýlila… a pak když máš potíže, použiješ jako omluvu, že si mne nemůžeš vybavit v hlavě proto, žes ztratil paměť!"{#deionarra_s6_1}'
 
     menu:
         '"„Potíže?“ „Vybavit v hlavě?“ Já tě neznám duchu… nemám vůbec žádné vzpomínky. Řekni mi… kdo jsi? Co o mně víš?"{#deionarra_s6_r720}':
@@ -169,7 +169,7 @@ label deionarra_s6: # from 3.0
 
 # s7 # say722
 label deionarra_s7: # from 3.1
-    nr '"Ano…" Vypadá plná naděje. "Co mé jméno vyvolává?"{#deionarra_s7_}'
+    nr '"Ano…" Vypadá plná naděje. "Co mé jméno vyvolává?"{#deionarra_s7_1}'
 
     menu:
         '"Nikdo. Lhal jsem."{#deionarra_s7_r700}':
@@ -201,7 +201,7 @@ label deionarra_s7: # from 3.1
 
 # s8 # say725
 label deionarra_s8: # from 7.0 47.2
-    nr 'Výraz Deionarry přechází do naštvaného šklebu. "Ty malomocný pse! Zrádče mého srdce! Přeju si, abys byl proklet a aby tě muka prokletí dostala při každé tvé inkarnaci i bez pomoci mé kletby.! Táhni!" Zkřížila ruce a zavřela oči.{#deionarra_s8_}'
+    nr 'Výraz Deionarry přechází do naštvaného šklebu. "Ty malomocný pse! Zrádče mého srdce! Přeju si, abys byl proklet a aby tě muka prokletí dostala při každé tvé inkarnaci i bez pomoci mé kletby.! Táhni!" Zkřížila ruce a zavřela oči.{#deionarra_s8_1}'
 
     menu:
         '"Dobře…"{#deionarra_s8_r747}' if deionarraLogic.r747_condition():
@@ -222,7 +222,7 @@ label deionarra_s8: # from 7.0 47.2
 
 # s9 # say726
 label deionarra_s9: # from 3.2 3.3 6.1 6.2 7.1 7.2 7.3
-    nr '"Och, konečně je osud ke mně milosrdný! Dokonce ani smrt mne nemůže vymazat z tvé paměti, má lásko! Nevidíš? Tvé vzpomínky by se měly vrátit! Řekni mi, jak ti můžu pomoci a já to udělám!"{#deionarra_s9_}'
+    nr '"Och, konečně je osud ke mně milosrdný! Dokonce ani smrt mne nemůže vymazat z tvé paměti, má lásko! Nevidíš? Tvé vzpomínky by se měly vrátit! Řekni mi, jak ti můžu pomoci a já to udělám!"{#deionarra_s9_1}'
 
     menu:
         '"Víš, kdo jsem?"{#deionarra_s9_r729}':
@@ -252,7 +252,7 @@ label deionarra_s9: # from 3.2 3.3 6.1 6.2 7.1 7.2 7.3
 
 # s10 # say733
 label deionarra_s10: # from 5.0 11.1 12.1 13.1 14.0 25.1 27.2 28.0 30.0 31.1 32.0 34.1 35.1 36.0 41.1 42.0 43.1 44.2 74.0
-    nr '"Co si přeješ vědět?"{#deionarra_s10_}'
+    nr '"Co si přeješ vědět?"{#deionarra_s10_1}'
 
     menu:
         '"Kdo jsi?"{#deionarra_s10_r734}':
@@ -294,7 +294,7 @@ label deionarra_s10: # from 5.0 11.1 12.1 13.1 14.0 25.1 27.2 28.0 30.0 31.1 32.
 
 # s11 # say739
 label deionarra_s11: # from 6.0 9.0 10.1
-    nr '"Ty jsi jak požehnán, tak proklet, má lásko. A jsi ten, kdo nikdy není daleko od mých myšlenek a mého srdce."{#deionarra_s11_}'
+    nr '"Ty jsi jak požehnán, tak proklet, má lásko. A jsi ten, kdo nikdy není daleko od mých myšlenek a mého srdce."{#deionarra_s11_1}'
 
     menu:
         '"„Požehnán a proklet?“ Co tím myslíš?"{#deionarra_s11_r740}':
@@ -316,7 +316,7 @@ label deionarra_s11: # from 6.0 9.0 10.1
 
 # s12 # say743
 label deionarra_s12: # from 9.1 10.2
-    nr '"Kde jsi? Proč jsi tady se mnou, má lásko… jako za časů, kdy jsme spolu sdíleli náš život. Teď je to Nekonečná hranice, která nás obklopuje."{#deionarra_s12_}'
+    nr '"Kde jsi? Proč jsi tady se mnou, má lásko… jako za časů, kdy jsme spolu sdíleli náš život. Teď je to Nekonečná hranice, která nás obklopuje."{#deionarra_s12_1}'
 
     menu:
         '"„Nekonečná hranice?“"{#deionarra_s12_r744}':
@@ -338,7 +338,7 @@ label deionarra_s12: # from 9.1 10.2
 
 # s13 # say748
 label deionarra_s13: # from 11.0
-    nr '"Podstata tvého prokletí by měla být zjevná, má lásko. Podívej se na sebe." ukazuje na tebe prstem. "Smrt tě odmítla. Tvé vzpomínky tě opustily. Nepozastavil ses nad tím nebo nechtěl bys vědět proč?"{#deionarra_s13_}'
+    nr '"Podstata tvého prokletí by měla být zjevná, má lásko. Podívej se na sebe." ukazuje na tebe prstem. "Smrt tě odmítla. Tvé vzpomínky tě opustily. Nepozastavil ses nad tím nebo nechtěl bys vědět proč?"{#deionarra_s13_1}'
 
     menu:
         '"Pořád se ještě pokouším zorientovat. Co jiného mi můžeš o mé osobě říct?"{#deionarra_s13_r749}':
@@ -364,7 +364,7 @@ label deionarra_s13: # from 11.0
 
 # s14 # say752
 label deionarra_s14: # from 12.0
-    nr 'Deionarra se smutkem promlouvá. "Bojím se, že je tu překážka, kterou asi nikdy nepřekonáš, má lásko. Je to překážka mezi tvým životem a tím, co ze mne zůstalo…"{#deionarra_s14_}'
+    nr 'Deionarra se smutkem promlouvá. "Bojím se, že je tu překážka, kterou asi nikdy nepřekonáš, má lásko. Je to překážka mezi tvým životem a tím, co ze mne zůstalo…"{#deionarra_s14_1}'
 
     menu:
         '"A… ha. Snad bys mi mohla odpovědět na nějaké otázky…"{#deionarra_s14_r753}':
@@ -382,7 +382,7 @@ label deionarra_s14: # from 12.0
 
 # s15 # say756
 label deionarra_s15: # from 3.4 5.1 6.3 6.4 7.4 9.4 10.7 11.2 12.2 13.3 14.1 25.2 27.3 28.1 28.3 30.1 31.2 32.1 41.2 41.3 42.1 42.2 43.3 44.3 47.3
-    nr '"Počkej chviličku… hodně jsem se naučila, když jsem s Tebou cestovala, má lásko a co ty jsi ztratil, jsem já zachovala. Neprozradila jsem ti všechno, co vím. Můj pohled je jasný… zatímco ty pořád tápeš v temnotách po útržcích myšlenek."{#deionarra_s15_}'
+    nr '"Počkej chviličku… hodně jsem se naučila, když jsem s Tebou cestovala, má lásko a co ty jsi ztratil, jsem já zachovala. Neprozradila jsem ti všechno, co vím. Můj pohled je jasný… zatímco ty pořád tápeš v temnotách po útržcích myšlenek."{#deionarra_s15_1}'
 
     menu:
         '"Cokoliv mi chceš říct, může počkat. Sbohem."{#deionarra_s15_r757}':
@@ -404,7 +404,7 @@ label deionarra_s15: # from 3.4 5.1 6.3 6.4 7.4 9.4 10.7 11.2 12.2 13.3 14.1 25.
 
 # s16 # say762
 label deionarra_s16: # from 20.0 21.0
-    nr 'Deionarra vypadá zaraženě, ale následně se její tón změnil, její hlas se začíná téměř obhajovat. "Já… jsem to nemyslela tak, abych z tebe získala přísahu, má lásko. Řekla jsem to jenom proto, že jsem na tebe tak dlouho čekala, aby ses ke mně připojil do…"{#deionarra_s16_}'
+    nr 'Deionarra vypadá zaraženě, ale následně se její tón změnil, její hlas se začíná téměř obhajovat. "Já… jsem to nemyslela tak, abych z tebe získala přísahu, má lásko. Řekla jsem to jenom proto, že jsem na tebe tak dlouho čekala, aby ses ke mně připojil do…"{#deionarra_s16_1}'
 
     menu:
         '"Jestli jsi tedy nechtěla, abych přísahal, Deionarro, pak to ani nežádej. A teď mi řekni svou vizi a už nebudeme mluvit o žádných slibech ani přísahách."{#deionarra_s16_r763}':
@@ -414,7 +414,7 @@ label deionarra_s16: # from 20.0 21.0
 
 # s17 # say769
 label deionarra_s17: # from 15.1 15.2
-    nr '"Čas sám o sobě zmírňuje své sevření, jakoby nás pomalu obklopovalo mrazivé zapomnění, má lásko. Záblesky věcí najednou přicházejí houfně do mé vize. Vidím tě, má lásko. Vidím tě jako nyní, ale…" Deionarra najednou utichne.{#deionarra_s17_}'
+    nr '"Čas sám o sobě zmírňuje své sevření, jakoby nás pomalu obklopovalo mrazivé zapomnění, má lásko. Záblesky věcí najednou přicházejí houfně do mé vize. Vidím tě, má lásko. Vidím tě jako nyní, ale…" Deionarra najednou utichne.{#deionarra_s17_1}'
 
     menu:
         '"Proč jsi najednou zticha? Že by tě tvoje řeč unavila?"{#deionarra_s17_r770}':
@@ -432,7 +432,7 @@ label deionarra_s17: # from 15.1 15.2
 
 # s18 # say773
 label deionarra_s18: # from 17.0 17.1
-    nr '"Vidím, co na tebe čeká. Přichází to skrz sféry a zastavuje se to přesně tady. Mám mluvit o tom co vidím?"{#deionarra_s18_}'
+    nr '"Vidím, co na tebe čeká. Přichází to skrz sféry a zastavuje se to přesně tady. Mám mluvit o tom co vidím?"{#deionarra_s18_1}'
 
     menu:
         '"Řekni mi to."{#deionarra_s18_r774}':
@@ -446,7 +446,7 @@ label deionarra_s18: # from 17.0 17.1
 
 # s19 # say776
 label deionarra_s19: # from 17.2 18.1
-    nr '"Ty jsi byl vždycky takový, má lásko. Už dokonce odmítáš dávat si pozor na volání smrti. Bude čas další věcí, kterou od sebe odeženeš?" Zavírá oči a s éterickým šepotem se rozplývá.{#deionarra_s19_}'
+    nr '"Ty jsi byl vždycky takový, má lásko. Už dokonce odmítáš dávat si pozor na volání smrti. Bude čas další věcí, kterou od sebe odeženeš?" Zavírá oči a s éterickým šepotem se rozplývá.{#deionarra_s19_1}'
 
     menu:
         'Odejdi.{#deionarra_s19_r803}' if deionarraLogic.r803_condition():
@@ -467,7 +467,7 @@ label deionarra_s19: # from 17.2 18.1
 
 # s20 # say777
 label deionarra_s20: # from 18.0
-    nr '"Nejdříve potřebuji tvůj slib. Slib mi, že se vrátíš. Že najdeš nějaké prostředky, jak mně zachránit nebo se ke mně připojit."{#deionarra_s20_}'
+    nr '"Nejdříve potřebuji tvůj slib. Slib mi, že se vrátíš. Že najdeš nějaké prostředky, jak mně zachránit nebo se ke mně připojit."{#deionarra_s20_1}'
 
     menu:
         '"Je těžké uvěřit tomu, že žena, kterou miluju, by po mně vyžadovala slib, že se sem vrátím. Ty mi snad nedůvěřuješ, Deionarro?"{#deionarra_s20_r778}' if deionarraLogic.r778_condition():
@@ -499,7 +499,7 @@ label deionarra_s20: # from 18.0
 
 # s21 # say783
 label deionarra_s21: # from 20.1
-    nr 'Deionarra si založila ruce. "Skutečně je to tak, má lásko. Cena nesmrtelnosti nebyla, bohužel, zřejmě tak vysoká. Je neporušenost opravdu tak moc za jednu tvou vzpomínku?"{#deionarra_s21_}'
+    nr 'Deionarra si založila ruce. "Skutečně je to tak, má lásko. Cena nesmrtelnosti nebyla, bohužel, zřejmě tak vysoká. Je neporušenost opravdu tak moc za jednu tvou vzpomínku?"{#deionarra_s21_1}'
 
     menu:
         '"Je těžké uvěřit tomu, že žena, kterou miluju, by po mně vyžadovala slib, že se sem vrátím. Ty mi snad nedůvěřuješ, Deionarro?"{#deionarra_s21_r804}':
@@ -531,7 +531,7 @@ label deionarra_s21: # from 20.1
 
 # s22 # say784
 label deionarra_s22: # from 10.5 20.2 20.5 21.1 21.4 40.0
-    nr '"Toto vidí mé oči, má lásko, osvobozená od pout času…"~ [DEN020]{#deionarra_s22_}'
+    nr '"Toto vidí mé oči, má lásko, osvobozená od pout času…"~ [DEN020]{#deionarra_s22_1}'
 
     menu:
         'Čekej na její pokračování.{#deionarra_s22_r786}':
@@ -542,7 +542,7 @@ label deionarra_s22: # from 10.5 20.2 20.5 21.1 21.4 40.0
 
 # s23 # say785
 label deionarra_s23: # from 22.0
-    nr '"Měl bys potkat tři nepřátele, ale nikdo z nich není tak nebezpečný, jako ty sám v celé své kráse. Jsou to odstíny zla, dobra a neutrality, kterým byl dán život a jež jsou ovládány zákony sfér."~ [DEN021]{#deionarra_s23_}'
+    nr '"Měl bys potkat tři nepřátele, ale nikdo z nich není tak nebezpečný, jako ty sám v celé své kráse. Jsou to odstíny zla, dobra a neutrality, kterým byl dán život a jež jsou ovládány zákony sfér."~ [DEN021]{#deionarra_s23_1}'
 
     menu:
         'Čekej na její pokračování.{#deionarra_s23_r787}':
@@ -552,7 +552,7 @@ label deionarra_s23: # from 22.0
 
 # s24 # say788
 label deionarra_s24: # from 23.0
-    nr '"Měl bys přijít do věznice postavené z lítosti a žalu, kde samotné stíny zešílely. Tam budeš požádán, abys podstoupil strašlivou oběť, má lásko. K tomu, abys mohl konečně odpočívat v pokoji, potřebuješ zničit toho, kdo tě drží naživu, takže už potom nebudeš nesmrtelný."~ [DEN022]{#deionarra_s24_}'
+    nr '"Měl bys přijít do věznice postavené z lítosti a žalu, kde samotné stíny zešílely. Tam budeš požádán, abys podstoupil strašlivou oběť, má lásko. K tomu, abys mohl konečně odpočívat v pokoji, potřebuješ zničit toho, kdo tě drží naživu, takže už potom nebudeš nesmrtelný."~ [DEN022]{#deionarra_s24_1}'
 
     menu:
         '"„Zničit to, co mne drží naživu?“"{#deionarra_s24_r789}':
@@ -562,7 +562,7 @@ label deionarra_s24: # from 23.0
 
 # s25 # say791
 label deionarra_s25: # from 13.2 29.0
-    nr '"Nepochybuji o tom, že máš schopnost vstávat z mrtvých. Věřím totiž, že každá inkarnace zeslabuje tvé myšlenky a vzpomínky. Tvrdil jsi, žes ztratil paměť. Je to snad vedlejší efekt nesčetných úmrtí? Jestli ano, co dalšího ztratíš při těch následných? Když ztratíš svou mysl, nakonec si ani nebudeš vědom toho, že nemůžeš umřít. Jsi asi skutečně zatracen."{#deionarra_s25_}'
+    nr '"Nepochybuji o tom, že máš schopnost vstávat z mrtvých. Věřím totiž, že každá inkarnace zeslabuje tvé myšlenky a vzpomínky. Tvrdil jsi, žes ztratil paměť. Je to snad vedlejší efekt nesčetných úmrtí? Jestli ano, co dalšího ztratíš při těch následných? Když ztratíš svou mysl, nakonec si ani nebudeš vědom toho, že nemůžeš umřít. Jsi asi skutečně zatracen."{#deionarra_s25_1}'
 
     menu:
         '"„Nesčetných smrtí?“ Jak dlouho tohle už trvá?"{#deionarra_s25_r812}':
@@ -584,7 +584,7 @@ label deionarra_s25: # from 13.2 29.0
 
 # s26 # say793
 label deionarra_s26: # from 3.5 4.1 6.5 6.6 7.5 15.0 15.3 20.3 21.2 21.5 28.2 47.4
-    nr 'Deionarra vypadá rozzuřeně. "Pak tedy odejdi, jako jsi to předtím udělal již stotřikrát! Přišel jsi jen kvůli tomu, abys mne trápil?! Odejdi a už se nevracej!" Zavírá a v nadpozemském tichu se rozplynula.{#deionarra_s26_}'
+    nr 'Deionarra vypadá rozzuřeně. "Pak tedy odejdi, jako jsi to předtím udělal již stotřikrát! Přišel jsi jen kvůli tomu, abys mne trápil?! Odejdi a už se nevracej!" Zavírá a v nadpozemském tichu se rozplynula.{#deionarra_s26_1}'
 
     menu:
         'Odejdi.{#deionarra_s26_r6081}' if deionarraLogic.r6081_condition():
@@ -605,7 +605,7 @@ label deionarra_s26: # from 3.5 4.1 6.5 6.6 7.5 15.0 15.3 20.3 21.2 21.5 28.2 47
 
 # s27 # say795
 label deionarra_s27: # from 13.0
-    nr '"Vím, že jsi říkal, že mne miluješ, a že bys mne miloval, dokud by nás smrt nedostala oba dva. Věřila jsem tomu a nikdy jsem nevěděla pravdu o tom, kdo jsi byl a jaký jsi byl."{#deionarra_s27_}'
+    nr '"Vím, že jsi říkal, že mne miluješ, a že bys mne miloval, dokud by nás smrt nedostala oba dva. Věřila jsem tomu a nikdy jsem nevěděla pravdu o tom, kdo jsi byl a jaký jsi byl."{#deionarra_s27_1}'
 
     menu:
         '"A co jsem?"{#deionarra_s27_r797}' if deionarraLogic.r797_condition():
@@ -631,7 +631,7 @@ label deionarra_s27: # from 13.0
 
 # s28 # say799
 label deionarra_s28: # from 27.0
-    nr '"Už jsme o tvé osobě mluvili předtím." Obličej Deionarry nabral chladný výraz. "Už se o tom znovu bavit nehodlám."{#deionarra_s28_}'
+    nr '"Už jsme o tvé osobě mluvili předtím." Obličej Deionarry nabral chladný výraz. "Už se o tom znovu bavit nehodlám."{#deionarra_s28_1}'
 
     menu:
         '"V pořádku… Měl bych nějaké další otázky…"{#deionarra_s28_r800}':
@@ -657,7 +657,7 @@ label deionarra_s28: # from 27.0
 
 # s29 # say809
 label deionarra_s29: # from 24.0
-    nr '"Vím, že musíš umřít… dokud to stále ještě jde. Kruh se *musí* uzavřít, má lásko. Nejsi určen pro takovýto život. Musíš najít ten život, který ti byl odepřen a projít skrz, do země mrtvých."~ [DEN023]{#deionarra_s29_}'
+    nr '"Vím, že musíš umřít… dokud to stále ještě jde. Kruh se *musí* uzavřít, má lásko. Nejsi určen pro takovýto život. Musíš najít ten život, který ti byl odepřen a projít skrz, do země mrtvých."~ [DEN023]{#deionarra_s29_1}'
 
     menu:
         '"„Zemřít dokud to stále ještě jde?“"{#deionarra_s29_r810}':
@@ -668,7 +668,7 @@ label deionarra_s29: # from 24.0
 
 # s30 # say814
 label deionarra_s30: # from 25.0
-    nr '"Já skutečně nevím. Výjimkou je ta, která trvala dostatečně dlouho."{#deionarra_s30_}'
+    nr '"Já skutečně nevím. Výjimkou je ta, která trvala dostatečně dlouho."{#deionarra_s30_1}'
 
     menu:
         '"Měl bych nějaké další otázky…"{#deionarra_s30_r815}':
@@ -686,7 +686,7 @@ label deionarra_s30: # from 25.0
 
 # s31 # say817
 label deionarra_s31: # from 45.0
-    nr '"Portály jsou díry v prostoru, vedoucí k cílům ve vnějších a vnitřních sférách… kdybys našel ten správný klíč, mohl bys utéct jedním z těchto portálů."{#deionarra_s31_}'
+    nr '"Portály jsou díry v prostoru, vedoucí k cílům ve vnějších a vnitřních sférách… kdybys našel ten správný klíč, mohl bys utéct jedním z těchto portálů."{#deionarra_s31_1}'
 
     menu:
         '"Klíč?"{#deionarra_s31_r819}':
@@ -708,7 +708,7 @@ label deionarra_s31: # from 45.0
 
 # s32 # say821
 label deionarra_s32: # from 31.0
-    nr 'Deionarra se na chvíli odmlčí, jakoby se pokoušela na něco vzpomenout. "Portály se zjevují, když máš u sebe ten správný „klíč.“ Bohužel, těmito klíči může být opravdu téměř cokoliv… vzrušení, kousek dřeva, stříbřitě třpytivá dýka, ústřižek látky nebo melodie, kterou si pobroukáváš… obávám se, že pouze Spalovači jsou ti, kdož vědí o klíči, který bys měl použít k útěku z jejich hal, má lásko."{#deionarra_s32_}'
+    nr 'Deionarra se na chvíli odmlčí, jakoby se pokoušela na něco vzpomenout. "Portály se zjevují, když máš u sebe ten správný „klíč.“ Bohužel, těmito klíči může být opravdu téměř cokoliv… vzrušení, kousek dřeva, stříbřitě třpytivá dýka, ústřižek látky nebo melodie, kterou si pobroukáváš… obávám se, že pouze Spalovači jsou ti, kdož vědí o klíči, který bys měl použít k útěku z jejich hal, má lásko."{#deionarra_s32_1}'
 
     menu:
         '"Aha. Měl bych nějaké další otázky…"{#deionarra_s32_r824}':
@@ -726,7 +726,7 @@ label deionarra_s32: # from 31.0
 
 # s33 # say6083
 label deionarra_s33: # from 4.0
-    nr '"Nemám pro tebe odpovědi! Tvé nevěrné srdce tě zavedlo sem, tak ať tě odtud i vyvede! A teď odejdi!"{#deionarra_s33_}'
+    nr '"Nemám pro tebe odpovědi! Tvé nevěrné srdce tě zavedlo sem, tak ať tě odtud i vyvede! A teď odejdi!"{#deionarra_s33_1}'
 
     menu:
         'Lež: "Tohle není Deionarra, na niž si vzpomínám. Deionarra, kterou jsem miloval byla laskavá, něžná… a nikdy neodmítla pomoci duši v nouzi. Opravdu jsi klesla tak hluboko?"{#deionarra_s33_r6129}' if deionarraLogic.r6129_condition():
@@ -760,7 +760,7 @@ label deionarra_s33: # from 4.0
 
 # s34 # say6086
 label deionarra_s34: # from 33.2 33.3 33.4
-    nr 'Zuřivý výraz v tváři Deionarry se rozplynul - rychlost změny je stejně strašidelná jako zoufalství, které se jí ve tváři zračí teď. "Ne! Počkej, má lásko." Její hlas zni prosebně. "Prosím odpusť! Prosím tě! Neopouštěj mě!"{#deionarra_s34_}'
+    nr 'Zuřivý výraz v tváři Deionarry se rozplynul - rychlost změny je stejně strašidelná jako zoufalství, které se jí ve tváři zračí teď. "Ne! Počkej, má lásko." Její hlas zni prosebně. "Prosím odpusť! Prosím tě! Neopouštěj mě!"{#deionarra_s34_1}'
 
     menu:
         '"Deionarro, má trpělivost mizí, tvé výbuchy mě nebaví. Pokud máme mluvit dál, *budeš* se ovládat, nebo už si s tebou nikdy nepromluvím. Budeš sama. Je ti to jasné?"{#deionarra_s34_r6095}':
@@ -775,7 +775,7 @@ label deionarra_s34: # from 33.2 33.3 33.4
 
 # s35 # say6087
 label deionarra_s35: # from 33.0
-    nr 'Zuřivý výraz v tváři Deionarry se rozplynul - rychlost změny je stejně strašidelná jako zoufalství, které se jí ve tváři zračí teď. "Ne… ne, jsem stále ta Deionarra, kterou si pamatuješ, má lásko. Prosím, odpusť mi, má lásko. Prosím."{#deionarra_s35_}'
+    nr 'Zuřivý výraz v tváři Deionarry se rozplynul - rychlost změny je stejně strašidelná jako zoufalství, které se jí ve tváři zračí teď. "Ne… ne, jsem stále ta Deionarra, kterou si pamatuješ, má lásko. Prosím, odpusť mi, má lásko. Prosím."{#deionarra_s35_1}'
 
     menu:
         '"Deionarro, má trpělivost mizí, tvé výbuchy mě nebaví. Pokud máme mluvit dál, *budeš* se ovládat, nebo už si s tebou nikdy nepromluvím. Budeš sama. Je ti to jasné?"{#deionarra_s35_r6097}':
@@ -790,7 +790,7 @@ label deionarra_s35: # from 33.0
 
 # s36 # say6088
 label deionarra_s36: # from 34.0 35.0
-    nr 'Hlas jí přešel do slabého šeptání. "Ano… ano, prosím. Neopouštěj mě." Díky jejímu prosebnému výrazu ti přeběhl mráz po zádech - ale ne ze strachu. Je ti to příjemné. Máš pocit, že to není poprvé, kdy jsi touhle ženou takto manipuloval.{#deionarra_s36_}'
+    nr 'Hlas jí přešel do slabého šeptání. "Ano… ano, prosím. Neopouštěj mě." Díky jejímu prosebnému výrazu ti přeběhl mráz po zádech - ale ne ze strachu. Je ti to příjemné. Máš pocit, že to není poprvé, kdy jsi touhle ženou takto manipuloval.{#deionarra_s36_1}'
 
     menu:
         '"Poslouchej, Deionarro. Mám pro tebe pár otázek…"{#deionarra_s36_r6099}':
@@ -800,7 +800,7 @@ label deionarra_s36: # from 34.0 35.0
 
 # s37 # say6089
 label deionarra_s37: # from 33.1 47.0
-    nr '"Odvrhnout *tebe?!* Ty se OPOVAŽUJEŠ obvinit mě, že tě ODVRHUJU?!" Deionarra máchla rukama a zamířila je na tebe, ukazováčky ti míří přímo do obličeje. Vypadá to jako nějaký druh čarodějnictví. "Ty se OPOVAŽUJEŠ!"{#deionarra_s37_}'
+    nr '"Odvrhnout *tebe?!* Ty se OPOVAŽUJEŠ obvinit mě, že tě ODVRHUJU?!" Deionarra máchla rukama a zamířila je na tebe, ukazováčky ti míří přímo do obličeje. Vypadá to jako nějaký druh čarodějnictví. "Ty se OPOVAŽUJEŠ!"{#deionarra_s37_1}'
 
     menu:
         '"Ticho! Poslouchej, duchu! Ztrácím trpělivost---"{#deionarra_s37_r6100}':
@@ -816,7 +816,7 @@ label deionarra_s37: # from 33.1 47.0
 
 # s38 # say6090
 label deionarra_s38: # from 37.0 37.1
-    nr '"Shoř! Ať shoříš, jakoby tě plameny Baatoru stravovaly zevnitř! Shoř a věz že je to jenom *zlomek* mé nenávisti, kterou k tobě cítím! Proklínám tě--- proklínám tě celým svým srdcem a svou duší. Nikdy se neuvolníš z řetězů svého odporného neživota. Trp a umírej a tvá mysl bude slábnout a rozpadat se stejně jako tvé hnijící tělo!"{#deionarra_s38_}'
+    nr '"Shoř! Ať shoříš, jakoby tě plameny Baatoru stravovaly zevnitř! Shoř a věz že je to jenom *zlomek* mé nenávisti, kterou k tobě cítím! Proklínám tě--- proklínám tě celým svým srdcem a svou duší. Nikdy se neuvolníš z řetězů svého odporného neživota. Trp a umírej a tvá mysl bude slábnout a rozpadat se stejně jako tvé hnijící tělo!"{#deionarra_s38_1}'
 
     menu:
         '"Dej si pozor na své kletby, ženo! Nemám trpělivost s---"{#deionarra_s38_r6102}':
@@ -830,7 +830,7 @@ label deionarra_s38: # from 37.0 37.1
 
 # s39 # say6091
 label deionarra_s39: # from 38.0 38.1
-    nr '"Jakmile je jednou kletba vyslovena, nedá se vrátit zpět." Deionařin hlas přešel do zasyčení: "Věz toto: já mám celou věčnost, „má lásko.“ Počkám si, až vejdeš do hal smrti." Usmála se, ale v tom úsměvu není žádná radost. "Zase *budeme* spolu."{#deionarra_s39_}'
+    nr '"Jakmile je jednou kletba vyslovena, nedá se vrátit zpět." Deionařin hlas přešel do zasyčení: "Věz toto: já mám celou věčnost, „má lásko.“ Počkám si, až vejdeš do hal smrti." Usmála se, ale v tom úsměvu není žádná radost. "Zase *budeme* spolu."{#deionarra_s39_1}'
 
     menu:
         '"Vydrž chvíli! Chci si promluvit -"{#deionarra_s39_r6104}':
@@ -844,7 +844,7 @@ label deionarra_s39: # from 38.0 38.1
 
 # s40 # say6092
 label deionarra_s40: # from 16.0 20.4 21.3
-    nr 'Deionarra ztuhla. Vypadá to, že chtěla něco říct, ale pak to vzdala a vzdychla. "Dobrá, má lásko… stejně jako předtím ti musím důvěřovat." Zavřela oči.{#deionarra_s40_}'
+    nr 'Deionarra ztuhla. Vypadá to, že chtěla něco říct, ale pak to vzdala a vzdychla. "Dobrá, má lásko… stejně jako předtím ti musím důvěřovat." Zavřela oči.{#deionarra_s40_1}'
 
     menu:
         'Počkej…{#deionarra_s40_r6106}':
@@ -854,7 +854,7 @@ label deionarra_s40: # from 16.0 20.4 21.3
 
 # s41 # say6108
 label deionarra_s41: # from 10.6
-    nr 'Deionarra smutně zavrtěla hlavou. "Jakmile je tato kletba vyslovena, nedá se odvolat. Odpusť mi, má lásko."{#deionarra_s41_}'
+    nr 'Deionarra smutně zavrtěla hlavou. "Jakmile je tato kletba vyslovena, nedá se odvolat. Odpusť mi, má lásko."{#deionarra_s41_1}'
 
     menu:
         '"Copak ji nedokáže někdo odstranit?"{#deionarra_s41_r6110}':
@@ -884,7 +884,7 @@ label deionarra_s41: # from 10.6
 
 # s42 # say6109
 label deionarra_s42: # from 41.0
-    nr '"Pokud ano, nevím o tom." Deionarra se tváří nadějně. "Ale jsou jiní, mocnější než já, kteří by to mohli dokázat. Znovu tě prosím o odpuštění, má lásko. Nevěděla jsem, co dělám."{#deionarra_s42_}'
+    nr '"Pokud ano, nevím o tom." Deionarra se tváří nadějně. "Ale jsou jiní, mocnější než já, kteří by to mohli dokázat. Znovu tě prosím o odpuštění, má lásko. Nevěděla jsem, co dělám."{#deionarra_s42_1}'
 
     menu:
         '"Chtěl jsem se tě ještě na něco zeptat."{#deionarra_s42_r6116}':
@@ -910,7 +910,7 @@ label deionarra_s42: # from 41.0
 
 # s43 # say6121
 label deionarra_s43: # from 9.2 10.3 44.0
-    nr '"Odejít…?" Deionařin hlas přešel v zasyčení. Pak zvedla hlas: "*ODEJÍT?!* Ty se ptáš mě, která jsem zde uvězněná kvůli tobě, jak odejít z tohoto místa?!"{#deionarra_s43_}'
+    nr '"Odejít…?" Deionařin hlas přešel v zasyčení. Pak zvedla hlas: "*ODEJÍT?!* Ty se ptáš mě, která jsem zde uvězněná kvůli tobě, jak odejít z tohoto místa?!"{#deionarra_s43_1}'
 
     menu:
         '"Ano, musím odtud utéct. Znáš cestu ven?"{#deionarra_s43_r6137}':
@@ -936,7 +936,7 @@ label deionarra_s43: # from 9.2 10.3 44.0
 
 # s44 # say6122
 label deionarra_s44: # from 9.3 10.4
-    nr 'Už ses málem zeptal, když se ti slova najednou zadrhla v krku. Napadlo tě, že jestli se zeptáš, jak odtud uniknout, mohla by si myslet, že jí opouštíš. Pokud se jí chceš zeptat jak odejít, budeš muset být velice opatrný.{#deionarra_s44_}'
+    nr 'Už ses málem zeptal, když se ti slova najednou zadrhla v krku. Napadlo tě, že jestli se zeptáš, jak odtud uniknout, mohla by si myslet, že jí opouštíš. Pokud se jí chceš zeptat jak odejít, budeš muset být velice opatrný.{#deionarra_s44_1}'
 
     menu:
         '"Můžeš mi říct, jak se odtud dostanu?"{#deionarra_s44_r6142}':
@@ -962,7 +962,7 @@ label deionarra_s44: # from 9.3 10.4
 
 # s45 # say6123
 label deionarra_s45: # from 46.0 46.1
-    nr '"Cítím, že toto místo má mnoho dveří zakrytých před zrakem smrtelníků. Možná bys mohl použít jeden z těchto portálů jako prostředek útěku."{#deionarra_s45_}'
+    nr '"Cítím, že toto místo má mnoho dveří zakrytých před zrakem smrtelníků. Možná bys mohl použít jeden z těchto portálů jako prostředek útěku."{#deionarra_s45_1}'
 
     menu:
         '"Portály?"{#deionarra_s45_r6124}':
@@ -972,7 +972,7 @@ label deionarra_s45: # from 46.0 46.1
 
 # s46 # say6125
 label deionarra_s46: # from 43.2 44.1 47.1
-    nr '"V nebezpečí?" Deionarra vypadá zaujatě. "Samozřejmě, má lásko. Pomohu, jakkoliv budu moci…" Na chvíli zavřela oči a ty vidíš éterický vánek procházející jejím tělem, čechrajíce jí vlasy. Po chvíli vánek utichl a její oči se pomalu otevřely. "Možná by se to dalo udělat takto."{#deionarra_s46_}'
+    nr '"V nebezpečí?" Deionarra vypadá zaujatě. "Samozřejmě, má lásko. Pomohu, jakkoliv budu moci…" Na chvíli zavřela oči a ty vidíš éterický vánek procházející jejím tělem, čechrajíce jí vlasy. Po chvíli vánek utichl a její oči se pomalu otevřely. "Možná by se to dalo udělat takto."{#deionarra_s46_1}'
 
     menu:
         '"Ano?"{#deionarra_s46_r6147}' if deionarraLogic.r6147_condition():
@@ -987,7 +987,7 @@ label deionarra_s46: # from 43.2 44.1 47.1
 
 # s47 # say6135
 label deionarra_s47: # from 43.0
-    nr '"Přicházíš za mnou ve smrti jen proto, abys mi řekl, že potřebuješ moji pomoc, abys mne mohl *zase* opustit?!" Její tvář je maskou zuřivosti. "*Zemřela jsem* pro tebe, má lásko. Ještě teď za to *trpím!*"{#deionarra_s47_}'
+    nr '"Přicházíš za mnou ve smrti jen proto, abys mi řekl, že potřebuješ moji pomoc, abys mne mohl *zase* opustit?!" Její tvář je maskou zuřivosti. "*Zemřela jsem* pro tebe, má lásko. Ještě teď za to *trpím!*"{#deionarra_s47_1}'
 
     menu:
         '"Deionarro, prosím… potřebuji tvou pomoc. Odvrhneš mne, když tě nejvíc potřebuju?"{#deionarra_s47_r6149}':
@@ -1013,7 +1013,7 @@ label deionarra_s47: # from 43.0
 
 # s48 # say6136
 label deionarra_s48: # from 33.5 39.0 39.1
-    nr 'Deionarra zavřela oči a s nehmotným šuměním zmizela.{#deionarra_s48_}'
+    nr 'Deionarra zavřela oči a s nehmotným šuměním zmizela.{#deionarra_s48_1}'
 
     menu:
         'Odejdi.{#deionarra_s48_r6154}' if deionarraLogic.r6154_condition():
@@ -1034,7 +1034,7 @@ label deionarra_s48: # from 33.5 39.0 39.1
 
 # s49 # say63356
 label deionarra_s49: # - # IF WEIGHT #3 ~  Global("Deionarra","GLOBAL",0) Global("Current_Area","GLOBAL",1203)
-    nr 'Vidíš před sebou překvapivě krásnou spektrální formu; má dlouhé, uvolněné vlasy, a její šaty vypadají, jako by se chvěly nějakým éterickým vánkem. Její oči spočinuly na tobě, a ty získáváš cizí nesouvislý pocit, jako kdyby jsi se díval do několika párů očí najednou.{#deionarra_s49_}'
+    nr 'Vidíš před sebou překvapivě krásnou spektrální formu; má dlouhé, uvolněné vlasy, a její šaty vypadají, jako by se chvěly nějakým éterickým vánkem. Její oči spočinuly na tobě, a ty získáváš cizí nesouvislý pocit, jako kdyby jsi se díval do několika párů očí najednou.{#deionarra_s49_1}'
 
     menu:
         '"Ty jsi Deionarra…?"{#deionarra_s49_r63357}':
@@ -1044,7 +1044,7 @@ label deionarra_s49: # - # IF WEIGHT #3 ~  Global("Deionarra","GLOBAL",0) Global
 
 # s50 # say63358
 label deionarra_s50: # - # IF WEIGHT #4 ~  GlobalGT("Deionarra","GLOBAL",0) Global("Current_Area","GLOBAL",1203)
-    nr 'Před tebou je spektrální forma Deionarry; její šaty vypadají, jako by se chvěly nějakým éterickým vánkem. Její oči spočinuly na tobě, a ty získáváš cizí nesouvislý pocit, jako kdyby jsi se díval do několika párů očí najednou.{#deionarra_s50_}'
+    nr 'Před tebou je spektrální forma Deionarry; její šaty vypadají, jako by se chvěly nějakým éterickým vánkem. Její oči spočinuly na tobě, a ty získáváš cizí nesouvislý pocit, jako kdyby jsi se díval do několika párů očí najednou.{#deionarra_s50_1}'
 
     menu:
         '"Deionarro…?"{#deionarra_s50_r63359}':
@@ -1054,7 +1054,7 @@ label deionarra_s50: # - # IF WEIGHT #4 ~  GlobalGT("Deionarra","GLOBAL",0) Glob
 
 # s51 # say63360
 label deionarra_s51: # from 49.0 50.0
-    nr '"Má Lásko, konečně jsem tě *našla*… Hledala jsem tě od té doby, co jsi byl rozdělen krystalem - tato pevnost se rozpíná na stovkách mil, a já jsem se bála, že jsi pro mne ztracený." Její strašidelné oči si tě změřily, hledaje na tvém těle nová zranění. "Jsi v pořádku?"{#deionarra_s51_}'
+    nr '"Má Lásko, konečně jsem tě *našla*… Hledala jsem tě od té doby, co jsi byl rozdělen krystalem - tato pevnost se rozpíná na stovkách mil, a já jsem se bála, že jsi pro mne ztracený." Její strašidelné oči si tě změřily, hledaje na tvém těle nová zranění. "Jsi v pořádku?"{#deionarra_s51_1}'
 
     menu:
         '"Myslím, že ano - krystal mne rozdělil, ale jsem zase jeden. Avšak teď jsem zde uvězněn."{#deionarra_s51_r63362}':
@@ -1064,14 +1064,14 @@ label deionarra_s51: # from 49.0 50.0
 
 # s52 # say63363
 label deionarra_s52: # from 51.0
-    nr '"Mám podezření, že tvé uvěznění zde bylo skutečným účelem krystalu. Ale to není žádná překážka pro někoho jako jsem já." Zavřela oči. "Mé oči toho mnoho spatřily, a sály pevnosti znám velmi dobře."{#deionarra_s52_}'
+    nr '"Mám podezření, že tvé uvěznění zde bylo skutečným účelem krystalu. Ale to není žádná překážka pro někoho jako jsem já." Zavřela oči. "Mé oči toho mnoho spatřily, a sály pevnosti znám velmi dobře."{#deionarra_s52_1}'
 
     jump deionarra_s53
 
 
 # s53 # say63364
 label deionarra_s53: # from 52.0 58.0 59.0
-    nr '"Pokud jsi zde uvězněn, má Lásko, podívám se, jak tě vysvobodit. Kam chceš jít?"{#deionarra_s53_}'
+    nr '"Pokud jsi zde uvězněn, má Lásko, podívám se, jak tě vysvobodit. Kam chceš jít?"{#deionarra_s53_1}'
 
     menu:
         '"Chci najít svého protivníka a porazit ho."{#deionarra_s53_r63365}':
@@ -1097,7 +1097,7 @@ label deionarra_s53: # from 52.0 58.0 59.0
 
 # s54 # say63370
 label deionarra_s54: # from 53.0 53.1 53.2 53.3
-    nr '"Jak si přeješ, Má Lásko." Natáhla ruku. "Dotkni se mé ruky, a stěny této pevnosti již více stěny nebudou."{#deionarra_s54_}'
+    nr '"Jak si přeješ, Má Lásko." Natáhla ruku. "Dotkni se mé ruky, a stěny této pevnosti již více stěny nebudou."{#deionarra_s54_1}'
 
     menu:
         'Dotkni se její ruky…{#deionarra_s54_r63371}' if deionarraLogic.r63371_condition():
@@ -1113,7 +1113,7 @@ label deionarra_s54: # from 53.0 53.1 53.2 53.3
 
 # s55 # say63372
 label deionarra_s55: # from 53.4
-    nr '"O čem to mluvíš?"{#deionarra_s55_}'
+    nr '"O čem to mluvíš?"{#deionarra_s55_1}'
 
     menu:
         'Pravda: "Když jsem tě přivedl do této pevnosti, bylo mým záměrem, abys zde zemřela. Potřeboval jsem někoho, kdo by tady zůstal, aby mohl sloužit jako spojení s tímto místem. Já vím, že jsi mne tak moc milovala, že tvá láska odvrátí smrt a dovolí ti stát se duchem. A proto tu teď trpíš."{#deionarra_s55_r63373}':
@@ -1129,7 +1129,7 @@ label deionarra_s55: # from 53.4
 
 # s56 # say63375
 label deionarra_s56: # from 55.0
-    nr 'Zatímco mluvíš, zůstává tvář Deionarry nehybná jako maska.{#deionarra_s56_}'
+    nr 'Zatímco mluvíš, zůstává tvář Deionarry nehybná jako maska.{#deionarra_s56_1}'
 
     menu:
         'Lež: "Je mi líto Deionarro."{#deionarra_s56_r63376}':
@@ -1149,7 +1149,7 @@ label deionarra_s56: # from 55.0
 
 # s57 # say63379
 label deionarra_s57: # from 56.0 56.1 56.2
-    nr '"*Miluješ* mne? Pokud řekneš ano, má Lásko, pak na ničem co se stalo nezáleží."{#deionarra_s57_}'
+    nr '"*Miluješ* mne? Pokud řekneš ano, má Lásko, pak na ničem co se stalo nezáleží."{#deionarra_s57_1}'
 
     menu:
         'Lež: "Samozřejmě tě miluji. Dokonce ani smrt nemůže zničit pouto mezi námi."{#deionarra_s57_r63380}':
@@ -1170,7 +1170,7 @@ label deionarra_s57: # from 56.0 56.1 56.2
 
 # s58 # say63383
 label deionarra_s58: # from 55.1 57.0 57.1
-    nr '"Pak ti pomohu, má Lásko. Řekni mi jak ti mohu pomoci, a já to udělám."{#deionarra_s58_}'
+    nr '"Pak ti pomohu, má Lásko. Řekni mi jak ti mohu pomoci, a já to udělám."{#deionarra_s58_1}'
 
     menu:
         '"Jsem zde uvězněn. Můžeš mi pomoci uniknout?"{#deionarra_s58_r63384}':
@@ -1181,7 +1181,7 @@ label deionarra_s58: # from 55.1 57.0 57.1
 
 # s59 # say63385
 label deionarra_s59: # from 57.2
-    nr '"Pak… tohle bude konec věcí mezi námi, má Lásko. Zůstávala jsem zde kvůli tobě - z žádného jiného důvodu. Naposledy ti pomohu, pak pocestuji za Hranici Věčnosti, jak jsem si předsevzala."{#deionarra_s59_}'
+    nr '"Pak… tohle bude konec věcí mezi námi, má Lásko. Zůstávala jsem zde kvůli tobě - z žádného jiného důvodu. Naposledy ti pomohu, pak pocestuji za Hranici Věčnosti, jak jsem si předsevzala."{#deionarra_s59_1}'
 
     menu:
         '"Pak se tě zeptám na poslední věc a odejdu v míru: Jsem zde uvězněn. Můžeš mi pomoci?"{#deionarra_s59_r63386}':
@@ -1191,7 +1191,7 @@ label deionarra_s59: # from 57.2
 
 # s60 # say63387
 label deionarra_s60: # - # IF WEIGHT #6 /* Triggers after states #: 62 even though they appear after this state */ ~  Global("Deionarra","GLOBAL",0) Global("Current_Area","GLOBAL",1200) Global("1200_Cut_Scene_2","GLOBAL",0)
-    nr 'Vidíš překvapivě krásnou spektrální formu; má dlouhé, rozpuštěné vlasy, a její šaty vypadají, jako by se chvěly nějakým éterickým vánkem. Stojí na okraji cesty z černých kamenů a strnule zírá do prázdnoty Sféry.{#deionarra_s60_}'
+    nr 'Vidíš překvapivě krásnou spektrální formu; má dlouhé, rozpuštěné vlasy, a její šaty vypadají, jako by se chvěly nějakým éterickým vánkem. Stojí na okraji cesty z černých kamenů a strnule zírá do prázdnoty Sféry.{#deionarra_s60_1}'
 
     menu:
         '"Kdo jsi?"{#deionarra_s60_r63388}':
@@ -1206,7 +1206,7 @@ label deionarra_s60: # - # IF WEIGHT #6 /* Triggers after states #: 62 even thou
 
 # s61 # say63390
 label deionarra_s61: # - # IF WEIGHT #7 /* Triggers after states #: 62 even though they appear after this state */ ~  GlobalGT("Deionarra","GLOBAL",0) Global("Current_Area","GLOBAL",1200) Global("1200_Cut_Scene_2","GLOBAL",0)
-    nr 'Před tebou je spektrální forma Deionarry; její šaty vypadají, jako by se chvěly nějakým éterickým vánkem. Stojí na okraji cesty z černých kamenů a strnule zírá do prázdnoty Sféry.{#deionarra_s61_}'
+    nr 'Před tebou je spektrální forma Deionarry; její šaty vypadají, jako by se chvěly nějakým éterickým vánkem. Stojí na okraji cesty z černých kamenů a strnule zírá do prázdnoty Sféry.{#deionarra_s61_1}'
 
     menu:
         '"Deionarro…?"{#deionarra_s61_r63391}':
@@ -1221,7 +1221,7 @@ label deionarra_s61: # - # IF WEIGHT #7 /* Triggers after states #: 62 even thou
 
 # s62 # say63393
 label deionarra_s62: # from 60.0 61.0 # IF WEIGHT #5 ~  Global("Current_Area","GLOBAL",1200) Global("1200_Cut_Scene_2","GLOBAL",1)
-    nr '"Má Lásko! *Neměl* bys tu být! Musíš okamžitě odejít!"{#deionarra_s62_}'
+    nr '"Má Lásko! *Neměl* bys tu být! Musíš okamžitě odejít!"{#deionarra_s62_1}'
 
     menu:
         '"Proč? Kdo jsi, duchu… co je tohle za místo?"{#deionarra_s62_r63394}' if deionarraLogic.r63394_condition():
@@ -1235,7 +1235,7 @@ label deionarra_s62: # from 60.0 61.0 # IF WEIGHT #5 ~  Global("Current_Area","G
 
 # s63 # say63396
 label deionarra_s63: # from 62.0 62.1
-    nr '"Tohle je Pevnost Lítosti. Tohle je místo, které drží v zajetí okamžik mé smrti, a já se nemohu vzdálit od jejich síní. Pokud můžeš najít cestu zpět do Sigilu pak *musíš* odejít; pokud zde zůstaneš, má Lásko, zemřeš."{#deionarra_s63_}'
+    nr '"Tohle je Pevnost Lítosti. Tohle je místo, které drží v zajetí okamžik mé smrti, a já se nemohu vzdálit od jejich síní. Pokud můžeš najít cestu zpět do Sigilu pak *musíš* odejít; pokud zde zůstaneš, má Lásko, zemřeš."{#deionarra_s63_1}'
 
     menu:
         '"Jsem nesmrtelný, duchu; tvé varování oceňuji, ale smrt mi teď  dělá nejmenší starosti."{#deionarra_s63_r63397}' if deionarraLogic.r63397_condition():
@@ -1253,7 +1253,7 @@ label deionarra_s63: # from 62.0 62.1
 
 # s64 # say63400
 label deionarra_s64: # from 63.0 63.1 63.2
-    nr 'Potřásla hlavou. "Ne, má Lásko. V této Pevnosti je něco - obal, který ji obklopuje ji odřezává od zbytku Sfér. Je to obal, který funguje jako zábrana k tvojí nesmrtelnosti."{#deionarra_s64_}'
+    nr 'Potřásla hlavou. "Ne, má Lásko. V této Pevnosti je něco - obal, který ji obklopuje ji odřezává od zbytku Sfér. Je to obal, který funguje jako zábrana k tvojí nesmrtelnosti."{#deionarra_s64_1}'
 
     menu:
         '"Skořápka? Sloup mi řekl, že pokud zemřu, zemře za mne někdo jiný. A pokud se nenajde nikdo, kdo by zemřel za mne -"{#deionarra_s64_r63401}' if deionarraLogic.r63401_condition():
@@ -1267,7 +1267,7 @@ label deionarra_s64: # from 63.0 63.1 63.2
 
 # s65 # say63403
 label deionarra_s65: # from 64.1
-    nr '"Jak jsem se zde snažila udržet vzhůru, dozvěděla jsem se o povaze tvé nesmrtelnosti, má Lásko. Je to věc, která touží po životech jiných. V okamžiku tvé smrti, si vyžádá jinou živou věc z tvého okolí, umožňujíce ti žít. Duše, které zemře místo tebe je přenesena sem, do Pevnosti, jako stín. Věřím, že tato skořápka zabraňuje tvé nesmrtelnosti najít jinou oběť."{#deionarra_s65_}'
+    nr '"Jak jsem se zde snažila udržet vzhůru, dozvěděla jsem se o povaze tvé nesmrtelnosti, má Lásko. Je to věc, která touží po životech jiných. V okamžiku tvé smrti, si vyžádá jinou živou věc z tvého okolí, umožňujíce ti žít. Duše, které zemře místo tebe je přenesena sem, do Pevnosti, jako stín. Věřím, že tato skořápka zabraňuje tvé nesmrtelnosti najít jinou oběť."{#deionarra_s65_1}'
 
     menu:
         '"Takže… když zemřu, zemře místo mne někdo jiný. A pokud nenajde jinou živou věc, která by zemřela *pro* mne…"{#deionarra_s65_r63404}':
@@ -1277,7 +1277,7 @@ label deionarra_s65: # from 64.1
 
 # s66 # say63405
 label deionarra_s66: # from 64.0 65.0
-    nr '"Pak jestliže zde zemřeš, je to konec, protože zde není nic *živého* - takže musíš být opatrný. Vrať se do Sigilu a opusť tohle prokleté místo!"{#deionarra_s66_}'
+    nr '"Pak jestliže zde zemřeš, je to konec, protože zde není nic *živého* - takže musíš být opatrný. Vrať se do Sigilu a opusť tohle prokleté místo!"{#deionarra_s66_1}'
 
     menu:
         '"Ale - moji spojenci jsou tady: a to znamená, že jsou uvnitř této skořápky. Co se *jim* stane, když zemřu?"{#deionarra_s66_r63406}' if deionarraLogic.r63406_condition():
@@ -1299,7 +1299,7 @@ label deionarra_s66: # from 64.0 65.0
 
 # s67 # say63410
 label deionarra_s67: # from 66.0 66.1
-    nr '"Má Lásko, pokud jsi s sebou přivedl *cokoliv*, co s tebou tady žije, potom to je v příšerném nebezpečí - od obojího od stínů a od tebe. Kdybys tady zemřel, tvá nesmrtelnost bude pátrat po něčem živém zavřeném v této Pevnosti, a *to* bude to, co tady zemře. Musíš odtud odejít, hned!"{#deionarra_s67_}'
+    nr '"Má Lásko, pokud jsi s sebou přivedl *cokoliv*, co s tebou tady žije, potom to je v příšerném nebezpečí - od obojího od stínů a od tebe. Kdybys tady zemřel, tvá nesmrtelnost bude pátrat po něčem živém zavřeném v této Pevnosti, a *to* bude to, co tady zemře. Musíš odtud odejít, hned!"{#deionarra_s67_1}'
 
     menu:
         '"Nemohu *jít* zpátky. Takže můžeš mi říci *něco* jiného co by mi mohlo pomoci? Co čeká uvnitř pevnosti?"{#deionarra_s67_r63411}':
@@ -1309,7 +1309,7 @@ label deionarra_s67: # from 66.0 66.1
 
 # s68 # say63412
 label deionarra_s68: # from 66.2 66.3 67.0
-    nr '"Uvnitř Pevnosti je nepřirozená temnota, má Lásko, pouze stíny těch kteří zemřeli na tvém místě. Krmí je energie této Sféry, a jejich nenávist k tobě převažuje nad všemi těmi důvody. Nenechají tě odejít." Vrhla letmý pohled na zdi Pevnosti. "*Nevstupuj*, prosím tě!"{#deionarra_s68_}'
+    nr '"Uvnitř Pevnosti je nepřirozená temnota, má Lásko, pouze stíny těch kteří zemřeli na tvém místě. Krmí je energie této Sféry, a jejich nenávist k tobě převažuje nad všemi těmi důvody. Nenechají tě odejít." Vrhla letmý pohled na zdi Pevnosti. "*Nevstupuj*, prosím tě!"{#deionarra_s68_1}'
 
     menu:
         '"Ale - moji spojenci jsou tam uvnitř. Nemohu je opustit. Nenapadá tě, kde by mohli být?"{#deionarra_s68_r63413}' if deionarraLogic.r63413_condition():
@@ -1328,7 +1328,7 @@ label deionarra_s68: # from 66.2 66.3 67.0
 
 # s69 # say63416
 label deionarra_s69: # from 68.0 68.1
-    nr '"Pokud jsi sem přivedl jiné, pak od tebe byli odvrženi, když jste přišli - to je povaha tohoto místa, rozdělit živé věci… pak je zabít." Vypadá rozrušeně. "Pevnost je věc mnoha mil - nalézt tvé přátele bude náročné."{#deionarra_s69_}'
+    nr '"Pokud jsi sem přivedl jiné, pak od tebe byli odvrženi, když jste přišli - to je povaha tohoto místa, rozdělit živé věci… pak je zabít." Vypadá rozrušeně. "Pevnost je věc mnoha mil - nalézt tvé přátele bude náročné."{#deionarra_s69_1}'
 
     menu:
         '"Musím je najít. V této věci nemám na vybranou."{#deionarra_s69_r63417}':
@@ -1339,7 +1339,7 @@ label deionarra_s69: # from 68.0 68.1
 
 # s70 # say63418
 label deionarra_s70: # from 75.0
-    nr '"Ještě jedna věc…" Deionarra se odmlčela, jako kdyby se pokoušela zachytit letmou vzpomínku. "Uvnitř… uvnitř místnosti jsou veliké hodiny…" Její hlas se ustálil, zjistěl. "Hodiny, se kterými jsi již jednou mluvil, když jsi měl klič k útěku z této místnosti… když jsi tu byl jednou uvězněn předtím." Podívala se na tebe. "Já vím, že tě nemohu zdržovat na tvé cestě, má Lásko -- budu tě sledovat a pomohu ti, pokud budu moci."{#deionarra_s70_}'
+    nr '"Ještě jedna věc…" Deionarra se odmlčela, jako kdyby se pokoušela zachytit letmou vzpomínku. "Uvnitř… uvnitř místnosti jsou veliké hodiny…" Její hlas se ustálil, zjistěl. "Hodiny, se kterými jsi již jednou mluvil, když jsi měl klič k útěku z této místnosti… když jsi tu byl jednou uvězněn předtím." Podívala se na tebe. "Já vím, že tě nemohu zdržovat na tvé cestě, má Lásko -- budu tě sledovat a pomohu ti, pokud budu moci."{#deionarra_s70_1}'
 
     menu:
         '"Přinesl jsem ti tvůj prsten, Deionarro. Našel jsem tvůj odkaz pro mne."{#deionarra_s70_r63419}' if deionarraLogic.r63419_condition():
@@ -1358,7 +1358,7 @@ label deionarra_s70: # from 75.0
 
 # s71 # say63422
 label deionarra_s71: # from 70.0
-    nr '"Prsten ještě drží část mne v sobě, má Lásko. Když ho neseš, neseš s sebou moje srdce." Zavřela na chvíli oči, a najednou cítíš, jak tebou prochází teplo. Deionarra otevřela oči a usmála se. "Věděla jsem, že se ke mně vrátíš, když ho budeš mít u sebe. Nos ho teď s mým požehnáním, a drž si ho blízko svého srdce. Přes něho tě budu chránit."{#deionarra_s71_}'
+    nr '"Prsten ještě drží část mne v sobě, má Lásko. Když ho neseš, neseš s sebou moje srdce." Zavřela na chvíli oči, a najednou cítíš, jak tebou prochází teplo. Deionarra otevřela oči a usmála se. "Věděla jsem, že se ke mně vrátíš, když ho budeš mít u sebe. Nos ho teď s mým požehnáním, a drž si ho blízko svého srdce. Přes něho tě budu chránit."{#deionarra_s71_1}'
 
     menu:
         '"Máš mé díky, Deionarro. Teď musím jít."{#deionarra_s71_r63423}' if deionarraLogic.r63423_condition():
@@ -1368,14 +1368,14 @@ label deionarra_s71: # from 70.0
 
 # s72 # say66912
 label deionarra_s72: # from 27.1
-    nr '"Ty… já…nemůžu…" Náhle se zarazila a pak promluvila pomalu, opatrně, jakoby ji ta slova děsila. "Pravda je tato: Ty jsi ten, jenž umírá mnohou smrtí. Tyto smrti ti daly znalost všech smrtelných věcí a v tvých dlaních leží jiskra života… a smrti. Ti, kdož zemřou blízko tebe, si uchovají jiskřičku života, kterou ty můžeš vytáhnout na povrch a vdechnout ji zpět do jejich těla…"{#deionarra_s72_}'
+    nr '"Ty… já…nemůžu…" Náhle se zarazila a pak promluvila pomalu, opatrně, jakoby ji ta slova děsila. "Pravda je tato: Ty jsi ten, jenž umírá mnohou smrtí. Tyto smrti ti daly znalost všech smrtelných věcí a v tvých dlaních leží jiskra života… a smrti. Ti, kdož zemřou blízko tebe, si uchovají jiskřičku života, kterou ty můžeš vytáhnout na povrch a vdechnout ji zpět do jejich těla…"{#deionarra_s72_1}'
 
     jump deionarra_s73
 
 
 # s73 # say66913
 label deionarra_s73: # from 72.0
-    nr 'Jak Deionarra promluvila tato slova, v hlavě se ti objevil nepříjemný pocit… máš nutkání podívat se na své ruce. Když jsi je zvedl a *podíval* se na ně, VIDÍŠ, jak krev protéká tvou paží, rozlévá se do svalů a dává sílu tvým kostem…{#deionarra_s73_}'
+    nr 'Jak Deionarra promluvila tato slova, v hlavě se ti objevil nepříjemný pocit… máš nutkání podívat se na své ruce. Když jsi je zvedl a *podíval* se na ně, VIDÍŠ, jak krev protéká tvou paží, rozlévá se do svalů a dává sílu tvým kostem…{#deionarra_s73_1}'
 
     menu:
         '"Co…"{#deionarra_s73_r66914}':
@@ -1386,7 +1386,7 @@ label deionarra_s73: # from 72.0
 
 # s74 # say66915
 label deionarra_s74: # from 73.0
-    nr 'A náhle víš, že Deionarra má *pravdu*. Vzpomněl sis, jak rozdmýchat vyhaslou jiskřičku života v těle a vytáhnout ji na povrch. Potěšilo tě to, ale zároveň ses i zhrozil. POZNÁMKA: Vzpomněl sis, jak oživit jiné ze smrti. Abys mohl použít tuto schopnost, zvol tlačítko Zvláštní Schopnosti v Rychlém menu. Můžeš ji použít jenom na členy skupiny, kteří zemřou v tvé přítomnosti - nebude to fungovat na nikoho, kdo s tebou necestuje a *nebude* to fungovat na členy skupiny, které z party odstraníš poté, co zemřou.{#deionarra_s74_}'
+    nr 'A náhle víš, že Deionarra má *pravdu*. Vzpomněl sis, jak rozdmýchat vyhaslou jiskřičku života v těle a vytáhnout ji na povrch. Potěšilo tě to, ale zároveň ses i zhrozil. POZNÁMKA: Vzpomněl sis, jak oživit jiné ze smrti. Abys mohl použít tuto schopnost, zvol tlačítko Zvláštní Schopnosti v Rychlém menu. Můžeš ji použít jenom na členy skupiny, kteří zemřou v tvé přítomnosti - nebude to fungovat na nikoho, kdo s tebou necestuje a *nebude* to fungovat na členy skupiny, které z party odstraníš poté, co zemřou.{#deionarra_s74_1}'
 
     menu:
         '"Já… já… Mám pár dalších otázek…"{#deionarra_s74_r66916}':
@@ -1396,6 +1396,6 @@ label deionarra_s74: # from 73.0
 
 # s75 # say68114
 label deionarra_s75: # from 68.2 69.0
-    nr '"Velmi dobře má, lásko… pokud ale chceš jít dále, musíš vědět toto -  za vchodem do Pevnosti je velká komnata, ve které je bezpočet stínů. Musíš se pohybovat rychle a nenechat je, aby tě obklíčili, jinak tě určitě zabijí!"{#deionarra_s75_}'
+    nr '"Velmi dobře má, lásko… pokud ale chceš jít dále, musíš vědět toto -  za vchodem do Pevnosti je velká komnata, ve které je bezpočet stínů. Musíš se pohybovat rychle a nenechat je, aby tě obklíčili, jinak tě určitě zabijí!"{#deionarra_s75_1}'
 
     jump deionarra_s70

@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say35242
 label zf1148_s0: # - # IF ~  True()
-    nr 'Die Haut dieser weiblichen Leiche ist über und über mit komplizierten Mustern tätowiert. Die Haut ihrer Braue ist zurückgepellt worden, so daß die Zahl "1148" in den Schädel gemeißelt werden konnte. Ihr Mund wurde mit dicken, rohen Stichen versiegelt.{#zf1148_s0_}'
+    nr 'Die Haut dieser weiblichen Leiche ist über und über mit komplizierten Mustern tätowiert. Die Haut ihrer Braue ist zurückgepellt worden, so daß die Zahl "1148" in den Schädel gemeißelt werden konnte. Ihr Mund wurde mit dicken, rohen Stichen versiegelt.{#zf1148_s0_1}'
 
     menu:
         '"Sag mal… hast du nachher schon was vor?"{#zf1148_s0_r35243}' if zf1148Logic.r35243_condition():
@@ -58,7 +58,7 @@ label zf1148_s0: # - # IF ~  True()
 
 # s1 # say35244
 label zf1148_s1: # from 0.0 0.1 0.2
-    nr 'Die Leiche starrt dich weiter an.{#zf1148_s1_}'
+    nr 'Die Leiche starrt dich weiter an.{#zf1148_s1_1}'
 
     menu:
         '"Dann leb wohl."{#zf1148_s1_r35245}' if zf1148Logic.r35245_condition():
@@ -76,7 +76,7 @@ label zf1148_s1: # from 0.0 0.1 0.2
 
 # s2 # say35263
 label zf1148_s2: # from 0.3
-    nr 'Diese Leiche antwortet nicht. Es sieht so aus, als ob sie schon zu tot ist, um noch auf irgendeine deiner Fragen zu antworten.{#zf1148_s2_}'
+    nr 'Diese Leiche antwortet nicht. Es sieht so aus, als ob sie schon zu tot ist, um noch auf irgendeine deiner Fragen zu antworten.{#zf1148_s2_1}'
 
     menu:
         '"Dann leb wohl."{#zf1148_s2_r35264}' if zf1148Logic.r35264_condition():
@@ -94,6 +94,6 @@ label zf1148_s2: # from 0.3
 
 # s3 # say35273
 label zf1148_s3: # - # IF ~  False()
-    nr 'Diese Leiche antwortet nicht. Es sieht so aus, als ob sie schon zu tot ist, um noch auf irgendeine deiner Fragen zu antworten.{#zf1148_s3_}'
+    nr 'Diese Leiche antwortet nicht. Es sieht so aus, als ob sie schon zu tot ist, um noch auf irgendeine deiner Fragen zu antworten.{#zf1148_s3_1}'
 
     menu:

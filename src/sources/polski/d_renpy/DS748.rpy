@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say35383
 label s748_s0: # - # IF ~  True()
-    nr 'Szkielet ten - numer "748", wedle numeru wyrytego na jego czole - jest dziwaczny o tyle, że niektóre jego zęby wyglądają na sztuczne, wykonane z czerwonawo-brązowego kamienia. Oczywiście nie są cenne, w przeciwnym bowiem razie dozorcy by je usunęli.{#s748_s0_}'
+    nr 'Szkielet ten - numer "748", wedle numeru wyrytego na jego czole - jest dziwaczny o tyle, że niektóre jego zęby wyglądają na sztuczne, wykonane z czerwonawo-brązowego kamienia. Oczywiście nie są cenne, w przeciwnym bowiem razie dozorcy by je usunęli.{#s748_s0_1}'
 
     menu:
         '"Przepraszam, widziałeś może jakieś przechodzące szkielety?"{#s748_s0_r35384}' if s748Logic.r35384_condition():
@@ -90,7 +90,7 @@ label s748_s0: # - # IF ~  True()
 
 # s1 # say35385
 label s748_s1: # from 0.0 0.1 0.2 0.3
-    nr 'Szkielet nie odpowiada.{#s748_s1_}'
+    nr 'Szkielet nie odpowiada.{#s748_s1_1}'
 
     menu:
         '"Świetnie się z tobą gadało, Kostuszku. Bądź zdrów."{#s748_s1_r35386}' if s748Logic.r35386_condition():
@@ -109,7 +109,7 @@ label s748_s1: # from 0.0 0.1 0.2 0.3
 
 # s2 # say35411
 label s748_s2: # from 0.4
-    nr 'Szkielet nie odpowiada. Wygląda na to, że jest w zbyt daleko posuniętym stadium rozkładu, aby odpowiedzieć na twoje pytania.{#s748_s2_}'
+    nr 'Szkielet nie odpowiada. Wygląda na to, że jest w zbyt daleko posuniętym stadium rozkładu, aby odpowiedzieć na twoje pytania.{#s748_s2_1}'
 
     menu:
         'Zostaw szkielet w spokoju.{#s748_s2_r35412}' if s748Logic.r35412_condition():
@@ -128,7 +128,7 @@ label s748_s2: # from 0.4
 
 # s3 # say35416
 label s748_s3: # from 0.5
-    nr 'Ktoś związał kości tego szkieletu skórzanymi paskami tak, że teraz przypominają muskuły i ścięgna. Paski te są przymocowane do żelaznych nitów wetkniętych w stawy kościotrupa. Wygląda na to, że już swoje odpracował: wiele kości jest połamanych, a liczne pęknięcia wypełniono cuchnącym klejem.{#s748_s3_}'
+    nr 'Ktoś związał kości tego szkieletu skórzanymi paskami tak, że teraz przypominają muskuły i ścięgna. Paski te są przymocowane do żelaznych nitów wetkniętych w stawy kościotrupa. Wygląda na to, że już swoje odpracował: wiele kości jest połamanych, a liczne pęknięcia wypełniono cuchnącym klejem.{#s748_s3_1}'
 
     menu:
         'Spróbuj wyciągnąć nity ze stawów szkieletu.{#s748_s3_r35417}' if s748Logic.r35417_condition():
@@ -176,7 +176,7 @@ label s748_s3: # from 0.5
 
 # s4 # say35422
 label s748_s4: # from 0.7 0.10 3.1 3.4
-    nr 'Ciągniesz za żelazne nity, ale nie masz na tyle siły, żeby je wyciągnąć. Wygląda na to, że ktoś wbił je bardzo solidnie.{#s748_s4_}'
+    nr 'Ciągniesz za żelazne nity, ale nie masz na tyle siły, żeby je wyciągnąć. Wygląda na to, że ktoś wbił je bardzo solidnie.{#s748_s4_1}'
 
     menu:
         '"Może udałoby mi się je wyciągnąć, gdybym miał odpowiednie narzędzie… hmm. Może tu jeszcze wrócę, Kostuszku."{#s748_s4_r35423}' if s748Logic.r35423_condition():
@@ -208,7 +208,7 @@ label s748_s4: # from 0.7 0.10 3.1 3.4
 
 # s5 # say35430
 label s748_s5: # from 0.8 0.11 3.2 3.5
-    nr 'Z całej siły ciągniesz za żelazne nity i po chwili wyrywasz je ze stawów. Szkielet przewraca się na ziemię, a niektóre jego kości wciąż podrygują.{#s748_s5_}'
+    nr 'Z całej siły ciągniesz za żelazne nity i po chwili wyrywasz je ze stawów. Szkielet przewraca się na ziemię, a niektóre jego kości wciąż podrygują.{#s748_s5_1}'
 
     menu:
         '"Przykro mi, Kostuszku…"{#s748_s5_r35431}':
@@ -219,7 +219,7 @@ label s748_s5: # from 0.8 0.11 3.2 3.5
 
 # s6 # say35433
 label s748_s6: # from 0.9 0.12 3.3 3.6
-    nr 'Używając łomu, wyciągasz nity ze stawów szkieletu. Ten przewraca się na ziemię, a niektóre jego kości wciąż podrygują.{#s748_s6_}'
+    nr 'Używając łomu, wyciągasz nity ze stawów szkieletu. Ten przewraca się na ziemię, a niektóre jego kości wciąż podrygują.{#s748_s6_1}'
 
     menu:
         '"Przykro mi, Kostuszku…"{#s748_s6_r35434}':
@@ -230,6 +230,6 @@ label s748_s6: # from 0.9 0.12 3.3 3.6
 
 # s7 # say35459
 label s748_s7: # - # IF ~  False()
-    nr 'Szkielet nie odpowiada. Wygląda na to, że jest w zbyt daleko posuniętym stadium rozkładu, aby odpowiedzieć na twoje pytania.{#s748_s7_}'
+    nr 'Szkielet nie odpowiada. Wygląda na to, że jest w zbyt daleko posuniętym stadium rozkładu, aby odpowiedzieć na twoje pytania.{#s748_s7_1}'
 
     menu:

@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say34931
 label zm396_s0: # - # IF ~  HasItem("Bandage","ZM396")
-    nr 'Ten trup włóczy się od płyty do płyty, bandażując leżące tam ciała. Na lewej skroni ma wyryty numer "396", a jego usta są zaszyte. Dostrzegasz, że truposz ma w ręku zwój bandaży… a bandaże wyglądają na zdatne do użycia.{#zm396_s0_}'
+    nr 'Ten trup włóczy się od płyty do płyty, bandażując leżące tam ciała. Na lewej skroni ma wyryty numer "396", a jego usta są zaszyte. Dostrzegasz, że truposz ma w ręku zwój bandaży… a bandaże wyglądają na zdatne do użycia.{#zm396_s0_1}'
 
     menu:
         '"Czy mogę pożyczyć te bandaże?"{#zm396_s0_r34932}' if zm396Logic.r34932_condition():
@@ -47,7 +47,7 @@ label zm396_s0: # - # IF ~  HasItem("Bandage","ZM396")
 
 # s1 # say34933
 label zm396_s1: # from 0.0 0.1 0.3 4.0 4.1 4.2
-    nr 'Trup wciąż się w ciebie wpatruje.{#zm396_s1_}'
+    nr 'Trup wciąż się w ciebie wpatruje.{#zm396_s1_1}'
 
     menu:
         'Spróbuj wziąć bandaże od zombiaka.{#zm396_s1_r34934}' if zm396Logic.r34934_condition():
@@ -62,7 +62,7 @@ label zm396_s1: # from 0.0 0.1 0.3 4.0 4.1 4.2
 
 # s2 # say34938
 label zm396_s2: # from 0.4 4.3
-    nr 'Trup nie rusza się. Wygląda na to, że jest w zbyt daleko posuniętym stadium rozkładu, aby odpowiedzieć na twoje pytania.{#zm396_s2_}'
+    nr 'Trup nie rusza się. Wygląda na to, że jest w zbyt daleko posuniętym stadium rozkładu, aby odpowiedzieć na twoje pytania.{#zm396_s2_1}'
 
     menu:
         'Zostaw truposza w spokoju.{#zm396_s2_r34939}':
@@ -72,7 +72,7 @@ label zm396_s2: # from 0.4 4.3
 
 # s3 # say45108
 label zm396_s3: # from 0.2 1.0
-    nr 'Zręcznym ruchem ręki wyjmujesz zwój bandaży z dłoni truposza. Nie wydaje się, aby cokolwiek zauważył; dalej łazi i bandażuje zwłoki.{#zm396_s3_}'
+    nr 'Zręcznym ruchem ręki wyjmujesz zwój bandaży z dłoni truposza. Nie wydaje się, aby cokolwiek zauważył; dalej łazi i bandażuje zwłoki.{#zm396_s3_1}'
 
     menu:
         'Ponownie zbadaj truposza.{#zm396_s3_r45109}':
@@ -86,7 +86,7 @@ label zm396_s3: # from 0.2 1.0
 
 # s4 # say45111
 label zm396_s4: # from 3.0 # IF ~  !HasItem("Bandage","ZM396")
-    nr 'Ten trup włóczy się od płyty do płyty, bandażując ciała tam leżące. W dalszym ciągu wykonuje swoje obowiązki, nawet bez bandaży. Na lewej skroni ma wyryty numer "396", a jego usta są zaszyte.{#zm396_s4_}'
+    nr 'Ten trup włóczy się od płyty do płyty, bandażując ciała tam leżące. W dalszym ciągu wykonuje swoje obowiązki, nawet bez bandaży. Na lewej skroni ma wyryty numer "396", a jego usta są zaszyte.{#zm396_s4_1}'
 
     menu:
         '"Przepraszam, że wziąłem od ciebie te bandaże. Po prostu mnie się bardziej przydadzą niż tym zwłokom."{#zm396_s4_r45112}' if zm396Logic.r45112_condition():

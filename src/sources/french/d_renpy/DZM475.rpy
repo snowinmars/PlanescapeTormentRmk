@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say6584
 label zm475_s0: # - # IF ~  True()
-    nr 'La tête légèrement difforme de ce cadavre semble être maintenue grâce à des bandes de métal étroites boulonnées directement sur le crâne. Une plaque de fer rouillée placée sur son œil gauche porte le numéro „475“. Ses lèvres sont cousues, et il empeste la lotion d„embaumement.{#zm475_s0_}'
+    nr 'La tête légèrement difforme de ce cadavre semble être maintenue grâce à des bandes de métal étroites boulonnées directement sur le crâne. Une plaque de fer rouillée placée sur son œil gauche porte le numéro „475“. Ses lèvres sont cousues, et il empeste la lotion d„embaumement.{#zm475_s0_1}'
 
     menu:
         '"Alors… Tu as vu quelque chose d„intéressant ?"{#zm475_s0_r6587}' if zm475Logic.r6587_condition():
@@ -42,7 +42,7 @@ label zm475_s0: # - # IF ~  True()
 
 # s1 # say6585
 label zm475_s1: # from 0.0 0.1 0.2
-    nr 'Le cadavre continue à te fixer.{#zm475_s1_}'
+    nr 'Le cadavre continue à te fixer.{#zm475_s1_1}'
 
     menu:
         'Laisse le cadavre tranquille.{#zm475_s1_r6593}':
@@ -52,7 +52,7 @@ label zm475_s1: # from 0.0 0.1 0.2
 
 # s2 # say6586
 label zm475_s2: # from 0.3
-    nr 'Le cadavre ne répond pas. Il semble qu„il soit trop absent pour répondre à tes questions.{#zm475_s2_}'
+    nr 'Le cadavre ne répond pas. Il semble qu„il soit trop absent pour répondre à tes questions.{#zm475_s2_1}'
 
     menu:
         'Laisse le cadavre tranquille.{#zm475_s2_r6594}':

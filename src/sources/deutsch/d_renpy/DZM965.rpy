@@ -11,14 +11,14 @@ init 10 python:
 
 # s0 # say34920
 label zm965_s0: # - # IF ~  NearbyDialog("Dmorte")
-    nr 'Diese Leiche trampelt einen dreieckigen Pfad entlang. Wenn sie eine der Ecken des Dreiecks erreicht, hält sie kurz inne, dreht sich dann um, und torkelt zur nächsten Ecke. Auf die Seite ihres Schädels ist "965" tätowiert. Als du herankommst, hält sie an und starrt dich an.{#zm965_s0_}'
+    nr 'Diese Leiche trampelt einen dreieckigen Pfad entlang. Wenn sie eine der Ecken des Dreiecks erreicht, hält sie kurz inne, dreht sich dann um, und torkelt zur nächsten Ecke. Auf die Seite ihres Schädels ist "965" tätowiert. Als du herankommst, hält sie an und starrt dich an.{#zm965_s0_1}'
 
     jump morte_s477  # EXTERN
 
 
 # s1 # say34922
 label zm965_s1: # externs morte_s481 morte_s480 # IF ~  !NearbyDialog("Dmorte")
-    nr 'Diese Leiche trampelt einen dreieckigen Pfad entlang. Wenn sie eine der Ecken des Dreiecks erreicht, hält sie kurz inne, dreht sich dann um, und torkelt zur nächsten Ecke. Auf die Seite ihres Schädels ist "965" tätowiert. Als du herankommst, hält sie an und starrt dich an.{#zm965_s1_}'
+    nr 'Diese Leiche trampelt einen dreieckigen Pfad entlang. Wenn sie eine der Ecken des Dreiecks erreicht, hält sie kurz inne, dreht sich dann um, und torkelt zur nächsten Ecke. Auf die Seite ihres Schädels ist "965" tätowiert. Als du herankommst, hält sie an und starrt dich an.{#zm965_s1_1}'
 
     menu:
         '"Also… Warum läufst du immer im Dreieck?"{#zm965_s1_r34923}' if zm965Logic.r34923_condition():
@@ -49,7 +49,7 @@ label zm965_s1: # externs morte_s481 morte_s480 # IF ~  !NearbyDialog("Dmorte")
 
 # s2 # say34927
 label zm965_s2: # from 1.0 1.1 1.2
-    nr 'Die Leiche starrt dich verständnislos an.{#zm965_s2_}'
+    nr 'Die Leiche starrt dich verständnislos an.{#zm965_s2_1}'
 
     menu:
         'Laß die Leiche in Ruhe.{#zm965_s2_r34928}':
@@ -59,7 +59,7 @@ label zm965_s2: # from 1.0 1.1 1.2
 
 # s3 # say45069
 label zm965_s3: # from 1.3
-    nr 'Die Leiche rührt sich nicht. Sie sieht so aus, als sei sie schon ein bißchen zu weit hinüber, um deine Fragen zu beantworten.{#zm965_s3_}'
+    nr 'Die Leiche rührt sich nicht. Sie sieht so aus, als sei sie schon ein bißchen zu weit hinüber, um deine Fragen zu beantworten.{#zm965_s3_1}'
 
     menu:
         'Laß die Leiche in Ruhe.{#zm965_s3_r45075}':

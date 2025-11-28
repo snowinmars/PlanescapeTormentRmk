@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say24575
 label zm569_s0: # - # IF ~  True()
-    nr 'Ten powłóczący nogami trup wygląda tak, jakby nie żył od kilku lat. Skóra wzdłuż czoła odgięła się, odsłaniając kredowo-białą czaszkę. Ktoś wyrył mu numer "569" na odsłoniętej kości.{#zm569_s0_}'
+    nr 'Ten powłóczący nogami trup wygląda tak, jakby nie żył od kilku lat. Skóra wzdłuż czoła odgięła się, odsłaniając kredowo-białą czaszkę. Ktoś wyrył mu numer "569" na odsłoniętej kości.{#zm569_s0_1}'
 
     menu:
         '"Szukam klucza… nie masz go przypadkiem?"{#zm569_s0_r24576}' if zm569Logic.r24576_condition():
@@ -49,7 +49,7 @@ label zm569_s0: # - # IF ~  True()
 
 # s1 # say24577
 label zm569_s1: # from 0.1 0.2 0.3 3.1
-    nr 'Trup wciąż ci się przygląda.{#zm569_s1_}'
+    nr 'Trup wciąż ci się przygląda.{#zm569_s1_1}'
 
     menu:
         '"W takim razie nic to. Żegnaj."{#zm569_s1_r24578}':
@@ -63,7 +63,7 @@ label zm569_s1: # from 0.1 0.2 0.3 3.1
 
 # s2 # say24582
 label zm569_s2: # from 0.4
-    nr 'Truposz nie rusza się. Wygląda na to, że jest w zbyt daleko posuniętym stadium rozkładu, aby odpowiedzieć na twoje pytania.{#zm569_s2_}'
+    nr 'Truposz nie rusza się. Wygląda na to, że jest w zbyt daleko posuniętym stadium rozkładu, aby odpowiedzieć na twoje pytania.{#zm569_s2_1}'
 
     menu:
         'Zostaw truposza w spokoju.{#zm569_s2_r24583}':
@@ -73,7 +73,7 @@ label zm569_s2: # from 0.4
 
 # s3 # say42293
 label zm569_s3: # from 0.5
-    nr 'Nie wydaje się, aby ten trup miał mieć klucz… a i nie wygląda on na kogoś, kto umiałby się nim posłużyć, nawet gdyby go posiadał. Ma połamane palce, jakby ktoś przetrącił mu je młotkiem. Zauważasz też, że jego lewy bark jest mocno zabandażowany… te bandaże są jeszcze zdatne do użytku, tylko wpierw należałoby się pozbyć truposza.{#zm569_s3_}'
+    nr 'Nie wydaje się, aby ten trup miał mieć klucz… a i nie wygląda on na kogoś, kto umiałby się nim posłużyć, nawet gdyby go posiadał. Ma połamane palce, jakby ktoś przetrącił mu je młotkiem. Zauważasz też, że jego lewy bark jest mocno zabandażowany… te bandaże są jeszcze zdatne do użytku, tylko wpierw należałoby się pozbyć truposza.{#zm569_s3_1}'
 
     menu:
         '"Chyba go nie masz… nie wiesz przypadkiem, który to z twoich kościstych przyjaciół ma klucz do wyjścia stąd?"{#zm569_s3_r42294}' if zm569Logic.r42294_condition():

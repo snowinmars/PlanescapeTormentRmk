@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say35050
 label zf626_s0: # - # IF ~  True()
-    nr 'Le côté gauche du visage de cette femme semble s„être enfoncé sous des coups de gourdin, et ses chairs meurtries et boursouflées pendent lamentablement sur son crâne. Le numéro “626„ est cousu sur la joue droite, juste sous l“œil.{#zf626_s0_}'
+    nr 'Le côté gauche du visage de cette femme semble s„être enfoncé sous des coups de gourdin, et ses chairs meurtries et boursouflées pendent lamentablement sur son crâne. Le numéro “626„ est cousu sur la joue droite, juste sous l“œil.{#zf626_s0_1}'
 
     menu:
         '"Hum… sale blessure que t„as là."{#zf626_s0_r35051}' if zf626Logic.r35051_condition():
@@ -58,7 +58,7 @@ label zf626_s0: # - # IF ~  True()
 
 # s1 # say35052
 label zf626_s1: # from 0.0 0.1 0.2
-    nr 'Le cadavre continue de te regarder fixement de son œil valide.{#zf626_s1_}'
+    nr 'Le cadavre continue de te regarder fixement de son œil valide.{#zf626_s1_1}'
 
     menu:
         '"Alors, au revoir."{#zf626_s1_r35053}' if zf626Logic.r35053_condition():
@@ -76,7 +76,7 @@ label zf626_s1: # from 0.0 0.1 0.2
 
 # s2 # say35071
 label zf626_s2: # from 0.3
-    nr 'Ce cadavre ne bouge pas… Comme s„il était déjà trop abîmé pour répondre à tes questions.{#zf626_s2_}'
+    nr 'Ce cadavre ne bouge pas… Comme s„il était déjà trop abîmé pour répondre à tes questions.{#zf626_s2_1}'
 
     menu:
         '"Alors, au revoir."{#zf626_s2_r35072}' if zf626Logic.r35072_condition():
@@ -94,6 +94,6 @@ label zf626_s2: # from 0.3
 
 # s3 # say35081
 label zf626_s3: # - # IF ~  False()
-    nr 'Ce cadavre ne répond pas. Il semble qu„il soit trop absent pour répondre à tes questions.{#zf626_s3_}'
+    nr 'Ce cadavre ne répond pas. Il semble qu„il soit trop absent pour répondre à tes questions.{#zf626_s3_1}'
 
     menu:

@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say6495
 label zm310_s0: # - # IF ~  Global("Oinosian","GLOBAL",0)
-    nr 'Tato oživená mrtvola má sešité rty a do obočí má vyřezané číslo "310"; pach formaldehydu prostupuje oblast kolem ní. Když jí zastoupíš cestu, otáčí své neživé oči na tebe.{#zm310_s0_}'
+    nr 'Tato oživená mrtvola má sešité rty a do obočí má vyřezané číslo "310"; pach formaldehydu prostupuje oblast kolem ní. Když jí zastoupíš cestu, otáčí své neživé oči na tebe.{#zm310_s0_1}'
 
     menu:
         '"Tak… je tam dál vidět něco zajímavého?"{#zm310_s0_r6499}' if zm310Logic.r6499_condition():
@@ -43,7 +43,7 @@ label zm310_s0: # - # IF ~  Global("Oinosian","GLOBAL",0)
 
 # s1 # say6496
 label zm310_s1: # from 0.0 0.1 0.2
-    nr 'Mrtvola na tebe stále zírá.{#zm310_s1_}'
+    nr 'Mrtvola na tebe stále zírá.{#zm310_s1_1}'
 
     menu:
         'Nechej mrtvolu být.{#zm310_s1_r6505}':
@@ -53,7 +53,7 @@ label zm310_s1: # from 0.0 0.1 0.2
 
 # s2 # say6498
 label zm310_s2: # from 0.3
-    nr 'Na chvíli si myslíš, že tato mrtvola je příliš stará na to, aby mohla odpovědět… ale náhle rozpoznáváš v jejích rysech skutečné utrpení a tvé smysly za tím vycítily hluboké zoufalství z toho, že se duše musela vrátit zpět do své staré schránky.{#zm310_s2_}'
+    nr 'Na chvíli si myslíš, že tato mrtvola je příliš stará na to, aby mohla odpovědět… ale náhle rozpoznáváš v jejích rysech skutečné utrpení a tvé smysly za tím vycítily hluboké zoufalství z toho, že se duše musela vrátit zpět do své staré schránky.{#zm310_s2_1}'
 
     menu:
         '"Rád bych ti položil otázku…"{#zm310_s2_r6506}':
@@ -67,7 +67,7 @@ label zm310_s2: # from 0.3
 
 # s3 # say9642
 label zm310_s3: # from 2.0 4.2 5.2 6.2 7.2 8.1 9.0 10.0 11.2 12.1 13.1 14.1 15.1 16.0 18.0
-    nr 'Mrtvola promluvila hlubokým jednotvárným hlasem, z něhož čpí zklamání a beznaděj. Dokonce se dá říct, že je k nerozeznání od hlasu zombie. "Co potřebuješ, pane můj?"{#zm310_s3_}'
+    nr 'Mrtvola promluvila hlubokým jednotvárným hlasem, z něhož čpí zklamání a beznaděj. Dokonce se dá říct, že je k nerozeznání od hlasu zombie. "Co potřebuješ, pane můj?"{#zm310_s3_1}'
 
     menu:
         '"Kdo vlastně jsi?"{#zm310_s3_r9658}':
@@ -105,7 +105,7 @@ label zm310_s3: # from 2.0 4.2 5.2 6.2 7.2 8.1 9.0 10.0 11.2 12.1 13.1 14.1 15.1
 
 # s4 # say9643
 label zm310_s4: # from 3.0
-    nr 'Duch mluví tak tiše, že musíš napínat své uši, abys ho vůbec slyšel; mrtvolná ústa se jen stěží pohybují, aby vyprodukovala slova. "Jsem nikdo, pane můj; jen troska hmyzu, zoufale oddaná Pusté věži v Oinosu. Jednou jsem byl nazýván Arabhiemem, ale to bylo, pane můj… to bylo. Před dlouhou, velmi dlouhou dobou."{#zm310_s4_}'
+    nr 'Duch mluví tak tiše, že musíš napínat své uši, abys ho vůbec slyšel; mrtvolná ústa se jen stěží pohybují, aby vyprodukovala slova. "Jsem nikdo, pane můj; jen troska hmyzu, zoufale oddaná Pusté věži v Oinosu. Jednou jsem byl nazýván Arabhiemem, ale to bylo, pane můj… to bylo. Před dlouhou, velmi dlouhou dobou."{#zm310_s4_1}'
 
     menu:
         '"Říkal jsi Pustá věž?"{#zm310_s4_r9666}':
@@ -127,7 +127,7 @@ label zm310_s4: # from 3.0
 
 # s5 # say9644
 label zm310_s5: # from 3.1
-    nr '"Žil jsem v Sigilu, pane můj. V Úlu. Nebylo to tak hrozné místo, jak jsem dříve myslil, avšak teď je mým domovem… Oinos." Mrtvola mrkla tak pomalu, až ti připadalo, že pouze zavřela své oči.{#zm310_s5_}'
+    nr '"Žil jsem v Sigilu, pane můj. V Úlu. Nebylo to tak hrozné místo, jak jsem dříve myslil, avšak teď je mým domovem… Oinos." Mrtvola mrkla tak pomalu, až ti připadalo, že pouze zavřela své oči.{#zm310_s5_1}'
 
     menu:
         '"V Úlu?"{#zm310_s5_r9670}':
@@ -149,7 +149,7 @@ label zm310_s5: # from 3.1
 
 # s6 # say9645
 label zm310_s6: # from 3.2
-    nr '"Byl jsem zavražděn, pane můj, zavražděn lupiči. Pln alkoholu jsem klopýtal ulicemi Úlu, až jsem se ztratil a padl jsem za oběť bandě pobudů. Avšak přesto; můj život pravděpodobně nebyl cennějším, než těch několik měděných, které za mě mohl Sběrač dostat."{#zm310_s6_}'
+    nr '"Byl jsem zavražděn, pane můj, zavražděn lupiči. Pln alkoholu jsem klopýtal ulicemi Úlu, až jsem se ztratil a padl jsem za oběť bandě pobudů. Avšak přesto; můj život pravděpodobně nebyl cennějším, než těch několik měděných, které za mě mohl Sběrač dostat."{#zm310_s6_1}'
 
     menu:
         '"Proč svým životem tak opovrhuješ?"{#zm310_s6_r9674}':
@@ -171,7 +171,7 @@ label zm310_s6: # from 3.2
 
 # s7 # say9646
 label zm310_s7: # from 3.3 4.1 5.1 8.0 12.0
-    nr 'Duch na okamžik zavřel své oči, jeho mrtvé tělo se jemně chvělo. "V úděsném Oinosu, pane můj. V Šedé pustině. Tam byla upoutána má mysl, ve stínu Khin-Oin, Pusté věže."{#zm310_s7_}'
+    nr 'Duch na okamžik zavřel své oči, jeho mrtvé tělo se jemně chvělo. "V úděsném Oinosu, pane můj. V Šedé pustině. Tam byla upoutána má mysl, ve stínu Khin-Oin, Pusté věže."{#zm310_s7_1}'
 
     menu:
         '"Pověz mi více o tom… Oinosu."{#zm310_s7_r9678}':
@@ -193,7 +193,7 @@ label zm310_s7: # from 3.3 4.1 5.1 8.0 12.0
 
 # s8 # say9647
 label zm310_s8: # from 3.4
-    nr '"Tady už pro mě nic není, pane můj. Jsem uvězněn v pusté šedi zničeného Oinosu. Pro takového, jako jsem já, už není naděje." Zdá se, že se duch propadl do ještě větší beznaděje, pod tíhou zármutku se mu podlamují kolena.{#zm310_s8_}'
+    nr '"Tady už pro mě nic není, pane můj. Jsem uvězněn v pusté šedi zničeného Oinosu. Pro takového, jako jsem já, už není naděje." Zdá se, že se duch propadl do ještě větší beznaděje, pod tíhou zármutku se mu podlamují kolena.{#zm310_s8_1}'
 
     menu:
         '"Oinos?"{#zm310_s8_r9682}':
@@ -211,7 +211,7 @@ label zm310_s8: # from 3.4
 
 # s9 # say9648
 label zm310_s9: # from 3.5 15.0
-    nr '"Pouze hodně málo, pane můj; jen to, že sem jsou odnášeni mrtví, aby byli pohřbeni nebo spáleni… nebo použiti jako pomocníci - stejně jako moje tělo."{#zm310_s9_}'
+    nr '"Pouze hodně málo, pane můj; jen to, že sem jsou odnášeni mrtví, aby byli pohřbeni nebo spáleni… nebo použiti jako pomocníci - stejně jako moje tělo."{#zm310_s9_1}'
 
     menu:
         '"Ach tak. Mno, měl bych ještě otázečku…"{#zm310_s9_r9685}':
@@ -225,7 +225,7 @@ label zm310_s9: # from 3.5 15.0
 
 # s10 # say9649
 label zm310_s10: # from 3.6
-    nr 'Mrtvola pomalu zatřásla hlavou ze strany na stranu. "Kdepak, pane můj. Neznám nikoho s takovým jménem. Je mi líto, pane můj."{#zm310_s10_}'
+    nr 'Mrtvola pomalu zatřásla hlavou ze strany na stranu. "Kdepak, pane můj. Neznám nikoho s takovým jménem. Je mi líto, pane můj."{#zm310_s10_1}'
 
     menu:
         '"Mohl bych se ještě na něco zeptat?"{#zm310_s10_r9687}':
@@ -239,7 +239,7 @@ label zm310_s10: # from 3.6
 
 # s11 # say9650
 label zm310_s11: # from 7.0
-    nr '"Tady není co povědět, pane můj. Je to země mého Pána, Lorda Khin-Oina… je plná utrpení a chorob, hniloby, která pohlcuje těla i duše. Je to místo naprosté beznaděje."{#zm310_s11_}'
+    nr '"Tady není co povědět, pane můj. Je to země mého Pána, Lorda Khin-Oina… je plná utrpení a chorob, hniloby, která pohlcuje těla i duše. Je to místo naprosté beznaděje."{#zm310_s11_1}'
 
     menu:
         '"Kdo je ten… Pán?„"{#zm310_s11_r9689}':
@@ -261,7 +261,7 @@ label zm310_s11: # from 7.0
 
 # s12 # say9651
 label zm310_s12: # from 5.0
-    nr '"Ano, pane můj. Je to bídné místo, avšak ne tak, jak Oinos."{#zm310_s12_}'
+    nr '"Ano, pane můj. Je to bídné místo, avšak ne tak, jak Oinos."{#zm310_s12_1}'
 
     menu:
         '"Oinos?"{#zm310_s12_r9693}':
@@ -279,7 +279,7 @@ label zm310_s12: # from 5.0
 
 # s13 # say9652
 label zm310_s13: # from 4.0 7.1 11.1 14.0
-    nr '"Ano, pane můj. Je to ohromná věž, je mnohem vyšší než ty nejvyšší věže celého Sigilu.  Vypadá jako kost, pane můj -- jako páteř nějakého obrovitého stvoření. A právě na tomto místě musím dřít a opravovat poškození, která věži způsobily armády Pánových nepřátel, jeho knížecích soků."{#zm310_s13_}'
+    nr '"Ano, pane můj. Je to ohromná věž, je mnohem vyšší než ty nejvyšší věže celého Sigilu.  Vypadá jako kost, pane můj -- jako páteř nějakého obrovitého stvoření. A právě na tomto místě musím dřít a opravovat poškození, která věži způsobily armády Pánových nepřátel, jeho knížecích soků."{#zm310_s13_1}'
 
     menu:
         '"Kdo je ten… Pán?„"{#zm310_s13_r9696}':
@@ -297,7 +297,7 @@ label zm310_s13: # from 4.0 7.1 11.1 14.0
 
 # s14 # say9653
 label zm310_s14: # from 11.0 13.0
-    nr '"Znám ho jen jako Pána, pane můj; Lorda of Khin-Oinu. On je fiendským knížetem -- a vládne děsivou silou. Právě on vlastní mou duši a bude ji vlastnit dále navěky. Mou duši - nepatrné zrnko prachu - jež je předurčena umdlévat pod jeho nohama, dokud vody věčnosti nevymelou mou cestu k Zapomnění."{#zm310_s14_}'
+    nr '"Znám ho jen jako Pána, pane můj; Lorda of Khin-Oinu. On je fiendským knížetem -- a vládne děsivou silou. Právě on vlastní mou duši a bude ji vlastnit dále navěky. Mou duši - nepatrné zrnko prachu - jež je předurčena umdlévat pod jeho nohama, dokud vody věčnosti nevymelou mou cestu k Zapomnění."{#zm310_s14_1}'
 
     menu:
         '"Pověz mi o tom „Khin-Oinu.“"{#zm310_s14_r9699}':
@@ -315,7 +315,7 @@ label zm310_s14: # from 11.0 13.0
 
 # s15 # say9654
 label zm310_s15: # from 6.1
-    nr '"Ano, pane můj, Sběrač. Sběrači jsou ti, kteří v ulicích města hledají mrtvé a pak je vláčí do Márnice -- místa, kde teď stojíme -- za nepatrnou odměnu." Duch si udělal chviličku času, aby se mohl porozhlédnout kolem. Potom se zase otočil zpět a tiše si povzdechl.{#zm310_s15_}'
+    nr '"Ano, pane můj, Sběrač. Sběrači jsou ti, kteří v ulicích města hledají mrtvé a pak je vláčí do Márnice -- místa, kde teď stojíme -- za nepatrnou odměnu." Duch si udělal chviličku času, aby se mohl porozhlédnout kolem. Potom se zase otočil zpět a tiše si povzdechl.{#zm310_s15_1}'
 
     menu:
         '"Co všechno víš o této Márnici?"{#zm310_s15_r9702}':
@@ -333,7 +333,7 @@ label zm310_s15: # from 6.1
 
 # s16 # say9655
 label zm310_s16: # from 6.0
-    nr '"O tom nechci mluvit, pane můj. Nestojí to ani za řeč." Zdá se, že duch je v tomto mínění neochvějný.{#zm310_s16_}'
+    nr '"O tom nechci mluvit, pane můj. Nestojí to ani za řeč." Zdá se, že duch je v tomto mínění neochvějný.{#zm310_s16_1}'
 
     menu:
         '"Fajn. Měl bych ještě další otázku…"{#zm310_s16_r9705}':
@@ -347,14 +347,14 @@ label zm310_s16: # from 6.0
 
 # s17 # say9656
 label zm310_s17: # from 2.1 3.7 4.3 5.3 6.3 7.3 8.2 9.1 10.1 11.3 12.2 13.2 14.2 15.2 16.1
-    nr 'Nebyl bys býval postřehnul, že duch opustil tělo, dokud se šoupavými kroky nevrátila zombie opět ke své práci.{#zm310_s17_}'
+    nr 'Nebyl bys býval postřehnul, že duch opustil tělo, dokud se šoupavými kroky nevrátila zombie opět ke své práci.{#zm310_s17_1}'
 
     jump zm310_dispose
 
 
 # s18 # say20102
 label zm310_s18: # - # IF ~  Global("Oinosian","GLOBAL",1)
-    nr 'Mrtvola jakoby se scvrkla, nahrbila se váhou duchova zoufalství.{#zm310_s18_}'
+    nr 'Mrtvola jakoby se scvrkla, nahrbila se váhou duchova zoufalství.{#zm310_s18_1}'
 
     menu:
         '"Mám pár otázek…"{#zm310_s18_r20103}':

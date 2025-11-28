@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say24564
 label zm825_s0: # - # IF ~  True()
-    nr 'This corpse„s head lolls back and forth on its shoulders… judging from the angle of the neck, it looks like this man may have been hanged. The number "825" has been painted on the side of his head.{#zm825_s0_}'
+    nr 'This corpse„s head lolls back and forth on its shoulders… judging from the angle of the neck, it looks like this man may have been hanged. The number "825" has been painted on the side of his head.{#zm825_s0_1}'
 
     menu:
         '"I„m looking for a key… do you happen to have one?"{#zm825_s0_r24565}' if zm825Logic.r24565_condition():
@@ -49,7 +49,7 @@ label zm825_s0: # - # IF ~  True()
 
 # s1 # say24566
 label zm825_s1: # from 0.1 0.2 0.3 3.1
-    nr 'The corpse stares at the ground and does not answer.{#zm825_s1_}'
+    nr 'The corpse stares at the ground and does not answer.{#zm825_s1_1}'
 
     menu:
         '"Never mind, then. Farewell."{#zm825_s1_r24567}':
@@ -63,7 +63,7 @@ label zm825_s1: # from 0.1 0.2 0.3 3.1
 
 # s2 # say24571
 label zm825_s2: # from 0.4
-    nr 'The corpse does not stir. It looks like it is too far gone to answer any of your questions.{#zm825_s2_}'
+    nr 'The corpse does not stir. It looks like it is too far gone to answer any of your questions.{#zm825_s2_1}'
 
     menu:
         'Leave the corpse in peace.{#zm825_s2_r24572}':
@@ -73,7 +73,7 @@ label zm825_s2: # from 0.4
 
 # s3 # say42311
 label zm825_s3: # from 0.5
-    nr 'This corpse is carrying nothing… but you happen to notice its hands are heavily bandaged. The bandages might be usable if the corpse was disposed of first.{#zm825_s3_}'
+    nr 'This corpse is carrying nothing… but you happen to notice its hands are heavily bandaged. The bandages might be usable if the corpse was disposed of first.{#zm825_s3_1}'
 
     menu:
         '"Guess you don„t have the key… you don“t happen to know which of your other corpse friends has the key out of this place?"{#zm825_s3_r42312}' if zm825Logic.r42312_condition():

@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say34986
 label zf114_s0: # - # IF ~  True()
-    nr 'Když jsi se přiblížil, mrtvola ženy se na chvíli přestala potácet po místnosti. Na jejím čele sis všiml vyrytého čísla "114". Pusu má pevně sešitou, ale stehy začínají pomalu povolovat, takže z jejích rtů uniká slabý nářek.{#zf114_s0_}'
+    nr 'Když jsi se přiblížil, mrtvola ženy se na chvíli přestala potácet po místnosti. Na jejím čele sis všiml vyrytého čísla "114". Pusu má pevně sešitou, ale stehy začínají pomalu povolovat, takže z jejích rtů uniká slabý nářek.{#zf114_s0_1}'
 
     menu:
         '"Takže… cos dělala poslední dobou?"{#zf114_s0_r34987}' if zf114Logic.r34987_condition():
@@ -58,7 +58,7 @@ label zf114_s0: # - # IF ~  True()
 
 # s1 # say34988
 label zf114_s1: # from 0.0 0.1 0.2
-    nr 'Mrtvola na tebe dál zírá.{#zf114_s1_}'
+    nr 'Mrtvola na tebe dál zírá.{#zf114_s1_1}'
 
     menu:
         '"Sbohem tedy."{#zf114_s1_r34989}' if zf114Logic.r34989_condition():
@@ -76,7 +76,7 @@ label zf114_s1: # from 0.0 0.1 0.2
 
 # s2 # say35007
 label zf114_s2: # from 0.3
-    nr 'Mrtvola neodpovídá. Asi už shnila příliš, aby byla schopná odpovídat na otázky.{#zf114_s2_}'
+    nr 'Mrtvola neodpovídá. Asi už shnila příliš, aby byla schopná odpovídat na otázky.{#zf114_s2_1}'
 
     menu:
         '"Sbohem tedy."{#zf114_s2_r35008}' if zf114Logic.r35008_condition():
@@ -94,6 +94,6 @@ label zf114_s2: # from 0.3
 
 # s3 # say35017
 label zf114_s3: # - # IF ~  False()
-    nr 'Mrtvola neodpovídá. Asi už shnila příliš, aby byla schopná odpovídat na otázky.{#zf114_s3_}'
+    nr 'Mrtvola neodpovídá. Asi už shnila příliš, aby byla schopná odpovídat na otázky.{#zf114_s3_1}'
 
     menu:

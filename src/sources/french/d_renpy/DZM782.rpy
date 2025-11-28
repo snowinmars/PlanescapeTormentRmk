@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say24708
 label zm782_s0: # - # IF ~  True()
-    nr 'Ce cadavre s„arrête et te fixe alors que tu t“approches. Le numéro „782“ est gravé sur son front, et ses lèvres ont été cousues. Une légère odeur de formol émane de lui.{#zm782_s0_}'
+    nr 'Ce cadavre s„arrête et te fixe alors que tu t“approches. Le numéro „782“ est gravé sur son front, et ses lèvres ont été cousues. Une légère odeur de formol émane de lui.{#zm782_s0_1}'
 
     menu:
         '"Je cherche une clé… tu n„en aurais pas une, par hasard ?"{#zm782_s0_r24709}' if zm782Logic.r24709_condition():
@@ -37,7 +37,7 @@ label zm782_s0: # - # IF ~  True()
 
 # s1 # say24710
 label zm782_s1: # from 0.1
-    nr 'Le cadavre ne répond pas.{#zm782_s1_}'
+    nr 'Le cadavre ne répond pas.{#zm782_s1_1}'
 
     menu:
         '"Bon, peu importe. Au revoir."{#zm782_s1_r24711}':
@@ -51,7 +51,7 @@ label zm782_s1: # from 0.1
 
 # s2 # say24715
 label zm782_s2: # from 0.2 0.3
-    nr 'Ce cadavre doit être celui qui possède la clé. Il la tient serrée dans sa main gauche, le pouce et l„index comme figés autour. On dirait que tu vas être obligé d“arracher la main du corps pour récupérer la clé.{#zm782_s2_}'
+    nr 'Ce cadavre doit être celui qui possède la clé. Il la tient serrée dans sa main gauche, le pouce et l„index comme figés autour. On dirait que tu vas être obligé d“arracher la main du corps pour récupérer la clé.{#zm782_s2_1}'
 
     menu:
         '"J„ai besoin de cette clé, cadavre… on dirait bien que tu ne vas pas faire long feu dans ce monde."{#zm782_s2_r24716}':

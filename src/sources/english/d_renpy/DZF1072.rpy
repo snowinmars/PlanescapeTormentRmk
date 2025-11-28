@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say35114
 label zf1072_s0: # - # IF ~  True()
-    nr 'The smell of formaldehyde emanating from this corpse is particularly strong… it smells like it was applied recently, and with good reason: this corpse appears to be in an advanced stage of decay. Her jaw is missing, and some of the flesh has slid off her skull, revealing the number "1072" chiseled into the bone.{#zf1072_s0_}'
+    nr 'The smell of formaldehyde emanating from this corpse is particularly strong… it smells like it was applied recently, and with good reason: this corpse appears to be in an advanced stage of decay. Her jaw is missing, and some of the flesh has slid off her skull, revealing the number "1072" chiseled into the bone.{#zf1072_s0_1}'
 
     menu:
         '"I think this one„s seen better days…"{#zf1072_s0_r35115}' if zf1072Logic.r35115_condition():
@@ -58,7 +58,7 @@ label zf1072_s0: # - # IF ~  True()
 
 # s1 # say35116
 label zf1072_s1: # from 0.0 0.1 0.2
-    nr 'The corpse does not respond to your voice - the fact it has no jaw may have something to do with it. Either that, or it simply has nothing to say.{#zf1072_s1_}'
+    nr 'The corpse does not respond to your voice - the fact it has no jaw may have something to do with it. Either that, or it simply has nothing to say.{#zf1072_s1_1}'
 
     menu:
         '"Farewell then."{#zf1072_s1_r35117}' if zf1072Logic.r35117_condition():
@@ -76,7 +76,7 @@ label zf1072_s1: # from 0.0 0.1 0.2
 
 # s2 # say35135
 label zf1072_s2: # from 0.3
-    nr 'The corpse does not stir. It looks like it is too far gone to answer any of your questions.{#zf1072_s2_}'
+    nr 'The corpse does not stir. It looks like it is too far gone to answer any of your questions.{#zf1072_s2_1}'
 
     menu:
         '"Farewell then."{#zf1072_s2_r35136}' if zf1072Logic.r35136_condition():
@@ -94,6 +94,6 @@ label zf1072_s2: # from 0.3
 
 # s3 # say35145
 label zf1072_s3: # - # IF ~  False()
-    nr 'The corpse does not stir. It looks like it is too far gone to answer any of your questions.{#zf1072_s3_}'
+    nr 'The corpse does not stir. It looks like it is too far gone to answer any of your questions.{#zf1072_s3_1}'
 
     menu:

@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say292
 label giantsk_s0: # - # IF ~  True()
-    nr 'Devant toi se tient un squelette géant en armure de bronze ornée et boulonnée directement dans son ossature. Des symboles travaillés sont gravés sur le plastron. Tu te demandes d„où vient le squelette. Tu ignorais l“existence d„humains de cette taille. L“énorme lame dans sa main semble être aussi lourde qu„une charrette.{#giantsk_s0_}'
+    nr 'Devant toi se tient un squelette géant en armure de bronze ornée et boulonnée directement dans son ossature. Des symboles travaillés sont gravés sur le plastron. Tu te demandes d„où vient le squelette. Tu ignorais l“existence d„humains de cette taille. L“énorme lame dans sa main semble être aussi lourde qu„une charrette.{#giantsk_s0_1}'
 
     menu:
         '"Tu veux bien que je tienne cette lame une seconde ? Tu dois en avoir assez de la porter."{#giantsk_s0_r293}':
@@ -63,7 +63,7 @@ label giantsk_s0: # - # IF ~  True()
 
 # s1 # say1166
 label giantsk_s1: # from 0.0 0.1 0.9 # IF ~  False()
-    nr 'Le squelette a l„air mort depuis trop longtemps pour pouvoir répondre à tes questions. Ou bien sa tête est trop haute pour qu“il puisse t„entendre.{#giantsk_s1_}'
+    nr 'Le squelette a l„air mort depuis trop longtemps pour pouvoir répondre à tes questions. Ou bien sa tête est trop haute pour qu“il puisse t„entendre.{#giantsk_s1_1}'
 
     menu:
         'Examine le squelette géant… attentivement.{#giantsk_s1_r1167}':
@@ -101,7 +101,7 @@ label giantsk_s1: # from 0.0 0.1 0.9 # IF ~  False()
 
 # s2 # say4005
 label giantsk_s2: # from 0.4 0.6 1.2 1.4 3.0 4.1 4.3 5.3 5.5 6.2 6.4 7.3 7.5 8.2 8.4 9.4 9.6
-    nr 'Au moment où tu touches le squelette, une cloche en fer résonne dans toute la Morgue… aussi vite que l„éclair, le squelette se réveille et lève sa lame, prêt à frapper !{#giantsk_s2_}'
+    nr 'Au moment où tu touches le squelette, une cloche en fer résonne dans toute la Morgue… aussi vite que l„éclair, le squelette se réveille et lève sa lame, prêt à frapper !{#giantsk_s2_1}'
 
     menu:
         '"Tu vas regretter de ne plus être mort, Os…"{#giantsk_s2_r4042}':
@@ -112,7 +112,7 @@ label giantsk_s2: # from 0.4 0.6 1.2 1.4 3.0 4.1 4.3 5.3 5.5 6.2 6.4 7.3 7.5 8.2
 
 # s3 # say4006
 label giantsk_s3: # from 0.5 0.7 1.3 1.5 4.2 4.4 5.4 5.6 6.3 6.5 7.4 7.6 8.3 8.5 9.5 9.7
-    nr 'Tu étais prêt à agir quand soudain tu t„arrêtes… Les symboles gravés sur le plastron de l“armure du squelette attirent ton regard. Si ces squelettes sont des gardes, alors tu risques de les déranger et… de les réveiller.{#giantsk_s3_}'
+    nr 'Tu étais prêt à agir quand soudain tu t„arrêtes… Les symboles gravés sur le plastron de l“armure du squelette attirent ton regard. Si ces squelettes sont des gardes, alors tu risques de les déranger et… de les réveiller.{#giantsk_s3_1}'
 
     menu:
         '"C„est un risque que je suis prêt à prendre…"{#giantsk_s3_r4043}':
@@ -130,7 +130,7 @@ label giantsk_s3: # from 0.5 0.7 1.3 1.5 4.2 4.4 5.4 5.6 6.3 6.5 7.4 7.6 8.3 8.5
 
 # s4 # say4007
 label giantsk_s4: # from 0.2 1.0 3.1 7.1 15.1 16.3
-    nr 'L„armure en bronze ornée est rivée dans la cage thoracique du squelette avec une série de boulons en fer. Les épaulières aussi. Tu observes la charpente derrière l“armure et tu remarques que des boulons en fer similaires sont placés dans les articulations de l„épaule, du coude, de la hanche et du genou. Des cordons épais en cuir et des cordes nouées descendent le long des bras et des jambes du squelette. Ils ressemblent à des muscles et des tendons.{#giantsk_s4_}'
+    nr 'L„armure en bronze ornée est rivée dans la cage thoracique du squelette avec une série de boulons en fer. Les épaulières aussi. Tu observes la charpente derrière l“armure et tu remarques que des boulons en fer similaires sont placés dans les articulations de l„épaule, du coude, de la hanche et du genou. Des cordons épais en cuir et des cordes nouées descendent le long des bras et des jambes du squelette. Ils ressemblent à des muscles et des tendons.{#giantsk_s4_1}'
 
     menu:
         'Examine l„armure.{#giantsk_s4_r4045}':
@@ -164,7 +164,7 @@ label giantsk_s4: # from 0.2 1.0 3.1 7.1 15.1 16.3
 
 # s5 # say4008
 label giantsk_s5: # from 4.0
-    nr 'Malgré son ancienneté, l„armure a l“air bien conservée. Elle brille et les symboles gravés sur le plastron semblent vaciller à la lueur du feu, échappant à ton regard chaque fois que tu veux les observer.{#giantsk_s5_}'
+    nr 'Malgré son ancienneté, l„armure a l“air bien conservée. Elle brille et les symboles gravés sur le plastron semblent vaciller à la lueur du feu, échappant à ton regard chaque fois que tu veux les observer.{#giantsk_s5_1}'
 
     menu:
         'Étudie les symboles.{#giantsk_s5_r4054}' if giantskLogic.r4054_condition():
@@ -206,7 +206,7 @@ label giantsk_s5: # from 4.0
 
 # s6 # say4009
 label giantsk_s6: # from 5.0 5.1
-    nr 'Presque inconsciemment, tu poses les yeux sur les symboles. Après un instant, les symboles cessent de vaciller et se concentrent en un tracé de runes qui court des pieds à la tête du plastron. Bizarrement, l„enchevêtrement des runes te rappelle une chaîne… et tu te souviens que ces runes sont une sorte de protection contre l“enchantement.{#giantsk_s6_}'
+    nr 'Presque inconsciemment, tu poses les yeux sur les symboles. Après un instant, les symboles cessent de vaciller et se concentrent en un tracé de runes qui court des pieds à la tête du plastron. Bizarrement, l„enchevêtrement des runes te rappelle une chaîne… et tu te souviens que ces runes sont une sorte de protection contre l“enchantement.{#giantsk_s6_1}'
 
     menu:
         'Étudie les runes, essaie de te souvenir de l„enchantement.{#giantsk_s6_r4062}' if giantskLogic.r4062_condition():
@@ -244,7 +244,7 @@ label giantsk_s6: # from 5.0 5.1
 
 # s7 # say4010
 label giantsk_s7: # from 5.2 6.1 7.2
-    nr 'Tu observes les runes pendant un moment mais tu ne réussis pas à déchiffrer l„enchantement. Il a l“air compliqué. Tu as du mal à te concentrer.{#giantsk_s7_}'
+    nr 'Tu observes les runes pendant un moment mais tu ne réussis pas à déchiffrer l„enchantement. Il a l“air compliqué. Tu as du mal à te concentrer.{#giantsk_s7_1}'
 
     menu:
         'Compare les runes avec celles du Manuel des Ossements et des Cendres.{#giantsk_s7_r64294}' if giantskLogic.r64294_condition():
@@ -286,7 +286,7 @@ label giantsk_s7: # from 5.2 6.1 7.2
 
 # s8 # say4011
 label giantsk_s8: # from 6.0
-    nr 'Tu observes la trame des runes pendant qu„elles se tissent un chemin sur le plastron. Au niveau le plus simple, les runes sont un enchantement d“armure mineur ; mais plusieurs runes en forme de crâne et des dessins sphériques le long des bords de l„armure te font suspecter des enchantements nécromantiques et des protections majeures, tissés à l“intérieur. Si tu touchais le squelette, tu le réveillerais… et il se défendrait.{#giantsk_s8_}'
+    nr 'Tu observes la trame des runes pendant qu„elles se tissent un chemin sur le plastron. Au niveau le plus simple, les runes sont un enchantement d“armure mineur ; mais plusieurs runes en forme de crâne et des dessins sphériques le long des bords de l„armure te font suspecter des enchantements nécromantiques et des protections majeures, tissés à l“intérieur. Si tu touchais le squelette, tu le réveillerais… et il se défendrait.{#giantsk_s8_1}'
 
     menu:
         'Essaie de trouver un moyen de lever les enchantements.{#giantsk_s8_r4079}' if giantskLogic.r4079_condition():
@@ -325,7 +325,7 @@ label giantsk_s8: # from 6.0
 
 # s9 # say4012
 label giantsk_s9: # from 0.3 1.1 8.0 8.1
-    nr 'Tu penses que le fait de casser la structure des runes sur le plastron permettrait de briser l„enchantement, mais ça a l“air difficile… la structure est compliquée, et le squelette pourrait se réveiller si tu éraflais la mauvaise partie.{#giantsk_s9_}'
+    nr 'Tu penses que le fait de casser la structure des runes sur le plastron permettrait de briser l„enchantement, mais ça a l“air difficile… la structure est compliquée, et le squelette pourrait se réveiller si tu éraflais la mauvaise partie.{#giantsk_s9_1}'
 
     menu:
         'Compare les motifs avec les enchantements du Manuel des Ossements et des Cendres pour savoir si tu peux comprendre comment les briser.{#giantsk_s9_r64296}' if giantskLogic.r64296_condition():
@@ -373,7 +373,7 @@ label giantsk_s9: # from 0.3 1.1 8.0 8.1
 
 # s10 # say4013
 label giantsk_s10: # from 9.1 16.0
-    nr 'Tu commences à travailler sur les runes qui décorent le plastron. Soudain, une cloche résonne dans toute la Morgue… aussi vite que l„éclair, le squelette se réveille et lève sa lame, prêt à frapper !{#giantsk_s10_}'
+    nr 'Tu commences à travailler sur les runes qui décorent le plastron. Soudain, une cloche résonne dans toute la Morgue… aussi vite que l„éclair, le squelette se réveille et lève sa lame, prêt à frapper !{#giantsk_s10_1}'
 
     menu:
         '"Tu vas regretter de ne plus être mort, Os…"{#giantsk_s10_r4095}':
@@ -384,7 +384,7 @@ label giantsk_s10: # from 9.1 16.0
 
 # s11 # say4014
 label giantsk_s11: # from 9.2 16.1
-    nr 'Le travail est difficile et nerveusement éprouvant. Lentement, ton esprit se concentre et les runes se brisent sous ton attaque. En quelques minutes, le squelette géant est libéré des enchantements qui l„emprisonnaient. Il s“effondre sur le sol dans un fracas d„ossements !{#giantsk_s11_}'
+    nr 'Le travail est difficile et nerveusement éprouvant. Lentement, ton esprit se concentre et les runes se brisent sous ton attaque. En quelques minutes, le squelette géant est libéré des enchantements qui l„emprisonnaient. Il s“effondre sur le sol dans un fracas d„ossements !{#giantsk_s11_1}'
 
     menu:
         '"Fichu tas d„os… !"{#giantsk_s11_r4096}':
@@ -395,7 +395,7 @@ label giantsk_s11: # from 9.2 16.1
 
 # s12 # say4015
 label giantsk_s12: # from 11.0
-    nr 'Tu attends un moment, mais personne ne répond à ce bruit. Rapidement, tu passes au crible les os du squelette sur le sol. La plupart sont trop lourds ou trop vieux pour être utilisés. Mais tu découvres un morceau du plastron portant la majorité des enchantements brisés. Tu as le sentiment qu„il pourra t“être utile.{#giantsk_s12_}'
+    nr 'Tu attends un moment, mais personne ne répond à ce bruit. Rapidement, tu passes au crible les os du squelette sur le sol. La plupart sont trop lourds ou trop vieux pour être utilisés. Mais tu découvres un morceau du plastron portant la majorité des enchantements brisés. Tu as le sentiment qu„il pourra t“être utile.{#giantsk_s12_1}'
 
     menu:
         '"Alors, je vais prendre ça…"{#giantsk_s12_r4097}':
@@ -406,7 +406,7 @@ label giantsk_s12: # from 11.0
 
 # s13 # say4016
 label giantsk_s13: # from 9.3 16.2
-    nr 'Cette fois, briser l„enchantement a été plus facile. Les runes se sont rapidement défaites sous ton attaque. En quelques minutes, le squelette géant est libéré des enchantements qui l“emprisonnaient. Fort de ton expérience, tu rattrapes le squelette avant qu„il ne tombe. Dans un grognement, tu le poses à terre.{#giantsk_s13_}'
+    nr 'Cette fois, briser l„enchantement a été plus facile. Les runes se sont rapidement défaites sous ton attaque. En quelques minutes, le squelette géant est libéré des enchantements qui l“emprisonnaient. Fort de ton expérience, tu rattrapes le squelette avant qu„il ne tombe. Dans un grognement, tu le poses à terre.{#giantsk_s13_1}'
 
     menu:
         '"Voyons ce que nous avons cette fois…"{#giantsk_s13_r4098}':
@@ -417,7 +417,7 @@ label giantsk_s13: # from 9.3 16.2
 
 # s14 # say4017
 label giantsk_s14: # from 13.0
-    nr 'Rapidement, tu fouilles dans les restes du squelette. À nouveau, tu trouves un morceau du plastron. Comme le premier, il porte un fragment de l„enchantement brisé. Cela pourra être utile.{#giantsk_s14_}'
+    nr 'Rapidement, tu fouilles dans les restes du squelette. À nouveau, tu trouves un morceau du plastron. Comme le premier, il porte un fragment de l„enchantement brisé. Cela pourra être utile.{#giantsk_s14_1}'
 
     menu:
         '"Alors, je vais prendre ça…"{#giantsk_s14_r4099}' if giantskLogic.r4099_condition():
@@ -438,7 +438,7 @@ label giantsk_s14: # from 13.0
 
 # s15 # say64295
 label giantsk_s15: # from 7.0
-    nr 'Tu consultes le livre et tu compares les diagrammes aux marques sur la cuirasse. Autant que tu puisses en juger, les runes sont un enchantement de protection mineur. Mais plusieurs runes en forme de crâne et des marques sphériques sur les côtés de l„armure laissent penser qu“on a utilisé aussi plusieurs enchantements de nécromancie et de vigilance très puissants. Toucher le squelette risque certainement de l„animer et il est probable qu“il… se défendra.{#giantsk_s15_}'
+    nr 'Tu consultes le livre et tu compares les diagrammes aux marques sur la cuirasse. Autant que tu puisses en juger, les runes sont un enchantement de protection mineur. Mais plusieurs runes en forme de crâne et des marques sphériques sur les côtés de l„armure laissent penser qu“on a utilisé aussi plusieurs enchantements de nécromancie et de vigilance très puissants. Toucher le squelette risque certainement de l„animer et il est probable qu“il… se défendra.{#giantsk_s15_1}'
 
     menu:
         'Consulte le Manuel des Ossements et des Cendres pour savoir si tu peux comprendre comment les briser.{#giantsk_s15_r64298}':
@@ -452,7 +452,7 @@ label giantsk_s15: # from 7.0
 
 # s16 # say64297
 label giantsk_s16: # from 9.0 15.0
-    nr 'D„après ce que tu peux comprendre du manuel, il semble que l“enchantement de protection ne concerne que la cuirasse. La magie nécromantique doit permettre au squelette de s„animer ; quant à l“enchantement de vigilance, c„est lui qui permet au squelette d“avoir une perception limitée de son environnement. Tu supposes que si tu détruis les enchantements du squelette, il l„interprétera comme une attaque… sauf s“il ne peut pas détecter ta présence.{#giantsk_s16_}'
+    nr 'D„après ce que tu peux comprendre du manuel, il semble que l“enchantement de protection ne concerne que la cuirasse. La magie nécromantique doit permettre au squelette de s„animer ; quant à l“enchantement de vigilance, c„est lui qui permet au squelette d“avoir une perception limitée de son environnement. Tu supposes que si tu détruis les enchantements du squelette, il l„interprétera comme une attaque… sauf s“il ne peut pas détecter ta présence.{#giantsk_s16_1}'
 
     menu:
         'Détruis les runes de protection d„abord, puis les runes de nécromancie et, enfin, celles de vigilance.{#giantsk_s16_r64300}':

@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say47002
 label zm1664_s0: # from 5.0 # IF ~  True()
-    nr 'Obrovská mrtvola tiše stojí v rohu místnosti, tváří ke stěně. Vypadá, že v dřívějších časech to byl zavalitý muž. Podle stavu těla soudíš, že zemřel teprve nedávno. Čerstvě vyšité číslo na jeho čele hlásí "1664." Tahle mrtvola vypadá, že slouží jako knihovník, podle ohromné hromady knih, které drží v náručí.{#zm1664_s0_}'
+    nr 'Obrovská mrtvola tiše stojí v rohu místnosti, tváří ke stěně. Vypadá, že v dřívějších časech to byl zavalitý muž. Podle stavu těla soudíš, že zemřel teprve nedávno. Čerstvě vyšité číslo na jeho čele hlásí "1664." Tahle mrtvola vypadá, že slouží jako knihovník, podle ohromné hromady knih, které drží v náručí.{#zm1664_s0_1}'
 
     menu:
         'Prohlédni knihy.{#zm1664_s0_r47003}' if zm1664Logic.r47003_condition():
@@ -41,7 +41,7 @@ label zm1664_s0: # from 5.0 # IF ~  True()
 
 # s1 # say47009
 label zm1664_s1: # from 0.2 6.0
-    nr 'Mrtvola zírá prázdně do zdi.{#zm1664_s1_}'
+    nr 'Mrtvola zírá prázdně do zdi.{#zm1664_s1_1}'
 
     menu:
         'Nechej mrtvolu být.{#zm1664_s1_r47010}':
@@ -51,7 +51,7 @@ label zm1664_s1: # from 0.2 6.0
 
 # s2 # say47011
 label zm1664_s2: # from 0.3
-    nr 'Mrtvola se nehýbá. Navzdory skutečnosti, že je mrtvá teprve chvíli, nezdá se schopna odpovědět na některou z tvých otázek.{#zm1664_s2_}'
+    nr 'Mrtvola se nehýbá. Navzdory skutečnosti, že je mrtvá teprve chvíli, nezdá se schopna odpovědět na některou z tvých otázek.{#zm1664_s2_1}'
 
     menu:
         'Nechej mrtvolu být.{#zm1664_s2_r47012}':
@@ -61,7 +61,7 @@ label zm1664_s2: # from 0.3
 
 # s3 # say47013
 label zm1664_s3: # from 0.0
-    nr 'Knihy vypadají jako staré účetní knihy Márnice bez jakéhokoli zvláštního významu. Nicméně, jak sis prohlížel jednotlivé texty, objevil jsi volný list vložený mezi dvě knihy. Náhle tě přepadl pocit, že jej tam někdo dal jako do úkrytu.{#zm1664_s3_}'
+    nr 'Knihy vypadají jako staré účetní knihy Márnice bez jakéhokoli zvláštního významu. Nicméně, jak sis prohlížel jednotlivé texty, objevil jsi volný list vložený mezi dvě knihy. Náhle tě přepadl pocit, že jej tam někdo dal jako do úkrytu.{#zm1664_s3_1}'
 
     menu:
         'Vezmi stránku.{#zm1664_s3_r47014}':
@@ -72,7 +72,7 @@ label zm1664_s3: # from 0.0
 
 # s4 # say47015
 label zm1664_s4: # from 3.0
-    nr 'Stránka nevypadá jako vytržená z účetních knih… spíš byla součástí nějakých záznamů. Odtržení je rovně oříznuté jakoby nožem, proto předpokládáš, že stránka byla odstraněna úmyslně.{#zm1664_s4_}'
+    nr 'Stránka nevypadá jako vytržená z účetních knih… spíš byla součástí nějakých záznamů. Odtržení je rovně oříznuté jakoby nožem, proto předpokládáš, že stránka byla odstraněna úmyslně.{#zm1664_s4_1}'
 
     menu:
         'Přečti si to.{#zm1664_s4_r47016}':
@@ -82,7 +82,7 @@ label zm1664_s4: # from 3.0
 
 # s5 # say47017
 label zm1664_s5: # from 4.0
-    nr 'Pročíst se celou stránkou ti zabralo trochu času… je to seznam mrtvých těl přinesených do Márnice a zaznamenaných v Přijímací místnosti. Všechna přihlášení vypadají jako z nedávné doby.  POZNÁMKA: Aby sis "přečetl" zprávy, knihy nebo svitky, ulož je do svého inventáře, klikni na ně pravým tlačítkem a zobrazí se ti panel s informacemi.{#zm1664_s5_}'
+    nr 'Pročíst se celou stránkou ti zabralo trochu času… je to seznam mrtvých těl přinesených do Márnice a zaznamenaných v Přijímací místnosti. Všechna přihlášení vypadají jako z nedávné doby.  POZNÁMKA: Aby sis "přečetl" zprávy, knihy nebo svitky, ulož je do svého inventáře, klikni na ně pravým tlačítkem a zobrazí se ti panel s informacemi.{#zm1664_s5_1}'
 
     menu:
         'Prozkoumej zombie znova.{#zm1664_s5_r47018}':
@@ -96,7 +96,7 @@ label zm1664_s5: # from 4.0
 
 # s6 # say47021
 label zm1664_s6: # from 0.1
-    nr 'Knihy vypadají jako staré účetní knihy Márnice bez jakéhokoli zvláštního významu. Ještě jednou je prohledáváš, ale už jsi nenašel nic dalšího.{#zm1664_s6_}'
+    nr 'Knihy vypadají jako staré účetní knihy Márnice bez jakéhokoli zvláštního významu. Ještě jednou je prohledáváš, ale už jsi nenašel nic dalšího.{#zm1664_s6_1}'
 
     menu:
         '"Tak jak ses stal knihovníkem? Všechna ostatní místa byla obsazená?"{#zm1664_s6_r47022}':

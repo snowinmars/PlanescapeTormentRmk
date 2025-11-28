@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say24575
 label zm569_s0: # - # IF ~  True()
-    nr 'Ce cadavre qui se traîne semble être mort depuis de nombreuses années. La peau de son front a pelé, découvrant son crâne couleur de craie. Quelqu„un a gravé le numéro “569„ dans l“os ainsi découvert.{#zm569_s0_}'
+    nr 'Ce cadavre qui se traîne semble être mort depuis de nombreuses années. La peau de son front a pelé, découvrant son crâne couleur de craie. Quelqu„un a gravé le numéro “569„ dans l“os ainsi découvert.{#zm569_s0_1}'
 
     menu:
         '"Je cherche une clé… tu n„en aurais pas une, par hasard ?"{#zm569_s0_r24576}' if zm569Logic.r24576_condition():
@@ -49,7 +49,7 @@ label zm569_s0: # - # IF ~  True()
 
 # s1 # say24577
 label zm569_s1: # from 0.1 0.2 0.3 3.1
-    nr 'Le cadavre t„observe en silence.{#zm569_s1_}'
+    nr 'Le cadavre t„observe en silence.{#zm569_s1_1}'
 
     menu:
         '"Bon, peu importe. Au revoir."{#zm569_s1_r24578}':
@@ -63,7 +63,7 @@ label zm569_s1: # from 0.1 0.2 0.3 3.1
 
 # s2 # say24582
 label zm569_s2: # from 0.4
-    nr 'Le cadavre ne bouge pas. Il a l„air trop absent pour répondre à tes questions.{#zm569_s2_}'
+    nr 'Le cadavre ne bouge pas. Il a l„air trop absent pour répondre à tes questions.{#zm569_s2_1}'
 
     menu:
         'Laisse le cadavre tranquille.{#zm569_s2_r24583}':
@@ -73,7 +73,7 @@ label zm569_s2: # from 0.4
 
 # s3 # say42293
 label zm569_s3: # from 0.5
-    nr 'Ce cadavre ne semble pas avoir de clé… Et si c„était le cas, il ne pourrait apparemment pas s“en servir. Ses doigts sont cassés, comme si quelqu„un les avait frappés à coups de marteau. Tu constates aussi que son épaule gauche est entièrement bandée… Une fois enlevés du cadavre, ces bandages pourraient resservir.{#zm569_s3_}'
+    nr 'Ce cadavre ne semble pas avoir de clé… Et si c„était le cas, il ne pourrait apparemment pas s“en servir. Ses doigts sont cassés, comme si quelqu„un les avait frappés à coups de marteau. Tu constates aussi que son épaule gauche est entièrement bandée… Une fois enlevés du cadavre, ces bandages pourraient resservir.{#zm569_s3_1}'
 
     menu:
         '"Je suppose que tu ne l„as pas… Tu ne saurais pas lequel de tes amis cadavres a la clé pour sortir d“ici, par hasard ?"{#zm569_s3_r42294}' if zm569Logic.r42294_condition():

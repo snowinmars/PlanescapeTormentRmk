@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say35082
 label zf1096_s0: # - # IF ~  True()
-    nr 'Ce cadavre de femme fait le tour de la salle, d„une dalle à l“autre. Ses cheveux sont ramassés en une longue tresse enroulée autour du cou tel un nœud coulant. Quelqu„un a marqué au pochoir le numéro “1096„ sur son front, et ses lèvres sont cousues ensemble.{#zf1096_s0_}'
+    nr 'Ce cadavre de femme fait le tour de la salle, d„une dalle à l“autre. Ses cheveux sont ramassés en une longue tresse enroulée autour du cou tel un nœud coulant. Quelqu„un a marqué au pochoir le numéro “1096„ sur son front, et ses lèvres sont cousues ensemble.{#zf1096_s0_1}'
 
     menu:
         '"Hum… jolie tresse."{#zf1096_s0_r35083}' if zf1096Logic.r35083_condition():
@@ -58,7 +58,7 @@ label zf1096_s0: # - # IF ~  True()
 
 # s1 # say35084
 label zf1096_s1: # from 0.0 0.1 0.2
-    nr 'Le cadavre ne réagit pas. Tu doutes même qu„il ait conscience de ta présence.{#zf1096_s1_}'
+    nr 'Le cadavre ne réagit pas. Tu doutes même qu„il ait conscience de ta présence.{#zf1096_s1_1}'
 
     menu:
         '"Alors, au revoir."{#zf1096_s1_r35085}' if zf1096Logic.r35085_condition():
@@ -76,7 +76,7 @@ label zf1096_s1: # from 0.0 0.1 0.2
 
 # s2 # say35103
 label zf1096_s2: # from 0.3
-    nr 'Le cadavre ne bouge pas. Il a l„air trop absent pour répondre à tes questions.{#zf1096_s2_}'
+    nr 'Le cadavre ne bouge pas. Il a l„air trop absent pour répondre à tes questions.{#zf1096_s2_1}'
 
     menu:
         '"Alors, au revoir."{#zf1096_s2_r35104}' if zf1096Logic.r35104_condition():
@@ -94,6 +94,6 @@ label zf1096_s2: # from 0.3
 
 # s3 # say35113
 label zf1096_s3: # - # IF ~  False()
-    nr 'Le cadavre ne bouge pas. Il a l„air trop absent pour répondre à tes questions.{#zf1096_s3_}'
+    nr 'Le cadavre ne bouge pas. Il a l„air trop absent pour répondre à tes questions.{#zf1096_s3_1}'
 
     menu:

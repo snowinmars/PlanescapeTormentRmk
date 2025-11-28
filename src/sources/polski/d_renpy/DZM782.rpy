@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say24708
 label zm782_s0: # - # IF ~  True()
-    nr 'Ten trup zatrzymuje się i beznamiętnie patrzy, kiedy doń podchodzisz. Na czole ma wyryty numer "782", a wargi zaszyte. Od ciała unosi się słaby odór formaliny.{#zm782_s0_}'
+    nr 'Ten trup zatrzymuje się i beznamiętnie patrzy, kiedy doń podchodzisz. Na czole ma wyryty numer "782", a wargi zaszyte. Od ciała unosi się słaby odór formaliny.{#zm782_s0_1}'
 
     menu:
         '"Szukam klucza… czy ty przypadkiem go nie masz?"{#zm782_s0_r24709}' if zm782Logic.r24709_condition():
@@ -37,7 +37,7 @@ label zm782_s0: # - # IF ~  True()
 
 # s1 # say24710
 label zm782_s1: # from 0.1
-    nr 'Trup nie odpowiada.{#zm782_s1_}'
+    nr 'Trup nie odpowiada.{#zm782_s1_1}'
 
     menu:
         '"W takim razie trudno. Żegnaj."{#zm782_s1_r24711}':
@@ -51,7 +51,7 @@ label zm782_s1: # from 0.1
 
 # s2 # say24715
 label zm782_s2: # from 0.2 0.3
-    nr 'Ten truposz wygląda na tego, który ma klucz. Trzyma go mocno w lewej dłoni. Kciuk i palec wskazujący zacisnęły się na nim w śmiertelnym uścisku. Chyba będziesz musiał odrąbać mu rękę, aby zdobyć ten klucz.{#zm782_s2_}'
+    nr 'Ten truposz wygląda na tego, który ma klucz. Trzyma go mocno w lewej dłoni. Kciuk i palec wskazujący zacisnęły się na nim w śmiertelnym uścisku. Chyba będziesz musiał odrąbać mu rękę, aby zdobyć ten klucz.{#zm782_s2_1}'
 
     menu:
         '"Potrzebuję tego klucza, trupku… nie bardzo chyba tęskno ci do tego świata."{#zm782_s2_r24716}':

@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say453
 label vaxis_s0: # - # IF ~  Global("Vaxis","GLOBAL",0)
-    nr 'Belhající mrtvola na tebe civí svým prázdným pohledem. Má do čela vyryto číslo "821" a rty má sešity. Z těla vychází slabý zápach formaldehydu.{#vaxis_s0_}'
+    nr 'Belhající mrtvola na tebe civí svým prázdným pohledem. Má do čela vyryto číslo "821" a rty má sešity. Z těla vychází slabý zápach formaldehydu.{#vaxis_s0_1}'
 
     menu:
         '"Tak… viděl jsi tu něco zajímavého?"{#vaxis_s0_r454}' if vaxisLogic.r454_condition():
@@ -42,7 +42,7 @@ label vaxis_s0: # - # IF ~  Global("Vaxis","GLOBAL",0)
 
 # s1 # say460
 label vaxis_s1: # from 0.3 # IF ~  False()
-    nr 'Docela náhodou, nevypadá to, že by tvoje schopnost na tohle tělo fungovala.{#vaxis_s1_}'
+    nr 'Docela náhodou, nevypadá to, že by tvoje schopnost na tohle tělo fungovala.{#vaxis_s1_1}'
 
     menu:
         'Hrábni mu do oka.{#vaxis_s1_r461}':
@@ -57,7 +57,7 @@ label vaxis_s1: # from 0.3 # IF ~  False()
 
 # s2 # say463
 label vaxis_s2: # from 1.0
-    nr 'Mrtvola vydala tlumené zasténání, když jsi jí sáhl do oka a prudce zdvihla ruce, aby si zakryla obličej. Začíná si mumlat různé nemravné nadávky, které jsou směřovány tobě.{#vaxis_s2_}'
+    nr 'Mrtvola vydala tlumené zasténání, když jsi jí sáhl do oka a prudce zdvihla ruce, aby si zakryla obličej. Začíná si mumlat různé nemravné nadávky, které jsou směřovány tobě.{#vaxis_s2_1}'
 
     menu:
         '"Ty nejsi zombie! Kdo jsi?"{#vaxis_s2_r464}':
@@ -78,7 +78,7 @@ label vaxis_s2: # from 1.0
 
 # s3 # say467
 label vaxis_s3: # from 2.2 5.2
-    nr 'Jak se chystáš k odchodu, „zombie“ si něco mumlá… vypadá to jako by se pokoušela něco říct, ale je to pro ni těžké, když má sešité rty. "Kdu ty? Cu ty chcuš?"{#vaxis_s3_}'
+    nr 'Jak se chystáš k odchodu, „zombie“ si něco mumlá… vypadá to jako by se pokoušela něco říct, ale je to pro ni těžké, když má sešité rty. "Kdu ty? Cu ty chcuš?"{#vaxis_s3_1}'
 
     menu:
         '"Hledám odtud cestu ven. Můžeš mi pomoct?"{#vaxis_s3_r468}' if vaxisLogic.r468_condition():
@@ -110,7 +110,7 @@ label vaxis_s3: # from 2.2 5.2
 
 # s4 # say471
 label vaxis_s4: # from 3.5 6.5 7.8 8.5 10.4 11.4 12.2 13.5 14.4 15.2 16.4 17.2 18.1 19.3 20.1 25.6 27.6 31.6 32.5 34.2 35.6 59.1 74.1 75.3 76.1
-    nr 'Když už jsi na odchodu, zombie ze svého hrdla vydá slabé zavrčení. "Tu nic neřúkneš o mně. Tu bút zticha. NIC neřúct Spaluvačům." Dává si prst před pusu. "Sssssst." Pak přejíždí prstem přes své hrdlo. "Nebu já tě navždu uspat. Slušíš mě?"{#vaxis_s4_}'
+    nr 'Když už jsi na odchodu, zombie ze svého hrdla vydá slabé zavrčení. "Tu nic neřúkneš o mně. Tu bút zticha. NIC neřúct Spaluvačům." Dává si prst před pusu. "Sssssst." Pak přejíždí prstem přes své hrdlo. "Nebu já tě navždu uspat. Slušíš mě?"{#vaxis_s4_1}'
 
     menu:
         '"Tak ty si mi VYHROŽOVAL? Tak to jo… připrav se na smrrrrrrrt."{#vaxis_s4_r475}':
@@ -135,7 +135,7 @@ label vaxis_s4: # from 3.5 6.5 7.8 8.5 10.4 11.4 12.2 13.5 14.4 15.2 16.4 17.2 1
 
 # s5 # say479
 label vaxis_s5: # from 0.0 0.1 0.2 0.4
-    nr 'Jak jsi oslovil zombie, tak vypadá dost překvapeně. "Eh? Cu?"{#vaxis_s5_}'
+    nr 'Jak jsi oslovil zombie, tak vypadá dost překvapeně. "Eh? Cu?"{#vaxis_s5_1}'
 
     menu:
         '"Ty nejsi zombie! Kdo jsi?„{#vaxis_s5_r480}':
@@ -159,7 +159,7 @@ label vaxis_s5: # from 0.0 0.1 0.2 0.4
 
 # s6 # say483
 label vaxis_s6: # from 2.0 2.1 5.0 5.1
-    nr '„Zombie“ se pokouší komunikovat skrz sešité rty; má podivný napůl vystrašený a napůl naštvaný výraz v obličeji. "Kdu TY? Cu ty chcuš?"{#vaxis_s6_}'
+    nr '„Zombie“ se pokouší komunikovat skrz sešité rty; má podivný napůl vystrašený a napůl naštvaný výraz v obličeji. "Kdu TY? Cu ty chcuš?"{#vaxis_s6_1}'
 
     menu:
         '"Hledám odtud cestu ven. Můžeš mi pomoct?"{#vaxis_s6_r484}' if vaxisLogic.r484_condition():
@@ -191,7 +191,7 @@ label vaxis_s6: # from 2.0 2.1 5.0 5.1
 
 # s7 # say490
 label vaxis_s7: # from 3.0 3.1 3.2 3.4 6.0 6.1 6.2 6.4
-    nr 'Zombie nevypadá, že by tě slyšel. Prohlíží si tě na chvíli shora dolů a pak se zamračí. "Cu poslucháš?" Jeho oči se podezíravě zúžily. "Tu špuhujuš Spaluvuču?"{#vaxis_s7_}'
+    nr 'Zombie nevypadá, že by tě slyšel. Prohlíží si tě na chvíli shora dolů a pak se zamračí. "Cu poslucháš?" Jeho oči se podezíravě zúžily. "Tu špuhujuš Spaluvuču?"{#vaxis_s7_1}'
 
     menu:
         '"Ne. Pokouším se utéct."{#vaxis_s7_r491}' if vaxisLogic.r491_condition():
@@ -237,7 +237,7 @@ label vaxis_s7: # from 3.0 3.1 3.2 3.4 6.0 6.1 6.2 6.4
 
 # s8 # say1350
 label vaxis_s8: # from 7.2
-    nr 'Pozorně tě studuje. "Ty fpeh? Ty deláf frandu?"{#vaxis_s8_}'
+    nr 'Pozorně tě studuje. "Ty fpeh? Ty deláf frandu?"{#vaxis_s8_1}'
 
     menu:
         '"Huh?"{#vaxis_s8_r4671}':
@@ -270,7 +270,7 @@ label vaxis_s8: # from 7.2
 
 # s9 # say1363
 label vaxis_s9: # from 7.3
-    nr 'Pozorně tě studuje. "Ty špeh? Ty děláš srandu?"{#vaxis_s9_}'
+    nr 'Pozorně tě studuje. "Ty špeh? Ty děláš srandu?"{#vaxis_s9_1}'
 
     menu:
         '"Huh?"{#vaxis_s9_r4359}':
@@ -284,7 +284,7 @@ label vaxis_s9: # from 7.3
 
 # s10 # say4361
 label vaxis_s10: # from 8.0 8.1
-    nr 'Zamračil se a pak na tebe zasyčel. "Ty né fpíón!" Mávl rukou. "Vmiv! Vmivni!"{#vaxis_s10_}'
+    nr 'Zamračil se a pak na tebe zasyčel. "Ty né fpíón!" Mávl rukou. "Vmiv! Vmivni!"{#vaxis_s10_1}'
 
     menu:
         '"Nejdřív mi řekni, co tady děláš, nebo zavolám stráže."{#vaxis_s10_r4362}' if vaxisLogic.r4362_condition():
@@ -312,7 +312,7 @@ label vaxis_s10: # from 8.0 8.1
 
 # s11 # say4366
 label vaxis_s11: # externs morte_s86
-    nr 'Zombie na tohle přikývla. Máš pocit, že za vším tím maskováním vidíš pýchu.{#vaxis_s11_}'
+    nr 'Zombie na tohle přikývla. Máš pocit, že za vším tím maskováním vidíš pýchu.{#vaxis_s11_1}'
 
     menu:
         '"Můžeš mi pomoct s útěkem?"{#vaxis_s11_r4368}' if vaxisLogic.r4368_condition():
@@ -340,7 +340,7 @@ label vaxis_s11: # externs morte_s86
 
 # s12 # say4373
 label vaxis_s12: # from 7.0 11.0
-    nr 'Vypadá to, že jsi zombie zaujal. "Máf problémy? Fo fe ftalo?"{#vaxis_s12_}'
+    nr 'Vypadá to, že jsi zombie zaujal. "Máf problémy? Fo fe ftalo?"{#vaxis_s12_1}'
 
     menu:
         '"Probudil jsem se na jednom z kamenů nahoře."{#vaxis_s12_r4374}':
@@ -358,7 +358,7 @@ label vaxis_s12: # from 7.0 11.0
 
 # s13 # say4377
 label vaxis_s13: # from 12.0
-    nr 'Zombie se na tebe dívá, jako bys zešílel. "Ty blávnifej?"{#vaxis_s13_}'
+    nr 'Zombie se na tebe dívá, jako bys zešílel. "Ty blávnifej?"{#vaxis_s13_1}'
 
     menu:
         '"Ano, jsem blávnífej. Hodně blávnifej."{#vaxis_s13_r4378}':
@@ -389,7 +389,7 @@ label vaxis_s13: # from 12.0
 
 # s14 # say4384
 label vaxis_s14: # from 13.0 13.3 15.0
-    nr 'Dívá se na tebe, pak zasyčel a mávl rukou. "Fef blávnifej! Vypadni vode mně!"{#vaxis_s14_}'
+    nr 'Dívá se na tebe, pak zasyčel a mávl rukou. "Fef blávnifej! Vypadni vode mně!"{#vaxis_s14_1}'
 
     menu:
         '"Já nikam nejdu. Řekni mi, co tady děláš, nebo zavolám stráže."{#vaxis_s14_r4385}' if vaxisLogic.r4385_condition():
@@ -417,7 +417,7 @@ label vaxis_s14: # from 13.0 13.3 15.0
 
 # s15 # say4390
 label vaxis_s15: # externs morte_s88
-    nr 'Falešná zombie se na tebe podezřívavě dívá.{#vaxis_s15_}'
+    nr 'Falešná zombie se na tebe podezřívavě dívá.{#vaxis_s15_1}'
 
     menu:
         '"Je to pravda: Probral jsem se na náhrobku."{#vaxis_s15_r4391}':
@@ -436,7 +436,7 @@ label vaxis_s15: # externs morte_s88
 
 # s16 # say4394
 label vaxis_s16: # from 13.1
-    nr 'Dívá se na tebe, pak zasyčel a mávl rukou. "Fef blávnifej! Magor! Blbef! Vypadni vode mně!"{#vaxis_s16_}'
+    nr 'Dívá se na tebe, pak zasyčel a mávl rukou. "Fef blávnifej! Magor! Blbef! Vypadni vode mně!"{#vaxis_s16_1}'
 
     menu:
         '"Já nikam nejdu. Řekni mi, co tady děláš, nebo zavolám stráže."{#vaxis_s16_r4395}' if vaxisLogic.r4395_condition():
@@ -464,7 +464,7 @@ label vaxis_s16: # from 13.1
 
 # s17 # say4400
 label vaxis_s17: # from 7.5 10.1 14.1 16.1 25.3 27.3
-    nr 'Na chvíli vypadá zastrašeně, ale rychle se vzpamatoval. "Ty práfknef mě, já práfknu tebe. Já tu mám fchovaný kámofe, ty nemáf nikoho. Nemáf tu fo dělat. Fpalovafi tě vabijou. Já utefu."{#vaxis_s17_}'
+    nr 'Na chvíli vypadá zastrašeně, ale rychle se vzpamatoval. "Ty práfknef mě, já práfknu tebe. Já tu mám fchovaný kámofe, ty nemáf nikoho. Nemáf tu fo dělat. Fpalovafi tě vabijou. Já utefu."{#vaxis_s17_1}'
 
     menu:
         '"Neutečeš, jestli tě ZABIJU. A teď mi odpověz na mé otázky, nebo to tvoje maskování bude doopravdy. Zombie."{#vaxis_s17_r4401}' if vaxisLogic.r4401_condition():
@@ -484,7 +484,7 @@ label vaxis_s17: # from 7.5 10.1 14.1 16.1 25.3 27.3
 
 # s18 # say4404
 label vaxis_s18: # from 17.0
-    nr 'Oči zombie se rošířily, pak na tebe zasyčel. "VKUFÍF mě dát do knihy mrtvejch? Mám tu fchovaný kámofe, ty nemáf nikoho. Dotkni fě mě a kámofi tě vabijou!"{#vaxis_s18_}'
+    nr 'Oči zombie se rošířily, pak na tebe zasyčel. "VKUFÍF mě dát do knihy mrtvejch? Mám tu fchovaný kámofe, ty nemáf nikoho. Dotkni fě mě a kámofi tě vabijou!"{#vaxis_s18_1}'
 
     menu:
         '"Risknu to. Připrav se na smrt."{#vaxis_s18_r4405}':
@@ -499,7 +499,7 @@ label vaxis_s18: # from 17.0
 
 # s19 # say4407
 label vaxis_s19: # from 7.6 10.2 14.2 16.2 25.4 27.4
-    nr 'Oči zombie se rošířily, pak přejel očima po tvé postavě a zasyčel na tebe. "TY mě VKUFÍF dát do knihy mrtvejch? Mám tu fchovaný kámofe, ty nemáf nikoho. Dotkni fě mě a kámofi tě vabijou!"{#vaxis_s19_}'
+    nr 'Oči zombie se rošířily, pak přejel očima po tvé postavě a zasyčel na tebe. "TY mě VKUFÍF dát do knihy mrtvejch? Mám tu fchovaný kámofe, ty nemáf nikoho. Dotkni fě mě a kámofi tě vabijou!"{#vaxis_s19_1}'
 
     menu:
         '"Risknu to. Připrav se na smrt."{#vaxis_s19_r4408}':
@@ -522,7 +522,7 @@ label vaxis_s19: # from 7.6 10.2 14.2 16.2 25.4 27.4
 
 # s20 # say4412
 label vaxis_s20: # from 19.2
-    nr 'Oči zombie se rošířily, pak na tebe zasyčel. "Ty práfknef mě, já práfknu tebe. Já tu mám fchovaný kámofe, ty nemáf nikoho. Nemáf tu fo dělat. Fpalovafi tě vabijou. Já utefu."{#vaxis_s20_}'
+    nr 'Oči zombie se rošířily, pak na tebe zasyčel. "Ty práfknef mě, já práfknu tebe. Já tu mám fchovaný kámofe, ty nemáf nikoho. Nemáf tu fo dělat. Fpalovafi tě vabijou. Já utefu."{#vaxis_s20_1}'
 
     menu:
         '"To byla tvoje poslední šance, mrtvolo. Připrav se na smrt."{#vaxis_s20_r4413}':
@@ -537,7 +537,7 @@ label vaxis_s20: # from 19.2
 
 # s21 # say4415
 label vaxis_s21: # from 7.4 10.0 14.0 16.0 19.1 25.2 27.2
-    nr 'V tvýh očích musí být něco, co způsobilo, že se zombie přikrčila. "Ne-ne-ne! Nevolej ftrávníky!" Vypadá vystrašeně. "Já fpehuju fpalovafe, víkám, fo vidím. Nif víf."{#vaxis_s21_}'
+    nr 'V tvýh očích musí být něco, co způsobilo, že se zombie přikrčila. "Ne-ne-ne! Nevolej ftrávníky!" Vypadá vystrašeně. "Já fpehuju fpalovafe, víkám, fo vidím. Nif víf."{#vaxis_s21_1}'
 
     menu:
         '"Špehuješ? Pro koho?"{#vaxis_s21_r4416}':
@@ -559,7 +559,7 @@ label vaxis_s21: # from 7.4 10.0 14.0 16.0 19.1 25.2 27.2
 
 # s22 # say4420
 label vaxis_s22: # from 7.7 10.3 14.3 16.3 17.1 25.5 27.5
-    nr '"Neh-neh-ne! Neublivuj mi!" Fakt, že vážíš o pár kilo svalů víc než zombie pravděpodobně zapůsobil. "Neublivuj mi! Já fpehuju fpalovafe, víkám, fo vidím. Nif víf."{#vaxis_s22_}'
+    nr '"Neh-neh-ne! Neublivuj mi!" Fakt, že vážíš o pár kilo svalů víc než zombie pravděpodobně zapůsobil. "Neublivuj mi! Já fpehuju fpalovafe, víkám, fo vidím. Nif víf."{#vaxis_s22_1}'
 
     menu:
         '"Špehuješ? Pro koho?"{#vaxis_s22_r4421}':
@@ -581,7 +581,7 @@ label vaxis_s22: # from 7.7 10.3 14.3 16.3 17.1 25.5 27.5
 
 # s23 # say4425
 label vaxis_s23: # from 21.0 22.0
-    nr 'Zombie zmlkla, zjevně se bojí  Už nechce říct ani slovo.{#vaxis_s23_}'
+    nr 'Zombie zmlkla, zjevně se bojí  Už nechce říct ani slovo.{#vaxis_s23_1}'
 
     menu:
         '"No tak. Proč to tady hlídáš?"{#vaxis_s23_r4426}' if vaxisLogic.r4426_condition():
@@ -617,7 +617,7 @@ label vaxis_s23: # from 21.0 22.0
 
 # s24 # say4433
 label vaxis_s24: # from 3.3 6.3 8.2
-    nr '"Hledáf mě? Prof?" Zašilhal na tebe. "Ty máf fprávu pro mě?"{#vaxis_s24_}'
+    nr '"Hledáf mě? Prof?" Zašilhal na tebe. "Ty máf fprávu pro mě?"{#vaxis_s24_1}'
 
     menu:
         'Lži: "Ano, mám pro tebe zprávu."{#vaxis_s24_r4434}':
@@ -636,7 +636,7 @@ label vaxis_s24: # from 3.3 6.3 8.2
 
 # s25 # say4437
 label vaxis_s25: # from 24.2
-    nr 'Zlostně zasyčel. "Tak fo chfef, vole?"{#vaxis_s25_}'
+    nr 'Zlostně zasyčel. "Tak fo chfef, vole?"{#vaxis_s25_1}'
 
     menu:
         '"Hledám cestu pryč. Můžeš mi pomoct?"{#vaxis_s25_r4438}' if vaxisLogic.r4438_condition():
@@ -672,7 +672,7 @@ label vaxis_s25: # from 24.2
 
 # s26 # say4445
 label vaxis_s26: # from 24.0
-    nr '"Jaká fpráva?"{#vaxis_s26_}'
+    nr '"Jaká fpráva?"{#vaxis_s26_1}'
 
     menu:
         '"Řekneš mi o své misi."{#vaxis_s26_r4446}' if vaxisLogic.r4446_condition():
@@ -700,7 +700,7 @@ label vaxis_s26: # from 24.0
 
 # s27 # say4451
 label vaxis_s27: # from 24.1 26.3 26.4
-    nr 'Jeho oči se zúžily. "Ty nejfi pofel. Kdo fef?"{#vaxis_s27_}'
+    nr 'Jeho oči se zúžily. "Ty nejfi pofel. Kdo fef?"{#vaxis_s27_1}'
 
     menu:
         '"Hledám cestu pryč. Můžeš mi pomoct?"{#vaxis_s27_r4452}' if vaxisLogic.r4452_condition():
@@ -736,7 +736,7 @@ label vaxis_s27: # from 24.1 26.3 26.4
 
 # s28 # say4459
 label vaxis_s28: # from 8.3 8.4 11.1 11.2 11.3 26.0 30.0 43.5
-    nr '"Fpehuju Fpalovafe. Víkám, fo vidím. Nif víf."{#vaxis_s28_}'
+    nr '"Fpehuju Fpalovafe. Víkám, fo vidím. Nif víf."{#vaxis_s28_1}'
 
     menu:
         '"Co jsi viděl Spalovače dělat?"{#vaxis_s28_r4460}':
@@ -754,7 +754,7 @@ label vaxis_s28: # from 8.3 8.4 11.1 11.2 11.3 26.0 30.0 43.5
 
 # s29 # say4463
 label vaxis_s29: # from 21.1 22.1 23.4 28.0 70.1 71.2
-    nr '"Nif. Nedělaj nif. Nif fem nevjiftil. Mrtví, mrtví, akorát mrtví lidi. Fpalovafi nif nedělaj." Tváří se zklamaně. "Ftejně je ale hlídám."{#vaxis_s29_}'
+    nr '"Nif. Nedělaj nif. Nif fem nevjiftil. Mrtví, mrtví, akorát mrtví lidi. Fpalovafi nif nedělaj." Tváří se zklamaně. "Ftejně je ale hlídám."{#vaxis_s29_1}'
 
     menu:
         '"Aha. Ještě jsem se tě chtěl zeptat na něco jiného…"{#vaxis_s29_r4464}':
@@ -768,7 +768,7 @@ label vaxis_s29: # from 21.1 22.1 23.4 28.0 70.1 71.2
 
 # s30 # say4466
 label vaxis_s30: # from 26.1 26.2
-    nr 'Zamračil se, jakoby nad něčím přemýšlel. "Jaký pvíkavy?"{#vaxis_s30_}'
+    nr 'Zamračil se, jakoby nad něčím přemýšlel. "Jaký pvíkavy?"{#vaxis_s30_1}'
 
     menu:
         '"Řekni mi o své misi."{#vaxis_s30_r4467}':
@@ -796,7 +796,7 @@ label vaxis_s30: # from 26.1 26.2
 
 # s31 # say4472
 label vaxis_s31: # from 7.1 12.1 13.4 15.1 25.0 27.0 50.0
-    nr 'Je chvíli z ticha, pak přikývl, že rozumí. "Prof bych ti měl pomoft?"{#vaxis_s31_}'
+    nr 'Je chvíli z ticha, pak přikývl, že rozumí. "Prof bych ti měl pomoft?"{#vaxis_s31_1}'
 
     menu:
         '"Protože potřebuju tvou pomoc."{#vaxis_s31_r4473}':
@@ -833,7 +833,7 @@ label vaxis_s31: # from 7.1 12.1 13.4 15.1 25.0 27.0 50.0
 
 # s32 # say4480
 label vaxis_s32: # from 31.0
-    nr 'Zombie si odfrkla. "Kavdej něfo *potvebuje*, ale nikdo nif *nedá*. *Dej* mi něfo a já ti *movná* pomůvu."{#vaxis_s32_}'
+    nr 'Zombie si odfrkla. "Kavdej něfo *potvebuje*, ale nikdo nif *nedá*. *Dej* mi něfo a já ti *movná* pomůvu."{#vaxis_s32_1}'
 
     menu:
         '"Co potřebuješ?"{#vaxis_s32_r4481}':
@@ -865,7 +865,7 @@ label vaxis_s32: # from 31.0
 
 # s33 # say4487
 label vaxis_s33: # from 31.2 31.5 32.1 32.4 34.1 35.2 35.5 75.0
-    nr 'Prohlíží si tě a uvažuje, jestli na tebe bude mít, pak si to ale raději rozmyslel. "Hmfff. Můvef utéft portálem."{#vaxis_s33_}'
+    nr 'Prohlíží si tě a uvažuje, jestli na tebe bude mít, pak si to ale raději rozmyslel. "Hmfff. Můvef utéft portálem."{#vaxis_s33_1}'
 
     menu:
         '"Portály?"{#vaxis_s33_r4672}':
@@ -876,7 +876,7 @@ label vaxis_s33: # from 31.2 31.5 32.1 32.4 34.1 35.2 35.5 75.0
 
 # s34 # say4491
 label vaxis_s34: # from 31.3 32.2 35.3
-    nr 'Na chvíli vypadá zastrašeně, ale rychle se vzpamatoval. "Ty práfknef mě, já práfknu tebe. Já tu mám fchovaný kámofe, ty nemáf nikoho. Nemáf tu fo dělat. Fpalovafi tě vabijou. Já utefu."{#vaxis_s34_}'
+    nr 'Na chvíli vypadá zastrašeně, ale rychle se vzpamatoval. "Ty práfknef mě, já práfknu tebe. Já tu mám fchovaný kámofe, ty nemáf nikoho. Nemáf tu fo dělat. Fpalovafi tě vabijou. Já utefu."{#vaxis_s34_1}'
 
     menu:
         '"Neutečeš, jestli tě ZABIJU. A teď mluv, nebo už to maskování nebudeš potřebovat… zombie."{#vaxis_s34_r4489}' if vaxisLogic.r4489_condition():
@@ -896,7 +896,7 @@ label vaxis_s34: # from 31.3 32.2 35.3
 
 # s35 # say4493
 label vaxis_s35: # from 30.3 31.1 32.0
-    nr '"Mufíf mi donéft *klíf*. Potvebuju velevnej klíf k balvamovafí míftnofti."{#vaxis_s35_}'
+    nr '"Mufíf mi donéft *klíf*. Potvebuju velevnej klíf k balvamovafí míftnofti."{#vaxis_s35_1}'
 
     menu:
         '"Myslíš tenhle klíč?"{#vaxis_s35_r4494}' if vaxisLogic.r4494_condition():
@@ -935,7 +935,7 @@ label vaxis_s35: # from 30.3 31.1 32.0
 
 # s36 # say4501
 label vaxis_s36: # from 35.1 58.2
-    nr '"Fpalovafka ho má." Ukázal si na oči. "Má vlutý ofi…" Podivně zagestikuloval rukou, jako by se v nečem hrabal. "Na prftech má nove."{#vaxis_s36_}'
+    nr '"Fpalovafka ho má." Ukázal si na oči. "Má vlutý ofi…" Podivně zagestikuloval rukou, jako by se v nečem hrabal. "Na prftech má nove."{#vaxis_s36_1}'
 
     menu:
         '"Už jsem se s ní setkal. Tady je klíč."{#vaxis_s36_r4502}' if vaxisLogic.r4502_condition():
@@ -961,7 +961,7 @@ label vaxis_s36: # from 35.1 58.2
 
 # s37 # say4505
 label vaxis_s37: # from 36.3
-    nr 'Zombie mrkl. Asi tě nepochopil.{#vaxis_s37_}'
+    nr 'Zombie mrkl. Asi tě nepochopil.{#vaxis_s37_1}'
 
     menu:
         '"To byl jenom vtípek, měl bys… zapomeň na to. Zajdu ti pro ten klíč."{#vaxis_s37_r4506}' if vaxisLogic.r4506_condition():
@@ -977,7 +977,7 @@ label vaxis_s37: # from 36.3
 
 # s38 # say4507
 label vaxis_s38: # from 36.1 36.2 37.0 37.1
-    nr 'Zombie na tebe zašilhal. "Jefli tě chytěj, nif o mně nevíkej, nebo tě vabiju. Af budef fpát."{#vaxis_s38_}'
+    nr 'Zombie na tebe zašilhal. "Jefli tě chytěj, nif o mně nevíkej, nebo tě vabiju. Af budef fpát."{#vaxis_s38_1}'
 
     menu:
         '"Donesu ti ten tvůj zatracený klíč… ale ty už mi radši nevyhrožuj, jasný?!"{#vaxis_s38_r4508}' if vaxisLogic.r4508_condition():
@@ -1001,14 +1001,14 @@ label vaxis_s38: # from 36.1 36.2 37.0 37.1
 
 # s39 # say4512
 label vaxis_s39: # from 43.12
-    nr '"Já dobrej v mafkování. A taky mám jivvy. A napláfal fem na febe blvamovafí tekutinu. Já DOBRÁ vombie." Zombie se zasmál, jak mu to jenom sešitá pusa dovolila a pak si zaťukal na čelo. "Fpalovafi fou blllbíííí!"{#vaxis_s39_}'
+    nr '"Já dobrej v mafkování. A taky mám jivvy. A napláfal fem na febe blvamovafí tekutinu. Já DOBRÁ vombie." Zombie se zasmál, jak mu to jenom sešitá pusa dovolila a pak si zaťukal na čelo. "Fpalovafi fou blllbíííí!"{#vaxis_s39_1}'
 
     jump morte_s93  # EXTERN
 
 
 # s40 # say4514
 label vaxis_s40: # -
-    nr '"Pofkám na tebe. Donef klíf." Zombie se usmál. "Pak ti pomůvu."{#vaxis_s40_}'
+    nr '"Pofkám na tebe. Donef klíf." Zombie se usmál. "Pak ti pomůvu."{#vaxis_s40_1}'
 
     menu:
         '"Jestli to najdu, vrátím se."{#vaxis_s40_r4515}':
@@ -1022,7 +1022,7 @@ label vaxis_s40: # -
 
 # s41 # say4517
 label vaxis_s41: # -
-    nr 'Zombieho oči se rozšířily, pak natáhl ruku a lusknul prsty. "Dej mi ho."{#vaxis_s41_}'
+    nr 'Zombieho oči se rozšířily, pak natáhl ruku a lusknul prsty. "Dej mi ho."{#vaxis_s41_1}'
 
     menu:
         '"Vydrž chvíli. Nejdřív něco chci."{#vaxis_s41_r4518}':
@@ -1037,7 +1037,7 @@ label vaxis_s41: # -
 
 # s42 # say4520
 label vaxis_s42: # from 35.0 36.0 58.0 58.1
-    nr 'Zombieho oči se rozšířily. Popadl klíč z tvé dlaně. Pokyvuje si a obrací jej v dlani. "Dobve. Dobve."{#vaxis_s42_}'
+    nr 'Zombieho oči se rozšířily. Popadl klíč z tvé dlaně. Pokyvuje si a obrací jej v dlani. "Dobve. Dobve."{#vaxis_s42_1}'
 
     menu:
         '"Tak… jak se odtud dostanu?"{#vaxis_s42_r4521}' if vaxisLogic.r4521_condition():
@@ -1055,7 +1055,7 @@ label vaxis_s42: # from 35.0 36.0 58.0 58.1
 
 # s43 # say4523
 label vaxis_s43: # from 21.2 22.2 23.5 25.1 27.1 28.1 29.0 42.1 44.2 45.1 46.2 47.2 48.0 51.1 52.0 53.0 54.0 56.0 58.3 59.0 60.3 61.4 62.3 63.1 64.0 70.2 71.3 77.0
-    nr '"Fo chfef fědět?"{#vaxis_s43_}'
+    nr '"Fo chfef fědět?"{#vaxis_s43_1}'
 
     menu:
         '"Jak odtud mohu uprchnout?"{#vaxis_s43_r64508}' if vaxisLogic.r64508_condition():
@@ -1117,7 +1117,7 @@ label vaxis_s43: # from 21.2 22.2 23.5 25.1 27.1 28.1 29.0 42.1 44.2 45.1 46.2 4
 
 # s44 # say4537
 label vaxis_s44: # from 43.6
-    nr '"FÁ-ROD?" Zombie se na chvíli zamyšleně zamrači. "Já… flyfel fem, ve vije někde v Úlu. Nevím kde." Znovu se zamračil. "Fpálováfi móf naftvaní, némaj RÁDI Fá-roda."{#vaxis_s44_}'
+    nr '"FÁ-ROD?" Zombie se na chvíli zamyšleně zamrači. "Já… flyfel fem, ve vije někde v Úlu. Nevím kde." Znovu se zamračil. "Fpálováfi móf naftvaní, némaj RÁDI Fá-roda."{#vaxis_s44_1}'
 
     menu:
         '"Úlu?"{#vaxis_s44_r4538}':
@@ -1140,7 +1140,7 @@ label vaxis_s44: # from 43.6
 
 # s45 # say4542
 label vaxis_s45: # from 44.0
-    nr '"Flum tam fenku."{#vaxis_s45_}'
+    nr '"Flum tam fenku."{#vaxis_s45_1}'
 
     menu:
         '"Proč nemají Spalovači rádi Pharoda?"{#vaxis_s45_r4543}':
@@ -1159,7 +1159,7 @@ label vaxis_s45: # from 44.0
 
 # s46 # say4546
 label vaxis_s46: # from 44.1 45.0
-    nr '"On je fběraf. Nofí mrtvoly do márnife, prodává je Fpalovafům. Nofí MOF mrtváků. Fpalovafi nevěděj, fodkud má mrtváky. Myflej fi, ve Fá-rod ftrká lidi do mrtvý knihy."{#vaxis_s46_}'
+    nr '"On je fběraf. Nofí mrtvoly do márnife, prodává je Fpalovafům. Nofí MOF mrtváků. Fpalovafi nevěděj, fodkud má mrtváky. Myflej fi, ve Fá-rod ftrká lidi do mrtvý knihy."{#vaxis_s46_1}'
 
     menu:
         '"Uh… co?"{#vaxis_s46_r4547}' if vaxisLogic.r4547_condition():
@@ -1181,7 +1181,7 @@ label vaxis_s46: # from 44.1 45.0
 
 # s47 # say4551
 label vaxis_s47: # from 43.7
-    nr '"Néfim. Nákej fůl tě fobral?"{#vaxis_s47_}'
+    nr '"Néfim. Nákej fůl tě fobral?"{#vaxis_s47_1}'
 
     menu:
         '"Uh… co?"{#vaxis_s47_r4552}' if vaxisLogic.r4552_condition():
@@ -1203,7 +1203,7 @@ label vaxis_s47: # from 43.7
 
 # s48 # say4556
 label vaxis_s48: # from 46.0 47.0
-    nr 'Zombie se pokouší promluvit, zarazí se, promyslí si to a pak pokrčí rameny. Zjevně to nedovede lépe vysvětlit.{#vaxis_s48_}'
+    nr 'Zombie se pokouší promluvit, zarazí se, promyslí si to a pak pokrčí rameny. Zjevně to nedovede lépe vysvětlit.{#vaxis_s48_1}'
 
     menu:
         '"Oh. Chtěl jsem vědět ještě něco…"{#vaxis_s48_r4557}':
@@ -1217,7 +1217,7 @@ label vaxis_s48: # from 46.0 47.0
 
 # s49 # say4559
 label vaxis_s49: # from 30.1 42.0 43.0 43.1
-    nr 'Zombie zabručela. "Můvef utéft portálem." Zamával rukou. "Pufff."{#vaxis_s49_}'
+    nr 'Zombie zabručela. "Můvef utéft portálem." Zamával rukou. "Pufff."{#vaxis_s49_1}'
 
     menu:
         '"Portálem? Jakým portálem?"{#vaxis_s49_r4560}':
@@ -1227,7 +1227,7 @@ label vaxis_s49: # from 30.1 42.0 43.0 43.1
 
 # s50 # say4563
 label vaxis_s50: # from 33.0 49.0
-    nr '"Portály…" Zombie mávl rukou kolem. "Portály vfude."{#vaxis_s50_}'
+    nr '"Portály…" Zombie mávl rukou kolem. "Portály vfude."{#vaxis_s50_1}'
 
     menu:
         '"Můžeš mi ukázat některý z portálů?"{#vaxis_s50_r4564}' if vaxisLogic.r4564_condition():
@@ -1249,7 +1249,7 @@ label vaxis_s50: # from 33.0 49.0
 
 # s51 # say4567
 label vaxis_s51: # from 50.1 50.2 50.3 72.0
-    nr 'Zombie kývl. "Chfef pryf, tak projdi vobloukem na prvním patve, feverovápadní míftnoft… Potvebujef koftěnej prft, vkroufenej…" Zvedl ukazováček a ohnul ho. "Av budef mít klíf, jdi do voblouku, fkrofíf do tajný krypty. Vodtamtud můvef utéft. Tajná útěková fefta. Můvef fi tam i FODPOFINOUT."{#vaxis_s51_}'
+    nr 'Zombie kývl. "Chfef pryf, tak projdi vobloukem na prvním patve, feverovápadní míftnoft… Potvebujef koftěnej prft, vkroufenej…" Zvedl ukazováček a ohnul ho. "Av budef mít klíf, jdi do voblouku, fkrofíf do tajný krypty. Vodtamtud můvef utéft. Tajná útěková fefta. Můvef fi tam i FODPOFINOUT."{#vaxis_s51_1}'
 
     menu:
         '"Křivou prstní kost? Kde něco takového najdu?"{#vaxis_s51_r64527}' if vaxisLogic.r64527_condition():
@@ -1273,7 +1273,7 @@ label vaxis_s51: # from 50.1 50.2 50.3 72.0
 
 # s52 # say4570
 label vaxis_s52: # from 43.2
-    nr '"Poflouchej! Pamatuj fi!" Zombie začíná být naštvaný. "Voblouk, první patro, feverovápadní míftnoft." Zvedl ukazováček a zkroutil jej. "Potvebujef prftní koft, vkroufenou. Fkonfíf v tajný mífntnosfti, odkud můvef utéft. Můvef tam taky vodpofívat."{#vaxis_s52_}'
+    nr '"Poflouchej! Pamatuj fi!" Zombie začíná být naštvaný. "Voblouk, první patro, feverovápadní míftnoft." Zvedl ukazováček a zkroutil jej. "Potvebujef prftní koft, vkroufenou. Fkonfíf v tajný mífntnosfti, odkud můvef utéft. Můvef tam taky vodpofívat."{#vaxis_s52_1}'
 
     menu:
         '"Chtěl jsem vědět ještě něco…"{#vaxis_s52_r4571}':
@@ -1287,7 +1287,7 @@ label vaxis_s52: # from 43.2
 
 # s53 # say4573
 label vaxis_s53: # from 43.8
-    nr '"Pífav." Pokrčil rameny. "Ftarej. Vlutej."{#vaxis_s53_}'
+    nr '"Pífav." Pokrčil rameny. "Ftarej. Vlutej."{#vaxis_s53_1}'
 
     menu:
         '"Asi už se k tomu nedá víc dodat. Chtěl bych vědět ještě něco."{#vaxis_s53_r4574}':
@@ -1301,7 +1301,7 @@ label vaxis_s53: # from 43.8
 
 # s54 # say4576
 label vaxis_s54: # from 43.9
-    nr '"Hunh?" Zamračil se. "Kdo ona?"{#vaxis_s54_}'
+    nr '"Hunh?" Zamračil se. "Kdo ona?"{#vaxis_s54_1}'
 
     menu:
         '"Zapomeň na to. Chtěl bych vědět ještě něco…"{#vaxis_s54_r4577}':
@@ -1315,7 +1315,7 @@ label vaxis_s54: # from 43.9
 
 # s55 # say4579
 label vaxis_s55: # from 43.10
-    nr '"Průvodfe, u pvedních dveví márnife. Fo f ním?"{#vaxis_s55_}'
+    nr '"Průvodfe, u pvedních dveví márnife. Fo f ním?"{#vaxis_s55_1}'
 
     menu:
         '"Co o něm víš?"{#vaxis_s55_r4580}':
@@ -1331,7 +1331,7 @@ label vaxis_s55: # from 43.10
 
 # s56 # say4582
 label vaxis_s56: # from 55.0
-    nr '"Je divnej, ne Fpalovaf, ne Anarchofta, má jiný vofi…" Pokrčil rameny. "Jako kryfa. Divnej."{#vaxis_s56_}'
+    nr '"Je divnej, ne Fpalovaf, ne Anarchofta, má jiný vofi…" Pokrčil rameny. "Jako kryfa. Divnej."{#vaxis_s56_1}'
 
     menu:
         '"To je dobře, že je to jedinej divnej tady kolem. Ještě je tu něco, co bych chtěl vědět…"{#vaxis_s56_r4583}':
@@ -1345,7 +1345,7 @@ label vaxis_s56: # from 55.0
 
 # s57 # say4585
 label vaxis_s57: # - # IF ~  GlobalGT("Vaxis","GLOBAL",0)
-    nr 'Vidíš falešnou zombie. Žasneš nad kvalitním maskováním… jeho dýchání je tak potlačené, že je skoro nelze zpozorovat."{#vaxis_s57_}'
+    nr 'Vidíš falešnou zombie. Žasneš nad kvalitním maskováním… jeho dýchání je tak potlačené, že je skoro nelze zpozorovat."{#vaxis_s57_1}'
 
     menu:
         '"Zdravím."{#vaxis_s57_r4586}' if vaxisLogic.r4586_condition():
@@ -1371,7 +1371,7 @@ label vaxis_s57: # - # IF ~  GlobalGT("Vaxis","GLOBAL",0)
 
 # s58 # say4591
 label vaxis_s58: # from 57.0 57.1 57.3
-    nr 'Zombie se rychle rozhlédl, jestli vás někdo nevidí, pak se k tobě otočil. "Fo je?"{#vaxis_s58_}'
+    nr 'Zombie se rychle rozhlédl, jestli vás někdo nevidí, pak se k tobě otočil. "Fo je?"{#vaxis_s58_1}'
 
     menu:
         '"Tady je ten klíč, cos ho chtěl."{#vaxis_s58_r4592}' if vaxisLogic.r4592_condition():
@@ -1399,7 +1399,7 @@ label vaxis_s58: # from 57.0 57.1 57.3
 
 # s59 # say4597
 label vaxis_s59: # from 57.2
-    nr 'Zombie se rychle rozhlédl, jestli vás někdo nevidí, pak na tebe zamával. "Vypadni! Jdi pryf!"{#vaxis_s59_}'
+    nr 'Zombie se rychle rozhlédl, jestli vás někdo nevidí, pak na tebe zamával. "Vypadni! Jdi pryf!"{#vaxis_s59_1}'
 
     menu:
         '"Ne. Nejdřív mám nějaké otázky…"{#vaxis_s59_r4598}':
@@ -1417,7 +1417,7 @@ label vaxis_s59: # from 57.2
 
 # s60 # say4601
 label vaxis_s60: # from 43.11
-    nr '"Já dobrej v mafkování. A taky mám jivvy. A napláfal fem na febe blvamovafí tekutinu. Já DOBRÁ vombie." Zombie se zasmál, jak mu to jenom sešitá pusa dovolila a pak si zaťukal na čelo. "Fpalovafi fou blllbíííí!"{#vaxis_s60_}'
+    nr '"Já dobrej v mafkování. A taky mám jivvy. A napláfal fem na febe blvamovafí tekutinu. Já DOBRÁ vombie." Zombie se zasmál, jak mu to jenom sešitá pusa dovolila a pak si zaťukal na čelo. "Fpalovafi fou blllbíííí!"{#vaxis_s60_1}'
 
     menu:
         '"Jo, jsou pořádně pitomí."{#vaxis_s60_r4602}':
@@ -1443,7 +1443,7 @@ label vaxis_s60: # from 43.11
 
 # s61 # say4607
 label vaxis_s61: # from 60.0
-    nr 'Sarkasmus na zombie zjevně nezabral. "Blbí Fpalovafi. Já dobrá vombie."{#vaxis_s61_}'
+    nr 'Sarkasmus na zombie zjevně nezabral. "Blbí Fpalovafi. Já dobrá vombie."{#vaxis_s61_1}'
 
     menu:
         '"Nebude to bolet?"{#vaxis_s61_r4608}':
@@ -1473,7 +1473,7 @@ label vaxis_s61: # from 60.0
 
 # s62 # say4614
 label vaxis_s62: # from 60.1 61.0
-    nr 'Podíval se na tvé jizvy. "Já fe tě prám to famý. Mě mof nebolelo." Poplácal se po hrudi. "Já TVRDEJ."{#vaxis_s62_}'
+    nr 'Podíval se na tvé jizvy. "Já fe tě prám to famý. Mě mof nebolelo." Poplácal se po hrudi. "Já TVRDEJ."{#vaxis_s62_1}'
 
     menu:
         '"To maskování je dost dobrý. Můžeš mě taky zamaskovat jako zombii?"{#vaxis_s62_r4615}' if vaxisLogic.r4615_condition():
@@ -1499,7 +1499,7 @@ label vaxis_s62: # from 60.1 61.0
 
 # s63 # say4619
 label vaxis_s63: # from 43.3 43.4 60.2 61.1 62.0 64.1 64.2
-    nr 'Chvíli si tě prohlíží a něco si mumlá, nakonec přikývl. "Jo. Potvebuju fklínku balvamovafí tekutiny." Ukázal na jizvy na tvém hrudníku. "A nějakou nit a jehlu."{#vaxis_s63_}'
+    nr 'Chvíli si tě prohlíží a něco si mumlá, nakonec přikývl. "Jo. Potvebuju fklínku balvamovafí tekutiny." Ukázal na jizvy na tvém hrudníku. "A nějakou nit a jehlu."{#vaxis_s63_1}'
 
     menu:
         '"Tady máš."{#vaxis_s63_r4620}' if vaxisLogic.r4620_condition():
@@ -1525,7 +1525,7 @@ label vaxis_s63: # from 43.3 43.4 60.2 61.1 62.0 64.1 64.2
 
 # s64 # say4624
 label vaxis_s64: # from 61.2 61.3 62.1 62.2
-    nr 'Prohlédl si tě s podivným výrazem na tváři. "Ty budef DOBRÁ vombie. Můvu tě udělat vombie? Dobrej pvevlek."{#vaxis_s64_}'
+    nr 'Prohlédl si tě s podivným výrazem na tváři. "Ty budef DOBRÁ vombie. Můvu tě udělat vombie? Dobrej pvevlek."{#vaxis_s64_1}'
 
     menu:
         '"Ne. Ale stejně díky. Mám pro tebe ještě další otázky…"{#vaxis_s64_r4625}':
@@ -1549,7 +1549,7 @@ label vaxis_s64: # from 61.2 61.3 62.1 62.2
 
 # s65 # say4629
 label vaxis_s65: # from 63.0
-    nr 'Zombie si od tebe vzal předměty a pak se pustil do práce…{#vaxis_s65_}'
+    nr 'Zombie si od tebe vzal předměty a pak se pustil do práce…{#vaxis_s65_1}'
 
     menu:
         'Zkus vydržet bez hnutí.{#vaxis_s65_r4630}' if vaxisLogic.r4630_condition():
@@ -1575,7 +1575,7 @@ label vaxis_s65: # from 63.0
 
 # s66 # say4633
 label vaxis_s66: # from 65.0 65.2 65.3
-    nr 'Zombie tě potřel balzamovací tekutinou a pak zašil některé z tvých jizev. Nakonec dokončil maskování sešitím tvých rtů."{#vaxis_s66_}'
+    nr 'Zombie tě potřel balzamovací tekutinou a pak zašil některé z tvých jizev. Nakonec dokončil maskování sešitím tvých rtů."{#vaxis_s66_1}'
 
     menu:
         '"Mmm-hmmph-mmm… Víky."{#vaxis_s66_r4634}' if vaxisLogic.r4634_condition():
@@ -1594,7 +1594,7 @@ label vaxis_s66: # from 65.0 65.2 65.3
 
 # s67 # say4637
 label vaxis_s67: # from 66.0 66.2
-    nr 'Zombie zvedl ruku. "Opatrň! Mluvení trhá ftehu, vnifí máafkování. Vombie nemluví. Mufíf mluvit? Mluv pomalu, opatrň."  POZNÁMKA: Uvědom si, že nikdo nečeká, že budou zombie mluvit. Jestli si s někým promluvíš zamaskovaný jako zombie, pravděpodobně bude tvůj převlek odhalen.{#vaxis_s67_}'
+    nr 'Zombie zvedl ruku. "Opatrň! Mluvení trhá ftehu, vnifí máafkování. Vombie nemluví. Mufíf mluvit? Mluv pomalu, opatrň."  POZNÁMKA: Uvědom si, že nikdo nečeká, že budou zombie mluvit. Jestli si s někým promluvíš zamaskovaný jako zombie, pravděpodobně bude tvůj převlek odhalen.{#vaxis_s67_1}'
 
     menu:
         '"Mmph… mmm. Já… rovumím."{#vaxis_s67_r4638}':
@@ -1605,7 +1605,7 @@ label vaxis_s67: # from 66.0 66.2
 
 # s68 # say4639
 label vaxis_s68: # from 67.0
-    nr 'Zombie se zamračil. "Mafkování nevydrví dlouho. Balvám ufchne, ftehy vypadají." Pokrčil rameny. "Afi ti to nevydrví, av fe doftanef ven. A neběhej. Běháf a vnifíf felý mafkování."  POZNÁMKA: Nasazení zbraní nebo běhání okamžitě zruší tvé maskování za zombie. Pokud najdeš novou zbraň, nesnaž se ji použít, dokud budeš chtít zůstat zamaskovaný. Pokud máš zapnuto automatické běhání, rozhodně je vypni, jakmile domluvíš s Vaxisem, tedy pokud chceš zůstat v přestrojení.{#vaxis_s68_}'
+    nr 'Zombie se zamračil. "Mafkování nevydrví dlouho. Balvám ufchne, ftehy vypadají." Pokrčil rameny. "Afi ti to nevydrví, av fe doftanef ven. A neběhej. Běháf a vnifíf felý mafkování."  POZNÁMKA: Nasazení zbraní nebo běhání okamžitě zruší tvé maskování za zombie. Pokud najdeš novou zbraň, nesnaž se ji použít, dokud budeš chtít zůstat zamaskovaný. Pokud máš zapnuto automatické běhání, rozhodně je vypni, jakmile domluvíš s Vaxisem, tedy pokud chceš zůstat v přestrojení.{#vaxis_s68_1}'
 
     menu:
         'Přikývni a odejdi.{#vaxis_s68_r4640}':
@@ -1615,7 +1615,7 @@ label vaxis_s68: # from 67.0
 
 # s69 # say4641
 label vaxis_s69: # -
-    nr '„Zombie“ se zamračil. "Ty vypadáf vnámě. Uf fem tě viděl?"{#vaxis_s69_}'
+    nr '„Zombie“ se zamračil. "Ty vypadáf vnámě. Uf fem tě viděl?"{#vaxis_s69_1}'
 
     menu:
         '"Možná. Kde jsi mě viděl?"{#vaxis_s69_r4642}':
@@ -1629,7 +1629,7 @@ label vaxis_s69: # -
 
 # s70 # say4644
 label vaxis_s70: # from 23.0 23.2 71.0 71.1
-    nr 'K tvému překvapení se od tebe zombie otočil… a začíná se bojácně rozhlížet kolem.{#vaxis_s70_}'
+    nr 'K tvému překvapení se od tebe zombie otočil… a začíná se bojácně rozhlížet kolem.{#vaxis_s70_1}'
 
     menu:
         '"Nebudeš mluvit? Tak se připrav, naučím tě aspoň řvát!"{#vaxis_s70_r4645}':
@@ -1652,7 +1652,7 @@ label vaxis_s70: # from 23.0 23.2 71.0 71.1
 
 # s71 # say4649
 label vaxis_s71: # externs morte_s90
-    nr 'Zombie se vystrašeně dívá. Je stále potichu… ale něco v jeho výrazu ti říká, že Morteho poznámka byla přesná.{#vaxis_s71_}'
+    nr 'Zombie se vystrašeně dívá. Je stále potichu… ale něco v jeho výrazu ti říká, že Morteho poznámka byla přesná.{#vaxis_s71_1}'
 
     menu:
         '"Anarchisti, huh? To pro ně hlídáš tady tohle místo?"{#vaxis_s71_r4650}':
@@ -1679,7 +1679,7 @@ label vaxis_s71: # externs morte_s90
 
 # s72 # say4655
 label vaxis_s72: # from 30.2
-    nr 'Zombie vypadá zklamaně, ale pak pokrčil rameny a sáhl do své špianvé tuniky. "Byl tu klid. Fpalovafi klidní, nif novýho od poflední fprávy." Po chvíli vyhrabal nějaké předměty, které ti podal. "Tady." Podle pachu byly schovány tak, aby nebyly objeveny v případě, že by ho někdo prohledával. "Va chvilku odejdu."{#vaxis_s72_}'
+    nr 'Zombie vypadá zklamaně, ale pak pokrčil rameny a sáhl do své špianvé tuniky. "Byl tu klid. Fpalovafi klidní, nif novýho od poflední fprávy." Po chvíli vyhrabal nějaké předměty, které ti podal. "Tady." Podle pachu byly schovány tak, aby nebyly objeveny v případě, že by ho někdo prohledával. "Va chvilku odejdu."{#vaxis_s72_1}'
 
     menu:
         '"Odejdeš? Jak?"{#vaxis_s72_r4656}' if vaxisLogic.r4656_condition():
@@ -1693,7 +1693,7 @@ label vaxis_s72: # from 30.2
 
 # s73 # say4658
 label vaxis_s73: # -
-    nr 'Zombie zabručel. "Portál je v oblouku na prvním patve, feverováapdní míftnoft. Potvebujef vkroufenou koft v prftu, abyf ho otevvel. Hodně ftěftí."{#vaxis_s73_}'
+    nr 'Zombie zabručel. "Portál je v oblouku na prvním patve, feverováapdní míftnoft. Potvebujef vkroufenou koft v prftu, abyf ho otevvel. Hodně ftěftí."{#vaxis_s73_1}'
 
     menu:
         '"Uh… dobře."{#vaxis_s73_r4659}':
@@ -1703,7 +1703,7 @@ label vaxis_s73: # -
 
 # s74 # say4660
 label vaxis_s74: # from 34.0
-    nr 'Oči zombie se rošířily, pak na tebe zasyčel. "VKUFÍF mě dát do knihy mrtvejch? Mám tu fchovaný kámofe, ty nemáf nikoho. Dotkni fě mě a kámofi tě vabijou!"{#vaxis_s74_}'
+    nr 'Oči zombie se rošířily, pak na tebe zasyčel. "VKUFÍF mě dát do knihy mrtvejch? Mám tu fchovaný kámofe, ty nemáf nikoho. Dotkni fě mě a kámofi tě vabijou!"{#vaxis_s74_1}'
 
     menu:
         '"To byla tvá poslední šance. Připrav se na smrt."{#vaxis_s74_r4661}':
@@ -1718,7 +1718,7 @@ label vaxis_s74: # from 34.0
 
 # s75 # say4663
 label vaxis_s75: # from 31.4 32.3 35.4
-    nr 'Oči zombie se rošířily, pak přejel očima po tvé postavě a zasyčel na tebe. "TY mě VKUFÍF dát do knihy mrtvejch? Mám tu fchovaný kámofe, ty nemáf nikoho. Dotkni fě mě a kámofi tě vabijou!"{#vaxis_s75_}'
+    nr 'Oči zombie se rošířily, pak přejel očima po tvé postavě a zasyčel na tebe. "TY mě VKUFÍF dát do knihy mrtvejch? Mám tu fchovaný kámofe, ty nemáf nikoho. Dotkni fě mě a kámofi tě vabijou!"{#vaxis_s75_1}'
 
     menu:
         '"Co kdybych tvůj převlek prozradil strážným?"{#vaxis_s75_r4664}' if vaxisLogic.r4664_condition():
@@ -1741,7 +1741,7 @@ label vaxis_s75: # from 31.4 32.3 35.4
 
 # s76 # say4668
 label vaxis_s76: # from 75.1
-    nr 'Oči zombie se rošířily, pak na tebe zasyčel. "Ty práfknef mě, já práfknu tebe. Já tu mám fchovaný kámofe, ty nemáf nikoho. Nemáf tu fo dělat. Fpalovafi tě vabijou. Já utefu."{#vaxis_s76_}'
+    nr 'Oči zombie se rošířily, pak na tebe zasyčel. "Ty práfknef mě, já práfknu tebe. Já tu mám fchovaný kámofe, ty nemáf nikoho. Nemáf tu fo dělat. Fpalovafi tě vabijou. Já utefu."{#vaxis_s76_1}'
 
     menu:
         '"To byla tvoje poslední šance, mrtvolo. Připrav se na smrt."{#vaxis_s76_r4669}':
@@ -1756,7 +1756,7 @@ label vaxis_s76: # from 75.1
 
 # s77 # say64523
 label vaxis_s77: # from 51.0
-    nr 'Pokrčí rameny. "Mufí být někde kolem… podívej fe ve fkladiftích v hofním patfe. Mofná tam."{#vaxis_s77_}'
+    nr 'Pokrčí rameny. "Mufí být někde kolem… podívej fe ve fkladiftích v hofním patfe. Mofná tam."{#vaxis_s77_1}'
 
     menu:
         '"Fajn. Mám další otázky…"{#vaxis_s77_r64524}':

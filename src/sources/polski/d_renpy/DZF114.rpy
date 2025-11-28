@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say34986
 label zf114_s0: # - # IF ~  True()
-    nr 'Ten trup kobiety przestaje człapać na twój widok. Dostrzegasz numer "114" wygrawerowany na jej czole. Usta ma zaszyte, ale nici powoli obluzowują się i z ust dolatują cichutkie jęki.{#zf114_s0_}'
+    nr 'Ten trup kobiety przestaje człapać na twój widok. Dostrzegasz numer "114" wygrawerowany na jej czole. Usta ma zaszyte, ale nici powoli obluzowują się i z ust dolatują cichutkie jęki.{#zf114_s0_1}'
 
     menu:
         '"Więc jak… masz jakieś plany na później?"{#zf114_s0_r34987}' if zf114Logic.r34987_condition():
@@ -58,7 +58,7 @@ label zf114_s0: # - # IF ~  True()
 
 # s1 # say34988
 label zf114_s1: # from 0.0 0.1 0.2
-    nr 'Trup wciąż się w ciebie wpatruje.{#zf114_s1_}'
+    nr 'Trup wciąż się w ciebie wpatruje.{#zf114_s1_1}'
 
     menu:
         '"A zatem żegnaj."{#zf114_s1_r34989}' if zf114Logic.r34989_condition():
@@ -76,7 +76,7 @@ label zf114_s1: # from 0.0 0.1 0.2
 
 # s2 # say35007
 label zf114_s2: # from 0.3
-    nr 'Trup nie odpowiada. Wygląda na to, że jest w zbyt daleko posuniętym stadium rozkładu, aby odpowiedzieć na twoje pytania.{#zf114_s2_}'
+    nr 'Trup nie odpowiada. Wygląda na to, że jest w zbyt daleko posuniętym stadium rozkładu, aby odpowiedzieć na twoje pytania.{#zf114_s2_1}'
 
     menu:
         '"A zatem żegnaj."{#zf114_s2_r35008}' if zf114Logic.r35008_condition():
@@ -94,6 +94,6 @@ label zf114_s2: # from 0.3
 
 # s3 # say35017
 label zf114_s3: # - # IF ~  False()
-    nr 'Trup nie odpowiada. Wygląda na to, że jest w zbyt daleko posuniętym stadium rozkładu, aby odpowiedzieć na twoje pytania.{#zf114_s3_}'
+    nr 'Trup nie odpowiada. Wygląda na to, że jest w zbyt daleko posuniętym stadium rozkładu, aby odpowiedzieć na twoje pytania.{#zf114_s3_1}'
 
     menu:

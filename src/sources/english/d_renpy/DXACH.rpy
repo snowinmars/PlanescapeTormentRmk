@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say500
 label xach_s0: # - # IF ~  True()
-    nr 'You see a male corpse with the number "331" chiseled into his skull. His eyes and lips are stitched closed, and there is a gaping hole torn in his throat. He smells *foul.*{#xach_s0_}'
+    nr 'You see a male corpse with the number "331" chiseled into his skull. His eyes and lips are stitched closed, and there is a gaping hole torn in his throat. He smells *foul.*{#xach_s0_1}'
 
     menu:
         '"So… seen anything interesting going on?"{#xach_s0_r502}' if xachLogic.r502_condition():
@@ -42,7 +42,7 @@ label xach_s0: # - # IF ~  True()
 
 # s1 # say501
 label xach_s1: # from 0.0 0.1 0.2 0.4
-    nr 'The corpse stares ahead silently with its sightless eyes.{#xach_s1_}'
+    nr 'The corpse stares ahead silently with its sightless eyes.{#xach_s1_1}'
 
     menu:
         '"Farewell, then."{#xach_s1_r505}':
@@ -52,7 +52,7 @@ label xach_s1: # from 0.0 0.1 0.2 0.4
 
 # s2 # say504
 label xach_s2: # from 0.3
-    nr '"Wh-wh…" The zombie is awkwardly getting his voice back, and he sounds alarmed. "Who„s there?! Answer me!"{#xach_s2_}'
+    nr '"Wh-wh…" The zombie is awkwardly getting his voice back, and he sounds alarmed. "Who„s there?! Answer me!"{#xach_s2_1}'
 
     menu:
         '"Can you not see me?"{#xach_s2_r507}':
@@ -82,7 +82,7 @@ label xach_s2: # from 0.3
 
 # s3 # say509
 label xach_s3: # from 2.0
-    nr '"Blind I am, in death as I was in life… now answer me. Who are you?"{#xach_s3_}'
+    nr '"Blind I am, in death as I was in life… now answer me. Who are you?"{#xach_s3_1}'
 
     menu:
         'Improvise: "It is I. Do you not recognize my voice?"{#xach_s3_r510}' if xachLogic.r510_condition():
@@ -108,7 +108,7 @@ label xach_s3: # from 2.0
 
 # s4 # say512
 label xach_s4: # from 2.4 3.3 30.0 31.0
-    nr '"Wha… you!" The zombie seems shocked, but gladdened. "By the Lady„s Gaze…" His tone takes on a sense of wonder. "Aren“t you *dead,* cutter?"{#xach_s4_}'
+    nr '"Wha… you!" The zombie seems shocked, but gladdened. "By the Lady„s Gaze…" His tone takes on a sense of wonder. "Aren“t you *dead,* cutter?"{#xach_s4_1}'
 
     menu:
         '"Who are you?"{#xach_s4_r515}':
@@ -134,7 +134,7 @@ label xach_s4: # from 2.4 3.3 30.0 31.0
 
 # s5 # say514
 label xach_s5: # from 4.0
-    nr '"So, it„s hard to peel away this filthy shroudskin an“ see ol„ Xachariah the Fool beneath? It is I, cutter. Blessed be the powers, I thought never to see you again… but you“ve changed too, as far as my ears can tell… have you been making poor choices again?" Xachariah wheezes from his throat hole. "Be you dead, too?"{#xach_s5_}'
+    nr '"So, it„s hard to peel away this filthy shroudskin an“ see ol„ Xachariah the Fool beneath? It is I, cutter. Blessed be the powers, I thought never to see you again… but you“ve changed too, as far as my ears can tell… have you been making poor choices again?" Xachariah wheezes from his throat hole. "Be you dead, too?"{#xach_s5_1}'
 
     menu:
         '"It„s a long tale… but no, I“m not dead."{#xach_s5_r685}':
@@ -160,7 +160,7 @@ label xach_s5: # from 4.0
 
 # s6 # say513
 label xach_s6: # from 4.2 5.2
-    nr '"In the Mortuary, cutter. Did you not know that?"{#xach_s6_}'
+    nr '"In the Mortuary, cutter. Did you not know that?"{#xach_s6_1}'
 
     menu:
         '"What led you to this state?"{#xach_s6_r523}':
@@ -191,7 +191,7 @@ label xach_s6: # from 4.2 5.2
 
 # s7 # say528
 label xach_s7: # from 8.0 9.1 10.2 11.1 12.1 13.0 14.0 15.0 16.2 17.1 18.1 19.3 22.1 23.5 24.2 25.0 26.2 27.4 28.1 29.1 32.1 33.2 35.0 36.1 40.0 46.1 47.1 48.0 49.1
-    nr '"Aye?"{#xach_s7_}'
+    nr '"Aye?"{#xach_s7_1}'
 
     menu:
         '"I wanted to retrieve that object now, Xachariah…"{#xach_s7_r63484}' if xachLogic.r63484_condition():
@@ -225,7 +225,7 @@ label xach_s7: # from 8.0 9.1 10.2 11.1 12.1 13.0 14.0 15.0 16.2 17.1 18.1 19.3 
 
 # s8 # say529
 label xach_s8: # from 6.0 7.1
-    nr 'His voice drops, as if ashamed. "It„s a hard path following in your footsteps, cutter, and many terrible things did I see. I took to drink, and became half-sodden with the stuff. Once, when I was sodding drunk, I signed my body off to the Dusties. Fate decided ta kick me when I was down, and I died shortly afterward."{#xach_s8_}'
+    nr 'His voice drops, as if ashamed. "It„s a hard path following in your footsteps, cutter, and many terrible things did I see. I took to drink, and became half-sodden with the stuff. Once, when I was sodding drunk, I signed my body off to the Dusties. Fate decided ta kick me when I was down, and I died shortly afterward."{#xach_s8_1}'
 
     menu:
         '"I had some other questions…"{#xach_s8_r531}':
@@ -243,7 +243,7 @@ label xach_s8: # from 6.0 7.1
 
 # s9 # say533
 label xach_s9: # from 6.1 7.2
-    nr '"A place of the dead run by the Dead… there„s some things not right here, though…"{#xach_s9_}'
+    nr '"A place of the dead run by the Dead… there„s some things not right here, though…"{#xach_s9_1}'
 
     menu:
         '"Like what?"{#xach_s9_r534}':
@@ -265,7 +265,7 @@ label xach_s9: # from 6.1 7.2
 
 # s10 # say535
 label xach_s10: # from 9.0
-    nr '"I„ll tell you the dark of it: There“s a zombie that pretends to be a zombie, but isn„t. I don“t care much for knowing the reason why, but it„s a strange thing."{#xach_s10_}'
+    nr '"I„ll tell you the dark of it: There“s a zombie that pretends to be a zombie, but isn„t. I don“t care much for knowing the reason why, but it„s a strange thing."{#xach_s10_1}'
 
     menu:
         '"Anything else?"{#xach_s10_r538}' if xachLogic.r538_condition():
@@ -291,7 +291,7 @@ label xach_s10: # from 9.0
 
 # s11 # say541
 label xach_s11: # from 10.0 12.0
-    nr '"Another thing, that old githzerai… the one that keeps the preparation room… Dhall. He„s saved you from cremation a score of times. You“re lucky to have a friend in that one."{#xach_s11_}'
+    nr '"Another thing, that old githzerai… the one that keeps the preparation room… Dhall. He„s saved you from cremation a score of times. You“re lucky to have a friend in that one."{#xach_s11_1}'
 
     menu:
         '"What did Dhall do to save me, exactly?"{#xach_s11_r542}' if xachLogic.r542_condition():
@@ -313,7 +313,7 @@ label xach_s11: # from 10.0 12.0
 
 # s12 # say547
 label xach_s12: # from 10.1
-    nr '"Even if my eyes allowed me to see „em, I can“t make sense of numbers. Here„s how you“ll know him, cutter: his voice is wrong for a zombie… he doesn„t respond the same way as the others."{#xach_s12_}'
+    nr '"Even if my eyes allowed me to see „em, I can“t make sense of numbers. Here„s how you“ll know him, cutter: his voice is wrong for a zombie… he doesn„t respond the same way as the others."{#xach_s12_1}'
 
     menu:
         '"Anything else strange about the Mortuary you„ve noticed?"{#xach_s12_r548}' if xachLogic.r548_condition():
@@ -335,7 +335,7 @@ label xach_s12: # from 10.1
 
 # s13 # say550
 label xach_s13: # from 11.0
-    nr '"He just postponed your cremation until you popped up off the slab. Not certain why, really."{#xach_s13_}'
+    nr '"He just postponed your cremation until you popped up off the slab. Not certain why, really."{#xach_s13_1}'
 
     menu:
         '"Interesting. I had some other questions…"{#xach_s13_r552}':
@@ -353,7 +353,7 @@ label xach_s13: # from 11.0
 
 # s14 # say555
 label xach_s14: # -
-    nr '"He thought it necessary to prevent… to… I… I can„t quite remember why it was necessary."{#xach_s14_}'
+    nr '"He thought it necessary to prevent… to… I… I can„t quite remember why it was necessary."{#xach_s14_1}'
 
     menu:
         '"Hmmm. Suspicious… I had some other questions…"{#xach_s14_r557}':
@@ -371,7 +371,7 @@ label xach_s14: # -
 
 # s15 # say558
 label xach_s15: # -
-    nr 'His voice drops, as if ashamed. "When we split paths, cutter, not much life was left in me. It„s a hard path following in your footsteps, and many terrible things did I see. I took to drink, and became half-sodden with the stuff. When I was sodding drunk, I signed my body off to the Dusties. Fate decided ta kick me when I was down, and I died shortly afterward."{#xach_s15_}'
+    nr 'His voice drops, as if ashamed. "When we split paths, cutter, not much life was left in me. It„s a hard path following in your footsteps, and many terrible things did I see. I took to drink, and became half-sodden with the stuff. When I was sodding drunk, I signed my body off to the Dusties. Fate decided ta kick me when I was down, and I died shortly afterward."{#xach_s15_1}'
 
     menu:
         '"I had some other questions…"{#xach_s15_r559}':
@@ -389,7 +389,7 @@ label xach_s15: # -
 
 # s16 # say561
 label xach_s16: # from 6.2 7.3
-    nr '"Why? Have you forgotten yourself?"{#xach_s16_}'
+    nr '"Why? Have you forgotten yourself?"{#xach_s16_1}'
 
     menu:
         '"In a manner of speaking… yes."{#xach_s16_r562}':
@@ -415,7 +415,7 @@ label xach_s16: # from 6.2 7.3
 
 # s17 # say566
 label xach_s17: # from 16.0 21.0 22.0
-    nr '"Well… you were a strange one, always suspicious and watching for something… reckon somebody like you had got enough enemies in yer lifetimes. And there was no denying that anybody who messed with you ended up in the black chapters of the dead-book."{#xach_s17_}'
+    nr '"Well… you were a strange one, always suspicious and watching for something… reckon somebody like you had got enough enemies in yer lifetimes. And there was no denying that anybody who messed with you ended up in the black chapters of the dead-book."{#xach_s17_1}'
 
     menu:
         '"Anything else? Any specifics…"{#xach_s17_r569}':
@@ -437,7 +437,7 @@ label xach_s17: # from 16.0 21.0 22.0
 
 # s18 # say567
 label xach_s18: # from 17.0
-    nr '"You could be damnably ruthless, too… like when you made me sign that contract, or abandoned that one mewling chit on Avernus. We had a balor of a time, as well. None of us ever even entertained the notion to jump ship on your watch, son."{#xach_s18_}'
+    nr '"You could be damnably ruthless, too… like when you made me sign that contract, or abandoned that one mewling chit on Avernus. We had a balor of a time, as well. None of us ever even entertained the notion to jump ship on your watch, son."{#xach_s18_1}'
 
     menu:
         '"I… see. What else? Anything you could tell me would help."{#xach_s18_r572}':
@@ -459,7 +459,7 @@ label xach_s18: # from 17.0
 
 # s19 # say568
 label xach_s19: # from 18.0
-    nr '"At your core, you looked at what happened to you like taking territory in a war; everything was like a battle to you, and you were the most ruthless bastard I ever near met. Naught else mattered except for solving that goal. Poor Deionarra with her sobbing and pleading with you didn„t sway you none, the gith warning you about your strategies, and poor Xachariah just trying to hold on when we hit the planes. You were tough like you couldn“t die, but we were only human. Now I guess we„re all in the dead-book… or in and out of it, so to speak."{#xach_s19_}'
+    nr '"At your core, you looked at what happened to you like taking territory in a war; everything was like a battle to you, and you were the most ruthless bastard I ever near met. Naught else mattered except for solving that goal. Poor Deionarra with her sobbing and pleading with you didn„t sway you none, the gith warning you about your strategies, and poor Xachariah just trying to hold on when we hit the planes. You were tough like you couldn“t die, but we were only human. Now I guess we„re all in the dead-book… or in and out of it, so to speak."{#xach_s19_1}'
 
     menu:
         '"Anything else?"{#xach_s19_r63234}' if xachLogic.r63234_condition():
@@ -489,7 +489,7 @@ label xach_s19: # from 18.0
 
 # s20 # say580
 label xach_s20: # from 16.1
-    nr '"Well, what is it that I can say to you that„ll prove myself… now, see, not all the memories are there, so: how about this… remember when we were carving that trek through Avernus and we ran across that crew of abishai in that maggot-ridden pit?"{#xach_s20_}'
+    nr '"Well, what is it that I can say to you that„ll prove myself… now, see, not all the memories are there, so: how about this… remember when we were carving that trek through Avernus and we ran across that crew of abishai in that maggot-ridden pit?"{#xach_s20_1}'
 
     menu:
         'Lie: "Yes."{#xach_s20_r581}':
@@ -503,7 +503,7 @@ label xach_s20: # from 16.1
 
 # s21 # say583
 label xach_s21: # from 20.0
-    nr '"Well, now, then I„m glad one of us remembers that, because I sure as Balor don“t. Who are you, cutter, and what do you expect to find fishing in the memories of dead men?"{#xach_s21_}'
+    nr '"Well, now, then I„m glad one of us remembers that, because I sure as Balor don“t. Who are you, cutter, and what do you expect to find fishing in the memories of dead men?"{#xach_s21_1}'
 
     menu:
         '"I expect to find myself. I truly have forgotten who I am, Xachariah, and I believe you did know me. What can you tell me of my previous life?"{#xach_s21_r584}':
@@ -525,7 +525,7 @@ label xach_s21: # from 20.0
 
 # s22 # say588
 label xach_s22: # from 20.1
-    nr '"Hmmm. Well maybe that event didn„t happen the way I “member then. How„s this: “member when Deionarra nearly got herself penned in the dead-book trying to stop you from entering Curst?"{#xach_s22_}'
+    nr '"Hmmm. Well maybe that event didn„t happen the way I “member then. How„s this: “member when Deionarra nearly got herself penned in the dead-book trying to stop you from entering Curst?"{#xach_s22_1}'
 
     menu:
         '"No, not really… but that„s fine; I believe you did know me. So can you tell me of my previous life?"{#xach_s22_r590}':
@@ -547,7 +547,7 @@ label xach_s22: # from 20.1
 
 # s23 # say589
 label xach_s23: # from 6.3 7.4
-    nr '"A motley crew we were… a half-dead man who couldn„t get himself penned in the dead-book if he tried - so ugly all the powers of death wouldn“t take „em - a wailing advocate“s daughter, a gith exile, a bobbing jackal-tongued skull, and a half-sodden blind archer like myself."{#xach_s23_}'
+    nr '"A motley crew we were… a half-dead man who couldn„t get himself penned in the dead-book if he tried - so ugly all the powers of death wouldn“t take „em - a wailing advocate“s daughter, a gith exile, a bobbing jackal-tongued skull, and a half-sodden blind archer like myself."{#xach_s23_1}'
 
     menu:
         '"Gith?"{#xach_s23_r593}':
@@ -585,7 +585,7 @@ label xach_s23: # from 6.3 7.4
 
 # s24 # say600
 label xach_s24: # from 19.2 23.0 27.0
-    nr '"Grim-lookin„ gith… unfriendly and silent, like all their kind. Didn“t trust that gith a lick, I didn„t. See, cutter, them spindly giths care only about two things: keeping out of slavery and killing them squid-headed illithids. Everything else is just lower down the slope, and he didn“t give a damn about any of us other than you."{#xach_s24_}'
+    nr '"Grim-lookin„ gith… unfriendly and silent, like all their kind. Didn“t trust that gith a lick, I didn„t. See, cutter, them spindly giths care only about two things: keeping out of slavery and killing them squid-headed illithids. Everything else is just lower down the slope, and he didn“t give a damn about any of us other than you."{#xach_s24_1}'
 
     menu:
         '"Why was that?"{#xach_s24_r601}' if xachLogic.r601_condition():
@@ -611,7 +611,7 @@ label xach_s24: # from 19.2 23.0 27.0
 
 # s25 # say605
 label xach_s25: # from 24.0 26.0
-    nr '"One of the darks I never did bring to light, cutter. Perhaps you tell me?"{#xach_s25_}'
+    nr '"One of the darks I never did bring to light, cutter. Perhaps you tell me?"{#xach_s25_1}'
 
     menu:
         '"I don„t know myself. I had some other questions…"{#xach_s25_r606}':
@@ -629,7 +629,7 @@ label xach_s25: # from 24.0 26.0
 
 # s26 # say608
 label xach_s26: # from 19.1 23.1 27.1
-    nr '"That feisty chit-who-would-be-a-soldier swore she„d follow you to Baator and back, and by the powers, she was so addled by the thought of you without her she did just that. Cared little for me or the gith, and a bare little it was. She was wild with heart poison for you, she was, proof she was barmy. I don“t understand what the womenfolk saw in yer scarred mug, but it set their blood a-boil. She was some rich scut from the Clerk„s Ward, and you needed something from her, and the only price was that she came with you."{#xach_s26_}'
+    nr '"That feisty chit-who-would-be-a-soldier swore she„d follow you to Baator and back, and by the powers, she was so addled by the thought of you without her she did just that. Cared little for me or the gith, and a bare little it was. She was wild with heart poison for you, she was, proof she was barmy. I don“t understand what the womenfolk saw in yer scarred mug, but it set their blood a-boil. She was some rich scut from the Clerk„s Ward, and you needed something from her, and the only price was that she came with you."{#xach_s26_1}'
 
     menu:
         '"What did I want from her?"{#xach_s26_r609}' if xachLogic.r609_condition():
@@ -655,7 +655,7 @@ label xach_s26: # from 19.1 23.1 27.1
 
 # s27 # say612
 label xach_s27: # from 24.1 26.1 28.0 29.0 33.1 49.0
-    nr '"Aye, which one?"{#xach_s27_}'
+    nr '"Aye, which one?"{#xach_s27_1}'
 
     menu:
         '"The gith."{#xach_s27_r613}':
@@ -689,7 +689,7 @@ label xach_s27: # from 24.1 26.1 28.0 29.0 33.1 49.0
 
 # s28 # say620
 label xach_s28: # from 23.2 27.2
-    nr '"That filthy-talking skull was hankering for a bruising, so it was! Always smarting off, it was, and making fun of my condition!"{#xach_s28_}'
+    nr '"That filthy-talking skull was hankering for a bruising, so it was! Always smarting off, it was, and making fun of my condition!"{#xach_s28_1}'
 
     menu:
         '"About some of my other companions…"{#xach_s28_r622}':
@@ -711,7 +711,7 @@ label xach_s28: # from 23.2 27.2
 
 # s29 # say625
 label xach_s29: # from 23.4
-    nr '"That scrapbook that you„d stitched together outta yer own flesh and had more pages than I had years in my life?! Good fortune indeed if you“ve lost that ghoulish book! Always scribbling in it, you were, and it smelled a fright. It was like you were afraid that at any moment someone would take it away… you wrote in it till skin tore from your fingers and I wondered if you were trying to spill out your brain-box through your pen. Sometimes we would hold up for days while you wrote. I hated that infernal book. It seemed to hold you by the heart, and not in a kind way. The last I saw of it, cutter, it was in your possession. If you don„t carry it, I don“t know where on the planes it could be."{#xach_s29_}'
+    nr '"That scrapbook that you„d stitched together outta yer own flesh and had more pages than I had years in my life?! Good fortune indeed if you“ve lost that ghoulish book! Always scribbling in it, you were, and it smelled a fright. It was like you were afraid that at any moment someone would take it away… you wrote in it till skin tore from your fingers and I wondered if you were trying to spill out your brain-box through your pen. Sometimes we would hold up for days while you wrote. I hated that infernal book. It seemed to hold you by the heart, and not in a kind way. The last I saw of it, cutter, it was in your possession. If you don„t carry it, I don“t know where on the planes it could be."{#xach_s29_1}'
 
     menu:
         '"About those companions of mine…"{#xach_s29_r626}':
@@ -733,7 +733,7 @@ label xach_s29: # from 23.4
 
 # s30 # say629
 label xach_s30: # from 2.1 2.2 3.0 3.1
-    nr '"It sounds familiar… but if you are who I think you are, then… who…" The zombie becomes silent for a moment. "Who am I?"{#xach_s30_}'
+    nr '"It sounds familiar… but if you are who I think you are, then… who…" The zombie becomes silent for a moment. "Who am I?"{#xach_s30_1}'
 
     menu:
         '"Xachariah?"{#xach_s30_r631}' if xachLogic.r631_condition():
@@ -747,7 +747,7 @@ label xach_s30: # from 2.1 2.2 3.0 3.1
 
 # s31 # say630
 label xach_s31: # from 2.3 3.2
-    nr '"I…" The zombie becomes silent. "…my name… has fled me. I… can no longer remember who I am."{#xach_s31_}'
+    nr '"I…" The zombie becomes silent. "…my name… has fled me. I… can no longer remember who I am."{#xach_s31_1}'
 
     menu:
         '"Xachariah?"{#xach_s31_r634}' if xachLogic.r634_condition():
@@ -765,7 +765,7 @@ label xach_s31: # from 2.3 3.2
 
 # s32 # say642
 label xach_s32: # from 19.0
-    nr '"You left something when you left us, cutter… you left Dak„kon without a master, and the skull without a friend. Me? You stabbed something so deep inside me, it never came out when I was alive. Caused my blood to run cold, it did, that thing sitting like a lump of lead in my chest."{#xach_s32_}'
+    nr '"You left something when you left us, cutter… you left Dak„kon without a master, and the skull without a friend. Me? You stabbed something so deep inside me, it never came out when I was alive. Caused my blood to run cold, it did, that thing sitting like a lump of lead in my chest."{#xach_s32_1}'
 
     menu:
         '"What is it?"{#xach_s32_r645}':
@@ -788,7 +788,7 @@ label xach_s32: # from 19.0
 
 # s33 # say643
 label xach_s33: # from 32.0
-    nr '"I… I don„t know. But it changed me, somehow. Changed my insides. I was already dying when you put it in me, so I wasn“t too concerned about it at the time."{#xach_s33_}'
+    nr '"I… I don„t know. But it changed me, somehow. Changed my insides. I was already dying when you put it in me, so I wasn“t too concerned about it at the time."{#xach_s33_1}'
 
     menu:
         '"Can I have it back?"{#xach_s33_r649}':
@@ -814,7 +814,7 @@ label xach_s33: # from 32.0
 
 # s34 # say644
 label xach_s34: # from 7.0 33.0
-    nr '"It„s buried pretty deep, but I have an idea of where it is. Without a scalpel and some directions from me, you won“t be able to get it out. You got a scalpel?"{#xach_s34_}'
+    nr '"It„s buried pretty deep, but I have an idea of where it is. Without a scalpel and some directions from me, you won“t be able to get it out. You got a scalpel?"{#xach_s34_1}'
 
     menu:
         '"Yes."{#xach_s34_r647}' if xachLogic.r647_condition():
@@ -828,7 +828,7 @@ label xach_s34: # from 7.0 33.0
 
 # s35 # say654
 label xach_s35: # -
-    nr '"Well, return when you can snag one, and we can see about prying that pretty outta there."{#xach_s35_}'
+    nr '"Well, return when you can snag one, and we can see about prying that pretty outta there."{#xach_s35_1}'
 
     menu:
         '"I had some other questions…"{#xach_s35_r655}':
@@ -842,7 +842,7 @@ label xach_s35: # -
 
 # s36 # say657
 label xach_s36: # from 34.0 34.1
-    nr '"Then open me up half a hand„s width below the sternum, and feel around for it."{#xach_s36_}'
+    nr '"Then open me up half a hand„s width below the sternum, and feel around for it."{#xach_s36_1}'
 
     menu:
         'Do it.{#xach_s36_r658}':
@@ -864,7 +864,7 @@ label xach_s36: # from 34.0 34.1
 
 # s37 # say661
 label xach_s37: # from 36.0
-    nr '"A little more to the left… a little more…" Your hand closes on an object.{#xach_s37_}'
+    nr '"A little more to the left… a little more…" Your hand closes on an object.{#xach_s37_1}'
 
     menu:
         'Pull it out.{#xach_s37_r663}':
@@ -875,7 +875,7 @@ label xach_s37: # from 36.0
 
 # s38 # say662
 label xach_s38: # from 37.0
-    nr 'You pull out a zombie liver. "By the Lady„s gaze! Apologies, cutter… I thought them Dustmen took all those organs outta us before pulling us out of the dead-book. Give it another go. Maybe it“s to the right."{#xach_s38_}'
+    nr 'You pull out a zombie liver. "By the Lady„s gaze! Apologies, cutter… I thought them Dustmen took all those organs outta us before pulling us out of the dead-book. Give it another go. Maybe it“s to the right."{#xach_s38_1}'
 
     menu:
         'Do it again.{#xach_s38_r664}':
@@ -885,7 +885,7 @@ label xach_s38: # from 37.0
 
 # s39 # say665
 label xach_s39: # from 38.0
-    nr '"There ya go… now go a little to the right and back… a little more…" You feel something hard and cold, slightly larger than you expected. "I think that„s it. Pull it out."{#xach_s39_}'
+    nr '"There ya go… now go a little to the right and back… a little more…" You feel something hard and cold, slightly larger than you expected. "I think that„s it. Pull it out."{#xach_s39_1}'
 
     menu:
         'Pull it out.{#xach_s39_r666}':
@@ -896,7 +896,7 @@ label xach_s39: # from 38.0
 
 # s40 # say667
 label xach_s40: # from 39.0
-    nr 'You are holding a blackened, fist-sized object that is extremely heavy for its size. "That„s it all right. Huh. Bigger than I thought it“d be. Is that… what is that? Looks like… a heart."{#xach_s40_}'
+    nr 'You are holding a blackened, fist-sized object that is extremely heavy for its size. "That„s it all right. Huh. Bigger than I thought it“d be. Is that… what is that? Looks like… a heart."{#xach_s40_1}'
 
     menu:
         '"I think so, yes. Thanks, Xachariah. I had some other questions…"{#xach_s40_r668}':
@@ -914,7 +914,7 @@ label xach_s40: # from 39.0
 
 # s41 # say670
 label xach_s41: # from 4.3 5.3 6.4 7.6 8.1 9.2 10.3 11.2 12.2 13.1 14.1 15.1 16.3 17.2 18.2 19.4 21.2 22.2 23.6 24.3 25.1 26.3 27.5 28.2 29.2 32.2 33.3 36.2 40.1 46.2 47.2 48.1 49.2
-    nr '"Before you go: I need you to do me a slight favor, cutter."{#xach_s41_}'
+    nr '"Before you go: I need you to do me a slight favor, cutter."{#xach_s41_1}'
 
     menu:
         '"What is it?"{#xach_s41_r672}':
@@ -930,7 +930,7 @@ label xach_s41: # from 4.3 5.3 6.4 7.6 8.1 9.2 10.3 11.2 12.2 13.1 14.1 15.1 16.
 
 # s42 # say673
 label xach_s42: # from 41.0
-    nr 'His voice drops, as if ashamed. "I made some mistakes, some damned bad ones to be sure, and one of my biggest was signing that Dustman contract. If I hadn„t been so sodden with bub, I never woulda done it. I regret it, and I was hoping you could set it aright."{#xach_s42_}'
+    nr 'His voice drops, as if ashamed. "I made some mistakes, some damned bad ones to be sure, and one of my biggest was signing that Dustman contract. If I hadn„t been so sodden with bub, I never woulda done it. I regret it, and I was hoping you could set it aright."{#xach_s42_1}'
 
     menu:
         '"How?"{#xach_s42_r675}':
@@ -944,7 +944,7 @@ label xach_s42: # from 41.0
 
 # s43 # say677
 label xach_s43: # from 42.0
-    nr '"Way I reckon, this body„s gonna last a long time… and every day“s too long to me. Couldja maybe gut me again, cutter… for old time„s sake? The thought of spending another batch of years here in the Mortuary with these whitefaces is a mighty cold one. Can you see fit to put me back in the dead-book where I belong?"{#xach_s43_}'
+    nr '"Way I reckon, this body„s gonna last a long time… and every day“s too long to me. Couldja maybe gut me again, cutter… for old time„s sake? The thought of spending another batch of years here in the Mortuary with these whitefaces is a mighty cold one. Can you see fit to put me back in the dead-book where I belong?"{#xach_s43_1}'
 
     menu:
         '"If that is your wish…"{#xach_s43_r679}':
@@ -959,7 +959,7 @@ label xach_s43: # from 42.0
 
 # s44 # say678
 label xach_s44: # from 43.0
-    nr 'You gut him, and Xachariah falls to the floor with a heavy thud. There is a faint hiss from the body, and you see the chest heave once, then with a faint rattle, the corpse goes silent.{#xach_s44_}'
+    nr 'You gut him, and Xachariah falls to the floor with a heavy thud. There is a faint hiss from the body, and you see the chest heave once, then with a faint rattle, the corpse goes silent.{#xach_s44_1}'
 
     menu:
         '"Rest in peace, Xachariah."{#xach_s44_r681}':
@@ -970,7 +970,7 @@ label xach_s44: # from 43.0
 
 # s45 # say682
 label xach_s45: # from 41.1 42.1 43.1
-    nr '"Aye, well, never you mind then. No more use am I to you, I suppose."{#xach_s45_}'
+    nr '"Aye, well, never you mind then. No more use am I to you, I suppose."{#xach_s45_1}'
 
     menu:
         'Leave.{#xach_s45_r684}':
@@ -980,7 +980,7 @@ label xach_s45: # from 41.1 42.1 43.1
 
 # s46 # say683
 label xach_s46: # from 5.0
-    nr '"Well, cutter, I suppose being dead„s not something one would doubt, though how can you talk to me? Your voice is as clear as a knife…"{#xach_s46_}'
+    nr '"Well, cutter, I suppose being dead„s not something one would doubt, though how can you talk to me? Your voice is as clear as a knife…"{#xach_s46_1}'
 
     menu:
         '"What are you doing here?"{#xach_s46_r689}':
@@ -1002,7 +1002,7 @@ label xach_s46: # from 5.0
 
 # s47 # say692
 label xach_s47: # from 4.1 5.1 46.0
-    nr '"I am a stable hand in the most lifeless place of all. Be it that I could pass beyond the Eternal Boundary and have a Plane to call my home, but much of my soul was squandered, and now I am here."{#xach_s47_}'
+    nr '"I am a stable hand in the most lifeless place of all. Be it that I could pass beyond the Eternal Boundary and have a Plane to call my home, but much of my soul was squandered, and now I am here."{#xach_s47_1}'
 
     menu:
         '"What„s it like being a zombie?"{#xach_s47_r693}':
@@ -1024,7 +1024,7 @@ label xach_s47: # from 4.1 5.1 46.0
 
 # s48 # say694
 label xach_s48: # from 47.0
-    nr '"It„s honest work…" The stitching comes undone from Xachariah“s mouth and his lips peel back in what might be a smile. "…I care little for it."{#xach_s48_}'
+    nr '"It„s honest work…" The stitching comes undone from Xachariah“s mouth and his lips peel back in what might be a smile. "…I care little for it."{#xach_s48_1}'
 
     menu:
         '"I had some other questions…"{#xach_s48_r697}':
@@ -1043,7 +1043,7 @@ label xach_s48: # from 47.0
 
 # s49 # say63625
 label xach_s49: # from 23.3 27.3
-    nr '"That I was. You truly have forgotten, haven„t you? All men see with more than their eyes, cutter… some of them better than others. I sensed the hearts of my foes - *your* foes - and my arrows always struck true. Ah, those were some times…"{#xach_s49_}'
+    nr '"That I was. You truly have forgotten, haven„t you? All men see with more than their eyes, cutter… some of them better than others. I sensed the hearts of my foes - *your* foes - and my arrows always struck true. Ah, those were some times…"{#xach_s49_1}'
 
     menu:
         '"About some of my other companions…"{#xach_s49_r63626}':

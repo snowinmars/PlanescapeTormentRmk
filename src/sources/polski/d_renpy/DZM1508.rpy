@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say46745
 label zm1508_s0: # - # IF ~  True()
-    nr 'Czoło tego muskularnego trupa to jedna wielka blizna, jakby za życia walił głową w przeciwników podczas bitwy niczym taranem. Numer "1508" został mu wyszyty w poprzek czoła czerwoną nicią, a jego usta zostały zaszyte przy pomocy chropowatego, czarnego łyka. Cuchnie nieznacznie płynem balsamującym.{#zm1508_s0_}'
+    nr 'Czoło tego muskularnego trupa to jedna wielka blizna, jakby za życia walił głową w przeciwników podczas bitwy niczym taranem. Numer "1508" został mu wyszyty w poprzek czoła czerwoną nicią, a jego usta zostały zaszyte przy pomocy chropowatego, czarnego łyka. Cuchnie nieznacznie płynem balsamującym.{#zm1508_s0_1}'
 
     menu:
         '"Więc jak… widziałeś, żeby działo się tu coś interesującego?"{#zm1508_s0_r46746}' if zm1508Logic.r46746_condition():
@@ -42,7 +42,7 @@ label zm1508_s0: # - # IF ~  True()
 
 # s1 # say46747
 label zm1508_s1: # from 0.0 0.1 0.2
-    nr 'Trup wciąż się w ciebie wpatruje.{#zm1508_s1_}'
+    nr 'Trup wciąż się w ciebie wpatruje.{#zm1508_s1_1}'
 
     menu:
         'Zostaw truposza w spokoju.{#zm1508_s1_r46748}':
@@ -52,7 +52,7 @@ label zm1508_s1: # from 0.0 0.1 0.2
 
 # s2 # say46752
 label zm1508_s2: # from 0.3
-    nr 'Trup nie odpowiada. Wygląda na to, że jest w zbyt daleko posuniętym stadium rozkładu, aby odpowiedzieć na twoje pytania.{#zm1508_s2_}'
+    nr 'Trup nie odpowiada. Wygląda na to, że jest w zbyt daleko posuniętym stadium rozkładu, aby odpowiedzieć na twoje pytania.{#zm1508_s2_1}'
 
     menu:
         'Zostaw truposza w spokoju.{#zm1508_s2_r46753}':

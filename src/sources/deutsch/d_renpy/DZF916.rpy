@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say24719
 label zf916_s0: # - # IF ~  True()
-    nr 'Die weibliche Leiche starrt dich aus leeren Augen an. Die Zahl "916" ist in ihre Stirn eingraviert, und ihre Lippen wurden zugenäht. Ein schwacher Geruch von Formaldehyd geht von ihrem Körper aus.{#zf916_s0_}'
+    nr 'Die weibliche Leiche starrt dich aus leeren Augen an. Die Zahl "916" ist in ihre Stirn eingraviert, und ihre Lippen wurden zugenäht. Ein schwacher Geruch von Formaldehyd geht von ihrem Körper aus.{#zf916_s0_1}'
 
     menu:
         '"Sag mal… hast du nachher schon was vor?"{#zf916_s0_r24720}' if zf916Logic.r24720_condition():
@@ -58,7 +58,7 @@ label zf916_s0: # - # IF ~  True()
 
 # s1 # say24721
 label zf916_s1: # from 0.0 0.1 0.2
-    nr 'Die Leiche starrt dich weiter an.{#zf916_s1_}'
+    nr 'Die Leiche starrt dich weiter an.{#zf916_s1_1}'
 
     menu:
         '"Dann leb wohl."{#zf916_s1_r24722}' if zf916Logic.r24722_condition():
@@ -76,7 +76,7 @@ label zf916_s1: # from 0.0 0.1 0.2
 
 # s2 # say24740
 label zf916_s2: # from 0.3
-    nr 'Diese Leiche antwortet nicht. Es sieht so aus, als ob sie schon zu tot ist, um noch auf irgendeine deiner Fragen zu antworten.{#zf916_s2_}'
+    nr 'Diese Leiche antwortet nicht. Es sieht so aus, als ob sie schon zu tot ist, um noch auf irgendeine deiner Fragen zu antworten.{#zf916_s2_1}'
 
     menu:
         '"Dann leb wohl."{#zf916_s2_r24741}' if zf916Logic.r24741_condition():
@@ -94,6 +94,6 @@ label zf916_s2: # from 0.3
 
 # s3 # say24750
 label zf916_s3: # - # IF ~  False()
-    nr 'Diese Leiche antwortet nicht. Es sieht so aus, als ob sie schon zu tot ist, um noch auf irgendeine deiner Fragen zu antworten.{#zf916_s3_}'
+    nr 'Diese Leiche antwortet nicht. Es sieht so aus, als ob sie schon zu tot ist, um noch auf irgendeine deiner Fragen zu antworten.{#zf916_s3_1}'
 
     menu:

@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say47002
 label zm1664_s0: # from 5.0 # IF ~  True()
-    nr 'Ten olbrzymi truposz stoi cicho w rogu pokoju, twarzą do ściany. Wygląda na to, że kiedyś był potężnie zbudowanym mężczyzną w młodym wieku. Sądząc po stanie jego zwłok, umarł niedawno. Na czole ma świeżo wyszyty numer "1664". Wydaje się, że trup ten pełni funkcję bibliotekarza, ponieważ trzyma w rękach olbrzymi stos książek.{#zm1664_s0_}'
+    nr 'Ten olbrzymi truposz stoi cicho w rogu pokoju, twarzą do ściany. Wygląda na to, że kiedyś był potężnie zbudowanym mężczyzną w młodym wieku. Sądząc po stanie jego zwłok, umarł niedawno. Na czole ma świeżo wyszyty numer "1664". Wydaje się, że trup ten pełni funkcję bibliotekarza, ponieważ trzyma w rękach olbrzymi stos książek.{#zm1664_s0_1}'
 
     menu:
         'Zbadaj książki.{#zm1664_s0_r47003}' if zm1664Logic.r47003_condition():
@@ -41,7 +41,7 @@ label zm1664_s0: # from 5.0 # IF ~  True()
 
 # s1 # say47009
 label zm1664_s1: # from 0.2 6.0
-    nr 'Truposz beznamiętnie wpatruje się w ścianę.{#zm1664_s1_}'
+    nr 'Truposz beznamiętnie wpatruje się w ścianę.{#zm1664_s1_1}'
 
     menu:
         'Zostaw truposza w spokoju.{#zm1664_s1_r47010}':
@@ -51,7 +51,7 @@ label zm1664_s1: # from 0.2 6.0
 
 # s2 # say47011
 label zm1664_s2: # from 0.3
-    nr 'Trup nie porusza się. Pomimo że wygląda na takiego, co to zmarł całkiem niedawno, nie wydaje się być w stanie odpowiedzieć na żadne z twoich pytań.{#zm1664_s2_}'
+    nr 'Trup nie porusza się. Pomimo że wygląda na takiego, co to zmarł całkiem niedawno, nie wydaje się być w stanie odpowiedzieć na żadne z twoich pytań.{#zm1664_s2_1}'
 
     menu:
         'Zostaw truposza w spokoju.{#zm1664_s2_r47012}':
@@ -61,7 +61,7 @@ label zm1664_s2: # from 0.3
 
 # s3 # say47013
 label zm1664_s3: # from 0.0
-    nr 'Książki wyglądają na stare księgi główne Kostnicy i żadna z nich nie jest szczególnie interesująca. Jednakowoż, kiedy tak wertujesz te teksty, zauważasz luźną stronę złożoną pomiędzy dwiema księgami. Nagle uderza cię myśl, że ktoś wcisnął ją tam, aby ją ukryć.{#zm1664_s3_}'
+    nr 'Książki wyglądają na stare księgi główne Kostnicy i żadna z nich nie jest szczególnie interesująca. Jednakowoż, kiedy tak wertujesz te teksty, zauważasz luźną stronę złożoną pomiędzy dwiema księgami. Nagle uderza cię myśl, że ktoś wcisnął ją tam, aby ją ukryć.{#zm1664_s3_1}'
 
     menu:
         'Weź stronicę.{#zm1664_s3_r47014}':
@@ -72,7 +72,7 @@ label zm1664_s3: # from 0.0
 
 # s4 # say47015
 label zm1664_s4: # from 3.0
-    nr 'Strona nie wydaje się pochodzić z ksiąg głównych… wygląda na kartkę z dziennika rejestracyjnego. Rozdarcie jest gładkie, jakby od noża, więc podejrzewasz, że stronicę usunięto celowo.{#zm1664_s4_}'
+    nr 'Strona nie wydaje się pochodzić z ksiąg głównych… wygląda na kartkę z dziennika rejestracyjnego. Rozdarcie jest gładkie, jakby od noża, więc podejrzewasz, że stronicę usunięto celowo.{#zm1664_s4_1}'
 
     menu:
         'Przeczytaj ją.{#zm1664_s4_r47016}':
@@ -82,7 +82,7 @@ label zm1664_s4: # from 3.0
 
 # s5 # say47017
 label zm1664_s5: # from 4.0
-    nr 'Wertujesz stronicę przez kilka chwil… To lista trupów zniesionych do kostnicy i skatalogowanych w sali przyjęć. Listę sporządzono niedawno.  ^NNOTE: <READSTUFF>^-{#zm1664_s5_}'
+    nr 'Wertujesz stronicę przez kilka chwil… To lista trupów zniesionych do kostnicy i skatalogowanych w sali przyjęć. Listę sporządzono niedawno.  ^NNOTE: <READSTUFF>^-{#zm1664_s5_1}'
 
     menu:
         'Raz jeszcze zbadaj zombiaka.{#zm1664_s5_r47018}':
@@ -96,7 +96,7 @@ label zm1664_s5: # from 4.0
 
 # s6 # say47021
 label zm1664_s6: # from 0.1
-    nr 'Książki wyglądają na stare księgi główne Kostnicy i żadna z nich nie jest szczególnie interesująca. Ponownie przeglądasz teksty, ale nie znajdujesz już niczego więcej.{#zm1664_s6_}'
+    nr 'Książki wyglądają na stare księgi główne Kostnicy i żadna z nich nie jest szczególnie interesująca. Ponownie przeglądasz teksty, ale nie znajdujesz już niczego więcej.{#zm1664_s6_1}'
 
     menu:
         '"No więc jak to się stało, że zostałeś bibliotekarzem? Wszystko inne było już zajęte?"{#zm1664_s6_r47022}':

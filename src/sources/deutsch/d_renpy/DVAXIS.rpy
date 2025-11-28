@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say453
 label vaxis_s0: # - # IF ~  Global("Vaxis","GLOBAL",0)
-    nr 'Die elendige Leiche starrt dich mit leerem Blick an. Auf ihrer Stirn ist die Zahl "821" eingeritzt, und ihre Lippen sind zugenäht. Dem Körper entströmt ein leichter Formaldehydgeruch.{#vaxis_s0_}'
+    nr 'Die elendige Leiche starrt dich mit leerem Blick an. Auf ihrer Stirn ist die Zahl "821" eingeritzt, und ihre Lippen sind zugenäht. Dem Körper entströmt ein leichter Formaldehydgeruch.{#vaxis_s0_1}'
 
     menu:
         '"Na… gibt„s hier irgendwas Interessantes zu berichten?"{#vaxis_s0_r454}' if vaxisLogic.r454_condition():
@@ -42,7 +42,7 @@ label vaxis_s0: # - # IF ~  Global("Vaxis","GLOBAL",0)
 
 # s1 # say460
 label vaxis_s1: # from 0.3 # IF ~  False()
-    nr 'Merkwürdigerweise scheinen deine Fähigkeiten bei dieser Leiche wirkungslos zu bleiben.{#vaxis_s1_}'
+    nr 'Merkwürdigerweise scheinen deine Fähigkeiten bei dieser Leiche wirkungslos zu bleiben.{#vaxis_s1_1}'
 
     menu:
         'Pieks ihr ins Auge.{#vaxis_s1_r461}':
@@ -57,7 +57,7 @@ label vaxis_s1: # from 0.3 # IF ~  False()
 
 # s2 # say463
 label vaxis_s2: # from 1.0
-    nr 'Die Leiche stößt einen gedämpften Schrei aus, als du ihr ins Auge stichst, und blitzschnell legt sie ihre Hände vors Gesicht. Keuchend gibt sie irgendwelches Zeug von sich, das du für Obszönitäten hältst.{#vaxis_s2_}'
+    nr 'Die Leiche stößt einen gedämpften Schrei aus, als du ihr ins Auge stichst, und blitzschnell legt sie ihre Hände vors Gesicht. Keuchend gibt sie irgendwelches Zeug von sich, das du für Obszönitäten hältst.{#vaxis_s2_1}'
 
     menu:
         '"Du bist kein Zombie! Wer bist du?"{#vaxis_s2_r464}':
@@ -78,7 +78,7 @@ label vaxis_s2: # from 1.0
 
 # s3 # say467
 label vaxis_s3: # from 2.2 5.2
-    nr 'Als du dich umdrehst und gehen willst, murmelt der „Zombie“ irgendetwas… als würde er versuchen, etwas zu sagen, was jedoch mit großen Schwierigkeiten verbunden ist, da seine Lippen zugenäht sind. "Mwer mbist DU? Mwas mwillst du?"{#vaxis_s3_}'
+    nr 'Als du dich umdrehst und gehen willst, murmelt der „Zombie“ irgendetwas… als würde er versuchen, etwas zu sagen, was jedoch mit großen Schwierigkeiten verbunden ist, da seine Lippen zugenäht sind. "Mwer mbist DU? Mwas mwillst du?"{#vaxis_s3_1}'
 
     menu:
         '"Ich suche nach einem Weg hier raus. Kannst du mir helfen?"{#vaxis_s3_r468}' if vaxisLogic.r468_condition():
@@ -110,7 +110,7 @@ label vaxis_s3: # from 2.2 5.2
 
 # s4 # say471
 label vaxis_s4: # from 3.5 6.5 7.8 8.5 10.4 11.4 12.2 13.5 14.4 15.2 16.4 17.2 18.1 19.3 20.1 25.6 27.6 31.6 32.5 34.2 35.6 59.1 74.1 75.3 76.1
-    nr 'Als du dich umdrehst und gehen willst, vernimmst du einen kehligen Laut aus der Richtung des Zombies. "Mkein Mwort über MICH, zu niemndm. Mund hulten. Mkein WORT zu den Stubies." Er legt den Finger auf die Lippen. "Schhhhhh." Dann streicht er mit dem Finger über seine Kehle. "Oder ich muß mdir im Schluf die Mkehle durchschneiden. MKLAR?"{#vaxis_s4_}'
+    nr 'Als du dich umdrehst und gehen willst, vernimmst du einen kehligen Laut aus der Richtung des Zombies. "Mkein Mwort über MICH, zu niemndm. Mund hulten. Mkein WORT zu den Stubies." Er legt den Finger auf die Lippen. "Schhhhhh." Dann streicht er mit dem Finger über seine Kehle. "Oder ich muß mdir im Schluf die Mkehle durchschneiden. MKLAR?"{#vaxis_s4_1}'
 
     menu:
         '"Sollte das eine DROHUNG sein? Das war„s dann… bereite dich schon mal auf den Tod vor."{#vaxis_s4_r475}':
@@ -135,7 +135,7 @@ label vaxis_s4: # from 3.5 6.5 7.8 8.5 10.4 11.4 12.2 13.5 14.4 15.2 16.4 17.2 1
 
 # s5 # say479
 label vaxis_s5: # from 0.0 0.1 0.2 0.4
-    nr 'Als du den Zombie ansprichst, blinzelt er überrascht. "Jaaa? Mwas?"{#vaxis_s5_}'
+    nr 'Als du den Zombie ansprichst, blinzelt er überrascht. "Jaaa? Mwas?"{#vaxis_s5_1}'
 
     menu:
         '"Du bist kein Zombie! Wer bist du?"{#vaxis_s5_r480}':
@@ -156,7 +156,7 @@ label vaxis_s5: # from 0.0 0.1 0.2 0.4
 
 # s6 # say483
 label vaxis_s6: # from 2.0 2.1 5.0 5.1
-    nr 'Der „Zombie“ versucht durch seine zugenähten Lippen hindurch zu antworten; seine Miene ist eine merkwürdige Mischung aus Angst und Wut. "Mwer mbist DU? Mwas mwillst du?"{#vaxis_s6_}'
+    nr 'Der „Zombie“ versucht durch seine zugenähten Lippen hindurch zu antworten; seine Miene ist eine merkwürdige Mischung aus Angst und Wut. "Mwer mbist DU? Mwas mwillst du?"{#vaxis_s6_1}'
 
     menu:
         '"Ich suche nach einem Weg hier raus. Kannst du mir helfen?"{#vaxis_s6_r484}' if vaxisLogic.r484_condition():
@@ -188,7 +188,7 @@ label vaxis_s6: # from 2.0 2.1 5.0 5.1
 
 # s7 # say490
 label vaxis_s7: # from 3.0 3.1 3.2 3.4 6.0 6.1 6.2 6.4
-    nr 'Der Zombie scheint dich nicht gehört zu haben. Er mustert dich einen Augenblick lang von Kopf bis Fuß, dann runzelt er die Stirn. "Mwas mwillst du?" Argwöhnisch kneift er seine Augen zusammen. "Stubies usspionieren?"{#vaxis_s7_}'
+    nr 'Der Zombie scheint dich nicht gehört zu haben. Er mustert dich einen Augenblick lang von Kopf bis Fuß, dann runzelt er die Stirn. "Mwas mwillst du?" Argwöhnisch kneift er seine Augen zusammen. "Stubies usspionieren?"{#vaxis_s7_1}'
 
     menu:
         '"Nein. Ich versuche hier rauszukommen."{#vaxis_s7_r491}' if vaxisLogic.r491_condition():
@@ -234,7 +234,7 @@ label vaxis_s7: # from 3.0 3.1 3.2 3.4 6.0 6.1 6.2 6.4
 
 # s8 # say1350
 label vaxis_s8: # from 7.2
-    nr 'Jetzt schaut er dich noch prüfender an. "Mdu Spion? Mghörst zu Zelle?"{#vaxis_s8_}'
+    nr 'Jetzt schaut er dich noch prüfender an. "Mdu Spion? Mghörst zu Zelle?"{#vaxis_s8_1}'
 
     menu:
         '"Hä?"{#vaxis_s8_r4671}':
@@ -267,7 +267,7 @@ label vaxis_s8: # from 7.2
 
 # s9 # say1363
 label vaxis_s9: # from 7.3
-    nr 'Jetzt schaut er dich noch prüfender an. "Mdu Spion? Mghörst zu Zelle?"{#vaxis_s9_}'
+    nr 'Jetzt schaut er dich noch prüfender an. "Mdu Spion? Mghörst zu Zelle?"{#vaxis_s9_1}'
 
     menu:
         '"Hä?"{#vaxis_s9_r4359}':
@@ -281,7 +281,7 @@ label vaxis_s9: # from 7.3
 
 # s10 # say4361
 label vaxis_s10: # from 8.0 8.1
-    nr 'Er runzelt die Stirn, dann zischt er dich an. "Mdu kein Spion!" Er scheucht dich mit einer Geste fort. "Geh! Geh!"{#vaxis_s10_}'
+    nr 'Er runzelt die Stirn, dann zischt er dich an. "Mdu kein Spion!" Er scheucht dich mit einer Geste fort. "Geh! Geh!"{#vaxis_s10_1}'
 
     menu:
         '"Erst mußt du mir sagen, was du hier tust, oder ich rufe die Wache."{#vaxis_s10_r4362}' if vaxisLogic.r4362_condition():
@@ -309,7 +309,7 @@ label vaxis_s10: # from 8.0 8.1
 
 # s11 # say4366
 label vaxis_s11: # externs morte_s86
-    nr 'Der Zombie nickt jetzt, und du glaubst zu bemerken, daß er sich unter seiner Zombie-Tarnung vor Stolz aufplustert.{#vaxis_s11_}'
+    nr 'Der Zombie nickt jetzt, und du glaubst zu bemerken, daß er sich unter seiner Zombie-Tarnung vor Stolz aufplustert.{#vaxis_s11_1}'
 
     menu:
         '"Kannst du mir helfen, hier rauszukommen?"{#vaxis_s11_r4368}' if vaxisLogic.r4368_condition():
@@ -337,7 +337,7 @@ label vaxis_s11: # externs morte_s86
 
 # s12 # say4373
 label vaxis_s12: # from 7.0 11.0
-    nr 'Der Zombie scheint interessiert. "Mdu in Schwierigkitn? Mwas hust du mverbrochn?"{#vaxis_s12_}'
+    nr 'Der Zombie scheint interessiert. "Mdu in Schwierigkitn? Mwas hust du mverbrochn?"{#vaxis_s12_1}'
 
     menu:
         '"Ich bin auf einer der Totenbänke oben aufgewacht."{#vaxis_s12_r4374}':
@@ -355,7 +355,7 @@ label vaxis_s12: # from 7.0 11.0
 
 # s13 # say4377
 label vaxis_s13: # from 12.0
-    nr 'Der Zombie schaut dich an, als wärst du verrückt. "Mbist du übergeschnuppt?"{#vaxis_s13_}'
+    nr 'Der Zombie schaut dich an, als wärst du verrückt. "Mbist du übergeschnuppt?"{#vaxis_s13_1}'
 
     menu:
         '"Ja, ich bin übergeschnappt. Total übergeschnappt."{#vaxis_s13_r4378}':
@@ -386,7 +386,7 @@ label vaxis_s13: # from 12.0
 
 # s14 # say4384
 label vaxis_s14: # from 13.0 13.3 15.0
-    nr 'Er schaut dich an, dann scheucht er dich mit einer Geste fort und zischt. "Mdu bescheuert! Luß mich in Ruhe!"{#vaxis_s14_}'
+    nr 'Er schaut dich an, dann scheucht er dich mit einer Geste fort und zischt. "Mdu bescheuert! Luß mich in Ruhe!"{#vaxis_s14_1}'
 
     menu:
         '"Ich gehe nirgendwo hin. Sag mir, was du hier tust, oder ich rufe die Wache."{#vaxis_s14_r4385}' if vaxisLogic.r4385_condition():
@@ -414,7 +414,7 @@ label vaxis_s14: # from 13.0 13.3 15.0
 
 # s15 # say4390
 label vaxis_s15: # externs morte_s88
-    nr 'Der falsche Zombie schaut euch beide mißtrauisch an.{#vaxis_s15_}'
+    nr 'Der falsche Zombie schaut euch beide mißtrauisch an.{#vaxis_s15_1}'
 
     menu:
         '"Das ist die reine Wahrheit - ich bin auf einer der Totenbänke hier aufgewacht."{#vaxis_s15_r4391}':
@@ -433,7 +433,7 @@ label vaxis_s15: # externs morte_s88
 
 # s16 # say4394
 label vaxis_s16: # from 13.1
-    nr 'Er schaut dich an, dann scheucht er dich mit einer Geste fort und zischt. "Hohlkopfh! Idiot! Mweg hier, mdu Mdussel! Geh!"{#vaxis_s16_}'
+    nr 'Er schaut dich an, dann scheucht er dich mit einer Geste fort und zischt. "Hohlkopfh! Idiot! Mweg hier, mdu Mdussel! Geh!"{#vaxis_s16_1}'
 
     menu:
         '"Ich gehe nirgendwo hin. Sag mir, was du hier tust, oder ich rufe die Wache."{#vaxis_s16_r4395}' if vaxisLogic.r4395_condition():
@@ -461,7 +461,7 @@ label vaxis_s16: # from 13.1
 
 # s17 # say4400
 label vaxis_s17: # from 7.5 10.1 14.1 16.1 25.3 27.3
-    nr 'Einen Moment lang wirkt er ängstlich. Dann schaut er dich prüfend an und grinst spöttisch über das ganze Gesicht. "Mdu erzählst mir Mdunkel, ich erzähl *mdir* Mdunkel. Ich Freunde, hier versteckt, mdu *niemndn.* Mdu solltest nicht mhier sein. Mdich töten Stubies, ich mach mich us dem Stub."{#vaxis_s17_}'
+    nr 'Einen Moment lang wirkt er ängstlich. Dann schaut er dich prüfend an und grinst spöttisch über das ganze Gesicht. "Mdu erzählst mir Mdunkel, ich erzähl *mdir* Mdunkel. Ich Freunde, hier versteckt, mdu *niemndn.* Mdu solltest nicht mhier sein. Mdich töten Stubies, ich mach mich us dem Stub."{#vaxis_s17_1}'
 
     menu:
         '"Du wirst nicht entkommen, wenn ich dich TÖTE. Und jetzt antworte auf meine Fragen, oder ich seh zu, daß deine Verkleidung zur Realität wird."{#vaxis_s17_r4401}' if vaxisLogic.r4401_condition():
@@ -481,7 +481,7 @@ label vaxis_s17: # from 7.5 10.1 14.1 16.1 25.3 27.3
 
 # s18 # say4404
 label vaxis_s18: # from 17.0
-    nr 'Der Zombie kneift die Augen zusammen und zischt dich an. "Mdu WILLST mich ins Totenbuch stecken? Ich Freunde, hier versteckt, mdu *niemndn.* Mwenn mdu mir ein Mhaar krümmst, mtöten DICH meine Mfreunde."{#vaxis_s18_}'
+    nr 'Der Zombie kneift die Augen zusammen und zischt dich an. "Mdu WILLST mich ins Totenbuch stecken? Ich Freunde, hier versteckt, mdu *niemndn.* Mwenn mdu mir ein Mhaar krümmst, mtöten DICH meine Mfreunde."{#vaxis_s18_1}'
 
     menu:
         '"Ich werd„s wagen. Bereite dich schon mal auf den Tod vor."{#vaxis_s18_r4405}':
@@ -496,7 +496,7 @@ label vaxis_s18: # from 17.0
 
 # s19 # say4407
 label vaxis_s19: # from 7.6 10.2 14.2 16.2 25.4 27.4
-    nr 'Einen Moment lang wirkt er ängstlich. Dann begutachtet er deine Statur und grinst spöttisch über das ganze Gesicht. "MDUUU MICH ins Totenbuch stecken? Ich Freunde, hier versteckt. Mdu *niemndn.* Mwenn mdu mir ein Mhaar krümmst, mtöten DICH meine Mfreunde."{#vaxis_s19_}'
+    nr 'Einen Moment lang wirkt er ängstlich. Dann begutachtet er deine Statur und grinst spöttisch über das ganze Gesicht. "MDUUU MICH ins Totenbuch stecken? Ich Freunde, hier versteckt. Mdu *niemndn.* Mwenn mdu mir ein Mhaar krümmst, mtöten DICH meine Mfreunde."{#vaxis_s19_1}'
 
     menu:
         '"Ich werd„s wagen. Bereite dich schon mal auf den Tod vor."{#vaxis_s19_r4408}':
@@ -519,7 +519,7 @@ label vaxis_s19: # from 7.6 10.2 14.2 16.2 25.4 27.4
 
 # s20 # say4412
 label vaxis_s20: # from 19.2
-    nr 'Der Zombie kneift die Augen zusammen und zischt dich an. "Mdu erzählst mir Mdunkel, ich erzähl *mdir* Mdunkel. Ich Freunde, hier versteckt, mdu *niemndn.* Mdu solltest nicht hier sein. Mdich töten Stuubies, ich mach mich us dem Stub."{#vaxis_s20_}'
+    nr 'Der Zombie kneift die Augen zusammen und zischt dich an. "Mdu erzählst mir Mdunkel, ich erzähl *mdir* Mdunkel. Ich Freunde, hier versteckt, mdu *niemndn.* Mdu solltest nicht hier sein. Mdich töten Stuubies, ich mach mich us dem Stub."{#vaxis_s20_1}'
 
     menu:
         '"Das war deine letzte Chance, Leiche. Bereite dich schon mal auf den Tod vor."{#vaxis_s20_r4413}':
@@ -534,7 +534,7 @@ label vaxis_s20: # from 19.2
 
 # s21 # say4415
 label vaxis_s21: # from 7.4 10.0 14.0 16.0 19.1 25.2 27.2
-    nr 'Irgendetwas in deinem Blick scheint den Zombie stark zu verunsichern. "Nein-nein-nicht! Kkeine Mwachen rufn!" Er scheint sich zu fürchten. "Ich-ich-ich mspioniere Stubies aus; sssage, mwas ich sehe. Sonst nnnichts."{#vaxis_s21_}'
+    nr 'Irgendetwas in deinem Blick scheint den Zombie stark zu verunsichern. "Nein-nein-nicht! Kkeine Mwachen rufn!" Er scheint sich zu fürchten. "Ich-ich-ich mspioniere Stubies aus; sssage, mwas ich sehe. Sonst nnnichts."{#vaxis_s21_1}'
 
     menu:
         '"Spitzel? Für wen?"{#vaxis_s21_r4416}':
@@ -556,7 +556,7 @@ label vaxis_s21: # from 7.4 10.0 14.0 16.0 19.1 25.2 27.2
 
 # s22 # say4420
 label vaxis_s22: # from 7.7 10.3 14.3 16.3 17.1 25.5 27.5
-    nr '"Nein-nein-nicht! Nicht mweh tun!" Die Tatsache, daß du ein paar Kilo mehr Muskelmasse auf die Waage bringst, scheint die Entscheidung des Zombies zu beeinflussen. Er wirkt verunsichert. "Nicht mweh tun! Ich-ich-ich mspioniere Stubies us; sssage, mwus ich sehe. Sonst nnnichts."{#vaxis_s22_}'
+    nr '"Nein-nein-nicht! Nicht mweh tun!" Die Tatsache, daß du ein paar Kilo mehr Muskelmasse auf die Waage bringst, scheint die Entscheidung des Zombies zu beeinflussen. Er wirkt verunsichert. "Nicht mweh tun! Ich-ich-ich mspioniere Stubies us; sssage, mwus ich sehe. Sonst nnnichts."{#vaxis_s22_1}'
 
     menu:
         '"Spitzel? Für wen?"{#vaxis_s22_r4421}':
@@ -578,7 +578,7 @@ label vaxis_s22: # from 7.7 10.3 14.3 16.3 17.1 25.5 27.5
 
 # s23 # say4425
 label vaxis_s23: # from 21.0 22.0
-    nr 'Der Zombie verstummt vor Angst. Er sieht aus, als würde er überhaupt nichts mehr sagen wollen.{#vaxis_s23_}'
+    nr 'Der Zombie verstummt vor Angst. Er sieht aus, als würde er überhaupt nichts mehr sagen wollen.{#vaxis_s23_1}'
 
     menu:
         '"Nun komm schon. "Für wen sperrst du hier die Augen auf?"{#vaxis_s23_r4426}' if vaxisLogic.r4426_condition():
@@ -614,7 +614,7 @@ label vaxis_s23: # from 21.0 22.0
 
 # s24 # say4433
 label vaxis_s24: # from 3.3 6.3 8.2
-    nr '"Mdu hast mich gggesucht? Mweshalb?" Er schielt dich an. "Mdu hust eine Nuchricht für mmmich?"{#vaxis_s24_}'
+    nr '"Mdu hast mich gggesucht? Mweshalb?" Er schielt dich an. "Mdu hust eine Nuchricht für mmmich?"{#vaxis_s24_1}'
 
     menu:
         'Lüge: "Ja, ich habe eine Nachricht für dich."{#vaxis_s24_r4434}':
@@ -633,7 +633,7 @@ label vaxis_s24: # from 3.3 6.3 8.2
 
 # s25 # say4437
 label vaxis_s25: # from 24.2
-    nr 'Er zischt dich wütend an. "Mwas *mwillst* du mdunn, Dussel?!"{#vaxis_s25_}'
+    nr 'Er zischt dich wütend an. "Mwas *mwillst* du mdunn, Dussel?!"{#vaxis_s25_1}'
 
     menu:
         '"Ich suche nach einem Weg hier raus. Kannst du mir helfen?"{#vaxis_s25_r4438}' if vaxisLogic.r4438_condition():
@@ -669,7 +669,7 @@ label vaxis_s25: # from 24.2
 
 # s26 # say4445
 label vaxis_s26: # from 24.0
-    nr '"Mwas für eine Nachricht?"{#vaxis_s26_}'
+    nr '"Mwas für eine Nachricht?"{#vaxis_s26_1}'
 
     menu:
         '"Du sollst mir von deiner Mission erzählen."{#vaxis_s26_r4446}' if vaxisLogic.r4446_condition():
@@ -697,7 +697,7 @@ label vaxis_s26: # from 24.0
 
 # s27 # say4451
 label vaxis_s27: # from 24.1 26.3 26.4
-    nr 'Wütend kneift er die Augen zusammen. "Mdu mkein Bote. Mwer bist du?"{#vaxis_s27_}'
+    nr 'Wütend kneift er die Augen zusammen. "Mdu mkein Bote. Mwer bist du?"{#vaxis_s27_1}'
 
     menu:
         '"Ich suche nach einem Weg hier raus. Kannst du mir helfen?"{#vaxis_s27_r4452}' if vaxisLogic.r4452_condition():
@@ -733,7 +733,7 @@ label vaxis_s27: # from 24.1 26.3 26.4
 
 # s28 # say4459
 label vaxis_s28: # from 8.3 8.4 11.1 11.2 11.3 26.0 30.0 43.5
-    nr '"Ich bespitzle Stubies. Sage, mwas ich sehe. Sssonst nichts."{#vaxis_s28_}'
+    nr '"Ich bespitzle Stubies. Sage, mwas ich sehe. Sssonst nichts."{#vaxis_s28_1}'
 
     menu:
         '"Hast du gesehen, was die Staubmenschen machen?"{#vaxis_s28_r4460}':
@@ -751,7 +751,7 @@ label vaxis_s28: # from 8.3 8.4 11.1 11.2 11.3 26.0 30.0 43.5
 
 # s29 # say4463
 label vaxis_s29: # from 21.1 22.1 23.4 28.0 70.1 71.2
-    nr '"Nix. Sie tun nix. Ich habe nix gesehen. Nur Tote, tote Leute. Stubies tun *nix.*" Er kneift seine Augen zusammen und sagt voller Überzeugung "Uber ich mguck trotzdm hin."{#vaxis_s29_}'
+    nr '"Nix. Sie tun nix. Ich habe nix gesehen. Nur Tote, tote Leute. Stubies tun *nix.*" Er kneift seine Augen zusammen und sagt voller Überzeugung "Uber ich mguck trotzdm hin."{#vaxis_s29_1}'
 
     menu:
         '"Ich verstehe. Da war noch was, was ich wissen wollte…"{#vaxis_s29_r4464}':
@@ -765,7 +765,7 @@ label vaxis_s29: # from 21.1 22.1 23.4 28.0 70.1 71.2
 
 # s30 # say4466
 label vaxis_s30: # from 26.1 26.2
-    nr 'Er kneift seine Augen zusammen, um dich besser zu sehen. "Mwas für mwelche?"{#vaxis_s30_}'
+    nr 'Er kneift seine Augen zusammen, um dich besser zu sehen. "Mwas für mwelche?"{#vaxis_s30_1}'
 
     menu:
         '"Erzähl mir von deiner Mission."{#vaxis_s30_r4467}':
@@ -792,7 +792,7 @@ label vaxis_s30: # from 26.1 26.2
 
 # s31 # say4472
 label vaxis_s31: # from 7.1 12.1 13.4 15.1 25.0 27.0 50.0
-    nr 'Er ist kurz still, dann nickt er verständig. "Mweshalb sollte ich mdir hlfen?"{#vaxis_s31_}'
+    nr 'Er ist kurz still, dann nickt er verständig. "Mweshalb sollte ich mdir hlfen?"{#vaxis_s31_1}'
 
     menu:
         '"Weil ich deine Hilfe brauche."{#vaxis_s31_r4473}':
@@ -829,7 +829,7 @@ label vaxis_s31: # from 7.1 12.1 13.4 15.1 25.0 27.0 50.0
 
 # s32 # say4480
 label vaxis_s32: # from 31.0
-    nr 'Der Zombie grinst leicht verächtlich. "Jeder *mbraucht* was - niemand *mgibt* was. Mwenn du mir mwas *gibst*, hlf ich dir *vielleicht*."{#vaxis_s32_}'
+    nr 'Der Zombie grinst leicht verächtlich. "Jeder *mbraucht* was - niemand *mgibt* was. Mwenn du mir mwas *gibst*, hlf ich dir *vielleicht*."{#vaxis_s32_1}'
 
     menu:
         '"Was brauchst du?"{#vaxis_s32_r4481}':
@@ -861,7 +861,7 @@ label vaxis_s32: # from 31.0
 
 # s33 # say4487
 label vaxis_s33: # from 31.2 31.5 32.1 32.4 34.1 35.2 35.5 75.0
-    nr 'Er mustert dich von Kopf bis Fuß, als frage er sich, ober er einen Angriff wagen sollte. Dann starrt er auf deine Narben und entscheidet sich dagegen. "Hmmm. Mdu kunnst durch Mportule entkommn."{#vaxis_s33_}'
+    nr 'Er mustert dich von Kopf bis Fuß, als frage er sich, ober er einen Angriff wagen sollte. Dann starrt er auf deine Narben und entscheidet sich dagegen. "Hmmm. Mdu kunnst durch Mportule entkommn."{#vaxis_s33_1}'
 
     menu:
         '"Portale?"{#vaxis_s33_r4672}':
@@ -872,7 +872,7 @@ label vaxis_s33: # from 31.2 31.5 32.1 32.4 34.1 35.2 35.5 75.0
 
 # s34 # say4491
 label vaxis_s34: # from 31.3 32.2 35.3
-    nr 'Einen Moment lang wirkt er ängstlich. Dann schaut er dich prüfend an und grinst spöttisch über das ganze Gesicht. "Mdu erzählst mir Mdunkel, ich erzähl *mdir* Mdunkel. Ich Freunde, hier versteckt, mdu *niemndn.* Mdu solltest nicht mhier sein. Mdich töten Stubies, ich mach mich us dem Stub."{#vaxis_s34_}'
+    nr 'Einen Moment lang wirkt er ängstlich. Dann schaut er dich prüfend an und grinst spöttisch über das ganze Gesicht. "Mdu erzählst mir Mdunkel, ich erzähl *mdir* Mdunkel. Ich Freunde, hier versteckt, mdu *niemndn.* Mdu solltest nicht mhier sein. Mdich töten Stubies, ich mach mich us dem Stub."{#vaxis_s34_1}'
 
     menu:
         '"Du wirst nicht entkommen, wenn ich dich TÖTE. Und jetzt mach endlich den Mund auf, oder ich seh zu, daß deine Verkleidung zur Realität wird."{#vaxis_s34_r4489}' if vaxisLogic.r4489_condition():
@@ -892,7 +892,7 @@ label vaxis_s34: # from 31.3 32.2 35.3
 
 # s35 # say4493
 label vaxis_s35: # from 30.3 31.1 32.0
-    nr '"Mhol mir dn *Schlüssel*. Eisnschlssel zum Bulsumierungsrum."{#vaxis_s35_}'
+    nr '"Mhol mir dn *Schlüssel*. Eisnschlssel zum Bulsumierungsrum."{#vaxis_s35_1}'
 
     menu:
         '"Sprichst du von diesem Schlüssel hier?"{#vaxis_s35_r4494}' if vaxisLogic.r4494_condition():
@@ -931,7 +931,7 @@ label vaxis_s35: # from 30.3 31.1 32.0
 
 # s36 # say4501
 label vaxis_s36: # from 35.1 58.2
-    nr '"Ssstubie-Frau hut ihn." Er zeigt auf seine Augen. "Mgelbe Ugen…" Mit seinen Händen deutet er eine Schere an. "Mklingen un Mfingern."{#vaxis_s36_}'
+    nr '"Ssstubie-Frau hut ihn." Er zeigt auf seine Augen. "Mgelbe Ugen…" Mit seinen Händen deutet er eine Schere an. "Mklingen un Mfingern."{#vaxis_s36_1}'
 
     menu:
         '"Unsere Wege haben sich schon einmal gekreuzt. "Hier ist der Schlüssel."{#vaxis_s36_r4502}' if vaxisLogic.r4502_condition():
@@ -957,7 +957,7 @@ label vaxis_s36: # from 35.1 58.2
 
 # s37 # say4505
 label vaxis_s37: # from 36.3
-    nr 'Der Zombie blinzelt. Er scheint dich nicht verstanden zu haben.{#vaxis_s37_}'
+    nr 'Der Zombie blinzelt. Er scheint dich nicht verstanden zu haben.{#vaxis_s37_1}'
 
     menu:
         '"Hör mal, das sollte„n Witz sein, du Idiot… vergiß es, ich geh jetzt und hole deinen Schlüssel."{#vaxis_s37_r4506}' if vaxisLogic.r4506_condition():
@@ -973,7 +973,7 @@ label vaxis_s37: # from 36.3
 
 # s38 # say4507
 label vaxis_s38: # from 36.1 36.2 37.0 37.1
-    nr 'Der Zombie schielt dich an. "Mwenn sssie dich kriegen, kein Mwort über mich, oder ich ssschneid mdir im Schluf mdie Mkehle durch."{#vaxis_s38_}'
+    nr 'Der Zombie schielt dich an. "Mwenn sssie dich kriegen, kein Mwort über mich, oder ich ssschneid mdir im Schluf mdie Mkehle durch."{#vaxis_s38_1}'
 
     menu:
         '"Ich werd dir deinen verdammten Schlüssel holen… aber nimm dich in acht mit deinen Drohungen, verstanden?"{#vaxis_s38_r4508}' if vaxisLogic.r4508_condition():
@@ -997,14 +997,14 @@ label vaxis_s38: # from 36.1 36.2 37.0 37.1
 
 # s39 # say4512
 label vaxis_s39: # from 43.12
-    nr '"Ich mgut im Tarnen. Ich uch Nurben. Ich viel Mbulsumierungsöl. Muche GUUUTE Zombies." Der Zombie kichert durch die zugenähten Lippen. "Stubies sssind mblöd."{#vaxis_s39_}'
+    nr '"Ich mgut im Tarnen. Ich uch Nurben. Ich viel Mbulsumierungsöl. Muche GUUUTE Zombies." Der Zombie kichert durch die zugenähten Lippen. "Stubies sssind mblöd."{#vaxis_s39_1}'
 
     jump morte_s93  # EXTERN
 
 
 # s40 # say4514
 label vaxis_s40: # -
-    nr '"Ich mwurte hier. Hol erst mden Schlssel." Der Zombie lächelt so breit, daß es dir den Magen umdreht "Mdunn helf ich dir."{#vaxis_s40_}'
+    nr '"Ich mwurte hier. Hol erst mden Schlssel." Der Zombie lächelt so breit, daß es dir den Magen umdreht "Mdunn helf ich dir."{#vaxis_s40_1}'
 
     menu:
         '"Wenn ich ihn finde, bring ich ihn dir."{#vaxis_s40_r4515}':
@@ -1018,7 +1018,7 @@ label vaxis_s40: # -
 
 # s41 # say4517
 label vaxis_s41: # -
-    nr 'Der Zombie macht große Augen; dann streckt er die Hand aus und schnippst mit den Fingern. "Mgib her."{#vaxis_s41_}'
+    nr 'Der Zombie macht große Augen; dann streckt er die Hand aus und schnippst mit den Fingern. "Mgib her."{#vaxis_s41_1}'
 
     menu:
         '"Einen Moment mal. Erst will ich hier noch was."{#vaxis_s41_r4518}':
@@ -1033,7 +1033,7 @@ label vaxis_s41: # -
 
 # s42 # say4520
 label vaxis_s42: # from 35.0 36.0 58.0 58.1
-    nr 'Der Zombie macht große Augen und entreißt dir den Schlüssel. Er dreht ihn um und nickt dabei. "Mguuut… mguuut."{#vaxis_s42_}'
+    nr 'Der Zombie macht große Augen und entreißt dir den Schlüssel. Er dreht ihn um und nickt dabei. "Mguuut… mguuut."{#vaxis_s42_1}'
 
     menu:
         '"Also… wie komme ich hier raus?"{#vaxis_s42_r4521}' if vaxisLogic.r4521_condition():
@@ -1049,7 +1049,7 @@ label vaxis_s42: # from 35.0 36.0 58.0 58.1
 
 # s43 # say4523
 label vaxis_s43: # from 21.2 22.2 23.5 25.1 27.1 28.1 29.0 42.1 44.2 45.1 46.2 47.2 48.0 51.1 52.0 53.0 54.0 56.0 58.3 59.0 60.3 61.4 62.3 63.1 64.0 70.2 71.3 77.0
-    nr '"Mwas mwillst du mwissn?"{#vaxis_s43_}'
+    nr '"Mwas mwillst du mwissn?"{#vaxis_s43_1}'
 
     menu:
         '"Wie komme ich hier raus?"{#vaxis_s43_r64508}' if vaxisLogic.r64508_condition():
@@ -1111,7 +1111,7 @@ label vaxis_s43: # from 21.2 22.2 23.5 25.1 27.1 28.1 29.0 42.1 44.2 45.1 46.2 4
 
 # s44 # say4537
 label vaxis_s44: # from 43.6
-    nr '"Fff-UROD?" Der Zombie runzelt nachdenklich die Stirn. "Er… er mlebt irgndwo im Stock." Er schüttelt den Kopf. "Mweiß nicht mwo." Er runzelt erneut die Stirn. "Stubies seeehr mböse, MMMÖGEN Mfff-arod nicht."{#vaxis_s44_}'
+    nr '"Fff-UROD?" Der Zombie runzelt nachdenklich die Stirn. "Er… er mlebt irgndwo im Stock." Er schüttelt den Kopf. "Mweiß nicht mwo." Er runzelt erneut die Stirn. "Stubies seeehr mböse, MMMÖGEN Mfff-arod nicht."{#vaxis_s44_1}'
 
     menu:
         '"Stock?"{#vaxis_s44_r4538}':
@@ -1134,7 +1134,7 @@ label vaxis_s44: # from 43.6
 
 # s45 # say4542
 label vaxis_s45: # from 44.0
-    nr '"Slums da mdrußen."{#vaxis_s45_}'
+    nr '"Slums da mdrußen."{#vaxis_s45_1}'
 
     menu:
         '"Warum mögen die Staubmenschen Pharod nicht?"{#vaxis_s45_r4543}':
@@ -1153,7 +1153,7 @@ label vaxis_s45: # from 44.0
 
 # s46 # say4546
 label vaxis_s46: # from 44.1 45.0
-    nr '"Ein Summler. Mbringt Tote in Leichenhulle und mverkuft sie an Ssstubies. Mbringt VIELE Tote. Stubies wissen nicht, woher. Gluben, er msteckt Mdussl in Totnbuch."{#vaxis_s46_}'
+    nr '"Ein Summler. Mbringt Tote in Leichenhulle und mverkuft sie an Ssstubies. Mbringt VIELE Tote. Stubies wissen nicht, woher. Gluben, er msteckt Mdussl in Totnbuch."{#vaxis_s46_1}'
 
     menu:
         '"Äh… was?"{#vaxis_s46_r4547}' if vaxisLogic.r4547_condition():
@@ -1175,7 +1175,7 @@ label vaxis_s46: # from 44.1 45.0
 
 # s47 # say4551
 label vaxis_s47: # from 43.7
-    nr '"Weiß nicht. Von nem Dussel geschält?"{#vaxis_s47_}'
+    nr '"Weiß nicht. Von nem Dussel geschält?"{#vaxis_s47_1}'
 
     menu:
         '"Äh… was?"{#vaxis_s47_r4552}' if vaxisLogic.r4552_condition():
@@ -1197,7 +1197,7 @@ label vaxis_s47: # from 43.7
 
 # s48 # say4556
 label vaxis_s48: # from 46.0 47.0
-    nr 'Der Zombie versucht, etwas zu sagen; er wartet kurz, versucht erneut zu sprechen und zuckt dann mit den Achseln. Scheinbar findet er keine bessere Erklärung{#vaxis_s48_}'
+    nr 'Der Zombie versucht, etwas zu sagen; er wartet kurz, versucht erneut zu sprechen und zuckt dann mit den Achseln. Scheinbar findet er keine bessere Erklärung{#vaxis_s48_1}'
 
     menu:
         '"Oh. Da war noch was, was ich wissen wollte…"{#vaxis_s48_r4557}':
@@ -1211,7 +1211,7 @@ label vaxis_s48: # from 46.0 47.0
 
 # s49 # say4559
 label vaxis_s49: # from 30.1 42.0 43.0 43.1
-    nr 'Der Zombie brummt. "Mdu mkunnst durch die Mportule entkmmen." Er winkt mit der Hand. "So."{#vaxis_s49_}'
+    nr 'Der Zombie brummt. "Mdu mkunnst durch die Mportule entkmmen." Er winkt mit der Hand. "So."{#vaxis_s49_1}'
 
     menu:
         '"Portale? Was für Portale?"{#vaxis_s49_r4560}':
@@ -1221,7 +1221,7 @@ label vaxis_s49: # from 30.1 42.0 43.0 43.1
 
 # s50 # say4563
 label vaxis_s50: # from 33.0 49.0
-    nr '"Mportule…" Der Zombie zeigt um sich. "Mportule überull."{#vaxis_s50_}'
+    nr '"Mportule…" Der Zombie zeigt um sich. "Mportule überull."{#vaxis_s50_1}'
 
     menu:
         '"Kannst du mir so ein Portal zeigen?"{#vaxis_s50_r4564}' if vaxisLogic.r4564_condition():
@@ -1243,7 +1243,7 @@ label vaxis_s50: # from 33.0 49.0
 
 # s51 # say4567
 label vaxis_s51: # from 50.1 50.2 50.3 72.0
-    nr 'Der Zombie nickt. "Mwenn mdu rus mwillst, geh zum Mbugen im ersstn Stuck, nordwstlichr Rum… Mdu bruchst Fingerknuchen, Hakenform…" Er hält einen Zeigefinger hoch und biegt ihn wie einen Haken. "Wunn du Schlussel hast, geh zu Bugen, sprung in Mgeheimkryptu. Mvun durt kunnst du mfliehen. Geheimer Mfluchtweg." Er nickt eifrig. "Da kunnst du AUSRUHN."{#vaxis_s51_}'
+    nr 'Der Zombie nickt. "Mwenn mdu rus mwillst, geh zum Mbugen im ersstn Stuck, nordwstlichr Rum… Mdu bruchst Fingerknuchen, Hakenform…" Er hält einen Zeigefinger hoch und biegt ihn wie einen Haken. "Wunn du Schlussel hast, geh zu Bugen, sprung in Mgeheimkryptu. Mvun durt kunnst du mfliehen. Geheimer Mfluchtweg." Er nickt eifrig. "Da kunnst du AUSRUHN."{#vaxis_s51_1}'
 
     menu:
         '"Krummer Fingerknochen? Wo soll ich denn sowas finden?"{#vaxis_s51_r64527}' if vaxisLogic.r64527_condition():
@@ -1264,7 +1264,7 @@ label vaxis_s51: # from 50.1 50.2 50.3 72.0
 
 # s52 # say4570
 label vaxis_s52: # from 43.2
-    nr '"Hör mr doch zu!" Der Zombie macht einen verärgerten Eindruck. "Bugen, ersstr Stuck, nordwstlichr Rum…" Er hält einen Zeigefinger hoch und beugt ihn. "Mdu bruchst Fingerknuchen, krumm. Mdu gehst in Geheimkryptu. Mfluchtweg Da kunnst du AUSRUHN."{#vaxis_s52_}'
+    nr '"Hör mr doch zu!" Der Zombie macht einen verärgerten Eindruck. "Bugen, ersstr Stuck, nordwstlichr Rum…" Er hält einen Zeigefinger hoch und beugt ihn. "Mdu bruchst Fingerknuchen, krumm. Mdu gehst in Geheimkryptu. Mfluchtweg Da kunnst du AUSRUHN."{#vaxis_s52_1}'
 
     menu:
         '"Da ist noch was, was ich wissen wollte…"{#vaxis_s52_r4571}':
@@ -1278,7 +1278,7 @@ label vaxis_s52: # from 43.2
 
 # s53 # say4573
 label vaxis_s53: # from 43.8
-    nr '"Schreiber." Zuckt mit den Achseln. "Ult. Gelb."{#vaxis_s53_}'
+    nr '"Schreiber." Zuckt mit den Achseln. "Ult. Gelb."{#vaxis_s53_1}'
 
     menu:
         '"Weiter ist da nichts zu sagen, schätze ich. Ich wollte noch was anderes wissen…"{#vaxis_s53_r4574}':
@@ -1292,7 +1292,7 @@ label vaxis_s53: # from 43.8
 
 # s54 # say4576
 label vaxis_s54: # from 43.9
-    nr '"Hmmm?" Er runzelt die Stirn. "Mwer ist dddus?"{#vaxis_s54_}'
+    nr '"Hmmm?" Er runzelt die Stirn. "Mwer ist dddus?"{#vaxis_s54_1}'
 
     menu:
         '"Vergiß es einfach. Ich wollte noch was anderes wissen…"{#vaxis_s54_r4577}':
@@ -1306,7 +1306,7 @@ label vaxis_s54: # from 43.9
 
 # s55 # say4579
 label vaxis_s55: # from 43.10
-    nr '"Führer, am Hupttur zur Leichnhulle. Mwus hust du mit ihm vor?"{#vaxis_s55_}'
+    nr '"Führer, am Hupttur zur Leichnhulle. Mwus hust du mit ihm vor?"{#vaxis_s55_1}'
 
     menu:
         '"Was weißt du über ihn?"{#vaxis_s55_r4580}':
@@ -1321,7 +1321,7 @@ label vaxis_s55: # from 43.10
 
 # s56 # say4582
 label vaxis_s56: # from 55.0
-    nr '"Mmmerkwürdig, kein Stubie, kein Unurchist, Augen unders…" Mit den Achseln zuckend. "Mag Ratten. Merkwürdig."{#vaxis_s56_}'
+    nr '"Mmmerkwürdig, kein Stubie, kein Unurchist, Augen unders…" Mit den Achseln zuckend. "Mag Ratten. Merkwürdig."{#vaxis_s56_1}'
 
     menu:
         '"Gut, daß er der Einzige hier ist, der merkwürdig ist. Da war noch was, was ich wissen wollte…"{#vaxis_s56_r4583}':
@@ -1335,7 +1335,7 @@ label vaxis_s56: # from 55.0
 
 # s57 # say4585
 label vaxis_s57: # - # IF ~  GlobalGT("Vaxis","GLOBAL",0)
-    nr 'Du erblickst den falschen Zombie. Du bist erstaunt, wie gut er getarnt ist… sein Atem ist so schwach, daß man ihn kaum wahrnimmt.{#vaxis_s57_}'
+    nr 'Du erblickst den falschen Zombie. Du bist erstaunt, wie gut er getarnt ist… sein Atem ist so schwach, daß man ihn kaum wahrnimmt.{#vaxis_s57_1}'
 
     menu:
         '"Sei gegrüßt."{#vaxis_s57_r4586}' if vaxisLogic.r4586_condition():
@@ -1361,7 +1361,7 @@ label vaxis_s57: # - # IF ~  GlobalGT("Vaxis","GLOBAL",0)
 
 # s58 # say4591
 label vaxis_s58: # from 57.0 57.1 57.3
-    nr 'Der Zombie blickt rasch um sich. Er will sich überzeugen, daß niemand zusieht. Dann dreht er sich zu dir. "Mwus?"{#vaxis_s58_}'
+    nr 'Der Zombie blickt rasch um sich. Er will sich überzeugen, daß niemand zusieht. Dann dreht er sich zu dir. "Mwus?"{#vaxis_s58_1}'
 
     menu:
         '"Hier hat du den Schlüssel für den Balsamierungsraum."{#vaxis_s58_r4592}' if vaxisLogic.r4592_condition():
@@ -1389,7 +1389,7 @@ label vaxis_s58: # from 57.0 57.1 57.3
 
 # s59 # say4597
 label vaxis_s59: # from 57.2
-    nr 'Der Zombie blickt um sich. Er will sich überzeugen, daß niemand zusieht. Dann scheucht er dich mit einer Geste fort und zischt dich an. "Geh mweg! Los!"{#vaxis_s59_}'
+    nr 'Der Zombie blickt um sich. Er will sich überzeugen, daß niemand zusieht. Dann scheucht er dich mit einer Geste fort und zischt dich an. "Geh mweg! Los!"{#vaxis_s59_1}'
 
     menu:
         '"Nein. Ich hätte da erstmal ein paar Fragen an dich…"{#vaxis_s59_r4598}':
@@ -1407,7 +1407,7 @@ label vaxis_s59: # from 57.2
 
 # s60 # say4601
 label vaxis_s60: # from 43.11
-    nr '"Ich mgut im Tarnen. Ich uch Nurben. Ich viel Mbulsumierungsöl. Muche GUUUTE Zombies." Der Zombie kichert durch die zugenähten Lippen. "Stubies sssind mblöd."{#vaxis_s60_}'
+    nr '"Ich mgut im Tarnen. Ich uch Nurben. Ich viel Mbulsumierungsöl. Muche GUUUTE Zombies." Der Zombie kichert durch die zugenähten Lippen. "Stubies sssind mblöd."{#vaxis_s60_1}'
 
     menu:
         '"Ja klar, das sind die Dummen, was?"{#vaxis_s60_r4602}':
@@ -1433,7 +1433,7 @@ label vaxis_s60: # from 43.11
 
 # s61 # say4607
 label vaxis_s61: # from 60.0
-    nr 'Der Sarkasmus geht an dem Zombie offensichtlich vorbei, denn er nickt eifrig. "Stubies ddumm. Ich muche MGUTE Zombies."{#vaxis_s61_}'
+    nr 'Der Sarkasmus geht an dem Zombie offensichtlich vorbei, denn er nickt eifrig. "Stubies ddumm. Ich muche MGUTE Zombies."{#vaxis_s61_1}'
 
     menu:
         '"Tut das nicht weh?"{#vaxis_s61_r4608}':
@@ -1463,7 +1463,7 @@ label vaxis_s61: # from 60.0
 
 # s62 # say4614
 label vaxis_s62: # from 60.1 61.0
-    nr 'Er betrachtet deine Narben. "Ich gleiche Fruge. Mir nicht mwehgetun." Auf seine Brust klopfend: "Ich STRK."{#vaxis_s62_}'
+    nr 'Er betrachtet deine Narben. "Ich gleiche Fruge. Mir nicht mwehgetun." Auf seine Brust klopfend: "Ich STRK."{#vaxis_s62_1}'
 
     menu:
         '"Diese Verkleidung ist nicht schlecht. Kannst du mich als Zombie verkleiden?"{#vaxis_s62_r4615}' if vaxisLogic.r4615_condition():
@@ -1489,7 +1489,7 @@ label vaxis_s62: # from 60.1 61.0
 
 # s63 # say4619
 label vaxis_s63: # from 43.3 43.4 60.2 61.1 62.0 64.1 64.2
-    nr 'Er mustert dich kurz von Kopf bis Fuß, murmelt etwas vor sich hin und nickt. "U-huh. Ich mbruche Mbalsmierungsöl." Auf die Narben auf deiner Brust zeigend. "Und Nnnudel und Fffuden."{#vaxis_s63_}'
+    nr 'Er mustert dich kurz von Kopf bis Fuß, murmelt etwas vor sich hin und nickt. "U-huh. Ich mbruche Mbalsmierungsöl." Auf die Narben auf deiner Brust zeigend. "Und Nnnudel und Fffuden."{#vaxis_s63_1}'
 
     menu:
         '"Hier, bitte sehr."{#vaxis_s63_r4620}' if vaxisLogic.r4620_condition():
@@ -1515,7 +1515,7 @@ label vaxis_s63: # from 43.3 43.4 60.2 61.1 62.0 64.1 64.2
 
 # s64 # say4624
 label vaxis_s64: # from 61.2 61.3 62.1 62.2
-    nr 'Mit seltsamer Miene mustert er dich von Kopf bis Fuß. "Du GUUUTER Zombie. Ich Zombie us dir muchen? GUUUTE Turnung."{#vaxis_s64_}'
+    nr 'Mit seltsamer Miene mustert er dich von Kopf bis Fuß. "Du GUUUTER Zombie. Ich Zombie us dir muchen? GUUUTE Turnung."{#vaxis_s64_1}'
 
     menu:
         '"Trotzdem vielen Dank. Ich hätte da noch ein paar Fragen an dich…"{#vaxis_s64_r4625}':
@@ -1539,7 +1539,7 @@ label vaxis_s64: # from 61.2 61.3 62.1 62.2
 
 # s65 # say4629
 label vaxis_s65: # from 63.0
-    nr 'Der Zombie nimmt dir die Sachen ab und macht sich an die Arbeit…{#vaxis_s65_}'
+    nr 'Der Zombie nimmt dir die Sachen ab und macht sich an die Arbeit…{#vaxis_s65_1}'
 
     menu:
         'Versuche, ganz stillzuhalten.{#vaxis_s65_r4630}' if vaxisLogic.r4630_condition():
@@ -1565,7 +1565,7 @@ label vaxis_s65: # from 63.0
 
 # s66 # say4633
 label vaxis_s66: # from 65.0 65.2 65.3
-    nr 'Der Zombie bestreicht dich mit Balsamierungsöl. Dann näht er verschiedene Narben zu. Er arbeitet von den Füßen aufwärts und vollendet die Tarnung, indem er deine Lippen zusammennäht.{#vaxis_s66_}'
+    nr 'Der Zombie bestreicht dich mit Balsamierungsöl. Dann näht er verschiedene Narben zu. Er arbeitet von den Füßen aufwärts und vollendet die Tarnung, indem er deine Lippen zusammennäht.{#vaxis_s66_1}'
 
     menu:
         '"Mmm-hmmph-mmm… Danke fön."{#vaxis_s66_r4634}' if vaxisLogic.r4634_condition():
@@ -1584,7 +1584,7 @@ label vaxis_s66: # from 65.0 65.2 65.3
 
 # s67 # say4637
 label vaxis_s67: # from 66.0 66.2
-    nr 'Der Zombie hält seine Hand hoch. "Vorsücht! Reden zieht Fäden raus, ruiniert Vör-kloidung. Zumbie nix reden. Duu müssen reden? Reden langsam, vorsüchtüg."  ^NHINWEIS: Denk daran, daß niemand damit rechnet, daß ein Zombie spricht. Wenn du als Zombie jemanden ansprichst, riskierst du, daß man deine Verkleidung durchschaut.^-{#vaxis_s67_}'
+    nr 'Der Zombie hält seine Hand hoch. "Vorsücht! Reden zieht Fäden raus, ruiniert Vör-kloidung. Zumbie nix reden. Duu müssen reden? Reden langsam, vorsüchtüg."  ^NHINWEIS: Denk daran, daß niemand damit rechnet, daß ein Zombie spricht. Wenn du als Zombie jemanden ansprichst, riskierst du, daß man deine Verkleidung durchschaut.^-{#vaxis_s67_1}'
 
     menu:
         '"Mmph… mmm. Ich… verstehe."{#vaxis_s67_r4638}':
@@ -1595,7 +1595,7 @@ label vaxis_s67: # from 66.0 66.2
 
 # s68 # say4639
 label vaxis_s68: # from 67.0
-    nr 'Er runzelt die Stirn. "Mverkleigung mbald kaputt… Mbalsamieröl trocknet aus, Stiche gehen uf." Er zuckt die Achseln. "Mwuhrscheinlich hulten nicht ußerhalb Mleichenhulle. Uhnd nicht laufen! Duu laufen, du gunze Vör-kloidung ruinieren."  ^NHINWEIS: Durch Laufen wird deine Zombie-Verkleidung sofort aufgehoben. Falls du "Immer rennen" eingeschaltet hast, denke unbedingt daran, es auszuschalten, wenn du deine Verkleidung beibehalten willst, nachdem du mit Vaxis geredet hast.^-{#vaxis_s68_}'
+    nr 'Er runzelt die Stirn. "Mverkleigung mbald kaputt… Mbalsamieröl trocknet aus, Stiche gehen uf." Er zuckt die Achseln. "Mwuhrscheinlich hulten nicht ußerhalb Mleichenhulle. Uhnd nicht laufen! Duu laufen, du gunze Vör-kloidung ruinieren."  ^NHINWEIS: Durch Laufen wird deine Zombie-Verkleidung sofort aufgehoben. Falls du "Immer rennen" eingeschaltet hast, denke unbedingt daran, es auszuschalten, wenn du deine Verkleidung beibehalten willst, nachdem du mit Vaxis geredet hast.^-{#vaxis_s68_1}'
 
     menu:
         'Nicke noch einmal und geh dann.{#vaxis_s68_r4640}':
@@ -1605,7 +1605,7 @@ label vaxis_s68: # from 67.0
 
 # s69 # say4641
 label vaxis_s69: # -
-    nr 'Der „Zombie“ runzelt die Stirn. "Mdu mkommst mir mbekannt vor. Mkennen wir uns?"{#vaxis_s69_}'
+    nr 'Der „Zombie“ runzelt die Stirn. "Mdu mkommst mir mbekannt vor. Mkennen wir uns?"{#vaxis_s69_1}'
 
     menu:
         '"Kann schon sein. Wo willst du mich denn gesehen haben?"{#vaxis_s69_r4642}':
@@ -1619,7 +1619,7 @@ label vaxis_s69: # -
 
 # s70 # say4644
 label vaxis_s70: # from 23.0 23.2 71.0 71.1
-    nr 'Zu deiner Überraschung wendet sich der Zombie von dir ab… er beginnt, ängstlich um sich zu blicken.{#vaxis_s70_}'
+    nr 'Zu deiner Überraschung wendet sich der Zombie von dir ab… er beginnt, ängstlich um sich zu blicken.{#vaxis_s70_1}'
 
     menu:
         '"Du willst nicht reden? Dann wirst du gleich schreien."{#vaxis_s70_r4645}':
@@ -1642,7 +1642,7 @@ label vaxis_s70: # from 23.0 23.2 71.0 71.1
 
 # s71 # say4649
 label vaxis_s71: # externs morte_s90
-    nr 'Der Zombie schaut euch beide ängstlich an. Er ist noch immer stumm… aber irgendetwas in seinem Ausdruck scheint zu bestätigen, daß Morte recht hatte.{#vaxis_s71_}'
+    nr 'Der Zombie schaut euch beide ängstlich an. Er ist noch immer stumm… aber irgendetwas in seinem Ausdruck scheint zu bestätigen, daß Morte recht hatte.{#vaxis_s71_1}'
 
     menu:
         '"Soso, die Anarchisten. Für die sperrst du hier also die Augen auf?"{#vaxis_s71_r4650}':
@@ -1669,7 +1669,7 @@ label vaxis_s71: # externs morte_s90
 
 # s72 # say4655
 label vaxis_s72: # from 30.2
-    nr 'Der Zombie macht einen enttäuschten Eindruck, aber er zuckt mit den Achseln und beginnt, in seinem fleckigen Umhang herumzukramen. "Mruhig, Stubies mruhig, nix Neues seit letztm Rupport." Kurz darauf überreicht er dir ein paar Sachen und brummt. "Hiiierr." Den Geruch nach muß er die Dinger so versteckt haben, daß sie bei einer Durchsuchung niemand gefunden hätte. "Ich mgehe bbbald."{#vaxis_s72_}'
+    nr 'Der Zombie macht einen enttäuschten Eindruck, aber er zuckt mit den Achseln und beginnt, in seinem fleckigen Umhang herumzukramen. "Mruhig, Stubies mruhig, nix Neues seit letztm Rupport." Kurz darauf überreicht er dir ein paar Sachen und brummt. "Hiiierr." Den Geruch nach muß er die Dinger so versteckt haben, daß sie bei einer Durchsuchung niemand gefunden hätte. "Ich mgehe bbbald."{#vaxis_s72_1}'
 
     menu:
         '"Gehen? Wie?"{#vaxis_s72_r4656}' if vaxisLogic.r4656_condition():
@@ -1683,7 +1683,7 @@ label vaxis_s72: # from 30.2
 
 # s73 # say4658
 label vaxis_s73: # -
-    nr 'Der Zombie brummt. "Mportul istn Bugen - Urdgeschusss, mnordöstlichr Rum, mbruchst Fingerknochen von Skelett zum Ufmachen." Er nickt. "Mviel Glück."{#vaxis_s73_}'
+    nr 'Der Zombie brummt. "Mportul istn Bugen - Urdgeschusss, mnordöstlichr Rum, mbruchst Fingerknochen von Skelett zum Ufmachen." Er nickt. "Mviel Glück."{#vaxis_s73_1}'
 
     menu:
         '"Äh… na gut."{#vaxis_s73_r4659}':
@@ -1693,7 +1693,7 @@ label vaxis_s73: # -
 
 # s74 # say4660
 label vaxis_s74: # from 34.0
-    nr 'Der Zombie kneift die Augen zusammen und zischt dich an. "Mdu WILLST mich ins Totenbuch stecken? Ich Freunde, hier versteckt, mdu *niemndn.* Mwenn mdu mir ein Mhaar krümmst, mtöten DICH meine Mfreunde."{#vaxis_s74_}'
+    nr 'Der Zombie kneift die Augen zusammen und zischt dich an. "Mdu WILLST mich ins Totenbuch stecken? Ich Freunde, hier versteckt, mdu *niemndn.* Mwenn mdu mir ein Mhaar krümmst, mtöten DICH meine Mfreunde."{#vaxis_s74_1}'
 
     menu:
         '"Das war deine letzte Chance. Bereite dich schon mal auf den Tod vor."{#vaxis_s74_r4661}':
@@ -1708,7 +1708,7 @@ label vaxis_s74: # from 34.0
 
 # s75 # say4663
 label vaxis_s75: # from 31.4 32.3 35.4
-    nr 'Einen Moment lang wirkt er ängstlich. Dann begutachtet er deine Statur und grinst spöttisch über das ganze Gesicht. "MDUUU MICH ins Totenbuch stecken? Ich Freunde, hier versteckt. Mdu *niemndn.* Mwenn mdu mir ein Mhaar krümmst, mtöten DICH meine Mfreunde."{#vaxis_s75_}'
+    nr 'Einen Moment lang wirkt er ängstlich. Dann begutachtet er deine Statur und grinst spöttisch über das ganze Gesicht. "MDUUU MICH ins Totenbuch stecken? Ich Freunde, hier versteckt. Mdu *niemndn.* Mwenn mdu mir ein Mhaar krümmst, mtöten DICH meine Mfreunde."{#vaxis_s75_1}'
 
     menu:
         '"Wie wär„s, wenn ich deine Verkleidung an die Wache verraten würde?"{#vaxis_s75_r4664}' if vaxisLogic.r4664_condition():
@@ -1731,7 +1731,7 @@ label vaxis_s75: # from 31.4 32.3 35.4
 
 # s76 # say4668
 label vaxis_s76: # from 75.1
-    nr 'Der Zombie kneift die Augen zusammen und zischt dich an. "Mdu erzählst mir Mdunkel, ich erzähl *mdir* Mdunkel. Ich Freunde, hier versteckt, mdu *niemndn.* Mdu solltest nicht hier sein. Mdich töten Stuubies, ich mach mich us dem Stub."{#vaxis_s76_}'
+    nr 'Der Zombie kneift die Augen zusammen und zischt dich an. "Mdu erzählst mir Mdunkel, ich erzähl *mdir* Mdunkel. Ich Freunde, hier versteckt, mdu *niemndn.* Mdu solltest nicht hier sein. Mdich töten Stuubies, ich mach mich us dem Stub."{#vaxis_s76_1}'
 
     menu:
         '"Das war deine letzte Chance, Leiche. Bereite dich schon mal auf den Tod vor."{#vaxis_s76_r4669}':
@@ -1746,7 +1746,7 @@ label vaxis_s76: # from 75.1
 
 # s77 # say64523
 label vaxis_s77: # from 51.0
-    nr 'Er zuckt die Schultern. "Muß wohl einer in der Nähe sein, irgendwo. Sieh mal in den Lagerräumen im Obergeschoß nach. Vielleicht dort."{#vaxis_s77_}'
+    nr 'Er zuckt die Schultern. "Muß wohl einer in der Nähe sein, irgendwo. Sieh mal in den Lagerräumen im Obergeschoß nach. Vielleicht dort."{#vaxis_s77_1}'
 
     menu:
         '"Okay. Ich hätte da noch ein paar andere Fragen…"{#vaxis_s77_r64524}':

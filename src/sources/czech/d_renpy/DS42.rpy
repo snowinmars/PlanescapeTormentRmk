@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say6595
 label s42_s0: # - # IF ~  True()
-    nr 'Kostlivec se otočil tváří k tobě. Na čele má vyryto číslo "42" a řada jeho kostí, hlavně na čelistech a spojích, byla svázána koženými pásky. Kostru halí černé pracovní šaty.{#s42_s0_}'
+    nr 'Kostlivec se otočil tváří k tobě. Na čele má vyryto číslo "42" a řada jeho kostí, hlavně na čelistech a spojích, byla svázána koženými pásky. Kostru halí černé pracovní šaty.{#s42_s0_1}'
 
     menu:
         '"*Myslím*, že tohle je tělo, na které si vzpomínám…"{#s42_s0_r6612}' if s42Logic.r6612_condition():
@@ -73,7 +73,7 @@ label s42_s0: # - # IF ~  True()
 
 # s1 # say6596
 label s42_s1: # from 0.0 0.1 0.2 0.3 0.9 3.0 3.3
-    nr 'Při zvuku tvého hlasu se kostlivec náhle napřímil. Zkřížil si paže na hrudníku a prsty zahákl za žebra.{#s42_s1_}'
+    nr 'Při zvuku tvého hlasu se kostlivec náhle napřímil. Zkřížil si paže na hrudníku a prsty zahákl za žebra.{#s42_s1_1}'
 
     menu:
         'Překřiž si ruce na hrudníku.{#s42_s1_r6625}' if s42Logic.r6625_condition():
@@ -95,7 +95,7 @@ label s42_s1: # from 0.0 0.1 0.2 0.3 0.9 3.0 3.3
 
 # s2 # say6597
 label s42_s2: # from 0.4
-    nr 'Mrtvola neodpovídá. Vypadá to, že je mrtvá příliš dlouho na to, aby byla schopna odpovědět na nějakou tvou otázku.{#s42_s2_}'
+    nr 'Mrtvola neodpovídá. Vypadá to, že je mrtvá příliš dlouho na to, aby byla schopna odpovědět na nějakou tvou otázku.{#s42_s2_1}'
 
     menu:
         'Nechej kostlivce na pokoji.{#s42_s2_r6629}' if s42Logic.r6629_condition():
@@ -114,7 +114,7 @@ label s42_s2: # from 0.4
 
 # s3 # say6598
 label s42_s3: # from 0.5 10.2
-    nr 'Udivuje tě, že tahle hromada kostí pořád ještě drží pohromadě. Kostlivcovy zažloutlé kosti jsou zamazány sádrou a několika vrstvami odporně páchnoucího lepidla… vidíš, že kosti pokrývají stovky vlasových fraktur. Ačkoliv si někdo dal práci s tím, aby ovázal tohoto kostlivce koženými řemínky a sešrouboval jeho klouby dohromady, řemínky jsou otřepané a šrouby vypadají, že co chvíli upadnou.{#s42_s3_}'
+    nr 'Udivuje tě, že tahle hromada kostí pořád ještě drží pohromadě. Kostlivcovy zažloutlé kosti jsou zamazány sádrou a několika vrstvami odporně páchnoucího lepidla… vidíš, že kosti pokrývají stovky vlasových fraktur. Ačkoliv si někdo dal práci s tím, aby ovázal tohoto kostlivce koženými řemínky a sešrouboval jeho klouby dohromady, řemínky jsou otřepané a šrouby vypadají, že co chvíli upadnou.{#s42_s3_1}'
 
     menu:
         '"Myslím, že tohle je ta mrtvola, na kterou jsem si vzpomněl…"{#s42_s3_r63495}' if s42Logic.r63495_condition():
@@ -150,7 +150,7 @@ label s42_s3: # from 0.5 10.2
 
 # s4 # say6599
 label s42_s4: # from 1.0 12.0
-    nr 'Jako odpověď nechal kostlivec spadnout paže podél těla. Kožený provaz udržující kostlivcovo torzo v pevném stavu praskl a žebra se vyhnula ven jako dvojité dveře.{#s42_s4_}'
+    nr 'Jako odpověď nechal kostlivec spadnout paže podél těla. Kožený provaz udržující kostlivcovo torzo v pevném stavu praskl a žebra se vyhnula ven jako dvojité dveře.{#s42_s4_1}'
 
     menu:
         'Sáhni do hrudníku a prohledej ho.{#s42_s4_r6638}':
@@ -164,7 +164,7 @@ label s42_s4: # from 1.0 12.0
 
 # s5 # say6600
 label s42_s5: # from 4.0 9.0
-    nr 'K tvému překvapení tvoje ruka zmizela hned, jak jsi ji vložil mezi žebra… máš silný pocit, že je někde úplně *jinde.* Jak saháš do hrudníku, tvá ruka znovu narazila na neviditelný objekt. Má velikost pěsti a zdá se, že je připojen k páteři kostlivce.{#s42_s5_}'
+    nr 'K tvému překvapení tvoje ruka zmizela hned, jak jsi ji vložil mezi žebra… máš silný pocit, že je někde úplně *jinde.* Jak saháš do hrudníku, tvá ruka znovu narazila na neviditelný objekt. Má velikost pěsti a zdá se, že je připojen k páteři kostlivce.{#s42_s5_1}'
 
     menu:
         'Vyjmi předmět.{#s42_s5_r6640}':
@@ -179,7 +179,7 @@ label s42_s5: # from 4.0 9.0
 
 # s6 # say6601
 label s42_s6: # from 0.7 0.8 3.2
-    nr 'ŠRouby lehce vyklouzly z kostlivcových kloubů. Kostlivec se rozpadl, některé jeho kosti sebou dosud škubou.{#s42_s6_}'
+    nr 'ŠRouby lehce vyklouzly z kostlivcových kloubů. Kostlivec se rozpadl, některé jeho kosti sebou dosud škubou.{#s42_s6_1}'
 
     menu:
         '"Omlouvám se za to, Kosti…"{#s42_s6_r6642}':
@@ -190,7 +190,7 @@ label s42_s6: # from 0.7 0.8 3.2
 
 # s7 # say6602
 label s42_s7: # from 5.0
-    nr 'Jakmile jsi ten předmět vyňal, kostlivec se náhle rozpadl a kovové šrouby udržující jeho klouby zazvonily o podlahu. Ať už byl ten předmět cokoliv, zdá se, že to on držel kostlivce pohromadě.{#s42_s7_}'
+    nr 'Jakmile jsi ten předmět vyňal, kostlivec se náhle rozpadl a kovové šrouby udržující jeho klouby zazvonily o podlahu. Ať už byl ten předmět cokoliv, zdá se, že to on držel kostlivce pohromadě.{#s42_s7_1}'
 
     menu:
         'Prozkoumej předmět.{#s42_s7_r6643}' if s42Logic.r6643_condition():
@@ -204,7 +204,7 @@ label s42_s7: # from 5.0
 
 # s8 # say6603
 label s42_s8: # from 7.0 7.1
-    nr 'Vypadá to jako nenápadná hromádka železa. Nedokážeš si představit, proč by to někdo schovával mezi kostlivcova žebra.{#s42_s8_}'
+    nr 'Vypadá to jako nenápadná hromádka železa. Nedokážeš si představit, proč by to někdo schovával mezi kostlivcova žebra.{#s42_s8_1}'
 
     menu:
         'Prozkoumej kousek kovu.{#s42_s8_r6645}':
@@ -215,7 +215,7 @@ label s42_s8: # from 7.0 7.1
 
 # s9 # say6604
 label s42_s9: # from 1.1 12.1
-    nr 'Jako odpověď nechal kostlivec spadnout paže podél těla. Kožený provaz udržující kostlivcovo torzo v pevném stavu praskl a žebra se vyhnula ven jako dvojité dveře. Nedokážeš si vysvětlit proč, ale máš neodolatelné nutkání sáhnout do jeho hrudníku.{#s42_s9_}'
+    nr 'Jako odpověď nechal kostlivec spadnout paže podél těla. Kožený provaz udržující kostlivcovo torzo v pevném stavu praskl a žebra se vyhnula ven jako dvojité dveře. Nedokážeš si vysvětlit proč, ale máš neodolatelné nutkání sáhnout do jeho hrudníku.{#s42_s9_1}'
 
     menu:
         'Sáhni do hrudníku a prohledej ho.{#s42_s9_r6646}':
@@ -229,7 +229,7 @@ label s42_s9: # from 1.1 12.1
 
 # s10 # say6605
 label s42_s10: # from 1.2 12.2
-    nr 'Kostlivcovy paže spadly podél těla.{#s42_s10_}'
+    nr 'Kostlivcovy paže spadly podél těla.{#s42_s10_1}'
 
     menu:
         '"Uh… ahoj?"{#s42_s10_r6648}' if s42Logic.r6648_condition():
@@ -252,7 +252,7 @@ label s42_s10: # from 1.2 12.2
 
 # s11 # say6606
 label s42_s11: # -
-    nr 'Vypadá to jako nenápadná hromádka železa. Tvé předchozí vtělení muselo mít důvod schovat to sem.{#s42_s11_}'
+    nr 'Vypadá to jako nenápadná hromádka železa. Tvé předchozí vtělení muselo mít důvod schovat to sem.{#s42_s11_1}'
 
     menu:
         'Pečlivě prozkoumej kousek kovu.{#s42_s11_r6652}':
@@ -263,7 +263,7 @@ label s42_s11: # -
 
 # s12 # say6607
 label s42_s12: # from 10.0
-    nr 'Kostlivec znovu zkřížil ruce na hrudi.{#s42_s12_}'
+    nr 'Kostlivec znovu zkřížil ruce na hrudi.{#s42_s12_1}'
 
     menu:
         'Překřiž si ruce na hrudníku.{#s42_s12_r6653}' if s42Logic.r6653_condition():
@@ -285,14 +285,14 @@ label s42_s12: # from 10.0
 
 # s13 # say6608
 label s42_s13: # from 10.1
-    nr 'Kostlivec znovu zkřížil ruce na hrudi.{#s42_s13_}'
+    nr 'Kostlivec znovu zkřížil ruce na hrudi.{#s42_s13_1}'
 
     jump morte_s112  # EXTERN
 
 
 # s14 # say58983
 label s42_s14: # from 8.0 11.0
-    nr 'Když jsi položil obě ruce na kus železa, abys jej prozkoumal, ozvalo se *hssssss,* a kov se vypařil, zanechávaje za sebou podivnou dýku, hrstku mincí zabalených v hadříku a dvě krvavé kapky - vypadá to, že byly *uvnitř* kusu železa.{#s42_s14_}'
+    nr 'Když jsi položil obě ruce na kus železa, abys jej prozkoumal, ozvalo se *hssssss,* a kov se vypařil, zanechávaje za sebou podivnou dýku, hrstku mincí zabalených v hadříku a dvě krvavé kapky - vypadá to, že byly *uvnitř* kusu železa.{#s42_s14_1}'
 
     menu:
         'Vezmi si věci a jdi pryč.{#s42_s14_r58984}':

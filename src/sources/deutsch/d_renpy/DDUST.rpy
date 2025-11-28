@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say300
 label dust_s0: # - # IF ~  Global("Appearance","GLOBAL",1)
-    nr 'Der Staubmensch scheint dich nicht zu bemerken. Er scheint dich wohl für eine dieser lebenden Leichen zu halten, die hier arbeiten.{#dust_s0_}'
+    nr 'Der Staubmensch scheint dich nicht zu bemerken. Er scheint dich wohl für eine dieser lebenden Leichen zu halten, die hier arbeiten.{#dust_s0_1}'
 
     menu:
         '"Sei gegrüßt."{#dust_s0_r302}':
@@ -37,7 +37,7 @@ label dust_s0: # - # IF ~  Global("Appearance","GLOBAL",1)
 
 # s1 # say307
 label dust_s1: # from 0.0 0.1 0.2 0.3
-    nr 'Der Staubmensch zuckt zusammen und wirft seinen Kopf zu dir herum. Er wirkt schockiert - deine Verkleidung muß wohl ganz gut sein.{#dust_s1_}'
+    nr 'Der Staubmensch zuckt zusammen und wirft seinen Kopf zu dir herum. Er wirkt schockiert - deine Verkleidung muß wohl ganz gut sein.{#dust_s1_1}'
 
     menu:
         'Nutze seine Überraschung aus und brich ihm das Genick, bevor er rufen kann.{#dust_s1_r310}':
@@ -55,7 +55,7 @@ label dust_s1: # from 0.0 0.1 0.2 0.3
 
 # s2 # say309
 label dust_s2: # from 1.1 1.2 5.2 5.3 19.6 20.4 47.2 47.3 51.4
-    nr 'Der Staubmensch geht einen Schritt zurück und klatscht dann dreimal fest in die Hände. Daraufhin ertönt der Klang einer großen Eisenglocke durch die ganze Leichenhalle.{#dust_s2_}'
+    nr 'Der Staubmensch geht einen Schritt zurück und klatscht dann dreimal fest in die Hände. Daraufhin ertönt der Klang einer großen Eisenglocke durch die ganze Leichenhalle.{#dust_s2_1}'
 
     menu:
         '"Nun gut…"{#dust_s2_r313}':
@@ -66,7 +66,7 @@ label dust_s2: # from 1.1 1.2 5.2 5.3 19.6 20.4 47.2 47.3 51.4
 
 # s3 # say314
 label dust_s3: # externs morte_s64
-    nr 'Der blasse Mann trägt eine lange dunkle Robe und riecht leicht muffig. Sein Gesicht ist ausdruckslos; er scheint in seine Arbeit vertieft.{#dust_s3_}'
+    nr 'Der blasse Mann trägt eine lange dunkle Robe und riecht leicht muffig. Sein Gesicht ist ausdruckslos; er scheint in seine Arbeit vertieft.{#dust_s3_1}'
 
     menu:
         '"Sei gegrüßt."{#dust_s3_r315}':
@@ -92,7 +92,7 @@ label dust_s3: # externs morte_s64
 
 # s4 # say321
 label dust_s4: # from 3.0 3.1 3.2 3.3 40.2 40.3
-    nr 'Der Staubmensch blickt langsam auf und dreht sich zu dir um. "Hast du dich verirrt?"{#dust_s4_}'
+    nr 'Der Staubmensch blickt langsam auf und dreht sich zu dir um. "Hast du dich verirrt?"{#dust_s4_1}'
 
     menu:
         '"Ja."{#dust_s4_r322}':
@@ -114,7 +114,7 @@ label dust_s4: # from 3.0 3.1 3.2 3.3 40.2 40.3
 
 # s5 # say326
 label dust_s5: # from 4.0 4.3 6.4 16.2 51.1
-    nr '"Ich rufe einen Wächter, der dich hinausführen wird. Warte einen Augenblick."{#dust_s5_}'
+    nr '"Ich rufe einen Wächter, der dich hinausführen wird. Warte einen Augenblick."{#dust_s5_1}'
 
     menu:
         'Brich ihm das Genick, bevor er rufen kann.{#dust_s5_r327}' if dustLogic.r327_condition():
@@ -136,7 +136,7 @@ label dust_s5: # from 4.0 4.3 6.4 16.2 51.1
 
 # s6 # say330
 label dust_s6: # from 4.1 4.2 51.2 51.3
-    nr '"Was hast du hier zu suchen, wenn du dich nicht verirrt hast?"{#dust_s6_}'
+    nr '"Was hast du hier zu suchen, wenn du dich nicht verirrt hast?"{#dust_s6_1}'
 
     menu:
         '"Das geht dich nichts an."{#dust_s6_r331}':
@@ -162,7 +162,7 @@ label dust_s6: # from 4.1 4.2 51.2 51.3
 
 # s7 # say335
 label dust_s7: # from 6.0 9.0 20.0
-    nr '"Das geht mich leider sehr wohl etwas an. Vielleicht können dir die Wächter ja die Zunge lösen." Der Staubmensch geht einen Schritt zurück; er sieht aus, als würde er jeden Moment die Wachen rufen.{#dust_s7_}'
+    nr '"Das geht mich leider sehr wohl etwas an. Vielleicht können dir die Wächter ja die Zunge lösen." Der Staubmensch geht einen Schritt zurück; er sieht aus, als würde er jeden Moment die Wachen rufen.{#dust_s7_1}'
 
     menu:
         'Brich ihm das Genick, bevor er rufen kann.{#dust_s7_r344}' if dustLogic.r344_condition():
@@ -181,7 +181,7 @@ label dust_s7: # from 6.0 9.0 20.0
 
 # s8 # say336
 label dust_s8: # from 6.1 16.0 20.1
-    nr '"Du machst wohl Witze? Vielleicht würdest du das gerne den Wachen erzählen." Er sieht aus, als würde er jeden Moment die Wachen rufen.{#dust_s8_}'
+    nr '"Du machst wohl Witze? Vielleicht würdest du das gerne den Wachen erzählen." Er sieht aus, als würde er jeden Moment die Wachen rufen.{#dust_s8_1}'
 
     menu:
         'Brich ihm das Genick, bevor er rufen kann.{#dust_s8_r358}' if dustLogic.r358_condition():
@@ -200,7 +200,7 @@ label dust_s8: # from 6.1 16.0 20.1
 
 # s9 # say338
 label dust_s9: # from 6.2 20.2
-    nr '"Wen möchtest du hier treffen?"{#dust_s9_}'
+    nr '"Wen möchtest du hier treffen?"{#dust_s9_1}'
 
     menu:
         '"Das geht dich nichts an."{#dust_s9_r3922}':
@@ -247,7 +247,7 @@ label dust_s9: # from 6.2 20.2
 
 # s10 # say345
 label dust_s10: # from 9.1
-    nr '"Dhall ist im Empfangsraum auf diesem Stockwerk. Ich warne dich… er hat alle Hände voll zu tun und ist nicht gerade bei bester Gesundheit. Wenn es nicht absolut dringend ist, würde ich ihn lieber nicht stören."{#dust_s10_}'
+    nr '"Dhall ist im Empfangsraum auf diesem Stockwerk. Ich warne dich… er hat alle Hände voll zu tun und ist nicht gerade bei bester Gesundheit. Wenn es nicht absolut dringend ist, würde ich ihn lieber nicht stören."{#dust_s10_1}'
 
     menu:
         '"Also gut. Danke für die Auskunft."{#dust_s10_r347}':
@@ -257,7 +257,7 @@ label dust_s10: # from 9.1
 
 # s11 # say346
 label dust_s11: # from 9.2
-    nr '"Dhall ist höchstwahrscheinlich im Empfangsraum im ersten Stock. Er hat alle Hände voll zu tun und ist nicht gerade bei bester Gesundheit. Wenn es nicht absolut dringend ist, würde ich ihn lieber nicht stören."{#dust_s11_}'
+    nr '"Dhall ist höchstwahrscheinlich im Empfangsraum im ersten Stock. Er hat alle Hände voll zu tun und ist nicht gerade bei bester Gesundheit. Wenn es nicht absolut dringend ist, würde ich ihn lieber nicht stören."{#dust_s11_1}'
 
     menu:
         '"Also gut. Danke für die Auskunft."{#dust_s11_r348}':
@@ -267,7 +267,7 @@ label dust_s11: # from 9.2
 
 # s12 # say349
 label dust_s12: # from 9.4 19.1
-    nr '"Deionarra? Ich weiß, daß in der Gedenkhalle im Erdgeschoß eine Frau bestattet ist. Ob sie das ist?"{#dust_s12_}'
+    nr '"Deionarra? Ich weiß, daß in der Gedenkhalle im Erdgeschoß eine Frau bestattet ist. Ob sie das ist?"{#dust_s12_1}'
 
     menu:
         '"Höchstwahrscheinlich. Vielen Dank."{#dust_s12_r352}':
@@ -277,7 +277,7 @@ label dust_s12: # from 9.4 19.1
 
 # s13 # say350
 label dust_s13: # from 9.3
-    nr '"Deionarra? Ich weiß, daß im Nordwesten der Gedenkhalle eine Frau bestattet ist. Ob sie das ist?"{#dust_s13_}'
+    nr '"Deionarra? Ich weiß, daß im Nordwesten der Gedenkhalle eine Frau bestattet ist. Ob sie das ist?"{#dust_s13_1}'
 
     menu:
         '"Höchstwahrscheinlich. Vielen Dank."{#dust_s13_r353}':
@@ -287,7 +287,7 @@ label dust_s13: # from 9.3
 
 # s14 # say351
 label dust_s14: # from 9.6
-    nr '"Ich glaube, Soego ist am Haupttor im Erdgeschoß. Er arbeitet hier während des Tiefstands als Führer."{#dust_s14_}'
+    nr '"Ich glaube, Soego ist am Haupttor im Erdgeschoß. Er arbeitet hier während des Tiefstands als Führer."{#dust_s14_1}'
 
     menu:
         '"Also gut. Vielen Dank."{#dust_s14_r354}':
@@ -297,7 +297,7 @@ label dust_s14: # from 9.6
 
 # s15 # say355
 label dust_s15: # from 9.5
-    nr '"Ich glaube, Soego ist am Haupttor. Er arbeitet hier während des Tiefstands als Führer."{#dust_s15_}'
+    nr '"Ich glaube, Soego ist am Haupttor. Er arbeitet hier während des Tiefstands als Führer."{#dust_s15_1}'
 
     menu:
         '"Also gut. Vielen Dank."{#dust_s15_r356}':
@@ -307,7 +307,7 @@ label dust_s15: # from 9.5
 
 # s16 # say357
 label dust_s16: # from 6.3 20.3
-    nr '"Wer sollte bestattet werden? Vielleicht finden die Feierlichkeiten woanders in der Leichenhalle statt."{#dust_s16_}'
+    nr '"Wer sollte bestattet werden? Vielleicht finden die Feierlichkeiten woanders in der Leichenhalle statt."{#dust_s16_1}'
 
     menu:
         '"Du verstehst mich falsch… ICH sollte bestattet werden."{#dust_s16_r359}':
@@ -325,7 +325,7 @@ label dust_s16: # from 6.3 20.3
 
 # s17 # say362
 label dust_s17: # from 16.1
-    nr '"Mehrere Grabkammern umgeben die Leichenhalle. Sie folgen dem Verlauf der Mauer im Erdgeshoß und im ersten Stock. Kennst du den Namen des Verstorbenen?"{#dust_s17_}'
+    nr '"Mehrere Grabkammern umgeben die Leichenhalle. Sie folgen dem Verlauf der Mauer im Erdgeshoß und im ersten Stock. Kennst du den Namen des Verstorbenen?"{#dust_s17_1}'
 
     menu:
         '"Nein."{#dust_s17_r363}':
@@ -339,7 +339,7 @@ label dust_s17: # from 16.1
 
 # s18 # say365
 label dust_s18: # from 17.0
-    nr '"Frag doch einfach einen der Führer am Haupttor. Sie können dir bestimmt helfen."{#dust_s18_}'
+    nr '"Frag doch einfach einen der Führer am Haupttor. Sie können dir bestimmt helfen."{#dust_s18_1}'
 
     menu:
         '"Also gut. Vielen Dank."{#dust_s18_r366}':
@@ -349,7 +349,7 @@ label dust_s18: # from 17.0
 
 # s19 # say367
 label dust_s19: # from 17.1
-    nr 'Der Staubmensch wartet.{#dust_s19_}'
+    nr 'Der Staubmensch wartet.{#dust_s19_1}'
 
     menu:
         '"Entschuldigung… Ich hab„ mich versprochen. Ich kenne den Namen des Verstorbenen nicht."{#dust_s19_r369}':
@@ -384,7 +384,7 @@ label dust_s19: # from 17.1
 
 # s20 # say374
 label dust_s20: # from 9.9 19.0
-    nr '"Ah ja. Und was hast du hier zu suchen?"{#dust_s20_}'
+    nr '"Ah ja. Und was hast du hier zu suchen?"{#dust_s20_1}'
 
     menu:
         '"Geht dich nichts an."{#dust_s20_r375}':
@@ -410,7 +410,7 @@ label dust_s20: # from 9.9 19.0
 
 # s21 # say368
 label dust_s21: # from 9.7 9.8 19.2 19.3
-    nr '"Nie gehört. Frag doch einfach einen der Führer am Haupttor… sie können dir vielleicht mehr sagen."{#dust_s21_}'
+    nr '"Nie gehört. Frag doch einfach einen der Führer am Haupttor… sie können dir vielleicht mehr sagen."{#dust_s21_1}'
 
     menu:
         '"Also gut. Das mach ich. Leb wohl."{#dust_s21_r380}':
@@ -420,7 +420,7 @@ label dust_s21: # from 9.7 9.8 19.2 19.3
 
 # s22 # say294
 label dust_s22: # - # IF ~  Global("Appearance","GLOBAL",2)
-    nr 'Der blasse Mann trägt eine lange dunkle Robe und riecht leicht muffig. Sein Gesicht ist ausdruckslos; er scheint in seine Arbeit vertieft.{#dust_s22_}'
+    nr 'Der blasse Mann trägt eine lange dunkle Robe und riecht leicht muffig. Sein Gesicht ist ausdruckslos; er scheint in seine Arbeit vertieft.{#dust_s22_1}'
 
     menu:
         '"Sei gegrüßt."{#dust_s22_r295}':
@@ -434,7 +434,7 @@ label dust_s22: # - # IF ~  Global("Appearance","GLOBAL",2)
 
 # s23 # say381
 label dust_s23: # from 22.0
-    nr 'Er dreht sich langsam um; seine Augen gleiten auf deine Robe. "Sei gegrüßt, Mitwisser."{#dust_s23_}'
+    nr 'Er dreht sich langsam um; seine Augen gleiten auf deine Robe. "Sei gegrüßt, Mitwisser."{#dust_s23_1}'
 
     menu:
         '"Wer bist du?"{#dust_s23_r383}':
@@ -456,7 +456,7 @@ label dust_s23: # from 22.0
 
 # s24 # say393
 label dust_s24: # from 23.0
-    nr '"Das möchte ich auch gerne von dir wissen. Ich kenne dein Gesicht nicht. Wer bist du?"{#dust_s24_}'
+    nr '"Das möchte ich auch gerne von dir wissen. Ich kenne dein Gesicht nicht. Wer bist du?"{#dust_s24_1}'
 
     menu:
         'Lüge: "Sein Name ist… äh, Adahn."{#dust_s24_r450}' if dustLogic.r450_condition():
@@ -479,7 +479,7 @@ label dust_s24: # from 23.0
 
 # s25 # say394
 label dust_s25: # from 23.1
-    nr '"Dies ist die Leichenhalle…" Der Staubmensch schaut dich an, als müßte er erst verdauen, was du gesagt hast. "Wie war doch gleich dein Name?"{#dust_s25_}'
+    nr '"Dies ist die Leichenhalle…" Der Staubmensch schaut dich an, als müßte er erst verdauen, was du gesagt hast. "Wie war doch gleich dein Name?"{#dust_s25_1}'
 
     menu:
         'Lüge: "Sein Name ist… äh, Adahn."{#dust_s25_r399}' if dustLogic.r399_condition():
@@ -502,7 +502,7 @@ label dust_s25: # from 23.1
 
 # s26 # say400
 label dust_s26: # from 23.2 27.0 28.2 30.3 31.3 34.2 36.1 39.0 50.0
-    nr 'Der Staubmensch wartet geduldig darauf, daß du fortfährst.{#dust_s26_}'
+    nr 'Der Staubmensch wartet geduldig darauf, daß du fortfährst.{#dust_s26_1}'
 
     menu:
         '"Kannst du mir sagen, wie ich hier rauskomme?"{#dust_s26_r401}':
@@ -524,7 +524,7 @@ label dust_s26: # from 23.2 27.0 28.2 30.3 31.3 34.2 36.1 39.0 50.0
 
 # s27 # say405
 label dust_s27: # from 26.0
-    nr '"Am besten du gehst einfach durch das Haupttor. Es ist im Erdgeschoß."{#dust_s27_}'
+    nr '"Am besten du gehst einfach durch das Haupttor. Es ist im Erdgeschoß."{#dust_s27_1}'
 
     menu:
         '"Ich hätte noch ein paar Fragen…"{#dust_s27_r406}':
@@ -538,7 +538,7 @@ label dust_s27: # from 26.0
 
 # s28 # say408
 label dust_s28: # from 26.1
-    nr '"Dieser Name…" Der Staubmensch hält kurz inne. "Dieser Name kommt mir irgendwie *bekannt* vor… ich glaube, es gab da mal einen Sammler, der so hieß. Dhall, der Schreiberling, könnte ihn kennen."{#dust_s28_}'
+    nr '"Dieser Name…" Der Staubmensch hält kurz inne. "Dieser Name kommt mir irgendwie *bekannt* vor… ich glaube, es gab da mal einen Sammler, der so hieß. Dhall, der Schreiberling, könnte ihn kennen."{#dust_s28_1}'
 
     menu:
         '"Sammler?"{#dust_s28_r409}':
@@ -560,7 +560,7 @@ label dust_s28: # from 26.1
 
 # s29 # say412
 label dust_s29: # from 28.0
-    nr '"Sammler… lesen Tote von den Straßen Sigils auf und schaffen sie in die Leichenhalle…" Der Staubmensch zögert, dann runzelt er die Stirn. "Du bist nicht von hier. Wer bist du?"{#dust_s29_}'
+    nr '"Sammler… lesen Tote von den Straßen Sigils auf und schaffen sie in die Leichenhalle…" Der Staubmensch zögert, dann runzelt er die Stirn. "Du bist nicht von hier. Wer bist du?"{#dust_s29_1}'
 
     menu:
         '"Ich bin noch nicht lange eingeweiht. Vergib mir meine Unwissenheit."{#dust_s29_r413}' if dustLogic.r413_condition():
@@ -582,7 +582,7 @@ label dust_s29: # from 28.0
 
 # s30 # say414
 label dust_s30: # from 28.1
-    nr '"Dhall ist eines der angesehensten Mitglieder unseres Bundes. Ich kenne niemanden, der mehr über das Wesen des Wahren Todes nachgedacht oder sich mehr darum verdient gemacht hätte als er. Er kann viel Wissen weitergeben. Wenn du ihn nicht kennst, solltest du die erste Gelegenheit nutzen, mit ihm zu reden. Er wird nicht mehr lange im Schatten dieser Existenz verweilen."{#dust_s30_}'
+    nr '"Dhall ist eines der angesehensten Mitglieder unseres Bundes. Ich kenne niemanden, der mehr über das Wesen des Wahren Todes nachgedacht oder sich mehr darum verdient gemacht hätte als er. Er kann viel Wissen weitergeben. Wenn du ihn nicht kennst, solltest du die erste Gelegenheit nutzen, mit ihm zu reden. Er wird nicht mehr lange im Schatten dieser Existenz verweilen."{#dust_s30_1}'
 
     menu:
         '"„Er wird nicht mehr lange im Schatten dieser Existenz veweilen“?"{#dust_s30_r415}':
@@ -608,7 +608,7 @@ label dust_s30: # from 28.1
 
 # s31 # say419
 label dust_s31: # from 30.0 32.0 33.0
-    nr 'Nickt. "Dhall ist krank. Er ist alt, selbst für einen Githzerai. Der Tod ist ihm gewiß nach diesem Siechtum. Er ist wirklich gesegnet."{#dust_s31_}'
+    nr 'Nickt. "Dhall ist krank. Er ist alt, selbst für einen Githzerai. Der Tod ist ihm gewiß nach diesem Siechtum. Er ist wirklich gesegnet."{#dust_s31_1}'
 
     menu:
         '"Für einen Githzerai?"{#dust_s31_r420}':
@@ -634,7 +634,7 @@ label dust_s31: # from 30.0 32.0 33.0
 
 # s32 # say427
 label dust_s32: # from 30.1
-    nr '"Dhall ist im Empfangsraum in der nordwestlichen Winkel dieses Stockwerks. Ich warne dich… Dhall ist ziemlich beschäftigt… wenn er nicht gerade seiner Arbeit nachgeht, wird ein Großteil seiner Zeit von seiner Krankheit beansprucht."{#dust_s32_}'
+    nr '"Dhall ist im Empfangsraum in der nordwestlichen Winkel dieses Stockwerks. Ich warne dich… Dhall ist ziemlich beschäftigt… wenn er nicht gerade seiner Arbeit nachgeht, wird ein Großteil seiner Zeit von seiner Krankheit beansprucht."{#dust_s32_1}'
 
     menu:
         '"Ist Dhall krank?"{#dust_s32_r428}':
@@ -648,7 +648,7 @@ label dust_s32: # from 30.1
 
 # s33 # say426
 label dust_s33: # from 30.2
-    nr '"Dhall ist höchstwahrscheinlich im Empfangsraum im ersten Stock. An deiner Stelle würde ich ihn nicht allzu lang aufhalten, da er alle Hände voll zu tun hat… wenn er nicht gerade seinen Pflichten nachkommt, schlägt er sich die meiste Zeit mit seiner Krankheit herum."{#dust_s33_}'
+    nr '"Dhall ist höchstwahrscheinlich im Empfangsraum im ersten Stock. An deiner Stelle würde ich ihn nicht allzu lang aufhalten, da er alle Hände voll zu tun hat… wenn er nicht gerade seinen Pflichten nachkommt, schlägt er sich die meiste Zeit mit seiner Krankheit herum."{#dust_s33_1}'
 
     menu:
         '"Ist Dhall krank?"{#dust_s33_r430}':
@@ -662,7 +662,7 @@ label dust_s33: # from 30.2
 
 # s34 # say432
 label dust_s34: # from 31.0
-    nr '"Ja, die Githzerai leben wesentlich länger als die Menschen."{#dust_s34_}'
+    nr '"Ja, die Githzerai leben wesentlich länger als die Menschen."{#dust_s34_1}'
 
     menu:
         '"Was ist ein „Githzerai“?"{#dust_s34_r433}':
@@ -684,7 +684,7 @@ label dust_s34: # from 31.0
 
 # s35 # say435
 label dust_s35: # from 31.1 34.0
-    nr '"Die Githzerai sind…" Der Staubmensch zögert; dann runzelt er die Stirn und starrt dich durchdringend an. "Du bist nicht von hier. Wer bist du?"{#dust_s35_}'
+    nr '"Die Githzerai sind…" Der Staubmensch zögert; dann runzelt er die Stirn und starrt dich durchdringend an. "Du bist nicht von hier. Wer bist du?"{#dust_s35_1}'
 
     menu:
         '"Ich bin noch nicht lange eingeweiht. Vergib mir meine Unwissenheit."{#dust_s35_r436}' if dustLogic.r436_condition():
@@ -706,7 +706,7 @@ label dust_s35: # from 31.1 34.0
 
 # s36 # say439
 label dust_s36: # from 31.2 34.1
-    nr '"Er ist  gesegnet, weil er den Wahren Tod erlangen wird. Dann braucht er nicht mehr im Schatten dieser Existenz zu verweilen."{#dust_s36_}'
+    nr '"Er ist  gesegnet, weil er den Wahren Tod erlangen wird. Dann braucht er nicht mehr im Schatten dieser Existenz zu verweilen."{#dust_s36_1}'
 
     menu:
         '"Und… das ist gut?"{#dust_s36_r441}':
@@ -724,7 +724,7 @@ label dust_s36: # from 31.2 34.1
 
 # s37 # say444
 label dust_s37: # from 36.0
-    nr 'Der Staubmensch nickt. "Ja." Er runzelt die Stirn, dann mustert er dich prüfend. "Du bist nicht von hier. Wer bist du?"{#dust_s37_}'
+    nr 'Der Staubmensch nickt. "Ja." Er runzelt die Stirn, dann mustert er dich prüfend. "Du bist nicht von hier. Wer bist du?"{#dust_s37_1}'
 
     menu:
         '"Ich bin noch nicht lange eingeweiht. Vergib mir meine Unwissenheit."{#dust_s37_r445}' if dustLogic.r445_condition():
@@ -746,7 +746,7 @@ label dust_s37: # from 36.0
 
 # s38 # say447
 label dust_s38: # -
-    nr '"Du bist keiner von uns, oder? Was hast du hier zu suchen? Bist du ein Anarchist? Oder ein Spitzel eines anderen Bundes? Wachen! Wachen!"{#dust_s38_}'
+    nr '"Du bist keiner von uns, oder? Was hast du hier zu suchen? Bist du ein Anarchist? Oder ein Spitzel eines anderen Bundes? Wachen! Wachen!"{#dust_s38_1}'
 
     menu:
         '"Verdammt!"{#dust_s38_r448}':
@@ -767,7 +767,7 @@ label dust_s38: # -
 
 # s39 # say398
 label dust_s39: # from 26.2
-    nr '"Ein Journal? Ich habe keines gesehen."{#dust_s39_}'
+    nr '"Ein Journal? Ich habe keines gesehen."{#dust_s39_1}'
 
     menu:
         '"Ich hätte noch ein paar Fragen…"{#dust_s39_r451}':
@@ -781,7 +781,7 @@ label dust_s39: # from 26.2
 
 # s40 # say1419
 label dust_s40: # -
-    nr 'Der blasse Mann trägt eine lange dunkle Robe und riecht leicht muffig. Sein Gesicht ist ausdruckslos; er scheint in seine Arbeit vertieft.{#dust_s40_}'
+    nr 'Der blasse Mann trägt eine lange dunkle Robe und riecht leicht muffig. Sein Gesicht ist ausdruckslos; er scheint in seine Arbeit vertieft.{#dust_s40_1}'
 
     menu:
         '"Sei gegrüßt."{#dust_s40_r1420}' if dustLogic.r1420_condition():
@@ -807,7 +807,7 @@ label dust_s40: # -
 
 # s41 # say1425
 label dust_s41: # from 1.0 5.1 7.1 8.1 47.1
-    nr 'Bevor der Staubmensch auch nur ein Wort sagen kann, packst du ihn an den Schläfen und drehst seinen Kopf ruckartig nach links.{#dust_s41_}'
+    nr 'Bevor der Staubmensch auch nur ein Wort sagen kann, packst du ihn an den Schläfen und drehst seinen Kopf ruckartig nach links.{#dust_s41_1}'
 
     menu:
         '"Ich kann nicht zulassen, daß du deine Freunde warnst…"{#dust_s41_r1426}':
@@ -818,7 +818,7 @@ label dust_s41: # from 1.0 5.1 7.1 8.1 47.1
 
 # s42 # say1427
 label dust_s42: # from 41.0 45.0
-    nr 'Es macht *Knacks*, und der Staubmensch fällt dir erschlafft in die Arme.{#dust_s42_}'
+    nr 'Es macht *Knacks*, und der Staubmensch fällt dir erschlafft in die Arme.{#dust_s42_1}'
 
     menu:
         '"Besser du als ich, Staubie."{#dust_s42_r1428}' if dustLogic.r1428_condition():
@@ -834,7 +834,7 @@ label dust_s42: # from 41.0 45.0
 
 # s43 # say1430
 label dust_s43: # from 42.0
-    nr 'Zu deiner Überraschung scheint diese Handlung instinktiv zu sein, als hättest du das schon viele Male getan. Mit diesem Gedanken regt sich eine vage Erinnerung, die jedoch nicht stark genug ist, um an die Oberfläche zu gelangen.{#dust_s43_}'
+    nr 'Zu deiner Überraschung scheint diese Handlung instinktiv zu sein, als hättest du das schon viele Male getan. Mit diesem Gedanken regt sich eine vage Erinnerung, die jedoch nicht stark genug ist, um an die Oberfläche zu gelangen.{#dust_s43_1}'
 
     menu:
         'Laß die Leiche liegen, geh weiter.{#dust_s43_r3882}':
@@ -845,7 +845,7 @@ label dust_s43: # from 42.0
 
 # s44 # say3883
 label dust_s44: # from 5.0 7.0 8.0 19.4 47.0
-    nr 'Du bist nicht schnell genug. Der Staubmensch weicht deinem Angriffsversuch aus. Er geht einen Schritt zurück und klatscht dreimal fest in Hände. Daraufhin ertönt der Klang einer großen Eisenglocke durch die ganze Leichenhalle.{#dust_s44_}'
+    nr 'Du bist nicht schnell genug. Der Staubmensch weicht deinem Angriffsversuch aus. Er geht einen Schritt zurück und klatscht dreimal fest in Hände. Daraufhin ertönt der Klang einer großen Eisenglocke durch die ganze Leichenhalle.{#dust_s44_1}'
 
     menu:
         '"Nun gut…"{#dust_s44_r3884}':
@@ -856,7 +856,7 @@ label dust_s44: # from 5.0 7.0 8.0 19.4 47.0
 
 # s45 # say3889
 label dust_s45: # from 19.5
-    nr 'Als du dich vorbeugst, um ihm etwas „zuzuflüstern“, beugt der Staubmensch seinen Kopf auch nach vorn. Als er in Reichweite kommt, packst du ihn an den Schläfen und drehst seinen Kopf ruckartig nach links.{#dust_s45_}'
+    nr 'Als du dich vorbeugst, um ihm etwas „zuzuflüstern“, beugt der Staubmensch seinen Kopf auch nach vorn. Als er in Reichweite kommt, packst du ihn an den Schläfen und drehst seinen Kopf ruckartig nach links.{#dust_s45_1}'
 
     menu:
         '"Ich kann nicht zulassen, daß du deine Freunde warnst…"{#dust_s45_r3890}':
@@ -867,7 +867,7 @@ label dust_s45: # from 19.5
 
 # s46 # say3891
 label dust_s46: # from 24.3 25.3 29.3 35.3 37.3 49.3 50.1
-    nr 'Der Staubmensch wirkt mißtrauisch. Er sieht aus, als würde er jeden Moment etwas sagen, doch dann schüttelt er nur kurz den Kopf und wendet sich wieder seiner Arbeit zu.{#dust_s46_}'
+    nr 'Der Staubmensch wirkt mißtrauisch. Er sieht aus, als würde er jeden Moment etwas sagen, doch dann schüttelt er nur kurz den Kopf und wendet sich wieder seiner Arbeit zu.{#dust_s46_1}'
 
     menu:
         'Geh einfach weg.{#dust_s46_r3892}':
@@ -877,7 +877,7 @@ label dust_s46: # from 24.3 25.3 29.3 35.3 37.3 49.3 50.1
 
 # s47 # say3893
 label dust_s47: # from 24.2 25.2 29.1 29.2 35.1 35.2 37.1 37.2 49.1 49.2
-    nr 'Der Staubmensch mustert dich aufmerksam. "Du bist keiner von uns, oder? Was führt dich hierher? Bist du ein Anarchist? Oder ein Spitzel eines anderen Bundes? Ich glaube, dies ist ein Fall für die Wache…"{#dust_s47_}'
+    nr 'Der Staubmensch mustert dich aufmerksam. "Du bist keiner von uns, oder? Was führt dich hierher? Bist du ein Anarchist? Oder ein Spitzel eines anderen Bundes? Ich glaube, dies ist ein Fall für die Wache…"{#dust_s47_1}'
 
     menu:
         'Brich ihm das Genick, bevor er rufen kann.{#dust_s47_r3914}' if dustLogic.r3914_condition():
@@ -899,7 +899,7 @@ label dust_s47: # from 24.2 25.2 29.1 29.2 35.1 35.2 37.1 37.2 49.1 49.2
 
 # s48 # say3894
 label dust_s48: # from 10.0 11.0 12.0 13.0 14.0 15.0 21.0 26.3 27.1 28.3 30.4 31.4 32.1 33.1 34.3 36.2 39.1
-    nr 'Der Staubmensch nickt, bevor er sich wieder seiner Arbeit zuwendet.{#dust_s48_}'
+    nr 'Der Staubmensch nickt, bevor er sich wieder seiner Arbeit zuwendet.{#dust_s48_1}'
 
     menu:
         'Geh einfach weg.{#dust_s48_r3895}':
@@ -909,7 +909,7 @@ label dust_s48: # from 10.0 11.0 12.0 13.0 14.0 15.0 21.0 26.3 27.1 28.3 30.4 31
 
 # s49 # say3896
 label dust_s49: # from 24.0 24.1 25.0 25.1
-    nr 'Der Staubmensch runzelt die Stirn. "Dieser Name kommt mir nicht bekannt vor."{#dust_s49_}'
+    nr 'Der Staubmensch runzelt die Stirn. "Dieser Name kommt mir nicht bekannt vor."{#dust_s49_1}'
 
     menu:
         '"Ich bin noch nicht lange eingeweiht. Vergib mir meine Unwissenheit."{#dust_s49_r3898}' if dustLogic.r3898_condition():
@@ -931,7 +931,7 @@ label dust_s49: # from 24.0 24.1 25.0 25.1
 
 # s50 # say3897
 label dust_s50: # from 29.0 35.0 37.0 49.0
-    nr 'Der Staubmensch runzelt weiter die Stirn und sagt mit einem leichten Nicken: "Sehr gut. Was kann ich für dich tun, Eingeweihter?"{#dust_s50_}'
+    nr 'Der Staubmensch runzelt weiter die Stirn und sagt mit einem leichten Nicken: "Sehr gut. Was kann ich für dich tun, Eingeweihter?"{#dust_s50_1}'
 
     menu:
         '"Ich hätte da ein paar Fragen…"{#dust_s50_r3902}':
@@ -945,7 +945,7 @@ label dust_s50: # from 29.0 35.0 37.0 49.0
 
 # s51 # say66674
 label dust_s51: # - # IF ~  Global("Appearance","GLOBAL",0)
-    nr 'Der Staubmensch sieht dich mit versteinerter Miene an. "Hast du dich verlaufen?"{#dust_s51_}'
+    nr 'Der Staubmensch sieht dich mit versteinerter Miene an. "Hast du dich verlaufen?"{#dust_s51_1}'
 
     menu:
         '"Nein, ich bin Mitglied des Bundes. Ich seh mir nur ein bißchen die Leichenhalle an."{#dust_s51_r66675}' if dustLogic.r66675_condition():
@@ -971,7 +971,7 @@ label dust_s51: # - # IF ~  Global("Appearance","GLOBAL",0)
 
 # s52 # say66681
 label dust_s52: # from 51.0
-    nr 'Der Staubmensch starrt dich einen Moment lang an und nickt dann. "Nun denn. Sag mir bescheid, wenn du Hilfe brauchst."{#dust_s52_}'
+    nr 'Der Staubmensch starrt dich einen Moment lang an und nickt dann. "Nun denn. Sag mir bescheid, wenn du Hilfe brauchst."{#dust_s52_1}'
 
     menu:
         '"Mach ich. Leb wohl."{#dust_s52_r66682}':

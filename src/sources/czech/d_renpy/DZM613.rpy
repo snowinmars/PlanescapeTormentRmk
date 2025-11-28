@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say6540
 label zm613_s0: # - # IF ~  True()
-    nr 'ČÍslo "613" je hluboko vyryto do čela této plahočící se mrtvoly, ale kousek odtržené tuhé kůže odděluje "1" a "3." Když se podíváš zblízka, s obtížemi tam rozluštíš vyřezanou "2".{#zm613_s0_}'
+    nr 'ČÍslo "613" je hluboko vyryto do čela této plahočící se mrtvoly, ale kousek odtržené tuhé kůže odděluje "1" a "3." Když se podíváš zblízka, s obtížemi tam rozluštíš vyřezanou "2".{#zm613_s0_1}'
 
     menu:
         '"Tak… je tam dál vidět něco zajímavého?"{#zm613_s0_r6543}' if zm613Logic.r6543_condition():
@@ -42,7 +42,7 @@ label zm613_s0: # - # IF ~  True()
 
 # s1 # say6541
 label zm613_s1: # from 0.0 0.1 0.2
-    nr 'Mrtvola na tebe stále zírá.{#zm613_s1_}'
+    nr 'Mrtvola na tebe stále zírá.{#zm613_s1_1}'
 
     menu:
         'Nechej mrtvolu být.{#zm613_s1_r6549}':
@@ -52,7 +52,7 @@ label zm613_s1: # from 0.0 0.1 0.2
 
 # s2 # say6542
 label zm613_s2: # from 0.3
-    nr 'Mrtvola neodpovídá. Vypadá to, že je mrtvá příliš dlouho na to, aby byla schopna odpovědět na nějakou tvou otázku.{#zm613_s2_}'
+    nr 'Mrtvola neodpovídá. Vypadá to, že je mrtvá příliš dlouho na to, aby byla schopna odpovědět na nějakou tvou otázku.{#zm613_s2_1}'
 
     menu:
         'Nechej mrtvolu být.{#zm613_s2_r6550}':

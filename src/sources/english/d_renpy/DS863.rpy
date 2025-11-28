@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say35537
 label s863_s0: # from 10.0 # IF ~  !HasItem("DRemind","S863")
-    nr 'This skeleton looks like it has seen a great deal of action, either because of combat or by falling down one too many staircases; both its arms and legs have been broken and rebuilt with the aid of leather straps and thin iron rods. The front of its skull bears the number "863"… but the back of the skull has caved in, forming an empty cavity.{#s863_s0_}'
+    nr 'This skeleton looks like it has seen a great deal of action, either because of combat or by falling down one too many staircases; both its arms and legs have been broken and rebuilt with the aid of leather straps and thin iron rods. The front of its skull bears the number "863"… but the back of the skull has caved in, forming an empty cavity.{#s863_s0_1}'
 
     menu:
         '"Sorry about taking that parchment, but I doubt you would have delivered it any time soon."{#s863_s0_r35538}' if s863Logic.r35538_condition():
@@ -90,7 +90,7 @@ label s863_s0: # from 10.0 # IF ~  !HasItem("DRemind","S863")
 
 # s1 # say35539
 label s863_s1: # from 0.0 0.1 0.2 0.3
-    nr 'The skeleton makes no reply.{#s863_s1_}'
+    nr 'The skeleton makes no reply.{#s863_s1_1}'
 
     menu:
         '"Great talking to you, Bones. Stay healthy."{#s863_s1_r35540}' if s863Logic.r35540_condition():
@@ -109,7 +109,7 @@ label s863_s1: # from 0.0 0.1 0.2 0.3
 
 # s2 # say35565
 label s863_s2: # from 0.4
-    nr 'This skeleton makes no reply. It looks like it is too far gone to answer any of your questions.{#s863_s2_}'
+    nr 'This skeleton makes no reply. It looks like it is too far gone to answer any of your questions.{#s863_s2_1}'
 
     menu:
         'Leave the skeleton in peace.{#s863_s2_r35566}' if s863Logic.r35566_condition():
@@ -128,7 +128,7 @@ label s863_s2: # from 0.4
 
 # s3 # say35570
 label s863_s3: # from 0.5
-    nr 'Someone has taken care to bind the bones of this skeleton with leather straps, woven around the body in such a pattern that they resemble muscles and tendons. The straps are secured to metal bolts punched into the skeleton„s joints. This skeleton looks like it has seen a great deal of service: many of its bones are chipped and its numerous fractures are bound with sealant and foul-smelling glues.{#s863_s3_}'
+    nr 'Someone has taken care to bind the bones of this skeleton with leather straps, woven around the body in such a pattern that they resemble muscles and tendons. The straps are secured to metal bolts punched into the skeleton„s joints. This skeleton looks like it has seen a great deal of service: many of its bones are chipped and its numerous fractures are bound with sealant and foul-smelling glues.{#s863_s3_1}'
 
     menu:
         'Try and pry out the skeleton„s joint bolts.{#s863_s3_r35571}' if s863Logic.r35571_condition():
@@ -176,7 +176,7 @@ label s863_s3: # from 0.5
 
 # s4 # say35576
 label s863_s4: # from 0.7 0.10 3.1 3.4
-    nr 'You pull at the iron bolts, but you„re not strong enough to pull them out. They“ve been hammered in pretty tight.{#s863_s4_}'
+    nr 'You pull at the iron bolts, but you„re not strong enough to pull them out. They“ve been hammered in pretty tight.{#s863_s4_1}'
 
     menu:
         '"Maybe if I had the right tool, I could get them out… hmmmm. I may be back, Bones."{#s863_s4_r35577}' if s863Logic.r35577_condition():
@@ -208,7 +208,7 @@ label s863_s4: # from 0.7 0.10 3.1 3.4
 
 # s5 # say35584
 label s863_s5: # from 0.8 0.11 3.2 3.5
-    nr 'You pull at the iron bolts with all your strength, and after a few moments of tugging, you rip the bolts from the joints. The skeleton collapses, some of its bones still twitching.{#s863_s5_}'
+    nr 'You pull at the iron bolts with all your strength, and after a few moments of tugging, you rip the bolts from the joints. The skeleton collapses, some of its bones still twitching.{#s863_s5_1}'
 
     menu:
         '"Sorry about that, Bones…"{#s863_s5_r35585}':
@@ -219,7 +219,7 @@ label s863_s5: # from 0.8 0.11 3.2 3.5
 
 # s6 # say35587
 label s863_s6: # from 0.9 0.12 3.3 3.6
-    nr 'Using your prybar, you rip the bolts from the skeleton„s joints. The skeleton collapses, some of its bones still twitching.{#s863_s6_}'
+    nr 'Using your prybar, you rip the bolts from the skeleton„s joints. The skeleton collapses, some of its bones still twitching.{#s863_s6_1}'
 
     menu:
         '"Sorry about that, Bones…"{#s863_s6_r35588}':
@@ -230,13 +230,13 @@ label s863_s6: # from 0.9 0.12 3.3 3.6
 
 # s7 # say35613
 label s863_s7: # - # IF ~  False()
-    nr 'This skeleton makes no reply. It looks like it is too far gone to answer any of your questions.{#s863_s7_}'
+    nr 'This skeleton makes no reply. It looks like it is too far gone to answer any of your questions.{#s863_s7_1}'
 
     menu:
 
 # s8 # say64262
 label s863_s8: # - # IF ~  HasItem("DRemind","S863")
-    nr 'This skeleton has either seen a great deal of combat or has fallen down one too many staircases; both its arms and legs have been broken and rebuilt with the aid of leather straps and thin iron rods. The front of its skull bears the number "863"… but the back of the skull has caved in, forming an empty cavity. You notice that someone has taken advantage of this and tucked a rolled up piece of parchment inside the skull.{#s863_s8_}'
+    nr 'This skeleton has either seen a great deal of combat or has fallen down one too many staircases; both its arms and legs have been broken and rebuilt with the aid of leather straps and thin iron rods. The front of its skull bears the number "863"… but the back of the skull has caved in, forming an empty cavity. You notice that someone has taken advantage of this and tucked a rolled up piece of parchment inside the skull.{#s863_s8_1}'
 
     menu:
         'Take the parchment out of the skeleton„s skull.{#s863_s8_r64263}':
@@ -250,7 +250,7 @@ label s863_s8: # - # IF ~  HasItem("DRemind","S863")
 
 # s9 # say64265
 label s863_s9: # from 8.0
-    nr 'You slip the parchment out of the worker„s skull - oddly enough, it looks as if the skull cavity is *intended* to store messages; a tiny string is attached to the parchment from a hook bolted inside the skull, as if to keep the parchment from accidentally falling out.{#s863_s9_}'
+    nr 'You slip the parchment out of the worker„s skull - oddly enough, it looks as if the skull cavity is *intended* to store messages; a tiny string is attached to the parchment from a hook bolted inside the skull, as if to keep the parchment from accidentally falling out.{#s863_s9_1}'
 
     menu:
         'Unhook the string, take the parchment.{#s863_s9_r64266}':
@@ -261,7 +261,7 @@ label s863_s9: # from 8.0
 
 # s10 # say64267
 label s863_s10: # from 9.0
-    nr 'You unhook the string and glance over the parchment - it looks like a reminder from one of the Mortuary custodians. Judging from the note, this skeleton seems to be a walking messenger of sorts. As you take a second glance at the skeleton, you realize it has stopped in front of the slab because it can„t figure out how to move past it.  ^NNOTE: <READSTUFF>^-{#s863_s10_}'
+    nr 'You unhook the string and glance over the parchment - it looks like a reminder from one of the Mortuary custodians. Judging from the note, this skeleton seems to be a walking messenger of sorts. As you take a second glance at the skeleton, you realize it has stopped in front of the slab because it can„t figure out how to move past it.  ^NNOTE: <READSTUFF>^-{#s863_s10_1}'
 
     menu:
         'Examine the skeleton again.{#s863_s10_r64268}':

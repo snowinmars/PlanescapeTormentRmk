@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say34953
 label zm1201_s0: # - # IF ~  Global("1201_Note_Retrieved","GLOBAL",0)
-    nr 'Na czole tego truposza ktoś atramentem napisał numer "1201". Atrament rozlał się na oczy, policzki i szczękę trupa. Kiedy tak wzrokiem śledzisz ślady atramentu na jego twarzy, zauważasz, że zatrzymał się on na szwie zamykającym wargi trupa i zahaczył o coś, co wygląda na róg listu z wiadomością.{#zm1201_s0_}'
+    nr 'Na czole tego truposza ktoś atramentem napisał numer "1201". Atrament rozlał się na oczy, policzki i szczękę trupa. Kiedy tak wzrokiem śledzisz ślady atramentu na jego twarzy, zauważasz, że zatrzymał się on na szwie zamykającym wargi trupa i zahaczył o coś, co wygląda na róg listu z wiadomością.{#zm1201_s0_1}'
 
     menu:
         'Spróbuj wyciągnąć wiadomość.{#zm1201_s0_r34954}' if zm1201Logic.r34954_condition():
@@ -37,7 +37,7 @@ label zm1201_s0: # - # IF ~  Global("1201_Note_Retrieved","GLOBAL",0)
 
 # s1 # say34955
 label zm1201_s1: # from 0.0
-    nr 'List zlał się z posoką w ustach zombiaka. Gdybyś spróbował go wyciągnąć poprzez ścieg krzyżykowy na ustach truposza, papier podarłby się na strzępy. Próba nacięcia trupa, w celu dostania się do wiadomości zniszczyłaby ją - musisz więc znaleźć delikatny sposób na usunięcie szwów, zanim ją wyjmiesz.{#zm1201_s1_}'
+    nr 'List zlał się z posoką w ustach zombiaka. Gdybyś spróbował go wyciągnąć poprzez ścieg krzyżykowy na ustach truposza, papier podarłby się na strzępy. Próba nacięcia trupa, w celu dostania się do wiadomości zniszczyłaby ją - musisz więc znaleźć delikatny sposób na usunięcie szwów, zanim ją wyjmiesz.{#zm1201_s1_1}'
 
     menu:
         'Posłuż się skalpelem, aby przeciąć szwy.{#zm1201_s1_r34956}' if zm1201Logic.r34956_condition():
@@ -52,7 +52,7 @@ label zm1201_s1: # from 0.0
 
 # s2 # say34960
 label zm1201_s2: # from 1.0
-    nr 'Szybkim ruchem rozcinasz nić zszywającą usta trupa. Jego żuchwa zwisa bezwładnie. Ostrożnie wyciągasz z jego ust notatkę… Pomimo stanu papieru jej treść nadal jest czytelna.  ^NNOTE: <READSTUFF>^-{#zm1201_s2_}'
+    nr 'Szybkim ruchem rozcinasz nić zszywającą usta trupa. Jego żuchwa zwisa bezwładnie. Ostrożnie wyciągasz z jego ust notatkę… Pomimo stanu papieru jej treść nadal jest czytelna.  ^NNOTE: <READSTUFF>^-{#zm1201_s2_1}'
 
     menu:
         'Ponownie zbadaj truposza.{#zm1201_s2_r34961}':
@@ -66,7 +66,7 @@ label zm1201_s2: # from 1.0
 
 # s3 # say45124
 label zm1201_s3: # from 0.1 5.0 5.1 5.2
-    nr 'Mlecznobiałe oczy truposza wpatrują się w ciebie bezmyślnie.{#zm1201_s3_}'
+    nr 'Mlecznobiałe oczy truposza wpatrują się w ciebie bezmyślnie.{#zm1201_s3_1}'
 
     menu:
         'Zostaw truposza w spokoju.{#zm1201_s3_r45125}':
@@ -76,7 +76,7 @@ label zm1201_s3: # from 0.1 5.0 5.1 5.2
 
 # s4 # say45126
 label zm1201_s4: # from 0.2 5.3
-    nr 'Truposz nie rusza się. Wygląda na to, że jest w zbyt daleko posuniętym stadium rozkładu, aby odpowiedzieć na twoje pytania.{#zm1201_s4_}'
+    nr 'Truposz nie rusza się. Wygląda na to, że jest w zbyt daleko posuniętym stadium rozkładu, aby odpowiedzieć na twoje pytania.{#zm1201_s4_1}'
 
     menu:
         'Zostaw truposza w spokoju.{#zm1201_s4_r45127}':
@@ -86,7 +86,7 @@ label zm1201_s4: # from 0.2 5.3
 
 # s5 # say45128
 label zm1201_s5: # from 2.0 # IF ~  Global("1201_Note_Retrieved","GLOBAL",1)
-    nr 'Na czole tego trupa ktoś atramentem napisał numer "1201". Atrament rozlał się na oczy, policzki i szczękę trupa, przez co sam trup wygląda tak, jakby płakał. Jego szczęka zwisa otwarta, a strużka posoki wolno sączy się z kącika ust.{#zm1201_s5_}'
+    nr 'Na czole tego trupa ktoś atramentem napisał numer "1201". Atrament rozlał się na oczy, policzki i szczękę trupa, przez co sam trup wygląda tak, jakby płakał. Jego szczęka zwisa otwarta, a strużka posoki wolno sączy się z kącika ust.{#zm1201_s5_1}'
 
     menu:
         '"Przepraszam za przecięcie tych szwów… ale po prostu musiałem zobaczyć, co miałeś w ustach."{#zm1201_s5_r45129}' if zm1201Logic.r45129_condition():

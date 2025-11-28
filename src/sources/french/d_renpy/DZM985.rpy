@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say45515
 label zm985_s0: # - # IF ~  Global("Topple_985","GLOBAL",0)
-    nr 'Le cadavre „985“ s„est arrêté. S“il faut en juger par l„état de sa jambe gauche, la putréfaction ou une sorte de moisissure lui a rongé la rotule. Il tangue d“avant en arrière et fait de son mieux pour conserver son équilibre.{#zm985_s0_}'
+    nr 'Le cadavre „985“ s„est arrêté. S“il faut en juger par l„état de sa jambe gauche, la putréfaction ou une sorte de moisissure lui a rongé la rotule. Il tangue d“avant en arrière et fait de son mieux pour conserver son équilibre.{#zm985_s0_1}'
 
     menu:
         'Pousse le cadavre.{#zm985_s0_r45516}' if zm985Logic.r45516_condition():
@@ -53,7 +53,7 @@ label zm985_s0: # - # IF ~  Global("Topple_985","GLOBAL",0)
 
 # s1 # say45524
 label zm985_s1: # from 0.4 5.0 5.1 5.2
-    nr 'Le cadavre regarde droit devant, sans se rendre compte de quoi que ce soit. Rien n„indique qu“il t„a aperçu.{#zm985_s1_}'
+    nr 'Le cadavre regarde droit devant, sans se rendre compte de quoi que ce soit. Rien n„indique qu“il t„a aperçu.{#zm985_s1_1}'
 
     menu:
         'Laisse le cadavre tranquille.{#zm985_s1_r45525}':
@@ -63,7 +63,7 @@ label zm985_s1: # from 0.4 5.0 5.1 5.2
 
 # s2 # say45526
 label zm985_s2: # from 0.5 5.3
-    nr 'Le cadavre ne bouge pas. Il a l„air trop absent pour répondre à tes questions.{#zm985_s2_}'
+    nr 'Le cadavre ne bouge pas. Il a l„air trop absent pour répondre à tes questions.{#zm985_s2_1}'
 
     menu:
         'Laisse le cadavre tranquille.{#zm985_s2_r45527}':
@@ -73,7 +73,7 @@ label zm985_s2: # from 0.5 5.3
 
 # s3 # say45528
 label zm985_s3: # from 0.1 6.0
-    nr 'La jambe gauche du cadavre craque soudainement et il s„effondre comme un arbre mort. Son torse explose comme un melon trop mûr en heurtant les dalles de pierre et une substance écœurante s“en échappe. À ta grande surprise, personne ne semble s„être aperçu de la chute du zombi. Plus étrange encore, le bas de sa jambe gauche est toujours là, bien droit. Au bout de quelques instants, le mollet tombe à son tour dans un bruit sourd.{#zm985_s3_}'
+    nr 'La jambe gauche du cadavre craque soudainement et il s„effondre comme un arbre mort. Son torse explose comme un melon trop mûr en heurtant les dalles de pierre et une substance écœurante s“en échappe. À ta grande surprise, personne ne semble s„être aperçu de la chute du zombi. Plus étrange encore, le bas de sa jambe gauche est toujours là, bien droit. Au bout de quelques instants, le mollet tombe à son tour dans un bruit sourd.{#zm985_s3_1}'
 
     $ zm985Logic.s3_action()
     jump zm985_s7
@@ -81,7 +81,7 @@ label zm985_s3: # from 0.1 6.0
 
 # s4 # say45530
 label zm985_s4: # from 0.2
-    nr 'Tu saisis le bras gauche du cadavre pour l„aider à tenir debout. À ce moment, il bascule vers la droite, et tu te retrouves à essayer de l“empêcher de tomber.{#zm985_s4_}'
+    nr 'Tu saisis le bras gauche du cadavre pour l„aider à tenir debout. À ce moment, il bascule vers la droite, et tu te retrouves à essayer de l“empêcher de tomber.{#zm985_s4_1}'
 
     $ zm985Logic.s4_action()
     jump morte_s482  # EXTERN
@@ -89,7 +89,7 @@ label zm985_s4: # from 0.2
 
 # s5 # say45531
 label zm985_s5: # - # IF ~  GlobalGT("Topple_985","GLOBAL",0)
-    nr 'On dirait que quelqu„un a remplacé le bras gauche et la jambe gauche de ce zombi par des membres prélevés sur un autre cadavre. La nouvelle jambe gauche est plus petite que l“ancienne mais, au moins, le mort-vivant peut désormais se tenir debout.{#zm985_s5_}'
+    nr 'On dirait que quelqu„un a remplacé le bras gauche et la jambe gauche de ce zombi par des membres prélevés sur un autre cadavre. La nouvelle jambe gauche est plus petite que l“ancienne mais, au moins, le mort-vivant peut désormais se tenir debout.{#zm985_s5_1}'
 
     menu:
         '"Désolé de t„avoir fait tomber. C“était un accident."{#zm985_s5_r45532}' if zm985Logic.r45532_condition():
@@ -120,7 +120,7 @@ label zm985_s5: # - # IF ~  GlobalGT("Topple_985","GLOBAL",0)
 
 # s6 # say45538
 label zm985_s6: # from 0.3
-    nr 'Tu saisis le bras gauche du cadavre pour l„aider à tenir debout. À ce moment, il bascule vers la droite, et tu te retrouves à essayer de l“empêcher de tomber.{#zm985_s6_}'
+    nr 'Tu saisis le bras gauche du cadavre pour l„aider à tenir debout. À ce moment, il bascule vers la droite, et tu te retrouves à essayer de l“empêcher de tomber.{#zm985_s6_1}'
 
     menu:
         '"Oh-oh…"{#zm985_s6_r45539}':
@@ -131,7 +131,7 @@ label zm985_s6: # from 0.3
 
 # s7 # say64205
 label zm985_s7: # from 3.0
-    nr 'Tandis que tu regardes fixement les restes putréfiés du cadavre, tu remarques que son bras gauche a l„air intact - il s“est séparé du torse pendant la chute et il ne semble pas atteint par la pourriture, comme le reste du corps.{#zm985_s7_}'
+    nr 'Tandis que tu regardes fixement les restes putréfiés du cadavre, tu remarques que son bras gauche a l„air intact - il s“est séparé du torse pendant la chute et il ne semble pas atteint par la pourriture, comme le reste du corps.{#zm985_s7_1}'
 
     menu:
         '"Hmmm. Je me demande si ce bras peut m„être utile…"{#zm985_s7_r64206}':

@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say35082
 label zf1096_s0: # - # IF ~  True()
-    nr 'Ten trup kobiety porusza się po pokoju od płyty do płyty. Włosy ma zaplecione w długi warkocz i zaplecione w pętlę wokół szyi. Ktoś wymalował jej na czole przez szablon numer "1096" i zaszył mocno wargi.{#zf1096_s0_}'
+    nr 'Ten trup kobiety porusza się po pokoju od płyty do płyty. Włosy ma zaplecione w długi warkocz i zaplecione w pętlę wokół szyi. Ktoś wymalował jej na czole przez szablon numer "1096" i zaszył mocno wargi.{#zf1096_s0_1}'
 
     menu:
         '"Ehm… ładny warkocz."{#zf1096_s0_r35083}' if zf1096Logic.r35083_condition():
@@ -58,7 +58,7 @@ label zf1096_s0: # - # IF ~  True()
 
 # s1 # say35084
 label zf1096_s1: # from 0.0 0.1 0.2
-    nr 'Trup nie odpowiada. Wątpliwe, czy w ogóle wie, że tu jesteś.{#zf1096_s1_}'
+    nr 'Trup nie odpowiada. Wątpliwe, czy w ogóle wie, że tu jesteś.{#zf1096_s1_1}'
 
     menu:
         '"A zatem żegnaj."{#zf1096_s1_r35085}' if zf1096Logic.r35085_condition():
@@ -76,7 +76,7 @@ label zf1096_s1: # from 0.0 0.1 0.2
 
 # s2 # say35103
 label zf1096_s2: # from 0.3
-    nr 'Trup nie rusza się. Wygląda na to, że jest w zbyt daleko posuniętym stadium rozkładu, aby odpowiedzieć na twoje pytania.{#zf1096_s2_}'
+    nr 'Trup nie rusza się. Wygląda na to, że jest w zbyt daleko posuniętym stadium rozkładu, aby odpowiedzieć na twoje pytania.{#zf1096_s2_1}'
 
     menu:
         '"A zatem żegnaj."{#zf1096_s2_r35104}' if zf1096Logic.r35104_condition():
@@ -94,6 +94,6 @@ label zf1096_s2: # from 0.3
 
 # s3 # say35113
 label zf1096_s3: # - # IF ~  False()
-    nr 'Trup nie rusza się. Wygląda na to, że jest w zbyt daleko posuniętym stadium rozkładu, aby odpowiedzieć na twoje pytania.{#zf1096_s3_}'
+    nr 'Trup nie rusza się. Wygląda na to, że jest w zbyt daleko posuniętym stadium rozkładu, aby odpowiedzieć na twoje pytania.{#zf1096_s3_1}'
 
     menu:

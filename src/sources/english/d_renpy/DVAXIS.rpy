@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say453
 label vaxis_s0: # - # IF ~  Global("Vaxis","GLOBAL",0)
-    nr 'The shambling corpse gazes at you with vacant eyes. The number "821" is carved into his forehead, and his lips have been stitched closed. The faint smell of formaldehyde emanates from the body.{#vaxis_s0_}'
+    nr 'The shambling corpse gazes at you with vacant eyes. The number "821" is carved into his forehead, and his lips have been stitched closed. The faint smell of formaldehyde emanates from the body.{#vaxis_s0_1}'
 
     menu:
         '"So… seen anything interesting going on?"{#vaxis_s0_r454}' if vaxisLogic.r454_condition():
@@ -42,7 +42,7 @@ label vaxis_s0: # - # IF ~  Global("Vaxis","GLOBAL",0)
 
 # s1 # say460
 label vaxis_s1: # from 0.3 # IF ~  False()
-    nr 'Oddly enough, your ability does not seem to work on this corpse.{#vaxis_s1_}'
+    nr 'Oddly enough, your ability does not seem to work on this corpse.{#vaxis_s1_1}'
 
     menu:
         'Poke it in the eye.{#vaxis_s1_r461}':
@@ -57,7 +57,7 @@ label vaxis_s1: # from 0.3 # IF ~  False()
 
 # s2 # say463
 label vaxis_s2: # from 1.0
-    nr 'The corpse gives a muffled yelp as you jab it in the eye, and its hands shoot up to cover its face. It begins mumbling what you take for obscenities under its breath.{#vaxis_s2_}'
+    nr 'The corpse gives a muffled yelp as you jab it in the eye, and its hands shoot up to cover its face. It begins mumbling what you take for obscenities under its breath.{#vaxis_s2_1}'
 
     menu:
         '"You„re not a zombie! Who are you?"{#vaxis_s2_r464}':
@@ -78,7 +78,7 @@ label vaxis_s2: # from 1.0
 
 # s3 # say467
 label vaxis_s3: # from 2.2 5.2
-    nr 'As you turn to leave, the „zombie“ mumbles something… it looks like he„s trying to say something, but it“s difficult with his lips stitched closed. "Hoo YU? Wut yu wunt?"{#vaxis_s3_}'
+    nr 'As you turn to leave, the „zombie“ mumbles something… it looks like he„s trying to say something, but it“s difficult with his lips stitched closed. "Hoo YU? Wut yu wunt?"{#vaxis_s3_1}'
 
     menu:
         '"I„m looking for a way out of here. Can you help me?"{#vaxis_s3_r468}' if vaxisLogic.r468_condition():
@@ -110,7 +110,7 @@ label vaxis_s3: # from 2.2 5.2
 
 # s4 # say471
 label vaxis_s4: # from 3.5 6.5 7.8 8.5 10.4 11.4 12.2 13.5 14.4 15.2 16.4 17.2 18.1 19.3 20.1 25.6 27.6 31.6 32.5 34.2 35.6 59.1 74.1 75.3 76.1
-    nr 'As you are turning to leave, the zombie makes a low growl in his throat. "Yoo say nuthin to nuh-whun bout ME. Yoo bee kwi-it. Say NUTHIN t„Duhstees." He puts his finger across lips. "Shhhhhh." He then draws the finger across his throat. "Or I gut yuu in yer sleep. You HEER me?"{#vaxis_s4_}'
+    nr 'As you are turning to leave, the zombie makes a low growl in his throat. "Yoo say nuthin to nuh-whun bout ME. Yoo bee kwi-it. Say NUTHIN t„Duhstees." He puts his finger across lips. "Shhhhhh." He then draws the finger across his throat. "Or I gut yuu in yer sleep. You HEER me?"{#vaxis_s4_1}'
 
     menu:
         '"Did you just THREATEN me? That does it… prepare to die."{#vaxis_s4_r475}':
@@ -135,7 +135,7 @@ label vaxis_s4: # from 3.5 6.5 7.8 8.5 10.4 11.4 12.2 13.5 14.4 15.2 16.4 17.2 1
 
 # s5 # say479
 label vaxis_s5: # from 0.0 0.1 0.2 0.4
-    nr 'As you address the zombie, it blinks in surprise. "Eh? Wut?"{#vaxis_s5_}'
+    nr 'As you address the zombie, it blinks in surprise. "Eh? Wut?"{#vaxis_s5_1}'
 
     menu:
         '"You„re not a zombie! Who are you?"{#vaxis_s5_r480}':
@@ -159,7 +159,7 @@ label vaxis_s5: # from 0.0 0.1 0.2 0.4
 
 # s6 # say483
 label vaxis_s6: # from 2.0 2.1 5.0 5.1
-    nr 'The „zombie“ is trying to respond behind stitched lips; he has a peculiar half-frightened, half-angry expression. "Hoo YU? Wut yu wunt?"{#vaxis_s6_}'
+    nr 'The „zombie“ is trying to respond behind stitched lips; he has a peculiar half-frightened, half-angry expression. "Hoo YU? Wut yu wunt?"{#vaxis_s6_1}'
 
     menu:
         '"I„m looking for a way out of here. Can you help me?"{#vaxis_s6_r484}' if vaxisLogic.r484_condition():
@@ -191,7 +191,7 @@ label vaxis_s6: # from 2.0 2.1 5.0 5.1
 
 # s7 # say490
 label vaxis_s7: # from 3.0 3.1 3.2 3.4 6.0 6.1 6.2 6.4
-    nr 'The zombie doesn„t seem to have heard you. He looks you up and down for a few moments, then frowns. "Wut yu do heer?" His eyes narrow suspiciously. "Yu spy on Duhstees?"{#vaxis_s7_}'
+    nr 'The zombie doesn„t seem to have heard you. He looks you up and down for a few moments, then frowns. "Wut yu do heer?" His eyes narrow suspiciously. "Yu spy on Duhstees?"{#vaxis_s7_1}'
 
     menu:
         '"No. I„m trying to escape."{#vaxis_s7_r491}' if vaxisLogic.r491_condition():
@@ -237,7 +237,7 @@ label vaxis_s7: # from 3.0 3.1 3.2 3.4 6.0 6.1 6.2 6.4
 
 # s8 # say1350
 label vaxis_s8: # from 7.2
-    nr 'He studies you more intently. "Yu spy? Yu wit cell?"{#vaxis_s8_}'
+    nr 'He studies you more intently. "Yu spy? Yu wit cell?"{#vaxis_s8_1}'
 
     menu:
         '"Huh?"{#vaxis_s8_r4671}':
@@ -270,7 +270,7 @@ label vaxis_s8: # from 7.2
 
 # s9 # say1363
 label vaxis_s9: # from 7.3
-    nr 'He studies you more intently. "Yu spy? Yu wit cell?"{#vaxis_s9_}'
+    nr 'He studies you more intently. "Yu spy? Yu wit cell?"{#vaxis_s9_1}'
 
     menu:
         '"Huh?"{#vaxis_s9_r4359}':
@@ -284,7 +284,7 @@ label vaxis_s9: # from 7.3
 
 # s10 # say4361
 label vaxis_s10: # from 8.0 8.1
-    nr 'Frowns, then hisses at you. "Yu no spy!" He makes a shooing motion. "Git! Git!"{#vaxis_s10_}'
+    nr 'Frowns, then hisses at you. "Yu no spy!" He makes a shooing motion. "Git! Git!"{#vaxis_s10_1}'
 
     menu:
         '"First, you„ll tell me what you“re doing here, or I„ll call the guards."{#vaxis_s10_r4362}' if vaxisLogic.r4362_condition():
@@ -312,7 +312,7 @@ label vaxis_s10: # from 8.0 8.1
 
 # s11 # say4366
 label vaxis_s11: # externs morte_s86
-    nr 'The zombie nods at this, and you think you detect him puffing up a little in pride behind his zombie disguise.{#vaxis_s11_}'
+    nr 'The zombie nods at this, and you think you detect him puffing up a little in pride behind his zombie disguise.{#vaxis_s11_1}'
 
     menu:
         '"Can you help me escape?"{#vaxis_s11_r4368}' if vaxisLogic.r4368_condition():
@@ -340,7 +340,7 @@ label vaxis_s11: # externs morte_s86
 
 # s12 # say4373
 label vaxis_s12: # from 7.0 11.0
-    nr 'The zombie seems interested. "Yu in trouble? Wutt yu do?"{#vaxis_s12_}'
+    nr 'The zombie seems interested. "Yu in trouble? Wutt yu do?"{#vaxis_s12_1}'
 
     menu:
         '"I woke up on one of the slabs upstairs."{#vaxis_s12_r4374}':
@@ -358,7 +358,7 @@ label vaxis_s12: # from 7.0 11.0
 
 # s13 # say4377
 label vaxis_s13: # from 12.0
-    nr 'The zombie„s looking at you like you“re crazy. "Yu barmee?"{#vaxis_s13_}'
+    nr 'The zombie„s looking at you like you“re crazy. "Yu barmee?"{#vaxis_s13_1}'
 
     menu:
         '"Yes, I am barmee. Very barmee."{#vaxis_s13_r4378}':
@@ -389,7 +389,7 @@ label vaxis_s13: # from 12.0
 
 # s14 # say4384
 label vaxis_s14: # from 13.0 13.3 15.0
-    nr 'He looks at you, then hisses and makes a shooing motion. "Yu barmee! Git away frum me!"{#vaxis_s14_}'
+    nr 'He looks at you, then hisses and makes a shooing motion. "Yu barmee! Git away frum me!"{#vaxis_s14_1}'
 
     menu:
         '"I„m not going anywhere. Tell me what you“re doing here, or I„ll call the guards."{#vaxis_s14_r4385}' if vaxisLogic.r4385_condition():
@@ -417,7 +417,7 @@ label vaxis_s14: # from 13.0 13.3 15.0
 
 # s15 # say4390
 label vaxis_s15: # externs morte_s88
-    nr 'The fake zombie is looking at you both suspiciously.{#vaxis_s15_}'
+    nr 'The fake zombie is looking at you both suspiciously.{#vaxis_s15_1}'
 
     menu:
         '"It„s the truth - I woke up on one of the slabs here."{#vaxis_s15_r4391}':
@@ -436,7 +436,7 @@ label vaxis_s15: # externs morte_s88
 
 # s16 # say4394
 label vaxis_s16: # from 13.1
-    nr 'He looks at you, then hisses and makes a shooing motion. "Addle-cuve! Idjit! Git awuh frum me, burk! Guh!"{#vaxis_s16_}'
+    nr 'He looks at you, then hisses and makes a shooing motion. "Addle-cuve! Idjit! Git awuh frum me, burk! Guh!"{#vaxis_s16_1}'
 
     menu:
         '"I„m not going anywhere. Tell me what you“re doing here, or I„ll call the guards."{#vaxis_s16_r4395}' if vaxisLogic.r4395_condition():
@@ -464,7 +464,7 @@ label vaxis_s16: # from 13.1
 
 # s17 # say4400
 label vaxis_s17: # from 7.5 10.1 14.1 16.1 25.3 27.3
-    nr 'He seems frightened for a moment, then studies you and a sneer crawls across his face. "Yu spill th„ dark on me, me spill dark on *yu.* I have friends hid heer, yu got *nubudy.* Yu not s“posd be heer. Duhstees kill yu. Me escape."{#vaxis_s17_}'
+    nr 'He seems frightened for a moment, then studies you and a sneer crawls across his face. "Yu spill th„ dark on me, me spill dark on *yu.* I have friends hid heer, yu got *nubudy.* Yu not s“posd be heer. Duhstees kill yu. Me escape."{#vaxis_s17_1}'
 
     menu:
         '"You won„t escape if I KILL you. Now answer my questions, or I“ll make that disguise a reality."{#vaxis_s17_r4401}' if vaxisLogic.r4401_condition():
@@ -484,7 +484,7 @@ label vaxis_s17: # from 7.5 10.1 14.1 16.1 25.3 27.3
 
 # s18 # say4404
 label vaxis_s18: # from 17.0
-    nr 'The zombie„s eyes narrow, and he hisses at you. "Yu TRY n“ put me in dead-book? I have frens hid heer, yu got *nubudy.* Yu tuch me, my frends kill YU."{#vaxis_s18_}'
+    nr 'The zombie„s eyes narrow, and he hisses at you. "Yu TRY n“ put me in dead-book? I have frens hid heer, yu got *nubudy.* Yu tuch me, my frends kill YU."{#vaxis_s18_1}'
 
     menu:
         '"I„ll risk it. Prepare to die."{#vaxis_s18_r4405}':
@@ -499,7 +499,7 @@ label vaxis_s18: # from 17.0
 
 # s19 # say4407
 label vaxis_s19: # from 7.6 10.2 14.2 16.2 25.4 27.4
-    nr 'He seems frightened for a moment, then studies your build, and a sneer crawls across his face. "YOO try n„ put ME in dead-book? I have frens hid heer, yu got *nubudy.* Yu tuch me, my frends kill YU."{#vaxis_s19_}'
+    nr 'He seems frightened for a moment, then studies your build, and a sneer crawls across his face. "YOO try n„ put ME in dead-book? I have frens hid heer, yu got *nubudy.* Yu tuch me, my frends kill YU."{#vaxis_s19_1}'
 
     menu:
         '"I„ll risk it. Prepare to die."{#vaxis_s19_r4408}':
@@ -522,7 +522,7 @@ label vaxis_s19: # from 7.6 10.2 14.2 16.2 25.4 27.4
 
 # s20 # say4412
 label vaxis_s20: # from 19.2
-    nr 'The zombie„s eyes narrow, and he hisses at you. "Yu spill th“ dark on me, me spill dark on *yu.* I have friends hid heer, yu got *nubudy.* Duhstees kill yu. Me escape."{#vaxis_s20_}'
+    nr 'The zombie„s eyes narrow, and he hisses at you. "Yu spill th“ dark on me, me spill dark on *yu.* I have friends hid heer, yu got *nubudy.* Duhstees kill yu. Me escape."{#vaxis_s20_1}'
 
     menu:
         '"That was your last chance, corpse. Prepare to die."{#vaxis_s20_r4413}':
@@ -537,7 +537,7 @@ label vaxis_s20: # from 19.2
 
 # s21 # say4415
 label vaxis_s21: # from 7.4 10.0 14.0 16.0 19.1 25.2 27.2
-    nr 'There must be something in your eye that makes the zombie„s expression crumble. "Nuh-nuh-no! Dun“t cull th„ gards!" He looks frightened. "Muh-muh-me spy un Duhstees, say wut I see. Nuh-Nuthin“ more."{#vaxis_s21_}'
+    nr 'There must be something in your eye that makes the zombie„s expression crumble. "Nuh-nuh-no! Dun“t cull th„ gards!" He looks frightened. "Muh-muh-me spy un Duhstees, say wut I see. Nuh-Nuthin“ more."{#vaxis_s21_1}'
 
     menu:
         '"Spy? For who?"{#vaxis_s21_r4416}':
@@ -559,7 +559,7 @@ label vaxis_s21: # from 7.4 10.0 14.0 16.0 19.1 25.2 27.2
 
 # s22 # say4420
 label vaxis_s22: # from 7.7 10.3 14.3 16.3 17.1 25.5 27.5
-    nr '"Nuh-nuh-no! Dun„t huurt me!" The fact you outweigh the zombie by several pounds of raw muscle seems to influence his decision, and his expression crumbles. "Dunht huurt me! Muh-muh-me spy un Duhstees, say wut I see. Nuh-Nuthin“ more."{#vaxis_s22_}'
+    nr '"Nuh-nuh-no! Dun„t huurt me!" The fact you outweigh the zombie by several pounds of raw muscle seems to influence his decision, and his expression crumbles. "Dunht huurt me! Muh-muh-me spy un Duhstees, say wut I see. Nuh-Nuthin“ more."{#vaxis_s22_1}'
 
     menu:
         '"Spy? For who?"{#vaxis_s22_r4421}':
@@ -581,7 +581,7 @@ label vaxis_s22: # from 7.7 10.3 14.3 16.3 17.1 25.5 27.5
 
 # s23 # say4425
 label vaxis_s23: # from 21.0 22.0
-    nr 'The zombie falls into a frightened silence. He seems unwilling to say any more.{#vaxis_s23_}'
+    nr 'The zombie falls into a frightened silence. He seems unwilling to say any more.{#vaxis_s23_1}'
 
     menu:
         '"C„mon. Who are you watching this place for?"{#vaxis_s23_r4426}' if vaxisLogic.r4426_condition():
@@ -617,7 +617,7 @@ label vaxis_s23: # from 21.0 22.0
 
 # s24 # say4433
 label vaxis_s24: # from 3.3 6.3 8.2
-    nr '"Luukin„ fur me? Why?" He squints at you. "Yu gut muhssage fur me?"{#vaxis_s24_}'
+    nr '"Luukin„ fur me? Why?" He squints at you. "Yu gut muhssage fur me?"{#vaxis_s24_1}'
 
     menu:
         'Lie: "Yes, I have a message for you."{#vaxis_s24_r4434}':
@@ -636,7 +636,7 @@ label vaxis_s24: # from 3.3 6.3 8.2
 
 # s25 # say4437
 label vaxis_s25: # from 24.2
-    nr 'Hisses angrily. "Then wut yu *want,* burk?!"{#vaxis_s25_}'
+    nr 'Hisses angrily. "Then wut yu *want,* burk?!"{#vaxis_s25_1}'
 
     menu:
         '"I„m looking for a way out of here. Can you help me?"{#vaxis_s25_r4438}' if vaxisLogic.r4438_condition():
@@ -672,7 +672,7 @@ label vaxis_s25: # from 24.2
 
 # s26 # say4445
 label vaxis_s26: # from 24.0
-    nr '"Wut muhssage?"{#vaxis_s26_}'
+    nr '"Wut muhssage?"{#vaxis_s26_1}'
 
     menu:
         '"You are to tell me your mission."{#vaxis_s26_r4446}' if vaxisLogic.r4446_condition():
@@ -700,7 +700,7 @@ label vaxis_s26: # from 24.0
 
 # s27 # say4451
 label vaxis_s27: # from 24.1 26.3 26.4
-    nr 'His eyes narrow angrily. "Yu NO muhssagerr. Hoo yu?"{#vaxis_s27_}'
+    nr 'His eyes narrow angrily. "Yu NO muhssagerr. Hoo yu?"{#vaxis_s27_1}'
 
     menu:
         '"I„m looking for a way out of here. Can you help me?"{#vaxis_s27_r4452}' if vaxisLogic.r4452_condition():
@@ -736,7 +736,7 @@ label vaxis_s27: # from 24.1 26.3 26.4
 
 # s28 # say4459
 label vaxis_s28: # from 8.3 8.4 11.1 11.2 11.3 26.0 30.0 43.5
-    nr '"Me spy on Duhstees. Say wut I see. Nuthin„ more."{#vaxis_s28_}'
+    nr '"Me spy on Duhstees. Say wut I see. Nuthin„ more."{#vaxis_s28_1}'
 
     menu:
         '"What have you seen the Dustmen do?"{#vaxis_s28_r4460}':
@@ -754,7 +754,7 @@ label vaxis_s28: # from 8.3 8.4 11.1 11.2 11.3 26.0 30.0 43.5
 
 # s29 # say4463
 label vaxis_s29: # from 21.1 22.1 23.4 28.0 70.1 71.2
-    nr '"Nuthin„. They do nuthin“. Can„t find nuthin“. Dead, dead, juhst dead people, Duhstees do *nuthin„.*" Eyes narrow in conviction. "Still I watch."{#vaxis_s29_}'
+    nr '"Nuthin„. They do nuthin“. Can„t find nuthin“. Dead, dead, juhst dead people, Duhstees do *nuthin„.*" Eyes narrow in conviction. "Still I watch."{#vaxis_s29_1}'
 
     menu:
         '"I see. There was something else I wanted to ask you…"{#vaxis_s29_r4464}':
@@ -768,7 +768,7 @@ label vaxis_s29: # from 21.1 22.1 23.4 28.0 70.1 71.2
 
 # s30 # say4466
 label vaxis_s30: # from 26.1 26.2
-    nr 'He narrows his eyes, like he„s trying to figure you out. "Wut ordrs?"{#vaxis_s30_}'
+    nr 'He narrows his eyes, like he„s trying to figure you out. "Wut ordrs?"{#vaxis_s30_1}'
 
     menu:
         '"Tell me your mission."{#vaxis_s30_r4467}':
@@ -796,7 +796,7 @@ label vaxis_s30: # from 26.1 26.2
 
 # s31 # say4472
 label vaxis_s31: # from 7.1 12.1 13.4 15.1 25.0 27.0 50.0
-    nr 'He is silent for a moment, then nods slightly, as if in understanding. "Why shud I hulp yu?"{#vaxis_s31_}'
+    nr 'He is silent for a moment, then nods slightly, as if in understanding. "Why shud I hulp yu?"{#vaxis_s31_1}'
 
     menu:
         '"Because I need your help."{#vaxis_s31_r4473}':
@@ -833,7 +833,7 @@ label vaxis_s31: # from 7.1 12.1 13.4 15.1 25.0 27.0 50.0
 
 # s32 # say4480
 label vaxis_s32: # from 31.0
-    nr 'The zombie gives a half-sneer. "Everybodee *needs* sumthin„, but nubudy *gives* anything. Yu *give* me sumfin“, *maybee* I help."{#vaxis_s32_}'
+    nr 'The zombie gives a half-sneer. "Everybodee *needs* sumthin„, but nubudy *gives* anything. Yu *give* me sumfin“, *maybee* I help."{#vaxis_s32_1}'
 
     menu:
         '"What is it you need?"{#vaxis_s32_r4481}':
@@ -865,7 +865,7 @@ label vaxis_s32: # from 31.0
 
 # s33 # say4487
 label vaxis_s33: # from 31.2 31.5 32.1 32.4 34.1 35.2 35.5 75.0
-    nr 'He looks you up and down as if wondering if he can take you, stares at your scars, then decides against it. "Hmmph. Yu kin escape through portalz."{#vaxis_s33_}'
+    nr 'He looks you up and down as if wondering if he can take you, stares at your scars, then decides against it. "Hmmph. Yu kin escape through portalz."{#vaxis_s33_1}'
 
     menu:
         '"Portals?"{#vaxis_s33_r4672}':
@@ -876,7 +876,7 @@ label vaxis_s33: # from 31.2 31.5 32.1 32.4 34.1 35.2 35.5 75.0
 
 # s34 # say4491
 label vaxis_s34: # from 31.3 32.2 35.3
-    nr 'He seems frightened for a moment, then studies you and a sneer crawls across his face. "Yu spill th„ dark on me, me spill dark on *yu.* I have friends hid heer, yu got *nubudy.* Yu not s“posd be heer. Duhstees kill yu. Me escape."{#vaxis_s34_}'
+    nr 'He seems frightened for a moment, then studies you and a sneer crawls across his face. "Yu spill th„ dark on me, me spill dark on *yu.* I have friends hid heer, yu got *nubudy.* Yu not s“posd be heer. Duhstees kill yu. Me escape."{#vaxis_s34_1}'
 
     menu:
         '"You won„t escape if I KILL you. Now start talking, or I“ll make that disguise a reality."{#vaxis_s34_r4489}' if vaxisLogic.r4489_condition():
@@ -896,7 +896,7 @@ label vaxis_s34: # from 31.3 32.2 35.3
 
 # s35 # say4493
 label vaxis_s35: # from 30.3 31.1 32.0
-    nr '"Uh need you t„git a *key* fur me. Wunt iron key tuh embulmuh“s rum."{#vaxis_s35_}'
+    nr '"Uh need you t„git a *key* fur me. Wunt iron key tuh embulmuh“s rum."{#vaxis_s35_1}'
 
     menu:
         '"You mean this key?"{#vaxis_s35_r4494}' if vaxisLogic.r4494_condition():
@@ -935,7 +935,7 @@ label vaxis_s35: # from 30.3 31.1 32.0
 
 # s36 # say4501
 label vaxis_s36: # from 35.1 58.2
-    nr '"A dusstie chit hazzit." He points at his eyes. "She haz yuhllo eyez…" He then makes a motion with his hands that reminds you of a pair of cutting shears. "Bladezz on fingerzz."{#vaxis_s36_}'
+    nr '"A dusstie chit hazzit." He points at his eyes. "She haz yuhllo eyez…" He then makes a motion with his hands that reminds you of a pair of cutting shears. "Bladezz on fingerzz."{#vaxis_s36_1}'
 
     menu:
         '"We already crossed paths. Here„s the key."{#vaxis_s36_r4502}' if vaxisLogic.r4502_condition():
@@ -961,7 +961,7 @@ label vaxis_s36: # from 35.1 58.2
 
 # s37 # say4505
 label vaxis_s37: # from 36.3
-    nr 'The zombie blinks. He doesn„t seem to have understood you.{#vaxis_s37_}'
+    nr 'The zombie blinks. He doesn„t seem to have understood you.{#vaxis_s37_1}'
 
     menu:
         '"That was a joke, see, you„re sup… forget it, I“ll go find your key."{#vaxis_s37_r4506}' if vaxisLogic.r4506_condition():
@@ -977,7 +977,7 @@ label vaxis_s37: # from 36.3
 
 # s38 # say4507
 label vaxis_s38: # from 36.1 36.2 37.0 37.1
-    nr 'The zombie squints at you. "If yu„re cught, dun“t say nothin„ bout me, or me gut yu in yur sleep."{#vaxis_s38_}'
+    nr 'The zombie squints at you. "If yu„re cught, dun“t say nothin„ bout me, or me gut yu in yur sleep."{#vaxis_s38_1}'
 
     menu:
         '"I„ll get your damned key… but you had best watch your threats, you hear me?"{#vaxis_s38_r4508}' if vaxisLogic.r4508_condition():
@@ -1001,14 +1001,14 @@ label vaxis_s38: # from 36.1 36.2 37.0 37.1
 
 # s39 # say4512
 label vaxis_s39: # from 43.12
-    nr '"Me gud at duh-guise. Me ulso gut scars. Me wuhr lots of embalming fluid. Me make GUD zumbie." The zombie giggles through stitched lips, then taps his head. "Duhstees stuh-pud."{#vaxis_s39_}'
+    nr '"Me gud at duh-guise. Me ulso gut scars. Me wuhr lots of embalming fluid. Me make GUD zumbie." The zombie giggles through stitched lips, then taps his head. "Duhstees stuh-pud."{#vaxis_s39_1}'
 
     jump morte_s93  # EXTERN
 
 
 # s40 # say4514
 label vaxis_s40: # -
-    nr '"I wait heer fur yu. Get key." The zombie gives you a stomach-churning smile. "Then I help yu."{#vaxis_s40_}'
+    nr '"I wait heer fur yu. Get key." The zombie gives you a stomach-churning smile. "Then I help yu."{#vaxis_s40_1}'
 
     menu:
         '"If I can find it, I„ll bring it back."{#vaxis_s40_r4515}':
@@ -1022,7 +1022,7 @@ label vaxis_s40: # -
 
 # s41 # say4517
 label vaxis_s41: # -
-    nr 'The zombie„s eyes widen, then he holds his hand out and snaps his fingers. "Gife it t“me."{#vaxis_s41_}'
+    nr 'The zombie„s eyes widen, then he holds his hand out and snaps his fingers. "Gife it t“me."{#vaxis_s41_1}'
 
     menu:
         '"Hold a moment. There„s something I want first."{#vaxis_s41_r4518}':
@@ -1037,7 +1037,7 @@ label vaxis_s41: # -
 
 # s42 # say4520
 label vaxis_s42: # from 35.0 36.0 58.0 58.1
-    nr 'The zombie„s eyes widen, and he snatches the key from your hand. He turns it over, nodding all the while. "Gud… gud."{#vaxis_s42_}'
+    nr 'The zombie„s eyes widen, and he snatches the key from your hand. He turns it over, nodding all the while. "Gud… gud."{#vaxis_s42_1}'
 
     menu:
         '"Now… how do I get out of here?"{#vaxis_s42_r4521}' if vaxisLogic.r4521_condition():
@@ -1055,7 +1055,7 @@ label vaxis_s42: # from 35.0 36.0 58.0 58.1
 
 # s43 # say4523
 label vaxis_s43: # from 21.2 22.2 23.5 25.1 27.1 28.1 29.0 42.1 44.2 45.1 46.2 47.2 48.0 51.1 52.0 53.0 54.0 56.0 58.3 59.0 60.3 61.4 62.3 63.1 64.0 70.2 71.3 77.0
-    nr '"Wut yu want tuh knuw?"{#vaxis_s43_}'
+    nr '"Wut yu want tuh knuw?"{#vaxis_s43_1}'
 
     menu:
         '"How can I escape from here?"{#vaxis_s43_r64508}' if vaxisLogic.r64508_condition():
@@ -1117,7 +1117,7 @@ label vaxis_s43: # from 21.2 22.2 23.5 25.1 27.1 28.1 29.0 42.1 44.2 45.1 46.2 4
 
 # s44 # say4537
 label vaxis_s44: # from 43.6
-    nr '"Fuh-AROD?" The zombie frowns briefly in thought. "Me… heer he live in Hive somewhere." He shakes his head. "Not know where." He frowns again. "Dushties vare-ee mad, thay not LIKE Fuh-arod."{#vaxis_s44_}'
+    nr '"Fuh-AROD?" The zombie frowns briefly in thought. "Me… heer he live in Hive somewhere." He shakes his head. "Not know where." He frowns again. "Dushties vare-ee mad, thay not LIKE Fuh-arod."{#vaxis_s44_1}'
 
     menu:
         '"Hive?"{#vaxis_s44_r4538}':
@@ -1140,7 +1140,7 @@ label vaxis_s44: # from 43.6
 
 # s45 # say4542
 label vaxis_s45: # from 44.0
-    nr '"Slumz ousside this place."{#vaxis_s45_}'
+    nr '"Slumz ousside this place."{#vaxis_s45_1}'
 
     menu:
         '"Why don„t the Dustmen like Pharod?"{#vaxis_s45_r4543}':
@@ -1159,7 +1159,7 @@ label vaxis_s45: # from 44.0
 
 # s46 # say4546
 label vaxis_s46: # from 44.1 45.0
-    nr '"He„z a Cullector. Bringz deaderz to Mortuaree, sellz “em to Dustmen. Bringz LOT uf deaderz. Dushties not know where he getz deaderz. Think he„z puttin“ berks in dead-book."{#vaxis_s46_}'
+    nr '"He„z a Cullector. Bringz deaderz to Mortuaree, sellz “em to Dustmen. Bringz LOT uf deaderz. Dushties not know where he getz deaderz. Think he„z puttin“ berks in dead-book."{#vaxis_s46_1}'
 
     menu:
         '"Uh… what?"{#vaxis_s46_r4547}' if vaxisLogic.r4547_condition():
@@ -1181,7 +1181,7 @@ label vaxis_s46: # from 44.1 45.0
 
 # s47 # say4551
 label vaxis_s47: # from 43.7
-    nr '"Do„ kno. Sum berk peel you?"{#vaxis_s47_}'
+    nr '"Do„ kno. Sum berk peel you?"{#vaxis_s47_1}'
 
     menu:
         '"Uh… what?"{#vaxis_s47_r4552}' if vaxisLogic.r4552_condition():
@@ -1203,7 +1203,7 @@ label vaxis_s47: # from 43.7
 
 # s48 # say4556
 label vaxis_s48: # from 46.0 47.0
-    nr 'The zombie tries to speak, pauses, tries again, then shrugs. Apparently, he can„t explain it any better.{#vaxis_s48_}'
+    nr 'The zombie tries to speak, pauses, tries again, then shrugs. Apparently, he can„t explain it any better.{#vaxis_s48_1}'
 
     menu:
         '"Oh. There was something else I wanted to know…"{#vaxis_s48_r4557}':
@@ -1217,7 +1217,7 @@ label vaxis_s48: # from 46.0 47.0
 
 # s49 # say4559
 label vaxis_s49: # from 30.1 42.0 43.0 43.1
-    nr 'The zombie grunts. "Yu kin escape through portalz." He waves his hands. "Phoof."{#vaxis_s49_}'
+    nr 'The zombie grunts. "Yu kin escape through portalz." He waves his hands. "Phoof."{#vaxis_s49_1}'
 
     menu:
         '"Portals? What portals?"{#vaxis_s49_r4560}':
@@ -1227,7 +1227,7 @@ label vaxis_s49: # from 30.1 42.0 43.0 43.1
 
 # s50 # say4563
 label vaxis_s50: # from 33.0 49.0
-    nr '"Portalz…" The zombie waves around the area. "Portalz evereewheer."{#vaxis_s50_}'
+    nr '"Portalz…" The zombie waves around the area. "Portalz evereewheer."{#vaxis_s50_1}'
 
     menu:
         '"Can you show me one of these portals?"{#vaxis_s50_r4564}' if vaxisLogic.r4564_condition():
@@ -1249,7 +1249,7 @@ label vaxis_s50: # from 33.0 49.0
 
 # s51 # say4567
 label vaxis_s51: # from 50.1 50.2 50.3 72.0
-    nr 'The zombie nods. "Yu wunt out, go tuh arch on firzzt fluur, nurthwezzt ruum… Yuh need fungur-bone, shape of crook…" He holds up his index finger and bends it into a crook. "When yuh have key, guh to arch, jump ta sucret cryp and ken escape frum here. Secret escape route." He nods eagerly. "Yuh can REST there."{#vaxis_s51_}'
+    nr 'The zombie nods. "Yu wunt out, go tuh arch on firzzt fluur, nurthwezzt ruum… Yuh need fungur-bone, shape of crook…" He holds up his index finger and bends it into a crook. "When yuh have key, guh to arch, jump ta sucret cryp and ken escape frum here. Secret escape route." He nods eagerly. "Yuh can REST there."{#vaxis_s51_1}'
 
     menu:
         '"Crooked finger bone? Where am I going to find one of those?"{#vaxis_s51_r64527}' if vaxisLogic.r64527_condition():
@@ -1273,7 +1273,7 @@ label vaxis_s51: # from 50.1 50.2 50.3 72.0
 
 # s52 # say4570
 label vaxis_s52: # from 43.2
-    nr '"Lissen! R„member!" The zombie sounds angry. "Arch, firzzzt fluur, nurthwezzt ruum…" He holds up his index finger and bends it. "Yuh need finger bone, bent. Yuh guh ta sucret cryp. Escape route. Yuh ken REST there."{#vaxis_s52_}'
+    nr '"Lissen! R„member!" The zombie sounds angry. "Arch, firzzzt fluur, nurthwezzt ruum…" He holds up his index finger and bends it. "Yuh need finger bone, bent. Yuh guh ta sucret cryp. Escape route. Yuh ken REST there."{#vaxis_s52_1}'
 
     menu:
         '"There was something else I wanted to know…"{#vaxis_s52_r4571}':
@@ -1287,7 +1287,7 @@ label vaxis_s52: # from 43.2
 
 # s53 # say4573
 label vaxis_s53: # from 43.8
-    nr '"Scribe." Shrugs. "Old. Yellow."{#vaxis_s53_}'
+    nr '"Scribe." Shrugs. "Old. Yellow."{#vaxis_s53_1}'
 
     menu:
         '"There„s nothing more to be said, I suppose. I wanted to know something else…"{#vaxis_s53_r4574}':
@@ -1301,7 +1301,7 @@ label vaxis_s53: # from 43.8
 
 # s54 # say4576
 label vaxis_s54: # from 43.9
-    nr '"Hunh?" Frowns. "Hoo shee?"{#vaxis_s54_}'
+    nr '"Hunh?" Frowns. "Hoo shee?"{#vaxis_s54_1}'
 
     menu:
         '"Forget it. I wanted to know something else…"{#vaxis_s54_r4577}':
@@ -1315,7 +1315,7 @@ label vaxis_s54: # from 43.9
 
 # s55 # say4579
 label vaxis_s55: # from 43.10
-    nr '"Guide. He at Mortuary frunt door. Wut yu wunt wi„ him?"{#vaxis_s55_}'
+    nr '"Guide. He at Mortuary frunt door. Wut yu wunt wi„ him?"{#vaxis_s55_1}'
 
     menu:
         '"What do you know about him?"{#vaxis_s55_r4580}':
@@ -1331,7 +1331,7 @@ label vaxis_s55: # from 43.10
 
 # s56 # say4582
 label vaxis_s56: # from 55.0
-    nr '"Actz strange, not Duhstie, not Anarchizt, eyez changed…" Shrugs. "Likez ratz. Strange."{#vaxis_s56_}'
+    nr '"Actz strange, not Duhstie, not Anarchizt, eyez changed…" Shrugs. "Likez ratz. Strange."{#vaxis_s56_1}'
 
     menu:
         '"Good thing he„s the only strange one around here. There“s something else I wanted to know…"{#vaxis_s56_r4583}':
@@ -1345,7 +1345,7 @@ label vaxis_s56: # from 55.0
 
 # s57 # say4585
 label vaxis_s57: # - # IF ~  GlobalGT("Vaxis","GLOBAL",0)
-    nr 'You see the false zombie. You„re amazed at the man“s disguise… his breathing is so subdued, you can barely see it.{#vaxis_s57_}'
+    nr 'You see the false zombie. You„re amazed at the man“s disguise… his breathing is so subdued, you can barely see it.{#vaxis_s57_1}'
 
     menu:
         '"Greetings."{#vaxis_s57_r4586}' if vaxisLogic.r4586_condition():
@@ -1371,7 +1371,7 @@ label vaxis_s57: # - # IF ~  GlobalGT("Vaxis","GLOBAL",0)
 
 # s58 # say4591
 label vaxis_s58: # from 57.0 57.1 57.3
-    nr 'The zombie quickly glances around to see if anyone is watching, then turns to face you. "Wut?"{#vaxis_s58_}'
+    nr 'The zombie quickly glances around to see if anyone is watching, then turns to face you. "Wut?"{#vaxis_s58_1}'
 
     menu:
         '"Here„s that embalming room key you wanted."{#vaxis_s58_r4592}' if vaxisLogic.r4592_condition():
@@ -1399,7 +1399,7 @@ label vaxis_s58: # from 57.0 57.1 57.3
 
 # s59 # say4597
 label vaxis_s59: # from 57.2
-    nr 'The zombie glances around to see if anyone is watching, then makes a shooing motion and hisses at you. "Guh „way! Git!"{#vaxis_s59_}'
+    nr 'The zombie glances around to see if anyone is watching, then makes a shooing motion and hisses at you. "Guh „way! Git!"{#vaxis_s59_1}'
 
     menu:
         '"No. I had some questions for you, first…"{#vaxis_s59_r4598}':
@@ -1417,7 +1417,7 @@ label vaxis_s59: # from 57.2
 
 # s60 # say4601
 label vaxis_s60: # from 43.11
-    nr '"Me gud at duh-guise. Me ulso gut scars. Me wuhr lots of embalming fluid. Me make GUD zumbie." The zombie giggles through stitched lips, then taps his head. "Duhstees stuh-pud."{#vaxis_s60_}'
+    nr '"Me gud at duh-guise. Me ulso gut scars. Me wuhr lots of embalming fluid. Me make GUD zumbie." The zombie giggles through stitched lips, then taps his head. "Duhstees stuh-pud."{#vaxis_s60_1}'
 
     menu:
         '"Yeah, they„re the stupid ones all right."{#vaxis_s60_r4602}':
@@ -1443,7 +1443,7 @@ label vaxis_s60: # from 43.11
 
 # s61 # say4607
 label vaxis_s61: # from 60.0
-    nr 'The sarcasm is evidently lost on the zombie, who nods eagerly. "Stuh-pud Duhstees. Me make GUD zumbie."{#vaxis_s61_}'
+    nr 'The sarcasm is evidently lost on the zombie, who nods eagerly. "Stuh-pud Duhstees. Me make GUD zumbie."{#vaxis_s61_1}'
 
     menu:
         '"Doesn„t that hurt?"{#vaxis_s61_r4608}':
@@ -1473,7 +1473,7 @@ label vaxis_s61: # from 60.0
 
 # s62 # say4614
 label vaxis_s62: # from 60.1 61.0
-    nr 'He looks at your scars. "I ask yu same question. Me, it not hurt much." Claps his chest. "Me TUFF."{#vaxis_s62_}'
+    nr 'He looks at your scars. "I ask yu same question. Me, it not hurt much." Claps his chest. "Me TUFF."{#vaxis_s62_1}'
 
     menu:
         '"That disguise is pretty good. Can you disguise me as a zombie?"{#vaxis_s62_r4615}' if vaxisLogic.r4615_condition():
@@ -1499,7 +1499,7 @@ label vaxis_s62: # from 60.1 61.0
 
 # s63 # say4619
 label vaxis_s63: # from 43.3 43.4 60.2 61.1 62.0 64.1 64.2
-    nr 'He looks you up and down for a few moments, mumbling to himself, then nods. "U-huh. Me need jar uf embalming flew-id." Points at the scars on your chest. "N„ some needle and thread."{#vaxis_s63_}'
+    nr 'He looks you up and down for a few moments, mumbling to himself, then nods. "U-huh. Me need jar uf embalming flew-id." Points at the scars on your chest. "N„ some needle and thread."{#vaxis_s63_1}'
 
     menu:
         '"Here you go."{#vaxis_s63_r4620}' if vaxisLogic.r4620_condition():
@@ -1525,7 +1525,7 @@ label vaxis_s63: # from 43.3 43.4 60.2 61.1 62.0 64.1 64.2
 
 # s64 # say4624
 label vaxis_s64: # from 61.2 61.3 62.1 62.2
-    nr 'He looks you up and down with a strange expression. "U be GUD zumbie. I cud make u a zumbie? GUD dis-gize."{#vaxis_s64_}'
+    nr 'He looks you up and down with a strange expression. "U be GUD zumbie. I cud make u a zumbie? GUD dis-gize."{#vaxis_s64_1}'
 
     menu:
         '"Thanks anyway. I had some other questions for you…"{#vaxis_s64_r4625}':
@@ -1549,7 +1549,7 @@ label vaxis_s64: # from 61.2 61.3 62.1 62.2
 
 # s65 # say4629
 label vaxis_s65: # from 63.0
-    nr 'The zombie takes the items from you, then sets to work…{#vaxis_s65_}'
+    nr 'The zombie takes the items from you, then sets to work…{#vaxis_s65_1}'
 
     menu:
         'Try to hold still.{#vaxis_s65_r4630}' if vaxisLogic.r4630_condition():
@@ -1575,7 +1575,7 @@ label vaxis_s65: # from 63.0
 
 # s66 # say4633
 label vaxis_s66: # from 65.0 65.2 65.3
-    nr 'The zombie liberally applies the embalming fluid to your body, then stitches up several of your scars. Working from your feet upwards, he stitches up your scars, then finishes off the disguise by stitching up your lips.{#vaxis_s66_}'
+    nr 'The zombie liberally applies the embalming fluid to your body, then stitches up several of your scars. Working from your feet upwards, he stitches up your scars, then finishes off the disguise by stitching up your lips.{#vaxis_s66_1}'
 
     menu:
         '"Mmm-hmmph-mmm… Fanks."{#vaxis_s66_r4634}' if vaxisLogic.r4634_condition():
@@ -1594,7 +1594,7 @@ label vaxis_s66: # from 65.0 65.2 65.3
 
 # s67 # say4637
 label vaxis_s67: # from 66.0 66.2
-    nr 'The zombie holds up his hand. "Curful! Talk pulls stitches out, ruin diz-gize. Zumbie no talk. Yoo got to talk? Talk slow, curful."  ^NNOTE: Take heed that no one expects zombies to talk. If you speak to someone as a zombie, you run the risk of exposing your disguise.^-{#vaxis_s67_}'
+    nr 'The zombie holds up his hand. "Curful! Talk pulls stitches out, ruin diz-gize. Zumbie no talk. Yoo got to talk? Talk slow, curful."  ^NNOTE: Take heed that no one expects zombies to talk. If you speak to someone as a zombie, you run the risk of exposing your disguise.^-{#vaxis_s67_1}'
 
     menu:
         '"Mmph… mmm. I… understand."{#vaxis_s67_r4638}':
@@ -1605,7 +1605,7 @@ label vaxis_s67: # from 66.0 66.2
 
 # s68 # say4639
 label vaxis_s68: # from 67.0
-    nr 'The zombie frowns. "Diz-gize wun„t last long… um-balming fluid dry up, stitchez fall out." He shrugs. "Prob-lee not last ousside Mortuaree. Uhnd no running! Yoo run, yoo ruin whole diz-gize."  ^NNOTE: Equipping weapons and/or running will instantly nullify your zombie disguise. If you find a new weapon, hold off on equipping it until you no longer wish to be disguised. If you have Always Run on, be sure to switch it off if you want to maintain the disguise when you finish speaking to Vaxis.^-{#vaxis_s68_}'
+    nr 'The zombie frowns. "Diz-gize wun„t last long… um-balming fluid dry up, stitchez fall out." He shrugs. "Prob-lee not last ousside Mortuaree. Uhnd no running! Yoo run, yoo ruin whole diz-gize."  ^NNOTE: Equipping weapons and/or running will instantly nullify your zombie disguise. If you find a new weapon, hold off on equipping it until you no longer wish to be disguised. If you have Always Run on, be sure to switch it off if you want to maintain the disguise when you finish speaking to Vaxis.^-{#vaxis_s68_1}'
 
     menu:
         'Nod again, leave.{#vaxis_s68_r4640}':
@@ -1615,7 +1615,7 @@ label vaxis_s68: # from 67.0
 
 # s69 # say4641
 label vaxis_s69: # -
-    nr 'The „zombie“ frowns. "Yu look familer. Me see yoo beefor?"{#vaxis_s69_}'
+    nr 'The „zombie“ frowns. "Yu look familer. Me see yoo beefor?"{#vaxis_s69_1}'
 
     menu:
         '"Maybe. Where have you seen me?"{#vaxis_s69_r4642}':
@@ -1629,7 +1629,7 @@ label vaxis_s69: # -
 
 # s70 # say4644
 label vaxis_s70: # from 23.0 23.2 71.0 71.1
-    nr 'To your surprise, the zombie turns away from you… he is starting to glance around fearfully.{#vaxis_s70_}'
+    nr 'To your surprise, the zombie turns away from you… he is starting to glance around fearfully.{#vaxis_s70_1}'
 
     menu:
         '"You won„t talk? Then get ready to start screaming."{#vaxis_s70_r4645}':
@@ -1652,7 +1652,7 @@ label vaxis_s70: # from 23.0 23.2 71.0 71.1
 
 # s71 # say4649
 label vaxis_s71: # externs morte_s90
-    nr 'The zombie is watching you both fearfully. He is still silent… but something in his expression tells you Morte„s guess was right on the mark.{#vaxis_s71_}'
+    nr 'The zombie is watching you both fearfully. He is still silent… but something in his expression tells you Morte„s guess was right on the mark.{#vaxis_s71_1}'
 
     menu:
         '"The Anarchists, huh? That who you„re watching this place for?"{#vaxis_s71_r4650}':
@@ -1679,7 +1679,7 @@ label vaxis_s71: # externs morte_s90
 
 # s72 # say4655
 label vaxis_s72: # from 30.2
-    nr 'The zombie looks disappointed, but he shrugs and begins to fish deeply into his stained tunic. "Beehn quiet, Duhsties beehn quiet, nuthin„ new since lahst rehport." After a few moments, he hands you some items, then grunts. "Heer." Judging by the smell, they must have been hidden so as to avoid turning up if he was searched. "Me leeve in shurt while."{#vaxis_s72_}'
+    nr 'The zombie looks disappointed, but he shrugs and begins to fish deeply into his stained tunic. "Beehn quiet, Duhsties beehn quiet, nuthin„ new since lahst rehport." After a few moments, he hands you some items, then grunts. "Heer." Judging by the smell, they must have been hidden so as to avoid turning up if he was searched. "Me leeve in shurt while."{#vaxis_s72_1}'
 
     menu:
         '"Leave? How?"{#vaxis_s72_r4656}' if vaxisLogic.r4656_condition():
@@ -1693,7 +1693,7 @@ label vaxis_s72: # from 30.2
 
 # s73 # say4658
 label vaxis_s73: # -
-    nr 'The zombie grunts. "Portal„s an arch - fizzzt floor, nurthwest ruhm, needs skel-tun finger bone tuh open." He nods. "Guud luhk."{#vaxis_s73_}'
+    nr 'The zombie grunts. "Portal„s an arch - fizzzt floor, nurthwest ruhm, needs skel-tun finger bone tuh open." He nods. "Guud luhk."{#vaxis_s73_1}'
 
     menu:
         '"Uh… all right."{#vaxis_s73_r4659}':
@@ -1703,7 +1703,7 @@ label vaxis_s73: # -
 
 # s74 # say4660
 label vaxis_s74: # from 34.0
-    nr 'The zombie„s eyes narrow, and he hisses at you. "Yu TRY n“ put me in dead-book? I have frens hid heer, yu got *nubudy.* Yu tuch me, my frends kill YU."{#vaxis_s74_}'
+    nr 'The zombie„s eyes narrow, and he hisses at you. "Yu TRY n“ put me in dead-book? I have frens hid heer, yu got *nubudy.* Yu tuch me, my frends kill YU."{#vaxis_s74_1}'
 
     menu:
         '"That was your last chance. Prepare to die."{#vaxis_s74_r4661}':
@@ -1718,7 +1718,7 @@ label vaxis_s74: # from 34.0
 
 # s75 # say4663
 label vaxis_s75: # from 31.4 32.3 35.4
-    nr 'He seems frightened for a moment, then studies your build, and a sneer crawls across his face. "YOO try n„ put ME in dead-book? I have frens hid heer, yu got *nubudy.* Yu tuch me, my frends kill YU."{#vaxis_s75_}'
+    nr 'He seems frightened for a moment, then studies your build, and a sneer crawls across his face. "YOO try n„ put ME in dead-book? I have frens hid heer, yu got *nubudy.* Yu tuch me, my frends kill YU."{#vaxis_s75_1}'
 
     menu:
         '"How about I expose your disguise to the guards?"{#vaxis_s75_r4664}' if vaxisLogic.r4664_condition():
@@ -1741,7 +1741,7 @@ label vaxis_s75: # from 31.4 32.3 35.4
 
 # s76 # say4668
 label vaxis_s76: # from 75.1
-    nr 'The zombie„s eyes narrow, and he hisses at you. "Yu spill th“ dark on me, me spill dark on *yu.* I have friends hid heer, yu got *nubudy.* Duhstees kill yu. Me escape."{#vaxis_s76_}'
+    nr 'The zombie„s eyes narrow, and he hisses at you. "Yu spill th“ dark on me, me spill dark on *yu.* I have friends hid heer, yu got *nubudy.* Duhstees kill yu. Me escape."{#vaxis_s76_1}'
 
     menu:
         '"That was your last chance, corpse. Prepare to die."{#vaxis_s76_r4669}':
@@ -1756,7 +1756,7 @@ label vaxis_s76: # from 75.1
 
 # s77 # say64523
 label vaxis_s77: # from 51.0
-    nr 'He shrugs. "Mhust be one „round sumwhere… look in storage roomz on upper floor. Maybe there."{#vaxis_s77_}'
+    nr 'He shrugs. "Mhust be one „round sumwhere… look in storage roomz on upper floor. Maybe there."{#vaxis_s77_1}'
 
     menu:
         '"All right. I had some other questions…"{#vaxis_s77_r64524}':

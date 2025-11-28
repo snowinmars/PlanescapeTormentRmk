@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say6584
 label zm475_s0: # - # IF ~  True()
-    nr 'Lehce znetvořená hlava této mrtvoly vypadá, že drží pohromadě díky spoustě úzkých kovových pásků přišroubovaných přímo k lebce. Na rezavé kovové destičce umístěné přes levé oko je vyryto číslo "475". Mrtvola má sešitá ústa a je cítit balzamovací tekutinou.{#zm475_s0_}'
+    nr 'Lehce znetvořená hlava této mrtvoly vypadá, že drží pohromadě díky spoustě úzkých kovových pásků přišroubovaných přímo k lebce. Na rezavé kovové destičce umístěné přes levé oko je vyryto číslo "475". Mrtvola má sešitá ústa a je cítit balzamovací tekutinou.{#zm475_s0_1}'
 
     menu:
         '"Tak… je tam dál vidět něco zajímavého?"{#zm475_s0_r6587}' if zm475Logic.r6587_condition():
@@ -42,7 +42,7 @@ label zm475_s0: # - # IF ~  True()
 
 # s1 # say6585
 label zm475_s1: # from 0.0 0.1 0.2
-    nr 'Mrtvola na tebe stále zírá.{#zm475_s1_}'
+    nr 'Mrtvola na tebe stále zírá.{#zm475_s1_1}'
 
     menu:
         'Nechej mrtvolu být.{#zm475_s1_r6593}':
@@ -52,7 +52,7 @@ label zm475_s1: # from 0.0 0.1 0.2
 
 # s2 # say6586
 label zm475_s2: # from 0.3
-    nr 'Mrtvola neodpovídá. Vypadá to, že je mrtvá příliš dlouho na to, aby byla schopna odpovědět na nějakou tvou otázku.{#zm475_s2_}'
+    nr 'Mrtvola neodpovídá. Vypadá to, že je mrtvá příliš dlouho na to, aby byla schopna odpovědět na nějakou tvou otázku.{#zm475_s2_1}'
 
     menu:
         'Nechej mrtvolu být.{#zm475_s2_r6594}':

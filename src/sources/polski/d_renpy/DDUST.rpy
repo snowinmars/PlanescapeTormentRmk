@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say300
 label dust_s0: # - # IF ~  Global("Appearance","GLOBAL",1)
-    nr 'Grabarz zdaje się ciebie nie zauważać. Wziął cię najwyraźniej za jednego z niumarłych pracowników.{#dust_s0_}'
+    nr 'Grabarz zdaje się ciebie nie zauważać. Wziął cię najwyraźniej za jednego z niumarłych pracowników.{#dust_s0_1}'
 
     menu:
         '"Witaj."{#dust_s0_r302}':
@@ -37,7 +37,7 @@ label dust_s0: # - # IF ~  Global("Appearance","GLOBAL",1)
 
 # s1 # say307
 label dust_s1: # from 0.0 0.1 0.2 0.3
-    nr 'Grabarz podskakuje, po czym podnosi gwałtownie głowę, by na ciebie spojrzeć. Zdaje się być zszokowany - twoje przebranie jest całkiem dobre.{#dust_s1_}'
+    nr 'Grabarz podskakuje, po czym podnosi gwałtownie głowę, by na ciebie spojrzeć. Zdaje się być zszokowany - twoje przebranie jest całkiem dobre.{#dust_s1_1}'
 
     menu:
         'Wykorzystaj to, że jest zaskoczony i skręć mu kark, zanim zdąży zawołać.{#dust_s1_r310}':
@@ -55,7 +55,7 @@ label dust_s1: # from 0.0 0.1 0.2 0.3
 
 # s2 # say309
 label dust_s2: # from 1.1 1.2 5.2 5.3 19.6 20.4 47.2 47.3 51.4
-    nr 'Grabarz cofa się o krok, po czym klaszcze w dłonie po trzykroć. W odpowiedzi całą Kostnicę wypełnia bicie wielkiego żelaznego dzwonu.{#dust_s2_}'
+    nr 'Grabarz cofa się o krok, po czym klaszcze w dłonie po trzykroć. W odpowiedzi całą Kostnicę wypełnia bicie wielkiego żelaznego dzwonu.{#dust_s2_1}'
 
     menu:
         '"No dobrze…"{#dust_s2_r313}':
@@ -66,7 +66,7 @@ label dust_s2: # from 1.1 1.2 5.2 5.3 19.6 20.4 47.2 47.3 51.4
 
 # s3 # say314
 label dust_s3: # externs morte_s64
-    nr 'Ten blady mężczyzna ubrany jest w długie, ciemne szaty. Wokół niego roztacza się słaby zapach stęchlizny. Ma obojętny wyraz oczu i wydaje się być pochłonięty swoimi obowiązkami.{#dust_s3_}'
+    nr 'Ten blady mężczyzna ubrany jest w długie, ciemne szaty. Wokół niego roztacza się słaby zapach stęchlizny. Ma obojętny wyraz oczu i wydaje się być pochłonięty swoimi obowiązkami.{#dust_s3_1}'
 
     menu:
         '"Witaj."{#dust_s3_r315}':
@@ -92,7 +92,7 @@ label dust_s3: # externs morte_s64
 
 # s4 # say321
 label dust_s4: # from 3.0 3.1 3.2 3.3 40.2 40.3
-    nr 'Grabarz unosi powoli głowę i odwraca się w twym kierunku. "Zgubiłeś się?"{#dust_s4_}'
+    nr 'Grabarz unosi powoli głowę i odwraca się w twym kierunku. "Zgubiłeś się?"{#dust_s4_1}'
 
     menu:
         '"Tak."{#dust_s4_r322}':
@@ -114,7 +114,7 @@ label dust_s4: # from 3.0 3.1 3.2 3.3 40.2 40.3
 
 # s5 # say326
 label dust_s5: # from 4.0 4.3 6.4 16.2 51.1
-    nr '"Wezwę straż, by cię wyprowadziła. Poczekaj chwilę."{#dust_s5_}'
+    nr '"Wezwę straż, by cię wyprowadziła. Poczekaj chwilę."{#dust_s5_1}'
 
     menu:
         'Skręć mu kark, zanim zdąży zawołać.{#dust_s5_r327}' if dustLogic.r327_condition():
@@ -136,7 +136,7 @@ label dust_s5: # from 4.0 4.3 6.4 16.2 51.1
 
 # s6 # say330
 label dust_s6: # from 4.1 4.2 51.2 51.3
-    nr '"Skoro się nie zgubiłeś, to co tutaj robisz?"{#dust_s6_}'
+    nr '"Skoro się nie zgubiłeś, to co tutaj robisz?"{#dust_s6_1}'
 
     menu:
         '"To nie twoja sprawa."{#dust_s6_r331}':
@@ -162,7 +162,7 @@ label dust_s6: # from 4.1 4.2 51.2 51.3
 
 # s7 # say335
 label dust_s7: # from 6.0 9.0 20.0
-    nr '"Obawiam się, że to jest moja sprawa. Być może straż pomoże rozwiązać ci język." Grabarz cofa się o krok. Wygląda na to, że chce wezwać straże.{#dust_s7_}'
+    nr '"Obawiam się, że to jest moja sprawa. Być może straż pomoże rozwiązać ci język." Grabarz cofa się o krok. Wygląda na to, że chce wezwać straże.{#dust_s7_1}'
 
     menu:
         'Skręć mu kark, zanim zdąży zawołać.{#dust_s7_r344}' if dustLogic.r344_condition():
@@ -181,7 +181,7 @@ label dust_s7: # from 6.0 9.0 20.0
 
 # s8 # say336
 label dust_s8: # from 6.1 16.0 20.1
-    nr '"Żarty sobie stroisz? Może chcesz się nimi podzielić ze strażą?" Grabarz cofa się o krok. Wygląda na to, że chce wezwać straże."{#dust_s8_}'
+    nr '"Żarty sobie stroisz? Może chcesz się nimi podzielić ze strażą?" Grabarz cofa się o krok. Wygląda na to, że chce wezwać straże."{#dust_s8_1}'
 
     menu:
         'Skręć mu kark, zanim zdąży zawołać.{#dust_s8_r358}' if dustLogic.r358_condition():
@@ -200,7 +200,7 @@ label dust_s8: # from 6.1 16.0 20.1
 
 # s9 # say338
 label dust_s9: # from 6.2 20.2
-    nr '"Z kim się chcesz zobaczyć?"{#dust_s9_}'
+    nr '"Z kim się chcesz zobaczyć?"{#dust_s9_1}'
 
     menu:
         '"To nie twoja sprawa."{#dust_s9_r3922}':
@@ -247,7 +247,7 @@ label dust_s9: # from 6.2 20.2
 
 # s10 # say345
 label dust_s10: # from 9.1
-    nr '"Znajdziesz go w sali odbiorczej na tym piętrze. Muszę cię jednak przestrzec… Dhall jest wyjątkowo zajęty swoimi obowiązkami, poza tym nie jest okazem najlepszego zdrowia. Jeśli nie masz nadzwyczaj pilnej sprawy, lepiej byłoby mu nie przeszkadzać."{#dust_s10_}'
+    nr '"Znajdziesz go w sali odbiorczej na tym piętrze. Muszę cię jednak przestrzec… Dhall jest wyjątkowo zajęty swoimi obowiązkami, poza tym nie jest okazem najlepszego zdrowia. Jeśli nie masz nadzwyczaj pilnej sprawy, lepiej byłoby mu nie przeszkadzać."{#dust_s10_1}'
 
     menu:
         '"Świetnie. Dzięki za informacje."{#dust_s10_r347}':
@@ -257,7 +257,7 @@ label dust_s10: # from 9.1
 
 # s11 # say346
 label dust_s11: # from 9.2
-    nr '"Jest najprawdopodobniej w sali odbiorczej na pierwszym piętrze. Jest jednak wyjątkowo zajęty i nie grzeszy zbytnio zdrowiem. Jeśli nie masz nadzwyczaj pilnej sprawy, lepiej byłoby mu nie przeszkadzać."{#dust_s11_}'
+    nr '"Jest najprawdopodobniej w sali odbiorczej na pierwszym piętrze. Jest jednak wyjątkowo zajęty i nie grzeszy zbytnio zdrowiem. Jeśli nie masz nadzwyczaj pilnej sprawy, lepiej byłoby mu nie przeszkadzać."{#dust_s11_1}'
 
     menu:
         '"Świetnie. Dzięki za informacje."{#dust_s11_r348}':
@@ -267,7 +267,7 @@ label dust_s11: # from 9.2
 
 # s12 # say349
 label dust_s12: # from 9.4 19.1
-    nr '"Deionarra? Wiem, że w sali pamięci na parterze pochowano jakąś kobietę. Może to była ona?"{#dust_s12_}'
+    nr '"Deionarra? Wiem, że w sali pamięci na parterze pochowano jakąś kobietę. Może to była ona?"{#dust_s12_1}'
 
     menu:
         '"Najprawdopodobniej. Dzięki."{#dust_s12_r352}':
@@ -277,7 +277,7 @@ label dust_s12: # from 9.4 19.1
 
 # s13 # say350
 label dust_s13: # from 9.3
-    nr '"Deionarra? Wiem, że w północno-zachodniej sali pamięci pochowano jakąś kobietę. Może to była ona?"{#dust_s13_}'
+    nr '"Deionarra? Wiem, że w północno-zachodniej sali pamięci pochowano jakąś kobietę. Może to była ona?"{#dust_s13_1}'
 
     menu:
         '"Najprawdopodobniej. Dzięki."{#dust_s13_r353}':
@@ -287,7 +287,7 @@ label dust_s13: # from 9.3
 
 # s14 # say351
 label dust_s14: # from 9.6
-    nr '"Sądzę, że Soe znajduje się gdzieś w pobliżu frontowej bramy na parterze. Pracuje jako przewodnik w godzinach antyszczytu."{#dust_s14_}'
+    nr '"Sądzę, że Soe znajduje się gdzieś w pobliżu frontowej bramy na parterze. Pracuje jako przewodnik w godzinach antyszczytu."{#dust_s14_1}'
 
     menu:
         '"Dobrze. Dzięki."{#dust_s14_r354}':
@@ -297,7 +297,7 @@ label dust_s14: # from 9.6
 
 # s15 # say355
 label dust_s15: # from 9.5
-    nr '"Sądzę, że znajdziesz go w pobliżu frontowej bramy. Pracuje jako przewodnik w godzinach antyszczytu."{#dust_s15_}'
+    nr '"Sądzę, że znajdziesz go w pobliżu frontowej bramy. Pracuje jako przewodnik w godzinach antyszczytu."{#dust_s15_1}'
 
     menu:
         '"Dobrze. Dzięki."{#dust_s15_r356}':
@@ -307,7 +307,7 @@ label dust_s15: # from 9.5
 
 # s16 # say357
 label dust_s16: # from 6.3 20.3
-    nr '"Kto miał zostać pochowany? Być może posługi te odbywają się w innym miejscu Kostnicy."{#dust_s16_}'
+    nr '"Kto miał zostać pochowany? Być może posługi te odbywają się w innym miejscu Kostnicy."{#dust_s16_1}'
 
     menu:
         '"Źle mnie zrozumiałeś… To MNIE chciano przez pomyłkę pochować."{#dust_s16_r359}':
@@ -325,7 +325,7 @@ label dust_s16: # from 6.3 20.3
 
 # s17 # say362
 label dust_s17: # from 16.1
-    nr '"W obwodzie Kostnicy znajduje się kilka komnat pogrzebowych, które ciągną się wzdłuż krzywizny ścian na parterze i pierwszym piętrze. Znasz imię zmarłego?"{#dust_s17_}'
+    nr '"W obwodzie Kostnicy znajduje się kilka komnat pogrzebowych, które ciągną się wzdłuż krzywizny ścian na parterze i pierwszym piętrze. Znasz imię zmarłego?"{#dust_s17_1}'
 
     menu:
         '"Nie."{#dust_s17_r363}':
@@ -339,7 +339,7 @@ label dust_s17: # from 16.1
 
 # s18 # say365
 label dust_s18: # from 17.0
-    nr '"W takim razie powinieneś skonsultować się z którymś z przewodników przy frontowej bramie. Powinien ci pomóc."{#dust_s18_}'
+    nr '"W takim razie powinieneś skonsultować się z którymś z przewodników przy frontowej bramie. Powinien ci pomóc."{#dust_s18_1}'
 
     menu:
         '"Dobrze. Dzięki."{#dust_s18_r366}':
@@ -349,7 +349,7 @@ label dust_s18: # from 17.0
 
 # s19 # say367
 label dust_s19: # from 17.1
-    nr 'Grabarz czeka.{#dust_s19_}'
+    nr 'Grabarz czeka.{#dust_s19_1}'
 
     menu:
         '"Wybacz… Przejęzyczyłem się. Nie znam imienia zmarłego."{#dust_s19_r369}':
@@ -384,7 +384,7 @@ label dust_s19: # from 17.1
 
 # s20 # say374
 label dust_s20: # from 9.9 19.0
-    nr '"Rozumiem. Powiedz teraz, w jakiej sprawie tu jesteś?"{#dust_s20_}'
+    nr '"Rozumiem. Powiedz teraz, w jakiej sprawie tu jesteś?"{#dust_s20_1}'
 
     menu:
         '"Nie twój interes."{#dust_s20_r375}':
@@ -410,7 +410,7 @@ label dust_s20: # from 9.9 19.0
 
 # s21 # say368
 label dust_s21: # from 9.7 9.8 19.2 19.3
-    nr '"To imię jest mi obce. Skonsultuj się w tej sprawie z jednym z przewodników przy frontowej bramie… Oni będą w stanie pokierować cię lepiej niż ja."{#dust_s21_}'
+    nr '"To imię jest mi obce. Skonsultuj się w tej sprawie z jednym z przewodników przy frontowej bramie… Oni będą w stanie pokierować cię lepiej niż ja."{#dust_s21_1}'
 
     menu:
         '"Dobrze. Zrobię tak. Żegnaj."{#dust_s21_r380}':
@@ -420,7 +420,7 @@ label dust_s21: # from 9.7 9.8 19.2 19.3
 
 # s22 # say294
 label dust_s22: # - # IF ~  Global("Appearance","GLOBAL",2)
-    nr 'Ten blady mężczyzna ubrany jest w długie, ciemne szaty. Wokół niego roztacza się słaby zapach stęchlizny. Ma obojętny wyraz oczu i wydaje się być pochłonięty swoimi obowiązkami.{#dust_s22_}'
+    nr 'Ten blady mężczyzna ubrany jest w długie, ciemne szaty. Wokół niego roztacza się słaby zapach stęchlizny. Ma obojętny wyraz oczu i wydaje się być pochłonięty swoimi obowiązkami.{#dust_s22_1}'
 
     menu:
         '"Witaj."{#dust_s22_r295}':
@@ -434,7 +434,7 @@ label dust_s22: # - # IF ~  Global("Appearance","GLOBAL",2)
 
 # s23 # say381
 label dust_s23: # from 22.0
-    nr 'Odwraca się powoli i zerka na twoje szaty. "Witaj, bracie wtajemniczony."{#dust_s23_}'
+    nr 'Odwraca się powoli i zerka na twoje szaty. "Witaj, bracie wtajemniczony."{#dust_s23_1}'
 
     menu:
         '"Kim jesteś?"{#dust_s23_r383}':
@@ -456,7 +456,7 @@ label dust_s23: # from 22.0
 
 # s24 # say393
 label dust_s24: # from 23.0
-    nr '"Mam do ciebie takie samo pytanie. Nie znam twojej twarzy. Kim jesteś?"{#dust_s24_}'
+    nr '"Mam do ciebie takie samo pytanie. Nie znam twojej twarzy. Kim jesteś?"{#dust_s24_1}'
 
     menu:
         'Kłamstwo: "To imię to… uch, Adahn."{#dust_s24_r450}' if dustLogic.r450_condition():
@@ -479,7 +479,7 @@ label dust_s24: # from 23.0
 
 # s25 # say394
 label dust_s25: # from 23.1
-    nr '"To Kostnica…" Grabarz wpatruje się w ciebie przez chwilę, jakby rozważał to, co właśnie powiedziałeś. "Mógłbyś powtórzyć, jak masz na imię?"{#dust_s25_}'
+    nr '"To Kostnica…" Grabarz wpatruje się w ciebie przez chwilę, jakby rozważał to, co właśnie powiedziałeś. "Mógłbyś powtórzyć, jak masz na imię?"{#dust_s25_1}'
 
     menu:
         'Kłamstwo: "To imię to… uch, Adahn."{#dust_s25_r399}' if dustLogic.r399_condition():
@@ -502,7 +502,7 @@ label dust_s25: # from 23.1
 
 # s26 # say400
 label dust_s26: # from 23.2 27.0 28.2 30.3 31.3 34.2 36.1 39.0 50.0
-    nr 'Grabarz cierpliwe czeka, aż zaczniesz kontynuować.{#dust_s26_}'
+    nr 'Grabarz cierpliwe czeka, aż zaczniesz kontynuować.{#dust_s26_1}'
 
     menu:
         '"Mógłbyś mi powiedzieć, jak stąd wyjść?"{#dust_s26_r401}':
@@ -524,7 +524,7 @@ label dust_s26: # from 23.2 27.0 28.2 30.3 31.3 34.2 36.1 39.0 50.0
 
 # s27 # say405
 label dust_s27: # from 26.0
-    nr '"Najprościej będzie wyjść przez frontową bramę. Znajduje się ona na parterze."{#dust_s27_}'
+    nr '"Najprościej będzie wyjść przez frontową bramę. Znajduje się ona na parterze."{#dust_s27_1}'
 
     menu:
         '"Mam jeszcze kilka pytań…"{#dust_s27_r406}':
@@ -538,7 +538,7 @@ label dust_s27: # from 26.0
 
 # s28 # say408
 label dust_s28: # from 26.1
-    nr '"To imię…" Grabarz przerywa na chwilę. "To imię *brzmi* znajomo… Wydaje mi się, że przypominam sobie Zbieracza, który się tak nazywał. Skryba Dhall powinien o nim wiedzieć."{#dust_s28_}'
+    nr '"To imię…" Grabarz przerywa na chwilę. "To imię *brzmi* znajomo… Wydaje mi się, że przypominam sobie Zbieracza, który się tak nazywał. Skryba Dhall powinien o nim wiedzieć."{#dust_s28_1}'
 
     menu:
         '"Zbieracza?"{#dust_s28_r409}':
@@ -560,7 +560,7 @@ label dust_s28: # from 26.1
 
 # s29 # say412
 label dust_s29: # from 28.0
-    nr '"Zbieracze… Zabierają z ulic Sigil umarłych i przynoszą ich do Kostnicy." Grabarz przerywa, po czym marszczy brwi. "Nie jesteś stąd. Kim jesteś?"{#dust_s29_}'
+    nr '"Zbieracze… Zabierają z ulic Sigil umarłych i przynoszą ich do Kostnicy." Grabarz przerywa, po czym marszczy brwi. "Nie jesteś stąd. Kim jesteś?"{#dust_s29_1}'
 
     menu:
         '"Jestem świeżo wtajemniczonym. Wybacz mi moją niewiedzę."{#dust_s29_r413}' if dustLogic.r413_condition():
@@ -582,7 +582,7 @@ label dust_s29: # from 28.0
 
 # s30 # say414
 label dust_s30: # from 28.1
-    nr '"Dhall jest jednym z najbardziej poważanych spośród naszej frakcji. Nie znam nikogo, kto częściej rozmyślałby nad naturą Prawdziwej Śmierci i kto bardziej by na nią zasługiwał, niż on. Posiada sporą wiedzę, którą się może podzielić. Jeśli go nie znasz, proponuję ci, byś z nim porozmawiał, gdy tylko będziesz miał okazję. Nie pozostanie on już zbyt długo w cieniu tego istnienia."{#dust_s30_}'
+    nr '"Dhall jest jednym z najbardziej poważanych spośród naszej frakcji. Nie znam nikogo, kto częściej rozmyślałby nad naturą Prawdziwej Śmierci i kto bardziej by na nią zasługiwał, niż on. Posiada sporą wiedzę, którą się może podzielić. Jeśli go nie znasz, proponuję ci, byś z nim porozmawiał, gdy tylko będziesz miał okazję. Nie pozostanie on już zbyt długo w cieniu tego istnienia."{#dust_s30_1}'
 
     menu:
         '"*Nie pozostanie on już zbyt długo w cieniu tego istnienia*?"{#dust_s30_r415}':
@@ -608,7 +608,7 @@ label dust_s30: # from 28.1
 
 # s31 # say419
 label dust_s31: # from 30.0 32.0 33.0
-    nr 'Potwierdza. "Dhall jest chory. Jest stary nawet jak na standardy githzerai. Następstwem choroby, której się nabawił, będzie niewątpliwie śmierć. I tak ma szczęście."{#dust_s31_}'
+    nr 'Potwierdza. "Dhall jest chory. Jest stary nawet jak na standardy githzerai. Następstwem choroby, której się nabawił, będzie niewątpliwie śmierć. I tak ma szczęście."{#dust_s31_1}'
 
     menu:
         '"Standardy githzerai?"{#dust_s31_r420}':
@@ -634,7 +634,7 @@ label dust_s31: # from 30.0 32.0 33.0
 
 # s32 # say427
 label dust_s32: # from 30.1
-    nr '"Znajdziesz go w sali odbiorczej w północno-zachodnim narożniku tej kondygnacji. Muszę cię jednak przestrzec… Dhall jest bardzo zajęty… Resztę czasu, którego nie pochłaniają jego obowiązki, w głównej mierze zabiera mu jego choroba."{#dust_s32_}'
+    nr '"Znajdziesz go w sali odbiorczej w północno-zachodnim narożniku tej kondygnacji. Muszę cię jednak przestrzec… Dhall jest bardzo zajęty… Resztę czasu, którego nie pochłaniają jego obowiązki, w głównej mierze zabiera mu jego choroba."{#dust_s32_1}'
 
     menu:
         '"Dhall jest chory?"{#dust_s32_r428}':
@@ -648,7 +648,7 @@ label dust_s32: # from 30.1
 
 # s33 # say426
 label dust_s33: # from 30.2
-    nr '"Znajdziesz go najpewniej w sali odbiorczej na pierwszym piętrze. Muszę cię jednak przestrzec… Dhall jest bardzo zajęty… Resztę czasu, którego nie pochłaniają jego obowiązki, w głównej mierze zabiera mu jego choroba."{#dust_s33_}'
+    nr '"Znajdziesz go najpewniej w sali odbiorczej na pierwszym piętrze. Muszę cię jednak przestrzec… Dhall jest bardzo zajęty… Resztę czasu, którego nie pochłaniają jego obowiązki, w głównej mierze zabiera mu jego choroba."{#dust_s33_1}'
 
     menu:
         '"Dhall jest chory?"{#dust_s33_r430}':
@@ -662,7 +662,7 @@ label dust_s33: # from 30.2
 
 # s34 # say432
 label dust_s34: # from 31.0
-    nr '"Tak, średnia życia githzerai jest znacznie dłuższa niż ludzi."{#dust_s34_}'
+    nr '"Tak, średnia życia githzerai jest znacznie dłuższa niż ludzi."{#dust_s34_1}'
 
     menu:
         '"Co to jest *githzerai*?"{#dust_s34_r433}':
@@ -684,7 +684,7 @@ label dust_s34: # from 31.0
 
 # s35 # say435
 label dust_s35: # from 31.1 34.0
-    nr '"Githzerai to…" Przerywa, po czym marszczy brwi i zaczyna przeglądać ci się uważne. "Nie jesteś tutejszy. Kim jesteś?"{#dust_s35_}'
+    nr '"Githzerai to…" Przerywa, po czym marszczy brwi i zaczyna przeglądać ci się uważne. "Nie jesteś tutejszy. Kim jesteś?"{#dust_s35_1}'
 
     menu:
         '"Jestem świeżo wtajemniczonym. Wybacz mi moją niewiedzę."{#dust_s35_r436}' if dustLogic.r436_condition():
@@ -706,7 +706,7 @@ label dust_s35: # from 31.1 34.0
 
 # s36 # say439
 label dust_s36: # from 31.2 34.1
-    nr '"Ma szczęście, gdyż osiągnie Prawdziwą Śmierć. Nie będzie już musiał żyć w cieniu tego istnienia."{#dust_s36_}'
+    nr '"Ma szczęście, gdyż osiągnie Prawdziwą Śmierć. Nie będzie już musiał żyć w cieniu tego istnienia."{#dust_s36_1}'
 
     menu:
         '"I… to jest czymś dobrym?"{#dust_s36_r441}':
@@ -724,7 +724,7 @@ label dust_s36: # from 31.2 34.1
 
 # s37 # say444
 label dust_s37: # from 36.0
-    nr 'Grabarz przytakuje. "Tak." Marszczy brwi, po czym przygląda ci się wnikliwie. "Nie jesteś tutejszy. Kim jesteś?"{#dust_s37_}'
+    nr 'Grabarz przytakuje. "Tak." Marszczy brwi, po czym przygląda ci się wnikliwie. "Nie jesteś tutejszy. Kim jesteś?"{#dust_s37_1}'
 
     menu:
         '"Jestem świeżo wtajemniczonym. Wybacz mi moją niewiedzę."{#dust_s37_r445}' if dustLogic.r445_condition():
@@ -746,7 +746,7 @@ label dust_s37: # from 36.0
 
 # s38 # say447
 label dust_s38: # -
-    nr '"Nie jesteś jednym z nas, nieprawdaż? Co tu robisz? Jesteś członkiem Anarchistów? Albo szpiegiem którejś z innych frakcji? Straż! Straż!"{#dust_s38_}'
+    nr '"Nie jesteś jednym z nas, nieprawdaż? Co tu robisz? Jesteś członkiem Anarchistów? Albo szpiegiem którejś z innych frakcji? Straż! Straż!"{#dust_s38_1}'
 
     menu:
         '"Cholera!"{#dust_s38_r448}':
@@ -767,7 +767,7 @@ label dust_s38: # -
 
 # s39 # say398
 label dust_s39: # from 26.2
-    nr '"Dziennik? Nie widziałem żadnego."{#dust_s39_}'
+    nr '"Dziennik? Nie widziałem żadnego."{#dust_s39_1}'
 
     menu:
         '"Mam jeszcze kilka pytań…"{#dust_s39_r451}':
@@ -781,7 +781,7 @@ label dust_s39: # from 26.2
 
 # s40 # say1419
 label dust_s40: # -
-    nr 'Ten blady mężczyzna ubrany jest w długie, ciemne szaty. Roztacza się wokół niego słaby zapach stęchlizny. Ma obojętny wyraz oczu i wydaje się być pochłonięty swoimi obowiązkami.{#dust_s40_}'
+    nr 'Ten blady mężczyzna ubrany jest w długie, ciemne szaty. Roztacza się wokół niego słaby zapach stęchlizny. Ma obojętny wyraz oczu i wydaje się być pochłonięty swoimi obowiązkami.{#dust_s40_1}'
 
     menu:
         '"Witaj."{#dust_s40_r1420}' if dustLogic.r1420_condition():
@@ -807,7 +807,7 @@ label dust_s40: # -
 
 # s41 # say1425
 label dust_s41: # from 1.0 5.1 7.1 8.1 47.1
-    nr 'Nim ma szanse wypowiedzieć choćby słowo, twe dłonie zaciskają się wokół jego skroni i przekręcasz mu głowę gwałtownie w lewą stronę.{#dust_s41_}'
+    nr 'Nim ma szanse wypowiedzieć choćby słowo, twe dłonie zaciskają się wokół jego skroni i przekręcasz mu głowę gwałtownie w lewą stronę.{#dust_s41_1}'
 
     menu:
         '"Nie mogę pozwolić, byś powiadomił swoich przyjaciół…"{#dust_s41_r1426}':
@@ -818,7 +818,7 @@ label dust_s41: # from 1.0 5.1 7.1 8.1 47.1
 
 # s42 # say1427
 label dust_s42: # from 41.0 45.0
-    nr 'Następuje *chrupnięcie* i Grabarz upada bezwładnie w twe ramiona.{#dust_s42_}'
+    nr 'Następuje *chrupnięcie* i Grabarz upada bezwładnie w twe ramiona.{#dust_s42_1}'
 
     menu:
         '"Lepiej ty niż ja, Grabarzu."{#dust_s42_r1428}' if dustLogic.r1428_condition():
@@ -834,7 +834,7 @@ label dust_s42: # from 41.0 45.0
 
 # s43 # say1430
 label dust_s43: # from 42.0
-    nr 'Ku twemu zdziwieniu wykonałeś to instynktownie, jakbyś już wcześniej robił to wiele razy… Przemyśleniu temu towarzyszą przebłyski wspomnień, są jednak zbyt słabe, by ujawnić się w pełni.{#dust_s43_}'
+    nr 'Ku twemu zdziwieniu wykonałeś to instynktownie, jakbyś już wcześniej robił to wiele razy… Przemyśleniu temu towarzyszą przebłyski wspomnień, są jednak zbyt słabe, by ujawnić się w pełni.{#dust_s43_1}'
 
     menu:
         'Zostaw ciało i kontynuuj.{#dust_s43_r3882}':
@@ -845,7 +845,7 @@ label dust_s43: # from 42.0
 
 # s44 # say3883
 label dust_s44: # from 5.0 7.0 8.0 19.4 47.0
-    nr 'Nie okazujesz się dostatecznie szybki i Grabarz wykonuje unik, gdy się na niego rzucasz. Następnie cofa się o krok, po czym klaszcze w dłonie po trzykroć. W odpowiedzi całą Kostnicę wypełnia bicie wielkiego, żelaznego dzwonu.{#dust_s44_}'
+    nr 'Nie okazujesz się dostatecznie szybki i Grabarz wykonuje unik, gdy się na niego rzucasz. Następnie cofa się o krok, po czym klaszcze w dłonie po trzykroć. W odpowiedzi całą Kostnicę wypełnia bicie wielkiego, żelaznego dzwonu.{#dust_s44_1}'
 
     menu:
         '"No dobrze…"{#dust_s44_r3884}':
@@ -856,7 +856,7 @@ label dust_s44: # from 5.0 7.0 8.0 19.4 47.0
 
 # s45 # say3889
 label dust_s45: # from 19.5
-    nr 'Gdy się przybliżasz, by mu coś wyszeptać, on również się przybliża. Gdy tylko wkracza w zasięg twych ramion, zaciskasz swe dłonie wokół jego skroni i przekręcasz mu głowę gwałtownie w lewą stronę.{#dust_s45_}'
+    nr 'Gdy się przybliżasz, by mu coś wyszeptać, on również się przybliża. Gdy tylko wkracza w zasięg twych ramion, zaciskasz swe dłonie wokół jego skroni i przekręcasz mu głowę gwałtownie w lewą stronę.{#dust_s45_1}'
 
     menu:
         '"Nie mogę pozwolić, byś powiadomił swoich przyjaciół…"{#dust_s45_r3890}':
@@ -867,7 +867,7 @@ label dust_s45: # from 19.5
 
 # s46 # say3891
 label dust_s46: # from 24.3 25.3 29.3 35.3 37.3 49.3 50.1
-    nr 'Grabarz wydaje się być podejrzliwy. Wygląda na to, że chce coś powiedzieć, po czym potrząsa nieznacznie głową i wraca do swoich zajęć.{#dust_s46_}'
+    nr 'Grabarz wydaje się być podejrzliwy. Wygląda na to, że chce coś powiedzieć, po czym potrząsa nieznacznie głową i wraca do swoich zajęć.{#dust_s46_1}'
 
     menu:
         'Odejdź.{#dust_s46_r3892}':
@@ -877,7 +877,7 @@ label dust_s46: # from 24.3 25.3 29.3 35.3 37.3 49.3 50.1
 
 # s47 # say3893
 label dust_s47: # from 24.2 25.2 29.1 29.2 35.1 35.2 37.1 37.2 49.1 49.2
-    nr 'Grabarz przygląda ci się dokładnie. "Nie jesteś jednym z nas, nieprawdaż? Co tu robisz? Jesteś członkiem Anarchistów? Albo szpiegiem którejś z innych frakcji? Zdaje się, że powinna się tym zająć straż…"{#dust_s47_}'
+    nr 'Grabarz przygląda ci się dokładnie. "Nie jesteś jednym z nas, nieprawdaż? Co tu robisz? Jesteś członkiem Anarchistów? Albo szpiegiem którejś z innych frakcji? Zdaje się, że powinna się tym zająć straż…"{#dust_s47_1}'
 
     menu:
         'Skręć mu kark, zanim zdąży zawołać.{#dust_s47_r3914}' if dustLogic.r3914_condition():
@@ -899,7 +899,7 @@ label dust_s47: # from 24.2 25.2 29.1 29.2 35.1 35.2 37.1 37.2 49.1 49.2
 
 # s48 # say3894
 label dust_s48: # from 10.0 11.0 12.0 13.0 14.0 15.0 21.0 26.3 27.1 28.3 30.4 31.4 32.1 33.1 34.3 36.2 39.1
-    nr 'Grabarz kiwa głową, po czym powraca do swych obowiązków.{#dust_s48_}'
+    nr 'Grabarz kiwa głową, po czym powraca do swych obowiązków.{#dust_s48_1}'
 
     menu:
         'Odejdź.{#dust_s48_r3895}':
@@ -909,7 +909,7 @@ label dust_s48: # from 10.0 11.0 12.0 13.0 14.0 15.0 21.0 26.3 27.1 28.3 30.4 31
 
 # s49 # say3896
 label dust_s49: # from 24.0 24.1 25.0 25.1
-    nr 'Grabarz marszczy brwi. "Imię to jest mi obce."{#dust_s49_}'
+    nr 'Grabarz marszczy brwi. "Imię to jest mi obce."{#dust_s49_1}'
 
     menu:
         '"Jestem świeżo wtajemniczonym. Wybacz mi moją niewiedzę."{#dust_s49_r3898}' if dustLogic.r3898_condition():
@@ -931,7 +931,7 @@ label dust_s49: # from 24.0 24.1 25.0 25.1
 
 # s50 # say3897
 label dust_s50: # from 29.0 35.0 37.0 49.0
-    nr 'Wciąż patrzy na ciebie krzywo, skłania jednakże lekko głową. "Dobrze. W czym mogę ci pomóc, wtajemniczony?"{#dust_s50_}'
+    nr 'Wciąż patrzy na ciebie krzywo, skłania jednakże lekko głową. "Dobrze. W czym mogę ci pomóc, wtajemniczony?"{#dust_s50_1}'
 
     menu:
         '"Mam kilka pytań…"{#dust_s50_r3902}':
@@ -945,7 +945,7 @@ label dust_s50: # from 29.0 35.0 37.0 49.0
 
 # s51 # say66674
 label dust_s51: # - # IF ~  Global("Appearance","GLOBAL",0)
-    nr 'Grabarz spogląda na ciebie kamiennym wzrokiem. "Zgubiłeś się?"{#dust_s51_}'
+    nr 'Grabarz spogląda na ciebie kamiennym wzrokiem. "Zgubiłeś się?"{#dust_s51_1}'
 
     menu:
         '"Nie, jestem członkiem frakcji. Zwiedzam jedynie Kostnicę."{#dust_s51_r66675}' if dustLogic.r66675_condition():
@@ -971,7 +971,7 @@ label dust_s51: # - # IF ~  Global("Appearance","GLOBAL",0)
 
 # s52 # say66681
 label dust_s52: # from 51.0
-    nr 'Grabarz wpatruje się w ciebie przez chwilę, po czym kiwa głową. "Dobrze. Gdybyś potrzebował pomocy, daj mi znać."{#dust_s52_}'
+    nr 'Grabarz wpatruje się w ciebie przez chwilę, po czym kiwa głową. "Dobrze. Gdybyś potrzebował pomocy, daj mi znać."{#dust_s52_1}'
 
     menu:
         '"Zrobię tak. Żegnaj."{#dust_s52_r66682}':

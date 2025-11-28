@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say453
 label vaxis_s0: # - # IF ~  Global("Vaxis","GLOBAL",0)
-    nr 'Le cadavre, les pieds traînants, t„observe, le regard vide. Le nombre “821„ est gravé sur son front et ses lèvres sont cousues. Une faible odeur de formol émane de son corps.{#vaxis_s0_}'
+    nr 'Le cadavre, les pieds traînants, t„observe, le regard vide. Le nombre “821„ est gravé sur son front et ses lèvres sont cousues. Une faible odeur de formol émane de son corps.{#vaxis_s0_1}'
 
     menu:
         '"Alors… t„as vu quelque chose d“intéressant ?"{#vaxis_s0_r454}' if vaxisLogic.r454_condition():
@@ -42,7 +42,7 @@ label vaxis_s0: # - # IF ~  Global("Vaxis","GLOBAL",0)
 
 # s1 # say460
 label vaxis_s1: # from 0.3 # IF ~  False()
-    nr 'Bizarrement, tes capacités ne semblent pas fonctionner sur ce cadavre.{#vaxis_s1_}'
+    nr 'Bizarrement, tes capacités ne semblent pas fonctionner sur ce cadavre.{#vaxis_s1_1}'
 
     menu:
         'Donne-lui un coup dans l„œil.{#vaxis_s1_r461}':
@@ -57,7 +57,7 @@ label vaxis_s1: # from 0.3 # IF ~  False()
 
 # s2 # say463
 label vaxis_s2: # from 1.0
-    nr 'Le cadavre glapit quand tu lui touches l„œil. Ses mains tentent de couvrir son visage. Il marmonne ce que tu prends pour des obscénités.{#vaxis_s2_}'
+    nr 'Le cadavre glapit quand tu lui touches l„œil. Ses mains tentent de couvrir son visage. Il marmonne ce que tu prends pour des obscénités.{#vaxis_s2_1}'
 
     menu:
         '"Tu n„es pas un zombi ! Qui es-tu ?"{#vaxis_s2_r464}':
@@ -78,7 +78,7 @@ label vaxis_s2: # from 1.0
 
 # s3 # say467
 label vaxis_s3: # from 2.2 5.2
-    nr 'Tu te retournes, décidé à partir, et le „zombi“ marmonne… Il semble qu„il veut dire quelque chose, mais c“est difficile car ses lèvres sont cousues. "Ki Hé tu ? Keu Weu tu ?"{#vaxis_s3_}'
+    nr 'Tu te retournes, décidé à partir, et le „zombi“ marmonne… Il semble qu„il veut dire quelque chose, mais c“est difficile car ses lèvres sont cousues. "Ki Hé tu ? Keu Weu tu ?"{#vaxis_s3_1}'
 
     menu:
         '"Je cherche un moyen de sortir d„ici. Peux-tu m“aider ?"{#vaxis_s3_r468}' if vaxisLogic.r468_condition():
@@ -110,7 +110,7 @@ label vaxis_s3: # from 2.2 5.2
 
 # s4 # say471
 label vaxis_s4: # from 3.5 6.5 7.8 8.5 10.4 11.4 12.2 13.5 14.4 15.2 16.4 17.2 18.1 19.3 20.1 25.6 27.6 31.6 32.5 34.2 35.6 59.1 74.1 75.3 76.1
-    nr 'Tu te retournes, décidé à partir, et le zombi grogne sourdement. "Ne ti rien fur MOA. SHUT ! Ne ti RIEN ozom-hou-sièr." Il pose son doigt sur ses lèvres. "Shhhh !" Puis il passe son doigt en travers du cou. "Ou je te tu tan ton sommeil. Kom-tri ?"{#vaxis_s4_}'
+    nr 'Tu te retournes, décidé à partir, et le zombi grogne sourdement. "Ne ti rien fur MOA. SHUT ! Ne ti RIEN ozom-hou-sièr." Il pose son doigt sur ses lèvres. "Shhhh !" Puis il passe son doigt en travers du cou. "Ou je te tu tan ton sommeil. Kom-tri ?"{#vaxis_s4_1}'
 
     menu:
         '"C„est une MENACE ? C“en est trop… Prépare-toi à mourir."{#vaxis_s4_r475}':
@@ -135,7 +135,7 @@ label vaxis_s4: # from 3.5 6.5 7.8 8.5 10.4 11.4 12.2 13.5 14.4 15.2 16.4 17.2 1
 
 # s5 # say479
 label vaxis_s5: # from 0.0 0.1 0.2 0.4
-    nr 'Tu t„adresses au zombi et il cille de surprise. "Hein ? Koi ?"{#vaxis_s5_}'
+    nr 'Tu t„adresses au zombi et il cille de surprise. "Hein ? Koi ?"{#vaxis_s5_1}'
 
     menu:
         '"Tu n„es pas un zombi ! Qui es-tu ?"{#vaxis_s5_r480}':
@@ -156,7 +156,7 @@ label vaxis_s5: # from 0.0 0.1 0.2 0.4
 
 # s6 # say483
 label vaxis_s6: # from 2.0 2.1 5.0 5.1
-    nr 'Le „zombi“ tente de répondre derrière ses lèvres cousues. Son expression particulière est mi-effrayée, mi-fâchée. "Ki Hé tu ? Keu Weu tu ?"{#vaxis_s6_}'
+    nr 'Le „zombi“ tente de répondre derrière ses lèvres cousues. Son expression particulière est mi-effrayée, mi-fâchée. "Ki Hé tu ? Keu Weu tu ?"{#vaxis_s6_1}'
 
     menu:
         '"Je cherche un moyen de sortir d„ici. Peux-tu m“aider ?"{#vaxis_s6_r484}' if vaxisLogic.r484_condition():
@@ -188,7 +188,7 @@ label vaxis_s6: # from 2.0 2.1 5.0 5.1
 
 # s7 # say490
 label vaxis_s7: # from 3.0 3.1 3.2 3.4 6.0 6.1 6.2 6.4
-    nr 'Le zombi ne semble pas t„avoir entendu. Il t“examine des pieds à la tête pendant un instant, puis il fronce les sourcils. "Keu hé tu isi ?" Il plisse les yeux, méfiant. "Toa èstion dé hom-hou-sièr ?"{#vaxis_s7_}'
+    nr 'Le zombi ne semble pas t„avoir entendu. Il t“examine des pieds à la tête pendant un instant, puis il fronce les sourcils. "Keu hé tu isi ?" Il plisse les yeux, méfiant. "Toa èstion dé hom-hou-sièr ?"{#vaxis_s7_1}'
 
     menu:
         '"Non. J„essaie de m“enfuir."{#vaxis_s7_r491}' if vaxisLogic.r491_condition():
@@ -234,7 +234,7 @@ label vaxis_s7: # from 3.0 3.1 3.2 3.4 6.0 6.1 6.2 6.4
 
 # s8 # say1350
 label vaxis_s8: # from 7.2
-    nr 'Il t„observe intensément."Toa èstion ? Toa es dans la celloule ?"{#vaxis_s8_}'
+    nr 'Il t„observe intensément."Toa èstion ? Toa es dans la celloule ?"{#vaxis_s8_1}'
 
     menu:
         '"Hein ?"{#vaxis_s8_r4671}':
@@ -267,7 +267,7 @@ label vaxis_s8: # from 7.2
 
 # s9 # say1363
 label vaxis_s9: # from 7.3
-    nr 'Il t„observe intensément."Toa èstion ? Toa es dans la celloule ?"{#vaxis_s9_}'
+    nr 'Il t„observe intensément."Toa èstion ? Toa es dans la celloule ?"{#vaxis_s9_1}'
 
     menu:
         '"Hein ?"{#vaxis_s9_r4359}':
@@ -281,7 +281,7 @@ label vaxis_s9: # from 7.3
 
 # s10 # say4361
 label vaxis_s10: # from 8.0 8.1
-    nr 'Il fronce les sourcils. "Toa ha èstion !" Il te chasse d„un geste. "Wa ! Wa !"{#vaxis_s10_}'
+    nr 'Il fronce les sourcils. "Toa ha èstion !" Il te chasse d„un geste. "Wa ! Wa !"{#vaxis_s10_1}'
 
     menu:
         '"Commence par me dire ce que tu fais ici ou j„appelle les gardes."{#vaxis_s10_r4362}' if vaxisLogic.r4362_condition():
@@ -309,7 +309,7 @@ label vaxis_s10: # from 8.0 8.1
 
 # s11 # say4366
 label vaxis_s11: # externs morte_s86
-    nr 'Le zombi hoche la tête, et tu crois remarquer qu„il pouffe sous son déguisement de zombi.{#vaxis_s11_}'
+    nr 'Le zombi hoche la tête, et tu crois remarquer qu„il pouffe sous son déguisement de zombi.{#vaxis_s11_1}'
 
     menu:
         '"Peux-tu m„aider à m“enfuir ?"{#vaxis_s11_r4368}' if vaxisLogic.r4368_condition():
@@ -337,7 +337,7 @@ label vaxis_s11: # externs morte_s86
 
 # s12 # say4373
 label vaxis_s12: # from 7.0 11.0
-    nr 'Le zombi a l„air intéressé. "Tu ha dézennui ? Keu hé-tu ?"{#vaxis_s12_}'
+    nr 'Le zombi a l„air intéressé. "Tu ha dézennui ? Keu hé-tu ?"{#vaxis_s12_1}'
 
     menu:
         '"Je me suis réveillé là-haut sur l„une des dalles."{#vaxis_s12_r4374}':
@@ -355,7 +355,7 @@ label vaxis_s12: # from 7.0 11.0
 
 # s13 # say4377
 label vaxis_s13: # from 12.0
-    nr 'Le zombi te regarde comme si tu étais fou. "Toa asi-mutè ?"{#vaxis_s13_}'
+    nr 'Le zombi te regarde comme si tu étais fou. "Toa asi-mutè ?"{#vaxis_s13_1}'
 
     menu:
         '"Oui, je suis azimuté. Très „azimuté“."{#vaxis_s13_r4378}':
@@ -386,7 +386,7 @@ label vaxis_s13: # from 12.0
 
 # s14 # say4384
 label vaxis_s14: # from 13.0 13.3 15.0
-    nr 'Il te regarde, siffle et te chasse d„un geste. " Toa tingue ! Wa ! Wa !"{#vaxis_s14_}'
+    nr 'Il te regarde, siffle et te chasse d„un geste. " Toa tingue ! Wa ! Wa !"{#vaxis_s14_1}'
 
     menu:
         '"Je ne bougerai pas. Dis-moi ce que tu fais ici ou j„appelle les gardes."{#vaxis_s14_r4385}' if vaxisLogic.r4385_condition():
@@ -414,7 +414,7 @@ label vaxis_s14: # from 13.0 13.3 15.0
 
 # s15 # say4390
 label vaxis_s15: # externs morte_s88
-    nr 'Le faux zombi vous regarde méfiant.{#vaxis_s15_}'
+    nr 'Le faux zombi vous regarde méfiant.{#vaxis_s15_1}'
 
     menu:
         '"C„est la vérité, je me suis réveillé sur une de ces dalles funéraires."{#vaxis_s15_r4391}':
@@ -433,7 +433,7 @@ label vaxis_s15: # externs morte_s88
 
 # s16 # say4394
 label vaxis_s16: # from 13.1
-    nr 'Il te regarde, siffle et te chasse d„un geste. " Toa tingue ! Wa ! Wa ! Peurk ! Pah !"{#vaxis_s16_}'
+    nr 'Il te regarde, siffle et te chasse d„un geste. " Toa tingue ! Wa ! Wa ! Peurk ! Pah !"{#vaxis_s16_1}'
 
     menu:
         '"Je ne bougerai pas. Dis-moi ce que tu fais ici ou j„appelle les gardes."{#vaxis_s16_r4395}' if vaxisLogic.r4395_condition():
@@ -461,7 +461,7 @@ label vaxis_s16: # from 13.1
 
 # s17 # say4400
 label vaxis_s17: # from 7.5 10.1 14.1 16.1 25.3 27.3
-    nr 'Il a l„air effrayé un instant, puis il t“observe et un rictus traverse son visage. "Toa crache le soltiv a moa, moa je donne soltiv a *toa*. Moa, jé dézami isi, *pah toa*. Isi pah ta plas. Hom-hou-sièr te tuhé. Moa ésapé."{#vaxis_s17_}'
+    nr 'Il a l„air effrayé un instant, puis il t“observe et un rictus traverse son visage. "Toa crache le soltiv a moa, moa je donne soltiv a *toa*. Moa, jé dézami isi, *pah toa*. Isi pah ta plas. Hom-hou-sièr te tuhé. Moa ésapé."{#vaxis_s17_1}'
 
     menu:
         '"Tu ne t„échapperas pas si je te TUE. Maintenant, réponds à mes questions ou je transforme ce déguisement en réalité."{#vaxis_s17_r4401}' if vaxisLogic.r4401_condition():
@@ -481,7 +481,7 @@ label vaxis_s17: # from 7.5 10.1 14.1 16.1 25.3 27.3
 
 # s18 # say4404
 label vaxis_s18: # from 17.0
-    nr 'Le zombi plisse les yeux et siffle. "Tuh ésèyeu de meu mèt dan liv dé moh ? Jé dézami isi, *pah toa*. Tu meu tous, mézami teu tuh."{#vaxis_s18_}'
+    nr 'Le zombi plisse les yeux et siffle. "Tuh ésèyeu de meu mèt dan liv dé moh ? Jé dézami isi, *pah toa*. Tu meu tous, mézami teu tuh."{#vaxis_s18_1}'
 
     menu:
         '"Je prends le risque. Prépare-toi à mourir."{#vaxis_s18_r4405}':
@@ -496,7 +496,7 @@ label vaxis_s18: # from 17.0
 
 # s19 # say4407
 label vaxis_s19: # from 7.6 10.2 14.2 16.2 25.4 27.4
-    nr 'Il a l„air effrayé un instant, puis il observe ta carrure, et un rictus traverse son visage. "Tuh ésèyeu de meu mèt dan lif dé moh ? Jé dézami isi, *pah toa.* Tu meu tous, mézami teu tuh."{#vaxis_s19_}'
+    nr 'Il a l„air effrayé un instant, puis il observe ta carrure, et un rictus traverse son visage. "Tuh ésèyeu de meu mèt dan lif dé moh ? Jé dézami isi, *pah toa.* Tu meu tous, mézami teu tuh."{#vaxis_s19_1}'
 
     menu:
         '"Je prends le risque. Prépare-toi à mourir."{#vaxis_s19_r4408}':
@@ -519,7 +519,7 @@ label vaxis_s19: # from 7.6 10.2 14.2 16.2 25.4 27.4
 
 # s20 # say4412
 label vaxis_s20: # from 19.2
-    nr 'Le zombi plisse les yeux et siffle. "Toa crache le soltiv a moa, moa je donne soltiv a *toa*. Moa, jé dézami isi, *pah toa*. Isi pah ta plas. Hom-hou-sièr te tuhé. Moa ésapé."{#vaxis_s20_}'
+    nr 'Le zombi plisse les yeux et siffle. "Toa crache le soltiv a moa, moa je donne soltiv a *toa*. Moa, jé dézami isi, *pah toa*. Isi pah ta plas. Hom-hou-sièr te tuhé. Moa ésapé."{#vaxis_s20_1}'
 
     menu:
         '"C„était ta dernière chance, cadavre. Prépare-toi à mourir."{#vaxis_s20_r4413}':
@@ -534,7 +534,7 @@ label vaxis_s20: # from 19.2
 
 # s21 # say4415
 label vaxis_s21: # from 7.4 10.0 14.0 16.0 19.1 25.2 27.2
-    nr 'Quelque chose dans ton regard fait s„effondrer l“expression du zombi. "Noh-noh-noh ! Neu pah apeulé lé gahd !" Il a l„air effrayé. "Moa-moa èstioné lézom-hou-sièr, dih seu keu voa. Pah plus."{#vaxis_s21_}'
+    nr 'Quelque chose dans ton regard fait s„effondrer l“expression du zombi. "Noh-noh-noh ! Neu pah apeulé lé gahd !" Il a l„air effrayé. "Moa-moa èstioné lézom-hou-sièr, dih seu keu voa. Pah plus."{#vaxis_s21_1}'
 
     menu:
         '"Tu espionnes ? Pour le compte de qui ?"{#vaxis_s21_r4416}':
@@ -556,7 +556,7 @@ label vaxis_s21: # from 7.4 10.0 14.0 16.0 19.1 25.2 27.2
 
 # s22 # say4420
 label vaxis_s22: # from 7.7 10.3 14.3 16.3 17.1 25.5 27.5
-    nr '"Noh-noh-noh ! Pah fèr mal !" Tu as quelques kilos de muscles en plus que le zombi, ce qui commence à influencer sa décision, et changer son expression. "Pah fèr mal ! Moa-moa èstioné lézom-hou-sièr, dih seu keu voa. Pah plus."{#vaxis_s22_}'
+    nr '"Noh-noh-noh ! Pah fèr mal !" Tu as quelques kilos de muscles en plus que le zombi, ce qui commence à influencer sa décision, et changer son expression. "Pah fèr mal ! Moa-moa èstioné lézom-hou-sièr, dih seu keu voa. Pah plus."{#vaxis_s22_1}'
 
     menu:
         '"Tu espionnes ? Pour le compte de qui ?"{#vaxis_s22_r4421}':
@@ -578,7 +578,7 @@ label vaxis_s22: # from 7.7 10.3 14.3 16.3 17.1 25.5 27.5
 
 # s23 # say4425
 label vaxis_s23: # from 21.0 22.0
-    nr 'Le zombi sombre dans un silence effrayé. Il semble ne pas vouloir en dire plus.{#vaxis_s23_}'
+    nr 'Le zombi sombre dans un silence effrayé. Il semble ne pas vouloir en dire plus.{#vaxis_s23_1}'
 
     menu:
         '"Allez. Pour le compte de qui espionnes-tu cet endroit ?"{#vaxis_s23_r4426}' if vaxisLogic.r4426_condition():
@@ -614,7 +614,7 @@ label vaxis_s23: # from 21.0 22.0
 
 # s24 # say4433
 label vaxis_s24: # from 3.3 6.3 8.2
-    nr '"Tuh meu sèrs ? Hourkoa ?" Il plisse les yeux. "Toa pon masaj hour moa ?"{#vaxis_s24_}'
+    nr '"Tuh meu sèrs ? Hourkoa ?" Il plisse les yeux. "Toa pon masaj hour moa ?"{#vaxis_s24_1}'
 
     menu:
         'Mensonge : "Oui, j„ai un message pour toi."{#vaxis_s24_r4434}':
@@ -633,7 +633,7 @@ label vaxis_s24: # from 3.3 6.3 8.2
 
 # s25 # say4437
 label vaxis_s25: # from 24.2
-    nr 'Il siffle de colère. "Kès--tu *weu,* pij ?"{#vaxis_s25_}'
+    nr 'Il siffle de colère. "Kès--tu *weu,* pij ?"{#vaxis_s25_1}'
 
     menu:
         '"Je cherche un moyen de sortir d„ici. Peux-tu m“aider ?"{#vaxis_s25_r4438}' if vaxisLogic.r4438_condition():
@@ -669,7 +669,7 @@ label vaxis_s25: # from 24.2
 
 # s26 # say4445
 label vaxis_s26: # from 24.0
-    nr '"Kèl masaj ?"{#vaxis_s26_}'
+    nr '"Kèl masaj ?"{#vaxis_s26_1}'
 
     menu:
         '"Tu vas me dire quelle est ta mission."{#vaxis_s26_r4446}' if vaxisLogic.r4446_condition():
@@ -697,7 +697,7 @@ label vaxis_s26: # from 24.0
 
 # s27 # say4451
 label vaxis_s27: # from 24.1 26.3 26.4
-    nr 'Il plisse les yeux de colère. "Toa pah masseur. Ki hé-tu ?"{#vaxis_s27_}'
+    nr 'Il plisse les yeux de colère. "Toa pah masseur. Ki hé-tu ?"{#vaxis_s27_1}'
 
     menu:
         '"Je cherche un moyen de sortir d„ici. Peux-tu m“aider ?"{#vaxis_s27_r4452}' if vaxisLogic.r4452_condition():
@@ -733,7 +733,7 @@ label vaxis_s27: # from 24.1 26.3 26.4
 
 # s28 # say4459
 label vaxis_s28: # from 8.3 8.4 11.1 11.2 11.3 26.0 30.0 43.5
-    nr '"Moa èstioné hom-hou-sièr. Dir seu keu je voa. Pah plus."{#vaxis_s28_}'
+    nr '"Moa èstioné hom-hou-sièr. Dir seu keu je voa. Pah plus."{#vaxis_s28_1}'
 
     menu:
         '"Qu„as-tu vu sur les Hommes-Poussière ?"{#vaxis_s28_r4460}':
@@ -751,7 +751,7 @@ label vaxis_s28: # from 8.3 8.4 11.1 11.2 11.3 26.0 30.0 43.5
 
 # s29 # say4463
 label vaxis_s29: # from 21.1 22.1 23.4 28.0 70.1 71.2
-    nr '"Rien. Il son rien. Rien trouvé. Mohr, mohr, keu dé mohr. Hom-hou-sièr rien fèr." Il plisse les yeux, convaincu. "Mé je surwèil."{#vaxis_s29_}'
+    nr '"Rien. Il son rien. Rien trouvé. Mohr, mohr, keu dé mohr. Hom-hou-sièr rien fèr." Il plisse les yeux, convaincu. "Mé je surwèil."{#vaxis_s29_1}'
 
     menu:
         '"Je vois. J„avais autre chose à te demander…"{#vaxis_s29_r4464}':
@@ -765,7 +765,7 @@ label vaxis_s29: # from 21.1 22.1 23.4 28.0 70.1 71.2
 
 # s30 # say4466
 label vaxis_s30: # from 26.1 26.2
-    nr 'Il plisse les yeux, comme s„il essayait de comprendre. "Kèl ordr ?“{#vaxis_s30_}'
+    nr 'Il plisse les yeux, comme s„il essayait de comprendre. "Kèl ordr ?“{#vaxis_s30_1}'
 
     menu:
         '"Dis-moi en quoi consiste ta mission."{#vaxis_s30_r4467}':
@@ -792,7 +792,7 @@ label vaxis_s30: # from 26.1 26.2
 
 # s31 # say4472
 label vaxis_s31: # from 7.1 12.1 13.4 15.1 25.0 27.0 50.0
-    nr 'Il reste silencieux un instant, puis hoche doucement la tête, comme s„il comprenait. "Purkoi tèderèjeu ?"{#vaxis_s31_}'
+    nr 'Il reste silencieux un instant, puis hoche doucement la tête, comme s„il comprenait. "Purkoi tèderèjeu ?"{#vaxis_s31_1}'
 
     menu:
         '"Parce que j„ai besoin de ton aide."{#vaxis_s31_r4473}':
@@ -829,7 +829,7 @@ label vaxis_s31: # from 7.1 12.1 13.4 15.1 25.0 27.0 50.0
 
 # s32 # say4480
 label vaxis_s32: # from 31.0
-    nr 'Le zombi ricane à demi. "Touleumont *abezoin* te kélkeushoz, mépérson don rien. Tu me *don* kélkeushoz, *peutét* je téd."{#vaxis_s32_}'
+    nr 'Le zombi ricane à demi. "Touleumont *abezoin* te kélkeushoz, mépérson don rien. Tu me *don* kélkeushoz, *peutét* je téd."{#vaxis_s32_1}'
 
     menu:
         '"Que veux-tu ?"{#vaxis_s32_r4481}':
@@ -861,7 +861,7 @@ label vaxis_s32: # from 31.0
 
 # s33 # say4487
 label vaxis_s33: # from 31.2 31.5 32.1 32.4 34.1 35.2 35.5 75.0
-    nr 'Il te dévisage des pieds à la tête, comme s„il se demandait ce qu“il pouvait te prendre ; il regarde tes cicatrices, puis change d„avis. "Hmpf. Tu peu éshapé atravér léportay."{#vaxis_s33_}'
+    nr 'Il te dévisage des pieds à la tête, comme s„il se demandait ce qu“il pouvait te prendre ; il regarde tes cicatrices, puis change d„avis. "Hmpf. Tu peu éshapé atravér léportay."{#vaxis_s33_1}'
 
     menu:
         '"Des portails ?"{#vaxis_s33_r4672}':
@@ -872,7 +872,7 @@ label vaxis_s33: # from 31.2 31.5 32.1 32.4 34.1 35.2 35.5 75.0
 
 # s34 # say4491
 label vaxis_s34: # from 31.3 32.2 35.3
-    nr 'Il a l„air effrayé un instant, puis il t“observe et un rictus traverse son visage. "Toa crache le soltiv a moa, moa je donne soltiv a *toa*. Moa, jé dézami isi, *pah toa*. Isi pah ta plas. Hom-hou-sièr te tuhé. Moa ésapé."{#vaxis_s34_}'
+    nr 'Il a l„air effrayé un instant, puis il t“observe et un rictus traverse son visage. "Toa crache le soltiv a moa, moa je donne soltiv a *toa*. Moa, jé dézami isi, *pah toa*. Isi pah ta plas. Hom-hou-sièr te tuhé. Moa ésapé."{#vaxis_s34_1}'
 
     menu:
         '"Tu ne t„échapperas pas si je te TUE. Alors, parle ou je transforme ce déguisement en réalité."{#vaxis_s34_r4489}' if vaxisLogic.r4489_condition():
@@ -892,7 +892,7 @@ label vaxis_s34: # from 31.3 32.2 35.3
 
 # s35 # say4493
 label vaxis_s35: # from 30.3 31.1 32.0
-    nr '"Tu toa prendrun *clé* pourmoa. Bezoin dun clé enfér. Dans la sambre d„emboumoment."{#vaxis_s35_}'
+    nr '"Tu toa prendrun *clé* pourmoa. Bezoin dun clé enfér. Dans la sambre d„emboumoment."{#vaxis_s35_1}'
 
     menu:
         '"Tu veux parler de cette clé ?"{#vaxis_s35_r4494}' if vaxisLogic.r4494_condition():
@@ -931,7 +931,7 @@ label vaxis_s35: # from 30.3 31.1 32.0
 
 # s36 # say4501
 label vaxis_s36: # from 35.1 58.2
-    nr '"Un fiy-hou-sièr a la clé." Il désigne ses yeux. "èla lézieujon…" Il fait ensuite un geste qui te rappelle une paire de cisailles. "lam sur lé doa."{#vaxis_s36_}'
+    nr '"Un fiy-hou-sièr a la clé." Il désigne ses yeux. "èla lézieujon…" Il fait ensuite un geste qui te rappelle une paire de cisailles. "lam sur lé doa."{#vaxis_s36_1}'
 
     menu:
         '"Nos chemins se sont déjà croisés. Voilà la clé."{#vaxis_s36_r4502}' if vaxisLogic.r4502_condition():
@@ -957,7 +957,7 @@ label vaxis_s36: # from 35.1 58.2
 
 # s37 # say4505
 label vaxis_s37: # from 36.3
-    nr 'Le zombi cligne des yeux. Il ne semble pas t„avoir compris.{#vaxis_s37_}'
+    nr 'Le zombi cligne des yeux. Il ne semble pas t„avoir compris.{#vaxis_s37_1}'
 
     menu:
         '"C„était une blague, tu vois, tu es sup… Laisse tomber, je vais aller chercher ta clé."{#vaxis_s37_r4506}' if vaxisLogic.r4506_condition():
@@ -973,7 +973,7 @@ label vaxis_s37: # from 36.3
 
 # s38 # say4507
 label vaxis_s38: # from 36.1 36.2 37.0 37.1
-    nr 'Le zombi plisse les yeux. "Si tu te fé prendr, neu di rien sur moa, ou jeu teu tuh dan ton someiy."{#vaxis_s38_}'
+    nr 'Le zombi plisse les yeux. "Si tu te fé prendr, neu di rien sur moa, ou jeu teu tuh dan ton someiy."{#vaxis_s38_1}'
 
     menu:
         '"Je vais trouver ta satanée clé… mais tu ferais mieux d„éviter de me menacer, compris ?"{#vaxis_s38_r4508}' if vaxisLogic.r4508_condition():
@@ -997,14 +997,14 @@ label vaxis_s38: # from 36.1 36.2 37.0 37.1
 
 # s39 # say4512
 label vaxis_s39: # from 43.12
-    nr '"Moa bon déghizé. Moa osi bèl sikatris. Moa porté bocou laussion enbo„ment. Moa fèr BON zombi." Le zombi glousse à travers ses lèvres cousues, puis se frappe la tête. "Hom-hou-sièr stupid."{#vaxis_s39_}'
+    nr '"Moa bon déghizé. Moa osi bèl sikatris. Moa porté bocou laussion enbo„ment. Moa fèr BON zombi." Le zombi glousse à travers ses lèvres cousues, puis se frappe la tête. "Hom-hou-sièr stupid."{#vaxis_s39_1}'
 
     jump morte_s93  # EXTERN
 
 
 # s40 # say4514
 label vaxis_s40: # -
-    nr '"Je taten isi. Trouf laclé." Le zombi esquisse un sourire. "Aprè je tèd."{#vaxis_s40_}'
+    nr '"Je taten isi. Trouf laclé." Le zombi esquisse un sourire. "Aprè je tèd."{#vaxis_s40_1}'
 
     menu:
         '"Si je la trouve, je te la rapporte."{#vaxis_s40_r4515}':
@@ -1018,7 +1018,7 @@ label vaxis_s40: # -
 
 # s41 # say4517
 label vaxis_s41: # -
-    nr 'Les yeux du zombi s„écarquillent. Il lève la main et claque des doigts. "Don !"{#vaxis_s41_}'
+    nr 'Les yeux du zombi s„écarquillent. Il lève la main et claque des doigts. "Don !"{#vaxis_s41_1}'
 
     menu:
         '"Attends. Je veux d„abord quelque chose."{#vaxis_s41_r4518}':
@@ -1033,7 +1033,7 @@ label vaxis_s41: # -
 
 # s42 # say4520
 label vaxis_s42: # from 35.0 36.0 58.0 58.1
-    nr 'Les yeux du zombi s„écarquillent. Il t“arrache la clé des mains. Il se retourne et hoche la tête en disant : "Bien."{#vaxis_s42_}'
+    nr 'Les yeux du zombi s„écarquillent. Il t“arrache la clé des mains. Il se retourne et hoche la tête en disant : "Bien."{#vaxis_s42_1}'
 
     menu:
         '"Bon… comment est-ce que je vais sortir d„ici ?"{#vaxis_s42_r4521}' if vaxisLogic.r4521_condition():
@@ -1049,7 +1049,7 @@ label vaxis_s42: # from 35.0 36.0 58.0 58.1
 
 # s43 # say4523
 label vaxis_s43: # from 21.2 22.2 23.5 25.1 27.1 28.1 29.0 42.1 44.2 45.1 46.2 47.2 48.0 51.1 52.0 53.0 54.0 56.0 58.3 59.0 60.3 61.4 62.3 63.1 64.0 70.2 71.3 77.0
-    nr '"Keuweutu safoir ?"{#vaxis_s43_}'
+    nr '"Keuweutu safoir ?"{#vaxis_s43_1}'
 
     menu:
         '"Comment puis-je m„enfuir d“ici ?"{#vaxis_s43_r64508}' if vaxisLogic.r64508_condition():
@@ -1111,7 +1111,7 @@ label vaxis_s43: # from 21.2 22.2 23.5 25.1 27.1 28.1 29.0 42.1 44.2 45.1 46.2 4
 
 # s44 # say4537
 label vaxis_s44: # from 43.6
-    nr '"Farod ?" Le zombi fronce brièvement les sourcils, pensif. "Moa… il vi isi dan la rush." Il secoue la tête. "Je sé pah ou." Il fronce les sourcils à nouveau. "Hom-hou-sièr trè fou, ilnèm pah Farod."{#vaxis_s44_}'
+    nr '"Farod ?" Le zombi fronce brièvement les sourcils, pensif. "Moa… il vi isi dan la rush." Il secoue la tête. "Je sé pah ou." Il fronce les sourcils à nouveau. "Hom-hou-sièr trè fou, ilnèm pah Farod."{#vaxis_s44_1}'
 
     menu:
         '"La Ruche ?"{#vaxis_s44_r4538}':
@@ -1134,7 +1134,7 @@ label vaxis_s44: # from 43.6
 
 # s45 # say4542
 label vaxis_s45: # from 44.0
-    nr '"Dan bahkartié."{#vaxis_s45_}'
+    nr '"Dan bahkartié."{#vaxis_s45_1}'
 
     menu:
         '"Pourquoi les Hommes-Poussière n„aiment pas Pharod ?"{#vaxis_s45_r4543}':
@@ -1153,7 +1153,7 @@ label vaxis_s45: # from 44.0
 
 # s46 # say4546
 label vaxis_s46: # from 44.1 45.0
-    nr '"Sétunrékupérateuh. Il aport lémor ala mork, léven ozom-hou-sièr. BOCOU deumor. Lézom-hou-sièr safpah ou trouvé lémor. Jeucroakil mélébij danleulifdémor."{#vaxis_s46_}'
+    nr '"Sétunrékupérateuh. Il aport lémor ala mork, léven ozom-hou-sièr. BOCOU deumor. Lézom-hou-sièr safpah ou trouvé lémor. Jeucroakil mélébij danleulifdémor."{#vaxis_s46_1}'
 
     menu:
         '"Euh… quoi ?"{#vaxis_s46_r4547}' if vaxisLogic.r4547_condition():
@@ -1175,7 +1175,7 @@ label vaxis_s46: # from 44.1 45.0
 
 # s47 # say4551
 label vaxis_s47: # from 43.7
-    nr '"Sépah. Débijteuplèz ?"{#vaxis_s47_}'
+    nr '"Sépah. Débijteuplèz ?"{#vaxis_s47_1}'
 
     menu:
         '"Euh… quoi ?"{#vaxis_s47_r4552}' if vaxisLogic.r4552_condition():
@@ -1197,7 +1197,7 @@ label vaxis_s47: # from 43.7
 
 # s48 # say4556
 label vaxis_s48: # from 46.0 47.0
-    nr 'Le zombi tente de parler, fait une pause, essaye encore, puis hausse les épaules. Apparemment, il ne peut pas donner de meilleure explication.{#vaxis_s48_}'
+    nr 'Le zombi tente de parler, fait une pause, essaye encore, puis hausse les épaules. Apparemment, il ne peut pas donner de meilleure explication.{#vaxis_s48_1}'
 
     menu:
         '"Oh. Je voudrais savoir autre chose…"{#vaxis_s48_r4557}':
@@ -1211,7 +1211,7 @@ label vaxis_s48: # from 46.0 47.0
 
 # s49 # say4559
 label vaxis_s49: # from 30.1 42.0 43.0 43.1
-    nr 'Le zombi grogne. "Tupeu éshapé par léportay." Il agite les mains. "Pouh."{#vaxis_s49_}'
+    nr 'Le zombi grogne. "Tupeu éshapé par léportay." Il agite les mains. "Pouh."{#vaxis_s49_1}'
 
     menu:
         '"Des portails ? Quels portails ?"{#vaxis_s49_r4560}':
@@ -1221,7 +1221,7 @@ label vaxis_s49: # from 30.1 42.0 43.0 43.1
 
 # s50 # say4563
 label vaxis_s50: # from 33.0 49.0
-    nr '"Portay…" Le zombi agite les mains. "Portay partou."{#vaxis_s50_}'
+    nr '"Portay…" Le zombi agite les mains. "Portay partou."{#vaxis_s50_1}'
 
     menu:
         '"Peux-tu me montrer l„un de ces portails ?"{#vaxis_s50_r4564}' if vaxisLogic.r4564_condition():
@@ -1243,7 +1243,7 @@ label vaxis_s50: # from 33.0 49.0
 
 # s51 # say4567
 label vaxis_s51: # from 50.1 50.2 50.3 72.0
-    nr 'Le zombi hoche la tête. "Tu sor, wa juskalarsh sur sètétaj, saleunorouèst, Y te fo un„" Il brandit son index recourbé. "Kantalaclé; wa juskalarsh, sotalakript seukrèt ; éshaptoa parla. Sortiseukrèt." Il hoche la tête. "Tupeu TREUPOSER laba."{#vaxis_s51_}'
+    nr 'Le zombi hoche la tête. "Tu sor, wa juskalarsh sur sètétaj, saleunorouèst, Y te fo un„" Il brandit son index recourbé. "Kantalaclé; wa juskalarsh, sotalakript seukrèt ; éshaptoa parla. Sortiseukrèt." Il hoche la tête. "Tupeu TREUPOSER laba."{#vaxis_s51_1}'
 
     menu:
         '"Un doigt crochu squelettique ? Où puis-je en trouver un ?"{#vaxis_s51_r64527}' if vaxisLogic.r64527_condition():
@@ -1264,7 +1264,7 @@ label vaxis_s51: # from 50.1 50.2 50.3 72.0
 
 # s52 # say4570
 label vaxis_s52: # from 43.2
-    nr '"Ecout ! Souvientoa !" Le zombi semble en colère. "arshembrouyé, sètétaj, saleunorouèst…" Il tend l„index puis le recourbe. "Tua beuzoin deufalanj, kourbé. Wa kript seukrèt. Sortiseukrèt. Tupeu treuposer laba."{#vaxis_s52_}'
+    nr '"Ecout ! Souvientoa !" Le zombi semble en colère. "arshembrouyé, sètétaj, saleunorouèst…" Il tend l„index puis le recourbe. "Tua beuzoin deufalanj, kourbé. Wa kript seukrèt. Sortiseukrèt. Tupeu treuposer laba."{#vaxis_s52_1}'
 
     menu:
         '"Il y a autre chose que je voudrais savoir…"{#vaxis_s52_r4571}':
@@ -1278,7 +1278,7 @@ label vaxis_s52: # from 43.2
 
 # s53 # say4573
 label vaxis_s53: # from 43.8
-    nr '"Scribe." Il hausse les épaules. "Vieux. Joune."{#vaxis_s53_}'
+    nr '"Scribe." Il hausse les épaules. "Vieux. Joune."{#vaxis_s53_1}'
 
     menu:
         '"Il n„y a rien à ajouter, je suppose. Il y a autre chose que je voudrais savoir…"{#vaxis_s53_r4574}':
@@ -1292,7 +1292,7 @@ label vaxis_s53: # from 43.8
 
 # s54 # say4576
 label vaxis_s54: # from 43.9
-    nr '"Hein ?" Il fronce les sourcils. "kiétèl ?"{#vaxis_s54_}'
+    nr '"Hein ?" Il fronce les sourcils. "kiétèl ?"{#vaxis_s54_1}'
 
     menu:
         '"Laisse tomber. Il y a autre chose que je voudrais savoir…"{#vaxis_s54_r4577}':
@@ -1306,7 +1306,7 @@ label vaxis_s54: # from 43.9
 
 # s55 # say4579
 label vaxis_s55: # from 43.10
-    nr '"Guid. Alamork. Port entré. Keuweutudeului ?"{#vaxis_s55_}'
+    nr '"Guid. Alamork. Port entré. Keuweutudeului ?"{#vaxis_s55_1}'
 
     menu:
         '"Qu„est-ce que tu sais sur lui ?"{#vaxis_s55_r4580}':
@@ -1321,7 +1321,7 @@ label vaxis_s55: # from 43.10
 
 # s56 # say4582
 label vaxis_s56: # from 55.0
-    nr '"Réaksion bizar, pah hom-hou-sièr, pah anarshist, zieu shangé…" Il hausse les épaules. "Kom ra… étranj."{#vaxis_s56_}'
+    nr '"Réaksion bizar, pah hom-hou-sièr, pah anarshist, zieu shangé…" Il hausse les épaules. "Kom ra… étranj."{#vaxis_s56_1}'
 
     menu:
         '"Heureusement qu„il est le seul à être bizarre par ici. Il y a autre chose que je voudrais savoir…"{#vaxis_s56_r4583}':
@@ -1335,7 +1335,7 @@ label vaxis_s56: # from 55.0
 
 # s57 # say4585
 label vaxis_s57: # - # IF ~  GlobalGT("Vaxis","GLOBAL",0)
-    nr 'Tu vois le faux zombi. Tu es impressionné par le déguisement de cet homme. Sa respiration est si légère que tu la perçois à peine.{#vaxis_s57_}'
+    nr 'Tu vois le faux zombi. Tu es impressionné par le déguisement de cet homme. Sa respiration est si légère que tu la perçois à peine.{#vaxis_s57_1}'
 
     menu:
         '"Bonjour."{#vaxis_s57_r4586}' if vaxisLogic.r4586_condition():
@@ -1361,7 +1361,7 @@ label vaxis_s57: # - # IF ~  GlobalGT("Vaxis","GLOBAL",0)
 
 # s58 # say4591
 label vaxis_s58: # from 57.0 57.1 57.3
-    nr 'Le zombi jette un coup d„œil circulaire pour s“assurer que personne ne regarde, puis il se retourne vers toi. "Kwa ?"{#vaxis_s58_}'
+    nr 'Le zombi jette un coup d„œil circulaire pour s“assurer que personne ne regarde, puis il se retourne vers toi. "Kwa ?"{#vaxis_s58_1}'
 
     menu:
         '"Voici la clé de la salle d„embaumement que tu voulais."{#vaxis_s58_r4592}' if vaxisLogic.r4592_condition():
@@ -1389,7 +1389,7 @@ label vaxis_s58: # from 57.0 57.1 57.3
 
 # s59 # say4597
 label vaxis_s59: # from 57.2
-    nr 'Le zombi jette un coup d„œil circulaire pour s“assurer que personne ne regarde, puis il te fait le geste de partir et siffle. "Waten ! Wa !"{#vaxis_s59_}'
+    nr 'Le zombi jette un coup d„œil circulaire pour s“assurer que personne ne regarde, puis il te fait le geste de partir et siffle. "Waten ! Wa !"{#vaxis_s59_1}'
 
     menu:
         '"Non. J„ai d“abord quelques questions à te poser…"{#vaxis_s59_r4598}':
@@ -1407,7 +1407,7 @@ label vaxis_s59: # from 57.2
 
 # s60 # say4601
 label vaxis_s60: # from 43.11
-    nr '"Moa bon déghizé. Moa osi bèl sikatris. Moa porté bocou laussion embo„ment. Moa fèr BON zombi." Le zombi glousse à travers ses lèvres cousues, puis se frappe la tête. "Hom-hou-sièr stupid."{#vaxis_s60_}'
+    nr '"Moa bon déghizé. Moa osi bèl sikatris. Moa porté bocou laussion embo„ment. Moa fèr BON zombi." Le zombi glousse à travers ses lèvres cousues, puis se frappe la tête. "Hom-hou-sièr stupid."{#vaxis_s60_1}'
 
     menu:
         '"Ouais, ils sont stupides, c„est vrai."{#vaxis_s60_r4602}':
@@ -1433,7 +1433,7 @@ label vaxis_s60: # from 43.11
 
 # s61 # say4607
 label vaxis_s61: # from 60.0
-    nr 'Visiblement, le sarcasme ne prend pas sur le zombi. Il hoche la tête, avide. "Hom-hou-sièr stupid. Moa fèr BON zombi."{#vaxis_s61_}'
+    nr 'Visiblement, le sarcasme ne prend pas sur le zombi. Il hoche la tête, avide. "Hom-hou-sièr stupid. Moa fèr BON zombi."{#vaxis_s61_1}'
 
     menu:
         '"Ça ne fait pas mal ?"{#vaxis_s61_r4608}':
@@ -1463,7 +1463,7 @@ label vaxis_s61: # from 60.0
 
 # s62 # say4614
 label vaxis_s62: # from 60.1 61.0
-    nr 'Il regarde tes cicatrices. "Jeute pozla mèmkestion. Moa pah fèr mal." Il se frappe la poitrine. "Moa FOR."{#vaxis_s62_}'
+    nr 'Il regarde tes cicatrices. "Jeute pozla mèmkestion. Moa pah fèr mal." Il se frappe la poitrine. "Moa FOR."{#vaxis_s62_1}'
 
     menu:
         '"Ce déguisement n„est pas mal du tout. Pourrais-tu me déguiser en zombi ?"{#vaxis_s62_r4615}' if vaxisLogic.r4615_condition():
@@ -1489,7 +1489,7 @@ label vaxis_s62: # from 60.1 61.0
 
 # s63 # say4619
 label vaxis_s63: # from 43.3 43.4 60.2 61.1 62.0 64.1 64.2
-    nr 'Il te dévisage des pieds à la tête pendant quelques instants, il marmonne, puis hoche la tête. "Oui. Moa beuzoin bèn laussion embo„ment." Il désigne les cicatrices sur ton torse. "Eunéguiy édufil."{#vaxis_s63_}'
+    nr 'Il te dévisage des pieds à la tête pendant quelques instants, il marmonne, puis hoche la tête. "Oui. Moa beuzoin bèn laussion embo„ment." Il désigne les cicatrices sur ton torse. "Eunéguiy édufil."{#vaxis_s63_1}'
 
     menu:
         '"Voilà."{#vaxis_s63_r4620}' if vaxisLogic.r4620_condition():
@@ -1515,7 +1515,7 @@ label vaxis_s63: # from 43.3 43.4 60.2 61.1 62.0 64.1 64.2
 
 # s64 # say4624
 label vaxis_s64: # from 61.2 61.3 62.1 62.2
-    nr 'Il te dévisage des pieds à la tête avec une expression étrange. "Toafèr bonzombi. Jeupeufèr deutoa un zombi ? Bon déghizmen."{#vaxis_s64_}'
+    nr 'Il te dévisage des pieds à la tête avec une expression étrange. "Toafèr bonzombi. Jeupeufèr deutoa un zombi ? Bon déghizmen."{#vaxis_s64_1}'
 
     menu:
         '"Merci quand même. J„ai d“autres questions à te poser…"{#vaxis_s64_r4625}':
@@ -1539,7 +1539,7 @@ label vaxis_s64: # from 61.2 61.3 62.1 62.2
 
 # s65 # say4629
 label vaxis_s65: # from 63.0
-    nr 'Le zombi saisit les articles, et se met au travail…{#vaxis_s65_}'
+    nr 'Le zombi saisit les articles, et se met au travail…{#vaxis_s65_1}'
 
     menu:
         'Essaie de ne pas bouger.{#vaxis_s65_r4630}' if vaxisLogic.r4630_condition():
@@ -1565,7 +1565,7 @@ label vaxis_s65: # from 63.0
 
 # s66 # say4633
 label vaxis_s66: # from 65.0 65.2 65.3
-    nr 'Le zombi applique de la lotion d„embaumement sur tout ton corps, puis recoud plusieurs de tes cicatrices. Il commence par les pieds et finit par coudre tes lèvres.{#vaxis_s66_}'
+    nr 'Le zombi applique de la lotion d„embaumement sur tout ton corps, puis recoud plusieurs de tes cicatrices. Il commence par les pieds et finit par coudre tes lèvres.{#vaxis_s66_1}'
 
     menu:
         '"Mmm-hmmph-mmm… Merfi."{#vaxis_s66_r4634}' if vaxisLogic.r4634_condition():
@@ -1584,7 +1584,7 @@ label vaxis_s66: # from 65.0 65.2 65.3
 
 # s67 # say4637
 label vaxis_s67: # from 66.0 66.2
-    nr 'Le zombi lève la main. "Tenzion ! Parler, ça tire sur les points d„suture, ça abîme. Zombi parle pas. Tu veux parler ? Parle lentement, tenzion."  ^NREMARQUE : Nul ne s“attend à ce qu„un zombi parle. Si tu parles tout en te faisant passer pour un zombi, tu risques de dévoiler ta couverture.^-{#vaxis_s67_}'
+    nr 'Le zombi lève la main. "Tenzion ! Parler, ça tire sur les points d„suture, ça abîme. Zombi parle pas. Tu veux parler ? Parle lentement, tenzion."  ^NREMARQUE : Nul ne s“attend à ce qu„un zombi parle. Si tu parles tout en te faisant passer pour un zombi, tu risques de dévoiler ta couverture.^-{#vaxis_s67_1}'
 
     menu:
         '"Mmph… mmm. Je… je comprends."{#vaxis_s67_r4638}':
@@ -1595,7 +1595,7 @@ label vaxis_s67: # from 66.0 66.2
 
 # s68 # say4639
 label vaxis_s68: # from 67.0
-    nr 'Il fronce les sourcils. "Déghizmen pah tenir lonten… natron sèsh é poin tombé." Il hausse les épaules. "Neutiendra peutèt pah plu loin kelamork."  ^NREMARQUE : Courir annulera aussitôt ton déguisement. Si la course automatique est activée, désactive-la si tu souhaites garder ton déguisement après avoir fini de parler à Vaxis.^-{#vaxis_s68_}'
+    nr 'Il fronce les sourcils. "Déghizmen pah tenir lonten… natron sèsh é poin tombé." Il hausse les épaules. "Neutiendra peutèt pah plu loin kelamork."  ^NREMARQUE : Courir annulera aussitôt ton déguisement. Si la course automatique est activée, désactive-la si tu souhaites garder ton déguisement après avoir fini de parler à Vaxis.^-{#vaxis_s68_1}'
 
     menu:
         'Autre signe de tête, pars.{#vaxis_s68_r4640}':
@@ -1605,7 +1605,7 @@ label vaxis_s68: # from 67.0
 
 # s69 # say4641
 label vaxis_s69: # -
-    nr 'Le zombi fronce les sourcils. "On sédéjavukelkepah ?"{#vaxis_s69_}'
+    nr 'Le zombi fronce les sourcils. "On sédéjavukelkepah ?"{#vaxis_s69_1}'
 
     menu:
         '"Peut-être. Où m„aurais-tu déjà vu ?"{#vaxis_s69_r4642}':
@@ -1619,7 +1619,7 @@ label vaxis_s69: # -
 
 # s70 # say4644
 label vaxis_s70: # from 23.0 23.2 71.0 71.1
-    nr 'À ta grande surprise, le zombi se détourne… Il observe les alentours attentivement.{#vaxis_s70_}'
+    nr 'À ta grande surprise, le zombi se détourne… Il observe les alentours attentivement.{#vaxis_s70_1}'
 
     menu:
         '"Tu ne veux pas parler ? Alors, prépare-toi à hurler."{#vaxis_s70_r4645}':
@@ -1642,7 +1642,7 @@ label vaxis_s70: # from 23.0 23.2 71.0 71.1
 
 # s71 # say4649
 label vaxis_s71: # externs morte_s90
-    nr 'Le zombi vous observe craintif. Il reste silencieux, mais quelque chose dans son expression te fait penser que Morte avait raison.{#vaxis_s71_}'
+    nr 'Le zombi vous observe craintif. Il reste silencieux, mais quelque chose dans son expression te fait penser que Morte avait raison.{#vaxis_s71_1}'
 
     menu:
         '"Les Anarchistes, hein ? C„est pour eux que tu espionnes cet endroit ?"{#vaxis_s71_r4650}':
@@ -1669,7 +1669,7 @@ label vaxis_s71: # externs morte_s90
 
 # s72 # say4655
 label vaxis_s72: # from 30.2
-    nr 'Le zombi a l„air déçu, mais il hausse les épaules et cherche quelque chose dans sa tunique tachée. "Silens. Hom-hou-sièr silensieu. Rien deunéf deupui dèrnié rapor." Après quelques instants, il te tend des objets, et grogne. "Voala." Leur odeur fait penser qu“ils ont été cachés pour d„éviter d“être trouvés s„il avait été fouillé. "Moa partir biento."{#vaxis_s72_}'
+    nr 'Le zombi a l„air déçu, mais il hausse les épaules et cherche quelque chose dans sa tunique tachée. "Silens. Hom-hou-sièr silensieu. Rien deunéf deupui dèrnié rapor." Après quelques instants, il te tend des objets, et grogne. "Voala." Leur odeur fait penser qu“ils ont été cachés pour d„éviter d“être trouvés s„il avait été fouillé. "Moa partir biento."{#vaxis_s72_1}'
 
     menu:
         '"Partir ? Comment ?"{#vaxis_s72_r4656}' if vaxisLogic.r4656_condition():
@@ -1683,7 +1683,7 @@ label vaxis_s72: # from 30.2
 
 # s73 # say4658
 label vaxis_s73: # -
-    nr 'Le zombi grogne. "Le portail est une voûte - rezzz-de-chauzée, saleunorouest. Ilfo falanj deuskelet pourouvrir." Il hoche la tête. "Bonshanse."{#vaxis_s73_}'
+    nr 'Le zombi grogne. "Le portail est une voûte - rezzz-de-chauzée, saleunorouest. Ilfo falanj deuskelet pourouvrir." Il hoche la tête. "Bonshanse."{#vaxis_s73_1}'
 
     menu:
         '"Euh… d„accord."{#vaxis_s73_r4659}':
@@ -1693,7 +1693,7 @@ label vaxis_s73: # -
 
 # s74 # say4660
 label vaxis_s74: # from 34.0
-    nr 'Le zombi plisse les yeux et siffle. "Tuh ésèyeu de meu mèt dan liv dé moh ? Jé dézami isi, *pah toa.* Tu meu tous, mézami teu tuh."{#vaxis_s74_}'
+    nr 'Le zombi plisse les yeux et siffle. "Tuh ésèyeu de meu mèt dan liv dé moh ? Jé dézami isi, *pah toa.* Tu meu tous, mézami teu tuh."{#vaxis_s74_1}'
 
     menu:
         '"C„était ta dernière chance. Prépare-toi à mourir."{#vaxis_s74_r4661}':
@@ -1708,7 +1708,7 @@ label vaxis_s74: # from 34.0
 
 # s75 # say4663
 label vaxis_s75: # from 31.4 32.3 35.4
-    nr 'Il a l„air effrayé un instant, puis il observe ta carrure, et un rictus traverse son visage. "Tuh ésèyeu de meu mèt dan lif dé moh ? Jé dézami isi, *pah toa.* Tu meu tous, mézami teu tuh."{#vaxis_s75_}'
+    nr 'Il a l„air effrayé un instant, puis il observe ta carrure, et un rictus traverse son visage. "Tuh ésèyeu de meu mèt dan lif dé moh ? Jé dézami isi, *pah toa.* Tu meu tous, mézami teu tuh."{#vaxis_s75_1}'
 
     menu:
         '"Et si je parlais de ton déguisement aux gardes ?"{#vaxis_s75_r4664}' if vaxisLogic.r4664_condition():
@@ -1731,7 +1731,7 @@ label vaxis_s75: # from 31.4 32.3 35.4
 
 # s76 # say4668
 label vaxis_s76: # from 75.1
-    nr 'Le zombi plisse les yeux et siffle." " Toa crache le soltiv a moa, moa je donne soltiv a *toa*. Moa, jé dézami isi, *pah toa.* Isi pah ta plas. Hom-hou-sièr te tuhé. Moa ésapé."{#vaxis_s76_}'
+    nr 'Le zombi plisse les yeux et siffle." " Toa crache le soltiv a moa, moa je donne soltiv a *toa*. Moa, jé dézami isi, *pah toa.* Isi pah ta plas. Hom-hou-sièr te tuhé. Moa ésapé."{#vaxis_s76_1}'
 
     menu:
         '"C„était ta dernière chance, cadavre. Prépare-toi à mourir."{#vaxis_s76_r4669}':
@@ -1746,7 +1746,7 @@ label vaxis_s76: # from 75.1
 
 # s77 # say64523
 label vaxis_s77: # from 51.0
-    nr 'Il hausse les épaules. "C„doi èt keq“par… Va don foir dans leuh dèbara, à lètage. C„est p“têt lah."{#vaxis_s77_}'
+    nr 'Il hausse les épaules. "C„doi èt keq“par… Va don foir dans leuh dèbara, à lètage. C„est p“têt lah."{#vaxis_s77_1}'
 
     menu:
         '"Très bien. J„ai d“autres questions…"{#vaxis_s77_r64524}':

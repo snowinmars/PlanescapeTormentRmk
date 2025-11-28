@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say34953
 label zm1201_s0: # - # IF ~  Global("1201_Note_Retrieved","GLOBAL",0)
-    nr 'Le numéro „1201“ est inscrit à l„encre sur le front du cadavre. L“encre a coulé sur les yeux, les joues et la mâchoire. En suivant la trace laissée par ces „larmes“ sur le visage, tu remarques que l„encre a coulé dans la couture qui ferme les lèvres, prenant la forme de ce qui ressemble à une note coincée dans la bouche du cadavre.{#zm1201_s0_}'
+    nr 'Le numéro „1201“ est inscrit à l„encre sur le front du cadavre. L“encre a coulé sur les yeux, les joues et la mâchoire. En suivant la trace laissée par ces „larmes“ sur le visage, tu remarques que l„encre a coulé dans la couture qui ferme les lèvres, prenant la forme de ce qui ressemble à une note coincée dans la bouche du cadavre.{#zm1201_s0_1}'
 
     menu:
         'Essaie de sortir la note.{#zm1201_s0_r34954}' if zm1201Logic.r34954_condition():
@@ -37,7 +37,7 @@ label zm1201_s0: # - # IF ~  Global("1201_Note_Retrieved","GLOBAL",0)
 
 # s1 # say34955
 label zm1201_s1: # from 0.0
-    nr 'La note s„est mélangée à l“encre dans la bouche du zombi. Si tu essayais de tirer sur le papier à travers les coutures, tu risquerais de le déchirer. Tailler le cadavre en pièces risque aussi de détruire la note… Il va falloir trouver un moyen d„enlever délicatement les points de couture avant de tirer sur la note.{#zm1201_s1_}'
+    nr 'La note s„est mélangée à l“encre dans la bouche du zombi. Si tu essayais de tirer sur le papier à travers les coutures, tu risquerais de le déchirer. Tailler le cadavre en pièces risque aussi de détruire la note… Il va falloir trouver un moyen d„enlever délicatement les points de couture avant de tirer sur la note.{#zm1201_s1_1}'
 
     menu:
         'Sers-toi du scalpel pour couper les coutures.{#zm1201_s1_r34956}' if zm1201Logic.r34956_condition():
@@ -52,7 +52,7 @@ label zm1201_s1: # from 0.0
 
 # s2 # say34960
 label zm1201_s2: # from 1.0
-    nr 'Tu découpes habilement les coutures qui ferment la bouche du cadavre, et la mâchoire s„ouvre béante. Délicatement, tu retires la note de la bouche… Malgré le mauvais état du papier, l“écriture semble lisible.  ^NREMARQUE : <READSTUFF>^-{#zm1201_s2_}'
+    nr 'Tu découpes habilement les coutures qui ferment la bouche du cadavre, et la mâchoire s„ouvre béante. Délicatement, tu retires la note de la bouche… Malgré le mauvais état du papier, l“écriture semble lisible.  ^NREMARQUE : <READSTUFF>^-{#zm1201_s2_1}'
 
     menu:
         'Réexamine le cadavre.{#zm1201_s2_r34961}':
@@ -66,7 +66,7 @@ label zm1201_s2: # from 1.0
 
 # s3 # say45124
 label zm1201_s3: # from 0.1 5.0 5.1 5.2
-    nr 'Les yeux blancs du cadavre te regardent sans te voir.{#zm1201_s3_}'
+    nr 'Les yeux blancs du cadavre te regardent sans te voir.{#zm1201_s3_1}'
 
     menu:
         'Laisse le cadavre tranquille.{#zm1201_s3_r45125}':
@@ -76,7 +76,7 @@ label zm1201_s3: # from 0.1 5.0 5.1 5.2
 
 # s4 # say45126
 label zm1201_s4: # from 0.2 5.3
-    nr 'Le cadavre ne bouge pas. Il a l„air trop absent pour répondre à tes questions.{#zm1201_s4_}'
+    nr 'Le cadavre ne bouge pas. Il a l„air trop absent pour répondre à tes questions.{#zm1201_s4_1}'
 
     menu:
         'Laisse le cadavre tranquille.{#zm1201_s4_r45127}':
@@ -86,7 +86,7 @@ label zm1201_s4: # from 0.2 5.3
 
 # s5 # say45128
 label zm1201_s5: # from 2.0 # IF ~  Global("1201_Note_Retrieved","GLOBAL",1)
-    nr 'Le numéro „1201“ a été inscrit à l„encre sur le front de ce cadavre. L“encre a coulé sur ses yeux, ses joues et sa mâchoire, à tel point que l„on croirait qu“il a pleuré. Sa bouche est grande ouverte et un filet de substance indéfinissable coule à la commissure de ses lèvres.{#zm1201_s5_}'
+    nr 'Le numéro „1201“ a été inscrit à l„encre sur le front de ce cadavre. L“encre a coulé sur ses yeux, ses joues et sa mâchoire, à tel point que l„on croirait qu“il a pleuré. Sa bouche est grande ouverte et un filet de substance indéfinissable coule à la commissure de ses lèvres.{#zm1201_s5_1}'
 
     menu:
         '"Désolé d„avoir enlevé ces points de suture, mais il fallait que je voie ce que tu avais dans la bouche."{#zm1201_s5_r45129}' if zm1201Logic.r45129_condition():
