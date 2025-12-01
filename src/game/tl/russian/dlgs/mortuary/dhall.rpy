@@ -188,7 +188,7 @@ translate russian dhall_s11_4a35b48b:
 translate russian dhall_s11_641cceb6:
 
     # x "«Знай: я не завидую тебе, Неугомонный. Твои возрождения — проклятье, которого я бы не смог вынести. Ты должен смириться с этим. Когда-нибудь твой путь вернет тебя сюда…»{#dhall_s11_2}"
-    x "«Знай: я не завидую тебе, Неугомонный. Твои возрождения — проклятье, которого я бы не смог вынести. Ты должен смириться с этим.»{#dhall_s11_2}"
+    x "«Знай: я не завидую тебе, Неугомонный. Твои возрождения — проклятье, которого я бы не смог вынести. Ты должен смириться с этим».{#dhall_s11_2}"
     x "«Когда-нибудь твой путь вернет тебя сюда…»{#dhall_s11_2}"
 
 # game/dlgs/mortuary/dhall.rpy:305
@@ -922,6 +922,10 @@ translate russian strings:
     old "Дхолла{#dhall_s4_y1}"
     new "Дхолла{#dhall_s4_y1}"
 
+    # game/dlgs/mortuary/dhall.rpy:105
+    old "него{#dhall_s4_y2}"
+    new "него{#dhall_s4_y2}"
+
     # game/dlgs/mortuary/dhall.rpy:110
     old "«Спасибо. У меня есть другие вопросы…»{#dhall_s4_r836}"
     new "«Спасибо. У меня есть другие вопросы…»{#dhall_s4_r836}"
@@ -1343,8 +1347,12 @@ translate russian strings:
     new "«Думаю, я услышал достаточно. Прощай».{#dhall_s22_r920_2}"
 
     # game/dlgs/mortuary/dhall.rpy:622
-    old "Он{#dhall_s23_y1}"
-    new "Он{#dhall_s23_y1}"
+    old "Дхолл{#dhall_s23_y1}"
+    new "Дхолл{#dhall_s23_y1}"
+
+    # game/dlgs/mortuary/dhall.rpy:622
+    old "Он{#dhall_s23_y2}"
+    new "Он{#dhall_s23_y2}"
 
     # game/dlgs/mortuary/dhall.rpy:627
     old "«Каковы твои обязанности?»{#dhall_s23_r927}"

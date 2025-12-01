@@ -1,42 +1,43 @@
-﻿# TODO: Translation updated at 2025-11-27 22:23
+# TODO: Translation updated at 2025-11-28 22:23
 
 # game/dlgs/inventory/n1201.rpy:14
 translate english n1201_s0_43ee8c05:
 
     # nr "На этой вонючей записке под текстом изображена странная диаграмма. Кажется, она указывает, что тебе следует загнуть уголки записки к центру. На каждом из уголков есть ряд странных отметок: одна отметка в верхнем правом, две — в нижнем правом, три — в нижнем левом и ни одной в верхнем левом.{#n1201_s0_1}"
-    nr 'This foul-smelling note has a strange looking diagram inscribed beneath the writing. It looks as if it„s instructing you to fold the corners of the note so their points touch the center.{#n1201_s0_1}'
-    nr 'There is a series of strange marks on each corner - one mark on the upper right, two marks on the lower right, three marks on the lower left, and no marks on the upper left.{#n1201_s0_2}'
+    nr "This foul-smelling note has a strange looking diagram inscribed beneath the writing.{#n1201_s0_1}"
+    nr "It looks as if it's instructing you to fold the corners of the note so their points touch the center. There is a series of strange marks on each corner -{#n1201_s0_1}"
+    nr "one mark on the upper right,\ntwo marks on the lower right,\nthree marks on the lower left,\nand no marks on the upper left.{#n1201_s0_1}"
 
 # game/dlgs/inventory/n1201.rpy:45
 translate english n1201_s1_94bb7c3d:
 
     # nr "Ты загибаешь уголок таким образом, чтобы он касался центра.{#n1201_s1_1}"
-    nr 'You fold the corner inwards so its point touches the center.{#n1201_s1_1}'
+    nr "You fold the corner inwards so its point touches the center.{#n1201_s1_1}"
 
 # game/dlgs/inventory/n1201.rpy:90
 translate english n1201_s2_dcda7167:
 
     # nr "Как только ты загибаешь верхний левый уголок, ты видишь, что верхний правый уголок разгибается сам по себе, возвращаясь в прежнее положение.{#n1201_s2_1}"
-    nr 'As you fold the upper left inward to the center, you watch as the upper right unfolds by itself, resuming its normal position.{#n1201_s2_1}'
+    nr "As you fold the upper left inward to the center, you watch as the upper right unfolds by itself, resuming its normal position.{#n1201_s2_1}"
 
 # game/dlgs/inventory/n1201.rpy:110
 translate english n1201_s3_c1f55905:
 
     # nr "Как только ты загибаешь нижний левый уголок, на мгновение он остается в таком положении, но затем другие уголки разгибаются. Ничего не происходит.{#n1201_s3_1}"
-    nr 'As you fold the lower left corner inwards, it stays for a moment, then the other two corners unfold outwards. Nothing happens.{#n1201_s3_1}'
+    nr "As you fold the lower left corner inwards, it stays for a moment, then the other two corners unfold outwards. Nothing happens.{#n1201_s3_1}"
 
 # game/dlgs/inventory/n1201.rpy:124
 translate english n1201_s4_ec4bfba1:
 
     # nr "Как только ты снова загибаешь верхний правый уголок, нижний левый уголок повторяет то же действие. Теперь все уголки касаются центра. Какое-то время ты наблюдаешь за тем, как уголки бумаги поднимаются, превращая записку в небольшую четырехугольную бумажную пирамидку.{#n1201_s4_1}"
-    nr 'As you fold the upper right corner back to the center, the lower left corner mirrors the action, until all the corners touch in the center.{#n1201_s4_1}'
-    nr 'You watch for a moment, and the corners of the paper raise up, turning the note into a small four-sided paper pyramid.{#n1201_s4_2}'
+    nr "As you fold the upper right corner back to the center, the lower left corner mirrors the action, until all the corners touch in the center.{#n1201_s4_1}"
+    nr "You watch for a moment, and the corners of the paper raise up, turning the note into a small four-sided paper pyramid.{#n1201_s4_1}"
 
 # game/dlgs/inventory/n1201.rpy:135
 translate english n1201_s5_d753276a:
 
     # nr "Ты отгибаешь стороны пирамидки, и бумага превращается в пыль. Внутри находится треугольная серьга. Она блестит и играет на свету.{#n1201_s5_1}"
-    nr 'You peel back the sides of the pyramid, and the paper disintegrates to dust. Inside is a small triangle-shaped earring. It catches the light and gleams brightly.{#n1201_s5_1}'
+    nr "You peel back the sides of the pyramid, and the paper disintegrates to dust. Inside is a small triangle-shaped earring. It catches the light and gleams brightly.{#n1201_s5_1}"
 
 translate english strings:
 
@@ -98,7 +99,7 @@ translate english strings:
 
     # game/dlgs/inventory/n1201.rpy:92
     old "Загнуть нижний правый уголок.{#n1201_s2_r45017}"
-    new "Fold the lower right into the center.{#n1201_s2_r45017}"
+    new "Fold the lower left corner inwards.{#n1201_s2_r45017}"
 
     # game/dlgs/inventory/n1201.rpy:92
     old "Разложить записку, оставить ее в покое.{#n1201_s2_r45018}"

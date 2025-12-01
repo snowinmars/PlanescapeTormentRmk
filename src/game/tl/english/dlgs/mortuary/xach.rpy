@@ -1,976 +1,1211 @@
-﻿# TODO: Translation updated at 2025-11-25 19:58
+# TODO: Translation updated at 2025-11-28 22:23
 
 # game/dlgs/mortuary/xach.rpy:14
-translate english xach_s0_e03a8649:
+translate english xach_s0_7b895cc7:
 
-    # nr "Перед тобой труп мужчины с выбитым на черепе номером «331»."
-    nr ""
+    # nr "Перед тобой труп мужчины с выбитым на черепе номером «331». Его веки и губы крепко зашиты, в горле зияет огромная дыра. От него *отвратительно* пахнет.{#xach_s0_1}"
+    nr "You see a male corpse with the number «331» chiseled into his skull. His eyes and lips are stitched closed, and there is a gaping hole torn in his throat.{#xach_s0_1}"
+    nr "He smells *foul.*{#xach_s0_1}"
 
-# game/dlgs/mortuary/xach.rpy:15
-translate english xach_s0_fee9eeea:
+# game/dlgs/mortuary/xach.rpy:45
+translate english xach_s1_700b7e99:
 
-    # nr "Его веки и губы крепко зашиты, в горле зияет огромная дыра. От него *отвратительно* пахнет."
-    nr ""
+    # nr "Труп беззвучно смотрит вперед своими невидящими глазами.{#xach_s1_1}"
+    nr "The corpse stares ahead silently with its sightless eyes.{#xach_s1_1}"
 
-# game/dlgs/mortuary/xach.rpy:46
-translate english xach_s1_9c500d24:
+# game/dlgs/mortuary/xach.rpy:55
+translate english xach_s2_3005ce1e:
 
-    # nr "Труп беззвучно смотрит вперед своими невидящими глазами."
-    nr ""
+    # xach_unknown "«Кх-кх…»{#xach_s2_1}"
+    xach_unknown "«Wh-wh…» {#xach_s2_1}"
 
 # game/dlgs/mortuary/xach.rpy:56
-translate english xach_s2_ad3906ae:
+translate english xach_s2_fa41cc9c:
 
-    # xach_unknown "«Кх-кх…»"
-    xach_unknown ""
+    # nr "Зомби неуклюже подает голос, полный тревоги.{#xach_s2_2}"
+    nr "The zombie is awkwardly getting his voice back, and he sounds alarmed.{#xach_s2_2}"
 
 # game/dlgs/mortuary/xach.rpy:57
-translate english xach_s2_f3d4fb8e:
+translate english xach_s2_b900df69:
 
-    # nr "Зомби неуклюже подает голос, полный тревоги."
-    nr ""
+    # xach_unknown "«Кто здесь!? Отвечай!»{#xach_s2_3}"
+    xach_unknown "«Who's there?! Answer me!»{#xach_s2_3}"
 
-# game/dlgs/mortuary/xach.rpy:58
-translate english xach_s2_4fc6d3d7:
+# game/dlgs/mortuary/xach.rpy:87
+translate english xach_s3_29f14edc:
 
-    # xach_unknown "«Кто здесь!? Отвечай!»"
-    xach_unknown ""
+    # xach_unknown "«Я слеп, слеп в смерти, как был слеп при жизни… а теперь отвечай — кто ты?»{#xach_s3_1}"
+    xach_unknown "«Blind I am, in death as I was in life… now answer me. Who are you?»{#xach_s3_1}"
 
-# game/dlgs/mortuary/xach.rpy:88
-translate english xach_s3_22659950:
+# game/dlgs/mortuary/xach.rpy:113
+translate english xach_s4_62807a3c:
 
-    # xach_unknown "«Я слеп, слеп в смерти, как был слеп при жизни… а теперь отвечай — кто ты?»"
-    xach_unknown ""
+    # xach "«Что… ты!»{#xach_s4_1}"
+    xach "«Wha… you!»{#xach_s4_1}"
 
 # game/dlgs/mortuary/xach.rpy:114
-translate english xach_s4_52654a4e:
+translate english xach_s4_09dc133f:
 
-    # xach "«Что… ты!»"
-    xach ""
+    # nr "Зомби потрясен, но при этом обрадован.{#xach_s4_2}"
+    nr "The zombie seems shocked, but gladdened.{#xach_s4_2}"
 
 # game/dlgs/mortuary/xach.rpy:115
-translate english xach_s4_2f846752:
+translate english xach_s4_b0d0a92c:
 
-    # nr "Зомби потрясен, но при этом обрадован."
-    nr ""
+    # xach "«О взор Леди…»{#xach_s4_3}"
+    xach "«By the Lady's Gaze…»{#xach_s4_3}"
 
 # game/dlgs/mortuary/xach.rpy:116
-translate english xach_s4_523ef7fb:
+translate english xach_s4_92a2ec5d:
 
-    # xach "«О взор Леди…»"
-    xach ""
+    # nr "В его голосе звучит удивление.{#xach_s4_4}"
+    nr "His tone takes on a sense of wonder.{#xach_s4_4}"
 
 # game/dlgs/mortuary/xach.rpy:117
-translate english xach_s4_1837c2de:
+translate english xach_s4_be41ef3d:
 
-    # nr "В его голосе звучит удивление."
-    nr ""
+    # xach "«Разве ты не *мертв*, рубака?»{#xach_s4_5}"
+    xach "«Aren't you *dead,* cutter?»{#xach_s4_5}"
 
-# game/dlgs/mortuary/xach.rpy:118
-translate english xach_s4_99de4d91:
+# game/dlgs/mortuary/xach.rpy:143
+translate english xach_s5_f1f21ae4:
 
-    # xach "«Разве ты не *мертв*, рубака?»"
-    xach ""
+    # xach "«Что, трудновато под этой вонючей шкурой узнать старого дурака Захарию? Это я, рубака. Слава силам, а я-то думал, что больше никогда тебя не встречу… но и ты тоже изменился, если уши меня не подводят… снова сделал неправильный выбор?»{#xach_s5_1}"
+    xach "«So, it's hard to peel away this filthy shroudskin an' see ol' Xachariah the Fool beneath? It is I, cutter».{#xach_s5_1}"
+    xach "«Blessed be the powers, I thought never to see you again… but you've changed too, as far as my ears can tell… have you been making poor choices again?»{#xach_s5_1}"
 
 # game/dlgs/mortuary/xach.rpy:144
-translate english xach_s5_935f677a:
+translate english xach_s5_03be632d:
 
-    # xach "«Что, трудновато под этой вонючей шкурой узнать старого дурака Захарию? Это я, рубака»."
-    xach ""
+    # nr "Из дыры в горле Захарии со свистом выходит воздух.{#xach_s5_2}"
+    nr "Xachariah wheezes from his throat hole.{#xach_s5_2}"
 
 # game/dlgs/mortuary/xach.rpy:145
-translate english xach_s5_647d61f2:
+translate english xach_s5_4983ce8f:
 
-    # xach "«Слава силам, а я-то думал, что больше никогда тебя не встречу… но и ты тоже изменился, если уши меня не подводят…»"
-    xach ""
+    # xach "«Ты ведь тоже мертв?»{#xach_s5_3}"
+    xach "«Be you dead, too?»{#xach_s5_3}"
 
-# game/dlgs/mortuary/xach.rpy:146
-translate english xach_s5_49709433:
+# game/dlgs/mortuary/xach.rpy:171
+translate english xach_s6_59200288:
 
-    # xach "«…снова сделал неправильный выбор?»"
-    xach ""
+    # xach "«Это Морг, рубака. Ты, что, этого не знаешь?»{#xach_s6_1}"
+    xach "«In the Mortuary, cutter. Did you not know that?»{#xach_s6_1}"
 
-# game/dlgs/mortuary/xach.rpy:147
-translate english xach_s5_7f31d09c:
+# game/dlgs/mortuary/xach.rpy:202
+translate english xach_s7_3d8a7c9e:
 
-    # nr "Из дыры в горле Захарии со свистом выходит воздух."
-    nr ""
+    # xach "«Ага?»{#xach_s7_1}"
+    xach "«Aye?»{#xach_s7_1}"
 
-# game/dlgs/mortuary/xach.rpy:148
-translate english xach_s5_25c7536e:
+# game/dlgs/mortuary/xach.rpy:236
+translate english xach_s8_e63aaba1:
 
-    # xach "«Ты ведь тоже мертв?»"
-    xach ""
+    # nr "Он пристыженно умолкает.{#xach_s8_1}"
+    nr "His voice drops, as if ashamed.{#xach_s8_1}"
 
-# game/dlgs/mortuary/xach.rpy:174
-translate english xach_s6_e226f902:
+# game/dlgs/mortuary/xach.rpy:237
+translate english xach_s8_ec60dabc:
 
-    # xach "«Это Морг, рубака. Ты, что, этого не знаешь?»"
-    xach ""
+    # xach "«Следуя за тобой нелегкой дорогой, рубака, я видел много ужасных вещей. Я начал пить и от выпивки стал полоумным. Однажды я, в стельку пьяный, продал свое тело трухлявым. Судьба решила дать мне пинка под зад, и вскоре после этого я умер».{#xach_s8_2}"
+    xach "«It's a hard path following in your footsteps, cutter, and many terrible things did I see. I took to drink, and became half-sodden with the stuff. Once, when I was sodding drunk, I signed my body off to the Dusties. Fate decided ta kick me when I was down, and I died shortly afterward».{#xach_s8_2}"
 
-# game/dlgs/mortuary/xach.rpy:205
-translate english xach_s7_45f70d28:
+# game/dlgs/mortuary/xach.rpy:255
+translate english xach_s9_cf39590a:
 
-    # xach "«Ага?»"
-    xach ""
+    # xach "«Место для мертвых, которое управляется Смертью… но некоторые вещи здесь не на своем месте…»{#xach_s9_1}"
+    xach "«A place of the dead run by the Dead… there's some things not right here, though…»{#xach_s9_1}"
 
-# game/dlgs/mortuary/xach.rpy:239
-translate english xach_s8_46f8d850:
+# game/dlgs/mortuary/xach.rpy:277
+translate english xach_s10_2223f57a:
 
-    # nr "Он пристыженно умолкает."
-    nr ""
+    # xach "«Скажу тебе по секрету: здесь есть зомби, который пытается быть как зомби, но это не так. Мне все равно, зачем он это делает, но это довольно странно».{#xach_s10_1}"
+    xach "«I'll tell you the dark of it: There's a zombie that pretends to be a zombie, but isn't».{#xach_s10_1}"
+    xach "«I don't care much for knowing the reason why, but it's a strange thing».{#xach_s10_1}"
 
-# game/dlgs/mortuary/xach.rpy:240
-translate english xach_s8_b2eb3fe5:
+# game/dlgs/mortuary/xach.rpy:303
+translate english xach_s11_80097561:
 
-    # xach "«Следуя за тобой нелегкой дорогой, рубака, я видел много ужасных вещей. Я начал пить и от выпивки стал полоумным»."
-    xach ""
+    # xach "«Еще кое-что: тот старый гитцерай… который работает в препараторской… Дхолл. Он спасал тебя от кремации много-много раз. Тебе повезло, что у тебя есть такой друг».{#xach_s11_1}"
+    xach "«Another thing, that old githzerai… the one that keeps the preparation room… Dhall. He's saved you from cremation a score of times».{#xach_s11_1}"
+    xach "«You're lucky to have a friend in that one».{#xach_s11_1}"
 
-# game/dlgs/mortuary/xach.rpy:241
-translate english xach_s8_d402682a:
+# game/dlgs/mortuary/xach.rpy:325
+translate english xach_s12_e3c87180:
 
-    # xach "«Однажды я, в стельку пьяный, продал свое тело трухлявым. Судьба решила дать мне пинка под зад, и вскоре после этого я умер»."
-    xach ""
+    # xach "«Даже если бы мои глаза видели, их номера для меня ничего не значат. Но узнать можно вот как, рубака: его голос звучит неправильно, не как у зомби… он отвечает не так, как все остальные».{#xach_s12_1}"
+    xach "«Even if my eyes allowed me to see 'em, I can't make sense of numbers. Here's how you'll know him, cutter: his voice is wrong for a zombie…»{#xach_s12_1}"
+    xach "«…he doesn't respond the same way as the others».{#xach_s12_1}"
 
-# game/dlgs/mortuary/xach.rpy:259
-translate english xach_s9_1041e6b8:
+# game/dlgs/mortuary/xach.rpy:347
+translate english xach_s13_692051e3:
 
-    # xach "«Место для мертвых, которое управляется Смертью… но некоторые вещи здесь не на своем месте…»"
-    xach ""
+    # xach "«Он просто откладывал твою кремацию до тех пор, пока ты не очухивался и не слезал с плиты. Вот только непонятно, почему».{#xach_s13_1}"
+    xach "«He just postponed your cremation until you popped up off the slab. Not certain why, really».{#xach_s13_1}"
 
-# game/dlgs/mortuary/xach.rpy:281
-translate english xach_s10_057666ac:
+# game/dlgs/mortuary/xach.rpy:365
+translate english xach_s14_a81b1d0e:
 
-    # xach "«Скажу тебе по секрету: здесь есть зомби, который пытается быть как зомби, но это не так. Мне все равно, зачем он это делает, но это довольно странно»."
-    xach ""
+    # xach "«Он считал, что это необходимо предотвратить… ради… ради… я не помню точно, почему это было необходимо».{#xach_s14_1}"
+    xach "«He thought it necessary to prevent… to… I… I can't quite remember why it was necessary».{#xach_s14_1}"
 
-# game/dlgs/mortuary/xach.rpy:307
-translate english xach_s11_8518cf2f:
+# game/dlgs/mortuary/xach.rpy:383
+translate english xach_s15_f98af3c3:
 
-    # xach "«Еще кое-что: тот старый гитцерай… который работает в препараторской… Дхолл»."
-    xach ""
+    # nr "Он пристыженно умолкает.{#xach_s15_1}"
+    nr "His voice drops, as if ashamed.{#xach_s15_1}"
 
-# game/dlgs/mortuary/xach.rpy:308
-translate english xach_s11_7d06e73f:
+# game/dlgs/mortuary/xach.rpy:384
+translate english xach_s15_0d55b6a5:
 
-    # xach "«Он спасал тебя от кремации много-много раз. Тебе повезло, что у тебя есть такой друг»."
-    xach ""
+    # xach "«Когда мы разошлись путями, рубака, жить мне оставалось недолго. Следуя за тобой нелегкой дорогой, рубака, я видел много ужасных вещей. Я начал пить и стал от выпивки полоумным. Однажды я, в стельку пьяный, продал свое тело трухлявым. Судьба решила дать мне пинка под зад, и вскоре после этого я умер».{#xach_s15_2}"
+    xach "«When we split paths, cutter, not much life was left in me. It's a hard path following in your footsteps, and many terrible things did I see. I took to drink, and became half-sodden with the stuff. When I was sodding drunk, I signed my body off to the Dusties. Fate decided ta kick me when I was down, and I died shortly afterward».{#xach_s15_2}"
 
-# game/dlgs/mortuary/xach.rpy:330
-translate english xach_s12_afc756d4:
+# game/dlgs/mortuary/xach.rpy:402
+translate english xach_s16_49de18d9:
 
-    # xach "«Даже если бы мои глаза видели, их номера для меня ничего не значат»."
-    xach ""
+    # xach "«Зачем? Ты забыл, кто ты?»{#xach_s16_1}"
+    xach "«Why? Have you forgotten yourself?»{#xach_s16_1}"
 
-# game/dlgs/mortuary/xach.rpy:331
-translate english xach_s12_a42f6787:
+# game/dlgs/mortuary/xach.rpy:428
+translate english xach_s17_329c2027:
 
-    # xach "«Но узнать можно вот как, рубака: его голос звучит неправильно, не как у зомби… он отвечает не так, как все остальные»."
-    xach ""
+    # xach "«Ну… ты всегда был странным типом, вечно подозрительным и следящим за чем-то… Наверное, у такого, как ты, при жизни было много врагов. И любой, кто переходил тебе дорогу, без исключений попадал в черные главы книги мертвых».{#xach_s17_1}"
+    xach "«Well… you were a strange one, always suspicious and watching for something… reckon somebody like you had got enough enemies in yer lifetimes».{#xach_s17_1}"
+    xach "«And there was no denying that anybody who messed with you ended up in the black chapters of the dead-book».{#xach_s17_1}"
 
-# game/dlgs/mortuary/xach.rpy:353
-translate english xach_s13_38e310b5:
+# game/dlgs/mortuary/xach.rpy:450
+translate english xach_s18_759ea6e0:
 
-    # xach "«Он просто откладывал твою кремацию до тех пор, пока ты не очухивался и не слезал с плиты. Вот только непонятно, почему»."
-    xach ""
+    # xach "«А еще ты мог быть чертовски жестоким… например, заставил меня подписать тот контракт, или оставил ту вечно хныкающую крошку на Авернусе. Временами ты был похуже балора. Никто даже и думать не мог от том, чтобы сбежать от тебя, сынок».{#xach_s18_1}"
+    xach "«You could be damnably ruthless, too… like when you made me sign that contract, or abandoned that one mewling chit on Avernus».{#xach_s18_1}"
+    xach "«We had a balor of a time, as well. None of us ever even entertained the notion to jump ship on your watch, son».{#xach_s18_1}"
 
-# game/dlgs/mortuary/xach.rpy:371
-translate english xach_s14_d7cafc67:
+# game/dlgs/mortuary/xach.rpy:472
+translate english xach_s19_520f2508:
 
-    # xach "«Он считал, что это необходимо предотвратить… ради… ради… я не помню точно, почему это было необходимо»."
-    xach ""
+    # xach "«Ты был все равно что военачальник, который захватывал на войне территории; для тебя все было битвой, ты был самой безжалостной сволочью из всех, что я встречал. Для решения проблемы шло все без исключения. Рыдания и мольбы бедной Дейонарры не останавливали тебя, гит предостерегал тебя насчет твоих действий, а бедный Захария только и пытался держаться на ногах, пока мы бродили по планам. Ты был настолько крут, что казался бессмертным, но ведь мы были простыми людьми. Теперь мы все, наверное, в книге мертвых… или, так сказать, в ней и вне ее».{#xach_s19_1}"
+    xach "«At your core, you looked at what happened to you like taking territory in a war; everything was like a battle to you, and you were the most ruthless bastard I ever near met».{#xach_s19_1}"
+    xach "«Naught else mattered except for solving that goal. Poor Deionarra with her sobbing and pleading with you didn't sway you none, the gith warning you about your strategies, and poor Xachariah just trying to hold on when we hit the planes».{#xach_s19_1}"
+    xach "«You were tough like you couldn't die, but we were only human. Now I guess we're all in the dead-book… or in and out of it, so to speak».{#xach_s19_1}"
 
-# game/dlgs/mortuary/xach.rpy:389
-translate english xach_s15_46f8d850:
+# game/dlgs/mortuary/xach.rpy:502
+translate english xach_s20_20af1c55:
 
-    # nr "Он пристыженно умолкает."
-    nr ""
+    # xach "«Ну что я могу сказать, чтобы доказать свою правоту… не все можно вспомнить… Как насчет этого: помнишь, как мы проделывали путь сквозь Авернус и наткнулись на кучку абишаев в личиночной яме?»{#xach_s20_1}"
+    xach "«Well, what is it that I can say to you that'll prove myself… now, see, not all the memories are there, so: how about this…»{#xach_s20_1}"
+    xach "«…remember when we were carving that trek through Avernus and we ran across that crew of abishai in that maggot-ridden pit?»{#xach_s20_1}"
 
-# game/dlgs/mortuary/xach.rpy:390
-translate english xach_s15_8f0cb9ff:
+# game/dlgs/mortuary/xach.rpy:516
+translate english xach_s21_3624f88d:
 
-    # xach "«Когда мы разошлись путями, рубака, жить мне оставалось недолго. Следуя за тобой нелегкой дорогой, рубака, я видел много ужасных вещей. Я начал пить и стал от выпивки полоумным»."
-    xach ""
+    # xach "«Что ж, я рад, что хоть кто-то из нас двоих помнит об этом, потому что я, клянусь балором, не помню. Кто ты такой, рубака, и что ты надеешься выловить в обрывках воспоминаний мертвецов?»{#xach_s21_1}"
+    xach "«Well, now, then I'm glad one of us remembers that, because I sure as Balor don't».{#xach_s21_1}"
+    xach "«Who are you, cutter, and what do you expect to find fishing in the memories of dead men?»{#xach_s21_1}"
 
-# game/dlgs/mortuary/xach.rpy:391
-translate english xach_s15_d402682a:
+# game/dlgs/mortuary/xach.rpy:538
+translate english xach_s22_fdecf570:
 
-    # xach "«Однажды я, в стельку пьяный, продал свое тело трухлявым. Судьба решила дать мне пинка под зад, и вскоре после этого я умер»."
-    xach ""
+    # xach "«Хм-м-м. Что ж, такого события и я не припомню. А как насчет этого: помнишь, как Дейонарра прописала себя в книгу мертвых, пытаясь не пустить тебя в Проклятый?»{#xach_s22_1}"
+    xach "«Hmmm. Well maybe that event didn't happen the way I 'member then».{#xach_s22_1}"
+    xach "«How's this: 'member when Deionarra nearly got herself penned in the dead-book trying to stop you from entering Curst?»{#xach_s22_1}"
 
-# game/dlgs/mortuary/xach.rpy:409
-translate english xach_s16_1de49178:
+# game/dlgs/mortuary/xach.rpy:560
+translate english xach_s23_625a1e2e:
 
-    # xach "«Зачем? Ты забыл, кто ты?»"
-    xach ""
+    # xach "«Мы были пестрой компанией… Полумертвый парень, который не может прописать себя в книгу мертвых, как бы он ни старался. Да еще и такой страшный, что никто из сил смерти не решается его забрать. Причитающая дочка адвоката, гит-изгой, болтающий без передыху череп с подвешенным языком и полоумный слепой лучник, то есть я».{#xach_s23_1}"
+    xach "«A motley crew we were… a half-dead man who couldn't get himself penned in the dead-book if he tried - so ugly all the powers of death wouldn't take 'em…»{#xach_s23_1}"
+    xach "«…a wailing advocate's daughter, a gith exile, a bobbing jackal-tongued skull, and a half-sodden blind archer like myself».{#xach_s23_1}"
 
-# game/dlgs/mortuary/xach.rpy:435
-translate english xach_s17_ad81cca2:
+# game/dlgs/mortuary/xach.rpy:598
+translate english xach_s24_16cdf045:
 
-    # xach "«Ну… ты всегда был странным типом, вечно подозрительным и следящим за чем-то… Наверное, у такого, как ты, при жизни было много врагов»."
-    xach ""
+    # xach "«Мрачноватый гит… молчаливый и недружелюбный, как все они. Никогда не доверял этим гитам. Понимаешь, рубака, эти тощие гиты думают только о двух вещах: как бы не попасть в рабство и как убить кальмароголовых иллитидов. Все остальное не имеет большого значения, и этот чертов ублюдок ни с кем, кроме тебя, не общался».{#xach_s24_1}"
+    xach "«Grim-lookin' gith… unfriendly and silent, like all their kind. Didn't trust that gith a lick, I didn't».{#xach_s24_1}"
+    xach "«See, cutter, them spindly giths care only about two things: keeping out of slavery and killing them squid-headed illithids».{#xach_s24_1}"
+    xach "«Everything else is just lower down the slope, and he didn't give a damn about any of us other than you».{#xach_s24_1}"
 
-# game/dlgs/mortuary/xach.rpy:436
-translate english xach_s17_8064f144:
+# game/dlgs/mortuary/xach.rpy:624
+translate english xach_s25_b03f2e13:
 
-    # xach "«И любой, кто переходил тебе дорогу, без исключений попадал в черные главы книги мертвых»."
-    xach ""
+    # xach "«Это одна из тех тайн, прояснить которые мне никогда не удавалось. Может, ты мне скажешь?»{#xach_s25_1}"
+    xach "«One of the darks I never did bring to light, cutter. Perhaps you tell me?»{#xach_s25_1}"
 
-# game/dlgs/mortuary/xach.rpy:458
-translate english xach_s18_338c2407:
+# game/dlgs/mortuary/xach.rpy:642
+translate english xach_s26_7db1f48c:
 
-    # xach "«А еще ты мог быть чертовски жестоким… например, заставил меня подписать тот контракт, или оставил ту вечно хныкающую крошку на Авернусе»"
-    xach ""
+    # xach "«Вздорная крошка, возомнившая себя солдатом. Поклялась, что пойдет за тобой до Баатора и обратно. Силы всемогущие, да она была просто одержима мыслями о тебе, больше ни о чем и не думала. Меня или гита вообще не замечала. Она была просто без ума тебя — сбрендила, это уж точно. Не понимаю, что женщины находят в твоей покромсанной мордашке, но это заставляет их кровь кипеть от страсти. Она была богатенькой из Чиновничьего района, а тебе от нее что-то было нужно, и только из-за этого ты взял ее с собой».{#xach_s26_1}"
+    xach "«That feisty chit-who-would-be-a-soldier swore she'd follow you to Baator and back, and by the powers, she was so addled by the thought of you without her she did just that».{#xach_s26_1}"
+    xach "«Cared little for me or the gith, and a bare little it was. She was wild with heart poison for you, she was, proof she was barmy».{#xach_s26_1}"
+    xach "«I don't understand what the womenfolk saw in yer scarred mug, but it set their blood a-boil».{#xach_s26_1}"
+    xach "«She was some rich scut from the Clerk's Ward, and you needed something from her, and the only price was that she came with you».{#xach_s26_1}"
 
-# game/dlgs/mortuary/xach.rpy:459
-translate english xach_s18_66daa1e7:
+# game/dlgs/mortuary/xach.rpy:668
+translate english xach_s27_4740ab58:
 
-    # xach "«Временами ты был похуже балора. Никто даже и думать не мог от том, чтобы сбежать от тебя, сынок»."
-    xach ""
+    # xach "«Которого из них?»{#xach_s27_1}"
+    xach "«Aye, which one?»{#xach_s27_1}"
 
-# game/dlgs/mortuary/xach.rpy:481
-translate english xach_s19_df497479:
+# game/dlgs/mortuary/xach.rpy:702
+translate english xach_s28_660f868e:
 
-    # xach "«Ты был все равно что военачальник, который захватывал на войне территории; для тебя все было битвой, ты был самой безжалостной сволочью из всех, что я встречал»."
-    xach ""
-
-# game/dlgs/mortuary/xach.rpy:482
-translate english xach_s19_4ece17ba:
-
-    # xach "«Для решения проблемы шло все без исключения»."
-    xach ""
-
-# game/dlgs/mortuary/xach.rpy:483
-translate english xach_s19_b7176213:
-
-    # xach "«Рыдания и мольбы бедной Дейонарры не останавливали тебя, гит предостерегал тебя насчет твоих действий, а бедный Захария только и пытался держаться на ногах, пока мы бродили по планам»."
-    xach ""
-
-# game/dlgs/mortuary/xach.rpy:484
-translate english xach_s19_e6b352d8:
-
-    # xach "«Ты был настолько крут, что казался бессмертным, но ведь мы были простыми людьми. Теперь мы все, наверное, в книге мертвых… или, так сказать, в ней и вне ее»."
-    xach ""
-
-# game/dlgs/mortuary/xach.rpy:514
-translate english xach_s20_54a661bb:
-
-    # xach "«Ну что я могу сказать, чтобы доказать свою правоту… не все можно вспомнить…»"
-    xach ""
-
-# game/dlgs/mortuary/xach.rpy:515
-translate english xach_s20_90326acc:
-
-    # xach "«Как насчет этого: помнишь, как мы проделывали путь сквозь Авернус и наткнулись на кучку абишаев в личиночной яме?»"
-    xach ""
-
-# game/dlgs/mortuary/xach.rpy:529
-translate english xach_s21_38fc33b1:
-
-    # xach "«Что ж, я рад, что хоть кто-то из нас двоих помнит об этом, потому что я, клянусь балором, не помню»."
-    xach ""
-
-# game/dlgs/mortuary/xach.rpy:530
-translate english xach_s21_c30f2401:
-
-    # xach "«Кто ты такой, рубака, и что ты надеешься выловить в обрывках воспоминаний мертвецов?»"
-    xach ""
-
-# game/dlgs/mortuary/xach.rpy:552
-translate english xach_s22_8254a4c7:
-
-    # xach "«Хм-м-м. Что ж, такого события и я не припомню»."
-    xach ""
-
-# game/dlgs/mortuary/xach.rpy:553
-translate english xach_s22_e8c83375:
-
-    # xach "«А как насчет этого: помнишь, как Дейонарра прописала себя в книгу мертвых, пытаясь не пустить тебя в Проклятый?»"
-    xach ""
-
-# game/dlgs/mortuary/xach.rpy:575
-translate english xach_s23_7ef6e7ab:
-
-    # xach "«Мы были пестрой компанией… Полумертвый парень, который не может прописать себя в книгу мертвых, как бы он ни старался»."
-    xach ""
-
-# game/dlgs/mortuary/xach.rpy:576
-translate english xach_s23_6ee12db2:
-
-    # xach "«Да еще и такой страшный, что никто из сил смерти не решается его забрать»."
-    xach ""
-
-# game/dlgs/mortuary/xach.rpy:577
-translate english xach_s23_98151c3f:
-
-    # xach "«Причитающая дочка адвоката, гит-изгой, болтающий без передыху череп с подвешенным языком и полоумный слепой лучник, то есть я»."
-    xach ""
-
-# game/dlgs/mortuary/xach.rpy:615
-translate english xach_s24_e4524bd9:
-
-    # xach "«Мрачноватый гит… молчаливый и недружелюбный, как все они. Никогда не доверял этим гитам»."
-    xach ""
-
-# game/dlgs/mortuary/xach.rpy:616
-translate english xach_s24_4563ae50:
-
-    # xach "«Понимаешь, рубака, эти тощие гиты думают только о двух вещах: как бы не попасть в рабство и как убить кальмароголовых иллитидов»."
-    xach ""
-
-# game/dlgs/mortuary/xach.rpy:617
-translate english xach_s24_efe324f8:
-
-    # xach "«Все остальное не имеет большого значения, и этот чертов ублюдок ни с кем, кроме тебя, не общался»."
-    xach ""
-
-# game/dlgs/mortuary/xach.rpy:643
-translate english xach_s25_7092f979:
-
-    # xach "«Это одна из тех тайн, прояснить которые мне никогда не удавалось. Может, ты мне скажешь?»"
-    xach ""
-
-# game/dlgs/mortuary/xach.rpy:661
-translate english xach_s26_64913af6:
-
-    # xach "«Вздорная крошка, возомнившая себя солдатом. Поклялась, что пойдет за тобой до Баатора и обратно»."
-    xach ""
-
-# game/dlgs/mortuary/xach.rpy:662
-translate english xach_s26_95e30f18:
-
-    # xach "«Силы всемогущие, да она была просто одержима мыслями о тебе, больше ни о чем и не думала. Меня или гита вообще не замечала. Она была просто без ума тебя — сбрендила, это уж точно»."
-    xach ""
-
-# game/dlgs/mortuary/xach.rpy:663
-translate english xach_s26_a432e43b:
-
-    # xach "«Не понимаю, что женщины находят в твоей покромсанной мордашке, но это заставляет их кровь кипеть от страсти»."
-    xach ""
-
-# game/dlgs/mortuary/xach.rpy:664
-translate english xach_s26_ddbde7cf:
-
-    # xach "«Она была богатенькой из Чиновничьего района, а тебе от нее что-то было нужно, и только из-за этого ты взял ее с собой»."
-    xach ""
-
-# game/dlgs/mortuary/xach.rpy:690
-translate english xach_s27_c676f8bb:
-
-    # xach "«Которого из них?»"
-    xach ""
+    # xach "«Этот сквернослов просто напрашивался на тумаки, это уж точно! Вечно строил из себя умника и насмехался надо мной!»{#xach_s28_1}"
+    xach "«That filthy-talking skull was hankering for a bruising, so it was! Always smarting off, it was, and making fun of my condition!»{#xach_s28_1}"
 
 # game/dlgs/mortuary/xach.rpy:724
-translate english xach_s28_a991d5b1:
+translate english xach_s29_cc07be57:
 
-    # xach "«Этот сквернослов просто напрашивался на тумаки, это уж точно! Вечно строил из себя умника и насмехался надо мной!»"
-    xach ""
+    # xach "«Это та самодельная книжица, которую ты сшил из собственной кожи, и в которой страниц больше, чем моих прожитых лет?! Какое счастье, что ты ее потерял! Вечно в нее что-то корябал. От нее тянуло страхом. Как будто ты боялся, что ее кто-то свистнет… Ты писал в нее до тех пор, пока пальцы не истирал в кровь, а я уже начинал подумывать, что ты пытался выдуть содержимое своей черепушки через перо. Иногда мы днями ждали, пока ты пишешь. Ненавижу эту адскую книгу. Она словно присосалась к тебе, нехорошо это было. В последний раз, когда я ее видел, рубака, она была у тебя. Если она не у тебя, то я не знаю, где теперь она может быть на планах».{#xach_s29_1}"
+    xach "«That scrapbook that you'd stitched together outta yer own flesh and had more pages than I had years in my life?! Good fortune indeed if you've lost that ghoulish book!»{#xach_s29_1}"
+    xach "«Always scribbling in it, you were, and it smelled a fright. It was like you were afraid that at any moment someone would take it away…»{#xach_s29_1}"
+    xach "«…you wrote in it till skin tore from your fingers and I wondered if you were trying to spill out your brain-box through your pen».{#xach_s29_1}"
+    xach "«Sometimes we would hold up for days while you wrote. I hated that infernal book. It seemed to hold you by the heart, and not in a kind way».{#xach_s29_1}"
+    xach "«The last I saw of it, cutter, it was in your possession. If you don't carry it, I don't know where on the planes it could be».{#xach_s29_1}"
 
 # game/dlgs/mortuary/xach.rpy:746
-translate english xach_s29_809c2b3c:
+translate english xach_s30_9b8f54ab:
 
-    # xach "«Это та самодельная книжица, которую ты сшил из собственной кожи, и в которой страниц больше, чем моих прожитых лет?! Какое счастье, что ты ее потерял!»"
-    xach ""
+    # xach_unknown "«Звучит знакомо… но если ты тот, о ком я думаю, тогда… кто…»{#xach_s30_1}"
+    xach_unknown "»It sounds familiar… but if you are who I think you are, then… who…»{#xach_s30_1}"
 
 # game/dlgs/mortuary/xach.rpy:747
-translate english xach_s29_17af3e14:
+translate english xach_s30_2571d444:
 
-    # xach "«Вечно в нее что-то корябал. От нее тянуло страхом. Как будто ты боялся, что ее кто-то свистнет…»"
-    xach ""
+    # nr "Зомби на секунду умолкает.{#xach_s30_2}"
+    nr "The zombie becomes silent for a moment{#xach_s30_2}"
 
 # game/dlgs/mortuary/xach.rpy:748
-translate english xach_s29_a70ab0ce:
+translate english xach_s30_9dc70f3b:
 
-    # xach "«Ты писал в нее до тех пор, пока пальцы не истирал в кровь, а я уже начинал подумывать, что ты пытался выдуть содержимое своей черепушки через перо»."
-    xach ""
+    # xach_unknown "«Кто я?»{#xach_s30_3}"
+    xach_unknown "«Who am I?»{#xach_s30_3}"
 
-# game/dlgs/mortuary/xach.rpy:749
-translate english xach_s29_10b367ab:
+# game/dlgs/mortuary/xach.rpy:762
+translate english xach_s31_db3e0125:
 
-    # xach "«Иногда мы днями ждали, пока ты пишешь. Ненавижу эту адскую книгу. Она словно присосалась к тебе, нехорошо это было»."
-    xach ""
+    # xach_unknown "«Я…»{#xach_s31_1}"
+    xach_unknown "«I…»{#xach_s31_1}"
 
-# game/dlgs/mortuary/xach.rpy:750
-translate english xach_s29_01aac1cd:
+# game/dlgs/mortuary/xach.rpy:763
+translate english xach_s31_28359f4c:
 
-    # xach "«В последний раз, когда я ее видел, рубака, она была у тебя. Если она не у тебя, то я не знаю, где теперь она может быть на планах»."
-    xach ""
+    # nr "Зомби замолкает.{#xach_s31_2}"
+    nr "The zombie becomes silent.{#xach_s31_2}"
 
-# game/dlgs/mortuary/xach.rpy:772
-translate english xach_s30_6967cf95:
+# game/dlgs/mortuary/xach.rpy:764
+translate english xach_s31_930682fa:
 
-    # xach_unknown "«Звучит знакомо… но если ты тот, о ком я думаю, тогда… кто…»"
-    xach_unknown ""
+    # xach_unknown "«Имя… я его не помню. Я… не могу вспомнить, кто я такой».{#xach_s31_3}"
+    xach_unknown "«…my name… has fled me. I… can no longer remember who I am».{#xach_s31_3}"
 
-# game/dlgs/mortuary/xach.rpy:773
-translate english xach_s30_36401d62:
+# game/dlgs/mortuary/xach.rpy:782
+translate english xach_s32_a0eb5f5f:
 
-    # nr "Зомби на секунду умолкает."
+    # xach "«Каждый раз, когда ты бросал нас, рубака, ты что-нибудь оставлял… Даккона ты оставил без хозяина, черепа — без друга. А я? Ты запихнул что-то внутрь меня, и при моей жизни оно никогда не выходило наружу. Из-за этого моя кровь остыла. Оно сидит в моей груди словно осколок».{#xach_s32_1}"
+    xach "«You left something when you left us, cutter… you left Dak'kon without a master, and the skull without a friend».{#xach_s32_1}"
+    xach "«Me? You stabbed something so deep inside me, it never came out when I was alive».{#xach_s32_1}"
+    xach "«Caused my blood to run cold, it did, that thing sitting like a lump of lead in my chest».{#xach_s32_1}"
+
+# game/dlgs/mortuary/xach.rpy:805
+translate english xach_s33_36190e6b:
+
+    # xach "«Я… я не знаю. Но оно каким-то образом изменило меня. Изнутри. Я был уже при смерти, когда ты засунул его в меня, так что мне было как-то не до этого».{#xach_s33_1}"
+    xach "«I… I don't know. But it changed me, somehow. Changed my insides. I was already dying when you put it in me, so I wasn't too concerned about it at the time».{#xach_s33_1}"
+
+# game/dlgs/mortuary/xach.rpy:831
+translate english xach_s34_8ff0de7f:
+
+    # xach "«Оно надежно спрятано, но я представляю, где оно находится. Без скальпеля и кое-каких моих указаний ты не сможешь его достать. У тебя есть скальпель?»{#xach_s34_1}"
+    xach "«It's buried pretty deep, but I have an idea of where it is».{#xach_s34_1}"
+    xach "«Without a scalpel and some directions from me, you won't be able to get it out. You got a scalpel?»{#xach_s34_1}"
+
+# game/dlgs/mortuary/xach.rpy:845
+translate english xach_s35_3bc27b96:
+
+    # xach "«Ну тогда возвращайся, как найдешь его, и тогда мы попробуем вытащить эту штуковину наружу».{#xach_s35_1}"
+    xach "«Well, return when you can snag one, and we can see about prying that pretty outta there».{#xach_s35_1}"
+
+# game/dlgs/mortuary/xach.rpy:859
+translate english xach_s36_2ba3637c:
+
+    # xach "«Тогда вскрой меня на ладонь ниже грудины и пошарься внутри».{#xach_s36_1}"
+    xach "«Then open me up half a hand's width below the sternum, and feel around for it».{#xach_s36_1}"
+
+# game/dlgs/mortuary/xach.rpy:881
+translate english xach_s37_a7df019b:
+
+    # xach "«Чуть левее… еще чуть-чуть…»{#xach_s37_1}"
+    xach "«A little more to the left… a little more…» Your hand closes on an object.{#xach_s37_1}"
+
+# game/dlgs/mortuary/xach.rpy:882
+translate english xach_s37_0ae8f4c2:
+
+    # nr "Твоя рука на нащупывает предмет.{#xach_s37_2}"
     nr ""
 
-# game/dlgs/mortuary/xach.rpy:774
-translate english xach_s30_66931628:
+# game/dlgs/mortuary/xach.rpy:893
+translate english xach_s38_bfe54581:
 
-    # xach_unknown "«Кто я?»"
-    xach_unknown ""
+    # nr "Ты вытаскиваешь печень зомби.{#xach_s38_1}"
+    nr "You pull out a zombie liver.{#xach_s38_1}"
 
-# game/dlgs/mortuary/xach.rpy:788
-translate english xach_s31_1fea16e3:
+# game/dlgs/mortuary/xach.rpy:894
+translate english xach_s38_474df010:
 
-    # xach_unknown "«Я…»"
-    xach_unknown ""
+    # xach "«Взгляд Леди! Извини, рубака… Я думал, что тленные, перед тем как выписать нас из книги мертвых, вынимают все органы. Попробуй еще раз. Может быть, оно справа».{#xach_s38_2}"
+    xach "«By the Lady's gaze! Apologies, cutter… I thought them Dustmen took all those organs outta us before pulling us out of the dead-book. Give it another go. Maybe it's to the right».{#xach_s38_2}"
 
-# game/dlgs/mortuary/xach.rpy:789
-translate english xach_s31_fc7f713f:
+# game/dlgs/mortuary/xach.rpy:904
+translate english xach_s39_e98c363b:
 
-    # nr "Зомби замолкает."
-    nr ""
+    # xach "«Вот так… теперь чуть правее и глубже… еще чуть-чуть…»{#xach_s39_1}"
+    xach "«There ya go… now go a little to the right and back… a little more…»{#xach_s39_1}"
 
-# game/dlgs/mortuary/xach.rpy:790
-translate english xach_s31_bce6f288:
+# game/dlgs/mortuary/xach.rpy:905
+translate english xach_s39_3d69e597:
 
-    # xach_unknown "«Имя… я его не помню. Я… не могу вспомнить, кто я такой»."
-    xach_unknown ""
+    # nr "Ты чувствуешь что-то твердое и холодное, по размерам чуть больше ожидаемого.{#xach_s39_2}"
+    nr "You feel something hard and cold, slightly larger than you expected.{#xach_s39_2}"
 
-# game/dlgs/mortuary/xach.rpy:808
-translate english xach_s32_d5fd5585:
+# game/dlgs/mortuary/xach.rpy:906
+translate english xach_s39_8fe6791b:
 
-    # xach "«Каждый раз, когда ты бросал нас, рубака, ты что-нибудь оставлял…»"
-    xach ""
+    # xach "«Кажется, это оно. Вытаскивай».{#xach_s39_3}"
+    xach "«I think that's it. Pull it out».{#xach_s39_3}"
 
-# game/dlgs/mortuary/xach.rpy:809
-translate english xach_s32_156c9c0c:
+# game/dlgs/mortuary/xach.rpy:917
+translate english xach_s40_ba239120:
 
-    # xach "«Даккона ты оставил без хозяина, черепа — без друга»."
-    xach ""
+    # nr "Ты вытаскиваешь почерневший предмет размером с кулак, слишком тяжелый для своих размеров.{#xach_s40_1}"
+    nr "You are holding a blackened, fist-sized object that is extremely heavy for its size.{#xach_s40_1}"
 
-# game/dlgs/mortuary/xach.rpy:810
-translate english xach_s32_971542ba:
+# game/dlgs/mortuary/xach.rpy:918
+translate english xach_s40_36519f1b:
 
-    # xach "«А я? Ты запихнул что-то внутрь меня, и при моей жизни оно никогда не выходило наружу. Из-за этого моя кровь остыла. Оно сидит в моей груди словно осколок»."
-    xach ""
-
-# game/dlgs/mortuary/xach.rpy:833
-translate english xach_s33_8737df13:
-
-    # xach "«Я… я не знаю. Но оно каким-то образом изменило меня. Изнутри»."
-    xach ""
-
-# game/dlgs/mortuary/xach.rpy:834
-translate english xach_s33_e7b47b03:
-
-    # xach "«Я был уже при смерти, когда ты засунул его в меня, так что мне было как-то не до этого»."
-    xach ""
-
-# game/dlgs/mortuary/xach.rpy:860
-translate english xach_s34_f8f68462:
-
-    # xach "«Оно надежно спрятано, но я представляю, где оно находится»."
-    xach ""
-
-# game/dlgs/mortuary/xach.rpy:861
-translate english xach_s34_9bea975e:
-
-    # xach "«Без скальпеля и кое-каких моих указаний ты не сможешь его достать. У тебя есть скальпель?»"
-    xach ""
-
-# game/dlgs/mortuary/xach.rpy:875
-translate english xach_s35_b69a1931:
-
-    # xach "«Ну тогда возвращайся, как найдешь его, и тогда мы попробуем вытащить эту штуковину наружу»."
-    xach ""
-
-# game/dlgs/mortuary/xach.rpy:889
-translate english xach_s36_dabe122c:
-
-    # xach "«Тогда вскрой меня на ладонь ниже грудины и пошарься внутри»."
-    xach ""
-
-# game/dlgs/mortuary/xach.rpy:911
-translate english xach_s37_9b12f522:
-
-    # xach "«Чуть левее… еще чуть-чуть…»"
-    xach ""
-
-# game/dlgs/mortuary/xach.rpy:912
-translate english xach_s37_57b048ad:
-
-    # nr "Твоя рука на нащупывает предмет."
-    nr ""
-
-# game/dlgs/mortuary/xach.rpy:923
-translate english xach_s38_250c6564:
-
-    # nr "Ты вытаскиваешь печень зомби."
-    nr ""
-
-# game/dlgs/mortuary/xach.rpy:924
-translate english xach_s38_0f45de41:
-
-    # xach "«Взгляд Леди! Извини, рубака… Я думал, что тленные, перед тем как выписать нас из книги мертвых, вынимают все органы»."
-    xach ""
-
-# game/dlgs/mortuary/xach.rpy:925
-translate english xach_s38_05a4bb7b:
-
-    # xach "«Попробуй еще раз. Может быть, оно справа»."
-    xach ""
-
-# game/dlgs/mortuary/xach.rpy:935
-translate english xach_s39_43272412:
-
-    # xach "«Вот так… теперь чуть правее и глубже… еще чуть-чуть…»"
-    xach ""
+    # xach "«Вот и все. Ха, я и не думал, что оно такое большое. Это… а что это? Похоже… на сердце».{#xach_s40_2}"
+    xach "«That's it all right. Huh. Bigger than I thought it'd be. Is that… what is that? Looks like… a heart».{#xach_s40_2}"
 
 # game/dlgs/mortuary/xach.rpy:936
-translate english xach_s39_301e5fee:
+translate english xach_s41_8abed012:
 
-    # nr "Ты чувствуешь что-то твердое и холодное, по размерам чуть больше ожидаемого."
-    nr ""
+    # xach "«Перед тем как ты уйдешь, сделай для меня небольшое одолжение, рубака».{#xach_s41_1}"
+    xach "«Before you go: I need you to do me a slight favor, cutter».{#xach_s41_1}"
 
-# game/dlgs/mortuary/xach.rpy:937
-translate english xach_s39_8bbc504e:
+# game/dlgs/mortuary/xach.rpy:952
+translate english xach_s42_440e3b1d:
 
-    # xach "«Кажется, это оно. Вытаскивай»."
-    xach ""
+    # nr "Он пристыженно умолкает.{#xach_s42_1}"
+    nr "His voice drops, as if ashamed.{#xach_s42_1}"
 
-# game/dlgs/mortuary/xach.rpy:948
-translate english xach_s40_81344feb:
+# game/dlgs/mortuary/xach.rpy:953
+translate english xach_s42_28aaec92:
 
-    # nr "Ты вытаскиваешь почерневший предмет размером с кулак, слишком тяжелый для своих размеров."
-    nr ""
+    # xach "«Я совершил много ошибок, ужасных ошибок, если начистоту. Но самая ужасная из них — я подписал с тленными контракт. Не будь я тогда мертвецки пьян, я бы никогда такого не сделал. Я очень сожалею о ней и надеюсь, что ты сможешь разрешить ее правильно».{#xach_s42_2}"
+    xach "«I made some mistakes, some damned bad ones to be sure, and one of my biggest was signing that Dustman contract».{#xach_s42_2}"
+    xach "«If I hadn't been so sodden with bub, I never woulda done it. I regret it, and I was hoping you could set it aright».{#xach_s42_2}"
 
-# game/dlgs/mortuary/xach.rpy:949
-translate english xach_s40_d1f64c75:
+# game/dlgs/mortuary/xach.rpy:967
+translate english xach_s43_1e483a80:
 
-    # xach "«Вот и все. Ха, я и не думал, что оно такое большое»."
-    xach ""
+    # xach "«По моим прикидкам, это тело продержится еще долго… каждый день для меня слишком мучителен. Может, ты прирежешь меня, рубака… по старой дружбе? Одна только мысль о том, что я еще много лет буду торчать в Морге с этими бледнолицыми, леденит мою душу. Ты не мог бы прописать меня обратно в книгу мертвых, где мне и следует быть?»{#xach_s43_1}"
+    xach "«Way I reckon, this body's gonna last a long time… and every day's too long to me. Couldja maybe gut me again, cutter… for old time's sake?»{#xach_s43_1}"
+    xach "«The thought of spending another batch of years here in the Mortuary with these whitefaces is a mighty cold one».{#xach_s43_1}"
+    xach "«Can you see fit to put me back in the dead-book where I belong?»{#xach_s43_1}"
 
-# game/dlgs/mortuary/xach.rpy:950
-translate english xach_s40_e7e394e4:
+# game/dlgs/mortuary/xach.rpy:982
+translate english xach_s44_0954e5a7:
 
-    # xach "«Это… а что это? Похоже… на сердце»."
-    xach ""
+    # nr "Ты вспарываешь ему кишки, и Захария тяжело падает на пол. Тело издает слабый выдох, грудная клетка в последний раз опадает, после чего от него не слышно ни звука.{#xach_s44_1}"
+    nr "You gut him, and Xachariah falls to the floor with a heavy thud.{#xach_s44_1}"
+    nr "There is a faint hiss from the body, and you see the chest heave once, then with a faint rattle, the corpse goes silent.{#xach_s44_1}"
 
-# game/dlgs/mortuary/xach.rpy:968
-translate english xach_s41_658a654e:
+# game/dlgs/mortuary/xach.rpy:993
+translate english xach_s45_fe92f556:
 
-    # xach "«Перед тем как ты уйдешь, сделай для меня небольшое одолжение, рубака»."
-    xach ""
-
-# game/dlgs/mortuary/xach.rpy:984
-translate english xach_s42_46f8d850:
-
-    # nr "Он пристыженно умолкает."
-    nr ""
-
-# game/dlgs/mortuary/xach.rpy:985
-translate english xach_s42_835728c9:
-
-    # xach "«Я совершил много ошибок, ужасных ошибок, если начистоту. Но самая ужасная из них — я подписал с тленными контракт»."
-    xach ""
-
-# game/dlgs/mortuary/xach.rpy:986
-translate english xach_s42_cbedd7ba:
-
-    # xach "«Не будь я тогда мертвецки пьян, я бы никогда такого не сделал. Я очень сожалею о ней и надеюсь, что ты сможешь разрешить ее правильно»."
-    xach ""
-
-# game/dlgs/mortuary/xach.rpy:1000
-translate english xach_s43_7f1a6370:
-
-    # xach "«По моим прикидкам, это тело продержится еще долго… каждый день для меня слишком мучителен»."
-    xach ""
-
-# game/dlgs/mortuary/xach.rpy:1001
-translate english xach_s43_2a679b43:
-
-    # xach "«Может, ты прирежешь меня, рубака…»"
-    xach ""
-
-# game/dlgs/mortuary/xach.rpy:1002
-translate english xach_s43_74aaa63c:
-
-    # xach "«…по старой дружбе?»"
-    xach ""
+    # xach "«Ладно, тогда не бери в голову. Полагаю, теперь я для тебя бесполезен».{#xach_s45_1}"
+    xach "«Aye, well, never you mind then. No more use am I to you, I suppose».{#xach_s45_1}"
 
 # game/dlgs/mortuary/xach.rpy:1003
-translate english xach_s43_676f9ece:
+translate english xach_s46_46a09554:
 
-    # xach "«Одна только мысль о том, что я еще много лет буду торчать в Морге с этими бледнолицыми, леденит мою душу»."
-    xach ""
+    # xach "«Что ж, рубака, полагаю, что в факте смерти трудно сомневаться, но как ты тогда со мной разговариваешь? Твой голос так отчетлив…»{#xach_s46_1}"
+    xach "«Well, cutter, I suppose being dead's not something one would doubt, though how can you talk to me? Your voice is as clear as a knife…»{#xach_s46_1}"
 
-# game/dlgs/mortuary/xach.rpy:1004
-translate english xach_s43_b086b957:
+# game/dlgs/mortuary/xach.rpy:1025
+translate english xach_s47_5cef1ae1:
 
-    # xach "«Ты не мог бы прописать меня обратно в книгу мертвых, где мне и следует быть?»"
-    xach ""
+    # xach "«Я теперь уборщик в самом безжизненном месте на свете. Я бы мог пересечь Границу Вечности и найти свой родной план, но я промотал всю свою душу, так что теперь я нахожусь здесь».{#xach_s47_1}"
+    xach "«I am a stable hand in the most lifeless place of all».{#xach_s47_1}"
+    xach "«Be it that I could pass beyond the Eternal Boundary and have a Plane to call my home, but much of my soul was squandered, and now I am here».{#xach_s47_1}"
 
-# game/dlgs/mortuary/xach.rpy:1019
-translate english xach_s44_9eafec7a:
+# game/dlgs/mortuary/xach.rpy:1047
+translate english xach_s48_26f970c6:
 
-    # nr "Ты вспарываешь ему кишки, и Захария тяжело падает на пол."
-    nr ""
+    # xach "«Это очень почетная обязанность…»{#xach_s48_1}"
+    xach "«It's honest work…»{#xach_s48_1}"
 
-# game/dlgs/mortuary/xach.rpy:1020
-translate english xach_s44_6143aba3:
+# game/dlgs/mortuary/xach.rpy:1048
+translate english xach_s48_ca7576ba:
 
-    # nr "Тело издает слабый выдох, грудная клетка в последний раз опадает, после чего от него не слышно ни звука."
-    nr ""
+    # nr "Стежки вокруг рта Захарии уже ослабли настолько, что он смог растянуться в улыбке.{#xach_s48_2}"
+    nr "The stitching comes undone from Xachariah's mouth and his lips peel back in what might be a smile.{#xach_s48_2}"
 
-# game/dlgs/mortuary/xach.rpy:1031
-translate english xach_s45_6add4659:
+# game/dlgs/mortuary/xach.rpy:1049
+translate english xach_s48_eef1224a:
 
-    # xach "«Ладно, тогда не бери в голову. Полагаю, теперь я для тебя бесполезен»."
-    xach ""
+    # xach "«Меня это мало волнует».{#xach_s48_3}"
+    xach "«…I care little for it».{#xach_s48_3}"
 
-# game/dlgs/mortuary/xach.rpy:1041
-translate english xach_s46_4bb8751a:
+# game/dlgs/mortuary/xach.rpy:1068
+translate english xach_s49_ed265f22:
 
-    # xach "«Что ж, рубака, полагаю, что в факте смерти трудно сомневаться, но как ты тогда со мной разговариваешь? Твой голос так отчетлив…»"
-    xach ""
-
-# game/dlgs/mortuary/xach.rpy:1063
-translate english xach_s47_cad2c396:
-
-    # xach "«Я теперь уборщик в самом безжизненном месте на свете»."
-    xach ""
-
-# game/dlgs/mortuary/xach.rpy:1064
-translate english xach_s47_774a6342:
-
-    # xach "«Я бы мог пересечь Границу Вечности и найти свой родной план, но я промотал всю свою душу, так что теперь я нахожусь здесь»."
-    xach ""
-
-# game/dlgs/mortuary/xach.rpy:1086
-translate english xach_s48_cef61ca7:
-
-    # xach "«Это очень почетная обязанность…»"
-    xach ""
-
-# game/dlgs/mortuary/xach.rpy:1087
-translate english xach_s48_cc0efbcc:
-
-    # nr "Стежки вокруг рта Захарии уже ослабли настолько, что он смог растянуться в улыбке."
-    nr ""
-
-# game/dlgs/mortuary/xach.rpy:1088
-translate english xach_s48_6e74e5af:
-
-    # xach "«Меня это мало волнует»."
-    xach ""
-
-# game/dlgs/mortuary/xach.rpy:1107
-translate english xach_s49_67385e15:
-
-    # xach "«Это был я. Ты в самом деле все забыл? Люди видят не только глазами, рубака… некоторые видят гораздо лучше других»."
-    xach ""
-
-# game/dlgs/mortuary/xach.rpy:1108
-translate english xach_s49_a71c5d50:
-
-    # xach "«Я чувствовал сердца своих врагов — *твоих* врагов, и мои стрелы разили без промаха. Да, вот были времена…»"
-    xach ""
+    # xach "«Это был я. Ты в самом деле все забыл? Люди видят не только глазами, рубака… некоторые видят гораздо лучше других. Я чувствовал сердца своих врагов — *твоих* врагов, и мои стрелы разили без промаха. Да, вот были времена…»{#xach_s49_1}"
+    xach "«That I was. You truly have forgotten, haven't you? All men see with more than their eyes, cutter… some of them better than others».{#xach_s49_1}"
+    xach "«I sensed the hearts of my foes - *your* foes - and my arrows always struck true. Ah, those were some times…»{#xach_s49_1}"
 
 translate english strings:
 
-    # game/dlgs/mortuary/xach.rpy:60
-    old "«Ты меня не видишь?»"
-    new ""
-
-    # game/dlgs/mortuary/xach.rpy:60
-    old "Импровизация: «Это я. Ты не узнаешь мой голос?»"
-    new ""
-
-    # game/dlgs/mortuary/xach.rpy:60
-    old "«Захария?»"
-    new ""
-
-    # game/dlgs/mortuary/xach.rpy:60
-    old "«Сегодня ты не получишь ответов, труп. Прощай»."
-    new ""
-
-    # game/dlgs/mortuary/xach.rpy:120
-    old "«Я не могу долго говорить, мне нужно идти. Прощай»."
-    new ""
-
-    # game/dlgs/mortuary/xach.rpy:150
-    old "«Это долгая история… но нет, я не мертв»."
-    new ""
-
-    # game/dlgs/mortuary/xach.rpy:150
-    old "«У меня больше нет времени на разговоры, Захария. Прощай»."
-    new ""
-
-    # game/dlgs/mortuary/xach.rpy:176
-    old "«Как ты оказался в таком состоянии?»"
-    new ""
-
-    # game/dlgs/mortuary/xach.rpy:176
-    old "«Что ты можешь рассказать о Морге?»"
-    new ""
-
-    # game/dlgs/mortuary/xach.rpy:176
-    old "«Что ты можешь рассказать о моей предыдущей жизни?»"
-    new ""
-
-    # game/dlgs/mortuary/xach.rpy:176
-    old "«Что ты можешь рассказать о моих предыдущих спутниках?»"
-    new ""
-
-    # game/dlgs/mortuary/xach.rpy:207
-    old "«Я хочу забрать ту вещь, Захария…»"
-    new ""
-
-    # game/dlgs/mortuary/xach.rpy:207
-    old "«Я должен идти. Прощай, Захария»."
-    new ""
-
-    # game/dlgs/mortuary/xach.rpy:261
-    old "«Что, например?»"
-    new ""
-
-    # game/dlgs/mortuary/xach.rpy:261
-    old "«У меня больше нет времени на разговоры. Прощай»."
-    new ""
-
-    # game/dlgs/mortuary/xach.rpy:283
-    old "«Это который зомби?»"
-    new ""
-
-    # game/dlgs/mortuary/xach.rpy:283
-    old "«Интересно. У меня есть другие вопросы…»"
-    new ""
-
-    # game/dlgs/mortuary/xach.rpy:310
-    old "«А что именно делал Дхолл, чтобы спасти меня?»"
-    new ""
-
-    # game/dlgs/mortuary/xach.rpy:310
-    old "«Я знаю. У меня есть другие вопросы…»"
-    new ""
-
-    # game/dlgs/mortuary/xach.rpy:333
-    old "«Что еще странного в Морге ты заметил?»"
-    new ""
-
-    # game/dlgs/mortuary/xach.rpy:333
-    old "«Хм-м-м. Интересно. У меня есть другие вопросы…»"
-    new ""
-
-    # game/dlgs/mortuary/xach.rpy:333
-    old "«Пойду-ка, поищу этого зомби. Прощай»."
-    new ""
-
-    # game/dlgs/mortuary/xach.rpy:373
-    old "«Хм-м-м. Странно… У меня есть несколько вопросов…»"
-    new ""
-
-    # game/dlgs/mortuary/xach.rpy:373
-    old "«Понятно. Интересно, *почему* это было необходимо. Надо поговорить об этом с Дхоллом… Прощай»."
-    new ""
-
-    # game/dlgs/mortuary/xach.rpy:411
-    old "«Образно выражаясь… да»."
-    new ""
-
-    # game/dlgs/mortuary/xach.rpy:411
-    old "«Нет… Просто я хочу узнать, был ли ты тем, за кого себя выдаешь»."
-    new ""
-
-    # game/dlgs/mortuary/xach.rpy:438
-    old "«Что-нибудь еще? Что-нибудь особенное…»"
-    new ""
-
-    # game/dlgs/mortuary/xach.rpy:461
-    old "«Ясно… Что-нибудь еще? Это может мне очень помочь»."
-    new ""
-
-    # game/dlgs/mortuary/xach.rpy:486
-    old "«Дейонарра?»"
-    new ""
-
-    # game/dlgs/mortuary/xach.rpy:486
-    old "«„Гит“? Кого ты имеешь в виду?»"
-    new ""
-
-    # game/dlgs/mortuary/xach.rpy:486
-    old "«Понятно… Я должен идти. Прощай, Захария»."
-    new ""
-
-    # game/dlgs/mortuary/xach.rpy:517
-    old "Ложь: «Да»."
-    new ""
-
-    # game/dlgs/mortuary/xach.rpy:532
-    old "«Я надеюсь найти себя. На самом деле, я забыл, кто я, Захария, и думаю, что ты знаешь меня. Что ты можешь рассказать о моей предыдущей жизни?»"
-    new ""
-
-    # game/dlgs/mortuary/xach.rpy:532
-    old "«Ничего… Мне нужно идти. Прощай, Захария»."
-    new ""
-
-    # game/dlgs/mortuary/xach.rpy:555
-    old "«Нет, не помню… ну да ничего. Кажется, что ты меня знаешь. Что ты можешь рассказать о моей предыдущей жизни?»"
-    new ""
-
-    # game/dlgs/mortuary/xach.rpy:555
-    old "«Неважно… У меня есть другие вопросы»."
-    new ""
-
-    # game/dlgs/mortuary/xach.rpy:579
-    old "«Гит?»"
-    new ""
-
-    # game/dlgs/mortuary/xach.rpy:579
-    old "«„Причитающая дочка адвоката“?»"
-    new ""
-
-    # game/dlgs/mortuary/xach.rpy:579
-    old "«Летающий череп?»"
-    new ""
-
-    # game/dlgs/mortuary/xach.rpy:579
-    old "«Ты был слепым лучником?»"
-    new ""
-
-    # game/dlgs/mortuary/xach.rpy:579
-    old "«Ты не знаешь, что случилось с моим дневником?»"
-    new ""
-
-    # game/dlgs/mortuary/xach.rpy:579
-    old "«Это хорошо. Прощай, Захария»."
-    new ""
-
-    # game/dlgs/mortuary/xach.rpy:619
-    old "«Почему так?»"
-    new ""
-
-    # game/dlgs/mortuary/xach.rpy:619
-    old "«Насчет некоторых моих спутников…»"
-    new ""
-
-    # game/dlgs/mortuary/xach.rpy:619
-    old "«Хм-м-м. Интересно. Спасибо, Захария»."
-    new ""
-
-    # game/dlgs/mortuary/xach.rpy:645
-    old "«Я и сам не знаю. У меня есть другие вопросы…»"
-    new ""
-
-    # game/dlgs/mortuary/xach.rpy:645
-    old "«Возможно, мне это удастся. Прощай, Захария»."
-    new ""
-
-    # game/dlgs/mortuary/xach.rpy:666
-    old "«Что мне было нужно от нее?»"
-    new ""
-
-    # game/dlgs/mortuary/xach.rpy:666
-    old "«Я выслушал достаточно. Прощай, Захария»."
-    new ""
-
-    # game/dlgs/mortuary/xach.rpy:692
-    old "«Гит»."
-    new ""
-
-    # game/dlgs/mortuary/xach.rpy:692
-    old "«„Причитающая дочка адвоката“»."
-    new ""
-
-    # game/dlgs/mortuary/xach.rpy:692
-    old "«Летающий череп»."
-    new ""
-
-    # game/dlgs/mortuary/xach.rpy:692
-    old "«Ты… ты был… слепым лучником?»"
-    new ""
-
-    # game/dlgs/mortuary/xach.rpy:752
-    old "«Насчет моих спутников…»"
-    new ""
-
-    # game/dlgs/mortuary/xach.rpy:752
-    old "«Спасибо за информацию. Прощай, Захария»."
-    new ""
-
-    # game/dlgs/mortuary/xach.rpy:776
-    old "«Твое имя мне не известно. Я вернусь, если узнаю его. Прощай»."
-    new ""
-
-    # game/dlgs/mortuary/xach.rpy:792
-    old "«Я не знаю твоего имени. Я вернусь, если узнаю его. Прощай»."
-    new ""
-
-    # game/dlgs/mortuary/xach.rpy:812
-    old "«И что это?»"
-    new ""
-
-    # game/dlgs/mortuary/xach.rpy:836
-    old "«Могу я получить его обратно?»"
-    new ""
-
-    # game/dlgs/mortuary/xach.rpy:863
-    old "«Нет… но я смогу просто разорвать стежки руками»."
-    new ""
-
-    # game/dlgs/mortuary/xach.rpy:877
-    old "«Пойду-ка, поищу его. Прощай»."
-    new ""
-
-    # game/dlgs/mortuary/xach.rpy:891
-    old "Сделать это."
-    new ""
-
-    # game/dlgs/mortuary/xach.rpy:891
-    old "«Неважно, Захария… Лучше я задам тебе несколько вопросов…»"
-    new ""
-
-    # game/dlgs/mortuary/xach.rpy:891
-    old "«Сейчас я не могу, я должен идти. Прощай, Захария»."
-    new ""
-
-    # game/dlgs/mortuary/xach.rpy:914
-    old "Вытащить его."
-    new ""
-
-    # game/dlgs/mortuary/xach.rpy:927
-    old "Попробовать еще раз."
-    new ""
-
-    # game/dlgs/mortuary/xach.rpy:952
-    old "«Да, похоже. Спасибо, Захария. У меня есть вопросы к тебе…»"
-    new ""
-
-    # game/dlgs/mortuary/xach.rpy:952
-    old "«Очень похоже. Я должен идти. Прощай, Захария»."
-    new ""
-
-    # game/dlgs/mortuary/xach.rpy:970
-    old "«В последнее время я сделал уже достаточно одолжений и услуг… Мне нужно идти, Захария. Прощай»."
-    new ""
-
-    # game/dlgs/mortuary/xach.rpy:988
-    old "«Как?»"
-    new ""
-
-    # game/dlgs/mortuary/xach.rpy:1006
-    old "«Если ты так хочешь…»"
-    new ""
-
-    # game/dlgs/mortuary/xach.rpy:1006
-    old "«Захария, я не хочу убивать тебя. Еще раз. Прощай»."
-    new ""
-
-    # game/dlgs/mortuary/xach.rpy:1022
-    old "«Покойся с миром, Захария»."
-    new ""
-
-    # game/dlgs/mortuary/xach.rpy:1066
-    old "«Каково это — быть зомби?»"
-    new ""
-
-    # game/dlgs/mortuary/xach.rpy:1090
-    old "«Тогда прощай, Захария»."
-    new ""
+    # game/dlgs/mortuary/xach.rpy:16
+    old "«Итак… что тут у нас интересного?»{#xach_s0_r502}"
+    new "«So… seen anything interesting going on?»{#xach_s0_r502}"
+
+    # game/dlgs/mortuary/xach.rpy:16
+    old "«Итак… что тут у нас интересного?»{#xach_s0_r503}"
+    new "«So… seen anything interesting going on?»{#xach_s0_r503}"
+
+    # game/dlgs/mortuary/xach.rpy:16
+    old "«Знаешь, мне известно, что ты не зомби. Тебе никого не одурачить».{#xach_s0_r1354}"
+    new "«I know you're not a zombie, you know. You're not fooling anyone».{#xach_s0_r1354}"
+
+    # game/dlgs/mortuary/xach.rpy:16
+    old "Использовать на трупе свою способность «История костей».{#xach_s0_r1355}"
+    new "Use your Stories-Bones-Tell ability on the corpse.{#xach_s0_r1355}"
+
+    # game/dlgs/mortuary/xach.rpy:16
+    old "«Было приятно поболтать с тобой. Прощай».{#xach_s0_r1357}"
+    new "«It was great talking to you. Farewell».{#xach_s0_r1357}"
+
+    # game/dlgs/mortuary/xach.rpy:16
+    old "Оставить труп в покое.{#xach_s0_r1358}"
+    new "Leave the corpse in peace.{#xach_s0_r1358}"
+
+    # game/dlgs/mortuary/xach.rpy:47
+    old "«Тогда прощай».{#xach_s1_r505}"
+    new "«Farewell, then».{#xach_s1_r505}"
+
+    # game/dlgs/mortuary/xach.rpy:59
+    old "«Ты меня не видишь?»{#xach_s2_r507}"
+    new "«Can you not see me?»{#xach_s2_r507}"
+
+    # game/dlgs/mortuary/xach.rpy:59
+    old "Импровизация: «Это я. Ты не узнаешь мой голос?»{#xach_s2_r508}"
+    new "Improvise: »It is I. Do you not recognize my voice?»{#xach_s2_r508}"
+
+    # game/dlgs/mortuary/xach.rpy:59
+    old "Импровизация: «Это я. Ты не узнаешь мой голос?»{#xach_s2_r63307}"
+    new "Improvise: »It is I. Do you not recognize my voice?»{#xach_s2_r63307}"
+
+    # game/dlgs/mortuary/xach.rpy:59
+    old "«Кто ты?»{#xach_s2_r519}"
+    new "«Who are you?»{#xach_s2_r519}"
+
+    # game/dlgs/mortuary/xach.rpy:59
+    old "«Захария?»{#xach_s2_r506}"
+    new "«Xachariah?»{#xach_s2_r506}"
+
+    # game/dlgs/mortuary/xach.rpy:59
+    old "«Сегодня ты не получишь ответов, труп. Прощай».{#xach_s2_r520}"
+    new "«You shall have no answers this day, corpse. Farewell».{#xach_s2_r520}"
+
+    # game/dlgs/mortuary/xach.rpy:89
+    old "Импровизация: «Это я. Ты не узнаешь мой голос?»{#xach_s3_r510}"
+    new "Improvise: »It is I. Do you not recognize my voice?»{#xach_s3_r510}"
+
+    # game/dlgs/mortuary/xach.rpy:89
+    old "Импровизация: «Это я. Ты не узнаешь мой голос?»{#xach_s3_r63308}"
+    new "Improvise: »It is I. Do you not recognize my voice?»{#xach_s3_r63308}"
+
+    # game/dlgs/mortuary/xach.rpy:89
+    old "«Кто ты?»{#xach_s3_r511}"
+    new "«Who are you?»{#xach_s3_r511}"
+
+    # game/dlgs/mortuary/xach.rpy:89
+    old "«Захария?»{#xach_s3_r521}"
+    new "«Xachariah?»{#xach_s3_r521}"
+
+    # game/dlgs/mortuary/xach.rpy:89
+    old "«Сегодня ты не получишь ответов, труп. Прощай».{#xach_s3_r522}"
+    new "«You shall have no answers this day, corpse. Farewell».{#xach_s3_r522}"
+
+    # game/dlgs/mortuary/xach.rpy:119
+    old "«Кто ты?»{#xach_s4_r515}"
+    new "«Who are you?»{#xach_s4_r515}"
+
+    # game/dlgs/mortuary/xach.rpy:119
+    old "«Что ты здесь делаешь?»{#xach_s4_r516}"
+    new "«What are you doing here?»{#xach_s4_r516}"
+
+    # game/dlgs/mortuary/xach.rpy:119
+    old "«Что это за место?»{#xach_s4_r517}"
+    new "«What is this place?»{#xach_s4_r517}"
+
+    # game/dlgs/mortuary/xach.rpy:119
+    old "«Я не могу долго говорить, мне нужно идти. Прощай».{#xach_s4_r518}"
+    new "«I can't speak long. I must leave. Farewell».{#xach_s4_r518}"
+
+    # game/dlgs/mortuary/xach.rpy:119
+    old "«Я не могу долго говорить, мне нужно идти. Прощай».{#xach_s4_r1394}"
+    new "«I can't speak long. I must leave. Farewell».{#xach_s4_r1394}"
+
+    # game/dlgs/mortuary/xach.rpy:147
+    old "«Это долгая история… но нет, я не мертв».{#xach_s5_r685}"
+    new "«It's a long tale… but no, I'm not dead».{#xach_s5_r685}"
+
+    # game/dlgs/mortuary/xach.rpy:147
+    old "«Что ты здесь делаешь?»{#xach_s5_r686}"
+    new "«What are you doing here?»{#xach_s5_r686}"
+
+    # game/dlgs/mortuary/xach.rpy:147
+    old "«Что это за место?»{#xach_s5_r687}"
+    new "«What is this place?»{#xach_s5_r687}"
+
+    # game/dlgs/mortuary/xach.rpy:147
+    old "«У меня больше нет времени на разговоры, Захария. Прощай».{#xach_s5_r688}"
+    new "«I have no more time to talk, Xachariah. Farewell».{#xach_s5_r688}"
+
+    # game/dlgs/mortuary/xach.rpy:147
+    old "«У меня больше нет времени на разговоры, Захария. Прощай».{#xach_s5_r1393}"
+    new "«I have no more time to talk, Xachariah. Farewell».{#xach_s5_r1393}"
+
+    # game/dlgs/mortuary/xach.rpy:173
+    old "«Как ты оказался в таком состоянии?»{#xach_s6_r523}"
+    new "«What led you to this state?»{#xach_s6_r523}"
+
+    # game/dlgs/mortuary/xach.rpy:173
+    old "«Что ты можешь рассказать о Морге?»{#xach_s6_r524}"
+    new "«What can you tell me about the Mortuary?»{#xach_s6_r524}"
+
+    # game/dlgs/mortuary/xach.rpy:173
+    old "«Что ты можешь рассказать о моей предыдущей жизни?»{#xach_s6_r525}"
+    new "«What can you tell me about my previous life?»{#xach_s6_r525}"
+
+    # game/dlgs/mortuary/xach.rpy:173
+    old "«Что ты можешь рассказать о моих предыдущих спутниках?»{#xach_s6_r526}"
+    new "«What can you tell me about my previous companions?»{#xach_s6_r526}"
+
+    # game/dlgs/mortuary/xach.rpy:173
+    old "«Я должен идти. Прощай».{#xach_s6_r527}"
+    new "«I must leave. Farewell».{#xach_s6_r527}"
+
+    # game/dlgs/mortuary/xach.rpy:173
+    old "«Я должен идти. Прощай».{#xach_s6_r1392}"
+    new "«I must leave. Farewell».{#xach_s6_r1392}"
+
+    # game/dlgs/mortuary/xach.rpy:204
+    old "«Я хочу забрать ту вещь, Захария…»{#xach_s7_r63484}"
+    new "«I wanted to retrieve that object now, Xachariah…»{#xach_s7_r63484}"
+
+    # game/dlgs/mortuary/xach.rpy:204
+    old "«Как ты оказался в таком состоянии?»{#xach_s7_r637}"
+    new "«What led you to this state?»{#xach_s7_r637}"
+
+    # game/dlgs/mortuary/xach.rpy:204
+    old "«Что ты можешь рассказать о Морге?»{#xach_s7_r638}"
+    new "«What can you tell me about the Mortuary?»{#xach_s7_r638}"
+
+    # game/dlgs/mortuary/xach.rpy:204
+    old "«Что ты можешь рассказать о моей предыдущей жизни?»{#xach_s7_r639}"
+    new "«What can you tell me about my previous life?»{#xach_s7_r639}"
+
+    # game/dlgs/mortuary/xach.rpy:204
+    old "«Что ты можешь рассказать о моих предыдущих спутниках?»{#xach_s7_r640}"
+    new "«What can you tell me about my previous companions?»{#xach_s7_r640}"
+
+    # game/dlgs/mortuary/xach.rpy:204
+    old "«Я должен идти. Прощай, Захария».{#xach_s7_r1391}"
+    new "«I must leave. Farewell, Xachariah».{#xach_s7_r1391}"
+
+    # game/dlgs/mortuary/xach.rpy:204
+    old "«Я должен идти. Прощай, Захария».{#xach_s7_r641}"
+    new "«I must leave. Farewell, Xachariah».{#xach_s7_r641}"
+
+    # game/dlgs/mortuary/xach.rpy:239
+    old "«У меня есть другие вопросы…»{#xach_s8_r531}"
+    new "«I had some other questions…»{#xach_s8_r531}"
+
+    # game/dlgs/mortuary/xach.rpy:239
+    old "«Я выслушал достаточно. Прощай».{#xach_s8_r545}"
+    new "«I've heard enough. Farewell».{#xach_s8_r545}"
+
+    # game/dlgs/mortuary/xach.rpy:239
+    old "«Я выслушал достаточно. Прощай».{#xach_s8_r1390}"
+    new "«I've heard enough. Farewell».{#xach_s8_r1390}"
+
+    # game/dlgs/mortuary/xach.rpy:257
+    old "«Что, например?»{#xach_s9_r534}"
+    new "«Like what?»{#xach_s9_r534}"
+
+    # game/dlgs/mortuary/xach.rpy:257
+    old "«У меня есть другие вопросы к тебе…»{#xach_s9_r536}"
+    new "«I had some other questions for you…»{#xach_s9_r536}"
+
+    # game/dlgs/mortuary/xach.rpy:257
+    old "«У меня больше нет времени на разговоры. Прощай».{#xach_s9_r537}"
+    new "«I have no more time to speak with you. Farewell».{#xach_s9_r537}"
+
+    # game/dlgs/mortuary/xach.rpy:257
+    old "«У меня больше нет времени на разговоры. Прощай».{#xach_s9_r1389}"
+    new "«I have no more time to speak with you. Farewell».{#xach_s9_r1389}"
+
+    # game/dlgs/mortuary/xach.rpy:279
+    old "«Что-нибудь еще?»{#xach_s10_r538}"
+    new "«Anything else?»{#xach_s10_r538}"
+
+    # game/dlgs/mortuary/xach.rpy:279
+    old "«Это который зомби?»{#xach_s10_r539}"
+    new "«Which zombie is it?»{#xach_s10_r539}"
+
+    # game/dlgs/mortuary/xach.rpy:279
+    old "«Интересно. У меня есть другие вопросы…»{#xach_s10_r540}"
+    new "«Interesting. I had some other questions…»{#xach_s10_r540}"
+
+    # game/dlgs/mortuary/xach.rpy:279
+    old "«У меня больше нет времени на разговоры. Прощай».{#xach_s10_r546}"
+    new "«I have no more time to speak with you. Farewell».{#xach_s10_r546}"
+
+    # game/dlgs/mortuary/xach.rpy:279
+    old "«У меня больше нет времени на разговоры. Прощай».{#xach_s10_r1388}"
+    new "«I have no more time to speak with you. Farewell».{#xach_s10_r1388}"
+
+    # game/dlgs/mortuary/xach.rpy:305
+    old "«А что именно делал Дхолл, чтобы спасти меня?»{#xach_s11_r542}"
+    new "«What did Dhall do to save me, exactly?»{#xach_s11_r542}"
+
+    # game/dlgs/mortuary/xach.rpy:305
+    old "«Я знаю. У меня есть другие вопросы…»{#xach_s11_r543}"
+    new "«I know. I had some other questions…»{#xach_s11_r543}"
+
+    # game/dlgs/mortuary/xach.rpy:305
+    old "«У меня больше нет времени на разговоры. Прощай».{#xach_s11_r544}"
+    new "«I have no more time to speak with you. Farewell».{#xach_s11_r544}"
+
+    # game/dlgs/mortuary/xach.rpy:305
+    old "«У меня больше нет времени на разговоры. Прощай».{#xach_s11_r1387}"
+    new "«I have no more time to speak with you. Farewell».{#xach_s11_r1387}"
+
+    # game/dlgs/mortuary/xach.rpy:327
+    old "«Что еще странного в Морге ты заметил?»{#xach_s12_r548}"
+    new "«Anything else strange about the Mortuary you've noticed?»{#xach_s12_r548}"
+
+    # game/dlgs/mortuary/xach.rpy:327
+    old "«Хм-м-м. Интересно. У меня есть другие вопросы…»{#xach_s12_r554}"
+    new "«Hmmm. Interesting. I had some other questions…»{#xach_s12_r554}"
+
+    # game/dlgs/mortuary/xach.rpy:327
+    old "«Пойду-ка, поищу этого зомби. Прощай».{#xach_s12_r549}"
+    new "«I'll go look for this zombie. Farewell».{#xach_s12_r549}"
+
+    # game/dlgs/mortuary/xach.rpy:327
+    old "«Пойду-ка, поищу этого зомби. Прощай».{#xach_s12_r1386}"
+    new "«I'll go look for this zombie. Farewell».{#xach_s12_r1386}"
+
+    # game/dlgs/mortuary/xach.rpy:349
+    old "«Интересно. У меня есть другие вопросы…»{#xach_s13_r552}"
+    new "«Interesting. I had some other questions…»{#xach_s13_r552}"
+
+    # game/dlgs/mortuary/xach.rpy:349
+    old "«Мне нужно идти. Прощай».{#xach_s13_r553}"
+    new "«I have to go. Farewell».{#xach_s13_r553}"
+
+    # game/dlgs/mortuary/xach.rpy:349
+    old "«Мне нужно идти. Прощай».{#xach_s13_r1385}"
+    new "«I have to go. Farewell».{#xach_s13_r1385}"
+
+    # game/dlgs/mortuary/xach.rpy:367
+    old "«Хм-м-м. Странно… У меня есть несколько вопросов…»{#xach_s14_r557}"
+    new "«Hmmm. Suspicious… I had some other questions…»{#xach_s14_r557}"
+
+    # game/dlgs/mortuary/xach.rpy:367
+    old "«Понятно. Интересно, *почему* это было необходимо. Надо поговорить об этом с Дхоллом… Прощай».{#xach_s14_r556}"
+    new "«I see. I wonder if it *was* necessary. Dhall and I should discuss this… farewell».{#xach_s14_r556}"
+
+    # game/dlgs/mortuary/xach.rpy:367
+    old "«Понятно. Интересно, *почему* это было необходимо. Надо поговорить об этом с Дхоллом… Прощай».{#xach_s14_r1384}"
+    new "«I see. I wonder if it *was* necessary. Dhall and I should discuss this… farewell».{#xach_s14_r1384}"
+
+    # game/dlgs/mortuary/xach.rpy:386
+    old "«У меня есть другие вопросы…»{#xach_s15_r559}"
+    new "«I had some other questions…»{#xach_s15_r559}"
+
+    # game/dlgs/mortuary/xach.rpy:386
+    old "«Мне нужно идти. Прощай».{#xach_s15_r560}"
+    new "«I have to go. Farewell».{#xach_s15_r560}"
+
+    # game/dlgs/mortuary/xach.rpy:386
+    old "«Мне нужно идти. Прощай».{#xach_s15_r1383}"
+    new "«I have to go. Farewell».{#xach_s15_r1383}"
+
+    # game/dlgs/mortuary/xach.rpy:404
+    old "«Образно выражаясь… да».{#xach_s16_r562}"
+    new "«In a manner of speaking… yes».{#xach_s16_r562}"
+
+    # game/dlgs/mortuary/xach.rpy:404
+    old "«Нет… Просто я хочу узнать, был ли ты тем, за кого себя выдаешь».{#xach_s16_r563}"
+    new "«No… I just wanted to see if you were really who you said you were».{#xach_s16_r563}"
+
+    # game/dlgs/mortuary/xach.rpy:404
+    old "«Неважно. У меня есть другие вопросы…»{#xach_s16_r564}"
+    new "«Never mind. I had some other questions…»{#xach_s16_r564}"
+
+    # game/dlgs/mortuary/xach.rpy:404
+    old "«Мне нужно идти. Прощай».{#xach_s16_r565}"
+    new "«I have to go. Farewell».{#xach_s16_r565}"
+
+    # game/dlgs/mortuary/xach.rpy:404
+    old "«Мне нужно идти. Прощай».{#xach_s16_r1382}"
+    new "«I have to go. Farewell».{#xach_s16_r1382}"
+
+    # game/dlgs/mortuary/xach.rpy:430
+    old "«Что-нибудь еще? Что-нибудь особенное…»{#xach_s17_r569}"
+    new "«Anything else? Any specifics…»{#xach_s17_r569}"
+
+    # game/dlgs/mortuary/xach.rpy:430
+    old "«У меня есть другие вопросы…»{#xach_s17_r570}"
+    new "«I had some other questions…»{#xach_s17_r570}"
+
+    # game/dlgs/mortuary/xach.rpy:430
+    old "«Я должен идти. Прощай».{#xach_s17_r571}"
+    new "«I must leave. Farewell».{#xach_s17_r571}"
+
+    # game/dlgs/mortuary/xach.rpy:430
+    old "«Я должен идти. Прощай».{#xach_s17_r1381}"
+    new "«I must leave. Farewell».{#xach_s17_r1381}"
+
+    # game/dlgs/mortuary/xach.rpy:452
+    old "«Ясно… Что-нибудь еще? Это может мне очень помочь».{#xach_s18_r572}"
+    new "«I… see. What else? Anything you could tell me would help».{#xach_s18_r572}"
+
+    # game/dlgs/mortuary/xach.rpy:452
+    old "«Неважно. У меня есть другие вопросы…»{#xach_s18_r573}"
+    new "«Never mind. I had some other questions…»{#xach_s18_r573}"
+
+    # game/dlgs/mortuary/xach.rpy:452
+    old "«Я должен идти. Прощай».{#xach_s18_r574}"
+    new "«I must leave. Farewell».{#xach_s18_r574}"
+
+    # game/dlgs/mortuary/xach.rpy:452
+    old "«Я должен идти. Прощай».{#xach_s18_r1380}"
+    new "«I must leave. Farewell».{#xach_s18_r1380}"
+
+    # game/dlgs/mortuary/xach.rpy:474
+    old "«Что-нибудь еще?»{#xach_s19_r63234}"
+    new "«Anything else?»{#xach_s19_r63234}"
+
+    # game/dlgs/mortuary/xach.rpy:474
+    old "«Дейонарра?»{#xach_s19_r576}"
+    new "«Deionarra?»{#xach_s19_r576}"
+
+    # game/dlgs/mortuary/xach.rpy:474
+    old "«„Гит“? Кого ты имеешь в виду?»{#xach_s19_r577}"
+    new "«The 'gith'? Who do you mean?»{#xach_s19_r577}"
+
+    # game/dlgs/mortuary/xach.rpy:474
+    old "«У меня есть другие вопросы…»{#xach_s19_r578}"
+    new "«I had some other questions…»{#xach_s19_r578}"
+
+    # game/dlgs/mortuary/xach.rpy:474
+    old "«Понятно… Я должен идти. Прощай, Захария».{#xach_s19_r579}"
+    new "«I see… I have to go now. Farewell, Xachariah».{#xach_s19_r579}"
+
+    # game/dlgs/mortuary/xach.rpy:474
+    old "«Понятно… Я должен идти. Прощай, Захария».{#xach_s19_r1379}"
+    new "«I see… I have to go now. Farewell, Xachariah».{#xach_s19_r1379}"
+
+    # game/dlgs/mortuary/xach.rpy:504
+    old "Ложь: «Да».{#xach_s20_r581}"
+    new "Lie: »Yes».{#xach_s20_r581}"
+
+    # game/dlgs/mortuary/xach.rpy:504
+    old "«Нет».{#xach_s20_r582}"
+    new "«No».{#xach_s20_r582}"
+
+    # game/dlgs/mortuary/xach.rpy:518
+    old "«Я надеюсь найти себя. На самом деле, я забыл, кто я, Захария, и думаю, что ты знаешь меня. Что ты можешь рассказать о моей предыдущей жизни?»{#xach_s21_r584}"
+    new "«I expect to find myself. I truly have forgotten who I am, Xachariah, and I believe you did know me. What can you tell me of my previous life?»{#xach_s21_r584}"
+
+    # game/dlgs/mortuary/xach.rpy:518
+    old "«Забудь об этом. У меня есть несколько вопросов…»{#xach_s21_r586}"
+    new "«Forget it. I had some questions».{#xach_s21_r586}"
+
+    # game/dlgs/mortuary/xach.rpy:518
+    old "«Ничего… Мне нужно идти. Прощай, Захария».{#xach_s21_r587}"
+    new "«Nothing… I have to leave. Farewell, Xachariah».{#xach_s21_r587}"
+
+    # game/dlgs/mortuary/xach.rpy:518
+    old "«Ничего… Мне нужно идти. Прощай, Захария».{#xach_s21_r1378}"
+    new "«Nothing… I have to leave. Farewell, Xachariah».{#xach_s21_r1378}"
+
+    # game/dlgs/mortuary/xach.rpy:540
+    old "«Нет, не помню… ну да ничего. Кажется, что ты меня знаешь. Что ты можешь рассказать о моей предыдущей жизни?»{#xach_s22_r590}"
+    new "«No, not really… but that's fine; I believe you did know me. So can you tell me of my previous life?»{#xach_s22_r590}"
+
+    # game/dlgs/mortuary/xach.rpy:540
+    old "«Неважно… У меня есть другие вопросы».{#xach_s22_r591}"
+    new "«Never mind… I had some other questions».{#xach_s22_r591}"
+
+    # game/dlgs/mortuary/xach.rpy:540
+    old "«Я должен идти. Прощай, Захария».{#xach_s22_r592}"
+    new "«I must leave. Farewell, Xachariah».{#xach_s22_r592}"
+
+    # game/dlgs/mortuary/xach.rpy:540
+    old "«Я должен идти. Прощай, Захария».{#xach_s22_r1377}"
+    new "«I must leave. Farewell, Xachariah».{#xach_s22_r1377}"
+
+    # game/dlgs/mortuary/xach.rpy:562
+    old "«Гит?»{#xach_s23_r593}"
+    new "«Gith?»{#xach_s23_r593}"
+
+    # game/dlgs/mortuary/xach.rpy:562
+    old "«„Причитающая дочка адвоката“?»{#xach_s23_r594}"
+    new "«Wailing advocate's daughter?»{#xach_s23_r594}"
+
+    # game/dlgs/mortuary/xach.rpy:562
+    old "«Летающий череп?»{#xach_s23_r595}"
+    new "«A floating skull?»{#xach_s23_r595}"
+
+    # game/dlgs/mortuary/xach.rpy:562
+    old "«Ты был слепым лучником?»{#xach_s23_r596}"
+    new "«You were a blind archer?»{#xach_s23_r596}"
+
+    # game/dlgs/mortuary/xach.rpy:562
+    old "«Ты не знаешь, что случилось с моим дневником?»{#xach_s23_r597}"
+    new "«Do you know what happened to my journal?»{#xach_s23_r597}"
+
+    # game/dlgs/mortuary/xach.rpy:562
+    old "«Неважно. У меня есть другие вопросы…»{#xach_s23_r598}"
+    new "«Never mind. I had some other questions…»{#xach_s23_r598}"
+
+    # game/dlgs/mortuary/xach.rpy:562
+    old "«Это хорошо. Прощай, Захария».{#xach_s23_r599}"
+    new "«I have to go. Farewell, Xachariah».{#xach_s23_r599}"
+
+    # game/dlgs/mortuary/xach.rpy:562
+    old "«Это хорошо. Прощай, Захария».{#xach_s23_r1376}"
+    new "«I have to go. Farewell, Xachariah».{#xach_s23_r1376}"
+
+    # game/dlgs/mortuary/xach.rpy:600
+    old "«Почему так?»{#xach_s24_r601}"
+    new "«Why was that?»{#xach_s24_r601}"
+
+    # game/dlgs/mortuary/xach.rpy:600
+    old "«Насчет некоторых моих спутников…»{#xach_s24_r602}"
+    new "«About some of my other companions…»{#xach_s24_r602}"
+
+    # game/dlgs/mortuary/xach.rpy:600
+    old "«У меня есть другие вопросы…»{#xach_s24_r603}"
+    new "«I had some other questions…»{#xach_s24_r603}"
+
+    # game/dlgs/mortuary/xach.rpy:600
+    old "«Хм-м-м. Интересно. Спасибо, Захария».{#xach_s24_r604}"
+    new "«Hmmm. Interesting. Thank you, Xachariah».{#xach_s24_r604}"
+
+    # game/dlgs/mortuary/xach.rpy:600
+    old "«Хм-м-м. Интересно. Спасибо, Захария».{#xach_s24_r1375}"
+    new "«Hmmm. Interesting. Thank you, Xachariah».{#xach_s24_r1375}"
+
+    # game/dlgs/mortuary/xach.rpy:626
+    old "«Я и сам не знаю. У меня есть другие вопросы…»{#xach_s25_r606}"
+    new "«I don't know myself. I had some other questions…»{#xach_s25_r606}"
+
+    # game/dlgs/mortuary/xach.rpy:626
+    old "«Возможно, мне это удастся. Прощай, Захария».{#xach_s25_r607}"
+    new "«Maybe I better find out. Farewell, Xachariah».{#xach_s25_r607}"
+
+    # game/dlgs/mortuary/xach.rpy:626
+    old "«Возможно, мне это удастся. Прощай, Захария».{#xach_s25_r1374}"
+    new "«Maybe I better find out. Farewell, Xachariah».{#xach_s25_r1374}"
+
+    # game/dlgs/mortuary/xach.rpy:644
+    old "«Что мне было нужно от нее?»{#xach_s26_r609}"
+    new "«What did I want from her?»{#xach_s26_r609}"
+
+    # game/dlgs/mortuary/xach.rpy:644
+    old "«Насчет некоторых моих спутников…»{#xach_s26_r610}"
+    new "«About some of my other companions…»{#xach_s26_r610}"
+
+    # game/dlgs/mortuary/xach.rpy:644
+    old "«У меня есть другие вопросы…»{#xach_s26_r614}"
+    new "«I had some other questions…»{#xach_s26_r614}"
+
+    # game/dlgs/mortuary/xach.rpy:644
+    old "«Я выслушал достаточно. Прощай, Захария».{#xach_s26_r611}"
+    new "«I've heard enough. Farewell, Xachariah».{#xach_s26_r611}"
+
+    # game/dlgs/mortuary/xach.rpy:644
+    old "«Я выслушал достаточно. Прощай, Захария».{#xach_s26_r1373}"
+    new "«I've heard enough. Farewell, Xachariah».{#xach_s26_r1373}"
+
+    # game/dlgs/mortuary/xach.rpy:670
+    old "«Гит».{#xach_s27_r613}"
+    new "«The gith».{#xach_s27_r613}"
+
+    # game/dlgs/mortuary/xach.rpy:670
+    old "«„Причитающая дочка адвоката“».{#xach_s27_r615}"
+    new "«The 'wailing advocate's daughter.'»{#xach_s27_r615}"
+
+    # game/dlgs/mortuary/xach.rpy:670
+    old "«Летающий череп».{#xach_s27_r616}"
+    new "«The floating skull».{#xach_s27_r616}"
+
+    # game/dlgs/mortuary/xach.rpy:670
+    old "«Ты… ты был… слепым лучником?»{#xach_s27_r617}"
+    new "«You… you were a… blind archer?»{#xach_s27_r617}"
+
+    # game/dlgs/mortuary/xach.rpy:670
+    old "«Неважно. У меня есть другие вопросы…»{#xach_s27_r618}"
+    new "«Never mind. I had some other questions…»{#xach_s27_r618}"
+
+    # game/dlgs/mortuary/xach.rpy:670
+    old "«Я выслушал достаточно. Прощай, Захария».{#xach_s27_r619}"
+    new "«I've heard enough. Farewell, Xachariah».{#xach_s27_r619}"
+
+    # game/dlgs/mortuary/xach.rpy:670
+    old "«Я выслушал достаточно. Прощай, Захария».{#xach_s27_r1372}"
+    new "«I've heard enough. Farewell, Xachariah».{#xach_s27_r1372}"
+
+    # game/dlgs/mortuary/xach.rpy:704
+    old "«Насчет некоторых моих спутников…»{#xach_s28_r622}"
+    new "«About some of my other companions…»{#xach_s28_r622}"
+
+    # game/dlgs/mortuary/xach.rpy:704
+    old "«У меня есть другие вопросы…»{#xach_s28_r623}"
+    new "«I had some other questions…»{#xach_s28_r623}"
+
+    # game/dlgs/mortuary/xach.rpy:704
+    old "«Я выслушал достаточно. Прощай, Захария».{#xach_s28_r624}"
+    new "«I've heard enough. Farewell, Xachariah».{#xach_s28_r624}"
+
+    # game/dlgs/mortuary/xach.rpy:704
+    old "«Я выслушал достаточно. Прощай, Захария».{#xach_s28_r1371}"
+    new "«I've heard enough. Farewell, Xachariah».{#xach_s28_r1371}"
+
+    # game/dlgs/mortuary/xach.rpy:726
+    old "«Насчет моих спутников…»{#xach_s29_r626}"
+    new "«About those companions of mine…»{#xach_s29_r626}"
+
+    # game/dlgs/mortuary/xach.rpy:726
+    old "«У меня есть другие вопросы…»{#xach_s29_r627}"
+    new "«I had some other questions…»{#xach_s29_r627}"
+
+    # game/dlgs/mortuary/xach.rpy:726
+    old "«Спасибо за информацию. Прощай, Захария».{#xach_s29_r628}"
+    new "«Thanks for the information. Farewell, Xachariah».{#xach_s29_r628}"
+
+    # game/dlgs/mortuary/xach.rpy:726
+    old "«Спасибо за информацию. Прощай, Захария».{#xach_s29_r1370}"
+    new "«Thanks for the information. Farewell, Xachariah».{#xach_s29_r1370}"
+
+    # game/dlgs/mortuary/xach.rpy:750
+    old "«Захария?»{#xach_s30_r631}"
+    new "«Xachariah?»{#xach_s30_r631}"
+
+    # game/dlgs/mortuary/xach.rpy:750
+    old "«Твое имя мне не известно. Я вернусь, если узнаю его. Прощай».{#xach_s30_r632}"
+    new "«Your name is not known to me. I may return if I can find it. Farewell».{#xach_s30_r632}"
+
+    # game/dlgs/mortuary/xach.rpy:766
+    old "«Захария?»{#xach_s31_r634}"
+    new "«Xachariah?»{#xach_s31_r634}"
+
+    # game/dlgs/mortuary/xach.rpy:766
+    old "«Я не знаю твоего имени. Я вернусь, если узнаю его. Прощай».{#xach_s31_r635}"
+    new "«I do not know your name. I may return when I have found it. Farewell».{#xach_s31_r635}"
+
+    # game/dlgs/mortuary/xach.rpy:766
+    old "«Прощай».{#xach_s31_r636}"
+    new "«Farewell».{#xach_s31_r636}"
+
+    # game/dlgs/mortuary/xach.rpy:784
+    old "«И что это?»{#xach_s32_r645}"
+    new "«What is it?»{#xach_s32_r645}"
+
+    # game/dlgs/mortuary/xach.rpy:784
+    old "«У меня есть другие вопросы…»{#xach_s32_r646}"
+    new "«I had some other questions…»{#xach_s32_r646}"
+
+    # game/dlgs/mortuary/xach.rpy:784
+    old "«Я должен идти. Прощай, Захария».{#xach_s32_r648}"
+    new "«I must leave. Farewell, Xachariah».{#xach_s32_r648}"
+
+    # game/dlgs/mortuary/xach.rpy:784
+    old "«Я должен идти. Прощай, Захария».{#xach_s32_r1369}"
+    new "«I must leave. Farewell, Xachariah».{#xach_s32_r1369}"
+
+    # game/dlgs/mortuary/xach.rpy:807
+    old "«Могу я получить его обратно?»{#xach_s33_r649}"
+    new "«Can I have it back?»{#xach_s33_r649}"
+
+    # game/dlgs/mortuary/xach.rpy:807
+    old "«Насчет моих спутников…»{#xach_s33_r650}"
+    new "«About my other companions…»{#xach_s33_r650}"
+
+    # game/dlgs/mortuary/xach.rpy:807
+    old "«У меня есть другие вопросы…»{#xach_s33_r651}"
+    new "«I had some other questions…»{#xach_s33_r651}"
+
+    # game/dlgs/mortuary/xach.rpy:807
+    old "«Я должен идти. Прощай, Захария».{#xach_s33_r652}"
+    new "«I must leave. Farewell, Xachariah».{#xach_s33_r652}"
+
+    # game/dlgs/mortuary/xach.rpy:807
+    old "«Я должен идти. Прощай, Захария».{#xach_s33_r1368}"
+    new "«I must leave. Farewell, Xachariah».{#xach_s33_r1368}"
+
+    # game/dlgs/mortuary/xach.rpy:833
+    old "«Да».{#xach_s34_r647}"
+    new "«Yes».{#xach_s34_r647}"
+
+    # game/dlgs/mortuary/xach.rpy:833
+    old "«Нет… но я смогу просто разорвать стежки руками».{#xach_s34_r653}"
+    new "«No… but I ought to be able to just tear the stitches».{#xach_s34_r653}"
+
+    # game/dlgs/mortuary/xach.rpy:847
+    old "«У меня есть другие вопросы…»{#xach_s35_r655}"
+    new "«I had some other questions…»{#xach_s35_r655}"
+
+    # game/dlgs/mortuary/xach.rpy:847
+    old "«Пойду-ка, поищу его. Прощай».{#xach_s35_r656}"
+    new "«I'll go look for one. Farewell, Xachariah».{#xach_s35_r656}"
+
+    # game/dlgs/mortuary/xach.rpy:861
+    old "Сделать это.{#xach_s36_r658}"
+    new "Do it.{#xach_s36_r658}"
+
+    # game/dlgs/mortuary/xach.rpy:861
+    old "«Неважно, Захария… Лучше я задам тебе несколько вопросов…»{#xach_s36_r659}"
+    new "«Never mind, Xachariah… I had some questions to ask you, instead…»{#xach_s36_r659}"
+
+    # game/dlgs/mortuary/xach.rpy:861
+    old "«Сейчас я не могу, я должен идти. Прощай, Захария».{#xach_s36_r660}"
+    new "«I can't now, I must leave. Farewell, Xachariah».{#xach_s36_r660}"
+
+    # game/dlgs/mortuary/xach.rpy:861
+    old "«Сейчас я не могу, я должен идти. Прощай, Захария».{#xach_s36_r1367}"
+    new "«I can't now, I must leave. Farewell, Xachariah».{#xach_s36_r1367}"
+
+    # game/dlgs/mortuary/xach.rpy:884
+    old "Вытащить его.{#xach_s37_r663}"
+    new "Pull it out.{#xach_s37_r663}"
+
+    # game/dlgs/mortuary/xach.rpy:896
+    old "Попробовать еще раз.{#xach_s38_r664}"
+    new "Do it again.{#xach_s38_r664}"
+
+    # game/dlgs/mortuary/xach.rpy:908
+    old "Вытащить его.{#xach_s39_r666}"
+    new "Pull it out.{#xach_s39_r666}"
+
+    # game/dlgs/mortuary/xach.rpy:920
+    old "«Да, похоже. Спасибо, Захария. У меня есть вопросы к тебе…»{#xach_s40_r668}"
+    new "«I think so, yes. Thanks, Xachariah. I had some other questions…»{#xach_s40_r668}"
+
+    # game/dlgs/mortuary/xach.rpy:920
+    old "«Очень похоже. Я должен идти. Прощай, Захария».{#xach_s40_r669}"
+    new "«Looks like it. I must go now. Farewell, Xachariah».{#xach_s40_r669}"
+
+    # game/dlgs/mortuary/xach.rpy:920
+    old "«Очень похоже. Я должен идти. Прощай, Захария».{#xach_s40_r1366}"
+    new "«Looks like it. I must go now. Farewell, Xachariah».{#xach_s40_r1366}"
+
+    # game/dlgs/mortuary/xach.rpy:938
+    old "«И что это?»{#xach_s41_r672}"
+    new "«What is it?»{#xach_s41_r672}"
+
+    # game/dlgs/mortuary/xach.rpy:938
+    old "«В последнее время я сделал уже достаточно одолжений и услуг… Мне нужно идти, Захария. Прощай».{#xach_s41_r671}"
+    new "«I already have enough favors and quests to last me… I have to go, Xachariah. Farewell».{#xach_s41_r671}"
+
+    # game/dlgs/mortuary/xach.rpy:955
+    old "«Как?»{#xach_s42_r675}"
+    new "«How?»{#xach_s42_r675}"
+
+    # game/dlgs/mortuary/xach.rpy:955
+    old "«В последнее время я сделал уже достаточно одолжений и услуг… Мне нужно идти, Захария. Прощай».{#xach_s42_r676}"
+    new "«I already have enough favors and quests to last me… I have to go, Xachariah. Farewell».{#xach_s42_r676}"
+
+    # game/dlgs/mortuary/xach.rpy:969
+    old "«Если ты так хочешь…»{#xach_s43_r679}"
+    new "«If that is your wish…»{#xach_s43_r679}"
+
+    # game/dlgs/mortuary/xach.rpy:969
+    old "«Захария, я не хочу убивать тебя. Еще раз. Прощай».{#xach_s43_r680}"
+    new "«Xachariah, I won't kill you. Again. Farewell».{#xach_s43_r680}"
+
+    # game/dlgs/mortuary/xach.rpy:984
+    old "«Покойся с миром, Захария».{#xach_s44_r681}"
+    new "«Rest in peace, Xachariah».{#xach_s44_r681}"
+
+    # game/dlgs/mortuary/xach.rpy:995
+    old "Уйти.{#xach_s45_r684}"
+    new "Leave.{#xach_s45_r684}"
+
+    # game/dlgs/mortuary/xach.rpy:1005
+    old "«Что ты здесь делаешь?»{#xach_s46_r689}"
+    new "«What are you doing here?»{#xach_s46_r689}"
+
+    # game/dlgs/mortuary/xach.rpy:1005
+    old "«У меня есть несколько вопросов…»{#xach_s46_r690}"
+    new "«I had some questions…»{#xach_s46_r690}"
+
+    # game/dlgs/mortuary/xach.rpy:1005
+    old "«Я должен идти. Прощай, Захария».{#xach_s46_r691}"
+    new "«I must leave. Farewell, Xachariah».{#xach_s46_r691}"
+
+    # game/dlgs/mortuary/xach.rpy:1005
+    old "«Я должен идти. Прощай, Захария».{#xach_s46_r1365}"
+    new "«I must leave. Farewell, Xachariah».{#xach_s46_r1365}"
+
+    # game/dlgs/mortuary/xach.rpy:1027
+    old "«Каково это — быть зомби?»{#xach_s47_r693}"
+    new "«What's it like being a zombie?»{#xach_s47_r693}"
+
+    # game/dlgs/mortuary/xach.rpy:1027
+    old "«У меня есть несколько вопросов…»{#xach_s47_r695}"
+    new "«I had some questions…»{#xach_s47_r695}"
+
+    # game/dlgs/mortuary/xach.rpy:1027
+    old "«Я должен идти. Прощай, Захария».{#xach_s47_r696}"
+    new "«I must leave. Farewell, Xachariah».{#xach_s47_r696}"
+
+    # game/dlgs/mortuary/xach.rpy:1027
+    old "«Я должен идти. Прощай, Захария».{#xach_s47_r1364}"
+    new "«I must leave. Farewell, Xachariah».{#xach_s47_r1364}"
+
+    # game/dlgs/mortuary/xach.rpy:1051
+    old "«У меня есть другие вопросы…»{#xach_s48_r697}"
+    new "«I had some other questions…»{#xach_s48_r697}"
+
+    # game/dlgs/mortuary/xach.rpy:1051
+    old "«Тогда прощай, Захария».{#xach_s48_r698}"
+    new "«Farewell then, Xachariah».{#xach_s48_r698}"
+
+    # game/dlgs/mortuary/xach.rpy:1051
+    old "«Тогда прощай, Захария».{#xach_s48_r633}"
+    new "«Farewell then, Xachariah».{#xach_s48_r633}"
+
+    # game/dlgs/mortuary/xach.rpy:1070
+    old "«Насчет некоторых моих спутников…»{#xach_s49_r63626}"
+    new "«About some of my other companions…»{#xach_s49_r63626}"
+
+    # game/dlgs/mortuary/xach.rpy:1070
+    old "«У меня есть другие вопросы…»{#xach_s49_r63627}"
+    new "«I had some other questions…»{#xach_s49_r63627}"
+
+    # game/dlgs/mortuary/xach.rpy:1070
+    old "«Хм-м-м. Интересно. Спасибо, Захария».{#xach_s49_r63628}"
+    new "«Hmmm. Interesting. Thank you, Xachariah».{#xach_s49_r63628}"
+
+    # game/dlgs/mortuary/xach.rpy:1070
+    old "«Хм-м-м. Интересно. Спасибо, Захария».{#xach_s49_r63629}"
+    new "«Hmmm. Interesting. Thank you, Xachariah».{#xach_s49_r63629}"
 

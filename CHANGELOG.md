@@ -1,5 +1,9 @@
 # Change log
 
+## Version 0.03
+
+- Translate from None(russian) to russian and english
+
 ## Version 0.02
 
 - Add working save/load
