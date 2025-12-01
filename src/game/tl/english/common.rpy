@@ -1,4 +1,4 @@
-﻿# TODO: Translation updated at 2025-11-25 19:58
+# TODO: Translation updated at 2025-11-28 22:23
 
 translate english strings:
 
@@ -572,7 +572,7 @@ translate english strings:
 
     # renpy/common/00preferences.rpy:347
     old "joystick..."
-    new "joystick…"
+    new "joystick..."
 
     # renpy/common/00preferences.rpy:354
     old "skip"
@@ -892,7 +892,7 @@ translate english strings:
 
     # renpy/common/00iap.rpy:231
     old "Contacting App Store\nPlease Wait..."
-    new "Contacting App Store\nPlease Wait…"
+    new "Contacting App Store\nPlease Wait..."
 
     # renpy/common/00updater.rpy:505
     old "No update methods found."

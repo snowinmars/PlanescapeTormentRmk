@@ -81,8 +81,8 @@ translate russian introduction_1_c790b860:
 # game/dlgs/introduction.rpy:41
 translate russian introduction_1_bd25370e:
 
-    # snowinmars "Искусство нельзя заспойлерить. Сюжет \"Ромео и Джульетты\" излагается на первой странице книги - потому что не в нём смысл."
-    snowinmars "Искусство нельзя заспойлерить. Сюжет \"Ромео и Джульетты\" излагается на первой странице книги - потому что не в нём смысл."
+    # snowinmars "Искусство нельзя заспойлерить. Сюжет «Ромео и Джульетты» излагается на первой странице книги - потому что не в нём смысл."
+    snowinmars "Искусство нельзя заспойлерить. Сюжет «Ромео и Джульетты» излагается на первой странице книги - потому что не в нём смысл."
 
 # game/dlgs/introduction.rpy:42
 translate russian introduction_1_b6ba569e:
@@ -99,8 +99,8 @@ translate russian introduction_1_72fa661f:
 # game/dlgs/introduction.rpy:44
 translate russian introduction_1_80e235f3:
 
-    # snowinmars "Если тебе так спокойнее - хорошо. После прохождения игры ты поймёшь, что я прав."
-    snowinmars "Если тебе так спокойнее - хорошо. После прохождения игры ты поймёшь, что я прав."
+    # snowinmars "Если тебе так спокойнее - хорошо. После прохождения игры (целиком, не этой демки) ты поймёшь, что я прав."
+    snowinmars "Если тебе так спокойнее - хорошо. После прохождения игры (целиком, не этой демки) ты поймёшь, что я прав."
 
 # game/dlgs/introduction.rpy:46
 translate russian introduction_1_2b718e9d:
@@ -147,8 +147,8 @@ translate russian introduction_1_3137658f:
 # game/dlgs/introduction.rpy:54
 translate russian introduction_1_bb82dccc:
 
-    # snowinmars "Проекты вроде Kill the Princess показывают, что ягоды в ягодицах у RenPy вполне есть."
-    snowinmars "Проекты вроде Kill the Princess показывают, что ягоды в ягодицах у RenPy вполне есть."
+    # snowinmars "Проекты вроде «Kill the Princess» показывают, что ягоды в ягодицах у RenPy вполне есть."
+    snowinmars "Проекты вроде «Kill the Princess» показывают, что ягоды в ягодицах у RenPy вполне есть."
 
 # game/dlgs/introduction.rpy:55
 translate russian introduction_1_892848fb:
@@ -207,8 +207,8 @@ translate russian introduction_1_54a860f0:
 # game/dlgs/introduction.rpy:64
 translate russian introduction_1_2a406288:
 
-    # snowinmars "Спасибо также тексту \"Planescape: Torment - Novelization\" за авторством, вроде как, Chris Avellone and Colin McComb. Я с него иногда беру описания."
-    snowinmars "Спасибо также тексту \"Planescape: Torment - Novelization\" за авторством, вроде как, Chris Avellone and Colin McComb. Я с него иногда беру описания."
+    # snowinmars "Спасибо также тексту «Planescape: Torment - Novelization» за авторством, вроде как, Chris Avellone and Colin McComb. Я с него иногда беру описания."
+    snowinmars "Спасибо также тексту «Planescape: Torment - Novelization» за авторством, вроде как, Chris Avellone and Colin McComb. Я с него иногда беру описания."
 
 # game/dlgs/introduction.rpy:66
 translate russian introduction_1_7f0e7525:

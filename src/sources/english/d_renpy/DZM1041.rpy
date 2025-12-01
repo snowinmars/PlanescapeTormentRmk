@@ -217,7 +217,7 @@ label zm1041_s8: # from 5.2 14.2
 
 # s9 # say9066
 label zm1041_s9: # from 5.4 14.4
-    nr '"This building? Nothing at all; I had heard of it, knew my corpse was to serve here, but that is all."  "I know almost as little about this great city, „Sigil.“ My weeks here were spent searching for the men I fell into this world with and learning the language; though it pained me, I had time for little else. I could have learned so much from the myriad wonders of such a place…"{#zm1041_s9_1}'
+    nr '"This building? Nothing at all; I had heard of it, knew my corpse was to serve here, but that is all. I know almost as little about this great city, „Sigil.“ My weeks here were spent searching for the men I fell into this world with and learning the language; though it pained me, I had time for little else. I could have learned so much from the myriad wonders of such a place…"{#zm1041_s9_1}'
 
     menu:
         '"Your corpse was to serve here? How did that come about?"{#zm1041_s9_r9124}':

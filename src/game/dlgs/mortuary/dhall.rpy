@@ -102,7 +102,7 @@ label dhall_s3: # from 9.0
 # s4 # say833
 label dhall_s4: # from 3.0 3.1
     $ x = logic_get_know_dhall_name()
-    $ y = _('Дхолла{#dhall_s4_y1}') if dhallLogic.get_know_dhall_name() else ('него{#dhall_s4_y2}')
+    $ y = _('Дхолла{#dhall_s4_y1}') if dhallLogic.get_know_dhall_name() else _('него{#dhall_s4_y2}')
     x '«Я…»{#dhall_s4_1}'
     nr 'У [y] начинается очередной приступ кашля. Спустя минуту или две его дыхание становится достаточно спокойным, чтобы он смог продолжить.{#dhall_s4_2}'
     x '«Я… незамедлительно предупрежу стражу».{#dhall_s4_3}'
@@ -619,7 +619,7 @@ label dhall_s22: # from 47.0
 # s23 # say924
 label dhall_s23: # from 8.0
     $ x = logic_get_know_dhall_name()
-    $ y = ('Дхолл{#dhall_s23_y1}') if dhallLogic.get_know_dhall_name() else _('Он{#dhall_s23_y1}')
+    $ y = _('Дхолл{#dhall_s23_y1}') if dhallLogic.get_know_dhall_name() else _('Он{#dhall_s23_y2}')
     x '«Потому что заставлять тебя принимать нашу веру несправедливо. Ты должен оставить тень этой жизни по своей воле, а не по нашей».{#dhall_s23_1}'
     nr '[y], кажется, готов разразиться очередным приступом кашля, но с некоторыми усилиями ему удается сдержаться.{#dhall_s23_2}'
     x '«И покуда я не покину свою должность, я буду защищать твое право искать свою правду».{#dhall_s23_3}'

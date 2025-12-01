@@ -96,7 +96,7 @@ translate russian zm1146_s8_2ed592b7:
 translate russian zm1146_s8_5b6ff773:
 
     # zm1146 "«Хе, хе-хе-хе»{#zm1146_s8_2}"
-    zm1146 "«Хе, хе-хе-хе»{#zm1146_s8_2}"
+    zm1146 "«Хе, хе-хе-хе…»{#zm1146_s8_2}"
 
 # game/dlgs/mortuary_zombies/zm1146.rpy:162
 translate russian zm1146_s8_d9c920f2:
