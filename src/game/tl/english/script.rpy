@@ -1,12 +1,24 @@
-﻿# TODO: Translation updated at 2025-11-25 19:58
+# TODO: Translation updated at 2025-11-28 22:23
 
-# game/script.rpy:201
+# game/script.rpy:186
+translate english end_06023550:
+
+    # snowinmars "…"
+    snowinmars "…"
+
+# game/script.rpy:187
+translate english end_eaa0add7:
+
+    # snowinmars "………"
+    snowinmars "………"
+
+# game/script.rpy:188
 translate english end_7fd59d57:
 
     # snowinmars "Спасибо."
     snowinmars "Thanks."
 
-# game/script.rpy:203
+# game/script.rpy:190
 translate english end_5625e4d0:
 
     # "The conversation ends."
@@ -14,15 +26,15 @@ translate english end_5625e4d0:
 
 translate english strings:
 
-    # game/script.rpy:160
+    # game/script.rpy:147
     old "dev"
     new "dev"
 
-    # game/script.rpy:160
+    # game/script.rpy:147
     old "Вступление для технодемки"
     new "Tech demo intro"
 
-    # game/script.rpy:160
+    # game/script.rpy:147
     old "Новая жизнь"
     new "New life"
 
