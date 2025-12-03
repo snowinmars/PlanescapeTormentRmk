@@ -1,6 +1,11 @@
 # manually sync with script.rpy 'characters' variable
 define the_nameless_one   = Character(_('Безымянный'),     color='#c8ffc8')
 
+init 1 python:
+    def get_dhall_name():
+        return _('Дхолл') if dhallLogic.get_know_dhall_name() else '?'
+# define dhall              = DynamicCharacter(_('get_dhall_name()'),          color='#c8ffc8')
+
 define nr                 = Character('',                  color='#c8ffc8')
 define morte_unknown      = Character('?',                 color='#c8ffc8')
 define morte              = Character(_('Морт'),           color='#c8ffc8')

@@ -266,7 +266,7 @@ translate english xach_s29_cc07be57:
 translate english xach_s30_9b8f54ab:
 
     # xach_unknown "«Звучит знакомо… но если ты тот, о ком я думаю, тогда… кто…»{#xach_s30_1}"
-    xach_unknown "»It sounds familiar… but if you are who I think you are, then… who…»{#xach_s30_1}"
+    xach_unknown "«It sounds familiar… but if you are who I think you are, then… who…»{#xach_s30_1}"
 
 # game/dlgs/mortuary/xach.rpy:747
 translate english xach_s30_2571d444:

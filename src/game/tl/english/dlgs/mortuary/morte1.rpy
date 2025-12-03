@@ -4,35 +4,35 @@
 translate english morte1_s0_a184f8dc:
 
     # morte_unknown "«Эй, шеф. Ты в порядке? Изображаешь из себя труп или пытаешься обмануть трухлявых? Я уж думал, что ты дал дуба».{#morte1_s0_1}"
-    morte_unknown "»Hey, chief. You okay?»{#morte1_s0_1}"
-    morte_unknown "»You playing corpse or you putting the blinds on the Dusties?»{#morte1_s0_1}"
-    morte_unknown "»I thought you were a deader for sure».{#morte1_s0_1}"
+    morte_unknown "«Hey, chief. You okay?»{#morte1_s0_1}"
+    morte_unknown "«You playing corpse or you putting the blinds on the Dusties?»{#morte1_s0_1}"
+    morte_unknown "«I thought you were a deader for sure».{#morte1_s0_1}"
 
 # game/dlgs/mortuary/morte1.rpy:26
 translate english morte1_s1_180066ff:
 
     # morte_unknown "«Э… кто я? А как насчет *тебя* для начала? Кто ты?»{#morte1_s1_1}"
-    morte_unknown "»Uh… who am *I?* How about *you* start? Who're you?»{#morte1_s1_1}"
+    morte_unknown "«Uh… who am *I?* How about *you* start? Who're you?»{#morte1_s1_1}"
 
 # game/dlgs/mortuary/morte1.rpy:40
 translate english morte1_s2_5bdc8ca5:
 
     # morte "«Ты не можешь вспомнить свое *имя*? Хе. Что ж, в СЛЕДУЮЩИЙ раз, когда будешь кутить ночью в городе, не налегай на выпивку. Зовут Мортом. Я тоже здесь заперт».{#morte1_s2_1}"
-    morte "«You can't remember your *name?* Heh».{#morte1_s2_1}"
-    morte "«Well, NEXT time you spend a night in this berg, go easy on the bub».{#morte1_s2_1}"
+    morte_unknown "«You can't remember your *name?* Heh».{#morte1_s2_1}"
+    morte_unknown "«Well, NEXT time you spend a night in this berg, go easy on the bub».{#morte1_s2_1}"
     morte "«Name's Morte. I'm trapped in here, too».{#morte1_s2_1}"
 
 # game/dlgs/mortuary/morte1.rpy:50
 translate english morte1_s3_75266fec:
 
     # morte_unknown "«Ага, а я спросил тебя *вторым*. Как твое имя?»{#morte1_s3_1}"
-    morte_unknown "»Yeah, 'an I asked you *second.* What's your name?»{#morte1_s3_1}"
+    morte_unknown "«Yeah, 'an I asked you *second.* What's your name?»{#morte1_s3_1}"
 
 # game/dlgs/mortuary/morte1.rpy:64
 translate english morte1_s4_2ccb567c:
 
     # morte_unknown "«Пф-ф… да ты натянут как струна. Ну хорошо, пусть *я* буду хорошим парнем. Я - летающий череп. А кто ты?»{#morte1_s4_1}"
-    morte_unknown "»Tchhhh… you're tighter than a wet rope. All right, *I'll* be the nice guy here. Name's Morte. Who're you?»{#morte1_s4_1}"
+    morte_unknown "«Tchhhh… you're tighter than a wet rope. All right, *I'll* be the nice guy here. Name's Morte. Who're you?»{#morte1_s4_1}"
 
 # game/dlgs/mortuary/morte1.rpy:74
 translate english morte1_s5_27d4427c:
@@ -202,7 +202,7 @@ translate english morte1_s24_48f8ab26:
 
     # morte "«Отлично, похоже, ты позаботился о правильном трупе. Теперь надо найти ключ. Он должен быть на его теле. Как только мы его получим, мы сможем выбраться отсюда».{#morte1_s24_1}"
     morte "«All right, you took care of the right corpse, looks like. Now you gotta find the key.{#morte1_s24_1}"
-    morte "«It should have been on its body. Once we have it, we can get out of here».  ^NNOTE: <DEADPILE>^-{#morte1_s24_1}"
+    morte "«It should have been on its body. Once we have it, we can get out of here».{#morte1_s24_1}"
 
 # game/dlgs/mortuary/morte1.rpy:269
 translate english morte1_s24_bce304f3:
