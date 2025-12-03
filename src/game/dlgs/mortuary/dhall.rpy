@@ -6,6 +6,16 @@
     def logic_get_know_dhall_name():
         return dhall if dhallLogic.get_know_dhall_name() else dhall_unknown
 
+    # def get_dhall_appeal(upper_case=True):
+    #     if upper_case:
+    #         return _('Дхолл') if dhallLogic.get_know_dhall_name() else _('Он')
+    #     return _('Дхолл') if dhallLogic.get_know_dhall_name() else _('он')
+    # def get_dhall_appeal_genitive():
+    #     return _('Дхолла') if dhallLogic.get_know_dhall_name() else _('него')
+    # def get_dhall_appeal_voice():
+    #     return _('Голос Дхолла') if dhallLogic.get_know_dhall_name() else _('Его голос')
+
+
 
 # ###
 # Original:  DLG/DDHALL.DLG

@@ -5,6 +5,13 @@
 init offset = -1
 
 init python:
+    if persistent.language:
+        config.language = persistent.language
+    else:
+        config.language = 'english'
+        persistent.language = 'english'
+
+
     def get_available_translations():
         priority = {'russian': 0, 'english': 1}
         tl_path = os.path.join(renpy.config.gamedir, "tl")
@@ -788,8 +795,10 @@ screen preferences():
                 vbox:
                     style_prefix "radio"
                     label ("🌐 Aあ")
-                    for lang in get_available_translations():
-                        textbutton (f"{lang_to_native(lang)}") action Language(lang)
+                    # for lang in get_available_translations():
+                    #     textbutton (f"{lang_to_native(lang)}") action Language(lang)
+                    textbutton (f"Русский") action [SetVariable("persistent.language", "russian"), Language("russian")]
+                    textbutton (f"English") action [SetVariable("persistent.language", "english"), Language("english")]
 
 
             null height (4 * gui.pref_spacing)
