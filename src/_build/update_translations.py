@@ -1,5 +1,7 @@
 import re
 import os
+from typing import Dict, List, Tuple, Optional
+from dataclasses import dataclass
 from pathlib import Path
 
 cwd = os.getcwd()
@@ -11,251 +13,270 @@ IGNORED_FILES = [
 ]
 
 
-# TODO [snow]: this is a copy
-file_name_map = {
-    # ./sources/lang/d_renpy : ./game/tl/lang/dlgs
-    'soego.rpy'       : 'dsoego.rpy',
-    'n1201.rpy'       : 'dn1201.rpy',
-    'giantsk.rpy'     : 'dgiantsk.rpy',
-    'copearc.rpy'     : 'copearc.rpy',
-    'annah.rpy'       : 'dannah.rpy',
-    'dakkon.rpy'      : 'ddakkon.rpy',
-    'ddeathon.rpy'    : 'ddeathon.rpy',
-    'deionarra.rpy'   : 'ddeions.rpy',
-    'dhall.rpy'       : 'ddhall.rpy',
-    'dust.rpy'        : 'ddust.rpy',
-    'dustfem.rpy'     : 'ddustfem.rpy',
-    'eivene.rpy'      : 'deivene.rpy',
-    'grace.rpy'       : 'dgrace.rpy',
-    'ignus.rpy'       : 'dignus.rpy',
-    'morte.rpy'       : 'dmorte.rpy',
-    'morte1.rpy'      : 'dmorte1.rpy',
-    'morte2.rpy'      : 'dmorte2.rpy',
-    'nordom.rpy'      : 'dnordom.rpy',
-    's1221.rpy'       : 'ds1221.rpy',
-    's42.rpy'         : 'ds42.rpy',
-    's748.rpy'        : 'ds748.rpy',
-    's863.rpy'        : 'ds863.rpy',
-    's996.rpy'        : 'ds996.rpy',
-    'vaxis.rpy'       : 'dvaxis.rpy',
-    'vhail.rpy'       : 'dvhail.rpy',
-    'xach.rpy'        : 'dxach.rpy',
-    'zf1072.rpy'      : 'dzf1072.rpy',
-    'zf1096.rpy'      : 'dzf1096.rpy',
-    'zf114.rpy'       : 'dzf114.rpy',
-    'zf1148.rpy'      : 'dzf1148.rpy',
-    'zf444.rpy'       : 'dzf444.rpy',
-    'zf594.rpy'       : 'dzf594.rpy',
-    'zf626.rpy'       : 'dzf626.rpy',
-    'zf679.rpy'       : 'dzf679.rpy',
-    'zf832.rpy'       : 'dzf832.rpy',
-    'zf891.rpy'       : 'dzf891.rpy',
-    'zf916.rpy'       : 'dzf916.rpy',
-    'zm1041.rpy'      : 'dzm1041.rpy',
-    'zm1094.rpy'      : 'dzm1094.rpy',
-    'zm1146.rpy'      : 'dzm1146.rpy',
-    'zm1201.rpy'      : 'dzm1201.rpy',
-    'zm1445.rpy'      : 'dzm1445.rpy',
-    'zm1508.rpy'      : 'dzm1508.rpy',
-    'zm1664.rpy'      : 'dzm1664.rpy',
-    'zm199.rpy'       : 'dzm199.rpy',
-    'zm257.rpy'       : 'dzm257.rpy',
-    'zm310.rpy'       : 'dzm310.rpy',
-    'zm396.rpy'       : 'dzm396.rpy',
-    'zm463.rpy'       : 'dzm463.rpy',
-    'zm475.rpy'       : 'dzm475.rpy',
-    'zm506.rpy'       : 'dzm506.rpy',
-    'zm569.rpy'       : 'dzm569.rpy',
-    'zm613.rpy'       : 'dzm613.rpy',
-    'zm732.rpy'       : 'dzm732.rpy',
-    'zm782.rpy'       : 'dzm782.rpy',
-    'zm79.rpy'        : 'dzm79.rpy',
-    'zm825.rpy'       : 'dzm825.rpy',
-    'zm965.rpy'       : 'dzm965.rpy',
-    'zm985.rpy'       : 'dzm985.rpy',
+
+FILE_MAPPING = {
+    "COPEARC": "inventory/copearc",
+    "DDEIONS": "deionarra",
+    "DDHALL": "mortuary/dhall",
+    "DDUST": "mortuary/dust",
+    "DDUSTFEM": "mortuary/dustfem",
+    "DEIVENE": "mortuary/eivene",
+    "DGIANTSK": "mortuary/giantsk",
+    "DMORTE": "mortuary/morte",
+    "DMORTE1": "mortuary/morte1",
+    "DMORTE2": "mortuary/morte2",
+    "DN1201": "inventory/n1201",
+    "DS42": "mortuary_zombies/s42",
+    "DS748": "mortuary_zombies/s748",
+    "DS863": "mortuary_zombies/s863",
+    "DS996": "mortuary_zombies/s996",
+    "DS1221": "mortuary_zombies/s1221",
+    "DSOEGO": "soego",
+    "DVAXIS": "mortuary/vaxis",
+    "DXACH": "mortuary/xach",
+    "DZF114": "mortuary_zombies/zf114",
+    "DZF444": "mortuary_zombies/zf444",
+    "DZF594": "mortuary_zombies/zf594",
+    "DZF626": "mortuary_zombies/zf626",
+    "DZF679": "mortuary_zombies/zf679",
+    "DZF832": "mortuary_zombies/zf832",
+    "DZF891": "mortuary_zombies/zf891",
+    "DZF916": "mortuary_zombies/zf916",
+    "DZF1072": "mortuary_zombies/zf1072",
+    "DZF1096": "mortuary_zombies/zf1096",
+    "DZF1148": "mortuary_zombies/zf1148",
+    "DZM79": "mortuary_zombies/zm79",
+    "DZM199": "mortuary_zombies/zm199",
+    "DZM257": "mortuary_zombies/zm257",
+    "DZM310": "mortuary_zombies/zm310",
+    "DZM396": "mortuary_zombies/zm396",
+    "DZM463": "mortuary_zombies/zm463",
+    "DZM475": "mortuary_zombies/zm475",
+    "DZM506": "mortuary_zombies/zm506",
+    "DZM569": "mortuary_zombies/zm569",
+    "DZM613": "mortuary_zombies/zm613",
+    "DZM732": "mortuary_zombies/zm732",
+    "DZM782": "mortuary_zombies/zm782",
+    "DZM825": "mortuary_zombies/zm825",
+    "DZM965": "mortuary_zombies/zm965",
+    "DZM985": "mortuary_zombies/zm985",
+    "DZM1041": "mortuary_zombies/zm1041",
+    "DZM1094": "mortuary_zombies/zm1094",
+    "DZM1146": "mortuary_zombies/zm1146",
+    "DZM1201": "mortuary_zombies/zm1201",
+    "DZM1445": "mortuary_zombies/zm1445",
+    "DZM1508": "mortuary_zombies/zm1508",
+    "DZM1664": "mortuary_zombies/zm1664"
 }
 
 
-def update_translations(lang):
+@dataclass
+class TranslatableLine:
+    id: str
+    text: str
+    line_type: str  # 'narrative' или 'menu'
+    line_number: int
+    label: Optional[str] = None
+
+
+def update_translations(lang: str):
+    cwd = os.getcwd()
     folder_with_renpy_dialogues = os.path.normpath(os.path.join(cwd, f'sources/{lang}/d_renpy'))
     folder_with_translations = os.path.normpath(os.path.join(cwd, f'game/tl/{lang}/dlgs'))
 
-    english_content = {}
-    eng_files = {}
-    for eng_file in Path(folder_with_renpy_dialogues).glob("**/*.rpy"):
-        if eng_file.name in IGNORED_FILES:
-            continue
-        with open(eng_file, 'r', encoding='utf-8') as f:
-            english_content[eng_file.name] = _parse_english_file(f.read())
-            eng_files[eng_file.name] = eng_file
+    automator = TranslationAutomator()
 
-    for trans_file in Path(folder_with_translations).glob("**/*.rpy"):
-        if trans_file.name in IGNORED_FILES:
-            continue
+    eng_files = set(Path(folder_with_renpy_dialogues).glob("**/*.rpy"))
+    print(f"Найдено {len(eng_files)} исходных файлов")
 
-        _process_translation_file(trans_file, english_content)
+    trans_files = set(Path(folder_with_translations).glob("**/*.rpy"))
+    print(f"Найдено {len(trans_files)} файлов переводов")
 
+    base_trans_path = Path(folder_with_translations)
+    file_pairs = FileMatcher.find_matching_files(eng_files, trans_files, base_trans_path)
+    print(f"Сопоставлено {len(file_pairs)} пар файлов")
 
-def _parse_english_file(english_content):
-    labels_content = {}
+    for eng_file, trans_file in file_pairs:
+        automator.automate_translation(str(eng_file), str(trans_file))
 
-    lines = english_content.split('\n')
-    lines_len = len(lines)
-    i = 0
-
-    while i < lines_len:
-        line = lines[i].strip()
-
-        label_match = re.match(r'label\s+([a-zA-Z0-9_]+):', line)
-        if label_match:
-            label_name = label_match.group(1)
-            label_content = []
-
-            i += 1
-            while i < lines_len:
-                current_line = lines[i]
-                current_stripped = current_line.strip()
-
-                if (current_stripped.startswith('label ') or
-                    current_stripped.startswith('menu:') or
-                    current_stripped.startswith('jump ')): # or (current_stripped and not current_stripped.startswith('#') and not current_stripped.startswith('"') and ' "' not in current_line)
-                    break
-
-                if label_content or current_stripped:
-                    label_content.append(current_line)
-
-                i += 1
-
-            if len(label_content) > 0:
-                labels_content[label_name] = '\n'.join(label_content)
-            continue
-
-        i += 1
-
-    return labels_content
+    print("Обновление переводов завершено!")
 
 
-def _process_translation_file(trans_file, english_content):
-    with open(trans_file, 'r', encoding='utf-8') as f:
-        content = f.read()
+class RpyParser:
+    def __init__(self):
+        self.NARRATIVE_PATTERN = re.compile(r'^\s*(?:\w+\s+)?[\'\"](.*?)\{\#(.*?)\}[\'\"]')
+        self.MENU_PATTERN = re.compile(r'^\s*[\'\"](.*?)\{\#(.*?)\}[\'\"]')
+        self.LABEL_PATTERN = re.compile(r'^label\s+(\w+):')
 
-    new_content = []
-    lines = content.split('\n')
-    i = 0
 
-    while i < len(lines):
-        line = lines[i]
+    def parse_file(self, file_path):
+        translatable_lines = {}
+        current_label = None
 
-        trans_label_match = re.search(r'translate\s+english\s+([a-zA-Z0-9_]+)_[a-f0-9]+:', line)
-        if trans_label_match:
-            base_label = trans_label_match.group(1)  # deionarra_s75 из deionarra_s75_e514245c
+        with open(file_path, 'r', encoding='utf-8') as file:
+            lines = file.readlines()
 
-            new_content.append(line)
-            i += 1
+            for line_num, line in enumerate(lines, 1):
+                line = line.rstrip()
 
-            eng_content = _find_english_content(base_label, english_content)
+                label_match = self.LABEL_PATTERN.match(line)
+                if label_match:
+                    current_label = label_match.group(1)
+                    continue
 
-            if eng_content:
-                eng_dialogue = _parse_english_dialogue(eng_content)
-                eng_index = 0
+                narrative_match = self.NARRATIVE_PATTERN.match(line)
+                if narrative_match:
+                    text, line_id = narrative_match.groups()
+                    translatable_lines[line_id] = TranslatableLine(
+                        id=line_id,
+                        text=text.strip(),
+                        line_type='narrative',
+                        line_number=line_num,
+                        label=current_label
+                    )
 
-                while i < len(lines) and not lines[i].startswith('translate english'):
-                    current_line = lines[i]
+                if 'menu:' in line or any(item in line for item in ["'", '"']):
+                    menu_match = self.MENU_PATTERN.search(line)
+                    if menu_match and '{#' in line:
+                        text, line_id = menu_match.groups()
+                        # if ' if ' not in line:
+                        translatable_lines[line_id] = TranslatableLine(
+                            id=line_id,
+                            text=text.strip(),
+                            line_type='menu',
+                            line_number=line_num,
+                            label=current_label
+                        )
 
-                    # Если это строка с пустым переводом (new ""), заменяем её
-                    if _is_empty_dialogue_line(current_line) and eng_index < len(eng_dialogue):
-                        char_name = _extract_character_name(current_line)
-                        eng_text = eng_dialogue[eng_index]
+        return translatable_lines
 
-                        if char_name:
-                            # Для строк диалога: deionarra "" → deionarra "English text"
-                            new_content.append(f'    {char_name} "{eng_text}"')
-                        else:
-                            # Для других случаев оставляем как есть
-                            new_content.append(current_line)
+class TranslationFileProcessor:
+    def __init__(self):
+        self.TRANSLATE_BLOCK_PATTERN = re.compile(r'^translate\s+\w+\s+(\w+):')
+        self.STRINGS_SECTION_PATTERN = re.compile(r'^translate\s+\w+\s+strings:')
+        self.NARRATIVE_LINE_PATTERN = re.compile(r'^\s*(?:\w+\s+)?[\'\"](.*?)[\'\"]')
+        self.OLD_NEW_PATTERN = re.compile(r'^\s*(old|new)\s+[\'\"](.*?)[\'\"]')
 
-                        eng_index += 1
-                    else:
-                        # Все остальные строки добавляем без изменений
-                        new_content.append(current_line)
 
-                    i += 1
+    def read_translation_file(self, file_path):
+        if not os.path.exists(file_path):
+            return {}, []
 
-                # Если остались неперенесенные английские реплики, добавляем их в конец блока
-                while eng_index < len(eng_dialogue):
-                    eng_text = eng_dialogue[eng_index]
-                    # Добавляем как generic строку (можно настроить под конкретный формат)
-                    new_content.append(f'    # AUTO_INSERTED: "{eng_text}"')
-                    eng_index += 1
+        with open(file_path, 'r', encoding='utf-8') as file:
+            lines = file.readlines()
 
+        translations = {}
+        current_id = None
+        in_strings_section = False
+
+        for i, line in enumerate(lines):
+            line = line.strip()
+            if line.startswith('#'):
                 continue
+
+            if self.STRINGS_SECTION_PATTERN.match(line):
+                in_strings_section = True
+                continue
+            elif line.startswith('translate') and not line.endswith('strings:'):
+                in_strings_section = False
+
+            if '{#' in line: # '# game/' in line and
+                id_match = re.search(r'\{\#(.*?)\}', line)
+                if id_match:
+                    current_id = id_match.group(1)
+            elif not in_strings_section and current_id and line.strip().startswith(('nr', '# nr')):
+                narrative_match = self.NARRATIVE_LINE_PATTERN.match(line.lstrip('#').strip())
+                if narrative_match and line.strip().endswith('""'):
+                    translations[current_id] = line
+                    current_id = None
+            elif in_strings_section and current_id:
+                if 'new ""' in line:
+                    translations[current_id] = line
+                    current_id = None
+
+        return translations, lines
+
+
+    def update_translation_file(self, file_path, translations, original_lines):
+        with open(file_path, 'r', encoding='utf-8') as file:
+            lines = file.readlines()
+
+        updated_lines = []
+        current_id = None
+        in_strings_section = False
+        skip_next_empty = False
+
+        for i, line in enumerate(lines):
+            original_line = line.rstrip()
+            updated_line = original_line
+
+            if self.STRINGS_SECTION_PATTERN.match(original_line):
+                in_strings_section = True
+            elif original_line.startswith('translate') and not original_line.endswith('strings:'):
+                in_strings_section = False
+
+            id_match = re.search(r'\{\#(.*?)\}', original_line)
+            if id_match:
+                current_id = id_match.group(1)
+                skip_next_empty = False
+
+            if not in_strings_section and current_id and original_line.strip().endswith('""'):
+                if current_id in original_lines and not skip_next_empty:
+                    english_text = original_lines[current_id].text
+                    english_text = english_text.replace('"', '\\"')
+                    updated_line = f'    nr "{english_text}{{#{current_id}}}"'
+                    skip_next_empty = True
+                current_id = None
+
+            elif in_strings_section and current_id and 'new ""' in original_line:
+                if current_id in original_lines:
+                    english_text = original_lines[current_id].text
+                    english_text = english_text.replace('"', '\\"')
+                    updated_line = f'    new "{english_text}{{#{current_id}}}"'
+                current_id = None
+
+            updated_lines.append(updated_line + '\n')
+
+        with open(file_path, 'w', encoding='utf-8') as file:
+            file.writelines(updated_lines)
+
+
+class TranslationAutomator:
+    def __init__(self):
+        self.parser = RpyParser()
+        self.processor = TranslationFileProcessor()
+
+    def automate_translation(self, english_rpy_path, target_tl_path):
+        original_lines = self.parser.parse_file(english_rpy_path)
+        existing_translations, tl_lines = self.processor.read_translation_file(target_tl_path)
+        self.processor.update_translation_file(target_tl_path, existing_translations, original_lines)
+
+
+class FileMatcher:
+    @staticmethod
+    def find_matching_files(eng_files, trans_files, base_trans_path):
+        matches = []
+
+        trans_dict = {}
+        for trans_file in trans_files:
+            try:
+                rel_path = str(trans_file.relative_to(base_trans_path).with_suffix('')).replace('\\', '/')
+                trans_dict[rel_path] = trans_file
+            except ValueError:
+                rel_path = str(trans_file.with_suffix('')).replace('\\', '/')
+                trans_dict[rel_path] = trans_file
+
+        for eng_file in eng_files:
+            eng_name = eng_file.stem
+
+            if eng_name in FILE_MAPPING:
+                target_rel_path = FILE_MAPPING[eng_name]
+
+                if target_rel_path in trans_dict:
+                    matches.append((eng_file, trans_dict[target_rel_path]))
+                else:
+                    print(f"Предупреждение: Не найден файл перевода для {eng_name} -> {target_rel_path}")
             else:
-                print(f"Предупреждение: не найден контент для метки {base_label}")
-                # Пропускаем весь блок до следующего translate
-                while i < len(lines) and not lines[i].startswith('translate english'):
-                    new_content.append(lines[i])
-                    i += 1
-                continue
+                print(f"Предупреждение: Нет сопоставления для файла {eng_name}")
 
-        new_content.append(line)
-        i += 1
-
-    with open(trans_file, 'w', encoding='utf-8') as f:
-        f.write('\n'.join(new_content))
-
-
-def _find_english_content(base_label, english_content):
-    for filename, labels_dict in english_content.items():
-        if base_label in labels_dict:
-            return labels_dict[base_label]
-
-    # Пробуем найти похожие метки (на случай небольших расхождений)
-    for filename, labels_dict in english_content.items():
-        for label_name, content in labels_dict.items():
-            if label_name.startswith(base_label + '_') or base_label.startswith(label_name + '_'):
-                return content
-
-    return None
-
-
-def _parse_english_dialogue(eng_content):
-    dialogue_lines = []
-    lines = eng_content.split('\n')
-
-    for line in lines:
-        line = line.strip()
-        if not line or line.startswith('#'):
-            continue
-
-        # Ищем строки диалога: character "text"
-        dialogue_match = re.search(r'^([a-zA-Z_]+)\s+[\'"]([^\'"]*?)[\'"]', line)
-        if dialogue_match:
-            dialogue_text = dialogue_match.group(2)
-            if dialogue_text.strip():
-                dialogue_lines.append(dialogue_text)
-
-    return dialogue_lines
-
-
-def _is_empty_dialogue_line(line):
-    line = line.strip()
-    # Проверяем шаблоны: character "" или new ""
-    return (re.match(r'^[a-zA-Z_]+\s+""', line) or
-            re.match(r'^new\s+""', line) or
-            re.match(r'^old\s+""', line))
-
-
-def _extract_character_name(line):
-    line = line.strip()
-
-    # Для строк вида: deionarra ""
-    char_match = re.match(r'^([a-zA-Z_]+)\s+""', line)
-    if char_match:
-        return char_match.group(1)
-
-    # Для строк вида: "text"
-    generic_match = re.match(r'^""', line)
-    if generic_match:
-        return None
-
-    return None
+        return matches
