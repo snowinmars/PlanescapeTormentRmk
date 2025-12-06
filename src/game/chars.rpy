@@ -4,7 +4,7 @@ define the_nameless_one   = Character(_('Безымянный'),     color='#c8f
 init 1 python:
     def get_dhall_name():
         return _('Дхолл') if dhallLogic.get_know_dhall_name() else '?'
-# define dhall              = DynamicCharacter(_('get_dhall_name()'),          color='#c8ffc8')
+define dhall              = DynamicCharacter('get_dhall_name()',          color='#c8ffc8')
 
 define nr                 = Character('',                  color='#c8ffc8')
 define morte_unknown      = Character('?',                 color='#c8ffc8')
@@ -25,8 +25,8 @@ define vhail_unknown      = Character('?',                 color='#c8ffc8')
 define vhail              = Character(_('Вейлор'),         color='#c8ffc8')
 define scars              = Character('',                  color='#c8ffc8')
 define death_names        = Character(_('Смерть имён'),    color='#c8ffc8')
-define dhall              = Character(_('Дхолл'),          color='#c8ffc8')
-define dhall_unknown      = Character('?',                 color='#c8ffc8')
+# define dhall              = Character(_('Дхолл'),          color='#c8ffc8')
+# define dhall_unknown      = Character('?',                 color='#c8ffc8')
 define bei                = Character(_('Бэй'),            color='#c8ffc8')
 define asonje             = Character(_('Асонж'),          color='#c8ffc8')
 define eivene_unknown     = Character('?',                 color='#c8ffc8')
