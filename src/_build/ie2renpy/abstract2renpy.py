@@ -668,7 +668,7 @@ def _format_cue(line, nr, npc, label_id):
         return ''
 
     if '«' not in line and '»' not in line:
-        return f'{nr} \'{replace_single_quotes(capitalize_first(line))}{{#{label_id}_1}}\''
+        return f'# {nr} \'{replace_single_quotes(capitalize_first(line))}{{#{label_id}_1}}\''
 
     parts = []
     depth = 0
@@ -737,14 +737,16 @@ def _format_cue(line, nr, npc, label_id):
                     tokens.append((nr, seg_text))
 
     output_str = ''
+    i = 0
     for tag, text in tokens:
-        output_str += f'{tag} \'{text}{{#{label_id}_1}}\'\n'
+        i = i + 1
+        output_str += f'# {tag} \'{text}{{#{label_id}_{i}}}\'\n'
     return output_str.strip()
 
 
 def _format_cues(text, nr, npc, label_id):
     lines = text.strip().split('\n')
-    output_lines = []
+    output_lines = [f'"{label_id}{{#{label_id}}}"']
     for line in lines:
         if line.strip() == '':
             output_lines.append('')

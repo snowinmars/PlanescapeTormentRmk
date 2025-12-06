@@ -82,7 +82,7 @@ def s{sid}_condition(self):
 """.strip()
 
 menu_option_with_condition_template = """
-'{ab}{{#{id}}}' if {tnpc}Logic.r{aid}_condition():
+'{id}{{#{id}}}' if {tnpc}Logic.r{aid}_condition(): # '{ab}{{#{id}}}'
     # a{grc} # r{aid}
 """.strip()
 
@@ -96,7 +96,7 @@ $ {tnpc}Logic.r{aid}_action()
 """.strip()
 
 menu_option_template = """
-'{ab}{{#{id}}}':
+'{id}{{#{id}}}': # '{ab}{{#{id}}}'
     # a{grc} # r{aid}
 """.strip()
 
