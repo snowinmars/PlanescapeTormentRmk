@@ -282,6 +282,7 @@ class DialogueReplacer:
         self.boolean(None,                            'know_oinosian_name')
         self.boolean(None,                            'know_vaxis_name')
         self.boolean(None,                            'know_dhall_name')
+        self.boolean(None,                            'know_morte_name')
         self.boolean(None,                            'know_eivene_name')
         self.boolean(None,                            'know_zm257_spirit')
         self.boolean(None,                            'vaxis_has_keyem')
