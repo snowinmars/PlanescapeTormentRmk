@@ -4,7 +4,10 @@ define the_nameless_one   = Character(_('Безымянный'),     color='#c8f
 init 1 python:
     def get_dhall_name():
         return _('Дхолл') if dhallLogic.get_know_dhall_name() else '?'
+    def get_deionarra_name():
+        return _('Дейонарра') if dhallLogic.get_know_deionarra_name() else '?'
 define dhall              = DynamicCharacter('get_dhall_name()',          color='#c8ffc8')
+define deionarra          = DynamicCharacter('get_deionarra_name()',      color='#c8ffc8')
 
 define nr                 = Character('',                  color='#c8ffc8')
 define morte_unknown      = Character('?',                 color='#c8ffc8')
@@ -35,8 +38,8 @@ define vaxis_unknown      = Character('?',                 color='#c8ffc8')
 define vaxis              = Character(_('Ваксис'),         color='#c8ffc8')
 define xach_unknown       = Character('?',                 color='#c8ffc8')
 define xach               = Character(_('Захария'),        color='#c8ffc8')
-define deionarra_unknown  = Character('?',                 color='#c8ffc8')
-define deionarra          = Character(_('Дейонарра'),      color='#c8ffc8')
+# define deionarra_unknown  = Character('?',                 color='#c8ffc8')
+# define deionarra          = Character(_('Дейонарра'),      color='#c8ffc8')
 define soego_unknown      = Character('?',                 color='#c8ffc8')
 define soego              = Character(_('Соего'),          color='#c8ffc8')
 define dust               = Character(_('Тленный'),        color='#c8ffc8')
