@@ -50,7 +50,7 @@ translate russian deionarra_s3_7d9891f5:
     deionarra_unknown "«Имя *Дейонарра* должно пробудить в тебе хоть немного воспоминаний».{#deionarra_s3_6}"
 
 # game/dlgs/deionarra.rpy:123
-translate russian deionarra_s4_91bc3977:
+translate russian deionarra_s4_170a763a:
 
     # "deionarra_s4{#deionarra_s4_1}"
     nr "Дейонарра снова появляется… на этот раз ее лицо полно отчаяния, ее руки вытянуты, будто пытаются за что-то ухватиться.{#deionarra_s4_1}"
