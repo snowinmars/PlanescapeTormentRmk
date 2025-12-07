@@ -742,3 +742,11 @@ class DeionarraLogicGenerated:
 class DeionarraLogic(DeionarraLogicGenerated):
     def __init__(self, state_manager):
         super().__init__(state_manager)
+
+
+    def set_know_deionarra_name(self):
+        self.state_manager.world_manager.set_know_deionarra_name(True)
+
+
+    def get_know_deionarra_name(self):
+        return self.state_manager.world_manager.get_know_deionarra_name()
