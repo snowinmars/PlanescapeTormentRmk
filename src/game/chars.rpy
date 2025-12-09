@@ -12,11 +12,14 @@ init 1 python:
         return _('Бэй') if zm1041Logic.get_know_bei_name() else _('Зомби 1041')
     def get_asonje_name():
         return _('Асонж') if zm1041Logic.get_know_bei_name() else _('Зомби 1094')
+    def get_vaxis_name():
+        return _('Ваксис') if zm1041Logic.get_know_vaxis_name() else '?'
 define dhall              = DynamicCharacter('get_dhall_name()',          color='#c8ffc8')
 define deionarra          = DynamicCharacter('get_deionarra_name()',      color='#c8ffc8')
 define arabhiem           = DynamicCharacter('get_oinosian_name()',       color='#c8ffc8')
 define bei                = DynamicCharacter('get_bei_name()',            color='#c8ffc8')
 define asonje             = DynamicCharacter('get_asonje_name()',         color='#c8ffc8')
+define vaxis              = DynamicCharacter('get_vaxis_name()',          color='#c8ffc8')
 
 define nr                 = Character('',                  color='#c8ffc8')
 define morte_unknown      = Character('?',                 color='#c8ffc8')
@@ -39,8 +42,6 @@ define scars              = Character('',                  color='#c8ffc8')
 define death_names        = Character(_('Смерть имён'),    color='#c8ffc8')
 define eivene_unknown     = Character('?',                 color='#c8ffc8')
 define eivene             = Character(_('Эи-Вейн'),        color='#c8ffc8')
-define vaxis_unknown      = Character('?',                 color='#c8ffc8')
-define vaxis              = Character(_('Ваксис'),         color='#c8ffc8')
 define xach_unknown       = Character('?',                 color='#c8ffc8')
 define xach               = Character(_('Захария'),        color='#c8ffc8')
 define soego_unknown      = Character('?',                 color='#c8ffc8')
