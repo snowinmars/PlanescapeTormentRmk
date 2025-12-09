@@ -19,6 +19,10 @@ translate russian strings:
     new "Старик"
 
     # game/chars.rpy:10
+    old "Арабейм"
+    new "Арабейм"
+
+    # game/chars.rpy:10
     old "Анна"
     new "Анна"
 
