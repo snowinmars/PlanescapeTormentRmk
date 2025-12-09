@@ -19,6 +19,10 @@ translate english strings:
     new "Elderly man"
 
     # game/chars.rpy:10
+    old "Арабейм"
+    new "Arabhiem"
+
+    # game/chars.rpy:10
     old "Анна"
     new "Annah"
 
