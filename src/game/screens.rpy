@@ -243,6 +243,10 @@ style input:
 screen choice(items):
     style_prefix "choice"
 
+    if len(items) == 1 and renpy.is_skipping():
+        # key "ctrl" action items[0].action
+        timer 0.00001 action items[0].action
+
     vbox:
         for i in items:
             hbox:

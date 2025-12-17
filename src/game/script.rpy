@@ -57,7 +57,6 @@ init 3 python:
     from game.engine_data.inventory.all_inventory import (build_all_inventory)
     from game.engine_data.locations.all_locations import (build_all_locations)
     from game.engine_data.characters.all_characters import (build_all_characters)
-    from game.engine_data.journal.all_notes import (build_all_notes)
 
 
     runtime.global_events_manager = EventsManager(runtime.logger)
@@ -111,23 +110,30 @@ init 3 python:
 
         now = int(time.time())
         runtime.logger.info('Building journal notes…')
-        build_all_notes(runtime.global_journal_manager)
+        register_note(runtime.global_journal_manager)
         def on_update_journal():
             renpy.exports.sound.play(renpy.store.audio.update_journal)
         runtime.global_journal_manager.register_on_update_journal(on_update_journal)
         runtime.logger.info('Done building journal notes, took %s', int(time.time()) - now)
 
-        config.keymap['show_inventory'] = ['i']
+        config.keymap['inventory_screen'] = ['i', 'I', 'ш', 'Ш']
         config.underlay.append(
             renpy.Keymap(
-                show_inventory = Show("inventory_screen")
+                inventory_screen = Show("inventory_screen")
             )
         )
 
-        config.keymap['character_screen'] = ['c']
+        config.keymap['character_screen'] = ['c', 'C', 'с', 'С']
         config.underlay.append(
             renpy.Keymap(
                 character_screen = Show("character_screen", character=runtime.global_state_manager.characters_manager.get_character('protagonist'))
+            )
+        )
+
+        config.keymap['journal_screen'] = ['j', 'J', 'о', 'О']
+        config.underlay.append(
+            renpy.Keymap(
+                journal_screen = Show("journal_screen")
             )
         )
 
