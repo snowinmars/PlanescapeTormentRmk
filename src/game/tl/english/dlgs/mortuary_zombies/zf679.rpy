@@ -37,7 +37,7 @@ translate english strings:
 
     # game/dlgs/mortuary_zombies/zf679.rpy:17
     old "zf679_s0_r35197{#zf679_s0_r35197}"
-    new "«I know you're not a zombie, you know. You“re not fooling anyone».{#zf679_s0_r35197}"
+    new "«I know you're not a zombie, you know. You're not fooling anyone».{#zf679_s0_r35197}"
 
     # game/dlgs/mortuary_zombies/zf679.rpy:17
     old "zf679_s0_r35198{#zf679_s0_r35198}"

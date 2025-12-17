@@ -41,7 +41,7 @@ translate english strings:
 
     # game/dlgs/mortuary_zombies/zm825.rpy:17
     old "zm825_s0_r24570{#zm825_s0_r24570}"
-    new "«I know you're not a zombie, you know. You“re not fooling anyone».{#zm825_s0_r24570}"
+    new "«I know you're not a zombie, you know. You're not fooling anyone».{#zm825_s0_r24570}"
 
     # game/dlgs/mortuary_zombies/zm825.rpy:17
     old "zm825_s0_r24573{#zm825_s0_r24573}"
@@ -73,11 +73,11 @@ translate english strings:
 
     # game/dlgs/mortuary_zombies/zm825.rpy:83
     old "zm825_s3_r42312{#zm825_s3_r42312}"
-    new "«Guess you don't have the key… you don“t happen to know which of your other corpse friends has the key out of this place?»{#zm825_s3_r42312}"
+    new "«Guess you don't have the key… you don't happen to know which of your other corpse friends has the key out of this place?»{#zm825_s3_r42312}"
 
     # game/dlgs/mortuary_zombies/zm825.rpy:83
     old "zm825_s3_r42313{#zm825_s3_r42313}"
-    new "«Guess you don't have the key… you don“t happen to know which of your other corpse friends has the key out of this place?»{#zm825_s3_r42313}"
+    new "«Guess you don't have the key… you don't happen to know which of your other corpse friends has the key out of this place?»{#zm825_s3_r42313}"
 
     # game/dlgs/mortuary_zombies/zm825.rpy:83
     old "zm825_s3_r42314{#zm825_s3_r42314}"

@@ -4,7 +4,7 @@
 translate english zf594_s0_b9abb602:
 
     # "zf594_s0{#zf594_s0}"
-    nr "The shambling corpse gazes at you with vacant eyes. Her skin is paper-thin, almost wispy… it„s like someone draped a sheet of cobwebs across her frame.{#zf594_s0_1}"
+    nr "The shambling corpse gazes at you with vacant eyes. Her skin is paper-thin, almost wispy… it's like someone draped a sheet of cobwebs across her frame.{#zf594_s0_1}"
     nr "The number «594» has been scratched onto her forehead with a charcoal pencil.{#zf594_s0_1}"
 
 # game/dlgs/mortuary_zombies/zf594.rpy:62
@@ -37,7 +37,7 @@ translate english strings:
 
     # game/dlgs/mortuary_zombies/zf594.rpy:17
     old "zf594_s0_r35037{#zf594_s0_r35037}"
-    new "«I know you„re not a zombie, you know. You“re not fooling anyone»{#zf594_s0_r35037}"
+    new "«I know you're not a zombie, you know. You're not fooling anyone»{#zf594_s0_r35037}"
 
     # game/dlgs/mortuary_zombies/zf594.rpy:17
     old "zf594_s0_r35038{#zf594_s0_r35038}"

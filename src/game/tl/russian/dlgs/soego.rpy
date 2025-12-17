@@ -274,7 +274,7 @@ translate russian soego_s31_8bb17856:
 translate russian soego_s32_1ce9c2d3:
 
     # "soego_s32{#soego_s32}"
-    nr "Соэго качает головой:{#soego_s32_1}"
+    nr "Соэго качает головой.{#soego_s32_1}"
     soego "«Нет-нет, спасибо за заботу… Я переживу».{#soego_s32_2}"
     nr "Он немного хмурится.{#soego_s32_3}"
     soego "«Тебе нужно что-либо еще?»{#soego_s32_4}"
@@ -785,7 +785,7 @@ translate russian soego_s106_22725a9b:
 translate russian soego_s107_14e98526:
 
     # "soego_s107{#soego_s107}"
-    nr "Соэго бросает на тебя угрюмый взгляд:{#soego_s107_1}"
+    nr "Соэго бросает на тебя угрюмый взгляд.{#soego_s107_1}"
     soego "«Я не понимаю, о *чем* ты говоришь».{#soego_s107_2}"
 
 # game/dlgs/soego.rpy:2258

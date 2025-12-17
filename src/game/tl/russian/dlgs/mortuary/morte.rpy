@@ -1072,7 +1072,7 @@ translate russian morte_s152_8b7166bf:
 translate russian morte_s153_e50145d2:
 
     # "morte_s153{#morte_s153}"
-    nr "Морт подлетает поближе и шепчет тебе на ухо:{#morte_s153_1}"
+    nr "Морт подлетает поближе и шепчет тебе на ухо.{#morte_s153_1}"
     morte "«Он *прав*, шеф… Не знаю, что вас так взбесило…»{#morte_s153_2}"
 
 # game/dlgs/mortuary/morte.rpy:2697
@@ -1310,7 +1310,7 @@ translate russian morte_s188_365c5aba:
 translate russian morte_s189_cee9ebdc:
 
     # "morte_s189{#morte_s189}"
-    nr "Морт держит в зубах один из его пальцев, словно это какая-то жуткая сигара. Удерживая палец, он проговаривает:{#morte_s189_1}"
+    nr "Морт держит в зубах один из его пальцев, словно это какая-то жуткая сигара. Удерживая палец, он проговаривает.{#morte_s189_1}"
     morte "«Еще раз тронешь — и твоя рука присоединится к пальцу, пень».{#morte_s189_2}"
 
 # game/dlgs/mortuary/morte.rpy:3316
@@ -1330,7 +1330,7 @@ translate russian morte_s191_1134f43a:
 translate russian morte_s192_dc9226c7:
 
     # "morte_s192{#morte_s192}"
-    nr "Морт поворачивается к нему:{#morte_s192_1}"
+    nr "Морт поворачивается к нему.{#morte_s192_1}"
     morte "«Я не с тобой разговаривал, жопоголовый. Когда я к тебе обращусь, ты это поймешь: я буду хрюкать и фыркать, чтобы ты меня понял».{#morte_s192_2}"
 
 # game/dlgs/mortuary/morte.rpy:3352
@@ -1829,7 +1829,7 @@ translate russian morte_s266_7683dcd8:
 translate russian morte_s267_c3460bc2:
 
     # "morte_s267{#morte_s267}"
-    nr "Морт шипит в твое ухо:{#morte_s267_1}"
+    nr "Морт шипит в твое ухо.{#morte_s267_1}"
     morte "«Законник-крючкотвор».{#morte_s267_2}"
 
 # game/dlgs/mortuary/morte.rpy:4426
@@ -1990,7 +1990,7 @@ translate russian morte_s290_a3bb5396:
 translate russian morte_s291_f67fd0c7:
 
     # "morte_s291{#morte_s291}"
-    nr "Морт вклинивается в разговор, шепча:{#morte_s291_1}"
+    nr "Морт вклинивается в разговор, шепча.{#morte_s291_1}"
     morte "«Он говорит, что он юрист, консультант. Один из тех пней, которые трещат своими черепушками в судах».{#morte_s291_2}"
 
 # game/dlgs/mortuary/morte.rpy:4809
@@ -2017,7 +2017,7 @@ translate russian morte_s294_9f8a0671:
 translate russian morte_s295_d754050c:
 
     # "morte_s295{#morte_s295}"
-    nr "Морт насмешливо произносит:{#morte_s295_1}"
+    nr "Морт насмешливо произносит.{#morte_s295_1}"
     morte "«Ты все пропустил! Там был целый *парад* черепов! Такое случается, наверно, раз в миллион циклов Великого Кольца!»{#morte_s295_2}"
 
 # game/dlgs/mortuary/morte.rpy:4855
@@ -2102,7 +2102,7 @@ translate russian morte_s306_cc533426:
 translate russian morte_s307_1157ea2e:
 
     # "morte_s307{#morte_s307}"
-    nr "Морт громко кричит:{#morte_s307_1}"
+    nr "Морт громко кричит.{#morte_s307_1}"
     morte "«Что за фигня!»{#morte_s307_2}"
 
 # game/dlgs/mortuary/morte.rpy:5098
@@ -2135,7 +2135,7 @@ translate russian morte_s311_32f9194a:
 translate russian morte_s312_d7ab3a41:
 
     # "morte_s312{#morte_s312}"
-    nr "Когда ты становишься на колени перед женщиной, Морт кричит:{#morte_s312_1}"
+    nr "Когда ты становишься на колени перед женщиной, Морт кричит.{#morte_s312_1}"
     morte "«Шеф! Ты шутишь надо мной! То есть, я хочу сказать, ты же не будешь *этого* делать…»{#morte_s312_2}"
 
 # game/dlgs/mortuary/morte.rpy:5177
@@ -2161,7 +2161,7 @@ translate russian morte_s315_19e3ebf4:
 translate russian morte_s316_2d07a2ae:
 
     # "morte_s316{#morte_s316}"
-    nr "Морт подмигивает тебе и кричит девушке:{#morte_s316_1}"
+    nr "Морт подмигивает тебе и кричит девушке.{#morte_s316_1}"
     morte "«Эй, ты! Да-да, ты, маленькая дерзкая грубиянка… смотреть на меня, когда я с тобой разговариваю! Чего это ты такая кислая, а?»{#morte_s316_2}"
 
 # game/dlgs/mortuary/morte.rpy:5218
@@ -2220,7 +2220,7 @@ translate russian morte_s323_18e4291e:
 translate russian morte_s324_ff0795f8:
 
     # "morte_s324{#morte_s324}"
-    nr "Морт качает в твою сторону, обращаясь к мужчине:{#morte_s324_1}"
+    nr "Морт качает в твою сторону, обращаясь к мужчине.{#morte_s324_1}"
     morte "«Я показывал на этого огромного пня, знаток… не на тебя! Без обид, ага?»{#morte_s324_2}"
 
 # game/dlgs/mortuary/morte.rpy:5314
@@ -2761,7 +2761,7 @@ translate russian morte_s403_9ce19bc8:
 translate russian morte_s404_bd2d2e93:
 
     # "morte_s404{#morte_s404}"
-    nr "«Морт шепчет.{#morte_s404_1}"
+    nr "Морт шепчет.{#morte_s404_1}"
     morte "«Не к добру все это, шеф. Будь осторожен, не то они начисто сотрут твои мозги…»{#morte_s404_2}"
     morte "«…чем их больше, тем они сильнее: каждая крыса добавляет свой разум к остальным. Они *смертельно* опасны».{#morte_s404_2}"
 
@@ -2930,7 +2930,7 @@ translate russian morte_s427_95dd3296:
 translate russian morte_s428_dc75ea23:
 
     # "morte_s428{#morte_s428}"
-    nr "Морт тихонько шепчет:{#morte_s428_1}"
+    nr "Морт тихонько шепчет.{#morte_s428_1}"
     morte "«Ух ты… жуткая девчонка».{#morte_s428_2}"
 
 # game/dlgs/mortuary/morte.rpy:7051
@@ -3504,7 +3504,7 @@ translate russian morte_s511_81ea355c:
 translate russian morte_s512_7f4e51c1:
 
     # "morte_s512{#morte_s512}"
-    nr "Только ты делаешь шаг к колонне, Морт шепчет тебе:{#morte_s512_1}"
+    nr "Только ты делаешь шаг к колонне, Морт шепчет тебе.{#morte_s512_1}"
     morte "«Пссс! Шеф! Шеф… слушай, я не могу позволить этой штуковине увидеть себя».{#morte_s512_2}"
     morte "«Тебе придется убрать меня отсюда… оставь меня где-нибудь, а потом подбери позже, или еще чего…»{#morte_s512_2}"
 
@@ -4583,7 +4583,7 @@ translate russian morte_s666_30fa9323:
 translate russian morte_s667_3a03f68c:
 
     # "morte_s667{#morte_s667}"
-    morte "«Ну, пока я пылился на полке у Лотара в ожидании того, когда ты меня не выкупишь — спасибо за бесцельно проведенное там время, — я завел там несколько друзей…».{#morte_s667_1}"
+    morte "«Ну, пока я пылился на полке у Лотара в ожидании того, когда ты меня не выкупишь — спасибо за бесцельно проведенное там время, — я завел там несколько друзей…»{#morte_s667_1}"
     morte "«…и они сказали, что если мне понадобится помощь, то я могу их позвать».{#morte_s667_1}"
 
 # game/dlgs/mortuary/morte.rpy:10716
@@ -5048,7 +5048,7 @@ translate russian morte_s732_e0fa66f4:
 translate russian morte_s733_f2d3e7d9:
 
     # "morte_s733{#morte_s733}"
-    nr "Едва ты собираешься прикоснуться к Морту, как вдруг он произносит:{#morte_s733_1}"
+    nr "Едва ты собираешься прикоснуться к Морту, как вдруг он произносит.{#morte_s733_1}"
     morte "«Эй-эй-эй! Погоди, шеф. Э-э-э… мне тебе нужно кое-что тебе сказать».{#morte_s733_2}"
 
 # game/dlgs/mortuary/morte.rpy:11885
