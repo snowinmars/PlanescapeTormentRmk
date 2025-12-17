@@ -23,7 +23,7 @@ translate english zm396_s2_3947d4cb:
 translate english zm396_s3_20a85ce5:
 
     # "zm396_s3{#zm396_s3}"
-    nr "You snake your hand out and take the roll of bandages from the corpse„s hand. The corpse doesn't even seem to notice{#zm396_s3_1}"
+    nr "You snake your hand out and take the roll of bandages from the corpse's hand. The corpse doesn't even seem to notice{#zm396_s3_1}"
     nr "It continues going through the motions of bandaging the bodies.{#zm396_s3_1}"
 
 # game/dlgs/mortuary_zombies/zm396.rpy:94
@@ -38,7 +38,7 @@ translate english zm396_s4_abbac302:
 
     # "zm396_s4{#zm396_s4_2}"
     nr "This corpse is shuffling from slab to slab, bandaging the corpses lying there. It is going on about its duties, even without bandages.{#zm396_s4_1}"
-    nr "The number “396» is carved into his left temple, and his lips are stitched closed.{#zm396_s4_1}"
+    nr "The number «396» is carved into his left temple, and his lips are stitched closed.{#zm396_s4_1}"
 
 translate english strings:
 
@@ -56,7 +56,7 @@ translate english strings:
 
     # game/dlgs/mortuary_zombies/zm396.rpy:17
     old "zm396_s0_r34937{#zm396_s0_r34937}"
-    new "«I know you„re not a zombie, you know. You're not fooling anyone».{#zm396_s0_r34937}"
+    new "«I know you're not a zombie, you know. You're not fooling anyone».{#zm396_s0_r34937}"
 
     # game/dlgs/mortuary_zombies/zm396.rpy:17
     old "zm396_s0_r34940{#zm396_s0_r34940}"
@@ -92,15 +92,15 @@ translate english strings:
 
     # game/dlgs/mortuary_zombies/zm396.rpy:98
     old "zm396_s4_r45112{#zm396_s4_r45112}"
-    new "«Sorry about taking those bandages from you. It„s just that I need them more than the bodies here».{#zm396_s4_r45112}"
+    new "«Sorry about taking those bandages from you. It's just that I need them more than the bodies here».{#zm396_s4_r45112}"
 
     # game/dlgs/mortuary_zombies/zm396.rpy:98
     old "zm396_s4_r45113{#zm396_s4_r45113}"
-    new "«Sorry about taking those bandages from you. It„s just that I need them more than the bodies here».{#zm396_s4_r45113}"
+    new "«Sorry about taking those bandages from you. It's just that I need them more than the bodies here».{#zm396_s4_r45113}"
 
     # game/dlgs/mortuary_zombies/zm396.rpy:98
     old "zm396_s4_r45114{#zm396_s4_r45114}"
-    new "«I know you„re not a zombie, you know. You're not fooling anyone».{#zm396_s4_r45114}"
+    new "«I know you're not a zombie, you know. You're not fooling anyone».{#zm396_s4_r45114}"
 
     # game/dlgs/mortuary_zombies/zm396.rpy:98
     old "zm396_s4_r45115{#zm396_s4_r45115}"

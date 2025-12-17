@@ -6,7 +6,7 @@ translate english giantsk_s0_fac020de:
     # "giantsk_s0{#giantsk_s0}"
     nr "Before you is a giant skeleton in ornate bronze armor.{#giantsk_s0_1}"
     nr "The armor has been bolted onto the skeleton's frame, and a series of elaborate symbols have been carved across the breastplate.{#giantsk_s0_1}"
-    nr "You wonder where the skeleton came from; you weren“t aware they made humans in this size.{#giantsk_s0_1}"
+    nr "You wonder where the skeleton came from; you weren't aware they made humans in this size.{#giantsk_s0_1}"
     nr "The huge blade in its hands looks like it weighs as much as a wagon cart.{#giantsk_s0_1}"
 
 # game/dlgs/mortuary/giantsk.rpy:67
@@ -34,7 +34,7 @@ translate english giantsk_s4_c353d30a:
 
     # "giantsk_s4{#giantsk_s4}"
     nr "The skeleton's intricate bronze armor is riveted onto its rib cage and shoulder blades with a series of iron bolts.{#giantsk_s4_1}"
-    nr "As you study the frame behind the armor, you notice the same iron bolts are set into the skeleton“s shoulder, elbow, pelvic, and knee joints.{#giantsk_s4_1}"
+    nr "As you study the frame behind the armor, you notice the same iron bolts are set into the skeleton's shoulder, elbow, pelvic, and knee joints.{#giantsk_s4_1}"
     nr "A mass of thick leather cords and heavy knotted ropes run along the length of the skeleton's arms and legs, woven in such a pattern that they resemble muscles and tendons.{#giantsk_s4_1}"
 
 # game/dlgs/mortuary/giantsk.rpy:172
@@ -56,7 +56,7 @@ translate english giantsk_s6_9cee1059:
 translate english giantsk_s7_9ab30e02:
 
     # "giantsk_s7{#giantsk_s7}"
-    nr "You study the runes for a while, but you can't decipher the enchantment. It looks pretty complicated, and you“re having a hard time concentrating.{#giantsk_s7_1}"
+    nr "You study the runes for a while, but you can't decipher the enchantment. It looks pretty complicated, and you're having a hard time concentrating.{#giantsk_s7_1}"
 
 # game/dlgs/mortuary/giantsk.rpy:297
 translate english giantsk_s8_93540c7f:
@@ -93,7 +93,7 @@ translate english giantsk_s12_fc2e6820:
 
     # "giantsk_s12{#giantsk_s12}"
     nr "You wait for a moment, but no one responds to the sound. Moving quickly, you sift through the skeleton's parts on the floor.{#giantsk_s12_1}"
-    nr "Most of it is too heavy or too old to be useful, but you discover a piece of the skeleton“s breastplate with a majority of one of the broken enchantments engraved on it.{#giantsk_s12_1}"
+    nr "Most of it is too heavy or too old to be useful, but you discover a piece of the skeleton's breastplate with a majority of one of the broken enchantments engraved on it.{#giantsk_s12_1}"
     nr "You have a feeling that it could prove useful.{#giantsk_s12_1}"
 
 # game/dlgs/mortuary/giantsk.rpy:422
@@ -108,7 +108,7 @@ translate english giantsk_s13_31d691f8:
 translate english giantsk_s14_4393920a:
 
     # "giantsk_s14{#giantsk_s14}"
-    nr "You quickly rummage through the skeleton's remains and, once again, uncover a piece of the skeleton“s breastplate…{#giantsk_s14_1}"
+    nr "You quickly rummage through the skeleton's remains and, once again, uncover a piece of the skeleton's breastplate…{#giantsk_s14_1}"
     nr "…like the first, this one also has a fragment of its broken enchantment engraved on it. It could prove useful.{#giantsk_s14_1}"
 
 # game/dlgs/mortuary/giantsk.rpy:457
@@ -124,7 +124,7 @@ translate english giantsk_s16_063a546f:
 
     # "giantsk_s16{#giantsk_s16}"
     nr "From what you can make out from the Tome, it seems the armoring enchantment applies only to the breastplate, the necromantic enchantment allows the skeleton to be Raised, but it is the warding enchantment that gives the skeleton its limited awareness of its surroundings.{#giantsk_s16_1}"
-    nr "You'd guess that if you were to mar the skeleton“s wards, it would interpret it as an attack… unless you blinded it to your presence first.{#giantsk_s16_1}"
+    nr "You'd guess that if you were to mar the skeleton's wards, it would interpret it as an attack… unless you blinded it to your presence first.{#giantsk_s16_1}"
 
 translate english strings:
 
@@ -206,11 +206,11 @@ translate english strings:
 
     # game/dlgs/mortuary/giantsk.rpy:109
     old "giantsk_s2_r4042{#giantsk_s2_r4042}"
-    new "«You'll wish you“d stayed dead, Bones…»{#giantsk_s2_r4042}"
+    new "«You'll wish you'd stayed dead, Bones…»{#giantsk_s2_r4042}"
 
     # game/dlgs/mortuary/giantsk.rpy:121
     old "giantsk_s3_r4043{#giantsk_s3_r4043}"
-    new "«That's a risk I“m willing to take…»{#giantsk_s3_r4043}"
+    new "«That's a risk I'm willing to take…»{#giantsk_s3_r4043}"
 
     # game/dlgs/mortuary/giantsk.rpy:121
     old "giantsk_s3_r4044{#giantsk_s3_r4044}"
@@ -426,7 +426,7 @@ translate english strings:
 
     # game/dlgs/mortuary/giantsk.rpy:389
     old "giantsk_s10_r4095{#giantsk_s10_r4095}"
-    new "«You'll wish you“d stayed dead, Bones…»{#giantsk_s10_r4095}"
+    new "«You'll wish you'd stayed dead, Bones…»{#giantsk_s10_r4095}"
 
     # game/dlgs/mortuary/giantsk.rpy:401
     old "giantsk_s11_r4096{#giantsk_s11_r4096}"

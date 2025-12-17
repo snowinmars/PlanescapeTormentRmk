@@ -65,7 +65,7 @@ translate russian eivene_s7_7b4e791c:
 translate russian eivene_s8_01c2b529:
 
     # "eivene_s8{#eivene_s8}"
-    nr "Едва ты собираешься уйти, Эи-Вейн говорит:{#eivene_s8_1}"
+    nr "Едва ты собираешься уйти, Эи-Вейн говорит.{#eivene_s8_1}"
     eivene "«Стой. Ты следующий».{#eivene_s8_2}"
 
 # game/dlgs/mortuary/eivene.rpy:183

@@ -235,7 +235,7 @@ translate english dhall_s29_f292037d:
     nr "[get_dhall_appeal()] pauses, considering.{#dhall_s29_1}"
     dhall "«Most likely. Are you missing anything… especially anything of value?»{#dhall_s29_2}"
     nr "His voice dips as he frowns.{#dhall_s29_3}"
-    dhall "«Not that Pharod would take exception to anything that wasn't physically grafted to your body, and sometimes even that“s not enough to give his greedy mind pause».{#dhall_s29_4}"
+    dhall "«Not that Pharod would take exception to anything that wasn't physically grafted to your body, and sometimes even that's not enough to give his greedy mind pause».{#dhall_s29_4}"
 
 # game/dlgs/mortuary/dhall.rpy:832
 translate english dhall_s30_7c80e009:
@@ -509,7 +509,7 @@ translate english strings:
 
     # game/dlgs/mortuary/dhall.rpy:157
     old "dhall_s6_r843{#dhall_s6_r843}"
-    new "«Sharing a little death with you corpse-worshippers isn't much of a crime as far as I“m concerned. Now I had some questions for you…»{#dhall_s6_r843}"
+    new "«Sharing a little death with you corpse-worshippers isn't much of a crime as far as I'm concerned. Now I had some questions for you…»{#dhall_s6_r843}"
 
     # game/dlgs/mortuary/dhall.rpy:157
     old "dhall_s6_r5062{#dhall_s6_r5062}"
@@ -525,7 +525,7 @@ translate english strings:
 
     # game/dlgs/mortuary/dhall.rpy:197
     old "dhall_s8_r940{#dhall_s8_r940}"
-    new "«You're a Dustman. But you don“t seem to be in favor of killing me. Why not?»{#dhall_s8_r940}"
+    new "«You're a Dustman. But you don't seem to be in favor of killing me. Why not?»{#dhall_s8_r940}"
 
     # game/dlgs/mortuary/dhall.rpy:197
     old "dhall_s8_r911{#dhall_s8_r911}"
@@ -1209,7 +1209,7 @@ translate english strings:
 
     # game/dlgs/mortuary/dhall.rpy:1178
     old "dhall_s42_r5076{#dhall_s42_r5076}"
-    new "«I don't know. I don“t recall ever traveling with a woman.»{#dhall_s42_r5076}"
+    new "«I don't know. I don't recall ever traveling with a woman.»{#dhall_s42_r5076}"
 
     # game/dlgs/mortuary/dhall.rpy:1178
     old "dhall_s42_r5077{#dhall_s42_r5077}"
