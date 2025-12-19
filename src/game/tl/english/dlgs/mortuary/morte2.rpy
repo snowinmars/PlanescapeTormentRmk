@@ -102,9 +102,9 @@ translate english morte2_s14_a0192ff6:
     morte "«Bet I'm going to be hearing THAT a lot».{#morte2_s14_1}"
     nr "Morte clears his throat.{#morte2_s14_2}"
     morte "«Let's see…»{#morte2_s14_3}"
-    scars "«I know you feel like you've been drinking a few kegs of Styx wash, but you need to CENTER yourself».{#morte2_s14_4}"
-    scars "«Among your possessions is a JOURNAL that'll shed some light on the dark of the matter».{#morte2_s14_4}"
-    scars "«PHAROD can fill you in on the rest of the chant, if he's not in the dead-book already».{#morte2_s14_4}"
+    scars "{font=exocet.ttf}«I know you feel like you've been drinking a few kegs of Styx wash, but you need to CENTER yourself».{#morte2_s14_4}{/font}"
+    scars "{font=exocet.ttf}«Among your possessions is a JOURNAL that'll shed some light on the dark of the matter».{#morte2_s14_4}{/font}"
+    scars "{font=exocet.ttf}«PHAROD can fill you in on the rest of the chant, if he's not in the dead-book already».{#morte2_s14_4}{/font}"
 
 # game/dlgs/mortuary/morte2.rpy:288
 translate english morte2_s15_574a1b66:
@@ -113,9 +113,9 @@ translate english morte2_s15_574a1b66:
     morte "«I will, I will, hold on».{#morte2_s15_1}"
     nr "Morte pauses for a moment."
     morte "«All right, here's the last bit…»"
-    scars "«Don't lose the journal or we'll be up the Styx again».{#morte2_s15_4}"
-    scars "«And whatever you do, DO NOT tell anyone WHO you are or WHAT happens to you, or they'll put you on a quick pilgrimage to the crematorium».{#morte2_s15_4}"
-    scars "«Do what I tell you: READ the journal, then FIND Pharod».{#morte2_s15_4}"
+    scars "{font=exocet.ttf}«Don't lose the journal or we'll be up the Styx again».{#morte2_s15_4}{/font}"
+    scars "{font=exocet.ttf}«And whatever you do, DO NOT tell anyone WHO you are or WHAT happens to you, or they'll put you on a quick pilgrimage to the crematorium».{#morte2_s15_4}{/font}"
+    scars "{font=exocet.ttf}«Do what I tell you: READ the journal, then FIND Pharod».{#morte2_s15_4}{/font}"
 
 # game/dlgs/mortuary/morte2.rpy:314
 translate english morte2_s16_fc20cccc:

@@ -254,11 +254,11 @@ translate english morte_s34_33bf4382:
     morte "«Looks like directions…»{#morte_s34_1}"
     nr "Morte clears his throat.{#morte_s34_2}"
     morte "«Let's see. It starts with…»{#morte_s34_3}"
-    scars "«I know you feel like you've been drinking a few kegs of Styx wash, but you need to center yourself.{#morte_s34_4}"
-    scars "«Among your possessions should be a JOURNAL that'll shed some light on the dark of the matter.{#morte_s34_4}"
-    scars "«PHAROD should be able to fill you in on the rest of the chant, if he's not in the dead-book already.{#morte_s34_4}"
-    scars "«Don't lose this scrap of flesh OR the journal or we'll be up the Styx again, right?{#morte_s34_4}"
-    scars "«And trust me, whatever you do, DO NOT tell anyone WHO you are, WHAT happens to you, or WHERE you came from or you'll find yourself on a short trip to the crematorium.{#morte_s34_4}"
+    scars "{font=exocet.ttf}«I know you feel like you've been drinking a few kegs of Styx wash, but you need to center yourself.{#morte_s34_4}{/font}"
+    scars "{font=exocet.ttf}«Among your possessions should be a JOURNAL that'll shed some light on the dark of the matter.{#morte_s34_4}{/font}"
+    scars "{font=exocet.ttf}«PHAROD should be able to fill you in on the rest of the chant, if he's not in the dead-book already.{#morte_s34_4}{/font}"
+    scars "{font=exocet.ttf}«Don't lose this scrap of flesh OR the journal or we'll be up the Styx again, right?{#morte_s34_4}{/font}"
+    scars "{font=exocet.ttf}«And trust me, whatever you do, DO NOT tell anyone WHO you are, WHAT happens to you, or WHERE you came from or you'll find yourself on a short trip to the crematorium.{#morte_s34_4}{/font}"
 
 # game/dlgs/mortuary/morte.rpy:786
 translate english morte_s35_15715dc2:
@@ -3085,9 +3085,9 @@ translate english morte_s446_6d6cb580:
     morte "«Bet I'm going to be hearing THAT a lot».{#morte_s446_1}"
     nr "Morte clears his throat.{#morte_s446_2}"
     morte "«Let's see…»{#morte_s446_3}"
-    scars "I know you feel like you've been drinking a few kegs of Styx wash, but you need to CENTER yourself.{#morte_s446_4}"
-    scars "Among your possessions is a JOURNAL that'll shed some light on the dark of the matter.{#morte_s446_4}"
-    scars "PHAROD can fill you in on the rest of the chant, if he's not in the dead-book already.{#morte_s446_4}"
+    scars "{font=exocet.ttf}I know you feel like you've been drinking a few kegs of Styx wash, but you need to CENTER yourself.{#morte_s446_4}{/font}"
+    scars "{font=exocet.ttf}Among your possessions is a JOURNAL that'll shed some light on the dark of the matter.{#morte_s446_4}{/font}"
+    scars "{font=exocet.ttf}PHAROD can fill you in on the rest of the chant, if he's not in the dead-book already.{#morte_s446_4}{/font}"
 
 # game/dlgs/mortuary/morte.rpy:7333
 translate english morte_s447_637da0ef:
@@ -3096,9 +3096,9 @@ translate english morte_s447_637da0ef:
     morte "«I will, I will, hold on».{#morte_s447_1}"
     nr "Morte pauses for a moment.{#morte_s447_2}"
     morte "«All right, here's the last bit…»{#morte_s447_3}"
-    scars "Don't lose the journal or we'll be up the Styx again.{#morte_s447_4}"
-    scars "And whatever you do, DO NOT tell anyone WHO you are or WHAT happens to you, or they'll put you on a quick pilgrimage to the crematorium.{#morte_s447_4}"
-    scars "Do what I tell you: READ the journal, then FIND Pharod.{#morte_s447_4}"
+    scars "{font=exocet.ttf}Don't lose the journal or we'll be up the Styx again.{#morte_s447_4}{/font}"
+    scars "{font=exocet.ttf}And whatever you do, DO NOT tell anyone WHO you are or WHAT happens to you, or they'll put you on a quick pilgrimage to the crematorium.{#morte_s447_4}{/font}"
+    scars "{font=exocet.ttf}Do what I tell you: READ the journal, then FIND Pharod.{#morte_s447_4}{/font}"
 
 # game/dlgs/mortuary/morte.rpy:7359
 translate english morte_s448_c6f3b6cc:
@@ -4507,9 +4507,9 @@ translate english morte_s650_19778e05:
     morte "«Bet I'm going to be hearing THAT a lot».{#morte_s650_1}"
     nr "Morte clears his throat.{#morte_s650_2}"
     morte "«Let's see…»{#morte_s650_3}"
-    scars "I know you feel like you've been drinking a few kegs of Styx wash, but you need to CENTER yourself.{#morte_s650_4}"
-    scars "Among your possessions is a JOURNAL that'll shed some light on the dark of the matter.{#morte_s650_4}"
-    scars "PHAROD can fill you in on the rest of the chant, if he's not in the dead-book already.{#morte_s650_4}"
+    scars "{font=exocet.ttf}I know you feel like you've been drinking a few kegs of Styx wash, but you need to CENTER yourself.{#morte_s650_4}{/font}"
+    scars "{font=exocet.ttf}Among your possessions is a JOURNAL that'll shed some light on the dark of the matter.{#morte_s650_4}{/font}"
+    scars "{font=exocet.ttf}PHAROD can fill you in on the rest of the chant, if he's not in the dead-book already.{#morte_s650_4}{/font}"
 
 # game/dlgs/mortuary/morte.rpy:10373
 translate english morte_s651_cfbce642:
@@ -4518,9 +4518,9 @@ translate english morte_s651_cfbce642:
     morte "«I will, I will, hold on».{#morte_s651_1}"
     nr "Morte pauses for a moment.{#morte_s651_2}"
     morte "«All right, here's the last bit…»{#morte_s651_3}"
-    scars "Don't lose the journal or we'll be up the Styx again.{#morte_s651_4}"
-    scars "And whatever you do, DO NOT tell anyone WHO you are or WHAT happens to you, or they'll put you on a quick pilgrimage to the crematorium.{#morte_s651_4}"
-    scars "Do what I tell you: READ the journal, then FIND Pharod.{#morte_s651_4}"
+    scars "{font=exocet.ttf}Don't lose the journal or we'll be up the Styx again.{#morte_s651_4}{/font}"
+    scars "{font=exocet.ttf}And whatever you do, DO NOT tell anyone WHO you are or WHAT happens to you, or they'll put you on a quick pilgrimage to the crematorium.{#morte_s651_4}{/font}"
+    scars "{font=exocet.ttf}Do what I tell you: READ the journal, then FIND Pharod.{#morte_s651_4}{/font}"
 
 # game/dlgs/mortuary/morte.rpy:10401
 translate english morte_s652_7c3cba1e:

@@ -1,5 +1,9 @@
-screen journal_screen():
-    $ notes = runtime.global_journal_manager.build_journal()
+screen journal_screen(get_notes):
+    $ notes = get_notes()
+
+    on 'show' action Show('narrat')
+    on 'hide' action Hide('narrat')
+
     key "j" action Hide("journal_screen")
     key "mouseup_3" action Hide("journal_screen")
 
