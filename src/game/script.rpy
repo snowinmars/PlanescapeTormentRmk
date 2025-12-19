@@ -25,6 +25,7 @@ init 2 python:
     from game.engine.characters.characters_store import (CharactersStore)
     from game.engine.inventory.inventory_store import (InventoryStore)
     from game.engine.world.world_store import (WorldStore)
+    from game.engine.narrat.narrat_store import (NarratStore)
 
     # import types, functools
 
@@ -38,6 +39,7 @@ default events_store = EventsStore()
 default characters_store = CharactersStore()
 default inventory_store = InventoryStore()
 default world_store = WorldStore()
+default narrat_store = NarratStore()
 
 # define config.rollback_enabled = False
 
@@ -52,6 +54,7 @@ init 3 python:
     from game.engine.characters.characters_manager import (CharactersManager)
     from game.engine.journal.journal_manager import (JournalManager)
     from game.engine.world.world_manager import (WorldManager)
+    from game.engine.narrat.narrat_manager import (NarratManager)
 
     from game.engine_data.settings.all_settings import (build_all_settings)
     from game.engine_data.inventory.all_inventory import (build_all_inventory)
@@ -73,6 +76,7 @@ init 3 python:
         runtime.global_journal_manager,
         runtime.global_inventory_manager
     )
+    runtime.global_narrat_manager = NarratManager(runtime.global_events_manager)
 
 
     def apply_stores():
@@ -82,6 +86,7 @@ init 3 python:
         runtime.global_characters_manager.set_store(characters_store)
         runtime.global_inventory_manager.set_store(inventory_store)
         runtime.global_world_manager.set_store(world_store)
+        runtime.global_narrat_manager.set_store(narrat_store)
 
 
     def init_managers():
@@ -133,12 +138,22 @@ init 3 python:
         config.keymap['journal_screen'] = ['j', 'J', 'о', 'О']
         config.underlay.append(
             renpy.Keymap(
-                journal_screen = Show("journal_screen")
+                journal_screen = Show("journal_screen", get_notes=runtime.global_journal_manager.build_journal)
             )
         )
 
     config.after_load_callbacks.append(apply_stores)
     config.start_callbacks.append(init_managers)
+
+
+init 4 python: # inject narrat
+    _original_say = renpy.say
+    def narrat_say(who, what, *args, **kwargs):
+        runtime.global_narrat_manager.add_history_entry(who, what)
+        runtime.global_narrat_manager.update_current_dialogue(who, what)
+        runtime.global_narrat_manager.update_menu_items([])
+        return _original_say(who, what, *args, **kwargs)
+    renpy.say = narrat_say
 
 
 label start:
@@ -147,7 +162,7 @@ label start:
     show screen inventory_button
     show screen character_screen_button
     show screen hotkey_listener
-    show screen short_history
+    show screen narrat
 
     $ enable_dev = True
 

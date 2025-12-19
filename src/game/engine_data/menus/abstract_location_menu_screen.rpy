@@ -53,6 +53,7 @@ init python:
         def __call__(self):
             # This is called when the button is clicked.
             target_label = self.directive.execute()
+            renpy.show_screen('narrat')
             renpy.jump(target_label)
 
 
@@ -60,6 +61,7 @@ init python:
 
 screen abstract_location_menu_screen(background, walking, talking, bg_music):
     on "show" action SmartPlayMusic(bg_music)
+    on "show" action Hide("narrat")
 
     default tt = Tooltip('')
     zorder 100
