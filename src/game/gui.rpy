@@ -59,13 +59,13 @@ define gui.interface_text_color = '#ffffff'
 ## Шрифты и их размеры #########################################################
 
 ## Шрифт, используемый внутриигровым текстом.
-define gui.text_font = "NotoSans-Regular.ttf"
+define gui.text_font = "bookmani.ttf"
 
 ## Шрифт, используемый именами персонажей.
-define gui.name_text_font = "NotoSans-Regular.ttf"
+define gui.name_text_font = "bookmani.ttf"
 
 ## Шрифт, используемый текстом вне игры.
-define gui.interface_text_font = "NotoSans-Regular.ttf"
+define gui.interface_text_font = "bookmani.ttf"
 
 ## Размер нормального текста диалога.
 define gui.text_size = 33
@@ -209,15 +209,15 @@ define gui.quick_button_text_selected_color = gui.accent_color
 ##
 ## Кнопки выбора используются во внутриигровых меню.
 
-define gui.choice_button_width = 1185
+# define gui.choice_button_width = 1185
 define gui.choice_button_height = None
 define gui.choice_button_tile = False
-define gui.choice_button_borders = Borders(150, 8, 150, 8)
+# define gui.choice_button_borders = Borders(150, 8, 150, 8)
 define gui.choice_button_text_font = gui.text_font
 define gui.choice_button_text_size = gui.text_size
-define gui.choice_button_text_xalign = 0.5
-define gui.choice_button_text_idle_color = '#888888'
-define gui.choice_button_text_hover_color = "#ffffff"
+define gui.choice_button_text_xalign = 0
+define gui.choice_button_text_idle_color = '#a12933'
+define gui.choice_button_text_hover_color = "#f0ede4"
 define gui.choice_button_text_insensitive_color = '#8888887f'
 
 
@@ -455,7 +455,7 @@ init python:
         ## Изменяет размеры и интервалы различных объектов.
         gui.slider_size = 54
 
-        gui.choice_button_width = 1860
+        # gui.choice_button_width = 1860
         gui.choice_button_text_size = 45
 
         gui.navigation_spacing = 30

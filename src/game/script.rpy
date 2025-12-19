@@ -147,6 +147,7 @@ label start:
     show screen inventory_button
     show screen character_screen_button
     show screen hotkey_listener
+    show screen short_history
 
     $ enable_dev = True
 
