@@ -11,7 +11,7 @@ screen narrat():
     $ menu_height = int(config.get('screen_height') * config.get('menu_area_height'))
 
     frame:
-        background "bg/diabg_his.png"
+        background "gui/diabg_his.png"
         xsize screen_width
         xfill True
         yfill True

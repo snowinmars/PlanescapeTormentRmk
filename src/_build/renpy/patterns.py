@@ -49,7 +49,7 @@ action_gain_experience_pattern = PatternConfig(
     pattern=re.compile(r"self\.state_manager\.gain_experience\('party', (.*?)\)"),
     template="""
 def test_{f}(self):
-    who = 'protagonist'
+    who = 'protagonist_character_name'
     prop = 'experience'
     delta = {v}
 
@@ -62,10 +62,10 @@ def test_{f}(self):
 
 
 action_modify_property_once_pattern = PatternConfig(
-    pattern=re.compile(r"self\.state_manager\.characters_manager\.modify_property_once\('protagonist', (.*?), (.*?), .*?\)$"),
+    pattern=re.compile(r"self\.state_manager\.characters_manager\.modify_property_once\('protagonist_character_name', (.*?), (.*?), .*?\)$"),
     template="""
 def test_{f}(self):
-    who = 'protagonist'
+    who = 'protagonist_character_name'
     prop = {p}
     delta = {v}
 
@@ -78,10 +78,10 @@ def test_{f}(self):
 
 
 action_modify_property_pattern = PatternConfig(
-    pattern=re.compile(r"self\.state_manager\.characters_manager\.modify_property\('protagonist', (.*?), (.*?)\)$"),
+    pattern=re.compile(r"self\.state_manager\.characters_manager\.modify_property\('protagonist_character_name', (.*?), (.*?)\)$"),
     template="""
 def test_{f}(self):
-    who = 'protagonist'
+    who = 'protagonist_character_name'
     prop = {p}
     delta = {v}
 
@@ -94,10 +94,10 @@ def test_{f}(self):
 
 
 action_set_property_pattern = PatternConfig(
-    pattern=re.compile(r"self\.state_manager\.characters_manager\.set_property\('protagonist', (.*?), (.*?)\)$"),
+    pattern=re.compile(r"self\.state_manager\.characters_manager\.set_property\('protagonist_character_name', (.*?), (.*?)\)$"),
     template="""
 def test_{f}(self):
-    who = 'protagonist'
+    who = 'protagonist_character_name'
     prop = {p}
     delta = {v}
 
@@ -206,10 +206,10 @@ def test_{f}(self):
 
 
 condition_get_prop_lt_pattern = PatternConfig(
-    pattern=re.compile(r"return self\.state_manager\.characters_manager\.get_property\('protagonist', (.*?)\) < (.*?)$"),
+    pattern=re.compile(r"return self\.state_manager\.characters_manager\.get_property\('protagonist_character_name', (.*?)\) < (.*?)$"),
     template="""
 def test_{f}(self):
-    who = 'protagonist'
+    who = 'protagonist_character_name'
     prop = {p}
     value = {v}
 
@@ -223,10 +223,10 @@ def test_{f}(self):
 
 
 condition_get_prop_gt_pattern = PatternConfig(
-    pattern=re.compile(r"return self\.state_manager\.characters_manager\.get_property\('protagonist', (.*?)\) > (.*?)$"),
+    pattern=re.compile(r"return self\.state_manager\.characters_manager\.get_property\('protagonist_character_name', (.*?)\) > (.*?)$"),
     template="""
 def test_{f}(self):
-    who = 'protagonist'
+    who = 'protagonist_character_name'
     prop = {p}
     value = {v}
 
@@ -240,10 +240,10 @@ def test_{f}(self):
 
 
 condition_get_prop_eq_pattern = PatternConfig(
-    pattern=re.compile(r"return self\.state_manager\.characters_manager\.get_property\('protagonist', (.*?)\) == (.*?)$"),
+    pattern=re.compile(r"return self\.state_manager\.characters_manager\.get_property\('protagonist_character_name', (.*?)\) == (.*?)$"),
     template="""
 def test_{f}(self):
-    who = 'protagonist'
+    who = 'protagonist_character_name'
     prop = {p}
     value = {v}
 
@@ -257,10 +257,10 @@ def test_{f}(self):
 
 
 condition_get_prop_neq_pattern = PatternConfig(
-    pattern=re.compile(r"return self\.state_manager\.characters_manager\.get_property\('protagonist', (.*?)\) != (.*?)$"),
+    pattern=re.compile(r"return self\.state_manager\.characters_manager\.get_property\('protagonist_character_name', (.*?)\) != (.*?)$"),
     template="""
 def test_{f}(self):
-    who = 'protagonist'
+    who = 'protagonist_character_name'
     prop = {p}
     value = {v}
 

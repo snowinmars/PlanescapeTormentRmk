@@ -43,7 +43,7 @@ class Morte1LogicGeneratedTest(LogicTest):
 
 
     def test_r39824_action(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'good'
         delta = 1
 

@@ -376,12 +376,12 @@ max_health_after = 24
 current_health_after = 24
 """.strip()
 current_health_eq_max_health_condition_pattern_before = """
-self.state_manager.characters_manager.set_property('protagonist', 'max_health', max_health_before)
-self.state_manager.characters_manager.set_property('protagonist', 'current_health', current_health_before)
+self.state_manager.characters_manager.set_property('protagonist_character_name', 'max_health', max_health_before)
+self.state_manager.characters_manager.set_property('protagonist_character_name', 'current_health', current_health_before)
 """.strip()
 current_health_eq_max_health_condition_pattern_after = """
-self.state_manager.characters_manager.set_property('protagonist', 'max_health', max_health_after)
-self.state_manager.characters_manager.set_property('protagonist', 'current_health', current_health_after)
+self.state_manager.characters_manager.set_property('protagonist_character_name', 'max_health', max_health_after)
+self.state_manager.characters_manager.set_property('protagonist_character_name', 'current_health', current_health_after)
 """.strip()
 current_health_gt_max_health_condition_pattern_preconf = """
 max_health_before = 24
@@ -390,12 +390,12 @@ max_health_after = 24
 current_health_after = 16
 """.strip()
 current_health_gt_max_health_condition_pattern_before = """
-self.state_manager.characters_manager.set_property('protagonist', 'max_health', max_health_before)
-self.state_manager.characters_manager.set_property('protagonist', 'current_health', current_health_before)
+self.state_manager.characters_manager.set_property('protagonist_character_name', 'max_health', max_health_before)
+self.state_manager.characters_manager.set_property('protagonist_character_name', 'current_health', current_health_before)
 """.strip()
 current_health_gt_max_health_condition_pattern_after = """
-self.state_manager.characters_manager.set_property('protagonist', 'max_health', max_health_after)
-self.state_manager.characters_manager.set_property('protagonist', 'current_health', current_health_after)
+self.state_manager.characters_manager.set_property('protagonist_character_name', 'max_health', max_health_after)
+self.state_manager.characters_manager.set_property('protagonist_character_name', 'current_health', current_health_after)
 """.strip()
 current_health_lt_max_health_condition_pattern_preconf = """
 max_health_before = 24
@@ -404,12 +404,12 @@ max_health_after = 24
 current_health_after = 8
 """.strip()
 current_health_lt_max_health_condition_pattern_before = """
-self.state_manager.characters_manager.set_property('protagonist', 'max_health', max_health_before)
-self.state_manager.characters_manager.set_property('protagonist', 'current_health', current_health_before)
+self.state_manager.characters_manager.set_property('protagonist_character_name', 'max_health', max_health_before)
+self.state_manager.characters_manager.set_property('protagonist_character_name', 'current_health', current_health_before)
 """.strip()
 current_health_lt_max_health_condition_pattern_after = """
-self.state_manager.characters_manager.set_property('protagonist', 'max_health', max_health_after)
-self.state_manager.characters_manager.set_property('protagonist', 'current_health', current_health_after)
+self.state_manager.characters_manager.set_property('protagonist_character_name', 'max_health', max_health_after)
+self.state_manager.characters_manager.set_property('protagonist_character_name', 'current_health', current_health_after)
 """.strip()
 get_boolean_condition_pattern_preconf = """
 """.strip()

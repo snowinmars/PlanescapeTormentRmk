@@ -4,7 +4,7 @@ class Zm1041LogicGenerated:
 
 
     def r6576_action(self):
-        self.state_manager.characters_manager.modify_property('protagonist', 'law', -1)
+        self.state_manager.characters_manager.modify_property('protagonist_character_name', 'law', -1)
         self.state_manager.world_manager.set_zombie_chaotic(True)
 
 
@@ -21,29 +21,29 @@ class Zm1041LogicGenerated:
 
 
     def r9161_action(self):
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'good', 1, 'globalgood_bei_1')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'good', 1, 'globalgood_bei_1')
 
 
     def r9162_action(self):
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'good', -1, 'globalevil_bei_1')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'good', -1, 'globalevil_bei_1')
 
 
     def r9200_action(self):
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'good', 1, 'globalgood_bei_2')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'good', 1, 'globalgood_bei_2')
 
 
     def r9201_action(self):
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'law', -1, 'globalchaotic_bei_1')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'law', -1, 'globalchaotic_bei_1')
 
 
     def r9207_action(self):
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'good', 1, 'globalgood_bei_3')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'good', 1, 'globalgood_bei_3')
         self.state_manager.world_manager.set_know_xixi(True)
 
 
     def r9208_action(self):
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'good', -1, 'globalevil_bei_2')
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'law', -1, 'globalchaotic_bei_2')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'good', -1, 'globalevil_bei_2')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'law', -1, 'globalchaotic_bei_2')
         self.state_manager.world_manager.set_know_xixi(True)
 
 
@@ -86,7 +86,7 @@ class Zm1041LogicGenerated:
 
 
     def r9187_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'intelligence') > 13
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'intelligence') > 13
 
 
 class Zm1041Logic(Zm1041LogicGenerated):

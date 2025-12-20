@@ -18,10 +18,10 @@ class Zm985LogicGeneratedTest(LogicTest):
 
 
     def test_r45516_action(self):
-        who_law = 'protagonist'
+        who_law = 'protagonist_character_name'
         prop_law = 'law'
         delta_law = -1
-        who_good = 'protagonist'
+        who_good = 'protagonist_character_name'
         prop_good = 'good'
         delta_good = -1
 
@@ -44,10 +44,10 @@ class Zm985LogicGeneratedTest(LogicTest):
 
 
     def test_r45517_action(self):
-        who_law = 'protagonist'
+        who_law = 'protagonist_character_name'
         prop_law = 'law'
         delta_law = -1
-        who_good = 'protagonist'
+        who_good = 'protagonist_character_name'
         prop_good = 'good'
         delta_good = -1
 
@@ -70,10 +70,10 @@ class Zm985LogicGeneratedTest(LogicTest):
 
 
     def test_r45518_action(self):
-        who_law = 'protagonist'
+        who_law = 'protagonist_character_name'
         prop_law = 'law'
         delta_law = 1
-        who_good = 'protagonist'
+        who_good = 'protagonist_character_name'
         prop_good = 'good'
         delta_good = 1
 
@@ -96,10 +96,10 @@ class Zm985LogicGeneratedTest(LogicTest):
 
 
     def test_r45519_action(self):
-        who_law = 'protagonist'
+        who_law = 'protagonist_character_name'
         prop_law = 'law'
         delta_law = 1
-        who_good = 'protagonist'
+        who_good = 'protagonist_character_name'
         prop_good = 'good'
         delta_good = 1
 
@@ -144,7 +144,7 @@ class Zm985LogicGeneratedTest(LogicTest):
 
 
     def test_r45532_action(self):
-        who_law = 'protagonist'
+        who_law = 'protagonist_character_name'
         prop_law = 'law'
         delta_law = -1
         self.state_manager.world_manager.set_zombie_chaotic(False)

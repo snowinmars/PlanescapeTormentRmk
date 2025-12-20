@@ -58,8 +58,8 @@ class EiveneLogicGenerated:
 
 
     def r3449_action(self):
-        self.state_manager.characters_manager.modify_property('protagonist', 'max_health', 1)
-        self.state_manager.characters_manager.full_heal('protagonist')
+        self.state_manager.characters_manager.modify_property('protagonist_character_name', 'max_health', 1)
+        self.state_manager.characters_manager.full_heal('protagonist_character_name')
         self.state_manager.world_manager.set_ravel_eivene(1)
         self.state_manager.journal_manager.update_journal('38199')
         #$%.register('38199', 'После того, как я принес Эи-Вейн бальзамирующую жидкость и нитку, она зашила мои шрамы и нанесла бальзамирующую жидкость на мое тело. Довольно странно, но я чувствую себя... здоровее. %$#')
@@ -139,7 +139,7 @@ class EiveneLogicGenerated:
 
 
     def r63478_action(self):
-        self.state_manager.gain_experience('protagonist', 250)
+        self.state_manager.gain_experience('protagonist_character_name', 250)
         self.state_manager.world_manager.set_42_secret(True)
 
 

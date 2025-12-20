@@ -19,7 +19,7 @@ class IntroductionLogicTest(LogicTest):
         logic = IntroductionLogic(self.state_manager)
         logic.setup_new_life_as_mage()
 
-        props = self.state_manager.characters_manager.get_character('protagonist').get_all_properties()
+        props = self.state_manager.characters_manager.get_character('protagonist_character_name').get_all_properties()
         self.assertEqual(props['intelligence'], 16)
         self.assertEqual(props['wisdom'], 17)
         self.assertEqual(props['charisma'], 15)

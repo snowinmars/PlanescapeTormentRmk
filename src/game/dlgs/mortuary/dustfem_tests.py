@@ -43,7 +43,7 @@ class DustfemLogicGeneratedTest(LogicTest):
         adahn_after = 1
         adahn_after_once = 2 * 1
         self.state_manager.world_manager.set_adahn(adahn_before)
-        who_law = 'protagonist'
+        who_law = 'protagonist_character_name'
         prop_law = 'law'
         delta_law = -1
 
@@ -68,7 +68,7 @@ class DustfemLogicGeneratedTest(LogicTest):
         adahn_after = 1
         adahn_after_once = 2 * 1
         self.state_manager.world_manager.set_adahn(adahn_before)
-        who_law = 'protagonist'
+        who_law = 'protagonist_character_name'
         prop_law = 'law'
         delta_law = -1
 
@@ -93,7 +93,7 @@ class DustfemLogicGeneratedTest(LogicTest):
         adahn_after = 1
         adahn_after_once = 2 * 1
         self.state_manager.world_manager.set_adahn(adahn_before)
-        who_law = 'protagonist'
+        who_law = 'protagonist_character_name'
         prop_law = 'law'
         delta_law = -1
 
@@ -118,7 +118,7 @@ class DustfemLogicGeneratedTest(LogicTest):
         adahn_after = 1
         adahn_after_once = 2 * 1
         self.state_manager.world_manager.set_adahn(adahn_before)
-        who_law = 'protagonist'
+        who_law = 'protagonist_character_name'
         prop_law = 'law'
         delta_law = -1
 
@@ -147,7 +147,7 @@ class DustfemLogicGeneratedTest(LogicTest):
 
     def test_r4308_action(self):
         self.state_manager.world_manager.set_mortualy_alarmed(False)
-        who_law = 'protagonist'
+        who_law = 'protagonist_character_name'
         prop_law = 'law'
         delta_law = -1
 
@@ -188,7 +188,7 @@ class DustfemLogicGeneratedTest(LogicTest):
         choke_dustman_after = 1
         choke_dustman_after_once = 2 * 1
         self.state_manager.world_manager.set_choke_dustman(choke_dustman_before)
-        who_experience = 'protagonist'
+        who_experience = 'protagonist_character_name'
         prop_experience = 'experience'
         delta_experience = 15
 
@@ -224,7 +224,7 @@ class DustfemLogicGeneratedTest(LogicTest):
         choke_after_once = 2 * 1
         self.state_manager.world_manager.set_choke(choke_before)
         self.state_manager.world_manager.set_dead_dustfem(False)
-        who_experience = 'protagonist'
+        who_experience = 'protagonist_character_name'
         prop_experience = 'experience'
         delta_experience = 15
 
@@ -252,7 +252,7 @@ class DustfemLogicGeneratedTest(LogicTest):
 
     def test_r4320_action(self):
         self.state_manager.world_manager.set_dead_dustfem(False)
-        who_experience = 'protagonist'
+        who_experience = 'protagonist_character_name'
         prop_experience = 'experience'
         delta_experience = 250
 
@@ -284,7 +284,7 @@ class DustfemLogicGeneratedTest(LogicTest):
 
 
     def test_r1235_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'dexterity'
         value = 13
 
@@ -297,7 +297,7 @@ class DustfemLogicGeneratedTest(LogicTest):
 
 
     def test_r1236_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'dexterity'
         value = 12
 
@@ -310,7 +310,7 @@ class DustfemLogicGeneratedTest(LogicTest):
 
 
     def test_r1242_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'intelligence'
         value = 11
 
@@ -323,7 +323,7 @@ class DustfemLogicGeneratedTest(LogicTest):
 
 
     def test_r1244_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'dexterity'
         value = 13
 
@@ -336,7 +336,7 @@ class DustfemLogicGeneratedTest(LogicTest):
 
 
     def test_r1245_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'dexterity'
         value = 12
 
@@ -349,7 +349,7 @@ class DustfemLogicGeneratedTest(LogicTest):
 
 
     def test_r1247_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'dexterity'
         value = 13
 
@@ -362,7 +362,7 @@ class DustfemLogicGeneratedTest(LogicTest):
 
 
     def test_r1248_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'dexterity'
         value = 12
 
@@ -468,7 +468,7 @@ class DustfemLogicGeneratedTest(LogicTest):
 
 
     def test_r33227_condition(self):
-        who_intelligence = 'protagonist'
+        who_intelligence = 'protagonist_character_name'
         prop_intelligence = 'intelligence'
         delta_intelligence = 12
 
@@ -484,7 +484,7 @@ class DustfemLogicGeneratedTest(LogicTest):
 
 
     def test_r33229_condition(self):
-        who_intelligence = 'protagonist'
+        who_intelligence = 'protagonist_character_name'
         prop_intelligence = 'intelligence'
         delta_intelligence = 12
 
@@ -524,7 +524,7 @@ class DustfemLogicGeneratedTest(LogicTest):
 
 
     def test_r1275_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'dexterity'
         value = 13
 
@@ -537,7 +537,7 @@ class DustfemLogicGeneratedTest(LogicTest):
 
 
     def test_r1276_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'dexterity'
         value = 12
 
@@ -550,7 +550,7 @@ class DustfemLogicGeneratedTest(LogicTest):
 
 
     def test_r1281_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'intelligence'
         value = 11
 
@@ -579,7 +579,7 @@ class DustfemLogicGeneratedTest(LogicTest):
 
 
     def test_r1292_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'charisma'
         value = 13
 
@@ -592,7 +592,7 @@ class DustfemLogicGeneratedTest(LogicTest):
 
 
     def test_r1293_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'charisma'
         value = 12
 
@@ -621,7 +621,7 @@ class DustfemLogicGeneratedTest(LogicTest):
 
 
     def test_r1296_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'charisma'
         value = 13
 
@@ -634,7 +634,7 @@ class DustfemLogicGeneratedTest(LogicTest):
 
 
     def test_r1297_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'charisma'
         value = 12
 
@@ -647,7 +647,7 @@ class DustfemLogicGeneratedTest(LogicTest):
 
 
     def test_r1396_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'charisma'
         value = 12
 
@@ -660,7 +660,7 @@ class DustfemLogicGeneratedTest(LogicTest):
 
 
     def test_r1397_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'charisma'
         value = 13
 
@@ -673,7 +673,7 @@ class DustfemLogicGeneratedTest(LogicTest):
 
 
     def test_r1398_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'charisma'
         value = 13
 
@@ -686,7 +686,7 @@ class DustfemLogicGeneratedTest(LogicTest):
 
 
     def test_r1399_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'charisma'
         value = 12
 
@@ -713,7 +713,7 @@ class DustfemLogicGeneratedTest(LogicTest):
 
 
     def test_r4296_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'charisma'
         value = 12
 
@@ -726,7 +726,7 @@ class DustfemLogicGeneratedTest(LogicTest):
 
 
     def test_r4297_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'charisma'
         value = 13
 
@@ -739,7 +739,7 @@ class DustfemLogicGeneratedTest(LogicTest):
 
 
     def test_r4298_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'charisma'
         value = 13
 
@@ -752,7 +752,7 @@ class DustfemLogicGeneratedTest(LogicTest):
 
 
     def test_r4300_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'charisma'
         value = 12
 
@@ -765,7 +765,7 @@ class DustfemLogicGeneratedTest(LogicTest):
 
 
     def test_r4303_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'charisma'
         value = 12
 
@@ -778,7 +778,7 @@ class DustfemLogicGeneratedTest(LogicTest):
 
 
     def test_r4304_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'charisma'
         value = 13
 
@@ -791,7 +791,7 @@ class DustfemLogicGeneratedTest(LogicTest):
 
 
     def test_r4305_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'charisma'
         value = 13
 
@@ -804,7 +804,7 @@ class DustfemLogicGeneratedTest(LogicTest):
 
 
     def test_r4306_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'charisma'
         value = 12
 
@@ -890,7 +890,7 @@ class DustfemLogicGeneratedTest(LogicTest):
 
 
     def test_r4324_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'dexterity'
         value = 13
 
@@ -903,7 +903,7 @@ class DustfemLogicGeneratedTest(LogicTest):
 
 
     def test_r4325_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'dexterity'
         value = 12
 
@@ -916,7 +916,7 @@ class DustfemLogicGeneratedTest(LogicTest):
 
 
     def test_r4329_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'charisma'
         value = 12
 
@@ -929,7 +929,7 @@ class DustfemLogicGeneratedTest(LogicTest):
 
 
     def test_r4331_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'charisma'
         value = 13
 
@@ -942,7 +942,7 @@ class DustfemLogicGeneratedTest(LogicTest):
 
 
     def test_r4332_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'charisma'
         value = 13
 
@@ -955,7 +955,7 @@ class DustfemLogicGeneratedTest(LogicTest):
 
 
     def test_r4333_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'charisma'
         value = 12
 

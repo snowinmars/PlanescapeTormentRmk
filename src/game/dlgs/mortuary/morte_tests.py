@@ -138,7 +138,7 @@ class MorteLogicGeneratedTest(LogicTest):
 
 
     def test_r2605_action(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'law'
         delta = -1
 
@@ -202,7 +202,7 @@ class MorteLogicGeneratedTest(LogicTest):
 
 
     def test_r3965_action(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'good'
         delta = -1
 
@@ -214,7 +214,7 @@ class MorteLogicGeneratedTest(LogicTest):
 
 
     def test_r3966_action(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'good'
         delta = 1
 
@@ -233,7 +233,7 @@ class MorteLogicGeneratedTest(LogicTest):
 
 
     def test_r3988_action(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'law'
         delta = -1
 
@@ -245,7 +245,7 @@ class MorteLogicGeneratedTest(LogicTest):
 
 
     def test_r4029_action(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'good'
         delta = 1
 
@@ -338,7 +338,7 @@ class MorteLogicGeneratedTest(LogicTest):
 
 
     def test_r4678_action(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'law'
         delta = -3
 
@@ -350,7 +350,7 @@ class MorteLogicGeneratedTest(LogicTest):
 
 
     def test_r4679_action(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'law'
         delta = -1
 
@@ -362,7 +362,7 @@ class MorteLogicGeneratedTest(LogicTest):
 
 
     def test_r4682_action(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'law'
         delta = 3
 
@@ -374,10 +374,10 @@ class MorteLogicGeneratedTest(LogicTest):
 
 
     def test_r4687_action(self):
-        who_law = 'protagonist'
+        who_law = 'protagonist_character_name'
         prop_law = 'law'
         delta_law = 1
-        who_good = 'protagonist'
+        who_good = 'protagonist_character_name'
         prop_good = 'good'
         delta_good = 1
 
@@ -409,7 +409,7 @@ class MorteLogicGeneratedTest(LogicTest):
 
 
     def test_r4695_action(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'law'
         delta = -3
 
@@ -421,7 +421,7 @@ class MorteLogicGeneratedTest(LogicTest):
 
 
     def test_r4699_action(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'law'
         delta = 3
 
@@ -433,10 +433,10 @@ class MorteLogicGeneratedTest(LogicTest):
 
 
     def test_r64535_action(self):
-        who_looks_like = 'protagonist'
+        who_looks_like = 'protagonist_character_name'
         prop_looks_like = 'looks_like'
         delta_looks_like = 'zombie'
-        who_experience = 'protagonist'
+        who_experience = 'protagonist_character_name'
         prop_experience = 'experience'
         delta_experience = 500
         self.state_manager.world_manager.set_vaxis_global_xp(False)
@@ -463,7 +463,7 @@ class MorteLogicGeneratedTest(LogicTest):
 
 
     def test_r64534_action(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'looks_like'
         delta = 'zombie'
 
@@ -509,7 +509,7 @@ class MorteLogicGeneratedTest(LogicTest):
 
 
     def test_r6658_action(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'good'
         delta = -1
 
@@ -521,7 +521,7 @@ class MorteLogicGeneratedTest(LogicTest):
 
 
     def test_r6659_action(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'good'
         delta = 1
 
@@ -580,10 +580,10 @@ class MorteLogicGeneratedTest(LogicTest):
 
     def test_r11977_action(self):
         self.state_manager.world_manager.set_ingress_teeth_installed(False)
-        who_law = 'protagonist'
+        who_law = 'protagonist_character_name'
         prop_law = 'law'
         delta_law = -1
-        who_good = 'protagonist'
+        who_good = 'protagonist_character_name'
         prop_good = 'good'
         delta_good = -1
 
@@ -610,10 +610,10 @@ class MorteLogicGeneratedTest(LogicTest):
 
     def test_r11980_action(self):
         self.state_manager.world_manager.set_ingress_teeth_installed(False)
-        who_law = 'protagonist'
+        who_law = 'protagonist_character_name'
         prop_law = 'law'
         delta_law = -1
-        who_good = 'protagonist'
+        who_good = 'protagonist_character_name'
         prop_good = 'good'
         delta_good = -1
 
@@ -953,7 +953,7 @@ class MorteLogicGeneratedTest(LogicTest):
 
 
     def test_r18578_action(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'law'
         delta = 1
 
@@ -965,7 +965,7 @@ class MorteLogicGeneratedTest(LogicTest):
 
 
     def test_r18808_action(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'good'
         delta = 1
 
@@ -1037,7 +1037,7 @@ class MorteLogicGeneratedTest(LogicTest):
         gold_after = -50
         gold_after_once = -2 * 50
         self.state_manager.world_manager.set_gold(gold_before)
-        who_good = 'protagonist'
+        who_good = 'protagonist_character_name'
         prop_good = 'good'
         delta_good = 1
 
@@ -1062,7 +1062,7 @@ class MorteLogicGeneratedTest(LogicTest):
         gold_after = -100
         gold_after_once = -2 * 100
         self.state_manager.world_manager.set_gold(gold_before)
-        who_good = 'protagonist'
+        who_good = 'protagonist_character_name'
         prop_good = 'good'
         delta_good = 1
 
@@ -1120,7 +1120,7 @@ class MorteLogicGeneratedTest(LogicTest):
 
 
     def test_r22850_action(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'law'
         delta = -1
 
@@ -1132,7 +1132,7 @@ class MorteLogicGeneratedTest(LogicTest):
 
 
     def test_r22853_action(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'law'
         delta = -1
 
@@ -1144,7 +1144,7 @@ class MorteLogicGeneratedTest(LogicTest):
 
 
     def test_r22856_action(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'law'
         delta = -1
 
@@ -1186,7 +1186,7 @@ class MorteLogicGeneratedTest(LogicTest):
 
 
     def test_r24925_action(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'good'
         delta = 1
 
@@ -1517,7 +1517,7 @@ class MorteLogicGeneratedTest(LogicTest):
 
 
     def test_r34993_action(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'law'
         delta = -1
 
@@ -1543,7 +1543,7 @@ class MorteLogicGeneratedTest(LogicTest):
 
 
     def test_r35025_action(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'law'
         delta = -1
 
@@ -1569,7 +1569,7 @@ class MorteLogicGeneratedTest(LogicTest):
 
 
     def test_r35057_action(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'law'
         delta = -1
 
@@ -1595,7 +1595,7 @@ class MorteLogicGeneratedTest(LogicTest):
 
 
     def test_r35089_action(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'law'
         delta = -1
 
@@ -1621,7 +1621,7 @@ class MorteLogicGeneratedTest(LogicTest):
 
 
     def test_r35121_action(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'law'
         delta = -1
 
@@ -1647,7 +1647,7 @@ class MorteLogicGeneratedTest(LogicTest):
 
 
     def test_r35153_action(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'law'
         delta = -1
 
@@ -1673,7 +1673,7 @@ class MorteLogicGeneratedTest(LogicTest):
 
 
     def test_r35185_action(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'law'
         delta = -1
 
@@ -1699,7 +1699,7 @@ class MorteLogicGeneratedTest(LogicTest):
 
 
     def test_r35217_action(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'law'
         delta = -1
 
@@ -1725,7 +1725,7 @@ class MorteLogicGeneratedTest(LogicTest):
 
 
     def test_r35249_action(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'law'
         delta = -1
 
@@ -1751,7 +1751,7 @@ class MorteLogicGeneratedTest(LogicTest):
 
 
     def test_r35281_action(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'law'
         delta = -1
 
@@ -1763,7 +1763,7 @@ class MorteLogicGeneratedTest(LogicTest):
 
 
     def test_r35319_action(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'law'
         delta = -1
 
@@ -1775,7 +1775,7 @@ class MorteLogicGeneratedTest(LogicTest):
 
 
     def test_r35342_action(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'good'
         delta = -1
 
@@ -1787,7 +1787,7 @@ class MorteLogicGeneratedTest(LogicTest):
 
 
     def test_r35360_action(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'good'
         delta = 1
 
@@ -1806,7 +1806,7 @@ class MorteLogicGeneratedTest(LogicTest):
 
 
     def test_r35396_action(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'law'
         delta = -1
 
@@ -1818,7 +1818,7 @@ class MorteLogicGeneratedTest(LogicTest):
 
 
     def test_r35419_action(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'good'
         delta = -1
 
@@ -1830,7 +1830,7 @@ class MorteLogicGeneratedTest(LogicTest):
 
 
     def test_r35437_action(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'good'
         delta = 1
 
@@ -1849,7 +1849,7 @@ class MorteLogicGeneratedTest(LogicTest):
 
 
     def test_r35473_action(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'law'
         delta = -1
 
@@ -1861,7 +1861,7 @@ class MorteLogicGeneratedTest(LogicTest):
 
 
     def test_r35496_action(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'good'
         delta = -1
 
@@ -1873,7 +1873,7 @@ class MorteLogicGeneratedTest(LogicTest):
 
 
     def test_r35514_action(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'good'
         delta = 1
 
@@ -1892,7 +1892,7 @@ class MorteLogicGeneratedTest(LogicTest):
 
 
     def test_r35550_action(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'law'
         delta = -1
 
@@ -1904,7 +1904,7 @@ class MorteLogicGeneratedTest(LogicTest):
 
 
     def test_r35573_action(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'good'
         delta = -1
 
@@ -1916,7 +1916,7 @@ class MorteLogicGeneratedTest(LogicTest):
 
 
     def test_r35591_action(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'good'
         delta = 1
 
@@ -2253,7 +2253,7 @@ class MorteLogicGeneratedTest(LogicTest):
 
 
     def test_r53843_action(self):
-        who_good = 'protagonist'
+        who_good = 'protagonist_character_name'
         prop_good = 'good'
         delta_good = -1
         pillar_before = 1
@@ -2287,7 +2287,7 @@ class MorteLogicGeneratedTest(LogicTest):
 
 
     def test_r53850_action(self):
-        who_good = 'protagonist'
+        who_good = 'protagonist_character_name'
         prop_good = 'good'
         delta_good = -1
         pillar_before = 1
@@ -2446,7 +2446,7 @@ class MorteLogicGeneratedTest(LogicTest):
 
 
     def test_r55902_action(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'law'
         delta = -1
 
@@ -2465,7 +2465,7 @@ class MorteLogicGeneratedTest(LogicTest):
 
 
     def test_r55931_action(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'law'
         delta = 2
 
@@ -2477,7 +2477,7 @@ class MorteLogicGeneratedTest(LogicTest):
 
 
     def test_r55941_action(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'law'
         delta = -2
 
@@ -2695,7 +2695,7 @@ class MorteLogicGeneratedTest(LogicTest):
 
     def test_r65569_action(self):
         self.state_manager.world_manager.set_morte_tattoo_xp(False)
-        who_experience = 'protagonist'
+        who_experience = 'protagonist_character_name'
         prop_experience = 'experience'
         delta_experience = 1000
 
@@ -2784,7 +2784,7 @@ class MorteLogicGeneratedTest(LogicTest):
 
 
     def test_r65733_action(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'experience'
         delta = 12000
 
@@ -2796,7 +2796,7 @@ class MorteLogicGeneratedTest(LogicTest):
 
 
     def test_r65750_action(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'law'
         delta = 1
 
@@ -2808,10 +2808,10 @@ class MorteLogicGeneratedTest(LogicTest):
 
 
     def test_r65751_action(self):
-        who_law = 'protagonist'
+        who_law = 'protagonist_character_name'
         prop_law = 'law'
         delta_law = -1
-        who_good = 'protagonist'
+        who_good = 'protagonist_character_name'
         prop_good = 'good'
         delta_good = -1
 
@@ -2864,7 +2864,7 @@ class MorteLogicGeneratedTest(LogicTest):
 
     def test_r65774_action(self):
         self.state_manager.world_manager.set_memory_morte_pillar(False)
-        who_experience = 'protagonist'
+        who_experience = 'protagonist_character_name'
         prop_experience = 'experience'
         delta_experience = 12000
 
@@ -2915,20 +2915,20 @@ class MorteLogicGeneratedTest(LogicTest):
 
 
     def test_r65821_action(self):
-        who_experience = 'protagonist'
+        who_experience = 'protagonist_character_name'
         prop_experience = 'experience'
         delta_experience = 12000
         morale_morte_before = 0
         morale_morte_after = 3
         morale_morte_after_once = 2 * 3
         self.state_manager.world_manager.set_morale_morte(morale_morte_before)
-        who_strength = 'morte'
+        who_strength = 'morte_character_name'
         prop_strength = 'strength'
         delta_strength = 4
-        who_dexterity = 'morte'
+        who_dexterity = 'morte_character_name'
         prop_dexterity = 'dexterity'
         delta_dexterity = 2
-        who_constitution = 'morte'
+        who_constitution = 'morte_character_name'
         prop_constitution = 'constitution'
         delta_constitution = 2
         self.state_manager.world_manager.set_bd_morte_story(False)
@@ -3111,7 +3111,7 @@ class MorteLogicGeneratedTest(LogicTest):
 
 
     def test_r1019_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'intelligence'
         value = 11
 
@@ -3124,7 +3124,7 @@ class MorteLogicGeneratedTest(LogicTest):
 
 
     def test_r1050_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'intelligence'
         value = 12
 
@@ -3137,7 +3137,7 @@ class MorteLogicGeneratedTest(LogicTest):
 
 
     def test_r1051_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'intelligence'
         value = 11
 
@@ -3227,7 +3227,7 @@ class MorteLogicGeneratedTest(LogicTest):
 
 
     def test_r3969_condition(self):
-        who_strength = 'protagonist'
+        who_strength = 'protagonist_character_name'
         prop_strength = 'strength'
         delta_strength = 13
 
@@ -3243,7 +3243,7 @@ class MorteLogicGeneratedTest(LogicTest):
 
 
     def test_r3970_condition(self):
-        who_strength = 'protagonist'
+        who_strength = 'protagonist_character_name'
         prop_strength = 'strength'
         delta_strength = 12
 
@@ -3280,7 +3280,7 @@ class MorteLogicGeneratedTest(LogicTest):
 
 
     def test_r4023_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'wisdom'
         value = 13
 
@@ -3293,7 +3293,7 @@ class MorteLogicGeneratedTest(LogicTest):
 
 
     def test_r4024_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'wisdom'
         value = 12
 
@@ -3306,7 +3306,7 @@ class MorteLogicGeneratedTest(LogicTest):
 
 
     def test_r4027_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'wisdom'
         value = 13
 
@@ -3319,7 +3319,7 @@ class MorteLogicGeneratedTest(LogicTest):
 
 
     def test_r4028_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'wisdom'
         value = 12
 
@@ -3332,7 +3332,7 @@ class MorteLogicGeneratedTest(LogicTest):
 
 
     def test_r4031_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'wisdom'
         value = 13
 
@@ -3345,7 +3345,7 @@ class MorteLogicGeneratedTest(LogicTest):
 
 
     def test_r4032_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'wisdom'
         value = 12
 
@@ -3358,7 +3358,7 @@ class MorteLogicGeneratedTest(LogicTest):
 
 
     def test_r4034_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'wisdom'
         value = 13
 
@@ -3371,7 +3371,7 @@ class MorteLogicGeneratedTest(LogicTest):
 
 
     def test_r4686_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'intelligence'
         value = 13
 
@@ -3412,10 +3412,10 @@ class MorteLogicGeneratedTest(LogicTest):
 
 
     def test_r6327_condition(self):
-        who_intelligence = 'protagonist'
+        who_intelligence = 'protagonist_character_name'
         prop_intelligence = 'intelligence'
         delta_intelligence = 11
-        who_wisdom = 'protagonist'
+        who_wisdom = 'protagonist_character_name'
         prop_wisdom = 'wisdom'
         delta_wisdom = 12
 
@@ -3431,7 +3431,7 @@ class MorteLogicGeneratedTest(LogicTest):
 
 
     def test_r6328_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'wisdom'
         value = 11
 
@@ -3444,10 +3444,10 @@ class MorteLogicGeneratedTest(LogicTest):
 
 
     def test_r6329_condition(self):
-        who_intelligence = 'protagonist'
+        who_intelligence = 'protagonist_character_name'
         prop_intelligence = 'intelligence'
         delta_intelligence = 12
-        who_wisdom = 'protagonist'
+        who_wisdom = 'protagonist_character_name'
         prop_wisdom = 'wisdom'
         delta_wisdom = 12
 
@@ -3477,7 +3477,7 @@ class MorteLogicGeneratedTest(LogicTest):
 
 
     def test_r6665_condition(self):
-        who_wisdom = 'protagonist'
+        who_wisdom = 'protagonist_character_name'
         prop_wisdom = 'wisdom'
         delta_wisdom = 12
 
@@ -3684,7 +3684,7 @@ class MorteLogicGeneratedTest(LogicTest):
 
 
     def test_r16881_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'wisdom'
         value = 13
 
@@ -3697,7 +3697,7 @@ class MorteLogicGeneratedTest(LogicTest):
 
 
     def test_r16882_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'wisdom'
         value = 12
 
@@ -3969,7 +3969,7 @@ class MorteLogicGeneratedTest(LogicTest):
 
 
     def test_r18829_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'intelligence'
         value = 11
 
@@ -3982,7 +3982,7 @@ class MorteLogicGeneratedTest(LogicTest):
 
 
     def test_r18830_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'intelligence'
         value = 12
 
@@ -4092,10 +4092,10 @@ class MorteLogicGeneratedTest(LogicTest):
 
 
     def test_r24700_condition(self):
-        who_wisdom = 'protagonist'
+        who_wisdom = 'protagonist_character_name'
         prop_wisdom = 'wisdom'
         delta_wisdom = 13
-        who_intelligence = 'protagonist'
+        who_intelligence = 'protagonist_character_name'
         prop_intelligence = 'intelligence'
         delta_intelligence = 12
 
@@ -4111,7 +4111,7 @@ class MorteLogicGeneratedTest(LogicTest):
 
 
     def test_r24701_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'wisdom'
         value = 12
 
@@ -4140,7 +4140,7 @@ class MorteLogicGeneratedTest(LogicTest):
 
 
     def test_r25967_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'intelligence'
         value = 14
 
@@ -4153,7 +4153,7 @@ class MorteLogicGeneratedTest(LogicTest):
 
 
     def test_r27316_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'intelligence'
         value = 12
 
@@ -4182,7 +4182,7 @@ class MorteLogicGeneratedTest(LogicTest):
 
 
     def test_r27916_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'intelligence'
         value = 14
 
@@ -4291,7 +4291,7 @@ class MorteLogicGeneratedTest(LogicTest):
 
 
     def test_r28744_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'charisma'
         value = 14
 
@@ -4304,7 +4304,7 @@ class MorteLogicGeneratedTest(LogicTest):
 
 
     def test_r28745_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'charisma'
         value = 15
 
@@ -4317,7 +4317,7 @@ class MorteLogicGeneratedTest(LogicTest):
 
 
     def test_r28967_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'intelligence'
         value = 14
 
@@ -4358,7 +4358,7 @@ class MorteLogicGeneratedTest(LogicTest):
 
 
     def test_r30822_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'intelligence'
         value = 9
 
@@ -4371,7 +4371,7 @@ class MorteLogicGeneratedTest(LogicTest):
 
 
     def test_r30823_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'intelligence'
         value = 8
 
@@ -4384,7 +4384,7 @@ class MorteLogicGeneratedTest(LogicTest):
 
 
     def test_r30824_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'intelligence'
         value = 8
 
@@ -4478,7 +4478,7 @@ class MorteLogicGeneratedTest(LogicTest):
 
 
     def test_r35344_condition(self):
-        who_strength = 'protagonist'
+        who_strength = 'protagonist_character_name'
         prop_strength = 'strength'
         delta_strength = 13
 
@@ -4494,7 +4494,7 @@ class MorteLogicGeneratedTest(LogicTest):
 
 
     def test_r35352_condition(self):
-        who_strength = 'protagonist'
+        who_strength = 'protagonist_character_name'
         prop_strength = 'strength'
         delta_strength = 12
 
@@ -4531,7 +4531,7 @@ class MorteLogicGeneratedTest(LogicTest):
 
 
     def test_r35421_condition(self):
-        who_strength = 'protagonist'
+        who_strength = 'protagonist_character_name'
         prop_strength = 'strength'
         delta_strength = 13
 
@@ -4547,7 +4547,7 @@ class MorteLogicGeneratedTest(LogicTest):
 
 
     def test_r35429_condition(self):
-        who_strength = 'protagonist'
+        who_strength = 'protagonist_character_name'
         prop_strength = 'strength'
         delta_strength = 12
 
@@ -4584,7 +4584,7 @@ class MorteLogicGeneratedTest(LogicTest):
 
 
     def test_r35498_condition(self):
-        who_strength = 'protagonist'
+        who_strength = 'protagonist_character_name'
         prop_strength = 'strength'
         delta_strength = 13
 
@@ -4600,7 +4600,7 @@ class MorteLogicGeneratedTest(LogicTest):
 
 
     def test_r35506_condition(self):
-        who_strength = 'protagonist'
+        who_strength = 'protagonist_character_name'
         prop_strength = 'strength'
         delta_strength = 12
 
@@ -4637,7 +4637,7 @@ class MorteLogicGeneratedTest(LogicTest):
 
 
     def test_r35575_condition(self):
-        who_strength = 'protagonist'
+        who_strength = 'protagonist_character_name'
         prop_strength = 'strength'
         delta_strength = 13
 
@@ -4653,7 +4653,7 @@ class MorteLogicGeneratedTest(LogicTest):
 
 
     def test_r35583_condition(self):
-        who_strength = 'protagonist'
+        who_strength = 'protagonist_character_name'
         prop_strength = 'strength'
         delta_strength = 12
 
@@ -4696,14 +4696,14 @@ class MorteLogicGeneratedTest(LogicTest):
         current_health_after = 24
 
         self.state_manager.world_manager.set_in_party_morte(True)
-        self.state_manager.characters_manager.set_property('protagonist', 'max_health', max_health_before)
-        self.state_manager.characters_manager.set_property('protagonist', 'current_health', current_health_before)
+        self.state_manager.characters_manager.set_property('protagonist_character_name', 'max_health', max_health_before)
+        self.state_manager.characters_manager.set_property('protagonist_character_name', 'current_health', current_health_before)
 
         self.assertFalse(self.logic.r40069_condition())
 
         self.state_manager.world_manager.set_in_party_morte(False)
-        self.state_manager.characters_manager.set_property('protagonist', 'max_health', max_health_after)
-        self.state_manager.characters_manager.set_property('protagonist', 'current_health', current_health_after)
+        self.state_manager.characters_manager.set_property('protagonist_character_name', 'max_health', max_health_after)
+        self.state_manager.characters_manager.set_property('protagonist_character_name', 'current_health', current_health_after)
 
         self.assertTrue(self.logic.r40069_condition())
 
@@ -4715,14 +4715,14 @@ class MorteLogicGeneratedTest(LogicTest):
         current_health_after = 16
 
         self.state_manager.world_manager.set_in_party_morte(True)
-        self.state_manager.characters_manager.set_property('protagonist', 'max_health', max_health_before)
-        self.state_manager.characters_manager.set_property('protagonist', 'current_health', current_health_before)
+        self.state_manager.characters_manager.set_property('protagonist_character_name', 'max_health', max_health_before)
+        self.state_manager.characters_manager.set_property('protagonist_character_name', 'current_health', current_health_before)
 
         self.assertFalse(self.logic.r40070_condition())
 
         self.state_manager.world_manager.set_in_party_morte(False)
-        self.state_manager.characters_manager.set_property('protagonist', 'max_health', max_health_after)
-        self.state_manager.characters_manager.set_property('protagonist', 'current_health', current_health_after)
+        self.state_manager.characters_manager.set_property('protagonist_character_name', 'max_health', max_health_after)
+        self.state_manager.characters_manager.set_property('protagonist_character_name', 'current_health', current_health_after)
 
         self.assertTrue(self.logic.r40070_condition())
 
@@ -4734,14 +4734,14 @@ class MorteLogicGeneratedTest(LogicTest):
         current_health_after = 8
 
         self.state_manager.world_manager.set_in_party_morte(True)
-        self.state_manager.characters_manager.set_property('protagonist', 'max_health', max_health_before)
-        self.state_manager.characters_manager.set_property('protagonist', 'current_health', current_health_before)
+        self.state_manager.characters_manager.set_property('protagonist_character_name', 'max_health', max_health_before)
+        self.state_manager.characters_manager.set_property('protagonist_character_name', 'current_health', current_health_before)
 
         self.assertFalse(self.logic.r40071_condition())
 
         self.state_manager.world_manager.set_in_party_morte(False)
-        self.state_manager.characters_manager.set_property('protagonist', 'max_health', max_health_after)
-        self.state_manager.characters_manager.set_property('protagonist', 'current_health', current_health_after)
+        self.state_manager.characters_manager.set_property('protagonist_character_name', 'max_health', max_health_after)
+        self.state_manager.characters_manager.set_property('protagonist_character_name', 'current_health', current_health_after)
 
         self.assertTrue(self.logic.r40071_condition())
 
@@ -4961,7 +4961,7 @@ class MorteLogicGeneratedTest(LogicTest):
 
 
     def test_r41900_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'intelligence'
         value = 12
 
@@ -5422,7 +5422,7 @@ class MorteLogicGeneratedTest(LogicTest):
 
 
     def test_r54166_condition(self):
-        who_wisdom = 'protagonist'
+        who_wisdom = 'protagonist_character_name'
         prop_wisdom = 'wisdom'
         delta_wisdom = 13
 
@@ -5438,7 +5438,7 @@ class MorteLogicGeneratedTest(LogicTest):
 
 
     def test_r54167_condition(self):
-        who_wisdom = 'protagonist'
+        who_wisdom = 'protagonist_character_name'
         prop_wisdom = 'wisdom'
         delta_wisdom = 14
 
@@ -5461,7 +5461,7 @@ class MorteLogicGeneratedTest(LogicTest):
 
 
     def test_r54173_condition(self):
-        who_wisdom = 'protagonist'
+        who_wisdom = 'protagonist_character_name'
         prop_wisdom = 'wisdom'
         delta_wisdom = 13
 
@@ -5477,7 +5477,7 @@ class MorteLogicGeneratedTest(LogicTest):
 
 
     def test_r54174_condition(self):
-        who_wisdom = 'protagonist'
+        who_wisdom = 'protagonist_character_name'
         prop_wisdom = 'wisdom'
         delta_wisdom = 14
 
@@ -5727,7 +5727,7 @@ class MorteLogicGeneratedTest(LogicTest):
 
 
     def test_r54220_condition(self):
-        who_intelligence = 'protagonist'
+        who_intelligence = 'protagonist_character_name'
         prop_intelligence = 'intelligence'
         delta_intelligence = 15
 
@@ -5743,7 +5743,7 @@ class MorteLogicGeneratedTest(LogicTest):
 
 
     def test_r54221_condition(self):
-        who_intelligence = 'protagonist'
+        who_intelligence = 'protagonist_character_name'
         prop_intelligence = 'intelligence'
         delta_intelligence = 15
 
@@ -5761,7 +5761,7 @@ class MorteLogicGeneratedTest(LogicTest):
 
 
     def test_r54223_condition(self):
-        who_intelligence = 'protagonist'
+        who_intelligence = 'protagonist_character_name'
         prop_intelligence = 'intelligence'
         delta_intelligence = 15
 
@@ -5971,7 +5971,7 @@ class MorteLogicGeneratedTest(LogicTest):
 
 
     def test_r54264_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'wisdom'
         value = 15
 
@@ -6008,7 +6008,7 @@ class MorteLogicGeneratedTest(LogicTest):
 
 
     def test_r54269_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'wisdom'
         value = 15
 
@@ -6233,7 +6233,7 @@ class MorteLogicGeneratedTest(LogicTest):
 
 
     def test_r55875_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'intelligence'
         value = 15
 
@@ -6543,7 +6543,7 @@ class MorteLogicGeneratedTest(LogicTest):
 
 
     def test_r65738_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'wisdom'
         value = 13
 

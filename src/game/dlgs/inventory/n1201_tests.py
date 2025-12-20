@@ -316,7 +316,7 @@ class N1201LogicGeneratedTest(LogicTest):
 
 
     def test_r45023_action(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'experience'
         delta = 250
 

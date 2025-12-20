@@ -6,7 +6,7 @@ from game.engine_data.menus.menu_items import (
 
 class Morte1MenuItem(NpcMenuItem):
     def __init__(self, state_manager, x, y):
-        super().__init__(state_manager, x, y, 'morte')
+        super().__init__(state_manager, x, y, 'morte_character_name')
     def when(self):
         return not self.state_manager.world_manager.get_dead_morte() and \
                self.state_manager.world_manager.get_mortuary_walkthrough() < 2

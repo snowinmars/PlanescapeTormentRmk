@@ -50,7 +50,7 @@ class EiveneLogicGeneratedTest(LogicTest):
         self.state_manager.world_manager.set_has_embalm(True)
         self.state_manager.world_manager.set_has_needle(True)
         self.state_manager.world_manager.set_eivene_delivery(False)
-        who_experience = 'protagonist'
+        who_experience = 'protagonist_character_name'
         prop_experience = 'experience'
         delta_experience = 250
 
@@ -129,10 +129,10 @@ class EiveneLogicGeneratedTest(LogicTest):
 
 
     def test_r3449_action(self):
-        who_max_health = 'protagonist'
+        who_max_health = 'protagonist_character_name'
         prop_max_health = 'max_health'
         delta_max_health = 1
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop_max_health = 'max_health'
         prop_current_health = 'current_health'
         delta_max_health = 1
@@ -174,7 +174,7 @@ class EiveneLogicGeneratedTest(LogicTest):
 
 
     def test_r3456_action(self):
-        who_experience = 'protagonist'
+        who_experience = 'protagonist_character_name'
         prop_experience = 'experience'
         delta_experience = 250
         embalm_key_quest_before = 1
@@ -232,7 +232,7 @@ class EiveneLogicGeneratedTest(LogicTest):
         self.state_manager.world_manager.set_has_embalm(True)
         self.state_manager.world_manager.set_has_needle(True)
         self.state_manager.world_manager.set_eivene_delivery(False)
-        who_experience = 'protagonist'
+        who_experience = 'protagonist_character_name'
         prop_experience = 'experience'
         delta_experience = 250
 
@@ -259,7 +259,7 @@ class EiveneLogicGeneratedTest(LogicTest):
 
 
     def test_r3470_action(self):
-        who_experience = 'protagonist'
+        who_experience = 'protagonist_character_name'
         prop_experience = 'experience'
         delta_experience = 250
         embalm_key_quest_before = 1
@@ -333,7 +333,7 @@ class EiveneLogicGeneratedTest(LogicTest):
 
 
     def test_r3501_action(self):
-        who_experience = 'protagonist'
+        who_experience = 'protagonist_character_name'
         prop_experience = 'experience'
         delta_experience = 250
         embalm_key_quest_before = 1
@@ -362,7 +362,7 @@ class EiveneLogicGeneratedTest(LogicTest):
 
 
     def test_r63478_action(self):
-        who_experience = 'protagonist'
+        who_experience = 'protagonist_character_name'
         prop_experience = 'experience'
         delta_experience = 250
         self.state_manager.world_manager.set_42_secret(False)
