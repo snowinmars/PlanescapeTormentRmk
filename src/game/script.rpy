@@ -131,7 +131,7 @@ init 3 python:
         config.keymap['character_screen'] = ['c', 'C', 'с', 'С']
         config.underlay.append(
             renpy.Keymap(
-                character_screen = Show("character_screen", character=runtime.global_state_manager.characters_manager.get_character('protagonist'))
+                character_screen = Show("character_screen", character=runtime.global_state_manager.characters_manager.get_character('The Nameless One'))
             )
         )
 

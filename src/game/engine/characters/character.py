@@ -4,7 +4,7 @@ import json
 class Character:
     def __init__(self, \
                 name, \
-                max_health, current_health, \
+                max_health, current_health, ac, \
                 good, law, \
                 lore, experience, \
                 strength, dexterity, intelligence, constitution, wisdom, charisma,
@@ -12,6 +12,7 @@ class Character:
         self.name = name
         self.max_health = max_health
         self.current_health = current_health
+        self.ac = ac
         self.good = good
         self.law = law
         self.lore = lore
@@ -30,6 +31,7 @@ class Character:
             'name': self.name,
             'max_health': self.max_health,
             'current_health': self.current_health,
+            'ac': self.ac,
             'good': self.good,
             'law': self.law,
             'lore': self.lore,
@@ -49,6 +51,7 @@ class Character:
             'name': self.name,
             'max_health': self.max_health,
             'current_health': self.current_health,
+            'ac': self.ac,
             'good': self.good,
             'law': self.law,
             'lore': self.lore,
@@ -67,6 +70,7 @@ class Character:
         self.name = state['name']
         self.max_health = state['max_health']
         self.current_health = state['current_health']
+        self.ac = state['ac']
         self.good = state['good']
         self.law = state['law']
         self.lore = state['lore']

@@ -40,6 +40,7 @@ class CharactersStore():
                 x[1]['name'],
                 x[1]['max_health'],
                 x[1]['current_health'],
+                x[1]['ac'],
                 x[1]['good'],
                 x[1]['law'],
                 x[1]['lore'],
