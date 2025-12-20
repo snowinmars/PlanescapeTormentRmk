@@ -36,8 +36,8 @@ class DeionarraLogicGenerated:
 
 
     def r712_action(self):
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'good', -1, 'globalevil_deionarra_1')
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'law', -1, 'globalchaotic_deionarra_1')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'good', -1, 'globalevil_deionarra_1')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'law', -1, 'globalchaotic_deionarra_1')
 
 
     def r700_action(self):
@@ -45,8 +45,8 @@ class DeionarraLogicGenerated:
 
 
     def r702_action(self):
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'good', -1, 'globalevil_deionarra_2')
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'law', -1, 'globalchaotic_deionarra_2')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'good', -1, 'globalevil_deionarra_2')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'law', -1, 'globalchaotic_deionarra_2')
 
 
     def r747_action(self):
@@ -78,23 +78,23 @@ class DeionarraLogicGenerated:
 
 
     def r780_action(self):
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'good', -2, 'globalevil_deionarra_3')
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'law', -2, 'globalchaotic_deionarra_3')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'good', -2, 'globalevil_deionarra_3')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'law', -2, 'globalchaotic_deionarra_3')
 
 
     def r6093_action(self):
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'good', 2, 'globalgood_deionarra_1')
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'law', 2, 'globallawful_deionarra_1')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'good', 2, 'globalgood_deionarra_1')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'law', 2, 'globallawful_deionarra_1')
 
 
     def r805_action(self):
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'good', -2, 'globalevil_deionarra_3')
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'law', -2, 'globalchaotic_deionarra_3')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'good', -2, 'globalevil_deionarra_3')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'law', -2, 'globalchaotic_deionarra_3')
 
 
     def r808_action(self):
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'good', 2, 'globalgood_deionarra_1')
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'law', 2, 'globallawful_deionarra_1')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'good', 2, 'globalgood_deionarra_1')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'law', 2, 'globallawful_deionarra_1')
 
 
     def r786_action(self):
@@ -123,17 +123,17 @@ class DeionarraLogicGenerated:
 
     def r6129_action(self):
         self.state_manager.world_manager.set_deionarra_value(1)
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'law', -1, 'globalchaotic_deionarra_4')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'law', -1, 'globalchaotic_deionarra_4')
 
 
     def r6131_action(self):
         self.state_manager.world_manager.set_deionarra_value(1)
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'law', -1, 'globalchaotic_deionarra_4')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'law', -1, 'globalchaotic_deionarra_4')
 
 
     def r6132_action(self):
         self.state_manager.world_manager.set_deionarra_value(1)
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'law', -1, 'globalchaotic_deionarra_4')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'law', -1, 'globalchaotic_deionarra_4')
 
 
     def r6133_action(self):
@@ -141,11 +141,11 @@ class DeionarraLogicGenerated:
 
 
     def r6095_action(self):
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'good', -1, 'globalevil_deionarra_4')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'good', -1, 'globalevil_deionarra_4')
 
 
     def r6097_action(self):
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'good', -1, 'globalevil_deionarra_4')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'good', -1, 'globalevil_deionarra_4')
 
 
     def r6100_action(self):
@@ -189,38 +189,38 @@ class DeionarraLogicGenerated:
 
 
     def r63373_action(self):
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'law', 3, 'globallawful_deionarra_2')
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'good', 1, 'globalgood_deionarra_2')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'law', 3, 'globallawful_deionarra_2')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'good', 1, 'globalgood_deionarra_2')
         #$% SetAnimState(Myself,ANIM_MIMESTAND) %$#
 
 
     def r63374_action(self):
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'law', -3, 'globalchaotic_deionarra_5')
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'good', -1, 'globalevil_deionarra_5')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'law', -3, 'globalchaotic_deionarra_5')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'good', -1, 'globalevil_deionarra_5')
 
 
     def r63376_action(self):
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'law', -1, 'globalchaotic_deionarra_6')
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'good', -2, 'globalevil_deionarra_6')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'law', -1, 'globalchaotic_deionarra_6')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'good', -2, 'globalevil_deionarra_6')
 
 
     def r63377_action(self):
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'law', 1, 'globallawful_deionarra_3')
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'good', 1, 'globalgood_deionarra_3')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'law', 1, 'globallawful_deionarra_3')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'good', 1, 'globalgood_deionarra_3')
 
 
     def r63380_action(self):
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'law', -1, 'globalchaotic_deionarra_7')
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'good', -1, 'globalevil_deionarra_7')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'law', -1, 'globalchaotic_deionarra_7')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'good', -1, 'globalevil_deionarra_7')
 
 
     def r63381_action(self):
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'law', 1, 'globallawful_deionarra_4')
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'good', 1, 'globalgood_deionarra_4')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'law', 1, 'globallawful_deionarra_4')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'good', 1, 'globalgood_deionarra_4')
 
 
     def r63382_action(self):
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'law', 2, 'globallawful_deionarra_5')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'law', 2, 'globallawful_deionarra_5')
 
 
     def r63384_action(self):
@@ -284,21 +284,21 @@ class DeionarraLogicGenerated:
 
 
     def r708_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'intelligence') > 11 and \
-               self.state_manager.characters_manager.get_property('protagonist', 'charisma') < 11
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'intelligence') > 11 and \
+               self.state_manager.characters_manager.get_property('protagonist_character_name', 'charisma') < 11
 
 
     def r709_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'charisma') > 10
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'charisma') > 10
 
 
     def r713_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'intelligence') > 11 and \
-               self.state_manager.characters_manager.get_property('protagonist', 'charisma') < 11
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'intelligence') > 11 and \
+               self.state_manager.characters_manager.get_property('protagonist_character_name', 'charisma') < 11
 
 
     def r714_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'charisma') > 10
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'charisma') > 10
 
 
     def r1308_condition(self):
@@ -318,12 +318,12 @@ class DeionarraLogicGenerated:
 
 
     def r718_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'intelligence') > 11 and \
-               self.state_manager.characters_manager.get_property('protagonist', 'charisma') < 11
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'intelligence') > 11 and \
+               self.state_manager.characters_manager.get_property('protagonist_character_name', 'charisma') < 11
 
 
     def r719_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'charisma') > 10
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'charisma') > 10
 
 
     def r721_condition(self):
@@ -343,12 +343,12 @@ class DeionarraLogicGenerated:
 
 
     def r723_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'intelligence') > 11 and \
-               self.state_manager.characters_manager.get_property('protagonist', 'charisma') < 11
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'intelligence') > 11 and \
+               self.state_manager.characters_manager.get_property('protagonist_character_name', 'charisma') < 11
 
 
     def r724_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'charisma') > 10
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'charisma') > 10
 
 
     def r1312_condition(self):
@@ -375,12 +375,12 @@ class DeionarraLogicGenerated:
 
     def r731_condition(self):
         return not self.state_manager.world_manager.get_escape_mortuary() and \
-               self.state_manager.characters_manager.get_property('protagonist', 'wisdom') < 13
+               self.state_manager.characters_manager.get_property('protagonist_character_name', 'wisdom') < 13
 
 
     def r732_condition(self):
         return not self.state_manager.world_manager.get_escape_mortuary() and \
-               self.state_manager.characters_manager.get_property('protagonist', 'wisdom') > 12
+               self.state_manager.characters_manager.get_property('protagonist_character_name', 'wisdom') > 12
 
 
     def r1314_condition(self):
@@ -393,12 +393,12 @@ class DeionarraLogicGenerated:
 
     def r737_condition(self):
         return not self.state_manager.world_manager.get_escape_mortuary() and \
-               self.state_manager.characters_manager.get_property('protagonist', 'wisdom') < 13
+               self.state_manager.characters_manager.get_property('protagonist_character_name', 'wisdom') < 13
 
 
     def r738_condition(self):
         return not self.state_manager.world_manager.get_escape_mortuary() and \
-               self.state_manager.characters_manager.get_property('protagonist', 'wisdom') > 12
+               self.state_manager.characters_manager.get_property('protagonist_character_name', 'wisdom') > 12
 
 
     def r768_condition(self):
@@ -464,7 +464,7 @@ class DeionarraLogicGenerated:
 
 
     def r778_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'charisma') > 10
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'charisma') > 10
 
 
     def r813_condition(self):
@@ -546,16 +546,16 @@ class DeionarraLogicGenerated:
 
 
     def r6129_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'charisma') > 10
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'charisma') > 10
 
 
     def r6131_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'intelligence') > 11 and \
-               self.state_manager.characters_manager.get_property('protagonist', 'charisma') < 11
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'intelligence') > 11 and \
+               self.state_manager.characters_manager.get_property('protagonist_character_name', 'charisma') < 11
 
 
     def r6132_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'charisma') > 10
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'charisma') > 10
 
 
     def r6112_condition(self):
@@ -591,7 +591,7 @@ class DeionarraLogicGenerated:
 
 
     def r6139_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'charisma') > 10
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'charisma') > 10
 
 
     def r6140_condition(self):
@@ -619,7 +619,7 @@ class DeionarraLogicGenerated:
 
 
     def r6150_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'charisma') > 10
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'charisma') > 10
 
 
     def r6152_condition(self):

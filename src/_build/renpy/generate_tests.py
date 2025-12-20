@@ -282,7 +282,7 @@ def _build_test_actions_parts(operation):
     if modify_property_once_action_pattern.match(operation):
         match = modify_property_once_action_pattern.search(operation)
         who = match.group(1)
-        who = 'protagonist' if who == 'party' else who
+        who = 'protagonist_character_name' if who == 'party' else who
         prop = match.group(2)
         delta = match.group(3)
         key = match.group(4)
@@ -293,7 +293,7 @@ def _build_test_actions_parts(operation):
     if modify_property_action_pattern.match(operation):
         match = modify_property_action_pattern.search(operation)
         who = match.group(1)
-        who = 'protagonist' if who == 'party' else who
+        who = 'protagonist_character_name' if who == 'party' else who
         prop = match.group(2)
         delta = match.group(3)
         return modify_property_action_pattern_preconf.format(w=who, p=prop, d=delta), \
@@ -303,7 +303,7 @@ def _build_test_actions_parts(operation):
     if set_property_action_pattern.match(operation):
         match = set_property_action_pattern.search(operation)
         who = match.group(1)
-        who = 'protagonist' if who == 'party' else who
+        who = 'protagonist_character_name' if who == 'party' else who
         prop = match.group(2)
         delta = str(match.group(3)) if match.group(3).isdigit() else f'\'{match.group(3)}\''
         return set_property_action_pattern_preconf.format(w=who, p=prop, d=delta), \
@@ -313,7 +313,7 @@ def _build_test_actions_parts(operation):
     if gain_experience_action_pattern.match(operation):
         match = gain_experience_action_pattern.search(operation)
         who = match.group(1)
-        who = 'protagonist' if who == 'party' else who
+        who = 'protagonist_character_name' if who == 'party' else who
         delta = match.group(2)
         return gain_experience_action_pattern_preconf.format(w=who, d=delta), \
                gain_experience_action_pattern_before, \
@@ -329,7 +329,7 @@ def _build_test_actions_parts(operation):
     if full_heal_action_pattern.match(operation):
         match = full_heal_action_pattern.search(operation)
         who = match.group(1)
-        who = 'protagonist' if who == 'party' else who
+        who = 'protagonist_character_name' if who == 'party' else who
         return full_heal_action_pattern_preconf.format(w=who), \
                full_heal_action_pattern_before, \
                full_heal_action_pattern_after, \
@@ -408,7 +408,7 @@ def _build_test_conditions_parts(operation):
     if get_character_property_gt_condition_pattern.match(operation):
         match = get_character_property_gt_condition_pattern.search(operation)
         who = match.group(1)
-        who = 'protagonist' if who == 'party' else who
+        who = 'protagonist_character_name' if who == 'party' else who
         setting = match.group(2)
         value = match.group(3)
         return get_character_property_gt_condition_pattern_preconf.format(s=setting, w=who, v=value), \
@@ -417,7 +417,7 @@ def _build_test_conditions_parts(operation):
     if get_character_property_lt_condition_pattern.match(operation):
         match = get_character_property_lt_condition_pattern.search(operation)
         who = match.group(1)
-        who = 'protagonist' if who == 'party' else who
+        who = 'protagonist_character_name' if who == 'party' else who
         setting = match.group(2)
         value = match.group(3)
         return get_character_property_lt_condition_pattern_preconf.format(s=setting, w=who, v=value), \

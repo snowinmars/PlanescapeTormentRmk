@@ -4,7 +4,7 @@ class Zm1094LogicGenerated:
 
 
     def r6565_action(self):
-        self.state_manager.characters_manager.modify_property('protagonist', 'law', -1)
+        self.state_manager.characters_manager.modify_property('protagonist_character_name', 'law', -1)
         self.state_manager.world_manager.set_zombie_chaotic(True)
 
 
@@ -13,7 +13,7 @@ class Zm1094LogicGenerated:
 
 
     def r9247_action(self):
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'good', -1, 'globalevil_asonje_1')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'good', -1, 'globalevil_asonje_1')
         self.state_manager.world_manager.set_asonje_value(3)
 
 

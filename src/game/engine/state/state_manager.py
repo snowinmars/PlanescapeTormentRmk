@@ -18,22 +18,22 @@ class StateManager:
 
     def gain_experience(self, name, amount):
         if name == 'party':
-            self.characters_manager.modify_property('protagonist', 'experience', amount)
+            self.characters_manager.modify_property('protagonist_character_name', 'experience', amount)
 
             if self.world_manager.get_in_party_morte():
-                self.characters_manager.modify_property('morte', 'experience', amount)
+                self.characters_manager.modify_property('morte_character_name', 'experience', amount)
             if self.world_manager.get_in_party_annah():
-                self.characters_manager.modify_property('annah', 'experience', amount)
+                self.characters_manager.modify_property('annah_character_name', 'experience', amount)
             if self.world_manager.get_in_party_ignus():
-                self.characters_manager.modify_property('ignus', 'experience', amount)
+                self.characters_manager.modify_property('ignus_character_name', 'experience', amount)
             if self.world_manager.get_in_party_grace():
-                self.characters_manager.modify_property('grace', 'experience', amount)
+                self.characters_manager.modify_property('grace_character_name', 'experience', amount)
             if self.world_manager.get_in_party_dakkon():
-                self.characters_manager.modify_property('dakkon', 'experience', amount)
+                self.characters_manager.modify_property('dakkon_character_name', 'experience', amount)
             if self.world_manager.get_in_party_nordom():
-                self.characters_manager.modify_property('nordom', 'experience', amount)
+                self.characters_manager.modify_property('nordom_character_name', 'experience', amount)
             if self.world_manager.get_in_party_vhail():
-                self.characters_manager.modify_property('vhail', 'experience', amount)
+                self.characters_manager.modify_property('vhail_character_name', 'experience', amount)
         else:
             self.characters_manager.modify_property(name, 'experience', amount)
 

@@ -29,22 +29,22 @@ class DustLogicGenerated:
 
     def r33189_action(self):
         self.state_manager.world_manager.inc_adahn()
-        self.state_manager.characters_manager.modify_property('protagonist', 'law', -1)
+        self.state_manager.characters_manager.modify_property('protagonist_character_name', 'law', -1)
 
 
     def r371_action(self):
         self.state_manager.world_manager.inc_adahn()
-        self.state_manager.characters_manager.modify_property('protagonist', 'law', -1)
+        self.state_manager.characters_manager.modify_property('protagonist_character_name', 'law', -1)
 
 
     def r450_action(self):
         self.state_manager.world_manager.inc_adahn()
-        self.state_manager.characters_manager.modify_property('protagonist', 'law', -1)
+        self.state_manager.characters_manager.modify_property('protagonist_character_name', 'law', -1)
 
 
     def r399_action(self):
         self.state_manager.world_manager.inc_adahn()
-        self.state_manager.characters_manager.modify_property('protagonist', 'law', -1)
+        self.state_manager.characters_manager.modify_property('protagonist_character_name', 'law', -1)
 
 
     def r448_action(self):
@@ -61,7 +61,7 @@ class DustLogicGenerated:
         #$% Enemy() %$#
         #$% Attack(Protagonist) %$#
         #$% ForceAttack(Protagonist,Myself) %$#
-        self.state_manager.characters_manager.modify_property('protagonist', 'law', -1)
+        self.state_manager.characters_manager.modify_property('protagonist_character_name', 'law', -1)
 
 
     def r1339_action(self):
@@ -99,7 +99,7 @@ class DustLogicGenerated:
 
     def r3882_action(self):
         self.state_manager.world_manager.set_dead_dust(True)
-        self.state_manager.gain_experience('protagonist', 250)
+        self.state_manager.gain_experience('protagonist_character_name', 250)
 
 
     def r3884_action(self):
@@ -117,31 +117,31 @@ class DustLogicGenerated:
 
 
     def r327_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'dexterity') < 13
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'dexterity') < 13
 
 
     def r328_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'dexterity') > 12
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'dexterity') > 12
 
 
     def r334_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'intelligence') > 11
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'intelligence') > 11
 
 
     def r344_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'dexterity') < 13
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'dexterity') < 13
 
 
     def r3887_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'dexterity') > 12
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'dexterity') > 12
 
 
     def r358_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'dexterity') < 13
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'dexterity') < 13
 
 
     def r3885_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'dexterity') > 12
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'dexterity') > 12
 
 
     def r342_condition(self):
@@ -175,12 +175,12 @@ class DustLogicGenerated:
 
 
     def r33189_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'intelligence') > 12 and \
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'intelligence') > 12 and \
                self.state_manager.world_manager.get_talked_to_dust_times() == 1
 
 
     def r33190_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'intelligence') > 12 and \
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'intelligence') > 12 and \
                self.state_manager.world_manager.get_talked_to_dust_times() > 1
 
 
@@ -197,15 +197,15 @@ class DustLogicGenerated:
 
 
     def r373_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'dexterity') < 13
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'dexterity') < 13
 
 
     def r1335_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'dexterity') > 12
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'dexterity') > 12
 
 
     def r378_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'intelligence') > 11
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'intelligence') > 11
 
 
     def r450_condition(self):
@@ -217,11 +217,11 @@ class DustLogicGenerated:
 
 
     def r3904_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'charisma') < 13
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'charisma') < 13
 
 
     def r3905_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'charisma') > 12
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'charisma') > 12
 
 
     def r399_condition(self):
@@ -233,27 +233,27 @@ class DustLogicGenerated:
 
 
     def r3907_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'charisma') < 13
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'charisma') < 13
 
 
     def r3908_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'charisma') > 12
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'charisma') > 12
 
 
     def r413_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'charisma') > 12
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'charisma') > 12
 
 
     def r3918_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'charisma') < 13
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'charisma') < 13
 
 
     def r3919_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'charisma') < 13
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'charisma') < 13
 
 
     def r3920_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'charisma') > 12
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'charisma') > 12
 
 
     def r416_condition(self):
@@ -265,35 +265,35 @@ class DustLogicGenerated:
 
 
     def r436_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'charisma') > 12
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'charisma') > 12
 
 
     def r3909_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'charisma') < 13
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'charisma') < 13
 
 
     def r3910_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'charisma') < 13
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'charisma') < 13
 
 
     def r3911_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'charisma') > 12
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'charisma') > 12
 
 
     def r445_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'charisma') > 12
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'charisma') > 12
 
 
     def r446_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'charisma') < 13
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'charisma') < 13
 
 
     def r3912_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'charisma') < 13
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'charisma') < 13
 
 
     def r3913_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'charisma') > 12
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'charisma') > 12
 
 
     def r449_condition(self):
@@ -332,27 +332,27 @@ class DustLogicGenerated:
 
 
     def r3914_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'dexterity') < 13
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'dexterity') < 13
 
 
     def r3915_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'dexterity') > 12
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'dexterity') > 12
 
 
     def r3898_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'charisma') > 12
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'charisma') > 12
 
 
     def r3899_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'charisma') < 13
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'charisma') < 13
 
 
     def r3900_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'charisma') < 13
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'charisma') < 13
 
 
     def r3901_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'charisma') > 12
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'charisma') > 12
 
 
     def r66675_condition(self):

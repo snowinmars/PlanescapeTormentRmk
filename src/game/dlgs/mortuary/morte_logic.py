@@ -49,7 +49,7 @@ class MorteLogicGenerated:
 
 
     def r2605_action(self):
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'law', -1, 'globalmorte_zombie_1')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'law', -1, 'globalmorte_zombie_1')
 
 
     def r6952_action(self):
@@ -79,11 +79,11 @@ class MorteLogicGenerated:
 
 
     def r3965_action(self):
-        self.state_manager.characters_manager.modify_property('protagonist', 'good', -1)
+        self.state_manager.characters_manager.modify_property('protagonist_character_name', 'good', -1)
 
 
     def r3966_action(self):
-        self.state_manager.characters_manager.modify_property('protagonist', 'good', 1)
+        self.state_manager.characters_manager.modify_property('protagonist_character_name', 'good', 1)
 
 
     def r3972_action(self):
@@ -91,11 +91,11 @@ class MorteLogicGenerated:
 
 
     def r3988_action(self):
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'law', -1, 'globalchaotic_skeleton_mort_1')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'law', -1, 'globalchaotic_skeleton_mort_1')
 
 
     def r4029_action(self):
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'good', 1, 'globalgood_giant_skel_mort_1')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'good', 1, 'globalgood_giant_skel_mort_1')
 
 
     def r4144_action(self):
@@ -136,20 +136,20 @@ class MorteLogicGenerated:
 
 
     def r4678_action(self):
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'law', -3, 'globalchaotic_vaxis_3')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'law', -3, 'globalchaotic_vaxis_3')
 
 
     def r4679_action(self):
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'law', -1, 'globalchaotic_vaxis_4')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'law', -1, 'globalchaotic_vaxis_4')
 
 
     def r4682_action(self):
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'law', 3, 'globallawful_vaxis_3')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'law', 3, 'globallawful_vaxis_3')
 
 
     def r4687_action(self):
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'law', 1, 'globallawful_vaxis_2')
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'good', 1, 'globalgood_vaxis_2')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'law', 1, 'globallawful_vaxis_2')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'good', 1, 'globalgood_vaxis_2')
 
 
     def j64512_s89_r4693_action(self):
@@ -158,17 +158,17 @@ class MorteLogicGenerated:
 
 
     def r4695_action(self):
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'law', -3, 'globalchaotic_vaxis_3')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'law', -3, 'globalchaotic_vaxis_3')
 
 
     def r4699_action(self):
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'law', 3, 'globallawful_vaxis_3')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'law', 3, 'globallawful_vaxis_3')
 
 
     def r64535_action(self):
         #$% FadeToColor([20.0],0) %$#
         #$% Wait(1) %$#
-        self.state_manager.characters_manager.set_property('protagonist', 'looks_like', 'zombie')
+        self.state_manager.characters_manager.set_property('protagonist_character_name', 'looks_like', 'zombie')
         #$% Wait(2) %$#
         #$% FadeFromColor([20.0],0) %$#
         self.state_manager.gain_experience('party', 500)
@@ -178,7 +178,7 @@ class MorteLogicGenerated:
     def r64534_action(self):
         #$% FadeToColor([20.0],0) %$#
         #$% Wait(1) %$#
-        self.state_manager.characters_manager.set_property('protagonist', 'looks_like', 'zombie')
+        self.state_manager.characters_manager.set_property('protagonist_character_name', 'looks_like', 'zombie')
         #$% Wait(2) %$#
         #$% FadeFromColor([20.0],0) %$#
 
@@ -200,11 +200,11 @@ class MorteLogicGenerated:
 
 
     def r6658_action(self):
-        self.state_manager.characters_manager.modify_property('protagonist', 'good', -1)
+        self.state_manager.characters_manager.modify_property('protagonist_character_name', 'good', -1)
 
 
     def r6659_action(self):
-        self.state_manager.characters_manager.modify_property('protagonist', 'good', 1)
+        self.state_manager.characters_manager.modify_property('protagonist_character_name', 'good', 1)
 
 
     def r6957_action(self):
@@ -233,14 +233,14 @@ class MorteLogicGenerated:
 
     def r11977_action(self):
         self.state_manager.world_manager.set_ingress_teeth_installed(True)
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'law', -1, 'globalchaotic_ingress_teeth_2')
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'good', -1, 'globalevil_ingress_teeth_1')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'law', -1, 'globalchaotic_ingress_teeth_2')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'good', -1, 'globalevil_ingress_teeth_1')
 
 
     def r11980_action(self):
         self.state_manager.world_manager.set_ingress_teeth_installed(True)
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'law', -1, 'globalchaotic_ingress_teeth_2')
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'good', -1, 'globalevil_ingress_teeth_1')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'law', -1, 'globalchaotic_ingress_teeth_2')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'good', -1, 'globalevil_ingress_teeth_1')
 
 
     def r11982_action(self):
@@ -400,11 +400,11 @@ class MorteLogicGenerated:
 
 
     def r18578_action(self):
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'law', 1, 'globallawful_yellow_1')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'law', 1, 'globallawful_yellow_1')
 
 
     def r18808_action(self):
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'good', 1, 'globalgood_yellow_1')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'good', 1, 'globalgood_yellow_1')
 
 
     def r18820_action(self):
@@ -437,12 +437,12 @@ class MorteLogicGenerated:
 
     def r18835_action(self):
         self.state_manager.world_manager.dec_gold(50)
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'good', 1, 'globalgood_yellow_2')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'good', 1, 'globalgood_yellow_2')
 
 
     def r18836_action(self):
         self.state_manager.world_manager.dec_gold(100)
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'good', 1, 'globalgood_yellow_2')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'good', 1, 'globalgood_yellow_2')
 
 
     def r20612_action(self):
@@ -461,15 +461,15 @@ class MorteLogicGenerated:
 
 
     def r22850_action(self):
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'law', -1, 'globalchaotic_cube_3')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'law', -1, 'globalchaotic_cube_3')
 
 
     def r22853_action(self):
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'law', -1, 'globalchaotic_cube_4')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'law', -1, 'globalchaotic_cube_4')
 
 
     def r22856_action(self):
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'law', -1, 'globalchaotic_cube_5')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'law', -1, 'globalchaotic_cube_5')
 
 
     def r24904_action(self):
@@ -482,7 +482,7 @@ class MorteLogicGenerated:
 
 
     def r24925_action(self):
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'good', 1, 'globalgood_morte_1')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'good', 1, 'globalgood_morte_1')
 
 
     def r24932_action(self):
@@ -635,7 +635,7 @@ class MorteLogicGenerated:
 
 
     def r34993_action(self):
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'law', -1, 'globalmorte_zombie_1')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'law', -1, 'globalmorte_zombie_1')
 
 
     def r35023_action(self):
@@ -647,7 +647,7 @@ class MorteLogicGenerated:
 
 
     def r35025_action(self):
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'law', -1, 'globalmorte_zombie_1')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'law', -1, 'globalmorte_zombie_1')
 
 
     def r35055_action(self):
@@ -659,7 +659,7 @@ class MorteLogicGenerated:
 
 
     def r35057_action(self):
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'law', -1, 'globalmorte_zombie_1')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'law', -1, 'globalmorte_zombie_1')
 
 
     def r35087_action(self):
@@ -671,7 +671,7 @@ class MorteLogicGenerated:
 
 
     def r35089_action(self):
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'law', -1, 'globalmorte_zombie_1')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'law', -1, 'globalmorte_zombie_1')
 
 
     def r35119_action(self):
@@ -683,7 +683,7 @@ class MorteLogicGenerated:
 
 
     def r35121_action(self):
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'law', -1, 'globalmorte_zombie_1')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'law', -1, 'globalmorte_zombie_1')
 
 
     def r35151_action(self):
@@ -695,7 +695,7 @@ class MorteLogicGenerated:
 
 
     def r35153_action(self):
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'law', -1, 'globalmorte_zombie_1')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'law', -1, 'globalmorte_zombie_1')
 
 
     def r35183_action(self):
@@ -707,7 +707,7 @@ class MorteLogicGenerated:
 
 
     def r35185_action(self):
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'law', -1, 'globalmorte_zombie_1')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'law', -1, 'globalmorte_zombie_1')
 
 
     def r35215_action(self):
@@ -719,7 +719,7 @@ class MorteLogicGenerated:
 
 
     def r35217_action(self):
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'law', -1, 'globalmorte_zombie_1')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'law', -1, 'globalmorte_zombie_1')
 
 
     def r35247_action(self):
@@ -731,7 +731,7 @@ class MorteLogicGenerated:
 
 
     def r35249_action(self):
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'law', -1, 'globalmorte_zombie_1')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'law', -1, 'globalmorte_zombie_1')
 
 
     def r35279_action(self):
@@ -743,19 +743,19 @@ class MorteLogicGenerated:
 
 
     def r35281_action(self):
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'law', -1, 'globalmorte_zombie_1')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'law', -1, 'globalmorte_zombie_1')
 
 
     def r35319_action(self):
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'law', -1, 'globalchaotic_skeleton_mort_1')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'law', -1, 'globalchaotic_skeleton_mort_1')
 
 
     def r35342_action(self):
-        self.state_manager.characters_manager.modify_property('protagonist', 'good', -1)
+        self.state_manager.characters_manager.modify_property('protagonist_character_name', 'good', -1)
 
 
     def r35360_action(self):
-        self.state_manager.characters_manager.modify_property('protagonist', 'good', 1)
+        self.state_manager.characters_manager.modify_property('protagonist_character_name', 'good', 1)
 
 
     def r35358_action(self):
@@ -763,15 +763,15 @@ class MorteLogicGenerated:
 
 
     def r35396_action(self):
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'law', -1, 'globalchaotic_skeleton_mort_1')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'law', -1, 'globalchaotic_skeleton_mort_1')
 
 
     def r35419_action(self):
-        self.state_manager.characters_manager.modify_property('protagonist', 'good', -1)
+        self.state_manager.characters_manager.modify_property('protagonist_character_name', 'good', -1)
 
 
     def r35437_action(self):
-        self.state_manager.characters_manager.modify_property('protagonist', 'good', 1)
+        self.state_manager.characters_manager.modify_property('protagonist_character_name', 'good', 1)
 
 
     def r35435_action(self):
@@ -779,15 +779,15 @@ class MorteLogicGenerated:
 
 
     def r35473_action(self):
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'law', -1, 'globalchaotic_skeleton_mort_1')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'law', -1, 'globalchaotic_skeleton_mort_1')
 
 
     def r35496_action(self):
-        self.state_manager.characters_manager.modify_property('protagonist', 'good', -1)
+        self.state_manager.characters_manager.modify_property('protagonist_character_name', 'good', -1)
 
 
     def r35514_action(self):
-        self.state_manager.characters_manager.modify_property('protagonist', 'good', 1)
+        self.state_manager.characters_manager.modify_property('protagonist_character_name', 'good', 1)
 
 
     def r35512_action(self):
@@ -795,15 +795,15 @@ class MorteLogicGenerated:
 
 
     def r35550_action(self):
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'law', -1, 'globalchaotic_skeleton_mort_1')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'law', -1, 'globalchaotic_skeleton_mort_1')
 
 
     def r35573_action(self):
-        self.state_manager.characters_manager.modify_property('protagonist', 'good', -1)
+        self.state_manager.characters_manager.modify_property('protagonist_character_name', 'good', -1)
 
 
     def r35591_action(self):
-        self.state_manager.characters_manager.modify_property('protagonist', 'good', 1)
+        self.state_manager.characters_manager.modify_property('protagonist_character_name', 'good', 1)
 
 
     def r35589_action(self):
@@ -954,7 +954,7 @@ class MorteLogicGenerated:
 
 
     def r53843_action(self):
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'good', -1, 'globalevil_pillar_2')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'good', -1, 'globalevil_pillar_2')
         self.state_manager.world_manager.set_pillar(2)
         #$% StartCutSceneMode() %$#
         #$% ?.start_cut_scene('1001Cut1') %$#
@@ -965,7 +965,7 @@ class MorteLogicGenerated:
 
 
     def r53850_action(self):
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'good', -1, 'globalevil_pillar_2')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'good', -1, 'globalevil_pillar_2')
         self.state_manager.world_manager.set_pillar(2)
         #$% StartCutSceneMode() %$#
         #$% ?.start_cut_scene('1001Cut1') %$#
@@ -1121,7 +1121,7 @@ class MorteLogicGenerated:
 
 
     def r55902_action(self):
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'law', -1, 'globalchaotic_nordom_5')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'law', -1, 'globalchaotic_nordom_5')
 
 
     def r55925_action(self):
@@ -1129,11 +1129,11 @@ class MorteLogicGenerated:
 
 
     def r55931_action(self):
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'law', 2, 'globallawful_nordom_2')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'law', 2, 'globallawful_nordom_2')
 
 
     def r55941_action(self):
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'law', -2, 'globalchaotic_nordom_4')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'law', -2, 'globalchaotic_nordom_4')
 
 
     def r61414_action(self):
@@ -1284,12 +1284,12 @@ class MorteLogicGenerated:
 
 
     def r65750_action(self):
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'law', 1, 'globallawful_morte_1')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'law', 1, 'globallawful_morte_1')
 
 
     def r65751_action(self):
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'law', -1, 'globalchaotic_morte_1')
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'good', -1, 'globalevil_morte_1')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'law', -1, 'globalchaotic_morte_1')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'good', -1, 'globalevil_morte_1')
 
 
     def j53633_s699_r65753_action(self):
@@ -1335,7 +1335,7 @@ class MorteLogicGenerated:
 
     def r65774_action(self):
         self.state_manager.world_manager.set_memory_morte_pillar(True)
-        self.state_manager.gain_experience('protagonist', 12000)
+        self.state_manager.gain_experience('protagonist_character_name', 12000)
         #$% FadeToColor([20.0],0) %$#
         #$% Wait(3) %$#
         #$% FadeFromColor([20.0],0) %$#
@@ -1374,9 +1374,9 @@ class MorteLogicGenerated:
     def r65821_action(self):
         self.state_manager.gain_experience('party', 12000)
         self.state_manager.world_manager.inc_morale_morte(3)
-        self.state_manager.characters_manager.modify_property('morte', 'strength', 4)
-        self.state_manager.characters_manager.modify_property('morte', 'dexterity', 2)
-        self.state_manager.characters_manager.modify_property('morte', 'constitution', 2)
+        self.state_manager.characters_manager.modify_property('morte_character_name', 'strength', 4)
+        self.state_manager.characters_manager.modify_property('morte_character_name', 'dexterity', 2)
+        self.state_manager.characters_manager.modify_property('morte_character_name', 'constitution', 2)
         self.state_manager.world_manager.set_bd_morte_story(True)
         self.state_manager.journal_manager.update_journal('65825')
         #$%.register('65825', 'Я выяснил, почему Морт оставался со мной все это время... Все из-за того, что он испытывал чувство вины за то, что убил меня однажды, когда был жив. Встретившись со своей виной лицом к лицу, он сбросил с себя весь этот груз и, в конце концов, стал сильнее. %$#')
@@ -1549,15 +1549,15 @@ class MorteLogicGenerated:
 
 
     def r1019_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'intelligence') > 11
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'intelligence') > 11
 
 
     def r1050_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'intelligence') < 12
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'intelligence') < 12
 
 
     def r1051_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'intelligence') > 11
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'intelligence') > 11
 
 
     def r1077_condition(self):
@@ -1606,12 +1606,12 @@ class MorteLogicGenerated:
 
     def r3969_condition(self):
         return not self.state_manager.world_manager.get_has_prybar() and \
-               self.state_manager.characters_manager.get_property('protagonist', 'strength') < 13
+               self.state_manager.characters_manager.get_property('protagonist_character_name', 'strength') < 13
 
 
     def r3970_condition(self):
         return not self.state_manager.world_manager.get_has_prybar() and \
-               self.state_manager.characters_manager.get_property('protagonist', 'strength') > 12
+               self.state_manager.characters_manager.get_property('protagonist_character_name', 'strength') > 12
 
 
     def r3971_condition(self):
@@ -1627,35 +1627,35 @@ class MorteLogicGenerated:
 
 
     def r4023_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'wisdom') < 13
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'wisdom') < 13
 
 
     def r4024_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'wisdom') > 12
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'wisdom') > 12
 
 
     def r4027_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'wisdom') < 13
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'wisdom') < 13
 
 
     def r4028_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'wisdom') > 12
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'wisdom') > 12
 
 
     def r4031_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'wisdom') < 13
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'wisdom') < 13
 
 
     def r4032_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'wisdom') > 12
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'wisdom') > 12
 
 
     def r4034_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'wisdom') < 13
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'wisdom') < 13
 
 
     def r4686_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'intelligence') > 13
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'intelligence') > 13
 
 
     def r64535_condition(self):
@@ -1675,17 +1675,17 @@ class MorteLogicGenerated:
 
 
     def r6327_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'intelligence') > 11 and \
-               self.state_manager.characters_manager.get_property('protagonist', 'wisdom') < 12
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'intelligence') > 11 and \
+               self.state_manager.characters_manager.get_property('protagonist_character_name', 'wisdom') < 12
 
 
     def r6328_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'wisdom') > 11
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'wisdom') > 11
 
 
     def r6329_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'intelligence') < 12 and \
-               self.state_manager.characters_manager.get_property('protagonist', 'wisdom') < 12
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'intelligence') < 12 and \
+               self.state_manager.characters_manager.get_property('protagonist_character_name', 'wisdom') < 12
 
 
     def r6330_condition(self):
@@ -1697,7 +1697,7 @@ class MorteLogicGenerated:
 
 
     def r6665_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'wisdom') > 12 and \
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'wisdom') > 12 and \
                not self.state_manager.world_manager.get_42_secret()
 
 
@@ -1802,11 +1802,11 @@ class MorteLogicGenerated:
 
 
     def r16881_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'wisdom') < 13
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'wisdom') < 13
 
 
     def r16882_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'wisdom') > 12
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'wisdom') > 12
 
 
     def r16884_condition(self):
@@ -1926,11 +1926,11 @@ class MorteLogicGenerated:
 
 
     def r18829_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'intelligence') > 11
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'intelligence') > 11
 
 
     def r18830_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'intelligence') < 12
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'intelligence') < 12
 
 
     def r18833_condition(self):
@@ -1986,12 +1986,12 @@ class MorteLogicGenerated:
 
 
     def r24700_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'wisdom') < 13 and \
-               self.state_manager.characters_manager.get_property('protagonist', 'intelligence') > 12
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'wisdom') < 13 and \
+               self.state_manager.characters_manager.get_property('protagonist_character_name', 'intelligence') > 12
 
 
     def r24701_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'wisdom') > 12
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'wisdom') > 12
 
 
     def s244_condition(self):
@@ -2003,11 +2003,11 @@ class MorteLogicGenerated:
 
 
     def r25967_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'intelligence') > 14
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'intelligence') > 14
 
 
     def r27316_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'intelligence') > 12
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'intelligence') > 12
 
 
     def s268_condition(self):
@@ -2019,7 +2019,7 @@ class MorteLogicGenerated:
 
 
     def r27916_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'intelligence') > 14
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'intelligence') > 14
 
 
     def r28038_condition(self):
@@ -2063,15 +2063,15 @@ class MorteLogicGenerated:
 
 
     def r28744_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'charisma') > 14
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'charisma') > 14
 
 
     def r28745_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'charisma') < 15
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'charisma') < 15
 
 
     def r28967_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'intelligence') > 14
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'intelligence') > 14
 
 
     def r28968_condition(self):
@@ -2091,15 +2091,15 @@ class MorteLogicGenerated:
 
 
     def r30822_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'intelligence') < 9
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'intelligence') < 9
 
 
     def r30823_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'intelligence') > 8
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'intelligence') > 8
 
 
     def r30824_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'intelligence') > 8
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'intelligence') > 8
 
 
     def r30825_condition(self):
@@ -2146,12 +2146,12 @@ class MorteLogicGenerated:
 
     def r35344_condition(self):
         return not self.state_manager.world_manager.get_has_prybar() and \
-               self.state_manager.characters_manager.get_property('protagonist', 'strength') < 13
+               self.state_manager.characters_manager.get_property('protagonist_character_name', 'strength') < 13
 
 
     def r35352_condition(self):
         return not self.state_manager.world_manager.get_has_prybar() and \
-               self.state_manager.characters_manager.get_property('protagonist', 'strength') > 12
+               self.state_manager.characters_manager.get_property('protagonist_character_name', 'strength') > 12
 
 
     def r35355_condition(self):
@@ -2168,12 +2168,12 @@ class MorteLogicGenerated:
 
     def r35421_condition(self):
         return not self.state_manager.world_manager.get_has_prybar() and \
-               self.state_manager.characters_manager.get_property('protagonist', 'strength') < 13
+               self.state_manager.characters_manager.get_property('protagonist_character_name', 'strength') < 13
 
 
     def r35429_condition(self):
         return not self.state_manager.world_manager.get_has_prybar() and \
-               self.state_manager.characters_manager.get_property('protagonist', 'strength') > 12
+               self.state_manager.characters_manager.get_property('protagonist_character_name', 'strength') > 12
 
 
     def r35432_condition(self):
@@ -2190,12 +2190,12 @@ class MorteLogicGenerated:
 
     def r35498_condition(self):
         return not self.state_manager.world_manager.get_has_prybar() and \
-               self.state_manager.characters_manager.get_property('protagonist', 'strength') < 13
+               self.state_manager.characters_manager.get_property('protagonist_character_name', 'strength') < 13
 
 
     def r35506_condition(self):
         return not self.state_manager.world_manager.get_has_prybar() and \
-               self.state_manager.characters_manager.get_property('protagonist', 'strength') > 12
+               self.state_manager.characters_manager.get_property('protagonist_character_name', 'strength') > 12
 
 
     def r35509_condition(self):
@@ -2212,12 +2212,12 @@ class MorteLogicGenerated:
 
     def r35575_condition(self):
         return not self.state_manager.world_manager.get_has_prybar() and \
-               self.state_manager.characters_manager.get_property('protagonist', 'strength') < 13
+               self.state_manager.characters_manager.get_property('protagonist_character_name', 'strength') < 13
 
 
     def r35583_condition(self):
         return not self.state_manager.world_manager.get_has_prybar() and \
-               self.state_manager.characters_manager.get_property('protagonist', 'strength') > 12
+               self.state_manager.characters_manager.get_property('protagonist_character_name', 'strength') > 12
 
 
     def r35586_condition(self):
@@ -2234,17 +2234,17 @@ class MorteLogicGenerated:
 
     def r40069_condition(self):
         return not self.state_manager.world_manager.get_in_party_morte() and \
-               self.state_manager.characters_manager.get_property('protagonist', 'current_health') == self.state_manager.characters_manager.get_property('protagonist', 'max_health')
+               self.state_manager.characters_manager.get_property('protagonist_character_name', 'current_health') == self.state_manager.characters_manager.get_property('protagonist_character_name', 'max_health')
 
 
     def r40070_condition(self):
         return not self.state_manager.world_manager.get_in_party_morte() and \
-               self.state_manager.characters_manager.get_property('protagonist', 'current_health') > self.state_manager.characters_manager.get_property('protagonist', 'max_health') / 2
+               self.state_manager.characters_manager.get_property('protagonist_character_name', 'current_health') > self.state_manager.characters_manager.get_property('protagonist_character_name', 'max_health') / 2
 
 
     def r40071_condition(self):
         return not self.state_manager.world_manager.get_in_party_morte() and \
-               self.state_manager.characters_manager.get_property('protagonist', 'current_health') <= self.state_manager.characters_manager.get_property('protagonist', 'max_health') / 2
+               self.state_manager.characters_manager.get_property('protagonist_character_name', 'current_health') <= self.state_manager.characters_manager.get_property('protagonist_character_name', 'max_health') / 2
 
 
     def r40077_condition(self):
@@ -2368,7 +2368,7 @@ class MorteLogicGenerated:
 
 
     def r41900_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'intelligence') > 12
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'intelligence') > 12
 
 
     def r41921_condition(self):
@@ -2583,12 +2583,12 @@ class MorteLogicGenerated:
 
     def r54166_condition(self):
         return self.state_manager.world_manager.get_in_party_dakkon() and \
-               self.state_manager.characters_manager.get_property('protagonist', 'wisdom') > 13
+               self.state_manager.characters_manager.get_property('protagonist_character_name', 'wisdom') > 13
 
 
     def r54167_condition(self):
         return self.state_manager.world_manager.get_in_party_dakkon() and \
-               self.state_manager.characters_manager.get_property('protagonist', 'wisdom') < 14
+               self.state_manager.characters_manager.get_property('protagonist_character_name', 'wisdom') < 14
 
 
     def r54172_condition(self):
@@ -2597,12 +2597,12 @@ class MorteLogicGenerated:
 
     def r54173_condition(self):
         return self.state_manager.world_manager.get_in_party_dakkon() and \
-               self.state_manager.characters_manager.get_property('protagonist', 'wisdom') > 13
+               self.state_manager.characters_manager.get_property('protagonist_character_name', 'wisdom') > 13
 
 
     def r54174_condition(self):
         return self.state_manager.world_manager.get_in_party_dakkon() and \
-               self.state_manager.characters_manager.get_property('protagonist', 'wisdom') < 14
+               self.state_manager.characters_manager.get_property('protagonist_character_name', 'wisdom') < 14
 
 
     def r54179_condition(self):
@@ -2710,18 +2710,18 @@ class MorteLogicGenerated:
 
 
     def r54220_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'intelligence') > 15 and \
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'intelligence') > 15 and \
                self.state_manager.world_manager.get_in_party_dakkon()
 
 
     def r54221_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'intelligence') > 15 and \
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'intelligence') > 15 and \
                not self.state_manager.world_manager.get_in_party_dakkon() and \
                self.state_manager.world_manager.get_dakkon_value() > 0
 
 
     def r54223_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'intelligence') > 15 and \
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'intelligence') > 15 and \
                not self.state_manager.world_manager.get_in_party_dakkon() and \
                self.state_manager.world_manager.get_dakkon_value() == 0
 
@@ -2811,7 +2811,7 @@ class MorteLogicGenerated:
 
 
     def r54264_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'wisdom') > 15
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'wisdom') > 15
 
 
     def r54266_condition(self):
@@ -2825,7 +2825,7 @@ class MorteLogicGenerated:
 
 
     def r54269_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'wisdom') > 15
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'wisdom') > 15
 
 
     def r54271_condition(self):
@@ -2932,7 +2932,7 @@ class MorteLogicGenerated:
 
 
     def r55875_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'intelligence') > 15
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'intelligence') > 15
 
 
     def r61411_condition(self):
@@ -3066,7 +3066,7 @@ class MorteLogicGenerated:
 
 
     def r65738_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'wisdom') > 13
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'wisdom') > 13
 
 
     def r65739_condition(self):

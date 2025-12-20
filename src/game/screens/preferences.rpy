@@ -10,165 +10,127 @@
 ## https://www.renpy.org/doc/html/screen_special.html#preferences
 
 screen preferences():
-
     tag menu
 
-    use game_menu(_("Настройки"), scroll="viewport"):
+    frame:
+        background Transform('gui/optbg.png', fit='cover')
+        xfill True
+        yfill True
 
-        vbox:
+        button:
+            xpos 890
+            ypos 50
+            xsize 143 # 143
+            ysize 143 # 143
+            background Transform('gui/settings_button_idle.png', fit='cover')
+            hover_background Transform('gui/settings_button_hover.png', fit='cover')
+            action ShowMenu("preferences_game")
+            text _("preferences_screen_game_settings"):
+                size 20
+                color "#eeeeee"
+                align (0.5, 0.5)
 
-            hbox:
-                box_wrap True
+        button:
+            xpos 1175
+            ypos 160
+            xsize 143 # 143
+            ysize 143 # 143
+            background Transform('gui/settings_button_idle.png', fit='cover')
+            hover_background Transform('gui/settings_button_hover.png', fit='cover')
+            action ShowMenu("preferences_save")
+            text _("preferences_screen_save"):
+                size 20
+                color "#eeeeee"
+                align (0.5, 0.5)
 
-                if renpy.variant("pc") or renpy.variant("web"):
+        button:
+            xpos 1295
+            ypos 450
+            xsize 143 # 143
+            ysize 143 # 143
+            background Transform('gui/settings_button_idle.png', fit='cover')
+            hover_background Transform('gui/settings_button_hover.png', fit='cover')
+            action ShowMenu("preferences_load")
+            text _("preferences_screen_load"):
+                size 20
+                color "#eeeeee"
+                align (0.5, 0.5)
 
-                    vbox:
-                        style_prefix "radio"
-                        label _("Режим экрана")
-                        textbutton _("Оконный") action Preference("display", "window")
-                        textbutton _("Полный") action Preference("display", "fullscreen")
+        button:
+            xpos 1175
+            ypos 730
+            xsize 143 # 143
+            ysize 143 # 143
+            background Transform('gui/settings_button_idle.png', fit='cover')
+            hover_background Transform('gui/settings_button_hover.png', fit='cover')
+            action Return()
+            text _("preferences_screen_back"):
+                size 20
+                color "#eeeeee"
+                align (0.5, 0.5)
 
-                vbox:
-                    style_prefix "check"
-                    label _("Пропуск")
-                    textbutton _("Всего текста") action Preference("skip", "toggle")
-                    textbutton _("После выборов") action Preference("after choices", "toggle")
-                    textbutton _("Переходов") action InvertSelected(Preference("transitions", "toggle"))
+        button:
+            xpos 890
+            ypos 835
+            xsize 143 # 143
+            ysize 143 # 143
+            background Transform('gui/settings_button_idle.png', fit='cover')
+            hover_background Transform('gui/settings_button_hover.png', fit='cover')
+            action ShowMenu("preferences_language")
+            text _("preferences_screen_language_settings"):
+                size 20
+                color "#eeeeee"
+                align (0.5, 0.5)
 
-                ## Дополнительные vbox'ы типа "radio_pref" или "check_pref"
-                ## могут быть добавлены сюда для добавления новых настроек.
+        button:
+            xpos 610
+            ypos 725
+            xsize 143 # 143
+            ysize 143 # 143
+            background Transform('gui/settings_button_idle.png', fit='cover')
+            hover_background Transform('gui/settings_button_hover.png', fit='cover')
+            action NullAction()
+            text _("preferences_screen_videos"):
+                size 20
+                color "#eeeeee"
+                align (0.5, 0.5)
 
-                vbox:
-                    style_prefix "radio"
-                    label ("🌐 Aあ")
-                    # for lang in get_available_translations():
-                    #     textbutton (f"{lang_to_native(lang)}") action Language(lang)
-                    textbutton (f"Русский") action [SetVariable("persistent.language", "russian"), Language("russian")]
-                    textbutton (f"English") action [SetVariable("persistent.language", "english"), Language("english")]
+        button:
+            xpos 490
+            ypos 450
+            xsize 143 # 143
+            ysize 143 # 143
+            background Transform('gui/settings_button_idle.png', fit='cover')
+            hover_background Transform('gui/settings_button_hover.png', fit='cover')
+            action ShowMenu("preferences_sound")
+            text _("preferences_screen_sound_settings"):
+                size 20
+                color "#eeeeee"
+                align (0.5, 0.5)
 
+        button:
+            xpos 610
+            ypos 160
+            xsize 143 # 143
+            ysize 143 # 143
+            background Transform('gui/settings_button_idle.png', fit='cover')
+            hover_background Transform('gui/settings_button_hover.png', fit='cover')
+            action ShowMenu("preferences_graphics")
+            text _("preferences_screen_graphics_settings"):
+                size 20
+                color "#eeeeee"
+                align (0.5, 0.5)
 
-            null height (4 * gui.pref_spacing)
-
-            hbox:
-                style_prefix "slider"
-                box_wrap True
-
-                vbox:
-
-                    label _("Скорость текста")
-
-                    bar value Preference("text speed")
-
-                    label _("Скорость авточтения")
-
-                    bar value Preference("auto-forward time")
-
-                vbox:
-
-                    if config.has_music:
-                        label _("Громкость музыки")
-
-                        hbox:
-                            bar value Preference("music volume")
-
-                    if config.has_sound:
-
-                        label _("Громкость звуков")
-
-                        hbox:
-                            bar value Preference("sound volume")
-
-                            if config.sample_sound:
-                                textbutton _("Тест") action Play("sound", config.sample_sound)
-
-
-                    if config.has_voice:
-                        label _("Громкость голоса")
-
-                        hbox:
-                            bar value Preference("voice volume")
-
-                            if config.sample_voice:
-                                textbutton _("Тест") action Play("voice", config.sample_voice)
-
-                    if config.has_music or config.has_sound or config.has_voice:
-                        null height gui.pref_spacing
-
-                        textbutton _("Без звука"):
-                            action Preference("all mute", "toggle")
-                            style "mute_all_button"
-
-
-style pref_label is gui_label
-style pref_label_text is gui_label_text
-style pref_vbox is vbox
-
-style radio_label is pref_label
-style radio_label_text is pref_label_text
-style radio_button is gui_button
-style radio_button_text is gui_button_text
-style radio_vbox is pref_vbox
-
-style check_label is pref_label
-style check_label_text is pref_label_text
-style check_button is gui_button
-style check_button_text is gui_button_text
-style check_vbox is pref_vbox
-
-style slider_label is pref_label
-style slider_label_text is pref_label_text
-style slider_slider is gui_slider
-style slider_button is gui_button
-style slider_button_text is gui_button_text
-style slider_pref_vbox is pref_vbox
-
-style mute_all_button is check_button
-style mute_all_button_text is check_button_text
-
-style pref_label:
-    top_margin gui.pref_spacing
-    bottom_margin 3
-
-style pref_label_text:
-    yalign 1.0
-
-style pref_vbox:
-    xsize 338
-
-style pref_vbox: ## Мобильные варианты
-    variant "medium"
-    xsize 675
-
-style radio_vbox:
-    spacing gui.pref_button_spacing
-
-style radio_button:
-    properties gui.button_properties("radio_button")
-    foreground "gui/button/radio_[prefix_]foreground.png"
-
-style radio_button_text:
-    properties gui.text_properties("radio_button")
-
-style check_vbox:
-    spacing gui.pref_button_spacing
-
-style check_button:
-    properties gui.button_properties("check_button")
-    foreground "gui/button/check_[prefix_]foreground.png"
-
-style check_button_text:
-    properties gui.text_properties("check_button")
-
-style slider_slider:
-    xsize 525
-
-style slider_button:
-    properties gui.button_properties("slider_button")
-    yalign 0.5
-    left_margin 15
-
-style slider_button_text:
-    properties gui.text_properties("slider_button")
-
-style slider_vbox:
-    xsize 675
+    if enabled_dev:
+        button:
+            xpos 10
+            ypos 10
+            xsize 143 # 143
+            ysize 143 # 143
+            background Transform('gui/settings_button_idle.png', fit='cover')
+            hover_background Transform('gui/settings_button_hover.png', fit='cover')
+            action ShowMenu("preferences_dev")
+            text 'dev':
+                size 20
+                color "#eeeeee"
+                align (0.5, 0.5)

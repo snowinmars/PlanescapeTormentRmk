@@ -39,7 +39,7 @@ class VaxisLogicGeneratedTest(LogicTest):
 
 
     def test_r454_action(self):
-        who_law = 'protagonist'
+        who_law = 'protagonist_character_name'
         prop_law = 'law'
         delta_law = -1
         self.state_manager.world_manager.set_zombie_chaotic(False)
@@ -97,7 +97,7 @@ class VaxisLogicGeneratedTest(LogicTest):
 
 
     def test_r472_action(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'law'
         delta = -1
 
@@ -109,7 +109,7 @@ class VaxisLogicGeneratedTest(LogicTest):
 
 
     def test_r473_action(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'good'
         delta = -1
 
@@ -125,7 +125,7 @@ class VaxisLogicGeneratedTest(LogicTest):
 
 
     def test_r476_action(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'good'
         delta = -1
 
@@ -137,10 +137,10 @@ class VaxisLogicGeneratedTest(LogicTest):
 
 
     def test_r477_action(self):
-        who_law = 'protagonist'
+        who_law = 'protagonist_character_name'
         prop_law = 'law'
         delta_law = 1
-        who_good = 'protagonist'
+        who_good = 'protagonist_character_name'
         prop_good = 'good'
         delta_good = 1
 
@@ -217,7 +217,7 @@ class VaxisLogicGeneratedTest(LogicTest):
 
 
     def test_r487_action(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'law'
         delta = -1
 
@@ -229,7 +229,7 @@ class VaxisLogicGeneratedTest(LogicTest):
 
 
     def test_r488_action(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'good'
         delta = -1
 
@@ -241,7 +241,7 @@ class VaxisLogicGeneratedTest(LogicTest):
 
 
     def test_r493_action(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'law'
         delta = -1
 
@@ -253,7 +253,7 @@ class VaxisLogicGeneratedTest(LogicTest):
 
 
     def test_r494_action(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'law'
         delta = -1
 
@@ -265,7 +265,7 @@ class VaxisLogicGeneratedTest(LogicTest):
 
 
     def test_r1306_action(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'good'
         delta = -1
 
@@ -277,7 +277,7 @@ class VaxisLogicGeneratedTest(LogicTest):
 
 
     def test_r1348_action(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'good'
         delta = -1
 
@@ -289,7 +289,7 @@ class VaxisLogicGeneratedTest(LogicTest):
 
 
     def test_r1359_action(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'law'
         delta = -1
 
@@ -301,7 +301,7 @@ class VaxisLogicGeneratedTest(LogicTest):
 
 
     def test_r1360_action(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'law'
         delta = -1
 
@@ -313,7 +313,7 @@ class VaxisLogicGeneratedTest(LogicTest):
 
 
     def test_r1361_action(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'law'
         delta = -1
 
@@ -325,7 +325,7 @@ class VaxisLogicGeneratedTest(LogicTest):
 
 
     def test_r4364_action(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'good'
         delta = -1
 
@@ -337,7 +337,7 @@ class VaxisLogicGeneratedTest(LogicTest):
 
 
     def test_r4365_action(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'good'
         delta = -1
 
@@ -349,7 +349,7 @@ class VaxisLogicGeneratedTest(LogicTest):
 
 
     def test_r4370_action(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'law'
         delta = -1
 
@@ -361,7 +361,7 @@ class VaxisLogicGeneratedTest(LogicTest):
 
 
     def test_r4371_action(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'law'
         delta = -1
 
@@ -373,10 +373,10 @@ class VaxisLogicGeneratedTest(LogicTest):
 
 
     def test_r4381_action(self):
-        who_law = 'protagonist'
+        who_law = 'protagonist_character_name'
         prop_law = 'law'
         delta_law = 1
-        who_good = 'protagonist'
+        who_good = 'protagonist_character_name'
         prop_good = 'good'
         delta_good = 1
 
@@ -399,7 +399,7 @@ class VaxisLogicGeneratedTest(LogicTest):
 
 
     def test_r4387_action(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'good'
         delta = -1
 
@@ -411,7 +411,7 @@ class VaxisLogicGeneratedTest(LogicTest):
 
 
     def test_r4388_action(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'good'
         delta = -1
 
@@ -423,10 +423,10 @@ class VaxisLogicGeneratedTest(LogicTest):
 
 
     def test_r4391_action(self):
-        who_law = 'protagonist'
+        who_law = 'protagonist_character_name'
         prop_law = 'law'
         delta_law = 1
-        who_good = 'protagonist'
+        who_good = 'protagonist_character_name'
         prop_good = 'good'
         delta_good = 1
 
@@ -449,7 +449,7 @@ class VaxisLogicGeneratedTest(LogicTest):
 
 
     def test_r4397_action(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'good'
         delta = -1
 
@@ -461,7 +461,7 @@ class VaxisLogicGeneratedTest(LogicTest):
 
 
     def test_r4398_action(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'good'
         delta = -1
 
@@ -473,7 +473,7 @@ class VaxisLogicGeneratedTest(LogicTest):
 
 
     def test_r4401_action(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'good'
         delta = -1
 
@@ -485,7 +485,7 @@ class VaxisLogicGeneratedTest(LogicTest):
 
 
     def test_r4402_action(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'good'
         delta = -1
 
@@ -509,7 +509,7 @@ class VaxisLogicGeneratedTest(LogicTest):
 
 
     def test_r4428_action(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'good'
         delta = -1
 
@@ -521,7 +521,7 @@ class VaxisLogicGeneratedTest(LogicTest):
 
 
     def test_r4429_action(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'good'
         delta = -1
 
@@ -533,7 +533,7 @@ class VaxisLogicGeneratedTest(LogicTest):
 
 
     def test_r4434_action(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'law'
         delta = -1
 
@@ -545,7 +545,7 @@ class VaxisLogicGeneratedTest(LogicTest):
 
 
     def test_r4442_action(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'good'
         delta = -1
 
@@ -557,7 +557,7 @@ class VaxisLogicGeneratedTest(LogicTest):
 
 
     def test_r4443_action(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'good'
         delta = -1
 
@@ -583,7 +583,7 @@ class VaxisLogicGeneratedTest(LogicTest):
 
 
     def test_r4456_action(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'good'
         delta = -1
 
@@ -595,7 +595,7 @@ class VaxisLogicGeneratedTest(LogicTest):
 
 
     def test_r4457_action(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'good'
         delta = -1
 
@@ -622,7 +622,7 @@ class VaxisLogicGeneratedTest(LogicTest):
         self.state_manager.world_manager.set_has_bandages(False)
         self.state_manager.world_manager.set_has_embalm(False)
         self.state_manager.world_manager.set_has_needle(False)
-        who_experience = 'protagonist'
+        who_experience = 'protagonist_character_name'
         prop_experience = 'experience'
         delta_experience = 500
 
@@ -658,7 +658,7 @@ class VaxisLogicGeneratedTest(LogicTest):
 
 
     def test_r4474_action(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'good'
         delta = 1
 
@@ -670,7 +670,7 @@ class VaxisLogicGeneratedTest(LogicTest):
 
 
     def test_r4477_action(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'good'
         delta = -1
 
@@ -682,7 +682,7 @@ class VaxisLogicGeneratedTest(LogicTest):
 
 
     def test_r4478_action(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'good'
         delta = -1
 
@@ -694,7 +694,7 @@ class VaxisLogicGeneratedTest(LogicTest):
 
 
     def test_r4484_action(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'good'
         delta = -1
 
@@ -706,7 +706,7 @@ class VaxisLogicGeneratedTest(LogicTest):
 
 
     def test_r4485_action(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'good'
         delta = -1
 
@@ -725,7 +725,7 @@ class VaxisLogicGeneratedTest(LogicTest):
 
 
     def test_r4489_action(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'good'
         delta = -1
 
@@ -737,7 +737,7 @@ class VaxisLogicGeneratedTest(LogicTest):
 
 
     def test_r4490_action(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'good'
         delta = -1
 
@@ -749,7 +749,7 @@ class VaxisLogicGeneratedTest(LogicTest):
 
 
     def test_r4494_action(self):
-        who_experience = 'protagonist'
+        who_experience = 'protagonist_character_name'
         prop_experience = 'experience'
         delta_experience = 250
         self.state_manager.world_manager.set_has_keyem(True)
@@ -791,7 +791,7 @@ class VaxisLogicGeneratedTest(LogicTest):
 
 
     def test_r4498_action(self):
-        who_good = 'protagonist'
+        who_good = 'protagonist_character_name'
         prop_good = 'good'
         delta_good = -1
         self.state_manager.world_manager.set_vaxis_orders(True)
@@ -813,7 +813,7 @@ class VaxisLogicGeneratedTest(LogicTest):
 
 
     def test_r4499_action(self):
-        who_good = 'protagonist'
+        who_good = 'protagonist_character_name'
         prop_good = 'good'
         delta_good = -1
         self.state_manager.world_manager.set_vaxis_orders(True)
@@ -835,7 +835,7 @@ class VaxisLogicGeneratedTest(LogicTest):
 
 
     def test_r4502_action(self):
-        who_experience = 'protagonist'
+        who_experience = 'protagonist_character_name'
         prop_experience = 'experience'
         delta_experience = 250
         self.state_manager.world_manager.set_has_keyem(True)
@@ -879,7 +879,7 @@ class VaxisLogicGeneratedTest(LogicTest):
 
 
     def test_r4504_action(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'law'
         delta = -1
 
@@ -927,7 +927,7 @@ class VaxisLogicGeneratedTest(LogicTest):
 
 
     def test_r4519_action(self):
-        who_experience = 'protagonist'
+        who_experience = 'protagonist_character_name'
         prop_experience = 'experience'
         delta_experience = 250
         self.state_manager.world_manager.set_has_keyem(True)
@@ -1023,7 +1023,7 @@ class VaxisLogicGeneratedTest(LogicTest):
 
 
     def test_r64527_action(self):
-        who_experience = 'protagonist'
+        who_experience = 'protagonist_character_name'
         prop_experience = 'experience'
         delta_experience = 250
         self.state_manager.world_manager.set_vaxis_help(False)
@@ -1054,7 +1054,7 @@ class VaxisLogicGeneratedTest(LogicTest):
 
 
     def test_r4568_action(self):
-        who_experience = 'protagonist'
+        who_experience = 'protagonist_character_name'
         prop_experience = 'experience'
         delta_experience = 250
         self.state_manager.world_manager.set_vaxis_help(False)
@@ -1085,7 +1085,7 @@ class VaxisLogicGeneratedTest(LogicTest):
 
 
     def test_r4569_action(self):
-        who_experience = 'protagonist'
+        who_experience = 'protagonist_character_name'
         prop_experience = 'experience'
         delta_experience = 250
         self.state_manager.world_manager.set_vaxis_help(False)
@@ -1125,7 +1125,7 @@ class VaxisLogicGeneratedTest(LogicTest):
 
 
     def test_r4592_action(self):
-        who_experience = 'protagonist'
+        who_experience = 'protagonist_character_name'
         prop_experience = 'experience'
         delta_experience = 250
         self.state_manager.world_manager.set_has_keyem(True)
@@ -1147,7 +1147,7 @@ class VaxisLogicGeneratedTest(LogicTest):
 
 
     def test_r4593_action(self):
-        who_experience = 'protagonist'
+        who_experience = 'protagonist_character_name'
         prop_experience = 'experience'
         delta_experience = 250
         self.state_manager.world_manager.set_has_keyem(True)
@@ -1239,10 +1239,10 @@ class VaxisLogicGeneratedTest(LogicTest):
 
 
     def test_r4630_action(self):
-        who_looks_like = 'protagonist'
+        who_looks_like = 'protagonist_character_name'
         prop_looks_like = 'looks_like'
         delta_looks_like = 'zombie'
-        who_experience = 'protagonist'
+        who_experience = 'protagonist_character_name'
         prop_experience = 'experience'
         delta_experience = 500
         self.state_manager.world_manager.set_vaxis_global_xp(False)
@@ -1276,7 +1276,7 @@ class VaxisLogicGeneratedTest(LogicTest):
 
 
     def test_r4632_action(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'looks_like'
         delta = 'zombie'
 
@@ -1288,7 +1288,7 @@ class VaxisLogicGeneratedTest(LogicTest):
 
 
     def test_r64533_action(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'looks_like'
         delta = 'zombie'
 
@@ -1320,7 +1320,7 @@ class VaxisLogicGeneratedTest(LogicTest):
 
 
     def test_r4651_action(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'good'
         delta = -1
 
@@ -1379,7 +1379,7 @@ class VaxisLogicGeneratedTest(LogicTest):
 
 
     def test_r472_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'intelligence'
         value = 11
 
@@ -1399,7 +1399,7 @@ class VaxisLogicGeneratedTest(LogicTest):
 
 
     def test_r487_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'intelligence'
         value = 11
 
@@ -1440,7 +1440,7 @@ class VaxisLogicGeneratedTest(LogicTest):
 
 
     def test_r495_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'charisma'
         value = 10
 
@@ -1453,7 +1453,7 @@ class VaxisLogicGeneratedTest(LogicTest):
 
 
     def test_r496_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'charisma'
         value = 11
 
@@ -1466,7 +1466,7 @@ class VaxisLogicGeneratedTest(LogicTest):
 
 
     def test_r1306_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'strength'
         value = 12
 
@@ -1479,7 +1479,7 @@ class VaxisLogicGeneratedTest(LogicTest):
 
 
     def test_r1348_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'strength'
         value = 11
 
@@ -1492,7 +1492,7 @@ class VaxisLogicGeneratedTest(LogicTest):
 
 
     def test_r1359_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'intelligence'
         value = 11
 
@@ -1505,10 +1505,10 @@ class VaxisLogicGeneratedTest(LogicTest):
 
 
     def test_r1360_condition(self):
-        who_charisma = 'protagonist'
+        who_charisma = 'protagonist_character_name'
         prop_charisma = 'charisma'
         delta_charisma = 11
-        who_intelligence = 'protagonist'
+        who_intelligence = 'protagonist_character_name'
         prop_intelligence = 'intelligence'
         delta_intelligence = 12
 
@@ -1524,7 +1524,7 @@ class VaxisLogicGeneratedTest(LogicTest):
 
 
     def test_r1361_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'intelligence'
         value = 11
 
@@ -1537,7 +1537,7 @@ class VaxisLogicGeneratedTest(LogicTest):
 
 
     def test_r4362_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'charisma'
         value = 10
 
@@ -1550,7 +1550,7 @@ class VaxisLogicGeneratedTest(LogicTest):
 
 
     def test_r4363_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'charisma'
         value = 11
 
@@ -1563,7 +1563,7 @@ class VaxisLogicGeneratedTest(LogicTest):
 
 
     def test_r4364_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'strength'
         value = 12
 
@@ -1576,7 +1576,7 @@ class VaxisLogicGeneratedTest(LogicTest):
 
 
     def test_r4365_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'strength'
         value = 11
 
@@ -1596,10 +1596,10 @@ class VaxisLogicGeneratedTest(LogicTest):
 
 
     def test_r4370_condition(self):
-        who_charisma = 'protagonist'
+        who_charisma = 'protagonist_character_name'
         prop_charisma = 'charisma'
         delta_charisma = 11
-        who_intelligence = 'protagonist'
+        who_intelligence = 'protagonist_character_name'
         prop_intelligence = 'intelligence'
         delta_intelligence = 12
 
@@ -1615,7 +1615,7 @@ class VaxisLogicGeneratedTest(LogicTest):
 
 
     def test_r4371_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'intelligence'
         value = 11
 
@@ -1642,7 +1642,7 @@ class VaxisLogicGeneratedTest(LogicTest):
 
 
     def test_r4385_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'charisma'
         value = 10
 
@@ -1655,7 +1655,7 @@ class VaxisLogicGeneratedTest(LogicTest):
 
 
     def test_r4386_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'charisma'
         value = 11
 
@@ -1668,7 +1668,7 @@ class VaxisLogicGeneratedTest(LogicTest):
 
 
     def test_r4387_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'strength'
         value = 12
 
@@ -1681,7 +1681,7 @@ class VaxisLogicGeneratedTest(LogicTest):
 
 
     def test_r4388_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'strength'
         value = 11
 
@@ -1694,7 +1694,7 @@ class VaxisLogicGeneratedTest(LogicTest):
 
 
     def test_r4395_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'charisma'
         value = 10
 
@@ -1707,7 +1707,7 @@ class VaxisLogicGeneratedTest(LogicTest):
 
 
     def test_r4396_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'charisma'
         value = 11
 
@@ -1720,7 +1720,7 @@ class VaxisLogicGeneratedTest(LogicTest):
 
 
     def test_r4397_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'strength'
         value = 12
 
@@ -1733,7 +1733,7 @@ class VaxisLogicGeneratedTest(LogicTest):
 
 
     def test_r4398_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'strength'
         value = 11
 
@@ -1746,7 +1746,7 @@ class VaxisLogicGeneratedTest(LogicTest):
 
 
     def test_r4401_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'strength'
         value = 12
 
@@ -1759,7 +1759,7 @@ class VaxisLogicGeneratedTest(LogicTest):
 
 
     def test_r4402_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'strength'
         value = 11
 
@@ -1772,7 +1772,7 @@ class VaxisLogicGeneratedTest(LogicTest):
 
 
     def test_r4409_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'charisma'
         value = 10
 
@@ -1785,7 +1785,7 @@ class VaxisLogicGeneratedTest(LogicTest):
 
 
     def test_r4410_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'charisma'
         value = 11
 
@@ -1833,7 +1833,7 @@ class VaxisLogicGeneratedTest(LogicTest):
 
 
     def test_r4440_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'charisma'
         value = 10
 
@@ -1846,7 +1846,7 @@ class VaxisLogicGeneratedTest(LogicTest):
 
 
     def test_r4441_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'charisma'
         value = 11
 
@@ -1859,7 +1859,7 @@ class VaxisLogicGeneratedTest(LogicTest):
 
 
     def test_r4442_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'strength'
         value = 12
 
@@ -1872,7 +1872,7 @@ class VaxisLogicGeneratedTest(LogicTest):
 
 
     def test_r4443_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'strength'
         value = 11
 
@@ -1885,10 +1885,10 @@ class VaxisLogicGeneratedTest(LogicTest):
 
 
     def test_r4446_condition(self):
-        who_charisma = 'protagonist'
+        who_charisma = 'protagonist_character_name'
         prop_charisma = 'charisma'
         delta_charisma = 12
-        who_intelligence = 'protagonist'
+        who_intelligence = 'protagonist_character_name'
         prop_intelligence = 'intelligence'
         delta_intelligence = 12
 
@@ -1904,10 +1904,10 @@ class VaxisLogicGeneratedTest(LogicTest):
 
 
     def test_r4447_condition(self):
-        who_charisma = 'protagonist'
+        who_charisma = 'protagonist_character_name'
         prop_charisma = 'charisma'
         delta_charisma = 11
-        who_intelligence = 'protagonist'
+        who_intelligence = 'protagonist_character_name'
         prop_intelligence = 'intelligence'
         delta_intelligence = 12
 
@@ -1923,7 +1923,7 @@ class VaxisLogicGeneratedTest(LogicTest):
 
 
     def test_r4448_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'intelligence'
         value = 11
 
@@ -1943,7 +1943,7 @@ class VaxisLogicGeneratedTest(LogicTest):
 
 
     def test_r4454_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'charisma'
         value = 10
 
@@ -1956,7 +1956,7 @@ class VaxisLogicGeneratedTest(LogicTest):
 
 
     def test_r4455_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'charisma'
         value = 11
 
@@ -1969,7 +1969,7 @@ class VaxisLogicGeneratedTest(LogicTest):
 
 
     def test_r4456_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'strength'
         value = 12
 
@@ -1982,7 +1982,7 @@ class VaxisLogicGeneratedTest(LogicTest):
 
 
     def test_r4457_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'strength'
         value = 11
 
@@ -2002,7 +2002,7 @@ class VaxisLogicGeneratedTest(LogicTest):
 
 
     def test_r4474_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'charisma'
         value = 10
 
@@ -2015,7 +2015,7 @@ class VaxisLogicGeneratedTest(LogicTest):
 
 
     def test_r4475_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'charisma'
         value = 10
 
@@ -2028,7 +2028,7 @@ class VaxisLogicGeneratedTest(LogicTest):
 
 
     def test_r4476_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'charisma'
         value = 11
 
@@ -2041,7 +2041,7 @@ class VaxisLogicGeneratedTest(LogicTest):
 
 
     def test_r4477_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'strength'
         value = 12
 
@@ -2054,7 +2054,7 @@ class VaxisLogicGeneratedTest(LogicTest):
 
 
     def test_r4478_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'strength'
         value = 11
 
@@ -2067,7 +2067,7 @@ class VaxisLogicGeneratedTest(LogicTest):
 
 
     def test_r4482_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'charisma'
         value = 10
 
@@ -2080,7 +2080,7 @@ class VaxisLogicGeneratedTest(LogicTest):
 
 
     def test_r4483_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'charisma'
         value = 11
 
@@ -2093,7 +2093,7 @@ class VaxisLogicGeneratedTest(LogicTest):
 
 
     def test_r4484_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'strength'
         value = 12
 
@@ -2106,7 +2106,7 @@ class VaxisLogicGeneratedTest(LogicTest):
 
 
     def test_r4485_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'strength'
         value = 11
 
@@ -2119,7 +2119,7 @@ class VaxisLogicGeneratedTest(LogicTest):
 
 
     def test_r4489_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'strength'
         value = 12
 
@@ -2132,7 +2132,7 @@ class VaxisLogicGeneratedTest(LogicTest):
 
 
     def test_r4490_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'strength'
         value = 11
 
@@ -2152,7 +2152,7 @@ class VaxisLogicGeneratedTest(LogicTest):
 
 
     def test_r4496_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'charisma'
         value = 10
 
@@ -2165,7 +2165,7 @@ class VaxisLogicGeneratedTest(LogicTest):
 
 
     def test_r4497_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'charisma'
         value = 11
 
@@ -2178,7 +2178,7 @@ class VaxisLogicGeneratedTest(LogicTest):
 
 
     def test_r4498_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'strength'
         value = 12
 
@@ -2191,7 +2191,7 @@ class VaxisLogicGeneratedTest(LogicTest):
 
 
     def test_r4499_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'strength'
         value = 11
 
@@ -2604,7 +2604,7 @@ class VaxisLogicGeneratedTest(LogicTest):
 
 
     def test_r4604_condition(self):
-        who_intelligence = 'protagonist'
+        who_intelligence = 'protagonist_character_name'
         prop_intelligence = 'intelligence'
         delta_intelligence = 12
 
@@ -2620,7 +2620,7 @@ class VaxisLogicGeneratedTest(LogicTest):
 
 
     def test_r4609_condition(self):
-        who_intelligence = 'protagonist'
+        who_intelligence = 'protagonist_character_name'
         prop_intelligence = 'intelligence'
         delta_intelligence = 12
 
@@ -2636,7 +2636,7 @@ class VaxisLogicGeneratedTest(LogicTest):
 
 
     def test_r4610_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'charisma'
         value = 10
 
@@ -2649,7 +2649,7 @@ class VaxisLogicGeneratedTest(LogicTest):
 
 
     def test_r4611_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'charisma'
         value = 10
 
@@ -2662,7 +2662,7 @@ class VaxisLogicGeneratedTest(LogicTest):
 
 
     def test_r4612_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'charisma'
         value = 9
 
@@ -2675,7 +2675,7 @@ class VaxisLogicGeneratedTest(LogicTest):
 
 
     def test_r4613_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'charisma'
         value = 9
 
@@ -2688,7 +2688,7 @@ class VaxisLogicGeneratedTest(LogicTest):
 
 
     def test_r4615_condition(self):
-        who_intelligence = 'protagonist'
+        who_intelligence = 'protagonist_character_name'
         prop_intelligence = 'intelligence'
         delta_intelligence = 12
 
@@ -2704,7 +2704,7 @@ class VaxisLogicGeneratedTest(LogicTest):
 
 
     def test_r4616_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'charisma'
         value = 13
 
@@ -2717,7 +2717,7 @@ class VaxisLogicGeneratedTest(LogicTest):
 
 
     def test_r4617_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'charisma'
         value = 13
 
@@ -2730,7 +2730,7 @@ class VaxisLogicGeneratedTest(LogicTest):
 
 
     def test_r4618_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'charisma'
         value = 12
 
@@ -2743,7 +2743,7 @@ class VaxisLogicGeneratedTest(LogicTest):
 
 
     def test_r4674_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'charisma'
         value = 12
 
@@ -2861,7 +2861,7 @@ class VaxisLogicGeneratedTest(LogicTest):
 
 
     def test_r4664_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'charisma'
         value = 10
 
@@ -2874,7 +2874,7 @@ class VaxisLogicGeneratedTest(LogicTest):
 
 
     def test_r4665_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'charisma'
         value = 11
 

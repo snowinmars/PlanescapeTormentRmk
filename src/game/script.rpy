@@ -5,9 +5,18 @@ init 1 python:
     from game.engine.runtime import (runtime)
     from game.engine.setup_logger import (setup_logger)
 
+    enabled_dev = True
+
+    if not persistent.language:
+        persistent.language = 'english'
+
+    if persistent.language:
+        config.language = persistent.language
+        _preferences.language = persistent.language
+
     gamedir = os.path.normpath(config.gamedir)
     logs_folder = os.path.join(gamedir, 'logs')
-    config.version = "0.03"
+    config.version = "0.04"
     config.reject_backslash = False  # required to make the above work with with RenPy:
     os.environ['SDL_VIDEO_CENTERED'] = '1'
     sys.setdefaultencoding('utf-8')
@@ -59,7 +68,6 @@ init 3 python:
     from game.engine_data.settings.all_settings import (build_all_settings)
     from game.engine_data.inventory.all_inventory import (build_all_inventory)
     from game.engine_data.locations.all_locations import (build_all_locations)
-    from game.engine_data.characters.all_characters import (build_all_characters)
 
 
     runtime.global_events_manager = EventsManager(runtime.logger)
@@ -131,7 +139,7 @@ init 3 python:
         config.keymap['character_screen'] = ['c', 'C', 'с', 'С']
         config.underlay.append(
             renpy.Keymap(
-                character_screen = Show("character_screen", character=runtime.global_state_manager.characters_manager.get_character('The Nameless One'))
+                character_screen = Show("character_screen", character=runtime.global_state_manager.characters_manager.get_character('protagonist_character_name'))
             )
         )
 
@@ -164,10 +172,8 @@ label start:
     show screen hotkey_listener
     show screen narrat
 
-    $ enable_dev = True
-
     menu:
-        "dev" if enable_dev:
+        "dev" if enabled_dev:
             jump dev
         "Вступление для технодемки":
             jump introduction
@@ -187,7 +193,7 @@ label dev:
     $ gsm.world_manager.set_in_party_morte(True)
     $ gsm.world_manager.set_has_intro_key(True)
     $ gsm.world_manager.set_mortuary_walkthrough(1)
-    # $ gcm.set_property('protagonist', 'good', 10)
+    # $ gcm.set_property('protagonist_character_name', 'good', 10)
     # $ gsm.world_manager.set_mortualy_alarmed(True)
     # $ gsm.world_manager.set_has_mortuary_key(True)
     # $ gsm.world_manager.set_has_tome_ba(True)

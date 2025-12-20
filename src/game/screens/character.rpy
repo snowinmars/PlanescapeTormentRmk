@@ -3,7 +3,7 @@ init python:
 
 
 screen character_screen_button():
-    textbutton "Character" action Show("character_screen", character=runtime.global_state_manager.characters_manager.get_character('The Nameless One')):
+    textbutton "Character" action Show("character_screen", character=runtime.global_state_manager.characters_manager.get_character('protagonist_character_name')):
         align (1.0, 0.0)
         offset (-20, 20)
 
@@ -22,10 +22,10 @@ screen character_screen(character):
         ysize 1000
         xpadding 30
         ypadding 30
-        background Transform("bg/recbg.png", fit='cover')
+        background Transform("gui/recbg.png", fit='cover')
 
         vbox:
-            label character.name:
+            label _(character.name):
                 xpos 460
                 ypos 25
                 xsize 275
@@ -33,7 +33,7 @@ screen character_screen(character):
                 text_color "#dbc401"
                 text_align (0.5, 0.5)
 
-            label _("Маг{#character_screen_class}"):
+            label _(character.current_class):
                 xpos 460
                 ypos 60
                 xsize 275
@@ -42,7 +42,7 @@ screen character_screen(character):
                 text_align (0.5, 0.5)
 
         vbox:
-            label _("Человек{#character_screen_race}"):
+            label _(character.race):
                 xpos 790
                 ypos 70
                 xsize 160
@@ -50,7 +50,7 @@ screen character_screen(character):
                 text_color "#dbc401"
                 text_align (0.5, 0.5)
 
-            label _("Мужчина{#character_screen_sex}"):
+            label _(character.sex):
                 xpos 785
                 ypos 110
                 xsize 165
@@ -60,7 +60,7 @@ screen character_screen(character):
 
         ####
         vbox:
-            label _("КБ{#character_screen_armor_class}"):
+            label _("character_screen_armor_class"):
                 xpos 870
                 ypos 290
                 xsize 50
@@ -78,6 +78,7 @@ screen character_screen(character):
 
         ####
         vbox:
+
             label str(character.current_health):
                 xpos 972
                 ypos 385
@@ -85,6 +86,7 @@ screen character_screen(character):
                 text_size 20
                 text_color "#f8f6de"
                 text_align (0.5, 0.5)
+                background Transform('gui/ichpman.png', fit='cover')
 
             label str(character.max_health):
                 xpos 972
@@ -96,7 +98,7 @@ screen character_screen(character):
 
         ####
         vbox:
-            label _("СИЛ{#character_screen_strength}"):
+            label _("character_screen_strength"):
                 xpos 325
                 ypos 92
                 xsize 100
@@ -114,7 +116,7 @@ screen character_screen(character):
 
         ####
         vbox:
-            label _("ИНТ{#character_screen_intelligence}"):
+            label _("character_screen_intelligence"):
                 xpos 232
                 ypos 265
                 xsize 100
@@ -132,7 +134,7 @@ screen character_screen(character):
 
         ####
         vbox:
-            label _("МУД{#character_screen_wisdom}"):
+            label _("character_screen_wisdom"):
                 xpos 249
                 ypos 440
                 xsize 100
@@ -150,7 +152,7 @@ screen character_screen(character):
 
         ####
         vbox:
-            label _("ЛОВ{#character_screen_dexterity}"):
+            label _("character_screen_dexterity"):
                 xpos 375
                 ypos 588
                 xsize 100
@@ -168,7 +170,7 @@ screen character_screen(character):
 
         ####
         vbox:
-            label _("ТЕЛ{#character_screen_constitution}"):
+            label _("character_screen_constitution"):
                 xpos 537
                 ypos 650
                 xsize 100
@@ -186,7 +188,7 @@ screen character_screen(character):
 
         ####
         vbox:
-            label _("ОБА{#character_screen_charisma}"):
+            label _("character_screen_charisma"):
                 xpos 705
                 ypos 595
                 xsize 100
@@ -205,7 +207,7 @@ screen character_screen(character):
         ###
         vbox:
             imagebutton:
-                idle Transform("bg/aligment_neutral.png", fit='cover')
+                idle Transform("gui/aligment_neutral.png", fit='cover')
                 xpos 799
                 ypos 444
                 xsize 75

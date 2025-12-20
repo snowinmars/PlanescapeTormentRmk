@@ -34,7 +34,7 @@ class Zm1041LogicGeneratedTest(LogicTest):
 
 
     def test_r6576_action(self):
-        who_law = 'protagonist'
+        who_law = 'protagonist_character_name'
         prop_law = 'law'
         delta_law = -1
         self.state_manager.world_manager.set_zombie_chaotic(False)
@@ -83,7 +83,7 @@ class Zm1041LogicGeneratedTest(LogicTest):
 
 
     def test_r9161_action(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'good'
         delta = 1
 
@@ -95,7 +95,7 @@ class Zm1041LogicGeneratedTest(LogicTest):
 
 
     def test_r9162_action(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'good'
         delta = -1
 
@@ -107,7 +107,7 @@ class Zm1041LogicGeneratedTest(LogicTest):
 
 
     def test_r9200_action(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'good'
         delta = 1
 
@@ -119,7 +119,7 @@ class Zm1041LogicGeneratedTest(LogicTest):
 
 
     def test_r9201_action(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'law'
         delta = -1
 
@@ -131,7 +131,7 @@ class Zm1041LogicGeneratedTest(LogicTest):
 
 
     def test_r9207_action(self):
-        who_good = 'protagonist'
+        who_good = 'protagonist_character_name'
         prop_good = 'good'
         delta_good = 1
         self.state_manager.world_manager.set_know_xixi(False)
@@ -153,10 +153,10 @@ class Zm1041LogicGeneratedTest(LogicTest):
 
 
     def test_r9208_action(self):
-        who_good = 'protagonist'
+        who_good = 'protagonist_character_name'
         prop_good = 'good'
         delta_good = -1
-        who_law = 'protagonist'
+        who_law = 'protagonist_character_name'
         prop_law = 'law'
         delta_law = -1
         self.state_manager.world_manager.set_know_xixi(False)
@@ -258,7 +258,7 @@ class Zm1041LogicGeneratedTest(LogicTest):
 
 
     def test_r9187_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'intelligence'
         value = 13
 

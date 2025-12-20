@@ -6,9 +6,13 @@ from game.engine.characters.character import (Character)
 
 class CharacterTest(LogicTest):
     def test_ctor(self):
-        name='char'
+        name='protagonist_character_name'
+        current_class='Mage'
+        race='Human'
+        sex='Male'
         max_health=31
         current_health=31
+        ac=10
         good=3
         law=5
         lore=7
@@ -22,8 +26,8 @@ class CharacterTest(LogicTest):
         looks_like='looks_like'
 
         char = Character(
-            name=name,
-            max_health=max_health, current_health=current_health, \
+            name=name, current_class=current_class, race=race, sex=sex, \
+            max_health=max_health, current_health=current_health, ac=ac, \
             good=good, law=law, \
             lore=lore, experience=experience, \
             strength=strength, dexterity=dexterity, intelligence=intelligence, constitution=constitution, wisdom=wisdom, charisma=charisma,
@@ -33,8 +37,12 @@ class CharacterTest(LogicTest):
         self.assertIsNotNone(char)
 
         self.assertEqual(char.name, name)
+        self.assertEqual(char.current_class, current_class)
+        self.assertEqual(char.race, race)
+        self.assertEqual(char.sex, sex)
         self.assertEqual(char.max_health, max_health)
         self.assertEqual(char.current_health, current_health)
+        self.assertEqual(char.ac, ac)
         self.assertEqual(char.good, good)
         self.assertEqual(char.law, law)
         self.assertEqual(char.lore, lore)
@@ -49,9 +57,13 @@ class CharacterTest(LogicTest):
 
 
     def test_get_all_properties_when_all_ok(self):
-        name='char'
+        name='protagonist_character_name'
+        current_class='Mage'
+        race='Human'
+        sex='Male'
         max_health=31
         current_health=31
+        ac=10
         good=3
         law=5
         lore=7
@@ -65,8 +77,8 @@ class CharacterTest(LogicTest):
         looks_like='looks_like'
 
         char = Character(
-            name=name,
-            max_health=max_health, current_health=current_health, \
+            name=name, current_class=current_class, race=race, sex=sex, \
+            max_health=max_health, current_health=current_health, ac=ac, \
             good=good, law=law, \
             lore=lore, experience=experience, \
             strength=strength, dexterity=dexterity, intelligence=intelligence, constitution=constitution, wisdom=wisdom, charisma=charisma,
@@ -76,8 +88,12 @@ class CharacterTest(LogicTest):
         props = char.get_all_properties()
 
         self.assertEqual(props['name'], name)
+        self.assertEqual(props['current_class'], current_class)
+        self.assertEqual(props['race'], race)
+        self.assertEqual(props['sex'], sex)
         self.assertEqual(props['max_health'], max_health)
         self.assertEqual(props['current_health'], current_health)
+        self.assertEqual(props['ac'], ac)
         self.assertEqual(props['good'], good)
         self.assertEqual(props['law'], law)
         self.assertEqual(props['lore'], lore)

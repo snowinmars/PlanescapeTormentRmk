@@ -20,7 +20,7 @@ class Zm1201LogicGeneratedTest(LogicTest):
     def test_r34956_action(self):
         self.state_manager.world_manager.set_1201_note_retrieved(False)
         self.state_manager.world_manager.set_has_1201_note(False)
-        who_experience = 'protagonist'
+        who_experience = 'protagonist_character_name'
         prop_experience = 'experience'
         delta_experience = 250
 
@@ -44,7 +44,7 @@ class Zm1201LogicGeneratedTest(LogicTest):
 
 
     def test_r45129_action(self):
-        who_law = 'protagonist'
+        who_law = 'protagonist_character_name'
         prop_law = 'law'
         delta_law = -1
         self.state_manager.world_manager.set_zombie_chaotic(False)

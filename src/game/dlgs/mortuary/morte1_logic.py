@@ -8,7 +8,7 @@ class Morte1LogicGenerated:
 
 
     def r39824_action(self):
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'good', 1, 'globalgood_morte_1')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'good', 1, 'globalgood_morte_1')
 
 
 #     def r39831_action(self):  # unused

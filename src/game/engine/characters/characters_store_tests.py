@@ -9,16 +9,16 @@ class CharacterStoreTest(unittest.TestCase):
     def setUp(self):
         self.store = CharactersStore()
         self.morte = Character(
-            name='morte',
-            max_health=20, current_health=20, \
+            name='morte_character_name', current_class='Fighter', race='Human. Once', sex='Male', \
+            max_health=20, current_health=20, ac=4, \
             good=60, law=-60, \
             lore=0, experience=2000, \
             strength=12, dexterity=16, intelligence=13, constitution=16, wisdom=9, charisma=6,
             looks_like=''
         )
         self.annah = Character(
-            name='annah',
-            max_health=38, current_health=38, \
+            name='annah_character_name', current_class='Fighter/Thief', race='Tiefling', sex='Female', \
+            max_health=38, current_health=38, ac=4, \
             good=0, law=-60, \
             lore=0, experience=0, \
             strength=14, dexterity=18, intelligence=12, constitution=16, wisdom=10, charisma=13,

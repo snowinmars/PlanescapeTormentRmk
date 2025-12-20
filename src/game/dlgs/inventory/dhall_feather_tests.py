@@ -12,7 +12,7 @@ class DhallFeatherLogicTest(LogicTest):
 
     def test_break_feather(self):
         logic = DhallFeatherLogic(self.state_manager)
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'lore'
         delta = 1
 

@@ -18,7 +18,7 @@ class CopearcLogicGeneratedTest(LogicTest):
 
 
     def test_r46725_action(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'experience'
         delta = 250
 
@@ -30,7 +30,7 @@ class CopearcLogicGeneratedTest(LogicTest):
 
 
     def test_r46728_action(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'experience'
         delta = 250
 

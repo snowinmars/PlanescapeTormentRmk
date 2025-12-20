@@ -4,11 +4,11 @@ class GiantskLogicGenerated:
 
 
     def r293_action(self):
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'law', -1, 'globalchaotic_giant_skel_mort_1')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'law', -1, 'globalchaotic_giant_skel_mort_1')
 
 
     def r1165_action(self):
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'law', -1, 'globalchaotic_giant_skel_mort_1')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'law', -1, 'globalchaotic_giant_skel_mort_1')
 
 
     def r4042_action(self):
@@ -84,19 +84,19 @@ class GiantskLogicGenerated:
 
 
     def r3998_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'wisdom') < 13
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'wisdom') < 13
 
 
     def r3999_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'wisdom') > 12
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'wisdom') > 12
 
 
     def r4000_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'wisdom') < 13
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'wisdom') < 13
 
 
     def r4001_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'wisdom') > 12
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'wisdom') > 12
 
 
     def r4002_condition(self):
@@ -113,19 +113,19 @@ class GiantskLogicGenerated:
 
 
     def r4036_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'wisdom') < 13
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'wisdom') < 13
 
 
     def r4037_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'wisdom') > 12
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'wisdom') > 12
 
 
     def r4038_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'wisdom') < 13
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'wisdom') < 13
 
 
     def r4039_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'wisdom') > 12
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'wisdom') > 12
 
 
     def r4040_condition(self):
@@ -134,19 +134,19 @@ class GiantskLogicGenerated:
 
 
     def r4048_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'wisdom') < 13
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'wisdom') < 13
 
 
     def r4049_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'wisdom') > 12
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'wisdom') > 12
 
 
     def r4050_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'wisdom') < 13
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'wisdom') < 13
 
 
     def r4051_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'wisdom') > 12
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'wisdom') > 12
 
 
     def r4052_condition(self):
@@ -155,33 +155,33 @@ class GiantskLogicGenerated:
 
 
     def r4054_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'intelligence') > 12 and \
-               self.state_manager.characters_manager.get_property('protagonist', 'wisdom') < 13
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'intelligence') > 12 and \
+               self.state_manager.characters_manager.get_property('protagonist_character_name', 'wisdom') < 13
 
 
     def r4055_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'wisdom') > 12
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'wisdom') > 12
 
 
     def r64293_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'wisdom') < 13 and \
-               self.state_manager.characters_manager.get_property('protagonist', 'intelligence') < 13
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'wisdom') < 13 and \
+               self.state_manager.characters_manager.get_property('protagonist_character_name', 'intelligence') < 13
 
 
     def r4056_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'wisdom') < 13
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'wisdom') < 13
 
 
     def r4057_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'wisdom') > 12
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'wisdom') > 12
 
 
     def r4058_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'wisdom') < 13
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'wisdom') < 13
 
 
     def r4059_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'wisdom') > 12
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'wisdom') > 12
 
 
     def r4060_condition(self):
@@ -190,27 +190,27 @@ class GiantskLogicGenerated:
 
 
     def r4062_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'intelligence') > 15
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'intelligence') > 15
 
 
     def r4063_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'intelligence') < 16
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'intelligence') < 16
 
 
     def r4064_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'wisdom') < 13
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'wisdom') < 13
 
 
     def r4065_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'wisdom') > 12
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'wisdom') > 12
 
 
     def r4066_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'wisdom') < 13
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'wisdom') < 13
 
 
     def r4067_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'wisdom') > 12
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'wisdom') > 12
 
 
     def r4068_condition(self):
@@ -223,19 +223,19 @@ class GiantskLogicGenerated:
 
 
     def r4072_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'wisdom') < 13
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'wisdom') < 13
 
 
     def r4073_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'wisdom') > 12
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'wisdom') > 12
 
 
     def r4074_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'wisdom') < 13
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'wisdom') < 13
 
 
     def r4075_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'wisdom') > 12
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'wisdom') > 12
 
 
     def r4076_condition(self):
@@ -252,19 +252,19 @@ class GiantskLogicGenerated:
 
 
     def r4081_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'wisdom') < 13
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'wisdom') < 13
 
 
     def r4082_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'wisdom') > 12
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'wisdom') > 12
 
 
     def r4083_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'wisdom') < 13
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'wisdom') < 13
 
 
     def r4084_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'wisdom') > 12
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'wisdom') > 12
 
 
     def r4085_condition(self):
@@ -285,19 +285,19 @@ class GiantskLogicGenerated:
 
 
     def r4089_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'wisdom') < 13
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'wisdom') < 13
 
 
     def r4090_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'wisdom') > 12
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'wisdom') > 12
 
 
     def r4091_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'wisdom') < 13
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'wisdom') < 13
 
 
     def r4092_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'wisdom') > 12
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'wisdom') > 12
 
 
     def r4093_condition(self):

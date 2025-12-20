@@ -21,13 +21,13 @@ class DhallLogicGenerated:
     def r831_action(self):
         self.state_manager.gain_experience('party', 250)
         self.state_manager.world_manager.set_vaxis_betrayed(2)
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'good', -3, 'globalevil_dhall_2')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'good', -3, 'globalevil_dhall_2')
         self.state_manager.journal_manager.update_journal('39469')
         #$%.register('39469', 'Да, я обещал Ваксису, что не выдам его тленным, ну и что? Я рассказал писарю Дхоллу о Ваксисе и его маскировке. Дхолл должен послать других тленных схватить Ваксиса. %$#')
 
 
     def r843_action(self):
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'good', -1, 'globalevil_dhall_1')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'good', -1, 'globalevil_dhall_1')
 
 
     def j39460_s9_r5069_action(self):
@@ -56,7 +56,7 @@ class DhallLogicGenerated:
 
 
     def r936_action(self):
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'good', 1, 'globalgood_dhall_1')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'good', 1, 'globalgood_dhall_1')
 
 
     def r953_action(self):
@@ -99,11 +99,11 @@ class DhallLogicGenerated:
 
 
     def r6051_action(self):
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'good', 1, 'globalgood_dhall_2')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'good', 1, 'globalgood_dhall_2')
 
 
     def r6053_action(self):
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'good', -1, 'globalevil_dhall_3')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'good', -1, 'globalevil_dhall_3')
 
 
     def r5070_condition(self):
@@ -119,12 +119,12 @@ class DhallLogicGenerated:
 
 
     def r5073_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'intelligence') > 12 and \
-               self.state_manager.characters_manager.get_property('protagonist', 'wisdom') < 13
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'intelligence') > 12 and \
+               self.state_manager.characters_manager.get_property('protagonist_character_name', 'wisdom') < 13
 
 
     def r5074_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'wisdom') > 12
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'wisdom') > 12
 
 
     def r6064_condition(self):
@@ -190,19 +190,19 @@ class DhallLogicGenerated:
 
 
     def r892_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'wisdom') > 11
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'wisdom') > 11
 
 
     def r898_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'wisdom') > 11
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'wisdom') > 11
 
 
     def r910_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'wisdom') > 11
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'wisdom') > 11
 
 
     def r931_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'intelligence') > 11
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'intelligence') > 11
 
 
     def r942_condition(self):
@@ -250,12 +250,12 @@ class DhallLogicGenerated:
 
 
     def r5078_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'intelligence') > 12 and \
-               self.state_manager.characters_manager.get_property('protagonist', 'wisdom') < 13
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'intelligence') > 12 and \
+               self.state_manager.characters_manager.get_property('protagonist_character_name', 'wisdom') < 13
 
 
     def r5079_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'wisdom') > 12
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'wisdom') > 12
 
 
     def r5081_condition(self):
@@ -263,12 +263,12 @@ class DhallLogicGenerated:
 
 
     def r5082_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'intelligence') > 12 and \
-               self.state_manager.characters_manager.get_property('protagonist', 'wisdom') < 13
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'intelligence') > 12 and \
+               self.state_manager.characters_manager.get_property('protagonist_character_name', 'wisdom') < 13
 
 
     def r5083_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'wisdom') > 12
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'wisdom') > 12
 
 
     def r6032_condition(self):

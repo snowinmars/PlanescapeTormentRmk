@@ -10,58 +10,54 @@
 ## https://www.renpy.org/doc/html/screen_special.html#main-menu
 
 screen main_menu():
-
-    ## Этот тег гарантирует, что любой другой экран с тем же тегом будет
-    ## заменять этот.
     tag menu
 
-    add gui.main_menu_background
-
-    ## Эта пустая рамка затеняет главное меню.
     frame:
-        style "main_menu_frame"
+        background Transform('gui/startbg.png', fit='cover')
+        xfill True
+        yfill True
 
-    ## Оператор use включает отображение другого экрана в данном. Актуальное
-    ## содержание главного меню находится на экране навигации.
-    use navigation
+        imagebutton:
+            xpos 802
+            ypos 330
+            xsize 315 # 631
+            ysize 107 # 215
+            idle Transform('gui/newlife_idle.png', fit='cover')
+            hover Transform('gui/newlife_hover.png', fit='cover')
+            action Start()
 
-    if gui.show_name:
+        imagebutton:
+            xpos 715
+            ypos 525
+            xsize 186 # 373
+            ysize 297 # 594
+            idle Transform('gui/load_idle.png', fit='cover')
+            hover Transform('gui/load_hover.png', fit='cover')
+            action ShowMenu("preferences_load")
 
-        vbox:
-            style "main_menu_vbox"
+        imagebutton:
+            xpos 1015
+            ypos 525
+            xsize 186 # 373
+            ysize 297 # 594
+            idle Transform('gui/load_last_idle.png', fit='cover')
+            hover Transform('gui/load_last_hover.png', fit='cover')
+            action Continue()
 
-            text "[config.name!t]":
-                style "main_menu_title"
+        imagebutton:
+            xpos 1130
+            ypos 710
+            xsize 230 # 460
+            ysize 256 # 502
+            idle Transform('gui/settings_idle.png', fit='cover')
+            hover Transform('gui/settings_hover.png', fit='cover')
+            action ShowMenu("preferences")
 
-            text "[config.version]":
-                style "main_menu_version"
-
-
-style main_menu_frame is empty
-style main_menu_vbox is vbox
-style main_menu_text is gui_text
-style main_menu_title is main_menu_text
-style main_menu_version is main_menu_text
-
-style main_menu_frame:
-    xsize 420
-    yfill True
-    padding (6, 6)
-
-    background "gui/overlay/main_menu.png"
-
-style main_menu_vbox:
-    xalign 1.0
-    xoffset -30
-    xmaximum 1200
-    yalign 1.0
-    yoffset -30
-
-style main_menu_text:
-    properties gui.text_properties("main_menu", accent=True)
-
-style main_menu_title:
-    properties gui.text_properties("title")
-
-style main_menu_version:
-    properties gui.text_properties("version")
+        imagebutton:
+            xpos 550
+            ypos 710
+            xsize 254 # 508
+            ysize 256 # 513
+            idle Transform('gui/exit_idle.png', fit='cover')
+            hover Transform('gui/exit_hover.png', fit='cover')
+            action Quit(confirm=not main_menu)

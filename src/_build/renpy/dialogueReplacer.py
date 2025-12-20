@@ -406,7 +406,7 @@ class DialogueReplacer:
 
         self.add_replacement('ChangeAIScript("pcmorte",DEFAULT) JoinPartyEx(TRUE)', 'self.state_manager.world_manager.set_in_party_morte(True)')
         self.add_replacement('JoinPartyEx(TRUE)', 'self.state_manager.world_manager.set_in_party_morte(True)')
-        self.add_replacement('SetNamelessDisguise(ZOMBIE)', "self.state_manager.characters_manager.set_property('protagonist', 'looks_like', 'zombie')")
+        self.add_replacement('SetNamelessDisguise(ZOMBIE)', "self.state_manager.characters_manager.set_property('protagonist_character_name', 'looks_like', 'zombie')")
 
         self.add_replacement('NumInParty(1)', 'return self.state_manager.count_in_party() == 0')
         self.add_replacement('NumInPartyGT(1)', 'return self.state_manager.count_in_party() > 0')

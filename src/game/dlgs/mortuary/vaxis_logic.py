@@ -4,7 +4,7 @@ class VaxisLogicGenerated:
 
 
     def r454_action(self):
-        self.state_manager.characters_manager.modify_property('protagonist', 'law', -1)
+        self.state_manager.characters_manager.modify_property('protagonist_character_name', 'law', -1)
         self.state_manager.world_manager.set_zombie_chaotic(True)
 
 
@@ -28,11 +28,11 @@ class VaxisLogicGenerated:
 
 
     def r472_action(self):
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'law', -1, 'globalchaotic_vaxis_1')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'law', -1, 'globalchaotic_vaxis_1')
 
 
     def r473_action(self):
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'good', -1, 'globalevil_vaxis_1')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'good', -1, 'globalevil_vaxis_1')
 
 
     def r475_action(self):
@@ -43,12 +43,12 @@ class VaxisLogicGenerated:
 
 
     def r476_action(self):
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'good', -1, 'globalevil_vaxis_2')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'good', -1, 'globalevil_vaxis_2')
 
 
     def r477_action(self):
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'law', 1, 'globallawful_vaxis_1')
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'good', 1, 'globalgood_vaxis_1')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'law', 1, 'globallawful_vaxis_1')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'good', 1, 'globalgood_vaxis_1')
 
 
     def j64513_s5_r480_action(self):
@@ -79,89 +79,89 @@ class VaxisLogicGenerated:
 
 
     def r487_action(self):
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'law', -1, 'globalchaotic_vaxis_1')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'law', -1, 'globalchaotic_vaxis_1')
 
 
     def r488_action(self):
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'good', -1, 'globalevil_vaxis_1')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'good', -1, 'globalevil_vaxis_1')
 
 
     def r493_action(self):
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'law', -1, 'globalchaotic_vaxis_2')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'law', -1, 'globalchaotic_vaxis_2')
 
 
     def r494_action(self):
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'law', -1, 'globalchaotic_vaxis_2')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'law', -1, 'globalchaotic_vaxis_2')
 
 
     def r1306_action(self):
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'good', -1, 'globalevil_vaxis_1')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'good', -1, 'globalevil_vaxis_1')
 
 
     def r1348_action(self):
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'good', -1, 'globalevil_vaxis_1')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'good', -1, 'globalevil_vaxis_1')
 
 
     def r1359_action(self):
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'law', -1, 'globalchaotic_vaxis_1')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'law', -1, 'globalchaotic_vaxis_1')
 
 
     def r1360_action(self):
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'law', -1, 'globalchaotic_vaxis_1')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'law', -1, 'globalchaotic_vaxis_1')
 
 
     def r1361_action(self):
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'law', -1, 'globalchaotic_vaxis_1')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'law', -1, 'globalchaotic_vaxis_1')
 
 
     def r4364_action(self):
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'good', -1, 'globalevil_vaxis_1')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'good', -1, 'globalevil_vaxis_1')
 
 
     def r4365_action(self):
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'good', -1, 'globalevil_vaxis_1')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'good', -1, 'globalevil_vaxis_1')
 
 
     def r4370_action(self):
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'law', -1, 'globalchaotic_vaxis_1')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'law', -1, 'globalchaotic_vaxis_1')
 
 
     def r4371_action(self):
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'law', -1, 'globalchaotic_vaxis_1')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'law', -1, 'globalchaotic_vaxis_1')
 
 
     def r4381_action(self):
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'law', 1, 'globallawful_vaxis_2')
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'good', 1, 'globalgood_vaxis_2')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'law', 1, 'globallawful_vaxis_2')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'good', 1, 'globalgood_vaxis_2')
 
 
     def r4387_action(self):
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'good', -1, 'globalevil_vaxis_1')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'good', -1, 'globalevil_vaxis_1')
 
 
     def r4388_action(self):
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'good', -1, 'globalevil_vaxis_1')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'good', -1, 'globalevil_vaxis_1')
 
 
     def r4391_action(self):
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'law', 1, 'globallawful_vaxis_2')
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'good', 1, 'globalgood_vaxis_2')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'law', 1, 'globallawful_vaxis_2')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'good', 1, 'globalgood_vaxis_2')
 
 
     def r4397_action(self):
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'good', -1, 'globalevil_vaxis_1')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'good', -1, 'globalevil_vaxis_1')
 
 
     def r4398_action(self):
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'good', -1, 'globalevil_vaxis_1')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'good', -1, 'globalevil_vaxis_1')
 
 
     def r4401_action(self):
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'good', -1, 'globalevil_vaxis_1')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'good', -1, 'globalevil_vaxis_1')
 
 
     def r4402_action(self):
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'good', -1, 'globalevil_vaxis_1')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'good', -1, 'globalevil_vaxis_1')
 
 
     def r4405_action(self):
@@ -186,23 +186,23 @@ class VaxisLogicGenerated:
 
 
     def r4428_action(self):
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'good', -1, 'globalevil_vaxis_1')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'good', -1, 'globalevil_vaxis_1')
 
 
     def r4429_action(self):
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'good', -1, 'globalevil_vaxis_1')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'good', -1, 'globalevil_vaxis_1')
 
 
     def r4434_action(self):
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'law', -1, 'globalchaotic_vaxis_5')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'law', -1, 'globalchaotic_vaxis_5')
 
 
     def r4442_action(self):
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'good', -1, 'globalevil_vaxis_1')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'good', -1, 'globalevil_vaxis_1')
 
 
     def r4443_action(self):
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'good', -1, 'globalevil_vaxis_1')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'good', -1, 'globalevil_vaxis_1')
 
 
     def r4447_action(self):
@@ -214,11 +214,11 @@ class VaxisLogicGenerated:
 
 
     def r4456_action(self):
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'good', -1, 'globalevil_vaxis_1')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'good', -1, 'globalevil_vaxis_1')
 
 
     def r4457_action(self):
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'good', -1, 'globalevil_vaxis_1')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'good', -1, 'globalevil_vaxis_1')
 
 
     def j64517_s30_r4469_action(self):
@@ -238,23 +238,23 @@ class VaxisLogicGenerated:
 
 
     def r4474_action(self):
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'good', 1, 'globalgood_vaxis_3')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'good', 1, 'globalgood_vaxis_3')
 
 
     def r4477_action(self):
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'good', -1, 'globalevil_vaxis_1')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'good', -1, 'globalevil_vaxis_1')
 
 
     def r4478_action(self):
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'good', -1, 'globalevil_vaxis_1')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'good', -1, 'globalevil_vaxis_1')
 
 
     def r4484_action(self):
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'good', -1, 'globalevil_vaxis_1')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'good', -1, 'globalevil_vaxis_1')
 
 
     def r4485_action(self):
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'good', -1, 'globalevil_vaxis_1')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'good', -1, 'globalevil_vaxis_1')
 
 
     def r4672_action(self):
@@ -262,11 +262,11 @@ class VaxisLogicGenerated:
 
 
     def r4489_action(self):
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'good', -1, 'globalevil_vaxis_1')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'good', -1, 'globalevil_vaxis_1')
 
 
     def r4490_action(self):
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'good', -1, 'globalevil_vaxis_1')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'good', -1, 'globalevil_vaxis_1')
 
 
     def r4494_action(self):
@@ -284,12 +284,12 @@ class VaxisLogicGenerated:
 
 
     def r4498_action(self):
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'good', -1, 'globalevil_vaxis_1')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'good', -1, 'globalevil_vaxis_1')
         self.state_manager.world_manager.set_vaxis_orders(False)
 
 
     def r4499_action(self):
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'good', -1, 'globalevil_vaxis_1')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'good', -1, 'globalevil_vaxis_1')
         self.state_manager.world_manager.set_vaxis_orders(False)
 
 
@@ -310,7 +310,7 @@ class VaxisLogicGenerated:
 
 
     def r4504_action(self):
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'law', -1, 'globalchaotic_vaxis_6')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'law', -1, 'globalchaotic_vaxis_6')
 
 
     def j64519_s37_r4506_action(self):
@@ -441,7 +441,7 @@ class VaxisLogicGenerated:
     def r4630_action(self):
         #$% FadeToColor([20.0],0) %$#
         #$% Wait(1) %$#
-        self.state_manager.characters_manager.set_property('protagonist', 'looks_like', 'zombie')
+        self.state_manager.characters_manager.set_property('protagonist_character_name', 'looks_like', 'zombie')
         #$% Wait(2) %$#
         #$% FadeFromColor([20.0],0) %$#
         self.state_manager.gain_experience('party', 500)
@@ -455,7 +455,7 @@ class VaxisLogicGenerated:
     def r4632_action(self):
         #$% FadeToColor([20.0],0) %$#
         #$% Wait(1) %$#
-        self.state_manager.characters_manager.set_property('protagonist', 'looks_like', 'zombie')
+        self.state_manager.characters_manager.set_property('protagonist_character_name', 'looks_like', 'zombie')
         #$% Wait(2) %$#
         #$% FadeFromColor([20.0],0) %$#
 
@@ -463,7 +463,7 @@ class VaxisLogicGenerated:
     def r64533_action(self):
         #$% FadeToColor([20.0],0) %$#
         #$% Wait(1) %$#
-        self.state_manager.characters_manager.set_property('protagonist', 'looks_like', 'zombie')
+        self.state_manager.characters_manager.set_property('protagonist_character_name', 'looks_like', 'zombie')
         #$% Wait(2) %$#
         #$% FadeFromColor([20.0],0) %$#
 
@@ -485,7 +485,7 @@ class VaxisLogicGenerated:
 
 
     def r4651_action(self):
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'good', -1, 'globalevil_vaxis_1')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'good', -1, 'globalevil_vaxis_1')
 
 
     def r4661_action(self):
@@ -530,7 +530,7 @@ class VaxisLogicGenerated:
 
 
     def r472_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'intelligence') > 11
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'intelligence') > 11
 
 
     def r484_condition(self):
@@ -538,7 +538,7 @@ class VaxisLogicGenerated:
 
 
     def r487_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'intelligence') > 11
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'intelligence') > 11
 
 
     def r491_condition(self):
@@ -558,48 +558,48 @@ class VaxisLogicGenerated:
 
 
     def r495_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'charisma') > 10
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'charisma') > 10
 
 
     def r496_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'charisma') < 11
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'charisma') < 11
 
 
     def r1306_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'strength') < 12
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'strength') < 12
 
 
     def r1348_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'strength') > 11
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'strength') > 11
 
 
     def r1359_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'intelligence') > 11
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'intelligence') > 11
 
 
     def r1360_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'charisma') > 11 and \
-               self.state_manager.characters_manager.get_property('protagonist', 'intelligence') < 12
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'charisma') > 11 and \
+               self.state_manager.characters_manager.get_property('protagonist_character_name', 'intelligence') < 12
 
 
     def r1361_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'intelligence') > 11
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'intelligence') > 11
 
 
     def r4362_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'charisma') > 10
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'charisma') > 10
 
 
     def r4363_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'charisma') < 11
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'charisma') < 11
 
 
     def r4364_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'strength') < 12
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'strength') < 12
 
 
     def r4365_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'strength') > 11
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'strength') > 11
 
 
     def r4368_condition(self):
@@ -607,12 +607,12 @@ class VaxisLogicGenerated:
 
 
     def r4370_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'charisma') > 11 and \
-               self.state_manager.characters_manager.get_property('protagonist', 'intelligence') < 12
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'charisma') > 11 and \
+               self.state_manager.characters_manager.get_property('protagonist_character_name', 'intelligence') < 12
 
 
     def r4371_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'intelligence') > 11
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'intelligence') > 11
 
 
     def r4379_condition(self):
@@ -624,51 +624,51 @@ class VaxisLogicGenerated:
 
 
     def r4385_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'charisma') > 10
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'charisma') > 10
 
 
     def r4386_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'charisma') < 11
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'charisma') < 11
 
 
     def r4387_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'strength') < 12
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'strength') < 12
 
 
     def r4388_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'strength') > 11
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'strength') > 11
 
 
     def r4395_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'charisma') > 10
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'charisma') > 10
 
 
     def r4396_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'charisma') < 11
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'charisma') < 11
 
 
     def r4397_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'strength') < 12
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'strength') < 12
 
 
     def r4398_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'strength') > 11
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'strength') > 11
 
 
     def r4401_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'strength') < 12
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'strength') < 12
 
 
     def r4402_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'strength') > 11
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'strength') > 11
 
 
     def r4409_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'charisma') > 10
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'charisma') > 10
 
 
     def r4410_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'charisma') < 11
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'charisma') < 11
 
 
     def r4426_condition(self):
@@ -692,33 +692,33 @@ class VaxisLogicGenerated:
 
 
     def r4440_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'charisma') > 10
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'charisma') > 10
 
 
     def r4441_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'charisma') < 11
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'charisma') < 11
 
 
     def r4442_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'strength') < 12
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'strength') < 12
 
 
     def r4443_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'strength') > 11
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'strength') > 11
 
 
     def r4446_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'charisma') < 12 and \
-               self.state_manager.characters_manager.get_property('protagonist', 'intelligence') < 12
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'charisma') < 12 and \
+               self.state_manager.characters_manager.get_property('protagonist_character_name', 'intelligence') < 12
 
 
     def r4447_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'charisma') > 11 and \
-               self.state_manager.characters_manager.get_property('protagonist', 'intelligence') < 12
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'charisma') > 11 and \
+               self.state_manager.characters_manager.get_property('protagonist_character_name', 'intelligence') < 12
 
 
     def r4448_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'intelligence') > 11
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'intelligence') > 11
 
 
     def r4452_condition(self):
@@ -726,19 +726,19 @@ class VaxisLogicGenerated:
 
 
     def r4454_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'charisma') > 10
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'charisma') > 10
 
 
     def r4455_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'charisma') < 11
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'charisma') < 11
 
 
     def r4456_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'strength') < 12
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'strength') < 12
 
 
     def r4457_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'strength') > 11
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'strength') > 11
 
 
     def r4469_condition(self):
@@ -746,47 +746,47 @@ class VaxisLogicGenerated:
 
 
     def r4474_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'charisma') > 10
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'charisma') > 10
 
 
     def r4475_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'charisma') > 10
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'charisma') > 10
 
 
     def r4476_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'charisma') < 11
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'charisma') < 11
 
 
     def r4477_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'strength') < 12
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'strength') < 12
 
 
     def r4478_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'strength') > 11
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'strength') > 11
 
 
     def r4482_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'charisma') > 10
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'charisma') > 10
 
 
     def r4483_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'charisma') < 11
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'charisma') < 11
 
 
     def r4484_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'strength') < 12
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'strength') < 12
 
 
     def r4485_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'strength') > 11
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'strength') > 11
 
 
     def r4489_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'strength') < 12
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'strength') < 12
 
 
     def r4490_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'strength') > 11
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'strength') > 11
 
 
     def r4494_condition(self):
@@ -794,19 +794,19 @@ class VaxisLogicGenerated:
 
 
     def r4496_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'charisma') > 10
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'charisma') > 10
 
 
     def r4497_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'charisma') < 11
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'charisma') < 11
 
 
     def r4498_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'strength') < 12
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'strength') < 12
 
 
     def r4499_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'strength') > 11
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'strength') > 11
 
 
     def r4502_condition(self):
@@ -1006,50 +1006,50 @@ class VaxisLogicGenerated:
 
 
     def r4604_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'intelligence') > 12 and \
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'intelligence') > 12 and \
                self.state_manager.world_manager.get_appearance() != 1
 
 
     def r4609_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'intelligence') > 12 and \
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'intelligence') > 12 and \
                self.state_manager.world_manager.get_appearance() != 1
 
 
     def r4610_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'charisma') < 10
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'charisma') < 10
 
 
     def r4611_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'charisma') < 10
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'charisma') < 10
 
 
     def r4612_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'charisma') > 9
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'charisma') > 9
 
 
     def r4613_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'charisma') > 9
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'charisma') > 9
 
 
     def r4615_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'intelligence') > 12 and \
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'intelligence') > 12 and \
                self.state_manager.world_manager.get_appearance() != 1
 
 
     def r4616_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'charisma') < 13
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'charisma') < 13
 
 
     def r4617_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'charisma') < 13
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'charisma') < 13
 
 
     def r4618_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'charisma') > 12
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'charisma') > 12
 
 
     def r4674_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'charisma') > 12
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'charisma') > 12
 
 
     def r4620_condition(self):
@@ -1100,11 +1100,11 @@ class VaxisLogicGenerated:
 
 
     def r4664_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'charisma') > 10
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'charisma') > 10
 
 
     def r4665_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'charisma') < 11
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'charisma') < 11
 
 
 class VaxisLogic(VaxisLogicGenerated):
