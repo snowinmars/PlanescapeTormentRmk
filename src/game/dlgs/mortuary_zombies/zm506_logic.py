@@ -10,12 +10,12 @@ class Zm506LogicGenerated:
 
 
     def r45484_action(self):
-        self.state_manager.characters_manager.modify_property('protagonist', 'law', -1)
+        self.state_manager.characters_manager.modify_property('protagonist_character_name', 'law', -1)
         self.state_manager.world_manager.set_zombie_chaotic(True)
 
 
     def r45502_action(self):
-        self.state_manager.characters_manager.modify_property('protagonist', 'law', -1)
+        self.state_manager.characters_manager.modify_property('protagonist_character_name', 'law', -1)
         self.state_manager.world_manager.set_zombie_chaotic(True)
 
 

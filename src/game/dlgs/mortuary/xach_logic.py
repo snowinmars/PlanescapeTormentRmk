@@ -4,7 +4,7 @@ class XachLogicGenerated:
 
 
     def r502_action(self):
-        self.state_manager.characters_manager.modify_property('protagonist', 'law', -1)
+        self.state_manager.characters_manager.modify_property('protagonist_character_name', 'law', -1)
         self.state_manager.world_manager.set_zombie_chaotic(True)
 
 
@@ -62,12 +62,12 @@ class XachLogicGenerated:
 
 
     def r508_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'intelligence') > 16 and \
-               self.state_manager.characters_manager.get_property('protagonist', 'charisma') < 17
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'intelligence') > 16 and \
+               self.state_manager.characters_manager.get_property('protagonist_character_name', 'charisma') < 17
 
 
     def r63307_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'charisma') > 16
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'charisma') > 16
 
 
     def r506_condition(self):
@@ -75,12 +75,12 @@ class XachLogicGenerated:
 
 
     def r510_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'intelligence') > 16 and \
-               self.state_manager.characters_manager.get_property('protagonist', 'charisma') < 17
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'intelligence') > 16 and \
+               self.state_manager.characters_manager.get_property('protagonist_character_name', 'charisma') < 17
 
 
     def r63308_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'charisma') > 16
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'charisma') > 16
 
 
     def r521_condition(self):
@@ -104,7 +104,7 @@ class XachLogicGenerated:
 
 
     def r524_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'intelligence') > 12
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'intelligence') > 12
 
 
     def r527_condition(self):
@@ -144,7 +144,7 @@ class XachLogicGenerated:
 
 
     def r538_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'intelligence') > 15
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'intelligence') > 15
 
 
     def r546_condition(self):
@@ -156,7 +156,7 @@ class XachLogicGenerated:
 
 
     def r542_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'intelligence') > 17
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'intelligence') > 17
 
 
     def r544_condition(self):
@@ -168,7 +168,7 @@ class XachLogicGenerated:
 
 
     def r548_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'intelligence') > 15
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'intelligence') > 15
 
 
     def r549_condition(self):

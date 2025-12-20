@@ -4,7 +4,7 @@ class Zm782LogicGenerated:
 
 
 #     def r24716_action(self): # unused
-#         #$% ?.attack('Protagonist').by('ZM782') %$#
+#         #$% ?.attack('protagonist_character_name').by('ZM782') %$#
 #         return
 
 

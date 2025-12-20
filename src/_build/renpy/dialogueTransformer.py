@@ -81,9 +81,9 @@ class DialogueTransformer:
             exanded_amount = _expand_amount(amount)
 
             if expanded_prop in ('good', 'evil'):
-                return f"self.state_manager.characters_manager.modify_property_once('protagonist', 'good', {exanded_amount}, '{global_id.lower()}')"
+                return f"self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'good', {exanded_amount}, '{global_id.lower()}')"
             elif expanded_prop in ('law', 'chaotic'):
-                return f"self.state_manager.characters_manager.modify_property_once('protagonist', 'law', {exanded_amount}, '{global_id.lower()}')"
+                return f"self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'law', {exanded_amount}, '{global_id.lower()}')"
             elif expanded_prop == 'know_dustmen':
                 return f"self.state_manager.world_manager.inc_once_know_dustmen('{global_id.lower()}')"
             elif expanded_prop == 'morte_mimir':
@@ -101,9 +101,9 @@ class DialogueTransformer:
             exanded_amount = _expand_amount(amount)
 
             if expanded_prop in ('good', 'evil'):
-                return f"self.state_manager.characters_manager.modify_property('protagonist', 'good', {exanded_amount})"
+                return f"self.state_manager.characters_manager.modify_property('protagonist_character_name', 'good', {exanded_amount})"
             elif expanded_prop in ('law', 'chaotic'):
-                return f"self.state_manager.characters_manager.modify_property('protagonist', 'law', {exanded_amount})"
+                return f"self.state_manager.characters_manager.modify_property('protagonist_character_name', 'law', {exanded_amount})"
 
             raise Exception(f'Unknown match {INCREMENT_REGEX}\n  {match.groups()}')
 
@@ -271,7 +271,7 @@ class DialogueTransformer:
 
 def _expand_character(char):
     if char.lower() == 'player1':
-        return 'protagonist'
+        return 'protagonist_character_name'
     return char.lower()
 
 

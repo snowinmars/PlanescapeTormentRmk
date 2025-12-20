@@ -295,7 +295,7 @@ class AreaLogicTest(LogicTest):
 
 
     def test_r3501_action(self):
-        who_experience = 'protagonist'
+        who_experience = 'protagonist_character_name'
         prop_experience = 'experience'
         delta_experience = 250
         embalm_key_quest_before = 1
@@ -1501,12 +1501,12 @@ class AreaLogic:
 
 
     def r708_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'intelligence') > 11 and \\
-               self.state_manager.characters_manager.get_property('protagonist', 'charisma') < 11
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'intelligence') > 11 and \\
+               self.state_manager.characters_manager.get_property('protagonist_character_name', 'charisma') < 11
 
 
     def r709_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'charisma') > 10
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'charisma') > 10
 """.strip() + '\n'
 test_result14_tests = """
 import unittest
@@ -1550,10 +1550,10 @@ class AreaLogicTest(LogicTest):
 
 
     def test_r708_condition(self):
-        who_intelligence = 'protagonist'
+        who_intelligence = 'protagonist_character_name'
         prop_intelligence = 'intelligence'
         delta_intelligence = 11
-        who_charisma = 'protagonist'
+        who_charisma = 'protagonist_character_name'
         prop_charisma = 'charisma'
         delta_charisma = 11
 
@@ -1569,7 +1569,7 @@ class AreaLogicTest(LogicTest):
 
 
     def test_r709_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'charisma'
         value = 10
 
@@ -2160,7 +2160,7 @@ class AreaLogicTest(LogicTest):
         choke_after_once = 2 * 1
         self.state_manager.world_manager.set_choke(choke_before)
         self.state_manager.world_manager.set_dead_area(False)
-        who_experience = 'protagonist'
+        who_experience = 'protagonist_character_name'
         prop_experience = 'experience'
         delta_experience = 15
 
@@ -2199,7 +2199,7 @@ class AreaLogicTest(LogicTest):
         choke_after_once = 2 * 1
         self.state_manager.world_manager.set_choke(choke_before)
         self.state_manager.world_manager.set_dead_area(False)
-        who_experience = 'protagonist'
+        who_experience = 'protagonist_character_name'
         prop_experience = 'experience'
         delta_experience = 15
 
@@ -2343,7 +2343,7 @@ class AreaLogicTest(LogicTest):
 
 
     def test_r66914_action(self):
-        who_experience = 'protagonist'
+        who_experience = 'protagonist_character_name'
         prop_experience = 'experience'
         delta_experience = 1000
         self.state_manager.world_manager.set_deionarra_raise_dead(False)

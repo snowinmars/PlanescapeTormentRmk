@@ -32,9 +32,13 @@ class CharactersManagerTest(LogicTest):
 
 
     def test_get_property_when_all_ok(self):
-        name='char'
+        name='protagonist_character_name'
+        current_class='Mage'
+        race='Human'
+        sex='Male'
         max_health=31
         current_health=31
+        ac=10
         good=3
         law=5
         lore=7
@@ -48,8 +52,8 @@ class CharactersManagerTest(LogicTest):
         looks_like='looks_like'
 
         char = Character(
-            name=name,
-            max_health=max_health, current_health=current_health, \
+            name=name, current_class=current_class, race=race, sex=sex, \
+            max_health=max_health, current_health=current_health, ac=ac, \
             good=good, law=law, \
             lore=lore, experience=experience, \
             strength=strength, dexterity=dexterity, intelligence=intelligence, constitution=constitution, wisdom=wisdom, charisma=charisma,
@@ -59,8 +63,12 @@ class CharactersManagerTest(LogicTest):
         self.characters_manager.add_character(char)
 
         self.assertEqual(self.characters_manager.get_property(name, 'name'), name)
+        self.assertEqual(self.characters_manager.get_property(name, 'current_class'), current_class)
+        self.assertEqual(self.characters_manager.get_property(name, 'race'), race)
+        self.assertEqual(self.characters_manager.get_property(name, 'sex'), sex)
         self.assertEqual(self.characters_manager.get_property(name, 'max_health'), max_health)
         self.assertEqual(self.characters_manager.get_property(name, 'current_health'), current_health)
+        self.assertEqual(self.characters_manager.get_property(name, 'ac'), ac)
         self.assertEqual(self.characters_manager.get_property(name, 'good'), good)
         self.assertEqual(self.characters_manager.get_property(name, 'law'), law)
         self.assertEqual(self.characters_manager.get_property(name, 'lore'), lore)
@@ -289,9 +297,13 @@ class CharactersManagerTest(LogicTest):
 
 
     def test_get_all_properties_when_all_ok(self):
-        name='char'
+        name='protagonist_character_name'
+        current_class='Mage'
+        race='Human'
+        sex='Male'
         max_health=31
         current_health=31
+        ac=10
         good=3
         law=5
         lore=7
@@ -305,8 +317,8 @@ class CharactersManagerTest(LogicTest):
         looks_like='looks_like'
 
         char = Character(
-            name=name,
-            max_health=max_health, current_health=current_health, \
+            name=name, current_class=current_class, race=race, sex=sex, \
+            max_health=max_health, current_health=current_health, ac=ac, \
             good=good, law=law, \
             lore=lore, experience=experience, \
             strength=strength, dexterity=dexterity, intelligence=intelligence, constitution=constitution, wisdom=wisdom, charisma=charisma,
@@ -317,8 +329,10 @@ class CharactersManagerTest(LogicTest):
         props = self.characters_manager.get_all_properties(char.name)
 
         self.assertEqual(props['name'], name)
+        self.assertEqual(props['current_class'], current_class)
         self.assertEqual(props['max_health'], max_health)
         self.assertEqual(props['current_health'], current_health)
+        self.assertEqual(props['ac'], ac)
         self.assertEqual(props['good'], good)
         self.assertEqual(props['law'], law)
         self.assertEqual(props['lore'], lore)
@@ -359,8 +373,12 @@ class CharactersManagerTest(LogicTest):
 
 
 def _create_char(name):
+    current_class='mage'
+    race='human'
+    sex='man'
     max_health=31
     current_health=31
+    ac=10
     good=3
     law=5
     lore=7
@@ -374,8 +392,8 @@ def _create_char(name):
     looks_like='looks_like'
 
     return Character(
-        name=name,
-        max_health=max_health, current_health=current_health, \
+        name=name, current_class=current_class, race=race, sex=sex, \
+        max_health=max_health, current_health=current_health, ac=ac, \
         good=good, law=law, \
         lore=lore, experience=experience, \
         strength=strength, dexterity=dexterity, intelligence=intelligence, constitution=constitution, wisdom=wisdom, charisma=charisma,

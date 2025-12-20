@@ -4,7 +4,7 @@ class Zm396LogicGenerated:
 
 
     def r34932_action(self):
-        self.state_manager.characters_manager.modify_property('protagonist', 'law', -1)
+        self.state_manager.characters_manager.modify_property('protagonist_character_name', 'law', -1)
         self.state_manager.world_manager.set_zombie_chaotic(True)
 
 
@@ -17,7 +17,7 @@ class Zm396LogicGenerated:
 
 
     def r45112_action(self):
-        self.state_manager.characters_manager.modify_property('protagonist', 'law', -1)
+        self.state_manager.characters_manager.modify_property('protagonist_character_name', 'law', -1)
         self.state_manager.world_manager.set_zombie_chaotic(True)
 
 

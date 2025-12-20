@@ -4,7 +4,7 @@ class Zm79LogicGenerated:
 
 
     def r34943_action(self):
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'law', -1, 'globalzombie_chaotic')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'law', -1, 'globalzombie_chaotic')
 
 
     def r34946_action(self):

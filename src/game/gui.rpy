@@ -242,8 +242,8 @@ define config.thumbnail_width = 384
 define config.thumbnail_height = 216
 
 ## Количество колонок и рядов в таблице слотов.
-define gui.file_slot_cols = 3
-define gui.file_slot_rows = 2
+define gui.file_slot_cols = 1
+define gui.file_slot_rows = 32
 
 
 ## Позиционирование и Интервалы ################################################
@@ -467,8 +467,8 @@ init python:
         gui.quick_button_text_size = 30
 
         ## Местоположение кнопок слотов.
-        gui.file_slot_cols = 2
-        gui.file_slot_rows = 2
+        gui.file_slot_cols = 1
+        gui.file_slot_rows = 32
 
         ## Режим NVL.
         gui.nvl_height = 255

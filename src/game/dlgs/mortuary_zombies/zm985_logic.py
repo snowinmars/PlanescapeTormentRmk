@@ -4,27 +4,27 @@ class Zm985LogicGenerated:
 
 
     def r45516_action(self):
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'law', -1, 'globalchaotic_zm985_1')
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'good', -1, 'globalevil_zm985_1')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'law', -1, 'globalchaotic_zm985_1')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'good', -1, 'globalevil_zm985_1')
         #$% ?.play_sound('SPE_11') %$#
         #$% SetAnimState(Myself,ANIM_MIMEDIE) %$#
 
 
     def r45517_action(self):
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'law', -1, 'globalchaotic_zm985_1')
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'good', -1, 'globalevil_zm985_1')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'law', -1, 'globalchaotic_zm985_1')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'good', -1, 'globalevil_zm985_1')
         #$% ?.play_sound('SPE_11') %$#
         #$% SetAnimState(Myself,ANIM_MIMEDIE) %$#
 
 
     def r45518_action(self):
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'law', 1, 'globallawful_zm985_1')
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'good', 1, 'globalgood_zm985_1')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'law', 1, 'globallawful_zm985_1')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'good', 1, 'globalgood_zm985_1')
 
 
     def r45519_action(self):
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'law', 1, 'globallawful_zm985_1')
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'good', 1, 'globalgood_zm985_1')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'law', 1, 'globallawful_zm985_1')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'good', 1, 'globalgood_zm985_1')
 
 
     def s3_action(self):
@@ -43,7 +43,7 @@ class Zm985LogicGenerated:
 
 
     def r45532_action(self):
-        self.state_manager.characters_manager.modify_property('protagonist', 'law', -1)
+        self.state_manager.characters_manager.modify_property('protagonist_character_name', 'law', -1)
         self.state_manager.world_manager.set_zombie_chaotic(True)
 
 

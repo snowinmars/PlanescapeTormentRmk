@@ -18,7 +18,7 @@ class GiantskLogicGeneratedTest(LogicTest):
 
 
     def test_r293_action(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'law'
         delta = -1
 
@@ -30,7 +30,7 @@ class GiantskLogicGeneratedTest(LogicTest):
 
 
     def test_r1165_action(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'law'
         delta = -1
 
@@ -53,7 +53,7 @@ class GiantskLogicGeneratedTest(LogicTest):
         giant_skeleton_enchant_after = 1
         giant_skeleton_enchant_after_once = 1
         self.state_manager.world_manager.set_giant_skeleton_enchant(giant_skeleton_enchant_before)
-        who_experience = 'protagonist'
+        who_experience = 'protagonist_character_name'
         prop_experience = 'experience'
         delta_experience = 500
 
@@ -123,7 +123,7 @@ class GiantskLogicGeneratedTest(LogicTest):
 
 
     def test_r4096_action(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'experience'
         delta = 800
 
@@ -142,7 +142,7 @@ class GiantskLogicGeneratedTest(LogicTest):
 
 
     def test_r4098_action(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'experience'
         delta = 800
 
@@ -236,7 +236,7 @@ class GiantskLogicGeneratedTest(LogicTest):
 
 
     def test_r3998_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'wisdom'
         value = 13
 
@@ -249,7 +249,7 @@ class GiantskLogicGeneratedTest(LogicTest):
 
 
     def test_r3999_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'wisdom'
         value = 12
 
@@ -262,7 +262,7 @@ class GiantskLogicGeneratedTest(LogicTest):
 
 
     def test_r4000_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'wisdom'
         value = 13
 
@@ -275,7 +275,7 @@ class GiantskLogicGeneratedTest(LogicTest):
 
 
     def test_r4001_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'wisdom'
         value = 12
 
@@ -315,7 +315,7 @@ class GiantskLogicGeneratedTest(LogicTest):
 
 
     def test_r4036_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'wisdom'
         value = 13
 
@@ -328,7 +328,7 @@ class GiantskLogicGeneratedTest(LogicTest):
 
 
     def test_r4037_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'wisdom'
         value = 12
 
@@ -341,7 +341,7 @@ class GiantskLogicGeneratedTest(LogicTest):
 
 
     def test_r4038_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'wisdom'
         value = 13
 
@@ -354,7 +354,7 @@ class GiantskLogicGeneratedTest(LogicTest):
 
 
     def test_r4039_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'wisdom'
         value = 12
 
@@ -379,7 +379,7 @@ class GiantskLogicGeneratedTest(LogicTest):
 
 
     def test_r4048_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'wisdom'
         value = 13
 
@@ -392,7 +392,7 @@ class GiantskLogicGeneratedTest(LogicTest):
 
 
     def test_r4049_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'wisdom'
         value = 12
 
@@ -405,7 +405,7 @@ class GiantskLogicGeneratedTest(LogicTest):
 
 
     def test_r4050_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'wisdom'
         value = 13
 
@@ -418,7 +418,7 @@ class GiantskLogicGeneratedTest(LogicTest):
 
 
     def test_r4051_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'wisdom'
         value = 12
 
@@ -443,10 +443,10 @@ class GiantskLogicGeneratedTest(LogicTest):
 
 
     def test_r4054_condition(self):
-        who_intelligence = 'protagonist'
+        who_intelligence = 'protagonist_character_name'
         prop_intelligence = 'intelligence'
         delta_intelligence = 12
-        who_wisdom = 'protagonist'
+        who_wisdom = 'protagonist_character_name'
         prop_wisdom = 'wisdom'
         delta_wisdom = 13
 
@@ -462,7 +462,7 @@ class GiantskLogicGeneratedTest(LogicTest):
 
 
     def test_r4055_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'wisdom'
         value = 12
 
@@ -475,10 +475,10 @@ class GiantskLogicGeneratedTest(LogicTest):
 
 
     def test_r64293_condition(self):
-        who_wisdom = 'protagonist'
+        who_wisdom = 'protagonist_character_name'
         prop_wisdom = 'wisdom'
         delta_wisdom = 13
-        who_intelligence = 'protagonist'
+        who_intelligence = 'protagonist_character_name'
         prop_intelligence = 'intelligence'
         delta_intelligence = 13
 
@@ -494,7 +494,7 @@ class GiantskLogicGeneratedTest(LogicTest):
 
 
     def test_r4056_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'wisdom'
         value = 13
 
@@ -507,7 +507,7 @@ class GiantskLogicGeneratedTest(LogicTest):
 
 
     def test_r4057_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'wisdom'
         value = 12
 
@@ -520,7 +520,7 @@ class GiantskLogicGeneratedTest(LogicTest):
 
 
     def test_r4058_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'wisdom'
         value = 13
 
@@ -533,7 +533,7 @@ class GiantskLogicGeneratedTest(LogicTest):
 
 
     def test_r4059_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'wisdom'
         value = 12
 
@@ -558,7 +558,7 @@ class GiantskLogicGeneratedTest(LogicTest):
 
 
     def test_r4062_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'intelligence'
         value = 15
 
@@ -571,7 +571,7 @@ class GiantskLogicGeneratedTest(LogicTest):
 
 
     def test_r4063_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'intelligence'
         value = 16
 
@@ -584,7 +584,7 @@ class GiantskLogicGeneratedTest(LogicTest):
 
 
     def test_r4064_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'wisdom'
         value = 13
 
@@ -597,7 +597,7 @@ class GiantskLogicGeneratedTest(LogicTest):
 
 
     def test_r4065_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'wisdom'
         value = 12
 
@@ -610,7 +610,7 @@ class GiantskLogicGeneratedTest(LogicTest):
 
 
     def test_r4066_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'wisdom'
         value = 13
 
@@ -623,7 +623,7 @@ class GiantskLogicGeneratedTest(LogicTest):
 
 
     def test_r4067_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'wisdom'
         value = 12
 
@@ -655,7 +655,7 @@ class GiantskLogicGeneratedTest(LogicTest):
 
 
     def test_r4072_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'wisdom'
         value = 13
 
@@ -668,7 +668,7 @@ class GiantskLogicGeneratedTest(LogicTest):
 
 
     def test_r4073_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'wisdom'
         value = 12
 
@@ -681,7 +681,7 @@ class GiantskLogicGeneratedTest(LogicTest):
 
 
     def test_r4074_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'wisdom'
         value = 13
 
@@ -694,7 +694,7 @@ class GiantskLogicGeneratedTest(LogicTest):
 
 
     def test_r4075_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'wisdom'
         value = 12
 
@@ -735,7 +735,7 @@ class GiantskLogicGeneratedTest(LogicTest):
 
 
     def test_r4081_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'wisdom'
         value = 13
 
@@ -748,7 +748,7 @@ class GiantskLogicGeneratedTest(LogicTest):
 
 
     def test_r4082_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'wisdom'
         value = 12
 
@@ -761,7 +761,7 @@ class GiantskLogicGeneratedTest(LogicTest):
 
 
     def test_r4083_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'wisdom'
         value = 13
 
@@ -774,7 +774,7 @@ class GiantskLogicGeneratedTest(LogicTest):
 
 
     def test_r4084_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'wisdom'
         value = 12
 
@@ -822,7 +822,7 @@ class GiantskLogicGeneratedTest(LogicTest):
 
 
     def test_r4089_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'wisdom'
         value = 13
 
@@ -835,7 +835,7 @@ class GiantskLogicGeneratedTest(LogicTest):
 
 
     def test_r4090_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'wisdom'
         value = 12
 
@@ -848,7 +848,7 @@ class GiantskLogicGeneratedTest(LogicTest):
 
 
     def test_r4091_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'wisdom'
         value = 13
 
@@ -861,7 +861,7 @@ class GiantskLogicGeneratedTest(LogicTest):
 
 
     def test_r4092_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'wisdom'
         value = 12
 

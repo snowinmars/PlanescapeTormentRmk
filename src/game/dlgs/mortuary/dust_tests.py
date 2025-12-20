@@ -43,7 +43,7 @@ class DustLogicGeneratedTest(LogicTest):
         adahn_after = 1
         adahn_after_once = 2 * 1
         self.state_manager.world_manager.set_adahn(adahn_before)
-        who_law = 'protagonist'
+        who_law = 'protagonist_character_name'
         prop_law = 'law'
         delta_law = -1
 
@@ -68,7 +68,7 @@ class DustLogicGeneratedTest(LogicTest):
         adahn_after = 1
         adahn_after_once = 2 * 1
         self.state_manager.world_manager.set_adahn(adahn_before)
-        who_law = 'protagonist'
+        who_law = 'protagonist_character_name'
         prop_law = 'law'
         delta_law = -1
 
@@ -93,7 +93,7 @@ class DustLogicGeneratedTest(LogicTest):
         adahn_after = 1
         adahn_after_once = 2 * 1
         self.state_manager.world_manager.set_adahn(adahn_before)
-        who_law = 'protagonist'
+        who_law = 'protagonist_character_name'
         prop_law = 'law'
         delta_law = -1
 
@@ -118,7 +118,7 @@ class DustLogicGeneratedTest(LogicTest):
         adahn_after = 1
         adahn_after_once = 2 * 1
         self.state_manager.world_manager.set_adahn(adahn_before)
-        who_law = 'protagonist'
+        who_law = 'protagonist_character_name'
         prop_law = 'law'
         delta_law = -1
 
@@ -147,7 +147,7 @@ class DustLogicGeneratedTest(LogicTest):
 
     def test_r449_action(self):
         self.state_manager.world_manager.set_mortualy_alarmed(False)
-        who_law = 'protagonist'
+        who_law = 'protagonist_character_name'
         prop_law = 'law'
         delta_law = -1
 
@@ -200,7 +200,7 @@ class DustLogicGeneratedTest(LogicTest):
         choke_after_once = 2 * 1
         self.state_manager.world_manager.set_choke(choke_before)
         self.state_manager.world_manager.set_dead_dust(False)
-        who_experience = 'protagonist'
+        who_experience = 'protagonist_character_name'
         prop_experience = 'experience'
         delta_experience = 15
 
@@ -239,7 +239,7 @@ class DustLogicGeneratedTest(LogicTest):
         choke_after_once = 2 * 1
         self.state_manager.world_manager.set_choke(choke_before)
         self.state_manager.world_manager.set_dead_dust(False)
-        who_experience = 'protagonist'
+        who_experience = 'protagonist_character_name'
         prop_experience = 'experience'
         delta_experience = 15
 
@@ -267,7 +267,7 @@ class DustLogicGeneratedTest(LogicTest):
 
     def test_r3882_action(self):
         self.state_manager.world_manager.set_dead_dust(False)
-        who_experience = 'protagonist'
+        who_experience = 'protagonist_character_name'
         prop_experience = 'experience'
         delta_experience = 250
 
@@ -299,7 +299,7 @@ class DustLogicGeneratedTest(LogicTest):
 
 
     def test_r327_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'dexterity'
         value = 13
 
@@ -312,7 +312,7 @@ class DustLogicGeneratedTest(LogicTest):
 
 
     def test_r328_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'dexterity'
         value = 12
 
@@ -325,7 +325,7 @@ class DustLogicGeneratedTest(LogicTest):
 
 
     def test_r334_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'intelligence'
         value = 11
 
@@ -338,7 +338,7 @@ class DustLogicGeneratedTest(LogicTest):
 
 
     def test_r344_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'dexterity'
         value = 13
 
@@ -351,7 +351,7 @@ class DustLogicGeneratedTest(LogicTest):
 
 
     def test_r3887_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'dexterity'
         value = 12
 
@@ -364,7 +364,7 @@ class DustLogicGeneratedTest(LogicTest):
 
 
     def test_r358_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'dexterity'
         value = 13
 
@@ -377,7 +377,7 @@ class DustLogicGeneratedTest(LogicTest):
 
 
     def test_r3885_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'dexterity'
         value = 12
 
@@ -483,7 +483,7 @@ class DustLogicGeneratedTest(LogicTest):
 
 
     def test_r33189_condition(self):
-        who_intelligence = 'protagonist'
+        who_intelligence = 'protagonist_character_name'
         prop_intelligence = 'intelligence'
         delta_intelligence = 12
 
@@ -499,7 +499,7 @@ class DustLogicGeneratedTest(LogicTest):
 
 
     def test_r33190_condition(self):
-        who_intelligence = 'protagonist'
+        who_intelligence = 'protagonist_character_name'
         prop_intelligence = 'intelligence'
         delta_intelligence = 12
 
@@ -539,7 +539,7 @@ class DustLogicGeneratedTest(LogicTest):
 
 
     def test_r373_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'dexterity'
         value = 13
 
@@ -552,7 +552,7 @@ class DustLogicGeneratedTest(LogicTest):
 
 
     def test_r1335_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'dexterity'
         value = 12
 
@@ -565,7 +565,7 @@ class DustLogicGeneratedTest(LogicTest):
 
 
     def test_r378_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'intelligence'
         value = 11
 
@@ -594,7 +594,7 @@ class DustLogicGeneratedTest(LogicTest):
 
 
     def test_r3904_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'charisma'
         value = 13
 
@@ -607,7 +607,7 @@ class DustLogicGeneratedTest(LogicTest):
 
 
     def test_r3905_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'charisma'
         value = 12
 
@@ -636,7 +636,7 @@ class DustLogicGeneratedTest(LogicTest):
 
 
     def test_r3907_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'charisma'
         value = 13
 
@@ -649,7 +649,7 @@ class DustLogicGeneratedTest(LogicTest):
 
 
     def test_r3908_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'charisma'
         value = 12
 
@@ -662,7 +662,7 @@ class DustLogicGeneratedTest(LogicTest):
 
 
     def test_r413_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'charisma'
         value = 12
 
@@ -675,7 +675,7 @@ class DustLogicGeneratedTest(LogicTest):
 
 
     def test_r3918_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'charisma'
         value = 13
 
@@ -688,7 +688,7 @@ class DustLogicGeneratedTest(LogicTest):
 
 
     def test_r3919_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'charisma'
         value = 13
 
@@ -701,7 +701,7 @@ class DustLogicGeneratedTest(LogicTest):
 
 
     def test_r3920_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'charisma'
         value = 12
 
@@ -728,7 +728,7 @@ class DustLogicGeneratedTest(LogicTest):
 
 
     def test_r436_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'charisma'
         value = 12
 
@@ -741,7 +741,7 @@ class DustLogicGeneratedTest(LogicTest):
 
 
     def test_r3909_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'charisma'
         value = 13
 
@@ -754,7 +754,7 @@ class DustLogicGeneratedTest(LogicTest):
 
 
     def test_r3910_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'charisma'
         value = 13
 
@@ -767,7 +767,7 @@ class DustLogicGeneratedTest(LogicTest):
 
 
     def test_r3911_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'charisma'
         value = 12
 
@@ -780,7 +780,7 @@ class DustLogicGeneratedTest(LogicTest):
 
 
     def test_r445_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'charisma'
         value = 12
 
@@ -793,7 +793,7 @@ class DustLogicGeneratedTest(LogicTest):
 
 
     def test_r446_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'charisma'
         value = 13
 
@@ -806,7 +806,7 @@ class DustLogicGeneratedTest(LogicTest):
 
 
     def test_r3912_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'charisma'
         value = 13
 
@@ -819,7 +819,7 @@ class DustLogicGeneratedTest(LogicTest):
 
 
     def test_r3913_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'charisma'
         value = 12
 
@@ -905,7 +905,7 @@ class DustLogicGeneratedTest(LogicTest):
 
 
     def test_r3914_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'dexterity'
         value = 13
 
@@ -918,7 +918,7 @@ class DustLogicGeneratedTest(LogicTest):
 
 
     def test_r3915_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'dexterity'
         value = 12
 
@@ -931,7 +931,7 @@ class DustLogicGeneratedTest(LogicTest):
 
 
     def test_r3898_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'charisma'
         value = 12
 
@@ -944,7 +944,7 @@ class DustLogicGeneratedTest(LogicTest):
 
 
     def test_r3899_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'charisma'
         value = 13
 
@@ -957,7 +957,7 @@ class DustLogicGeneratedTest(LogicTest):
 
 
     def test_r3900_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'charisma'
         value = 13
 
@@ -970,7 +970,7 @@ class DustLogicGeneratedTest(LogicTest):
 
 
     def test_r3901_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'charisma'
         value = 12
 

@@ -20,7 +20,7 @@ class Zm506LogicGeneratedTest(LogicTest):
     def test_r45480_action(self):
         self.state_manager.world_manager.set_has_506_thread(False)
         self.state_manager.world_manager.set_has_needle(False)
-        who_experience = 'protagonist'
+        who_experience = 'protagonist_character_name'
         prop_experience = 'experience'
         delta_experience = 100
 
@@ -44,7 +44,7 @@ class Zm506LogicGeneratedTest(LogicTest):
 
 
     def test_r45484_action(self):
-        who_law = 'protagonist'
+        who_law = 'protagonist_character_name'
         prop_law = 'law'
         delta_law = -1
         self.state_manager.world_manager.set_zombie_chaotic(False)
@@ -66,7 +66,7 @@ class Zm506LogicGeneratedTest(LogicTest):
 
 
     def test_r45502_action(self):
-        who_law = 'protagonist'
+        who_law = 'protagonist_character_name'
         prop_law = 'law'
         delta_law = -1
         self.state_manager.world_manager.set_zombie_chaotic(False)

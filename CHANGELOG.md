@@ -1,5 +1,10 @@
 # Change log
 
+## Version 0.04
+- Implement narrat-like approach to dialogues
+- Redo some UI: menus, journal, character screens
+- Improve translations (russian, english)
+
 ## Version 0.03
 
 - Translate from None(russian) to russian and english

@@ -1,22 +1,19 @@
 screen journal_screen(get_notes):
     $ notes = get_notes()
 
-    on 'show' action Show('narrat')
-    on 'hide' action Hide('narrat')
+    use narrat()
 
     key "j" action Hide("journal_screen")
     key "mouseup_3" action Hide("journal_screen")
 
     modal False
 
-    # Цветной фон для области журнала
     frame:
         xalign 0
         yalign 0
         xsize 1325
         ysize 1025
-        background Transform('bg/journal.png', fit='cover')
-        # background "#ff000099"
+        background Transform('gui/journal.png', fit='cover')
 
         vbox:
             spacing 0
@@ -31,10 +28,11 @@ screen journal_screen(get_notes):
                     xpos 715
                     ypos 50
                     xsize 150
-                    background "#8b77ca"
-                    hover_background "#8b77ca"
+                    ysize 15
+                    background Transform('gui/button.png', fit='cover')
+                    hover_background Transform('gui/button_hover.png', fit='cover')
                     action NullAction()
-                    text _("Задания{#journal_screen_quests_button}"):
+                    text _("journal_screen_quests_button"):
                         size 20
                         color "#dddddd"
                         hover_color "#dddddd"
@@ -47,7 +45,7 @@ screen journal_screen(get_notes):
                     background "#5036d4"
                     hover_background "#734df5"
                     action NullAction()
-                    text _("Дневник{#journal_screen_journal_button}"):
+                    text _("journal_screen_journal_button"):
                         size 20
                         color "#dddddd"
                         hover_color "#eeeeee"
@@ -60,7 +58,7 @@ screen journal_screen(get_notes):
                     background "#8b77ca"
                     hover_background "#8b77ca"
                     action NullAction()
-                    text _("Существа{#journal_screen_bestiary_button}"):
+                    text _("journal_screen_bestiary_button"):
                         size 20
                         color "#dddddd"
                         hover_color "#dddddd"
@@ -68,18 +66,13 @@ screen journal_screen(get_notes):
 
                 button:
                     xpos 1240
-                    ypos 50
-                    xsize 25
-                    background "#5036d4"
-                    hover_background "#734df5"
+                    ypos 45
+                    xsize 50
+                    ysize 50
+                    background Transform('gui/close.png', fit='cover')
+                    hover_background Transform('gui/close_hover.png', fit='cover')
                     action Hide("journal_screen")
-                    text "X":
-                        size 20
-                        color "#dddddd"
-                        hover_color "#eeeeee"
-                        xalign 0.5
 
-        # Прокручиваемая область с заметками (занимает всё оставшееся пространство)
         viewport:
             scrollbars "vertical"
             mousewheel True

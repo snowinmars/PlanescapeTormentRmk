@@ -38,6 +38,9 @@ class CharactersStore():
             x[0],
             Character(
                 x[1]['name'],
+                x[1]['current_class'],
+                x[1]['race'],
+                x[1]['sex'],
                 x[1]['max_health'],
                 x[1]['current_health'],
                 x[1]['ac'],

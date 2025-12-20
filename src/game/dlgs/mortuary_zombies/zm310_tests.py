@@ -32,7 +32,7 @@ class Zm310LogicGeneratedTest(LogicTest):
 
 
     def test_r6499_action(self):
-        who_law = 'protagonist'
+        who_law = 'protagonist_character_name'
         prop_law = 'law'
         delta_law = -1
         self.state_manager.world_manager.set_zombie_chaotic(False)

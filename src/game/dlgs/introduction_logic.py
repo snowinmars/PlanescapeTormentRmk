@@ -5,9 +5,9 @@ class IntroductionLogic:
 
 
     def setup_new_life_as_mage(self):
-        self.state_manager.characters_manager.set_property('protagonist', 'intelligence', 16)
-        self.state_manager.characters_manager.set_property('protagonist', 'wisdom', 17)
-        self.state_manager.characters_manager.set_property('protagonist', 'charisma', 15)
+        self.state_manager.characters_manager.set_property('protagonist_character_name', 'intelligence', 16)
+        self.state_manager.characters_manager.set_property('protagonist_character_name', 'wisdom', 17)
+        self.state_manager.characters_manager.set_property('protagonist_character_name', 'charisma', 15)
 
 
     def setup_as_highlvl(self):

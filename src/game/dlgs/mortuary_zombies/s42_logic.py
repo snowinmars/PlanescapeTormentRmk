@@ -4,11 +4,11 @@ class S42LogicGenerated:
 
 
     def r6613_action(self):
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'law', -1, 'globalskeleton_chaotic')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'law', -1, 'globalskeleton_chaotic')
 
 
     def r6614_action(self):
-        self.state_manager.characters_manager.modify_property('protagonist', 'law', -1)
+        self.state_manager.characters_manager.modify_property('protagonist_character_name', 'law', -1)
         self.state_manager.world_manager.set_skeleton_chaotic(True)
 
 
@@ -119,7 +119,7 @@ class S42LogicGenerated:
 
 
     def r6626_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'wisdom') > 12 and \
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'wisdom') > 12 and \
                not self.state_manager.world_manager.get_42_secret()
 
 
@@ -190,7 +190,7 @@ class S42LogicGenerated:
 
 
     def r6654_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'wisdom') > 12 and \
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'wisdom') > 12 and \
                not self.state_manager.world_manager.get_42_secret()
 
 

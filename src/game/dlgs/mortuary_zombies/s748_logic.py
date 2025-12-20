@@ -4,12 +4,12 @@ class S748LogicGenerated:
 
 
     def r35384_action(self):
-        self.state_manager.characters_manager.modify_property('protagonist', 'law', -1)
+        self.state_manager.characters_manager.modify_property('protagonist_character_name', 'law', -1)
         self.state_manager.world_manager.set_skeleton_chaotic(True)
 
 
     def r35408_action(self):
-        self.state_manager.characters_manager.modify_property('protagonist', 'law', -1)
+        self.state_manager.characters_manager.modify_property('protagonist_character_name', 'law', -1)
         self.state_manager.world_manager.set_skeleton_chaotic(True)
 
 
@@ -92,7 +92,7 @@ class S748LogicGenerated:
                self.state_manager.world_manager.get_in_party_morte() and \
                self.state_manager.world_manager.get_morte_skel_mort_quip2() and \
                not self.state_manager.world_manager.get_has_prybar() and \
-               self.state_manager.characters_manager.get_property('protagonist', 'strength') < 13
+               self.state_manager.characters_manager.get_property('protagonist_character_name', 'strength') < 13
 
 
     def r35450_condition(self):
@@ -100,7 +100,7 @@ class S748LogicGenerated:
                self.state_manager.world_manager.get_in_party_morte() and \
                self.state_manager.world_manager.get_morte_skel_mort_quip2() and \
                not self.state_manager.world_manager.get_has_prybar() and \
-               self.state_manager.characters_manager.get_property('protagonist', 'strength') > 12
+               self.state_manager.characters_manager.get_property('protagonist_character_name', 'strength') > 12
 
 
     def r35451_condition(self):
@@ -114,14 +114,14 @@ class S748LogicGenerated:
         return not self.state_manager.world_manager.get_in_party_morte() and \
                self.state_manager.world_manager.get_skeleton_examine() and \
                not self.state_manager.world_manager.get_has_prybar() and \
-               self.state_manager.characters_manager.get_property('protagonist', 'strength') < 13
+               self.state_manager.characters_manager.get_property('protagonist_character_name', 'strength') < 13
 
 
     def r35453_condition(self):
         return not self.state_manager.world_manager.get_in_party_morte() and \
                self.state_manager.world_manager.get_skeleton_examine() and \
                not self.state_manager.world_manager.get_has_prybar() and \
-               self.state_manager.characters_manager.get_property('protagonist', 'strength') > 12
+               self.state_manager.characters_manager.get_property('protagonist_character_name', 'strength') > 12
 
 
     def r35454_condition(self):
@@ -186,14 +186,14 @@ class S748LogicGenerated:
         return self.state_manager.world_manager.get_in_party_morte() and \
                self.state_manager.world_manager.get_morte_skel_mort_quip2() and \
                not self.state_manager.world_manager.get_has_prybar() and \
-               self.state_manager.characters_manager.get_property('protagonist', 'strength') < 13
+               self.state_manager.characters_manager.get_property('protagonist_character_name', 'strength') < 13
 
 
     def r35440_condition(self):
         return self.state_manager.world_manager.get_in_party_morte() and \
                self.state_manager.world_manager.get_morte_skel_mort_quip2() and \
                not self.state_manager.world_manager.get_has_prybar() and \
-               self.state_manager.characters_manager.get_property('protagonist', 'strength') > 12
+               self.state_manager.characters_manager.get_property('protagonist_character_name', 'strength') > 12
 
 
     def r35441_condition(self):
@@ -205,13 +205,13 @@ class S748LogicGenerated:
     def r35442_condition(self):
         return not self.state_manager.world_manager.get_in_party_morte() and \
                not self.state_manager.world_manager.get_has_prybar() and \
-               self.state_manager.characters_manager.get_property('protagonist', 'strength') < 13
+               self.state_manager.characters_manager.get_property('protagonist_character_name', 'strength') < 13
 
 
     def r35443_condition(self):
         return not self.state_manager.world_manager.get_in_party_morte() and \
                not self.state_manager.world_manager.get_has_prybar() and \
-               self.state_manager.characters_manager.get_property('protagonist', 'strength') > 12
+               self.state_manager.characters_manager.get_property('protagonist_character_name', 'strength') > 12
 
 
     def r35444_condition(self):
@@ -234,19 +234,19 @@ class S748LogicGenerated:
 
 
     def r35423_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'intelligence') > 12 and \
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'intelligence') > 12 and \
                self.state_manager.world_manager.get_in_party_morte() and \
                not self.state_manager.world_manager.get_morte_skel_mort_quip()
 
 
     def r35424_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'intelligence') > 12 and \
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'intelligence') > 12 and \
                not self.state_manager.world_manager.get_in_party_morte() and \
                not self.state_manager.world_manager.get_morte_skel_mort_quip()
 
 
     def r35425_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'intelligence') > 12 and \
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'intelligence') > 12 and \
                self.state_manager.world_manager.get_morte_skel_mort_quip()
 
 

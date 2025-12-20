@@ -68,13 +68,13 @@ class NpcMenuItem(MenuItem):
         party_radius = 40
         hexagon = generate_hexagon_positions(x, y, party_radius)
         return {
-            'morte' : { 'x': x, 'y': y } ,
-            'annah' : hexagon[0],
-            'dakkon': hexagon[1],
-            'grace' : hexagon[2],
-            'nordom': hexagon[3],
-            'ignus' : hexagon[4],
-            'vhail' : hexagon[5],
+            'morte_character_name' : { 'x': x, 'y': y } ,
+            'annah_character_name' : hexagon[0],
+            'dakkon_character_name': hexagon[1],
+            'grace_character_name' : hexagon[2],
+            'nordom_character_name': hexagon[3],
+            'ignus_character_name' : hexagon[4],
+            'vhail_character_name' : hexagon[5],
         }
 
 

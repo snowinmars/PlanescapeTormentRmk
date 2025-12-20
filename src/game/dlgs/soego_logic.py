@@ -14,11 +14,11 @@ class SoegoLogicGenerated:
 
 
     def r1439_action(self):
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'law', -1, 'globalchaotic_soego_1')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'law', -1, 'globalchaotic_soego_1')
 
 
     def r1448_action(self):
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'law', -1, 'globalchaotic_soego_2')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'law', -1, 'globalchaotic_soego_2')
 
 
     def j63982_s3_r1450_action(self):
@@ -50,7 +50,7 @@ class SoegoLogicGenerated:
 
 
     def r1466_action(self):
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'law', -1, 'globalchaotic_soego_2')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'law', -1, 'globalchaotic_soego_2')
 
 
     def r1478_action(self):
@@ -62,8 +62,8 @@ class SoegoLogicGenerated:
 
 
     def r1482_action(self):
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'law', -1, 'globalchaotic_soego_3')
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'good', -1, 'globalevil_soego_1')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'law', -1, 'globalchaotic_soego_3')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'good', -1, 'globalevil_soego_1')
 
 
     def r1490_action(self):
@@ -80,7 +80,7 @@ class SoegoLogicGenerated:
 
 
     def r1509_action(self):
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'law', -1, 'globalchaotic_soego_2')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'law', -1, 'globalchaotic_soego_2')
 
 
     def r1525_action(self):
@@ -121,7 +121,7 @@ class SoegoLogicGenerated:
 
 
     def r4809_action(self):
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'good', 1, 'globalgood_soego_1')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'good', 1, 'globalgood_soego_1')
 
 
     def r4810_action(self):
@@ -136,7 +136,7 @@ class SoegoLogicGenerated:
     def r4837_action(self):
         self.state_manager.gain_experience('party', 250)
         self.state_manager.world_manager.set_vaxis_betrayed(1)
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'good', -3, 'globalevil_dhall_2')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'good', -3, 'globalevil_dhall_2')
 
 
     def r4861_action(self):
@@ -156,7 +156,7 @@ class SoegoLogicGenerated:
 
 
     def r4864_action(self):
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'good', 1, 'globalgood_soego_2')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'good', 1, 'globalgood_soego_2')
 
 
     def j63982_s38_r66706_action(self):
@@ -178,13 +178,13 @@ class SoegoLogicGenerated:
 
 
     def r4926_action(self):
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'law', 1, 'globallawful_soego_1')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'law', 1, 'globallawful_soego_1')
 
 
     def r4931_action(self):
         self.state_manager.world_manager.set_soego_adahn(True)
         self.state_manager.world_manager.inc_adahn()
-        self.state_manager.characters_manager.modify_property('protagonist', 'law', -1)
+        self.state_manager.characters_manager.modify_property('protagonist_character_name', 'law', -1)
 
 
     def r4961_action(self):
@@ -198,7 +198,7 @@ class SoegoLogicGenerated:
     def r4967_action(self):
         self.state_manager.world_manager.set_soego_adahn(True)
         self.state_manager.world_manager.inc_adahn()
-        self.state_manager.characters_manager.modify_property('protagonist', 'law', -1)
+        self.state_manager.characters_manager.modify_property('protagonist_character_name', 'law', -1)
 
 
     def r4975_action(self):
@@ -315,8 +315,8 @@ class SoegoLogicGenerated:
 
     def r24206_action(self):
         self.state_manager.world_manager.set_soego_told(True)
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'law', -3, 'globalchaotic_hargrimm_7')
-        self.state_manager.characters_manager.modify_property_once('protagonist', 'good', -1, 'globalevil_hargrimm_3')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'law', -3, 'globalchaotic_hargrimm_7')
+        self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'good', -1, 'globalevil_hargrimm_3')
 
 
     def r21915_action(self):
@@ -422,51 +422,51 @@ class SoegoLogicGenerated:
 
 
     def r1440_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'charisma') > 10
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'charisma') > 10
 
 
     def r1441_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'charisma') < 11
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'charisma') < 11
 
 
     def r1446_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'charisma') > 10
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'charisma') > 10
 
 
     def r1451_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'dexterity') > 12
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'dexterity') > 12
 
 
     def r1452_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'dexterity') < 13
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'dexterity') < 13
 
 
     def r1458_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'dexterity') > 12
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'dexterity') > 12
 
 
     def r1459_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'dexterity') < 13
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'dexterity') < 13
 
 
     def r1464_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'charisma') > 10
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'charisma') > 10
 
 
     def r1469_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'charisma') > 10
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'charisma') > 10
 
 
     def r1470_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'charisma') < 11
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'charisma') < 11
 
 
     def r1471_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'dexterity') > 12
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'dexterity') > 12
 
 
     def r1472_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'dexterity') < 13
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'dexterity') < 13
 
 
     def r1478_condition(self):
@@ -478,11 +478,11 @@ class SoegoLogicGenerated:
 
 
     def r1483_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'dexterity') > 12
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'dexterity') > 12
 
 
     def r1484_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'dexterity') < 13
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'dexterity') < 13
 
 
     def r1487_condition(self):
@@ -494,7 +494,7 @@ class SoegoLogicGenerated:
 
 
     def r1495_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'charisma') > 10
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'charisma') > 10
 
 
     def r1496_condition(self):
@@ -506,39 +506,39 @@ class SoegoLogicGenerated:
 
 
     def r1506_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'charisma') > 10
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'charisma') > 10
 
 
     def r1512_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'charisma') > 10
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'charisma') > 10
 
 
     def r1513_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'charisma') < 11
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'charisma') < 11
 
 
     def r1514_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'dexterity') > 12
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'dexterity') > 12
 
 
     def r1515_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'dexterity') < 13
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'dexterity') < 13
 
 
     def r1518_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'charisma') > 10
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'charisma') > 10
 
 
     def r1520_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'charisma') < 11
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'charisma') < 11
 
 
     def r1521_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'dexterity') > 12
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'dexterity') > 12
 
 
     def r1522_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'dexterity') < 13
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'dexterity') < 13
 
 
     def r1530_condition(self):
@@ -550,12 +550,12 @@ class SoegoLogicGenerated:
 
 
     def r4805_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'charisma') > 10 and \
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'charisma') > 10 and \
                not self.state_manager.world_manager.get_gate_open()
 
 
     def r4806_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'charisma') < 11 and \
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'charisma') < 11 and \
                not self.state_manager.world_manager.get_gate_open()
 
 
@@ -567,12 +567,12 @@ class SoegoLogicGenerated:
 
 
     def r4810_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'wisdom') < 13 and \
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'wisdom') < 13 and \
                self.state_manager.world_manager.get_vaxis_exposes_soego()
 
 
     def r4811_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'wisdom') > 12 and \
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'wisdom') > 12 and \
                self.state_manager.world_manager.get_vaxis_exposes_soego()
 
 
@@ -649,7 +649,7 @@ class SoegoLogicGenerated:
 
 
     def r4879_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'intelligence') > 12
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'intelligence') > 12
 
 
     def r4882_condition(self):
@@ -693,23 +693,23 @@ class SoegoLogicGenerated:
 
 
     def r4910_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'charisma') > 10
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'charisma') > 10
 
 
     def r4912_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'dexterity') > 12
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'dexterity') > 12
 
 
     def r4913_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'dexterity') < 13
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'dexterity') < 13
 
 
     def r4917_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'charisma') > 10
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'charisma') > 10
 
 
     def r4921_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'intelligence') > 11
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'intelligence') > 11
 
 
     def r4929_condition(self):
@@ -721,29 +721,29 @@ class SoegoLogicGenerated:
 
 
     def r4931_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'intelligence') > 12 and \
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'intelligence') > 12 and \
                not self.state_manager.world_manager.get_soego_adahn()
 
 
     def r4932_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'intelligence') > 12 and \
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'intelligence') > 12 and \
                self.state_manager.world_manager.get_soego_adahn()
 
 
     def r4951_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'charisma') > 10
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'charisma') > 10
 
 
     def r4955_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'intelligence') > 11
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'intelligence') > 11
 
 
     def r4958_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'dexterity') > 12
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'dexterity') > 12
 
 
     def r4959_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'dexterity') < 13
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'dexterity') < 13
 
 
     def r4965_condition(self):
@@ -767,11 +767,11 @@ class SoegoLogicGenerated:
 
 
     def r4984_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'charisma') > 10
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'charisma') > 10
 
 
     def r4985_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'charisma') < 11
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'charisma') < 11
 
 
     def r4988_condition(self):
@@ -783,19 +783,19 @@ class SoegoLogicGenerated:
 
 
     def r4991_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'charisma') > 10
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'charisma') > 10
 
 
     def r4992_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'charisma') < 11
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'charisma') < 11
 
 
     def r4993_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'dexterity') > 12
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'dexterity') > 12
 
 
     def r4994_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'dexterity') < 13
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'dexterity') < 13
 
 
     def r21655_condition(self):
@@ -1026,19 +1026,19 @@ class SoegoLogicGenerated:
 
 
     def r66716_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'dexterity') < 13
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'dexterity') < 13
 
 
     def r66717_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'dexterity') > 12
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'dexterity') > 12
 
 
     def r66721_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'dexterity') < 13
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'dexterity') < 13
 
 
     def r66722_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'dexterity') > 12
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'dexterity') > 12
 
 
 class SoegoLogic(SoegoLogicGenerated):

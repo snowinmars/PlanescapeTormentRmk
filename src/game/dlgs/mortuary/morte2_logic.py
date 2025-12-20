@@ -41,7 +41,7 @@ class Morte2LogicGenerated:
 
 
     def r41163_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'intelligence') > 12
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'intelligence') > 12
 
 
     def r41181_condition(self):
@@ -149,7 +149,7 @@ class Morte2LogicGenerated:
 
 
     def r41239_condition(self):
-        return self.state_manager.characters_manager.get_property('protagonist', 'intelligence') > 12
+        return self.state_manager.characters_manager.get_property('protagonist_character_name', 'intelligence') > 12
 
 
 class Morte2Logic(Morte2LogicGenerated):

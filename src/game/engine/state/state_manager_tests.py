@@ -50,14 +50,14 @@ class StateManagerTest(LogicTest):
 
 
     def test_gain_experience_when_full_party(self):
-        protagonist = self.state_manager.characters_manager.get_character('protagonist')
-        morte = self.state_manager.characters_manager.get_character('morte')
-        annah = self.state_manager.characters_manager.get_character('annah')
-        ignus = self.state_manager.characters_manager.get_character('ignus')
-        grace = self.state_manager.characters_manager.get_character('grace')
-        dakkon = self.state_manager.characters_manager.get_character('dakkon')
-        nordom = self.state_manager.characters_manager.get_character('nordom')
-        vhail = self.state_manager.characters_manager.get_character('vhail')
+        protagonist = self.state_manager.characters_manager.get_character('protagonist_character_name')
+        morte = self.state_manager.characters_manager.get_character('morte_character_name')
+        annah = self.state_manager.characters_manager.get_character('annah_character_name')
+        ignus = self.state_manager.characters_manager.get_character('ignus_character_name')
+        grace = self.state_manager.characters_manager.get_character('grace_character_name')
+        dakkon = self.state_manager.characters_manager.get_character('dakkon_character_name')
+        nordom = self.state_manager.characters_manager.get_character('nordom_character_name')
+        vhail = self.state_manager.characters_manager.get_character('vhail_character_name')
         prop = 'experience'
         delta = 17
 
@@ -99,14 +99,14 @@ class StateManagerTest(LogicTest):
         self.assertEqual(vhail_before + delta, vhail_after)
 
     def test_gain_experience_when_empty_party(self):
-        protagonist = self.state_manager.characters_manager.get_character('protagonist')
-        morte = self.state_manager.characters_manager.get_character('morte')
-        annah = self.state_manager.characters_manager.get_character('annah')
-        ignus = self.state_manager.characters_manager.get_character('ignus')
-        grace = self.state_manager.characters_manager.get_character('grace')
-        dakkon = self.state_manager.characters_manager.get_character('dakkon')
-        nordom = self.state_manager.characters_manager.get_character('nordom')
-        vhail = self.state_manager.characters_manager.get_character('vhail')
+        protagonist = self.state_manager.characters_manager.get_character('protagonist_character_name')
+        morte = self.state_manager.characters_manager.get_character('morte_character_name')
+        annah = self.state_manager.characters_manager.get_character('annah_character_name')
+        ignus = self.state_manager.characters_manager.get_character('ignus_character_name')
+        grace = self.state_manager.characters_manager.get_character('grace_character_name')
+        dakkon = self.state_manager.characters_manager.get_character('dakkon_character_name')
+        nordom = self.state_manager.characters_manager.get_character('nordom_character_name')
+        vhail = self.state_manager.characters_manager.get_character('vhail_character_name')
         prop = 'experience'
         delta = 17
 
@@ -149,37 +149,37 @@ class StateManagerTest(LogicTest):
 
 
     def test_gain_experience_when_per_npc(self):
-        protagonist = self.state_manager.characters_manager.get_character('protagonist')
-        morte = self.state_manager.characters_manager.get_character('morte')
-        annah = self.state_manager.characters_manager.get_character('annah')
-        ignus = self.state_manager.characters_manager.get_character('ignus')
-        grace = self.state_manager.characters_manager.get_character('grace')
-        dakkon = self.state_manager.characters_manager.get_character('dakkon')
-        nordom = self.state_manager.characters_manager.get_character('nordom')
-        vhail = self.state_manager.characters_manager.get_character('vhail')
+        protagonist = self.state_manager.characters_manager.get_character('protagonist_character_name')
+        morte = self.state_manager.characters_manager.get_character('morte_character_name')
+        annah = self.state_manager.characters_manager.get_character('annah_character_name')
+        ignus = self.state_manager.characters_manager.get_character('ignus_character_name')
+        grace = self.state_manager.characters_manager.get_character('grace_character_name')
+        dakkon = self.state_manager.characters_manager.get_character('dakkon_character_name')
+        nordom = self.state_manager.characters_manager.get_character('nordom_character_name')
+        vhail = self.state_manager.characters_manager.get_character('vhail_character_name')
         prop = 'experience'
         delta = 17
 
         protagonist_before = self.state_manager.characters_manager.get_property(protagonist.name, prop)
-        self.state_manager.gain_experience('protagonist', delta)
+        self.state_manager.gain_experience('protagonist_character_name', delta)
         protagonist_after = self.state_manager.characters_manager.get_property(protagonist.name, prop)
         self.assertEqual(protagonist_before + delta, protagonist_after)
 
         morte_before = self.state_manager.characters_manager.get_property(morte.name, prop)
-        self.state_manager.gain_experience('morte', delta)
+        self.state_manager.gain_experience('morte_character_name', delta)
         morte_after = self.state_manager.characters_manager.get_property(morte.name, prop)
         self.assertEqual(protagonist_before + delta, protagonist_after)
         self.assertEqual(morte_before + delta, morte_after)
 
         annah_before = self.state_manager.characters_manager.get_property(annah.name, prop)
-        self.state_manager.gain_experience('annah', delta)
+        self.state_manager.gain_experience('annah_character_name', delta)
         annah_after = self.state_manager.characters_manager.get_property(annah.name, prop)
         self.assertEqual(protagonist_before + delta, protagonist_after)
         self.assertEqual(morte_before + delta, morte_after)
         self.assertEqual(annah_before + delta, annah_after)
 
         ignus_before = self.state_manager.characters_manager.get_property(ignus.name, prop)
-        self.state_manager.gain_experience('ignus', delta)
+        self.state_manager.gain_experience('ignus_character_name', delta)
         ignus_after = self.state_manager.characters_manager.get_property(ignus.name, prop)
         self.assertEqual(protagonist_before + delta, protagonist_after)
         self.assertEqual(morte_before + delta, morte_after)
@@ -187,7 +187,7 @@ class StateManagerTest(LogicTest):
         self.assertEqual(ignus_before + delta, ignus_after)
 
         grace_before = self.state_manager.characters_manager.get_property(grace.name, prop)
-        self.state_manager.gain_experience('grace', delta)
+        self.state_manager.gain_experience('grace_character_name', delta)
         grace_after = self.state_manager.characters_manager.get_property(grace.name, prop)
         self.assertEqual(protagonist_before + delta, protagonist_after)
         self.assertEqual(morte_before + delta, morte_after)
@@ -196,7 +196,7 @@ class StateManagerTest(LogicTest):
         self.assertEqual(grace_before + delta, grace_after)
 
         dakkon_before = self.state_manager.characters_manager.get_property(dakkon.name, prop)
-        self.state_manager.gain_experience('dakkon', delta)
+        self.state_manager.gain_experience('dakkon_character_name', delta)
         dakkon_after = self.state_manager.characters_manager.get_property(dakkon.name, prop)
         self.assertEqual(protagonist_before + delta, protagonist_after)
         self.assertEqual(morte_before + delta, morte_after)
@@ -206,7 +206,7 @@ class StateManagerTest(LogicTest):
         self.assertEqual(dakkon_before + delta, dakkon_after)
 
         nordom_before = self.state_manager.characters_manager.get_property(nordom.name, prop)
-        self.state_manager.gain_experience('nordom', delta)
+        self.state_manager.gain_experience('nordom_character_name', delta)
         nordom_after = self.state_manager.characters_manager.get_property(nordom.name, prop)
         self.assertEqual(protagonist_before + delta, protagonist_after)
         self.assertEqual(morte_before + delta, morte_after)
@@ -217,7 +217,7 @@ class StateManagerTest(LogicTest):
         self.assertEqual(nordom_before + delta, nordom_after)
 
         vhail_before = self.state_manager.characters_manager.get_property(vhail.name, prop)
-        self.state_manager.gain_experience('vhail', delta)
+        self.state_manager.gain_experience('vhail_character_name', delta)
         vhail_after = self.state_manager.characters_manager.get_property(vhail.name, prop)
         self.assertEqual(protagonist_before + delta, protagonist_after)
         self.assertEqual(morte_before + delta, morte_after)
