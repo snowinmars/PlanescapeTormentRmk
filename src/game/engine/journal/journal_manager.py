@@ -1,4 +1,5 @@
 import logging
+import time
 
 from game.engine.journal.journal_note import (JournalNote)
 
@@ -40,15 +41,36 @@ class JournalManager:
 
     def update_journal(self, note_id):
         self._log(f"Updated my journal with note '{note_id}'")
-        self.get(note_id).found = True
+        found_note = self.get(note_id)
+        found_note.found = True
+        found_note.found_at = time.time()
 
         for callback in self._on_update_journal:
             callback()
 
 
     def build_journal(self):
-        return map(lambda x: x[1], filter(lambda x: x[1].found, self._journal_store.notes.items()))
+        return list(map(
+            lambda x: x[1],
+            filter(
+                lambda x: x[1].found,
+                sorted(
+                    self._journal_store.notes.items(),
+                    key=lambda x: x[1].found_at,
+                    reverse=True
+                )
+            )
+        ))
 
 
     def _log(self, line):
         self._events_manager.write_event(line)
+
+
+    def __getstate__(self):
+        return {
+        }
+
+
+    def __setstate__(self, state):
+        return

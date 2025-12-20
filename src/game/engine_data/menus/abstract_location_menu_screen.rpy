@@ -138,11 +138,11 @@ screen abstract_location_menu_screen(background, walking, talking, bg_music):
                     hovered tt.Action(talking_button.tooltip())
                     unhovered tt.Action('')
 
-    vbox:
-        xpos 1200
-        ypos 0
-        $ x, y = renpy.get_mouse_pos()
-        $ offset_x = round(x + xadj.value)
-        $ offset_y = round(y + yadj.value)
-        text "X Offset: [offset_x]"
-        text "Y Offset: [offset_y]"
+    # vbox:
+    #     xpos 1200
+    #     ypos 0
+    #     $ x, y = renpy.get_mouse_pos()
+    #     $ offset_x = round(x + xadj.value)
+    #     $ offset_y = round(y + yadj.value)
+    #     text "X Offset: [offset_x]"
+    #     text "Y Offset: [offset_y]"

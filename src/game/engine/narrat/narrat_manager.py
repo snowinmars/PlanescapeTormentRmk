@@ -54,4 +54,7 @@ class NarratManager:
         self._narrat_store.current_menu_items = []
 
     def add_br(self):
+        already_has_br = len(self._narrat_store.history) > 0 and self._narrat_store.history[-1]['is_br']
+        if already_has_br:
+            return
         self.add_history_entry(None, None, True)

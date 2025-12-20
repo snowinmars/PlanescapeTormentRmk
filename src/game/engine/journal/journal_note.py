@@ -6,13 +6,15 @@ class JournalNote:
         self.id = id
         self.content = content
         self.found = found
+        self.found_at = 0
 
 
     def __getstate__(self):
         return {
             'id': self.id,
             'content': self.content,
-            'found': self.found
+            'found': self.found,
+            'found_at': self.found_at
         }
 
 
@@ -20,6 +22,7 @@ class JournalNote:
         self.id = state['id']
         self.content = state['content']
         self.found = state['found']
+        self.found_at = state['found_at']
 
 
     def toJson(self):

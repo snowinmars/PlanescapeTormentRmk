@@ -41,7 +41,7 @@ default inventory_store = InventoryStore()
 default world_store = WorldStore()
 default narrat_store = NarratStore()
 
-# define config.rollback_enabled = False
+define config.rollback_enabled = False # as it is narrat now
 
 init 3 python:
     # engine warm up
@@ -157,7 +157,7 @@ init 4 python: # inject narrat
 
 
 label start:
-    show screen events_manager_display
+    # show screen events_manager_display
     # show screen mouse_coordinates
     show screen inventory_button
     show screen character_screen_button

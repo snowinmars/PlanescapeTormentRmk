@@ -11,9 +11,9 @@ init 1 python:
     def get_bei_name():
         return _('Бэй') if zm1041Logic.get_know_bei_name() else _('Зомби 1041')
     def get_asonje_name():
-        return _('Асонж') if zm1041Logic.get_know_bei_name() else _('Зомби 1094')
+        return _('Асонж') if zm1096Logic.get_know_bei_name() else _('Зомби 1094')
     def get_vaxis_name():
-        return _('Ваксис') if zm1041Logic.get_know_vaxis_name() else '?'
+        return _('Ваксис') if vaxisLogic.get_know_vaxis_name() else '?'
 define dhall              = DynamicCharacter('get_dhall_name()',          color='#b8a175')
 define deionarra          = DynamicCharacter('get_deionarra_name()',      color='#b8a175')
 define arabhiem           = DynamicCharacter('get_oinosian_name()',       color='#b8a175')
