@@ -183,6 +183,10 @@ label start:
 
 
 label dev:
+    $ gsm.world_manager.set_know_xachariah_name(True)
+    $ gsm.world_manager.set_can_speak_with_dead(True)
+    jump xach_speak
+
     play music mortuary
     call quick_setup_as_mage from _call_quick_setup_as_mage
     $ gsm = runtime.global_state_manager
