@@ -11,7 +11,7 @@
 
 # s0 # say44993
 label n1201_s0: # from 1.6 3.0 # IF ~  True()
-    "n1201_s0{#n1201_s0}"
+    'n1201_s0{#n1201_s0}'
     # nr 'This foul-smelling note has a strange looking diagram inscribed beneath the writing. It looks as if it„s instructing you to fold the corners of the note so their points touch the center. There is a series of strange marks on each corner - one mark on the upper right, two marks on the lower right, three marks on the lower left, and no marks on the upper left.{#n1201_s0_1}'
 
     menu:
@@ -43,7 +43,7 @@ label n1201_s0: # from 1.6 3.0 # IF ~  True()
 
 # s1 # say44999
 label n1201_s1: # from 0.0 0.1 0.2 0.3 1.0 1.1 1.2 1.3 1.4
-    "n1201_s1{#n1201_s1}"
+    'n1201_s1{#n1201_s1}'
     # nr 'You fold the corner inwards so its point touches the center.{#n1201_s1_1}'
 
     menu:
@@ -89,7 +89,7 @@ label n1201_s1: # from 0.0 0.1 0.2 0.3 1.0 1.1 1.2 1.3 1.4
 
 # s2 # say45015
 label n1201_s2: # from 1.5
-    "n1201_s2{#n1201_s2}"
+    'n1201_s2{#n1201_s2}'
     # nr 'As you fold the upper left inward to the center, you watch as the upper right unfolds by itself, resuming its normal position.{#n1201_s2_1}'
 
     menu:
@@ -110,7 +110,7 @@ label n1201_s2: # from 1.5
 
 # s3 # say45019
 label n1201_s3: # from 2.1
-    "n1201_s3{#n1201_s3}"
+    'n1201_s3{#n1201_s3}'
     # nr 'As you fold the lower left corner inwards, it stays for a moment, then the other two corners unfold outwards. Nothing happens.{#n1201_s3_1}'
 
     menu:
@@ -125,7 +125,7 @@ label n1201_s3: # from 2.1
 
 # s4 # say45022
 label n1201_s4: # from 2.0
-    "n1201_s4{#n1201_s4}"
+    'n1201_s4{#n1201_s4}'
     # nr 'As you fold the upper right corner back to the center, the lower left corner mirrors the action, until all the corners touch in the center. You watch for a moment, and the corners of the paper raise up, turning the note into a small four-sided paper pyramid.{#n1201_s4_1}'
 
     menu:
@@ -137,7 +137,7 @@ label n1201_s4: # from 2.0
 
 # s5 # say45024
 label n1201_s5: # from 4.0
-    "n1201_s5{#n1201_s5}"
+    'n1201_s5{#n1201_s5}'
     # nr 'You peel back the sides of the pyramid, and the paper disintegrates to dust. Inside is a small triangle-shaped earring. It catches the light and gleams brightly.{#n1201_s5_1}'
 
     menu:

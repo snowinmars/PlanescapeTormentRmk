@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say69459
 label deionarra_s0: # from 5.2 9.5 10.8 11.3 12.3 13.4 14.2 25.3 27.4 28.4 30.2 31.3 32.2 41.4 41.5 42.3 42.4 43.4 44.4
-    "deionarra_s0{#deionarra_s0}"
+    'deionarra_s0{#deionarra_s0}'
     # deionarra '«Я буду ждать тебя в залах смерти, любовь моя».{#deionarra_s0_1}'
     # nr 'Дейонарра улыбается, но в улыбке нет ничего, кроме печали. Закрыв глаза, она исчезает с беззвучным вздохом.{#deionarra_s0_2}' # [DEN008B]
 
@@ -34,7 +34,7 @@ label deionarra_s0: # from 5.2 9.5 10.8 11.3 12.3 13.4 14.2 25.3 27.4 28.4 30.2 
 
 # s1 # say5
 label deionarra_s1: # - # IF WEIGHT #0 ~  Global("Deionarra","GLOBAL",0) !Global("Current_Area","GLOBAL",1203) !Global("Current_Area","GLOBAL",1200)
-    "deionarra_s1{#deionarra_s1}"
+    'deionarra_s1{#deionarra_s1}'
     # nr 'Ты видишь перед собой поразительно красивый призрачный силуэт девушки. Ее руки скрещены, а глаза закрыты. У нее длинные развевающиеся волосы, ее платье будто колышется от какого-то неземного ветра. Она слегка вздрагивает; ее глаза мерцают.{#deionarra_s1_1}'
 
     menu:
@@ -54,10 +54,10 @@ label deionarra_s1: # - # IF WEIGHT #0 ~  Global("Deionarra","GLOBAL",0) !Global
 
 # s2 # say706
 label deionarra_s2: # from 1.0 1.1
-    "deionarra_s2{#deionarra_s2_1}"
+    'deionarra_s2{#deionarra_s2_1}'
     # nr 'Ее глаза медленно открываются, секунду она смущенно моргает, будто не понимая, где она находится. Девушка медленно окидывает взглядом комнату. Увидев тебя, ее спокойное лицо искажается яростью.{#deionarra_s2_1}'
     play sound deionarra_s1
-    "deionarra_s2{#deionarra_s2_2}"
+    'deionarra_s2{#deionarra_s2_2}'
     # deionarra '«Ты! Что привело сюда *тебя*?! Захотел лично полюбоваться на причиненные тобой страдания? Или, быть может, даже после моей смерти ты надеешься получить от меня пользу?..»{#deionarra_s2_2}'
     # nr 'Ее голос превращается в шипение.{#deionarra_s2_3}'
     # deionarra '«„Любовь моя“».{#deionarra_s2_4}' # [DEN001]
@@ -81,14 +81,14 @@ label deionarra_s2: # from 1.0 1.1
 
 # s3 # say710
 label deionarra_s3: # from 2.0 2.1 2.2 10.0
-    "deionarra_s3{#deionarra_s3_1}"
+    'deionarra_s3{#deionarra_s3_1}'
     # nr 'Дух складывает руки в мольбе.{#deionarra_s3_1}'
     # deionarra '«Ну почему же воры разума продолжают красть мое имя из твоей памяти? Неужели ты *не помнишь* меня, любовь моя?»{#deionarra_s3_2}'
     # nr 'Дух протягивает руки.{#deionarra_s3_3}'
     # deionarra '«Подумай…»{#deionarra_s3_4}'
     # nr 'Ее голос снова наполняется отчаянием.{#deionarra_s3_5}'
     $ deionarraLogic.set_know_deionarra_name()
-    "deionarra_s3{#deionarra_s3_2}"
+    'deionarra_s3{#deionarra_s3_2}'
     # deionarra '«Имя *Дейонарра* должно пробудить в тебе хоть немного воспоминаний».{#deionarra_s3_6}'
 
     menu:
@@ -120,10 +120,10 @@ label deionarra_s3: # from 2.0 2.1 2.2 10.0
 
 # s4 # say715
 label deionarra_s4: # - # IF WEIGHT #1 ~  Global("Deionarra","GLOBAL",2) !Global("Current_Area","GLOBAL",1203) !Global("Current_Area","GLOBAL",1200)
-    "deionarra_s4{#deionarra_s4_1}"
+    'deionarra_s4{#deionarra_s4_1}'
     # nr 'Дейонарра снова появляется… на этот раз ее лицо полно отчаяния, ее руки вытянуты, будто пытаются за что-то ухватиться. При твоем появлении отчаяние на ее лице сменяется яростью.{#deionarra_s4_1}'
     play sound deionarra_s4
-    "deionarra_s4{#deionarra_s4_2}"
+    'deionarra_s4{#deionarra_s4_2}'
     # deionarra '«Ты снова пришел! Почему ты продолжаешь мучить меня?»{#deionarra_s4_2}' # [DEN002]
 
     menu:
@@ -138,10 +138,10 @@ label deionarra_s4: # - # IF WEIGHT #1 ~  Global("Deionarra","GLOBAL",2) !Global
 
 # s5 # say716
 label deionarra_s5: # - # IF WEIGHT #2 ~  Global("Deionarra","GLOBAL",1) !Global("Current_Area","GLOBAL",1203) !Global("Current_Area","GLOBAL",1200)
-    "deionarra_s5{#deionarra_s5_1}"
+    'deionarra_s5{#deionarra_s5_1}'
     # nr 'Дейонарра снова появляется… на этот раз ее лицо полно отчаяния, ее руки вытянуты, будто пытаются за что-то ухватиться. При твоем появлении отчаяние на ее лице сменяется надеждой.{#deionarra_s5_1}'
     play sound deionarra_s5
-    "deionarra_s5{#deionarra_s5_2}"
+    'deionarra_s5{#deionarra_s5_2}'
     # deionarra '«Любовь моя… ты снова вернулся ко мне! Ты вспомнил меня?»{#deionarra_s5_2}' # [DEN003A]
 
     menu:
@@ -160,7 +160,7 @@ label deionarra_s5: # - # IF WEIGHT #2 ~  Global("Deionarra","GLOBAL",1) !Global
 
 # s6 # say717
 label deionarra_s6: # from 3.0
-    "deionarra_s6{#deionarra_s6}"
+    'deionarra_s6{#deionarra_s6}'
     # deionarra '«Этого я и боялась. Я действительно потеряла тебя… и то, что раньше приносило тебе неудобства, теперь стало оправданием для того, чтобы отказаться от меня так же, как ты отринул воспоминания обо мне!»{#deionarra_s6_1}'
 
     menu:
@@ -195,7 +195,7 @@ label deionarra_s6: # from 3.0
 
 # s7 # say722
 label deionarra_s7: # from 3.1
-    "deionarra_s7{#deionarra_s7}"
+    'deionarra_s7{#deionarra_s7}'
     # deionarra '«Да…»{#deionarra_s7_1}'
     # nr 'Она выглядит обнадеженной.{#deionarra_s7_2}'
     # deionarra '«Что пробудило мое имя в твоей памяти?»{#deionarra_s7_3}'
@@ -230,7 +230,7 @@ label deionarra_s7: # from 3.1
 
 # s8 # say725
 label deionarra_s8: # from 7.0 47.2
-    "deionarra_s8{#deionarra_s8}"
+    'deionarra_s8{#deionarra_s8}'
     # nr 'Лицо Дейонарры превращается яростную маску.{#deionarra_s8_1}'
     # deionarra '«Ты прокаженный пес! Предатель моего сердца! Я бы прокляла тебя, но ты и без моих проклятий обречен на вечные страдания в своих воскрешениях! Прочь!»{#deionarra_s8_2}'
     # nr 'Она скрещивает свои руки и закрывает глаза.{#deionarra_s8_3}'
@@ -254,7 +254,7 @@ label deionarra_s8: # from 7.0 47.2
 
 # s9 # say726
 label deionarra_s9: # from 3.2 3.3 6.1 6.2 7.1 7.2 7.3
-    "deionarra_s9{#deionarra_s9}"
+    'deionarra_s9{#deionarra_s9}'
     # deionarra '«Ах, наконец-то судьба проявила милосердие! Даже смерть не может изгнать меня из твоего разума, любовь моя! Разве ты не понимаешь? Твои воспоминания возвращаются! Скажи мне, как я могу помочь тебе, и я сделаю это!»{#deionarra_s9_1}'
 
     menu:
@@ -285,7 +285,7 @@ label deionarra_s9: # from 3.2 3.3 6.1 6.2 7.1 7.2 7.3
 
 # s10 # say733
 label deionarra_s10: # from 5.0 11.1 12.1 13.1 14.0 25.1 27.2 28.0 30.0 31.1 32.0 34.1 35.1 36.0 41.1 42.0 43.1 44.2 74.0
-    "deionarra_s10{#deionarra_s10}"
+    'deionarra_s10{#deionarra_s10}'
     # deionarra '«Что ты желаешь знать?»{#deionarra_s10_1}'
 
     menu:
@@ -328,7 +328,7 @@ label deionarra_s10: # from 5.0 11.1 12.1 13.1 14.0 25.1 27.2 28.0 30.0 31.1 32.
 
 # s11 # say739
 label deionarra_s11: # from 6.0 9.0 10.1
-    "deionarra_s11{#deionarra_s11}"
+    'deionarra_s11{#deionarra_s11}'
     # deionarra '«Ты тот, кто одновременно благословен и проклят, любовь моя. И тот, кто всегда пребывает в моих мыслях и в моем сердце».{#deionarra_s11_1}'
 
     menu:
@@ -351,7 +351,7 @@ label deionarra_s11: # from 6.0 9.0 10.1
 
 # s12 # say743
 label deionarra_s12: # from 9.1 10.2
-    "deionarra_s12{#deionarra_s12}"
+    'deionarra_s12{#deionarra_s12}'
     # deionarra '«Где ты находишься? Ты здесь, рядом со мной, любовь моя… как в те времена, когда мы оба были живы. Теперь меж нами пролегла Граница Вечности».{#deionarra_s12_1}'
 
     menu:
@@ -374,7 +374,7 @@ label deionarra_s12: # from 9.1 10.2
 
 # s13 # say748
 label deionarra_s13: # from 11.0
-    "deionarra_s13{#deionarra_s13}"
+    'deionarra_s13{#deionarra_s13}'
     # deionarra '«Природа твоего проклятия должна быть очевидной для тебя, любовь моя. Взгляни на себя».{#deionarra_s13_1}'
     # nr 'Она указывает на тебя пальцем.{#deionarra_s13_2}'
     # deionarra '«Смерть не принимает тебя. Твои воспоминания покинули тебя. Как ты думаешь, почему?»{#deionarra_s13_3}'
@@ -403,7 +403,7 @@ label deionarra_s13: # from 11.0
 
 # s14 # say752
 label deionarra_s14: # from 12.0
-    "deionarra_s14{#deionarra_s14}"
+    'deionarra_s14{#deionarra_s14}'
     # nr 'Голос Дейонарры полон печалью.{#deionarra_s14_1}'
     # deionarra '«Это преграда, которую, боюсь, ты никогда не пересечешь, любовь моя. Она ограждает твою жизнь от того, что осталось от моей…»{#deionarra_s14_2}'
 
@@ -423,7 +423,7 @@ label deionarra_s14: # from 12.0
 
 # s15 # say756
 label deionarra_s15: # from 3.4 5.1 6.3 6.4 7.4 9.4 10.7 11.2 12.2 13.3 14.1 25.2 27.3 28.1 28.3 30.1 31.2 32.1 41.2 41.3 42.1 42.2 43.3 44.3 47.3
-    "deionarra_s15{#deionarra_s15}"
+    'deionarra_s15{#deionarra_s15}'
     # deionarra '«Постой… Я многое узнала во время наших путешествий, любовь моя. И то, что ты потерял, я сберегла. Я еще не сказала всего, что знаю о тебе. Мой взор чист… в то время как ты мечешься в темноте в поисках искры разума».{#deionarra_s15_1}'
 
     menu:
@@ -446,7 +446,7 @@ label deionarra_s15: # from 3.4 5.1 6.3 6.4 7.4 9.4 10.7 11.2 12.2 13.3 14.1 25.
 
 # s16 # say762
 label deionarra_s16: # from 20.0 21.0
-    "deionarra_s16{#deionarra_s16}"
+    'deionarra_s16{#deionarra_s16}'
     # nr 'Дейонарра выглядит ошеломленной, затем ее тон меняется, голос почти умоляет.{#deionarra_s16_1}'
     # deionarra '«Я… не хотела брать с тебя клятву, любовь моя. Просто я так долго ждала, когда ты присоединишься ко мне за пределами…»{#deionarra_s16_2}'
 
@@ -458,7 +458,7 @@ label deionarra_s16: # from 20.0 21.0
 
 # s17 # say769
 label deionarra_s17: # from 15.1 15.2
-    "deionarra_s17{#deionarra_s17}"
+    'deionarra_s17{#deionarra_s17}'
     # deionarra '«Время ослабляет свою хватку, а холод забвения медленно поглощает нас, любовь моя. Еще не все видения приобрели четкие очертания. Я вижу тебя, любовь моя. Я вижу тебя таким, какой ты сейчас, и…»{#deionarra_s17_1}'
     # nr 'Дейонарра умолкает.{#deionarra_s17_2}'
 
@@ -478,7 +478,7 @@ label deionarra_s17: # from 15.1 15.2
 
 # s18 # say773
 label deionarra_s18: # from 17.0 17.1
-    "deionarra_s18{#deionarra_s18}"
+    'deionarra_s18{#deionarra_s18}'
     # deionarra '«Я вижу путь, лежащий перед тобой. Он берет свое начало отсюда и проходит сквозь планы. Должна ли я говорить о том, что я вижу?»{#deionarra_s18_1}'
 
     menu:
@@ -493,7 +493,7 @@ label deionarra_s18: # from 17.0 17.1
 
 # s19 # say776
 label deionarra_s19: # from 17.2 18.1
-    "deionarra_s19{#deionarra_s19}"
+    'deionarra_s19{#deionarra_s19}'
     # deionarra '«Ты всегда был таким, любовь моя. Ты уже отверг призыв смерти. Что ты отвергнешь в следующий раз? Быть может, само время?»{#deionarra_s19_1}'
     # nr 'Закрыв глаза, Дейонарра исчезает с беззвучным вздохом.{#deionarra_s19_2}'
 
@@ -516,7 +516,7 @@ label deionarra_s19: # from 17.2 18.1
 
 # s20 # say777
 label deionarra_s20: # from 18.0
-    "deionarra_s20{#deionarra_s20}"
+    'deionarra_s20{#deionarra_s20}'
     # deionarra '«Сначала мне нужно обещание. Обещание, что ты вернешься. Что ты найдешь способ спасти меня или присоединиться ко мне».{#deionarra_s20_1}'
 
     menu:
@@ -549,7 +549,7 @@ label deionarra_s20: # from 18.0
 
 # s21 # say783
 label deionarra_s21: # from 20.1
-    "deionarra_s21{#deionarra_s21}"
+    'deionarra_s21{#deionarra_s21}'
     # nr 'Дейонарра скрещивает руки на груди.{#deionarra_s21_1}'
     # deionarra '«Да, это так, любовь моя. А цена бессмертия, по всей видимости, была не так уж высока? Или честность — это слишком для тебя?»{#deionarra_s21_2}'
 
@@ -583,7 +583,7 @@ label deionarra_s21: # from 20.1
 
 # s22 # say784
 label deionarra_s22: # from 10.5 20.2 20.5 21.1 21.4 40.0
-    "deionarra_s22{#deionarra_s22}"
+    'deionarra_s22{#deionarra_s22}'
     # deionarra '«Любовь моя, вот что видят мои глаза, освобожденные от оков времени…»{#deionarra_s22_1}' # [DEN020]
 
     menu:
@@ -595,7 +595,7 @@ label deionarra_s22: # from 10.5 20.2 20.5 21.1 21.4 40.0
 
 # s23 # say785
 label deionarra_s23: # from 22.0
-    "deionarra_s23{#deionarra_s23}"
+    'deionarra_s23{#deionarra_s23}'
     # deionarra '«Ты встретишь трех врагов, но ни один из них не был бы тебе ровней в период полного расцвета твоих сил. Они — тени зла, добра и нейтральности, которых породили и извратили законы планов».{#deionarra_s23_1}' # [DEN021]
 
     menu:
@@ -606,7 +606,7 @@ label deionarra_s23: # from 22.0
 
 # s24 # say788
 label deionarra_s24: # from 23.0
-    "deionarra_s24{#deionarra_s24}"
+    'deionarra_s24{#deionarra_s24}'
     # deionarra '«Ты попадешь в тюрьму, построенную из сожалений и скорби, где даже тени теряют рассудок. Там тебя попросят принести ужасную жертву, любовь моя. Чтобы обрести покой, ты должен будешь уничтожить то, что удерживает тебя в живых, и отринуть свое бессмертие».{#deionarra_s24_1}' # [DEN022]
 
     menu:
@@ -617,7 +617,7 @@ label deionarra_s24: # from 23.0
 
 # s25 # say791
 label deionarra_s25: # from 13.2 29.0
-    "deionarra_s25{#deionarra_s25}"
+    'deionarra_s25{#deionarra_s25}'
     # deionarra '«Я не сомневаюсь в твоей способности восставать из мертвых. Но я уверена, что с каждым перерождением твои мысли и память слабеют. Ты утверждаешь, что потерял память. Быть может, это следствие бесчисленных смертей? Если это так, то что ты потеряешь в следующих смертях? Если ты потеряешь свой рассудок, то даже не сможешь осознать собственное бессмертие. И тогда ты будешь по-настоящему обречен».{#deionarra_s25_1}'
 
     menu:
@@ -640,7 +640,7 @@ label deionarra_s25: # from 13.2 29.0
 
 # s26 # say793
 label deionarra_s26: # from 3.5 4.1 6.5 6.6 7.5 15.0 15.3 20.3 21.2 21.5 28.2 47.4
-    "deionarra_s26{#deionarra_s26}"
+    'deionarra_s26{#deionarra_s26}'
     # nr 'Дейонарра выглядит разъяренной.{#deionarra_s26_1}'
     # deionarra '«Тогда уходи, как уходил уже триста раз! Зачем ты приходишь сюда? Чтобы помучить меня?! Уходи и никогда больше не возвращайся!»{#deionarra_s26_2}'
     # nr 'Закрыв глаза, Дейонарра исчезает с беззвучным вздохом.{#deionarra_s26_3}'
@@ -664,7 +664,7 @@ label deionarra_s26: # from 3.5 4.1 6.5 6.6 7.5 15.0 15.3 20.3 21.2 21.5 28.2 47
 
 # s27 # say795
 label deionarra_s27: # from 13.0
-    "deionarra_s27{#deionarra_s27}"
+    'deionarra_s27{#deionarra_s27}'
     # deionarra '«Я знаю, что когда-то ты говорил, что любишь меня и что будешь любить до тех пор, пока смерть не заберет нас обоих. Я верила тебе, не зная всей правды о том, кто ты и что ты на самом деле».{#deionarra_s27_1}'
 
     menu:
@@ -691,7 +691,7 @@ label deionarra_s27: # from 13.0
 
 # s28 # say799
 label deionarra_s28: # from 27.0
-    "deionarra_s28{#deionarra_s28}"
+    'deionarra_s28{#deionarra_s28}'
     # deionarra '«Мы уже говорили о твоей природе».{#deionarra_s28_1}'
     # nr 'Взгляд Дейонарры холодеет.{#deionarra_s28_2}'
     # deionarra '«И этот разговор больше не повторится».{#deionarra_s28_3}'
@@ -720,7 +720,7 @@ label deionarra_s28: # from 27.0
 
 # s29 # say809
 label deionarra_s29: # from 24.0
-    "deionarra_s29{#deionarra_s29}"
+    'deionarra_s29{#deionarra_s29}'
     # deionarra '«Я знаю, что ты должен умереть… пока еще можешь. Круг *должен* замкнуться, любовь моя. Ты не предназначен для такой жизни. Ты должен найти то, что у тебя отнято, и уйти дальше, в земли мертвых».{#deionarra_s29_1}' # [DEN023]
 
     menu:
@@ -732,7 +732,7 @@ label deionarra_s29: # from 24.0
 
 # s30 # say814
 label deionarra_s30: # from 25.0
-    "deionarra_s30{#deionarra_s30}"
+    'deionarra_s30{#deionarra_s30}'
     # deionarra '«Я не знаю точно. Мне известно лишь, что это продолжается достаточно долго».{#deionarra_s30_1}'
 
     menu:
@@ -751,7 +751,7 @@ label deionarra_s30: # from 25.0
 
 # s31 # say817
 label deionarra_s31: # from 45.0
-    "deionarra_s31{#deionarra_s31}"
+    'deionarra_s31{#deionarra_s31}'
     # deionarra '«Порталы — это дыры в реальности, ведущие в различные места на внутренних и внешних планах… если ты найдешь подходящий ключ, то сможешь сбежать через один из них».{#deionarra_s31_1}'
 
     menu:
@@ -774,7 +774,7 @@ label deionarra_s31: # from 45.0
 
 # s32 # say821
 label deionarra_s32: # from 31.0
-    "deionarra_s32{#deionarra_s32}"
+    'deionarra_s32{#deionarra_s32}'
     # nr 'Дейонарра умолкает, пытаясь что-то вспомнить.{#deionarra_s32_1}'
     # deionarra '«Порталы раскрываются лишь только в том случае, если у тебя есть подходящий „ключ“. К сожалению, ключом может быть все что угодно… эмоция, кусочек дерева, кинжал из посеребренного стекла, обрывок одежды, твое посвистывание… Боюсь, что только тленные знают, какие ключи нужно использовать, чтобы покинуть эти залы, любовь моя».{#deionarra_s32_2}'
 
@@ -794,7 +794,7 @@ label deionarra_s32: # from 31.0
 
 # s33 # say6083
 label deionarra_s33: # from 4.0
-    "deionarra_s33{#deionarra_s33}"
+    'deionarra_s33{#deionarra_s33}'
     # deionarra '«У меня для тебя нет ответов! Твое лживое сердце привело тебя сюда, пусть оно ведет тебя и дальше! Уходи прочь!»{#deionarra_s33_1}'
 
     menu:
@@ -829,7 +829,7 @@ label deionarra_s33: # from 4.0
 
 # s34 # say6086
 label deionarra_s34: # from 33.2 33.3 33.4
-    "deionarra_s34{#deionarra_s34}"
+    'deionarra_s34{#deionarra_s34}'
     # nr 'Гневное выражение спадает с лица Дейонарры… с пугающей скоростью оно сменяется выражением отчаяния.{#deionarra_s34_1}'
     # deionarra '«Нет! Постой, любовь моя».{#deionarra_s34_2}'
     # nr 'Говорит она жалобно.{#deionarra_s34_3}'
@@ -848,7 +848,7 @@ label deionarra_s34: # from 33.2 33.3 33.4
 
 # s35 # say6087
 label deionarra_s35: # from 33.0
-    "deionarra_s35{#deionarra_s35}"
+    'deionarra_s35{#deionarra_s35}'
     # nr 'Гневное выражение спадает с лица Дейонарры… с пугающей скоростью оно сменяется выражением отчаянья.{#deionarra_s35_1}'
     # deionarra '«Нет… нет… нет… Я все еще Дейонарра, которую ты помнишь, любовь моя. Пожалуйста, прости меня, умоляю».{#deionarra_s35_2}'
 
@@ -865,7 +865,7 @@ label deionarra_s35: # from 33.0
 
 # s36 # say6088
 label deionarra_s36: # from 34.0 35.0
-    "deionarra_s36{#deionarra_s36}"
+    'deionarra_s36{#deionarra_s36}'
     # nr 'Ее голос становится едва различимым шепотом.{#deionarra_s36_1}'
     # deionarra '«Да… да, пожалуйста. Не уходи».{#deionarra_s36_2}'
     # nr 'Ее молящее выражение лица бросает тебя в дрожь… но не от страха, а от удовольствия. Ты чувствуешь, что уже не впервые манипулируешь этой женщиной.{#deionarra_s36_3}'
@@ -878,7 +878,7 @@ label deionarra_s36: # from 34.0 35.0
 
 # s37 # say6089
 label deionarra_s37: # from 33.1 47.0
-    "deionarra_s37{#deionarra_s37}"
+    'deionarra_s37{#deionarra_s37}'
     # deionarra '«Отвергну *тебя*?! Да как ты СМЕЕШЬ обвинять меня в том, что я отвергаю ТЕБЯ?!»{#deionarra_s37_1}'
     # nr 'Дейонарра выбрасывает руки вверх, образуя полукруг, затем опускает их, пальцами указывая на тебя. Похоже, она произносит какое-то заклинание.{#deionarra_s37_2}'
     # deionarra '«Да как ты СМЕЕШЬ!..»{#deionarra_s37_3}'
@@ -897,7 +897,7 @@ label deionarra_s37: # from 33.1 47.0
 
 # s38 # say6090
 label deionarra_s38: # from 37.0 37.1
-    "deionarra_s38{#deionarra_s38}"
+    'deionarra_s38{#deionarra_s38}'
     # deionarra '«Гори! Гори, как если бы огонь Баатора пожирал тебя изнутри! Гори и знай, что это лишь *крупица* моей ненависти! Я проклинаю тебя, проклинаю всем своим сердцем и душой! Ты никогда не освободишься от оков своей несчастной нежизни. Ты зачахнешь и умрешь! А разум твой иссохнет и сгниет вслед за телом!»{#deionarra_s38_1}'
 
     menu:
@@ -912,7 +912,7 @@ label deionarra_s38: # from 37.0 37.1
 
 # s39 # say6091
 label deionarra_s39: # from 38.0 38.1
-    "deionarra_s39{#deionarra_s39}"
+    'deionarra_s39{#deionarra_s39}'
     # deionarra '«Будучи произнесенным, проклятие уже не может быть снято».{#deionarra_s39_1}'
     # nr 'Голос Дейонарры превращается в шипение.{#deionarra_s39_2}'
     # deionarra '«Знай: у меня вечность в запасе, „любовь моя“. Я буду ждать тебя в залах смерти».{#deionarra_s39_3}'
@@ -931,7 +931,7 @@ label deionarra_s39: # from 38.0 38.1
 
 # s40 # say6092
 label deionarra_s40: # from 16.0 20.4 21.3
-    "deionarra_s40{#deionarra_s40}"
+    'deionarra_s40{#deionarra_s40}'
     # nr 'Дейонарра застывает. Кажется, она хочет что-то сказать, но затем, вздохнув, сдается.{#deionarra_s40_1}'
     # deionarra '«Хорошо, любовь моя… как и прежде, я поверю тебе».{#deionarra_s40_2}'
     # nr 'Она закрывает глаза.{#deionarra_s40_3}'
@@ -944,7 +944,7 @@ label deionarra_s40: # from 16.0 20.4 21.3
 
 # s41 # say6108
 label deionarra_s41: # from 10.6
-    "deionarra_s41{#deionarra_s41}"
+    'deionarra_s41{#deionarra_s41}'
     # nr 'Дейонарра горестно качает головой.{#deionarra_s41_1}'
     # deionarra '«Будучи произнесенным, проклятие уже не может быть снято. Прости меня, любовь моя».{#deionarra_s41_2}'
 
@@ -976,7 +976,7 @@ label deionarra_s41: # from 10.6
 
 # s42 # say6109
 label deionarra_s42: # from 41.0
-    "deionarra_s42{#deionarra_s42}"
+    'deionarra_s42{#deionarra_s42}'
     # deionarra '«Если и есть, то он мне незнаком».{#deionarra_s42_1}'
     # nr 'Дейонарра вдруг воодушевляется.{#deionarra_s42_2}'
     # deionarra '«Но, возможно, кто-нибудь более могущественный, чем я, сможет снять проклятье. Прости меня, любовь моя. Я не ведала, что творила».{#deionarra_s42_3}'
@@ -1005,7 +1005,7 @@ label deionarra_s42: # from 41.0
 
 # s43 # say6121
 label deionarra_s43: # from 9.2 10.3 44.0
-    "deionarra_s43{#deionarra_s43}"
+    'deionarra_s43{#deionarra_s43}'
     # deionarra '«Выбраться?..»{#deionarra_s43_1}'
     # nr 'Шепчет Дейонарра, затем снова повышает голос.{#deionarra_s43_2}'
     # deionarra '«*Выбраться*?! Из-за тебя я навеки здесь заточена, и ты меня еще спрашиваешь, как отсюда *выбраться*?!»{#deionarra_s43_3}'
@@ -1034,7 +1034,7 @@ label deionarra_s43: # from 9.2 10.3 44.0
 
 # s44 # say6122
 label deionarra_s44: # from 9.3 10.4
-    "deionarra_s44{#deionarra_s44}"
+    'deionarra_s44{#deionarra_s44}'
     # nr 'Ты уже собираешься спросить Дейонарру, но слова застревают у тебя в горле. Внезапно ты осознаешь, что, если ты скажешь ей, что ищешь выход отсюда, Дейонарра может решить, что ты бросаешь ее. Если ты собираешься спросить ее о том, как отсюда выбраться, тебе нужно сделать это поделикатнее.{#deionarra_s44_1}'
 
     menu:
@@ -1061,7 +1061,7 @@ label deionarra_s44: # from 9.3 10.4
 
 # s45 # say6123
 label deionarra_s45: # from 46.0 46.1
-    "deionarra_s45{#deionarra_s45}"
+    'deionarra_s45{#deionarra_s45}'
     # deionarra '«Я чувствую, что в этом месте есть много дверей, скрытых от глаз смертных. Возможно, ты сможешь воспользоваться одним из этих порталов для побега».{#deionarra_s45_1}'
 
     menu:
@@ -1072,7 +1072,7 @@ label deionarra_s45: # from 46.0 46.1
 
 # s46 # say6125
 label deionarra_s46: # from 43.2 44.1 47.1
-    "deionarra_s46{#deionarra_s46}"
+    'deionarra_s46{#deionarra_s46}'
     # deionarra '«В опасности?»{#deionarra_s46_1}'
     # nr 'Дейонарра выглядит обеспокоенной.{#deionarra_s46_2}'
     # deionarra '«Конечно же, любовь моя, я помогу тебе…»{#deionarra_s46_3}'
@@ -1092,7 +1092,7 @@ label deionarra_s46: # from 43.2 44.1 47.1
 
 # s47 # say6135
 label deionarra_s47: # from 43.0
-    "deionarra_s47{#deionarra_s47}"
+    'deionarra_s47{#deionarra_s47}'
     # deionarra '«Ты пришел ко мне после моей смерти лишь для того, чтобы *снова* меня бросить, да еще и просишь помочь тебе в этом?»{#deionarra_s47_1}'
     # nr 'Ее лицо искажается в гримасе ярости.{#deionarra_s47_2}'
     # deionarra '«Я *умерла* ради тебя, любовь моя. И до сих пор от этого *страдаю*!»{#deionarra_s47_3}'
@@ -1121,7 +1121,7 @@ label deionarra_s47: # from 43.0
 
 # s48 # say6136
 label deionarra_s48: # from 33.5 39.0 39.1
-    "deionarra_s48{#deionarra_s48}"
+    'deionarra_s48{#deionarra_s48}'
     # nr 'Закрыв глаза, Дейонарра исчезает с беззвучным вздохом.{#deionarra_s48_1}'
 
     menu:
@@ -1143,7 +1143,7 @@ label deionarra_s48: # from 33.5 39.0 39.1
 
 # s49 # say63356
 label deionarra_s49: # - # IF WEIGHT #3 ~  Global("Deionarra","GLOBAL",0) Global("Current_Area","GLOBAL",1203)
-    "deionarra_s49{#deionarra_s49}"
+    'deionarra_s49{#deionarra_s49}'
     # nr 'Перед собой ты видишь поразительно красивый призрачный силуэт девушки. У нее длинные развевающиеся волосы, ее платье будто колышется от какого-то неземного ветра. Ваши взгляды пересекаются, и тебя охватывает странное ощущение, как будто ты смотришь сразу в несколько пар глаз.{#deionarra_s49_1}'
 
     menu:
@@ -1154,7 +1154,7 @@ label deionarra_s49: # - # IF WEIGHT #3 ~  Global("Deionarra","GLOBAL",0) Global
 
 # s50 # say63358
 label deionarra_s50: # - # IF WEIGHT #4 ~  GlobalGT("Deionarra","GLOBAL",0) Global("Current_Area","GLOBAL",1203)
-    "deionarra_s50{#deionarra_s50}"
+    'deionarra_s50{#deionarra_s50}'
     # nr 'Перед тобой призрачный силуэт Дейонарры. Ее призрачное платье будто колышется от какого-то неземного ветра. Ваши взгляды пересекаются, и тебя охватывает странное ощущение, как будто ты смотришь сразу в несколько пар глаз.{#deionarra_s50_1}'
 
     menu:
@@ -1165,7 +1165,7 @@ label deionarra_s50: # - # IF WEIGHT #4 ~  GlobalGT("Deionarra","GLOBAL",0) Glob
 
 # s51 # say63360
 label deionarra_s51: # from 49.0 50.0
-    "deionarra_s51{#deionarra_s51}"
+    'deionarra_s51{#deionarra_s51}'
     # deionarra '«Любовь моя, наконец-то я *нашла* тебя… Я искала тебя с тех пор, как ты был разделен кристаллом: эта Крепость простирается на сотни миль, и я боялась, что ты потерял меня».{#deionarra_s51_1}'
     # nr 'Ее призрачные глаза осматривают тебя с ног до головы в поисках новых ран.{#deionarra_s51_2}'
     # deionarra '«Ты в порядке?»{#deionarra_s51_3}'
@@ -1178,7 +1178,7 @@ label deionarra_s51: # from 49.0 50.0
 
 # s52 # say63363
 label deionarra_s52: # from 51.0
-    "deionarra_s52{#deionarra_s52}"
+    'deionarra_s52{#deionarra_s52}'
     # deionarra «Подозреваю, что истинное предназначение кристалла — твое заключение здесь. Но он — не преграда для таких как я».{#deionarra_s52_1}'
     # nr 'Она закрывает глаза.{#deionarra_s52_2}'
     # deionarra '«Мои глаза видят многое, и залы этой Крепости очень знакомы мне».{#deionarra_s52_3}'
@@ -1188,7 +1188,7 @@ label deionarra_s52: # from 51.0
 
 # s53 # say63364
 label deionarra_s53: # from 52.0 58.0 59.0
-    "deionarra_s53{#deionarra_s53}"
+    'deionarra_s53{#deionarra_s53}'
     # deionarra '«Если ты пленен здесь, любовь моя, я помогу тебе освободиться. Куда ты хочешь попасть?»{#deionarra_s53_1}'
 
     menu:
@@ -1215,7 +1215,7 @@ label deionarra_s53: # from 52.0 58.0 59.0
 
 # s54 # say63370
 label deionarra_s54: # from 53.0 53.1 53.2 53.3
-    "deionarra_s54{#deionarra_s54}"
+    'deionarra_s54{#deionarra_s54}'
     # deionarra '«Как пожелаешь, любовь моя».{#deionarra_s54_1}'
     # nr 'Она протягивает руку.{#deionarra_s54_2}'
     # deionarra '«Прикоснись к моей руке, и стены этой Крепости больше не будут преградой».{#deionarra_s54_3}'
@@ -1234,7 +1234,7 @@ label deionarra_s54: # from 53.0 53.1 53.2 53.3
 
 # s55 # say63372
 label deionarra_s55: # from 53.4
-    "deionarra_s55{#deionarra_s55}"
+    'deionarra_s55{#deionarra_s55}'
     # deionarra '«О чем ты говоришь?»{#deionarra_s55_1}'
 
     menu:
@@ -1251,7 +1251,7 @@ label deionarra_s55: # from 53.4
 
 # s56 # say63375
 label deionarra_s56: # from 55.0
-    "deionarra_s56{#deionarra_s56}"
+    'deionarra_s56{#deionarra_s56}'
     # nr 'Пока ты говоришь, лицо Дейонарры остается непроницаемым.{#deionarra_s56_1}'
 
     menu:
@@ -1272,7 +1272,7 @@ label deionarra_s56: # from 55.0
 
 # s57 # say63379
 label deionarra_s57: # from 56.0 56.1 56.2
-    "deionarra_s57{#deionarra_s57}"
+    'deionarra_s57{#deionarra_s57}'
     # deionarra '«Ты *любишь* меня? Если ты скажешь да, любовь моя, то все остальное будет неважно».{#deionarra_s57_1}'
 
     menu:
@@ -1294,7 +1294,7 @@ label deionarra_s57: # from 56.0 56.1 56.2
 
 # s58 # say63383
 label deionarra_s58: # from 55.1 57.0 57.1
-    "deionarra_s58{#deionarra_s58}"
+    'deionarra_s58{#deionarra_s58}'
     # deionarra '«Тогда я помогу тебе, любовь моя. Скажи мне, как я могу помочь тебе, и я это сделаю».{#deionarra_s58_1}'
 
     menu:
@@ -1306,7 +1306,7 @@ label deionarra_s58: # from 55.1 57.0 57.1
 
 # s59 # say63385
 label deionarra_s59: # from 57.2
-    "deionarra_s59{#deionarra_s59}"
+    'deionarra_s59{#deionarra_s59}'
     # deionarra '«Тогда… тогда это будет концом всего, что было между нами, любовь моя. Я осталась здесь только ради тебя — и ничего больше. Я помогу тебе в последний раз, а затем отправлюсь за Границу Вечности, как и намеревалась».{#deionarra_s59_1}'
 
     menu:
@@ -1317,7 +1317,7 @@ label deionarra_s59: # from 57.2
 
 # s60 # say63387
 label deionarra_s60: # - # IF WEIGHT #6 /* Triggers after states #: 62 even though they appear after this state */ ~  Global("Deionarra","GLOBAL",0) Global("Current_Area","GLOBAL",1200) Global("1200_Cut_Scene_2","GLOBAL",0)
-    "deionarra_s60{#deionarra_s60}"
+    'deionarra_s60{#deionarra_s60}'
     # nr 'Ты видишь поразительно красивый призрачный силуэт девушки. У нее длинные развевающиеся волосы, ее платье будто колышется от какого-то неземного ветра. Она стоит на краю вымощенной черным камнем дороги, всматриваясь в пустоту плана.{#deionarra_s60_1}'
 
     menu:
@@ -1333,7 +1333,7 @@ label deionarra_s60: # - # IF WEIGHT #6 /* Triggers after states #: 62 even thou
 
 # s61 # say63390
 label deionarra_s61: # - # IF WEIGHT #7 /* Triggers after states #: 62 even though they appear after this state */ ~  GlobalGT("Deionarra","GLOBAL",0) Global("Current_Area","GLOBAL",1200) Global("1200_Cut_Scene_2","GLOBAL",0)
-    "deionarra_s61{#deionarra_s61}"
+    'deionarra_s61{#deionarra_s61}'
     # nr 'Перед тобой призрачный силуэт Дейонарры. Ее призрачное платье будто колышется от какого-то неземного ветра. Она стоит на краю вымощенной черным камнем дороги, всматриваясь в пустоту плана.{#deionarra_s61_1}'
 
     menu:
@@ -1349,7 +1349,7 @@ label deionarra_s61: # - # IF WEIGHT #7 /* Triggers after states #: 62 even thou
 
 # s62 # say63393
 label deionarra_s62: # from 60.0 61.0 # IF WEIGHT #5 ~  Global("Current_Area","GLOBAL",1200) Global("1200_Cut_Scene_2","GLOBAL",1)
-    "deionarra_s62{#deionarra_s62}"
+    'deionarra_s62{#deionarra_s62}'
     # deionarra '«Любовь моя! Ты *не должен* находиться здесь! Ты должен уйти!»{#deionarra_s62_1}'
 
     menu:
@@ -1364,7 +1364,7 @@ label deionarra_s62: # from 60.0 61.0 # IF WEIGHT #5 ~  Global("Current_Area","G
 
 # s63 # say63396
 label deionarra_s63: # from 62.0 62.1
-    "deionarra_s63{#deionarra_s63}"
+    'deionarra_s63{#deionarra_s63}'
     # deionarra '«Это Крепость сожалений. Это место, которое удерживает миг моей смерти в узниках, и я не могу далеко уходить от его залов. Если тебе известен путь назад в Сигил, немедленно *возвращайся*. Если ты останешься здесь, любовь моя, ты умрешь».{#deionarra_s63_1}'
 
     menu:
@@ -1383,7 +1383,7 @@ label deionarra_s63: # from 62.0 62.1
 
 # s64 # say63400
 label deionarra_s64: # from 63.0 63.1 63.2
-    "deionarra_s64{#deionarra_s64}"
+    'deionarra_s64{#deionarra_s64}'
     # nr 'Она качает головой.{#deionarra_s64_1}'
     # deionarra '«Нет, любовь моя. Здесь, в Крепости, есть нечто — оболочка, которая окружает ее и ограждает от остальных планов. И это оболочка является преградой для твоего бессмертия».{#deionarra_s64_2}'
 
@@ -1399,7 +1399,7 @@ label deionarra_s64: # from 63.0 63.1 63.2
 
 # s65 # say63403
 label deionarra_s65: # from 64.1
-    "deionarra_s65{#deionarra_s65}"
+    'deionarra_s65{#deionarra_s65}'
     # deionarra '«Блуждая по этому месту, я познала природу твоего бессмертия, любовь моя. Оно жаждет жизней других. В момент твоей смерти оно хватает вместо тебя другое живое существо, благодаря чему ты остаешься живым. Душа, погибшая вместо тебя, попадает тенью сюда, в Крепость. Я думаю, что эта оболочка не позволит твоему бессмертию найти новую жертву».{#deionarra_s65_1}'
 
     menu:
@@ -1410,7 +1410,7 @@ label deionarra_s65: # from 64.1
 
 # s66 # say63405
 label deionarra_s66: # from 64.0 65.0
-    "deionarra_s66{#deionarra_s66}"
+    'deionarra_s66{#deionarra_s66}'
     # deionarra '«То смерть твоя будет окончательной. Здесь нет ничего *живого*, так что будь осторожен. Покинь это проклятое место и возвращайся назад в Сигил!»{#deionarra_s66_1}'
 
     menu:
@@ -1433,7 +1433,7 @@ label deionarra_s66: # from 64.0 65.0
 
 # s67 # say63410
 label deionarra_s67: # from 66.0 66.1
-    "deionarra_s67{#deionarra_s67}"
+    'deionarra_s67{#deionarra_s67}'
     # deionarra '«Любовь моя, если ты привел сюда *что-либо* живое, то ему угрожает великая опасность — и от теней, и от тебя. Если ты умрешь здесь, твое бессмертие будет охотиться за первым попавшимся живым существом в Крепости, и *оно* умрет вместо тебя. Теперь ты должен уходить отсюда!»{#deionarra_s67_1}'
 
     menu:
@@ -1444,7 +1444,7 @@ label deionarra_s67: # from 66.0 66.1
 
 # s68 # say63412
 label deionarra_s68: # from 66.2 66.3 67.0
-    "deionarra_s68{#deionarra_s68}"
+    'deionarra_s68{#deionarra_s68}'
     # deionarra '«Внутри Крепости нет настоящей темноты, любовь моя, лишь только тени тех, кто погиб вместо тебя. Энергия этого плана питает их, и их ненависть к тебе выше всяких границ. Они не позволят тебе уйти».{#deionarra_s68_1}'
     # nr 'Она бросает взгляд на стены Крепости.{#deionarra_s68_2}'
     # deionarra '«Умоляю тебя, *не входи*!»{#deionarra_s68_3}'
@@ -1466,7 +1466,7 @@ label deionarra_s68: # from 66.2 66.3 67.0
 
 # s69 # say63416
 label deionarra_s69: # from 68.0 68.1
-    "deionarra_s69{#deionarra_s69}"
+    'deionarra_s69{#deionarra_s69}'
     # deionarra '«Всех, кого ты привел сюда, разбросало по разным местам: природа этого места такова, что оно разделяет живых существ… а затем убивает их».{#deionarra_s69_1}'
     # nr 'Она выглядит обезумевшей.{#deionarra_s69_2}'
     # deionarra '«Крепость простирается на много миль: найти твоих друзей будет очень трудно».{#deionarra_s69_3}'
@@ -1480,7 +1480,7 @@ label deionarra_s69: # from 68.0 68.1
 
 # s70 # say63418
 label deionarra_s70: # from 75.0
-    "deionarra_s70{#deionarra_s70}"
+    'deionarra_s70{#deionarra_s70}'
     # deionarra '«И еще одно…»{#deionarra_s70_1}'
     # nr 'Дейонарра умолкает, будто пытаясь поймать ускользающее воспоминание.{#deionarra_s70_2}'
     # deionarra '«Внутри… внутри комнаты есть огромные часы…»{#deionarra_s70_3}'
@@ -1506,7 +1506,7 @@ label deionarra_s70: # from 75.0
 
 # s71 # say63422
 label deionarra_s71: # from 70.0
-    "deionarra_s71{#deionarra_s71}"
+    'deionarra_s71{#deionarra_s71}'
     # deionarra '«Кольцо все еще содержит частичку меня, любовь моя. Нося его, ты носишь с собой мое сердце».{#deionarra_s71_1}'
     # nr 'На секунду она закрывает глаза, и ты неожиданно чувствуешь тепло, пронизывающее тебя. Открыв глаза, Дейонарра улыбается.{#deionarra_s71_2}'
     # deionarra '«Я знала, что ты вернешься ко мне вместе с ним. Носи же теперь его с моим благословением и держи поближе к своему сердцу. Через него я буду защищать тебя».{#deionarra_s71_3}'
@@ -1519,7 +1519,7 @@ label deionarra_s71: # from 70.0
 
 # s72 # say66912
 label deionarra_s72: # from 27.1
-    "deionarra_s72{#deionarra_s72}"
+    'deionarra_s72{#deionarra_s72}'
     # deionarra '«Ты… я… не могу…»{#deionarra_s72_1}'
     # nr 'Она неожиданно замирает, затем продолжает говорить, медленно и осторожно, будто боясь собственного голоса.{#deionarra_s72_2}'
     # deionarra '«Вот в чем правда: ты тот, кто умирал тысячью смертей. И через это ты постиг саму сущность смертности, в твоих руках теперь находится искра жизни… и смерти. Умирающий рядом с тобой оставляет след, по которому ты можешь его воскресить…»{#deionarra_s72_3}'
@@ -1529,7 +1529,7 @@ label deionarra_s72: # from 27.1
 
 # s73 # say66913
 label deionarra_s73: # from 72.0
-    "deionarra_s73{#deionarra_s73}"
+    'deionarra_s73{#deionarra_s73}'
     # nr 'При этих словах Дейонарры твой череп пронзает внезапное озарение… неожиданно ты ощущаешь непреодолимое желание взглянуть на собственную руку. Подняв ее и *посмотрев* на нее, ты ВИДИШЬ кровь, текущую по запястью, омывающую твои мускулы, дающую силу твоим костям…{#deionarra_s73_1}'
 
     menu:
@@ -1542,7 +1542,7 @@ label deionarra_s73: # from 72.0
 
 # s74 # say66915
 label deionarra_s74: # from 73.0
-    "deionarra_s74{#deionarra_s74}"
+    'deionarra_s74{#deionarra_s74}'
     # nr 'И ты понимаешь, что Дейонарра *права*. Неожиданно ты вспоминаешь, как находить самую слабую искорку жизни в теле и оживлять его… эта мысль одновременно пугает и интригует тебя.{#deionarra_s74_1}'
 
     menu:
@@ -1553,7 +1553,7 @@ label deionarra_s74: # from 73.0
 
 # s75 # say68114
 label deionarra_s75: # from 68.2 69.0
-    "deionarra_s75{#deionarra_s75}"
+    'deionarra_s75{#deionarra_s75}'
     # deionarra '«Хорошо, любовь моя… если ты хочешь идти, то ты должен знать: за входом в Крепость расположен огромный вестибюль с бесчисленным множеством теней. Ты должен идти без промедления и не позволить им обнаружить себя, иначе ты погибнешь!»{#deionarra_s75_1}'
 
     jump deionarra_s70

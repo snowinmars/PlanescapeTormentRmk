@@ -108,7 +108,7 @@ screen narrat_history(
 
                                 $ is_nameless = not is_br and not hasattr(entry['who'], 'name')
                                 if is_nameless:
-                                    text __('Безымянный') + ' - ' + __(entry['what']):
+                                    text __('protagonist_character_name') + ' - ' + __(entry['what']):
                                         size 18
                                         color nameless_text_color
                                         xfill True

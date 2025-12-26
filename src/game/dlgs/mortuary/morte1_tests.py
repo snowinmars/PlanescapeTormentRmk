@@ -11,6 +11,20 @@ class Morte1LogicTest(LogicTest):
         self.logic = Morte1Logic(self.state_manager)
 
 
+    def test_set_know_morte_name(self):
+        self._false_then_true_action(
+            self.state_manager.world_manager.get_know_morte_name,
+            self.logic.set_know_morte_name
+        )
+
+
+    def test_get_know_morte_name(self):
+        self._boolean_straight_condition(
+            lambda x: self.state_manager.world_manager.set_know_morte_name(x),
+            self.logic.get_know_morte_name
+        )
+
+
     def test_s23_action(self):
         self.state_manager.world_manager.set_mortuary_walkthrough(2)
         self._integer_equals_action(

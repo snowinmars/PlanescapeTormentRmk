@@ -3,10 +3,10 @@
 translate russian strings:
 
     # game/screens/preferences_language.rpy:45
-    old "preferences_language_screen_russian"
-    new "Русский"
+    old 'preferences_language_screen_russian'
+    new 'Русский'
 
     # game/screens/preferences_language.rpy:71
-    old "preferences_language_screen_english"
-    new "English"
+    old 'preferences_language_screen_english'
+    new 'English'
 

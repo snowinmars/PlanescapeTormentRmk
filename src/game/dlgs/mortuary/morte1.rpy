@@ -12,7 +12,7 @@
 # s0 # say39792
 label morte1_s0: # - # IF WEIGHT #1 /* Triggers after states #: 26 even though they appear after this state */ ~  !InParty("Morte") Global("Morte","GLOBAL",0)
     play sound morte1_s0
-    "morte1_s0{#morte1_s0}"
+    'morte1_s0{#morte1_s0}'
     # morte '«Эй, шеф. Ты в порядке? Изображаешь из себя труп или пытаешься обмануть трухлявых? Я уж думал, что ты дал дуба».{#morte1_s0_1}'
 
     menu:
@@ -24,7 +24,7 @@ label morte1_s0: # - # IF WEIGHT #1 /* Triggers after states #: 26 even though t
 
 # s1 # say39795
 label morte1_s1: # from 0.0
-    "morte1_s1{#morte1_s1}"
+    'morte1_s1{#morte1_s1}'
     # morte '«Э… кто я? А как насчет *тебя* для начала? Кто ты?»{#morte1_s1_1}'
 
     menu:
@@ -39,7 +39,7 @@ label morte1_s1: # from 0.0
 
 # s2 # say39798
 label morte1_s2: # from 1.0 3.0 4.0
-    "morte1_s2{#morte1_s2}"
+    'morte1_s2{#morte1_s2}'
     $ morte1Logic.set_know_morte_name()
     # morte '«Ты не можешь вспомнить свое *имя*? Хе. Что ж, в СЛЕДУЮЩИЙ раз, когда будешь кутить ночью в городе, не налегай на выпивку. Зовут Мортом. Я тоже здесь заперт».{#morte1_s2_1}'
 
@@ -51,7 +51,7 @@ label morte1_s2: # from 1.0 3.0 4.0
 
 # s3 # say39800
 label morte1_s3: # from 1.1
-    "morte1_s3{#morte1_s3}"
+    'morte1_s3{#morte1_s3}'
     # morte '«Ага, а я спросил тебя *вторым*. Как твое имя?»{#morte1_s3_1}'
 
     menu:
@@ -66,7 +66,7 @@ label morte1_s3: # from 1.1
 
 # s4 # say39803
 label morte1_s4: # from 3.1
-    "morte1_s4{#morte1_s4}"
+    'morte1_s4{#morte1_s4}'
     # morte '«Пф-ф… да ты натянут как струна. Ну хорошо, пусть *я* буду хорошим парнем. Я - летающий череп. А кто ты?»{#morte1_s4_1}'
 
     menu:
@@ -77,7 +77,7 @@ label morte1_s4: # from 3.1
 
 # s5 # say39805
 label morte1_s5: # from 2.0
-    "morte1_s5{#morte1_s5}"
+    'morte1_s5{#morte1_s5}'
     # morte '«Ага, и поскольку ты еще не успел размять ноги, вот тебе новость: я перепробовал все двери, и эта комната заперта крепче пояса целомудрия».{#morte1_s5_1}'
 
     menu:
@@ -88,7 +88,7 @@ label morte1_s5: # from 2.0
 
 # s6 # say39807
 label morte1_s6: # from 5.0
-    "morte1_s6{#morte1_s6}"
+    'morte1_s6{#morte1_s6}'
     # morte '«Оно называется „Моргом“… это такое большое черное здание с чарующей архитектурой беременной паучихи».{#morte1_s6_1}'
 
     menu:
@@ -99,7 +99,7 @@ label morte1_s6: # from 5.0
 
 # s7 # say39809
 label morte1_s7: # from 6.0
-    "morte1_s7{#morte1_s7}"
+    'morte1_s7{#morte1_s7}'
     # morte '«Не похоже. Хотя на тебе куча шрамов… выглядит так, словно какой-то пень изрисовал тебя всего ножом. Еще одна причина свалить отсюда побыстрее, пока тот, кто изрезал тебя, не вернулся назад и не завершил свою работу».{#morte1_s7_1}'
 
     menu:
@@ -110,7 +110,7 @@ label morte1_s7: # from 6.0
 
 # s8 # say39811
 label morte1_s8: # from 7.0
-    "morte1_s8{#morte1_s8}"
+    'morte1_s8{#morte1_s8}'
     # morte '«Ну… художество на груди не ТАК уж плохо выглядит… но то, что на спине…»{#morte1_s8_1}'
     # nr 'Морт делает паузу.{#morte1_s8_2}'
     # morte '«Скажем так, шеф, у тебя целая галерея татуировок на спине. Тут что-то написано…»{#morte1_s8_3}'
@@ -123,7 +123,7 @@ label morte1_s8: # from 7.0
 
 # s9 # say39813
 label morte1_s9: # from 8.0
-    "morte1_s9{#morte1_s9}"
+    'morte1_s9{#morte1_s9}'
     # morte '«Ха! Похоже, тебя доставили с инструкцией…»{#morte1_s9_1}'
     # nr 'Морт прочищает горло.{#morte1_s9_2}'
     # morte '«Посмотрим… начинается с…»{#morte1_s9_3}'
@@ -137,7 +137,7 @@ label morte1_s9: # from 8.0
 
 # s10 # say39815
 label morte1_s10: # from 9.0
-    "morte1_s10{#morte1_s10}"
+    'morte1_s10{#morte1_s10}'
     # morte '«Ага, здесь есть еще немного…»{#morte1_s10_1}'
     # nr 'Морт умолкает.{#morte1_s10_2}'
     # morte '«Посмотрим… вот продолжение…»{#morte1_s10_3}'
@@ -151,7 +151,7 @@ label morte1_s10: # from 9.0
 
 # s11 # say39817
 label morte1_s11: # from 10.0
-    "morte1_s11{#morte1_s11}"
+    'morte1_s11{#morte1_s11}'
     # morte '«Нет… тебя обобрали догола, когда доставили сюда. Хотя, с другой стороны, похоже, что достаточно того дневника, что выбит у тебя на теле».{#morte1_s11_1}'
 
     menu:
@@ -162,7 +162,7 @@ label morte1_s11: # from 10.0
 
 # s12 # say39819
 label morte1_s12: # from 11.0
-    "morte1_s12{#morte1_s12}"
+    'morte1_s12{#morte1_s12}'
     # morte '«Нет, не знаю… С другой стороны, я вообще мало кого знаю. В общем, КТО-НИБУДЬ да знает, как добраться до этого Фарода… э, то есть, как только мы выберемся отсюда».{#morte1_s12_1}'
 
     menu:
@@ -173,7 +173,7 @@ label morte1_s12: # from 11.0
 
 # s13 # say39821
 label morte1_s13: # from 12.0
-    "morte1_s13{#morte1_s13}"
+    'morte1_s13{#morte1_s13}'
     # morte '«Ну, если все двери заперты, значит, нам понадобится ключ. Есть шанс, что он есть у одного из ходячих трупов в этой комнате».{#morte1_s13_1}'
 
     menu:
@@ -184,7 +184,7 @@ label morte1_s13: # from 12.0
 
 # s14 # say39823
 label morte1_s14: # from 13.0
-    "morte1_s14{#morte1_s14}"
+    'morte1_s14{#morte1_s14}'
     # morte '«Ага, хранители Морга используют мертвые тела в качестве дешевой рабочей силы. Трупы тупые как пробка, они безвредны и не будут атаковать до тех пор, пока ты не нападешь первым».{#morte1_s14_1}'
 
     menu:
@@ -200,7 +200,7 @@ label morte1_s14: # from 13.0
 
 # s15 # say39826
 label morte1_s15: # from 14.0
-    "morte1_s15{#morte1_s15}"
+    'morte1_s15{#morte1_s15}'
     # morte '«Погоди, ты что, думаешь, что причинишь им боль? Они уже МЕРТВЫ. Но если тебе нужна мотивация, то пожалуйста: если ты убьешь их, то по крайней мере они отдохнут до того, как хранители поднимут их снова на работу».{#morte1_s15_1}'
 
     menu:
@@ -211,7 +211,7 @@ label morte1_s15: # from 14.0
 
 # s16 # say39828
 label morte1_s16: # from 14.1 15.0
-    "morte1_s16{#morte1_s16}"
+    'morte1_s16{#morte1_s16}'
     # morte '«Хорошо, но перед этим неплохо бы вооружиться. Кажется, здесь где-то на полках есть скальпель».{#morte1_s16_1}'
 
     jump morte1_s19
@@ -219,7 +219,7 @@ label morte1_s16: # from 14.1 15.0
 
 # s19 # say39834
 label morte1_s19: # from 16.0
-    "morte1_s19{#morte1_s19}"
+    'morte1_s19{#morte1_s19}'
     # morte '«А теперь пора разделаться с этими трупами…»{#morte1_s19_1}'
     # morte '«…и не бойся, я буду держаться у тебя за спиной и давать ценные тактические советы».{#morte1_s19_2}'
 
@@ -235,7 +235,7 @@ label morte1_s19: # from 16.0
 
 # s20 # say39837
 label morte1_s20: # from 19.0
-    "morte1_s20{#morte1_s20}"
+    'morte1_s20{#morte1_s20}'
     # morte '«Я ПОМОГУ тебе. Хороший совет всегда хорош в трудную минуту».{#morte1_s20_1}'
 
     menu:
@@ -250,7 +250,7 @@ label morte1_s20: # from 19.0
 
 # s21 # say39840
 label morte1_s21: # from 20.0
-    "morte1_s21{#morte1_s21}"
+    'morte1_s21{#morte1_s21}'
     # morte '«Я? Я романтик, а не солдат. Я только под ногами буду путаться».{#morte1_s21_1}'
 
     menu:
@@ -265,7 +265,7 @@ label morte1_s21: # from 20.0
 
 # s22 # say39843
 label morte1_s22: # from 21.0
-    "morte1_s22{#morte1_s22}"
+    'morte1_s22{#morte1_s22}'
     # morte '«Э… без проблем. Я помогу тебе».{#morte1_s22_1}'
 
     menu:
@@ -276,7 +276,7 @@ label morte1_s22: # from 21.0
 
 # s23 # say39845
 label morte1_s23: # from 19.1 20.1 21.1 22.0
-    "morte1_s23{#morte1_s23}"
+    'morte1_s23{#morte1_s23}'
     # morte '«Тогда настало время познакомить этих трупов с их второй смертью…»{#morte1_s23_1}'
     $ morte1Logic.s23_action()
 
@@ -288,7 +288,7 @@ label morte1_s23: # from 19.1 20.1 21.1 22.0
 
 # s24 # say39847
 label morte1_s24: # - # IF WEIGHT #4 /* Triggers after states #: 26 even though they appear after this state */ ~  Global("Mortuary_Walkthrough","GLOBAL",0) !PartyHasItem("KeyPr") Global("ZM782_Dead_KAPUTZ","GLOBAL",1)
-    "morte1_s24{#morte1_s24}"
+    'morte1_s24{#morte1_s24}'
     $ morte1Logic.s24_action()
     # morte '«Отлично, похоже, ты позаботился о правильном трупе. Теперь надо найти ключ. Он должен быть на его теле. Как только мы его получим, мы сможем выбраться отсюда».{#morte1_s24_1}'
     # nr 'Ты достаёшь из-под тела кусок железа, в котором с трудом можно опознать правильную форму.{#morte1_s24_2}'
@@ -302,7 +302,7 @@ label morte1_s24: # - # IF WEIGHT #4 /* Triggers after states #: 26 even though 
 
 # s26 # say39851
 label morte1_s26: # - # IF WEIGHT #0 ~  !InParty("Morte") GlobalGT("Morte","GLOBAL",0)
-    "morte1_s26{#morte1_s26}"
+    'morte1_s26{#morte1_s26}'
     # morte '«Я знал, что ты вернешься, шеф! Все-таки понял, что я нужен тебе, а?»{#morte1_s26_1}' # [MRT516]
 
     menu:
@@ -318,7 +318,7 @@ label morte1_s26: # - # IF WEIGHT #0 ~  !InParty("Morte") GlobalGT("Morte","GLOB
 
 # s27 # say39854
 label morte1_s27: # from 26.1
-    "morte1_s27{#morte1_s27}"
+    'morte1_s27{#morte1_s27}'
     # morte '«Пф-ф. Ну хорошо, не знаю, как долго я смогу здесь быть, так что я даю тебе ПОСЛЕДНИЙ шанс. Ты уверен, что не хочешь моего мудрого совета и быстрой остроты?»{#morte1_s27_1}'
 
     menu:
@@ -338,7 +338,7 @@ label morte1_s27: # from 26.1
 
 # s28 # say39858
 label morte1_s28: # from 27.0 27.2
-    "morte1_s28{#morte1_s28}"
+    'morte1_s28{#morte1_s28}'
     # morte '«Ты пытаешься задеть мои чувства, шеф? Погоди, разве я что-то не так сказал? Или это из-за того, что у меня нет рук? Что?»{#morte1_s28_1}'
 
     menu:
@@ -354,7 +354,7 @@ label morte1_s28: # from 27.0 27.2
 
 # s29 # say39861
 label morte1_s29: # from 28.1
-    "morte1_s29{#morte1_s29}"
+    'morte1_s29{#morte1_s29}'
     # morte '«Ну хорошо, я не собираюсь ждать тебя ВЕЧНО, так что тебе лучше вернуться, как только ты передумаешь».{#morte1_s29_1}'
 
     menu:
@@ -365,7 +365,7 @@ label morte1_s29: # from 28.1
 
 # s30 # say39863
 label morte1_s30: # - # IF WEIGHT #6 ~  Global("Mortuary_Walkthrough","GLOBAL",1)
-    "morte1_s30{#morte1_s30}"
+    'morte1_s30{#morte1_s30}'
     # morte '«Что тебя гложет, шеф?»{#morte1_s30_1}' # [MRT515]
 
     menu:
@@ -376,7 +376,7 @@ label morte1_s30: # - # IF WEIGHT #6 ~  Global("Mortuary_Walkthrough","GLOBAL",1
 
 # s31 # say42298
 label morte1_s31: # externs zm825_s3 zm825_s0 zm569_s3 zm569_s0
-    "morte1_s31{#morte1_s31}"
+    'morte1_s31{#morte1_s31}'
     # morte '«Э, шеф… они не слышат тебя, понятно? Они мертвы».{#morte1_s31_1}'
 
     menu:
@@ -387,7 +387,7 @@ label morte1_s31: # externs zm825_s3 zm825_s0 zm569_s3 zm569_s0
 
 # s32 # say42300
 label morte1_s32: # from 31.0
-    "morte1_s32{#morte1_s32}"
+    'morte1_s32{#morte1_s32}'
     # morte '«Ага, но *я* особенный. Смерть не смогла убить мою жажду к жизни. А здешние трупы…»{#morte1_s32_1}'
     # nr 'Морт обводит комнату взглядом.{#morte1_s32_2}'
     # morte '«Они и при жизни из себя ничего не представляли».{#morte1_s32_3}'
@@ -400,7 +400,7 @@ label morte1_s32: # from 31.0
 
 # s33 # say42302
 label morte1_s33: # from 32.0
-    "morte1_s33{#morte1_s33}"
+    'morte1_s33{#morte1_s33}'
     # morte '«Слушай шеф… Наблюдение за тем, как ты пытаешься поболтать с этими трупами, не способствует укреплению моей морали. Давай оставим разговоры с мертвецами сумасшедшим, ладно?»{#morte1_s33_1}'
 
     menu:
@@ -411,7 +411,7 @@ label morte1_s33: # from 32.0
 
 # s34 # say42306
 label morte1_s34: # externs zm782_s0
-    "morte1_s34{#morte1_s34}"
+    'morte1_s34{#morte1_s34}'
     # morte '«Кажется, просителю повезло, шеф. Смотри… у него в руке ключ».{#morte1_s34_1}'
 
     jump zm782_s2  # EXTERN
