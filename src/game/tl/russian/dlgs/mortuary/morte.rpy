@@ -186,9 +186,9 @@ translate russian morte_s25_9b0238b6:
 translate russian morte_s26_a8d551ad:
 
     # "morte_s26{#morte_s26}"
-    morte "«Просто поверь мне… Неважно, насколько крутым ты себя считаешь и что ты им скажешь».{#morte_s26_1}"
-    nr "Они тебя схватят. Ты не настолько силен, чтобы пробиться через стены гробницы или пережить жар стихийного плана огня. Пробуждение из мертвых{#morte_s26_2}"
-    morte "«Не лучшая затея, пока вокруг столько стражи. Не будь идиотом».{#morte_s26_3}"
+    morte "«Просто поверь мне… Неважно, насколько крутым ты себя считаешь и что ты им скажешь — они тебя схватят».{#morte_s26_1}"
+    morte "«Ты не настолько силен, чтобы пробиться через стены гробницы или пережить жар стихийного плана огня».{#morte_s26_1}"
+    morte "«Пробуждение из мертвых — не лучшая затея, пока вокруг столько стражи. Не будь идиотом».{#morte_s26_1}"
 
 # game/dlgs/mortuary/morte.rpy:613
 translate russian morte_s27_2531a9aa:
@@ -4027,7 +4027,7 @@ translate russian morte_s580_f12bc6b9:
 translate russian morte_s581_fbab83a2:
 
     # "morte_s581{#morte_s581}"
-    nr "NULL NODE{#morte_s581_1}"
+    nr "NULL NODE.{#morte_s581_1}"
 
 # game/dlgs/mortuary/morte.rpy:9589
 translate russian morte_s582_4719c70b:
@@ -4144,7 +4144,7 @@ translate russian morte_s597_ad24df8a:
 translate russian morte_s598_bddc559f:
 
     # "morte_s598{#morte_s598}"
-    nr "(NULL NODE){#morte_s598_1}"
+    nr "NULL NODE.{#morte_s598_1}"
 
 # game/dlgs/mortuary/morte.rpy:9864
 translate russian morte_s599_98827d0b:

@@ -746,7 +746,7 @@ def _format_cue(line, nr, npc, label_id):
 
 def _format_cues(text, nr, npc, label_id):
     lines = text.strip().split('\n')
-    output_lines = [f'"{label_id}{{#{label_id}}}"']
+    output_lines = [f'\'{label_id}{{#{label_id}}}\'']
     for line in lines:
         if line.strip() == '':
             output_lines.append('')

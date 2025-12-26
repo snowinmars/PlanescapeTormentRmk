@@ -1,4 +1,4 @@
-test_case1 = f'''
+test_case1 = '''
 IF ~~ THEN BEGIN 19 // from: 1.3
 SAY #3472 /* ~Женщина не отвечает.~ */
 IF ~~ THEN JOURNAL #38205 /* ~Недавно я встретил тленную-бальзамировщицу, которая оказалась «тифлингом», тем, у кого в жилах течет кровь нечисти. По всей видимости, кровь нечистых искажает их тела и, в некоторых случаях, также затрагивает и рассудок. Как сказал Морт, тифлингов в округе достаточно много... что может означать, что нечисти здесь тоже не меньше.~ */ EXTERN ~DMORTE~ 56
@@ -27,7 +27,7 @@ test_tree1 = {
         }
     }]
 }
-test_result1_rpy = f'''
+test_result1_rpy = '''
 init 10 python:
     from game.engine.runtime import (runtime)
     from game.dlgs.area_logic import AreaLogic
@@ -41,12 +41,13 @@ init 10 python:
 
 # s19 # say3472
 label area_s19: # from 1.3
-    nr 'Женщина не отвечает.'
+    'area_s19{#area_s19}'
+    # nr 'Женщина не отвечает.{#area_s19_1}'
 
     $ areaLogic.j38205_s19_action()
     jump morte_s56  # EXTERN
 '''.strip() + '\n'
-test_result1_logic = f'''
+test_result1_logic = '''
 class AreaLogic:
     def __init__(self, state_manager):
         self.state_manager = state_manager
@@ -56,7 +57,7 @@ class AreaLogic:
         self.state_manager.journal_manager.update_journal('38205')
         #$% .register('38205', 'Недавно я встретил тленную-бальзамировщицу, которая оказалась «тифлингом», тем, у кого в жилах течет кровь нечисти. По всей видимости, кровь нечистых искажает их тела и, в некоторых случаях, также затрагивает и рассудок. Как сказал Морт, тифлингов в округе достаточно много... что может означать, что нечисти здесь тоже не меньше.') %$#
 '''.strip() + '\n'
-test_result1_tests = f'''
+test_result1_tests = '''
 import unittest
 
 
@@ -89,7 +90,7 @@ if __name__ == '__main__':
 ################
 
 
-test_case2 = f'''
+test_case2 = '''
 IF ~~ THEN BEGIN 20 // from: 5.2 5.4
 SAY #3485 /* ~Она отворачивается... непохоже, чтобы она тебя услышала. ~ */
 IF ~~ THEN EXTERN ~DMORTE~ 57
@@ -121,7 +122,7 @@ test_tree2 = {
         }
     }]
 }
-test_result2_rpy = f'''
+test_result2_rpy = '''
 init 10 python:
     from game.engine.runtime import (runtime)
     from game.dlgs.area_logic import AreaLogic
@@ -135,16 +136,17 @@ init 10 python:
 
 # s20 # say3485
 label area_s20: # from 5.2 5.4
-    nr 'Она отворачивается… непохоже, чтобы она тебя услышала.'
+    'area_s20{#area_s20}'
+    # nr 'Она отворачивается… непохоже, чтобы она тебя услышала.{#area_s20_1}'
 
     jump morte_s57  # EXTERN
 '''.strip() + '\n'
-test_result2_logic = f'''
+test_result2_logic = '''
 class AreaLogic:
     def __init__(self, state_manager):
         self.state_manager = state_manager
 '''.strip() + '\n'
-test_result2_tests = f'''
+test_result2_tests = '''
 import unittest
 
 
@@ -168,7 +170,7 @@ if __name__ == '__main__':
 ################
 
 
-test_case3 = f'''
+test_case3 = '''
 IF ~~ THEN BEGIN 22 // from: 15.2 25.1 27.1
 SAY #3493 /* ~Заметив тебя, она поворачивается, а затем хмурится. «Тупые зомфи». Она нетерпеливо щелкает когтистыми пальцами, а затем делает движение рукой, как будто что-то зашивает. «Ты готов. Все зашито. Пшел-пшел-пшел». ~ */
 IF ~  Global("Embalm_Key_Quest","GLOBAL",1) HasItem("KeyEm","EiVene") ~ THEN REPLY #3501 /* ~«Минуточку». Жестом ты показываешь, как открываешь что-то ключом. «Мне нужен ключ от бальзамационной. У тебя он есть?»~ */ DO ~AddexperienceParty(250) SetGlobal("Embalm_Key_Quest","GLOBAL",2) GiveItem("KeyEm",Protagonist) ~ GOTO 18
@@ -226,7 +228,7 @@ test_tree3 = {
         }
     }]
 }
-test_result3_rpy = f'''
+test_result3_rpy = '''
 init 10 python:
     from game.engine.runtime import (runtime)
     from game.dlgs.area_logic import AreaLogic
@@ -240,26 +242,27 @@ init 10 python:
 
 # s22 # say3493
 label area_s22: # from 15.2 25.1 27.1
-    nr 'Заметив тебя, она поворачивается, а затем хмурится.'
-    area '«Тупые зомфи».'
-    nr 'Она нетерпеливо щелкает когтистыми пальцами, а затем делает движение рукой, как будто что-то зашивает.'
-    area '«Ты готов. Все зашито. Пшел-пшел-пшел».'
+    'area_s22{#area_s22}'
+    # nr 'Заметив тебя, она поворачивается, а затем хмурится.{#area_s22_1}'
+    # area '«Тупые зомфи».{#area_s22_2}'
+    # nr 'Она нетерпеливо щелкает когтистыми пальцами, а затем делает движение рукой, как будто что-то зашивает.{#area_s22_3}'
+    # area '«Ты готов. Все зашито. Пшел-пшел-пшел».{#area_s22_4}'
 
     menu:
-        '«Минуточку». Жестом ты показываешь, как открываешь что-то ключом. «Мне нужен ключ от бальзамационной. У тебя он есть?»' if areaLogic.r3501_condition():
+        'area_s22_r3501{#area_s22_r3501}' if areaLogic.r3501_condition(): # '«Минуточку». Жестом ты показываешь, как открываешь что-то ключом. «Мне нужен ключ от бальзамационной. У тебя он есть?»{#area_s22_r3501}'
             # a0 # r3501
             $ areaLogic.r3501_action()
             jump area_s18
 
-        '«Минуточку». Жестом ты показываешь, как открываешь что-то ключом. «Мне нужен ключ от бальзамационной. У тебя он есть?»' if areaLogic.r3502_condition():
+        'area_s22_r3502{#area_s22_r3502}' if areaLogic.r3502_condition(): # '«Минуточку». Жестом ты показываешь, как открываешь что-то ключом. «Мне нужен ключ от бальзамационной. У тебя он есть?»{#area_s22_r3502}'
             # a1 # r3502
             jump area_s24
 
-        'Уйти.':
+        'area_s22_r4358{#area_s22_r4358}': # 'Уйти.{#area_s22_r4358}'
             # a2 # r4358
             jump area_dispose
 '''.strip() + '\n'
-test_result3_logic = f'''
+test_result3_logic = '''
 class AreaLogic:
     def __init__(self, state_manager):
         self.state_manager = state_manager
@@ -280,7 +283,7 @@ class AreaLogic:
         return self.state_manager.world_manager.get_embalm_key_quest() == 1 and \\
                self.state_manager.world_manager.get_has_keyem()
 '''.strip() + '\n'
-test_result3_tests = f'''
+test_result3_tests = '''
 import unittest
 
 
@@ -357,7 +360,7 @@ if __name__ == '__main__':
 ################
 
 
-test_case4 = f'''
+test_case4 = '''
 IF ~~ THEN BEGIN 16 // from: 15.0
 SAY #3464 /* ~Наблюдая за движением рук Эи-Вейн, ты чувствуешь покалывание в голове. Внезапно у тебя в глазах все начинает размываться и плыть...~ */
 IF ~~ THEN DO ~FadeToColor([20.0],0) Wait(3) FadeFromColor([20.0],0) Wait(3) ~ GOTO 26
@@ -385,7 +388,7 @@ test_tree4 = {
         }
     }]
 }
-test_result4_rpy = f'''
+test_result4_rpy = '''
 init 10 python:
     from game.engine.runtime import (runtime)
     from game.dlgs.area_logic import AreaLogic
@@ -399,12 +402,13 @@ init 10 python:
 
 # s16 # say3464
 label area_s16: # from 15.0
-    nr 'Наблюдая за движением рук Эи-Вейн, ты чувствуешь покалывание в голове. Внезапно у тебя в глазах все начинает размываться и плыть…'
+    'area_s16{#area_s16}'
+    # nr 'Наблюдая за движением рук Эи-Вейн, ты чувствуешь покалывание в голове. Внезапно у тебя в глазах все начинает размываться и плыть…{#area_s16_1}'
 
     $ areaLogic.s16_action()
     jump area_s26
 '''.strip() + '\n'
-test_result4_logic = f'''
+test_result4_logic = '''
 class AreaLogic:
     def __init__(self, state_manager):
         self.state_manager = state_manager
@@ -417,7 +421,7 @@ class AreaLogic:
         #$% Wait(3) %$#
         return
 '''.strip() + '\n'
-test_result4_tests = f'''
+test_result4_tests = '''
 import unittest
 
 
@@ -445,7 +449,7 @@ if __name__ == '__main__':
 ################
 
 
-test_case5 = f'''
+test_case5 = '''
 IF ~~ THEN BEGIN 178 // from:
 SAY #15348 /* ~«Что? Шеф, я всего лишь мимир! Я не умею 'драться на дуэли'!»~ */
 IF ~~ THEN DO ~SetGlobal("Know_Mimir","GLOBAL",1) ~ EXTERN ~DADYZOEL~ 35
@@ -471,7 +475,7 @@ test_tree5 = {
         }
     }],
 }
-test_result5_rpy = f'''
+test_result5_rpy = '''
 init 10 python:
     from game.engine.runtime import (runtime)
     from game.dlgs.area_logic import AreaLogic
@@ -485,12 +489,13 @@ init 10 python:
 
 # s178 # say15348
 label area_s178: # -
-    area '«Что? Шеф, я всего лишь мимир! Я не умею „драться на дуэли“!»'
+    'area_s178{#area_s178}'
+    # area '«Что? Шеф, я всего лишь мимир! Я не умею „драться на дуэли“!»{#area_s178_1}'
 
     $ areaLogic.s178_action()
     jump adyzoel_s35  # EXTERN
 '''.strip() + '\n'
-test_result5_logic = f'''
+test_result5_logic = '''
 class AreaLogic:
     def __init__(self, state_manager):
         self.state_manager = state_manager
@@ -499,7 +504,7 @@ class AreaLogic:
     def s178_action(self):
         self.state_manager.world_manager.set_know_mimir(True)
 '''.strip() + '\n'
-test_result5_tests = f'''
+test_result5_tests = '''
 import unittest
 
 
@@ -530,7 +535,7 @@ if __name__ == '__main__':
 ################
 
 
-test_case6 = f'''
+test_case6 = '''
 IF ~~ THEN BEGIN 16 // from: 15.0
 SAY #3464 /* ~Наблюдая за движением рук Эи-Вейн, ты чувствуешь покалывание в голове. Внезапно у тебя в глазах все начинает размываться и плыть...~ */
 IF ~~ THEN DO ~FadeToColor([20.0],0) Wait(3) FadeFromColor([20.0],0) Wait(3) ~ EXTERN ~DMORTE~ 57
@@ -559,7 +564,7 @@ test_tree6 = {
         }
     }]
 }
-test_result6_rpy = f'''
+test_result6_rpy = '''
 init 10 python:
     from game.engine.runtime import (runtime)
     from game.dlgs.area_logic import AreaLogic
@@ -573,12 +578,13 @@ init 10 python:
 
 # s16 # say3464
 label area_s16: # from 15.0
-    nr 'Наблюдая за движением рук Эи-Вейн, ты чувствуешь покалывание в голове. Внезапно у тебя в глазах все начинает размываться и плыть…'
+    'area_s16{#area_s16}'
+    # nr 'Наблюдая за движением рук Эи-Вейн, ты чувствуешь покалывание в голове. Внезапно у тебя в глазах все начинает размываться и плыть…{#area_s16_1}'
 
     $ areaLogic.s16_action()
     jump morte_s57  # EXTERN
 '''.strip() + '\n'
-test_result6_logic = f'''
+test_result6_logic = '''
 class AreaLogic:
     def __init__(self, state_manager):
         self.state_manager = state_manager
@@ -591,7 +597,7 @@ class AreaLogic:
         #$% Wait(3) %$#
         return
 '''.strip() + '\n'
-test_result6_tests = f'''
+test_result6_tests = '''
 import unittest
 
 
@@ -619,7 +625,7 @@ if __name__ == '__main__':
 ################
 
 
-test_case7 = f'''
+test_case7 = '''
 IF ~  Global("Appearance","GLOBAL",1)
 ~ THEN BEGIN 0 // from:
 SAY #300 /* ~Тленный не обращает на тебя внимания. Должно быть, он спутал тебя с одним из мертвых рабочих.~ */
@@ -694,7 +700,7 @@ test_tree7 = {
         }
     }]
 }
-test_result7_rpy = f'''
+test_result7_rpy = '''
 init 10 python:
     from game.engine.runtime import (runtime)
     from game.dlgs.area_logic import AreaLogic
@@ -708,35 +714,36 @@ init 10 python:
 
 # s0 # say300
 label area_s0: # - # IF ~  Global("Appearance","GLOBAL",1)
-    nr 'Тленный не обращает на тебя внимания. Должно быть, он спутал тебя с одним из мертвых рабочих.'
+    'area_s0{#area_s0}'
+    # nr 'Тленный не обращает на тебя внимания. Должно быть, он спутал тебя с одним из мертвых рабочих.{#area_s0_1}'
 
     menu:
-        '«Приветствую».':
+        'area_s0_r302{#area_s0_r302}': # '«Приветствую».{#area_s0_r302}'
             # a0 # r302
             jump area_s1
 
-        '«Кто ты?»':
+        'area_s0_r303{#area_s0_r303}': # '«Кто ты?»{#area_s0_r303}'
             # a1 # r303
             jump area_s1
 
-        '«Что это за место?»':
+        'area_s0_r304{#area_s0_r304}': # '«Что это за место?»{#area_s0_r304}'
             # a2 # r304
             jump area_s1
 
-        '«У меня есть пара вопросов…»':
+        'area_s0_r305{#area_s0_r305}': # '«У меня есть пара вопросов…»{#area_s0_r305}'
             # a3 # r305
             jump morte_s59  # EXTERN
 
-        'Оставить его в покое.':
+        'area_s0_r306{#area_s0_r306}': # 'Оставить его в покое.{#area_s0_r306}'
             # a4 # r306
             jump area_dispose
 '''.strip() + '\n'
-test_result7_logic = f'''
+test_result7_logic = '''
 class AreaLogic:
     def __init__(self, state_manager):
         self.state_manager = state_manager
 '''.strip() + '\n'
-test_result7_tests = f'''
+test_result7_tests = '''
 import unittest
 
 
@@ -760,7 +767,7 @@ if __name__ == '__main__':
 ################
 
 
-test_case8 = f'''
+test_case8 = '''
 IF ~~ THEN BEGIN 138 // from: 137.0
 SAY #11947 /* ~Морт глядит на твою ладонь. «Ух-х-х». Кажется, его покоробило. «Вот уж мелкие уродцы, а?»~ */
 IF ~~ THEN EXIT
@@ -788,7 +795,7 @@ test_tree8 = {
         }
     }]
 }
-test_result8_rpy = f'''
+test_result8_rpy = '''
 init 10 python:
     from game.engine.runtime import (runtime)
     from game.dlgs.area_logic import AreaLogic
@@ -802,19 +809,20 @@ init 10 python:
 
 # s138 # say11947
 label area_s138: # from 137.0
-    nr 'Морт глядит на твою ладонь.'
-    area '«Ух-х-х».'
-    nr 'Кажется, его покоробило.'
-    area '«Вот уж мелкие уродцы, а?»'
+    'area_s138{#area_s138}'
+    # nr 'Морт глядит на твою ладонь.{#area_s138_1}'
+    # area '«Ух-х-х».{#area_s138_2}'
+    # nr 'Кажется, его покоробило.{#area_s138_3}'
+    # area '«Вот уж мелкие уродцы, а?»{#area_s138_4}'
 
     jump area_dispose
 '''.strip() + '\n'
-test_result8_logic = f'''
+test_result8_logic = '''
 class AreaLogic:
     def __init__(self, state_manager):
         self.state_manager = state_manager
 '''.strip() + '\n'
-test_result8_tests = f'''
+test_result8_tests = '''
 import unittest
 
 
@@ -838,7 +846,7 @@ if __name__ == '__main__':
 ################
 
 
-test_case9 = f'''
+test_case9 = '''
 IF ~~ THEN BEGIN 179 // from:
 SAY #15349 /* ~«Это, э... что-то вроде говорящей энциклопедии. Мне не нравится об этом говорить. Мне типа неловко, правда».~ */
 IF ~  GlobalLT("Morte_Mimir","GLOBAL",2) ~ THEN DO ~IncrementGlobalOnceEx("GLOBALMorte_Mimir","GLOBALMorte_Mimir",0) ~ EXTERN ~DADYZOEL~ 36
@@ -877,7 +885,7 @@ test_tree9 = {
         }
     }]
 }
-test_result9_rpy = f'''
+test_result9_rpy = '''
 init 10 python:
     from game.engine.runtime import (runtime)
     from game.dlgs.area_logic import AreaLogic
@@ -891,17 +899,18 @@ init 10 python:
 
 # s179 # say15349
 label area_s179: # -
-    area '«Это, э… что-то вроде говорящей энциклопедии. Мне не нравится об этом говорить. Мне типа неловко, правда».'
+    'area_s179{#area_s179}'
+    # area '«Это, э… что-то вроде говорящей энциклопедии. Мне не нравится об этом говорить. Мне типа неловко, правда».{#area_s179_1}'
 
     if areaLogic.s179_condition():
         $ areaLogic.s179_action()
         jump adyzoel_s36  # EXTERN
     menu:
-        '«Но ты ведь НЕ мимир, Морт…»' if areaLogic.r65537_condition():
+        'area_s179_r65537{#area_s179_r65537}' if areaLogic.r65537_condition(): # '«Но ты ведь НЕ мимир, Морт…»{#area_s179_r65537}'
             # a0 # r65537
             jump adyzoel_s36  # EXTERN
 '''.strip() + '\n'
-test_result9_logic = f'''
+test_result9_logic = '''
 class AreaLogic:
     def __init__(self, state_manager):
         self.state_manager = state_manager
@@ -918,7 +927,7 @@ class AreaLogic:
     def r65537_condition(self):
         return self.state_manager.world_manager.get_morte_mimir() > 1
 '''.strip() + '\n'
-test_result9_tests = f'''
+test_result9_tests = '''
 import unittest
 
 
@@ -966,7 +975,7 @@ if __name__ == '__main__':
 ################
 
 
-test_case10 = f'''
+test_case10 = '''
 IF ~~ THEN BEGIN 206 // from: 204.0
   SAY #19704 /* ~«Это не то же самое, шеф...»~ */
   IF ~~ THEN GOTO 205
@@ -992,7 +1001,7 @@ test_tree10 = {
         'target_state': {'id': 205}
     }]
 }
-test_result10_rpy = f'''
+test_result10_rpy = '''
 init 10 python:
     from game.engine.runtime import (runtime)
     from game.dlgs.area_logic import AreaLogic
@@ -1006,16 +1015,17 @@ init 10 python:
 
 # s206 # say19704
 label area_s206: # from 204.0
-    area '«Это не то же самое, шеф…»'
+    'area_s206{#area_s206}'
+    # area '«Это не то же самое, шеф…»{#area_s206_1}'
 
     jump area_s205
 '''.strip() + '\n'
-test_result10_logic = f'''
+test_result10_logic = '''
 class AreaLogic:
     def __init__(self, state_manager):
         self.state_manager = state_manager
 '''.strip() + '\n'
-test_result10_tests = f'''
+test_result10_tests = '''
 import unittest
 
 
@@ -1039,7 +1049,7 @@ if __name__ == '__main__':
 ################
 
 
-test_case11 = f'''
+test_case11 = '''
 IF ~~ THEN BEGIN 518 // from: 515.0 517.0
 SAY #53668 /* ~Морт смотрит тебе под ноги — он еще никогда не выглядел таким жалким. «Те воспоминания, они... слушай, шеф, я даже не помню, *каково* это — быть человеком. Я не помню свою жизнь до Колонны...»~ */
 IF ~  NearbyDialog("DDakkon") ~ THEN EXTERN ~DDAKKON~ 183
@@ -1083,7 +1093,7 @@ test_tree11 = {
         }
     }]
 }
-test_result11_rpy = f'''
+test_result11_rpy = '''
 init 10 python:
     from game.engine.runtime import (runtime)
     from game.dlgs.area_logic import AreaLogic
@@ -1097,17 +1107,18 @@ init 10 python:
 
 # s518 # say53668
 label area_s518: # from 515.0 517.0
-    nr 'Морт смотрит тебе под ноги — он еще никогда не выглядел таким жалким.'
-    area '«Те воспоминания, они… слушай, шеф, я даже не помню, *каково* это — быть человеком. Я не помню свою жизнь до Колонны…»'
+    'area_s518{#area_s518}'
+    # nr 'Морт смотрит тебе под ноги — он еще никогда не выглядел таким жалким.{#area_s518_1}'
+    # area '«Те воспоминания, они… слушай, шеф, я даже не помню, *каково* это — быть человеком. Я не помню свою жизнь до Колонны…»{#area_s518_2}'
 
     if areaLogic.s518_condition():
         jump dakkon_s183  # EXTERN
     menu:
-        '«Продолжай…»' if areaLogic.r54105_condition():
+        'area_s518_r54105{#area_s518_r54105}' if areaLogic.r54105_condition(): # '«Продолжай…»{#area_s518_r54105}'
             # a0 # r54105
             jump area_s520
 '''.strip() + '\n'
-test_result11_logic = f'''
+test_result11_logic = '''
 class AreaLogic:
     def __init__(self, state_manager):
         self.state_manager = state_manager
@@ -1120,7 +1131,7 @@ class AreaLogic:
     def r54105_condition(self):
         return not self.state_manager.world_manager.get_in_party_dakkon()
 '''.strip() + '\n'
-test_result11_tests = f'''
+test_result11_tests = '''
 import unittest
 
 
@@ -1158,7 +1169,7 @@ if __name__ == '__main__':
 ################
 
 
-test_case12 = f'''
+test_case12 = '''
 IF ~~ THEN BEGIN 0 // from:
 SAY #986 /* ~«Эй, шеф. Ты в порядке? Изображаешь из себя труп или пытаешься обмануть трухлявых? Я уж думал, что ты дал дуба».~ */
 IF ~~ THEN REPLY #987 /* ~«Кто ты?»~ */ GOTO 1
@@ -1219,7 +1230,7 @@ test_tree12 = {
         }
     }]
 }
-test_result12_rpy = f'''
+test_result12_rpy = '''
 init 10 python:
     from game.engine.runtime import (runtime)
     from game.dlgs.area_logic import AreaLogic
@@ -1233,27 +1244,28 @@ init 10 python:
 
 # s0 # say986
 label area_s0: # -
-    area '«Эй, шеф. Ты в порядке? Изображаешь из себя труп или пытаешься обмануть трухлявых? Я уж думал, что ты дал дуба».'
+    'area_s0{#area_s0}'
+    # area '«Эй, шеф. Ты в порядке? Изображаешь из себя труп или пытаешься обмануть трухлявых? Я уж думал, что ты дал дуба».{#area_s0_1}'
 
     menu:
-        '«Кто ты?»':
+        'area_s0_r987{#area_s0_r987}': # '«Кто ты?»{#area_s0_r987}'
             # a0 # r987
             jump area_s1
 
-        'Не обращать внимания на говорящий череп и изучить комнату.':
+        'area_s0_r989{#area_s0_r989}': # 'Не обращать внимания на говорящий череп и изучить комнату.{#area_s0_r989}'
             # a1 # r989
             jump area_dispose
 
-        'Вдохнуть поглубже, встряхнуть головой и не обращать внимания на говорящий с тобой череп.':
+        'area_s0_r988{#area_s0_r988}': # 'Вдохнуть поглубже, встряхнуть головой и не обращать внимания на говорящий с тобой череп.{#area_s0_r988}'
             # a2 # r988
             jump area_dispose
 
-        '«Морт, я уверен, что у тебя найдется еще тысяча умных мыслей, но мне нужно, чтобы ты заткнулся, закончил свои дела и присоединился ко мне НЕМЕДЛЕННО».':
+        'area_s0_r17833{#area_s0_r17833}': # '«Морт, я уверен, что у тебя найдется еще тысяча умных мыслей, но мне нужно, чтобы ты заткнулся, закончил свои дела и присоединился ко мне НЕМЕДЛЕННО».{#area_s0_r17833}'
             # a3 # r17833
             $ areaLogic.r17833_action()
             jump area_dispose
 '''.strip() + '\n'
-test_result12_logic = f'''
+test_result12_logic = '''
 class AreaLogic:
     def __init__(self, state_manager):
         self.state_manager = state_manager
@@ -1265,7 +1277,7 @@ class AreaLogic:
         self.state_manager.world_manager.set_read_scars(True)
         self.state_manager.world_manager.set_in_party_morte(True)
 '''.strip() + '\n'
-test_result12_tests = f'''
+test_result12_tests = '''
 import unittest
 
 
@@ -1318,7 +1330,7 @@ if __name__ == '__main__':
 ################
 
 
-test_case13 = f'''
+test_case13 = '''
 IF ~~ THEN BEGIN 0 // from:
   SAY #822 /* ~Прежде чем Морт успевает завершить свои разглагольствования, писарь начинает безудержно кашлять. Спустя минуту или две кашель прекращается, и дыхание писаря вновь становится неровным хрипом.~ */
   IF ~~ THEN EXTERN ~DMORTE~ 104
@@ -1344,7 +1356,7 @@ test_tree13 = {
         }
     }]
 }
-test_result13_rpy = f'''
+test_result13_rpy = '''
 init 10 python:
     from game.engine.runtime import (runtime)
     from game.dlgs.area_logic import AreaLogic
@@ -1358,16 +1370,17 @@ init 10 python:
 
 # s0 # say822
 label area_s0: # -
-    nr 'Прежде чем Морт успевает завершить свои разглагольствования, писарь начинает безудержно кашлять. Спустя минуту или две кашель прекращается, и дыхание писаря вновь становится неровным хрипом.'
+    'area_s0{#area_s0}'
+    # nr 'Прежде чем Морт успевает завершить свои разглагольствования, писарь начинает безудержно кашлять. Спустя минуту или две кашель прекращается, и дыхание писаря вновь становится неровным хрипом.{#area_s0_1}'
 
     jump morte_s104  # EXTERN
 '''.strip() + '\n'
-test_result13_logic = f'''
+test_result13_logic = '''
 class AreaLogic:
     def __init__(self, state_manager):
         self.state_manager = state_manager
 '''.strip() + '\n'
-test_result13_tests = f'''
+test_result13_tests = '''
 import unittest
 
 
@@ -1460,24 +1473,25 @@ init 10 python:
 
 # s2 # say706
 label area_s2: # from 1.0 1.1
-    nr 'Ее глаза медленно открываются, секунду она смущенно моргает, будто не понимая, где она находится. Девушка медленно окидывает взглядом комнату. Увидев тебя, ее спокойное лицо искажается яростью.'
-    area '«Ты! Что привело сюда *тебя*?! Захотел лично полюбоваться на причиненные тобой страдания? Или, быть может, даже после моей смерти ты надеешься получить от меня пользу?..»'
-    nr 'Ее голос превращается в шипение.'
-    area '«„Любовь моя“».'
-    nr '~ [DEN001]'
+    'area_s2{#area_s2}'
+    # nr 'Ее глаза медленно открываются, секунду она смущенно моргает, будто не понимая, где она находится. Девушка медленно окидывает взглядом комнату. Увидев тебя, ее спокойное лицо искажается яростью.{#area_s2_1}'
+    # area '«Ты! Что привело сюда *тебя*?! Захотел лично полюбоваться на причиненные тобой страдания? Или, быть может, даже после моей смерти ты надеешься получить от меня пользу?..»{#area_s2_2}'
+    # nr 'Ее голос превращается в шипение.{#area_s2_3}'
+    # area '«„Любовь моя“».{#area_s2_4}'
+    # nr '~ [DEN001]{#area_s2_5}'
 
     menu:
-        '«Кто ты?»':
+        'area_s2_r707{#area_s2_r707}': # '«Кто ты?»{#area_s2_r707}'
             # a0 # r707
             $ areaLogic.r707_action()
             jump area_s3
 
-        '«Любовь моя? Я знаю тебя?»' if areaLogic.r708_condition():
+        'area_s2_r708{#area_s2_r708}' if areaLogic.r708_condition(): # '«Любовь моя? Я знаю тебя?»{#area_s2_r708}'
             # a1 # r708
             $ areaLogic.r708_action()
             jump area_s3
 
-        '«Любовь моя? Я знаю тебя?»' if areaLogic.r709_condition():
+        'area_s2_r709{#area_s2_r709}' if areaLogic.r709_condition(): # '«Любовь моя? Я знаю тебя?»{#area_s2_r709}'
             # a2 # r709
             $ areaLogic.r709_action()
             jump area_s3
@@ -1633,11 +1647,12 @@ init 10 python:
 
 # s29 # say809
 label area_s29: # from 24.0
-    area '«Я знаю, что ты должен умереть… пока еще можешь. Круг *должен* замкнуться, любовь моя. Ты не предназначен для такой жизни. Ты должен найти то, что у тебя отнято, и уйти дальше, в земли мертвых».'
-    nr '~ [DEN023]'
+    'area_s29{#area_s29}'
+    # area '«Я знаю, что ты должен умереть… пока еще можешь. Круг *должен* замкнуться, любовь моя. Ты не предназначен для такой жизни. Ты должен найти то, что у тебя отнято, и уйти дальше, в земли мертвых».{#area_s29_1}'
+    # nr '~ [DEN023]{#area_s29_2}'
 
     menu:
-        '«Пока я еще могу?»':
+        'area_s29_r810{#area_s29_r810}': # '«Пока я еще могу?»{#area_s29_r810}'
             # a0 # r810
             $ areaLogic.j26087_s29_r810_action()
             jump area_s25
@@ -1785,22 +1800,23 @@ init 10 python:
 
 # s26 # say793
 label area_s26: # from 3.5 4.1 6.5 6.6 7.5 15.0 15.3 20.3 21.2 21.5 28.2 47.4
-    nr 'Дейонарра выглядит разъяренной.'
-    area '«Тогда уходи, как уходил уже триста раз! Зачем ты приходишь сюда? Чтобы помучить меня?! Уходи и никогда больше не возвращайся!»'
-    nr 'Закрыв глаза, Дейонарра исчезает с беззвучным вздохом.'
+    'area_s26{#area_s26}'
+    # nr 'Дейонарра выглядит разъяренной.{#area_s26_1}'
+    # area '«Тогда уходи, как уходил уже триста раз! Зачем ты приходишь сюда? Чтобы помучить меня?! Уходи и никогда больше не возвращайся!»{#area_s26_2}'
+    # nr 'Закрыв глаза, Дейонарра исчезает с беззвучным вздохом.{#area_s26_3}'
 
     menu:
-        'Уйти.' if areaLogic.r6081_condition():
+        'area_s26_r6081{#area_s26_r6081}' if areaLogic.r6081_condition(): # 'Уйти.{#area_s26_r6081}'
             # a0 # r6081
             $ areaLogic.r6081_action()
             jump area_dispose
 
-        'Уйти.' if areaLogic.r6082_condition():
+        'area_s26_r6082{#area_s26_r6082}' if areaLogic.r6082_condition(): # 'Уйти.{#area_s26_r6082}'
             # a1 # r6082
             $ areaLogic.r6082_action()
             jump morte_s105  # EXTERN
 
-        'Уйти.' if areaLogic.r13257_condition():
+        'area_s26_r13257{#area_s26_r13257}' if areaLogic.r13257_condition(): # 'Уйти.{#area_s26_r13257}'
             # a2 # r13257
             $ areaLogic.r13257_action()
             jump area_dispose
@@ -1968,15 +1984,16 @@ init 10 python:
 
 # s61 # say63390
 label area_s61: # - # IF WEIGHT #7 /* Triggers after states #: 62 even though they appear after this state */ ~  GlobalGT("Deionarra","GLOBAL",0) Global("Current_Area","GLOBAL",1200) Global("1200_Cut_Scene_2","GLOBAL",0)
-    nr 'Перед тобой призрачный силуэт Дейонарры. Ее призрачное платье будто колышется от какого-то неземного ветра. Она стоит на краю вымощенной черным камнем дороги, всматриваясь в пустоту плана.'
+    'area_s61{#area_s61}'
+    # nr 'Перед тобой призрачный силуэт Дейонарры. Ее призрачное платье будто колышется от какого-то неземного ветра. Она стоит на краю вымощенной черным камнем дороги, всматриваясь в пустоту плана.{#area_s61_1}'
 
     menu:
-        '«Дейонарра?..»':
+        'area_s61_r63391{#area_s61_r63391}': # '«Дейонарра?..»{#area_s61_r63391}'
             # a0 # r63391
             $ areaLogic.r63391_action()
             jump area_s62
 
-        'Оставить Дейонарру в покое.':
+        'area_s61_r63392{#area_s61_r63392}': # 'Оставить Дейонарру в покое.{#area_s61_r63392}'
             # a1 # r63392
             jump area_dispose
 """.strip() + '\n'
@@ -2091,15 +2108,16 @@ init 10 python:
 
 # s42 # say1427
 label area_s42: # from 41.0 45.0
-    nr 'В шее раздается характерный хруст, и тело тленного безвольно падает в твои объятия.'
+    'area_s42{#area_s42}'
+    # nr 'В шее раздается характерный хруст, и тело тленного безвольно падает в твои объятия.{#area_s42_1}'
 
     menu:
-        '«Лучше ты, чем я, трухлявый».' if areaLogic.r1428_condition():
+        'area_s42_r1428{#area_s42_r1428}' if areaLogic.r1428_condition(): # '«Лучше ты, чем я, трухлявый».{#area_s42_r1428}'
             # a0 # r1428
             $ areaLogic.r1428_action()
             jump area_s43
 
-        '«Лучше ты, чем я, трухлявый».' if areaLogic.r1429_condition():
+        'area_s42_r1429{#area_s42_r1429}' if areaLogic.r1429_condition(): # '«Лучше ты, чем я, трухлявый».{#area_s42_r1429}'
             # a1 # r1429
             $ areaLogic.r1429_action()
             jump area_dispose
@@ -2291,10 +2309,11 @@ init 10 python:
 
 # s73 # say66913
 label area_s73: # from 72.0
-    nr 'При этих словах Дейонарры твой череп пронзает внезапное озарение… неожиданно ты ощущаешь непреодолимое желание взглянуть на собственную руку. Подняв ее и *посмотрев* на нее, ты ВИДИШЬ кровь, текущую по запястью, омывающую твои мускулы, дающую силу твоим костям…'
+    'area_s73{#area_s73}'
+    # nr 'При этих словах Дейонарры твой череп пронзает внезапное озарение… неожиданно ты ощущаешь непреодолимое желание взглянуть на собственную руку. Подняв ее и *посмотрев* на нее, ты ВИДИШЬ кровь, текущую по запястью, омывающую твои мускулы, дающую силу твоим костям…{#area_s73_1}'
 
     menu:
-        '«Чт…»':
+        'area_s73_r66914{#area_s73_r66914}': # '«Чт…»{#area_s73_r66914}'
             # a0 # r66914
             $ areaLogic.j66917_s73_r66914_action()
             $ areaLogic.r66914_action()
@@ -2452,10 +2471,11 @@ init 10 python:
 
 # s2 # say309
 label area_s2: # from 1.1 1.2 5.2 5.3 19.6 20.4 47.2 47.3 51.4
-    nr 'Тленный отступает на шаг, затем быстро хлопает в ладони три раза. В ответ во всем Морге раздается звон огромного железного колокола.'
+    'area_s2{#area_s2}'
+    # nr 'Тленный отступает на шаг, затем быстро хлопает в ладони три раза. В ответ во всем Морге раздается звон огромного железного колокола.{#area_s2_1}'
 
     menu:
-        '«Ну хорошо…»':
+        'area_s2_r313{#area_s2_r313}': # '«Ну хорошо…»{#area_s2_r313}'
             # a0 # r313
             $ areaLogic.r313_action()
             jump area_dispose

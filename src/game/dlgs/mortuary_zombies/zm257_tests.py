@@ -11,12 +11,12 @@ class Zm257LogicTest(LogicTest):
         self.logic = Zm257Logic(self.state_manager)
 
 
-    def test_know_zm257_spirit_action(self):
+    def test_set_know_zm257_spirit(self):
         logic = Zm257Logic(self.state_manager)
 
         self._false_then_true_action(
             self.state_manager.world_manager.get_know_zm257_spirit,
-            logic.know_zm257_spirit_action
+            logic.set_know_zm257_spirit
         )
 
 

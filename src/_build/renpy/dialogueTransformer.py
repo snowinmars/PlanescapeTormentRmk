@@ -270,7 +270,8 @@ class DialogueTransformer:
 
 
 def _expand_character(char):
-    if char.lower() == 'player1':
+    if char.lower() == 'player1' or \
+       char.lower() == 'protagonist':
         return 'protagonist_character_name'
     return char.lower()
 

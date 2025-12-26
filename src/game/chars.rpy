@@ -11,7 +11,7 @@ init 1 python:
     def get_bei_name():
         return _('Бэй') if zm1041Logic.get_know_bei_name() else _('Зомби 1041')
     def get_asonje_name():
-        return _('Асонж') if zm1096Logic.get_know_bei_name() else _('Зомби 1094')
+        return _('Асонж') if zm1094Logic.get_know_asonje_name() else _('Зомби 1094')
     def get_vaxis_name():
         return _('Ваксис') if vaxisLogic.get_know_vaxis_name() else '?'
     def get_xach_name():

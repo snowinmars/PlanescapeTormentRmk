@@ -35,7 +35,7 @@ class JournalStoreTest(unittest.TestCase):
         self._fill_store(self.store)
 
         dump = pickle.dumps(self.store)
-        expected = b"\x80\x05\x95\xd5\x00\x00\x00\x00\x00\x00\x00\x8c!game.engine.journal.journal_store\x94\x8c\x0cJournalStore\x94\x93\x94)\x81\x94}\x94\x8c\x05notes\x94}\x94(\x8c\x06note_a\x94\x8c game.engine.journal.journal_note\x94\x8c\x0bJournalNote\x94\x93\x94)\x81\x94}\x94(\x8c\x02id\x94h\x07\x8c\x07content\x94\x8c\x06Note a\x94\x8c\x05found\x94\x88ub\x8c\x06note_b\x94h\n)\x81\x94}\x94(h\rh\x11h\x0e\x8c\x06Note b\x94h\x10\x89ubusb."
+        expected = b'\x80\x05\x95\xe6\x00\x00\x00\x00\x00\x00\x00\x8c!game.engine.journal.journal_store\x94\x8c\x0cJournalStore\x94\x93\x94)\x81\x94}\x94\x8c\x05notes\x94}\x94(\x8c\x06note_a\x94\x8c game.engine.journal.journal_note\x94\x8c\x0bJournalNote\x94\x93\x94)\x81\x94}\x94(\x8c\x02id\x94h\x07\x8c\x07content\x94\x8c\x06Note a\x94\x8c\x05found\x94\x88\x8c\x08found_at\x94K\x00ub\x8c\x06note_b\x94h\n)\x81\x94}\x94(h\rh\x12h\x0e\x8c\x06Note b\x94h\x10\x89h\x11K\x00ubusb.'
         self.assertEqual(dump, expected)
 
         store = pickle.loads(dump)
@@ -46,7 +46,7 @@ class JournalStoreTest(unittest.TestCase):
         self._fill_store(self.store)
 
         dump = self.store.toJson()
-        expected = '{"notes": {"note_a": {"id": "note_a", "content": "Note a", "found": true}, "note_b": {"id": "note_b", "content": "Note b", "found": false}}}'
+        expected = '{"notes": {"note_a": {"id": "note_a", "content": "Note a", "found": true, "found_at": 0}, "note_b": {"id": "note_b", "content": "Note b", "found": false, "found_at": 0}}}'
         self.assertEqual(dump, expected)
 
         store = JournalStore.fromJson(dump)

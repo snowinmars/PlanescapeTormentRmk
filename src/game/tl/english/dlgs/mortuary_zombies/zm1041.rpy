@@ -25,7 +25,7 @@ translate english zm1041_s2_d75abce4:
 translate english zm1041_s3_dfdb17e5:
 
     # "zm1041_s3{#zm1041_s3}"
-    nr "The spirit smiles for a moment, as if pleased. He composes himself, standing with one hand behind him as he begins to speak in a soft, lilting tone."
+    nr "The spirit smiles for a moment, as if pleased. He composes himself, standing with one hand behind him as he begins to speak in a soft, lilting tone.{#zm1041_s3_1}"
     bei "«Suiang jianne shyr nan bye yih nan;\nDong feng wu lih bay hua tsarn;\nChuen tsarn daw syy sy fang jinn;\nLah Jiuh cherng huei ley shyy gan».{#zm1041_s3_2}"
     nr "That being said, he appears content to stand and wait patiently for your reply.{#zm1041_s3_3}"
     nr "You open your mouth to voice a question, but before you can begin the spirit begins to speak in a soft, lilting tone.{#zm1041_s4_1}"
