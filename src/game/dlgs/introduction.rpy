@@ -95,7 +95,7 @@ label new_life:
         snowinmars 'Так как я эти, хайлвл диалоги тоже перенёс сюда, было бы странно не предложить к ним доступа. Если хочешь - возьми.'
 
         menu:
-            'Получить "История костей"':
+            'Получить „Историю костей“':
                 $ introductionLogic.setup_as_highlvl()
                 snowinmars 'Вжух - ты умеешь разговаривать с духами.'
             'Не надо':
@@ -113,7 +113,7 @@ label new_life:
 label intro:
     play music mortuary
     scene black
-    # hide expression "*"
+    # hide expression '*'
 
     nr '………кккккккхххххххххх………'
     nr 'Этот хриплый присвист – мой первый вдох.'

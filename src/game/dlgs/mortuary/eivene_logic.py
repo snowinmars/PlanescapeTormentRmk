@@ -288,5 +288,9 @@ class EiveneLogic(EiveneLogicGenerated):
         super().__init__(state_manager)
 
 
+    def get_know_eivene_name(self):
+        return self.state_manager.world_manager.get_know_eivene_name()
+
+
     def set_know_eivene_name(self):
         self.state_manager.world_manager.set_know_eivene_name(True)

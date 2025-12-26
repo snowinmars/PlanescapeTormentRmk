@@ -3,6 +3,6 @@
 translate english strings:
 
     # game/screens/preferences_save.rpy:13
-    old "preferences_save_title"
-    new "Save"
+    old 'preferences_save_title'
+    new 'Save'
 

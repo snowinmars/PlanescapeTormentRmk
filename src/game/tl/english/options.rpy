@@ -3,6 +3,6 @@
 translate english strings:
 
     # game/options.rpy:15
-    old "PlanescapeTormentRmk"
-    new "PlanescapeTormentRmk"
+    old 'PlanescapeTormentRmk'
+    new 'PlanescapeTormentRmk'
 

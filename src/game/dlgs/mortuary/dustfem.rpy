@@ -11,7 +11,7 @@ init 10 python:
 
 # s0 # say298
 label dustfem_s0: # - # IF ~  Global("Appearance","GLOBAL",1)
-    "dustfem_s0{#dustfem_s0}"
+    'dustfem_s0{#dustfem_s0}'
     # nr 'Тленная не обращает на тебя внимания. Должно быть, она спутала тебя с одним из мертвых рабочих.{#dustfem_s0_1}'
 
     menu:
@@ -38,7 +38,7 @@ label dustfem_s0: # - # IF ~  Global("Appearance","GLOBAL",1)
 
 # s1 # say1171
 label dustfem_s1: # from 0.0 0.1 0.2 0.3
-    "dustfem_s1{#dustfem_s1}"
+    'dustfem_s1{#dustfem_s1}'
     # nr 'Тленная подпрыгивает от неожиданности. Затем она поворачивает к тебе голову. Она выглядит потрясенной: должно быть, маскировка у тебя весьма неплохая.{#dustfem_s1_1}'
 
     menu:
@@ -57,7 +57,7 @@ label dustfem_s1: # from 0.0 0.1 0.2 0.3
 
 # s2 # say1176
 label dustfem_s2: # from 1.1 1.2 4.3 5.2 5.3 6.4 19.6 20.4 47.2 47.3 51.4
-    "dustfem_s2{#dustfem_s2}"
+    'dustfem_s2{#dustfem_s2}'
     # nr 'Тленная отступает на шаг, затем быстро хлопает в ладони три раза. В ответ во всем Морге раздается звон огромного железного колокола.{#dustfem_s2_1}'
 
     menu:
@@ -69,7 +69,7 @@ label dustfem_s2: # from 1.1 1.2 4.3 5.2 5.3 6.4 19.6 20.4 47.2 47.3 51.4
 
 # s3 # say1177
 label dustfem_s3: # externs morte_s84
-    "dustfem_s3{#dustfem_s3}"
+    'dustfem_s3{#dustfem_s3}'
     # nr 'Эта бледная женщина одета в длинную темную мантию. От нее слегка отдает плесенью. Ее лицо ничего не выражает; кажется, она поглощена своими обязанностями.{#dustfem_s3_1}'
 
     menu:
@@ -96,7 +96,7 @@ label dustfem_s3: # externs morte_s84
 
 # s4 # say1178
 label dustfem_s4: # from 3.0 3.1 3.2 3.3 40.2 40.3
-    "dustfem_s4{#dustfem_s4}"
+    'dustfem_s4{#dustfem_s4}'
     # nr 'Тленная медленно поднимает свою голову и оборачивается к тебе.{#dustfem_s4_1}'
     # dustfem '«Ты потерялся?»{#dustfem_s4_2}'
 
@@ -120,7 +120,7 @@ label dustfem_s4: # from 3.0 3.1 3.2 3.3 40.2 40.3
 
 # s5 # say1179
 label dustfem_s5: # from 4.0 16.2 51.1
-    "dustfem_s5{#dustfem_s5}"
+    'dustfem_s5{#dustfem_s5}'
     # dustfem '«Я позову стражу, они тебя живо выведут. Погоди минутку».{#dustfem_s5_1}'
 
     menu:
@@ -143,7 +143,7 @@ label dustfem_s5: # from 4.0 16.2 51.1
 
 # s6 # say1180
 label dustfem_s6: # from 4.1 4.2 51.2 51.3
-    "dustfem_s6{#dustfem_s6}"
+    'dustfem_s6{#dustfem_s6}'
     # dustfem '«Если ты не потерялся, то что же ты здесь делаешь?»{#dustfem_s6_1}'
 
     menu:
@@ -170,7 +170,7 @@ label dustfem_s6: # from 4.1 4.2 51.2 51.3
 
 # s7 # say1181
 label dustfem_s7: # from 6.0 9.0 20.0
-    "dustfem_s7{#dustfem_s7}"
+    'dustfem_s7{#dustfem_s7}'
     # dustfem '«Боюсь, что меня касается. Может, стражники развяжут твой язык».{#dustfem_s7_1}'
     # nr 'Тленная делает шаг назад, кажется, она собирается позвать стражников.{#dustfem_s7_2}'
 
@@ -191,7 +191,7 @@ label dustfem_s7: # from 6.0 9.0 20.0
 
 # s8 # say1182
 label dustfem_s8: # from 6.1 16.0 20.1
-    "dustfem_s8{#dustfem_s8}"
+    'dustfem_s8{#dustfem_s8}'
     # dustfem '«Любишь пошутить? Тогда может поделишься своими шутками со стражниками».{#dustfem_s8_1}'
     # nr 'Тленная отступает на шаг; кажется, она собирается позвать стражников.{#dustfem_s8_2}'
 
@@ -212,7 +212,7 @@ label dustfem_s8: # from 6.1 16.0 20.1
 
 # s9 # say1183
 label dustfem_s9: # from 6.2 20.2
-    "dustfem_s9{#dustfem_s9}"
+    'dustfem_s9{#dustfem_s9}'
     # dustfem '«Кого ты хочешь увидеть?»{#dustfem_s9_1}'
 
     menu:
@@ -260,7 +260,7 @@ label dustfem_s9: # from 6.2 20.2
 
 # s10 # say1184
 label dustfem_s10: # from 9.1
-    "dustfem_s10{#dustfem_s10}"
+    'dustfem_s10{#dustfem_s10}'
     # dustfem '«Дхолла можно найти в приемной комнате на этом этаже. Должна предупредить… Дхолл очень занят, а здоровье у него подкошено. Если у тебя к нему несрочное дело, то лучше не беспокоить его».{#dustfem_s10_1}'
 
     menu:
@@ -271,7 +271,7 @@ label dustfem_s10: # from 9.1
 
 # s11 # say1185
 label dustfem_s11: # from 9.2
-    "dustfem_s11{#dustfem_s11}"
+    'dustfem_s11{#dustfem_s11}'
     # dustfem '«Дхолл скорее всего в приемной комнате на втором этаже. Он очень занят, а здоровье у него подкошено. Если у тебя к нему несрочное дело, то лучше не беспокоить его».{#dustfem_s11_1}'
 
     menu:
@@ -282,7 +282,7 @@ label dustfem_s11: # from 9.2
 
 # s12 # say1186
 label dustfem_s12: # from 9.4 19.1
-    "dustfem_s12{#dustfem_s12}"
+    'dustfem_s12{#dustfem_s12}'
     # dustfem '«Дейонаррой? На первом этаже в мемориальном зале похоронена женщина. Может быть, это она?»{#dustfem_s12_1}'
 
     menu:
@@ -293,7 +293,7 @@ label dustfem_s12: # from 9.4 19.1
 
 # s13 # say1187
 label dustfem_s13: # from 9.3
-    "dustfem_s13{#dustfem_s13}"
+    'dustfem_s13{#dustfem_s13}'
     # dustfem '«Дейонаррой? В северо-западном мемориальном зале похоронена женщина. Может быть, это она?»{#dustfem_s13_1}'
 
     menu:
@@ -304,7 +304,7 @@ label dustfem_s13: # from 9.3
 
 # s14 # say1188
 label dustfem_s14: # from 9.6
-    "dustfem_s14{#dustfem_s14}"
+    'dustfem_s14{#dustfem_s14}'
     # dustfem '«Скорее всего, Соэго находится у главных ворот на первом этаже. Он работает проводником в часы антипика».{#dustfem_s14_1}'
 
     menu:
@@ -315,7 +315,7 @@ label dustfem_s14: # from 9.6
 
 # s15 # say1189
 label dustfem_s15: # from 9.5
-    "dustfem_s15{#dustfem_s15}"
+    'dustfem_s15{#dustfem_s15}'
     # dustfem '«Скорее всего, Соэго находится у главных ворот. Он работает проводником в часы антипика».{#dustfem_s15_1}'
 
     menu:
@@ -326,7 +326,7 @@ label dustfem_s15: # from 9.5
 
 # s16 # say1190
 label dustfem_s16: # from 6.3 20.3
-    "dustfem_s16{#dustfem_s16}"
+    'dustfem_s16{#dustfem_s16}'
     # dustfem '«Кто был погребен? Возможно, служба проводится в другом конце Морга».{#dustfem_s16_1}'
 
     menu:
@@ -345,7 +345,7 @@ label dustfem_s16: # from 6.3 20.3
 
 # s17 # say1191
 label dustfem_s17: # from 16.1
-    "dustfem_s17{#dustfem_s17}"
+    'dustfem_s17{#dustfem_s17}'
     # dustfem '«По всему периметру Морга расположены погребальные залы. Они расположены вдоль стены на первом и втором этажах. Тебе известно имя усопшего?»{#dustfem_s17_1}'
 
     menu:
@@ -360,7 +360,7 @@ label dustfem_s17: # from 16.1
 
 # s18 # say1192
 label dustfem_s18: # from 17.0
-    "dustfem_s18{#dustfem_s18}"
+    'dustfem_s18{#dustfem_s18}'
     # dustfem '«Тогда тебе стоит поговорить с одним из проводников у главных ворот. Они тебе помогут».{#dustfem_s18_1}'
 
     menu:
@@ -371,7 +371,7 @@ label dustfem_s18: # from 17.0
 
 # s19 # say1193
 label dustfem_s19: # from 17.1
-    "dustfem_s19{#dustfem_s19}"
+    'dustfem_s19{#dustfem_s19}'
     # nr 'Тленная ждет.{#dustfem_s19_1}'
 
     menu:
@@ -407,7 +407,7 @@ label dustfem_s19: # from 17.1
 
 # s20 # say1194
 label dustfem_s20: # from 9.9 19.0
-    "dustfem_s20{#dustfem_s20}"
+    'dustfem_s20{#dustfem_s20}'
     # dustfem '«Понятно. И что же ты здесь делаешь?»{#dustfem_s20_1}'
 
     menu:
@@ -434,7 +434,7 @@ label dustfem_s20: # from 9.9 19.0
 
 # s21 # say1195
 label dustfem_s21: # from 9.7 9.8 19.2 19.3
-    "dustfem_s21{#dustfem_s21}"
+    'dustfem_s21{#dustfem_s21}'
     # dustfem '«Это имя мне незнакомо. Справься у одного из проводников у главных ворот… они смогут сориентировать тебя лучше, чем я».{#dustfem_s21_1}'
 
     menu:
@@ -445,7 +445,7 @@ label dustfem_s21: # from 9.7 9.8 19.2 19.3
 
 # s22 # say1196
 label dustfem_s22: # - # IF ~  Global("Appearance","GLOBAL",2)
-    "dustfem_s22{#dustfem_s22}"
+    'dustfem_s22{#dustfem_s22}'
     # nr 'Эта бледная женщина одета в длинную темную мантию. От нее слегка отдает плесенью. Ее лицо ничего не выражает; кажется, она поглощена своими обязанностями.{#dustfem_s22_1}'
 
     menu:
@@ -460,7 +460,7 @@ label dustfem_s22: # - # IF ~  Global("Appearance","GLOBAL",2)
 
 # s23 # say1197
 label dustfem_s23: # from 22.0
-    "dustfem_s23{#dustfem_s23}"
+    'dustfem_s23{#dustfem_s23}'
     # nr 'Она медленно оборачивается, ее взгляд мельком скользит по твоей одежде.{#dustfem_s23_1}'
     # dustfem '«Приветствую тебя, посвященный».{#dustfem_s23_2}'
 
@@ -484,7 +484,7 @@ label dustfem_s23: # from 22.0
 
 # s24 # say1198
 label dustfem_s24: # from 23.0
-    "dustfem_s24{#dustfem_s24}"
+    'dustfem_s24{#dustfem_s24}'
     # dustfem '«У меня такой же вопрос. Твое лицо мне незнакомо. Как тебя зовут?»{#dustfem_s24_1}'
 
     menu:
@@ -508,7 +508,7 @@ label dustfem_s24: # from 23.0
 
 # s25 # say1199
 label dustfem_s25: # from 23.1
-    "dustfem_s25{#dustfem_s25}"
+    'dustfem_s25{#dustfem_s25}'
     # dustfem '«Это Морг…»{#dustfem_s25_1}'
     # nr 'Тленная какое-то время смотрит на тебя, как бы оценивая только что тобою сказанное.{#dustfem_s25_2}'
     # dustfem '«Как, ты сказал, тебя зовут?»{#dustfem_s25_3}'
@@ -534,7 +534,7 @@ label dustfem_s25: # from 23.1
 
 # s26 # say1200
 label dustfem_s26: # from 23.2 27.0 28.2 30.3 31.3 34.2 36.1 39.0 50.0
-    "dustfem_s26{#dustfem_s26}"
+    'dustfem_s26{#dustfem_s26}'
     # nr 'Тленная терпеливо ждет твоего продолжения.{#dustfem_s26_1}'
 
     menu:
@@ -557,7 +557,7 @@ label dustfem_s26: # from 23.2 27.0 28.2 30.3 31.3 34.2 36.1 39.0 50.0
 
 # s27 # say1201
 label dustfem_s27: # from 26.0
-    "dustfem_s27{#dustfem_s27}"
+    'dustfem_s27{#dustfem_s27}'
     # dustfem '«Ты можешь просто выйти через главные ворота. Они на первом этаже».{#dustfem_s27_1}'
 
     menu:
@@ -572,7 +572,7 @@ label dustfem_s27: # from 26.0
 
 # s28 # say1202
 label dustfem_s28: # from 26.1
-    "dustfem_s28{#dustfem_s28}"
+    'dustfem_s28{#dustfem_s28}'
     # dustfem '«Это имя…»{#dustfem_s28_1}'
     # nr 'Тленная на секунду умолкает.{#dustfem_s28_2}'
     # dustfem '«Это имя *звучит* знакомо… Кажется, я припоминаю сборщика с таким именем. Писец Дхолл может знать о нем больше».{#dustfem_s28_3}'
@@ -597,7 +597,7 @@ label dustfem_s28: # from 26.1
 
 # s29 # say1203
 label dustfem_s29: # from 28.0
-    "dustfem_s29{#dustfem_s29}"
+    'dustfem_s29{#dustfem_s29}'
     # dustfem '«Сборщики… они собирают тех, кто умер на улицах Сигила, и доставляют их в Морг…»{#dustfem_s29_1}'
     # nr 'Тленная умолкает, хмуря брови.{#dustfem_s29_2}'
     # dustfem '«Ты нездешний. Кто ты?»{#dustfem_s29_3}'
@@ -622,7 +622,7 @@ label dustfem_s29: # from 28.0
 
 # s30 # say1204
 label dustfem_s30: # from 28.1
-    "dustfem_s30{#dustfem_s30}"
+    'dustfem_s30{#dustfem_s30}'
     # dustfem '«Дхолл — один из самых уважаемых членов нашей фракции. Наверное, никто не размышлял о сущности Истинной Смерти и не заслужил ее больше, чем он. У него много знаний, которыми он может поделиться. Если ты незнаком с ним, то я советую тебе как можно раньше воспользоваться этой возможностью. Ему осталось не так долго жить в тени этого существования».{#dustfem_s30_1}'
 
     menu:
@@ -649,7 +649,7 @@ label dustfem_s30: # from 28.1
 
 # s31 # say1205
 label dustfem_s31: # from 30.0 32.0 33.0
-    "dustfem_s31{#dustfem_s31}"
+    'dustfem_s31{#dustfem_s31}'
     # nr 'Кивок.{#dustfem_s31_1}'
     # dustfem '«Дхолл болен. Он стар, даже по меркам гитцераев. Несомненно, смерть последует за болезнью, которую он подхватил. Ему повезло».{#dustfem_s31_2}'
 
@@ -677,7 +677,7 @@ label dustfem_s31: # from 30.0 32.0 33.0
 
 # s32 # say1206
 label dustfem_s32: # from 30.1
-    "dustfem_s32{#dustfem_s32}"
+    'dustfem_s32{#dustfem_s32}'
     # dustfem '«Дхолл находится в приемной комнате в северо-западной части этого этажа. Должна предупредить… Дхолл очень занят… то время, которое он не занят своими обязанностями, отбирает у него болезнь».{#dustfem_s32_1}'
 
     menu:
@@ -692,7 +692,7 @@ label dustfem_s32: # from 30.1
 
 # s33 # say1207
 label dustfem_s33: # from 30.2
-    "dustfem_s33{#dustfem_s33}"
+    'dustfem_s33{#dustfem_s33}'
     # dustfem '«Дхолл скорее всего в приемной комнате на втором этаже. Лучше не отвлекай его слишком сильно — он очень занят… то время, которое он не занят своими обязанностями, отбирает у него болезнь».{#dustfem_s33_1}'
 
     menu:
@@ -707,7 +707,7 @@ label dustfem_s33: # from 30.2
 
 # s34 # say1208
 label dustfem_s34: # from 31.0
-    "dustfem_s34{#dustfem_s34}"
+    'dustfem_s34{#dustfem_s34}'
     # dustfem '«Да, гитцераи живут гораздо дольше, чем люди».{#dustfem_s34_1}'
 
     menu:
@@ -730,7 +730,7 @@ label dustfem_s34: # from 31.0
 
 # s35 # say1209
 label dustfem_s35: # from 31.1 34.0
-    "dustfem_s35{#dustfem_s35}"
+    'dustfem_s35{#dustfem_s35}'
     # dustfem '«Гитцерай — это…»{#dustfem_s35_1}'
     # nr 'Тленная умолкает, пристально глядя на тебя.{#dustfem_s35_2}'
     # dustfem '«Ты ведь нездешний. Кто ты?»{#dustfem_s35_3}'
@@ -754,7 +754,7 @@ label dustfem_s35: # from 31.1 34.0
 
 # s36 # say1210
 label dustfem_s36: # from 31.2 34.1
-    "dustfem_s36{#dustfem_s36}"
+    'dustfem_s36{#dustfem_s36}'
     # dustfem '«Ему повезло в том, что он достигнет Истинной Смерти. Он больше не будет странствовать в тени этого существования».{#dustfem_s36_1}'
 
     menu:
@@ -773,7 +773,7 @@ label dustfem_s36: # from 31.2 34.1
 
 # s37 # say1211
 label dustfem_s37: # from 36.0
-    "dustfem_s37{#dustfem_s37}"
+    'dustfem_s37{#dustfem_s37}'
     # nr 'Тленная кивает.{#dustfem_s37_1}'
     # dustfem '«Да».{#dustfem_s37_2}'
     # nr 'Она хмурится, затем пристально смотрит на тебя.{#dustfem_s37_3}'
@@ -799,7 +799,7 @@ label dustfem_s37: # from 36.0
 
 # s38 # say1212
 label dustfem_s38: # -
-    "dustfem_s38{#dustfem_s38}"
+    'dustfem_s38{#dustfem_s38}'
     # dustfem '«Ты не из наших. Кто ты? Что ты здесь делаешь? Ты из анархистов? Или шпион другой фракции?»{#dustfem_s38_1}'
     # nr 'Тленная отступает на шаг.{#dustfem_s38_2}'
     # dustfem '«Стража! Стража!»{#dustfem_s38_3}'
@@ -823,7 +823,7 @@ label dustfem_s38: # -
 
 # s39 # say1213
 label dustfem_s39: # from 26.2
-    "dustfem_s39{#dustfem_s39}"
+    'dustfem_s39{#dustfem_s39}'
     # dustfem '«Дневник? Не встречала такого».{#dustfem_s39_1}'
 
     menu:
@@ -838,7 +838,7 @@ label dustfem_s39: # from 26.2
 
 # s40 # say1214
 label dustfem_s40: # -
-    "dustfem_s40{#dustfem_s40}"
+    'dustfem_s40{#dustfem_s40}'
     # nr 'Эта бледная женщина одета в длинную темную мантию. От нее слегка отдает плесенью. Ее лицо ничего не выражает; кажется, она поглощена своими обязанностями.{#dustfem_s40_1}'
 
     menu:
@@ -865,7 +865,7 @@ label dustfem_s40: # -
 
 # s41 # say1215
 label dustfem_s41: # from 1.0 5.1 7.1 8.1 47.1
-    "dustfem_s41{#dustfem_s41}"
+    'dustfem_s41{#dustfem_s41}'
     # nr 'Тленная не успевает и слова вымолвить, как твои руки хватают ее голову за виски и резко сворачивают ее влево.{#dustfem_s41_1}'
 
     menu:
@@ -877,7 +877,7 @@ label dustfem_s41: # from 1.0 5.1 7.1 8.1 47.1
 
 # s42 # say1216
 label dustfem_s42: # from 41.0 45.0
-    "dustfem_s42{#dustfem_s42}"
+    'dustfem_s42{#dustfem_s42}'
     # nr 'В шее раздается характерный хруст, и тело тленной безвольно падает в твои объятия.{#dustfem_s42_1}'
 
     menu:
@@ -894,7 +894,7 @@ label dustfem_s42: # from 41.0 45.0
 
 # s43 # say1217
 label dustfem_s43: # from 42.0
-    "dustfem_s43{#dustfem_s43}"
+    'dustfem_s43{#dustfem_s43}'
     # nr 'К своему удивлению, это действие происходит практически инстинктивно, будто ты проделывал это уже много раз… с этой мыслью всплывает воспоминание, но оно недостаточно сильно для того, чтобы за него зацепиться.{#dustfem_s43_1}'
 
     menu:
@@ -906,7 +906,7 @@ label dustfem_s43: # from 42.0
 
 # s44 # say1218
 label dustfem_s44: # from 5.0 7.0 8.0 19.4 47.0
-    "dustfem_s44{#dustfem_s44}"
+    'dustfem_s44{#dustfem_s44}'
     # nr 'Ты недостаточно быстр, и тленная уворачивается от твоего выпада. Отступив на шаг, она быстро хлопает в ладони три раза. В ответ во всем Морге раздается звон огромного железного колокола.{#dustfem_s44_1}'
 
     menu:
@@ -918,7 +918,7 @@ label dustfem_s44: # from 5.0 7.0 8.0 19.4 47.0
 
 # s45 # say1219
 label dustfem_s45: # from 19.5
-    "dustfem_s45{#dustfem_s45}"
+    'dustfem_s45{#dustfem_s45}'
     # nr 'Ты наклоняешься, чтобы „шепнуть“ ей что-то на ухо, тленная тоже наклоняется. Как только она оказывается на расстоянии вытянутой руки, ты хватаешь ее за виски и резко сворачиваешь голову влево.{#dustfem_s45_1}'
 
     menu:
@@ -930,7 +930,7 @@ label dustfem_s45: # from 19.5
 
 # s46 # say1220
 label dustfem_s46: # from 24.3 25.3 29.3 35.3 37.3 49.3 50.1
-    "dustfem_s46{#dustfem_s46}"
+    'dustfem_s46{#dustfem_s46}'
     # nr 'Тленная явно что-то подозревает. Похоже, она хочет что-то сказать, затем едва заметно качает головой и возвращается к своим обязанностям.{#dustfem_s46_1}'
 
     menu:
@@ -941,7 +941,7 @@ label dustfem_s46: # from 24.3 25.3 29.3 35.3 37.3 49.3 50.1
 
 # s47 # say1221
 label dustfem_s47: # from 24.2 25.2 29.1 29.2 35.1 35.2 37.1 37.2 49.1 49.2
-    "dustfem_s47{#dustfem_s47}"
+    'dustfem_s47{#dustfem_s47}'
     # nr 'Тленная внимательно тебя осматривает.{#dustfem_s47_1}'
     # dustfem '«Ты не из наших. Что ты здесь делаешь? Ты из анархистов? Или шпион другой фракции? Кажется, здесь есть дело для стражников…»{#dustfem_s47_2}'
 
@@ -965,7 +965,7 @@ label dustfem_s47: # from 24.2 25.2 29.1 29.2 35.1 35.2 37.1 37.2 49.1 49.2
 
 # s48 # say1222
 label dustfem_s48: # from 10.0 11.0 12.0 13.0 14.0 15.0 26.3 27.1 28.3 30.4 31.4 32.1 33.1 34.3 36.2 39.1
-    "dustfem_s48{#dustfem_s48}"
+    'dustfem_s48{#dustfem_s48}'
     # nr 'Тленная кивает и возвращается к своим делам.{#dustfem_s48_1}'
 
     menu:
@@ -976,7 +976,7 @@ label dustfem_s48: # from 10.0 11.0 12.0 13.0 14.0 15.0 26.3 27.1 28.3 30.4 31.4
 
 # s49 # say1223
 label dustfem_s49: # from 24.0 24.1 25.0 25.1
-    "dustfem_s49{#dustfem_s49}"
+    'dustfem_s49{#dustfem_s49}'
     # nr 'Тленная хмурится.{#dustfem_s49_1}'
     # dustfem '«Это имя мне незнакомо».{#dustfem_s49_2}'
 
@@ -1000,7 +1000,7 @@ label dustfem_s49: # from 24.0 24.1 25.0 25.1
 
 # s50 # say1224
 label dustfem_s50: # from 29.0 35.0 37.0 49.0
-    "dustfem_s50{#dustfem_s50}"
+    'dustfem_s50{#dustfem_s50}'
     # nr 'Тленная продолжает хмуриться, но затем слегка кивает.{#dustfem_s50_1}'
     # dustfem '«Ну хорошо. Что я могу сделать для тебя, посвященный?»{#dustfem_s50_2}'
 
@@ -1016,7 +1016,7 @@ label dustfem_s50: # from 29.0 35.0 37.0 49.0
 
 # s51 # say66683
 label dustfem_s51: # - # IF ~  Global("Appearance","GLOBAL",0)
-    "dustfem_s51{#dustfem_s51}"
+    'dustfem_s51{#dustfem_s51}'
     # nr 'Тленная бросает на тебя каменный взгляд.{#dustfem_s51_1}'
     # dustfem '«Ты потерялся?»{#dustfem_s51_2}'
 
@@ -1044,7 +1044,7 @@ label dustfem_s51: # - # IF ~  Global("Appearance","GLOBAL",0)
 
 # s52 # say66689
 label dustfem_s52: # from 51.0
-    "dustfem_s52{#dustfem_s52}"
+    'dustfem_s52{#dustfem_s52}'
     # nr 'Тленная какое-то время пристально на тебя смотрит, затем кивает.{#dustfem_s52_1}'
     # dustfem '«Хорошо. Если тебе нужна помощь, дай мне знать».{#dustfem_s52_2}'
 
