@@ -122,9 +122,9 @@ is_visited_internal_condition_pattern = re.compile(r"^locations_manager\.is_visi
 not_is_visited_internal_condition_pattern = re.compile(r"^not locations_manager\.is_visited_internal\('(.*?)'\)$")
 count_in_party_eq_zero_condition_pattern = re.compile(r"^count_in_party\(\) == 0$")
 count_in_party_gt_zero_condition_pattern = re.compile(r"^count_in_party\(\) > 0$")
-current_health_eq_max_health_condition_pattern = re.compile(r"^characters_manager\.get_property\(\'protagonist\', \'current_health\'\) == characters_manager.get_property\(\'protagonist\', \'max_health\'\)$")
-current_health_gt_max_health_condition_pattern = re.compile(r"^characters_manager\.get_property\(\'protagonist\', \'current_health\'\) > characters_manager.get_property\(\'protagonist\', \'max_health\'\) / 2$")
-current_health_lt_max_health_condition_pattern = re.compile(r"^characters_manager\.get_property\(\'protagonist\', \'current_health\'\) <= characters_manager.get_property\(\'protagonist\', \'max_health\'\) / 2$")
+current_health_eq_max_health_condition_pattern = re.compile(r"^characters_manager\.get_property\(\'protagonist_character_name\', \'current_health\'\) == characters_manager.get_property\(\'protagonist_character_name\', \'max_health\'\)$")
+current_health_gt_max_health_condition_pattern = re.compile(r"^characters_manager\.get_property\(\'protagonist_character_name\', \'current_health\'\) > characters_manager.get_property\(\'protagonist_character_name\', \'max_health\'\) / 2$")
+current_health_lt_max_health_condition_pattern = re.compile(r"^characters_manager\.get_property\(\'protagonist_character_name\', \'current_health\'\) <= characters_manager.get_property\(\'protagonist_character_name\', \'max_health\'\) / 2$")
 
 set_boolean_action_pattern = re.compile(r'^world_manager\.set_(.*?)\((True|False)\)$')
 set_integer_action_pattern = re.compile(r'^world_manager\.set_(.*?)\((\d+)\)$')

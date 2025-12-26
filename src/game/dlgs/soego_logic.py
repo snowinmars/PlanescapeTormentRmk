@@ -1044,3 +1044,11 @@ class SoegoLogicGenerated:
 class SoegoLogic(SoegoLogicGenerated):
     def __init__(self, state_manager):
         super().__init__(state_manager)
+
+
+    def set_know_soego_name(self):
+        self.state_manager.world_manager.set_know_soego_name(True)
+
+
+    def get_know_soego_name(self):
+        return not self.state_manager.world_manager.get_know_soego_name()

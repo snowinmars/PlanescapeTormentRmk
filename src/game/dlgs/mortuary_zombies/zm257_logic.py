@@ -33,5 +33,9 @@ class Zm257Logic(Zm257LogicGenerated):
         super().__init__(state_manager)
 
 
-    def know_zm257_spirit_action(self):
+    def get_know_zm257_spirit(self):
+        return self.state_manager.world_manager.get_know_zm257_spirit()
+
+
+    def set_know_zm257_spirit(self):
         self.state_manager.world_manager.set_know_zm257_spirit(True)

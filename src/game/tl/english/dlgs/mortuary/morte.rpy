@@ -2018,6 +2018,7 @@ translate english morte_s290_a3bb5396:
 translate english morte_s291_f67fd0c7:
 
     # "morte_s291{#morte_s291}"
+    nr "Morte breaks in with a whisper.{#morte_s291_1}"
     morte "«He's saying he's a lawyer. A counselor. One of those berks who rattle their bone-boxes at the courts».{#morte_s291_2}"
 
 # game/dlgs/mortuary/morte.rpy:4809
@@ -4073,7 +4074,7 @@ translate english morte_s580_f12bc6b9:
 translate english morte_s581_fbab83a2:
 
     # "morte_s581{#morte_s581}"
-    nr "NULL NODE{#morte_s581_1}"
+    nr "NULL NODE.{#morte_s581_1}"
 
 # game/dlgs/mortuary/morte.rpy:9589
 translate english morte_s582_4719c70b:
@@ -4189,7 +4190,7 @@ translate english morte_s597_ad24df8a:
 translate english morte_s598_bddc559f:
 
     # "morte_s598{#morte_s598}"
-    nr "(NULL NODE){#morte_s598_1}"
+    nr "NULL NODE.{#morte_s598_1}"
 
 # game/dlgs/mortuary/morte.rpy:9864
 translate english morte_s599_98827d0b:

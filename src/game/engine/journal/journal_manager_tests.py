@@ -127,22 +127,22 @@ class JournalManagerTest(LogicTest):
         notes_after2 = list(self.journal_manager.build_journal())
         notes_length_after2 = len(notes_after2)
         self.assertEqual(notes_length_after2, notes_length_before + 1)
-        self._assert_equals_notes(notes_after2[0], note1)
+        self._assert_equals_notes(notes_after2[-1], note1)
 
         self.journal_manager.update_journal(note_id2)
         notes_after3 = list(self.journal_manager.build_journal())
         notes_length_after3 = len(list(self.journal_manager.build_journal()))
         self.assertEqual(notes_length_after3, notes_length_before + 2)
-        self._assert_equals_notes(notes_after3[0], note1)
-        self._assert_equals_notes(notes_after3[1], note2)
+        self._assert_equals_notes(notes_after3[-1], note1)
+        self._assert_equals_notes(notes_after3[-2], note2)
 
         self.journal_manager.update_journal(note_id3)
         notes_after4 = list(self.journal_manager.build_journal())
         notes_length_after4 = len(list(self.journal_manager.build_journal()))
         self.assertEqual(notes_length_after4, notes_length_before + 3)
-        self._assert_equals_notes(notes_after4[0], note1)
-        self._assert_equals_notes(notes_after4[1], note2)
-        self._assert_equals_notes(notes_after4[2], note3)
+        self._assert_equals_notes(notes_after4[-1], note1)
+        self._assert_equals_notes(notes_after4[-2], note2)
+        self._assert_equals_notes(notes_after4[-3], note3)
 
 
     def _assert_equals_notes(self, lhs, rhs):

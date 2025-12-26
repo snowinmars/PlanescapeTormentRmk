@@ -400,9 +400,9 @@ class DialogueReplacer:
         self.add_replacement('HasItem("Bandage","ZM396")', 'return not self.state_manager.world_manager.get_has_bandages_zm396()')
         self.add_replacement('GiveItem("KeyEm","Vaxis")', 'self.state_manager.world_manager.set_has_keyem(False) self.state_manager.world_manager.set_vaxis_has_keyem(True)')
 
-        self.add_replacement('HPPercent(Protagonist,100)', 'return self.state_manager.characters_manager.get_property(\'protagonist\', \'current_health\') == self.state_manager.characters_manager.get_property(\'protagonist\', \'max_health\')')
-        self.add_replacement('HPPercentGT(Protagonist,49)', 'return self.state_manager.characters_manager.get_property(\'protagonist\', \'current_health\') > self.state_manager.characters_manager.get_property(\'protagonist\', \'max_health\') / 2')
-        self.add_replacement('HPPercentLT(Protagonist,50)', 'return self.state_manager.characters_manager.get_property(\'protagonist\', \'current_health\') <= self.state_manager.characters_manager.get_property(\'protagonist\', \'max_health\') / 2')
+        self.add_replacement('HPPercent(Protagonist,100)', 'return self.state_manager.characters_manager.get_property(\'protagonist_character_name\', \'current_health\') == self.state_manager.characters_manager.get_property(\'protagonist_character_name\', \'max_health\')')
+        self.add_replacement('HPPercentGT(Protagonist,49)', 'return self.state_manager.characters_manager.get_property(\'protagonist_character_name\', \'current_health\') > self.state_manager.characters_manager.get_property(\'protagonist_character_name\', \'max_health\') / 2')
+        self.add_replacement('HPPercentLT(Protagonist,50)', 'return self.state_manager.characters_manager.get_property(\'protagonist_character_name\', \'current_health\') <= self.state_manager.characters_manager.get_property(\'protagonist_character_name\', \'max_health\') / 2')
 
         self.add_replacement('ChangeAIScript("pcmorte",DEFAULT) JoinPartyEx(TRUE)', 'self.state_manager.world_manager.set_in_party_morte(True)')
         self.add_replacement('JoinPartyEx(TRUE)', 'self.state_manager.world_manager.set_in_party_morte(True)')

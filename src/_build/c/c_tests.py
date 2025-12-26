@@ -18,8 +18,7 @@ class CTests(unittest.TestCase):
         started_at = time.time()
         cwd = os.getcwd()
         in_docker = cwd == '/app'
-        relative_path = '.' if in_docker else '.'
-        folder_with_game = os.path.normpath(os.path.join(cwd, relative_path))
+        folder_with_game = os.path.normpath(cwd)
         print(f'C found in {folder_with_game}')
         self.rpy_files, self.logic_files, self.raw_files, self.dialog_replacer = find_files(folder_with_game)
         print(f'''
@@ -43,7 +42,7 @@ C report:
                 errors.append(test_error)
             for test_warning in test_warnings:
                 warnings.append(test_warning)
-            print(f"- Completed {test_func.__name__} in {round(time.time() - started_at, 2)} sec with {len(test_errors)} errors and {len(test_warnings)} warnings")
+            print(f"- {len(test_errors)}/{len(test_warnings)} (errors/warnings): completed {test_func.__name__} in {round(time.time() - started_at, 2)} sec")
 
         run_test(search_syntax, self.rpy_files)
         run_test(match_labels, self.rpy_files)
@@ -71,17 +70,18 @@ def print_results(errors, warnings):
 def find_files(root_dir):
     root_path = Path(root_dir)
 
-    rpys = root_path.rglob('*.rpy')
+    rpys = root_path.rglob('./game/**/*.rpy')
     rpy_files = []
     for rpy_file in rpys:
-        if 'd_renpy' not in rpy_file.parts:
+        if 'd_renpy' not in rpy_file.parts and \
+            'tl' not in rpy_file.parts:
             rpy_files.append(GameFile(
                 path=rpy_file,
                 name=rpy_file.name,
                 content=rpy_file.read_text(encoding='utf-8')
             ))
 
-    logics = root_path.rglob('*_logic.py')
+    logics = root_path.rglob('./game/**/*_logic.py')
     logic_files = []
     for logic_file in logics:
         if 'd_renpy' not in logic_file.parts:
@@ -98,7 +98,7 @@ def find_files(root_dir):
         content=dialog_replacer_path.read_text(encoding='utf-8')
     )
 
-    raw = root_path.rglob('*.D')
+    raw = root_path.rglob('./sources/russian/d_raw/*.D')
     raw_files = []
     for raw_file in raw:
         raw_files.append(GameFile(

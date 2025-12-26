@@ -32,7 +32,7 @@ translate english strings:
 
     # game/engine_data/journal/all_notes.rpy:11
     old "note_id_24933{#note_id_24933}"
-    new "I've started writing down my experiences to keep a clear head, and in the hopes I can make some sense of what's going on. I woke up in some place called the «Mortuary»... it looks like a morgue of some sort. I don't know who I am, what I'm doing here, or how I got here. The first thing I found when I woke up was some chattering skull called Morte. He said we were locked in, and that one of the shambling corpses in the room probably has the key. He suggested I hunt around the shelves of the room for a scalpel, then go plunge it into one of the corpses until it «dies».{#note_id_24933}"
+    new "I've started writing down my experiences to keep a clear head, and in the hopes I can make some sense of what's going on. I woke up in some place called the «Mortuary»… it looks like a morgue of some sort. I don't know who I am, what I'm doing here, or how I got here. The first thing I found when I woke up was some chattering skull called Morte. He said we were locked in, and that one of the shambling corpses in the room probably has the key. He suggested I hunt around the shelves of the room for a scalpel, then go plunge it into one of the corpses until it «dies».{#note_id_24933}"
 
     # game/engine_data/journal/all_notes.rpy:12
     old "note_id_25254{#note_id_25254}"
@@ -40,7 +40,7 @@ translate english strings:
 
     # game/engine_data/journal/all_notes.rpy:13
     old "note_id_26087{#note_id_26087}"
-    new "I encountered the ghost of a woman named Deionarra, who prophesied that I would meet three enemies, but 'no more dangerous than myself in my full glory.' They are shades of evil, of good, and of neutrality given life and twisted by the laws of the planes. She said that I would come to a prison built of 'regrets and sorrow,' where 'the shadows themselves have gone mad.' Here, I will be asked to make a terrible sacrifice... for the matter to be laid to rest, I must 'destroy that which keeps me alive, and be immortal no longer.'{#note_id_26087}"
+    new "I encountered the ghost of a woman named Deionarra, who prophesied that I would meet three enemies, but 'no more dangerous than myself in my full glory.' They are shades of evil, of good, and of neutrality given life and twisted by the laws of the planes. She said that I would come to a prison built of 'regrets and sorrow,' where 'the shadows themselves have gone mad.' Here, I will be asked to make a terrible sacrifice… for the matter to be laid to rest, I must 'destroy that which keeps me alive, and be immortal no longer.'{#note_id_26087}"
 
     # game/engine_data/journal/all_notes.rpy:14
     old "note_id_26108{#note_id_26108}"
@@ -56,7 +56,7 @@ translate english strings:
 
     # game/engine_data/journal/all_notes.rpy:17
     old "note_id_38199{#note_id_38199}"
-    new "After I delivered the embalming fluid and thread to Ei-Vene, she stitched up my scars and applied the embalming fluid on my body. Strangely enough, it made me feel... healthier.{#note_id_38199}"
+    new "After I delivered the embalming fluid and thread to Ei-Vene, she stitched up my scars and applied the embalming fluid on my body. Strangely enough, it made me feel… healthier.{#note_id_38199}"
 
     # game/engine_data/journal/all_notes.rpy:18
     old "note_id_38202{#note_id_38202}"
@@ -68,15 +68,15 @@ translate english strings:
 
     # game/engine_data/journal/all_notes.rpy:20
     old "note_id_38205{#note_id_38205}"
-    new "Apparently, the Dustwoman embalmer I encountered is a «tiefling», someone with fiendish blood in their veins. Apparently, the fiendish blood warps their bodies and in some cases, their minds as well. From what Morte said, it sounds like there are a number of tieflings about... which would imply a fair number of fiends as well.{#note_id_38205}"
+    new "Apparently, the Dustwoman embalmer I encountered is a «tiefling», someone with fiendish blood in their veins. Apparently, the fiendish blood warps their bodies and in some cases, their minds as well. From what Morte said, it sounds like there are a number of tieflings about… which would imply a fair number of fiends as well.{#note_id_38205}"
 
     # game/engine_data/journal/all_notes.rpy:21
     old "note_id_39459{#note_id_39459}"
-    new "I met a sickly scribe named Dhall in the Mortuary... he knew I had forgotten myself before I even spoke to him. Did I know him before I lost my memories? I was hoping to get some answers, but this place seems to breed more and more questions.{#note_id_39459}"
+    new "I met a sickly scribe named Dhall in the Mortuary… he knew I had forgotten myself before I even spoke to him. Did I know him before I lost my memories? I was hoping to get some answers, but this place seems to breed more and more questions.{#note_id_39459}"
 
     # game/engine_data/journal/all_notes.rpy:22
     old "note_id_39460{#note_id_39460}"
-    new "I asked Dhall if he knew me, and he responded that he knew little about me - and even less about the companions that had traveled with me in the past. Apparently, their bodies lie in the Mortuary... perhaps seeing them will cause my memories to resurface.{#note_id_39460}"
+    new "I asked Dhall if he knew me, and he responded that he knew little about me - and even less about the companions that had traveled with me in the past. Apparently, their bodies lie in the Mortuary… perhaps seeing them will cause my memories to resurface.{#note_id_39460}"
 
     # game/engine_data/journal/all_notes.rpy:23
     old "note_id_39461{#note_id_39461}"
@@ -104,7 +104,7 @@ translate english strings:
 
     # game/engine_data/journal/all_notes.rpy:29
     old "note_id_39470{#note_id_39470}"
-    new "Dhall suggested that the wounds I have suffered are minor in comparison to the wounds in my mind... he even went so far as to suggest that the wounds I've suffered may be responsible for my loss of memory, and the mental damage may be much greater than amnesia. The thought makes me uneasy - I wouldn't mind hearing some *good* news every once in a while.{#note_id_39470}"
+    new "Dhall suggested that the wounds I have suffered are minor in comparison to the wounds in my mind… he even went so far as to suggest that the wounds I've suffered may be responsible for my loss of memory, and the mental damage may be much greater than amnesia. The thought makes me uneasy - I wouldn't mind hearing some *good* news every once in a while.{#note_id_39470}"
 
     # game/engine_data/journal/all_notes.rpy:30
     old "note_id_39477{#note_id_39477}"
@@ -116,11 +116,11 @@ translate english strings:
 
     # game/engine_data/journal/all_notes.rpy:32
     old "note_id_39516{#note_id_39516}"
-    new "My original journal's gone missing, so I've started a new one. I woke up in a place called the «Mortuary». I don't know who I am, what I'm doing here, or even how I got here. The only person I encountered was a chattering skull called Morte... while he was checking my wounds, he discovered a set of 'directions' tattooed on my back:\n\n«I know you feel like you've been drinking a few kegs of Styx wash, but you need to CENTER yourself. Among your possessions is a JOURNAL that'll shed some light on the dark of the matter. PHAROD can fill you in on the rest of the chant, if he's not in the dead-book already.\n\nDon't lose the journal or we'll be up the Styx again. And whatever you do, DO NOT tell anyone WHO you are or WHAT happens to you, or they'll put you on a quick pilgrimage to the crematorium. Do what I tell you: READ the journal, then FIND Pharod».\n\nDid I leave this message for myself? Looks like I'll need to find this 'Pharod' AND my journal.{#note_id_39516}"
+    new "My original journal's gone missing, so I've started a new one. I woke up in a place called the «Mortuary». I don't know who I am, what I'm doing here, or even how I got here. The only person I encountered was a chattering skull called Morte… while he was checking my wounds, he discovered a set of 'directions' tattooed on my back:\n\n«I know you feel like you've been drinking a few kegs of Styx wash, but you need to CENTER yourself. Among your possessions is a JOURNAL that'll shed some light on the dark of the matter. PHAROD can fill you in on the rest of the chant, if he's not in the dead-book already.\n\nDon't lose the journal or we'll be up the Styx again. And whatever you do, DO NOT tell anyone WHO you are or WHAT happens to you, or they'll put you on a quick pilgrimage to the crematorium. Do what I tell you: READ the journal, then FIND Pharod».\n\nDid I leave this message for myself? Looks like I'll need to find this 'Pharod' AND my journal.{#note_id_39516}"
 
     # game/engine_data/journal/all_notes.rpy:33
     old "note_id_53633{#note_id_53633}"
-    new "Morte said it was I that pulled him from the Pillar so long ago, though he doesn't really understand how. He also explained that he lost all the Pillar's accumulated knowledge when he was removed from it... which would explain why he's not *quite* as useful as he told that earlier incarnation of mine he would be.{#note_id_53633}"
+    new "Morte said it was I that pulled him from the Pillar so long ago, though he doesn't really understand how. He also explained that he lost all the Pillar's accumulated knowledge when he was removed from it… which would explain why he's not *quite* as useful as he told that earlier incarnation of mine he would be.{#note_id_53633}"
 
     # game/engine_data/journal/all_notes.rpy:34
     old "note_id_53661{#note_id_53661}"
@@ -128,11 +128,11 @@ translate english strings:
 
     # game/engine_data/journal/all_notes.rpy:35
     old "note_id_61612{#note_id_61612}"
-    new "Watching Ei-Vene stitch up the corpse with her talons triggered a strange memory... I recall performing a similar operation on a corpse, long ago, except that I think I was placing something *inside* its chest rather than taking something out. It felt like I was putting whatever it was in there so I could retrieve it later. In the memory, when I crossed my arms, the corpse itself crossed its arms as well... it had the number «42» written on its scalp.{#note_id_61612}"
+    new "Watching Ei-Vene stitch up the corpse with her talons triggered a strange memory… I recall performing a similar operation on a corpse, long ago, except that I think I was placing something *inside* its chest rather than taking something out. It felt like I was putting whatever it was in there so I could retrieve it later. In the memory, when I crossed my arms, the corpse itself crossed its arms as well… it had the number «42» written on its scalp.{#note_id_61612}"
 
     # game/engine_data/journal/all_notes.rpy:36
     old "note_id_63982{#note_id_63982}"
-    new "I met a Dustman named Soego at the Mortuary front gate... he looks tired, as if he hasn't slept in weeks. Judging from the eyes and pallor of his skin, it looks like he has caught some sort of illness.{#note_id_63982}"
+    new "I met a Dustman named Soego at the Mortuary front gate… he looks tired, as if he hasn't slept in weeks. Judging from the eyes and pallor of his skin, it looks like he has caught some sort of illness.{#note_id_63982}"
 
     # game/engine_data/journal/all_notes.rpy:37
     old "note_id_64512{#note_id_64512}"
@@ -160,7 +160,7 @@ translate english strings:
 
     # game/engine_data/journal/all_notes.rpy:43
     old "note_id_64522{#note_id_64522}"
-    new "It sounds like the Dustmen and Pharod aren't on the best of terms... Vaxis told me Pharod's bringing a lot of bodies to the Mortuary, and the Dustmen suspect that he's killing people before their hour's up.{#note_id_64522}"
+    new "It sounds like the Dustmen and Pharod aren't on the best of terms… Vaxis told me Pharod's bringing a lot of bodies to the Mortuary, and the Dustmen suspect that he's killing people before their hour's up.{#note_id_64522}"
 
     # game/engine_data/journal/all_notes.rpy:44
     old "note_id_64528{#note_id_64528}"
@@ -204,7 +204,7 @@ translate english strings:
 
     # game/engine_data/journal/all_notes.rpy:54
     old "note_id_65678{#note_id_65678}"
-    new "Morte suggested someone in the Clerk's Ward might know where to obtain a piece of Ravel; failing that, we could try the Festhall and the sensory stones there. If *that* fails, I suppose we could always go visit some prostitutes... it sure would beat all this running around and talking to people.{#note_id_65678}"
+    new "Morte suggested someone in the Clerk's Ward might know where to obtain a piece of Ravel; failing that, we could try the Festhall and the sensory stones there. If *that* fails, I suppose we could always go visit some prostitutes… it sure would beat all this running around and talking to people.{#note_id_65678}"
 
     # game/engine_data/journal/all_notes.rpy:55
     old "note_id_65712{#note_id_65712}"
@@ -212,7 +212,7 @@ translate english strings:
 
     # game/engine_data/journal/all_notes.rpy:56
     old "note_id_65825{#note_id_65825}"
-    new "I discovered why Morte has stayed with me all this time... it's because he felt guilty for having killed me once, when he was alive. Confronting him on his guilty feelings seemed to take some of the burden off of him, and he seemed to become stronger as a result.{#note_id_65825}"
+    new "I discovered why Morte has stayed with me all this time… it's because he felt guilty for having killed me once, when he was alive. Confronting him on his guilty feelings seemed to take some of the burden off of him, and he seemed to become stronger as a result.{#note_id_65825}"
 
     # game/engine_data/journal/all_notes.rpy:57
     old "note_id_66659{#note_id_66659}"
@@ -220,7 +220,7 @@ translate english strings:
 
     # game/engine_data/journal/all_notes.rpy:58
     old "note_id_66917{#note_id_66917}"
-    new "I don't know whether to be horrified or impressed... when I spoke to Deionarra in the vaults of the Mortuary, she told me that my deaths had given me some control over life and death; if I see a body, I can see the faint traces of life in it and coax it forth. For some reason, it will only work on people who travel with me, and only if they die in my presence... why? In traveling with me do they become linked to me somehow?{#note_id_66917}"
+    new "I don't know whether to be horrified or impressed… when I spoke to Deionarra in the vaults of the Mortuary, she told me that my deaths had given me some control over life and death; if I see a body, I can see the faint traces of life in it and coax it forth. For some reason, it will only work on people who travel with me, and only if they die in my presence… why? In traveling with me do they become linked to me somehow?{#note_id_66917}"
 
     # game/engine_data/journal/all_notes.rpy:59
     old "note_id_67862{#note_id_67862}"

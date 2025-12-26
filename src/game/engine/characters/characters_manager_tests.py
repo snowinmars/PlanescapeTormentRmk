@@ -32,7 +32,7 @@ class CharactersManagerTest(LogicTest):
 
 
     def test_get_property_when_all_ok(self):
-        name='protagonist_character_name'
+        name='test_character_name'
         current_class='Mage'
         race='Human'
         sex='Male'
@@ -297,7 +297,7 @@ class CharactersManagerTest(LogicTest):
 
 
     def test_get_all_properties_when_all_ok(self):
-        name='protagonist_character_name'
+        name='test_character_name'
         current_class='Mage'
         race='Human'
         sex='Male'

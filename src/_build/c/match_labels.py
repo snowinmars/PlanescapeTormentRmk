@@ -2,9 +2,9 @@ import re
 import sys
 
 # Regex patterns for matching label definitions, jumps, and calls
-LABEL_PATTERN = re.compile(r'label\s+(.*?):')
-JUMP_PATTERN = re.compile(r'jump\s+(.*?)\n')
-CALL_PATTERN = re.compile(r'call\s+(.*?)\n')
+LABEL_PATTERN = re.compile(r'^\s*label\s+(.*?):')
+JUMP_PATTERN = re.compile(r'^\s*jump\s+(.*?)\n')
+CALL_PATTERN = re.compile(r'^\s*call\s+(.*?)\n')
 
 IGNORE_LABELS = {
     'graphics_menu', # known

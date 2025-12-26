@@ -59,7 +59,7 @@ label copearc_s2: # from 0.1 1.0
 # s3 # say46732
 label copearc_s3: # from 2.0
     "copearc_s3{#copearc_s3}"
-    # nr 'You shake the earring, but nothing comes out. Whatever was hidden in the earring is gone now.  ^NNOTE: Discovering the latch to the earring will now allow you to wear it. In addition, the secret compartment may make the earring more valuable to a merchant.^-{#copearc_s3_1}'
+    # nr 'You shake the earring, but nothing comes out. Whatever was hidden in the earring is gone now.{#copearc_s3_1}'
 
     menu:
         'copearc_s3_r46733{#copearc_s3_r46733}': # 'Put the earring away.{#copearc_s3_r46733}'

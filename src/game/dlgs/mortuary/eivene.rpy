@@ -163,7 +163,7 @@ label eivene_s7: # from 5.0 17.0
 # s8 # say3436
 label eivene_s8: # from 7.1
     "eivene_s8{#eivene_s8}"
-    # nr 'Едва ты собираешься уйти, Эи-Вейн говорит:{#eivene_s8_1}'
+    # nr 'Едва ты собираешься уйти, Эи-Вейн говорит.{#eivene_s8_1}'
     # eivene '«Стой. Ты следующий».{#eivene_s8_2}'
 
     menu:
