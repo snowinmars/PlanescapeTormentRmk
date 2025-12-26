@@ -12,7 +12,7 @@ class S42LogicTest(LogicTest):
 
 
     def test_r6613_action(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'law'
         delta = -1
 
@@ -24,7 +24,7 @@ class S42LogicTest(LogicTest):
 
 
     def test_r6614_action(self):
-        who_law = 'protagonist'
+        who_law = 'protagonist_character_name'
         prop_law = 'law'
         delta_law = -1
         self.state_manager.world_manager.set_skeleton_chaotic(False)
@@ -110,7 +110,7 @@ class S42LogicTest(LogicTest):
 
 
     def test_r6645_action(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'experience'
         delta = 250
 
@@ -129,7 +129,7 @@ class S42LogicTest(LogicTest):
 
 
     def test_r6652_action(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'experience'
         delta = 250
 
@@ -292,7 +292,7 @@ class S42LogicTest(LogicTest):
 
 
     def test_r6626_condition(self):
-        who_wisdom = 'protagonist'
+        who_wisdom = 'protagonist_character_name'
         prop_wisdom = 'wisdom'
         delta_wisdom = 12
 
@@ -443,7 +443,7 @@ class S42LogicTest(LogicTest):
 
 
     def test_r6654_condition(self):
-        who_wisdom = 'protagonist'
+        who_wisdom = 'protagonist_character_name'
         prop_wisdom = 'wisdom'
         delta_wisdom = 12
 

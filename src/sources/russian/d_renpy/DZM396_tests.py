@@ -12,7 +12,7 @@ class Zm396LogicTest(LogicTest):
 
 
     def test_r34932_action(self):
-        who_law = 'protagonist'
+        who_law = 'protagonist_character_name'
         prop_law = 'law'
         delta_law = -1
         self.state_manager.world_manager.set_zombie_chaotic(False)
@@ -48,7 +48,7 @@ class Zm396LogicTest(LogicTest):
 
 
     def test_r45112_action(self):
-        who_law = 'protagonist'
+        who_law = 'protagonist_character_name'
         prop_law = 'law'
         delta_law = -1
         self.state_manager.world_manager.set_zombie_chaotic(False)

@@ -12,7 +12,7 @@ class XachLogicTest(LogicTest):
 
 
     def test_r502_action(self):
-        who_law = 'protagonist'
+        who_law = 'protagonist_character_name'
         prop_law = 'law'
         delta_law = -1
         self.state_manager.world_manager.set_zombie_chaotic(False)
@@ -142,10 +142,10 @@ class XachLogicTest(LogicTest):
 
 
     def test_r508_condition(self):
-        who_intelligence = 'protagonist'
+        who_intelligence = 'protagonist_character_name'
         prop_intelligence = 'intelligence'
         delta_intelligence = 16
-        who_charisma = 'protagonist'
+        who_charisma = 'protagonist_character_name'
         prop_charisma = 'charisma'
         delta_charisma = 17
 
@@ -161,7 +161,7 @@ class XachLogicTest(LogicTest):
 
 
     def test_r63307_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'charisma'
         value = 16
 
@@ -181,10 +181,10 @@ class XachLogicTest(LogicTest):
 
 
     def test_r510_condition(self):
-        who_intelligence = 'protagonist'
+        who_intelligence = 'protagonist_character_name'
         prop_intelligence = 'intelligence'
         delta_intelligence = 16
-        who_charisma = 'protagonist'
+        who_charisma = 'protagonist_character_name'
         prop_charisma = 'charisma'
         delta_charisma = 17
 
@@ -200,7 +200,7 @@ class XachLogicTest(LogicTest):
 
 
     def test_r63308_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'charisma'
         value = 16
 
@@ -248,7 +248,7 @@ class XachLogicTest(LogicTest):
 
 
     def test_r524_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'intelligence'
         value = 12
 
@@ -325,7 +325,7 @@ class XachLogicTest(LogicTest):
 
 
     def test_r538_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'intelligence'
         value = 15
 
@@ -352,7 +352,7 @@ class XachLogicTest(LogicTest):
 
 
     def test_r542_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'intelligence'
         value = 17
 
@@ -379,7 +379,7 @@ class XachLogicTest(LogicTest):
 
 
     def test_r548_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'intelligence'
         value = 15
 

@@ -12,7 +12,7 @@ class S748LogicTest(LogicTest):
 
 
     def test_r35384_action(self):
-        who_law = 'protagonist'
+        who_law = 'protagonist_character_name'
         prop_law = 'law'
         delta_law = -1
         self.state_manager.world_manager.set_skeleton_chaotic(False)
@@ -34,7 +34,7 @@ class S748LogicTest(LogicTest):
 
 
     def test_r35408_action(self):
-        who_law = 'protagonist'
+        who_law = 'protagonist_character_name'
         prop_law = 'law'
         delta_law = -1
         self.state_manager.world_manager.set_skeleton_chaotic(False)
@@ -212,7 +212,7 @@ class S748LogicTest(LogicTest):
 
 
     def test_r35449_condition(self):
-        who_strength = 'protagonist'
+        who_strength = 'protagonist_character_name'
         prop_strength = 'strength'
         delta_strength = 13
 
@@ -234,7 +234,7 @@ class S748LogicTest(LogicTest):
 
 
     def test_r35450_condition(self):
-        who_strength = 'protagonist'
+        who_strength = 'protagonist_character_name'
         prop_strength = 'strength'
         delta_strength = 12
 
@@ -272,7 +272,7 @@ class S748LogicTest(LogicTest):
 
 
     def test_r35452_condition(self):
-        who_strength = 'protagonist'
+        who_strength = 'protagonist_character_name'
         prop_strength = 'strength'
         delta_strength = 13
 
@@ -292,7 +292,7 @@ class S748LogicTest(LogicTest):
 
 
     def test_r35453_condition(self):
-        who_strength = 'protagonist'
+        who_strength = 'protagonist_character_name'
         prop_strength = 'strength'
         delta_strength = 12
 
@@ -443,7 +443,7 @@ class S748LogicTest(LogicTest):
 
 
     def test_r35439_condition(self):
-        who_strength = 'protagonist'
+        who_strength = 'protagonist_character_name'
         prop_strength = 'strength'
         delta_strength = 13
 
@@ -463,7 +463,7 @@ class S748LogicTest(LogicTest):
 
 
     def test_r35440_condition(self):
-        who_strength = 'protagonist'
+        who_strength = 'protagonist_character_name'
         prop_strength = 'strength'
         delta_strength = 12
 
@@ -497,7 +497,7 @@ class S748LogicTest(LogicTest):
 
 
     def test_r35442_condition(self):
-        who_strength = 'protagonist'
+        who_strength = 'protagonist_character_name'
         prop_strength = 'strength'
         delta_strength = 13
 
@@ -515,7 +515,7 @@ class S748LogicTest(LogicTest):
 
 
     def test_r35443_condition(self):
-        who_strength = 'protagonist'
+        who_strength = 'protagonist_character_name'
         prop_strength = 'strength'
         delta_strength = 12
 
@@ -576,7 +576,7 @@ class S748LogicTest(LogicTest):
 
 
     def test_r35423_condition(self):
-        who_intelligence = 'protagonist'
+        who_intelligence = 'protagonist_character_name'
         prop_intelligence = 'intelligence'
         delta_intelligence = 12
 
@@ -594,7 +594,7 @@ class S748LogicTest(LogicTest):
 
 
     def test_r35424_condition(self):
-        who_intelligence = 'protagonist'
+        who_intelligence = 'protagonist_character_name'
         prop_intelligence = 'intelligence'
         delta_intelligence = 12
 
@@ -612,7 +612,7 @@ class S748LogicTest(LogicTest):
 
 
     def test_r35425_condition(self):
-        who_intelligence = 'protagonist'
+        who_intelligence = 'protagonist_character_name'
         prop_intelligence = 'intelligence'
         delta_intelligence = 12
 

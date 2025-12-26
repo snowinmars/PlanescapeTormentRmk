@@ -12,7 +12,7 @@ class Zm1094LogicTest(LogicTest):
 
 
     def test_r6565_action(self):
-        who_law = 'protagonist'
+        who_law = 'protagonist_character_name'
         prop_law = 'law'
         delta_law = -1
         self.state_manager.world_manager.set_zombie_chaotic(False)
@@ -43,7 +43,7 @@ class Zm1094LogicTest(LogicTest):
 
 
     def test_r9247_action(self):
-        who_good = 'protagonist'
+        who_good = 'protagonist_character_name'
         prop_good = 'good'
         delta_good = -1
         asonje_value_before = 1

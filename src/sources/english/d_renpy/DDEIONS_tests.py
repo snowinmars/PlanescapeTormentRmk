@@ -55,10 +55,10 @@ class DeionarraLogicTest(LogicTest):
 
 
     def test_r712_action(self):
-        who_good = 'protagonist'
+        who_good = 'protagonist_character_name'
         prop_good = 'good'
         delta_good = -1
-        who_law = 'protagonist'
+        who_law = 'protagonist_character_name'
         prop_law = 'law'
         delta_law = -1
 
@@ -90,10 +90,10 @@ class DeionarraLogicTest(LogicTest):
 
 
     def test_r702_action(self):
-        who_good = 'protagonist'
+        who_good = 'protagonist_character_name'
         prop_good = 'good'
         delta_good = -1
-        who_law = 'protagonist'
+        who_law = 'protagonist_character_name'
         prop_law = 'law'
         delta_law = -1
 
@@ -155,10 +155,10 @@ class DeionarraLogicTest(LogicTest):
 
 
     def test_r780_action(self):
-        who_good = 'protagonist'
+        who_good = 'protagonist_character_name'
         prop_good = 'good'
         delta_good = -2
-        who_law = 'protagonist'
+        who_law = 'protagonist_character_name'
         prop_law = 'law'
         delta_law = -2
 
@@ -181,10 +181,10 @@ class DeionarraLogicTest(LogicTest):
 
 
     def test_r6093_action(self):
-        who_good = 'protagonist'
+        who_good = 'protagonist_character_name'
         prop_good = 'good'
         delta_good = 2
-        who_law = 'protagonist'
+        who_law = 'protagonist_character_name'
         prop_law = 'law'
         delta_law = 2
 
@@ -207,10 +207,10 @@ class DeionarraLogicTest(LogicTest):
 
 
     def test_r805_action(self):
-        who_good = 'protagonist'
+        who_good = 'protagonist_character_name'
         prop_good = 'good'
         delta_good = -2
-        who_law = 'protagonist'
+        who_law = 'protagonist_character_name'
         prop_law = 'law'
         delta_law = -2
 
@@ -233,10 +233,10 @@ class DeionarraLogicTest(LogicTest):
 
 
     def test_r808_action(self):
-        who_good = 'protagonist'
+        who_good = 'protagonist_character_name'
         prop_good = 'good'
         delta_good = 2
-        who_law = 'protagonist'
+        who_law = 'protagonist_character_name'
         prop_law = 'law'
         delta_law = 2
 
@@ -306,7 +306,7 @@ class DeionarraLogicTest(LogicTest):
         deionarra_value_after = 1
         deionarra_value_after_once = 1
         self.state_manager.world_manager.set_deionarra_value(deionarra_value_before)
-        who_law = 'protagonist'
+        who_law = 'protagonist_character_name'
         prop_law = 'law'
         delta_law = -1
 
@@ -331,7 +331,7 @@ class DeionarraLogicTest(LogicTest):
         deionarra_value_after = 1
         deionarra_value_after_once = 1
         self.state_manager.world_manager.set_deionarra_value(deionarra_value_before)
-        who_law = 'protagonist'
+        who_law = 'protagonist_character_name'
         prop_law = 'law'
         delta_law = -1
 
@@ -356,7 +356,7 @@ class DeionarraLogicTest(LogicTest):
         deionarra_value_after = 1
         deionarra_value_after_once = 1
         self.state_manager.world_manager.set_deionarra_value(deionarra_value_before)
-        who_law = 'protagonist'
+        who_law = 'protagonist_character_name'
         prop_law = 'law'
         delta_law = -1
 
@@ -386,7 +386,7 @@ class DeionarraLogicTest(LogicTest):
 
 
     def test_r6095_action(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'good'
         delta = -1
 
@@ -398,7 +398,7 @@ class DeionarraLogicTest(LogicTest):
 
 
     def test_r6097_action(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'good'
         delta = -1
 
@@ -425,7 +425,7 @@ class DeionarraLogicTest(LogicTest):
 
     def test_r6148_action(self):
         self.state_manager.world_manager.set_deionarra_portal(False)
-        who_experience = 'protagonist'
+        who_experience = 'protagonist_character_name'
         prop_experience = 'experience'
         delta_experience = 500
 
@@ -481,10 +481,10 @@ class DeionarraLogicTest(LogicTest):
 
 
     def test_r63373_action(self):
-        who_law = 'protagonist'
+        who_law = 'protagonist_character_name'
         prop_law = 'law'
         delta_law = 3
-        who_good = 'protagonist'
+        who_good = 'protagonist_character_name'
         prop_good = 'good'
         delta_good = 1
 
@@ -507,10 +507,10 @@ class DeionarraLogicTest(LogicTest):
 
 
     def test_r63374_action(self):
-        who_law = 'protagonist'
+        who_law = 'protagonist_character_name'
         prop_law = 'law'
         delta_law = -3
-        who_good = 'protagonist'
+        who_good = 'protagonist_character_name'
         prop_good = 'good'
         delta_good = -1
 
@@ -533,10 +533,10 @@ class DeionarraLogicTest(LogicTest):
 
 
     def test_r63376_action(self):
-        who_law = 'protagonist'
+        who_law = 'protagonist_character_name'
         prop_law = 'law'
         delta_law = -1
-        who_good = 'protagonist'
+        who_good = 'protagonist_character_name'
         prop_good = 'good'
         delta_good = -2
 
@@ -559,10 +559,10 @@ class DeionarraLogicTest(LogicTest):
 
 
     def test_r63377_action(self):
-        who_law = 'protagonist'
+        who_law = 'protagonist_character_name'
         prop_law = 'law'
         delta_law = 1
-        who_good = 'protagonist'
+        who_good = 'protagonist_character_name'
         prop_good = 'good'
         delta_good = 1
 
@@ -585,10 +585,10 @@ class DeionarraLogicTest(LogicTest):
 
 
     def test_r63380_action(self):
-        who_law = 'protagonist'
+        who_law = 'protagonist_character_name'
         prop_law = 'law'
         delta_law = -1
-        who_good = 'protagonist'
+        who_good = 'protagonist_character_name'
         prop_good = 'good'
         delta_good = -1
 
@@ -611,10 +611,10 @@ class DeionarraLogicTest(LogicTest):
 
 
     def test_r63381_action(self):
-        who_law = 'protagonist'
+        who_law = 'protagonist_character_name'
         prop_law = 'law'
         delta_law = 1
-        who_good = 'protagonist'
+        who_good = 'protagonist_character_name'
         prop_good = 'good'
         delta_good = 1
 
@@ -637,7 +637,7 @@ class DeionarraLogicTest(LogicTest):
 
 
     def test_r63382_action(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'law'
         delta = 2
 
@@ -737,7 +737,7 @@ class DeionarraLogicTest(LogicTest):
 
 
     def test_r66914_action(self):
-        who_experience = 'protagonist'
+        who_experience = 'protagonist_character_name'
         prop_experience = 'experience'
         delta_experience = 1000
         self.state_manager.world_manager.set_deionarra_raise_dead(False)
@@ -802,10 +802,10 @@ class DeionarraLogicTest(LogicTest):
 
 
     def test_r708_condition(self):
-        who_intelligence = 'protagonist'
+        who_intelligence = 'protagonist_character_name'
         prop_intelligence = 'intelligence'
         delta_intelligence = 11
-        who_charisma = 'protagonist'
+        who_charisma = 'protagonist_character_name'
         prop_charisma = 'charisma'
         delta_charisma = 11
 
@@ -821,7 +821,7 @@ class DeionarraLogicTest(LogicTest):
 
 
     def test_r709_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'charisma'
         value = 10
 
@@ -834,10 +834,10 @@ class DeionarraLogicTest(LogicTest):
 
 
     def test_r713_condition(self):
-        who_intelligence = 'protagonist'
+        who_intelligence = 'protagonist_character_name'
         prop_intelligence = 'intelligence'
         delta_intelligence = 11
-        who_charisma = 'protagonist'
+        who_charisma = 'protagonist_character_name'
         prop_charisma = 'charisma'
         delta_charisma = 11
 
@@ -853,7 +853,7 @@ class DeionarraLogicTest(LogicTest):
 
 
     def test_r714_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'charisma'
         value = 10
 
@@ -894,10 +894,10 @@ class DeionarraLogicTest(LogicTest):
 
 
     def test_r718_condition(self):
-        who_intelligence = 'protagonist'
+        who_intelligence = 'protagonist_character_name'
         prop_intelligence = 'intelligence'
         delta_intelligence = 11
-        who_charisma = 'protagonist'
+        who_charisma = 'protagonist_character_name'
         prop_charisma = 'charisma'
         delta_charisma = 11
 
@@ -913,7 +913,7 @@ class DeionarraLogicTest(LogicTest):
 
 
     def test_r719_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'charisma'
         value = 10
 
@@ -954,10 +954,10 @@ class DeionarraLogicTest(LogicTest):
 
 
     def test_r723_condition(self):
-        who_intelligence = 'protagonist'
+        who_intelligence = 'protagonist_character_name'
         prop_intelligence = 'intelligence'
         delta_intelligence = 11
-        who_charisma = 'protagonist'
+        who_charisma = 'protagonist_character_name'
         prop_charisma = 'charisma'
         delta_charisma = 11
 
@@ -973,7 +973,7 @@ class DeionarraLogicTest(LogicTest):
 
 
     def test_r724_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'charisma'
         value = 10
 
@@ -1031,7 +1031,7 @@ class DeionarraLogicTest(LogicTest):
 
 
     def test_r731_condition(self):
-        who_wisdom = 'protagonist'
+        who_wisdom = 'protagonist_character_name'
         prop_wisdom = 'wisdom'
         delta_wisdom = 13
 
@@ -1047,7 +1047,7 @@ class DeionarraLogicTest(LogicTest):
 
 
     def test_r732_condition(self):
-        who_wisdom = 'protagonist'
+        who_wisdom = 'protagonist_character_name'
         prop_wisdom = 'wisdom'
         delta_wisdom = 12
 
@@ -1077,7 +1077,7 @@ class DeionarraLogicTest(LogicTest):
 
 
     def test_r737_condition(self):
-        who_wisdom = 'protagonist'
+        who_wisdom = 'protagonist_character_name'
         prop_wisdom = 'wisdom'
         delta_wisdom = 13
 
@@ -1093,7 +1093,7 @@ class DeionarraLogicTest(LogicTest):
 
 
     def test_r738_condition(self):
-        who_wisdom = 'protagonist'
+        who_wisdom = 'protagonist_character_name'
         prop_wisdom = 'wisdom'
         delta_wisdom = 12
 
@@ -1224,7 +1224,7 @@ class DeionarraLogicTest(LogicTest):
 
 
     def test_r778_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'charisma'
         value = 10
 
@@ -1380,7 +1380,7 @@ class DeionarraLogicTest(LogicTest):
 
 
     def test_r6129_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'charisma'
         value = 10
 
@@ -1393,10 +1393,10 @@ class DeionarraLogicTest(LogicTest):
 
 
     def test_r6131_condition(self):
-        who_intelligence = 'protagonist'
+        who_intelligence = 'protagonist_character_name'
         prop_intelligence = 'intelligence'
         delta_intelligence = 11
-        who_charisma = 'protagonist'
+        who_charisma = 'protagonist_character_name'
         prop_charisma = 'charisma'
         delta_charisma = 11
 
@@ -1412,7 +1412,7 @@ class DeionarraLogicTest(LogicTest):
 
 
     def test_r6132_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'charisma'
         value = 10
 
@@ -1481,7 +1481,7 @@ class DeionarraLogicTest(LogicTest):
 
 
     def test_r6139_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'charisma'
         value = 10
 
@@ -1536,7 +1536,7 @@ class DeionarraLogicTest(LogicTest):
 
 
     def test_r6150_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'charisma'
         value = 10
 

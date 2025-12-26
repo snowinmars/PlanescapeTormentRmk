@@ -77,7 +77,7 @@ class Morte2LogicTest(LogicTest):
 
 
     def test_r41163_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'intelligence'
         value = 12
 
@@ -272,7 +272,7 @@ class Morte2LogicTest(LogicTest):
 
 
     def test_r41239_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'intelligence'
         value = 12
 

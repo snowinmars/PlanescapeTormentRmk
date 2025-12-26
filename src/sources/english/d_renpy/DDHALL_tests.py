@@ -16,7 +16,7 @@ class DhallLogicTest(LogicTest):
 
 
     def test_r830_action(self):
-        who_experience = 'protagonist'
+        who_experience = 'protagonist_character_name'
         prop_experience = 'experience'
         delta_experience = 250
         vaxis_betrayed_before = 1
@@ -45,14 +45,14 @@ class DhallLogicTest(LogicTest):
 
 
     def test_r831_action(self):
-        who_experience = 'protagonist'
+        who_experience = 'protagonist_character_name'
         prop_experience = 'experience'
         delta_experience = 250
         vaxis_betrayed_before = 1
         vaxis_betrayed_after = 2
         vaxis_betrayed_after_once = 2
         self.state_manager.world_manager.set_vaxis_betrayed(vaxis_betrayed_before)
-        who_good = 'protagonist'
+        who_good = 'protagonist_character_name'
         prop_good = 'good'
         delta_good = -3
         note_id = '39469'
@@ -82,7 +82,7 @@ class DhallLogicTest(LogicTest):
 
 
     def test_r843_action(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'good'
         delta = -1
 
@@ -139,7 +139,7 @@ class DhallLogicTest(LogicTest):
 
 
     def test_r936_action(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'good'
         delta = 1
 
@@ -227,7 +227,7 @@ class DhallLogicTest(LogicTest):
 
 
     def test_r6051_action(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'good'
         delta = 1
 
@@ -239,7 +239,7 @@ class DhallLogicTest(LogicTest):
 
 
     def test_r6053_action(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'good'
         delta = -1
 
@@ -275,10 +275,10 @@ class DhallLogicTest(LogicTest):
 
 
     def test_r5073_condition(self):
-        who_intelligence = 'protagonist'
+        who_intelligence = 'protagonist_character_name'
         prop_intelligence = 'intelligence'
         delta_intelligence = 12
-        who_wisdom = 'protagonist'
+        who_wisdom = 'protagonist_character_name'
         prop_wisdom = 'wisdom'
         delta_wisdom = 13
 
@@ -294,7 +294,7 @@ class DhallLogicTest(LogicTest):
 
 
     def test_r5074_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'wisdom'
         value = 12
 
@@ -440,7 +440,7 @@ class DhallLogicTest(LogicTest):
 
 
     def test_r892_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'wisdom'
         value = 11
 
@@ -453,7 +453,7 @@ class DhallLogicTest(LogicTest):
 
 
     def test_r898_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'wisdom'
         value = 11
 
@@ -466,7 +466,7 @@ class DhallLogicTest(LogicTest):
 
 
     def test_r910_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'wisdom'
         value = 11
 
@@ -479,7 +479,7 @@ class DhallLogicTest(LogicTest):
 
 
     def test_r931_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'intelligence'
         value = 11
 
@@ -579,10 +579,10 @@ class DhallLogicTest(LogicTest):
 
 
     def test_r5078_condition(self):
-        who_intelligence = 'protagonist'
+        who_intelligence = 'protagonist_character_name'
         prop_intelligence = 'intelligence'
         delta_intelligence = 12
-        who_wisdom = 'protagonist'
+        who_wisdom = 'protagonist_character_name'
         prop_wisdom = 'wisdom'
         delta_wisdom = 13
 
@@ -598,7 +598,7 @@ class DhallLogicTest(LogicTest):
 
 
     def test_r5079_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'wisdom'
         value = 12
 
@@ -619,10 +619,10 @@ class DhallLogicTest(LogicTest):
 
 
     def test_r5082_condition(self):
-        who_intelligence = 'protagonist'
+        who_intelligence = 'protagonist_character_name'
         prop_intelligence = 'intelligence'
         delta_intelligence = 12
-        who_wisdom = 'protagonist'
+        who_wisdom = 'protagonist_character_name'
         prop_wisdom = 'wisdom'
         delta_wisdom = 13
 
@@ -638,7 +638,7 @@ class DhallLogicTest(LogicTest):
 
 
     def test_r5083_condition(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'wisdom'
         value = 12
 

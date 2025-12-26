@@ -12,7 +12,7 @@ class Zm79LogicTest(LogicTest):
 
 
     def test_r34943_action(self):
-        who = 'protagonist'
+        who = 'protagonist_character_name'
         prop = 'law'
         delta = -1
 
