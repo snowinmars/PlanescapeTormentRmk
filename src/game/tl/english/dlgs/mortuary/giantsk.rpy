@@ -5,8 +5,8 @@ translate english giantsk_s0_fac020de:
 
     # 'giantsk_s0{#giantsk_s0}'
     nr 'Before you is a giant skeleton in ornate bronze armor.{#giantsk_s0_1}'
-    nr 'The armor has been bolted onto the skeleton's frame, and a series of elaborate symbols have been carved across the breastplate.{#giantsk_s0_1}'
-    nr 'You wonder where the skeleton came from; you weren't aware they made humans in this size.{#giantsk_s0_1}'
+    nr 'The armor has been bolted onto the skeleton\'s frame, and a series of elaborate symbols have been carved across the breastplate.{#giantsk_s0_1}'
+    nr 'You wonder where the skeleton came from; you weren\'t aware they made humans in this size.{#giantsk_s0_1}'
     nr 'The huge blade in its hands looks like it weighs as much as a wagon cart.{#giantsk_s0_1}'
 
 # game/dlgs/mortuary/giantsk.rpy:67
@@ -26,22 +26,22 @@ translate english giantsk_s2_c64790db:
 translate english giantsk_s3_2340d484:
 
     # 'giantsk_s3{#giantsk_s3}'
-    nr 'As you are about to do so, you suddenly stop… and your eyes are drawn to the skeleton's armor.{#giantsk_s3_1}'
+    nr 'As you are about to do so, you suddenly stop… and your eyes are drawn to the skeleton\'s armor.{#giantsk_s3_1}'
     nr 'Something about the symbols engraved on its breastplate makes you pause. If these skeletons are guardians, then disturbing them may… awaken them.{#giantsk_s3_1}'
 
 # game/dlgs/mortuary/giantsk.rpy:137
 translate english giantsk_s4_c353d30a:
 
     # 'giantsk_s4{#giantsk_s4}'
-    nr 'The skeleton's intricate bronze armor is riveted onto its rib cage and shoulder blades with a series of iron bolts.{#giantsk_s4_1}'
-    nr 'As you study the frame behind the armor, you notice the same iron bolts are set into the skeleton's shoulder, elbow, pelvic, and knee joints.{#giantsk_s4_1}'
-    nr 'A mass of thick leather cords and heavy knotted ropes run along the length of the skeleton's arms and legs, woven in such a pattern that they resemble muscles and tendons.{#giantsk_s4_1}'
+    nr 'The skeleton\'s intricate bronze armor is riveted onto its rib cage and shoulder blades with a series of iron bolts.{#giantsk_s4_1}'
+    nr 'As you study the frame behind the armor, you notice the same iron bolts are set into the skeleton\'s shoulder, elbow, pelvic, and knee joints.{#giantsk_s4_1}'
+    nr 'A mass of thick leather cords and heavy knotted ropes run along the length of the skeleton\'s arms and legs, woven in such a pattern that they resemble muscles and tendons.{#giantsk_s4_1}'
 
 # game/dlgs/mortuary/giantsk.rpy:172
 translate english giantsk_s5_d188bb1e:
 
     # 'giantsk_s5{#giantsk_s5}'
-    nr 'Despite the armor's obvious age, it looks well cared for.{#giantsk_s5_1}'
+    nr 'Despite the armor\'s obvious age, it looks well cared for.{#giantsk_s5_1}'
     nr 'It shines brightly, and the symbols engraved on the breastplate seem to flow in the firelight, shifting slightly whenever you try to focus on them.{#giantsk_s5_1}'
 
 # game/dlgs/mortuary/giantsk.rpy:215
@@ -56,7 +56,7 @@ translate english giantsk_s6_9cee1059:
 translate english giantsk_s7_9ab30e02:
 
     # 'giantsk_s7{#giantsk_s7}'
-    nr 'You study the runes for a while, but you can't decipher the enchantment. It looks pretty complicated, and you're having a hard time concentrating.{#giantsk_s7_1}'
+    nr 'You study the runes for a while, but you can\'t decipher the enchantment. It looks pretty complicated, and you\'re having a hard time concentrating.{#giantsk_s7_1}'
 
 # game/dlgs/mortuary/giantsk.rpy:297
 translate english giantsk_s8_93540c7f:
@@ -92,8 +92,8 @@ translate english giantsk_s11_8cbe7f95:
 translate english giantsk_s12_fc2e6820:
 
     # 'giantsk_s12{#giantsk_s12}'
-    nr 'You wait for a moment, but no one responds to the sound. Moving quickly, you sift through the skeleton's parts on the floor.{#giantsk_s12_1}'
-    nr 'Most of it is too heavy or too old to be useful, but you discover a piece of the skeleton's breastplate with a majority of one of the broken enchantments engraved on it.{#giantsk_s12_1}'
+    nr 'You wait for a moment, but no one responds to the sound. Moving quickly, you sift through the skeleton\'s parts on the floor.{#giantsk_s12_1}'
+    nr 'Most of it is too heavy or too old to be useful, but you discover a piece of the skeleton\'s breastplate with a majority of one of the broken enchantments engraved on it.{#giantsk_s12_1}'
     nr 'You have a feeling that it could prove useful.{#giantsk_s12_1}'
 
 # game/dlgs/mortuary/giantsk.rpy:422
@@ -108,7 +108,7 @@ translate english giantsk_s13_31d691f8:
 translate english giantsk_s14_4393920a:
 
     # 'giantsk_s14{#giantsk_s14}'
-    nr 'You quickly rummage through the skeleton's remains and, once again, uncover a piece of the skeleton's breastplate…{#giantsk_s14_1}'
+    nr 'You quickly rummage through the skeleton\'s remains and, once again, uncover a piece of the skeleton\'s breastplate…{#giantsk_s14_1}'
     nr '…like the first, this one also has a fragment of its broken enchantment engraved on it. It could prove useful.{#giantsk_s14_1}'
 
 # game/dlgs/mortuary/giantsk.rpy:457
@@ -124,7 +124,7 @@ translate english giantsk_s16_063a546f:
 
     # 'giantsk_s16{#giantsk_s16}'
     nr 'From what you can make out from the Tome, it seems the armoring enchantment applies only to the breastplate, the necromantic enchantment allows the skeleton to be Raised, but it is the warding enchantment that gives the skeleton its limited awareness of its surroundings.{#giantsk_s16_1}'
-    nr 'You'd guess that if you were to mar the skeleton's wards, it would interpret it as an attack… unless you blinded it to your presence first.{#giantsk_s16_1}'
+    nr 'You\'d guess that if you were to mar the skeleton\'s wards, it would interpret it as an attack… unless you blinded it to your presence first.{#giantsk_s16_1}'
 
 translate english strings:
 
@@ -142,23 +142,23 @@ translate english strings:
 
     # game/dlgs/mortuary/giantsk.rpy:17
     old 'giantsk_s0_r3997{#giantsk_s0_r3997}'
-    new 'See if you can dispel the enchantments woven into the skeleton's breastplate.{#giantsk_s0_r3997}'
+    new 'See if you can dispel the enchantments woven into the skeleton\'s breastplate.{#giantsk_s0_r3997}'
 
     # game/dlgs/mortuary/giantsk.rpy:17
     old 'giantsk_s0_r3998{#giantsk_s0_r3998}'
-    new 'Try and pry the skeleton's blade from its hands.{#giantsk_s0_r3998}'
+    new 'Try and pry the skeleton\'s blade from its hands.{#giantsk_s0_r3998}'
 
     # game/dlgs/mortuary/giantsk.rpy:17
     old 'giantsk_s0_r3999{#giantsk_s0_r3999}'
-    new 'Try and pry the skeleton's blade from its hands.{#giantsk_s0_r3999}'
+    new 'Try and pry the skeleton\'s blade from its hands.{#giantsk_s0_r3999}'
 
     # game/dlgs/mortuary/giantsk.rpy:17
     old 'giantsk_s0_r4000{#giantsk_s0_r4000}'
-    new 'Try and pry out the bolts securing the skeleton's armor.{#giantsk_s0_r4000}'
+    new 'Try and pry out the bolts securing the skeleton\'s armor.{#giantsk_s0_r4000}'
 
     # game/dlgs/mortuary/giantsk.rpy:17
     old 'giantsk_s0_r4001{#giantsk_s0_r4001}'
-    new 'Try and pry out the bolts securing the skeleton's armor.{#giantsk_s0_r4001}'
+    new 'Try and pry out the bolts securing the skeleton\'s armor.{#giantsk_s0_r4001}'
 
     # game/dlgs/mortuary/giantsk.rpy:17
     old 'giantsk_s0_r4002{#giantsk_s0_r4002}'
@@ -178,23 +178,23 @@ translate english strings:
 
     # game/dlgs/mortuary/giantsk.rpy:70
     old 'giantsk_s1_r4035{#giantsk_s1_r4035}'
-    new 'See if you can dispel the enchantments woven into the skeleton's breastplate.{#giantsk_s1_r4035}'
+    new 'See if you can dispel the enchantments woven into the skeleton\'s breastplate.{#giantsk_s1_r4035}'
 
     # game/dlgs/mortuary/giantsk.rpy:70
     old 'giantsk_s1_r4036{#giantsk_s1_r4036}'
-    new 'Try and pry the skeleton's blade from its hands.{#giantsk_s1_r4036}'
+    new 'Try and pry the skeleton\'s blade from its hands.{#giantsk_s1_r4036}'
 
     # game/dlgs/mortuary/giantsk.rpy:70
     old 'giantsk_s1_r4037{#giantsk_s1_r4037}'
-    new 'Try and pry the skeleton's blade from its hands.{#giantsk_s1_r4037}'
+    new 'Try and pry the skeleton\'s blade from its hands.{#giantsk_s1_r4037}'
 
     # game/dlgs/mortuary/giantsk.rpy:70
     old 'giantsk_s1_r4038{#giantsk_s1_r4038}'
-    new 'Try and pry out the bolts securing the skeleton's armor.{#giantsk_s1_r4038}'
+    new 'Try and pry out the bolts securing the skeleton\'s armor.{#giantsk_s1_r4038}'
 
     # game/dlgs/mortuary/giantsk.rpy:70
     old 'giantsk_s1_r4039{#giantsk_s1_r4039}'
-    new 'Try and pry out the bolts securing the skeleton's armor.{#giantsk_s1_r4039}'
+    new 'Try and pry out the bolts securing the skeleton\'s armor.{#giantsk_s1_r4039}'
 
     # game/dlgs/mortuary/giantsk.rpy:70
     old 'giantsk_s1_r4040{#giantsk_s1_r4040}'
@@ -206,11 +206,11 @@ translate english strings:
 
     # game/dlgs/mortuary/giantsk.rpy:109
     old 'giantsk_s2_r4042{#giantsk_s2_r4042}'
-    new '«You'll wish you'd stayed dead, Bones…»{#giantsk_s2_r4042}'
+    new '«You\'ll wish you\'d stayed dead, Bones…»{#giantsk_s2_r4042}'
 
     # game/dlgs/mortuary/giantsk.rpy:121
     old 'giantsk_s3_r4043{#giantsk_s3_r4043}'
-    new '«That's a risk I'm willing to take…»{#giantsk_s3_r4043}'
+    new '«That\'s a risk I\'m willing to take…»{#giantsk_s3_r4043}'
 
     # game/dlgs/mortuary/giantsk.rpy:121
     old 'giantsk_s3_r4044{#giantsk_s3_r4044}'
@@ -226,19 +226,19 @@ translate english strings:
 
     # game/dlgs/mortuary/giantsk.rpy:140
     old 'giantsk_s4_r4048{#giantsk_s4_r4048}'
-    new 'Try and pry the skeleton's blade from its hands.{#giantsk_s4_r4048}'
+    new 'Try and pry the skeleton\'s blade from its hands.{#giantsk_s4_r4048}'
 
     # game/dlgs/mortuary/giantsk.rpy:140
     old 'giantsk_s4_r4049{#giantsk_s4_r4049}'
-    new 'Try and pry the skeleton's blade from its hands.{#giantsk_s4_r4049}'
+    new 'Try and pry the skeleton\'s blade from its hands.{#giantsk_s4_r4049}'
 
     # game/dlgs/mortuary/giantsk.rpy:140
     old 'giantsk_s4_r4050{#giantsk_s4_r4050}'
-    new 'Try and pry out the bolts securing the skeleton's armor.{#giantsk_s4_r4050}'
+    new 'Try and pry out the bolts securing the skeleton\'s armor.{#giantsk_s4_r4050}'
 
     # game/dlgs/mortuary/giantsk.rpy:140
     old 'giantsk_s4_r4051{#giantsk_s4_r4051}'
-    new 'Try and pry out the bolts securing the skeleton's armor.{#giantsk_s4_r4051}'
+    new 'Try and pry out the bolts securing the skeleton\'s armor.{#giantsk_s4_r4051}'
 
     # game/dlgs/mortuary/giantsk.rpy:140
     old 'giantsk_s4_r4052{#giantsk_s4_r4052}'
@@ -262,19 +262,19 @@ translate english strings:
 
     # game/dlgs/mortuary/giantsk.rpy:175
     old 'giantsk_s5_r4056{#giantsk_s5_r4056}'
-    new 'Try and pry the skeleton's blade from its hands.{#giantsk_s5_r4056}'
+    new 'Try and pry the skeleton\'s blade from its hands.{#giantsk_s5_r4056}'
 
     # game/dlgs/mortuary/giantsk.rpy:175
     old 'giantsk_s5_r4057{#giantsk_s5_r4057}'
-    new 'Try and pry the skeleton's blade from its hands.{#giantsk_s5_r4057}'
+    new 'Try and pry the skeleton\'s blade from its hands.{#giantsk_s5_r4057}'
 
     # game/dlgs/mortuary/giantsk.rpy:175
     old 'giantsk_s5_r4058{#giantsk_s5_r4058}'
-    new 'Try and pry out the bolts securing the skeleton's armor.{#giantsk_s5_r4058}'
+    new 'Try and pry out the bolts securing the skeleton\'s armor.{#giantsk_s5_r4058}'
 
     # game/dlgs/mortuary/giantsk.rpy:175
     old 'giantsk_s5_r4059{#giantsk_s5_r4059}'
-    new 'Try and pry out the bolts securing the skeleton's armor.{#giantsk_s5_r4059}'
+    new 'Try and pry out the bolts securing the skeleton\'s armor.{#giantsk_s5_r4059}'
 
     # game/dlgs/mortuary/giantsk.rpy:175
     old 'giantsk_s5_r4060{#giantsk_s5_r4060}'
@@ -294,19 +294,19 @@ translate english strings:
 
     # game/dlgs/mortuary/giantsk.rpy:218
     old 'giantsk_s6_r4064{#giantsk_s6_r4064}'
-    new 'Try and pry the skeleton's blade from its hands.{#giantsk_s6_r4064}'
+    new 'Try and pry the skeleton\'s blade from its hands.{#giantsk_s6_r4064}'
 
     # game/dlgs/mortuary/giantsk.rpy:218
     old 'giantsk_s6_r4065{#giantsk_s6_r4065}'
-    new 'Try and pry the skeleton's blade from its hands.{#giantsk_s6_r4065}'
+    new 'Try and pry the skeleton\'s blade from its hands.{#giantsk_s6_r4065}'
 
     # game/dlgs/mortuary/giantsk.rpy:218
     old 'giantsk_s6_r4066{#giantsk_s6_r4066}'
-    new 'Try and pry out the bolts securing the skeleton's armor.{#giantsk_s6_r4066}'
+    new 'Try and pry out the bolts securing the skeleton\'s armor.{#giantsk_s6_r4066}'
 
     # game/dlgs/mortuary/giantsk.rpy:218
     old 'giantsk_s6_r4067{#giantsk_s6_r4067}'
-    new 'Try and pry out the bolts securing the skeleton's armor.{#giantsk_s6_r4067}'
+    new 'Try and pry out the bolts securing the skeleton\'s armor.{#giantsk_s6_r4067}'
 
     # game/dlgs/mortuary/giantsk.rpy:218
     old 'giantsk_s6_r4068{#giantsk_s6_r4068}'
@@ -330,19 +330,19 @@ translate english strings:
 
     # game/dlgs/mortuary/giantsk.rpy:257
     old 'giantsk_s7_r4072{#giantsk_s7_r4072}'
-    new 'Try and pry the skeleton's blade from its hands.{#giantsk_s7_r4072}'
+    new 'Try and pry the skeleton\'s blade from its hands.{#giantsk_s7_r4072}'
 
     # game/dlgs/mortuary/giantsk.rpy:257
     old 'giantsk_s7_r4073{#giantsk_s7_r4073}'
-    new 'Try and pry the skeleton's blade from its hands.{#giantsk_s7_r4073}'
+    new 'Try and pry the skeleton\'s blade from its hands.{#giantsk_s7_r4073}'
 
     # game/dlgs/mortuary/giantsk.rpy:257
     old 'giantsk_s7_r4074{#giantsk_s7_r4074}'
-    new 'Try and pry out the bolts securing the skeleton's armor.{#giantsk_s7_r4074}'
+    new 'Try and pry out the bolts securing the skeleton\'s armor.{#giantsk_s7_r4074}'
 
     # game/dlgs/mortuary/giantsk.rpy:257
     old 'giantsk_s7_r4075{#giantsk_s7_r4075}'
-    new 'Try and pry out the bolts securing the skeleton's armor.{#giantsk_s7_r4075}'
+    new 'Try and pry out the bolts securing the skeleton\'s armor.{#giantsk_s7_r4075}'
 
     # game/dlgs/mortuary/giantsk.rpy:257
     old 'giantsk_s7_r4076{#giantsk_s7_r4076}'
@@ -362,19 +362,19 @@ translate english strings:
 
     # game/dlgs/mortuary/giantsk.rpy:300
     old 'giantsk_s8_r4081{#giantsk_s8_r4081}'
-    new 'Try and pry the skeleton's blade from its hands.{#giantsk_s8_r4081}'
+    new 'Try and pry the skeleton\'s blade from its hands.{#giantsk_s8_r4081}'
 
     # game/dlgs/mortuary/giantsk.rpy:300
     old 'giantsk_s8_r4082{#giantsk_s8_r4082}'
-    new 'Try and pry the skeleton's blade from its hands.{#giantsk_s8_r4082}'
+    new 'Try and pry the skeleton\'s blade from its hands.{#giantsk_s8_r4082}'
 
     # game/dlgs/mortuary/giantsk.rpy:300
     old 'giantsk_s8_r4083{#giantsk_s8_r4083}'
-    new 'Try and pry out the bolts securing the skeleton's armor.{#giantsk_s8_r4083}'
+    new 'Try and pry out the bolts securing the skeleton\'s armor.{#giantsk_s8_r4083}'
 
     # game/dlgs/mortuary/giantsk.rpy:300
     old 'giantsk_s8_r4084{#giantsk_s8_r4084}'
-    new 'Try and pry out the bolts securing the skeleton's armor.{#giantsk_s8_r4084}'
+    new 'Try and pry out the bolts securing the skeleton\'s armor.{#giantsk_s8_r4084}'
 
     # game/dlgs/mortuary/giantsk.rpy:300
     old 'giantsk_s8_r4085{#giantsk_s8_r4085}'
@@ -402,19 +402,19 @@ translate english strings:
 
     # game/dlgs/mortuary/giantsk.rpy:340
     old 'giantsk_s9_r4089{#giantsk_s9_r4089}'
-    new 'Try and pry the skeleton's blade from its hands.{#giantsk_s9_r4089}'
+    new 'Try and pry the skeleton\'s blade from its hands.{#giantsk_s9_r4089}'
 
     # game/dlgs/mortuary/giantsk.rpy:340
     old 'giantsk_s9_r4090{#giantsk_s9_r4090}'
-    new 'Try and pry the skeleton's blade from its hands.{#giantsk_s9_r4090}'
+    new 'Try and pry the skeleton\'s blade from its hands.{#giantsk_s9_r4090}'
 
     # game/dlgs/mortuary/giantsk.rpy:340
     old 'giantsk_s9_r4091{#giantsk_s9_r4091}'
-    new 'Try and pry out the bolts securing the skeleton's armor.{#giantsk_s9_r4091}'
+    new 'Try and pry out the bolts securing the skeleton\'s armor.{#giantsk_s9_r4091}'
 
     # game/dlgs/mortuary/giantsk.rpy:340
     old 'giantsk_s9_r4092{#giantsk_s9_r4092}'
-    new 'Try and pry out the bolts securing the skeleton's armor.{#giantsk_s9_r4092}'
+    new 'Try and pry out the bolts securing the skeleton\'s armor.{#giantsk_s9_r4092}'
 
     # game/dlgs/mortuary/giantsk.rpy:340
     old 'giantsk_s9_r4093{#giantsk_s9_r4093}'
@@ -426,7 +426,7 @@ translate english strings:
 
     # game/dlgs/mortuary/giantsk.rpy:389
     old 'giantsk_s10_r4095{#giantsk_s10_r4095}'
-    new '«You'll wish you'd stayed dead, Bones…»{#giantsk_s10_r4095}'
+    new '«You\'ll wish you\'d stayed dead, Bones…»{#giantsk_s10_r4095}'
 
     # game/dlgs/mortuary/giantsk.rpy:401
     old 'giantsk_s11_r4096{#giantsk_s11_r4096}'
@@ -434,23 +434,23 @@ translate english strings:
 
     # game/dlgs/mortuary/giantsk.rpy:413
     old 'giantsk_s12_r4097{#giantsk_s12_r4097}'
-    new '«I'll just take it then…»{#giantsk_s12_r4097}'
+    new '«I\'ll just take it then…»{#giantsk_s12_r4097}'
 
     # game/dlgs/mortuary/giantsk.rpy:425
     old 'giantsk_s13_r4098{#giantsk_s13_r4098}'
-    new '«Let's see what we got this time…»{#giantsk_s13_r4098}'
+    new '«Let\'s see what we got this time…»{#giantsk_s13_r4098}'
 
     # game/dlgs/mortuary/giantsk.rpy:438
     old 'giantsk_s14_r4099{#giantsk_s14_r4099}'
-    new '«I'll just take it then…»{#giantsk_s14_r4099}'
+    new '«I\'ll just take it then…»{#giantsk_s14_r4099}'
 
     # game/dlgs/mortuary/giantsk.rpy:438
     old 'giantsk_s14_r4100{#giantsk_s14_r4100}'
-    new '«I'll just take it then…»{#giantsk_s14_r4100}'
+    new '«I\'ll just take it then…»{#giantsk_s14_r4100}'
 
     # game/dlgs/mortuary/giantsk.rpy:438
     old 'giantsk_s14_r4101{#giantsk_s14_r4101}'
-    new '«I'll just take it then…»{#giantsk_s14_r4101}'
+    new '«I\'ll just take it then…»{#giantsk_s14_r4101}'
 
     # game/dlgs/mortuary/giantsk.rpy:460
     old 'giantsk_s15_r64298{#giantsk_s15_r64298}'

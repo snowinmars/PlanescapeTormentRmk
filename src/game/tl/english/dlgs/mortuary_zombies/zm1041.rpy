@@ -6,7 +6,7 @@ translate english zm1041_s0_3aee44ff:
     # 'zm1041_s0{#zm1041_s0}'
     nr 'This re-animated, male corpse has the numbers «1041» carved into its forehead.{#zm1041_s0_1}'
     nr 'Despite its taut, desiccated flesh, it is apparent that its features once had a rather „exotic“ cast to them.{#zm1041_s0_1}'
-    nr 'The zombie's lips have been stitched closed - most likely to prevent it from moaning incessantly - and it smells strongly of formaldehyde.{#zm1041_s0_1}'
+    nr 'The zombie\'s lips have been stitched closed - most likely to prevent it from moaning incessantly - and it smells strongly of formaldehyde.{#zm1041_s0_1}'
 
 # game/dlgs/mortuary_zombies/zm1041.rpy:50
 translate english zm1041_s1_124d594e:
@@ -48,7 +48,7 @@ translate english zm1041_s5_a4b823e0:
 translate english zm1041_s6_cd6f3727:
 
     # 'zm1041_s6{#zm1041_s6}'
-    bei '«Who I am is a difficult question to answer… who I *was* is not. I was known as Zhuang Bei, tutor and bodyguard to Liu Xixi, daughter of Censor Chi'an».{#zm1041_s6_1}'
+    bei '«Who I am is a difficult question to answer… who I *was* is not. I was known as Zhuang Bei, tutor and bodyguard to Liu Xixi, daughter of Censor Chi\'an».{#zm1041_s6_1}'
 
 # game/dlgs/mortuary_zombies/zm1041.rpy:185
 translate english zm1041_s7_9ee9f423:
@@ -70,7 +70,7 @@ translate english zm1041_s8_3414f230:
 translate english zm1041_s9_394834cc:
 
     # 'zm1041_s9{#zm1041_s9}'
-    bei '«This building? Nothing at all; I had heard of it, knew my corpse was to serve here, but that is all. I know almost as little about this great city, 'Sigil.'»{#zm1041_s9_1}'
+    bei '«This building? Nothing at all; I had heard of it, knew my corpse was to serve here, but that is all. I know almost as little about this great city, „Sigil“.»{#zm1041_s9_1}'
     bei '«My weeks here were spent searching for the men I fell into this world with and learning the language; though it pained me, I had time for little else».{#zm1041_s9_1}'
     bei '«I could have learned so much from the myriad wonders of such a place…»{#zm1041_s9_1}'
 
@@ -112,7 +112,7 @@ translate english zm1041_s15_9a5e6e33:
 
     # 'zm1041_s15{#zm1041_s15}'
     bei '«Well, you see…»{#zm1041_s15_1}'
-    nr 'The spirit stops for a moment to think, rubbing the corpse's withered hands together.{#zm1041_s15_2}'
+    nr 'The spirit stops for a moment to think, rubbing the corpse\'s withered hands together.{#zm1041_s15_2}'
     bei '«When I arrived, after a short period of waiting I was to be ushered to my final, *true* destination».{#zm1041_s15_3}'
     bei '«However, there was some sort of commotion during my escort through the Palace, and I was left alone in a side room with the promise that I would be attended to in a moment».{#zm1041_s15_3}'
 
@@ -150,7 +150,7 @@ translate english zm1041_s19_a880746c:
 translate english zm1041_s20_230ce4d2:
 
     # 'zm1041_s20{#zm1041_s20}'
-    bei '«I couldn't say. It is all so very frustrating!»{#zm1041_s20_1}'
+    bei '«I couldn\'t say. It is all so very frustrating!»{#zm1041_s20_1}'
     nr 'He pauses for a moment to regain his composure, the stiffened joints and tendons of the cadaver creaking softly as they relax once more.{#zm1041_s20_2}'
 
 # game/dlgs/mortuary_zombies/zm1041.rpy:506
@@ -158,7 +158,7 @@ translate english zm1041_s21_eda9f919:
 
     # 'zm1041_s21{#zm1041_s21}'
     bei '«Of course. As we stood there, two assassins suddenly burst down from the rooftop to the balcony, most likely there to slay or kidnap Miss Liu».{#zm1041_s21_1}'
-    bei '«Shouting for the guards, I drew my blade and leapt to her defense. In the ensuing battle, the balcony's railing was shattered and the four of us fell into the Jade Portal».{#zm1041_s21_1}'
+    bei '«Shouting for the guards, I drew my blade and leapt to her defense. In the ensuing battle, the balcony\'s railing was shattered and the four of us fell into the Jade Portal».{#zm1041_s21_1}'
 
 # game/dlgs/mortuary_zombies/zm1041.rpy:525
 translate english zm1041_s22_af22df74:
@@ -187,7 +187,7 @@ translate english zm1041_s24_8fe67238:
 translate english zm1041_s25_ca8d377d:
 
     # 'zm1041_s25{#zm1041_s25}'
-    nr 'The spirit stares at you coldly, ghost-lights burning deep within the corpse's eyes; you seem to have offended him.{#zm1041_s25_1}'
+    nr 'The spirit stares at you coldly, ghost-lights burning deep within the corpse\'s eyes; you seem to have offended him.{#zm1041_s25_1}'
 
 # game/dlgs/mortuary_zombies/zm1041.rpy:590
 translate english zm1041_s26_57504f02:
@@ -210,7 +210,7 @@ translate english zm1041_s28_a930ffac:
 
     # 'zm1041_s28{#zm1041_s28}'
     bei '«Very well».{#zm1041_s28_1}'
-    nr 'He thinks for a moment, tapping the ends of the corpse's long, bony fingers together. Soon, he begins to speak once more in a steady, measured rhythm.{#zm1041_s28_2}'
+    nr 'He thinks for a moment, tapping the ends of the corpse\'s long, bony fingers together. Soon, he begins to speak once more in a steady, measured rhythm.{#zm1041_s28_2}'
     bei '«It is difficult to meet as it is difficult to part.\nThe north wind has weakened; hundreds of flowers fade away».{#zm1041_s28_3}'
     bei '«When the Spring worms die, the silk shall never come again.\nWhen the candle wax becomes ash, tears shall stop».{#zm1041_s28_3}'
     nr 'He smiles at you politely.{#zm1041_s28_4}'
@@ -219,7 +219,7 @@ translate english zm1041_s28_a930ffac:
 translate english zm1041_s29_1f545b08:
 
     # 'zm1041_s29{#zm1041_s29}'
-    bei '«Well, I am ashamed to say it was a subtle attempt at saying… well, saying that perhaps you'd best let the spirits of the dead alone».{#zm1041_s29_1}'
+    bei '«Well, I am ashamed to say it was a subtle attempt at saying… well, saying that perhaps you\'d best let the spirits of the dead alone».{#zm1041_s29_1}'
     bei '«I no longer desire to have any part in this…»{#zm1041_s29_1}'
     nr 'The spirit makes a sweeping gesture to indicate everything around him.{#zm1041_s29_2}'
     bei '«…in this world».{#zm1041_s29_3}'
@@ -267,7 +267,7 @@ translate english zm1041_s35_9fb27e9c:
     # 'zm1041_s35{#zm1041_s35}'
     bei '«The assassin would have features similar to mine, and a Lotus Blossom tattooed upon his brow».{#zm1041_s35_1}'
     nr 'Seeing your confusion, he adds.{#zm1041_s35_2}'
-    bei '«It's a sort of flower, with seven petals. Liu Xixi is a young girl; only fourteen years of age».{#zm1041_s35_3}'
+    bei '«It\'s a sort of flower, with seven petals. Liu Xixi is a young girl; only fourteen years of age».{#zm1041_s35_3}'
     bei '«Perhaps she or the assassin would know where the way back was, and how to activate it again».{#zm1041_s35_3}'
 
 # game/dlgs/mortuary_zombies/zm1041.rpy:802
@@ -302,7 +302,7 @@ translate english strings:
 
     # game/dlgs/mortuary_zombies/zm1041.rpy:17
     old 'zm1041_s0_r6578{#zm1041_s0_r6578}'
-    new '«I know you're not a zombie, you know. You're not fooling anyone».{#zm1041_s0_r6578}'
+    new '«I know you\'re not a zombie, you know. You\'re not fooling anyone».{#zm1041_s0_r6578}'
 
     # game/dlgs/mortuary_zombies/zm1041.rpy:17
     old 'zm1041_s0_r6579{#zm1041_s0_r6579}'
@@ -402,11 +402,11 @@ translate english strings:
 
     # game/dlgs/mortuary_zombies/zm1041.rpy:165
     old 'zm1041_s6_r9114{#zm1041_s6_r9114}'
-    new '«That's all I wished to know. Farewell».{#zm1041_s6_r9114}'
+    new '«That\'s all I wished to know. Farewell».{#zm1041_s6_r9114}'
 
     # game/dlgs/mortuary_zombies/zm1041.rpy:190
     old 'zm1041_s7_r9115{#zm1041_s7_r9115}'
-    new '«How did you arrive from this 'Shou Lung'?»{#zm1041_s7_r9115}'
+    new '«How did you arrive from this „Shou Lung“?»{#zm1041_s7_r9115}'
 
     # game/dlgs/mortuary_zombies/zm1041.rpy:190
     old 'zm1041_s7_r9116{#zm1041_s7_r9116}'
@@ -414,7 +414,7 @@ translate english strings:
 
     # game/dlgs/mortuary_zombies/zm1041.rpy:190
     old 'zm1041_s7_r9117{#zm1041_s7_r9117}'
-    new '«That's all I wished to know. Farewell».{#zm1041_s7_r9117}'
+    new '«That\'s all I wished to know. Farewell».{#zm1041_s7_r9117}'
 
     # game/dlgs/mortuary_zombies/zm1041.rpy:211
     old 'zm1041_s8_r9118{#zm1041_s8_r9118}'
@@ -438,7 +438,7 @@ translate english strings:
 
     # game/dlgs/mortuary_zombies/zm1041.rpy:211
     old 'zm1041_s8_r9123{#zm1041_s8_r9123}'
-    new '«That's all I wished to know. Farewell».{#zm1041_s8_r9123}'
+    new '«That\'s all I wished to know. Farewell».{#zm1041_s8_r9123}'
 
     # game/dlgs/mortuary_zombies/zm1041.rpy:243
     old 'zm1041_s9_r9124{#zm1041_s9_r9124}'
@@ -478,7 +478,7 @@ translate english strings:
 
     # game/dlgs/mortuary_zombies/zm1041.rpy:286
     old 'zm1041_s11_r9133{#zm1041_s11_r9133}'
-    new '«That's all I wished to know. Farewell».{#zm1041_s11_r9133}'
+    new '«That\'s all I wished to know. Farewell».{#zm1041_s11_r9133}'
 
     # game/dlgs/mortuary_zombies/zm1041.rpy:305
     old 'zm1041_s12_r9134{#zm1041_s12_r9134}'
@@ -490,7 +490,7 @@ translate english strings:
 
     # game/dlgs/mortuary_zombies/zm1041.rpy:305
     old 'zm1041_s12_r9136{#zm1041_s12_r9136}'
-    new '«That's all I wished to know. Farewell».{#zm1041_s12_r9136}'
+    new '«That\'s all I wished to know. Farewell».{#zm1041_s12_r9136}'
 
     # game/dlgs/mortuary_zombies/zm1041.rpy:324
     old 'zm1041_s13_r9137{#zm1041_s13_r9137}'
@@ -550,7 +550,7 @@ translate english strings:
 
     # game/dlgs/mortuary_zombies/zm1041.rpy:385
     old 'zm1041_s15_r9151{#zm1041_s15_r9151}'
-    new '«Perhaps I'll hear the rest another time. Farewell».{#zm1041_s15_r9151}'
+    new '«Perhaps I\'lll hear the rest another time. Farewell».{#zm1041_s15_r9151}'
 
     # game/dlgs/mortuary_zombies/zm1041.rpy:408
     old 'zm1041_s16_r9152{#zm1041_s16_r9152}'
@@ -562,11 +562,11 @@ translate english strings:
 
     # game/dlgs/mortuary_zombies/zm1041.rpy:408
     old 'zm1041_s16_r9154{#zm1041_s16_r9154}'
-    new '«Perhaps I'll hear the rest another time. Farewell».{#zm1041_s16_r9154}'
+    new '«Perhaps I\'lll hear the rest another time. Farewell».{#zm1041_s16_r9154}'
 
     # game/dlgs/mortuary_zombies/zm1041.rpy:428
     old 'zm1041_s17_r9155{#zm1041_s17_r9155}'
-    new '«And that didn't seem a bit odd to you?»{#zm1041_s17_r9155}'
+    new '«And that didn\'t seem a bit odd to you?»{#zm1041_s17_r9155}'
 
     # game/dlgs/mortuary_zombies/zm1041.rpy:428
     old 'zm1041_s17_r9156{#zm1041_s17_r9156}'
@@ -574,7 +574,7 @@ translate english strings:
 
     # game/dlgs/mortuary_zombies/zm1041.rpy:428
     old 'zm1041_s17_r9157{#zm1041_s17_r9157}'
-    new '«That's all wished to know. Farewell».{#zm1041_s17_r9157}'
+    new '«That\'s all wished to know. Farewell».{#zm1041_s17_r9157}'
 
     # game/dlgs/mortuary_zombies/zm1041.rpy:447
     old 'zm1041_s18_r9158{#zm1041_s18_r9158}'
@@ -594,7 +594,7 @@ translate english strings:
 
     # game/dlgs/mortuary_zombies/zm1041.rpy:464
     old 'zm1041_s19_r9162{#zm1041_s19_r9162}'
-    new '«Poor fool… I wonder how long they'll let you wander!»{#zm1041_s19_r9162}'
+    new '«Poor fool… I wonder how long they\'ll let you wander!»{#zm1041_s19_r9162}'
 
     # game/dlgs/mortuary_zombies/zm1041.rpy:464
     old 'zm1041_s19_r9163{#zm1041_s19_r9163}'
@@ -610,7 +610,7 @@ translate english strings:
 
     # game/dlgs/mortuary_zombies/zm1041.rpy:490
     old 'zm1041_s20_r9166{#zm1041_s20_r9166}'
-    new '«Perhaps I'll hear the rest another time. Farewell».{#zm1041_s20_r9166}'
+    new '«Perhaps I\'lll hear the rest another time. Farewell».{#zm1041_s20_r9166}'
 
     # game/dlgs/mortuary_zombies/zm1041.rpy:509
     old 'zm1041_s21_r9167{#zm1041_s21_r9167}'
@@ -622,7 +622,7 @@ translate english strings:
 
     # game/dlgs/mortuary_zombies/zm1041.rpy:509
     old 'zm1041_s21_r9169{#zm1041_s21_r9169}'
-    new '«Perhaps I'll hear the rest another time. Farewell».{#zm1041_s21_r9169}'
+    new '«Perhaps I\'lll hear the rest another time. Farewell».{#zm1041_s21_r9169}'
 
     # game/dlgs/mortuary_zombies/zm1041.rpy:529
     old 'zm1041_s22_r9170{#zm1041_s22_r9170}'
@@ -642,7 +642,7 @@ translate english strings:
 
     # game/dlgs/mortuary_zombies/zm1041.rpy:544
     old 'zm1041_s23_r9174{#zm1041_s23_r9174}'
-    new '«That's all I wished to know for now. Farewell».{#zm1041_s23_r9174}'
+    new '«That\'s all I wished to know for now. Farewell».{#zm1041_s23_r9174}'
 
     # game/dlgs/mortuary_zombies/zm1041.rpy:563
     old 'zm1041_s24_r9175{#zm1041_s24_r9175}'
@@ -666,11 +666,11 @@ translate english strings:
 
     # game/dlgs/mortuary_zombies/zm1041.rpy:594
     old 'zm1041_s26_r9180{#zm1041_s26_r9180}'
-    new '«No… but I think I'd like to know more about this poem».{#zm1041_s26_r9180}'
+    new '«No… but I think I\'d like to know more about this poem».{#zm1041_s26_r9180}'
 
     # game/dlgs/mortuary_zombies/zm1041.rpy:594
     old 'zm1041_s26_r9181{#zm1041_s26_r9181}'
-    new '«No. As a matter of fact, I think I'll be leaving. Farewell».{#zm1041_s26_r9181}'
+    new '«No. As a matter of fact, I think I\'lll be leaving. Farewell».{#zm1041_s26_r9181}'
 
     # game/dlgs/mortuary_zombies/zm1041.rpy:613
     old 'zm1041_s27_r9182{#zm1041_s27_r9182}'
@@ -682,7 +682,7 @@ translate english strings:
 
     # game/dlgs/mortuary_zombies/zm1041.rpy:613
     old 'zm1041_s27_r9184{#zm1041_s27_r9184}'
-    new '«I see. Thank you, but I'd best take my leave now».{#zm1041_s27_r9184}'
+    new '«I see. Thank you, but I\'d best take my leave now».{#zm1041_s27_r9184}'
 
     # game/dlgs/mortuary_zombies/zm1041.rpy:635
     old 'zm1041_s28_r9185{#zm1041_s28_r9185}'
@@ -694,7 +694,7 @@ translate english strings:
 
     # game/dlgs/mortuary_zombies/zm1041.rpy:635
     old 'zm1041_s28_r9187{#zm1041_s28_r9187}'
-    new '«So you're saying that I should have left your spirit alone? Have I offended you, calling you here?»{#zm1041_s28_r9187}'
+    new '«So you\'re saying that I should have left your spirit alone? Have I offended you, calling you here?»{#zm1041_s28_r9187}'
 
     # game/dlgs/mortuary_zombies/zm1041.rpy:635
     old 'zm1041_s28_r9188{#zm1041_s28_r9188}'
@@ -722,7 +722,7 @@ translate english strings:
 
     # game/dlgs/mortuary_zombies/zm1041.rpy:692
     old 'zm1041_s31_r9194{#zm1041_s31_r9194}'
-    new '«Hmm. You know, it's odd how quickly you were able to pick up the language…»{#zm1041_s31_r9194}'
+    new '«Hmm. You know, it\'s odd how quickly you were able to pick up the language…»{#zm1041_s31_r9194}'
 
     # game/dlgs/mortuary_zombies/zm1041.rpy:692
     old 'zm1041_s31_r9195{#zm1041_s31_r9195}'
@@ -730,11 +730,11 @@ translate english strings:
 
     # game/dlgs/mortuary_zombies/zm1041.rpy:692
     old 'zm1041_s31_r9196{#zm1041_s31_r9196}'
-    new '«I'll have to hear the rest another time; farewell».{#zm1041_s31_r9196}'
+    new '«I\'lll have to hear the rest another time; farewell».{#zm1041_s31_r9196}'
 
     # game/dlgs/mortuary_zombies/zm1041.rpy:717
     old 'zm1041_s32_r9197{#zm1041_s32_r9197}'
-    new '«Would you have known how to return to your land, had you rescued this… 'Xi-xi'?»{#zm1041_s32_r9197}'
+    new '«Would you have known how to return to your land, had you rescued this… „Xi-xi“?»{#zm1041_s32_r9197}'
 
     # game/dlgs/mortuary_zombies/zm1041.rpy:717
     old 'zm1041_s32_r9198{#zm1041_s32_r9198}'
@@ -750,7 +750,7 @@ translate english strings:
 
     # game/dlgs/mortuary_zombies/zm1041.rpy:736
     old 'zm1041_s33_r9201{#zm1041_s33_r9201}'
-    new '«It certainly seems easy for you to just not care about your duties because you're dead. I don't know if I could just let something like that go».{#zm1041_s33_r9201}'
+    new '«It certainly seems easy for you to just not care about your duties because you\'re dead. I don\'t know if I could just let something like that go».{#zm1041_s33_r9201}'
 
     # game/dlgs/mortuary_zombies/zm1041.rpy:736
     old 'zm1041_s33_r9202{#zm1041_s33_r9202}'
@@ -758,7 +758,7 @@ translate english strings:
 
     # game/dlgs/mortuary_zombies/zm1041.rpy:736
     old 'zm1041_s33_r9203{#zm1041_s33_r9203}'
-    new '«Hmm. I'll leave you, now. Luck to you».{#zm1041_s33_r9203}'
+    new '«Hmm. I\'lll leave you, now. Luck to you».{#zm1041_s33_r9203}'
 
     # game/dlgs/mortuary_zombies/zm1041.rpy:761
     old 'zm1041_s34_r9205{#zm1041_s34_r9205}'
@@ -774,7 +774,7 @@ translate english strings:
 
     # game/dlgs/mortuary_zombies/zm1041.rpy:778
     old 'zm1041_s35_r9208{#zm1041_s35_r9208}'
-    new '«Never mind. I don't have time for this».{#zm1041_s35_r9208}'
+    new '«Never mind. I don\'t have time for this».{#zm1041_s35_r9208}'
 
     # game/dlgs/mortuary_zombies/zm1041.rpy:778
     old 'zm1041_s35_r9209{#zm1041_s35_r9209}'

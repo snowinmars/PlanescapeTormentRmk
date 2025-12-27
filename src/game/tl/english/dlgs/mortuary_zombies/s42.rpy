@@ -23,7 +23,7 @@ translate english s42_s2_82775f5a:
 translate english s42_s3_49c127ba:
 
     # 's42_s3{#s42_s3}'
-    nr 'You're amazed this rack of bones is still in one piece. Its yellowed bones are smeared with plaster and several layers of foul-smelling glues…{#s42_s3_1}'
+    nr 'You\'re amazed this rack of bones is still in one piece. Its yellowed bones are smeared with plaster and several layers of foul-smelling glues…{#s42_s3_1}'
     nr '…what little you can see of the bones reveals hundreds of hairline fractures.{#s42_s3_1}'
     nr 'Although someone has taken care to bind this skeleton with leather straps and bolt its joints together, the straps are frayed and the bolts look like they are about to fall out.{#s42_s3_1}'
 
@@ -31,20 +31,20 @@ translate english s42_s3_49c127ba:
 translate english s42_s4_c026d8a9:
 
     # 's42_s4{#s42_s4}'
-    nr 'In response, the skeleton drops its arms to its sides. The leather cords securing the skeleton's torso snap, and the rib cage folds outward like a pair of double doors.{#s42_s4_1}'
+    nr 'In response, the skeleton drops its arms to its sides. The leather cords securing the skeleton\'s torso snap, and the rib cage folds outward like a pair of double doors.{#s42_s4_1}'
 
 # game/dlgs/mortuary_zombies/s42.rpy:172
 translate english s42_s5_fa0a8d7f:
 
     # 's42_s5{#s42_s5}'
-    nr 'To your surprise, your hand vanishes as you reach inside the rib cage… you have a strange feeling it's somewhere *else.*{#s42_s5_1}'
-    nr 'As you reach inside the rib cage, your hand bumps against an invisible object. It's about the size of a fist and seems to be attached to the skeleton's spine.{#s42_s5_1}'
+    nr 'To your surprise, your hand vanishes as you reach inside the rib cage… you have a strange feeling it\'s somewhere *else.*{#s42_s5_1}'
+    nr 'As you reach inside the rib cage, your hand bumps against an invisible object. It\'s about the size of a fist and seems to be attached to the skeleton\'s spine.{#s42_s5_1}'
 
 # game/dlgs/mortuary_zombies/s42.rpy:188
 translate english s42_s6_41980196:
 
     # 's42_s6{#s42_s6}'
-    nr 'The bolts slide easily out of the skeleton's joints. The skeleton collapses, some of its bones still twitching.{#s42_s6_1}'
+    nr 'The bolts slide easily out of the skeleton\'s joints. The skeleton collapses, some of its bones still twitching.{#s42_s6_1}'
 
 # game/dlgs/mortuary_zombies/s42.rpy:200
 translate english s42_s7_3a11fe0b:
@@ -57,20 +57,20 @@ translate english s42_s7_3a11fe0b:
 translate english s42_s8_0983db5d:
 
     # 's42_s8{#s42_s8}'
-    nr 'It looks like an unremarkable lump of iron. You can't imagine why someone would hide it inside the rib cage of a skeleton.{#s42_s8_1}'
+    nr 'It looks like an unremarkable lump of iron. You can\'t imagine why someone would hide it inside the rib cage of a skeleton.{#s42_s8_1}'
 
 # game/dlgs/mortuary_zombies/s42.rpy:227
 translate english s42_s9_53dfb7a0:
 
     # 's42_s9{#s42_s9}'
-    nr 'In response, the skeleton drops its arms to its sides. The leather cords securing the skeleton's torso snap, and the rib cage folds outward like a pair of double doors.{#s42_s9_1}'
-    nr 'You can't explain why, but you have a sudden urge to reach inside the rib cage.{#s42_s9_1}'
+    nr 'In response, the skeleton drops its arms to its sides. The leather cords securing the skeleton\'s torso snap, and the rib cage folds outward like a pair of double doors.{#s42_s9_1}'
+    nr 'You can\'t explain why, but you have a sudden urge to reach inside the rib cage.{#s42_s9_1}'
 
 # game/dlgs/mortuary_zombies/s42.rpy:242
 translate english s42_s10_2eea670c:
 
     # 's42_s10{#s42_s10}'
-    nr 'The skeleton's arms drop to its sides.{#s42_s10_1}'
+    nr 'The skeleton\'s arms drop to its sides.{#s42_s10_1}'
 
 # game/dlgs/mortuary_zombies/s42.rpy:266
 translate english s42_s11_ef6e0b36:
@@ -109,11 +109,11 @@ translate english strings:
 
     # game/dlgs/mortuary_zombies/s42.rpy:17
     old 's42_s0_r6614{#s42_s0_r6614}'
-    new '«I have to ask: Why the smock? I mean, it's not like you have anything to be modest about».{#s42_s0_r6614}'
+    new '«I have to ask: Why the smock? I mean, it\'s not like you have anything to be modest about».{#s42_s0_r6614}'
 
     # game/dlgs/mortuary_zombies/s42.rpy:17
     old 's42_s0_r6615{#s42_s0_r6615}'
-    new '«I have to ask: Why the smock? I mean, it's not like you have anything to be modest about».{#s42_s0_r6615}'
+    new '«I have to ask: Why the smock? I mean, it\'s not like you have anything to be modest about».{#s42_s0_r6615}'
 
     # game/dlgs/mortuary_zombies/s42.rpy:17
     old 's42_s0_r6616{#s42_s0_r6616}'
@@ -125,15 +125,15 @@ translate english strings:
 
     # game/dlgs/mortuary_zombies/s42.rpy:17
     old 's42_s0_r6618{#s42_s0_r6618}'
-    new 'Try and pry out the skeleton's joint bolts.{#s42_s0_r6618}'
+    new 'Try and pry out the skeleton\'s joint bolts.{#s42_s0_r6618}'
 
     # game/dlgs/mortuary_zombies/s42.rpy:17
     old 's42_s0_r6619{#s42_s0_r6619}'
-    new 'Try and pry out the skeleton's joint bolts.{#s42_s0_r6619}'
+    new 'Try and pry out the skeleton\'s joint bolts.{#s42_s0_r6619}'
 
     # game/dlgs/mortuary_zombies/s42.rpy:17
     old 's42_s0_r6620{#s42_s0_r6620}'
-    new 'Try and pry out the skeleton's joint bolts.{#s42_s0_r6620}'
+    new 'Try and pry out the skeleton\'s joint bolts.{#s42_s0_r6620}'
 
     # game/dlgs/mortuary_zombies/s42.rpy:17
     old 's42_s0_r6621{#s42_s0_r6621}'
@@ -185,11 +185,11 @@ translate english strings:
 
     # game/dlgs/mortuary_zombies/s42.rpy:123
     old 's42_s3_r6632{#s42_s3_r6632}'
-    new 'Try and pry out the skeleton's joint bolts.{#s42_s3_r6632}'
+    new 'Try and pry out the skeleton\'s joint bolts.{#s42_s3_r6632}'
 
     # game/dlgs/mortuary_zombies/s42.rpy:123
     old 's42_s3_r6633{#s42_s3_r6633}'
-    new 'Try and pry out the skeleton's joint bolts.{#s42_s3_r6633}'
+    new 'Try and pry out the skeleton\'s joint bolts.{#s42_s3_r6633}'
 
     # game/dlgs/mortuary_zombies/s42.rpy:123
     old 's42_s3_r6634{#s42_s3_r6634}'

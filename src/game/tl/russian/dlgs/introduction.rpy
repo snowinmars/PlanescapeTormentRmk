@@ -443,8 +443,8 @@ translate russian strings:
     new 'Не надо мне спойлерить игру'
 
     # game/dlgs/introduction.rpy:97
-    old 'Получить \'История костей\''
-    new 'Получить \'История костей\''
+    old 'Получить „Историю костей“'
+    new 'Получить „Историю костей“'
 
     # game/dlgs/introduction.rpy:97
     old 'Не надо'

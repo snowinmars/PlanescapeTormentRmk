@@ -32,14 +32,14 @@ translate english zm1664_s3_25c4eceb:
 translate english zm1664_s4_94f42ef1:
 
     # 'zm1664_s4{#zm1664_s4}'
-    nr 'The page doesn't look like it belongs with the ledgers… it looks like it belongs in a log book.{#zm1664_s4_1}'
+    nr 'The page doesn\'t look like it belongs with the ledgers… it looks like it belongs in a log book.{#zm1664_s4_1}'
     nr 'The tear is clean, as if with a knife, so you suspect the page was removed on purpose.{#zm1664_s4_1}'
 
 # game/dlgs/mortuary_zombies/zm1664.rpy:90
 translate english zm1664_s5_d0b1a0ef:
 
     # 'zm1664_s5{#zm1664_s5}'
-    nr 'You take a moment to read through the page… it's a list of dead bodies brought to the Mortuary and logged in the Receiving Room.{#zm1664_s5_1}'
+    nr 'You take a moment to read through the page… it\'s a list of dead bodies brought to the Mortuary and logged in the Receiving Room.{#zm1664_s5_1}'
     nr 'All the entries appear to be recent arrivals.{#zm1664_s5_1}'
 
 # game/dlgs/mortuary_zombies/zm1664.rpy:105
@@ -60,7 +60,7 @@ translate english strings:
 
     # game/dlgs/mortuary_zombies/zm1664.rpy:17
     old 'zm1664_s0_r47005{#zm1664_s0_r47005}'
-    new '«I know you're not a zombie, you know. You're not fooling anyone».{#zm1664_s0_r47005}'
+    new '«I know you\'re not a zombie, you know. You\'re not fooling anyone».{#zm1664_s0_r47005}'
 
     # game/dlgs/mortuary_zombies/zm1664.rpy:17
     old 'zm1664_s0_r47006{#zm1664_s0_r47006}'

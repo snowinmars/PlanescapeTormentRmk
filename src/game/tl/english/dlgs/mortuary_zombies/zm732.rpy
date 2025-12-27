@@ -5,7 +5,7 @@ translate english zm732_s0_38cc3794:
 
     # 'zm732_s0{#zm732_s0}'
     nr 'This doddering corpse has had its eyes sewn shut as well as its mouth, and the number «732» is carved into its brow.{#zm732_s0_1}'
-    nr 'The threadwork that keeps its ocular cavities sealed looks extremely old… you wonder if the eyes were sewn shut before or after the man's death.{#zm732_s0_1}'
+    nr 'The threadwork that keeps its ocular cavities sealed looks extremely old… you wonder if the eyes were sewn shut before or after the man\'s death.{#zm732_s0_1}'
 
 # game/dlgs/mortuary_zombies/zm732.rpy:46
 translate english zm732_s1_153922a0:
@@ -24,14 +24,14 @@ translate english zm732_s3_ce3edfeb:
 
     # 'zm732_s3{#zm732_s3}'
     nr 'This doddering corpse has had its eyes sewn shut as well as its mouth, and the number «732» is carved into its brow.{#zm732_s3_1}'
-    nr 'The threadwork that keeps its ocular cavities sealed looks extremely old… you wonder if the eyes were sewn shut before or after the man's death.{#zm732_s3_1}'
+    nr 'The threadwork that keeps its ocular cavities sealed looks extremely old… you wonder if the eyes were sewn shut before or after the man\'s death.{#zm732_s3_1}'
     nr 'You notice he is carrying a huge tome in his hands, as if taking it somewhere.{#zm732_s3_1}'
 
 # game/dlgs/mortuary_zombies/zm732.rpy:84
 translate english zm732_s4_f3896399:
 
     # 'zm732_s4{#zm732_s4}'
-    nr 'You carefully take the tome from the corpse's hands - it doesn't seem to notice.{#zm732_s4_1}'
+    nr 'You carefully take the tome from the corpse\'s hands - it doesn\'t seem to notice.{#zm732_s4_1}'
     nr 'The tome appears to be a book of enchantments and wards - it is filled with diagrams and charts detailing various aspects of the necromantic arts.{#zm732_s4_1}'
     nr 'The book itself is extremely heavy; as awkward as the zombie is, it must be extremely strong.{#zm732_s4_1}'
 
@@ -47,7 +47,7 @@ translate english strings:
 
     # game/dlgs/mortuary_zombies/zm732.rpy:17
     old 'zm732_s0_r6534{#zm732_s0_r6534}'
-    new '«I know you're not a zombie, you know. You're not fooling anyone».{#zm732_s0_r6534}'
+    new '«I know you\'re not a zombie, you know. You\'re not fooling anyone».{#zm732_s0_r6534}'
 
     # game/dlgs/mortuary_zombies/zm732.rpy:17
     old 'zm732_s0_r6535{#zm732_s0_r6535}'

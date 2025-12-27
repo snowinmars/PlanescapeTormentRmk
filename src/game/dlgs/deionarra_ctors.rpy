@@ -33,7 +33,7 @@ label deionarra_speak:
         jump deionarra_s50_ctor
 
     # from 60.0 61.0 # IF WEIGHT #5 ~  Global("Current_Area","GLOBAL",1200) Global("1200_Cut_Scene_2","GLOBAL",1)
-    if  gsm.locations_manager.get_current_internal() = 'AR1200' and \
+    if  gsm.locations_manager.get_current_internal() == 'AR1200' and \
         gsm.world_manager.get_1200_cut_scene_2():
         jump deionarra_s62_ctor
 

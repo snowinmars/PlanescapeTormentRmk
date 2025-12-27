@@ -4,13 +4,13 @@
 translate english from_mortuary_f2r7_to_mortuary_f1r4_closed_72003171:
 
     # nr 'За запертой решёткой видна лестница вниз. Тебе понадобится ключ.'
-    nr 'Behind the locked bars you can see a staircase leading down. You'll need a key.'
+    nr 'Behind the locked bars you can see a staircase leading down. You\'ll need a key.'
 
 # game/engine_data/menus/mortuary/f2r7/loot.rpy:13
 translate english from_mortuary_f2r7_to_mortuary_f2r8_closed_b2193a50:
 
     # nr 'Дверь заперта. Судя по всему, она ведёт в соседнюю комнату. Тебе понадобится ключ.'
-    nr 'The door is locked. It looks like it leads to the next room. You'll need a key.'
+    nr 'The door is locked. It looks like it leads to the next room. You\'ll need a key.'
 
 # game/engine_data/menus/mortuary/f2r7/loot.rpy:19
 translate english mortuary_f2r7_loot_embalm_7fc3e5ea:

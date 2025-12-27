@@ -242,3 +242,71 @@ translate russian strings:
     old 'Зомби 1148'
     new 'Зомби 1148'
 
+# TODO: Translation updated at 2025-12-27 15:38
+
+translate russian strings:
+
+    # game/chars.rpy:4
+    old "oinosian_character_name"
+    new "Арабейм"
+
+    # game/chars.rpy:6
+    old "asonje_character_name"
+    new "Асонж"
+
+    # game/chars.rpy:8
+    old "bei_character_name"
+    new "Бэй"
+
+    # game/chars.rpy:10
+    old "dhall_character_name"
+    new "Дхолл"
+
+    # game/chars.rpy:12
+    old "soego_character_name"
+    new "Соего"
+
+    # game/chars.rpy:14
+    old "vaxis_character_name"
+    new "Ваксис"
+
+    # game/chars.rpy:16
+    old "xachariah_character_name"
+    new "Захария"
+
+    # game/chars.rpy:23
+    old "deionarra_character_name"
+    new "Дейонарра"
+
+    # game/chars.rpy:25
+    old "eivene_character_name"
+    new "Эи-Вейн"
+
+    # game/chars.rpy:55
+    old "death_names_character_name"
+    new "Смерть имён"
+
+    # game/chars.rpy:56
+    old "dust_character_name"
+    new "Тленный"
+
+    # game/chars.rpy:57
+    old "dustfem_character_name"
+    new "Тленная"
+
+    # game/chars.rpy:58
+    old "morte_story_1_character_name"
+    new "Старик"
+
+    # game/chars.rpy:59
+    old "morte_story_2_character_name"
+    new "Старуха"
+
+    # game/chars.rpy:60
+    old "zm1146_character_name"
+    new "Зомби «1146»"
+
+    # game/chars.rpy:61
+    old "zm257_character_name"
+    new "Зомби «257»"
+

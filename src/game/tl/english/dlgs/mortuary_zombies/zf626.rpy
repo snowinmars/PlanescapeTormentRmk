@@ -4,8 +4,8 @@
 translate english zf626_s0_2ff39631:
 
     # 'zf626_s0{#zf626_s0}'
-    nr 'The left side of this woman's face looks as if it was caved in with a club, and her flesh sags in bruised, swollen clumps over her ruined skull.{#zf626_s0_1}'
-    nr 'The number «626» has been stitched onto the corpse's right cheek, just below the eye.{#zf626_s0_1}'
+    nr 'The left side of this woman\'s face looks as if it was caved in with a club, and her flesh sags in bruised, swollen clumps over her ruined skull.{#zf626_s0_1}'
+    nr 'The number «626» has been stitched onto the corpse\'s right cheek, just below the eye.{#zf626_s0_1}'
 
 # game/dlgs/mortuary_zombies/zf626.rpy:62
 translate english zf626_s1_0c732ccb:
@@ -29,15 +29,15 @@ translate english strings:
 
     # game/dlgs/mortuary_zombies/zf626.rpy:17
     old 'zf626_s0_r35051{#zf626_s0_r35051}'
-    new '«Uh… nasty wound you've got there».{#zf626_s0_r35051}'
+    new '«Uh… nasty wound you\'ve got there».{#zf626_s0_r35051}'
 
     # game/dlgs/mortuary_zombies/zf626.rpy:17
     old 'zf626_s0_r35068{#zf626_s0_r35068}'
-    new '«Uh… nasty wound you've got there».{#zf626_s0_r35068}'
+    new '«Uh… nasty wound you\'ve got there».{#zf626_s0_r35068}'
 
     # game/dlgs/mortuary_zombies/zf626.rpy:17
     old 'zf626_s0_r35069{#zf626_s0_r35069}'
-    new '«I know you're not a zombie, you know. You're not fooling anyone».{#zf626_s0_r35069}'
+    new '«I know you\'re not a zombie, you know. You\'re not fooling anyone».{#zf626_s0_r35069}'
 
     # game/dlgs/mortuary_zombies/zf626.rpy:17
     old 'zf626_s0_r35070{#zf626_s0_r35070}'

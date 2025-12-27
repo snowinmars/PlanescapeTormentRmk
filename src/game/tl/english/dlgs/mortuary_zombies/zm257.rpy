@@ -11,7 +11,7 @@ translate english zm257_s0_6ac04720:
 translate english zm257_s1_7f45eef4:
 
     # 'zm257_s1{#zm257_s1}'
-    nr 'There is no flicker of understanding in the corpse's eyes; they stare silently off to the left and right.{#zm257_s1_1}'
+    nr 'There is no flicker of understanding in the corpse\'s eyes; they stare silently off to the left and right.{#zm257_s1_1}'
 
 # game/dlgs/mortuary_zombies/zm257.rpy:57
 translate english zm257_s2_e5a12faa:
@@ -61,15 +61,15 @@ translate english strings:
 
     # game/dlgs/mortuary_zombies/zm257.rpy:17
     old 'zm257_s0_r6510{#zm257_s0_r6510}'
-    new '«Don't you get dizzy with your eyeballs facing like that?»{#zm257_s0_r6510}'
+    new '«Don\'t you get dizzy with your eyeballs facing like that?»{#zm257_s0_r6510}'
 
     # game/dlgs/mortuary_zombies/zm257.rpy:17
     old 'zm257_s0_r6511{#zm257_s0_r6511}'
-    new '«Don't you get dizzy with your eyeballs facing like that?»{#zm257_s0_r6511}'
+    new '«Don\'t you get dizzy with your eyeballs facing like that?»{#zm257_s0_r6511}'
 
     # game/dlgs/mortuary_zombies/zm257.rpy:17
     old 'zm257_s0_r6512{#zm257_s0_r6512}'
-    new '«I know you're not a zombie, you know. You're not fooling anyone».{#zm257_s0_r6512}'
+    new '«I know you\'re not a zombie, you know. You\'re not fooling anyone».{#zm257_s0_r6512}'
 
     # game/dlgs/mortuary_zombies/zm257.rpy:17
     old 'zm257_s0_r6513{#zm257_s0_r6513}'
@@ -109,7 +109,7 @@ translate english strings:
 
     # game/dlgs/mortuary_zombies/zm257.rpy:96
     old 'zm257_s4_r9562{#zm257_s4_r9562}'
-    new '«I didn't quite catch that. Could you repeat it for me?»{#zm257_s4_r9562}'
+    new '«I didn\'t quite catch that. Could you repeat it for me?»{#zm257_s4_r9562}'
 
     # game/dlgs/mortuary_zombies/zm257.rpy:96
     old 'zm257_s4_r9563{#zm257_s4_r9563}'

@@ -11,7 +11,7 @@ translate english zf1096_s0_8c4f9e5d:
 translate english zf1096_s1_62b0dd01:
 
     # 'zf1096_s1{#zf1096_s1}'
-    nr 'The corpse does not respond. You doubt it even knows you're there.{#zf1096_s1_1}'
+    nr 'The corpse does not respond. You doubt it even knows you\'re there.{#zf1096_s1_1}'
 
 # game/dlgs/mortuary_zombies/zf1096.rpy:81
 translate english zf1096_s2_13ca5e11:
@@ -37,7 +37,7 @@ translate english strings:
 
     # game/dlgs/mortuary_zombies/zf1096.rpy:17
     old 'zf1096_s0_r35101{#zf1096_s0_r35101}'
-    new '«I know you're not a zombie, you know. You're not fooling anyone».{#zf1096_s0_r35101}'
+    new '«I know you\'re not a zombie, you know. You\'re not fooling anyone».{#zf1096_s0_r35101}'
 
     # game/dlgs/mortuary_zombies/zf1096.rpy:17
     old 'zf1096_s0_r35102{#zf1096_s0_r35102}'

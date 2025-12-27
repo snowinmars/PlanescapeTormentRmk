@@ -4,7 +4,7 @@
 translate english zf114_s0_96483afc:
 
     # 'zf114_s0{#zf114_s0}'
-    nr 'This woman's corpse pauses in its trudging about as you approach. You notice the number «114» is carved into her forehead.{#zf114_s0_1}'
+    nr 'This woman\'s corpse pauses in its trudging about as you approach. You notice the number «114» is carved into her forehead.{#zf114_s0_1}'
     nr 'Her mouth has been sewn shut, but the threading is slowly coming loose and faint moans issue from between her lips.{#zf114_s0_1}'
 
 # game/dlgs/mortuary_zombies/zf114.rpy:62
@@ -37,7 +37,7 @@ translate english strings:
 
     # game/dlgs/mortuary_zombies/zf114.rpy:17
     old 'zf114_s0_r35005{#zf114_s0_r35005}'
-    new '«I know you're not a zombie, you know. You're not fooling anyone».{#zf114_s0_r35005}'
+    new '«I know you\'re not a zombie, you know. You\'re not fooling anyone».{#zf114_s0_r35005}'
 
     # game/dlgs/mortuary_zombies/zf114.rpy:17
     old 'zf114_s0_r35006{#zf114_s0_r35006}'

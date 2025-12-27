@@ -5,7 +5,7 @@ translate english n1201_s0_9562924b:
 
     # 'n1201_s0{#n1201_s0}'
     nr 'This foul-smelling note has a strange looking diagram inscribed beneath the writing.{#n1201_s0_1}'
-    nr 'It looks as if it's instructing you to fold the corners of the note so their points touch the center. There is a series of strange marks on each corner…{#n1201_s0_1}'
+    nr 'It looks as if it\'s instructing you to fold the corners of the note so their points touch the center. There is a series of strange marks on each corner…{#n1201_s0_1}'
     nr '…one mark on the upper right,\ntwo marks on the lower right,\nthree marks on the lower left,\nand no marks on the upper left.{#n1201_s0_1}'
 
 

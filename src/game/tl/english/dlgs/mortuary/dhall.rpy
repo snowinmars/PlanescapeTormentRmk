@@ -4,13 +4,13 @@
 translate english dhall_s0_2ec5d757:
 
     # 'dhall_s0{#dhall_s0}'
-    nr 'Before Morte can finish his rant, the scribe begins coughing violently. After a moment or two, the coughing spell dies down, and the scribe's breathing resumes its ragged wheeze.{#dhall_s0_1}'
+    nr 'Before Morte can finish his rant, the scribe begins coughing violently. After a moment or two, the coughing spell dies down, and the scribe\'s breathing resumes its ragged wheeze.{#dhall_s0_1}'
 
 # game/dlgs/mortuary/dhall.rpy:32
 translate english dhall_s1_3f478205:
 
     # 'dhall_s1{#dhall_s1}'
-    nr 'Before Morte can finish, the scribe's gray eyes flicker to you.{#dhall_s1_1}'
+    nr 'Before Morte can finish, the scribe\'s gray eyes flicker to you.{#dhall_s1_1}'
     dhall '«The weight of years hangs heavy upon me, Restless One».{#dhall_s1_2}'
     nr 'He places down his quill.{#dhall_s1_3}'
     dhall '«…but I do not yet count deafness among my ailments».{#dhall_s1_4}'
@@ -19,7 +19,7 @@ translate english dhall_s1_3f478205:
 translate english dhall_s2_f66bc5fa:
 
     # 'dhall_s2{#dhall_s2}'
-    dhall '«Do you not know the woman's corpse interred in the memorial hall below? I had thought that she had traveled with you in the past…»{#dhall_s2_1}'
+    dhall '«Do you not know the woman\'s corpse interred in the memorial hall below? I had thought that she had traveled with you in the past…»{#dhall_s2_1}'
     nr '[get_dhall_appeal()] looks like he is about to start coughing again, then catches his breath.{#dhall_s2_2}'
     dhall '«Am I mistaken?»{#dhall_s2_3}'
 
@@ -50,7 +50,7 @@ translate english dhall_s5_95f80ab9:
 translate english dhall_s6_beeccf83:
 
     # 'dhall_s6{#dhall_s6}'
-    nr 'The figure's gray eyes flicker as he glances up from his book.{#dhall_s6_1}'
+    nr 'The figure\'s gray eyes flicker as he glances up from his book.{#dhall_s6_1}'
     dhall '«I suspected it might be you who was responsible for the attacks in the Mortuary. This…»{#dhall_s6_2}'
     nr 'He coughs slightly, then draws a ragged breath.{#dhall_s6_3}'
     dhall '«This is no way for you to enter the next life».{#dhall_s6_4}'
@@ -235,7 +235,7 @@ translate english dhall_s29_f292037d:
     nr '[get_dhall_appeal()] pauses, considering.{#dhall_s29_1}'
     dhall '«Most likely. Are you missing anything… especially anything of value?»{#dhall_s29_2}'
     nr 'His voice dips as he frowns.{#dhall_s29_3}'
-    dhall '«Not that Pharod would take exception to anything that wasn't physically grafted to your body, and sometimes even that's not enough to give his greedy mind pause».{#dhall_s29_4}'
+    dhall '«Not that Pharod would take exception to anything that wasn\'t physically grafted to your body, and sometimes even that\'s not enough to give his greedy mind pause».{#dhall_s29_4}'
 
 # game/dlgs/mortuary/dhall.rpy:832
 translate english dhall_s30_7c80e009:
@@ -248,7 +248,7 @@ translate english dhall_s30_7c80e009:
 translate english dhall_s31_a19d76dd:
 
     # 'dhall_s31{#dhall_s31}'
-    dhall '«A journal? If it was of any value, then it is likely it lies in Pharod's hands».{#dhall_s31_1}'
+    dhall '«A journal? If it was of any value, then it is likely it lies in Pharod\'s hands».{#dhall_s31_1}'
 
 # game/dlgs/mortuary/dhall.rpy:883
 translate english dhall_s32_ef4c0881:
@@ -347,7 +347,7 @@ translate english dhall_s44_1425e280:
 
     # 'dhall_s44{#dhall_s44}'
     dhall '«Know you? I…»{#dhall_s44_1}'
-    nr 'There is a trace of bitterness in the scribe's voice as he speaks.{#dhall_s44_2}'
+    nr 'There is a trace of bitterness in the scribe\'s voice as he speaks.{#dhall_s44_2}'
     dhall '«I have *never* known you, Restless One. No more than you have known yourself».{#dhall_s44_3}'
     nr 'He is silent for a moment.{#dhall_s44_4}'
     dhall '«For you have forgotten, have you not?»{#dhall_s44_5}'
@@ -445,7 +445,7 @@ translate english strings:
 
     # game/dlgs/mortuary/dhall.rpy:52
     old 'dhall_s2_r5072{#dhall_s2_r5072}'
-    new '«She claims to know me, but I can't recall her.»{#dhall_s2_r5072}'
+    new '«She claims to know me, but I can\'t recall her.»{#dhall_s2_r5072}'
 
     # game/dlgs/mortuary/dhall.rpy:52
     old 'dhall_s2_r5073{#dhall_s2_r5073}'
@@ -469,11 +469,11 @@ translate english strings:
 
     # game/dlgs/mortuary/dhall.rpy:92
     old 'dhall_s3_r830{#dhall_s3_r830}'
-    new '«Yes. It's a good disguise.»{#dhall_s3_r830}'
+    new '«Yes. It\'s a good disguise.»{#dhall_s3_r830}'
 
     # game/dlgs/mortuary/dhall.rpy:92
     old 'dhall_s3_r831{#dhall_s3_r831}'
-    new '«Yes. It's a good disguise.»{#dhall_s3_r831}'
+    new '«Yes. It\'s a good disguise.»{#dhall_s3_r831}'
 
     # game/dlgs/mortuary/dhall.rpy:92
     old 'dhall_s3_r834{#dhall_s3_r834}'
@@ -509,7 +509,7 @@ translate english strings:
 
     # game/dlgs/mortuary/dhall.rpy:157
     old 'dhall_s6_r843{#dhall_s6_r843}'
-    new '«Sharing a little death with you corpse-worshippers isn't much of a crime as far as I'm concerned. Now I had some questions for you…»{#dhall_s6_r843}'
+    new '«Sharing a little death with you corpse-worshippers isn\'t much of a crime as far as I\'m concerned. Now I had some questions for you…»{#dhall_s6_r843}'
 
     # game/dlgs/mortuary/dhall.rpy:157
     old 'dhall_s6_r5062{#dhall_s6_r5062}'
@@ -525,7 +525,7 @@ translate english strings:
 
     # game/dlgs/mortuary/dhall.rpy:197
     old 'dhall_s8_r940{#dhall_s8_r940}'
-    new '«You're a Dustman. But you don't seem to be in favor of killing me. Why not?»{#dhall_s8_r940}'
+    new '«You\'re a Dustman. But you don\'t seem to be in favor of killing me. Why not?»{#dhall_s8_r940}'
 
     # game/dlgs/mortuary/dhall.rpy:197
     old 'dhall_s8_r911{#dhall_s8_r911}'
@@ -537,15 +537,15 @@ translate english strings:
 
     # game/dlgs/mortuary/dhall.rpy:197
     old 'dhall_s8_r6038_1{#dhall_s8_r6038_1}'
-    new '«I've heard enough. Farewell, Dhall».{#dhall_s8_r6038_1}'
+    new '«I\'ve heard enough. Farewell, Dhall».{#dhall_s8_r6038_1}'
 
     # game/dlgs/mortuary/dhall.rpy:197
     old 'dhall_s8_r6038_2{#dhall_s8_r6038_2}'
-    new '«I've heard enough. Farewell».{#dhall_s8_r6038_2}'
+    new '«I\'ve heard enough. Farewell».{#dhall_s8_r6038_2}'
 
     # game/dlgs/mortuary/dhall.rpy:224
     old 'dhall_s9_r854{#dhall_s9_r854}'
-    new '«Did you know there's someone disguised as a zombie in the eastern chambers?»{#dhall_s9_r854}'
+    new '«Did you know there\'s someone disguised as a zombie in the eastern chambers?»{#dhall_s9_r854}'
 
     # game/dlgs/mortuary/dhall.rpy:224
     old 'dhall_s9_r857{#dhall_s9_r857}'
@@ -593,7 +593,7 @@ translate english strings:
 
     # game/dlgs/mortuary/dhall.rpy:270
     old 'dhall_s10_r863{#dhall_s10_r863}'
-    new '«Again…? I've been here more than once?»{#dhall_s10_r863}'
+    new '«Again…? I\'ve been here more than once?»{#dhall_s10_r863}'
 
     # game/dlgs/mortuary/dhall.rpy:270
     old 'dhall_s10_r864{#dhall_s10_r864}'
@@ -697,7 +697,7 @@ translate english strings:
 
     # game/dlgs/mortuary/dhall.rpy:437
     old 'dhall_s16_r892{#dhall_s16_r892}'
-    new '«Doesn't sound like you like Pharod much.»{#dhall_s16_r892}'
+    new '«Doesn\'t sound like you like Pharod much.»{#dhall_s16_r892}'
 
     # game/dlgs/mortuary/dhall.rpy:437
     old 'dhall_s16_r893{#dhall_s16_r893}'
@@ -721,7 +721,7 @@ translate english strings:
 
     # game/dlgs/mortuary/dhall.rpy:470
     old 'dhall_s17_r898{#dhall_s17_r898}'
-    new '«Doesn't sound like you like Pharod much.»{#dhall_s17_r898}'
+    new '«Doesn\'t sound like you like Pharod much.»{#dhall_s17_r898}'
 
     # game/dlgs/mortuary/dhall.rpy:470
     old 'dhall_s17_r899{#dhall_s17_r899}'
@@ -781,7 +781,7 @@ translate english strings:
 
     # game/dlgs/mortuary/dhall.rpy:558
     old 'dhall_s20_r910{#dhall_s20_r910}'
-    new '«Doesn't sound like you like Pharod much.»{#dhall_s20_r910}'
+    new '«Doesn\'t sound like you like Pharod much.»{#dhall_s20_r910}'
 
     # game/dlgs/mortuary/dhall.rpy:558
     old 'dhall_s20_r909{#dhall_s20_r909}'
@@ -813,7 +813,7 @@ translate english strings:
 
     # game/dlgs/mortuary/dhall.rpy:608
     old 'dhall_s22_r917{#dhall_s22_r917}'
-    new '«„Unacceptable“? That doesn't sound like it leaves me in a good position.»{#dhall_s22_r917}'
+    new '«„Unacceptable“? That doesn\'t sound like it leaves me in a good position.»{#dhall_s22_r917}'
 
     # game/dlgs/mortuary/dhall.rpy:608
     old 'dhall_s22_r918{#dhall_s22_r918}'
@@ -825,11 +825,11 @@ translate english strings:
 
     # game/dlgs/mortuary/dhall.rpy:608
     old 'dhall_s22_r920_1{#dhall_s22_r920_1}'
-    new '«I think I've heard enough. Farewell, Dhall».{#dhall_s22_r920_1}'
+    new '«I think I\'ve heard enough. Farewell, Dhall».{#dhall_s22_r920_1}'
 
     # game/dlgs/mortuary/dhall.rpy:608
     old 'dhall_s22_r920_2{#dhall_s22_r920_2}'
-    new '«I think I've heard enough. Farewell, Dhall».{#dhall_s22_r920_2}'
+    new '«I think I\'ve heard enough. Farewell, Dhall».{#dhall_s22_r920_2}'
 
     # game/dlgs/mortuary/dhall.rpy:637
     old 'dhall_s23_r927{#dhall_s23_r927}'
@@ -845,11 +845,11 @@ translate english strings:
 
     # game/dlgs/mortuary/dhall.rpy:637
     old 'dhall_s23_r6039_1{#dhall_s23_r6039_1}'
-    new '«I've heard enough. Farewell, Dhall».{#dhall_s23_r6039_1}'
+    new '«I\'ve heard enough. Farewell, Dhall».{#dhall_s23_r6039_1}'
 
     # game/dlgs/mortuary/dhall.rpy:637
     old 'dhall_s23_r6039_2{#dhall_s23_r6039_2}'
-    new '«I've heard enough. Farewell».{#dhall_s23_r6039_2}'
+    new '«I\'ve heard enough. Farewell».{#dhall_s23_r6039_2}'
 
     # game/dlgs/mortuary/dhall.rpy:666
     old 'dhall_s24_r1305{#dhall_s24_r1305}'
@@ -1045,7 +1045,7 @@ translate english strings:
 
     # game/dlgs/mortuary/dhall.rpy:932
     old 'dhall_s33_r959{#dhall_s33_r959}'
-    new '«What makes you think this life isn't real?»{#dhall_s33_r959}'
+    new '«What makes you think this life isn\'t real?»{#dhall_s33_r959}'
 
     # game/dlgs/mortuary/dhall.rpy:932
     old 'dhall_s33_r5736{#dhall_s33_r5736}'
@@ -1209,11 +1209,11 @@ translate english strings:
 
     # game/dlgs/mortuary/dhall.rpy:1178
     old 'dhall_s42_r5076{#dhall_s42_r5076}'
-    new '«I don't know. I don't recall ever traveling with a woman.»{#dhall_s42_r5076}'
+    new '«I don\'t know. I don\'t recall ever traveling with a woman.»{#dhall_s42_r5076}'
 
     # game/dlgs/mortuary/dhall.rpy:1178
     old 'dhall_s42_r5077{#dhall_s42_r5077}'
-    new '«Well, she claims to know me, but I can't recall her.»{#dhall_s42_r5077}'
+    new '«Well, she claims to know me, but I can\'t recall her.»{#dhall_s42_r5077}'
 
     # game/dlgs/mortuary/dhall.rpy:1178
     old 'dhall_s42_r5078{#dhall_s42_r5078}'
@@ -1265,7 +1265,7 @@ translate english strings:
 
     # game/dlgs/mortuary/dhall.rpy:1258
     old 'dhall_s45_r5732{#dhall_s45_r5732}'
-    new '«I don't have time for this. Farewell.»{#dhall_s45_r5732}'
+    new '«I don\'t have time for this. Farewell.»{#dhall_s45_r5732}'
 
     # game/dlgs/mortuary/dhall.rpy:1284
     old 'dhall_s46_r40005{#dhall_s46_r40005}'

@@ -27,10 +27,10 @@ translate english zm1146_s2_88d0958d:
 translate english zm1146_s3_a5462970:
 
     # 'zm1146_s3{#zm1146_s3}'
-    nr 'The spirit opens one eye, the orb's whiteness stark against the gray, puckered flesh that surrounds it.{#zm1146_s3_1}'
+    nr 'The spirit opens one eye, the orb\'s whiteness stark against the gray, puckered flesh that surrounds it.{#zm1146_s3_1}'
     nr 'It slowly turns its head so as to peer up at you; the blasted and scarified flesh of its face and neck pulling taut over the bone.{#zm1146_s3_1}'
     nr 'It finally croaks from its ruined throat.{#zm1146_s3_1}'
-    zm1146 '«No. No… I ain't, ya… pikin'… addle-cove».{#zm1146_s3_2}'
+    zm1146 '«No. No… I ain\'t, ya… pikin\'… addle-cove».{#zm1146_s3_2}'
 
 # game/dlgs/mortuary_zombies/zm1146.rpy:102
 translate english zm1146_s4_000498e5:
@@ -44,8 +44,8 @@ translate english zm1146_s4_000498e5:
 translate english zm1146_s5_9bc6b7b5:
 
     # 'zm1146_s5{#zm1146_s5}'
-    nr 'The spirit's horrible coughing finally settles down.{#zm1146_s5_1}'
-    zm1146 '«No, berk… ya… can't. Unless… unless yer gonna dance on inta Baator and rescues me, I've hit da… da blinds. Time fer my… my penance».{#zm1146_s5_2}'
+    nr 'The spirit\'s horrible coughing finally settles down.{#zm1146_s5_1}'
+    zm1146 '«No, berk… ya… can\'t. Unless… unless yer gonna dance on inta Baator and rescues me, I\'ve hit da… da blinds. Time fer my… my penance».{#zm1146_s5_2}'
     nr 'The spirit closes its eye and rests its head back on the floor.{#zm1146_s5_3}'
 
 # game/dlgs/mortuary_zombies/zm1146.rpy:139
@@ -53,7 +53,7 @@ translate english zm1146_s6_6dbab7f6:
 
     # 'zm1146_s6{#zm1146_s6}'
     nr 'The spirit makes a wet snarling noise, its cracked, blackened lips pulling away from crooked yellow teeth.{#zm1146_s6_1}'
-    zm1146 '«Jest… jest you waits till I… gets outta dis Pit… I'm… comin' fer you first, berk…»{#zm1146_s6_2}'
+    zm1146 '«Jest… jest you waits till I… gets outta dis Pit… I\'m… comin\' fer you first, berk…»{#zm1146_s6_2}'
 
 # game/dlgs/mortuary_zombies/zm1146.rpy:160
 translate english zm1146_s7_84a7b478:
@@ -66,9 +66,9 @@ translate english zm1146_s7_84a7b478:
 translate english zm1146_s8_faa91b49:
 
     # 'zm1146_s8{#zm1146_s8}'
-    nr 'You land a swift kick to the corpse's kidney, but to no avail; the spirit within seems unharmed.{#zm1146_s8_1}'
+    nr 'You land a swift kick to the corpse\'s kidney, but to no avail; the spirit within seems unharmed.{#zm1146_s8_1}'
     zm1146 '«Heh, heh-heh…»{#zm1146_s8_2}'
-    nr 'The thing gurgles, before finally fading from the body entirely. You're left standing there with a vague feeling of dissatisfaction.{#zm1146_s8_3}'
+    nr 'The thing gurgles, before finally fading from the body entirely. You\'re left standing there with a vague feeling of dissatisfaction.{#zm1146_s8_3}'
 
 # game/dlgs/mortuary_zombies/zm1146.rpy:178
 translate english zm1146_s9_4e90b8e6:
@@ -81,7 +81,7 @@ translate english zm1146_s9_4e90b8e6:
 translate english zm1146_s10_3b56e092:
 
     # 'zm1146_s10{#zm1146_s10}'
-    zm1146 '«None a' yer business… leaves me… be…»{#zm1146_s10_1}'
+    zm1146 '«None a\' yer business… leaves me… be…»{#zm1146_s10_1}'
 
 # game/dlgs/mortuary_zombies/zm1146.rpy:233
 translate english zm1146_s11_37e86925:
@@ -94,65 +94,65 @@ translate english zm1146_s12_26236be5:
 
     # 'zm1146_s12{#zm1146_s12}'
     zm1146 '«How do ya tinks, Clueless?»{#zm1146_s12_1}'
-    nr 'The spirit's outburst sends him into a short fit of jerking, painful coughs.{#zm1146_s12_2}'
-    zm1146 '«I signed da meat away fer… fer a bit a' jink».{#zm1146_s12_3}'
-    zm1146 '«Pikin' Dusters… an' right den - RIGHT DEN, can ya believes it - some barmy wizard decides ta blast da Hive ta flamin' oblivion, wit' me stucks right in da middle!»{#zm1146_s12_3}'
+    nr 'The spirit\'s outburst sends him into a short fit of jerking, painful coughs.{#zm1146_s12_2}'
+    zm1146 '«I signed da meat away fer… fer a bit a\' jink».{#zm1146_s12_3}'
+    zm1146 '«Pikin\' Dusters… an\' right den - RIGHT DEN, can ya believes it - some barmy wizard decides ta blast da Hive ta flamin\' oblivion, wit\' me stucks right in da middle!»{#zm1146_s12_3}'
     nr 'The spirit mumbles evilly for a bit, steaming fluid bubbling out from the corners of his jagged slit of a mouth.{#zm1146_s12_4}'
 
 # game/dlgs/mortuary_zombies/zm1146.rpy:270
 translate english zm1146_s13_b109e086:
 
     # 'zm1146_s13{#zm1146_s13}'
-    zm1146 '«Where do… do ya think, ya leather-headed basher? Baator, in dat stinkin' dung-hole dey call Phlegethos».{#zm1146_s13_1}'
-    zm1146 '«Burn, burn… burn… dat's all I do».{#zm1146_s13_1}'
-    zm1146 '«I burned ta death in life, an' now I's burnin' in death. Argh!»{#zm1146_s13_1}'
+    zm1146 '«Where do… do ya think, ya leather-headed basher? Baator, in dat stinkin\' dung-hole dey call Phlegethos».{#zm1146_s13_1}'
+    zm1146 '«Burn, burn… burn… dat\'s all I do».{#zm1146_s13_1}'
+    zm1146 '«I burned ta death in life, an\' now I\'s burnin\' in death. Argh!»{#zm1146_s13_1}'
     nr 'The corpse gnashes its teeth in fury.{#zm1146_s13_2}'
-    zm1146 '«Da irony's jest sickenin'! When I gets outta here, I's gonna toss so many sods inta dis damn hole. Heh, heh-heh… *gurgle*»{#zm1146_s13_3}'
+    zm1146 '«Da irony\'s jest sickenin\'! When I gets outta here, I\'s gonna toss so many sods inta dis damn hole. Heh, heh-heh… *gurgle*»{#zm1146_s13_3}'
 
 # game/dlgs/mortuary_zombies/zm1146.rpy:291
 translate english zm1146_s14_56cb3044:
 
     # 'zm1146_s14{#zm1146_s14}'
-    zm1146 '«Deserve? DIS? Nothin'! I… *gack*… didn't do nothin'. Jest tryin' ta get by… get by likes everybody else… den „phoomph“!»{#zm1146_s14_1}'
-    zm1146 '«Dat goat's son of a mage starts burnin' up da Hive!»{#zm1146_s14_1}'
+    zm1146 '«Deserve? DIS? Nothin\'! I… *gack*… didn\'t do nothin\'. Jest tryin\' ta get by… get by likes everybody else… den „phoomph“!»{#zm1146_s14_1}'
+    zm1146 '«Dat goat\'s son of a mage starts burnin\' up da Hive!»{#zm1146_s14_1}'
 
 # game/dlgs/mortuary_zombies/zm1146.rpy:310
 translate english zm1146_s15_dd9d953e:
 
     # 'zm1146_s15{#zm1146_s15}'
-    zm1146 '«Nothin'. Nothin' I's tellin' *you,* berk. Jest… jest leaves me alone ta burns…»{#zm1146_s15_1}'
+    zm1146 '«Nothin\'. Nothin\' I\'s tellin\' *you,* berk. Jest… jest leaves me alone ta burns…»{#zm1146_s15_1}'
 
 # game/dlgs/mortuary_zombies/zm1146.rpy:325
 translate english zm1146_s16_7066d233:
 
     # 'zm1146_s16{#zm1146_s16}'
-    zm1146 '«Who? What? No! What… what makes ya think I'd tells ya if I did, ya… ya soddin' berk? Hmph…»{#zm1146_s16_1}'
+    zm1146 '«Who? What? No! What… what makes ya think I\'d tells ya if I did, ya… ya soddin\' berk? Hmph…»{#zm1146_s16_1}'
 
 # game/dlgs/mortuary_zombies/zm1146.rpy:340
 translate english zm1146_s17_c41d1ed5:
 
     # 'zm1146_s17{#zm1146_s17}'
-    zm1146 '«Revenge, ya addle-cove! I's gonna… gonna gets dem all, all dose dat crossed me. Especially dat wizard!»{#zm1146_s17_1}'
-    zm1146 '«I's gonna tear off his wee bits and shoves 'em down his troat! Den I'll trow him in dis stinkin' hole, wee bits an' all!»{#zm1146_s17_1}'
-    zm1146 '«Him an' a few more fer… fer good measure, too! Heh, heh-heh…»{#zm1146_s17_1}'
+    zm1146 '«Revenge, ya addle-cove! I\'s gonna… gonna gets dem all, all dose dat crossed me. Especially dat wizard!»{#zm1146_s17_1}'
+    zm1146 '«I\'s gonna tear off his wee bits and shoves \'em down his troat! Den I\'ll trow him in dis stinkin\' hole, wee bits an\' all!»{#zm1146_s17_1}'
+    zm1146 '«Him an\' a few more fer… fer good measure, too! Heh, heh-heh…»{#zm1146_s17_1}'
 
 # game/dlgs/mortuary_zombies/zm1146.rpy:359
 translate english zm1146_s18_7b467d5b:
 
     # 'zm1146_s18{#zm1146_s18}'
-    zm1146 '«Yeah, da Hive… da worstest part a' Sigil. I never seen so much fire in alls me life…»{#zm1146_s18_1}'
-    zm1146 '«I ran dis way an' dat, tryin' ta get aways, but everytin' was jest burstin' inta flame!»{#zm1146_s18_1}'
-    zm1146 '«Buildin's, streets, folks an' der kids… and dat trice-blasted wizard, jest laughin' all da time!»{#zm1146_s18_1}'
-    zm1146 '«I turned a corner and tought I gots away fer a bit, but da next ting I know, me pikin' head's on fire! It pretty much… went downhills from dere…»{#zm1146_s18_1}'
-    nr 'The spirit's opened eye shines with a malevolent light.{#zm1146_s18_2}'
+    zm1146 '«Yeah, da Hive… da worstest part a\' Sigil. I never seen so much fire in alls me life…»{#zm1146_s18_1}'
+    zm1146 '«I ran dis way an\' dat, tryin\' ta get aways, but everytin\' was jest burstin\' inta flame!»{#zm1146_s18_1}'
+    zm1146 '«Buildin\'s, streets, folks an\' der kids… and dat trice-blasted wizard, jest laughin\' all da time!»{#zm1146_s18_1}'
+    zm1146 '«I turned a corner and tought I gots away fer a bit, but da next ting I know, me pikin\' head\'s on fire! It pretty much… went downhills from dere…»{#zm1146_s18_1}'
+    nr 'The spirit\'s opened eye shines with a malevolent light.{#zm1146_s18_2}'
 
 # game/dlgs/mortuary_zombies/zm1146.rpy:379
 translate english zm1146_s19_9e2dcd73:
 
     # 'zm1146_s19{#zm1146_s19}'
-    zm1146 '«Dunno. I was pretty well an' cooked before anyone stopped him, if someone ever did».{#zm1146_s19_1}'
-    zm1146 '«I tink I remember some peoples chasin' after him at da start of it alls, shoutin' his name… er… oh!»{#zm1146_s19_1}'
-    zm1146 '«Ignis, I'm tinkin' it was. Ignis. Or sumtin' like dat. I sure hopes dat piker's in a worse hole dan me!»{#zm1146_s19_1}'
+    zm1146 '«Dunno. I was pretty well an\' cooked before anyone stopped him, if someone ever did».{#zm1146_s19_1}'
+    zm1146 '«I tink I remember some peoples chasin\' after him at da start of it alls, shoutin\' his name… er… oh!»{#zm1146_s19_1}'
+    zm1146 '«Ignis, I\'m tinkin\' it was. Ignis. Or sumtin\' like dat. I sure hopes dat piker\'s in a worse hole dan me!»{#zm1146_s19_1}'
 
 # game/dlgs/mortuary_zombies/zm1146.rpy:394
 translate english zm1146_s20_82f7ef71:
@@ -172,7 +172,7 @@ translate english strings:
 
     # game/dlgs/mortuary_zombies/zm1146.rpy:17
     old 'zm1146_s0_r6523{#zm1146_s0_r6523}'
-    new '«I know you're not a zombie, you know. You're not fooling anyone».{#zm1146_s0_r6523}'
+    new '«I know you\'re not a zombie, you know. You\'re not fooling anyone».{#zm1146_s0_r6523}'
 
     # game/dlgs/mortuary_zombies/zm1146.rpy:17
     old 'zm1146_s0_r6524{#zm1146_s0_r6524}'
@@ -240,7 +240,7 @@ translate english strings:
 
     # game/dlgs/mortuary_zombies/zm1146.rpy:143
     old 'zm1146_s6_r9425{#zm1146_s6_r9425}'
-    new '«You do that. I'm not one to fear the likes of you».{#zm1146_s6_r9425}'
+    new '«You do that. I\'m not one to fear the likes of you».{#zm1146_s6_r9425}'
 
     # game/dlgs/mortuary_zombies/zm1146.rpy:143
     old 'zm1146_s6_r9426{#zm1146_s6_r9426}'

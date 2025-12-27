@@ -19,7 +19,7 @@ translate english zm1094_s2_3e3c2174:
 
     # 'zm1094_s2{#zm1094_s2}'
     nr 'The corpse shudders for a moment, then stills, the spirit flowing into its abandoned mortal shell once more.{#zm1094_s2_1}'
-    nr 'Within seconds, a semblance of life seems to spring into the zombie's eyes, and it begins to gaze about with a look of curious puzzlement upon its face.{#zm1094_s2_1}'
+    nr 'Within seconds, a semblance of life seems to spring into the zombie\'s eyes, and it begins to gaze about with a look of curious puzzlement upon its face.{#zm1094_s2_1}'
     nr 'The entire body now seems surrounded by a soft, golden aura.{#zm1094_s2_1}'
 
 # game/dlgs/mortuary_zombies/zm1094.rpy:73
@@ -35,7 +35,7 @@ translate english zm1094_s3_a71457f0:
 translate english zm1094_s4_09d122a0:
 
     # 'zm1094_s4{#zm1094_s4}'
-    nr 'The spirit's friendly demeanor vanishes in an instant. He frowns at you for a moment, the broken stitches hanging in tatters from his gray and withered lips.{#zm1094_s4_1}'
+    nr 'The spirit\'s friendly demeanor vanishes in an instant. He frowns at you for a moment, the broken stitches hanging in tatters from his gray and withered lips.{#zm1094_s4_1}'
     asonje '«Very well, ask what you will».'
     nr 'He looks away, apparently bored.{#zm1094_s4_3}'
 
@@ -56,7 +56,7 @@ translate english zm1094_s7_741410a4:
 
     # 'zm1094_s7{#zm1094_s7}'
     nr 'The spirit shrugs and looks skyward.{#zm1094_s7_1}'
-    asonje '«I couldn't say. What does it matter, in any case?»{#zm1094_s7_2}'
+    asonje '«I couldn\'t say. What does it matter, in any case?»{#zm1094_s7_2}'
     nr 'He purses his lips unhappily and gives you a hard look, the ghost-light in his eyes flashing angrily.{#zm1094_s7_3}'
     asonje '«Do you need anything more from me?»{#zm1094_s7_4}'
 
@@ -87,7 +87,7 @@ translate english zm1094_s10_04f6a1d2:
 translate english zm1094_s11_83e996bf:
 
     # 'zm1094_s11{#zm1094_s11}'
-    nr 'The spirit sighs loudly, filling the air with smell of formaldehyde from the corpse's lungs.{#zm1094_s11_1}'
+    nr 'The spirit sighs loudly, filling the air with smell of formaldehyde from the corpse\'s lungs.{#zm1094_s11_1}'
     asonje '«Yes, yes… ask away».{#zm1094_s11_2}'
 
 # game/dlgs/mortuary_zombies/zm1094.rpy:275
@@ -101,7 +101,7 @@ translate english zm1094_s13_382abf58:
 
     # 'zm1094_s13{#zm1094_s13}'
     nr 'He mulls it over for a moment, then laughs.{#zm1094_s13_1}'
-    asonje '«Yes! That would make sense, wouldn't it? Now, do I know you?»{#zm1094_s13_2}'
+    asonje '«Yes! That would make sense, wouldn\'t it? Now, do I know you?»{#zm1094_s13_2}'
     nr 'He cocks his head to one side, peering at you intently. He seems to regard discerning your identity as some sort of amusing game.{#zm1094_s13_3}'
 
 # game/dlgs/mortuary_zombies/zm1094.rpy:307
@@ -109,7 +109,7 @@ translate english zm1094_s14_38ef97b8:
 
     # 'zm1094_s14{#zm1094_s14}'
     nr 'The spirit shrugs and smiles, chuckling softly.{#zm1094_s14_1}'
-    asonje '«Perhaps you're right! What is it you wished to ask me?»{#zm1094_s14_2}'
+    asonje '«Perhaps you\'re right! What is it you wished to ask me?»{#zm1094_s14_2}'
     nr 'He begins absent-mindedly pulling the remaining stitches from his lips and dropping them to the floor, one by one.{#zm1094_s14_3}'
 
 # game/dlgs/mortuary_zombies/zm1094.rpy:349
@@ -129,11 +129,11 @@ translate english zm1094_s16_c765dbc8:
 translate english zm1094_s17_ad88bdf8:
 
     # 'zm1094_s17{#zm1094_s17}'
-    nr 'The spirit's smile fades away and he looks troubled for a moment.{#zm1094_s17_1}'
-    asonje '«Strange… I don't know! I'm not sure how I died, really».{#zm1094_s17_2}'
+    nr 'The spirit\'s smile fades away and he looks troubled for a moment.{#zm1094_s17_1}'
+    asonje '«Strange… I don\'t know! I\'m not sure how I died, really».{#zm1094_s17_2}'
     nr 'He shrugs.{#zm1094_s17_3}'
     asonje '«No matter!»{#zm1094_s17_4}'
-    nr 'His cheery grin returns, somehow bright despite being plastered across a corpse's withered face.{#zm1094_s17_5}'
+    nr 'His cheery grin returns, somehow bright despite being plastered across a corpse\'s withered face.{#zm1094_s17_5}'
 
 # game/dlgs/mortuary_zombies/zm1094.rpy:406
 translate english zm1094_s18_b862d225:
@@ -148,7 +148,7 @@ translate english zm1094_s19_828f9c96:
 
     # 'zm1094_s19{#zm1094_s19}'
     asonje '«Not so much. I signed a contract with a Dustman on a whim… she had pointed out the dreadful place to me, once, told me my corpse would be raised and used as a laborer».{#zm1094_s19_1}'
-    asonje '«I thought: I'll have no need for it when I've passed into the next life - why not? Might as well take the silver and go spend it on some women and wine!»{#zm1094_s19_1}'
+    asonje '«I thought: I\'ll have no need for it when I\'ve passed into the next life - why not? Might as well take the silver and go spend it on some women and wine!»{#zm1094_s19_1}'
     nr 'He chuckles at the idea, the ghost-lights in his eyes flashing merrily.{#zm1094_s19_2}'
 
 # game/dlgs/mortuary_zombies/zm1094.rpy:443
@@ -185,9 +185,9 @@ translate english zm1094_s24_49b66137:
 
     # 'zm1094_s24{#zm1094_s24}'
     asonje '«What, Sigil?»{#zm1094_s24_1}'
-    nr 'Seeing your nod, the corpse's smile stretches into a wide, wicked grin.{#zm1094_s24_2}'
-    asonje '«Oh, I'll not spoil that for you! Go and explore the place for yourself! Get lost in its streets, its taverns, its people… but take care!»{#zm1094_s24_3}'
-    asonje '«It can be a dangerous as well as wondrous place. But that's what makes it all so exciting, no?»{#zm1094_s24_3}'
+    nr 'Seeing your nod, the corpse\'s smile stretches into a wide, wicked grin.{#zm1094_s24_2}'
+    asonje '«Oh, I\'ll not spoil that for you! Go and explore the place for yourself! Get lost in its streets, its taverns, its people… but take care!»{#zm1094_s24_3}'
+    asonje '«It can be a dangerous as well as wondrous place. But that\'s what makes it all so exciting, no?»{#zm1094_s24_3}'
 
 # game/dlgs/mortuary_zombies/zm1094.rpy:555
 translate english zm1094_s25_203f1f76:
@@ -221,7 +221,7 @@ translate english strings:
 
     # game/dlgs/mortuary_zombies/zm1094.rpy:17
     old 'zm1094_s0_r6567{#zm1094_s0_r6567}'
-    new '«I know you're not a zombie, you know. You're not fooling anyone».{#zm1094_s0_r6567}'
+    new '«I know you\'re not a zombie, you know. You\'re not fooling anyone».{#zm1094_s0_r6567}'
 
     # game/dlgs/mortuary_zombies/zm1094.rpy:17
     old 'zm1094_s0_r6568{#zm1094_s0_r6568}'
@@ -481,7 +481,7 @@ translate english strings:
 
     # game/dlgs/mortuary_zombies/zm1094.rpy:464
     old 'zm1094_s21_r9304{#zm1094_s21_r9304}'
-    new 'Make a name up: »I do not know… 'Adahn'?»{#zm1094_s21_r9304}'
+    new 'Make a name up: »I do not know… „Adahn“?»{#zm1094_s21_r9304}'
 
     # game/dlgs/mortuary_zombies/zm1094.rpy:464
     old 'zm1094_s21_r9305{#zm1094_s21_r9305}'

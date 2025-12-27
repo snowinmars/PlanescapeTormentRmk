@@ -4,7 +4,7 @@
 translate english zf832_s0_50bcc31c:
 
     # 'zf832_s0{#zf832_s0}'
-    nr 'Despite this corpse's dry, leathery skin, it's clear this was once a beautiful woman of middle years.{#zf832_s0_1}'
+    nr 'Despite this corpse\'s dry, leathery skin, it\'s clear this was once a beautiful woman of middle years.{#zf832_s0_1}'
     nr 'Whomever prepared the corpse seemed to take pity on her, sewing her bow lips shut with small, neat stitches and tattooing the number «832» upon her forehead in elegant script.{#zf832_s0_1}'
 
 # game/dlgs/mortuary_zombies/zf832.rpy:62
@@ -37,7 +37,7 @@ translate english strings:
 
     # game/dlgs/mortuary_zombies/zf832.rpy:17
     old 'zf832_s0_r35165{#zf832_s0_r35165}'
-    new '«I know you're not a zombie, you know. You're not fooling anyone».{#zf832_s0_r35165}'
+    new '«I know you\'re not a zombie, you know. You\'re not fooling anyone».{#zf832_s0_r35165}'
 
     # game/dlgs/mortuary_zombies/zf832.rpy:17
     old 'zf832_s0_r35166{#zf832_s0_r35166}'

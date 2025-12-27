@@ -75,8 +75,8 @@ translate english strings:
     new 'Version [config.version!t]\n'
 
     # game/screens.rpy:596
-    old 'Сделано с помощью {a=https://www.renpy.org/}Ren'Py{/a} [renpy.version_only].\n\n[renpy.license!t]'
-    new '\nMade with a=https://www.renpy.org/}Ren'Py{/a} [renpy.version_only].\n\n[renpy.license!t]'
+    old 'Сделано с помощью {a=https://www.renpy.org/}Ren\'Py{/a} [renpy.version_only].\n\n[renpy.license!t]'
+    new '\nMade with a=https://www.renpy.org/}Ren\'Py{/a} [renpy.version_only].\n\n[renpy.license!t]'
 
     # game/screens.rpy:631
     old '{} страница'

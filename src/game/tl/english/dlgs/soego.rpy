@@ -5,14 +5,14 @@ translate english soego_s0_42681654:
 
     # 'soego_s0{#soego_s0}'
     nr 'You see a tired-looking man in a faded black robe.{#soego_s0_1}'
-    nr 'His narrow face is extremely pale, and he doesn't look as if he has been sleeping: his shoulders are slumped, and the flesh sags loosely beneath his bloodshot eyes.{#soego_s0_1}'
-    nr 'He doesn't appear to notice you… he must mistake you for one of the cadaverous workers.{#soego_s0_1}'
+    nr 'His narrow face is extremely pale, and he doesn\'t look as if he has been sleeping: his shoulders are slumped, and the flesh sags loosely beneath his bloodshot eyes.{#soego_s0_1}'
+    nr 'He doesn\'t appear to notice you… he must mistake you for one of the cadaverous workers.{#soego_s0_1}'
 
 # game/dlgs/soego.rpy:41
 translate english soego_s1_57d1a921:
 
     # 'soego_s1{#soego_s1}'
-    nr 'The Dustman's head snaps up as you address him.{#soego_s1_1}'
+    nr 'The Dustman\'s head snaps up as you address him.{#soego_s1_1}'
     soego '«Par… pardon? Did you just speak to me?»{#soego_s1_2}'
 
 # game/dlgs/soego.rpy:71
@@ -20,7 +20,7 @@ translate english soego_s2_f1b825f6:
 
     # 'soego_s2{#soego_s2_1}'
     soego '«By the powers!»{#soego_s2_1}'
-    nr 'The Dustman jumps, then stares intently at you. You notice his eyes aren't bloodshot as much as they have a red tinge to them.{#soego_s2_2}'
+    nr 'The Dustman jumps, then stares intently at you. You notice his eyes aren\'t bloodshot as much as they have a red tinge to them.{#soego_s2_2}'
     soego '«Sirrah, you force an unflattering confession from me: you make a convincing zombie».{#soego_s2_3}'
     nr 'He bows slightly.{#soego_s2_4}'
 
@@ -53,7 +53,7 @@ translate english soego_s5_29fd6a6a:
     # 'soego_s5{#soego_s5_1}'
     nr 'As you are turning to leave, the Dustman gives a slight hiss, then leans in and sniffs at you.{#soego_s5_1}'
     soego '«By the powers!»{#soego_s5_2}'
-    nr 'The Dustman step back, his eyes widening. You notice his eyes aren't bloodshot so much as they have a red tinge to them.{#soego_s5_3}'
+    nr 'The Dustman step back, his eyes widening. You notice his eyes aren\'t bloodshot so much as they have a red tinge to them.{#soego_s5_3}'
     soego '«Sirrah, you force an unflattering confession from me: you make a convincing zombie».{#soego_s5_4}'
     nr 'He bows slightly.{#soego_s5_5}'
 
@@ -67,8 +67,8 @@ translate english soego_s5_7e0ff9cd:
 translate english soego_s6_7235acb8:
 
     # 'soego_s6{#soego_s6}'
-    soego '«Oh, but I'm afraid it *is* my concern».{#soego_s6_1}'
-    nr 'Soego's eyes gleam red, and the corners of his mouth twitch slightly, as if in anticipation.{#soego_s6_2}'
+    soego '«Oh, but I\'m afraid it *is* my concern».{#soego_s6_1}'
+    nr 'Soego\'s eyes gleam red, and the corners of his mouth twitch slightly, as if in anticipation.{#soego_s6_2}'
     soego '«Mayhap…»{#soego_s6_3}'
     nr 'He sneers, displaying a row of sharp, dirty teeth.{#soego_s6_4}'
     soego '«Mayhap I should call the guards? Yes… yes, I think I will do that».{#soego_s6_5}'
@@ -79,7 +79,7 @@ translate english soego_s7_7e84b720:
     # 'soego_s7{#soego_s7}'
     soego '«Really?»{#soego_s7_1}'
     nr 'The Dustman scrutinizes you.{#soego_s7_2}'
-    soego '«You *do* look like you've been prepared. I don't know how you would have survived such pain… are you *in* pain? You look it».{#soego_s7_3}'
+    soego '«You *do* look like you\'ve been prepared. I don\'t know how you would have survived such pain… are you *in* pain? You look it».{#soego_s7_3}'
 
 # game/dlgs/soego.rpy:242
 translate english soego_s8_3cb636f0:
@@ -96,7 +96,7 @@ translate english soego_s9_1b95b811:
     nr 'Soego reaches to his belt, fumbles at it for a moment, then hisses.{#soego_s9_1}'
     soego '«The key!»{#soego_s9_2}'
     nr 'His eyes gleam a bright red, and his lips peel back in anger… his expression is almost animalistic.{#soego_s9_3}'
-    soego '«Someone's stolen the key!»{#soego_s9_4}'
+    soego '«Someone\'s stolen the key!»{#soego_s9_4}'
     nr 'He turns to you and snarls.{#soego_s9_5}'
     soego '«You! You must have done this!»{#soego_s9_6}'
 
@@ -104,7 +104,7 @@ translate english soego_s9_1b95b811:
 translate english soego_s10_6311ebac:
 
     # 'soego_s10{#soego_s10}'
-    nr 'Soego takes a large key from his belt and walks to the front gate. You can't help but notice his peculiar walk… he hunches forward, as if to keep balance.{#soego_s10_1}'
+    nr 'Soego takes a large key from his belt and walks to the front gate. You can\'t help but notice his peculiar walk… he hunches forward, as if to keep balance.{#soego_s10_1}'
 
 # game/dlgs/soego.rpy:301
 translate english soego_s11_7b8aee3f:
@@ -142,7 +142,7 @@ translate english soego_s15_47b02780:
     # 'soego_s15{#soego_s15_1}'
     nr 'As you are turning to leave, the Dustman stops sniffing you and gives a slight hiss.{#soego_s15_1}'
     soego '«By the powers!»{#soego_s15_2}'
-    nr 'The Dustman draws back, his eyes widening. You notice his eyes aren't bloodshot so much as they have a red tinge to them.{#soego_s15_3}'
+    nr 'The Dustman draws back, his eyes widening. You notice his eyes aren\'t bloodshot so much as they have a red tinge to them.{#soego_s15_3}'
     soego '«Sirrah, you force an unflattering confession from me: you make a convincing zombie».{#soego_s15_4}'
     nr 'He bows slightly.{#soego_s15_5}'
 
@@ -157,7 +157,7 @@ translate english soego_s16_9b15e347:
 
     # 'soego_s16{#soego_s16}'
     soego '«I see…»{#soego_s16_1}'
-    nr 'Soego's eyes gleam red, and the corners of his mouth twitch slightly, as if in anticipation.{#soego_s16_2}'
+    nr 'Soego\'s eyes gleam red, and the corners of his mouth twitch slightly, as if in anticipation.{#soego_s16_2}'
     soego '«Mayhap…»{#soego_s16_3}'
     nr 'He sneers, displaying a row of sharp, dirty teeth.{#soego_s16_4}'
     soego '«Mayhap I should call the guards? Yes… yes, I think I will do that».{#soego_s16_5}'
@@ -166,8 +166,8 @@ translate english soego_s16_9b15e347:
 translate english soego_s17_cb992b36:
 
     # 'soego_s17{#soego_s17}'
-    nr 'As you turn to leave, Soego gives an angry hiss… then suddenly composes himself and raises his hand».{#soego_s17_1}'
-    soego '«No, no, I'm afraid you can't leave. Something is amiss here. I think it is best we get this matter straightened out…»{#soego_s17_2}'
+    nr 'As you turn to leave, Soego gives an angry hiss… then suddenly composes himself and raises his hand.{#soego_s17_1}'
+    soego '«No, no, I\'m afraid you can\'t leave. Something is amiss here. I think it is best we get this matter straightened out…»{#soego_s17_2}'
     nr 'The corners of his lips twitch slightly, and his eyes gleam.{#soego_s17_3}'
     soego '«…mayhap the guards could help. Yes… mayhap I should call them».{#soego_s17_4}'
 
@@ -194,7 +194,7 @@ translate english soego_s21_f6e5c06f:
 
     # 'soego_s21{#soego_s21}'
     nr 'The Dustman looks as shocked as you; his eyes are wild, and he is making a gurgling noise in his throat…{#soego_s21_1}'
-    nr '…you're certain you've snapped his neck, for his head is twisted at an unnatural angle, but he's still alive!{#soego_s21_1}'
+    nr '…you\'re certain you\'ve snapped his neck, for his head is twisted at an unnatural angle, but he\'s still alive!{#soego_s21_1}'
     nr 'As you watch, stunned, he claps his hands weakly three times. In response, a great iron bell begins tolling throughout the Mortuary.{#soego_s21_1}'
 
 # game/dlgs/soego.rpy:514
@@ -242,7 +242,7 @@ translate english soego_s28_c7c74c70:
 
     # 'soego_s28{#soego_s28}'
     soego '«What? Why would anyone…?»{#soego_s28_1}'
-    nr 'Soego's voice suddenly drops to a hiss and his lips peel back to reveal a row of jagged teeth.{#soego_s28_2}'
+    nr 'Soego\'s voice suddenly drops to a hiss and his lips peel back to reveal a row of jagged teeth.{#soego_s28_2}'
     soego '«An *Anarchist.*»{#soego_s28_3}'
     nr 'His eyes gleam a bright red.{#soego_s28_4}'
     soego '«An Anarchist. *Here.*»{#soego_s28_5}'
@@ -254,7 +254,7 @@ translate english soego_s29_76025c01:
 
     # 'soego_s29{#soego_s29}'
     nr 'You are about to mention it, when suddenly you stop. You feel a strange prickling sensation as you look at Soego…{#soego_s29_1}'
-    nr '…for some reason, you don't think you should say anything.{#soego_s29_1}'
+    nr '…for some reason, you don\'t think you should say anything.{#soego_s29_1}'
 
 # game/dlgs/soego.rpy:703
 translate english soego_s30_98df1bf2:
@@ -305,7 +305,7 @@ translate english soego_s36_0fbc0811:
 
     # 'soego_s36{#soego_s36}'
     soego '«I know he resides in the Hive, the slums outside the Mortuary, but I do not know exactly where».{#soego_s36_1}'
-    soego '«Some of the other Collectors may know, if they'll talk to you».{#soego_s36_1}'
+    soego '«Some of the other Collectors may know, if they\'ll talk to you».{#soego_s36_1}'
 
 # game/dlgs/soego.rpy:863
 translate english soego_s37_e3387aad:
@@ -320,25 +320,25 @@ translate english soego_s38_2c736e00:
 
     # 'soego_s38{#soego_s38}'
     nr 'You see a tired-looking man in a black robe.{#soego_s38_1}'
-    nr 'His narrow face is extremely pale, and he doesn't look as if he has been sleeping: his shoulders are slumped, and the flesh sags loosely beneath his bloodshot eyes.{#soego_s38_1}'
-    nr 'He looks so lost in thought he doesn't even notice you.{#soego_s38_1}'
+    nr 'His narrow face is extremely pale, and he doesn\'t look as if he has been sleeping: his shoulders are slumped, and the flesh sags loosely beneath his bloodshot eyes.{#soego_s38_1}'
+    nr 'He looks so lost in thought he doesn\'t even notice you.{#soego_s38_1}'
 
 # game/dlgs/soego.rpy:905
 translate english soego_s39_1b3ef0c3:
 
     # 'soego_s39{#soego_s39}'
     soego '«Greetings…»{#soego_s39_1}'
-    nr 'The man turns to face you and makes a slight bow. You suddenly notice that his eyes aren't bloodshot so much as they have a red tinge to them.{#soego_s39_2}'
+    nr 'The man turns to face you and makes a slight bow. You suddenly notice that his eyes aren\'t bloodshot so much as they have a red tinge to them.{#soego_s39_2}'
     soego '«I am Soego. How may I…»{#soego_s39_3}'
     nr 'He suddenly seems to notice your scars, and the corner of his mouth twitches.{#soego_s39_4}'
-    soego '«I'm sorry, sirrah, are you lost?»{#soego_s39_5}'
+    soego '«I\'m sorry, sirrah, are you lost?»{#soego_s39_5}'
 
 # game/dlgs/soego.rpy:928
 translate english soego_s40_0646c178:
 
     # 'soego_s40{#soego_s40}'
     soego '«Well, then…»{#soego_s40_1}'
-    nr 'The corners of Soego's mouth twitch again, as if in anticipation.{#soego_s40_2}'
+    nr 'The corners of Soego\'s mouth twitch again, as if in anticipation.{#soego_s40_2}'
     soego '«Let me call the guards to lead you out. Stand for a moment».{#soego_s40_3}'
     nr 'He looks like he is about to call the guards.{#soego_s40_4}'
 
@@ -369,7 +369,7 @@ translate english soego_s44_96cb6607:
 
     # 'soego_s44{#soego_s44}'
     soego '«Dhall? Dhall the Scrivener can be found in the receiving room on the upper floor».{#soego_s44_1}'
-    nr 'The corner of Soego's mouth twitches briefly.{#soego_s44_2}'
+    nr 'The corner of Soego\'s mouth twitches briefly.{#soego_s44_2}'
     soego '«He is rather busy and his health is failing. Unless you have pressing business, I would not disturb him».{#soego_s44_3}'
 
 # game/dlgs/soego.rpy:1061
@@ -404,7 +404,7 @@ translate english soego_s49_84decfdc:
 
     # 'soego_s49{#soego_s49}'
     soego '«Adahn…»{#soego_s49_1}'
-    nr 'Soego's eyes narrow, and the red tinge you saw in them before seems more pronounced.{#soego_s49_2}'
+    nr 'Soego\'s eyes narrow, and the red tinge you saw in them before seems more pronounced.{#soego_s49_2}'
     soego '«No one of that name resides within the Mortuary halls, living or dead».{#soego_s49_3}'
     nr 'His mouth twitches, and to your surprise, he sniffs the air for a moment.{#soego_s49_4}'
 
@@ -412,7 +412,7 @@ translate english soego_s49_84decfdc:
 translate english soego_s50_2d2a167e:
 
     # 'soego_s50{#soego_s50}'
-    nr 'The corners of Soego's mouth twitch again, and his eyes gleam.{#soego_s50_1}'
+    nr 'The corners of Soego\'s mouth twitch again, and his eyes gleam.{#soego_s50_1}'
     soego '«Then what is your business here?»{#soego_s50_2}'
 
 # game/dlgs/soego.rpy:1159
@@ -451,7 +451,7 @@ translate english soego_s55_ec54b18c:
     # 'soego_s55{#soego_s55}'
     soego '«Yes, Collectors… packs of scavengers that bring the bodies of the dead to us. They may have thought you dead…»{#soego_s55_1}'
     nr 'Soego hisses, and his eyes gleam.{#soego_s55_2}'
-    soego '«…and they are so copper-blind they wouldn't have cared to check before delivering you here».{#soego_s55_3}'
+    soego '«…and they are so copper-blind they wouldn\'t have cared to check before delivering you here».{#soego_s55_3}'
     nr 'Soego studies you.{#soego_s55_4}'
     soego '«It is fortunate you awoke… or you may have reached the True Death before your time».{#soego_s55_5}'
 
@@ -494,7 +494,7 @@ translate english soego_s61_dbd12659:
 
     # 'soego_s61{#soego_s61}'
     soego '«This is most odd».{#soego_s61_1}'
-    nr 'Soego's eyes gleam red, and the corners of his mouth twitch slightly, as if in anticipation.{#soego_s61_2}'
+    nr 'Soego\'s eyes gleam red, and the corners of his mouth twitch slightly, as if in anticipation.{#soego_s61_2}'
     soego '«Mayhap…»{#soego_s61_3}'
     nr 'He sneers, displaying a row of sharp, dirty teeth.{#soego_s61_4}'
     soego '«Mayhap I should call the guards? Yes… yes, I think I will do that».{#soego_s61_5}'
@@ -504,14 +504,14 @@ translate english soego_s62_1bcc40ff:
 
     # 'soego_s62{#soego_s62}'
     soego '«Mayhap I should call the guards? Yes… yes, I think I will do that».{#soego_s61_5}'
-    nr 'Soego nods… and his mouth twitches again. He doesn't even seem to be aware of it.{#soego_s62_1}'
+    nr 'Soego nods… and his mouth twitches again. He doesn\'t even seem to be aware of it.{#soego_s62_1}'
 
 # game/dlgs/soego.rpy:1367
 translate english soego_s63_ff01645f:
 
     # 'soego_s63{#soego_s63}'
     soego '«Return when you have paid your respects, and I will unlock the front gate for you».{#soego_s62_2}'
-    soego '«It is after nine bells, so you'll have to leave as soon as you conclude your business».{#soego_s62_2}'
+    soego '«It is after nine bells, so you\'ll have to leave as soon as you conclude your business».{#soego_s62_2}'
     soego '«Ah, another member of the living. Most are slain by the ghouls, this far into the catacombs; you are fortunate».{#soego_s63_1}'
 
 # game/dlgs/soego.rpy:1399
@@ -606,7 +606,7 @@ translate english soego_s77_e582031d:
 translate english soego_s78_f434aeb8:
 
     # 'soego_s78{#soego_s78}'
-    soego '«I do not know. Ask some of the 'citizens,' here».{#soego_s78_1}'
+    soego '«I do not know. Ask some of the „citizens“, here».{#soego_s78_1}'
 
 # game/dlgs/soego.rpy:1757
 translate english soego_s79_eb942a1c:
@@ -781,7 +781,7 @@ translate english soego_s105_2e35ef2b:
 
     # 'soego_s105{#soego_s105}'
     nr 'He smiles.{#soego_s105_1}'
-    soego '«Everyone's unique. Everyone. Surely you won't deny that?»{#soego_s105_2}'
+    soego '«Everyone\'s unique. Everyone. Surely you won\'t deny that?»{#soego_s105_2}'
 
 # game/dlgs/soego.rpy:2232
 translate english soego_s106_22725a9b:
@@ -794,7 +794,7 @@ translate english soego_s107_14e98526:
 
     # 'soego_s107{#soego_s107}'
     nr 'Soego scowls at you.{#soego_s107_1}'
-    soego '«I don't know *what* you speak of».{#soego_s107_2}'
+    soego '«I don\'t know *what* you speak of».{#soego_s107_2}'
 
 # game/dlgs/soego.rpy:2258
 translate english soego_s108_76cf6202:
@@ -832,21 +832,21 @@ translate english soego_s113_2c3af0f9:
 
     # 'soego_s113{#soego_s113}'
     soego '«Greetings…»{#soego_s113_1}'
-    nr 'The man turns to face you and makes a slight bow. You suddenly notice that his eyes aren't bloodshot so much as they have a red tinge to them.{#soego_s113_2}'
+    nr 'The man turns to face you and makes a slight bow. You suddenly notice that his eyes aren\'t bloodshot so much as they have a red tinge to them.{#soego_s113_2}'
     soego '«I am Soego. How may I help you?»{#soego_s113_3}'
 
 # game/dlgs/soego.rpy:2379
 translate english soego_s114_36f3f5e5:
 
     # 'soego_s114{#soego_s114}'
-    nr 'Halfway through your comment, Soego's lips suddenly peel back, revealing a row of dirty, sharp teeth, and he leans in, sniffing you.{#soego_s114_1}'
+    nr 'Halfway through your comment, Soego\'s lips suddenly peel back, revealing a row of dirty, sharp teeth, and he leans in, sniffing you.{#soego_s114_1}'
 
 # game/dlgs/soego.rpy:2402
 translate english soego_s115_90499b07:
 
     # 'soego_s115{#soego_s115}'
     soego '«Your clothes… those robes. They smell of another. They are not yours».{#soego_s115_1}'
-    nr 'Soego's lips seal into a strange smile, and his eyes gleam with an almost feral light.{#soego_s115_2}'
+    nr 'Soego\'s lips seal into a strange smile, and his eyes gleam with an almost feral light.{#soego_s115_2}'
     soego '«Who *are* you?»{#soego_s115_3}'
 
 translate english strings:
@@ -877,7 +877,7 @@ translate english strings:
 
     # game/dlgs/soego.rpy:44
     old 'soego_s1_r1439{#soego_s1_r1439}'
-    new '«No. No, I didn't».{#soego_s1_r1439}'
+    new '«No. No, I didn\'t».{#soego_s1_r1439}'
 
     # game/dlgs/soego.rpy:44
     old 'soego_s1_r1440{#soego_s1_r1440}'
@@ -893,19 +893,19 @@ translate english strings:
 
     # game/dlgs/soego.rpy:76
     old 'soego_s2_r1444{#soego_s2_r1444}'
-    new '«It's none of your concern».{#soego_s2_r1444}'
+    new '«It\'s none of your concern».{#soego_s2_r1444}'
 
     # game/dlgs/soego.rpy:76
     old 'soego_s2_r1445{#soego_s2_r1445}'
-    new '«I'm not certain what I'm doing here. I woke up on one of the slabs upstairs, and my memory's… a little foggy».{#soego_s2_r1445}'
+    new '«I\'m not certain what I\'m doing here. I woke up on one of the slabs upstairs, and my memory\'s… a little foggy».{#soego_s2_r1445}'
 
     # game/dlgs/soego.rpy:76
     old 'soego_s2_r1446{#soego_s2_r1446}'
-    new '«I got turned around in the halls here, and I can't seem to find the exit. Can you help me?»{#soego_s2_r1446}'
+    new '«I got turned around in the halls here, and I can\'t seem to find the exit. Can you help me?»{#soego_s2_r1446}'
 
     # game/dlgs/soego.rpy:76
     old 'soego_s2_r1447{#soego_s2_r1447}'
-    new '«I'm trying to get out of here».{#soego_s2_r1447}'
+    new '«I\'m trying to get out of here».{#soego_s2_r1447}'
 
     # game/dlgs/soego.rpy:76
     old 'soego_s2_r1448{#soego_s2_r1448}'
@@ -913,11 +913,11 @@ translate english strings:
 
     # game/dlgs/soego.rpy:76
     old 'soego_s2_r4999{#soego_s2_r4999}'
-    new '«I really don't have time for this. Farewell».{#soego_s2_r4999}'
+    new '«I really don\'t have time for this. Farewell».{#soego_s2_r4999}'
 
     # game/dlgs/soego.rpy:108
     old 'soego_s3_r1450{#soego_s3_r1450}'
-    new '«It's not your imagination. I had some questions…»{#soego_s3_r1450}'
+    new '«It\'s not your imagination. I had some questions…»{#soego_s3_r1450}'
 
     # game/dlgs/soego.rpy:108
     old 'soego_s3_r1451{#soego_s3_r1451}'
@@ -937,7 +937,7 @@ translate english strings:
 
     # game/dlgs/soego.rpy:137
     old 'soego_s4_r1456{#soego_s4_r1456}'
-    new '«Uh… why in hell's name are you sniffing me?»{#soego_s4_r1456}'
+    new '«Uh… why in hell\'s name are you sniffing me?»{#soego_s4_r1456}'
 
     # game/dlgs/soego.rpy:137
     old 'soego_s4_r1457{#soego_s4_r1457}'
@@ -957,15 +957,15 @@ translate english strings:
 
     # game/dlgs/soego.rpy:171
     old 'soego_s5_r1462{#soego_s5_r1462}'
-    new '«It's none of your concern».{#soego_s5_r1462}'
+    new '«It\'s none of your concern».{#soego_s5_r1462}'
 
     # game/dlgs/soego.rpy:171
     old 'soego_s5_r1463{#soego_s5_r1463}'
-    new '«I'm not certain what I'm doing here. I woke up on one of the slabs upstairs, and my memory's… a little foggy».{#soego_s5_r1463}'
+    new '«I\'m not certain what I\'m doing here. I woke up on one of the slabs upstairs, and my memory\'s… a little foggy».{#soego_s5_r1463}'
 
     # game/dlgs/soego.rpy:171
     old 'soego_s5_r1464{#soego_s5_r1464}'
-    new '«I'm lost, and I'm looking for the exit. Can you help me?»{#soego_s5_r1464}'
+    new '«I\'m lost, and I\'m looking for the exit. Can you help me?»{#soego_s5_r1464}'
 
     # game/dlgs/soego.rpy:171
     old 'soego_s5_r1465{#soego_s5_r1465}'
@@ -977,15 +977,15 @@ translate english strings:
 
     # game/dlgs/soego.rpy:171
     old 'soego_s5_r1467{#soego_s5_r1467}'
-    new '«I really don't have time for this. Farewell».{#soego_s5_r1467}'
+    new '«I really don\'t have time for this. Farewell».{#soego_s5_r1467}'
 
     # game/dlgs/soego.rpy:203
     old 'soego_s6_r1469{#soego_s6_r1469}'
-    new '«Hold a moment! I was lost… I just got turned around in the halls here, and I can't seem to find the exit. Can you help me?»{#soego_s6_r1469}'
+    new '«Hold a moment! I was lost… I just got turned around in the halls here, and I can\'t seem to find the exit. Can you help me?»{#soego_s6_r1469}'
 
     # game/dlgs/soego.rpy:203
     old 'soego_s6_r1470{#soego_s6_r1470}'
-    new '«Stop! Don't call the guards! I just want to get out of here… can you help me?»{#soego_s6_r1470}'
+    new '«Stop! Don\'t call the guards! I just want to get out of here… can you help me?»{#soego_s6_r1470}'
 
     # game/dlgs/soego.rpy:203
     old 'soego_s6_r1471{#soego_s6_r1471}'
@@ -997,7 +997,7 @@ translate english strings:
 
     # game/dlgs/soego.rpy:203
     old 'soego_s6_r1473{#soego_s6_r1473}'
-    new '«Summon them, then. I'd like to meet them».{#soego_s6_r1473}'
+    new '«Summon them, then. I\'d like to meet them».{#soego_s6_r1473}'
 
     # game/dlgs/soego.rpy:230
     old 'soego_s7_r1475{#soego_s7_r1475}'
@@ -1005,7 +1005,7 @@ translate english strings:
 
     # game/dlgs/soego.rpy:230
     old 'soego_s7_r1476{#soego_s7_r1476}'
-    new '«I don't have time for this. Farewell».{#soego_s7_r1476}'
+    new '«I don\'t have time for this. Farewell».{#soego_s7_r1476}'
 
     # game/dlgs/soego.rpy:245
     old 'soego_s8_r1478{#soego_s8_r1478}'
@@ -1017,7 +1017,7 @@ translate english strings:
 
     # game/dlgs/soego.rpy:261
     old 'soego_s9_r1481{#soego_s9_r1481}'
-    new 'Bluff him: »Uh…wait! Why would I ask you for it if I'd stolen it?»{#soego_s9_r1481}'
+    new 'Bluff him: »Uh…wait! Why would I ask you for it if I\'d stolen it?»{#soego_s9_r1481}'
 
     # game/dlgs/soego.rpy:261
     old 'soego_s9_r1482{#soego_s9_r1482}'
@@ -1037,7 +1037,7 @@ translate english strings:
 
     # game/dlgs/soego.rpy:289
     old 'soego_s10_r1487{#soego_s10_r1487}'
-    new '«Odd walk he's got».{#soego_s10_r1487}'
+    new '«Odd walk he\'s got».{#soego_s10_r1487}'
 
     # game/dlgs/soego.rpy:289
     old 'soego_s10_r1488{#soego_s10_r1488}'
@@ -1057,43 +1057,43 @@ translate english strings:
 
     # game/dlgs/soego.rpy:333
     old 'soego_s13_r1495{#soego_s13_r1495}'
-    new '«I was here for an interment earlier, paying my respects. I'm ready to leave… but I seem to have gotten turned around. Can you help me find the exit?»{#soego_s13_r1495}'
+    new '«I was here for an interment earlier, paying my respects. I\'m ready to leave… but I seem to have gotten turned around. Can you help me find the exit?»{#soego_s13_r1495}'
 
     # game/dlgs/soego.rpy:333
     old 'soego_s13_r1496{#soego_s13_r1496}'
-    new '«I don't really know».{#soego_s13_r1496}'
+    new '«I don\'t really know».{#soego_s13_r1496}'
 
     # game/dlgs/soego.rpy:333
     old 'soego_s13_r1497{#soego_s13_r1497}'
-    new '«I don't really know».{#soego_s13_r1497}'
+    new '«I don\'t really know».{#soego_s13_r1497}'
 
     # game/dlgs/soego.rpy:333
     old 'soego_s13_r1498{#soego_s13_r1498}'
-    new '«I woke up on one of the slabs upstairs, and my memory's… a little foggy».{#soego_s13_r1498}'
+    new '«I woke up on one of the slabs upstairs, and my memory\'s… a little foggy».{#soego_s13_r1498}'
 
     # game/dlgs/soego.rpy:333
     old 'soego_s13_r1499{#soego_s13_r1499}'
-    new '«I don't have time for this. Farewell».{#soego_s13_r1499}'
+    new '«I don\'t have time for this. Farewell».{#soego_s13_r1499}'
 
     # game/dlgs/soego.rpy:360
     old 'soego_s14_r1501{#soego_s14_r1501}'
-    new '«Uh, 'Contracted'?»{#soego_s14_r1501}'
+    new '«Uh, „Contracted“?»{#soego_s14_r1501}'
 
     # game/dlgs/soego.rpy:360
     old 'soego_s14_r1502{#soego_s14_r1502}'
-    new '«I really don't have time for this. Farewell».{#soego_s14_r1502}'
+    new '«I really don\'t have time for this. Farewell».{#soego_s14_r1502}'
 
     # game/dlgs/soego.rpy:378
     old 'soego_s15_r1504{#soego_s15_r1504}'
-    new '«It's none of your concern».{#soego_s15_r1504}'
+    new '«It\'s none of your concern».{#soego_s15_r1504}'
 
     # game/dlgs/soego.rpy:378
     old 'soego_s15_r1505{#soego_s15_r1505}'
-    new '«I'm not certain what I'm doing here. I woke up on one of the slabs upstairs, and my memory's… a little foggy».{#soego_s15_r1505}'
+    new '«I\'m not certain what I\'m doing here. I woke up on one of the slabs upstairs, and my memory\'s… a little foggy».{#soego_s15_r1505}'
 
     # game/dlgs/soego.rpy:378
     old 'soego_s15_r1506{#soego_s15_r1506}'
-    new '«I'm lost, and I'm looking for the exit. Can you help me?»{#soego_s15_r1506}'
+    new '«I\'m lost, and I\'m looking for the exit. Can you help me?»{#soego_s15_r1506}'
 
     # game/dlgs/soego.rpy:378
     old 'soego_s15_r1508{#soego_s15_r1508}'
@@ -1105,15 +1105,15 @@ translate english strings:
 
     # game/dlgs/soego.rpy:378
     old 'soego_s15_r1510{#soego_s15_r1510}'
-    new '«I really don't have time for this. Farewell».{#soego_s15_r1510}'
+    new '«I really don\'t have time for this. Farewell».{#soego_s15_r1510}'
 
     # game/dlgs/soego.rpy:410
     old 'soego_s16_r1512{#soego_s16_r1512}'
-    new '«Hold a moment! I was lost… I just got turned around in the halls here, and I can't seem to find the exit. Can you help me?»{#soego_s16_r1512}'
+    new '«Hold a moment! I was lost… I just got turned around in the halls here, and I can\'t seem to find the exit. Can you help me?»{#soego_s16_r1512}'
 
     # game/dlgs/soego.rpy:410
     old 'soego_s16_r1513{#soego_s16_r1513}'
-    new '«Stop! Don't call the guards! I just want to get out of here… can you help me?»{#soego_s16_r1513}'
+    new '«Stop! Don\'t call the guards! I just want to get out of here… can you help me?»{#soego_s16_r1513}'
 
     # game/dlgs/soego.rpy:410
     old 'soego_s16_r1514{#soego_s16_r1514}'
@@ -1125,15 +1125,15 @@ translate english strings:
 
     # game/dlgs/soego.rpy:410
     old 'soego_s16_r1516{#soego_s16_r1516}'
-    new '«Summon them, then. I'd like to meet them».{#soego_s16_r1516}'
+    new '«Summon them, then. I\'d like to meet them».{#soego_s16_r1516}'
 
     # game/dlgs/soego.rpy:437
     old 'soego_s17_r1518{#soego_s17_r1518}'
-    new '«Hold a moment! I was lost… I just got turned around in the halls here, and I can't seem to find the exit. Can you help me?»{#soego_s17_r1518}'
+    new '«Hold a moment! I was lost… I just got turned around in the halls here, and I can\'t seem to find the exit. Can you help me?»{#soego_s17_r1518}'
 
     # game/dlgs/soego.rpy:437
     old 'soego_s17_r1520{#soego_s17_r1520}'
-    new '«Stop! Don't call the guards! I just want to get out of here… can you help me?»{#soego_s17_r1520}'
+    new '«Stop! Don\'t call the guards! I just want to get out of here… can you help me?»{#soego_s17_r1520}'
 
     # game/dlgs/soego.rpy:437
     old 'soego_s17_r1521{#soego_s17_r1521}'
@@ -1145,7 +1145,7 @@ translate english strings:
 
     # game/dlgs/soego.rpy:437
     old 'soego_s17_r1523{#soego_s17_r1523}'
-    new '«Summon them, then. I'd like to meet them».{#soego_s17_r1523}'
+    new '«Summon them, then. I\'d like to meet them».{#soego_s17_r1523}'
 
     # game/dlgs/soego.rpy:464
     old 'soego_s18_r1525{#soego_s18_r1525}'
@@ -1153,7 +1153,7 @@ translate english strings:
 
     # game/dlgs/soego.rpy:476
     old 'soego_s19_r1528{#soego_s19_r1528}'
-    new '«Can't have you alerting your friends…»{#soego_s19_r1528}'
+    new '«Can\'t have you alerting your friends…»{#soego_s19_r1528}'
 
     # game/dlgs/soego.rpy:488
     old 'soego_s20_r1530{#soego_s20_r1530}'
@@ -1181,7 +1181,7 @@ translate english strings:
 
     # game/dlgs/soego.rpy:529
     old 'soego_s23_r4795{#soego_s23_r4795}'
-    new '«I don't have time for this. Farewell».{#soego_s23_r4795}'
+    new '«I don\'t have time for this. Farewell».{#soego_s23_r4795}'
 
     # game/dlgs/soego.rpy:548
     old 'soego_s24_r4797{#soego_s24_r4797}'
@@ -1197,7 +1197,7 @@ translate english strings:
 
     # game/dlgs/soego.rpy:567
     old 'soego_s25_r4801{#soego_s25_r4801}'
-    new '«Well, 'Contracted' or not, how did I get here if I wasn't dead?»{#soego_s25_r4801}'
+    new '«Well, „Contracted“ or not, how did I get here if I wasn\'t dead?»{#soego_s25_r4801}'
 
     # game/dlgs/soego.rpy:567
     old 'soego_s25_r4802{#soego_s25_r4802}'
@@ -1209,7 +1209,7 @@ translate english strings:
 
     # game/dlgs/soego.rpy:586
     old 'soego_s26_r4805{#soego_s26_r4805}'
-    new '«I'd like to leave. Can you guide me to the exit?»{#soego_s26_r4805}'
+    new '«I\'d like to leave. Can you guide me to the exit?»{#soego_s26_r4805}'
 
     # game/dlgs/soego.rpy:586
     old 'soego_s26_r4806{#soego_s26_r4806}'
@@ -1217,7 +1217,7 @@ translate english strings:
 
     # game/dlgs/soego.rpy:586
     old 'soego_s26_r4807{#soego_s26_r4807}'
-    new '«Do you know there's a corpse up on the second level that's a human in disguise?»{#soego_s26_r4807}'
+    new '«Do you know there\'s a corpse up on the second level that\'s a human in disguise?»{#soego_s26_r4807}'
 
     # game/dlgs/soego.rpy:586
     old 'soego_s26_r4809{#soego_s26_r4809}'
@@ -1225,11 +1225,11 @@ translate english strings:
 
     # game/dlgs/soego.rpy:586
     old 'soego_s26_r4810{#soego_s26_r4810}'
-    new '«You're Soego, right? I heard you're a little odd for a Dustman. That you like rats».{#soego_s26_r4810}'
+    new '«You\'re Soego, right? I heard you\'re a little odd for a Dustman. That you like rats».{#soego_s26_r4810}'
 
     # game/dlgs/soego.rpy:586
     old 'soego_s26_r4811{#soego_s26_r4811}'
-    new '«You're Soego, right? I heard you're a little odd for a Dustman. That you like rats».{#soego_s26_r4811}'
+    new '«You\'re Soego, right? I heard you\'re a little odd for a Dustman. That you like rats».{#soego_s26_r4811}'
 
     # game/dlgs/soego.rpy:586
     old 'soego_s26_r4832{#soego_s26_r4832}'
@@ -1237,7 +1237,7 @@ translate english strings:
 
     # game/dlgs/soego.rpy:586
     old 'soego_s26_r4833{#soego_s26_r4833}'
-    new '«I'm missing a journal. Have you seen one?»{#soego_s26_r4833}'
+    new '«I\'m missing a journal. Have you seen one?»{#soego_s26_r4833}'
 
     # game/dlgs/soego.rpy:586
     old 'soego_s26_r4834{#soego_s26_r4834}'
@@ -1249,11 +1249,11 @@ translate english strings:
 
     # game/dlgs/soego.rpy:635
     old 'soego_s27_r4836{#soego_s27_r4836}'
-    new '«There's a man disguised as a corpse upstairs. I think he's spying on the Dustmen».{#soego_s27_r4836}'
+    new '«There\'s a man disguised as a corpse upstairs. I think he\'s spying on the Dustmen».{#soego_s27_r4836}'
 
     # game/dlgs/soego.rpy:635
     old 'soego_s27_r4837{#soego_s27_r4837}'
-    new '«There's a man disguised as a corpse upstairs. I think he's spying on the Dustmen».{#soego_s27_r4837}'
+    new '«There\'s a man disguised as a corpse upstairs. I think he\'s spying on the Dustmen».{#soego_s27_r4837}'
 
     # game/dlgs/soego.rpy:635
     old 'soego_s27_r4838{#soego_s27_r4838}'
@@ -1281,7 +1281,7 @@ translate english strings:
 
     # game/dlgs/soego.rpy:683
     old 'soego_s29_r4856{#soego_s29_r4856}'
-    new '«I hear you're a strange one, Soego. That you like rats».{#soego_s29_r4856}'
+    new '«I hear you\'re a strange one, Soego. That you like rats».{#soego_s29_r4856}'
 
     # game/dlgs/soego.rpy:683
     old 'soego_s29_r4857{#soego_s29_r4857}'
@@ -1325,11 +1325,11 @@ translate english strings:
 
     # game/dlgs/soego.rpy:747
     old 'soego_s32_r4870{#soego_s32_r4870}'
-    new '«No, I won't trouble you anymore. Thanks for the information».{#soego_s32_r4870}'
+    new '«No, I won\'t trouble you anymore. Thanks for the information».{#soego_s32_r4870}'
 
     # game/dlgs/soego.rpy:747
     old 'soego_s32_r4871{#soego_s32_r4871}'
-    new '«No, I won't trouble you anymore. Thanks for the information».{#soego_s32_r4871}'
+    new '«No, I won\'t trouble you anymore. Thanks for the information».{#soego_s32_r4871}'
 
     # game/dlgs/soego.rpy:766
     old 'soego_s33_r4873{#soego_s33_r4873}'
@@ -1373,7 +1373,7 @@ translate english strings:
 
     # game/dlgs/soego.rpy:820
     old 'soego_s35_r4885{#soego_s35_r4885}'
-    new '«Hmmmm. Suddenly it's extremely important that I find this Pharod. Do you know where I could find him?»{#soego_s35_r4885}'
+    new '«Hmmmm. Suddenly it\'s extremely important that I find this Pharod. Do you know where I could find him?»{#soego_s35_r4885}'
 
     # game/dlgs/soego.rpy:820
     old 'soego_s35_r4886{#soego_s35_r4886}'
@@ -1437,7 +1437,7 @@ translate english strings:
 
     # game/dlgs/soego.rpy:908
     old 'soego_s39_r4907{#soego_s39_r4907}'
-    new '«No, I'm not lost. I had some questions…»{#soego_s39_r4907}'
+    new '«No, I\'m not lost. I had some questions…»{#soego_s39_r4907}'
 
     # game/dlgs/soego.rpy:908
     old 'soego_s39_r4908{#soego_s39_r4908}'
@@ -1445,11 +1445,11 @@ translate english strings:
 
     # game/dlgs/soego.rpy:931
     old 'soego_s40_r4910{#soego_s40_r4910}'
-    new '«Hold a moment! Please… there's no need to call the guards. I came in for an interment earlier, and I just got turned around in the halls… Can you please just lead me out?»{#soego_s40_r4910}'
+    new '«Hold a moment! Please… there\'s no need to call the guards. I came in for an interment earlier, and I just got turned around in the halls… Can you please just lead me out?»{#soego_s40_r4910}'
 
     # game/dlgs/soego.rpy:931
     old 'soego_s40_r4911{#soego_s40_r4911}'
-    new '«No! I'm not lost - I misspoke».{#soego_s40_r4911}'
+    new '«No! I\'m not lost - I misspoke».{#soego_s40_r4911}'
 
     # game/dlgs/soego.rpy:931
     old 'soego_s40_r4912{#soego_s40_r4912}'
@@ -1469,7 +1469,7 @@ translate english strings:
 
     # game/dlgs/soego.rpy:962
     old 'soego_s41_r4917{#soego_s41_r4917}'
-    new '«I was here for an interment earlier, paying my respects. I'm ready to leave… but I seem to have gotten turned around. Can you help me find the exit?»{#soego_s41_r4917}'
+    new '«I was here for an interment earlier, paying my respects. I\'m ready to leave… but I seem to have gotten turned around. Can you help me find the exit?»{#soego_s41_r4917}'
 
     # game/dlgs/soego.rpy:962
     old 'soego_s41_r4918{#soego_s41_r4918}'
@@ -1481,7 +1481,7 @@ translate english strings:
 
     # game/dlgs/soego.rpy:962
     old 'soego_s41_r4920{#soego_s41_r4920}'
-    new '«I'm here to see someone».{#soego_s41_r4920}'
+    new '«I\'m here to see someone».{#soego_s41_r4920}'
 
     # game/dlgs/soego.rpy:962
     old 'soego_s41_r4921{#soego_s41_r4921}'
@@ -1501,7 +1501,7 @@ translate english strings:
 
     # game/dlgs/soego.rpy:997
     old 'soego_s42_r4926{#soego_s42_r4926}'
-    new '«Yes. I know this is hard to believe, but it's the truth: I woke up on one of your slabs upstairs».{#soego_s42_r4926}'
+    new '«Yes. I know this is hard to believe, but it\'s the truth: I woke up on one of your slabs upstairs».{#soego_s42_r4926}'
 
     # game/dlgs/soego.rpy:1013
     old 'soego_s43_r4928{#soego_s43_r4928}'
@@ -1529,7 +1529,7 @@ translate english strings:
 
     # game/dlgs/soego.rpy:1045
     old 'soego_s44_r4935{#soego_s44_r4935}'
-    new '«What's wrong with Dhall?»{#soego_s44_r4935}'
+    new '«What\'s wrong with Dhall?»{#soego_s44_r4935}'
 
     # game/dlgs/soego.rpy:1045
     old 'soego_s44_r4936{#soego_s44_r4936}'
@@ -1541,7 +1541,7 @@ translate english strings:
 
     # game/dlgs/soego.rpy:1064
     old 'soego_s45_r4939{#soego_s45_r4939}'
-    new '«What's wrong with Dhall?»{#soego_s45_r4939}'
+    new '«What\'s wrong with Dhall?»{#soego_s45_r4939}'
 
     # game/dlgs/soego.rpy:1064
     old 'soego_s45_r4940{#soego_s45_r4940}'
@@ -1569,7 +1569,7 @@ translate english strings:
 
     # game/dlgs/soego.rpy:1127
     old 'soego_s50_r4951{#soego_s50_r4951}'
-    new '«I was here for an interment earlier, paying my respects. I'm ready to leave… but I seem to have gotten turned around. Can you help me find the exit?»{#soego_s50_r4951}'
+    new '«I was here for an interment earlier, paying my respects. I\'m ready to leave… but I seem to have gotten turned around. Can you help me find the exit?»{#soego_s50_r4951}'
 
     # game/dlgs/soego.rpy:1127
     old 'soego_s50_r4952{#soego_s50_r4952}'
@@ -1581,7 +1581,7 @@ translate english strings:
 
     # game/dlgs/soego.rpy:1127
     old 'soego_s50_r4954{#soego_s50_r4954}'
-    new '«I'm here to see someone».{#soego_s50_r4954}'
+    new '«I\'m here to see someone».{#soego_s50_r4954}'
 
     # game/dlgs/soego.rpy:1127
     old 'soego_s50_r4955{#soego_s50_r4955}'
@@ -1613,7 +1613,7 @@ translate english strings:
 
     # game/dlgs/soego.rpy:1189
     old 'soego_s53_r4964{#soego_s53_r4964}'
-    new '«Pardon… I misspoke. I don't know the name of the deceased».{#soego_s53_r4964}'
+    new '«Pardon… I misspoke. I don\'t know the name of the deceased».{#soego_s53_r4964}'
 
     # game/dlgs/soego.rpy:1189
     old 'soego_s53_r4965{#soego_s53_r4965}'
@@ -1641,7 +1641,7 @@ translate english strings:
 
     # game/dlgs/soego.rpy:1236
     old 'soego_s55_r4973{#soego_s55_r4973}'
-    new '«Then there's been a mistake… and I'd like to leave. Now».{#soego_s55_r4973}'
+    new '«Then there\'s been a mistake… and I\'d like to leave. Now».{#soego_s55_r4973}'
 
     # game/dlgs/soego.rpy:1247
     old 'soego_s56_r4975{#soego_s56_r4975}'
@@ -1669,7 +1669,7 @@ translate english strings:
 
     # game/dlgs/soego.rpy:1293
     old 'soego_s59_r4984{#soego_s59_r4984}'
-    new '«Yes, thank you. Pardon me, I've gotten all turned around in these halls… can you help me find the exit?»{#soego_s59_r4984}'
+    new '«Yes, thank you. Pardon me, I\'ve gotten all turned around in these halls… can you help me find the exit?»{#soego_s59_r4984}'
 
     # game/dlgs/soego.rpy:1293
     old 'soego_s59_r4985{#soego_s59_r4985}'
@@ -1689,11 +1689,11 @@ translate english strings:
 
     # game/dlgs/soego.rpy:1328
     old 'soego_s61_r4991{#soego_s61_r4991}'
-    new '«Hold a moment! I was lost… I just got turned around in the halls here, and I can't seem to find the exit. Can you help me?»{#soego_s61_r4991}'
+    new '«Hold a moment! I was lost… I just got turned around in the halls here, and I can\'t seem to find the exit. Can you help me?»{#soego_s61_r4991}'
 
     # game/dlgs/soego.rpy:1328
     old 'soego_s61_r4992{#soego_s61_r4992}'
-    new '«Stop! Don't call the guards! I just want to get out of here… can you help me?»{#soego_s61_r4992}'
+    new '«Stop! Don\'t call the guards! I just want to get out of here… can you help me?»{#soego_s61_r4992}'
 
     # game/dlgs/soego.rpy:1328
     old 'soego_s61_r4993{#soego_s61_r4993}'
@@ -1705,7 +1705,7 @@ translate english strings:
 
     # game/dlgs/soego.rpy:1328
     old 'soego_s61_r4995{#soego_s61_r4995}'
-    new '«Summon them, then. I'd like to meet them».{#soego_s61_r4995}'
+    new '«Summon them, then. I\'d like to meet them».{#soego_s61_r4995}'
 
     # game/dlgs/soego.rpy:1355
     old 'soego_s62_r4997{#soego_s62_r4997}'
@@ -1717,7 +1717,7 @@ translate english strings:
 
     # game/dlgs/soego.rpy:1370
     old 'soego_s63_r21655{#soego_s63_r21655}'
-    new '«You're Soego, from the Mortuary. What are you doing here?»{#soego_s63_r21655}'
+    new '«You\'re Soego, from the Mortuary. What are you doing here?»{#soego_s63_r21655}'
 
     # game/dlgs/soego.rpy:1370
     old 'soego_s63_r21656{#soego_s63_r21656}'
@@ -1769,7 +1769,7 @@ translate english strings:
 
     # game/dlgs/soego.rpy:1429
     old 'soego_s65_r21669{#soego_s65_r21669}'
-    new '«That's all I wished to know. Farewell».{#soego_s65_r21669}'
+    new '«That\'s all I wished to know. Farewell».{#soego_s65_r21669}'
 
     # game/dlgs/soego.rpy:1452
     old 'soego_s66_r21671{#soego_s66_r21671}'
@@ -1785,7 +1785,7 @@ translate english strings:
 
     # game/dlgs/soego.rpy:1452
     old 'soego_s66_r21673{#soego_s66_r21673}'
-    new '«That's all I wished to know. Farewell».{#soego_s66_r21673}'
+    new '«That\'s all I wished to know. Farewell».{#soego_s66_r21673}'
 
     # game/dlgs/soego.rpy:1475
     old 'soego_s67_r21675{#soego_s67_r21675}'
@@ -1809,7 +1809,7 @@ translate english strings:
 
     # game/dlgs/soego.rpy:1475
     old 'soego_s67_r21770{#soego_s67_r21770}'
-    new '«That's all I wished to know. Farewell».{#soego_s67_r21770}'
+    new '«That\'s all I wished to know. Farewell».{#soego_s67_r21770}'
 
     # game/dlgs/soego.rpy:1506
     old 'soego_s68_r21772{#soego_s68_r21772}'
@@ -1829,11 +1829,11 @@ translate english strings:
 
     # game/dlgs/soego.rpy:1506
     old 'soego_s68_r21776{#soego_s68_r21776}'
-    new '«That's all I wished to know. Farewell».{#soego_s68_r21776}'
+    new '«That\'s all I wished to know. Farewell».{#soego_s68_r21776}'
 
     # game/dlgs/soego.rpy:1533
     old 'soego_s69_r21779{#soego_s69_r21779}'
-    new '«What was that 'false life' you mentioned?»{#soego_s69_r21779}'
+    new '«What was that „false life“ you mentioned?»{#soego_s69_r21779}'
 
     # game/dlgs/soego.rpy:1533
     old 'soego_s69_r21780{#soego_s69_r21780}'
@@ -1849,15 +1849,15 @@ translate english strings:
 
     # game/dlgs/soego.rpy:1533
     old 'soego_s69_r21784{#soego_s69_r21784}'
-    new '«That's all I wished to know. Farewell».{#soego_s69_r21784}'
+    new '«That\'s all I wished to know. Farewell».{#soego_s69_r21784}'
 
     # game/dlgs/soego.rpy:1560
     old 'soego_s70_r21788{#soego_s70_r21788}'
-    new '«What was that 'false life' you mentioned?»{#soego_s70_r21788}'
+    new '«What was that „false life“ you mentioned?»{#soego_s70_r21788}'
 
     # game/dlgs/soego.rpy:1560
     old 'soego_s70_r21790{#soego_s70_r21790}'
-    new '«You had mentioned the 'True Death'?»{#soego_s70_r21790}'
+    new '«You had mentioned the „True Death“?»{#soego_s70_r21790}'
 
     # game/dlgs/soego.rpy:1560
     old 'soego_s70_r64608{#soego_s70_r64608}'
@@ -1869,7 +1869,7 @@ translate english strings:
 
     # game/dlgs/soego.rpy:1560
     old 'soego_s70_r21794{#soego_s70_r21794}'
-    new '«That's all I wished to know. Farewell».{#soego_s70_r21794}'
+    new '«That\'s all I wished to know. Farewell».{#soego_s70_r21794}'
 
     # game/dlgs/soego.rpy:1587
     old 'soego_s71_r21800{#soego_s71_r21800}'
@@ -1885,11 +1885,11 @@ translate english strings:
 
     # game/dlgs/soego.rpy:1609
     old 'soego_s72_r64547{#soego_s72_r64547}'
-    new '«But I thought I'd broken your neck…»{#soego_s72_r64547}'
+    new '«But I thought I\'d broken your neck…»{#soego_s72_r64547}'
 
     # game/dlgs/soego.rpy:1609
     old 'soego_s72_r21808{#soego_s72_r21808}'
-    new '«But I thought I'd *killed* you…»{#soego_s72_r21808}'
+    new '«But I thought I\'d *killed* you…»{#soego_s72_r21808}'
 
     # game/dlgs/soego.rpy:1609
     old 'soego_s72_r21809{#soego_s72_r21809}'
@@ -1909,7 +1909,7 @@ translate english strings:
 
     # game/dlgs/soego.rpy:1609
     old 'soego_s72_r21813{#soego_s72_r21813}'
-    new '«That's all I wished to know. Farewell».{#soego_s72_r21813}'
+    new '«That\'s all I wished to know. Farewell».{#soego_s72_r21813}'
 
     # game/dlgs/soego.rpy:1644
     old 'soego_s73_r21815{#soego_s73_r21815}'
@@ -1917,11 +1917,11 @@ translate english strings:
 
     # game/dlgs/soego.rpy:1644
     old 'soego_s73_r21816{#soego_s73_r21816}'
-    new '«Aren't you angry?»{#soego_s73_r21816}'
+    new '«Aren\'t you angry?»{#soego_s73_r21816}'
 
     # game/dlgs/soego.rpy:1644
     old 'soego_s73_r21817{#soego_s73_r21817}'
-    new '«Hmmm. So… you'd said you're a missionary?»{#soego_s73_r21817}'
+    new '«Hmmm. So… you\'d said you\'re a missionary?»{#soego_s73_r21817}'
 
     # game/dlgs/soego.rpy:1644
     old 'soego_s73_r21818{#soego_s73_r21818}'
@@ -1937,11 +1937,11 @@ translate english strings:
 
     # game/dlgs/soego.rpy:1644
     old 'soego_s73_r21820{#soego_s73_r21820}'
-    new '«Forget it; that's all I wished to know. Farewell».{#soego_s73_r21820}'
+    new '«Forget it; that\'s all I wished to know. Farewell».{#soego_s73_r21820}'
 
     # game/dlgs/soego.rpy:1679
     old 'soego_s74_r64614{#soego_s74_r64614}'
-    new '«You'd said you're a missionary?»{#soego_s74_r64614}'
+    new '«You\'d said you\'re a missionary?»{#soego_s74_r64614}'
 
     # game/dlgs/soego.rpy:1679
     old 'soego_s74_r21823{#soego_s74_r21823}'
@@ -1957,7 +1957,7 @@ translate english strings:
 
     # game/dlgs/soego.rpy:1679
     old 'soego_s74_r21825{#soego_s74_r21825}'
-    new '«That's all I wished to know. Farewell».{#soego_s74_r21825}'
+    new '«That\'s all I wished to know. Farewell».{#soego_s74_r21825}'
 
     # game/dlgs/soego.rpy:1722
     old 'soego_s77_r21840{#soego_s77_r21840}'
@@ -1969,7 +1969,7 @@ translate english strings:
 
     # game/dlgs/soego.rpy:1722
     old 'soego_s77_r21843{#soego_s77_r21843}'
-    new '«That's all I wished to know. Farewell».{#soego_s77_r21843}'
+    new '«That\'s all I wished to know. Farewell».{#soego_s77_r21843}'
 
     # game/dlgs/soego.rpy:1741
     old 'soego_s78_r21847{#soego_s78_r21847}'
@@ -1993,11 +1993,11 @@ translate english strings:
 
     # game/dlgs/soego.rpy:1760
     old 'soego_s79_r64623{#soego_s79_r64623}'
-    new '«Wait a moment… didn't I break your neck in the Mortuary?»{#soego_s79_r64623}'
+    new '«Wait a moment… didn\'t I break your neck in the Mortuary?»{#soego_s79_r64623}'
 
     # game/dlgs/soego.rpy:1760
     old 'soego_s79_r64624{#soego_s79_r64624}'
-    new '«Wait a moment… I thought I'd *killed* you at the Mortuary…»{#soego_s79_r64624}'
+    new '«Wait a moment… I thought I\'d *killed* you at the Mortuary…»{#soego_s79_r64624}'
 
     # game/dlgs/soego.rpy:1760
     old 'soego_s79_r21853{#soego_s79_r21853}'
@@ -2073,11 +2073,11 @@ translate english strings:
 
     # game/dlgs/soego.rpy:1871
     old 'soego_s83_r21948{#soego_s83_r21948}'
-    new '«What do you know of this 'civilization'?»{#soego_s83_r21948}'
+    new '«What do you know of this „civilization“?»{#soego_s83_r21948}'
 
     # game/dlgs/soego.rpy:1871
     old 'soego_s83_r21949{#soego_s83_r21949}'
-    new '«What do you know of this 'civilization'?»{#soego_s83_r21949}'
+    new '«What do you know of this „civilization“?»{#soego_s83_r21949}'
 
     # game/dlgs/soego.rpy:1871
     old 'soego_s83_r21951{#soego_s83_r21951}'
@@ -2093,7 +2093,7 @@ translate english strings:
 
     # game/dlgs/soego.rpy:1942
     old 'soego_s88_r21977{#soego_s88_r21977}'
-    new '«That's all I wished to know. Farewell».{#soego_s88_r21977}'
+    new '«That\'s all I wished to know. Farewell».{#soego_s88_r21977}'
 
     # game/dlgs/soego.rpy:1957
     old 'soego_s89_r21979{#soego_s89_r21979}'
@@ -2105,7 +2105,7 @@ translate english strings:
 
     # game/dlgs/soego.rpy:1957
     old 'soego_s89_r21981{#soego_s89_r21981}'
-    new '«That's all I wished to know. Farewell».{#soego_s89_r21981}'
+    new '«That\'s all I wished to know. Farewell».{#soego_s89_r21981}'
 
     # game/dlgs/soego.rpy:1977
     old 'soego_s90_r21983{#soego_s90_r21983}'
@@ -2113,7 +2113,7 @@ translate english strings:
 
     # game/dlgs/soego.rpy:1977
     old 'soego_s90_r21984{#soego_s90_r21984}'
-    new '«That's all I wished to know. Farewell».{#soego_s90_r21984}'
+    new '«That\'s all I wished to know. Farewell».{#soego_s90_r21984}'
 
     # game/dlgs/soego.rpy:1992
     old 'soego_s91_r21986{#soego_s91_r21986}'
@@ -2125,7 +2125,7 @@ translate english strings:
 
     # game/dlgs/soego.rpy:1992
     old 'soego_s91_r21988{#soego_s91_r21988}'
-    new '«That's all I wished to know. Farewell».{#soego_s91_r21988}'
+    new '«That\'s all I wished to know. Farewell».{#soego_s91_r21988}'
 
     # game/dlgs/soego.rpy:2012
     old 'soego_s92_r21990{#soego_s92_r21990}'
@@ -2133,7 +2133,7 @@ translate english strings:
 
     # game/dlgs/soego.rpy:2012
     old 'soego_s92_r21991{#soego_s92_r21991}'
-    new '«That's all I wished to know. Farewell».{#soego_s92_r21991}'
+    new '«That\'s all I wished to know. Farewell».{#soego_s92_r21991}'
 
     # game/dlgs/soego.rpy:2035
     old 'soego_s94_r25248{#soego_s94_r25248}'
@@ -2189,11 +2189,11 @@ translate english strings:
 
     # game/dlgs/soego.rpy:2135
     old 'soego_s101_r22018{#soego_s101_r22018}'
-    new '«Aren't you angry?»{#soego_s101_r22018}'
+    new '«Aren\'t you angry?»{#soego_s101_r22018}'
 
     # game/dlgs/soego.rpy:2135
     old 'soego_s101_r22019{#soego_s101_r22019}'
-    new '«You'd said you're a missionary?»{#soego_s101_r22019}'
+    new '«You\'d said you\'re a missionary?»{#soego_s101_r22019}'
 
     # game/dlgs/soego.rpy:2135
     old 'soego_s101_r22020{#soego_s101_r22020}'
@@ -2201,7 +2201,7 @@ translate english strings:
 
     # game/dlgs/soego.rpy:2135
     old 'soego_s101_r22022{#soego_s101_r22022}'
-    new '«That's all I wished to know. Farewell».{#soego_s101_r22022}'
+    new '«That\'s all I wished to know. Farewell».{#soego_s101_r22022}'
 
     # game/dlgs/soego.rpy:2166
     old 'soego_s102_r22024{#soego_s102_r22024}'
@@ -2217,15 +2217,15 @@ translate english strings:
 
     # game/dlgs/soego.rpy:2178
     old 'soego_s103_r22029{#soego_s103_r22029}'
-    new '«No. Something is wrong here, and I'll find out what it is soon enough».{#soego_s103_r22029}'
+    new '«No. Something is wrong here, and I\'ll find out what it is soon enough».{#soego_s103_r22029}'
 
     # game/dlgs/soego.rpy:2197
     old 'soego_s104_r22033{#soego_s104_r22033}'
-    new '«Aren't you angry about what happened?»{#soego_s104_r22033}'
+    new '«Aren\'t you angry about what happened?»{#soego_s104_r22033}'
 
     # game/dlgs/soego.rpy:2197
     old 'soego_s104_r22034{#soego_s104_r22034}'
-    new '«You'd said you're a missionary?»{#soego_s104_r22034}'
+    new '«You\'d said you\'re a missionary?»{#soego_s104_r22034}'
 
     # game/dlgs/soego.rpy:2197
     old 'soego_s104_r22035{#soego_s104_r22035}'
@@ -2233,7 +2233,7 @@ translate english strings:
 
     # game/dlgs/soego.rpy:2197
     old 'soego_s104_r22038{#soego_s104_r22038}'
-    new '«I'll take my leave, now. Farewell».{#soego_s104_r22038}'
+    new '«I\'ll take my leave, now. Farewell».{#soego_s104_r22038}'
 
     # game/dlgs/soego.rpy:2220
     old 'soego_s105_r22040{#soego_s105_r22040}'
@@ -2241,11 +2241,11 @@ translate english strings:
 
     # game/dlgs/soego.rpy:2220
     old 'soego_s105_r22041{#soego_s105_r22041}'
-    new '«No. Something is wrong here, and I'll find out what it is soon enough».{#soego_s105_r22041}'
+    new '«No. Something is wrong here, and I\'ll find out what it is soon enough».{#soego_s105_r22041}'
 
     # game/dlgs/soego.rpy:2235
     old 'soego_s106_r22044{#soego_s106_r22044}'
-    new '«You heard me. You're no ordinary Dustman… what *are* you, Soego?»{#soego_s106_r22044}'
+    new '«You heard me. You\'re no ordinary Dustman… what *are* you, Soego?»{#soego_s106_r22044}'
 
     # game/dlgs/soego.rpy:2235
     old 'soego_s106_r22045{#soego_s106_r22045}'
@@ -2253,7 +2253,7 @@ translate english strings:
 
     # game/dlgs/soego.rpy:2250
     old 'soego_s107_r22048{#soego_s107_r22048}'
-    new '«Something is wrong here, and I'll find out what it is soon enough».{#soego_s107_r22048}'
+    new '«Something is wrong here, and I\'ll find out what it is soon enough».{#soego_s107_r22048}'
 
     # game/dlgs/soego.rpy:2261
     old 'soego_s108_r22051{#soego_s108_r22051}'
@@ -2265,11 +2265,11 @@ translate english strings:
 
     # game/dlgs/soego.rpy:2278
     old 'soego_s109_r64617{#soego_s109_r64617}'
-    new '«All right. But… I thought I'd broken your neck…»{#soego_s109_r64617}'
+    new '«All right. But… I thought I\'d broken your neck…»{#soego_s109_r64617}'
 
     # game/dlgs/soego.rpy:2278
     old 'soego_s109_r64618{#soego_s109_r64618}'
-    new '«Good. But… I thought I'd *killed* you…»{#soego_s109_r64618}'
+    new '«Good. But… I thought I\'d *killed* you…»{#soego_s109_r64618}'
 
     # game/dlgs/soego.rpy:2278
     old 'soego_s109_r22054{#soego_s109_r22054}'
@@ -2285,15 +2285,15 @@ translate english strings:
 
     # game/dlgs/soego.rpy:2278
     old 'soego_s109_r22056{#soego_s109_r22056}'
-    new '«I'll take my leave, now. Farewell».{#soego_s109_r22056}'
+    new '«I\'ll take my leave, now. Farewell».{#soego_s109_r22056}'
 
     # game/dlgs/soego.rpy:2309
     old 'soego_s110_r64625{#soego_s110_r64625}'
-    new '«Wait a moment… didn't I break your neck in the Mortuary?»{#soego_s110_r64625}'
+    new '«Wait a moment… didn\'t I break your neck in the Mortuary?»{#soego_s110_r64625}'
 
     # game/dlgs/soego.rpy:2309
     old 'soego_s110_r64626{#soego_s110_r64626}'
-    new '«Wait a moment… I thought I'd *killed* you at the Mortuary…»{#soego_s110_r64626}'
+    new '«Wait a moment… I thought I\'d *killed* you at the Mortuary…»{#soego_s110_r64626}'
 
     # game/dlgs/soego.rpy:2309
     old 'soego_s110_r22058{#soego_s110_r22058}'
@@ -2353,7 +2353,7 @@ translate english strings:
 
     # game/dlgs/soego.rpy:2405
     old 'soego_s115_r66720{#soego_s115_r66720}'
-    new '«You're correct. These robes aren't mine, but who they belong to is not your concern».{#soego_s115_r66720}'
+    new '«You\'re correct. These robes aren\'t mine, but who they belong to is not your concern».{#soego_s115_r66720}'
 
     # game/dlgs/soego.rpy:2405
     old 'soego_s115_r66721{#soego_s115_r66721}'

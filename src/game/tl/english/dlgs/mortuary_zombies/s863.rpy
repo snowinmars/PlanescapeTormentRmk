@@ -25,14 +25,14 @@ translate english s863_s3_8b2df135:
 
     # 's863_s3{#s863_s3}'
     nr 'Someone has taken care to bind the bones of this skeleton with leather straps, woven around the body in such a pattern that they resemble muscles and tendons.{#s863_s3_1}'
-    nr 'The straps are secured to metal bolts punched into the skeleton's joints.{#s863_s3_1}'
+    nr 'The straps are secured to metal bolts punched into the skeleton\'s joints.{#s863_s3_1}'
     nr 'This skeleton looks like it has seen a great deal of service: many of its bones are chipped and its numerous fractures are bound with sealant and foul-smelling glues.{#s863_s3_1}'
 
 # game/dlgs/mortuary_zombies/s863.rpy:183
 translate english s863_s4_39e5df11:
 
     # 's863_s4{#s863_s4}'
-    nr 'You pull at the iron bolts, but you're not strong enough to pull them out. They've been hammered in pretty tight.{#s863_s4_1}'
+    nr 'You pull at the iron bolts, but you\'re not strong enough to pull them out. They\'ve been hammered in pretty tight.{#s863_s4_1}'
 
 # game/dlgs/mortuary_zombies/s863.rpy:216
 translate english s863_s5_7baad451:
@@ -45,7 +45,7 @@ translate english s863_s5_7baad451:
 translate english s863_s6_5bc6c592:
 
     # 's863_s6{#s863_s6}'
-    nr 'Using your prybar, you rip the bolts from the skeleton's joints. The skeleton collapses, some of its bones still twitching.{#s863_s6_1}'
+    nr 'Using your prybar, you rip the bolts from the skeleton\'s joints. The skeleton collapses, some of its bones still twitching.{#s863_s6_1}'
 
 # game/dlgs/mortuary_zombies/s863.rpy:240
 translate english s863_s7_164ae689:
@@ -66,7 +66,7 @@ translate english s863_s8_0ef9a19a:
 translate english s863_s9_2aae5cb5:
 
     # 's863_s9{#s863_s9}'
-    nr 'You slip the parchment out of the worker's skull - oddly enough, it looks as if the skull cavity is *intended* to store messages.{#s863_s9_1}'
+    nr 'You slip the parchment out of the worker\'s skull - oddly enough, it looks as if the skull cavity is *intended* to store messages.{#s863_s9_1}'
     nr 'A tiny string is attached to the parchment from a hook bolted inside the skull, as if to keep the parchment from accidentally falling out.{#s863_s9_1}'
 
 # game/dlgs/mortuary_zombies/s863.rpy:276
@@ -75,7 +75,7 @@ translate english s863_s10_602fe114:
     # 's863_s10{#s863_s10}'
     nr 'You unhook the string and glance over the parchment - it looks like a reminder from one of the Mortuary custodians. {#s863_s10_1}'
     nr 'Judging from the note, this skeleton seems to be a walking messenger of sorts.{#s863_s10_1}'
-    nr 'As you take a second glance at the skeleton, you realize it has stopped in front of the slab because it can't figure out how to move past it.{#s863_s10_1}'
+    nr 'As you take a second glance at the skeleton, you realize it has stopped in front of the slab because it can\'t figure out how to move past it.{#s863_s10_1}'
 
 translate english strings:
 
@@ -105,31 +105,31 @@ translate english strings:
 
     # game/dlgs/mortuary_zombies/s863.rpy:17
     old 's863_s0_r35602{#s863_s0_r35602}'
-    new 'Try and pry out the skeleton's joint bolts.{#s863_s0_r35602}'
+    new 'Try and pry out the skeleton\'s joint bolts.{#s863_s0_r35602}'
 
     # game/dlgs/mortuary_zombies/s863.rpy:17
     old 's863_s0_r35603{#s863_s0_r35603}'
-    new 'Try and pry out the skeleton's joint bolts.{#s863_s0_r35603}'
+    new 'Try and pry out the skeleton\'s joint bolts.{#s863_s0_r35603}'
 
     # game/dlgs/mortuary_zombies/s863.rpy:17
     old 's863_s0_r35604{#s863_s0_r35604}'
-    new 'Try and pry out the skeleton's joint bolts.{#s863_s0_r35604}'
+    new 'Try and pry out the skeleton\'s joint bolts.{#s863_s0_r35604}'
 
     # game/dlgs/mortuary_zombies/s863.rpy:17
     old 's863_s0_r35605{#s863_s0_r35605}'
-    new 'Try and pry out the skeleton's joint bolts.{#s863_s0_r35605}'
+    new 'Try and pry out the skeleton\'s joint bolts.{#s863_s0_r35605}'
 
     # game/dlgs/mortuary_zombies/s863.rpy:17
     old 's863_s0_r35606{#s863_s0_r35606}'
-    new 'Try and pry out the skeleton's joint bolts.{#s863_s0_r35606}'
+    new 'Try and pry out the skeleton\'s joint bolts.{#s863_s0_r35606}'
 
     # game/dlgs/mortuary_zombies/s863.rpy:17
     old 's863_s0_r35607{#s863_s0_r35607}'
-    new 'Try and pry out the skeleton's joint bolts.{#s863_s0_r35607}'
+    new 'Try and pry out the skeleton\'s joint bolts.{#s863_s0_r35607}'
 
     # game/dlgs/mortuary_zombies/s863.rpy:17
     old 's863_s0_r35608{#s863_s0_r35608}'
-    new 'Try and pry out the skeleton's joint bolts.{#s863_s0_r35608}'
+    new 'Try and pry out the skeleton\'s joint bolts.{#s863_s0_r35608}'
 
     # game/dlgs/mortuary_zombies/s863.rpy:17
     old 's863_s0_r35609{#s863_s0_r35609}'
@@ -173,19 +173,19 @@ translate english strings:
 
     # game/dlgs/mortuary_zombies/s863.rpy:137
     old 's863_s3_r35571{#s863_s3_r35571}'
-    new 'Try and pry out the skeleton's joint bolts.{#s863_s3_r35571}'
+    new 'Try and pry out the skeleton\'s joint bolts.{#s863_s3_r35571}'
 
     # game/dlgs/mortuary_zombies/s863.rpy:137
     old 's863_s3_r35593{#s863_s3_r35593}'
-    new 'Try and pry out the skeleton's joint bolts.{#s863_s3_r35593}'
+    new 'Try and pry out the skeleton\'s joint bolts.{#s863_s3_r35593}'
 
     # game/dlgs/mortuary_zombies/s863.rpy:137
     old 's863_s3_r35594{#s863_s3_r35594}'
-    new 'Try and pry out the skeleton's joint bolts.{#s863_s3_r35594}'
+    new 'Try and pry out the skeleton\'s joint bolts.{#s863_s3_r35594}'
 
     # game/dlgs/mortuary_zombies/s863.rpy:137
     old 's863_s3_r35595{#s863_s3_r35595}'
-    new 'Try and pry out the skeleton's joint bolts.{#s863_s3_r35595}'
+    new 'Try and pry out the skeleton\'s joint bolts.{#s863_s3_r35595}'
 
     # game/dlgs/mortuary_zombies/s863.rpy:137
     old 's863_s3_r35596{#s863_s3_r35596}'
@@ -245,7 +245,7 @@ translate english strings:
 
     # game/dlgs/mortuary_zombies/s863.rpy:252
     old 's863_s8_r64263{#s863_s8_r64263}'
-    new 'Take the parchment out of the skeleton's skull.{#s863_s8_r64263}'
+    new 'Take the parchment out of the skeleton\'s skull.{#s863_s8_r64263}'
 
     # game/dlgs/mortuary_zombies/s863.rpy:252
     old 's863_s8_r64264{#s863_s8_r64264}'

@@ -23,18 +23,18 @@ translate english zm569_s2_e2aba804:
 translate english zm569_s3_1cfd16d2:
 
     # 'zm569_s3{#zm569_s3}'
-    nr 'This corpse doesn't appear to be carrying a key… and it doesn't look like it would be able to use one if it did.{#zm569_s3_1}'
+    nr 'This corpse doesn\'t appear to be carrying a key… and it doesn\'t look like it would be able to use one if it did.{#zm569_s3_1}'
     nr 'Its fingers are broken, as if someone smashed them with a hammer. You do happen to notice that its left shoulder is heavily bandaged…{#zm569_s3_1}'
 
 translate english strings:
 
     # game/dlgs/mortuary_zombies/zm569.rpy:17
     old 'zm569_s0_r24576{#zm569_s0_r24576}'
-    new '«I'm looking for a key… do you happen to have one?»{#zm569_s0_r24576}'
+    new '«I\'m looking for a key… do you happen to have one?»{#zm569_s0_r24576}'
 
     # game/dlgs/mortuary_zombies/zm569.rpy:17
     old 'zm569_s0_r24579{#zm569_s0_r24579}'
-    new '«I'm looking for a key… do you happen to have one?»{#zm569_s0_r24579}'
+    new '«I\'m looking for a key… do you happen to have one?»{#zm569_s0_r24579}'
 
     # game/dlgs/mortuary_zombies/zm569.rpy:17
     old 'zm569_s0_r24580{#zm569_s0_r24580}'
@@ -42,7 +42,7 @@ translate english strings:
 
     # game/dlgs/mortuary_zombies/zm569.rpy:17
     old 'zm569_s0_r24581{#zm569_s0_r24581}'
-    new '«I know you're not a zombie, you know. You're not fooling anyone».{#zm569_s0_r24581}'
+    new '«I know you\'re not a zombie, you know. You\'re not fooling anyone».{#zm569_s0_r24581}'
 
     # game/dlgs/mortuary_zombies/zm569.rpy:17
     old 'zm569_s0_r24584{#zm569_s0_r24584}'
@@ -50,7 +50,7 @@ translate english strings:
 
     # game/dlgs/mortuary_zombies/zm569.rpy:17
     old 'zm569_s0_r24585{#zm569_s0_r24585}'
-    new 'Examine the corpse, see if it's carrying a key.{#zm569_s0_r24585}'
+    new 'Examine the corpse, see if it\'s carrying a key.{#zm569_s0_r24585}'
 
     # game/dlgs/mortuary_zombies/zm569.rpy:17
     old 'zm569_s0_r42290{#zm569_s0_r42290}'
@@ -74,11 +74,11 @@ translate english strings:
 
     # game/dlgs/mortuary_zombies/zm569.rpy:82
     old 'zm569_s3_r42294{#zm569_s3_r42294}'
-    new '«Guess you don't have it… you don't happen to know which of your other corpse friends has the key out of this place?»{#zm569_s3_r42294}'
+    new '«Guess you don\'t have it… you don\'t happen to know which of your other corpse friends has the key out of this place?»{#zm569_s3_r42294}'
 
     # game/dlgs/mortuary_zombies/zm569.rpy:82
     old 'zm569_s3_r42295{#zm569_s3_r42295}'
-    new '«Guess you don't have it… you don't happen to know which of your other corpse friends has the key out of this place?»{#zm569_s3_r42295}'
+    new '«Guess you don\'t have it… you don\'t happen to know which of your other corpse friends has the key out of this place?»{#zm569_s3_r42295}'
 
     # game/dlgs/mortuary_zombies/zm569.rpy:82
     old 'zm569_s3_r42296{#zm569_s3_r42296}'

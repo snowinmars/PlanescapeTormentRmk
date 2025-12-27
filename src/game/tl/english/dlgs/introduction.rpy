@@ -10,7 +10,7 @@ translate english introduction_6f5a7dfe:
 translate english introduction_1_f267bd0e:
 
     # snowinmars 'Я переношу игру на новый движок по нескольким причинам.'
-    snowinmars 'I'm rewriting the game to a new engine for several reasons.'
+    snowinmars 'I\'m rewriting the game to a new engine for several reasons.'
 
 # game/dlgs/introduction.rpy:27
 translate english introduction_1_b853b702:
@@ -40,7 +40,7 @@ translate english introduction_1_1044dfaf:
 translate english introduction_1_3c4581c0:
 
     # snowinmars 'Но ты живёшь с деконструкцией минуту, десять, сто - и выясняется, что результат совсем не похож на оригинал. Он вообще другой. Как мозаика, которую можно собрать двумя способами.'
-    snowinmars 'But you live with deconstruction for a minute, ten, a hundred — and it turns out the result is nothing like the original. It's completely different. Like a mosaic that can be assembled in two ways.'
+    snowinmars 'But you live with deconstruction for a minute, ten, a hundred — and it turns out the result is nothing like the original. It\'s completely different. Like a mosaic that can be assembled in two ways.'
 
 # game/dlgs/introduction.rpy:34
 translate english introduction_1_f19fc93e:
@@ -64,7 +64,7 @@ translate english introduction_1_ff157314:
 translate english introduction_1_af893d89:
 
     # snowinmars 'Я подумал: а, собсно, почему бы не заострить: я выброшу всё, кроме повествования. Оно будет работать?'
-    snowinmars 'I thought: well, why not go for the bold: I'll throw out everything but the narrative. Will it work?'
+    snowinmars 'I thought: well, why not go for the bold: I\'ll throw out everything but the narrative. Will it work?'
 
 # game/dlgs/introduction.rpy:39
 translate english introduction_1_781f227a:
@@ -82,25 +82,25 @@ translate english introduction_1_c790b860:
 translate english introduction_1_efc98320:
 
     # snowinmars 'Искусство нельзя заспойлерить. Сюжет «Ромео и Джульетты» излагается на первой странице книги - потому что не в нём смысл.'
-    snowinmars 'Art cannot be spoiled. The plot of «Romeo and Juliet» is laid out on the first page of the book — because that's not the point.'
+    snowinmars 'Art cannot be spoiled. The plot of «Romeo and Juliet» is laid out on the first page of the book — because that\'s not the point.'
 
 # game/dlgs/introduction.rpy:42
 translate english introduction_1_b6ba569e:
 
     # snowinmars 'Тот сюжет был бородат ещё во времена Шекспира - но он пересказал его таким, что мы помним канву спустя половину тысячелетия. Поэтому и спойлерит его сразу.'
-    snowinmars 'That plot was already well-worn in Shakespeare's time, but he retold it in a way that we remember the outline half a millennium later. That's why I'll spoil it right away.'
+    snowinmars 'That plot was already well-worn in Shakespeare\'s time, but he retold it in a way that we remember the outline half a millennium later. That\'s why I\'ll spoil it right away.'
 
 # game/dlgs/introduction.rpy:43
 translate english introduction_1_72fa661f:
 
     # snowinmars 'Не в том смысл, что he was a boy, she was a girl. Хотя ши, bezuslovno, воз.'
-    snowinmars 'It's not that he was a boy, she was a girl. Although, он-она, все дела, though.'
+    snowinmars 'It\'s not that he was a boy, she was a girl. Although, он-она, все дела, though.'
 
 # game/dlgs/introduction.rpy:44
 translate english introduction_1_121eac64:
 
     # snowinmars 'Если тебе так спокойнее - хорошо. После прохождения игры (целиком, не этой демки) ты поймёшь, что я прав.'
-    snowinmars 'If it makes you feel better, fine. After you finish the game (the whole game, not this demo), you'll realize I'm right.'
+    snowinmars 'If it makes you feel better, fine. After you finish the game (the whole game, not this demo), you\'ll realize I\'m right.'
 
 # game/dlgs/introduction.rpy:46
 translate english introduction_1_2b718e9d:
@@ -112,19 +112,19 @@ translate english introduction_1_2b718e9d:
 translate english introduction_1_70231255:
 
     # snowinmars 'Потому что видят днд, кубики, устаревшую - для кого-то - графику, однозначно устаревший интерфейс - и не особо понимают, зачем им это надо. Потому что я посоветовал?'
-    snowinmars 'Because they see dnd, dices, outdated (for someone) graphics, a decidedly outdated interface — and they don't really understand why they need it. Because I recommended it?'
+    snowinmars 'Because they see dnd, dices, outdated (for someone) graphics, a decidedly outdated interface — and they don\'t really understand why they need it. Because I recommended it?'
 
 # game/dlgs/introduction.rpy:48
 translate english introduction_1_31847649:
 
     # snowinmars 'Кому-то этого хватит. Большинству - нет.'
-    snowinmars 'For some, that's enough. For most, it's not.'
+    snowinmars 'For some, that\'s enough. For most, it\'s not.'
 
 # game/dlgs/introduction.rpy:49
 translate english introduction_1_f55f65cc:
 
     # snowinmars 'Удобные движок и интерфейс - ящитаю - могут сгладить кривую входа. Если их корректно написать)'
-    snowinmars 'A user-friendly engine and interface — imho — can smooth out the entry curve. If they're written correctly.'
+    snowinmars 'A user-friendly engine and interface — imho — can smooth out the entry curve. If they\'re written correctly.'
 
 # game/dlgs/introduction.rpy:51
 translate english introduction_1_f11c6521:
@@ -142,7 +142,7 @@ translate english introduction_1_e9c93013:
 translate english introduction_1_3137658f:
 
     # snowinmars 'Я заведомо не парился: ни о качестве кода, ни о графике. Моя задача - понять, можно ли перенести игру в принципе на RenPy.'
-    snowinmars 'I deliberately didn't worry about the code quality or the graphics. My goal was to figure out whether the game could even be ported to RenPy.'
+    snowinmars 'I deliberately didn\'t worry about the code quality or the graphics. My goal was to figure out whether the game could even be ported to RenPy.'
 
 # game/dlgs/introduction.rpy:54
 translate english introduction_1_c7f9bb64:
@@ -161,19 +161,19 @@ translate english introduction_1_892848fb:
 translate english introduction_1_69a5bf08:
 
     # snowinmars 'И снова, и снова. Монологов в привычном смысле тут нет - ну, кроме вот этого, который я сейчас пишу.'
-    snowinmars 'Again and again. There are no monologues in the usual sense here—well, except for this one I'm writing now.'
+    snowinmars 'Again and again. There are no monologues in the usual sense here—well, except for this one I\'m writing now.'
 
 # game/dlgs/introduction.rpy:57
 translate english introduction_1_a80810f7:
 
     # snowinmars 'Это создаёт чудовищно сложное диалоговое дерево. Я не был уверен, что на RenPy им можно удобно управлять. Я не был уверен, что его можно написать.'
-    snowinmars 'This creates a monstrously complex dialog tree. I wasn't sure it could be easily managed in RenPy. I wasn't sure it could be written.'
+    snowinmars 'This creates a monstrously complex dialog tree. I wasn\'t sure it could be easily managed in RenPy. I wasn\'t sure it could be written.'
 
 # game/dlgs/introduction.rpy:58
 translate english introduction_1_81b62875:
 
     # snowinmars 'Благодаря незнакомому мне человеку - Argent77 - я смог упростить перенос диалогового ктулху до тривиальных действий.'
-    snowinmars 'Thanks to a stranger to me - Argent77 - I was able to simplify the translation of the dialogue's Cthulhu to trivial actions.'
+    snowinmars 'Thanks to a stranger to me - Argent77 - I was able to simplify the translation of the dialogue\'s Cthulhu to trivial actions.'
 
 # game/dlgs/introduction.rpy:59
 translate english introduction_1_c267e3c5:
@@ -197,7 +197,7 @@ translate english introduction_1_44a6ee56:
 translate english introduction_1_54cb3686:
 
     # snowinmars 'Питоновский код сгенерен deepseek r1, за что ему большое спасибо. Несмотря на десять с хреном лет в разработке, я не могу понять красоту этого языка. И уже не хочу понимать.'
-    snowinmars 'The Python code was generated by deepseek r1, for which I'm very grateful. Despite ten years of development, I still can't grasp the beauty of this language. And I don't want to anymore.'
+    snowinmars 'The Python code was generated by deepseek r1, for which I\'m very grateful. Despite ten years of development, I still can\'t grasp the beauty of this language. And I don\'t want to anymore.'
 
 # game/dlgs/introduction.rpy:63
 translate english introduction_1_54a860f0:
@@ -221,7 +221,7 @@ translate english introduction_1_7f0e7525:
 translate english introduction_1_f2aed22b:
 
     # snowinmars 'У RenPy из коробки есть история реплик - если ты сейчас помотаешь колёсиком мыши, то прочитаешь предыдущие реплики.'
-    snowinmars 'RenPy has a dialogue history out of the box - if you scroll your mouse wheel now, you'll read previous replicas.'
+    snowinmars 'RenPy has a dialogue history out of the box - if you scroll your mouse wheel now, you\'ll read previous replicas.'
 
 # game/dlgs/introduction.rpy:68
 translate english introduction_1_96bb03d8:
@@ -239,7 +239,7 @@ translate english introduction_1_ea4a5836:
 translate english introduction_1_e68892ac:
 
     # snowinmars 'Они нафиг не нужны, но они есть. Журнал тоже есть, но его просмотр не реализован.'
-    snowinmars 'They're completely unnecessary, but they're there. There's a journal, too, but it can't be viewed.'
+    snowinmars 'They\'re completely unnecessary, but they\'re there. There\'s a journal, too, but it can\'t be viewed.'
 
 # game/dlgs/introduction.rpy:72
 translate english introduction_1_68e2ae7c:
@@ -257,7 +257,7 @@ translate english introduction_1_585cf66c:
 translate english introduction_1_5fc3a1c0:
 
     # snowinmars 'Я пока не знаю. Я пытаюсь это узнать. Если ты мне поможешь в этом - будет супер.'
-    snowinmars 'I don't know yet. I'm trying to find out. If you help me with this, that would be great.'
+    snowinmars 'I don\'t know yet. I\'m trying to find out. If you help me with this, that would be great.'
 
 # game/dlgs/introduction.rpy:75
 translate english introduction_1_448cee24:
@@ -281,7 +281,7 @@ translate english introduction_1_7a983973:
 translate english introduction_1_f3133811:
 
     # snowinmars 'Если хочешь играть в оригинал - ссылка на прохождение:\n https://wiki.aerie.ru/wiki/Категория:Прохождение_(PsT)'
-    snowinmars 'If you want to play the original, here's a link to the walkthrough:\n https://wiki.aerie.ru/wiki/Категория:Прохождение_(PsT)'
+    snowinmars 'If you want to play the original, here\'s a link to the walkthrough:\n https://wiki.aerie.ru/wiki/Категория:Прохождение_(PsT)'
 
 # game/dlgs/introduction.rpy:79
 translate english introduction_1_c343907f:
@@ -293,13 +293,13 @@ translate english introduction_1_c343907f:
 translate english new_life_79bffc95:
 
     # snowinmars 'Да, тут такое дело…'
-    snowinmars 'Yes, here's the thing…'
+    snowinmars 'Yes, here\'s the thing…'
 
 # game/dlgs/introduction.rpy:88
 translate english new_life_1387c96e:
 
     # snowinmars 'Всё-таки я не могу полностью игнорировать билд: на нём завязаны диалоги, и завязаны сильно.'
-    snowinmars 'Yet I can't completely ignore the build: dialogues are tied to it, and tied heavily.'
+    snowinmars 'Yet I can\'t completely ignore the build: dialogues are tied to it, and tied heavily.'
 
 # game/dlgs/introduction.rpy:89
 translate english new_life_2fafb1ea:
@@ -311,7 +311,7 @@ translate english new_life_2fafb1ea:
 translate english new_life_00f6a281:
 
     # snowinmars '- и ты играешь магом. Если что - это база.'
-    snowinmars '- and you play as a mage. That's based, fyi.'
+    snowinmars '- and you play as a mage. That\'s based, fyi.'
 
 # game/dlgs/introduction.rpy:94
 translate english new_life_443d8506:
@@ -323,7 +323,7 @@ translate english new_life_443d8506:
 translate english new_life_2c8e82a3:
 
     # snowinmars 'Так как я эти, хайлвл диалоги тоже перенёс сюда, было бы странно не предложить к ним доступа. Если хочешь - возьми.'
-    snowinmars 'Since I've already moved these high-level dialogues here, it would be strange not to offer access to them. If you want them, take them.'
+    snowinmars 'Since I\'ve already moved these high-level dialogues here, it would be strange not to offer access to them. If you want them, take them.'
 
 # game/dlgs/introduction.rpy:100
 translate english new_life_12e4f6c2:
@@ -419,7 +419,7 @@ translate english intro_585c2295:
 translate english intro_3b3ca331:
 
     # nr 'Через секунду меня начинает сковывать медленный, ползучий ужас. Не спеша, но неотвратимо. Леденящее прозрение.'
-    nr 'And that's when that slow horror began to grip me.'
+    nr 'And that\'s when that slow horror began to grip me.'
 
 # game/dlgs/introduction.rpy:130
 translate english intro_268588c5:
@@ -431,13 +431,13 @@ translate english intro_268588c5:
 translate english intro_b78df8cc:
 
     # nr 'Я застываю, превращаясь в камень, в пустоту. Только бы не заметили…'
-    nr 'I froze, hoping they didn't see me.'
+    nr 'I froze, hoping they didn\'t see me.'
 
 translate english strings:
 
     # game/dlgs/introduction.rpy:17
     old 'Я не боюсь спойлеров'
-    new 'I'm not afraid of spoilers'
+    new 'I\'m not afraid of spoilers'
 
     # game/dlgs/introduction.rpy:17
     old 'Не надо мне спойлерить игру'
@@ -454,4 +454,12 @@ translate english strings:
     # game/dlgs/introduction.rpy:108
     old 'Вспомнить'
     new 'Remember'
+
+# TODO: Translation updated at 2025-12-27 15:39
+
+translate english strings:
+
+    # game/dlgs/introduction.rpy:97
+    old "Получить „Историю костей“"
+    new ""
 

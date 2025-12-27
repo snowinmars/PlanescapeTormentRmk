@@ -519,11 +519,11 @@ translate russian strings:
     new 'Вы уверены, что хотите пропустить непрочитанные диалоги до следующего выбора?'
 
     # renpy/common/00gui.rpy:459
-    old 'This save was created on a different device. Maliciously constructed save files can harm your computer. Do you trust this save's creator and everyone who could have changed the file?'
+    old 'This save was created on a different device. Maliciously constructed save files can harm your computer. Do you trust this save\'s creator and everyone who could have changed the file?'
     new 'Это сохранение было создано на другом устройстве. Злонамеренно созданные файлы сохранения могут нанести вред вашему компьютеру. Доверяете ли вы создателю этого сохранения и всем тем, кто мог изменить файл?'
 
     # renpy/common/00gui.rpy:460
-    old 'Do you trust the device the save was created on? You should only choose yes if you are the device's sole user.'
+    old 'Do you trust the device the save was created on? You should only choose yes if you are the device\'s sole user.'
     new 'Доверяете ли вы устройству, на котором было создано сохранение? Вы должны выбрать \'Да\', только если вы являетесь единственным пользователем устройства.'
 
     # renpy/common/00keymap.rpy:325
@@ -775,16 +775,16 @@ translate russian strings:
     new 'режим без звука'
 
     # renpy/common/00preferences.rpy:701
-    old 'Clipboard voicing enabled. Press 'shift+C' to disable.'
-    new 'Озвучка буфера обмена включена. Нажмите 'shift+C', чтобы отключить её.'
+    old 'Clipboard voicing enabled. Press \'shift+C\' to disable.'
+    new 'Озвучка буфера обмена включена. Нажмите «shift+C», чтобы отключить её.'
 
     # renpy/common/00preferences.rpy:703
-    old 'Self-voicing would say \'[renpy.display.tts.last]\'. Press 'alt+shift+V' to disable.'
-    new 'Синтезатор речи должен сказать \'[renpy.display.tts.last]\'. Нажмите 'alt+shift+V', чтобы отключить его.'
+    old 'Self-voicing would say \'[renpy.display.tts.last]\'. Press \'alt+shift+V\' to disable.'
+    new 'Синтезатор речи должен сказать \'[renpy.display.tts.last]\'. Нажмите «alt+shift+V», чтобы отключить его.'
 
     # renpy/common/00preferences.rpy:705
-    old 'Self-voicing enabled. Press 'v' to disable.'
-    new 'Синтезатор речи включён. Нажмите 'v', чтобы отключить его.'
+    old 'Self-voicing enabled. Press \'v\' to disable.'
+    new 'Синтезатор речи включён. Нажмите «v», чтобы отключить его.'
 
     # renpy/common/00speechbubble.rpy:420
     old 'Speech Bubble Editor'
@@ -803,23 +803,23 @@ translate russian strings:
     new 'Синхронизация загружена.'
 
     # renpy/common/00sync.rpy:193
-    old 'Could not connect to the Ren'Py Sync server.'
-    new 'Не удалось подключиться к серверу Ren'Py Sync.'
+    old 'Could not connect to the Ren\'Py Sync server.'
+    new 'Не удалось подключиться к серверу Ren\'Py Sync.'
 
     # renpy/common/00sync.rpy:195
-    old 'The Ren'Py Sync server timed out.'
-    new 'Сервер Ren'Py Sync завершил работу по таймеру.'
+    old 'The Ren\'Py Sync server timed out.'
+    new 'Сервер Ren\'Py Sync завершил работу по таймеру.'
 
     # renpy/common/00sync.rpy:197
-    old 'An unknown error occurred while connecting to the Ren'Py Sync server.'
-    new 'При подключении к серверу Ren'Py Sync произошла неизвестная ошибка.'
+    old 'An unknown error occurred while connecting to the Ren\'Py Sync server.'
+    new 'При подключении к серверу Ren\'Py Sync произошла неизвестная ошибка.'
 
     # renpy/common/00sync.rpy:213
-    old 'The Ren'Py Sync server does not have a copy of this sync. The sync ID may be invalid, or it may have timed out.'
-    new 'Сервер Ren'Py Sync не имеет копии этой синхронизации. Идентификатор синхронизации может быть недействительным, или она могла завершиться.'
+    old 'The Ren\'Py Sync server does not have a copy of this sync. The sync ID may be invalid, or it may have timed out.'
+    new 'Сервер Ren\'Py Sync не имеет копии этой синхронизации. Идентификатор синхронизации может быть недействительным, или она могла завершиться.'
 
     # renpy/common/00sync.rpy:316
-    old 'Please enter the sync ID you generated.\nNever enter a sync ID you didn't create yourself.'
+    old 'Please enter the sync ID you generated.\nNever enter a sync ID you didn\'t create yourself.'
     new 'Введите созданный вами идентификатор синхронизации.\nНикогда не вводите идентификатор синхронизации, который вы не создавали сами.'
 
     # renpy/common/00sync.rpy:335
@@ -839,8 +839,8 @@ translate russian strings:
     new 'Синхронизация содержит файл с недопустимым именем.'
 
     # renpy/common/00sync.rpy:440
-    old 'This will upload your saves to the {a=https://sync.renpy.org}Ren'Py Sync Server{/a}.\nDo you want to continue?'
-    new 'Это загрузит ваши сохранения на сервер {a=https://sync.renpy.org}Ren'Py Sync Server{/a}.\nВы хотите продолжить?'
+    old 'This will upload your saves to the {a=https://sync.renpy.org}Ren\'Py Sync Server{/a}.\nDo you want to continue?'
+    new 'Это загрузит ваши сохранения на сервер {a=https://sync.renpy.org}Ren\'Py Sync Server{/a}.\nВы хотите продолжить?'
 
     # renpy/common/00sync.rpy:448
     old 'Yes'
@@ -855,8 +855,8 @@ translate russian strings:
     new 'Введите идентификатор синхронизации'
 
     # renpy/common/00sync.rpy:483
-    old 'This will contact the {a=https://sync.renpy.org}Ren'Py Sync Server{/a}.'
-    new 'Это позволит связаться с сервером {a=https://sync.renpy.org}Ren'Py Sync Server{/a}.'
+    old 'This will contact the {a=https://sync.renpy.org}Ren\'Py Sync Server{/a}.'
+    new 'Это позволит связаться с сервером {a=https://sync.renpy.org}Ren\'Py Sync Server{/a}.'
 
     # renpy/common/00sync.rpy:513
     old 'Sync Success'
@@ -867,8 +867,8 @@ translate russian strings:
     new 'Идентификатор синхронизации:'
 
     # renpy/common/00sync.rpy:522
-    old 'You can use this ID to download your save on another device.\nThis sync will expire in an hour.\nRen'Py Sync is supported by {a=https://www.renpy.org/sponsors.html}Ren'Py's Sponsors{/a}.'
-    new 'Вы можете использовать этот идентификатор для загрузки сохранения на другое устройство.\nСрок действия этой синхронизации истечет через час.\nRen'Py Sync поддерживается спонсорами {a=https://www.renpy.org/sponsors.html}Ren'Py's Sponsors{/a}.'
+    old 'You can use this ID to download your save on another device.\nThis sync will expire in an hour.\nRen\'Py Sync is supported by {a=https://www.renpy.org/sponsors.html}Ren\'Py\'s Sponsors{/a}.'
+    new 'Вы можете использовать этот идентификатор для загрузки сохранения на другое устройство.\nСрок действия этой синхронизации истечет через час.\nRen\'Py Sync поддерживается спонсорами {a=https://www.renpy.org/sponsors.html}Ren\'Py\'s Sponsors{/a}.'
 
     # renpy/common/00sync.rpy:526
     old 'Continue'
@@ -1123,7 +1123,7 @@ translate russian strings:
     new 'Этот компьютер использует программный рендеринг.'
 
     # renpy/common/00gltest.rpy:251
-    old 'This game requires use of GL2 that can't be initialised.'
+    old 'This game requires use of GL2 that can\'t be initialised.'
     new 'Эта игра требует использование GL2 который не может быть инициализирован.'
 
     # renpy/common/00gltest.rpy:253
@@ -1147,7 +1147,7 @@ translate russian strings:
     new 'Продолжить, Показать это предупреждение снова'
 
     # renpy/common/00gltest.rpy:275
-    old 'Continue, Don't show warning again'
+    old 'Continue, Don\'t show warning again'
     new 'Продолжить, Не показывать это предупреждение снова.'
 
     # renpy/common/00gltest.rpy:283
@@ -1167,8 +1167,8 @@ translate russian strings:
     new 'Калибрую [name] ([i]/[total])'
 
     # renpy/common/00gamepad.rpy:60
-    old 'Press or move the '[control!s]' [kind].'
-    new 'Нажмите или сдвиньте [kind] '[control!s]''
+    old 'Press or move the \'[control!s]\' [kind].'
+    new 'Нажмите или сдвиньте [kind] «[control!s]»'
 
     # renpy/common/00gamepad.rpy:70
     old 'Skip (A)'
@@ -1427,16 +1427,16 @@ translate russian strings:
     new 'Нажмите <esc>, чтобы выйти из консоли. Введите help для помощи.\n'
 
     # renpy/common/00console.rpy:542
-    old 'Ren'Py script enabled.'
-    new 'Ren'Py script активирован.'
+    old 'Ren\'Py script enabled.'
+    new 'Ren\'Py script активирован.'
 
     # renpy/common/00console.rpy:544
-    old 'Ren'Py script disabled.'
-    new 'Ren'Py script деактивирован.'
+    old 'Ren\'Py script disabled.'
+    new 'Ren\'Py script деактивирован.'
 
     # renpy/common/00console.rpy:725
-    old 'The console is using short representations. To disable this, type 'long', and to re-enable, type 'short''
-    new 'The console is using short representations. To disable this, type 'long', and to re-enable, type 'short''
+    old 'The console is using short representations. To disable this, type «long», and to re-enable, type «short»'
+    new 'The console is using short representations. To disable this, type «long», and to re-enable, type «short»'
 
     # renpy/common/00console.rpy:797
     old 'help: show this help\n help <expr>: show signature and documentation of <expr>'

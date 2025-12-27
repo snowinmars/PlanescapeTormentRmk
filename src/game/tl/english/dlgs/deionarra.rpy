@@ -4,7 +4,7 @@
 translate english deionarra_s0_94b82b59:
 
     # 'deionarra_s0{#deionarra_s0}'
-    deionarra '«I shall wait for you in death's halls, my Love».{#deionarra_s0_1}'
+    deionarra '«I shall wait for you in death\'s halls, my Love».{#deionarra_s0_1}'
     nr 'She smiles, but there is only sadness in it. She closes her eyes, and with an ethereal whisper, she fades.{#deionarra_s0_2}'
 
 # game/dlgs/deionarra.rpy:37
@@ -92,7 +92,7 @@ translate english deionarra_s7_b1e3259a:
 translate english deionarra_s8_5a672b82:
 
     # 'deionarra_s8{#deionarra_s8}'
-    nr 'Deionarra's face melts into a mask of fury.{#deionarra_s8_1}'
+    nr 'Deionarra\'s face melts into a mask of fury.{#deionarra_s8_1}'
     deionarra '«You leprous dog! Traitor to my heart!»{#deionarra_s8_2}'
     deionarra '«I would wish you cursed, except that torment hounds you with every incarnation without need of my curses! Begone!»{#deionarra_s8_2}'
     nr 'She crosses her arms and closes her eyes.{#deionarra_s8_3}'
@@ -170,7 +170,7 @@ translate english deionarra_s18_3df10ef9:
 translate english deionarra_s19_7942a053:
 
     # 'deionarra_s19{#deionarra_s19}'
-    deionarra '«You were always so, my Love. Already you refuse to heed death's call. Shall time be the next one you spurn?»{#deionarra_s19_1}'
+    deionarra '«You were always so, my Love. Already you refuse to heed death\'s call. Shall time be the next one you spurn?»{#deionarra_s19_1}'
 
 # game/dlgs/deionarra.rpy:519
 translate english deionarra_s20_e103090b:
@@ -233,7 +233,7 @@ translate english deionarra_s28_c6e3f575:
 
     # 'deionarra_s28{#deionarra_s28}'
     deionarra '«We have spoken on your nature before».{#deionarra_s28_1}'
-    nr 'Deionarra's face takes on a distant expression.{#deionarra_s28_2}'
+    nr 'Deionarra\'s face takes on a distant expression.{#deionarra_s28_2}'
     deionarra '«We shall not do so again».{#deionarra_s28_3}'
 
 # game/dlgs/deionarra.rpy:723
@@ -276,7 +276,7 @@ translate english deionarra_s33_84df8c5b:
 translate english deionarra_s34_38082df4:
 
     # 'deionarra_s34{#deionarra_s34}'
-    nr 'The furious expression on Deionarra's face melts like water… the speed of the change is as frightening as the desperate expression now on her face.{#deionarra_s34_1}'
+    nr 'The furious expression on Deionarra\'s face melts like water… the speed of the change is as frightening as the desperate expression now on her face.{#deionarra_s34_1}'
     deionarra '«No! Wait, my Love».{#deionarra_s34_2}'
     nr 'Her voice is pleading.{#deionarra_s34_3}'
     deionarra '«Please forgive me, I beg of you! Do not leave!»{#deionarra_s34_4}'
@@ -285,7 +285,7 @@ translate english deionarra_s34_38082df4:
 translate english deionarra_s35_e54872f7:
 
     # 'deionarra_s35{#deionarra_s35}'
-    nr 'The furious expression on Deionarra's face melts like water… the speed of the change is as frightening as the desperate expression now on her face.{#deionarra_s35_1}'
+    nr 'The furious expression on Deionarra\'s face melts like water… the speed of the change is as frightening as the desperate expression now on her face.{#deionarra_s35_1}'
 
 # game/dlgs/deionarra.rpy:868
 translate english deionarra_s36_8d876020:
@@ -318,7 +318,7 @@ translate english deionarra_s39_3676cc41:
 
     # 'deionarra_s39{#deionarra_s39}'
     deionarra '«Once spoken, the curse cannot be undone».{#deionarra_s39_1}'
-    nr 'Deionarra's voice drops to a hiss.{#deionarra_s39_2}'
+    nr 'Deionarra\'s voice drops to a hiss.{#deionarra_s39_2}'
     deionarra '«Know this: I have all eternity, „my Love“. I shall wait for you to come to death“s halls».{#deionarra_s39_3}'
     nr 'She smiles, but there is no joy in it.{#deionarra_s39_4}'
     deionarra '«We *shall* be together again».{#deionarra_s39_5}'
@@ -351,7 +351,7 @@ translate english deionarra_s43_ff31c2c1:
 
     # 'deionarra_s43{#deionarra_s43}'
     deionarra '«Leave…?»{#deionarra_s43_1}'
-    nr 'Deionarra's voice drops to a hiss, then rises again.{#deionarra_s43_2}'
+    nr 'Deionarra\'s voice drops to a hiss, then rises again.{#deionarra_s43_2}'
     deionarra '«*Leave?!* You ask me, who am trapped here because of you, how to *leave* this place?!»{#deionarra_s43_3}'
 
 # game/dlgs/deionarra.rpy:1037
@@ -360,7 +360,7 @@ translate english deionarra_s44_80a68f04:
     # 'deionarra_s44{#deionarra_s44}'
     nr 'As you are about to ask Deionarra the question, it catches in your throat.{#deionarra_s44_1}'
     nr 'It occurs to you that if you tell her you are looking for an escape route, she may feel you are abandoning her.{#deionarra_s44_1}'
-    nr 'If you are going to ask her how to leave, you'll need to be delicate about it.{#deionarra_s44_1}'
+    nr 'If you are going to ask her how to leave, you\'ll need to be delicate about it.{#deionarra_s44_1}'
 
 # game/dlgs/deionarra.rpy:1064
 translate english deionarra_s45_d5684d4c:
@@ -420,7 +420,7 @@ translate english deionarra_s51_6f46cad9:
 translate english deionarra_s52_64877cc9:
 
     # 'deionarra_s52{#deionarra_s52}'
-    deionarra '«I suspect trapping you here was the crystal's true purpose. But it poses no barrier for one such as I».{#deionarra_s52_1}'
+    deionarra '«I suspect trapping you here was the crystal\'s true purpose. But it poses no barrier for one such as I».{#deionarra_s52_1}'
     nr 'She closes her eyes.{#deionarra_s52_2}'
     deionarra '«Much do my eyes see, and the halls of this Fortress are well known to me».{#deionarra_s52_3}'
 
@@ -448,7 +448,7 @@ translate english deionarra_s55_2b580839:
 translate english deionarra_s56_2895c449:
 
     # 'deionarra_s56{#deionarra_s56}'
-    nr 'Deionarra's face is a mask as you speak the words.{#deionarra_s56_1}'
+    nr 'Deionarra\'s face is a mask as you speak the words.{#deionarra_s56_1}'
 
 # game/dlgs/deionarra.rpy:1275
 translate english deionarra_s57_24b649e4:
@@ -637,7 +637,7 @@ translate english strings:
 
     # game/dlgs/deionarra.rpy:94
     old 'deionarra_s3_r711{#deionarra_s3_r711}'
-    new '«No, I'm sorry. My memories are lost to me».{#deionarra_s3_r711}'
+    new '«No, I\'m sorry. My memories are lost to me».{#deionarra_s3_r711}'
 
     # game/dlgs/deionarra.rpy:94
     old 'deionarra_s3_r712{#deionarra_s3_r712}'
@@ -681,7 +681,7 @@ translate english strings:
 
     # game/dlgs/deionarra.rpy:166
     old 'deionarra_s6_r720{#deionarra_s6_r720}'
-    new '«„Inconvenience“? 'Discard you“? I do not know you, spirit… my memories are no more. Tell me… who are you? What do you know of me?»{#deionarra_s6_r720}'
+    new '«„Inconvenience“? „Discard you“? I do not know you, spirit… my memories are no more. Tell me… who are you? What do you know of me?»{#deionarra_s6_r720}'
 
     # game/dlgs/deionarra.rpy:166
     old 'deionarra_s6_r718{#deionarra_s6_r718}'
@@ -837,7 +837,7 @@ translate english strings:
 
     # game/dlgs/deionarra.rpy:382
     old 'deionarra_s13_r749{#deionarra_s13_r749}'
-    new '«I'm still trying to get my bearings, actually. What else can you tell me about myself?»{#deionarra_s13_r749}'
+    new '«I\'m still trying to get my bearings, actually. What else can you tell me about myself?»{#deionarra_s13_r749}'
 
     # game/dlgs/deionarra.rpy:382
     old 'deionarra_s13_r750{#deionarra_s13_r750}'
@@ -1165,7 +1165,7 @@ translate english strings:
 
     # game/dlgs/deionarra.rpy:951
     old 'deionarra_s41_r6110{#deionarra_s41_r6110}'
-    new '«Isn't there anyone who could remove it?»{#deionarra_s41_r6110}'
+    new '«Isn\'t there anyone who could remove it?»{#deionarra_s41_r6110}'
 
     # game/dlgs/deionarra.rpy:951
     old 'deionarra_s41_r6111{#deionarra_s41_r6111}'
@@ -1173,7 +1173,7 @@ translate english strings:
 
     # game/dlgs/deionarra.rpy:951
     old 'deionarra_s41_r6112{#deionarra_s41_r6112}'
-    new '«I think it's a little late to ask for forgiveness now. Farewell, Deionarra».{#deionarra_s41_r6112}'
+    new '«I think it\'s a little late to ask for forgiveness now. Farewell, Deionarra».{#deionarra_s41_r6112}'
 
     # game/dlgs/deionarra.rpy:951
     old 'deionarra_s41_r6113{#deionarra_s41_r6113}'
@@ -1181,7 +1181,7 @@ translate english strings:
 
     # game/dlgs/deionarra.rpy:951
     old 'deionarra_s41_r6114{#deionarra_s41_r6114}'
-    new '«I think it's a little late to ask for forgiveness now. Farewell, Deionarra».{#deionarra_s41_r6114}'
+    new '«I think it\'s a little late to ask for forgiveness now. Farewell, Deionarra».{#deionarra_s41_r6114}'
 
     # game/dlgs/deionarra.rpy:951
     old 'deionarra_s41_r6115{#deionarra_s41_r6115}'
@@ -1193,7 +1193,7 @@ translate english strings:
 
     # game/dlgs/deionarra.rpy:984
     old 'deionarra_s42_r6117{#deionarra_s42_r6117}'
-    new '«I think it's a little late to ask for forgiveness now. Farewell, Deionarra».{#deionarra_s42_r6117}'
+    new '«I think it\'s a little late to ask for forgiveness now. Farewell, Deionarra».{#deionarra_s42_r6117}'
 
     # game/dlgs/deionarra.rpy:984
     old 'deionarra_s42_r6118{#deionarra_s42_r6118}'
@@ -1201,7 +1201,7 @@ translate english strings:
 
     # game/dlgs/deionarra.rpy:984
     old 'deionarra_s42_r6119{#deionarra_s42_r6119}'
-    new '«I think it's a little late to ask for forgiveness now. Farewell, Deionarra».{#deionarra_s42_r6119}'
+    new '«I think it\'s a little late to ask for forgiveness now. Farewell, Deionarra».{#deionarra_s42_r6119}'
 
     # game/dlgs/deionarra.rpy:984
     old 'deionarra_s42_r6120{#deionarra_s42_r6120}'
@@ -1397,19 +1397,19 @@ translate english strings:
 
     # game/dlgs/deionarra.rpy:1370
     old 'deionarra_s63_r63397{#deionarra_s63_r63397}'
-    new '«I'm immortal, spirit; your warning is appreciated, but death is the least of my worries».{#deionarra_s63_r63397}'
+    new '«I\'m immortal, spirit; your warning is appreciated, but death is the least of my worries».{#deionarra_s63_r63397}'
 
     # game/dlgs/deionarra.rpy:1370
     old 'deionarra_s63_r63398{#deionarra_s63_r63398}'
-    new '«I'm immortal, Deionarra; I don“t think I have much to worry about, even here».{#deionarra_s63_r63398}'
+    new '«I\'m immortal, Deionarra; I don“t think I have much to worry about, even here».{#deionarra_s63_r63398}'
 
     # game/dlgs/deionarra.rpy:1370
     old 'deionarra_s63_r63399{#deionarra_s63_r63399}'
-    new '«What about my immortality? Surely, I'm still immortal, even here…?»{#deionarra_s63_r63399}'
+    new '«What about my immortality? Surely, I\'m still immortal, even here…?»{#deionarra_s63_r63399}'
 
     # game/dlgs/deionarra.rpy:1390
     old 'deionarra_s64_r63401{#deionarra_s64_r63401}'
-    new '«A shell? The Pillar told me that when I die, another dies in my place. And if it can't find someone to die for me -»{#deionarra_s64_r63401}'
+    new '«A shell? The Pillar told me that when I die, another dies in my place. And if it can\'t find someone to die for me -»{#deionarra_s64_r63401}'
 
     # game/dlgs/deionarra.rpy:1390
     old 'deionarra_s64_r63402{#deionarra_s64_r63402}'
@@ -1417,7 +1417,7 @@ translate english strings:
 
     # game/dlgs/deionarra.rpy:1405
     old 'deionarra_s65_r63404{#deionarra_s65_r63404}'
-    new '«So… when I die, another dies in my place. And if it can't find another living thing to die *for* me…»{#deionarra_s65_r63404}'
+    new '«So… when I die, another dies in my place. And if it can\'t find another living thing to die *for* me…»{#deionarra_s65_r63404}'
 
     # game/dlgs/deionarra.rpy:1416
     old 'deionarra_s66_r63406{#deionarra_s66_r63406}'
@@ -1437,7 +1437,7 @@ translate english strings:
 
     # game/dlgs/deionarra.rpy:1439
     old 'deionarra_s67_r63411{#deionarra_s67_r63411}'
-    new '«I can't *go* back. So can you tell me *anything* else that might be helpful? What waits inside the Fortress?»{#deionarra_s67_r63411}'
+    new '«I can\'t *go* back. So can you tell me *anything* else that might be helpful? What waits inside the Fortress?»{#deionarra_s67_r63411}'
 
     # game/dlgs/deionarra.rpy:1452
     old 'deionarra_s68_r63413{#deionarra_s68_r63413}'

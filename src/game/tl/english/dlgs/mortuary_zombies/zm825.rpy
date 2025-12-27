@@ -4,7 +4,7 @@
 translate english zm825_s0_c8cc37f7:
 
     # 'zm825_s0{#zm825_s0}'
-    nr 'This corpse's head lolls back and forth on its shoulders… judging from the angle of the neck, it looks like this man may have been hanged.{#zm825_s0_1}'
+    nr 'This corpse\'s head lolls back and forth on its shoulders… judging from the angle of the neck, it looks like this man may have been hanged.{#zm825_s0_1}'
     nr 'The number «825» has been painted on the side of his head.{#zm825_s0_1}'
 
 # game/dlgs/mortuary_zombies/zm825.rpy:53
@@ -29,11 +29,11 @@ translate english strings:
 
     # game/dlgs/mortuary_zombies/zm825.rpy:17
     old 'zm825_s0_r24565{#zm825_s0_r24565}'
-    new '«I'm looking for a key… do you happen to have one?»{#zm825_s0_r24565}'
+    new '«I\'m looking for a key… do you happen to have one?»{#zm825_s0_r24565}'
 
     # game/dlgs/mortuary_zombies/zm825.rpy:17
     old 'zm825_s0_r24568{#zm825_s0_r24568}'
-    new '«I'm looking for a key… do you happen to have one?»{#zm825_s0_r24568}'
+    new '«I\'m looking for a key… do you happen to have one?»{#zm825_s0_r24568}'
 
     # game/dlgs/mortuary_zombies/zm825.rpy:17
     old 'zm825_s0_r24569{#zm825_s0_r24569}'
@@ -41,7 +41,7 @@ translate english strings:
 
     # game/dlgs/mortuary_zombies/zm825.rpy:17
     old 'zm825_s0_r24570{#zm825_s0_r24570}'
-    new '«I know you're not a zombie, you know. You're not fooling anyone».{#zm825_s0_r24570}'
+    new '«I know you\'re not a zombie, you know. You\'re not fooling anyone».{#zm825_s0_r24570}'
 
     # game/dlgs/mortuary_zombies/zm825.rpy:17
     old 'zm825_s0_r24573{#zm825_s0_r24573}'
@@ -49,7 +49,7 @@ translate english strings:
 
     # game/dlgs/mortuary_zombies/zm825.rpy:17
     old 'zm825_s0_r24574{#zm825_s0_r24574}'
-    new 'Examine the corpse, see if it's carrying a key.{#zm825_s0_r24574}'
+    new 'Examine the corpse, see if it\'s carrying a key.{#zm825_s0_r24574}'
 
     # game/dlgs/mortuary_zombies/zm825.rpy:17
     old 'zm825_s0_r42308{#zm825_s0_r42308}'
@@ -73,11 +73,11 @@ translate english strings:
 
     # game/dlgs/mortuary_zombies/zm825.rpy:83
     old 'zm825_s3_r42312{#zm825_s3_r42312}'
-    new '«Guess you don't have the key… you don't happen to know which of your other corpse friends has the key out of this place?»{#zm825_s3_r42312}'
+    new '«Guess you don\'t have the key… you don\'t happen to know which of your other corpse friends has the key out of this place?»{#zm825_s3_r42312}'
 
     # game/dlgs/mortuary_zombies/zm825.rpy:83
     old 'zm825_s3_r42313{#zm825_s3_r42313}'
-    new '«Guess you don't have the key… you don't happen to know which of your other corpse friends has the key out of this place?»{#zm825_s3_r42313}'
+    new '«Guess you don\'t have the key… you don\'t happen to know which of your other corpse friends has the key out of this place?»{#zm825_s3_r42313}'
 
     # game/dlgs/mortuary_zombies/zm825.rpy:83
     old 'zm825_s3_r42314{#zm825_s3_r42314}'
