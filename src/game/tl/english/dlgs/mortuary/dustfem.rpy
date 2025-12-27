@@ -47,7 +47,7 @@ translate english dustfem_s6_59f06bc9:
 translate english dustfem_s7_c9939ed5:
 
     # 'dustfem_s7{#dustfem_s7}'
-    dustfem '«I'm afraid that it is my concern. Mayhap the guards can loosen your tongue».{#dustfem_s7_1}'
+    dustfem '«I\'m afraid that it is my concern. Mayhap the guards can loosen your tongue».{#dustfem_s7_1}'
     nr 'The Dustman takes a step back; she looks like she is about to summon the guards.'
 
 # game/dlgs/mortuary/dustfem.rpy:194
@@ -162,7 +162,7 @@ translate english dustfem_s25_0f96132d:
 
     # 'dustfem_s25{#dustfem_s25}'
     dustfem '«This is the Mortuary…»{#dustfem_s25_1}'
-    nr 'The Dustman looks at you for a moment, as if digesting what you've just said.{#dustfem_s25_2}'
+    nr 'The Dustman looks at you for a moment, as if digesting what you\'ve just said.{#dustfem_s25_2}'
     dustfem '«What did you say your name was again?»{#dustfem_s25_3}'
 
 # game/dlgs/mortuary/dustfem.rpy:537
@@ -303,13 +303,13 @@ translate english dustfem_s45_16e2320a:
 
     # 'dustfem_s45{#dustfem_s45}'
     nr 'As you lean in to „whisper“ to her, the Dustman leans in as well.{#dustfem_s45_1}'
-    nr 'As she comes within arm's reach, your hands clamp onto her temples, and you twist her head sharply to the left.{#dustfem_s45_1}'
+    nr 'As she comes within arm\'s reach, your hands clamp onto her temples, and you twist her head sharply to the left.{#dustfem_s45_1}'
 
 # game/dlgs/mortuary/dustfem.rpy:933
 translate english dustfem_s46_cb2def98:
 
     # 'dustfem_s46{#dustfem_s46}'
-    nr 'The Dustman seems suspicious. She looks like she's about to say something, then shakes her head slightly and returns to her duties.{#dustfem_s46_1}'
+    nr 'The Dustman seems suspicious. She looks like she\'s about to say something, then shakes her head slightly and returns to her duties.{#dustfem_s46_1}'
 
 # game/dlgs/mortuary/dustfem.rpy:944
 translate english dustfem_s47_6388a061:
@@ -335,7 +335,7 @@ translate english dustfem_s49_db9d213d:
 translate english dustfem_s50_14796293:
 
     # 'dustfem_s50{#dustfem_s50}'
-    nr 'The Dustman's frown remains, but she nods slightly.{#dustfem_s50_1}'
+    nr 'The Dustman\'s frown remains, but she nods slightly.{#dustfem_s50_1}'
     dustfem '«Very well. How may I be of service to you, initiate?»{#dustfem_s50_2}'
 
 # game/dlgs/mortuary/dustfem.rpy:1019
@@ -420,7 +420,7 @@ translate english strings:
 
     # game/dlgs/mortuary/dustfem.rpy:103
     old 'dustfem_s4_r1233{#dustfem_s4_r1233}'
-    new '«No, I'm not lost. I had some questions…»{#dustfem_s4_r1233}'
+    new '«No, I\'m not lost. I had some questions…»{#dustfem_s4_r1233}'
 
     # game/dlgs/mortuary/dustfem.rpy:103
     old 'dustfem_s4_r1234{#dustfem_s4_r1234}'
@@ -452,7 +452,7 @@ translate english strings:
 
     # game/dlgs/mortuary/dustfem.rpy:149
     old 'dustfem_s6_r1241{#dustfem_s6_r1241}'
-    new '«I'm here to see someone».{#dustfem_s6_r1241}'
+    new '«I\'m here to see someone».{#dustfem_s6_r1241}'
 
     # game/dlgs/mortuary/dustfem.rpy:149
     old 'dustfem_s6_r1242{#dustfem_s6_r1242}'
@@ -472,7 +472,7 @@ translate english strings:
 
     # game/dlgs/mortuary/dustfem.rpy:177
     old 'dustfem_s7_r1246{#dustfem_s7_r1246}'
-    new '«Summon them, then. I'd like to meet them».{#dustfem_s7_r1246}'
+    new '«Summon them, then. I\'d like to meet them».{#dustfem_s7_r1246}'
 
     # game/dlgs/mortuary/dustfem.rpy:198
     old 'dustfem_s8_r1247{#dustfem_s8_r1247}'
@@ -484,7 +484,7 @@ translate english strings:
 
     # game/dlgs/mortuary/dustfem.rpy:198
     old 'dustfem_s8_r1249{#dustfem_s8_r1249}'
-    new '«Summon them, then. I'd like to meet them».{#dustfem_s8_r1249}'
+    new '«Summon them, then. I\'d like to meet them».{#dustfem_s8_r1249}'
 
     # game/dlgs/mortuary/dustfem.rpy:218
     old 'dustfem_s9_r1251{#dustfem_s9_r1251}'
@@ -576,7 +576,7 @@ translate english strings:
 
     # game/dlgs/mortuary/dustfem.rpy:377
     old 'dustfem_s19_r1271{#dustfem_s19_r1271}'
-    new '«Pardon… I misspoke. I don't know the name of the deceased».{#dustfem_s19_r1271}'
+    new '«Pardon… I misspoke. I don\'t know the name of the deceased».{#dustfem_s19_r1271}'
 
     # game/dlgs/mortuary/dustfem.rpy:377
     old 'dustfem_s19_r1272{#dustfem_s19_r1272}'
@@ -612,7 +612,7 @@ translate english strings:
 
     # game/dlgs/mortuary/dustfem.rpy:413
     old 'dustfem_s20_r1280{#dustfem_s20_r1280}'
-    new '«I'm here to see someone».{#dustfem_s20_r1280}'
+    new '«I\'m here to see someone».{#dustfem_s20_r1280}'
 
     # game/dlgs/mortuary/dustfem.rpy:413
     old 'dustfem_s20_r1281{#dustfem_s20_r1281}'
@@ -692,7 +692,7 @@ translate english strings:
 
     # game/dlgs/mortuary/dustfem.rpy:540
     old 'dustfem_s26_r1300{#dustfem_s26_r1300}'
-    new '«I'm missing a journal. Have you seen it?»{#dustfem_s26_r1300}'
+    new '«I\'m missing a journal. Have you seen it?»{#dustfem_s26_r1300}'
 
     # game/dlgs/mortuary/dustfem.rpy:540
     old 'dustfem_s26_r1328{#dustfem_s26_r1328}'
@@ -724,19 +724,19 @@ translate english strings:
 
     # game/dlgs/mortuary/dustfem.rpy:605
     old 'dustfem_s29_r1396{#dustfem_s29_r1396}'
-    new '«I'm a recent initiate. Forgive my ignorance».{#dustfem_s29_r1396}'
+    new '«I\'m a recent initiate. Forgive my ignorance».{#dustfem_s29_r1396}'
 
     # game/dlgs/mortuary/dustfem.rpy:605
     old 'dustfem_s29_r1397{#dustfem_s29_r1397}'
-    new '«I'm… new here. I'm… trying to get my bearings».{#dustfem_s29_r1397}'
+    new '«I\'m… new here. I\'m… trying to get my bearings».{#dustfem_s29_r1397}'
 
     # game/dlgs/mortuary/dustfem.rpy:605
     old 'dustfem_s29_r1398{#dustfem_s29_r1398}'
-    new '«Yeah, well… what's in a name? Keep the faith, uh, fellow initiate».{#dustfem_s29_r1398}'
+    new '«Yeah, well… what\'s in a name? Keep the faith, uh, fellow initiate».{#dustfem_s29_r1398}'
 
     # game/dlgs/mortuary/dustfem.rpy:605
     old 'dustfem_s29_r1399{#dustfem_s29_r1399}'
-    new '«If you can't help me, then I will find someone else who can. Farewell».{#dustfem_s29_r1399}'
+    new '«If you can\'t help me, then I will find someone else who can. Farewell».{#dustfem_s29_r1399}'
 
     # game/dlgs/mortuary/dustfem.rpy:628
     old 'dustfem_s30_r4280{#dustfem_s30_r4280}'
@@ -800,7 +800,7 @@ translate english strings:
 
     # game/dlgs/mortuary/dustfem.rpy:713
     old 'dustfem_s34_r4293{#dustfem_s34_r4293}'
-    new '«How is Dhall's death fortunate? Is he not well-liked?»{#dustfem_s34_r4293}'
+    new '«How is Dhall\'s death fortunate? Is he not well-liked?»{#dustfem_s34_r4293}'
 
     # game/dlgs/mortuary/dustfem.rpy:713
     old 'dustfem_s34_r4294{#dustfem_s34_r4294}'
@@ -812,23 +812,23 @@ translate english strings:
 
     # game/dlgs/mortuary/dustfem.rpy:737
     old 'dustfem_s35_r4296{#dustfem_s35_r4296}'
-    new '«I'm a recent initiate. Forgive my ignorance».{#dustfem_s35_r4296}'
+    new '«I\'m a recent initiate. Forgive my ignorance».{#dustfem_s35_r4296}'
 
     # game/dlgs/mortuary/dustfem.rpy:737
     old 'dustfem_s35_r4297{#dustfem_s35_r4297}'
-    new '«I'm… new here. I'm… trying to get my bearings».{#dustfem_s35_r4297}'
+    new '«I\'m… new here. I\'m… trying to get my bearings».{#dustfem_s35_r4297}'
 
     # game/dlgs/mortuary/dustfem.rpy:737
     old 'dustfem_s35_r4298{#dustfem_s35_r4298}'
-    new '«Yeah, well… what's in a name? Keep the faith, uh, fellow initiate».{#dustfem_s35_r4298}'
+    new '«Yeah, well… what\'s in a name? Keep the faith, uh, fellow initiate».{#dustfem_s35_r4298}'
 
     # game/dlgs/mortuary/dustfem.rpy:737
     old 'dustfem_s35_r4300{#dustfem_s35_r4300}'
-    new '«If you can't help me, then I will find someone else who can. Farewell».{#dustfem_s35_r4300}'
+    new '«If you can\'t help me, then I will find someone else who can. Farewell».{#dustfem_s35_r4300}'
 
     # game/dlgs/mortuary/dustfem.rpy:760
     old 'dustfem_s36_r4299{#dustfem_s36_r4299}'
-    new '«And… that's a good thing?»{#dustfem_s36_r4299}'
+    new '«And… that\'s a good thing?»{#dustfem_s36_r4299}'
 
     # game/dlgs/mortuary/dustfem.rpy:760
     old 'dustfem_s36_r4301{#dustfem_s36_r4301}'
@@ -840,19 +840,19 @@ translate english strings:
 
     # game/dlgs/mortuary/dustfem.rpy:782
     old 'dustfem_s37_r4303{#dustfem_s37_r4303}'
-    new '«I'm a recent initiate. Forgive my ignorance».{#dustfem_s37_r4303}'
+    new '«I\'m a recent initiate. Forgive my ignorance».{#dustfem_s37_r4303}'
 
     # game/dlgs/mortuary/dustfem.rpy:782
     old 'dustfem_s37_r4304{#dustfem_s37_r4304}'
-    new '«I'm… new here. I'm… trying to get my bearings».{#dustfem_s37_r4304}'
+    new '«I\'m… new here. I\'m… trying to get my bearings».{#dustfem_s37_r4304}'
 
     # game/dlgs/mortuary/dustfem.rpy:782
     old 'dustfem_s37_r4305{#dustfem_s37_r4305}'
-    new '«Yeah, well… what's in a name? Keep the faith, uh, fellow initiate».{#dustfem_s37_r4305}'
+    new '«Yeah, well… what\'s in a name? Keep the faith, uh, fellow initiate».{#dustfem_s37_r4305}'
 
     # game/dlgs/mortuary/dustfem.rpy:782
     old 'dustfem_s37_r4306{#dustfem_s37_r4306}'
-    new '«If you can't help me, then I will find someone else who can. Farewell».{#dustfem_s37_r4306}'
+    new '«If you can\'t help me, then I will find someone else who can. Farewell».{#dustfem_s37_r4306}'
 
     # game/dlgs/mortuary/dustfem.rpy:807
     old 'dustfem_s38_r4307{#dustfem_s38_r4307}'
@@ -860,11 +860,11 @@ translate english strings:
 
     # game/dlgs/mortuary/dustfem.rpy:807
     old 'dustfem_s38_r4308{#dustfem_s38_r4308}'
-    new '«Shhhh! I can't answer you over all that shouting!»{#dustfem_s38_r4308}'
+    new '«Shhhh! I can\'t answer you over all that shouting!»{#dustfem_s38_r4308}'
 
     # game/dlgs/mortuary/dustfem.rpy:807
     old 'dustfem_s38_r4309{#dustfem_s38_r4309}'
-    new '«Shhhh! I can't answer you over all that shouting!»{#dustfem_s38_r4309}'
+    new '«Shhhh! I can\'t answer you over all that shouting!»{#dustfem_s38_r4309}'
 
     # game/dlgs/mortuary/dustfem.rpy:829
     old 'dustfem_s39_r4310{#dustfem_s39_r4310}'
@@ -896,7 +896,7 @@ translate english strings:
 
     # game/dlgs/mortuary/dustfem.rpy:871
     old 'dustfem_s41_r4317{#dustfem_s41_r4317}'
-    new '«Can't have you alerting your friends…»{#dustfem_s41_r4317}'
+    new '«Can\'t have you alerting your friends…»{#dustfem_s41_r4317}'
 
     # game/dlgs/mortuary/dustfem.rpy:883
     old 'dustfem_s42_r4318{#dustfem_s42_r4318}'
@@ -916,7 +916,7 @@ translate english strings:
 
     # game/dlgs/mortuary/dustfem.rpy:924
     old 'dustfem_s45_r4322{#dustfem_s45_r4322}'
-    new '«Can't have you alerting your friends…»{#dustfem_s45_r4322}'
+    new '«Can\'t have you alerting your friends…»{#dustfem_s45_r4322}'
 
     # game/dlgs/mortuary/dustfem.rpy:936
     old 'dustfem_s46_r4323{#dustfem_s46_r4323}'
@@ -936,7 +936,7 @@ translate english strings:
 
     # game/dlgs/mortuary/dustfem.rpy:948
     old 'dustfem_s47_r4327{#dustfem_s47_r4327}'
-    new '«No, no… it's not, uh… I mean, I'm not a spy… you see, I woke up on one of the slabs… and…»{#dustfem_s47_r4327}'
+    new '«No, no… it\'s not, uh… I mean, I\'m not a spy… you see, I woke up on one of the slabs… and…»{#dustfem_s47_r4327}'
 
     # game/dlgs/mortuary/dustfem.rpy:971
     old 'dustfem_s48_r4328{#dustfem_s48_r4328}'
@@ -944,19 +944,19 @@ translate english strings:
 
     # game/dlgs/mortuary/dustfem.rpy:983
     old 'dustfem_s49_r4329{#dustfem_s49_r4329}'
-    new '«I'm a recent initiate. Forgive my ignorance».{#dustfem_s49_r4329}'
+    new '«I\'m a recent initiate. Forgive my ignorance».{#dustfem_s49_r4329}'
 
     # game/dlgs/mortuary/dustfem.rpy:983
     old 'dustfem_s49_r4331{#dustfem_s49_r4331}'
-    new '«I'm… new here. I'm… trying to learn the routine».{#dustfem_s49_r4331}'
+    new '«I\'m… new here. I\'m… trying to learn the routine».{#dustfem_s49_r4331}'
 
     # game/dlgs/mortuary/dustfem.rpy:983
     old 'dustfem_s49_r4332{#dustfem_s49_r4332}'
-    new '«Yeah, well… what's in a name? Keep the faith, uh, fellow initiate».{#dustfem_s49_r4332}'
+    new '«Yeah, well… what\'s in a name? Keep the faith, uh, fellow initiate».{#dustfem_s49_r4332}'
 
     # game/dlgs/mortuary/dustfem.rpy:983
     old 'dustfem_s49_r4333{#dustfem_s49_r4333}'
-    new '«If you can't help me, then I will find someone else who can. Farewell».{#dustfem_s49_r4333}'
+    new '«If you can\'t help me, then I will find someone else who can. Farewell».{#dustfem_s49_r4333}'
 
     # game/dlgs/mortuary/dustfem.rpy:1007
     old 'dustfem_s50_r4334{#dustfem_s50_r4334}'
@@ -980,7 +980,7 @@ translate english strings:
 
     # game/dlgs/mortuary/dustfem.rpy:1023
     old 'dustfem_s51_r66687{#dustfem_s51_r66687}'
-    new '«No, I'm not lost. I had some questions…»{#dustfem_s51_r66687}'
+    new '«No, I\'m not lost. I had some questions…»{#dustfem_s51_r66687}'
 
     # game/dlgs/mortuary/dustfem.rpy:1023
     old 'dustfem_s51_r66688{#dustfem_s51_r66688}'

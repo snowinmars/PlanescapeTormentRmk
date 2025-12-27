@@ -4,7 +4,7 @@
 translate english from_mortuary_f3r1_to_mortuary_f2r1_closed_72003171:
 
     # nr 'За запертой решёткой видна лестница вниз. Тебе понадобится ключ.'
-    nr 'Behind the locked bars you can see a staircase leading down. You'll need a key'
+    nr 'Behind the locked bars you can see a staircase leading down. You\'ll need a key'
 
 # game/engine_data/menus/mortuary/f3r1/loot.rpy:14
 translate english mortuary_f3r4_loot_mortuary_key_58aa2daa:

@@ -4,35 +4,35 @@
 translate russian morte1_s0_91ebb76f:
 
     # 'morte1_s0{#morte1_s0}'
-    morte_unknown '«Эй, шеф. Ты в порядке?».{#morte1_s0_1}'
-    morte_unknown '«Изображаешь из себя труп или пытаешься обмануть трухлявых?».{#morte1_s0_1}'
-    morte_unknown '«Я уж думал, что ты дал дуба».{#morte1_s0_1}'
+    morte '«Эй, шеф. Ты в порядке?».{#morte1_s0_1}'
+    morte '«Изображаешь из себя труп или пытаешься обмануть трухлявых?».{#morte1_s0_1}'
+    morte '«Я уж думал, что ты дал дуба».{#morte1_s0_1}'
 
 # game/dlgs/mortuary/morte1.rpy:26
 translate russian morte1_s1_057158f4:
 
     # 'morte1_s1{#morte1_s1}'
-    morte_unknown '«Э… кто я? А как насчет *тебя* для начала? Кто ты?»{#morte1_s1_1}'
+    morte '«Э… кто я? А как насчет *тебя* для начала? Кто ты?»{#morte1_s1_1}'
 
 # game/dlgs/mortuary/morte1.rpy:41
 translate russian morte1_s2_b8acd10e:
 
     # 'morte1_s2{#morte1_s2}'
-    morte_unknown '«Ты не можешь вспомнить свое *имя*? Хе».{#morte1_s2_1}'
-    morte_unknown '«Что ж, в СЛЕДУЮЩИЙ раз, когда будешь кутить ночью в городе, не налегай на выпивку».{#morte1_s2_1}'
+    morte '«Ты не можешь вспомнить свое *имя*? Хе».{#morte1_s2_1}'
+    morte '«Что ж, в СЛЕДУЮЩИЙ раз, когда будешь кутить ночью в городе, не налегай на выпивку».{#morte1_s2_1}'
     morte '«Зовут Мортом. Я тоже здесь заперт».{#morte1_s2_1}'
 
 # game/dlgs/mortuary/morte1.rpy:53
 translate russian morte1_s3_e65ebe07:
 
     # 'morte1_s3{#morte1_s3}'
-    morte_unknown '«Ага, а я спросил тебя *вторым*. Как твое имя?»{#morte1_s3_1}'
+    morte '«Ага, а я спросил тебя *вторым*. Как твое имя?»{#morte1_s3_1}'
 
 # game/dlgs/mortuary/morte1.rpy:68
 translate russian morte1_s4_2e142f1c:
 
     # 'morte1_s4{#morte1_s4}'
-    morte_unknown '«Пф-ф… да ты натянут как струна. Ну хорошо, пусть *я* буду хорошим парнем. Я - летающий череп. А кто ты?»{#morte1_s4_1}'
+    morte '«Пф-ф… да ты натянут как струна. Ну хорошо, пусть *я* буду хорошим парнем. Я - летающий череп. А кто ты?»{#morte1_s4_1}'
 
 # game/dlgs/mortuary/morte1.rpy:79
 translate russian morte1_s5_e596e920:

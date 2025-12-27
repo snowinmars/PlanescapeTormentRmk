@@ -5,7 +5,7 @@ translate english zf679_s0_0a5046a1:
 
     # 'zf679_s0{#zf679_s0}'
     nr 'This looks to be the corpse of a well-aged, even ancient woman.{#zf679_s0_1}'
-    nr 'Aside from the embalming fluid stink, the stitches sealing her mouth, and the number «679» stitched onto her right cheek, it's likely she looks only slightly different now than she did in her final years.{#zf679_s0_1}'
+    nr 'Aside from the embalming fluid stink, the stitches sealing her mouth, and the number «679» stitched onto her right cheek, it\'s likely she looks only slightly different now than she did in her final years.{#zf679_s0_1}'
 
 # game/dlgs/mortuary_zombies/zf679.rpy:62
 translate english zf679_s1_054cce90:
@@ -37,7 +37,7 @@ translate english strings:
 
     # game/dlgs/mortuary_zombies/zf679.rpy:17
     old 'zf679_s0_r35197{#zf679_s0_r35197}'
-    new '«I know you're not a zombie, you know. You're not fooling anyone».{#zf679_s0_r35197}'
+    new '«I know you\'re not a zombie, you know. You\'re not fooling anyone».{#zf679_s0_r35197}'
 
     # game/dlgs/mortuary_zombies/zf679.rpy:17
     old 'zf679_s0_r35198{#zf679_s0_r35198}'

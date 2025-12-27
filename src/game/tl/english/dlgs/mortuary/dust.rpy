@@ -47,7 +47,7 @@ translate english dust_s6_f14fb1de:
 translate english dust_s7_94abc184:
 
     # 'dust_s7{#dust_s7}'
-    dust '«I'm afraid that it is my concern. Mayhap the guards can loosen your tongue».{#dust_s7_1}'
+    dust '«I\'m afraid that it is my concern. Mayhap the guards can loosen your tongue».{#dust_s7_1}'
     nr 'The Dustman takes a step back; he looks like he is about to summon the guards.{#dust_s7_2}'
 
 # game/dlgs/mortuary/dust.rpy:194
@@ -163,7 +163,7 @@ translate english dust_s25_ab27cb8a:
 
     # 'dust_s25{#dust_s25}'
     dust '«This is the Mortuary…»{#dust_s25_1}'
-    nr 'The Dustman looks at you for a moment, as if digesting what you've just said.{#dust_s25_2}'
+    nr 'The Dustman looks at you for a moment, as if digesting what you\'ve just said.{#dust_s25_2}'
     dust '«What did you say your name was again?»{#dust_s25_3}'
 
 # game/dlgs/mortuary/dust.rpy:537
@@ -300,13 +300,13 @@ translate english dust_s45_756b5714:
 
     # 'dust_s45{#dust_s45}'
     nr 'As you lean in to „whisper“ to him, the Dustman leans in as well.{#dust_s45_1}'
-    nr 'As he comes within arm's reach, your hands clamp onto his temples, and you twist his head sharply to the left.{#dust_s45_1}'
+    nr 'As he comes within arm\'s reach, your hands clamp onto his temples, and you twist his head sharply to the left.{#dust_s45_1}'
 
 # game/dlgs/mortuary/dust.rpy:932
 translate english dust_s46_c8c0100d:
 
     # 'dust_s46{#dust_s46}'
-    nr 'The Dustman seems suspicious. He looks like he's about to say something, then shakes his head slightly and returns to his duties.{#dust_s46_1}'
+    nr 'The Dustman seems suspicious. He looks like he\'s about to say something, then shakes his head slightly and returns to his duties.{#dust_s46_1}'
 
 # game/dlgs/mortuary/dust.rpy:943
 translate english dust_s47_81384806:
@@ -332,7 +332,7 @@ translate english dust_s49_640ab843:
 translate english dust_s50_fd9a2707:
 
     # 'dust_s50{#dust_s50}'
-    nr 'The Dustman's frown remains, but he nods slightly.{#dust_s50_1}'
+    nr 'The Dustman\'s frown remains, but he nods slightly.{#dust_s50_1}'
     dust '«Very well. How may I be of service to you, initiate?»{#dust_s50_2}'
 
 # game/dlgs/mortuary/dust.rpy:1018
@@ -417,7 +417,7 @@ translate english strings:
 
     # game/dlgs/mortuary/dust.rpy:103
     old 'dust_s4_r324{#dust_s4_r324}'
-    new '«No, I'm not lost. I had some questions…»{#dust_s4_r324}'
+    new '«No, I\'m not lost. I had some questions…»{#dust_s4_r324}'
 
     # game/dlgs/mortuary/dust.rpy:103
     old 'dust_s4_r325{#dust_s4_r325}'
@@ -449,7 +449,7 @@ translate english strings:
 
     # game/dlgs/mortuary/dust.rpy:149
     old 'dust_s6_r333{#dust_s6_r333}'
-    new '«I'm here to see someone».{#dust_s6_r333}'
+    new '«I\'m here to see someone».{#dust_s6_r333}'
 
     # game/dlgs/mortuary/dust.rpy:149
     old 'dust_s6_r334{#dust_s6_r334}'
@@ -469,7 +469,7 @@ translate english strings:
 
     # game/dlgs/mortuary/dust.rpy:177
     old 'dust_s7_r3888{#dust_s7_r3888}'
-    new '«Summon them, then. I'd like to meet them».{#dust_s7_r3888}'
+    new '«Summon them, then. I\'d like to meet them».{#dust_s7_r3888}'
 
     # game/dlgs/mortuary/dust.rpy:198
     old 'dust_s8_r358{#dust_s8_r358}'
@@ -481,7 +481,7 @@ translate english strings:
 
     # game/dlgs/mortuary/dust.rpy:198
     old 'dust_s8_r3886{#dust_s8_r3886}'
-    new '«Summon them, then. I'd like to meet them».{#dust_s8_r3886}'
+    new '«Summon them, then. I\'d like to meet them».{#dust_s8_r3886}'
 
     # game/dlgs/mortuary/dust.rpy:218
     old 'dust_s9_r3922{#dust_s9_r3922}'
@@ -573,7 +573,7 @@ translate english strings:
 
     # game/dlgs/mortuary/dust.rpy:377
     old 'dust_s19_r369{#dust_s19_r369}'
-    new '«Pardon… I misspoke. I don't know the name of the deceased».{#dust_s19_r369}'
+    new '«Pardon… I misspoke. I don\'t know the name of the deceased».{#dust_s19_r369}'
 
     # game/dlgs/mortuary/dust.rpy:377
     old 'dust_s19_r370{#dust_s19_r370}'
@@ -609,7 +609,7 @@ translate english strings:
 
     # game/dlgs/mortuary/dust.rpy:413
     old 'dust_s20_r377{#dust_s20_r377}'
-    new '«I'm here to see someone».{#dust_s20_r377}'
+    new '«I\'m here to see someone».{#dust_s20_r377}'
 
     # game/dlgs/mortuary/dust.rpy:413
     old 'dust_s20_r378{#dust_s20_r378}'
@@ -689,7 +689,7 @@ translate english strings:
 
     # game/dlgs/mortuary/dust.rpy:540
     old 'dust_s26_r403{#dust_s26_r403}'
-    new '«I'm missing a journal. Have you seen it?»{#dust_s26_r403}'
+    new '«I\'m missing a journal. Have you seen it?»{#dust_s26_r403}'
 
     # game/dlgs/mortuary/dust.rpy:540
     old 'dust_s26_r404{#dust_s26_r404}'
@@ -721,19 +721,19 @@ translate english strings:
 
     # game/dlgs/mortuary/dust.rpy:605
     old 'dust_s29_r413{#dust_s29_r413}'
-    new '«I'm a recent initiate. Forgive my ignorance».{#dust_s29_r413}'
+    new '«I\'m a recent initiate. Forgive my ignorance».{#dust_s29_r413}'
 
     # game/dlgs/mortuary/dust.rpy:605
     old 'dust_s29_r3918{#dust_s29_r3918}'
-    new '«I'm… new here. I'm… trying to get my bearings».{#dust_s29_r3918}'
+    new '«I\'m… new here. I\'m… trying to get my bearings».{#dust_s29_r3918}'
 
     # game/dlgs/mortuary/dust.rpy:605
     old 'dust_s29_r3919{#dust_s29_r3919}'
-    new '«Yeah, well… what's in a name? Keep the faith, uh, fellow initiate».{#dust_s29_r3919}'
+    new '«Yeah, well… what\'s in a name? Keep the faith, uh, fellow initiate».{#dust_s29_r3919}'
 
     # game/dlgs/mortuary/dust.rpy:605
     old 'dust_s29_r3920{#dust_s29_r3920}'
-    new '«If you can't help me, then I will find someone else who can. Farewell».{#dust_s29_r3920}'
+    new '«If you can\'t help me, then I will find someone else who can. Farewell».{#dust_s29_r3920}'
 
     # game/dlgs/mortuary/dust.rpy:628
     old 'dust_s30_r415{#dust_s30_r415}'
@@ -797,7 +797,7 @@ translate english strings:
 
     # game/dlgs/mortuary/dust.rpy:713
     old 'dust_s34_r437{#dust_s34_r437}'
-    new '«How is Dhall's death fortunate? Is he not well-liked?»{#dust_s34_r437}'
+    new '«How is Dhall\'s death fortunate? Is he not well-liked?»{#dust_s34_r437}'
 
     # game/dlgs/mortuary/dust.rpy:713
     old 'dust_s34_r438{#dust_s34_r438}'
@@ -809,23 +809,23 @@ translate english strings:
 
     # game/dlgs/mortuary/dust.rpy:738
     old 'dust_s35_r436{#dust_s35_r436}'
-    new '«I'm a recent initiate. Forgive my ignorance».{#dust_s35_r436}'
+    new '«I\'m a recent initiate. Forgive my ignorance».{#dust_s35_r436}'
 
     # game/dlgs/mortuary/dust.rpy:738
     old 'dust_s35_r3909{#dust_s35_r3909}'
-    new '«I'm… new here. I'm… trying to get my bearings».{#dust_s35_r3909}'
+    new '«I\'m… new here. I\'m… trying to get my bearings».{#dust_s35_r3909}'
 
     # game/dlgs/mortuary/dust.rpy:738
     old 'dust_s35_r3910{#dust_s35_r3910}'
-    new '«Yeah, well… what's in a name? Keep the faith, uh, fellow initiate».{#dust_s35_r3910}'
+    new '«Yeah, well… what\'s in a name? Keep the faith, uh, fellow initiate».{#dust_s35_r3910}'
 
     # game/dlgs/mortuary/dust.rpy:738
     old 'dust_s35_r3911{#dust_s35_r3911}'
-    new '«If you can't help me, then I will find someone else who can. Farewell».{#dust_s35_r3911}'
+    new '«If you can\'t help me, then I will find someone else who can. Farewell».{#dust_s35_r3911}'
 
     # game/dlgs/mortuary/dust.rpy:761
     old 'dust_s36_r441{#dust_s36_r441}'
-    new '«And… that's a good thing?»{#dust_s36_r441}'
+    new '«And… that\'s a good thing?»{#dust_s36_r441}'
 
     # game/dlgs/mortuary/dust.rpy:761
     old 'dust_s36_r442{#dust_s36_r442}'
@@ -837,19 +837,19 @@ translate english strings:
 
     # game/dlgs/mortuary/dust.rpy:783
     old 'dust_s37_r445{#dust_s37_r445}'
-    new '«I'm a recent initiate. Forgive my ignorance».{#dust_s37_r445}'
+    new '«I\'m a recent initiate. Forgive my ignorance».{#dust_s37_r445}'
 
     # game/dlgs/mortuary/dust.rpy:783
     old 'dust_s37_r446{#dust_s37_r446}'
-    new '«I'm… new here. I'm… trying to get my bearings».{#dust_s37_r446}'
+    new '«I\'m… new here. I\'m… trying to get my bearings».{#dust_s37_r446}'
 
     # game/dlgs/mortuary/dust.rpy:783
     old 'dust_s37_r3912{#dust_s37_r3912}'
-    new '«Yeah, well… what's in a name? Keep the faith, uh, fellow initiate».{#dust_s37_r3912}'
+    new '«Yeah, well… what\'s in a name? Keep the faith, uh, fellow initiate».{#dust_s37_r3912}'
 
     # game/dlgs/mortuary/dust.rpy:783
     old 'dust_s37_r3913{#dust_s37_r3913}'
-    new '«If you can't help me, then I will find someone else who can. Farewell».{#dust_s37_r3913}'
+    new '«If you can\'t help me, then I will find someone else who can. Farewell».{#dust_s37_r3913}'
 
     # game/dlgs/mortuary/dust.rpy:806
     old 'dust_s38_r448{#dust_s38_r448}'
@@ -857,11 +857,11 @@ translate english strings:
 
     # game/dlgs/mortuary/dust.rpy:806
     old 'dust_s38_r449{#dust_s38_r449}'
-    new '«Shhhh! I can't answer you over all that shouting!»{#dust_s38_r449}'
+    new '«Shhhh! I can\'t answer you over all that shouting!»{#dust_s38_r449}'
 
     # game/dlgs/mortuary/dust.rpy:806
     old 'dust_s38_r1339{#dust_s38_r1339}'
-    new '«Shhhh! I can't answer you over all that shouting!»{#dust_s38_r1339}'
+    new '«Shhhh! I can\'t answer you over all that shouting!»{#dust_s38_r1339}'
 
     # game/dlgs/mortuary/dust.rpy:828
     old 'dust_s39_r451{#dust_s39_r451}'
@@ -893,7 +893,7 @@ translate english strings:
 
     # game/dlgs/mortuary/dust.rpy:870
     old 'dust_s41_r1426{#dust_s41_r1426}'
-    new '«Can't have you alerting your friends…»{#dust_s41_r1426}'
+    new '«Can\'t have you alerting your friends…»{#dust_s41_r1426}'
 
     # game/dlgs/mortuary/dust.rpy:882
     old 'dust_s42_r1428{#dust_s42_r1428}'
@@ -913,7 +913,7 @@ translate english strings:
 
     # game/dlgs/mortuary/dust.rpy:923
     old 'dust_s45_r3890{#dust_s45_r3890}'
-    new '«Can't have you alerting your friends…»{#dust_s45_r3890}'
+    new '«Can\'t have you alerting your friends…»{#dust_s45_r3890}'
 
     # game/dlgs/mortuary/dust.rpy:935
     old 'dust_s46_r3892{#dust_s46_r3892}'
@@ -929,7 +929,7 @@ translate english strings:
 
     # game/dlgs/mortuary/dust.rpy:947
     old 'dust_s47_r3916{#dust_s47_r3916}'
-    new '«No, no… it's not, uh… I mean, I'm not a spy… you see, I woke up on one of the slabs… and…»{#dust_s47_r3916}'
+    new '«No, no… it\'s not, uh… I mean, I\'m not a spy… you see, I woke up on one of the slabs… and…»{#dust_s47_r3916}'
 
     # game/dlgs/mortuary/dust.rpy:947
     old 'dust_s47_r3917{#dust_s47_r3917}'
@@ -941,19 +941,19 @@ translate english strings:
 
     # game/dlgs/mortuary/dust.rpy:982
     old 'dust_s49_r3898{#dust_s49_r3898}'
-    new '«I'm a recent initiate. Forgive my ignorance».{#dust_s49_r3898}'
+    new '«I\'m a recent initiate. Forgive my ignorance».{#dust_s49_r3898}'
 
     # game/dlgs/mortuary/dust.rpy:982
     old 'dust_s49_r3899{#dust_s49_r3899}'
-    new '«I'm… new here. I'm… trying to learn the routine».{#dust_s49_r3899}'
+    new '«I\'m… new here. I\'m… trying to learn the routine».{#dust_s49_r3899}'
 
     # game/dlgs/mortuary/dust.rpy:982
     old 'dust_s49_r3900{#dust_s49_r3900}'
-    new '«Yeah, well… what's in a name? Keep the faith, uh, fellow initiate».{#dust_s49_r3900}'
+    new '«Yeah, well… what\'s in a name? Keep the faith, uh, fellow initiate».{#dust_s49_r3900}'
 
     # game/dlgs/mortuary/dust.rpy:982
     old 'dust_s49_r3901{#dust_s49_r3901}'
-    new '«If you can't help me, then I will find someone else who can. Farewell».{#dust_s49_r3901}'
+    new '«If you can\'t help me, then I will find someone else who can. Farewell».{#dust_s49_r3901}'
 
     # game/dlgs/mortuary/dust.rpy:1006
     old 'dust_s50_r3902{#dust_s50_r3902}'
@@ -977,7 +977,7 @@ translate english strings:
 
     # game/dlgs/mortuary/dust.rpy:1022
     old 'dust_s51_r66678{#dust_s51_r66678}'
-    new '«No, I'm not lost. I had some questions…»{#dust_s51_r66678}'
+    new '«No, I\'m not lost. I had some questions…»{#dust_s51_r66678}'
 
     # game/dlgs/mortuary/dust.rpy:1022
     old 'dust_s51_r66679{#dust_s51_r66679}'

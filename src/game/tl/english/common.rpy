@@ -519,12 +519,12 @@ translate english strings:
     new 'Are you sure you want to skip unseen dialogue to the next choice?'
 
     # renpy/common/00gui.rpy:459
-    old 'This save was created on a different device. Maliciously constructed save files can harm your computer. Do you trust this save's creator and everyone who could have changed the file?'
-    new 'This save was created on a different device. Maliciously constructed save files can harm your computer. Do you trust this save's creator and everyone who could have changed the file?'
+    old 'This save was created on a different device. Maliciously constructed save files can harm your computer. Do you trust this save\'s creator and everyone who could have changed the file?'
+    new 'This save was created on a different device. Maliciously constructed save files can harm your computer. Do you trust this save\'s creator and everyone who could have changed the file?'
 
     # renpy/common/00gui.rpy:460
-    old 'Do you trust the device the save was created on? You should only choose yes if you are the device's sole user.'
-    new 'Do you trust the device the save was created on? You should only choose yes if you are the device's sole user.'
+    old 'Do you trust the device the save was created on? You should only choose yes if you are the device\'s sole user.'
+    new 'Do you trust the device the save was created on? You should only choose yes if you are the device\'s sole user.'
 
     # renpy/common/00keymap.rpy:325
     old 'Failed to save screenshot as %s.'
@@ -775,16 +775,16 @@ translate english strings:
     new 'mute all'
 
     # renpy/common/00preferences.rpy:701
-    old 'Clipboard voicing enabled. Press 'shift+C' to disable.'
-    new 'Clipboard voicing enabled. Press 'shift+C' to disable.'
+    old 'Clipboard voicing enabled. Press \'shift+C\' to disable.'
+    new 'Clipboard voicing enabled. Press «shift+C» to disable.'
 
     # renpy/common/00preferences.rpy:703
-    old 'Self-voicing would say \'[renpy.display.tts.last]\'. Press 'alt+shift+V' to disable.'
-    new 'Self-voicing would say \'[renpy.display.tts.last]\'. Press 'alt+shift+V' to disable.'
+    old 'Self-voicing would say \'[renpy.display.tts.last]\'. Press \'alt+shift+V\' to disable.'
+    new 'Self-voicing would say «[renpy.display.tts.last]». Press «alt+shift+V» to disable.'
 
     # renpy/common/00preferences.rpy:705
-    old 'Self-voicing enabled. Press 'v' to disable.'
-    new 'Self-voicing enabled. Press 'v' to disable.'
+    old 'Self-voicing enabled. Press \'v\' to disable.'
+    new 'Self-voicing enabled. Press «v» to disable.'
 
     # renpy/common/00speechbubble.rpy:420
     old 'Speech Bubble Editor'
@@ -803,24 +803,24 @@ translate english strings:
     new 'Sync downloaded.'
 
     # renpy/common/00sync.rpy:193
-    old 'Could not connect to the Ren'Py Sync server.'
-    new 'Could not connect to the Ren'Py Sync server.'
+    old 'Could not connect to the Ren\'Py Sync server.'
+    new 'Could not connect to the Ren\'Py Sync server.'
 
     # renpy/common/00sync.rpy:195
-    old 'The Ren'Py Sync server timed out.'
-    new 'The Ren'Py Sync server timed out.'
+    old 'The Ren\'Py Sync server timed out.'
+    new 'The Ren\'Py Sync server timed out.'
 
     # renpy/common/00sync.rpy:197
-    old 'An unknown error occurred while connecting to the Ren'Py Sync server.'
-    new 'An unknown error occurred while connecting to the Ren'Py Sync server.'
+    old 'An unknown error occurred while connecting to the Ren\'Py Sync server.'
+    new 'An unknown error occurred while connecting to the Ren\'Py Sync server.'
 
     # renpy/common/00sync.rpy:213
-    old 'The Ren'Py Sync server does not have a copy of this sync. The sync ID may be invalid, or it may have timed out.'
-    new 'The Ren'Py Sync server does not have a copy of this sync. The sync ID may be invalid, or it may have timed out.'
+    old 'The Ren\'Py Sync server does not have a copy of this sync. The sync ID may be invalid, or it may have timed out.'
+    new 'The Ren\'Py Sync server does not have a copy of this sync. The sync ID may be invalid, or it may have timed out.'
 
     # renpy/common/00sync.rpy:316
-    old 'Please enter the sync ID you generated.\nNever enter a sync ID you didn't create yourself.'
-    new 'Please enter the sync ID you generated.\nNever enter a sync ID you didn't create yourself.'
+    old 'Please enter the sync ID you generated.\nNever enter a sync ID you didn\'t create yourself.'
+    new 'Please enter the sync ID you generated.\nNever enter a sync ID you didn\'t create yourself.'
 
     # renpy/common/00sync.rpy:335
     old 'The sync ID is not in the correct format.'
@@ -839,8 +839,8 @@ translate english strings:
     new 'The sync contains a file with an invalid name.'
 
     # renpy/common/00sync.rpy:440
-    old 'This will upload your saves to the {a=https://sync.renpy.org}Ren'Py Sync Server{/a}.\nDo you want to continue?'
-    new 'This will upload your saves to the {a=https://sync.renpy.org}Ren'Py Sync Server{/a}.\nDo you want to continue?'
+    old 'This will upload your saves to the {a=https://sync.renpy.org}Ren\'Py Sync Server{/a}.\nDo you want to continue?'
+    new 'This will upload your saves to the {a=https://sync.renpy.org}Ren\'Py Sync Server{/a}.\nDo you want to continue?'
 
     # renpy/common/00sync.rpy:448
     old 'Yes'
@@ -855,8 +855,8 @@ translate english strings:
     new 'Enter Sync ID'
 
     # renpy/common/00sync.rpy:483
-    old 'This will contact the {a=https://sync.renpy.org}Ren'Py Sync Server{/a}.'
-    new 'This will contact the {a=https://sync.renpy.org}Ren'Py Sync Server{/a}.'
+    old 'This will contact the {a=https://sync.renpy.org}Ren\'Py Sync Server{/a}.'
+    new 'This will contact the {a=https://sync.renpy.org}Ren\'Py Sync Server{/a}.'
 
     # renpy/common/00sync.rpy:513
     old 'Sync Success'
@@ -867,8 +867,8 @@ translate english strings:
     new 'The Sync ID is:'
 
     # renpy/common/00sync.rpy:522
-    old 'You can use this ID to download your save on another device.\nThis sync will expire in an hour.\nRen'Py Sync is supported by {a=https://www.renpy.org/sponsors.html}Ren'Py's Sponsors{/a}.'
-    new 'You can use this ID to download your save on another device.\nThis sync will expire in an hour.\nRen'Py Sync is supported by {a=https://www.renpy.org/sponsors.html}Ren'Py's Sponsors{/a}.'
+    old 'You can use this ID to download your save on another device.\nThis sync will expire in an hour.\nRen\'Py Sync is supported by {a=https://www.renpy.org/sponsors.html}Ren\'Py\'s Sponsors{/a}.'
+    new 'You can use this ID to download your save on another device.\nThis sync will expire in an hour.\nRen\'Py Sync is supported by {a=https://www.renpy.org/sponsors.html}Ren\'Py\'s Sponsors{/a}.'
 
     # renpy/common/00sync.rpy:526
     old 'Continue'
@@ -1123,8 +1123,8 @@ translate english strings:
     new 'This computer is using software rendering.'
 
     # renpy/common/00gltest.rpy:251
-    old 'This game requires use of GL2 that can't be initialised.'
-    new 'This game requires use of GL2 that can't be initialised.'
+    old 'This game requires use of GL2 that can\'t be initialised.'
+    new 'This game requires use of GL2 that can\'t be initialised.'
 
     # renpy/common/00gltest.rpy:253
     old 'This computer has a problem displaying graphics: [problem].'
@@ -1147,8 +1147,8 @@ translate english strings:
     new 'Continue, Show this warning again'
 
     # renpy/common/00gltest.rpy:275
-    old 'Continue, Don't show warning again'
-    new 'Continue, Don't show warning again'
+    old 'Continue, Don\'t show warning again'
+    new 'Continue, Don\'t show warning again'
 
     # renpy/common/00gltest.rpy:283
     old 'Change render options'
@@ -1167,8 +1167,8 @@ translate english strings:
     new 'Calibrating [name] ([i]/[total])'
 
     # renpy/common/00gamepad.rpy:60
-    old 'Press or move the '[control!s]' [kind].'
-    new 'Press or move the '[control!s]' [kind].'
+    old 'Press or move the \'[control!s]\' [kind].'
+    new 'Press or move the «[control!s]» [kind].'
 
     # renpy/common/00gamepad.rpy:70
     old 'Skip (A)'

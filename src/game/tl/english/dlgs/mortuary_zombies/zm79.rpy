@@ -4,7 +4,7 @@
 translate english zm79_s0_f6fcf40d:
 
     # 'zm79_s0{#zm79_s0}'
-    nr 'The corpse's meaty head was clearly severed at some point and hastily sewn back on.{#zm79_s0_1}'
+    nr 'The corpse\'s meaty head was clearly severed at some point and hastily sewn back on.{#zm79_s0_1}'
     nr 'Several different sets of stitching - all in various states of unraveling - seem to indicate that the head is constantly being knocked back off and reattached during the course of its work.{#zm79_s0_1}'
     nr 'A number - «79» - has been cut into its temple, circumscribed by a fanged circle that appears to have been branded on its forehead.{#zm79_s0_1}'
 
@@ -24,7 +24,7 @@ translate english zm79_s2_a76aa44e:
 translate english zm79_s3_67ed41ab:
 
     # 'zm79_s3{#zm79_s3}'
-    nr 'The fanged circle looks like it was branded on the corpse's forehead long ago, presumably before it died.{#zm79_s3_1}'
+    nr 'The fanged circle looks like it was branded on the corpse\'s forehead long ago, presumably before it died.{#zm79_s3_1}'
     nr 'It might be a religious icon of some sort, or a rite of passage.{#zm79_s3_1}'
     nr 'You notice that one of the recesses between the inner „fangs“ has a small triangle within it, as if it has some special significance.{#zm79_s3_1}'
 
@@ -40,7 +40,7 @@ translate english strings:
 
     # game/dlgs/mortuary_zombies/zm79.rpy:17
     old 'zm79_s0_r34947{#zm79_s0_r34947}'
-    new '«I know you're not a zombie, you know. You're not fooling anyone».{#zm79_s0_r34947}'
+    new '«I know you\'re not a zombie, you know. You\'re not fooling anyone».{#zm79_s0_r34947}'
 
     # game/dlgs/mortuary_zombies/zm79.rpy:17
     old 'zm79_s0_r34948{#zm79_s0_r34948}'

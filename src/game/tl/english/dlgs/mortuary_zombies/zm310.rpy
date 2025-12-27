@@ -24,94 +24,94 @@ translate english zm310_s3_667f40f2:
 
     # 'zm310_s3{#zm310_s3}'
     nr 'It speaks in a slow monotone, the voice of one broken and without hope. Even now it is nearly indistinguishable from a soulless zombie.{#zm310_s3_1}'
-    arabhiem '«What would ye know, m'lord?»{#zm310_s3_2}'
+    arabhiem '«What would ye know, m\'lord?»{#zm310_s3_2}'
 
 # game/dlgs/mortuary_zombies/zm310.rpy:114
 translate english zm310_s4_a16012fb:
 
     # 'zm310_s4{#zm310_s4}'
-    nr 'The spirit speaks so softly you must strain to hear it; the corpse's mouth barely moves to form each word.{#zm310_s4_1}'
-    arabhiem '«I am no one, m'lord; a wretched insect clinging desperately to the Wasting Tower in Oinos. I was once called Arabhiem, though, m'lord… so long, so very long ago».{#zm310_s4_2}'
+    nr 'The spirit speaks so softly you must strain to hear it; the corpse\'s mouth barely moves to form each word.{#zm310_s4_1}'
+    arabhiem '«I am no one, m\'lord; a wretched insect clinging desperately to the Wasting Tower in Oinos. I was once called Arabhiem, though, m\'lord… so long, so very long ago».{#zm310_s4_2}'
 
 # game/dlgs/mortuary_zombies/zm310.rpy:138
 translate english zm310_s5_1f00b51a:
 
     # 'zm310_s5{#zm310_s5}'
-    arabhiem '«I lived in Sigil, m'lord. In the Hive. T'was not so awful a place as I once thought, now that my home is… Oinos».{#zm310_s5_1}'
+    arabhiem '«I lived in Sigil, m\'lord. In the Hive. T\'was not so awful a place as I once thought, now that my home is… Oinos».{#zm310_s5_1}'
     nr 'The corpse blinks, so slowly that for a moment you thought it had simply shut its eyes.{#zm310_s5_2}'
 
 # game/dlgs/mortuary_zombies/zm310.rpy:162
 translate english zm310_s6_563c6aaa:
 
     # 'zm310_s6{#zm310_s6}'
-    arabhiem '«I was murdered, m'lord, by robbers. Filled with drink and stumbling through the alleyways of the Hive, I became lost and eventually fell prey to a band of thugs. 'Tis just as well; my life was probably worth less than the few coppers a Collector may have gotten for my corpse».{#zm310_s6_1}'
+    arabhiem '«I was murdered, m\'lord, by robbers. Filled with drink and stumbling through the alleyways of the Hive, I became lost and eventually fell prey to a band of thugs. \'Tis just as well; my life was probably worth less than the few coppers a Collector may have gotten for my corpse».{#zm310_s6_1}'
 
 # game/dlgs/mortuary_zombies/zm310.rpy:185
 translate english zm310_s7_72bc2ce1:
 
     # 'zm310_s7{#zm310_s7}'
     nr 'The spirit closes his eyes for a moment, the corpse shuddering slightly.{#zm310_s7_1}'
-    arabhiem '«The horrid Oinos, m'lord. In the Grey Waste. It is there that my soul has been confined, in the shadow of Khin-Oin, the Wasting Tower».{#zm310_s7_2}'
+    arabhiem '«The horrid Oinos, m\'lord. In the Grey Waste. It is there that my soul has been confined, in the shadow of Khin-Oin, the Wasting Tower».{#zm310_s7_2}'
 
 # game/dlgs/mortuary_zombies/zm310.rpy:209
 translate english zm310_s8_d92ca23e:
 
     # 'zm310_s8{#zm310_s8}'
-    arabhiem '«There is nothing else for me, m'lord. Trapped for eternity in the pestilent waste of Oinos, I am. There is no hope for one such as I».{#zm310_s8_1}'
-    nr 'The spirit seems to descend into an even more pathetic state, the corpse's shoulders sagging beneath the weight of its sorrow.{#zm310_s8_2}'
+    arabhiem '«There is nothing else for me, m\'lord. Trapped for eternity in the pestilent waste of Oinos, I am. There is no hope for one such as I».{#zm310_s8_1}'
+    nr 'The spirit seems to descend into an even more pathetic state, the corpse\'s shoulders sagging beneath the weight of its sorrow.{#zm310_s8_2}'
 
 # game/dlgs/mortuary_zombies/zm310.rpy:229
 translate english zm310_s9_94b7707f:
 
     # 'zm310_s9{#zm310_s9}'
-    arabhiem '«Very little, m'lord; only that the dead are brought here to be interred or cremated… or used as laborers, as my corpse has been».{#zm310_s9_1}'
+    arabhiem '«Very little, m\'lord; only that the dead are brought here to be interred or cremated… or used as laborers, as my corpse has been».{#zm310_s9_1}'
 
 # game/dlgs/mortuary_zombies/zm310.rpy:244
 translate english zm310_s10_71d07705:
 
     # 'zm310_s10{#zm310_s10}'
     nr 'The corpse shakes its head slowly, side to side.{#zm310_s10_1}'
-    arabhiem '«No, m'lord. I knew no one by that name. I am sorry, m'lord».{#zm310_s10_2}'
+    arabhiem '«No, m\'lord. I knew no one by that name. I am sorry, m\'lord».{#zm310_s10_2}'
 
 # game/dlgs/mortuary_zombies/zm310.rpy:260
 translate english zm310_s11_7b4e3969:
 
     # 'zm310_s11{#zm310_s11}'
-    arabhiem '«There is little to say, m'lord. 'Tis the land of my Master, the Lord of Khin-Oin… full of anguish and disease, a rot which decays both body and spirit».{#zm310_s11_1}'
+    arabhiem '«There is little to say, m\'lord. \'Tis the land of my Master, the Lord of Khin-Oin… full of anguish and disease, a rot which decays both body and spirit».{#zm310_s11_1}'
     arabhiem '«It is a place of utter hopelessness».{#zm310_s11_1}'
 
 # game/dlgs/mortuary_zombies/zm310.rpy:283
 translate english zm310_s12_0eb219b2:
 
     # 'zm310_s12{#zm310_s12}'
-    arabhiem '«Yes, m'lord. A wretched place, but not so dreadful as Oinos».{#zm310_s12_1}'
+    arabhiem '«Yes, m\'lord. A wretched place, but not so dreadful as Oinos».{#zm310_s12_1}'
 
 # game/dlgs/mortuary_zombies/zm310.rpy:302
 translate english zm310_s13_d269fbff:
 
     # 'zm310_s13{#zm310_s13}'
-    arabhiem '«Yes, m'lord. 'Tis a mighty tower, far greater than the highest of Sigil's. It has the appearance of bone, m'lord - like the spinal column of some gargantuan creature».{#zm310_s13_1}'
-    arabhiem '«It is there that I toil, repairing the damage done to it by the armies of my Master's foes, his rival princes».{#zm310_s13_1}'
+    arabhiem '«Yes, m\'lord. \'Tis a mighty tower, far greater than the highest of Sigil\'s. It has the appearance of bone, m\'lord - like the spinal column of some gargantuan creature».{#zm310_s13_1}'
+    arabhiem '«It is there that I toil, repairing the damage done to it by the armies of my Master\'s foes, his rival princes».{#zm310_s13_1}'
 
 # game/dlgs/mortuary_zombies/zm310.rpy:321
 translate english zm310_s14_58575d28:
 
     # 'zm310_s14{#zm310_s14}'
-    arabhiem '«I know him only as the Master, m'lord; the Lord of Khin-Oin. He is a fiendish prince - an ultraloth of awesome power».{#zm310_s14_1}'
+    arabhiem '«I know him only as the Master, m\'lord; the Lord of Khin-Oin. He is a fiendish prince - an ultraloth of awesome power».{#zm310_s14_1}'
     arabhiem '«It is he who owns my soul, and so shall forever own it, a petty thing doomed to languish beneath his foot until eternity grinds its way into Oblivion».{#zm310_s14_1}'
 
 # game/dlgs/mortuary_zombies/zm310.rpy:340
 translate english zm310_s15_e1a77701:
 
     # 'zm310_s15{#zm310_s15}'
-    arabhiem '«Yes, m'lord, a Collector. Those who gather the dead of Sigil and haul them to the Mortuary - where we stand now - for a petty fee».{#zm310_s15_1}'
+    arabhiem '«Yes, m\'lord, a Collector. Those who gather the dead of Sigil and haul them to the Mortuary - where we stand now - for a petty fee».{#zm310_s15_1}'
     nr 'The spirit takes a moment to look at his surroundings, then sighs softly.'
 
 # game/dlgs/mortuary_zombies/zm310.rpy:359
 translate english zm310_s16_b6bfee17:
 
     # 'zm310_s16{#zm310_s16}'
-    arabhiem '«I would not speak of it, m'lord. 'Tis not worth discussing».{#zm310_s16_1}'
+    arabhiem '«I would not speak of it, m\'lord. \'Tis not worth discussing».{#zm310_s16_1}'
     nr 'The spirit seems immovable in this matter.{#zm310_s16_2}'
 
 # game/dlgs/mortuary_zombies/zm310.rpy:375
@@ -124,7 +124,7 @@ translate english zm310_s17_b5aaa209:
 translate english zm310_s18_2dd99d5e:
 
     # 'zm310_s18{#zm310_s18}'
-    nr 'The corpse seems to shrink in size, hunching over beneath the weight of the spirit's despair.{#zm310_s18_1}'
+    nr 'The corpse seems to shrink in size, hunching over beneath the weight of the spirit\'s despair.{#zm310_s18_1}'
 
 translate english strings:
 
@@ -138,7 +138,7 @@ translate english strings:
 
     # game/dlgs/mortuary_zombies/zm310.rpy:17
     old 'zm310_s0_r6501{#zm310_s0_r6501}'
-    new '«I know you're not a zombie, you know. You're not fooling anyone».{#zm310_s0_r6501}'
+    new '«I know you\'re not a zombie, you know. You\'re not fooling anyone».{#zm310_s0_r6501}'
 
     # game/dlgs/mortuary_zombies/zm310.rpy:17
     old 'zm310_s0_r6502{#zm310_s0_r6502}'
@@ -290,7 +290,7 @@ translate english strings:
 
     # game/dlgs/mortuary_zombies/zm310.rpy:263
     old 'zm310_s11_r9689{#zm310_s11_r9689}'
-    new '«Who is this… 'Master'?»{#zm310_s11_r9689}'
+    new '«Who is this… „Master“?»{#zm310_s11_r9689}'
 
     # game/dlgs/mortuary_zombies/zm310.rpy:263
     old 'zm310_s11_r9690{#zm310_s11_r9690}'
@@ -318,7 +318,7 @@ translate english strings:
 
     # game/dlgs/mortuary_zombies/zm310.rpy:305
     old 'zm310_s13_r9696{#zm310_s13_r9696}'
-    new '«Who is this 'Master'?»{#zm310_s13_r9696}'
+    new '«Who is this „Master“?»{#zm310_s13_r9696}'
 
     # game/dlgs/mortuary_zombies/zm310.rpy:305
     old 'zm310_s13_r9697{#zm310_s13_r9697}'
@@ -330,7 +330,7 @@ translate english strings:
 
     # game/dlgs/mortuary_zombies/zm310.rpy:324
     old 'zm310_s14_r9699{#zm310_s14_r9699}'
-    new '«Tell me of this 'Khin-Oin.'»{#zm310_s14_r9699}'
+    new '«Tell me of this „Khin-Oin“.»{#zm310_s14_r9699}'
 
     # game/dlgs/mortuary_zombies/zm310.rpy:324
     old 'zm310_s14_r9700{#zm310_s14_r9700}'

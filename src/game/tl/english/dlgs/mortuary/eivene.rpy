@@ -12,7 +12,7 @@ translate english eivene_s1_640c4762:
 
     # 'eivene_s1{#eivene_s1}'
     nr 'The woman does not respond… she seems too intent on the body in front of her. As you watch her work, you suddenly notice her hands… her fingers are talons.{#eivene_s1_1}'
-    nr 'They are darting in and out of the corpse's chest cavity like knives, removing organs.{#eivene_s1_1}'
+    nr 'They are darting in and out of the corpse\'s chest cavity like knives, removing organs.{#eivene_s1_1}'
 
 # game/dlgs/mortuary/eivene.rpy:56
 translate english eivene_s2_d3b5ca63:
@@ -37,7 +37,7 @@ translate english eivene_s4_6131af67:
 translate english eivene_s5_07ccf6e6:
 
     # 'eivene_s5{#eivene_s5_1}'
-    nr 'She doesn't seem to have heard you. She leans forward, squinting, as if she can't quite make you out…{#eivene_s5_1}'
+    nr 'She doesn\'t seem to have heard you. She leans forward, squinting, as if she can\'t quite make you out…{#eivene_s5_1}'
     nr '…whatever is wrong with her eyes must make her terribly near-sighted.{#eivene_s5_1}'
     eivene '«You».{#eivene_s5_2}'
     nr 'She clacks her taloned fingers together, then makes a strange motion with her hands.{#eivene_s5_3}'
@@ -58,7 +58,7 @@ translate english eivene_s6_45cb9d35:
 translate english eivene_s7_7b4e791c:
 
     # 'eivene_s7{#eivene_s7}'
-    nr 'Without missing a beat, Ei-Vene snaps the thread from your hands and hooks it around one of her talons, then begins sewing up the corpse's chest.{#eivene_s7_1}'
+    nr 'Without missing a beat, Ei-Vene snaps the thread from your hands and hooks it around one of her talons, then begins sewing up the corpse\'s chest.{#eivene_s7_1}'
     nr 'She then takes the embalming fluid, and begins to apply a layer to the corpse.{#eivene_s7_1}'
 
 # game/dlgs/mortuary/eivene.rpy:167
@@ -98,7 +98,7 @@ translate english eivene_s12_876c70cd:
 
     # 'eivene_s12{#eivene_s12}'
     nr 'Her talons suddenly hook into the thread you brought her, and lightning-like, she jabs another talon into the skin near one of your scars.{#eivene_s12_1}'
-    nr 'It feels barely more than a pin-prick, but it looks like she's about to start stitching you up.{#eivene_s12_1}'
+    nr 'It feels barely more than a pin-prick, but it looks like she\'s about to start stitching you up.{#eivene_s12_1}'
 
 # game/dlgs/mortuary/eivene.rpy:254
 translate english eivene_s13_96c1c77d:
@@ -119,13 +119,13 @@ translate english eivene_s14_ef8ceb50:
 translate english eivene_s15_5c1a900e:
 
     # 'eivene_s15{#eivene_s15}'
-    nr 'You see Ei-Vene. She is still dissecting the corpse's chest with her talons. The rhythm of the talons reminds you of something, but you can't quite recall what.{#eivene_s15_1}'
+    nr 'You see Ei-Vene. She is still dissecting the corpse\'s chest with her talons. The rhythm of the talons reminds you of something, but you can\'t quite recall what.{#eivene_s15_1}'
 
 # game/dlgs/mortuary/eivene.rpy:315
 translate english eivene_s16_58cd9ea7:
 
     # 'eivene_s16{#eivene_s16}'
-    nr 'As you study the motion of Ei-Vene's hands, you feel a prickling along your scalp, and then suddenly, you find your vision swimming, blurring, until…{#eivene_s16_1}'
+    nr 'As you study the motion of Ei-Vene\'s hands, you feel a prickling along your scalp, and then suddenly, you find your vision swimming, blurring, until…{#eivene_s16_1}'
 
 # game/dlgs/mortuary/eivene.rpy:324
 translate english eivene_s17_581f97d5:
@@ -191,7 +191,7 @@ translate english eivene_s25_ac6e0d38:
 
     # 'eivene_s25{#eivene_s25}'
     nr 'You watch her for a while, and the rhythm of her hands causes two memories to surface - one of you playing some sort of stringed instrument, perhaps a harp.{#eivene_s25_1}'
-    nr 'The other memory is that of stealing a purse… to your surprise, this last memory gives you a sudden temptation to pick Ei-Vene's pocket.{#eivene_s25_1}'
+    nr 'The other memory is that of stealing a purse… to your surprise, this last memory gives you a sudden temptation to pick Ei-Vene\'s pocket.{#eivene_s25_1}'
 
 # game/dlgs/mortuary/eivene.rpy:469
 translate english eivene_s26_45993788:
@@ -207,7 +207,7 @@ translate english eivene_s27_8049e768:
     # 'eivene_s27{#eivene_s27}'
     nr 'The memory of your voice is an echo, strange and hollow to your ears. You cross your arms in front of your chest, and to your surprise, the corpse does, too.{#eivene_s27_1}'
     nr 'After a moment, its hands fall back to its sides, and as it does, the vision fades…{#eivene_s27_1}'
-    nr '…until you are watching Ei-Vene's hands make their stitching motions once more.{#eivene_s27_1}'
+    nr '…until you are watching Ei-Vene\'s hands make their stitching motions once more.{#eivene_s27_1}'
 
 translate english strings:
 
@@ -229,11 +229,11 @@ translate english strings:
 
     # game/dlgs/mortuary/eivene.rpy:32
     old 'eivene_s1_r3414{#eivene_s1_r3414}'
-    new '«What's wrong with your hands?»{#eivene_s1_r3414}'
+    new '«What\'s wrong with your hands?»{#eivene_s1_r3414}'
 
     # game/dlgs/mortuary/eivene.rpy:32
     old 'eivene_s1_r3415{#eivene_s1_r3415}'
-    new '«What's wrong with your hands?»{#eivene_s1_r3415}'
+    new '«What\'s wrong with your hands?»{#eivene_s1_r3415}'
 
     # game/dlgs/mortuary/eivene.rpy:32
     old 'eivene_s1_r3416{#eivene_s1_r3416}'
@@ -265,11 +265,11 @@ translate english strings:
 
     # game/dlgs/mortuary/eivene.rpy:102
     old 'eivene_s5_r3427{#eivene_s5_r3427}'
-    new '«What's wrong with your hands?»{#eivene_s5_r3427}'
+    new '«What\'s wrong with your hands?»{#eivene_s5_r3427}'
 
     # game/dlgs/mortuary/eivene.rpy:102
     old 'eivene_s5_r3428{#eivene_s5_r3428}'
-    new '«What's wrong with your hands?»{#eivene_s5_r3428}'
+    new '«What\'s wrong with your hands?»{#eivene_s5_r3428}'
 
     # game/dlgs/mortuary/eivene.rpy:102
     old 'eivene_s5_r3429{#eivene_s5_r3429}'
@@ -301,11 +301,11 @@ translate english strings:
 
     # game/dlgs/mortuary/eivene.rpy:186
     old 'eivene_s9_r3440{#eivene_s9_r3440}'
-    new '«Uh, it's not that I'm not flattered, but…»{#eivene_s9_r3440}'
+    new '«Uh, it\'s not that I\'m not flattered, but…»{#eivene_s9_r3440}'
 
     # game/dlgs/mortuary/eivene.rpy:186
     old 'eivene_s9_r3441{#eivene_s9_r3441}'
-    new '«Uh, it's not that I'm not flattered, but…»{#eivene_s9_r3441}'
+    new '«Uh, it\'s not that I\'m not flattered, but…»{#eivene_s9_r3441}'
 
     # game/dlgs/mortuary/eivene.rpy:186
     old 'eivene_s9_r3442{#eivene_s9_r3442}'
@@ -389,11 +389,11 @@ translate english strings:
 
     # game/dlgs/mortuary/eivene.rpy:357
     old 'eivene_s18_r3494{#eivene_s18_r3494}'
-    new '«What's wrong with your hands?»{#eivene_s18_r3494}'
+    new '«What\'s wrong with your hands?»{#eivene_s18_r3494}'
 
     # game/dlgs/mortuary/eivene.rpy:357
     old 'eivene_s18_r3495{#eivene_s18_r3495}'
-    new '«What's wrong with your hands?»{#eivene_s18_r3495}'
+    new '«What\'s wrong with your hands?»{#eivene_s18_r3495}'
 
     # game/dlgs/mortuary/eivene.rpy:357
     old 'eivene_s18_r3496{#eivene_s18_r3496}'

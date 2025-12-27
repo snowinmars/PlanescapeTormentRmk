@@ -25,7 +25,7 @@ translate english zm506_s3_60588c19:
 
     # 'zm506_s3{#zm506_s3}'
     nr 'The stitches encircle the corpse, running from its arms, across its chest, up its neck, and into the damp mass of white hair.{#zm506_s3_1}'
-    nr 'As you follow the crossroads of stitches, you notice someone has jammed a needle into the corpse's forehead…{#zm506_s3_1}'
+    nr 'As you follow the crossroads of stitches, you notice someone has jammed a needle into the corpse\'s forehead…{#zm506_s3_1}'
     nr '…the needle is attached to a thread stitching up the side of the skull. You could probably unravel it if you had something to cut the thread.{#zm506_s3_1}'
 
 # game/dlgs/mortuary_zombies/zm506.rpy:87
@@ -33,7 +33,7 @@ translate english zm506_s4_dae3dbde:
 
     # 'zm506_s4{#zm506_s4}'
     nr 'You slice the thread neatly with the scalpel, then pluck out the needle and pull the stitches out.{#zm506_s4_1}'
-    nr 'As you do, the skin covering the forehead peels back to reveal the corpse's chalk-white skull - where, to your surprise, the number «78» has been chiseled.{#zm506_s4_1}'
+    nr 'As you do, the skin covering the forehead peels back to reveal the corpse\'s chalk-white skull - where, to your surprise, the number «78» has been chiseled.{#zm506_s4_1}'
 
 # game/dlgs/mortuary_zombies/zm506.rpy:111
 translate english zm506_s5_27d53c08:
@@ -50,7 +50,7 @@ translate english strings:
 
     # game/dlgs/mortuary_zombies/zm506.rpy:17
     old 'zm506_s0_r45421{#zm506_s0_r45421}'
-    new '«I know you're not a zombie, you know. You're not fooling anyone».{#zm506_s0_r45421}'
+    new '«I know you\'re not a zombie, you know. You\'re not fooling anyone».{#zm506_s0_r45421}'
 
     # game/dlgs/mortuary_zombies/zm506.rpy:17
     old 'zm506_s0_r45422{#zm506_s0_r45422}'
@@ -78,7 +78,7 @@ translate english strings:
 
     # game/dlgs/mortuary_zombies/zm506.rpy:66
     old 'zm506_s3_r45481{#zm506_s3_r45481}'
-    new '«Hmmm. Maybe there's something around here I can use to cut the thread… I'll be back».{#zm506_s3_r45481}'
+    new '«Hmmm. Maybe there\'s something around here I can use to cut the thread… I\'ll be back».{#zm506_s3_r45481}'
 
     # game/dlgs/mortuary_zombies/zm506.rpy:66
     old 'zm506_s3_r45482{#zm506_s3_r45482}'
@@ -114,7 +114,7 @@ translate english strings:
 
     # game/dlgs/mortuary_zombies/zm506.rpy:114
     old 'zm506_s5_r45510{#zm506_s5_r45510}'
-    new '«I know you're not a zombie, you know. You're not fooling anyone».{#zm506_s5_r45510}'
+    new '«I know you\'re not a zombie, you know. You\'re not fooling anyone».{#zm506_s5_r45510}'
 
     # game/dlgs/mortuary_zombies/zm506.rpy:114
     old 'zm506_s5_r45512{#zm506_s5_r45512}'

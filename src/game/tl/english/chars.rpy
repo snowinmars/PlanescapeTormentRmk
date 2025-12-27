@@ -242,3 +242,67 @@ translate english strings:
     old 'Зомби 1148'
     new 'Zombie 1148'
 
+    # game/chars.rpy:4
+    old "oinosian_character_name"
+    new "Arabhiem"
+
+    # game/chars.rpy:6
+    old "asonje_character_name"
+    new "Asonje"
+
+    # game/chars.rpy:8
+    old "bei_character_name"
+    new "Bei"
+
+    # game/chars.rpy:10
+    old "dhall_character_name"
+    new "Dhall"
+
+    # game/chars.rpy:12
+    old "soego_character_name"
+    new "Soego"
+
+    # game/chars.rpy:14
+    old "vaxis_character_name"
+    new "Vaxis"
+
+    # game/chars.rpy:16
+    old "xachariah_character_name"
+    new "Xachariah"
+
+    # game/chars.rpy:23
+    old "deionarra_character_name"
+    new "Deionarra"
+
+    # game/chars.rpy:25
+    old "eivene_character_name"
+    new "Ei-Vene"
+
+    # game/chars.rpy:55
+    old "death_names_character_name"
+    new "Death of names"
+
+    # game/chars.rpy:56
+    old "dust_character_name"
+    new "Dustman"
+
+    # game/chars.rpy:57
+    old "dustfem_character_name"
+    new "Dustman"
+
+    # game/chars.rpy:58
+    old "morte_story_1_character_name"
+    new "Old man"
+
+    # game/chars.rpy:59
+    old "morte_story_2_character_name"
+    new "Old woman"
+
+    # game/chars.rpy:60
+    old "zm1146_character_name"
+    new "Zombie #1146"
+
+    # game/chars.rpy:61
+    old "zm257_character_name"
+    new "Zombie #257"
+

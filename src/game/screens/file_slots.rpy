@@ -11,10 +11,10 @@
 ##
 ## https://www.renpy.org/doc/html/screen_special.html#save
 
-screen save()
+screen save():
     use preferences()
 
-screen load()
+screen load():
     use preferences()
 
 screen file_slots(title):

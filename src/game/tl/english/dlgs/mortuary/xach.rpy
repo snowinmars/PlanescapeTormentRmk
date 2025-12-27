@@ -19,7 +19,7 @@ translate english xach_s2_e521e322:
     # 'xach_s2{#xach_s2}'
     xach '«Wh-wh…» {#xach_s2_1}'
     nr 'The zombie is awkwardly getting his voice back, and he sounds alarmed.{#xach_s2_2}'
-    xach '«Who's there?! Answer me!»{#xach_s2_3}'
+    xach '«Who\'s there?! Answer me!»{#xach_s2_3}'
 
 # game/dlgs/mortuary/xach.rpy:90
 translate english xach_s3_e796c235:
@@ -33,16 +33,16 @@ translate english xach_s4_7ddca581:
     # 'xach_s4{#xach_s4}'
     xach '«Wha… you!»{#xach_s4_1}'
     nr 'The zombie seems shocked, but gladdened.{#xach_s4_2}'
-    xach '«By the Lady's Gaze…»{#xach_s4_3}'
+    xach '«By the Lady\'s Gaze…»{#xach_s4_3}'
     nr 'His tone takes on a sense of wonder.{#xach_s4_4}'
-    xach '«Aren't you *dead,* cutter?»{#xach_s4_5}'
+    xach '«Aren\'t you *dead,* cutter?»{#xach_s4_5}'
 
 # game/dlgs/mortuary/xach.rpy:148
 translate english xach_s5_80d2071f:
 
     # 'xach_s5{#xach_s5}'
-    xach '«So, it's hard to peel away this filthy shroudskin an' see ol' Xachariah the Fool beneath? It is I, cutter».{#xach_s5_1}'
-    xach '«Blessed be the powers, I thought never to see you again… but you've changed too, as far as my ears can tell… have you been making poor choices again?»{#xach_s5_1}'
+    xach '«So, it\'s hard to peel away this filthy shroudskin an\' see ol\' Xachariah the Fool beneath? It is I, cutter».{#xach_s5_1}'
+    xach '«Blessed be the powers, I thought never to see you again… but you\'ve changed too, as far as my ears can tell… have you been making poor choices again?»{#xach_s5_1}'
     nr 'Xachariah wheezes from his throat hole.{#xach_s5_2}'
     xach '«Be you dead, too?»{#xach_s5_3}'
 
@@ -63,34 +63,34 @@ translate english xach_s8_a96bf986:
 
     # 'xach_s8{#xach_s8}'
     nr 'His voice drops, as if ashamed.{#xach_s8_1}'
-    xach '«It's a hard path following in your footsteps, cutter, and many terrible things did I see. I took to drink, and became half-sodden with the stuff. Once, when I was sodding drunk, I signed my body off to the Dusties. Fate decided ta kick me when I was down, and I died shortly afterward».{#xach_s8_2}'
+    xach '«It\'s a hard path following in your footsteps, cutter, and many terrible things did I see. I took to drink, and became half-sodden with the stuff. Once, when I was sodding drunk, I signed my body off to the Dusties. Fate decided ta kick me when I was down, and I died shortly afterward».{#xach_s8_2}'
 
 # game/dlgs/mortuary/xach.rpy:264
 translate english xach_s9_bfdde24c:
 
     # 'xach_s9{#xach_s9}'
-    xach '«A place of the dead run by the Dead… there's some things not right here, though…»{#xach_s9_1}'
+    xach '«A place of the dead run by the Dead… there\'s some things not right here, though…»{#xach_s9_1}'
 
 # game/dlgs/mortuary/xach.rpy:287
 translate english xach_s10_e1276cf2:
 
     # 'xach_s10{#xach_s10}'
-    xach '«I'll tell you the dark of it: There's a zombie that pretends to be a zombie, but isn't».{#xach_s10_1}'
-    xach '«I don't care much for knowing the reason why, but it's a strange thing».{#xach_s10_1}'
+    xach '«I\'ll tell you the dark of it: There\'s a zombie that pretends to be a zombie, but isn\'t».{#xach_s10_1}'
+    xach '«I don\'t care much for knowing the reason why, but it\'s a strange thing».{#xach_s10_1}'
 
 # game/dlgs/mortuary/xach.rpy:314
 translate english xach_s11_4e5eaae2:
 
     # 'xach_s11{#xach_s11}'
-    xach '«Another thing, that old githzerai… the one that keeps the preparation room… Dhall. He's saved you from cremation a score of times».{#xach_s11_1}'
-    xach '«You're lucky to have a friend in that one».{#xach_s11_1}'
+    xach '«Another thing, that old githzerai… the one that keeps the preparation room… Dhall. He\'s saved you from cremation a score of times».{#xach_s11_1}'
+    xach '«You\'re lucky to have a friend in that one».{#xach_s11_1}'
 
 # game/dlgs/mortuary/xach.rpy:337
 translate english xach_s12_4dc70481:
 
     # 'xach_s12{#xach_s12}'
-    xach '«Even if my eyes allowed me to see 'em, I can't make sense of numbers. Here's how you'll know him, cutter: his voice is wrong for a zombie…»{#xach_s12_1}'
-    xach '«…he doesn't respond the same way as the others».{#xach_s12_1}'
+    xach '«Even if my eyes allowed me to see \'em, I can\'t make sense of numbers. Here\'s how you\'ll know him, cutter: his voice is wrong for a zombie…»{#xach_s12_1}'
+    xach '«…he doesn\'t respond the same way as the others».{#xach_s12_1}'
 
 # game/dlgs/mortuary/xach.rpy:360
 translate english xach_s13_dbf9a056:
@@ -102,14 +102,14 @@ translate english xach_s13_dbf9a056:
 translate english xach_s14_b7f57ba3:
 
     # 'xach_s14{#xach_s14}'
-    xach '«He thought it necessary to prevent… to… I… I can't quite remember why it was necessary».{#xach_s14_1}'
+    xach '«He thought it necessary to prevent… to… I… I can\'t quite remember why it was necessary».{#xach_s14_1}'
 
 # game/dlgs/mortuary/xach.rpy:398
 translate english xach_s15_02b8c6ec:
 
     # 'xach_s15{#xach_s15}'
     nr 'His voice drops, as if ashamed.{#xach_s15_1}'
-    xach '«When we split paths, cutter, not much life was left in me. It's a hard path following in your footsteps, and many terrible things did I see. I took to drink, and became half-sodden with the stuff. When I was sodding drunk, I signed my body off to the Dusties. Fate decided ta kick me when I was down, and I died shortly afterward».{#xach_s15_2}'
+    xach '«When we split paths, cutter, not much life was left in me. It\'s a hard path following in your footsteps, and many terrible things did I see. I took to drink, and became half-sodden with the stuff. When I was sodding drunk, I signed my body off to the Dusties. Fate decided ta kick me when I was down, and I died shortly afterward».{#xach_s15_2}'
 
 # game/dlgs/mortuary/xach.rpy:418
 translate english xach_s16_76b05009:
@@ -136,44 +136,44 @@ translate english xach_s19_2564582f:
 
     # 'xach_s19{#xach_s19}'
     xach '«At your core, you looked at what happened to you like taking territory in a war; everything was like a battle to you, and you were the most ruthless bastard I ever near met».{#xach_s19_1}'
-    xach '«Naught else mattered except for solving that goal. Poor Deionarra with her sobbing and pleading with you didn't sway you none, the gith warning you about your strategies, and poor Xachariah just trying to hold on when we hit the planes».{#xach_s19_1}'
-    xach '«You were tough like you couldn't die, but we were only human. Now I guess we're all in the dead-book… or in and out of it, so to speak».{#xach_s19_1}'
+    xach '«Naught else mattered except for solving that goal. Poor Deionarra with her sobbing and pleading with you didn\'t sway you none, the gith warning you about your strategies, and poor Xachariah just trying to hold on when we hit the planes».{#xach_s19_1}'
+    xach '«You were tough like you couldn\'t die, but we were only human. Now I guess we\'re all in the dead-book… or in and out of it, so to speak».{#xach_s19_1}'
 
 # game/dlgs/mortuary/xach.rpy:522
 translate english xach_s20_d1b183ef:
 
     # 'xach_s20{#xach_s20}'
-    xach '«Well, what is it that I can say to you that'll prove myself… now, see, not all the memories are there, so: how about this…»{#xach_s20_1}'
+    xach '«Well, what is it that I can say to you that\'ll prove myself… now, see, not all the memories are there, so: how about this…»{#xach_s20_1}'
     xach '«…remember when we were carving that trek through Avernus and we ran across that crew of abishai in that maggot-ridden pit?»{#xach_s20_1}'
 
 # game/dlgs/mortuary/xach.rpy:537
 translate english xach_s21_51dec737:
 
     # 'xach_s21{#xach_s21}'
-    xach '«Well, now, then I'm glad one of us remembers that, because I sure as Balor don't».{#xach_s21_1}'
+    xach '«Well, now, then I\'m glad one of us remembers that, because I sure as Balor don\'t».{#xach_s21_1}'
     xach '«Who are you, cutter, and what do you expect to find fishing in the memories of dead men?»{#xach_s21_1}'
 
 # game/dlgs/mortuary/xach.rpy:560
 translate english xach_s22_ef905c0c:
 
     # 'xach_s22{#xach_s22}'
-    xach '«Hmmm. Well maybe that event didn't happen the way I 'member then».{#xach_s22_1}'
-    xach '«How's this: 'member when Deionarra nearly got herself penned in the dead-book trying to stop you from entering Curst?»{#xach_s22_1}'
+    xach '«Hmmm. Well maybe that event didn\'t happen the way I \'member then».{#xach_s22_1}'
+    xach '«How\'s this: \'member when Deionarra nearly got herself penned in the dead-book trying to stop you from entering Curst?»{#xach_s22_1}'
 
 # game/dlgs/mortuary/xach.rpy:583
 translate english xach_s23_ded99edf:
 
     # 'xach_s23{#xach_s23}'
-    xach '«A motley crew we were… a half-dead man who couldn't get himself penned in the dead-book if he tried - so ugly all the powers of death wouldn't take 'em…»{#xach_s23_1}'
-    xach '«…a wailing advocate's daughter, a gith exile, a bobbing jackal-tongued skull, and a half-sodden blind archer like myself».{#xach_s23_1}'
+    xach '«A motley crew we were… a half-dead man who couldn\'t get himself penned in the dead-book if he tried - so ugly all the powers of death wouldn\'t take \'em…»{#xach_s23_1}'
+    xach '«…a wailing advocate\'s daughter, a gith exile, a bobbing jackal-tongued skull, and a half-sodden blind archer like myself».{#xach_s23_1}'
 
 # game/dlgs/mortuary/xach.rpy:622
 translate english xach_s24_78b6eddc:
 
     # 'xach_s24{#xach_s24}'
-    xach '«Grim-lookin' gith… unfriendly and silent, like all their kind. Didn't trust that gith a lick, I didn't».{#xach_s24_1}'
+    xach '«Grim-lookin\' gith… unfriendly and silent, like all their kind. Didn\'t trust that gith a lick, I didn\'t».{#xach_s24_1}'
     xach '«See, cutter, them spindly giths care only about two things: keeping out of slavery and killing them squid-headed illithids».{#xach_s24_1}'
-    xach '«Everything else is just lower down the slope, and he didn't give a damn about any of us other than you».{#xach_s24_1}'
+    xach '«Everything else is just lower down the slope, and he didn\'t give a damn about any of us other than you».{#xach_s24_1}'
 
 # game/dlgs/mortuary/xach.rpy:649
 translate english xach_s25_5fe117d3:
@@ -185,10 +185,10 @@ translate english xach_s25_5fe117d3:
 translate english xach_s26_e401d166:
 
     # 'xach_s26{#xach_s26}'
-    xach '«That feisty chit-who-would-be-a-soldier swore she'd follow you to Baator and back, and by the powers, she was so addled by the thought of you without her she did just that».{#xach_s26_1}'
+    xach '«That feisty chit-who-would-be-a-soldier swore she\'d follow you to Baator and back, and by the powers, she was so addled by the thought of you without her she did just that».{#xach_s26_1}'
     xach '«Cared little for me or the gith, and a bare little it was. She was wild with heart poison for you, she was, proof she was barmy».{#xach_s26_1}'
-    xach '«I don't understand what the womenfolk saw in yer scarred mug, but it set their blood a-boil».{#xach_s26_1}'
-    xach '«She was some rich scut from the Clerk's Ward, and you needed something from her, and the only price was that she came with you».{#xach_s26_1}'
+    xach '«I don\'t understand what the womenfolk saw in yer scarred mug, but it set their blood a-boil».{#xach_s26_1}'
+    xach '«She was some rich scut from the Clerk\'s Ward, and you needed something from her, and the only price was that she came with you».{#xach_s26_1}'
 
 # game/dlgs/mortuary/xach.rpy:695
 translate english xach_s27_1a913581:
@@ -206,11 +206,11 @@ translate english xach_s28_0821e83c:
 translate english xach_s29_93797966:
 
     # 'xach_s29{#xach_s29}'
-    xach '«That scrapbook that you'd stitched together outta yer own flesh and had more pages than I had years in my life?! Good fortune indeed if you've lost that ghoulish book!»{#xach_s29_1}'
+    xach '«That scrapbook that you\'d stitched together outta yer own flesh and had more pages than I had years in my life?! Good fortune indeed if you\'ve lost that ghoulish book!»{#xach_s29_1}'
     xach '«Always scribbling in it, you were, and it smelled a fright. It was like you were afraid that at any moment someone would take it away…»{#xach_s29_1}'
     xach '«…you wrote in it till skin tore from your fingers and I wondered if you were trying to spill out your brain-box through your pen».{#xach_s29_1}'
     xach '«Sometimes we would hold up for days while you wrote. I hated that infernal book. It seemed to hold you by the heart, and not in a kind way».{#xach_s29_1}'
-    xach '«The last I saw of it, cutter, it was in your possession. If you don't carry it, I don't know where on the planes it could be».{#xach_s29_1}'
+    xach '«The last I saw of it, cutter, it was in your possession. If you don\'t carry it, I don\'t know where on the planes it could be».{#xach_s29_1}'
 
 # game/dlgs/mortuary/xach.rpy:776
 translate english xach_s30_50fa5e80:
@@ -232,7 +232,7 @@ translate english xach_s31_d069ebbe:
 translate english xach_s32_a8360506:
 
     # 'xach_s32{#xach_s32}'
-    xach '«You left something when you left us, cutter… you left Dak'kon without a master, and the skull without a friend».{#xach_s32_1}'
+    xach '«You left something when you left us, cutter… you left Dak’kon without a master, and the skull without a friend».{#xach_s32_1}'
     xach '«Me? You stabbed something so deep inside me, it never came out when I was alive».{#xach_s32_1}'
     xach '«Caused my blood to run cold, it did, that thing sitting like a lump of lead in my chest».{#xach_s32_1}'
 
@@ -240,14 +240,14 @@ translate english xach_s32_a8360506:
 translate english xach_s33_540b7680:
 
     # 'xach_s33{#xach_s33}'
-    xach '«I… I don't know. But it changed me, somehow. Changed my insides. I was already dying when you put it in me, so I wasn't too concerned about it at the time».{#xach_s33_1}'
+    xach '«I… I don\'t know. But it changed me, somehow. Changed my insides. I was already dying when you put it in me, so I wasn\'t too concerned about it at the time».{#xach_s33_1}'
 
 # game/dlgs/mortuary/xach.rpy:865
 translate english xach_s34_294b236a:
 
     # 'xach_s34{#xach_s34}'
-    xach '«It's buried pretty deep, but I have an idea of where it is».{#xach_s34_1}'
-    xach '«Without a scalpel and some directions from me, you won't be able to get it out. You got a scalpel?»{#xach_s34_1}'
+    xach '«It\'s buried pretty deep, but I have an idea of where it is».{#xach_s34_1}'
+    xach '«Without a scalpel and some directions from me, you won\'t be able to get it out. You got a scalpel?»{#xach_s34_1}'
 
 # game/dlgs/mortuary/xach.rpy:880
 translate english xach_s35_18878ef4:
@@ -259,7 +259,7 @@ translate english xach_s35_18878ef4:
 translate english xach_s36_0659a96b:
 
     # 'xach_s36{#xach_s36}'
-    xach '«Then open me up half a hand's width below the sternum, and feel around for it».{#xach_s36_1}'
+    xach '«Then open me up half a hand\'s width below the sternum, and feel around for it».{#xach_s36_1}'
 
 # game/dlgs/mortuary/xach.rpy:918
 translate english xach_s37_b52f171d:
@@ -273,7 +273,7 @@ translate english xach_s37_b52f171d:
 translate english xach_s38_2aa3730c:
 
     # 'xach_s38{#xach_s38}'
-    xach '«By the Lady's gaze! Apologies, cutter… I thought them Dustmen took all those organs outta us before pulling us out of the dead-book. Give it another go. Maybe it's to the right».{#xach_s38_2}'
+    xach '«By the Lady\'s gaze! Apologies, cutter… I thought them Dustmen took all those organs outta us before pulling us out of the dead-book. Give it another go. Maybe it\'s to the right».{#xach_s38_2}'
 
 # game/dlgs/mortuary/xach.rpy:943
 translate english xach_s39_84c7f928:
@@ -281,14 +281,14 @@ translate english xach_s39_84c7f928:
     # 'xach_s39{#xach_s39}'
     xach '«There ya go… now go a little to the right and back… a little more…»{#xach_s39_1}'
     nr 'You feel something hard and cold, slightly larger than you expected.{#xach_s39_2}'
-    xach '«I think that's it. Pull it out».{#xach_s39_3}'
+    xach '«I think that\'s it. Pull it out».{#xach_s39_3}'
 
 # game/dlgs/mortuary/xach.rpy:957
 translate english xach_s40_e0e1c3dd:
 
     # 'xach_s40{#xach_s40}'
     nr 'You are holding a blackened, fist-sized object that is extremely heavy for its size.{#xach_s40_1}'
-    xach '«That's it all right. Huh. Bigger than I thought it'd be. Is that… what is that? Looks like… a heart».{#xach_s40_2}'
+    xach '«That\'s it all right. Huh. Bigger than I thought it\'d be. Is that… what is that? Looks like… a heart».{#xach_s40_2}'
 
 # game/dlgs/mortuary/xach.rpy:977
 translate english xach_s41_e0cd0d24:
@@ -302,13 +302,13 @@ translate english xach_s42_82ed8092:
     # 'xach_s42{#xach_s42}'
     nr 'His voice drops, as if ashamed.{#xach_s42_1}'
     xach '«I made some mistakes, some damned bad ones to be sure, and one of my biggest was signing that Dustman contract».{#xach_s42_2}'
-    xach '«If I hadn't been so sodden with bub, I never woulda done it. I regret it, and I was hoping you could set it aright».{#xach_s42_2}'
+    xach '«If I hadn\'t been so sodden with bub, I never woulda done it. I regret it, and I was hoping you could set it aright».{#xach_s42_2}'
 
 # game/dlgs/mortuary/xach.rpy:1010
 translate english xach_s43_422320a1:
 
     # 'xach_s43{#xach_s43}'
-    xach '«Way I reckon, this body's gonna last a long time… and every day's too long to me. Couldja maybe gut me again, cutter… for old time's sake?»{#xach_s43_1}'
+    xach '«Way I reckon, this body\'s gonna last a long time… and every day\'s too long to me. Couldja maybe gut me again, cutter… for old time\'s sake?»{#xach_s43_1}'
     xach '«The thought of spending another batch of years here in the Mortuary with these whitefaces is a mighty cold one».{#xach_s43_1}'
     xach '«Can you see fit to put me back in the dead-book where I belong?»{#xach_s43_1}'
 
@@ -329,7 +329,7 @@ translate english xach_s45_0aecd366:
 translate english xach_s46_20afb499:
 
     # 'xach_s46{#xach_s46}'
-    xach '«Well, cutter, I suppose being dead's not something one would doubt, though how can you talk to me? Your voice is as clear as a knife…»{#xach_s46_1}'
+    xach '«Well, cutter, I suppose being dead\'s not something one would doubt, though how can you talk to me? Your voice is as clear as a knife…»{#xach_s46_1}'
 
 # game/dlgs/mortuary/xach.rpy:1072
 translate english xach_s47_b675886a:
@@ -342,15 +342,15 @@ translate english xach_s47_b675886a:
 translate english xach_s48_053d68d3:
 
     # 'xach_s48{#xach_s48}'
-    xach '«It's honest work…»{#xach_s48_1}'
-    nr 'The stitching comes undone from Xachariah's mouth and his lips peel back in what might be a smile.{#xach_s48_2}'
+    xach '«It\'s honest work…»{#xach_s48_1}'
+    nr 'The stitching comes undone from Xachariah\'s mouth and his lips peel back in what might be a smile.{#xach_s48_2}'
     xach '«…I care little for it».{#xach_s48_3}'
 
 # game/dlgs/mortuary/xach.rpy:1117
 translate english xach_s49_32c8c217:
 
     # 'xach_s49{#xach_s49}'
-    xach '«That I was. You truly have forgotten, haven't you? All men see with more than their eyes, cutter… some of them better than others».{#xach_s49_1}'
+    xach '«That I was. You truly have forgotten, haven\'t you? All men see with more than their eyes, cutter… some of them better than others».{#xach_s49_1}'
     xach '«I sensed the hearts of my foes - *your* foes - and my arrows always struck true. Ah, those were some times…»{#xach_s49_1}'
 
 translate english strings:
@@ -365,7 +365,7 @@ translate english strings:
 
     # game/dlgs/mortuary/xach.rpy:17
     old 'xach_s0_r1354{#xach_s0_r1354}'
-    new '«I know you're not a zombie, you know. You're not fooling anyone».{#xach_s0_r1354}'
+    new '«I know you\'re not a zombie, you know. You\'re not fooling anyone».{#xach_s0_r1354}'
 
     # game/dlgs/mortuary/xach.rpy:17
     old 'xach_s0_r1355{#xach_s0_r1355}'
@@ -441,15 +441,15 @@ translate english strings:
 
     # game/dlgs/mortuary/xach.rpy:124
     old 'xach_s4_r518{#xach_s4_r518}'
-    new '«I can't speak long. I must leave. Farewell».{#xach_s4_r518}'
+    new '«I can\'t speak long. I must leave. Farewell».{#xach_s4_r518}'
 
     # game/dlgs/mortuary/xach.rpy:124
     old 'xach_s4_r1394{#xach_s4_r1394}'
-    new '«I can't speak long. I must leave. Farewell».{#xach_s4_r1394}'
+    new '«I can\'t speak long. I must leave. Farewell».{#xach_s4_r1394}'
 
     # game/dlgs/mortuary/xach.rpy:153
     old 'xach_s5_r685{#xach_s5_r685}'
-    new '«It's a long tale… but no, I'm not dead».{#xach_s5_r685}'
+    new '«It\'s a long tale… but no, I\'m not dead».{#xach_s5_r685}'
 
     # game/dlgs/mortuary/xach.rpy:153
     old 'xach_s5_r686{#xach_s5_r686}'
@@ -525,11 +525,11 @@ translate english strings:
 
     # game/dlgs/mortuary/xach.rpy:248
     old 'xach_s8_r545{#xach_s8_r545}'
-    new '«I've heard enough. Farewell».{#xach_s8_r545}'
+    new '«I\'ve heard enough. Farewell».{#xach_s8_r545}'
 
     # game/dlgs/mortuary/xach.rpy:248
     old 'xach_s8_r1390{#xach_s8_r1390}'
-    new '«I've heard enough. Farewell».{#xach_s8_r1390}'
+    new '«I\'ve heard enough. Farewell».{#xach_s8_r1390}'
 
     # game/dlgs/mortuary/xach.rpy:267
     old 'xach_s9_r534{#xach_s9_r534}'
@@ -585,7 +585,7 @@ translate english strings:
 
     # game/dlgs/mortuary/xach.rpy:340
     old 'xach_s12_r548{#xach_s12_r548}'
-    new '«Anything else strange about the Mortuary you've noticed?»{#xach_s12_r548}'
+    new '«Anything else strange about the Mortuary you\'ve noticed?»{#xach_s12_r548}'
 
     # game/dlgs/mortuary/xach.rpy:340
     old 'xach_s12_r554{#xach_s12_r554}'
@@ -593,11 +593,11 @@ translate english strings:
 
     # game/dlgs/mortuary/xach.rpy:340
     old 'xach_s12_r549{#xach_s12_r549}'
-    new '«I'll go look for this zombie. Farewell».{#xach_s12_r549}'
+    new '«I\'ll go look for this zombie. Farewell».{#xach_s12_r549}'
 
     # game/dlgs/mortuary/xach.rpy:340
     old 'xach_s12_r1386{#xach_s12_r1386}'
-    new '«I'll go look for this zombie. Farewell».{#xach_s12_r1386}'
+    new '«I\'ll go look for this zombie. Farewell».{#xach_s12_r1386}'
 
     # game/dlgs/mortuary/xach.rpy:363
     old 'xach_s13_r552{#xach_s13_r552}'
@@ -697,7 +697,7 @@ translate english strings:
 
     # game/dlgs/mortuary/xach.rpy:494
     old 'xach_s19_r577{#xach_s19_r577}'
-    new '«The 'gith'? Who do you mean?»{#xach_s19_r577}'
+    new '«The „gith“? Who do you mean?»{#xach_s19_r577}'
 
     # game/dlgs/mortuary/xach.rpy:494
     old 'xach_s19_r578{#xach_s19_r578}'
@@ -737,7 +737,7 @@ translate english strings:
 
     # game/dlgs/mortuary/xach.rpy:563
     old 'xach_s22_r590{#xach_s22_r590}'
-    new '«No, not really… but that's fine; I believe you did know me. So can you tell me of my previous life?»{#xach_s22_r590}'
+    new '«No, not really… but that\'s fine; I believe you did know me. So can you tell me of my previous life?»{#xach_s22_r590}'
 
     # game/dlgs/mortuary/xach.rpy:563
     old 'xach_s22_r591{#xach_s22_r591}'
@@ -757,7 +757,7 @@ translate english strings:
 
     # game/dlgs/mortuary/xach.rpy:586
     old 'xach_s23_r594{#xach_s23_r594}'
-    new '«Wailing advocate's daughter?»{#xach_s23_r594}'
+    new '«Wailing advocate\'s daughter?»{#xach_s23_r594}'
 
     # game/dlgs/mortuary/xach.rpy:586
     old 'xach_s23_r595{#xach_s23_r595}'
@@ -805,7 +805,7 @@ translate english strings:
 
     # game/dlgs/mortuary/xach.rpy:652
     old 'xach_s25_r606{#xach_s25_r606}'
-    new '«I don't know myself. I had some other questions…»{#xach_s25_r606}'
+    new '«I don\'t know myself. I had some other questions…»{#xach_s25_r606}'
 
     # game/dlgs/mortuary/xach.rpy:652
     old 'xach_s25_r607{#xach_s25_r607}'
@@ -829,11 +829,11 @@ translate english strings:
 
     # game/dlgs/mortuary/xach.rpy:671
     old 'xach_s26_r611{#xach_s26_r611}'
-    new '«I've heard enough. Farewell, Xachariah».{#xach_s26_r611}'
+    new '«I\'ve heard enough. Farewell, Xachariah».{#xach_s26_r611}'
 
     # game/dlgs/mortuary/xach.rpy:671
     old 'xach_s26_r1373{#xach_s26_r1373}'
-    new '«I've heard enough. Farewell, Xachariah».{#xach_s26_r1373}'
+    new '«I\'ve heard enough. Farewell, Xachariah».{#xach_s26_r1373}'
 
     # game/dlgs/mortuary/xach.rpy:698
     old 'xach_s27_r613{#xach_s27_r613}'
@@ -841,7 +841,7 @@ translate english strings:
 
     # game/dlgs/mortuary/xach.rpy:698
     old 'xach_s27_r615{#xach_s27_r615}'
-    new '«The 'wailing advocate's daughter.'»{#xach_s27_r615}'
+    new '«The „wailing advocate\'s daughter“.»{#xach_s27_r615}'
 
     # game/dlgs/mortuary/xach.rpy:698
     old 'xach_s27_r616{#xach_s27_r616}'
@@ -857,11 +857,11 @@ translate english strings:
 
     # game/dlgs/mortuary/xach.rpy:698
     old 'xach_s27_r619{#xach_s27_r619}'
-    new '«I've heard enough. Farewell, Xachariah».{#xach_s27_r619}'
+    new '«I\'ve heard enough. Farewell, Xachariah».{#xach_s27_r619}'
 
     # game/dlgs/mortuary/xach.rpy:698
     old 'xach_s27_r1372{#xach_s27_r1372}'
-    new '«I've heard enough. Farewell, Xachariah».{#xach_s27_r1372}'
+    new '«I\'ve heard enough. Farewell, Xachariah».{#xach_s27_r1372}'
 
     # game/dlgs/mortuary/xach.rpy:733
     old 'xach_s28_r622{#xach_s28_r622}'
@@ -873,11 +873,11 @@ translate english strings:
 
     # game/dlgs/mortuary/xach.rpy:733
     old 'xach_s28_r624{#xach_s28_r624}'
-    new '«I've heard enough. Farewell, Xachariah».{#xach_s28_r624}'
+    new '«I\'ve heard enough. Farewell, Xachariah».{#xach_s28_r624}'
 
     # game/dlgs/mortuary/xach.rpy:733
     old 'xach_s28_r1371{#xach_s28_r1371}'
-    new '«I've heard enough. Farewell, Xachariah».{#xach_s28_r1371}'
+    new '«I\'ve heard enough. Farewell, Xachariah».{#xach_s28_r1371}'
 
     # game/dlgs/mortuary/xach.rpy:756
     old 'xach_s29_r626{#xach_s29_r626}'
@@ -965,7 +965,7 @@ translate english strings:
 
     # game/dlgs/mortuary/xach.rpy:883
     old 'xach_s35_r656{#xach_s35_r656}'
-    new '«I'll go look for one. Farewell, Xachariah».{#xach_s35_r656}'
+    new '«I\'ll go look for one. Farewell, Xachariah».{#xach_s35_r656}'
 
     # game/dlgs/mortuary/xach.rpy:898
     old 'xach_s36_r658{#xach_s36_r658}'
@@ -977,11 +977,11 @@ translate english strings:
 
     # game/dlgs/mortuary/xach.rpy:898
     old 'xach_s36_r660{#xach_s36_r660}'
-    new '«I can't now, I must leave. Farewell, Xachariah».{#xach_s36_r660}'
+    new '«I can\'t now, I must leave. Farewell, Xachariah».{#xach_s36_r660}'
 
     # game/dlgs/mortuary/xach.rpy:898
     old 'xach_s36_r1367{#xach_s36_r1367}'
-    new '«I can't now, I must leave. Farewell, Xachariah».{#xach_s36_r1367}'
+    new '«I can\'t now, I must leave. Farewell, Xachariah».{#xach_s36_r1367}'
 
     # game/dlgs/mortuary/xach.rpy:922
     old 'xach_s37_r663{#xach_s37_r663}'
@@ -1029,7 +1029,7 @@ translate english strings:
 
     # game/dlgs/mortuary/xach.rpy:1013
     old 'xach_s43_r680{#xach_s43_r680}'
-    new '«Xachariah, I won't kill you. Again. Farewell».{#xach_s43_r680}'
+    new '«Xachariah, I won\'t kill you. Again. Farewell».{#xach_s43_r680}'
 
     # game/dlgs/mortuary/xach.rpy:1029
     old 'xach_s44_r681{#xach_s44_r681}'
@@ -1057,7 +1057,7 @@ translate english strings:
 
     # game/dlgs/mortuary/xach.rpy:1075
     old 'xach_s47_r693{#xach_s47_r693}'
-    new '«What's it like being a zombie?»{#xach_s47_r693}'
+    new '«What\'s it like being a zombie?»{#xach_s47_r693}'
 
     # game/dlgs/mortuary/xach.rpy:1075
     old 'xach_s47_r695{#xach_s47_r695}'

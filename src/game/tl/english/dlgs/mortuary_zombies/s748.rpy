@@ -5,7 +5,7 @@ translate english s748_s0_2b85e4d0:
 
     # 's748_s0{#s748_s0}'
     nr 'This skeleton - number «748», according to the number chiseled above its brow - is odd only in that some of its teeth appear to be false ones made of reddish-brown stone.{#s748_s0_1}'
-    nr 'They're clearly not valuable, however, as its caretakers would have otherwise removed them.{#s748_s0_1}'
+    nr 'They\'re clearly not valuable, however, as its caretakers would have otherwise removed them.{#s748_s0_1}'
 
 # game/dlgs/mortuary_zombies/s748.rpy:94
 translate english s748_s1_1f81ce52:
@@ -24,14 +24,14 @@ translate english s748_s3_3e92bbc9:
 
     # 's748_s3{#s748_s3}'
     nr 'Someone has taken care to bind the bones of this skeleton with leather straps, woven around the body in such a pattern that they resemble muscles and tendons.{#s748_s3_1}'
-    nr 'The straps are secured to metal bolts punched into the skeleton's joints.{#s748_s3_1}'
+    nr 'The straps are secured to metal bolts punched into the skeleton\'s joints.{#s748_s3_1}'
     nr 'This skeleton looks like it has seen a great deal of service: many of its bones are chipped and its numerous fractures are bound with sealant and foul-smelling glues.{#s748_s3_1}'
 
 # game/dlgs/mortuary_zombies/s748.rpy:183
 translate english s748_s4_48bc181a:
 
     # 's748_s4{#s748_s4}'
-    nr 'You pull at the iron bolts, but you're not strong enough to pull them out. They've been hammered in pretty tight.{#s748_s4_1}'
+    nr 'You pull at the iron bolts, but you\'re not strong enough to pull them out. They\'ve been hammered in pretty tight.{#s748_s4_1}'
 
 # game/dlgs/mortuary_zombies/s748.rpy:216
 translate english s748_s5_1e05f09a:
@@ -44,7 +44,7 @@ translate english s748_s5_1e05f09a:
 translate english s748_s6_a067da1d:
 
     # 's748_s6{#s748_s6}'
-    nr 'Using your prybar, you rip the bolts from the skeleton's joints. The skeleton collapses, some of its bones still twitching.{#s748_s6_1}'
+    nr 'Using your prybar, you rip the bolts from the skeleton\'s joints. The skeleton collapses, some of its bones still twitching.{#s748_s6_1}'
 
 # game/dlgs/mortuary_zombies/s748.rpy:240
 translate english s748_s7_a8556d72:
@@ -64,11 +64,11 @@ translate english strings:
 
     # game/dlgs/mortuary_zombies/s748.rpy:17
     old 's748_s0_r35408{#s748_s0_r35408}'
-    new '«I have to ask: Why the smock? I mean, it's not like you have anything to be modest about».{#s748_s0_r35408}'
+    new '«I have to ask: Why the smock? I mean, it\'s not like you have anything to be modest about».{#s748_s0_r35408}'
 
     # game/dlgs/mortuary_zombies/s748.rpy:17
     old 's748_s0_r35409{#s748_s0_r35409}'
-    new '«I have to ask: Why the smock? I mean, it's not like you have anything to be modest about».{#s748_s0_r35409}'
+    new '«I have to ask: Why the smock? I mean, it\'s not like you have anything to be modest about».{#s748_s0_r35409}'
 
     # game/dlgs/mortuary_zombies/s748.rpy:17
     old 's748_s0_r35410{#s748_s0_r35410}'
@@ -80,31 +80,31 @@ translate english strings:
 
     # game/dlgs/mortuary_zombies/s748.rpy:17
     old 's748_s0_r35448{#s748_s0_r35448}'
-    new 'Try and pry out the skeleton's joint bolts.{#s748_s0_r35448}'
+    new 'Try and pry out the skeleton\'s joint bolts.{#s748_s0_r35448}'
 
     # game/dlgs/mortuary_zombies/s748.rpy:17
     old 's748_s0_r35449{#s748_s0_r35449}'
-    new 'Try and pry out the skeleton's joint bolts.{#s748_s0_r35449}'
+    new 'Try and pry out the skeleton\'s joint bolts.{#s748_s0_r35449}'
 
     # game/dlgs/mortuary_zombies/s748.rpy:17
     old 's748_s0_r35450{#s748_s0_r35450}'
-    new 'Try and pry out the skeleton's joint bolts.{#s748_s0_r35450}'
+    new 'Try and pry out the skeleton\'s joint bolts.{#s748_s0_r35450}'
 
     # game/dlgs/mortuary_zombies/s748.rpy:17
     old 's748_s0_r35451{#s748_s0_r35451}'
-    new 'Try and pry out the skeleton's joint bolts.{#s748_s0_r35451}'
+    new 'Try and pry out the skeleton\'s joint bolts.{#s748_s0_r35451}'
 
     # game/dlgs/mortuary_zombies/s748.rpy:17
     old 's748_s0_r35452{#s748_s0_r35452}'
-    new 'Try and pry out the skeleton's joint bolts.{#s748_s0_r35452}'
+    new 'Try and pry out the skeleton\'s joint bolts.{#s748_s0_r35452}'
 
     # game/dlgs/mortuary_zombies/s748.rpy:17
     old 's748_s0_r35453{#s748_s0_r35453}'
-    new 'Try and pry out the skeleton's joint bolts.{#s748_s0_r35453}'
+    new 'Try and pry out the skeleton\'s joint bolts.{#s748_s0_r35453}'
 
     # game/dlgs/mortuary_zombies/s748.rpy:17
     old 's748_s0_r35454{#s748_s0_r35454}'
-    new 'Try and pry out the skeleton's joint bolts.{#s748_s0_r35454}'
+    new 'Try and pry out the skeleton\'s joint bolts.{#s748_s0_r35454}'
 
     # game/dlgs/mortuary_zombies/s748.rpy:17
     old 's748_s0_r35455{#s748_s0_r35455}'
@@ -148,19 +148,19 @@ translate english strings:
 
     # game/dlgs/mortuary_zombies/s748.rpy:137
     old 's748_s3_r35417{#s748_s3_r35417}'
-    new 'Try and pry out the skeleton's joint bolts.{#s748_s3_r35417}'
+    new 'Try and pry out the skeleton\'s joint bolts.{#s748_s3_r35417}'
 
     # game/dlgs/mortuary_zombies/s748.rpy:137
     old 's748_s3_r35439{#s748_s3_r35439}'
-    new 'Try and pry out the skeleton's joint bolts.{#s748_s3_r35439}'
+    new 'Try and pry out the skeleton\'s joint bolts.{#s748_s3_r35439}'
 
     # game/dlgs/mortuary_zombies/s748.rpy:137
     old 's748_s3_r35440{#s748_s3_r35440}'
-    new 'Try and pry out the skeleton's joint bolts.{#s748_s3_r35440}'
+    new 'Try and pry out the skeleton\'s joint bolts.{#s748_s3_r35440}'
 
     # game/dlgs/mortuary_zombies/s748.rpy:137
     old 's748_s3_r35441{#s748_s3_r35441}'
-    new 'Try and pry out the skeleton's joint bolts.{#s748_s3_r35441}'
+    new 'Try and pry out the skeleton\'s joint bolts.{#s748_s3_r35441}'
 
     # game/dlgs/mortuary_zombies/s748.rpy:137
     old 's748_s3_r35442{#s748_s3_r35442}'

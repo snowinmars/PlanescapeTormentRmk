@@ -30,15 +30,15 @@ translate english strings:
 
     # game/dlgs/mortuary_zombies/zf1072.rpy:17
     old 'zf1072_s0_r35115{#zf1072_s0_r35115}'
-    new '«I think this one's seen better days…»{#zf1072_s0_r35115}'
+    new '«I think this one\'s seen better days…»{#zf1072_s0_r35115}'
 
     # game/dlgs/mortuary_zombies/zf1072.rpy:17
     old 'zf1072_s0_r35132{#zf1072_s0_r35132}'
-    new '«I think this one's seen better days…»{#zf1072_s0_r35132}'
+    new '«I think this one\'s seen better days…»{#zf1072_s0_r35132}'
 
     # game/dlgs/mortuary_zombies/zf1072.rpy:17
     old 'zf1072_s0_r35133{#zf1072_s0_r35133}'
-    new '«I know you're not a zombie, you know. You're not fooling anyone».{#zf1072_s0_r35133}'
+    new '«I know you\'re not a zombie, you know. You\'re not fooling anyone».{#zf1072_s0_r35133}'
 
     # game/dlgs/mortuary_zombies/zf1072.rpy:17
     old 'zf1072_s0_r35134{#zf1072_s0_r35134}'

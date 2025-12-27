@@ -4,7 +4,7 @@
 translate english zm613_s0_113c74b9:
 
     # 'zm613_s0{#zm613_s0}'
-    nr 'The numbers «613» are cut deeply into this plodding corpse's forehead, but an inch of shredded, leathery skin separates the «1» and the «3».{#zm613_s0_1}'
+    nr 'The numbers «613» are cut deeply into this plodding corpse\'s forehead, but an inch of shredded, leathery skin separates the «1» and the «3».{#zm613_s0_1}'
     nr 'Looking closely, you can barely make out a «2» carved there.{#zm613_s0_1}'
 
 # game/dlgs/mortuary_zombies/zm613.rpy:46
@@ -31,7 +31,7 @@ translate english strings:
 
     # game/dlgs/mortuary_zombies/zm613.rpy:17
     old 'zm613_s0_r6545{#zm613_s0_r6545}'
-    new '«I know you're not a zombie, you know. You're not fooling anyone».{#zm613_s0_r6545}'
+    new '«I know you\'re not a zombie, you know. You\'re not fooling anyone».{#zm613_s0_r6545}'
 
     # game/dlgs/mortuary_zombies/zm613.rpy:17
     old 'zm613_s0_r6546{#zm613_s0_r6546}'

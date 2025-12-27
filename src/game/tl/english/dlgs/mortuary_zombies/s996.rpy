@@ -24,14 +24,14 @@ translate english s996_s3_a4455344:
 
     # 's996_s3{#s996_s3}'
     nr 'Someone has taken care to bind the bones of this skeleton with leather straps, woven around the body in such a pattern that they resemble muscles and tendons.{#s996_s3_1}'
-    nr 'The straps are secured to metal bolts punched into the skeleton's joints.{#s996_s3_1}'
+    nr 'The straps are secured to metal bolts punched into the skeleton\'s joints.{#s996_s3_1}'
     nr 'This skeleton looks like it has seen a great deal of service: many of its bones are chipped and its numerous fractures are bound with sealant and foul-smelling glues.{#s996_s3_1}'
 
 # game/dlgs/mortuary_zombies/s996.rpy:183
 translate english s996_s4_6a2b5ee3:
 
     # 's996_s4{#s996_s4}'
-    nr 'You pull at the iron bolts, but you're not strong enough to pull them out. They've been hammered in pretty tight.{#s996_s4_1}'
+    nr 'You pull at the iron bolts, but you\'re not strong enough to pull them out. They\'ve been hammered in pretty tight.{#s996_s4_1}'
 
 # game/dlgs/mortuary_zombies/s996.rpy:216
 translate english s996_s5_26b71d6b:
@@ -44,7 +44,7 @@ translate english s996_s5_26b71d6b:
 translate english s996_s6_087c1d14:
 
     # 's996_s6{#s996_s6}'
-    nr 'Using your prybar, you rip the bolts from the skeleton's joints. The skeleton collapses, some of its bones still twitching.{#s996_s6_1}'
+    nr 'Using your prybar, you rip the bolts from the skeleton\'s joints. The skeleton collapses, some of its bones still twitching.{#s996_s6_1}'
 
 # game/dlgs/mortuary_zombies/s996.rpy:240
 translate english s996_s7_4eb5d6eb:
@@ -64,11 +64,11 @@ translate english strings:
 
     # game/dlgs/mortuary_zombies/s996.rpy:17
     old 's996_s0_r35485{#s996_s0_r35485}'
-    new '«I have to ask: Why the smock? I mean, it's not like you have anything to be modest about».{#s996_s0_r35485}'
+    new '«I have to ask: Why the smock? I mean, it\'s not like you have anything to be modest about».{#s996_s0_r35485}'
 
     # game/dlgs/mortuary_zombies/s996.rpy:17
     old 's996_s0_r35486{#s996_s0_r35486}'
-    new '«I have to ask: Why the smock? I mean, it's not like you have anything to be modest about».{#s996_s0_r35486}'
+    new '«I have to ask: Why the smock? I mean, it\'s not like you have anything to be modest about».{#s996_s0_r35486}'
 
     # game/dlgs/mortuary_zombies/s996.rpy:17
     old 's996_s0_r35487{#s996_s0_r35487}'
@@ -80,31 +80,31 @@ translate english strings:
 
     # game/dlgs/mortuary_zombies/s996.rpy:17
     old 's996_s0_r35525{#s996_s0_r35525}'
-    new 'Try and pry out the skeleton's joint bolts.{#s996_s0_r35525}'
+    new 'Try and pry out the skeleton\'s joint bolts.{#s996_s0_r35525}'
 
     # game/dlgs/mortuary_zombies/s996.rpy:17
     old 's996_s0_r35526{#s996_s0_r35526}'
-    new 'Try and pry out the skeleton's joint bolts.{#s996_s0_r35526}'
+    new 'Try and pry out the skeleton\'s joint bolts.{#s996_s0_r35526}'
 
     # game/dlgs/mortuary_zombies/s996.rpy:17
     old 's996_s0_r35527{#s996_s0_r35527}'
-    new 'Try and pry out the skeleton's joint bolts.{#s996_s0_r35527}'
+    new 'Try and pry out the skeleton\'s joint bolts.{#s996_s0_r35527}'
 
     # game/dlgs/mortuary_zombies/s996.rpy:17
     old 's996_s0_r35528{#s996_s0_r35528}'
-    new 'Try and pry out the skeleton's joint bolts.{#s996_s0_r35528}'
+    new 'Try and pry out the skeleton\'s joint bolts.{#s996_s0_r35528}'
 
     # game/dlgs/mortuary_zombies/s996.rpy:17
     old 's996_s0_r35529{#s996_s0_r35529}'
-    new 'Try and pry out the skeleton's joint bolts.{#s996_s0_r35529}'
+    new 'Try and pry out the skeleton\'s joint bolts.{#s996_s0_r35529}'
 
     # game/dlgs/mortuary_zombies/s996.rpy:17
     old 's996_s0_r35530{#s996_s0_r35530}'
-    new 'Try and pry out the skeleton's joint bolts.{#s996_s0_r35530}'
+    new 'Try and pry out the skeleton\'s joint bolts.{#s996_s0_r35530}'
 
     # game/dlgs/mortuary_zombies/s996.rpy:17
     old 's996_s0_r35531{#s996_s0_r35531}'
-    new 'Try and pry out the skeleton's joint bolts.{#s996_s0_r35531}'
+    new 'Try and pry out the skeleton\'s joint bolts.{#s996_s0_r35531}'
 
     # game/dlgs/mortuary_zombies/s996.rpy:17
     old 's996_s0_r35532{#s996_s0_r35532}'
@@ -148,19 +148,19 @@ translate english strings:
 
     # game/dlgs/mortuary_zombies/s996.rpy:137
     old 's996_s3_r35494{#s996_s3_r35494}'
-    new 'Try and pry out the skeleton's joint bolts.{#s996_s3_r35494}'
+    new 'Try and pry out the skeleton\'s joint bolts.{#s996_s3_r35494}'
 
     # game/dlgs/mortuary_zombies/s996.rpy:137
     old 's996_s3_r35516{#s996_s3_r35516}'
-    new 'Try and pry out the skeleton's joint bolts.{#s996_s3_r35516}'
+    new 'Try and pry out the skeleton\'s joint bolts.{#s996_s3_r35516}'
 
     # game/dlgs/mortuary_zombies/s996.rpy:137
     old 's996_s3_r35517{#s996_s3_r35517}'
-    new 'Try and pry out the skeleton's joint bolts.{#s996_s3_r35517}'
+    new 'Try and pry out the skeleton\'s joint bolts.{#s996_s3_r35517}'
 
     # game/dlgs/mortuary_zombies/s996.rpy:137
     old 's996_s3_r35518{#s996_s3_r35518}'
-    new 'Try and pry out the skeleton's joint bolts.{#s996_s3_r35518}'
+    new 'Try and pry out the skeleton\'s joint bolts.{#s996_s3_r35518}'
 
     # game/dlgs/mortuary_zombies/s996.rpy:137
     old 's996_s3_r35519{#s996_s3_r35519}'
