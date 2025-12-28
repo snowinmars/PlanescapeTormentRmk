@@ -139,23 +139,6 @@ screen preferences_game():
                                 button:
                                     action NullAction()
                                     xsize 250
-                                    text _('preferences_game_screen_text_speed'): # Скорость текста
-                                        size 20
-                                        color '#dbc401'
-                                        hover_color '#eeeeee'
-
-                                bar:
-                                    value Preference("text speed")
-                                    thumb_offset 10
-
-                        frame:
-                            background None
-                            xsize 550
-
-                            hbox:
-                                button:
-                                    action NullAction()
-                                    xsize 250
                                     text _('preferences_game_screen_auto_forward_time'): # Скорость авточтения
                                         size 20
                                         color '#dbc401'
