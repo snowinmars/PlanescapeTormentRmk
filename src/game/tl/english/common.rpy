@@ -779,7 +779,7 @@ translate english strings:
     new 'Clipboard voicing enabled. Press «shift+C» to disable.'
 
     # renpy/common/00preferences.rpy:703
-    old 'Self-voicing would say \'[renpy.display.tts.last]\'. Press \'alt+shift+V\' to disable.'
+    old 'Self-voicing would say "[renpy.display.tts.last]". Press \'alt+shift+V\' to disable.'
     new 'Self-voicing would say «[renpy.display.tts.last]». Press «alt+shift+V» to disable.'
 
     # renpy/common/00preferences.rpy:705

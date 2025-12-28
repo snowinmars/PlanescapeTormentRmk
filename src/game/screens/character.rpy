@@ -105,6 +105,7 @@ screen character_screen(character):
                 text_size 20
                 text_color "#dbc401"
                 text_align (0.5, 0.5)
+                text_font 'exocet.ttf'
 
             label str(character.strength):
                 xpos 350
@@ -123,6 +124,7 @@ screen character_screen(character):
                 text_size 20
                 text_color "#dbc401"
                 text_align (0.5, 0.5)
+                text_font 'exocet.ttf'
 
             label str(character.intelligence):
                 xpos 258
@@ -141,6 +143,7 @@ screen character_screen(character):
                 text_size 20
                 text_color "#dbc401"
                 text_align (0.5, 0.5)
+                text_font 'exocet.ttf'
 
             label str(character.wisdom):
                 xpos 277
@@ -159,6 +162,7 @@ screen character_screen(character):
                 text_size 20
                 text_color "#dbc401"
                 text_align (0.5, 0.5)
+                text_font 'exocet.ttf'
 
             label str(character.dexterity):
                 xpos 402
@@ -177,6 +181,7 @@ screen character_screen(character):
                 text_size 20
                 text_color "#dbc401"
                 text_align (0.5, 0.5)
+                text_font 'exocet.ttf'
 
             label str(character.constitution):
                 xpos 563
@@ -195,6 +200,7 @@ screen character_screen(character):
                 text_size 20
                 text_color "#dbc401"
                 text_align (0.5, 0.5)
+                text_font 'exocet.ttf'
 
             label str(character.charisma):
                 xpos 725

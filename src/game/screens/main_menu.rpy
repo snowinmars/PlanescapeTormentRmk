@@ -52,11 +52,11 @@ screen main_menu():
             ysize 107 # 215
             background Transform('gui/main_menu_newlife.png', fit='cover')
             hover_background Transform('gui/main_menu_newlife.png', fit='cover', matrixcolor=main_menu_hover_matrix)
-            action Start()
+            action ShowMenu('character_creation')
 
             frame:
                 background CurvedText(
-                    _('main_menu_newlife'), # "Новая жизнь"
+                    __('main_menu_newlife'), # "Новая жизнь"
                     [(60, 50), (155, 50), (250, 50)],
                     font='exocet.ttf',
                     color='#bd7a10'
@@ -73,7 +73,7 @@ screen main_menu():
 
             frame:
                 background CurvedText(
-                    _('main_menu_load'), # "Выбрать жизнь"
+                    __('main_menu_load'), # "Выбрать жизнь"
                     [(30, 60), (40, 190), (139, 243)],
                     font='exocet.ttf',
                     color='#bd7a10'
@@ -90,7 +90,7 @@ screen main_menu():
 
             frame:
                 background CurvedText(
-                    _('main_menu_continue'), # "Возродиться"
+                    __('main_menu_continue'), # "Возродиться"
                     [(57, 237), (145, 185), (157, 77)],
                     font='exocet.ttf',
                     color='#bd7a10'
@@ -107,7 +107,7 @@ screen main_menu():
 
             frame:
                 background CurvedText(
-                    _('main_menu_settings'), # "Восприятие"
+                    __('main_menu_settings'), # "Восприятие"
                     [(67, 205), (150, 150), (190, 75)],
                     font='exocet.ttf',
                     color='#bd7a10'
@@ -124,7 +124,7 @@ screen main_menu():
 
             frame:
                 background CurvedText(
-                    _('main_menu_exit'), # "Бездна"
+                    __('main_menu_exit'), # "Бездна"
                     [(65, 95), (90, 140), (145, 185)],
                     font='exocet.ttf',
                     color='#bd7a10'

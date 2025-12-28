@@ -779,7 +779,7 @@ translate russian strings:
     new 'Озвучка буфера обмена включена. Нажмите «shift+C», чтобы отключить её.'
 
     # renpy/common/00preferences.rpy:703
-    old 'Self-voicing would say \'[renpy.display.tts.last]\'. Press \'alt+shift+V\' to disable.'
+    old 'Self-voicing would say "[renpy.display.tts.last]". Press \'alt+shift+V\' to disable.'
     new 'Синтезатор речи должен сказать \'[renpy.display.tts.last]\'. Нажмите «alt+shift+V», чтобы отключить его.'
 
     # renpy/common/00preferences.rpy:705
