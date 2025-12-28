@@ -1,5 +1,10 @@
 # Change log
 
+## Version 0.05
+- Technical improvements
+- Fix tests
+- Add characted generation screen
+
 ## Version 0.04
 - Implement narrat-like approach to dialogues
 - Redo some UI: menus, journal, character screens
