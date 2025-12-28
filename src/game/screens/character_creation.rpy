@@ -1,5 +1,6 @@
 init python:
     character_creation_hover_matrix = BrightnessMatrix(0.1)
+    character_creation_insensitive_matrix = SaturationMatrix(0.3) * BrightnessMatrix(-0.1)
     min_prop_value = 9
     max_prop_value = 18
     max_props_sum = 75
@@ -53,7 +54,10 @@ init python:
 
 
     def set_mage(character):
+        runtime.global_state_manager.characters_manager.set_property('protagonist_character_name', 'strength', 9)
+        runtime.global_state_manager.characters_manager.set_property('protagonist_character_name', 'dexterity', 9)
         runtime.global_state_manager.characters_manager.set_property('protagonist_character_name', 'intelligence', 16)
+        runtime.global_state_manager.characters_manager.set_property('protagonist_character_name', 'constitution', 9)
         runtime.global_state_manager.characters_manager.set_property('protagonist_character_name', 'wisdom', 17)
         runtime.global_state_manager.characters_manager.set_property('protagonist_character_name', 'charisma', 15)
 
@@ -91,6 +95,7 @@ screen character_creation():
                 button:
                     background Transform('gui/property_minus.png', fit='cover')
                     hover_background Transform('gui/property_minus.png', fit='cover', matrixcolor=character_creation_hover_matrix)
+                    insensitive_background Transform('gui/property_minus.png', fit='cover', matrixcolor=character_creation_insensitive_matrix)
                     xpos 23
                     ypos 23
                     xsize 72
@@ -111,6 +116,7 @@ screen character_creation():
                 button:
                     background Transform('gui/property_plus.png', fit='cover')
                     hover_background Transform('gui/property_plus.png', fit='cover', matrixcolor=character_creation_hover_matrix)
+                    insensitive_background Transform('gui/property_plus.png', fit='cover', matrixcolor=character_creation_insensitive_matrix)
                     xpos 215
                     ypos 20
                     xsize 72
@@ -118,7 +124,7 @@ screen character_creation():
                     action [Function(inc_prop, character, 'strength')]
                     hovered [Show('character_creation_strength'), Hide('character_creation_help')]
                     unhovered [Hide('character_creation_strength'), Show('character_creation_help')]
-                    sensitive (character.strength < max_prop_value)
+                    sensitive (character.strength < max_prop_value and count_all_props_sum(character) < max_props_sum)
 
         ####
         button:
@@ -148,6 +154,7 @@ screen character_creation():
                 button:
                     background Transform('gui/property_minus.png', fit='cover')
                     hover_background Transform('gui/property_minus.png', fit='cover', matrixcolor=character_creation_hover_matrix)
+                    insensitive_background Transform('gui/property_minus.png', fit='cover', matrixcolor=character_creation_insensitive_matrix)
                     xpos 50
                     ypos 225
                     xsize 72
@@ -171,6 +178,7 @@ screen character_creation():
                 button:
                     background Transform('gui/property_plus.png', fit='cover')
                     hover_background Transform('gui/property_plus.png', fit='cover', matrixcolor=character_creation_hover_matrix)
+                    insensitive_background Transform('gui/property_plus.png', fit='cover', matrixcolor=character_creation_insensitive_matrix)
                     xpos 145
                     ypos 60
                     xsize 72
@@ -181,7 +189,7 @@ screen character_creation():
                         rotate -60
                     hovered [Show('character_creation_intelligence'), Hide('character_creation_help')]
                     unhovered [Hide('character_creation_intelligence'), Show('character_creation_help')]
-                    sensitive (character.intelligence < max_prop_value)
+                    sensitive (character.intelligence < max_prop_value and count_all_props_sum(character) < max_props_sum)
 
         ####
         button:
@@ -211,6 +219,7 @@ screen character_creation():
                 button:
                     background Transform('gui/property_minus.png', fit='cover')
                     hover_background Transform('gui/property_minus.png', fit='cover', matrixcolor=character_creation_hover_matrix)
+                    insensitive_background Transform('gui/property_minus.png', fit='cover', matrixcolor=character_creation_insensitive_matrix)
                     xpos 35
                     ypos 55
                     xsize 72
@@ -234,6 +243,7 @@ screen character_creation():
                 button:
                     background Transform('gui/property_plus.png', fit='cover')
                     hover_background Transform('gui/property_plus.png', fit='cover', matrixcolor=character_creation_hover_matrix)
+                    insensitive_background Transform('gui/property_plus.png', fit='cover', matrixcolor=character_creation_insensitive_matrix)
                     xpos 133
                     ypos 223
                     xsize 72
@@ -244,7 +254,7 @@ screen character_creation():
                         rotate 60
                     hovered [Show('character_creation_wisdom'), Hide('character_creation_help')]
                     unhovered [Hide('character_creation_wisdom'), Show('character_creation_help')]
-                    sensitive (character.wisdom < max_prop_value)
+                    sensitive (character.wisdom < max_prop_value and count_all_props_sum(character) < max_props_sum)
 
         ####
         button:
@@ -271,6 +281,7 @@ screen character_creation():
                 button:
                     background Transform('gui/property_minus.png', fit='cover')
                     hover_background Transform('gui/property_minus.png', fit='cover', matrixcolor=character_creation_hover_matrix)
+                    insensitive_background Transform('gui/property_minus.png', fit='cover', matrixcolor=character_creation_insensitive_matrix)
                     xpos 15
                     ypos 115
                     xsize 72
@@ -291,6 +302,7 @@ screen character_creation():
                 button:
                     background Transform('gui/property_plus.png', fit='cover')
                     hover_background Transform('gui/property_plus.png', fit='cover', matrixcolor=character_creation_hover_matrix)
+                    insensitive_background Transform('gui/property_plus.png', fit='cover', matrixcolor=character_creation_insensitive_matrix)
                     xpos 205
                     ypos 115
                     xsize 72
@@ -298,7 +310,7 @@ screen character_creation():
                     action [Function(inc_prop, character, 'dexterity')]
                     hovered [Show('character_creation_dexterity'), Hide('character_creation_help')]
                     unhovered [Hide('character_creation_dexterity'), Show('character_creation_help')]
-                    sensitive (character.dexterity < max_prop_value)
+                    sensitive (character.dexterity < max_prop_value and count_all_props_sum(character) < max_props_sum)
 
         ####
         button:
@@ -328,6 +340,7 @@ screen character_creation():
                 button:
                     background Transform('gui/property_minus.png', fit='cover')
                     hover_background Transform('gui/property_minus.png', fit='cover', matrixcolor=character_creation_hover_matrix)
+                    insensitive_background Transform('gui/property_minus.png', fit='cover', matrixcolor=character_creation_insensitive_matrix)
                     xpos 112
                     ypos 222
                     xsize 72
@@ -351,6 +364,7 @@ screen character_creation():
                 button:
                     background Transform('gui/property_plus.png', fit='cover')
                     hover_background Transform('gui/property_plus.png', fit='cover', matrixcolor=character_creation_hover_matrix)
+                    insensitive_background Transform('gui/property_plus.png', fit='cover', matrixcolor=character_creation_insensitive_matrix)
                     xpos 210
                     ypos 55
                     xsize 72
@@ -361,7 +375,7 @@ screen character_creation():
                         rotate -60
                     hovered [Show('character_creation_constitution'), Hide('character_creation_help')]
                     unhovered [Hide('character_creation_constitution'), Show('character_creation_help')]
-                    sensitive (character.constitution < max_prop_value)
+                    sensitive (character.constitution < max_prop_value and count_all_props_sum(character) < max_props_sum)
 
         ####
         button:
@@ -391,6 +405,7 @@ screen character_creation():
                 button:
                     background Transform('gui/property_minus.png', fit='cover')
                     hover_background Transform('gui/property_minus.png', fit='cover', matrixcolor=character_creation_hover_matrix)
+                    insensitive_background Transform('gui/property_minus.png', fit='cover', matrixcolor=character_creation_insensitive_matrix)
                     xpos 110
                     ypos 48
                     xsize 72
@@ -414,6 +429,7 @@ screen character_creation():
                 button:
                     background Transform('gui/property_plus.png', fit='cover')
                     hover_background Transform('gui/property_plus.png', fit='cover', matrixcolor=character_creation_hover_matrix)
+                    insensitive_background Transform('gui/property_plus.png', fit='cover', matrixcolor=character_creation_insensitive_matrix)
                     xpos 205
                     ypos 210
                     xsize 72
@@ -424,7 +440,7 @@ screen character_creation():
                         rotate 60
                     hovered [Show('character_creation_charisma'), Hide('character_creation_help')]
                     unhovered [Hide('character_creation_charisma'), Show('character_creation_help')]
-                    sensitive (character.charisma < max_prop_value)
+                    sensitive (character.charisma < max_prop_value and count_all_props_sum(character) < max_props_sum)
 
         vbox:
             text _('character_screen_points'):
@@ -510,6 +526,7 @@ screen character_creation():
         ysize 66
         background Transform('gui/cgback_go.png', fit='cover')
         hover_background Transform('gui/cgback_go.png', fit='cover', matrixcolor=character_creation_hover_matrix)
+        insensitive_background Transform('gui/cgback_go.png', fit='cover', matrixcolor=character_creation_insensitive_matrix)
         action Start()
         sensitive (count_all_props_sum(character) == max_props_sum)
         text _("character_screen_go"):
@@ -517,6 +534,8 @@ screen character_creation():
             ypos 25
             size 20
             color "#f8f6dE"
+            insensitive_color "#ccdcb8"
+
 
     button:
         xpos 1450
@@ -525,7 +544,16 @@ screen character_creation():
         ysize 66
         background Transform('gui/cgback_back.png', fit='cover')
         hover_background Transform('gui/cgback_back.png', fit='cover', matrixcolor=character_creation_hover_matrix)
-        action ShowMenu("main_menu")
+        action [
+            ShowMenu("main_menu"),
+            Hide('character_creation_help'),
+            Hide('character_creation_strength'),
+            Hide('character_creation_intelligence'),
+            Hide('character_creation_wisdom'),
+            Hide('character_creation_dexterity'),
+            Hide('character_creation_constitution'),
+            Hide('character_creation_charisma')
+        ]
         text _("character_screen_back"):
             xpos 35
             ypos 5
