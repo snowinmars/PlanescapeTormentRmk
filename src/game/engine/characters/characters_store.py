@@ -21,13 +21,17 @@ class CharactersStore():
         self.once_keys = state['once_keys']
 
 
-    def toJson(self):
+    def toJson(self, indent=None):
         state = self.__getstate__()
         state['characters'] = dict(map(lambda x: (
             x[0],
             x[1].__getstate__()
         ), state['characters'].items()))
-        return json.dumps(state, ensure_ascii=False)
+        return json.dumps(
+            state,
+            ensure_ascii=False,
+            indent=indent
+        )
 
 
     @classmethod

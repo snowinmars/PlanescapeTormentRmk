@@ -15,4 +15,4 @@ label zm463_s0_ctor:
 
 label zm463_dispose:
     hide zm463_img
-    jump graphics_menu
+    jump  map_dispatcher

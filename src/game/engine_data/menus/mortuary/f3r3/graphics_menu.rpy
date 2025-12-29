@@ -34,3 +34,6 @@ screen mortuary_f3r3_graphics_menu_screen():
         ],
         audio.mortuary
     )
+
+screen abstract_location_menu_screen():
+    text 'foo'

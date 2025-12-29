@@ -27,3 +27,7 @@ class Zm1508LogicGenerated:
 class Zm1508Logic(Zm1508LogicGenerated):
     def __init__(self, state_manager):
         super().__init__(state_manager)
+
+
+    def talk(self):
+        self.state_manager.world_manager.inc_talked_to_zm1508_times()

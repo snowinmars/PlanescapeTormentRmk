@@ -15,4 +15,4 @@ label zm257_s0_ctor:
 
 label zm257_dispose:
     hide zm257_img
-    jump graphics_menu
+    jump  map_dispatcher

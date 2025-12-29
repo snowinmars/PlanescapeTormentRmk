@@ -100,3 +100,11 @@ class Zm1041Logic(Zm1041LogicGenerated):
 
     def get_know_bei_name(self):
         return not self.state_manager.world_manager.get_know_bei_name()
+
+
+    def talk(self):
+        self.state_manager.world_manager.inc_talked_to_zm1041_times()
+
+
+    def talk_bei(self):
+        self.state_manager.world_manager.inc_talked_to_bei_times()

@@ -11,6 +11,14 @@ class Zm1508LogicTest(LogicTest):
         self.logic = Zm1508Logic(self.state_manager)
 
 
+    def test_talk(self):
+        self._integer_inc_action(
+            self.state_manager.world_manager.get_talked_to_zm1508_times,
+            1,
+            self.logic.talk
+        )
+
+
 class Zm1508LogicGeneratedTest(LogicTest):
     def setUp(self):
         super(Zm1508LogicGeneratedTest, self).setUp()

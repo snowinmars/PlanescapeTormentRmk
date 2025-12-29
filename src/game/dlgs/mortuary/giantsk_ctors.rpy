@@ -15,4 +15,4 @@ label giantsk_s0_ctor:
 
 label giantsk_dispose:
     hide giantsk_img
-    jump graphics_menu
+    jump  map_dispatcher

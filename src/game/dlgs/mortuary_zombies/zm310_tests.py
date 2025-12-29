@@ -25,6 +25,22 @@ class Zm310LogicTest(LogicTest):
         )
 
 
+    def test_talk(self):
+        self._integer_inc_action(
+            self.state_manager.world_manager.get_talked_to_zm310_times,
+            1,
+            self.logic.talk
+        )
+
+
+    def test_talk(self):
+        self._integer_inc_action(
+            self.state_manager.world_manager.get_talked_to_oinosian_times,
+            1,
+            self.logic.talk_oinosian
+        )
+
+
 class Zm310LogicGeneratedTest(LogicTest):
     def setUp(self):
         super(Zm310LogicGeneratedTest, self).setUp()

@@ -22,12 +22,16 @@ class EventsStore():
         self.events = deque(state['events'], maxlen=self.max_entries)
 
 
-    def toJson(self):
+    def toJson(self, indent=None):
         state = self.__getstate__()
         state['events'] = list(map(lambda x:
             x.__getstate__()
         , state['events']))
-        return json.dumps(state, ensure_ascii=False)
+        return json.dumps(
+            state,
+            ensure_ascii=False,
+            indent=indent
+        )
 
 
     @classmethod

@@ -11,6 +11,22 @@ class Zm1146LogicTest(LogicTest):
         self.logic = Zm1146Logic(self.state_manager)
 
 
+    def test_talk(self):
+        self._integer_inc_action(
+            self.state_manager.world_manager.get_talked_to_zm1146_times,
+            1,
+            self.logic.talk
+        )
+
+
+    def test_talk_crispy(self):
+        self._integer_inc_action(
+            self.state_manager.world_manager.get_talked_to_crispy_times,
+            1,
+            self.logic.talk
+        )
+
+
 class Zm1146LogicGeneratedTest(LogicTest):
     def setUp(self):
         super(Zm1146LogicGeneratedTest, self).setUp()

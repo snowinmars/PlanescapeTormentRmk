@@ -11,6 +11,14 @@ class Zf832LogicTest(LogicTest):
         self.logic = Zf832Logic(self.state_manager)
 
 
+    def test_talk(self):
+        self._integer_inc_action(
+            self.state_manager.world_manager.get_talked_to_zf832_times,
+            1,
+            self.logic.talk
+        )
+
+
 class Zf832LogicGeneratedTest(LogicTest):
     def setUp(self):
         super(Zf832LogicGeneratedTest, self).setUp()

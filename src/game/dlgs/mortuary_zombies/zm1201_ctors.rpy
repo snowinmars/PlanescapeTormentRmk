@@ -25,4 +25,4 @@ label zm1201_s5_ctor:
 
 label zm1201_dispose:
     hide zm1201_img
-    jump graphics_menu
+    jump  map_dispatcher

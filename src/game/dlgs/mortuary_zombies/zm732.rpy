@@ -11,6 +11,7 @@ init 10 python:
 
 # s0 # say6529
 label zm732_s0: # from 4.0 # IF ~  !HasItem("TomeBA","ZM732")
+    $ zm732Logic.talk()
     'zm732_s0{#zm732_s0}'
 
     menu:
@@ -64,6 +65,7 @@ label zm732_s2: # from 0.3
 
 # s3 # say64270
 label zm732_s3: # - # IF ~  HasItem("TomeBA","ZM732")
+    $ zm732Logic.talk()
     'zm732_s3{#zm732_s3}'
 
     menu:

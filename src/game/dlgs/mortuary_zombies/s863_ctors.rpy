@@ -30,4 +30,4 @@ label s863_s8_ctor:
 
 label s863_dispose:
     hide s863_img
-    jump graphics_menu
+    jump  map_dispatcher

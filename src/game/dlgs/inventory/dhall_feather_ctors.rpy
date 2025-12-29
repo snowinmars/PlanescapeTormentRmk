@@ -13,4 +13,4 @@ label dhall_feather_s0_ctor:
 
 
 label dhall_feather_dispose:
-    jump graphics_menu
+    jump  map_dispatcher

@@ -11,6 +11,14 @@ class S748LogicTest(LogicTest):
         self.logic = S748Logic(self.state_manager)
 
 
+    def test_talk(self):
+        self._integer_inc_action(
+            self.state_manager.world_manager.get_talked_to_s478_times,
+            1,
+            self.logic.talk
+        )
+
+
 class S748LogicGeneratedTest(LogicTest):
     def setUp(self):
         super(S748LogicGeneratedTest, self).setUp()

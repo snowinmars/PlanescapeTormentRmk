@@ -11,6 +11,14 @@ class S42LogicTest(LogicTest):
         self.logic = S42Logic(self.state_manager)
 
 
+    def test_talk(self):
+        self._integer_inc_action(
+            self.state_manager.world_manager.get_talked_to_s42_times,
+            1,
+            self.logic.talk
+        )
+
+
 class S42LogicGeneratedTest(LogicTest):
     def setUp(self):
         super(S42LogicGeneratedTest, self).setUp()

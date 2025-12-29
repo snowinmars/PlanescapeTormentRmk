@@ -52,4 +52,4 @@ label morte2_s31_ctor:
 
 label morte2_dispose:
     hide morte_img
-    jump graphics_menu
+    jump  map_dispatcher

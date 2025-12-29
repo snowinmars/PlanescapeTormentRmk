@@ -79,6 +79,14 @@ class Zm396LogicTest(LogicTest):
         self.assertTrue(self.logic.r45113_condition())
 
 
+    def test_talk(self):
+        self._integer_inc_action(
+            self.state_manager.world_manager.get_talked_to_zm396_times,
+            1,
+            self.logic.talk
+        )
+
+
 class Zm396LogicGeneratedTest(LogicTest):
     def setUp(self):
         super(Zm396LogicGeneratedTest, self).setUp()

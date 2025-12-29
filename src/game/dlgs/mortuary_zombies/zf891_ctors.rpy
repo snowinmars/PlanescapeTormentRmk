@@ -20,4 +20,4 @@ label zf891_s3_ctor: # - # IF ~  False()
 
 label zf891_dispose:
     hide zf891_img
-    jump graphics_menu
+    jump  map_dispatcher

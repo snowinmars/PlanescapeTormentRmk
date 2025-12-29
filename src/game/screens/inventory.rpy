@@ -99,6 +99,6 @@ screen inventory_screen():
     textbutton "Закрыть":
         action [
             Hide("inventory_screen"),
-            Jump("graphics_menu")
+            Jump("map_dispatcher")
         ]
         align (0.99, 0.02)

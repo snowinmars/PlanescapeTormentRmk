@@ -43,3 +43,11 @@ class Zm310Logic(Zm310LogicGenerated):
 
     def get_know_oinosian_name(self):
         return self.state_manager.world_manager.get_know_oinosian_name()
+
+
+    def talk(self):
+        self.state_manager.world_manager.inc_talked_to_zm310_times()
+
+
+    def talk_oinosian(self):
+        self.state_manager.world_manager.inc_talked_to_oinosian_times()

@@ -98,3 +98,7 @@ class Zm396Logic(Zm396LogicGenerated):
     def r45113_condition(self):
         return self.state_manager.world_manager.get_has_bandages_zm396() \
                and self.state_manager.world_manager.get_zombie_chaotic()
+
+
+    def talk(self):
+        self.state_manager.world_manager.inc_talked_to_zm396_times()

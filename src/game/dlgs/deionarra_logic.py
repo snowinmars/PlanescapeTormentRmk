@@ -750,3 +750,7 @@ class DeionarraLogic(DeionarraLogicGenerated):
 
     def get_know_deionarra_name(self):
         return self.state_manager.world_manager.get_know_deionarra_name()
+
+
+    def talk(self):
+        self.state_manager.world_manager.inc_talked_to_deionarra_times()

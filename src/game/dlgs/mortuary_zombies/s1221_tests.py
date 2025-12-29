@@ -11,6 +11,14 @@ class S1221LogicTest(LogicTest):
         self.logic = S1221Logic(self.state_manager)
 
 
+    def test_talk(self):
+        self._integer_inc_action(
+            self.state_manager.world_manager.get_talked_to_s1221_times,
+            1,
+            self.logic.talk
+        )
+
+
 class S1221LogicGeneratedTest(LogicTest):
     def setUp(self):
         super(S1221LogicGeneratedTest, self).setUp()

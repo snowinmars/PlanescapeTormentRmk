@@ -53,3 +53,7 @@ class Zm1201LogicGenerated:
 class Zm1201Logic(Zm1201LogicGenerated):
     def __init__(self, state_manager):
         super().__init__(state_manager)
+
+
+    def talk(self):
+        self.state_manager.world_manager.inc_talked_to_zm1201_times()

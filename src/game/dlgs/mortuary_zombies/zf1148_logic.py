@@ -83,3 +83,7 @@ class Zf1148LogicGenerated:
 class Zf1148Logic(Zf1148LogicGenerated):
     def __init__(self, state_manager):
         super().__init__(state_manager)
+
+
+    def talk(self):
+        self.state_manager.world_manager.inc_talked_to_zf1148_times()

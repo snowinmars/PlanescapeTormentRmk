@@ -45,4 +45,4 @@ label dust_s51_ctor:
 
 label dust_dispose:
     hide dust_img
-    jump graphics_menu
+    jump  map_dispatcher

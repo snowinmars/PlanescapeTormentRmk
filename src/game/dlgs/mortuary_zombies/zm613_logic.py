@@ -27,3 +27,7 @@ class Zm613LogicGenerated:
 class Zm613Logic(Zm613LogicGenerated):
     def __init__(self, state_manager):
         super().__init__(state_manager)
+
+
+    def talk(self):
+        self.state_manager.world_manager.inc_talked_to_zm613_times()

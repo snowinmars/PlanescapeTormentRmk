@@ -46,4 +46,4 @@ label dustfem_s51_ctor:
 
 label dustfem_dispose:
     hide dustfem_img
-    jump graphics_menu
+    jump  map_dispatcher

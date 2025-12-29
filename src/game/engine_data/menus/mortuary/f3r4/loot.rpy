@@ -7,22 +7,22 @@ init 10 python:
 label mortuary_f3r4_loot_prybar:
     $ mortuaryF3R4LootLogic.prybar()
     nr "Ты подбираешь ломик."
-    jump graphics_menu
+    jump  map_dispatcher
 
 
 label mortuary_f3r4_loot_dustman_request:
     $ mortuaryF3R4LootLogic.dustman_request()
     nr "Ты подбираешь бумагу с запросом тленного."
-    jump graphics_menu
+    jump  map_dispatcher
 
 
 label mortuary_f3r4_loot_needle:
     $ mortuaryF3R4LootLogic.needle()
     nr "Ты подбираешь нитку с иголкой."
-    jump graphics_menu
+    jump  map_dispatcher
 
 
 label mortuary_f3r4_loot_garbage:
     $ mortuaryF3R4LootLogic.garbage()
     nr "Ты подбираешь кусок мусора."
-    jump graphics_menu
+    jump  map_dispatcher

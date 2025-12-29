@@ -14,6 +14,9 @@ init 1 python:
         config.language = persistent.language
         _preferences.language = persistent.language
 
+    if not hasattr(_preferences, 'show_mouse_screen'):
+        _preferences.show_mouse_screen = True
+
     gamedir = os.path.normpath(config.gamedir)
     logs_folder = os.path.join(gamedir, 'logs')
     config.version = "0.05"
@@ -68,6 +71,8 @@ init 3 python:
     from game.engine_data.settings.all_settings import (build_all_settings)
     from game.engine_data.inventory.all_inventory import (build_all_inventory)
     from game.engine_data.locations.all_locations import (build_all_locations)
+    from game.engine_data.characters.build_all_characters import (build_all_characters)
+    from game.engine_data.journal.build_all_notes import (build_all_notes)
 
 
     runtime.global_events_manager = EventsManager(runtime.logger)
@@ -123,7 +128,7 @@ init 3 python:
 
         now = int(time.time())
         runtime.logger.info('Building journal notes…')
-        register_note(runtime.global_journal_manager)
+        build_all_notes(runtime.global_journal_manager)
         def on_update_journal():
             renpy.exports.sound.play(renpy.store.audio.update_journal)
         runtime.global_journal_manager.register_on_update_journal(on_update_journal)
@@ -166,11 +171,12 @@ init 4 python: # inject narrat
 
 label start:
     # show screen events_manager_display
-    # show screen mouse_coordinates
     show screen inventory_button
     show screen character_screen_button
     show screen hotkey_listener
     show screen narrat
+
+    play music mortuary
 
     menu:
         "dev" if enabled_dev:
@@ -183,35 +189,10 @@ label start:
 
 
 label dev:
-    $ gsm.world_manager.set_know_xachariah_name(True)
-    $ gsm.world_manager.set_can_speak_with_dead(True)
-    jump xach_speak
-
-    play music mortuary
-    call quick_setup_as_mage from _call_quick_setup_as_mage
     $ gsm = runtime.global_state_manager
-    $ gcm = runtime.global_characters_manager
-    $ glm = runtime.global_locations_manager
-    $ glm.set_location('mortuary_f2r1')
-    $ gsm.world_manager.set_morte_value(1)
-    $ gsm.world_manager.set_in_party_morte(True)
-    $ gsm.world_manager.set_has_intro_key(True)
-    $ gsm.world_manager.set_mortuary_walkthrough(1)
-    # $ gcm.set_property('protagonist_character_name', 'good', 10)
-    # $ gsm.world_manager.set_mortualy_alarmed(True)
-    # $ gsm.world_manager.set_has_mortuary_key(True)
-    # $ gsm.world_manager.set_has_tome_ba(True)
-    $ gsm.world_manager.set_has_copper_earring_closed(True)
-    # $ gsm.world_manager.set_has_scalpel(True)
-    # $ gsm.world_manager.set_has_needle(True)
-    $ gsm.world_manager.set_has_1201_note(True)
-    # $ gsm.world_manager.set_has_zm1664_page(True)
-    # $ gsm.world_manager.set_has_bandages(True)
-    # $ gsm.world_manager.set_has_embalm(True)
-    # $ gsm.world_manager.set_has_keyem(True)
+    $ gsm.world_manager.set_has_mortuary_key(True)
 
-    jump morte1_s23
-    # jump graphics_menu
+    jump intro
 
 
 label end:

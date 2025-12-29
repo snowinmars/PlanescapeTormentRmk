@@ -14,4 +14,4 @@ label copearc_s0_ctor:
 
 label copearc_dispose:
     hide copearc_img
-    jump graphics_menu
+    jump  map_dispatcher

@@ -25,4 +25,4 @@ label zm732_s3_ctor:
 
 label zm732_dispose:
     hide zm732_img
-    jump graphics_menu
+    jump  map_dispatcher
