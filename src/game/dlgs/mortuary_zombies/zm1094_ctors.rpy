@@ -35,4 +35,4 @@ label zm1094_s27_ctor:
 
 label zm1094_dispose:
     hide zm1094_img
-    jump graphics_menu
+    jump  map_dispatcher

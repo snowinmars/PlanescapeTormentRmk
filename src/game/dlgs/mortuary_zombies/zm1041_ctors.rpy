@@ -30,4 +30,4 @@ label zm1041_s37_ctor:
 
 label zm1041_dispose:
     hide zm1041_img
-    jump graphics_menu
+    jump  map_dispatcher

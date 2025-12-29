@@ -22,10 +22,11 @@ class Event:
         self.text = state['text']
 
 
-    def toJson(self):
+    def toJson(self, indent=None):
         return json.dumps(
             self.__getstate__(),
-            ensure_ascii=False
+            ensure_ascii=False,
+            indent=indent
         )
 
 

@@ -18,13 +18,17 @@ class InventoryStore():
         self.inventory_items = state['inventory_items']
 
 
-    def toJson(self):
+    def toJson(self, indent=None):
         state = self.__getstate__()
         state['inventory_items'] = dict(map(lambda x: (
             x[0],
             x[1].__getstate__()
         ), state['inventory_items'].items()))
-        return json.dumps(state, ensure_ascii=False)
+        return json.dumps(
+            state,
+            ensure_ascii=False,
+            indent=indent
+        )
 
 
     @classmethod

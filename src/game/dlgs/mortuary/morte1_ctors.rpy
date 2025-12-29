@@ -51,4 +51,4 @@ label morte1_s30_ctor:
 
 label morte1_dispose:
     hide morte_img
-    jump graphics_menu
+    jump map_dispatcher

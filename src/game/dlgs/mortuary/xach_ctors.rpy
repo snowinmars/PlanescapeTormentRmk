@@ -30,4 +30,4 @@ label xach_s35_ctor: # -
 
 label xach_dispose:
     hide xach_img
-    jump graphics_menu
+    jump  map_dispatcher

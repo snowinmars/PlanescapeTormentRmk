@@ -11,6 +11,14 @@ class Zm985LogicTest(LogicTest):
         self.logic = Zm985Logic(self.state_manager)
 
 
+    def test_talk(self):
+        self._integer_inc_action(
+            self.state_manager.world_manager.get_talked_to_zm985_times,
+            1,
+            self.logic.talk
+        )
+
+
 class Zm985LogicGeneratedTest(LogicTest):
     def setUp(self):
         super(Zm985LogicGeneratedTest, self).setUp()

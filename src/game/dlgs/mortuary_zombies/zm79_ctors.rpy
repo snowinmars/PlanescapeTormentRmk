@@ -15,4 +15,4 @@ label zm79_s0_ctor:
 
 label zm79_dispose:
     hide zm79_img
-    jump graphics_menu
+    jump  map_dispatcher

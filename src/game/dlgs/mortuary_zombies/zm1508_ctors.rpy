@@ -15,4 +15,4 @@ label zm1508_s0_ctor:
 
 label zm1508_dispose:
     hide zm1508_img
-    jump graphics_menu
+    jump  map_dispatcher

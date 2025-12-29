@@ -39,3 +39,11 @@ class Zm257Logic(Zm257LogicGenerated):
 
     def set_know_zm257_spirit(self):
         self.state_manager.world_manager.set_know_zm257_spirit(True)
+
+
+    def talk(self):
+        self.state_manager.world_manager.inc_talked_to_zm257_times()
+
+
+    def talk_spirit(self):
+        self.state_manager.world_manager.inc_talked_to_zm257_spirit_times()

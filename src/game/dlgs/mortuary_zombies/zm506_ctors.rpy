@@ -25,4 +25,4 @@ label zm506_s5_ctor:
 
 label zm506_dispose:
     hide zm506_img
-    jump graphics_menu
+    jump  map_dispatcher

@@ -27,4 +27,4 @@ label zm985_s5_ctor:
 
 label zm985_dispose:
     hide zm985_img
-    jump graphics_menu
+    jump  map_dispatcher

@@ -15,4 +15,4 @@ label zm1445_s0_ctor:
 
 label zm1445_dispose:
     hide zm1445_img
-    jump graphics_menu
+    jump  map_dispatcher

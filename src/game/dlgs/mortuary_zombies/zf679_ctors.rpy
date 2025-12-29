@@ -20,4 +20,4 @@ label zf679_s3_ctor: # - # IF ~  False()
 
 label zf679_dispose:
     hide zf679_img
-    jump graphics_menu
+    jump  map_dispatcher

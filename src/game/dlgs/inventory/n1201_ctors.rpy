@@ -13,4 +13,4 @@ label n1201_s0_ctor:
 
 
 label n1201_dispose:
-    jump graphics_menu
+    jump  map_dispatcher

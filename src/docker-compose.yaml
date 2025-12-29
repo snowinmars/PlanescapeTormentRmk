@@ -19,7 +19,8 @@ services:
         coverage html && \
          report_end=\$(date +%s) && \
        total_end=\$(date +%s) && \
-       echo '\nСтатистика времени выполнения:' && \
+       echo && \
+       echo 'Статистика времени выполнения:' && \
        echo \"- Тесты: \$((test_end - test_start)) сек\" && \
        echo \"- Генерация отчёта: \$((report_end - report_start)) сек\" && \
        echo \"- Общее время: \$((total_end - start_time)) сек\""

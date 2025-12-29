@@ -11,6 +11,7 @@ init 10 python:
 
 # s0 # say24708
 label zm782_s0: # - # IF ~  True()
+    $ zm782Logic.talk()
     'zm782_s0{#zm782_s0}'
 
     menu:

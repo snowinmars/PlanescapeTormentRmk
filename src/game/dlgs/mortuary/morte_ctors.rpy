@@ -3,4 +3,4 @@
 
 label morte_dispose:
     hide morte_img
-    jump graphics_menu
+    jump  map_dispatcher

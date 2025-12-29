@@ -63,6 +63,14 @@ class Zm782LogicTest(LogicTest):
         )
 
 
+    def test_talk(self):
+        self._integer_inc_action(
+            self.state_manager.world_manager.get_talked_to_zm782_times,
+            1,
+            self.logic.talk
+        )
+
+
 class Zm782LogicGeneratedTest(LogicTest):
     def setUp(self):
         super(Zm782LogicGeneratedTest, self).setUp()

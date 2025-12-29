@@ -25,4 +25,4 @@ label zm1146_s20_ctor:
 
 label zm1146_dispose:
     hide zm1146_img
-    jump graphics_menu
+    jump  map_dispatcher

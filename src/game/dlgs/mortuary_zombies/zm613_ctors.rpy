@@ -15,4 +15,4 @@ label zm613_s0_ctor:
 
 label zm613_dispose:
     hide zm613_img
-    jump graphics_menu
+    jump  map_dispatcher

@@ -11,6 +11,7 @@ init 10 python:
 
 # s0 # say34931
 label zm396_s0: # - # IF ~  HasItem("Bandage","ZM396")
+    $ zm396Logic.talk()
     'zm396_s0{#zm396_s0}'
     # nr 'Этот труп ходит от плиты к плите, перевязывая лежащих на них мертвецов. На левом виске у него выбит номер «396»; его губы крепко зашиты. Ты замечаешь, что труп несет в руках несколько бинтов.{#zm396_s0_1}'
 
@@ -90,6 +91,7 @@ label zm396_s3: # from 0.2 1.0
 
 # s4 # say45111
 label zm396_s4: # from 3.0 # IF ~  !HasItem("Bandage","ZM396")
+    $ zm396Logic.talk()
     if not zm396Logic.get_took_zm396_bandages():
         'zm396_s4{#zm396_s4_1}'
     if zm396Logic.get_took_zm396_bandages():

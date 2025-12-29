@@ -25,6 +25,22 @@ class Zm1094LogicTest(LogicTest):
         )
 
 
+    def test_talk(self):
+        self._integer_inc_action(
+            self.state_manager.world_manager.get_talked_to_zm1094_times,
+            1,
+            self.logic.talk
+        )
+
+
+    def test_talk_asonje(self):
+        self._integer_inc_action(
+            self.state_manager.world_manager.get_talked_to_asonje_times,
+            1,
+            self.logic.talk
+        )
+
+
 class Zm1094LogicGeneratedTest(LogicTest):
     def setUp(self):
         super(Zm1094LogicGeneratedTest, self).setUp()

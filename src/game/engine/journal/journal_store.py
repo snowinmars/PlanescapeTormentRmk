@@ -18,13 +18,17 @@ class JournalStore():
         self.notes = state['notes']
 
 
-    def toJson(self):
+    def toJson(self, indent=None):
         state = self.__getstate__()
         state['notes'] = dict(map(lambda x: (
             x[0],
             x[1].__getstate__()
         ), state['notes'].items()))
-        return json.dumps(state, ensure_ascii=False)
+        return json.dumps(
+            state,
+            ensure_ascii=False,
+            indent=indent
+        )
 
 
     @classmethod

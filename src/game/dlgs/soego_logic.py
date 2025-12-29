@@ -1052,3 +1052,7 @@ class SoegoLogic(SoegoLogicGenerated):
 
     def get_know_soego_name(self):
         return not self.state_manager.world_manager.get_know_soego_name()
+
+
+    def talk(self):
+        self.state_manager.world_manager.inc_talked_to_soego_times()

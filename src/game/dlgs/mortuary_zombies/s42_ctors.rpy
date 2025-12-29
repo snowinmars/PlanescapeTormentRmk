@@ -20,4 +20,4 @@ label s42_s11_ctor: # -
 
 label s42_dispose:
     hide s42_img
-    jump graphics_menu
+    jump  map_dispatcher

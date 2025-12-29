@@ -27,3 +27,7 @@ class Zm1664LogicGenerated:
 class Zm1664Logic(Zm1664LogicGenerated):
     def __init__(self, state_manager):
         super().__init__(state_manager)
+
+
+    def talk(self):
+        self.state_manager.world_manager.inc_talked_to_zm1664_times()

@@ -20,4 +20,4 @@ label s748_s7_ctor: # -
 
 label s748_dispose:
     hide s748_img
-    jump graphics_menu
+    jump  map_dispatcher

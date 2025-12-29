@@ -25,4 +25,4 @@ label zm310_s18_ctor:
 
 label zm310_dispose:
     hide zm310_img
-    jump graphics_menu
+    jump  map_dispatcher

@@ -11,6 +11,14 @@ class S996LogicTest(LogicTest):
         self.logic = S996Logic(self.state_manager)
 
 
+    def test_talk(self):
+        self._integer_inc_action(
+            self.state_manager.world_manager.get_talked_to_s996_times,
+            1,
+            self.logic.talk
+        )
+
+
 class S996LogicGeneratedTest(LogicTest):
     def setUp(self):
         super(S996LogicGeneratedTest, self).setUp()

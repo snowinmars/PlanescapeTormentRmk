@@ -27,6 +27,22 @@ class Zm1041LogicTest(LogicTest):
         )
 
 
+    def test_talk(self):
+        self._integer_inc_action(
+            self.state_manager.world_manager.get_talked_to_zm1041_times,
+            1,
+            self.logic.talk
+        )
+
+
+    def test_talk_bei(self):
+        self._integer_inc_action(
+            self.state_manager.world_manager.get_talked_to_bei_times,
+            1,
+            self.logic.talk_bei
+        )
+
+
 class Zm1041LogicGeneratedTest(LogicTest):
     def setUp(self):
         super(Zm1041LogicGeneratedTest, self).setUp()

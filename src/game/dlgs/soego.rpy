@@ -38,6 +38,7 @@ label soego_s0: # - # IF WEIGHT #8 /* Triggers after states #: 59 58 12 63 108 7
 
 # s1 # say1437
 label soego_s1: # from 0.0 0.1 0.2 0.3
+    $ soegoLogic.talk()
     'soego_s1{#soego_s1}'
     # nr 'Когда ты обращаешься к тленному, он резко поднимает голову.{#soego_s1_1}'
     # soego '«Про… прошу прощения? Ты что-то сказал мне?»{#soego_s1_2}'
@@ -961,6 +962,7 @@ label soego_s38: # - # IF WEIGHT #9 /* Triggers after states #: 59 58 63 108 79 
 
 # s39 # say4904
 label soego_s39: # from 38.0
+    $ soegoLogic.talk()
     'soego_s39{#soego_s39}'
     # soego '«Приветствую…»{#soego_s39_1}'
     # nr 'Человек поворачивается к тебе лицом и слегка кивает. Внезапно ты замечаешь, что его глаза не налиты кровью, а просто имеют красный оттенок.{#soego_s39_2}'
@@ -1359,6 +1361,7 @@ label soego_s57: # from 53.0
 
 # s58 # say4980
 label soego_s58: # - # IF WEIGHT #6 /* Triggers after states #: 63 108 79 82 95 even though they appear after this state */ ~  CreatureInArea("AR0201") Global("Gate_Open","GLOBAL",1)
+    $ soegoLogic.talk()
     'soego_s58{#soego_s58}'
     # nr 'При твоем приближении Соэго вынюхивает воздух и поднимает взгляд. Увидев тебя, он хмурится.{#soego_s58_1}'
     # soego '«Я уже открыл для тебя ворота. Почему ты все еще здесь?»{#soego_s58_2}'
@@ -1375,6 +1378,7 @@ label soego_s58: # - # IF WEIGHT #6 /* Triggers after states #: 63 108 79 82 95 
 
 # s59 # say4983
 label soego_s59: # - # IF WEIGHT #7 /* Triggers after states #: 63 108 79 82 95 even though they appear after this state */ ~  CreatureInArea("AR0201") Global("Soego","GLOBAL",1) Global("Gate_Open","GLOBAL",0)
+    $ soegoLogic.talk()
     'soego_s59{#soego_s59}'
     # nr 'При твоем приближении Соэго вынюхивает воздух и поднимает взгляд. Увидев тебя, он слегка кивает.{#soego_s59_1}'
     # soego '«Ты нашел то, что искал?»{#soego_s59_2}'
@@ -1459,6 +1463,7 @@ label soego_s62: # from 44.2 45.1 46.0 47.1 48.0
 
 # s63 # say21653
 label soego_s63: # - # IF WEIGHT #4 /* Triggers after states #: 108 79 82 95 even though they appear after this state */ ~  CreatureInArea("AR1500") !Global("CR_Vic","GLOBAL",1)
+    $ soegoLogic.talk()
     'soego_s63{#soego_s63}'
     # soego '«А, еще один из живущих. Большинство из тех, кто заходит так глубоко в катакомбы, убивают упыри. Тебе повезло».{#soego_s63_1}'
 
@@ -1850,6 +1855,7 @@ label soego_s78: # from 63.3 64.3 65.2 66.2 67.4 68.3 69.3 70.3 72.5 73.5 74.3 7
 
 # s79 # say21851
 label soego_s79: # - # IF WEIGHT #2 /* Triggers after states #: 82 95 even though they appear after this state */ ~  CreatureInArea("AR1500") Global("CR_Vic","GLOBAL",1)
+    $ soegoLogic.talk()
     'soego_s79{#soego_s79}'
     # soego '«О, к нам подоспела подмога! Меня, как агента Многоединого, предупредили о твоем приходе. Нам нужно, чтобы ты попытался пробраться в тронный зал Безмолвного Короля и убил его. Сделай это, и Многоединый вознаградит тебя».{#soego_s79_1}'
 
@@ -1913,6 +1919,7 @@ label soego_s81: # from 80.0
 
 # s82 # say21913
 label soego_s82: # - # IF WEIGHT #1 /* Triggers after states #: 95 even though they appear after this state */ ~  CreatureInArea("AR1500") Global("Met_Soego2","GLOBAL",1)
+    $ soegoLogic.talk()
     'soego_s82{#soego_s82}'
     # soego '«А, рад встрече».{#soego_s82_1}'
 
@@ -2157,6 +2164,7 @@ label soego_s94: # from 82.0 82.1
 
 # s95 # say21997
 label soego_s95: # - # IF WEIGHT #0 ~  CreatureInArea("AR1500") GlobalGT("Soego_Exposed","GLOBAL",0)
+    $ soegoLogic.talk()
     'soego_s95{#soego_s95}'
     # soego '«Ах ты… сволочь!»{#soego_s95_1}'
 
@@ -2169,6 +2177,7 @@ label soego_s95: # - # IF WEIGHT #0 ~  CreatureInArea("AR1500") GlobalGT("Soego_
 
 # s96 # say22003
 label soego_s96: # -
+    $ soegoLogic.talk()
     'soego_s96{#soego_s96}'
     # soego '«Э… эта дверь ведет в мои личные покои. Прошу туда не входить».{#soego_s96_1}'
 
@@ -2191,6 +2200,7 @@ label soego_s97: # from 82.4
 
 # s98 # say22007
 label soego_s98: # -
+    $ soegoLogic.talk()
     'soego_s98{#soego_s98}'
     # soego '«Нет, я уже иду».{#soego_s98_1}'
 
@@ -2202,6 +2212,7 @@ label soego_s98: # -
 
 # s99 # say22009
 label soego_s99: # -
+    $ soegoLogic.talk()
     'soego_s99{#soego_s99}'
     # soego '«К сожалению, нет. Но все еще образуется».{#soego_s99_1}'
 
@@ -2258,6 +2269,7 @@ label soego_s101: # from 73.0
 
 # s102 # say22023
 label soego_s102: # -
+    $ soegoLogic.talk()
     'soego_s102{#soego_s102}'
     # nr 'Он вырывается из твоей хватки со сверхъестественной скоростью. Фыркая и плюясь, он шипит.{#soego_s102_1}'
     # soego '«Глупая тварь, ты напал на агента коллективного разума черепных крыс!»{#soego_s102_2}'
@@ -2358,6 +2370,7 @@ label soego_s107: # from 106.0
 
 # s108 # say22050
 label soego_s108: # - # IF WEIGHT #3 ~  Global("Dustman_Initiation","GLOBAL",5) GlobalLT("Soego","GLOBAL",3) !Global("CR_Vic","GLOBAL",1)
+    $ soegoLogic.talk()
     'soego_s108{#soego_s108}'
     # soego '«А, еще один из живущих. Большинство из тех, кто заходит так глубоко в катакомбы, убивают упыри. Тебе повезло».{#soego_s108_1}'
 
@@ -2461,6 +2474,7 @@ label soego_s112: # from 79.2 79.3 110.0 110.1
 
 # s113 # say66709
 label soego_s113: # from 38.1
+    $ soegoLogic.talk()
     'soego_s113{#soego_s113}'
     # soego '«Приветствую…»{#soego_s113_1}'
     # nr 'Человек поворачивается к тебе лицом и делает небольшой поклон. Внезапно ты замечаешь, что его глаза не налиты кровью, а просто имеют красный оттенок.{#soego_s113_2}'

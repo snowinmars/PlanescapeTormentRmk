@@ -15,4 +15,4 @@ label zm199_s0_ctor:
 
 label zm199_dispose:
     hide zm199_img
-    jump graphics_menu
+    jump  map_dispatcher

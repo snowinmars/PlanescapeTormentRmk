@@ -45,3 +45,7 @@ class Zm782Logic(Zm782LogicGenerated):
 
     def r24714_condition(self):
         return self.state_manager.world_manager.get_has_intro_key()
+
+
+    def talk(self):
+        self.state_manager.world_manager.inc_talked_to_zm782_times()

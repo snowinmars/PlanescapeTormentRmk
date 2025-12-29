@@ -20,4 +20,4 @@ label zf114_s3_ctor: # - # IF ~  False()
 
 label zf114_dispose:
     hide zf114_img
-    jump graphics_menu
+    jump  map_dispatcher

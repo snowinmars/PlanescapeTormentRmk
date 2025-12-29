@@ -25,4 +25,4 @@ label zm396_s4_ctor:
 
 label zm396_dispose:
     hide zm396_img
-    jump graphics_menu
+    jump  map_dispatcher

@@ -50,4 +50,4 @@ label vaxis_s73_ctor: # -
 
 label vaxis_dispose:
     hide vaxis_img
-    jump graphics_menu
+    jump  map_dispatcher

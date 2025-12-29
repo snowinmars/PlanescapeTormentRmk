@@ -56,6 +56,7 @@ label deionarra_s1: # - # IF WEIGHT #0 ~  Global("Deionarra","GLOBAL",0) !Global
 label deionarra_s2: # from 1.0 1.1
     'deionarra_s2{#deionarra_s2_1}'
     # nr 'Ее глаза медленно открываются, секунду она смущенно моргает, будто не понимая, где она находится. Девушка медленно окидывает взглядом комнату. Увидев тебя, ее спокойное лицо искажается яростью.{#deionarra_s2_1}'
+    $ deionarraLogic.talk()
     play sound deionarra_s1
     'deionarra_s2{#deionarra_s2_2}'
     # deionarra '«Ты! Что привело сюда *тебя*?! Захотел лично полюбоваться на причиненные тобой страдания? Или, быть может, даже после моей смерти ты надеешься получить от меня пользу?..»{#deionarra_s2_2}'
@@ -122,6 +123,7 @@ label deionarra_s3: # from 2.0 2.1 2.2 10.0
 label deionarra_s4: # - # IF WEIGHT #1 ~  Global("Deionarra","GLOBAL",2) !Global("Current_Area","GLOBAL",1203) !Global("Current_Area","GLOBAL",1200)
     'deionarra_s4{#deionarra_s4_1}'
     # nr 'Дейонарра снова появляется… на этот раз ее лицо полно отчаяния, ее руки вытянуты, будто пытаются за что-то ухватиться. При твоем появлении отчаяние на ее лице сменяется яростью.{#deionarra_s4_1}'
+    $ deionarraLogic.talk()
     play sound deionarra_s4
     'deionarra_s4{#deionarra_s4_2}'
     # deionarra '«Ты снова пришел! Почему ты продолжаешь мучить меня?»{#deionarra_s4_2}' # [DEN002]
@@ -140,6 +142,7 @@ label deionarra_s4: # - # IF WEIGHT #1 ~  Global("Deionarra","GLOBAL",2) !Global
 label deionarra_s5: # - # IF WEIGHT #2 ~  Global("Deionarra","GLOBAL",1) !Global("Current_Area","GLOBAL",1203) !Global("Current_Area","GLOBAL",1200)
     'deionarra_s5{#deionarra_s5_1}'
     # nr 'Дейонарра снова появляется… на этот раз ее лицо полно отчаяния, ее руки вытянуты, будто пытаются за что-то ухватиться. При твоем появлении отчаяние на ее лице сменяется надеждой.{#deionarra_s5_1}'
+    $ deionarraLogic.talk()
     play sound deionarra_s5
     'deionarra_s5{#deionarra_s5_2}'
     # deionarra '«Любовь моя… ты снова вернулся ко мне! Ты вспомнил меня?»{#deionarra_s5_2}' # [DEN003A]
@@ -1165,6 +1168,7 @@ label deionarra_s50: # - # IF WEIGHT #4 ~  GlobalGT("Deionarra","GLOBAL",0) Glob
 
 # s51 # say63360
 label deionarra_s51: # from 49.0 50.0
+    $ deionarraLogic.talk()
     'deionarra_s51{#deionarra_s51}'
     # deionarra '«Любовь моя, наконец-то я *нашла* тебя… Я искала тебя с тех пор, как ты был разделен кристаллом: эта Крепость простирается на сотни миль, и я боялась, что ты потерял меня».{#deionarra_s51_1}'
     # nr 'Ее призрачные глаза осматривают тебя с ног до головы в поисках новых ран.{#deionarra_s51_2}'
@@ -1349,6 +1353,7 @@ label deionarra_s61: # - # IF WEIGHT #7 /* Triggers after states #: 62 even thou
 
 # s62 # say63393
 label deionarra_s62: # from 60.0 61.0 # IF WEIGHT #5 ~  Global("Current_Area","GLOBAL",1200) Global("1200_Cut_Scene_2","GLOBAL",1)
+    $ deionarraLogic.talk()
     'deionarra_s62{#deionarra_s62}'
     # deionarra '«Любовь моя! Ты *не должен* находиться здесь! Ты должен уйти!»{#deionarra_s62_1}'
 

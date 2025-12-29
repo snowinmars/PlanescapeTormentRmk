@@ -30,5 +30,5 @@ label eivene_s25_ctor: # -
 
 label eivene_dispose:
     hide eivene_img
-    jump graphics_menu
+    jump  map_dispatcher
 

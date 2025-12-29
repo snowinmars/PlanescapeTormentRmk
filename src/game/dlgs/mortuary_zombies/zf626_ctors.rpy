@@ -20,4 +20,4 @@ label zf626_s3_ctor: # - # IF ~  False()
 
 label zf626_dispose:
     hide zf626_img
-    jump graphics_menu
+    jump  map_dispatcher

@@ -92,3 +92,11 @@ class Zm1094Logic(Zm1094LogicGenerated):
 
     def get_know_asonje_name(self):
         return self.state_manager.world_manager.get_know_asonje_name()
+
+
+    def talk(self):
+        self.state_manager.world_manager.inc_talked_to_zm1094_times()
+
+
+    def talk_asonje(self):
+        self.state_manager.world_manager.inc_talked_to_asonje_times()

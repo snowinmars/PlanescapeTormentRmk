@@ -92,4 +92,4 @@ label deionarra_s62_ctor:
 
 label deionarra_dispose:
     hide deionarra_img
-    jump graphics_menu
+    jump  map_dispatcher

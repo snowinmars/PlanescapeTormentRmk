@@ -15,4 +15,4 @@ label zm825_s0_ctor:
 
 label zm825_dispose:
     hide zm825_img
-    jump graphics_menu
+    jump  map_dispatcher

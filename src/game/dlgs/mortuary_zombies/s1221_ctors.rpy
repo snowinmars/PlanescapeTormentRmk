@@ -20,4 +20,4 @@ label s1221_s7_ctor: # - # IF ~  False()
 
 label s1221_dispose:
     hide s1221_img
-    jump graphics_menu
+    jump  map_dispatcher

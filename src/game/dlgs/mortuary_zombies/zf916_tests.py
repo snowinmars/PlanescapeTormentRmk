@@ -11,6 +11,14 @@ class Zf916LogicTest(LogicTest):
         self.logic = Zf916Logic(self.state_manager)
 
 
+    def test_talk(self):
+        self._integer_inc_action(
+            self.state_manager.world_manager.get_talked_to_zf916_times,
+            1,
+            self.logic.talk
+        )
+
+
 class Zf916LogicGeneratedTest(LogicTest):
     def setUp(self):
         super(Zf916LogicGeneratedTest, self).setUp()

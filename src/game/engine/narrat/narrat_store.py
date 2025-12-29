@@ -40,17 +40,20 @@ class NarratStore():
         self.current_menu_items = state['current_menu_items']
         self.config = state['config']
 
+    # cannot be friend with json
+    # because must have links to ADVCharacter etc
 
-    def toJson(self):
-        return json.dumps(
-            self.__getstate__(),
-            ensure_ascii=False
-        )
+    # def toJson(self, indent=None):
+    #     return json.dumps(
+    #         self.__getstate__(),
+    #         ensure_ascii=False,
+    #         indent=indent
+    #     )
 
 
-    @classmethod
-    def fromJson(cls, json_str):
-        data = json.loads(json_str)
-        obj = cls()
-        obj.__setstate__(data)
-        return obj
+    # @classmethod
+    # def fromJson(cls, json_str):
+    #     data = json.loads(json_str)
+    #     obj = cls()
+    #     obj.__setstate__(data)
+    #     return obj

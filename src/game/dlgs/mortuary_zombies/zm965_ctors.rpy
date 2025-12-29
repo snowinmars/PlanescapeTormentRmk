@@ -25,4 +25,4 @@ label zm965_s1_ctor:
 
 label zm965_dispose:
     hide zm965_img
-    jump graphics_menu
+    jump  map_dispatcher

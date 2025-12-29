@@ -30,4 +30,4 @@ label dhall_s40_ctor:
 
 label dhall_dispose:
     hide dhall_img
-    jump graphics_menu
+    jump  map_dispatcher

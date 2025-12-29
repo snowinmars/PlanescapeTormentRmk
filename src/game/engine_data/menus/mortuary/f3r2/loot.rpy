@@ -7,16 +7,16 @@ init 10 python:
 label mortuary_f3r2_loot_needle:
     $ mortuaryF3R2LootLogic.needle()
     nr "Ты подбираешь нитку с иголкой."
-    jump graphics_menu
+    jump  map_dispatcher
 
 
 label mortuary_f3r2_loot_garbage:
     $ mortuaryF3R2LootLogic.garbage()
     nr "Ты подбираешь кусок мусора."
-    jump graphics_menu
+    jump  map_dispatcher
 
 
 label mortuary_f3r2_loot_mortuary_task_list:
     $ mortuaryF3R2LootLogic.mortuary_task_list()
     nr "Ты подбираешь список заданий."
-    jump graphics_menu
+    jump  map_dispatcher

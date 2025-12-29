@@ -15,4 +15,4 @@ label zm782_s0_ctor:
 
 label zm782_dispose:
     hide zm782_img
-    jump graphics_menu
+    jump  map_dispatcher
