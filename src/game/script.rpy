@@ -26,7 +26,7 @@ init 1 python:
     # Game may bug out on saving, in such case, comment should be removed
     # config.use_cpickle = False
 
-    runtime.logger = setup_logger(renpy.emscripten, logs_folder)
+    runtime.logger = setup_logger(renpy.emscripten, renpy.android, logs_folder)
     runtime.logger.info("Version: %s" % config.version)
 
 

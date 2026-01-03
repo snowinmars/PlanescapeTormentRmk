@@ -1,5 +1,5 @@
-from game.engine_data.menus.menu_items import (
-    NavigationDirective,
+from game.map.NavigationDirective import (NavigationDirective)
+from game.map.map_items import (
     NpcMenuItem
 )
 

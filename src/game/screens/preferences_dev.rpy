@@ -254,22 +254,22 @@ screen preferences_dev():
                         background "gui/switch_off.png"
 
 
-screen _preferences_dev_stores(store):
+screen _preferences_dev_stores(store_obj):
     text '_characters_store':
         size 18
         color "#dbc401"
         xfill True
-    text store.toJson(2).replace('{', '{{').replace('[', '[['): # 'a: {}' / [b] is invalid template
+    text store_obj.toJson(2).replace('{', '{{').replace('[', '[['): # 'a: {}' / [b] is invalid template
         size 18
         color "#dbc401"
         xfill True
 
 
-screen _preferences_dev(preferences, preferences_dev_choosed_screen):
+screen _preferences_dev(store_obj, preferences_dev_choosed_screen):
     $ attrs = []
-    for attr in dir(preferences):
-        if not attr.startswith('_') and not callable(getattr(preferences, attr)):
-            $ value = getattr(preferences, attr)
+    for attr in dir(store_obj):
+        if not attr.startswith('_') and not callable(getattr(store_obj, attr)):
+            $ value = getattr(store_obj, attr)
             $ attrs.append((attr, value))
 
     $ runtime.global_events_manager.write_event(f'======\n=== {preferences_dev_choosed_screen}')

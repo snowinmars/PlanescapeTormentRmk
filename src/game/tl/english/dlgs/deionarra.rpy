@@ -307,7 +307,7 @@ translate english deionarra_s37_c60efc59:
 translate english deionarra_s38_c2eaa23b:
 
     # 'deionarra_s38{#deionarra_s38}'
-    deionarra '«Burn!»{#deionarra_s38_1}'
+    deionarra '{font=exocet.ttf}«Burn!»{#deionarra_s38_1}{/font}'
     deionarra 'May you burn as if the very fires of Baator were devouring you from within!»{#deionarra_s38_1}'
     deionarra 'Burn, and know it is but a *fraction* of my hatred for you!»{#deionarra_s38_1}'
     deionarra '«I curse you - I curse with all my heart and soul that you will never be free from the shackles of your wretched unlife».{#deionarra_s38_1}'

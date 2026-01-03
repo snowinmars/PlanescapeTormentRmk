@@ -16,7 +16,8 @@ All the stuff is under GNU/GPLv3
   - web - `PlanescapeTormentRmk-0.02-web.zip`
   - linux - `PlanescapeTormentRmk-0.02-linux.tar.bz2`
   - windows - `PlanescapeTormentRmk-0.02-win.zip`
-  - android - import web build into JoiPlay (have no mobile-optimized UI)
+  - android - `com.planescapetormentrmk-0.06-1767483720-release.apk` (have no mobile-optimized UI)
+  - joiPlay - import web build into JoiPlay (have no mobile-optimized UI)
 - run in browser
   - [itch.io](https://snowinmars.itch.io/planescapetormentrmk)
   - [gamejolt.com](https://gamejolt.com/games/planescapetormentrmk/1018976)
@@ -70,7 +71,7 @@ Russian:
 | 0.0.3   | 3326 | 40398 | 300003 | 12.1 | 90  | 1451 | 66  | 50  |
 | 0.0.4   | 3327 | 40354 | 301097 | 12.1 | 91  | 1451 | 66  | 55  |
 | 0.0.5   | 3327 | 40356 | 301102 | 12.1 | 91  | 1451 | 66  | 71  |
-| 0.0.6   | 3329 | 40356 | 301102 | 12.1 | 90  | 1451 | 66  | 70  |
+| 0.0.6   | 3330 | 40369 | 301184 | 12.1 | 90  | 1451 | 66  | 66  |
 
 English:
 | version | db   | wd    | ch     | aw   | cb  | mn   | im  | sc  |
@@ -80,4 +81,4 @@ English:
 | 0.0.3   | 3412 | 48312 | 310091 | 14.2 | 91  | 1451 | 66  | 50  |
 | 0.0.4   | 3427 | 48260 | 311739 | 14.1 | 91  | 1451 | 66  | 55  |
 | 0.0.5   | 3427 | 48265 | 311789 | 14.1 | 91  | 1451 | 66  | 71  |
-| 0.0.6   | 3430 | 48265 | 311789 | 14.1 | 91  | 1451 | 66  | 70  |
+| 0.0.6   | 3431 | 48281 | 311864 | 14.1 | 91  | 1451 | 66  | 66  |

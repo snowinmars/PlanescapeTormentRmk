@@ -312,7 +312,7 @@ translate russian deionarra_s37_c60efc59:
 translate russian deionarra_s38_c2eaa23b:
 
     # 'deionarra_s38{#deionarra_s38}'
-    deionarra '«Гори!»{#deionarra_s38_1}'
+    deionarra '{font=exocet.ttf}«Гори!»{#deionarra_s38_1}{/font}'
     deionarra '«Гори, как если бы огонь Баатора пожирал тебя изнутри!»{#deionarra_s38_1}'
     deionarra '«Гори и знай, что это лишь *крупица* моей ненависти!»{#deionarra_s38_1}'
     deionarra '«Я проклинаю тебя, проклинаю всем своим сердцем и душой!»{#deionarra_s38_1}'

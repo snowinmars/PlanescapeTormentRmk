@@ -2,12 +2,12 @@ init python:
     from game.engine.runtime import (runtime)
 
 
-screen events_manager_display(position=(0, 0.22), width=0.2, height=0.2, categories=None):
+screen events_manager_display(pos=(0, 0.22), width=0.2, height=0.2, categories=None):
     zorder 101
     style_prefix "events_manager"
 
     # Calculate positions
-    $ xpos, ypos = position
+    $ xpos, ypos = pos
     $ viewport_width = int(config.screen_width * width)
     $ viewport_height = int(config.screen_height * height)
 
