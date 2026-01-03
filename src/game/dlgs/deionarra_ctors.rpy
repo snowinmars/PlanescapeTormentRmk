@@ -52,44 +52,53 @@ label deionarra_speak:
 
 label deionarra_s1_ctor:
     show deionarra_img default at center_left_down
+    play music deionarra
     jump deionarra_s1
 
 
 label deionarra_s4_ctor:
     show deionarra_img default at center_left_down
+    play music deionarra
     jump deionarra_s4
 
 
 label deionarra_s5_ctor:
     show deionarra_img default at center_left_down
+    play music deionarra
     jump deionarra_s5
 
 
 label deionarra_s49_ctor:
     show deionarra_img default at center_left_down
+    play music deionarra
     jump deionarra_s49
 
 
 label deionarra_s50_ctor:
     show deionarra_img default at center_left_down
+    play music deionarra
     jump deionarra_s50
 
 
 label deionarra_s60_ctor:
     show deionarra_img default at center_left_down
+    play music deionarra
     jump deionarra_s60
 
 
 label deionarra_s61_ctor:
     show deionarra_img default at center_left_down
+    play music deionarra
     jump deionarra_s61
 
 
 label deionarra_s62_ctor:
     show deionarra_img default at center_left_down
+    play music deionarra
     jump deionarra_s62
 
 
 label deionarra_dispose:
     hide deionarra_img
-    jump  map_dispatcher
+    play music mortuary # TODO [snow]: scene cannot tell what to play after self
+    jump map_dispatcher

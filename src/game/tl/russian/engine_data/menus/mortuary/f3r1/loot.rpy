@@ -12,3 +12,9 @@ translate russian mortuary_f3r4_loot_mortuary_key_58aa2daa:
     # nr 'Ты подбираешь ключ от внутренних покоев Морга.'
     nr 'Ты подбираешь ключ от внутренних покоев Морга.'
 
+# game/engine_data/menus/mortuary/f3r1/loot.rpy:8
+translate russian from_mortuary_f3rc_to_mortuary_f3r1_closed_b2193a50:
+
+    # nr 'Дверь заперта. Судя по всему, она ведёт в соседнюю комнату. Тебе понадобится ключ.'
+    nr 'Дверь заперта. Судя по всему, она ведёт в соседнюю комнату. Тебе понадобится ключ.'
+

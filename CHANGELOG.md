@@ -1,8 +1,11 @@
 # Change log
 
 ## Version 0.06
+- Update from RenPy 8.3.6 to 8.5.1
+- Add Android build
 - Reimplement Mortuary floor 2 map
 - Improve UI
+- Minor fixes
 
 ## Version 0.05
 - Technical improvements

@@ -6,6 +6,7 @@ def get_logger():
 
 def setup_logger(
     emscripten,
+    android,
     logs_folder,
     log_level=None,
     log_format=None,
@@ -15,17 +16,18 @@ def setup_logger(
 ):
     if emscripten:
         return _setup_web_logger(
-            emscripten,
-            logs_folder,
             log_level,
             log_format,
             date_format,
-            max_log_files,
-            log_file_name
+        )
+    elif android:
+        return _setup_android_logger(
+            log_level,
+            log_format,
+            date_format,
         )
     else:
         return _setup_file_logger(
-            emscripten,
             logs_folder,
             log_level,
             log_format,
@@ -35,15 +37,36 @@ def setup_logger(
         )
 
 
-# Web build: use browser console logging
-def _setup_web_logger(
-    emscripten,
-    logs_folder,
+def _setup_android_logger(
     log_level=None,
     log_format=None,
     date_format=None,
-    max_log_files=5,
-    log_file_name=None
+):
+    log_level = logging.DEBUG if log_level is None else log_level
+    log_format = '%(levelname)-6s %(asctime)-25s %(message)s' if log_format is None else log_format
+    date_format = '%Y-%m-%d %H:%M:%S' if date_format is None else date_format
+
+    logging.basicConfig(
+        level=log_level,
+        format='%(levelname)-6s %(asctime)-25s %(message)s',
+        datefmt='%Y-%m-%d %H:%M:%S'
+    )
+
+    logger = get_logger()
+    cleanup_logger(logger)
+
+    handler = logging.StreamHandler()
+    handler.setLevel(log_level)
+    logger.addHandler(handler)
+    logger.info("Running in android mode - using console logging")
+
+    return logger
+
+
+def _setup_web_logger(
+    log_level=None,
+    log_format=None,
+    date_format=None,
 ):
     log_level = logging.DEBUG if log_level is None else log_level
     log_format = '%(levelname)-6s %(asctime)-25s %(message)s' if log_format is None else log_format
@@ -63,14 +86,11 @@ def _setup_web_logger(
     del formatter
 
     logger.info("Log level: %s" % log_level)
-    logger.info("Logs directory: %s" % logs_folder)
 
     return logger
 
 
-# PC build: use file logging
 def _setup_file_logger(
-    emscripten,
     logs_folder,
     log_level=None,
     log_format=None,
