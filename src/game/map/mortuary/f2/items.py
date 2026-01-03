@@ -1,13 +1,13 @@
 from game.map.NavigationDirective import (NavigationDirective)
 from game.map.map_items import (
+    ShadowItem,
     MenuItem,
-    GoToLocationMenuItem,
     ContainerMenuItem,
     ZombieMenuItem
 )
 
 
-class FromMortuaryF2R1ToMortuaryF2R2(GoToLocationMenuItem):
+class FromMortuaryF2R1ToMortuaryF2R2(MenuItem):
     def __init__(self, state_manager, x, y):
         super().__init__(state_manager, x, y)
     def when(self):
@@ -19,8 +19,8 @@ class FromMortuaryF2R1ToMortuaryF2R2(GoToLocationMenuItem):
         return 'FromMortuaryF2R1ToMortuaryF2R2_tooltip2' # Пройти в комнату
     def texture(self):
         if self.state_manager.locations_manager.is_visited('mortuary_f2r2'):
-            return 'bg/mortuary/f2r1r2door_opened.png'
-        return 'images/icons/open_idle.png'
+            return 'bg/mortuary/f2/door_f2r1_f2r2_opened.png'
+        return 'bg/mortuary/f2/door_f2r1_f2r2_closed.png'
     def jump(self):
         if self.state_manager.locations_manager.is_visited('mortuary_f2r2'):
            return NavigationDirective(
@@ -33,7 +33,7 @@ class FromMortuaryF2R1ToMortuaryF2R2(GoToLocationMenuItem):
         )
 
 
-class FromMortuaryF2R1ToMortuaryF2R8(GoToLocationMenuItem):
+class FromMortuaryF2R1ToMortuaryF2R8(MenuItem):
     def __init__(self, state_manager, x, y):
         super().__init__(state_manager, x, y)
     def when(self):
@@ -43,6 +43,10 @@ class FromMortuaryF2R1ToMortuaryF2R8(GoToLocationMenuItem):
         if self.state_manager.locations_manager.is_visited('mortuary_f2r8'):
             return 'FromMortuaryF2R1ToMortuaryF2R8_tooltip1' # Пройти в южную комнату
         return 'FromMortuaryF2R1ToMortuaryF2R8_tooltip2' # Пройти в комнату
+    def texture(self):
+        if self.state_manager.locations_manager.is_visited('mortuary_f2r8'):
+            return 'bg/mortuary/f2/door_f2r8_f2r1_opened.png'
+        return 'bg/mortuary/f2/door_f2r8_f2r1_closed.png'
     def jump(self):
         if self.state_manager.locations_manager.is_visited('mortuary_f2r8') or \
            self.state_manager.world_manager.get_has_mortuary_key():
@@ -61,13 +65,16 @@ class FromMortuaryF2R1ToMortuaryF3R1(MenuItem):
     def when(self):
         return self.state_manager.world_manager.get_has_intro_key() and \
                self.state_manager.locations_manager.get_location() == 'mortuary_f2r1'
-    def texture(self):
-        return 'images/icons/mortuary_f2r1_door_f3r1.png'
     def tooltip(self):
         if self.state_manager.locations_manager.is_visited('mortuary_f3r1') or \
            self.state_manager.locations_manager.is_visited('mortuary_f3r3'):
             return 'FromMortuaryF2R1ToMortuaryF3R1_tooltip1' # Подняться на третий этаж
         return 'FromMortuaryF2R1ToMortuaryF3R1_tooltip2' # Подняться по лестнице
+    def texture(self):
+        if self.state_manager.locations_manager.is_visited('mortuary_f3r1') or \
+           self.state_manager.locations_manager.is_visited('mortuary_f3r3'):
+            return 'bg/mortuary/f2/door_f2r1_f3r1_opened.png'
+        return 'bg/mortuary/f2/door_f2r1_f3r1_closed.png'
     def jump(self):
         if self.state_manager.world_manager.get_has_mortuary_key() or \
            self.state_manager.locations_manager.is_visited('mortuary_f3r1') or \
@@ -81,7 +88,7 @@ class FromMortuaryF2R1ToMortuaryF3R1(MenuItem):
         )
 
 
-class FromMortuaryF2R1ToMortuaryF1R1(GoToLocationMenuItem):
+class FromMortuaryF2R1ToMortuaryF1R1(MenuItem):
     def __init__(self, state_manager, x, y):
         super().__init__(state_manager, x, y)
     def when(self):
@@ -92,6 +99,11 @@ class FromMortuaryF2R1ToMortuaryF1R1(GoToLocationMenuItem):
            self.state_manager.locations_manager.is_visited('mortuary_f1r4'):
             return 'FromMortuaryF2R1ToMortuaryF1R1_tooltip1' # Спуститься на третий этаж
         return 'FromMortuaryF2R1ToMortuaryF1R1_tooltip2' # Спуститься по лестнице
+    def texture(self):
+        if self.state_manager.locations_manager.is_visited('mortuary_f1r1') or \
+           self.state_manager.locations_manager.is_visited('mortuary_f1r4'):
+            return 'bg/mortuary/f2/door_f2r1_f1r1_opened.png'
+        return 'bg/mortuary/f2/door_f2r1_f1r1_closed.png'
     def jump(self):
         if self.state_manager.world_manager.get_has_mortuary_key() or \
            self.state_manager.locations_manager.is_visited('mortuary_f1r1') or \
@@ -105,6 +117,14 @@ class FromMortuaryF2R1ToMortuaryF1R1(GoToLocationMenuItem):
         )
 
 
+class MortuaryF2R1Shadow(ShadowItem):
+    def __init__(self, state_manager, x, y):
+        super().__init__(state_manager, x, y)
+        self.location_id = 'mortuary_f2r1'
+    def texture(self):
+        return 'bg/mortuary/f2/shadow_f2r1.png'
+
+
 class InMortuaryF2R1PickScalpel(ContainerMenuItem):
     def __init__(self, state_manager, x, y):
         super().__init__(state_manager, x, y)
@@ -113,6 +133,8 @@ class InMortuaryF2R1PickScalpel(ContainerMenuItem):
                self.state_manager.locations_manager.get_location() == 'mortuary_f2r1'
     def tooltip(self):
         return 'InMortuaryF2R1PickScalpel_tooltip1' # Обыскать
+    def texture(self):
+        return 'bg/mortuary/f2/loot_f2r1_scalpel.png'
     def jump(self):
         return NavigationDirective(
             'mortuary_f2r1_loot_scalpel'
@@ -170,7 +192,7 @@ class InMortuaryF2R1Zm782(ZombieMenuItem):
 ###
 
 
-class FromMortuaryF2R2ToMortuaryF2R1(GoToLocationMenuItem):
+class FromMortuaryF2R2ToMortuaryF2R1(MenuItem):
     def __init__(self, state_manager, x, y):
         super().__init__(state_manager, x, y)
     def when(self):
@@ -181,8 +203,8 @@ class FromMortuaryF2R2ToMortuaryF2R1(GoToLocationMenuItem):
         return 'FromMortuaryF2R2ToMortuaryF2R1_tooltip2' # Пройти в комнату
     def texture(self):
         if self.state_manager.locations_manager.is_visited('mortuary_f2r1'):
-            return 'bg/mortuary/f2r1r2door_opened.png'
-        return 'images/icons/open_idle.png'
+            return 'bg/mortuary/f2/door_f2r1_f2r2_opened.png'
+        return 'bg/mortuary/f2/door_f2r1_f2r2_closed.png'
     def jump(self):
         return NavigationDirective(
             'map_dispatcher',
@@ -190,7 +212,7 @@ class FromMortuaryF2R2ToMortuaryF2R1(GoToLocationMenuItem):
         )
 
 
-class FromMortuaryF2R2ToMortuaryF2R3(GoToLocationMenuItem):
+class FromMortuaryF2R2ToMortuaryF2R3(MenuItem):
     def __init__(self, state_manager, x, y):
         super().__init__(state_manager, x, y)
     def when(self):
@@ -199,6 +221,10 @@ class FromMortuaryF2R2ToMortuaryF2R3(GoToLocationMenuItem):
         if self.state_manager.locations_manager.is_visited('mortuary_f2r3'):
             return 'FromMortuaryF2R2ToMortuaryF2R3_tooltip1' # Пройти в северо-западную препараторскую
         return 'FromMortuaryF2R2ToMortuaryF2R3_tooltip2' # Пройти в комнату
+    def texture(self):
+        if self.state_manager.locations_manager.is_visited('mortuary_f2r3'):
+            return 'bg/mortuary/f2/door_f2r2_f2r3_opened.png'
+        return 'bg/mortuary/f2/door_f2r2_f2r3_closed.png'
     def jump(self):
         if self.state_manager.locations_manager.is_visited('mortuary_f2r3'):
             return NavigationDirective(
@@ -209,6 +235,14 @@ class FromMortuaryF2R2ToMortuaryF2R3(GoToLocationMenuItem):
             'morte2_speak',
             lambda: self.state_manager.locations_manager.set_location('mortuary_f2r3')
         )
+
+
+class MortuaryF2R2Shadow(ShadowItem):
+    def __init__(self, state_manager, x, y):
+        super().__init__(state_manager, x, y)
+        self.location_id = 'mortuary_f2r2'
+    def texture(self):
+        return 'bg/mortuary/f2/shadow_f2r2.png'
 
 
 class InMortuaryF2R2Zm965(ZombieMenuItem):
@@ -263,7 +297,7 @@ class InMortuaryF2R2Zf626(ZombieMenuItem):
 
 
 
-class FromMortuaryF2R3ToMortuaryF2R4(GoToLocationMenuItem):
+class FromMortuaryF2R3ToMortuaryF2R4(MenuItem):
     def __init__(self, state_manager, x, y):
         super().__init__(state_manager, x, y)
     def when(self):
@@ -272,6 +306,10 @@ class FromMortuaryF2R3ToMortuaryF2R4(GoToLocationMenuItem):
         if self.state_manager.locations_manager.is_visited('mortuary_f2r4'):
             return 'FromMortuaryF2R3ToMortuaryF2R4_tooltip1' # Пройти в северную препараторскую
         return 'FromMortuaryF2R3ToMortuaryF2R4_tooltip2' # Пройти в комнату
+    def texture(self):
+        if self.state_manager.locations_manager.is_visited('mortuary_f2r4'):
+            return 'bg/mortuary/f2/door_f2r3_f2r4_opened.png'
+        return 'bg/mortuary/f2/door_f2r3_f2r4_closed.png'
     def jump(self):
         return NavigationDirective(
             'map_dispatcher',
@@ -279,7 +317,7 @@ class FromMortuaryF2R3ToMortuaryF2R4(GoToLocationMenuItem):
         )
 
 
-class FromMortuaryF2R3ToMortuaryF2R2(GoToLocationMenuItem):
+class FromMortuaryF2R3ToMortuaryF2R2(MenuItem):
     def __init__(self, state_manager, x, y):
         super().__init__(state_manager, x, y)
     def when(self):
@@ -288,11 +326,23 @@ class FromMortuaryF2R3ToMortuaryF2R2(GoToLocationMenuItem):
         if self.state_manager.locations_manager.is_visited('mortuary_f2r2'):
             return 'FromMortuaryF2R3ToMortuaryF2R2_tooltip1' # Пройти в западную препараторскую
         return 'FromMortuaryF2R3ToMortuaryF2R2_tooltip2' # Пройти в комнату
+    def texture(self):
+        if self.state_manager.locations_manager.is_visited('mortuary_f2r2'):
+            return 'bg/mortuary/f2/door_f2r2_f2r3_opened.png'
+        return 'bg/mortuary/f2/door_f2r2_f2r3_closed.png'
     def jump(self):
         return NavigationDirective(
             'map_dispatcher',
             lambda: self.state_manager.locations_manager.set_location('mortuary_f2r2')
         )
+
+
+class MortuaryF2R3Shadow(ShadowItem):
+    def __init__(self, state_manager, x, y):
+        super().__init__(state_manager, x, y)
+        self.location_id = 'mortuary_f2r3'
+    def texture(self):
+        return 'bg/mortuary/f2/shadow_f2r3.png'
 
 
 class InMortuaryF2R3Dhall(MenuItem):
@@ -382,7 +432,7 @@ class InMortuaryF2R3Zf1072(ZombieMenuItem):
 ###
 
 
-class FromMortuaryF2R4ToMortuaryF2R5(GoToLocationMenuItem):
+class FromMortuaryF2R4ToMortuaryF2R5(MenuItem):
     def __init__(self, state_manager, x, y):
         super().__init__(state_manager, x, y)
     def when(self):
@@ -391,6 +441,10 @@ class FromMortuaryF2R4ToMortuaryF2R5(GoToLocationMenuItem):
         if self.state_manager.locations_manager.is_visited('mortuary_f2r5'):
             return 'FromMortuaryF2R4ToMortuaryF2R5_tooltip1' # Пройти в серево-восточную препараторскую
         return 'FromMortuaryF2R4ToMortuaryF2R5_tooltip2' # Пройти в комнату
+    def texture(self):
+        if self.state_manager.locations_manager.is_visited('mortuary_f2r5'):
+            return 'bg/mortuary/f2/door_f2r4_f2r5_opened.png'
+        return 'bg/mortuary/f2/door_f2r4_f2r5_closed.png'
     def jump(self):
         return NavigationDirective(
             'map_dispatcher',
@@ -398,7 +452,7 @@ class FromMortuaryF2R4ToMortuaryF2R5(GoToLocationMenuItem):
         )
 
 
-class FromMortuaryF2R4ToMortuaryF2R3(GoToLocationMenuItem):
+class FromMortuaryF2R4ToMortuaryF2R3(MenuItem):
     def __init__(self, state_manager, x, y):
         super().__init__(state_manager, x, y)
     def when(self):
@@ -407,11 +461,23 @@ class FromMortuaryF2R4ToMortuaryF2R3(GoToLocationMenuItem):
         if self.state_manager.locations_manager.is_visited('mortuary_f2r3'):
             return 'FromMortuaryF2R4ToMortuaryF2R3_tooltip1' # Пройти в северо-западную приёмную
         return 'FromMortuaryF2R4ToMortuaryF2R3_tooltip2' # Пройти в комнату
+    def texture(self):
+        if self.state_manager.locations_manager.is_visited('mortuary_f2r3'):
+            return 'bg/mortuary/f2/door_f2r3_f2r4_opened.png'
+        return 'bg/mortuary/f2/door_f2r3_f2r4_closed.png'
     def jump(self):
         return NavigationDirective(
             'map_dispatcher',
             lambda: self.state_manager.locations_manager.set_location('mortuary_f2r3')
         )
+
+
+class MortuaryF2R4Shadow(ShadowItem):
+    def __init__(self, state_manager, x, y):
+        super().__init__(state_manager, x, y)
+        self.location_id = 'mortuary_f2r4'
+    def texture(self):
+        return 'bg/mortuary/f2/shadow_f2r4.png'
 
 
 class InMortuaryF2R4Zm1664(ZombieMenuItem):
@@ -433,7 +499,7 @@ class InMortuaryF2R4Zm1664(ZombieMenuItem):
 ###
 
 
-class FromMortuaryF2R5ToMortuaryF2R6(GoToLocationMenuItem):
+class FromMortuaryF2R5ToMortuaryF2R6(MenuItem):
     def __init__(self, state_manager, x, y):
         super().__init__(state_manager, x, y)
     def when(self):
@@ -442,6 +508,10 @@ class FromMortuaryF2R5ToMortuaryF2R6(GoToLocationMenuItem):
         if self.state_manager.locations_manager.is_visited('mortuary_f2r6'):
             return 'FromMortuaryF2R5ToMortuaryF2R6_tooltip1' # Пройти в восточную препараторскую
         return 'FromMortuaryF2R5ToMortuaryF2R6_tooltip2' # Пройти в комнату
+    def texture(self):
+        if self.state_manager.locations_manager.is_visited('mortuary_f2r6'):
+            return 'bg/mortuary/f2/door_f2r5_f2r6_opened.png'
+        return 'bg/mortuary/f2/door_f2r5_f2r6_closed.png'
     def jump(self):
         return NavigationDirective(
             'map_dispatcher',
@@ -449,7 +519,7 @@ class FromMortuaryF2R5ToMortuaryF2R6(GoToLocationMenuItem):
         )
 
 
-class FromMortuaryF2R5ToMortuaryF2R4(GoToLocationMenuItem):
+class FromMortuaryF2R5ToMortuaryF2R4(MenuItem):
     def __init__(self, state_manager, x, y):
         super().__init__(state_manager, x, y)
     def when(self):
@@ -458,11 +528,23 @@ class FromMortuaryF2R5ToMortuaryF2R4(GoToLocationMenuItem):
         if self.state_manager.locations_manager.is_visited('mortuary_f2r4'):
             return 'FromMortuaryF2R5ToMortuaryF2R4_tooltip1' # Пройти в восточную препараторскую
         return 'FromMortuaryF2R5ToMortuaryF2R4_tooltip2' # Пройти в комнату
+    def texture(self):
+        if self.state_manager.locations_manager.is_visited('mortuary_f2r4'):
+            return 'bg/mortuary/f2/door_f2r4_f2r5_opened.png'
+        return 'bg/mortuary/f2/door_f2r4_f2r5_closed.png'
     def jump(self):
         return NavigationDirective(
             'map_dispatcher',
             lambda: self.state_manager.locations_manager.set_location('mortuary_f2r4')
         )
+
+
+class MortuaryF2R5Shadow(ShadowItem):
+    def __init__(self, state_manager, x, y):
+        super().__init__(state_manager, x, y)
+        self.location_id = 'mortuary_f2r5'
+    def texture(self):
+        return 'bg/mortuary/f2/shadow_f2r5.png'
 
 
 class InMortuaryF2R5Eivene(MenuItem):
@@ -534,7 +616,7 @@ class InMortuaryF2R5Zm985(ZombieMenuItem):
 ###
 
 
-class FromMortuaryF2R6ToMortuaryF2R7(GoToLocationMenuItem):
+class FromMortuaryF2R6ToMortuaryF2R7(MenuItem):
     def __init__(self, state_manager, x, y):
         super().__init__(state_manager, x, y)
     def when(self):
@@ -543,6 +625,10 @@ class FromMortuaryF2R6ToMortuaryF2R7(GoToLocationMenuItem):
         if self.state_manager.locations_manager.is_visited('mortuary_f2r7'):
             return 'FromMortuaryF2R6ToMortuaryF2R7_tooltip1' # Пройти в юго-восточную препараторскую
         return 'FromMortuaryF2R6ToMortuaryF2R7_tooltip2' # Пройти в комнату
+    def texture(self):
+        if self.state_manager.locations_manager.is_visited('mortuary_f2r7'):
+            return 'bg/mortuary/f2/door_f2r6_f2r7_opened.png'
+        return 'bg/mortuary/f2/door_f2r6_f2r7_closed.png'
     def jump(self):
         return NavigationDirective(
             'map_dispatcher',
@@ -550,7 +636,7 @@ class FromMortuaryF2R6ToMortuaryF2R7(GoToLocationMenuItem):
         )
 
 
-class FromMortuaryF2R6ToMortuaryF2R5(GoToLocationMenuItem):
+class FromMortuaryF2R6ToMortuaryF2R5(MenuItem):
     def __init__(self, state_manager, x, y):
         super().__init__(state_manager, x, y)
     def when(self):
@@ -559,11 +645,23 @@ class FromMortuaryF2R6ToMortuaryF2R5(GoToLocationMenuItem):
         if self.state_manager.locations_manager.is_visited('mortuary_f2r5'):
             return 'FromMortuaryF2R6ToMortuaryF2R5_tooltip1' # Пройти в серево-восточную препараторскую
         return 'FromMortuaryF2R6ToMortuaryF2R5_tooltip2' # Пройти в комнату
+    def texture(self):
+        if self.state_manager.locations_manager.is_visited('mortuary_f2r5'):
+            return 'bg/mortuary/f2/door_f2r5_f2r6_opened.png'
+        return 'bg/mortuary/f2/door_f2r5_f2r6_closed.png'
     def jump(self):
         return NavigationDirective(
             'map_dispatcher',
             lambda: self.state_manager.locations_manager.set_location('mortuary_f2r5')
         )
+
+
+class MortuaryF2R6Shadow(ShadowItem):
+    def __init__(self, state_manager, x, y):
+        super().__init__(state_manager, x, y)
+        self.location_id = 'mortuary_f2r6'
+    def texture(self):
+        return 'bg/mortuary/f2/shadow_f2r6.png'
 
 
 class InMortuaryF2R6Vaxis(MenuItem):
@@ -589,7 +687,7 @@ class InMortuaryF2R6Vaxis(MenuItem):
 ###
 
 
-class FromMortuaryF2R7ToMortuaryF3R3(GoToLocationMenuItem):
+class FromMortuaryF2R7ToMortuaryF3R3(MenuItem):
     def __init__(self, state_manager, x, y):
         super().__init__(state_manager, x, y)
     def when(self):
@@ -599,6 +697,8 @@ class FromMortuaryF2R7ToMortuaryF3R3(GoToLocationMenuItem):
            self.state_manager.locations_manager.is_visited('mortuary_f3r3'):
             return 'FromMortuaryF2R7ToMortuaryF3R3_tooltip1' # Подняться на третий этаж
         return 'FromMortuaryF2R7ToMortuaryF3R3_tooltip2' # Подняться по лестнице
+    def texture(self):
+        return 'bg/mortuary/f2/door_f2r7_f3r3_opened.png'
     def jump(self):
         return NavigationDirective(
             'map_dispatcher',
@@ -606,7 +706,7 @@ class FromMortuaryF2R7ToMortuaryF3R3(GoToLocationMenuItem):
         )
 
 
-class FromMortuaryF2R7ToMortuaryF1R4(GoToLocationMenuItem):
+class FromMortuaryF2R7ToMortuaryF1R4(MenuItem):
     def __init__(self, state_manager, x, y):
         super().__init__(state_manager, x, y)
     def when(self):
@@ -616,6 +716,11 @@ class FromMortuaryF2R7ToMortuaryF1R4(GoToLocationMenuItem):
            self.state_manager.locations_manager.is_visited('mortuary_f1r4'):
             return 'FromMortuaryF2R7ToMortuaryF1R4_tooltip1' # Спуститься на первый этаж
         return 'FromMortuaryF2R7ToMortuaryF1R4_tooltip2' # Спуститься по лестнице
+    def texture(self):
+        if self.state_manager.locations_manager.is_visited('mortuary_f1r1') or \
+           self.state_manager.locations_manager.is_visited('mortuary_f1r4'):
+            return 'bg/mortuary/f2/door_f2r7_f1r4_opened.png'
+        return 'bg/mortuary/f2/door_f2r7_f1r4_closed.png'
     def jump(self):
         if self.state_manager.locations_manager.is_visited('mortuary_f1r1') or \
            self.state_manager.locations_manager.is_visited('mortuary_f1r4') or \
@@ -629,7 +734,7 @@ class FromMortuaryF2R7ToMortuaryF1R4(GoToLocationMenuItem):
         )
 
 
-class FromMortuaryF2R7ToMortuaryF2R6(GoToLocationMenuItem):
+class FromMortuaryF2R7ToMortuaryF2R6(MenuItem):
     def __init__(self, state_manager, x, y):
         super().__init__(state_manager, x, y)
     def when(self):
@@ -638,6 +743,10 @@ class FromMortuaryF2R7ToMortuaryF2R6(GoToLocationMenuItem):
         if self.state_manager.locations_manager.is_visited('mortuary_f2r6'):
             return 'FromMortuaryF2R7ToMortuaryF2R6_tooltip1' # Пройти в восточную препараторскую
         return 'FromMortuaryF2R7ToMortuaryF2R6_tooltip2' # Пройти в комнату
+    def texture(self):
+        if self.state_manager.locations_manager.is_visited('mortuary_f2r6'):
+            return 'bg/mortuary/f2/door_f2r6_f2r7_opened.png'
+        return 'bg/mortuary/f2/door_f2r6_f2r7_closed.png'
     def jump(self):
         return NavigationDirective(
             'map_dispatcher',
@@ -645,7 +754,7 @@ class FromMortuaryF2R7ToMortuaryF2R6(GoToLocationMenuItem):
         )
 
 
-class FromMortuaryF2R7ToMortuaryF2R8(GoToLocationMenuItem):
+class FromMortuaryF2R7ToMortuaryF2R8(MenuItem):
     def __init__(self, state_manager, x, y):
         super().__init__(state_manager, x, y)
     def when(self):
@@ -654,6 +763,10 @@ class FromMortuaryF2R7ToMortuaryF2R8(GoToLocationMenuItem):
         if self.state_manager.locations_manager.is_visited('mortuary_f2r8'):
             return 'FromMortuaryF2R7ToMortuaryF2R8_tooltip1' # Пройти в южную препараторскую
         return 'FromMortuaryF2R7ToMortuaryF2R8_tooltip2' # Пройти в комнату
+    def texture(self):
+        if self.state_manager.locations_manager.is_visited('mortuary_f2r8'):
+            return 'bg/mortuary/f2/door_f2r7_f2r8_opened.png'
+        return 'bg/mortuary/f2/door_f2r7_f2r8_closed.png'
     def jump(self):
         if self.state_manager.locations_manager.is_visited('mortuary_f2r8') or \
            self.state_manager.world_manager.get_has_mortuary_key():
@@ -666,6 +779,14 @@ class FromMortuaryF2R7ToMortuaryF2R8(GoToLocationMenuItem):
         )
 
 
+class MortuaryF2R7Shadow(ShadowItem):
+    def __init__(self, state_manager, x, y):
+        super().__init__(state_manager, x, y)
+        self.location_id = 'mortuary_f2r7'
+    def texture(self):
+        return 'bg/mortuary/f2/shadow_f2r7.png'
+
+
 class InMortuaryF2R7PickCopperEarringClosed(ContainerMenuItem):
     def __init__(self, state_manager, x, y):
         super().__init__(state_manager, x, y)
@@ -674,6 +795,8 @@ class InMortuaryF2R7PickCopperEarringClosed(ContainerMenuItem):
                self.state_manager.locations_manager.get_location() == 'mortuary_f2r7'
     def tooltip(self):
         return 'InMortuaryF2R7PickCopperEarringClosed_tooltip1' # Взять серьгу
+    def texture(self):
+        return 'bg/mortuary/f2/loot_f2r7_copper_earing.png'
     def jump(self):
         return NavigationDirective(
             'mortuary_f2r7_loot_copper_earring_closed'
@@ -688,6 +811,8 @@ class InMortuaryF2R7PickEmbalm(ContainerMenuItem):
                self.state_manager.locations_manager.get_location() == 'mortuary_f2r7'
     def tooltip(self):
         return 'InMortuaryF2R7PickEmbalm_tooltip1' # Взять бальзамирующую жидкость
+    def texture(self):
+        return 'bg/mortuary/f2/loot_f2r7_elbam.png'
     def jump(self):
         return NavigationDirective(
             'mortuary_f2r7_loot_embalm'
@@ -697,7 +822,7 @@ class InMortuaryF2R7PickEmbalm(ContainerMenuItem):
 ###
 
 
-class FromMortuaryF2R8ToMortuaryF2R1(GoToLocationMenuItem):
+class FromMortuaryF2R8ToMortuaryF2R1(MenuItem):
     def __init__(self, state_manager, x, y):
         super().__init__(state_manager, x, y)
     def when(self):
@@ -706,6 +831,10 @@ class FromMortuaryF2R8ToMortuaryF2R1(GoToLocationMenuItem):
         if self.state_manager.locations_manager.is_visited('mortuary_f2r1'):
             return 'FromMortuaryF2R8ToMortuaryF2R1_tooltip1' # Пройти в юго-западную препараторскую
         return 'FromMortuaryF2R8ToMortuaryF2R1_tooltip2' # Пройти в комнату
+    def texture(self):
+        if self.state_manager.locations_manager.is_visited('mortuary_f2r1'):
+            return 'bg/mortuary/f2/door_f2r8_f2r1_opened.png'
+        return 'bg/mortuary/f2/door_f2r8_f2r1_closed.png'
     def jump(self):
         return NavigationDirective(
             'map_dispatcher',
@@ -713,7 +842,7 @@ class FromMortuaryF2R8ToMortuaryF2R1(GoToLocationMenuItem):
         )
 
 
-class FromMortuaryF2R8ToMortuaryF2R7(GoToLocationMenuItem):
+class FromMortuaryF2R8ToMortuaryF2R7(MenuItem):
     def __init__(self, state_manager, x, y):
         super().__init__(state_manager, x, y)
     def when(self):
@@ -722,11 +851,23 @@ class FromMortuaryF2R8ToMortuaryF2R7(GoToLocationMenuItem):
         if self.state_manager.locations_manager.is_visited('mortuary_f2r7'):
             return 'FromMortuaryF2R8ToMortuaryF2R7_tooltip1' # Пройти в юго-восточную препараторскую
         return 'FromMortuaryF2R8ToMortuaryF2R7_tooltip2' # Пройти в комнату
+    def texture(self):
+        if self.state_manager.locations_manager.is_visited('mortuary_f2r7'):
+            return 'bg/mortuary/f2/door_f2r7_f2r8_opened.png'
+        return 'bg/mortuary/f2/door_f2r7_f2r8_closed.png'
     def jump(self):
         return NavigationDirective(
             'map_dispatcher',
             lambda: self.state_manager.locations_manager.set_location('mortuary_f2r7')
         )
+
+
+class MortuaryF2R8Shadow(ShadowItem):
+    def __init__(self, state_manager, x, y):
+        super().__init__(state_manager, x, y)
+        self.location_id = 'mortuary_f2r8'
+    def texture(self):
+        return 'bg/mortuary/f2/shadow_f2r8.png'
 
 
 class InMortuaryF2R8Zf891(ZombieMenuItem):

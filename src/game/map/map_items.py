@@ -1,6 +1,23 @@
 import math
 
 
+class ShadowItem:
+    def __init__(self, state_manager, x, y):
+        self.state_manager = state_manager
+        self._pos = { 'x': x, 'y': y }
+        self.location_id = None
+    def when_unvisited(self):
+        return self.state_manager.locations_manager.get_location() != self.location_id and \
+               not self.state_manager.locations_manager.is_visited(self.location_id)
+    def when_visited(self):
+        return self.state_manager.locations_manager.get_location() != self.location_id and \
+               self.state_manager.locations_manager.is_visited(self.location_id)
+    def texture(self):
+        return 'images/icons/unknown.png'
+    def pos(self):
+        return self._pos
+
+
 class MenuItem:
     def __init__(self, state_manager, x, y):
         self.state_manager = state_manager

@@ -10,12 +10,14 @@ init 10 python:
         InMortuaryF2R1Zm569,
         InMortuaryF2R1Zm825,
         InMortuaryF2R1Zm782,
+        MortuaryF2R1Shadow,
 
         FromMortuaryF2R2ToMortuaryF2R1,
         FromMortuaryF2R2ToMortuaryF2R3,
         InMortuaryF2R2Zm965,
         InMortuaryF2R2Zf594,
         InMortuaryF2R2Zf626,
+        MortuaryF2R2Shadow,
 
         FromMortuaryF2R3ToMortuaryF2R2,
         FromMortuaryF2R3ToMortuaryF2R4,
@@ -24,10 +26,12 @@ init 10 python:
         InMortuaryF2R3Zm1201,
         InMortuaryF2R3Zf1096,
         InMortuaryF2R3Zf1072,
+        MortuaryF2R3Shadow,
 
         FromMortuaryF2R4ToMortuaryF2R3,
         FromMortuaryF2R4ToMortuaryF2R5,
         InMortuaryF2R4Zm1664,
+        MortuaryF2R4Shadow,
 
         FromMortuaryF2R5ToMortuaryF2R4,
         FromMortuaryF2R5ToMortuaryF2R6,
@@ -35,10 +39,12 @@ init 10 python:
         InMortuaryF2R5Zm257,
         InMortuaryF2R5Zm506,
         InMortuaryF2R5Zm985,
+        MortuaryF2R5Shadow,
 
         FromMortuaryF2R6ToMortuaryF2R5,
         FromMortuaryF2R6ToMortuaryF2R7,
         InMortuaryF2R6Vaxis,
+        MortuaryF2R6Shadow,
 
         FromMortuaryF2R7ToMortuaryF2R6,
         FromMortuaryF2R7ToMortuaryF2R8,
@@ -46,86 +52,103 @@ init 10 python:
         FromMortuaryF2R7ToMortuaryF1R4,
         InMortuaryF2R7PickEmbalm,
         InMortuaryF2R7PickCopperEarringClosed,
+        MortuaryF2R7Shadow,
 
         FromMortuaryF2R8ToMortuaryF2R7,
         FromMortuaryF2R8ToMortuaryF2R1,
-        InMortuaryF2R8Zf891
+        InMortuaryF2R8Zf891,
+        MortuaryF2R8Shadow
     )
 
 
+default _mortuary_f2_map_xadj = MyAdjustment(value=0)
+default _mortuary_f2_map_yadj = MyAdjustment(value=0)
+default _mortuary_f2_map_zadj = MyAdjustment(value=1)
+
+
 label mortuary_f2_map:
-    call screen mortuary_f2_map
+    call screen mortuary_f2_map()
 
 
 screen mortuary_f2_map():
     $ state_manager = runtime.global_state_manager
     use _mortuary_f2_map(
-        'bg/mortuary/f2.png',
+        'bg/mortuary/f2/root.png',
         [
-            InMortuaryF2R1PickScalpel(state_manager, 1614, 2328),
-            FromMortuaryF2R1ToMortuaryF2R2(state_manager, 1340, 2324),
-            FromMortuaryF2R1ToMortuaryF2R8(state_manager, 2314, 2910),
-            FromMortuaryF2R1ToMortuaryF3R1(state_manager, 1952, 2159),
-            FromMortuaryF2R1ToMortuaryF1R1(state_manager, 1840, 2211),
+            InMortuaryF2R1PickScalpel(state_manager, 900, 2280),
+            FromMortuaryF2R1ToMortuaryF2R2(state_manager, 633, 2299),
+            FromMortuaryF2R1ToMortuaryF2R8(state_manager, 1658, 2842),
+            FromMortuaryF2R1ToMortuaryF3R1(state_manager, 1298, 2139),
+            FromMortuaryF2R1ToMortuaryF1R1(state_manager, 1138, 2139),
 
-            FromMortuaryF2R2ToMortuaryF2R1(state_manager, 1340, 2324),
-            FromMortuaryF2R2ToMortuaryF2R3(state_manager, 1200, 1331),
+            FromMortuaryF2R2ToMortuaryF2R1(state_manager, 633, 2299),
+            FromMortuaryF2R2ToMortuaryF2R3(state_manager, 475, 1338),
 
-            FromMortuaryF2R3ToMortuaryF2R2(state_manager, 1223, 1335),
-            FromMortuaryF2R3ToMortuaryF2R4(state_manager, 2027, 649),
+            FromMortuaryF2R3ToMortuaryF2R2(state_manager, 475, 1338),
+            FromMortuaryF2R3ToMortuaryF2R4(state_manager, 1306, 602),
 
-            FromMortuaryF2R4ToMortuaryF2R3(state_manager, 2021, 650),
-            FromMortuaryF2R4ToMortuaryF2R5(state_manager, 3489, 538),
+            FromMortuaryF2R4ToMortuaryF2R3(state_manager, 1306, 602),
+            FromMortuaryF2R4ToMortuaryF2R5(state_manager, 2745, 474),
 
-            FromMortuaryF2R5ToMortuaryF2R4(state_manager, 3480, 563),
-            FromMortuaryF2R5ToMortuaryF2R6(state_manager, 4439, 1135),
+            FromMortuaryF2R5ToMortuaryF2R4(state_manager, 2745, 474),
+            FromMortuaryF2R5ToMortuaryF2R6(state_manager, 3738, 1114),
 
-            FromMortuaryF2R6ToMortuaryF2R5(state_manager, 4440, 1135),
-            FromMortuaryF2R6ToMortuaryF2R7(state_manager, 4550, 2150),
+            FromMortuaryF2R6ToMortuaryF2R5(state_manager, 3738, 1114),
+            FromMortuaryF2R6ToMortuaryF2R7(state_manager, 3835, 2106),
 
-            FromMortuaryF2R7ToMortuaryF2R6(state_manager, 4550, 2150),
-            FromMortuaryF2R7ToMortuaryF2R8(state_manager, 3750, 2800),
-            FromMortuaryF2R7ToMortuaryF3R3(state_manager, 3935, 2050),
-            FromMortuaryF2R7ToMortuaryF1R4(state_manager, 4035, 2070),
-            InMortuaryF2R7PickEmbalm(state_manager, 4130, 2160),
-            InMortuaryF2R7PickCopperEarringClosed(state_manager, 3760, 2000),
+            FromMortuaryF2R7ToMortuaryF2R6(state_manager, 3835, 2106),
+            FromMortuaryF2R7ToMortuaryF2R8(state_manager, 3002, 2746),
+            FromMortuaryF2R7ToMortuaryF3R3(state_manager, 3205, 2001),
+            FromMortuaryF2R7ToMortuaryF1R4(state_manager, 3323, 2010),
+            InMortuaryF2R7PickEmbalm(state_manager, 3189, 2193),
+            InMortuaryF2R7PickCopperEarringClosed(state_manager, 3058, 1966),
 
-            FromMortuaryF2R8ToMortuaryF2R7(state_manager, 3740, 2800),
-            FromMortuaryF2R8ToMortuaryF2R1(state_manager, 2300, 2900),
+            FromMortuaryF2R8ToMortuaryF2R7(state_manager, 3002, 2746),
+            FromMortuaryF2R8ToMortuaryF2R1(state_manager, 1658, 2842)
         ],
         [
             *get_party(state_manager, mortuaryF2LootLogic.get_where_party_stands(state_manager)),
 
-            InMortuaryF2R1Zm569(state_manager, 1817, 2439),
-            InMortuaryF2R1Zm782(state_manager, 1863, 2663),
-            InMortuaryF2R1Zm825(state_manager, 2207, 2689),
+            InMortuaryF2R1Zm569(state_manager, 950, 2450),
+            InMortuaryF2R1Zm782(state_manager, 1275, 2750),
+            InMortuaryF2R1Zm825(state_manager, 1200, 2530),
 
-            InMortuaryF2R2Zm965(state_manager, 1200, 2000),
-            InMortuaryF2R2Zf594(state_manager, 1600, 1850),
-            InMortuaryF2R2Zf626(state_manager, 1200, 1700),
+            InMortuaryF2R2Zm965(state_manager, 580, 2000),
+            InMortuaryF2R2Zf594(state_manager, 580, 1700),
+            InMortuaryF2R2Zf626(state_manager, 839, 1850),
 
-            InMortuaryF2R3Dhall(state_manager, 2047, 1268),
-            InMortuaryF2R3Zm396(state_manager, 1513, 1100),
-            InMortuaryF2R3Zm1201(state_manager, 1720, 850),
-            InMortuaryF2R3Zf1096(state_manager, 2166, 1087),
-            InMortuaryF2R3Zf1072(state_manager, 2353, 1481),
+            InMortuaryF2R3Dhall(state_manager, 1350, 1250),
+            InMortuaryF2R3Zm396(state_manager, 860, 960),
+            InMortuaryF2R3Zm1201(state_manager, 1060, 760),
+            InMortuaryF2R3Zf1096(state_manager, 1460, 1060),
+            InMortuaryF2R3Zf1072(state_manager, 1600, 1460),
 
-            InMortuaryF2R4Zm1664(state_manager, 2783, 966),
+            InMortuaryF2R4Zm1664(state_manager, 2070, 900),
 
-            InMortuaryF2R5Eivene(state_manager, 3832, 794),
-            InMortuaryF2R5Zm257(state_manager, 3627, 797),
-            InMortuaryF2R5Zm506(state_manager, 3650, 1122),
-            InMortuaryF2R5Zm985(state_manager, 3373, 1377),
+            InMortuaryF2R5Eivene(state_manager, 3125, 750),
+            InMortuaryF2R5Zm257(state_manager, 2960, 840),
+            InMortuaryF2R5Zm506(state_manager, 3060, 1100),
+            InMortuaryF2R5Zm985(state_manager, 2610, 1370),
 
-            InMortuaryF2R6Vaxis(state_manager, 4500, 1700),
+            InMortuaryF2R6Vaxis(state_manager, 3880, 1700),
 
-            InMortuaryF2R8Zf891(state_manager, 3000, 2600)
+            InMortuaryF2R8Zf891(state_manager, 2300, 2600)
+        ],
+        [
+            MortuaryF2R1Shadow(state_manager, 1265, 2390),
+            MortuaryF2R2Shadow(state_manager, 865, 1750),
+            MortuaryF2R3Shadow(state_manager, 1125, 975),
+            MortuaryF2R4Shadow(state_manager, 2050, 700),
+            MortuaryF2R5Shadow(state_manager, 3100, 875),
+            MortuaryF2R6Shadow(state_manager, 3425, 1550),
+            MortuaryF2R7Shadow(state_manager, 3227, 2280),
+            MortuaryF2R8Shadow(state_manager, 2320, 2620),
         ],
         audio.mortuary
     )
 
 
-screen _mortuary_f2_map(background, static_actions, dynamic_actions, bg_music):
+screen _mortuary_f2_map(background, static_actions, dynamic_actions, shadows, bg_music):
     on "show" action SmartPlayMusic(bg_music)
     on "show" action Hide("narrat")
 
@@ -133,74 +156,84 @@ screen _mortuary_f2_map(background, static_actions, dynamic_actions, bg_music):
 
     default bg_displayable = renpy.displayable(background)
     default bg_size = renpy.render(bg_displayable, 0, 0, 0, 0).get_size()
-    default xadj = ui.adjustment(value=1920)
-    default yadj = ui.adjustment(value=1080)
 
-    viewport:
-        id "bg_viewport"
-        draggable True
-        mousewheel True
-        xsize config.screen_width
-        ysize config.screen_height
-        xadjustment xadj
-        yadjustment yadj
 
-        # This area needs to be larger than the viewport to enable dragging
-        frame:
-            xsize 3 * 1920
-            ysize 3 * 1080
-            background None
+    frame:
+        background None
+        xysize (config.screen_width, config.screen_height)
+        padding (0, 0)
+        align (0.5, 0.5)
 
-            add background:
-                xalign 0.5
-                yalign 0.5
+        zoom_viewport:
+            xysize (config.screen_width, config.screen_height)
+            draggable True
+            id "zoom_vp"
+            mousewheel "zoom"
+            start_zoom 1
+            zoom_min 1
+            zoom_max 10
+            zoom_amount 2
+            zoom_speed 0.05
+            xadjustment _mortuary_f2_map_xadj
+            yadjustment _mortuary_f2_map_yadj
+            zadjustment _mortuary_f2_map_zadj
 
-            for static_action_button in static_actions:
-                if not static_action_button.when():
-                    continue
+            frame:
+                xsize int(bg_size[0])
+                ysize int(bg_size[1])
+                anchor (0.5, 0.5)
+                add background:
+                    xalign 0.5
+                    yalign 0.5
 
-                imagebutton:
-                    idle static_action_button.texture()
-                    hover Transform(static_action_button.texture(), matrixcolor=BrightnessMatrix(0.2))
-                    xpos static_action_button.pos()['x']
-                    ypos static_action_button.pos()['y']
-                    action ExecuteNavigationDirective(static_action_button.jump())
-                    hovered tt.Action(static_action_button.tooltip())
-                    unhovered tt.Action('')
-                    anchor (0.5, 0.5)
+                for static_action_button in static_actions:
+                    if not static_action_button.when():
+                        continue
 
-            for dynamic_action_button in dynamic_actions:
-                if not dynamic_action_button.when():
-                    continue
+                    imagebutton:
+                        idle static_action_button.texture()
+                        hover Transform(static_action_button.texture(), matrixcolor=BrightnessMatrix(0.2))
+                        xpos static_action_button.pos()['x']
+                        ypos static_action_button.pos()['y']
+                        action ExecuteNavigationDirective(static_action_button.jump())
+                        hovered tt.Action(static_action_button.tooltip())
+                        unhovered tt.Action('')
+                        anchor (0.5, 0.5)
 
-                imagebutton:
-                    idle dynamic_action_button.texture()
-                    # hover Transform(dynamic_action_button.texture(), matrixcolor=BrightnessMatrix(0.2)) at pulse_effect
-                    xpos dynamic_action_button.pos()['x']
-                    ypos dynamic_action_button.pos()['y']
-                    anchor (0.5, 0.5)
+                for dynamic_action_button in dynamic_actions:
+                    if not dynamic_action_button.when():
+                        continue
 
-                # if 'kill_action' in dynamic_action_button and 'kill_tooltip' in dynamic_action_button:
-                #     $ tooltip = dynamic_action_button.kill_tooltip()
-                #     imagebutton:
-                #         idle 'images/icons/kill_idle.png'
-                #         hover Transform('images/icons/kill_hover.png', matrixcolor=BrightnessMatrix(0.2)) at pulse_effect
-                #         xpos dynamic_action_button.xpos + 40
-                #         ypos dynamic_action_button.ypos
-                #         action Jump(dynamic_action_button.kill_action())
-                #         hovered tt.Action(tooltip)
-                #         unhovered tt.Action('')
-                #         anchor (0.5, 0.5)
+                    imagebutton:
+                        idle dynamic_action_button.texture()
+                        # hover Transform(dynamic_action_button.texture(), matrixcolor=BrightnessMatrix(0.2)) at pulse_effect
+                        xpos dynamic_action_button.pos()['x']
+                        ypos dynamic_action_button.pos()['y']
+                        anchor (0.5, 0.5)
 
-                imagebutton:
-                    idle 'images/icons/speak_idle.png'
-                    hover Transform('images/icons/speak_hover.png', matrixcolor=BrightnessMatrix(0.2))
-                    xpos dynamic_action_button.pos()['x'] + 40
-                    ypos dynamic_action_button.pos()['y'] - 20
-                    action ExecuteNavigationDirective(dynamic_action_button.jump())
-                    hovered tt.Action(dynamic_action_button.tooltip())
-                    unhovered tt.Action('')
-                    anchor (0.5, 0.5)
+                    imagebutton:
+                        idle 'images/icons/speak_idle.png'
+                        hover Transform('images/icons/speak_hover.png', matrixcolor=BrightnessMatrix(0.2))
+                        xpos dynamic_action_button.pos()['x'] + 40
+                        ypos dynamic_action_button.pos()['y'] - 20
+                        action ExecuteNavigationDirective(dynamic_action_button.jump())
+                        hovered tt.Action(dynamic_action_button.tooltip())
+                        unhovered tt.Action('')
+                        anchor (0.5, 0.5)
+
+                for shadow in shadows:
+                    if shadow.when_unvisited():
+                        imagebutton:
+                            idle Transform(shadow.texture(), matrixcolor=OpacityMatrix(1))
+                            xpos shadow.pos()['x']
+                            ypos shadow.pos()['y']
+                            anchor (0.5, 0.5)
+                    if shadow.when_visited():
+                        imagebutton:
+                            idle Transform(shadow.texture(), matrixcolor=OpacityMatrix(0.9)) # * ColorizeMatrix("#ff0000", '#00ff00')
+                            xpos shadow.pos()['x']
+                            ypos shadow.pos()['y']
+                            anchor (0.5, 0.5)
 
     frame:
         xalign 0.5
@@ -224,10 +257,16 @@ screen _mortuary_f2_map(background, static_actions, dynamic_actions, bg_music):
             xalign 0.0
             yalign 1.0
 
-            $ x, y = renpy.get_mouse_pos()
-            $ offset_x = round(x + xadj.value)
-            $ offset_y = round(y + yadj.value)
-            label "{font=NotoSans-Regular.ttf}[offset_x], [offset_y]{/font}":
+            # default vp = renpy.get_widget(screen="mortuary_f2_map", id="zoom_vp")
+            # $ img_x, img_y = vp.get_cursor_coordinates() # TODO [snow]: why there is the difference between this and that?
+            $ vp_x, vp_y = renpy.get_mouse_pos()
+            $ scaled_x = vp_x + _mortuary_f2_map_xadj.value
+            $ scaled_y = vp_y + _mortuary_f2_map_yadj.value
+            $ zoom = (1 + _mortuary_f2_map_zadj.value)
+            $ img_x = scaled_x / zoom
+            $ img_y = scaled_y / zoom
+
+            label "{font=NotoSans-Regular.ttf}[round(img_x)] , [round(img_y)] x[round(zoom, 2)]{/font}":
                 text_color '#dbc401'
                 text_size 16
                 # action CopyToClipboard('[offset_x], [offset_y]')

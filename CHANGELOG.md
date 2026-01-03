@@ -1,5 +1,9 @@
 # Change log
 
+## Version 0.06
+- Reimplement Mortuary floor 2 map
+- Improve UI
+
 ## Version 0.05
 - Technical improvements
 - Fix tests
