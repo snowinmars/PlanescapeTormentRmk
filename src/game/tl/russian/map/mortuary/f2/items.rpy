@@ -28,7 +28,7 @@ translate russian strings:
 
     # game/map/mortuary/f2/items.rpy:12
     old 'FromMortuaryF2R1ToMortuaryF1R1_tooltip1'
-    new 'Спуститься на третий этаж'
+    new 'Спуститься на первый этаж'
 
     # game/map/mortuary/f2/items.rpy:13
     old 'FromMortuaryF2R1ToMortuaryF1R1_tooltip2'
@@ -296,11 +296,11 @@ translate russian strings:
 
     # game/map/mortuary/f2/items.rpy:122
     old 'InMortuaryF2R7PickCopperEarringClosed_tooltip1'
-    new 'Взять серьгу'
+    new 'Обыскать'
 
     # game/map/mortuary/f2/items.rpy:124
     old 'InMortuaryF2R7PickEmbalm_tooltip1'
-    new 'Взять бальзамирующую жидкость'
+    new 'Обыскать'
 
     # game/map/mortuary/f2/items.rpy:130
     old 'FromMortuaryF2R8ToMortuaryF2R1_tooltip1'

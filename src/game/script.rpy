@@ -19,7 +19,7 @@ init 1 python:
 
     gamedir = os.path.normpath(config.gamedir)
     logs_folder = os.path.join(gamedir, 'logs')
-    config.version = "0.05"
+    config.version = "0.06"
     config.reject_backslash = False  # required to make the above work with with RenPy:
     os.environ['SDL_VIDEO_CENTERED'] = '1'
     sys.setdefaultencoding('utf-8')
