@@ -1,0 +1,24 @@
+{
+    "expansion": false,
+    "google_play_key": null,
+    "google_play_salt": null,
+    "heap_size": "3",
+    "icon_name": "PlanescapeTormentRmk",
+    "include_pil": false,
+    "include_sqlite": false,
+    "layout": null,
+    "name": "PlanescapeTormentRmk",
+    "numeric_version": 1,
+    "orientation": "sensorLandscape",
+    "package": "com.planescapetormentrmk",
+    "permissions": [
+        "VIBRATE",
+        "INTERNET"
+    ],
+    "source": false,
+    "store": "none",
+    "update_always": false,
+    "update_icons": true,
+    "update_keystores": true,
+    "version": "1.0"
+}

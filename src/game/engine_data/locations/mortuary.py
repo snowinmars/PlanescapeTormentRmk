@@ -6,8 +6,8 @@ def build_mortuary_locations(manager):
             'mortuary_f2r7', 'mortuary_f2r8'
         ]) \
         .register('AR0203', [
-            'mortuary_f3r1', 'mortuary_f3r2',
-            'mortuary_f3r3', 'mortuary_f3r4'
+            'mortuary_f3r1', 'mortuary_f3r2', 'mortuary_f3r3',
+            'mortuary_f3r4', 'mortuary_f3rc'
         ]) \
         .register('AR0201', [
             'mortuary_f1r1', 'mortuary_f1r2', 'mortuary_f1r3',

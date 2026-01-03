@@ -12,3 +12,9 @@ translate english mortuary_f3r4_loot_mortuary_key_58aa2daa:
     # nr 'Ты подбираешь ключ от внутренних покоев Морга.'
     nr 'You pick up the key to the inner chambers of the Mortuary.'
 
+# game/engine_data/menus/mortuary/f3r1/loot.rpy:8
+translate english from_mortuary_f3rc_to_mortuary_f3r1_closed_b2193a50:
+
+    # nr 'Дверь заперта. Судя по всему, она ведёт в соседнюю комнату. Тебе понадобится ключ.'
+    nr 'The door is locked. It appears to lead to the next room. You\'ll need a key.'
+
