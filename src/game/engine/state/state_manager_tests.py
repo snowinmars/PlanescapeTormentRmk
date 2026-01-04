@@ -11,7 +11,7 @@ class StateManagerTest(LogicTest):
         self.assertIsNotNone(self.state_manager.world_manager._world_store.once_keys)
         self.assertIsNotNone(self.state_manager.world_manager._world_store.registry)
         self.assertIsNotNone(self.state_manager.journal_manager)
-        self.assertIsNotNone(self.state_manager._events_manager)
+        self.assertIsNotNone(self.state_manager._log_events_manager)
         self.assertEqual(len(self.state_manager.world_manager._world_store.once_keys), 0)
         self.assertNotEqual(len(self.state_manager.world_manager._world_store.registry), 0)
         self.assertIsNotNone(self.state_manager.characters_manager)

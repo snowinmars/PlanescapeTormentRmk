@@ -9,7 +9,7 @@ from game.engine.inventory.inventory_store import (InventoryStore)
 class InventoryManagerTest(LogicTest):
     def test_ctor(self):
         self.assertIsNotNone(self.inventory_manager)
-        self.assertIsNotNone(self.inventory_manager._events_manager)
+        self.assertIsNotNone(self.inventory_manager._log_events_manager)
         self.assertIsNotNone(self.inventory_manager._inventory_store.inventory_items)
         self.assertNotEqual(len(self.inventory_manager._inventory_store.inventory_items), 0)
         self.assertIsNotNone(self.inventory_manager._player_has_item_callback)
@@ -48,7 +48,7 @@ class InventoryManagerTest(LogicTest):
         inventory_item2 = _create_inventory_item('_2')
         delta = 2
 
-        custom_inventory_manager = InventoryManager(self.events_manager, lambda x: x == inventory_item2.settings_id)
+        custom_inventory_manager = InventoryManager(self.log_events_manager, lambda x: x == inventory_item2.settings_id)
         custom_inventory_manager.set_store(InventoryStore())
 
         before = len(custom_inventory_manager._inventory_store.inventory_items)

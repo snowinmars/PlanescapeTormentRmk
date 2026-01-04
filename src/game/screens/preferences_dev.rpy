@@ -98,10 +98,10 @@ screen preferences_dev():
                     xsize 40
                     background "#5036d4"
                     hover_background "#734df5"
-                    action SetVariable('preferences_dev_choosed_screen', 'events_store')
-                    text 'EV':
+                    action SetVariable('preferences_dev_choosed_screen', 'log_events_store')
+                    text 'LE':
                         size 20
-                        if preferences_dev_choosed_screen == 'events_store':
+                        if preferences_dev_choosed_screen == 'log_events_store':
                             color "#dbc401"
                         else:
                             color "#dddddd"
@@ -209,8 +209,8 @@ screen preferences_dev():
                 if preferences_dev_choosed_screen == 'characters_store':
                     use _preferences_dev_stores(runtime.global_state_manager.characters_manager._characters_store)
 
-                if preferences_dev_choosed_screen == 'events_store':
-                    use _preferences_dev_stores(runtime.global_events_manager._events_store)
+                if preferences_dev_choosed_screen == 'log_events_store':
+                    use _preferences_dev_stores(runtime.global_log_events_manager._log_events_store)
 
                 if preferences_dev_choosed_screen == 'inventory_store':
                     use _preferences_dev_stores(runtime.global_state_manager.inventory_manager._inventory_store)
@@ -272,11 +272,11 @@ screen _preferences_dev(store_obj, preferences_dev_choosed_screen):
             $ value = getattr(store_obj, attr)
             $ attrs.append((attr, value))
 
-    $ runtime.global_events_manager.write_event(f'======\n=== {preferences_dev_choosed_screen}')
+    $ runtime.global_log_events_manager.write_log_event(f'======\n=== {preferences_dev_choosed_screen}')
     $ attrs.sort()
 
     for attr, value in attrs:
-        $ runtime.global_events_manager.write_event(f'{str(attr)} : {str(value)}') # if this screen fails, the last entry in the log is the clue
+        $ runtime.global_log_events_manager.write_log_event(f'{str(attr)} : {str(value)}') # if this screen fails, the last entry in the log is the clue
 
         $ value_str = str(value).replace('{', '{{').replace('[', '[[') # 'a: {}' / [b] is invalid template
 
@@ -285,4 +285,4 @@ screen _preferences_dev(store_obj, preferences_dev_choosed_screen):
             color "#dbc401"
             xfill True
 
-    $ runtime.global_events_manager.write_event(f'=== {preferences_dev_choosed_screen}\n======')
+    $ runtime.global_log_events_manager.write_log_event(f'=== {preferences_dev_choosed_screen}\n======')

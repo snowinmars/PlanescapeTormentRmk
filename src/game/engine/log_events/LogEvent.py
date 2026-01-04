@@ -1,7 +1,7 @@
 import json
 
 
-class Event:
+class LogEvent:
     def __init__(self, timestamp, category, text):
         self.timestamp = timestamp
         self.category = category

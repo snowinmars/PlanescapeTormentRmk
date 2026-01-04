@@ -9,7 +9,7 @@ class CharactersManagerTest(LogicTest):
         self.assertIsNotNone(self.characters_manager)
         self.assertIsNotNone(self.characters_manager._characters_store.characters)
         self.assertIsNotNone(self.characters_manager._characters_store.once_keys)
-        self.assertIsNotNone(self.characters_manager._events_manager)
+        self.assertIsNotNone(self.characters_manager._log_events_manager)
         self.assertNotEqual(len(self.characters_manager._characters_store.characters), 0)
         self.assertEqual(len(self.characters_manager._characters_store.once_keys), 0)
 

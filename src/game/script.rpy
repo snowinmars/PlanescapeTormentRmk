@@ -33,7 +33,7 @@ init 1 python:
 init 2 python:
     from game.engine.locations.locations_store import (LocationsStore)
     from game.engine.journal.journal_store import (JournalStore)
-    from game.engine.events.events_store import (EventsStore)
+    from game.engine.log_events.log_events_store import (LogEventsStore)
     from game.engine.characters.characters_store import (CharactersStore)
     from game.engine.inventory.inventory_store import (InventoryStore)
     from game.engine.world.world_store import (WorldStore)
@@ -47,7 +47,7 @@ init 2 python:
 
 default locations_store = LocationsStore()
 default journal_store = JournalStore()
-default events_store = EventsStore()
+default log_events_store = LogEventsStore()
 default characters_store = CharactersStore()
 default inventory_store = InventoryStore()
 default world_store = WorldStore()
@@ -59,7 +59,7 @@ init 3 python:
     # engine warm up
     from game.engine.runtime import (runtime)
 
-    from game.engine.events.events_manager import (EventsManager)
+    from game.engine.log_events.log_events_manager import (LogEventsManager)
     from game.engine.state.state_manager import (StateManager)
     from game.engine.inventory.inventory_manager import (InventoryManager)
     from game.engine.locations.locations_manager import (LocationsManager)
@@ -75,27 +75,27 @@ init 3 python:
     from game.engine_data.journal.build_all_notes import (build_all_notes)
 
 
-    runtime.global_events_manager = EventsManager(runtime.logger)
-    runtime.global_locations_manager = LocationsManager(runtime.global_events_manager)
-    runtime.global_characters_manager = CharactersManager(runtime.global_events_manager)
-    runtime.global_journal_manager = JournalManager(runtime.global_events_manager)
-    runtime.global_world_manager = WorldManager(runtime.global_events_manager)
-    runtime.global_inventory_manager = InventoryManager(runtime.global_events_manager, lambda x: runtime.global_world_manager.get_setting_value(x))
+    runtime.global_log_events_manager = LogEventsManager(runtime.logger)
+    runtime.global_locations_manager = LocationsManager(runtime.global_log_events_manager)
+    runtime.global_characters_manager = CharactersManager(runtime.global_log_events_manager)
+    runtime.global_journal_manager = JournalManager(runtime.global_log_events_manager)
+    runtime.global_world_manager = WorldManager(runtime.global_log_events_manager)
+    runtime.global_inventory_manager = InventoryManager(runtime.global_log_events_manager, lambda x: runtime.global_world_manager.get_setting_value(x))
     runtime.global_state_manager = StateManager(
-        runtime.global_events_manager,
+        runtime.global_log_events_manager,
         runtime.global_world_manager,
         runtime.global_characters_manager,
         runtime.global_locations_manager,
         runtime.global_journal_manager,
         runtime.global_inventory_manager
     )
-    runtime.global_narrat_manager = NarratManager(runtime.global_events_manager)
+    runtime.global_narrat_manager = NarratManager(runtime.global_log_events_manager)
 
 
     def apply_stores():
         runtime.global_locations_manager.set_store(locations_store)
         runtime.global_journal_manager.set_store(journal_store)
-        runtime.global_events_manager.set_store(events_store)
+        runtime.global_log_events_manager.set_store(log_events_store)
         runtime.global_characters_manager.set_store(characters_store)
         runtime.global_inventory_manager.set_store(inventory_store)
         runtime.global_world_manager.set_store(world_store)
@@ -104,7 +104,7 @@ init 3 python:
 
     def init_managers():
         apply_stores()
-        runtime.global_events_manager.write_event('init_managers')
+        runtime.global_log_events_manager.write_log_event('init_managers')
 
         now = int(time.time())
         runtime.logger.info('Building settings manager…')

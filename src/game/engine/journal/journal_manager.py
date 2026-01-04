@@ -5,8 +5,8 @@ from game.engine.journal.journal_note import (JournalNote)
 
 
 class JournalManager:
-    def __init__(self, events_manager):
-        self._events_manager = events_manager
+    def __init__(self, log_events_manager):
+        self._log_events_manager = log_events_manager
         self._journal_store = None
         self._on_update_journal = []
 
@@ -64,7 +64,7 @@ class JournalManager:
 
 
     def _log(self, line):
-        self._events_manager.write_event(line)
+        self._log_events_manager.write_log_event(line)
 
 
     def __getstate__(self):

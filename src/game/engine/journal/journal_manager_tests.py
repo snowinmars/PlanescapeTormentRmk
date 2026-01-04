@@ -6,7 +6,7 @@ from game.engine.tests import (LogicTest)
 class JournalManagerTest(LogicTest):
     def test_ctor(self):
         self.assertIsNotNone(self.journal_manager)
-        self.assertIsNotNone(self.journal_manager._events_manager)
+        self.assertIsNotNone(self.journal_manager._log_events_manager)
         self.assertIsNotNone(self.journal_manager._journal_store.notes)
 
 
