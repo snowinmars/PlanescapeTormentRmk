@@ -463,3 +463,17 @@ translate english strings:
     old "Получить „Историю костей“"
     new ""
 
+# TODO: Translation updated at 2026-01-05 01:20
+
+# game/dlgs/introduction.rpy:61
+translate english introduction_1_ae223174:
+
+    # snowinmars "А ещё карта и ачивки сделаны на базе feniksdev - огромное ему спасибо за великолепную работу."
+    snowinmars "Also, map and achievements are made on feniksdev libs - huge thanks for his well-done job."
+
+# game/dlgs/introduction.rpy:62
+translate english introduction_1_f8b139c7:
+
+    # snowinmars "https://feniksdev.itch.io"
+    snowinmars "https://feniksdev.itch.io"
+
