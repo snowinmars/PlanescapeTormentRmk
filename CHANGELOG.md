@@ -2,8 +2,9 @@
 
 ## Version 0.06
 - Update from RenPy 8.3.6 to 8.5.1
-- Add Android build
-- Reimplement Mortuary floor 2 map
+- Add Android build (does not work, lol)
+- Reimplement Mortuary floor 1, 2, 3 maps
+- Game can be run (again) from start to end
 - Improve UI
 - Minor fixes
 

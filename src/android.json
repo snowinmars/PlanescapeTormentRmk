@@ -10,7 +10,7 @@
     "name": "PlanescapeTormentRmk",
     "numeric_version": 1,
     "orientation": "sensorLandscape",
-    "package": "com.planescapetormentrmk",
+    "package": "rmk.torment.planescape",
     "permissions": [
         "VIBRATE",
         "INTERNET"
