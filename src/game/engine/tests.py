@@ -1,7 +1,7 @@
 import unittest
 import inspect
 
-from game.engine.events.events_manager import (EventsManager)
+from game.engine.log_events.log_events_manager import (LogEventsManager)
 from game.engine.state.state_manager import (StateManager)
 from game.engine.inventory.inventory_manager import (InventoryManager)
 from game.engine.locations.locations_manager import (LocationsManager)
@@ -11,7 +11,7 @@ from game.engine.world.world_manager import (WorldManager)
 
 from game.engine.locations.locations_store import (LocationsStore)
 from game.engine.journal.journal_store import (JournalStore)
-from game.engine.events.events_store import (EventsStore)
+from game.engine.log_events.log_events_store import (LogEventsStore)
 from game.engine.characters.characters_store import (CharactersStore)
 from game.engine.inventory.inventory_store import (InventoryStore)
 from game.engine.world.world_store import (WorldStore)
@@ -28,14 +28,14 @@ class LogicTest(unittest.TestCase):
         self.target_class = None  # python is so meme
 
         self.logger = self.mock_logger(False, './logs')
-        self.events_manager = EventsManager(self.logger)
-        self.locations_manager = LocationsManager(self.events_manager)
-        self.characters_manager = CharactersManager(self.events_manager)
-        self.journal_manager = JournalManager(self.events_manager)
-        self.world_manager = WorldManager(self.events_manager)
-        self.inventory_manager = InventoryManager(self.events_manager, lambda x: self.world_manager.get_setting_value(x))
+        self.log_events_manager = LogEventsManager(self.logger)
+        self.locations_manager = LocationsManager(self.log_events_manager)
+        self.characters_manager = CharactersManager(self.log_events_manager)
+        self.journal_manager = JournalManager(self.log_events_manager)
+        self.world_manager = WorldManager(self.log_events_manager)
+        self.inventory_manager = InventoryManager(self.log_events_manager, lambda x: self.world_manager.get_setting_value(x))
         self.state_manager = StateManager(
-            self.events_manager,
+            self.log_events_manager,
             self.world_manager,
             self.characters_manager,
             self.locations_manager,
@@ -53,8 +53,8 @@ class LogicTest(unittest.TestCase):
         self.journal_store = JournalStore()
         self.journal_manager.set_store(self.journal_store)
 
-        self.events_store = EventsStore()
-        self.events_manager.set_store(self.events_store)
+        self.log_events_store = LogEventsStore()
+        self.log_events_manager.set_store(self.log_events_store)
 
         self.characters_store = CharactersStore()
         self.characters_manager.set_store(self.characters_store)

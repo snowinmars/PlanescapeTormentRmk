@@ -2,8 +2,8 @@ import logging
 
 
 class StateManager:
-    def __init__(self, events_manager, world_manager, characters_manager, locations_manager, journal_manager, inventory_manager):
-        self._events_manager = events_manager
+    def __init__(self, log_events_manager, world_manager, characters_manager, locations_manager, journal_manager, inventory_manager):
+        self._log_events_manager = log_events_manager
         self.world_manager = world_manager
         self.characters_manager = characters_manager
         self.locations_manager = locations_manager
@@ -51,4 +51,4 @@ class StateManager:
 
 
     def _log(self, line):
-        self._events_manager.write_event(line)
+        self._log_events_manager.write_log_event(line)

@@ -2,8 +2,8 @@ import logging
 
 
 class InventoryManager:
-    def __init__(self, events_manager, player_has_item_callback):
-        self._events_manager = events_manager
+    def __init__(self, log_events_manager, player_has_item_callback):
+        self._log_events_manager = log_events_manager
         self._inventory_store = None
         self._player_has_item_callback = player_has_item_callback
         self._selected_item = None
@@ -51,4 +51,4 @@ class InventoryManager:
 
 
     def _log(self, line):
-        self._events_manager.write_event(line)
+        self._log_events_manager.write_log_event(line)

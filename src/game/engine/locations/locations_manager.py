@@ -4,8 +4,8 @@ import logging
 # Internal is InfinityEngine: AR0202
 # External is Renpy: mortuary_f2r1
 class LocationsManager:
-    def __init__(self, events_manager):
-        self._events_manager = events_manager
+    def __init__(self, log_events_manager):
+        self._log_events_manager = log_events_manager
         self._locations_store = None
 
 
@@ -74,4 +74,4 @@ class LocationsManager:
 
 
     def _log(self, line):
-        self._events_manager.write_event(line)
+        self._log_events_manager.write_log_event(line)
