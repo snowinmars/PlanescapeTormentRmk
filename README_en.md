@@ -16,7 +16,7 @@ All the stuff is under GNU/GPLv3
   - web - `PlanescapeTormentRmk-0.02-web.zip`
   - linux - `PlanescapeTormentRmk-0.02-linux.tar.bz2`
   - windows - `PlanescapeTormentRmk-0.02-win.zip`
-  - android - `com.planescapetormentrmk-0.06-1767483720-release.apk` (have no mobile-optimized UI)
+  - android - `rmk.torment.planescape-0.06-1767561262-release.apk` (does NOT work)
   - joiPlay - import web build into JoiPlay (have no mobile-optimized UI)
 - run in browser
   - [itch.io](https://snowinmars.itch.io/planescapetormentrmk)
@@ -49,7 +49,6 @@ If the rpy filename is `T.rpy`, than:
 
 ### Linter statistics
 
-#### Shorthands:
 - db = dialogue blocks
 - wd = words
 - ch = characters
@@ -71,7 +70,7 @@ Russian:
 | 0.0.3   | 3326 | 40398 | 300003 | 12.1 | 90  | 1451 | 66  | 50  |
 | 0.0.4   | 3327 | 40354 | 301097 | 12.1 | 91  | 1451 | 66  | 55  |
 | 0.0.5   | 3327 | 40356 | 301102 | 12.1 | 91  | 1451 | 66  | 71  |
-| 0.0.6   | 3330 | 40369 | 301184 | 12.1 | 90  | 1451 | 66  | 66  |
+| 0.0.6   | 3328 | 40369 | 301208 | 12.1 | 91  | 1451 | 49  | 60  |
 
 English:
 | version | db   | wd    | ch     | aw   | cb  | mn   | im  | sc  |
@@ -81,4 +80,19 @@ English:
 | 0.0.3   | 3412 | 48312 | 310091 | 14.2 | 91  | 1451 | 66  | 50  |
 | 0.0.4   | 3427 | 48260 | 311739 | 14.1 | 91  | 1451 | 66  | 55  |
 | 0.0.5   | 3427 | 48265 | 311789 | 14.1 | 91  | 1451 | 66  | 71  |
-| 0.0.6   | 3431 | 48281 | 311864 | 14.1 | 91  | 1451 | 66  | 66  |
+| 0.0.6   | 3429 | 48281 | 311888 | 14.1 | 91  | 1451 | 49  | 60  |
+
+### Build statistic
+
+- mz = windows-build size in kb
+- lz = linux-build size in kb
+- wz = web-build size in kb
+
+ | version | mz     | lz     | wz     |
+ | ------- | ------ | ------ | ------ |
+ | 0.0.1   |        |        |        |
+ | 0.0.2   | 136152 | 122013 | 151831 |
+ | 0.0.3   | 140164 | 126037 | 155812 |
+ | 0.0.4   | 186286 | 171286 | 201937 |
+ | 0.0.5   | 189454 | 174551 | 205126 |
+ | 0.0.6   | 195719 | 180889 | 212101 |
