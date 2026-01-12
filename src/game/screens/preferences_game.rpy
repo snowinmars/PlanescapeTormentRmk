@@ -109,6 +109,39 @@ screen preferences_game():
                                     else:
                                         background "gui/switch_off.png"
 
+                        frame:
+                            background None
+                            xsize 500
+
+                            hbox:
+                                spacing 10
+
+                                button:
+                                    action [
+                                        ToggleField(persistent, "add_custom_achievements"),
+                                        Function(regain_custom_achievements)
+                                    ]
+                                    xfill True
+                                    yalign 0.5
+
+                                    text _('preferences_game_screen_add_custom_achievements'): # 'Включить дополнительные достижения'
+                                        size 18
+                                        color '#dbc401'
+                                        hover_color '#eeeeee'
+
+                                button:
+                                    action [
+                                        ToggleField(persistent, "add_custom_achievements"),
+                                        Function(regain_custom_achievements)
+                                    ]
+                                    padding (0, 0)
+                                    xysize (60, 30)
+
+                                    if persistent.add_custom_achievements:
+                                        background "gui/switch_on.png"
+                                    else:
+                                        background "gui/switch_off.png"
+
         vbox:
             xfill True
             yfill True

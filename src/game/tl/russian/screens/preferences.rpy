@@ -34,3 +34,11 @@ translate russian strings:
     old 'preferences_screen_graphics_settings'
     new 'Графика'
 
+    # game/screens/preferences.rpy:132
+    old "preferences_screen_main_menu"
+    new "Сохранить и перезапустить"
+
+    # game/screens/preferences.rpy:149
+    old "preferences_screen_achievements"
+    new "Достижения"
+

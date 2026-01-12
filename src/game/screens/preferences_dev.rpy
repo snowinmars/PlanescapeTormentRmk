@@ -1,6 +1,7 @@
 init python:
     preferences_dev_choosed_screen = ''
 
+
 screen preferences_dev():
     tag menu
 
@@ -19,171 +20,162 @@ screen preferences_dev():
             text_color "#dbc401"
             text_align (0.5, 0.5)
 
-        vbox:
-            spacing 0
-            xfill True
-            yfill True
+        hbox:
+            xpos 675
+            ypos 50
+            xsize 700
+            spacing 10
 
-            fixed:
-                xfill True
-                ysize 50
-
-                button:
-                    xpos 700
-                    ypos 50
-                    xsize 40
-                    background "#5036d4"
-                    hover_background "#734df5"
-                    action SetVariable('preferences_dev_choosed_screen', 'persistent')
-                    text 'pe':
-                        size 20
-                        if preferences_dev_choosed_screen == 'persistent':
-                            color "#dbc401"
-                        else:
-                            color "#dddddd"
-                        hover_color "#eeeeee"
-                        xalign 0.5
-
-                button:
-                    xpos 750
-                    ypos 50
-                    xsize 40
-                    background "#5036d4"
-                    hover_background "#734df5"
-                    action SetVariable('preferences_dev_choosed_screen', '_preferences')
-                    text '_p':
-                        size 20
-                        if preferences_dev_choosed_screen == '_preferences':
-                            color "#dbc401"
-                        else:
-                            color "#dddddd"
-                        hover_color "#eeeeee"
-                        xalign 0.5
-
-                button:
-                    xpos 800
-                    ypos 50
-                    xsize 40
-                    background "#5036d4"
-                    hover_background "#734df5"
-                    action SetVariable('preferences_dev_choosed_screen', 'config')
-                    text 'cf':
-                        size 20
-                        if preferences_dev_choosed_screen == 'config':
-                            color "#dbc401"
-                        else:
-                            color "#dddddd"
-                        hover_color "#eeeeee"
-                        xalign 0.5
-
-                button:
-                    xpos 850
-                    ypos 50
-                    xsize 40
-                    background "#5036d4"
-                    hover_background "#734df5"
-                    action SetVariable('preferences_dev_choosed_screen', 'characters_store')
-                    text 'CH':
-                        size 20
-                        if preferences_dev_choosed_screen == 'characters_store':
-                            color "#dbc401"
-                        else:
-                            color "#dddddd"
-                        hover_color "#eeeeee"
-                        xalign 0.5
-
-                button:
-                    xpos 900
-                    ypos 50
-                    xsize 40
-                    background "#5036d4"
-                    hover_background "#734df5"
-                    action SetVariable('preferences_dev_choosed_screen', 'log_events_store')
-                    text 'LE':
-                        size 20
-                        if preferences_dev_choosed_screen == 'log_events_store':
-                            color "#dbc401"
-                        else:
-                            color "#dddddd"
-                        hover_color "#eeeeee"
-                        xalign 0.5
-
-                button:
-                    xpos 950
-                    ypos 50
-                    xsize 40
-                    background "#5036d4"
-                    hover_background "#734df5"
-                    action SetVariable('preferences_dev_choosed_screen', 'inventory_store')
-                    text 'IV':
-                        size 20
-                        if preferences_dev_choosed_screen == 'inventory_store':
-                            color "#dbc401"
-                        else:
-                            color "#dddddd"
-                        hover_color "#eeeeee"
-                        xalign 0.5
-
-                button:
-                    xpos 1000
-                    ypos 50
-                    xsize 40
-                    background "#5036d4"
-                    hover_background "#734df5"
-                    action SetVariable('preferences_dev_choosed_screen', 'journal_store')
-                    text 'JR':
-                        size 20
-                        if preferences_dev_choosed_screen == 'journal_store':
-                            color "#dbc401"
-                        else:
-                            color "#dddddd"
-                        hover_color "#eeeeee"
-                        xalign 0.5
-
-                button:
-                    xpos 1050
-                    ypos 50
-                    xsize 40
-                    background "#5036d4"
-                    hover_background "#734df5"
-                    action SetVariable('preferences_dev_choosed_screen', 'locations_store')
-                    text 'LN':
-                        size 20
-                        if preferences_dev_choosed_screen == 'locations_store':
-                            color "#dbc401"
-                        else:
-                            color "#dddddd"
-                        hover_color "#eeeeee"
-                        xalign 0.5
-
-                button:
-                    xpos 1100
-                    ypos 50
-                    xsize 40
-                    background "#5036d4"
-                    hover_background "#734df5"
-                    action SetVariable('preferences_dev_choosed_screen', 'world_store')
-                    text 'WR':
-                        size 20
-                        if preferences_dev_choosed_screen == 'world_store':
-                            color "#dbc401"
-                        else:
-                            color "#dddddd"
-                        hover_color "#eeeeee"
-                        xalign 0.5
-
-                button:
-                    xpos 1300
-                    ypos 50
-                    xsize 40
-                    background "#5036d4"
-                    hover_background "#734df5"
-                    action Return()
-                    text "X":
-                        size 20
+            button:
+                xsize 40
+                background "#5036d4"
+                hover_background "#734df5"
+                action SetVariable('preferences_dev_choosed_screen', 'persistent')
+                text 'pe':
+                    size 20
+                    if preferences_dev_choosed_screen == 'persistent':
+                        color "#dbc401"
+                    else:
                         color "#dddddd"
-                        hover_color "#eeeeee"
-                        xalign 0.5
+                    hover_color "#eeeeee"
+                    xalign 0.5
+
+            button:
+                xsize 40
+                background "#5036d4"
+                hover_background "#734df5"
+                action SetVariable('preferences_dev_choosed_screen', '_preferences')
+                text '_p':
+                    size 20
+                    if preferences_dev_choosed_screen == '_preferences':
+                        color "#dbc401"
+                    else:
+                        color "#dddddd"
+                    hover_color "#eeeeee"
+                    xalign 0.5
+
+            button:
+                xsize 40
+                background "#5036d4"
+                hover_background "#734df5"
+                action SetVariable('preferences_dev_choosed_screen', 'config')
+                text 'cf':
+                    size 20
+                    if preferences_dev_choosed_screen == 'config':
+                        color "#dbc401"
+                    else:
+                        color "#dddddd"
+                    hover_color "#eeeeee"
+                    xalign 0.5
+
+            button:
+                xsize 40
+                background "#5036d4"
+                hover_background "#734df5"
+                action SetVariable('preferences_dev_choosed_screen', 'build')
+                text 'bl':
+                    size 20
+                    if preferences_dev_choosed_screen == 'build':
+                        color "#dbc401"
+                    else:
+                        color "#dddddd"
+                    hover_color "#eeeeee"
+                    xalign 0.5
+
+            button:
+                xsize 40
+                background "#5036d4"
+                hover_background "#734df5"
+                action SetVariable('preferences_dev_choosed_screen', 'characters_store')
+                text 'CH':
+                    size 20
+                    if preferences_dev_choosed_screen == 'characters_store':
+                        color "#dbc401"
+                    else:
+                        color "#dddddd"
+                    hover_color "#eeeeee"
+                    xalign 0.5
+
+            button:
+                xsize 40
+                background "#5036d4"
+                hover_background "#734df5"
+                action SetVariable('preferences_dev_choosed_screen', 'log_events_store')
+                text 'LE':
+                    size 20
+                    if preferences_dev_choosed_screen == 'log_events_store':
+                        color "#dbc401"
+                    else:
+                        color "#dddddd"
+                    hover_color "#eeeeee"
+                    xalign 0.5
+
+            button:
+                xsize 40
+                background "#5036d4"
+                hover_background "#734df5"
+                action SetVariable('preferences_dev_choosed_screen', 'inventory_store')
+                text 'IV':
+                    size 20
+                    if preferences_dev_choosed_screen == 'inventory_store':
+                        color "#dbc401"
+                    else:
+                        color "#dddddd"
+                    hover_color "#eeeeee"
+                    xalign 0.5
+
+            button:
+                xsize 40
+                background "#5036d4"
+                hover_background "#734df5"
+                action SetVariable('preferences_dev_choosed_screen', 'journal_store')
+                text 'JR':
+                    size 20
+                    if preferences_dev_choosed_screen == 'journal_store':
+                        color "#dbc401"
+                    else:
+                        color "#dddddd"
+                    hover_color "#eeeeee"
+                    xalign 0.5
+
+            button:
+                xsize 40
+                background "#5036d4"
+                hover_background "#734df5"
+                action SetVariable('preferences_dev_choosed_screen', 'locations_store')
+                text 'LN':
+                    size 20
+                    if preferences_dev_choosed_screen == 'locations_store':
+                        color "#dbc401"
+                    else:
+                        color "#dddddd"
+                    hover_color "#eeeeee"
+                    xalign 0.5
+
+            button:
+                xsize 40
+                background "#5036d4"
+                hover_background "#734df5"
+                action SetVariable('preferences_dev_choosed_screen', 'world_store')
+                text 'WR':
+                    size 20
+                    if preferences_dev_choosed_screen == 'world_store':
+                        color "#dbc401"
+                    else:
+                        color "#dddddd"
+                    hover_color "#eeeeee"
+                    xalign 0.5
+
+            button:
+                xsize 40
+                background "#5036d4"
+                hover_background "#734df5"
+                action Return()
+                text "X":
+                    size 20
+                    color "#dddddd"
+                    hover_color "#eeeeee"
+                    xalign 0.5
 
         viewport:
             scrollbars "vertical"
@@ -204,7 +196,10 @@ screen preferences_dev():
                     use _preferences_dev(_preferences, preferences_dev_choosed_screen)
 
                 if preferences_dev_choosed_screen == 'config':
-                    use _preferences_dev(config, preferences_dev_choosed_screen)
+                    use _preferences_dev(renpy.config, preferences_dev_choosed_screen)
+
+                if preferences_dev_choosed_screen == 'build':
+                    use _preferences_dev(build, preferences_dev_choosed_screen)
 
                 if preferences_dev_choosed_screen == 'characters_store':
                     use _preferences_dev_stores(runtime.global_state_manager.characters_manager._characters_store)
@@ -295,6 +290,8 @@ screen _preferences_dev(store_obj, preferences_dev_choosed_screen):
         if not attr.startswith('_') and not callable(getattr(store_obj, attr)):
             $ value = getattr(store_obj, attr)
             $ attrs.append((attr, value))
+        else:
+            $ attrs.append((attr, '/* .. */'))
 
     # $ runtime.global_log_events_manager.write_log_event(f'======\n=== {preferences_dev_choosed_screen}')
     $ attrs.sort()

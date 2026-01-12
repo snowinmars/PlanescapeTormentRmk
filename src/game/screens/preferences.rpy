@@ -9,6 +9,10 @@
 ##
 ## https://www.renpy.org/doc/html/screen_special.html#preferences
 
+init python:
+    def full_restart_with_save():
+        renpy.full_restart(save=True)
+
 screen preferences():
     tag menu
 
@@ -120,6 +124,33 @@ screen preferences():
                 size 20
                 color "#eeeeee"
                 align (0.5, 0.5)
+
+        button:
+            xpos 10
+            ypos 925
+            xsize 143 # 143
+            ysize 143 # 143
+            background Transform('gui/settings_button_idle.png', fit='cover')
+            hover_background Transform('gui/settings_button_hover.png', fit='cover')
+            action Function(full_restart_with_save)
+            text _("preferences_screen_main_menu"):
+                size 20
+                color "#eeeeee"
+                align (0.5, 0.5)
+
+        button:
+            xpos 1760
+            ypos 925
+            xsize 143 # 143
+            ysize 143 # 143
+            background Transform('gui/settings_button_idle.png', fit='cover')
+            hover_background Transform('gui/settings_button_hover.png', fit='cover')
+            action ShowMenu('achievement_gallery')
+            text _("preferences_screen_achievements"):
+                size 20
+                color "#eeeeee"
+                align (0.5, 0.5)
+
 
     if enabled_dev:
         button:

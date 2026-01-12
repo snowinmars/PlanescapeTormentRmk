@@ -135,6 +135,7 @@ label zm1094_s4: # from 3.0
 # s5 # say9226
 label zm1094_s5: # from 4.0 11.0
     $ zm1094Logic.set_know_asonje_name()
+    $ achievement_meet_asonje.grant()
     'zm1094_s5{#zm1094_s5}'
     # asonje '«Меня зовут Асонж. Я могу уйти?»{#zm1094_s5_1}'
 
@@ -347,6 +348,7 @@ label zm1094_s14: # from 3.2 13.0
 # s15 # say9236
 label zm1094_s15: # from 14.0 22.0
     $ zm1094Logic.set_know_asonje_name()
+    $ achievement_meet_asonje.grant()
     'zm1094_s15{#zm1094_s15}'
     # asonje '«Меня зовут Асонж. А как тебя?»{#zm1094_s15_1}'
 
@@ -553,6 +555,7 @@ label zm1094_s24: # from 19.0
 # s25 # say9283
 label zm1094_s25: # from 14.1 22.1
     $ zm1094Logic.set_know_asonje_name()
+    $ achievement_meet_asonje.grant()
     'zm1094_s25{#zm1094_s25}'
     # asonje '«Меня зовут Асонж».{#zm1094_s25_1}'
 

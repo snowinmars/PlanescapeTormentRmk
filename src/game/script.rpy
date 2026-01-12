@@ -6,6 +6,8 @@ init 1 python:
     from game.engine.setup_logger import (setup_logger)
 
     enabled_dev = True
+    config.version = "0.06"
+    build.info['sha8'] = "12345678"
 
     if not persistent.language:
         persistent.language = 'english'
@@ -17,9 +19,11 @@ init 1 python:
     if not hasattr(_preferences, 'show_mouse_screen'):
         _preferences.show_mouse_screen = True
 
+    if not persistent.add_custom_achievements:
+        persistent.add_custom_achievements = True
+
     gamedir = os.path.normpath(config.gamedir)
     logs_folder = os.path.join(gamedir, 'logs')
-    config.version = "0.06"
     config.reject_backslash = False  # required to make the above work with with RenPy:
     os.environ['SDL_VIDEO_CENTERED'] = '1'
     sys.setdefaultencoding('utf-8')
@@ -198,6 +202,7 @@ label dev:
 
 
 label end:
+    $ achievement_mortuary_gate.grant()
     snowinmars '…'
     snowinmars '………'
     snowinmars 'Спасибо.'

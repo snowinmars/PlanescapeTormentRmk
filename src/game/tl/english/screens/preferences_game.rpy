@@ -26,3 +26,7 @@ translate english strings:
     old 'preferences_screen_return'
     new 'Back'
 
+    # game/screens/preferences_game.rpy:127
+    old "preferences_game_screen_add_custom_achievements"
+    new "Add custom achievements"
+

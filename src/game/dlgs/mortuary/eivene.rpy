@@ -94,6 +94,7 @@ label eivene_s5: # from 4.0
     # eivene '«Ты».{#eivene_s5_2}'
     # nr 'Она соединяет когти вместе, затем делает странное движение рукой.{#eivene_s5_3}'
     $ eiveneLogic.set_know_eivene_name()
+    $ achievement_meet_eivene.grant()
     'eivene_s5{#eivene_s5_2}'
     # eivene '«Найди НИТКУ и БАЛЬЗАМ, принеси СЮДА, к Эи-Вейн.  Пшел — пшел — пшел»{#eivene_s5_4}'
 

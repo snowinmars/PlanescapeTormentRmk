@@ -323,15 +323,20 @@ translate english soego_s38_2c736e00:
     nr 'His narrow face is extremely pale, and he doesn\'t look as if he has been sleeping: his shoulders are slumped, and the flesh sags loosely beneath his bloodshot eyes.{#soego_s38_1}'
     nr 'He looks so lost in thought he doesn\'t even notice you.{#soego_s38_1}'
 
-# game/dlgs/soego.rpy:905
-translate english soego_s39_1b3ef0c3:
+# game/dlgs/soego.rpy:969
+translate english soego_s39_032c4c99:
 
-    # 'soego_s39{#soego_s39}'
-    soego '«Greetings…»{#soego_s39_1}'
-    nr 'The man turns to face you and makes a slight bow. You suddenly notice that his eyes aren\'t bloodshot so much as they have a red tinge to them.{#soego_s39_2}'
-    soego '«I am Soego. How may I…»{#soego_s39_3}'
-    nr 'He suddenly seems to notice your scars, and the corner of his mouth twitches.{#soego_s39_4}'
-    soego '«I\'m sorry, sirrah, are you lost?»{#soego_s39_5}'
+    # 'soego_s39_1{#soego_s39_1}'
+    soego '«Greetings…»{#soego_s39_1_1}'
+    nr 'The man turns to face you and makes a slight bow. You suddenly notice that his eyes aren\'t bloodshot so much as they have a red tinge to them.{#soego_s39_1_2}'
+
+# game/dlgs/soego.rpy:972
+translate english soego_s39_ccf187ba:
+
+    # 'soego_s39_2{#soego_s39_2}'
+    soego '«I am Soego. How may I…»{#soego_s39_2_3}'
+    nr 'He suddenly seems to notice your scars, and the corner of his mouth twitches.{#soego_s39_2_4}'
+    soego '«I\'m sorry, sirrah, are you lost?»{#soego_s39_2_5}'
 
 # game/dlgs/soego.rpy:928
 translate english soego_s40_0646c178:

@@ -306,3 +306,11 @@ translate english strings:
     old "zm257_character_name"
     new "Zombie #257"
 
+    # game/chars.rpy:38
+    old "crispy_character_name"
+    new "Spirit"
+
+    # game/chars.rpy:40
+    old "zm257_spirit_character_name"
+    new "Spirit"
+
