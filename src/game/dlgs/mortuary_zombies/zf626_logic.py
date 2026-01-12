@@ -86,4 +86,4 @@ class Zf626Logic(Zf626LogicGenerated):
 
 
     def talk(self):
-        self.state_manager.world_manager.inc_talked_to_zf114_times()
+        self.state_manager.world_manager.inc_talked_to_zf626_times()

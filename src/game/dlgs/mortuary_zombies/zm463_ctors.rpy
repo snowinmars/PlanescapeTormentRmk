@@ -14,5 +14,5 @@ label zm463_s0_ctor:
 
 
 label zm463_dispose:
-    hide zm463_img
-    jump  map_dispatcher
+    scene onlayer dialogue
+    jump map_dispatcher

@@ -24,5 +24,5 @@ label zm506_s5_ctor:
 
 
 label zm506_dispose:
-    hide zm506_img
-    jump  map_dispatcher
+    scene onlayer dialogue
+    jump map_dispatcher

@@ -14,5 +14,5 @@ label zm569_s0_ctor:
 
 
 label zm569_dispose:
-    hide zm569_img
-    jump  map_dispatcher
+    scene onlayer dialogue
+    jump map_dispatcher

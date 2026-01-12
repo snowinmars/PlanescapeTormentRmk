@@ -20,6 +20,7 @@ def build_all_settings(manager):
         .register('gold', 0) \
         .register('talked_to_dustfem_times', 0) \
         .register('talked_to_dust_times', 0) \
+        .register('talked_to_zm257_spirit_times', 0) \
         .register('appearance', False)
         # .register('good', 0)
         # .register('law', 0)

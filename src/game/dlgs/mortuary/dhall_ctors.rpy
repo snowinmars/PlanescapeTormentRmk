@@ -29,5 +29,5 @@ label dhall_s40_ctor:
 
 
 label dhall_dispose:
-    hide dhall_img
-    jump  map_dispatcher
+    scene onlayer dialogue
+    jump map_dispatcher

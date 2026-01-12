@@ -162,5 +162,5 @@ label soego_s108_ctor:
 
 
 label soego_dispose:
-    hide soego_img
-    jump  map_dispatcher
+    scene onlayer dialogue
+    jump map_dispatcher

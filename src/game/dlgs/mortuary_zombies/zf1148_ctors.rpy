@@ -19,5 +19,5 @@ label zf1148_s3_ctor: # - # IF ~  False()
 
 
 label zf1148_dispose:
-    hide zf1148_img
-    jump  map_dispatcher
+    scene onlayer dialogue
+    jump map_dispatcher

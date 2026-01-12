@@ -23,7 +23,7 @@ class Zm1146LogicTest(LogicTest):
         self._integer_inc_action(
             self.state_manager.world_manager.get_talked_to_crispy_times,
             1,
-            self.logic.talk
+            self.logic.talk_crispy
         )
 
 

@@ -14,5 +14,5 @@ label zm257_s0_ctor:
 
 
 label zm257_dispose:
-    hide zm257_img
-    jump  map_dispatcher
+    scene onlayer dialogue
+    jump map_dispatcher

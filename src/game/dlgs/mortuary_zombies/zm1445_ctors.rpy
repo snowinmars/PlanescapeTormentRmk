@@ -14,5 +14,5 @@ label zm1445_s0_ctor:
 
 
 label zm1445_dispose:
-    hide zm1445_img
-    jump  map_dispatcher
+    scene onlayer dialogue
+    jump map_dispatcher

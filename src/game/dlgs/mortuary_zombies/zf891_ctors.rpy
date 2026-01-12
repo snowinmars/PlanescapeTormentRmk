@@ -19,5 +19,5 @@ label zf891_s3_ctor: # - # IF ~  False()
 
 
 label zf891_dispose:
-    hide zf891_img
-    jump  map_dispatcher
+    scene onlayer dialogue
+    jump map_dispatcher

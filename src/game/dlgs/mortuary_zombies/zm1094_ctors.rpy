@@ -34,5 +34,5 @@ label zm1094_s27_ctor:
 
 
 label zm1094_dispose:
-    hide zm1094_img
-    jump  map_dispatcher
+    scene onlayer dialogue
+    jump map_dispatcher

@@ -13,4 +13,5 @@ label n1201_s0_ctor:
 
 
 label n1201_dispose:
-    jump  map_dispatcher
+    scene onlayer dialogue
+    jump map_dispatcher

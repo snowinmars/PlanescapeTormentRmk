@@ -50,5 +50,5 @@ label morte1_s30_ctor:
 
 
 label morte1_dispose:
-    hide morte_img
+    scene onlayer dialogue
     jump map_dispatcher

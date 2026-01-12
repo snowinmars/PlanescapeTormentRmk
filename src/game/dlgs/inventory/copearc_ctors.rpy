@@ -13,5 +13,5 @@ label copearc_s0_ctor:
 
 
 label copearc_dispose:
-    hide copearc_img
-    jump  map_dispatcher
+    scene onlayer dialogue
+    jump map_dispatcher

@@ -2,5 +2,5 @@
 # because i ignore externs from other labels
 
 label morte_dispose:
-    hide morte_img
-    jump  map_dispatcher
+    scene onlayer dialogue
+    jump map_dispatcher

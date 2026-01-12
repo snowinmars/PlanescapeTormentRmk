@@ -19,5 +19,5 @@ label zf1096_s3_ctor: # - # IF ~  False()
 
 
 label zf1096_dispose:
-    hide zf1096_img
-    jump  map_dispatcher
+    scene onlayer dialogue
+    jump map_dispatcher

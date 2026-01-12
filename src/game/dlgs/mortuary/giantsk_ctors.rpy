@@ -14,5 +14,5 @@ label giantsk_s0_ctor:
 
 
 label giantsk_dispose:
-    hide giantsk_img
-    jump  map_dispatcher
+    scene onlayer dialogue
+    jump map_dispatcher

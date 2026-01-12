@@ -24,5 +24,5 @@ label zm965_s1_ctor:
 
 
 label zm965_dispose:
-    hide zm965_img
-    jump  map_dispatcher
+    scene onlayer dialogue
+    jump map_dispatcher

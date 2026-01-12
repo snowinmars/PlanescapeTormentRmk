@@ -10,7 +10,6 @@ label quick_setup_as_mage:
 
 
 label introduction:
-    play music main
     scene black
     snowinmars 'Привет. Сразу вопрос.'
 

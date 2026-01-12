@@ -24,5 +24,5 @@ label zm310_s18_ctor:
 
 
 label zm310_dispose:
-    hide zm310_img
-    jump  map_dispatcher
+    scene onlayer dialogue
+    jump map_dispatcher

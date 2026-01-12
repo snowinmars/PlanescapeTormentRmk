@@ -19,5 +19,5 @@ label s996_s7_ctor: # - # IF ~  False()
 
 
 label s996_dispose:
-    hide s996_img
-    jump  map_dispatcher
+    scene onlayer dialogue
+    jump map_dispatcher

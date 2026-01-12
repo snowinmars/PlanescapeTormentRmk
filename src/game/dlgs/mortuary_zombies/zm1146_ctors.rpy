@@ -24,5 +24,5 @@ label zm1146_s20_ctor:
 
 
 label zm1146_dispose:
-    hide zm1146_img
-    jump  map_dispatcher
+    scene onlayer dialogue
+    jump map_dispatcher

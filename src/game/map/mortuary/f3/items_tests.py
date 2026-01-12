@@ -116,6 +116,7 @@ class F3ItemsTest(GraphicsMenuItemTest):
         self.state_manager.locations_manager.set_location('mortuary_f3r3')
         self._test_graphics_menu_item(FromMortuaryF3R3dToMortuaryF3Rc(self.state_manager, self.x, self.y))
         self.state_manager.locations_manager.set_location('mortuary_f3rc')
+        self.state_manager.locations_manager.set_location('mortuary_f3r3')
         self._test_graphics_menu_item(FromMortuaryF3R3dToMortuaryF3Rc(self.state_manager, self.x, self.y))
 
 
@@ -229,54 +230,54 @@ class F3ItemsTest(GraphicsMenuItemTest):
         self._test_graphics_menu_item(InMortuaryF3RcDustfem(self.state_manager, self.x, self.y))
     def test_InMortuaryF3R4S42(self):
         self.state_manager.locations_manager.set_location('mortuary_f3rc')
-        self._test_graphics_menu_item(InMortuaryF3R4S42(self.state_manager, self.x, self.y))
+        self._test_graphics_menu_item(InMortuaryF3RcS42(self.state_manager, self.x, self.y))
         self.state_manager.world_manager.set_talked_to_s42_times(1)
-        self._test_graphics_menu_item(InMortuaryF3R4S42(self.state_manager, self.x, self.y))
+        self._test_graphics_menu_item(InMortuaryF3RcS42(self.state_manager, self.x, self.y))
     def test_InMortuaryF3R3S748(self):
         self.state_manager.locations_manager.set_location('mortuary_f3rc')
-        self._test_graphics_menu_item(InMortuaryF3R3S748(self.state_manager, self.x, self.y))
+        self._test_graphics_menu_item(InMortuaryF3RcS748(self.state_manager, self.x, self.y))
         self.state_manager.world_manager.set_talked_to_s748_times(1)
-        self._test_graphics_menu_item(InMortuaryF3R3S748(self.state_manager, self.x, self.y))
+        self._test_graphics_menu_item(InMortuaryF3RcS748(self.state_manager, self.x, self.y))
     def test_InMortuaryF3R1S863(self):
         self.state_manager.locations_manager.set_location('mortuary_f3rc')
-        self._test_graphics_menu_item(InMortuaryF3R1S863(self.state_manager, self.x, self.y))
+        self._test_graphics_menu_item(InMortuaryF3RcS863(self.state_manager, self.x, self.y))
         self.state_manager.world_manager.set_talked_to_s863_times(1)
-        self._test_graphics_menu_item(InMortuaryF3R1S863(self.state_manager, self.x, self.y))
+        self._test_graphics_menu_item(InMortuaryF3RcS863(self.state_manager, self.x, self.y))
     def test_InMortuaryF3R3S996(self):
         self.state_manager.locations_manager.set_location('mortuary_f3rc')
-        self._test_graphics_menu_item(InMortuaryF3R3S996(self.state_manager, self.x, self.y))
+        self._test_graphics_menu_item(InMortuaryF3RcS996(self.state_manager, self.x, self.y))
         self.state_manager.world_manager.set_talked_to_s996_times(1)
-        self._test_graphics_menu_item(InMortuaryF3R3S996(self.state_manager, self.x, self.y))
+        self._test_graphics_menu_item(InMortuaryF3RcS996(self.state_manager, self.x, self.y))
     def test_InMortuaryF3R3Zm310(self):
         self.state_manager.locations_manager.set_location('mortuary_f3rc')
-        self._test_graphics_menu_item(InMortuaryF3R3Zm310(self.state_manager, self.x, self.y))
+        self._test_graphics_menu_item(InMortuaryF3RcZm310(self.state_manager, self.x, self.y))
         self.state_manager.world_manager.set_talked_to_zm310_times(1)
-        self._test_graphics_menu_item(InMortuaryF3R3Zm310(self.state_manager, self.x, self.y))
+        self._test_graphics_menu_item(InMortuaryF3RcZm310(self.state_manager, self.x, self.y))
     def test_InMortuaryF3R3Zm475(self):
         self.state_manager.locations_manager.set_location('mortuary_f3rc')
-        self._test_graphics_menu_item(InMortuaryF3R3Zm475(self.state_manager, self.x, self.y))
+        self._test_graphics_menu_item(InMortuaryF3RcZm475(self.state_manager, self.x, self.y))
         self.state_manager.world_manager.set_talked_to_zm475_times(1)
-        self._test_graphics_menu_item(InMortuaryF3R3Zm475(self.state_manager, self.x, self.y))
+        self._test_graphics_menu_item(InMortuaryF3RcZm475(self.state_manager, self.x, self.y))
     def test_InMortuaryF3R4Zm613(self):
         self.state_manager.locations_manager.set_location('mortuary_f3rc')
-        self._test_graphics_menu_item(InMortuaryF3R4Zm613(self.state_manager, self.x, self.y))
+        self._test_graphics_menu_item(InMortuaryF3RcZm613(self.state_manager, self.x, self.y))
         self.state_manager.world_manager.set_talked_to_zm613_times(1)
-        self._test_graphics_menu_item(InMortuaryF3R4Zm613(self.state_manager, self.x, self.y))
+        self._test_graphics_menu_item(InMortuaryF3RcZm613(self.state_manager, self.x, self.y))
     def test_InMortuaryF3R4Zf832(self):
         self.state_manager.locations_manager.set_location('mortuary_f3rc')
-        self._test_graphics_menu_item(InMortuaryF3R4Zf832(self.state_manager, self.x, self.y))
+        self._test_graphics_menu_item(InMortuaryF3RcZf832(self.state_manager, self.x, self.y))
         self.state_manager.world_manager.set_talked_to_zf832_times(1)
-        self._test_graphics_menu_item(InMortuaryF3R4Zf832(self.state_manager, self.x, self.y))
+        self._test_graphics_menu_item(InMortuaryF3RcZf832(self.state_manager, self.x, self.y))
     def test_InMortuaryF3R1Zm1146(self):
         self.state_manager.locations_manager.set_location('mortuary_f3rc')
-        self._test_graphics_menu_item(InMortuaryF3R1Zm1146(self.state_manager, self.x, self.y))
+        self._test_graphics_menu_item(InMortuaryF3RcZm1146(self.state_manager, self.x, self.y))
         self.state_manager.world_manager.set_talked_to_zm1146_times(1)
-        self._test_graphics_menu_item(InMortuaryF3R1Zm1146(self.state_manager, self.x, self.y))
+        self._test_graphics_menu_item(InMortuaryF3RcZm1146(self.state_manager, self.x, self.y))
     def test_InMortuaryF3R1Zf1148(self):
         self.state_manager.locations_manager.set_location('mortuary_f3rc')
-        self._test_graphics_menu_item(InMortuaryF3R1Zf1148(self.state_manager, self.x, self.y))
+        self._test_graphics_menu_item(InMortuaryF3RcZf1148(self.state_manager, self.x, self.y))
         self.state_manager.world_manager.set_talked_to_zf1148_times(1)
-        self._test_graphics_menu_item(InMortuaryF3R1Zf1148(self.state_manager, self.x, self.y))
+        self._test_graphics_menu_item(InMortuaryF3RcZf1148(self.state_manager, self.x, self.y))
 
 
 if __name__ == '__main__':

@@ -14,5 +14,5 @@ label zm825_s0_ctor:
 
 
 label zm825_dispose:
-    hide zm825_img
-    jump  map_dispatcher
+    scene onlayer dialogue
+    jump map_dispatcher

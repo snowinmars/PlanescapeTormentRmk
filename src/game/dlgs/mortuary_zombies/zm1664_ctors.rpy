@@ -14,5 +14,5 @@ label zm1664_s0_ctor:
 
 
 label zm1664_dispose:
-    hide zm1664_img
-    jump  map_dispatcher
+    scene onlayer dialogue
+    jump map_dispatcher

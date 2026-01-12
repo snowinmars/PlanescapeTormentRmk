@@ -24,5 +24,5 @@ label zm732_s3_ctor:
 
 
 label zm732_dispose:
-    hide zm732_img
-    jump  map_dispatcher
+    scene onlayer dialogue
+    jump map_dispatcher

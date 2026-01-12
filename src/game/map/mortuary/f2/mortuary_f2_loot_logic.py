@@ -34,3 +34,4 @@ class MortuaryF2LootLogic:
             return { 'x': 3650, 'y': 2300 }
         if current_location == 'mortuary_f2r8':
             return { 'x': 2630, 'y': 2800 }
+        raise Exception(f'current_location {current_location} is out of range')
