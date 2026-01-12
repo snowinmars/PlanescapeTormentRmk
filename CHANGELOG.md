@@ -1,5 +1,10 @@
 # Change log
 
+## Version 0.07
+- Add achievements
+- Fix tests
+- Minor UI changes
+
 ## Version 0.06
 - Update from RenPy 8.3.6 to 8.5.1
 - Add Android build (does not work, lol)

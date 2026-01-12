@@ -13,10 +13,11 @@ All the stuff is under GNU/GPLv3
 ## Download
 
 - prebuild - [disk.yandex.ru](https://disk.yandex.ru/d/1vqwCTMVOBEbgA)
-  - web - `PlanescapeTormentRmk-0.02-web.zip`
-  - linux - `PlanescapeTormentRmk-0.02-linux.tar.bz2`
-  - windows - `PlanescapeTormentRmk-0.02-win.zip`
-  - android - `rmk.torment.planescape-0.06-1767561262-release.apk` (does NOT work)
+  - web - `PlanescapeTormentRmk-*-web.zip`
+  - linux - `PlanescapeTormentRmk-*-linux.tar.bz2`
+  - windows - `PlanescapeTormentRmk-*-win.zip`
+  - mac - `PlanescapeTormentRmk-*-mac.zip`
+  - android - `rmk.torment.planescape-*-*-release.apk` (does NOT work)
   - joiPlay - import web build into JoiPlay (have no mobile-optimized UI)
 - run in browser
   - [itch.io](https://snowinmars.itch.io/planescapetormentrmk)

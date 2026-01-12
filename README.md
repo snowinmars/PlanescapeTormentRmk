@@ -13,10 +13,11 @@
 ## Скачать
 
 - билд - [disk.yandex.ru](https://disk.yandex.ru/d/1vqwCTMVOBEbgA)
-  - web - `PlanescapeTormentRmk-0.02-web.zip`
-  - linux - `PlanescapeTormentRmk-0.02-linux.tar.bz2`
-  - windows - `PlanescapeTormentRmk-0.02-win.zip`
-  - android - `rmk.torment.planescape-0.06-1767561262-release.apk` (НЕ работает)
+  - web - `PlanescapeTormentRmk-*-web.zip`
+  - linux - `PlanescapeTormentRmk-*-linux.tar.bz2`
+  - windows - `PlanescapeTormentRmk-*-win.zip`
+  - mac - `PlanescapeTormentRmk-*-mac.zip`
+  - android - `rmk.torment.planescape-*-*-release.apk` (НЕ работает)
   - joiPlay - запусти web build в JoiPlay (UI не оптимизирован под мобилки)
 - запустить в браузере
   - [itch.io](https://snowinmars.itch.io/planescapetormentrmk)
