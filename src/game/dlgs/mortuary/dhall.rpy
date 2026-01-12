@@ -1245,6 +1245,7 @@ label dhall_s44: # from 1.0 6.2 7.0
 label dhall_s45: # from 44.0
     'dhall_s45_1{#dhall_s45_1}'
     $ dhallLogic.set_know_dhall_name()
+    $ achievement_meet_dhall.grant()
     'dhall_s45_2{#dhall_s45_2}'
     # dhall '«Как всегда, вопрос. И как всегда, неправильный».{#dhall_s45_1}'
     # nr 'Он делает легкий поклон, но движение вызывает у него неожиданный приступ кашля.{#dhall_s45_2}'

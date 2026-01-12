@@ -76,6 +76,7 @@ label soego_s2: # from 1.0 1.1 3.0 3.3 4.0 4.1
     # soego '«Эй, ты заставляешь меня сделать нелестное признание: из тебя вышел убедительный зомби».{#soego_s2_3}'
     # nr 'Он делает легкий поклон.{#soego_s2_4}'
     $ soegoLogic.set_know_soego_name()
+    $ achievement_meet_soego.grant()
     'soego_s2{#soego_s2_2}'
     # soego '«Я Соэго. Могу ли я спросить тебя, что ты делаешь здесь».{#soego_s2_5}'
     # nr 'Он косится на твои шрамы.{#soego_s2_6}'
@@ -180,6 +181,7 @@ label soego_s5: # from 1.4
     # soego '«Эй, ты заставляешь меня сделать нелестное признание: из тебя вышел убедительный зомби».{#soego_s5_4}'
     # nr 'Он слегка кивает.{#soego_s5_5}'
     $ soegoLogic.set_know_soego_name()
+    $ achievement_meet_soego.grant()
     'soego_s5{#soego_s5_2}'
     # soego '«Я Соэго. Могу ли я спросить, что ты здесь делаешь… в таком виде?»{#soego_s5_6}'
 
@@ -408,6 +410,7 @@ label soego_s15: # from 4.4
     # soego '«Эй, ты заставляешь меня сделать нелестное признание: из тебя вышел убедительный зомби».{#soego_s15_4}'
     # nr 'Он слегка кивает.{#soego_s15_5}'
     $ soegoLogic.set_know_soego_name()
+    $ achievement_meet_soego.grant()
     'soego_s15{#soego_s15_2}'
     # soego '«Я Соэго. Могу ли я спросить, что ты здесь делаешь… в таком виде?»{#soego_s15_6}'
 
@@ -963,7 +966,10 @@ label soego_s38: # - # IF WEIGHT #9 /* Triggers after states #: 59 58 63 108 79 
 # s39 # say4904
 label soego_s39: # from 38.0
     $ soegoLogic.talk()
-    'soego_s39{#soego_s39}'
+    'soego_s39_1{#soego_s39_1}'
+    $ soegoLogic.set_know_soego_name()
+    $ achievement_meet_soego.grant()
+    'soego_s39_2{#soego_s39_2}'
     # soego '«Приветствую…»{#soego_s39_1}'
     # nr 'Человек поворачивается к тебе лицом и слегка кивает. Внезапно ты замечаешь, что его глаза не налиты кровью, а просто имеют красный оттенок.{#soego_s39_2}'
     # soego '«Я Соэго. Чем я могу…»{#soego_s39_3}'

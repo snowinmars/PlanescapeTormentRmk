@@ -41,6 +41,7 @@ label morte1_s1: # from 0.0
 label morte1_s2: # from 1.0 3.0 4.0
     'morte1_s2{#morte1_s2}'
     $ morte1Logic.set_know_morte_name()
+    $ achievement_meet_morte.grant()
     # morte '«Ты не можешь вспомнить свое *имя*? Хе. Что ж, в СЛЕДУЮЩИЙ раз, когда будешь кутить ночью в городе, не налегай на выпивку. Зовут Мортом. Я тоже здесь заперт».{#morte1_s2_1}'
 
     menu:

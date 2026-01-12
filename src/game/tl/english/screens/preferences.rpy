@@ -34,3 +34,11 @@ translate english strings:
     old 'preferences_screen_graphics_settings'
     new 'Graphics'
 
+    # game/screens/preferences.rpy:132
+    old "preferences_screen_main_menu"
+    new "Save and restart"
+
+    # game/screens/preferences.rpy:149
+    old "preferences_screen_achievements"
+    new "Achievements"
+

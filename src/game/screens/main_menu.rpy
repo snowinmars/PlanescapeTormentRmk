@@ -129,3 +129,11 @@ screen main_menu():
                     font='exocet.ttf',
                     color='#bd7a10'
                 )
+
+        label f'v{config.version}/{renpy.version_string}/sha {build.info["sha8"]}':
+            xalign 1.0
+            yalign 1.0
+            xsize 400
+            text_size 16
+            text_color "#dbc401"
+            text_align (0.5, 0.5)

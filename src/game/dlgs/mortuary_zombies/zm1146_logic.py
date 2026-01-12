@@ -55,4 +55,4 @@ class Zm1146Logic(Zm1146LogicGenerated):
 
 
     def get_crispy_value(self):
-        self.state_manager.world_manager.get_crispy_value()
+        return self.state_manager.world_manager.get_crispy_value()

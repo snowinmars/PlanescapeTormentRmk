@@ -89,6 +89,7 @@ label deionarra_s3: # from 2.0 2.1 2.2 10.0
     # deionarra '«Подумай…»{#deionarra_s3_4}'
     # nr 'Ее голос снова наполняется отчаянием.{#deionarra_s3_5}'
     $ deionarraLogic.set_know_deionarra_name()
+    $ achievement_meet_deionarra.grant()
     'deionarra_s3{#deionarra_s3_2}'
     # deionarra '«Имя *Дейонарра* должно пробудить в тебе хоть немного воспоминаний».{#deionarra_s3_6}'
 
@@ -1152,6 +1153,8 @@ label deionarra_s49: # - # IF WEIGHT #3 ~  Global("Deionarra","GLOBAL",0) Global
     menu:
         'deionarra_s49_r63357{#deionarra_s49_r63357}': # '«Ты — Дейонарра?..»{#deionarra_s49_r63357}'
             # a173 # r63357
+            $ deionarraLogic.set_know_deionarra_name()
+            $ achievement_meet_deionarra.grant()
             jump deionarra_s51
 
 
@@ -1328,6 +1331,8 @@ label deionarra_s60: # - # IF WEIGHT #6 /* Triggers after states #: 62 even thou
         'deionarra_s60_r63388{#deionarra_s60_r63388}': # '«Кто ты?»{#deionarra_s60_r63388}'
             # a193 # r63388
             $ deionarraLogic.r63388_action()
+            $ deionarraLogic.set_know_deionarra_name()
+            $ achievement_meet_deionarra.grant()
             jump deionarra_s62
 
         'deionarra_s60_r63389{#deionarra_s60_r63389}': # 'Оставить призрачную фигуру в покое.{#deionarra_s60_r63389}'

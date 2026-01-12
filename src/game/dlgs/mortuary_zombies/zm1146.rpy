@@ -32,6 +32,7 @@ label zm1146_s0: # - # IF ~  Global("Crispy","GLOBAL",0)
         'zm1146_s0_r6524{#zm1146_s0_r6524}' if zm1146Logic.r6524_condition(): # 'Использовать на трупе свою способность «История костей».{#zm1146_s0_r6524}'
             # a3 # r6524
             $ zm1146Logic.r6524_action()
+            $ achievement_meet_zm1146_spirit.grant()
             jump zm1146_s2
 
         'zm1146_s0_r6525{#zm1146_s0_r6525}': # '«Было приятно с тобой поболтать. Прощай».{#zm1146_s0_r6525}'
