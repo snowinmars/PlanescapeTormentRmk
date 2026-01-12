@@ -270,4 +270,4 @@ class S748Logic(S748LogicGenerated):
 
 
     def talk(self):
-        self.state_manager.world_manager.inc_talked_to_s42_times()
+        self.state_manager.world_manager.inc_talked_to_s748_times()

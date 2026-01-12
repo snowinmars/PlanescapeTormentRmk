@@ -49,5 +49,5 @@ label vaxis_s73_ctor: # -
 
 
 label vaxis_dispose:
-    hide vaxis_img
-    jump  map_dispatcher
+    scene onlayer dialogue
+    jump map_dispatcher

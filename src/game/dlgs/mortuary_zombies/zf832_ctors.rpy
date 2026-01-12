@@ -19,5 +19,5 @@ label zf832_s3_ctor: # - # IF ~  False()
 
 
 label zf832_dispose:
-    hide zf832_img
-    jump  map_dispatcher
+    scene onlayer dialogue
+    jump map_dispatcher

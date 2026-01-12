@@ -29,6 +29,6 @@ label eivene_s25_ctor: # -
 
 
 label eivene_dispose:
-    hide eivene_img
-    jump  map_dispatcher
+    scene onlayer dialogue
+    jump map_dispatcher
 

@@ -231,27 +231,51 @@ screen preferences_dev():
             xsize 575
             ysize 560
 
-            hbox:
-                spacing 10
+            vbox:
 
-                button :
-                    action ToggleField(_preferences, 'show_mouse_screen')
-                    xfill True
-                    yalign 0.5
+                hbox:
+                    spacing 10
 
-                    text _('preferences_game_screen_show_mouse_screen'): # 'Показывать экран координат мыши'
-                        size 18
-                        color '#dbc401'
-                        hover_color '#eeeeee'
+                    button :
+                        action ToggleField(_preferences, 'show_mouse_screen')
+                        xfill True
+                        yalign 0.5
 
-                button:
-                    action ToggleField(_preferences, 'show_mouse_screen')
-                    xysize (32, 32)
+                        text _('preferences_game_screen_show_mouse_screen'): # 'Показывать экран координат мыши'
+                            size 18
+                            color '#dbc401'
+                            hover_color '#eeeeee'
 
-                    if _preferences.show_mouse_screen:
-                        background "gui/switch_on.png"
-                    else:
-                        background "gui/switch_off.png"
+                    button:
+                        action ToggleField(_preferences, 'show_mouse_screen')
+                        xysize (32, 32)
+
+                        if _preferences.show_mouse_screen:
+                            background "gui/switch_on.png"
+                        else:
+                            background "gui/switch_off.png"
+
+                hbox:
+                    spacing 10
+
+                    button :
+                        action ToggleField(config, 'console')
+                        xfill True
+                        yalign 0.5
+
+                        text _('preferences_game_screen_console'): # 'Показывать консоль RenPy'
+                            size 18
+                            color '#dbc401'
+                            hover_color '#eeeeee'
+
+                    button:
+                        action ToggleField(config, 'console')
+                        xysize (32, 32)
+
+                        if config.console:
+                            background "gui/switch_on.png"
+                        else:
+                            background "gui/switch_off.png"
 
 
 screen _preferences_dev_stores(store_obj):
@@ -272,11 +296,11 @@ screen _preferences_dev(store_obj, preferences_dev_choosed_screen):
             $ value = getattr(store_obj, attr)
             $ attrs.append((attr, value))
 
-    $ runtime.global_log_events_manager.write_log_event(f'======\n=== {preferences_dev_choosed_screen}')
+    # $ runtime.global_log_events_manager.write_log_event(f'======\n=== {preferences_dev_choosed_screen}')
     $ attrs.sort()
 
     for attr, value in attrs:
-        $ runtime.global_log_events_manager.write_log_event(f'{str(attr)} : {str(value)}') # if this screen fails, the last entry in the log is the clue
+        # $ runtime.global_log_events_manager.write_log_event(f'{str(attr)} : {str(value)}') # if this screen fails, the last entry in the log is the clue
 
         $ value_str = str(value).replace('{', '{{').replace('[', '[[') # 'a: {}' / [b] is invalid template
 
@@ -285,4 +309,4 @@ screen _preferences_dev(store_obj, preferences_dev_choosed_screen):
             color "#dbc401"
             xfill True
 
-    $ runtime.global_log_events_manager.write_log_event(f'=== {preferences_dev_choosed_screen}\n======')
+    # $ runtime.global_log_events_manager.write_log_event(f'=== {preferences_dev_choosed_screen}\n======')

@@ -14,5 +14,5 @@ label zm782_s0_ctor:
 
 
 label zm782_dispose:
-    hide zm782_img
-    jump  map_dispatcher
+    scene onlayer dialogue
+    jump map_dispatcher

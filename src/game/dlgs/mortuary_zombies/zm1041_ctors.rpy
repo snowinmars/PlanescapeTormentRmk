@@ -29,5 +29,5 @@ label zm1041_s37_ctor:
 
 
 label zm1041_dispose:
-    hide zm1041_img
-    jump  map_dispatcher
+    scene onlayer dialogue
+    jump map_dispatcher

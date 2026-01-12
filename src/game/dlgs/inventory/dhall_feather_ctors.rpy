@@ -13,4 +13,5 @@ label dhall_feather_s0_ctor:
 
 
 label dhall_feather_dispose:
-    jump  map_dispatcher
+    scene onlayer dialogue
+    jump map_dispatcher

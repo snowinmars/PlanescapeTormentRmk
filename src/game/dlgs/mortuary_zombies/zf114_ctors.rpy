@@ -19,5 +19,5 @@ label zf114_s3_ctor: # - # IF ~  False()
 
 
 label zf114_dispose:
-    hide zf114_img
-    jump  map_dispatcher
+    scene onlayer dialogue
+    jump map_dispatcher

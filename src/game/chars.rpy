@@ -34,34 +34,41 @@ init 1 python:
     def get_vhail_name():
         return _('vhail_character_name') if vhailLogic.get_know_vhail_name() else '?'
 
-define arabhiem           = DynamicCharacter('get_oinosian_name()'  , color='#b8a175')
-define asonje             = DynamicCharacter('get_asonje_name()'    , color='#b8a175')
-define bei                = DynamicCharacter('get_bei_name()'       , color='#b8a175')
-define dhall              = DynamicCharacter('get_dhall_name()'     , color='#b8a175')
-define soego              = DynamicCharacter('get_soego_name()'     , color='#b8a175')
-define vaxis              = DynamicCharacter('get_vaxis_name()'     , color='#b8a175')
-define xach               = DynamicCharacter('get_xach_name()'      , color='#b8a175')
+    def get_zm1146_name():
+        return _('crispy_character_name') if zm1146Logic.get_crispy_value() else _('zm1146_character_name')
+    def get_zm257_name():
+        return _('zm257_spirit_character_name') if zm257Logic.get_know_zm257_spirit() else _('zm257_character_name')
 
-define annah              = DynamicCharacter('get_annah_name()'     , color='#b8a175')
-define dakkon             = DynamicCharacter('get_dakkon_name()'    , color='#b8a175')
-define deionarra          = DynamicCharacter('get_deionarra_name()' , color='#b8a175')
-define eivene             = DynamicCharacter('get_eivene_name()'    , color='#b8a175')
-define grace              = DynamicCharacter('get_grace_name()'     , color='#b8a175')
-define ignus              = DynamicCharacter('get_ignus_name()'     , color='#b8a175')
-define morte              = DynamicCharacter('get_morte_name()'     , color='#b8a175')
-define nordom             = DynamicCharacter('get_nordom_name()'    , color='#b8a175')
-define vhail              = DynamicCharacter('get_vhail_name()'     , color='#b8a175')
+
+define arabhiem           = DynamicCharacter('get_oinosian_name()'      , color='#b8a175')
+define asonje             = DynamicCharacter('get_asonje_name()'        , color='#b8a175')
+define bei                = DynamicCharacter('get_bei_name()'           , color='#b8a175')
+define dhall              = DynamicCharacter('get_dhall_name()'         , color='#b8a175')
+define soego              = DynamicCharacter('get_soego_name()'         , color='#b8a175')
+define vaxis              = DynamicCharacter('get_vaxis_name()'         , color='#b8a175')
+define xach               = DynamicCharacter('get_xach_name()'          , color='#b8a175')
+
+define annah              = DynamicCharacter('get_annah_name()'         , color='#b8a175')
+define dakkon             = DynamicCharacter('get_dakkon_name()'        , color='#b8a175')
+define deionarra          = DynamicCharacter('get_deionarra_name()'     , color='#b8a175')
+define eivene             = DynamicCharacter('get_eivene_name()'        , color='#b8a175')
+define grace              = DynamicCharacter('get_grace_name()'         , color='#b8a175')
+define ignus              = DynamicCharacter('get_ignus_name()'         , color='#b8a175')
+define morte              = DynamicCharacter('get_morte_name()'         , color='#b8a175')
+define nordom             = DynamicCharacter('get_nordom_name()'        , color='#b8a175')
+define vhail              = DynamicCharacter('get_vhail_name()'         , color='#b8a175')
+
+define zm1146             = Character('get_zm1146_name()'               , color='#b8a175')
+define zm257              = Character('get_zm257_name()'                , color='#b8a175')
 
 define death_names        = Character(_('death_names_character_name')   , color='#b8a175')
 define dust               = Character(_('dust_character_name')          , color='#b8a175')
 define dustfem            = Character(_('dustfem_character_name')       , color='#b8a175')
 define morte_story_1      = Character(_('morte_story_1_character_name') , color='#b8a175')
 define morte_story_2      = Character(_('morte_story_2_character_name') , color='#b8a175')
-define zm1146             = Character(_('zm1146_character_name')        , color='#b8a175')
-define zm257              = Character(_('zm257_character_name')         , color='#b8a175')
 
-define nr                 = Character('', color='#b8a175')
-define scars              = Character('', color='#b8a175')
-define the_nameless_one   = Character(_('protagonist_character_name'), color='#85c8d5')
+define nr                 = Character(''                                , color='#b8a175')
+define scars              = Character(''                                , color='#b8a175')
+define the_nameless_one   = Character(_('protagonist_character_name')   , color='#85c8d5')
 
-define snowinmars         = Character('dev', color='#b8a175')
+define snowinmars         = Character('dev'                             , color='#b8a175')

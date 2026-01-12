@@ -19,5 +19,5 @@ label s42_s11_ctor: # -
 
 
 label s42_dispose:
-    hide s42_img
-    jump  map_dispatcher
+    scene onlayer dialogue
+    jump map_dispatcher

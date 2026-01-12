@@ -44,5 +44,5 @@ label dust_s51_ctor:
 
 
 label dust_dispose:
-    hide dust_img
-    jump  map_dispatcher
+    scene onlayer dialogue
+    jump map_dispatcher

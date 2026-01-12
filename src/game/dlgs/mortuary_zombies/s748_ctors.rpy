@@ -19,5 +19,5 @@ label s748_s7_ctor: # -
 
 
 label s748_dispose:
-    hide s748_img
-    jump  map_dispatcher
+    scene onlayer dialogue
+    jump map_dispatcher

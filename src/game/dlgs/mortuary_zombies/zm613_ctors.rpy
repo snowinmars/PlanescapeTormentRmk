@@ -14,5 +14,5 @@ label zm613_s0_ctor:
 
 
 label zm613_dispose:
-    hide zm613_img
-    jump  map_dispatcher
+    scene onlayer dialogue
+    jump map_dispatcher

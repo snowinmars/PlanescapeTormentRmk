@@ -86,4 +86,4 @@ class Zf444Logic(Zf444LogicGenerated):
 
 
     def talk(self):
-        self.state_manager.world_manager.inc_talked_to_zf114_times()
+        self.state_manager.world_manager.inc_talked_to_zf444_times()

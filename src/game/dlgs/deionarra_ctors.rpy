@@ -99,6 +99,6 @@ label deionarra_s62_ctor:
 
 
 label deionarra_dispose:
-    hide deionarra_img
+    scene onlayer dialogue
     play music mortuary # TODO [snow]: scene cannot tell what to play after self
     jump map_dispatcher

@@ -29,5 +29,5 @@ label xach_s35_ctor: # -
 
 
 label xach_dispose:
-    hide xach_img
-    jump  map_dispatcher
+    scene onlayer dialogue
+    jump map_dispatcher

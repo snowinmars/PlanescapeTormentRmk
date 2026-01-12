@@ -45,5 +45,5 @@ label dustfem_s51_ctor:
 
 
 label dustfem_dispose:
-    hide dustfem_img
-    jump  map_dispatcher
+    scene onlayer dialogue
+    jump map_dispatcher

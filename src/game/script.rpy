@@ -169,14 +169,16 @@ init 4 python: # inject narrat
     renpy.say = narrat_say
 
 
+init 5 python:
+    renpy.add_layer('dialogue', above='master')
+
+
 label start:
     # show screen events_manager_display
     show screen inventory_button
     show screen character_screen_button
     show screen hotkey_listener
     show screen narrat
-
-    play music mortuary
 
     menu:
         "dev" if enabled_dev:

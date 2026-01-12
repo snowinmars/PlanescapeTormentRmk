@@ -24,5 +24,5 @@ label zm396_s4_ctor:
 
 
 label zm396_dispose:
-    hide zm396_img
-    jump  map_dispatcher
+    scene onlayer dialogue
+    jump map_dispatcher

@@ -29,5 +29,5 @@ label s863_s8_ctor:
 
 
 label s863_dispose:
-    hide s863_img
-    jump  map_dispatcher
+    scene onlayer dialogue
+    jump map_dispatcher

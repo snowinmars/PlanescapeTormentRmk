@@ -19,5 +19,5 @@ label s1221_s7_ctor: # - # IF ~  False()
 
 
 label s1221_dispose:
-    hide s1221_img
-    jump  map_dispatcher
+    scene onlayer dialogue
+    jump map_dispatcher
