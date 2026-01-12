@@ -50,7 +50,7 @@ class NarratManager:
         self._narrat_store.current_menu_items = items if items else []
 
     def add_menu_choice(self, choice_text):
-        self.add_history_entry("Выбор", choice_text)
+        self.add_history_entry('protagonist_character_name', choice_text)
         self._narrat_store.current_menu_items = []
 
     def add_br(self):

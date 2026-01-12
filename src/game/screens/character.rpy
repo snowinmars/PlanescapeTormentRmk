@@ -13,6 +13,9 @@ screen character_screen(character):
 
     # Close with 'c' key or right-click
     key "c" action Hide("character_screen")
+    key "C" action Hide("character_screen")
+    key "с" action Hide("character_screen")
+    key "С" action Hide("character_screen")
     key "mouseup_3" action Hide("character_screen")
 
     frame:

@@ -11,7 +11,7 @@ class NarratStore():
             'choice_text_color': '#ff2e21',
             'choice_text_hover_color': '#f0ede4',
             'npc_text_color': '#9ba290',
-            'nameless_text_color': '#98afb5',
+            'nameless_text_color': '#c4a28a',
             'nr_text_color': '#98afb5',
             'screen_width': 600,
             'screen_height': 1024,
