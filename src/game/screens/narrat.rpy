@@ -98,6 +98,8 @@ screen narrat_history(
                             vbox:
                                 xfill True
                                 spacing 2
+                                at transform:
+                                    alpha 0.7
 
                                 $ is_br = entry['is_br']
                                 if is_br:
@@ -113,6 +115,7 @@ screen narrat_history(
                                         color nameless_text_color
                                         xfill True
 
+
                                 $ is_npc = not is_br and hasattr(entry['who'], 'name') and entry['who'].name
                                 if is_npc:
                                     $ color = entry['who'].who_args['color']
@@ -124,6 +127,7 @@ screen narrat_history(
                                         size 18
                                         color npc_text_color
                                         xfill True
+
 
                                 $ is_nr = not is_br and not is_nameless and not is_npc
                                 if is_nr:
