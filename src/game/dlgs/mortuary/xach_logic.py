@@ -422,3 +422,11 @@ class XachLogic(XachLogicGenerated):
 
     def get_know_xachariah_name(self):
         return self.state_manager.world_manager.get_know_xachariah_name()
+
+
+    def talk(self):
+        self.state_manager.world_manager.inc_talked_to_zm331_times()
+
+
+    def talk_xach(self):
+        self.state_manager.world_manager.inc_talked_to_xach_times()

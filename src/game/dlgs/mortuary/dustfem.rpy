@@ -96,6 +96,7 @@ label dustfem_s3: # externs morte_s84
 
 # s4 # say1178
 label dustfem_s4: # from 3.0 3.1 3.2 3.3 40.2 40.3
+    $ dustfemLogic.talk() # TODO [snow]: minor bug: calls several times per dialogue. Affects nothing
     'dustfem_s4{#dustfem_s4}'
     # nr 'Тленная медленно поднимает свою голову и оборачивается к тебе.{#dustfem_s4_1}'
     # dustfem '«Ты потерялся?»{#dustfem_s4_2}'
@@ -460,6 +461,7 @@ label dustfem_s22: # - # IF ~  Global("Appearance","GLOBAL",2)
 
 # s23 # say1197
 label dustfem_s23: # from 22.0
+    $ dustfemLogic.talk()
     'dustfem_s23{#dustfem_s23}'
     # nr 'Она медленно оборачивается, ее взгляд мельком скользит по твоей одежде.{#dustfem_s23_1}'
     # dustfem '«Приветствую тебя, посвященный».{#dustfem_s23_2}'
@@ -1016,6 +1018,7 @@ label dustfem_s50: # from 29.0 35.0 37.0 49.0
 
 # s51 # say66683
 label dustfem_s51: # - # IF ~  Global("Appearance","GLOBAL",0)
+    $ dustfemLogic.talk()
     'dustfem_s51{#dustfem_s51}'
     # nr 'Тленная бросает на тебя каменный взгляд.{#dustfem_s51_1}'
     # dustfem '«Ты потерялся?»{#dustfem_s51_2}'

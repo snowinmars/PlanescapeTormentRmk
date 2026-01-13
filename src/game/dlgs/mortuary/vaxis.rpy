@@ -11,6 +11,7 @@
 
 # s0 # say453
 label vaxis_s0: # - # IF ~  Global("Vaxis","GLOBAL",0)
+    $ vaxisLogic.talk()
     'vaxis_s0{#vaxis_s0}'
     # nr 'Неуклюжий труп смотрит на тебя пустым взглядом. На его лбу вырезан номер «821», а его губы крепко зашиты. От тела исходит легкий запах формальдегида.{#vaxis_s0_1}'
 
@@ -1506,6 +1507,7 @@ label vaxis_s57: # - # IF ~  GlobalGT("Vaxis","GLOBAL",0)
 
 # s58 # say4591
 label vaxis_s58: # from 57.0 57.1 57.3
+    $ vaxisLogic.talk()
     'vaxis_s58{#vaxis_s58}'
     # nr 'Зомби быстро оглядывается вокруг, высматривая соглядатая, затем поворачивается к тебе.{#vaxis_s58_1}'
     # vaxis '«Фто?»{#vaxis_s58_2}'
@@ -1536,6 +1538,7 @@ label vaxis_s58: # from 57.0 57.1 57.3
 
 # s59 # say4597
 label vaxis_s59: # from 57.2
+    $ vaxisLogic.talk()
     'vaxis_s59{#vaxis_s59}'
     # nr 'Зомби быстро оглядывается вокруг, высматривая соглядатая, затем шипит на тебя.{#vaxis_s59_1}'
     # vaxis '«Ухои! Вон!»{#vaxis_s59_2}'

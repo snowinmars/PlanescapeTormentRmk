@@ -10,6 +10,7 @@ init 10 python in dhall_feather:
 
 
 label dhall_feather_s0:
+    $ dhallFeatherLogic.talk()
     $ dhallFeatherLogic.break_feather()
     'dhall_feather_s0{#dhall_feather_s0}'
     # nr 'Разломив перо, ты на секунду вспоминаешь кашель странного существа из Морга. Ты начинаешь понимать больше.{#dhall_feather_s0}'

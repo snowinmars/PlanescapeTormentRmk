@@ -5,34 +5,6 @@ from game.engine.tests import (LogicTest)
 from game.dlgs.deionarra_logic import (DeionarraLogicGenerated, DeionarraLogic)
 
 
-class DeionarraLogicTest(LogicTest):
-    def setUp(self):
-        super(DeionarraLogicTest, self).setUp()
-        self.logic = DeionarraLogic(self.state_manager)
-
-
-    def test_set_know_deionarra_name(self):
-        self._false_then_true_action(
-            self.state_manager.world_manager.get_know_deionarra_name,
-            self.logic.set_know_deionarra_name
-        )
-
-
-    def test_get_know_deionarra_name(self):
-        self._boolean_straight_condition(
-            lambda x: self.state_manager.world_manager.set_know_deionarra_name(x),
-            self.logic.get_know_deionarra_name
-        )
-
-
-    def test_talk(self):
-        self._integer_inc_action(
-            self.state_manager.world_manager.get_talked_to_deionarra_times,
-            1,
-            self.logic.talk
-        )
-
-
 class DeionarraLogicGeneratedTest(LogicTest):
     def setUp(self):
         super(DeionarraLogicGeneratedTest, self).setUp()
@@ -1814,6 +1786,34 @@ class DeionarraLogicGeneratedTest(LogicTest):
             lambda x: self.state_manager.world_manager.set_deionarra_value(x),
             0,
             self.logic.r63423_condition
+        )
+
+
+class DeionarraLogicTest(LogicTest):
+    def setUp(self):
+        super(DeionarraLogicTest, self).setUp()
+        self.logic = DeionarraLogic(self.state_manager)
+
+
+    def test_set_know_deionarra_name(self):
+        self._false_then_true_action(
+            self.state_manager.world_manager.get_know_deionarra_name,
+            self.logic.set_know_deionarra_name
+        )
+
+
+    def test_get_know_deionarra_name(self):
+        self._boolean_straight_condition(
+            lambda x: self.state_manager.world_manager.set_know_deionarra_name(x),
+            self.logic.get_know_deionarra_name
+        )
+
+
+    def test_talk(self):
+        self._integer_inc_action(
+            self.state_manager.world_manager.get_talked_to_deionarra_times,
+            1,
+            self.logic.talk
         )
 
 

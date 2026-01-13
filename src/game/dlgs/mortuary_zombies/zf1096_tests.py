@@ -5,20 +5,6 @@ from game.engine.tests import (LogicTest)
 from game.dlgs.mortuary_zombies.zf1096_logic import (Zf1096LogicGenerated, Zf1096Logic)
 
 
-class Zf1096LogicTest(LogicTest):
-    def setUp(self):
-        super(Zf1096LogicTest, self).setUp()
-        self.logic = Zf1096Logic(self.state_manager)
-
-
-    def test_talk(self):
-        self._integer_inc_action(
-            self.state_manager.world_manager.get_talked_to_zf1096_times,
-            1,
-            self.logic.talk
-        )
-
-
 class Zf1096LogicGeneratedTest(LogicTest):
     def setUp(self):
         super(Zf1096LogicGeneratedTest, self).setUp()
@@ -197,6 +183,20 @@ class Zf1096LogicGeneratedTest(LogicTest):
         self.state_manager.world_manager.set_morte_quip(False)
 
         self.assertTrue(self.logic.r35106_condition())
+
+
+class Zf1096LogicTest(LogicTest):
+    def setUp(self):
+        super(Zf1096LogicTest, self).setUp()
+        self.logic = Zf1096Logic(self.state_manager)
+
+
+    def test_talk(self):
+        self._integer_inc_action(
+            self.state_manager.world_manager.get_talked_to_zf1096_times,
+            1,
+            self.logic.talk
+        )
 
 
 if __name__ == '__main__':

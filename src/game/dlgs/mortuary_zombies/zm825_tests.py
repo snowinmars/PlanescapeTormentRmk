@@ -5,20 +5,6 @@ from game.engine.tests import (LogicTest)
 from game.dlgs.mortuary_zombies.zm825_logic import (Zm825LogicGenerated, Zm825Logic)
 
 
-class Zm825LogicTest(LogicTest):
-    def setUp(self):
-        super(Zm825LogicTest, self).setUp()
-        self.logic = Zm825Logic(self.state_manager)
-
-
-    def test_talk(self):
-        self._integer_inc_action(
-            self.state_manager.world_manager.get_talked_to_zm825_times,
-            1,
-            self.logic.talk
-        )
-
-
 class Zm825LogicGeneratedTest(LogicTest):
     def setUp(self):
         super(Zm825LogicGeneratedTest, self).setUp()
@@ -98,6 +84,20 @@ class Zm825LogicGeneratedTest(LogicTest):
         self._boolean_invert_condition(
             lambda x: self.state_manager.world_manager.set_in_party_morte(x),
             self.logic.r42313_condition
+        )
+
+
+class Zm825LogicTest(LogicTest):
+    def setUp(self):
+        super(Zm825LogicTest, self).setUp()
+        self.logic = Zm825Logic(self.state_manager)
+
+
+    def test_talk(self):
+        self._integer_inc_action(
+            self.state_manager.world_manager.get_talked_to_zm825_times,
+            1,
+            self.logic.talk
         )
 
 

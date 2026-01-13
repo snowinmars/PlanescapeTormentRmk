@@ -11,6 +11,7 @@
 
 # s0 # say986
 label morte_s0: # -
+    $ morteLogic.talk()
     'morte_s0{#morte_s0}'
     # morte '«Эй, шеф. Ты в порядке? Изображаешь из себя труп или пытаешься обмануть трухлявых? Я уж думал, что ты дал дуба».{#morte_s0_1}'
 
@@ -5312,6 +5313,7 @@ label morte_s324: # -
 
 # s325 # say33958
 label morte_s325: # - # IF WEIGHT #5 /* Triggers after states #: 742 737 733 487 even though they appear after this state */ ~  !InParty("Morte") !GlobalGT("Fortress_Morte","GLOBAL",2)
+    $ morteLogic.talk()
     'morte_s325{#morte_s325}'
     # morte '«Я знал, что ты вернешься, шеф! Все-таки понял, что я нужен тебе, а?»{#morte_s325_1}' # [MRT516]
 
@@ -5375,6 +5377,7 @@ label morte_s328: # from 327.1
 
 # s329 # say33970
 label morte_s329: # from 649.2 650.2 651.3 652.2 653.1 654.1 655.1 656.1 657.1 658.0 659.1 660.1 661.1 662.0 663.2 664.1 665.2 666.1 667.1 668.0 669.9 670.0 671.0 672.0 673.0 674.0 675.1 676.0 677.2 678.1 679.0 680.0 681.0 682.1 683.0 684.1 685.1 686.2 687.1 688.2 689.1 690.1 695.2 696.1 697.1 699.1 700.1 706.1 707.1 708.1 709.1 710.1 711.1 712.1 714.1 715.1 721.0 722.0 723.1 725.0 726.1 727.0
+    $ morteLogic.talk()
     'morte_s329{#morte_s329}'
     # morte '«Что тебя гложет, шеф?»{#morte_s329_1}'
 
@@ -7239,6 +7242,7 @@ label morte_s443: # from 442.0
 
 # s444 # say41838
 label morte_s444: # from 445.1 446.1 447.1 448.1 449.0 450.0 451.1 452.0 453.0 454.0 455.1 456.2 457.1 458.0 # IF WEIGHT #6 /* Triggers after states #: 742 737 733 487 even though they appear after this state */ ~  !Global("Mortuary_Walkthrough","GLOBAL",0) !Global("Mortuary_Walkthrough","GLOBAL",1) Global("AR0200_Visited","GLOBAL",0) InParty("Morte") !GlobalGT("Fortress_Morte","GLOBAL",2)
+    $ morteLogic.talk()
     'morte_s444{#morte_s444}'
     # morte '«Что тебя гложет, шеф?»{#morte_s444_1}' # [MRT515]
 
@@ -11780,6 +11784,7 @@ label morte_s728: # from 727.1
 
 # s729 # say66344
 label morte_s729: # - # IF WEIGHT #7 /* Triggers after states #: 742 737 733 even though they appear after this state */ ~  Global("AR0200_Visited","GLOBAL",1) InParty("Morte") !GlobalGT("Fortress_Morte","GLOBAL",2)
+    $ morteLogic.talk()
     'morte_s729{#morte_s729}'
     # morte '«Что тебя гложет, шеф?»{#morte_s729_1}' # [MRT515]
 

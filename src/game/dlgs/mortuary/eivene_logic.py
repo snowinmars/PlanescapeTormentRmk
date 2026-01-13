@@ -294,3 +294,7 @@ class EiveneLogic(EiveneLogicGenerated):
 
     def set_know_eivene_name(self):
         self.state_manager.world_manager.set_know_eivene_name(True)
+
+
+    def talk(self):
+        self.state_manager.world_manager.inc_talked_to_eivene_times()

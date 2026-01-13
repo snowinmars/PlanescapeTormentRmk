@@ -5,88 +5,6 @@ from game.engine.tests import (LogicTest)
 from game.dlgs.mortuary_zombies.zm396_logic import (Zm396LogicGenerated, Zm396Logic)
 
 
-class Zm396LogicTest(LogicTest):
-    def setUp(self):
-        super(Zm396LogicTest, self).setUp()
-        self.logic = Zm396Logic(self.state_manager)
-
-
-    def test_get_took_zm396_bandages(self):
-        self._boolean_straight_condition(
-            lambda x: self.state_manager.world_manager.set_has_bandages_zm396(x),
-            self.logic.get_took_zm396_bandages
-        )
-
-
-    def test_r34934_action(self):
-        self._false_then_true_action(
-            self.state_manager.world_manager.get_has_bandages,
-            self.logic.r34934_action
-        )
-
-
-    def test_r34936_action(self):
-        self._false_then_true_action(
-            self.state_manager.world_manager.get_has_bandages,
-            self.logic.r34936_action
-        )
-
-
-    def test_r34936_condition(self):
-        self._boolean_invert_condition(
-            lambda x: self.state_manager.world_manager.set_has_bandages_zm396(x),
-            self.logic.r34936_condition
-        )
-
-
-    def test_r34932_condition(self):
-        self.state_manager.world_manager.set_has_bandages_zm396(True)
-        self.state_manager.world_manager.set_zombie_chaotic(True)
-        self.assertFalse(self.logic.r34932_condition())
-
-        self.state_manager.world_manager.set_has_bandages_zm396(False)
-        self.state_manager.world_manager.set_zombie_chaotic(False)
-        self.assertTrue(self.logic.r34932_condition())
-
-
-    def test_r34935_condition(self):
-        self.state_manager.world_manager.set_has_bandages_zm396(True)
-        self.state_manager.world_manager.set_zombie_chaotic(False)
-        self.assertFalse(self.logic.r34935_condition())
-
-        self.state_manager.world_manager.set_has_bandages_zm396(False)
-        self.state_manager.world_manager.set_zombie_chaotic(True)
-        self.assertTrue(self.logic.r34935_condition())
-
-
-    def test_r45112_condition(self):
-        self.state_manager.world_manager.set_has_bandages_zm396(False)
-        self.state_manager.world_manager.set_zombie_chaotic(True)
-        self.assertFalse(self.logic.r45112_condition())
-
-        self.state_manager.world_manager.set_has_bandages_zm396(True)
-        self.state_manager.world_manager.set_zombie_chaotic(False)
-        self.assertTrue(self.logic.r45112_condition())
-
-
-    def test_r45113_condition(self):
-        self.state_manager.world_manager.set_has_bandages_zm396(False)
-        self.state_manager.world_manager.set_zombie_chaotic(False)
-        self.assertFalse(self.logic.r45113_condition())
-
-        self.state_manager.world_manager.set_has_bandages_zm396(True)
-        self.state_manager.world_manager.set_zombie_chaotic(True)
-        self.assertTrue(self.logic.r45113_condition())
-
-
-    def test_talk(self):
-        self._integer_inc_action(
-            self.state_manager.world_manager.get_talked_to_zm396_times,
-            1,
-            self.logic.talk
-        )
-
-
 class Zm396LogicGeneratedTest(LogicTest):
     def setUp(self):
         super(Zm396LogicGeneratedTest, self).setUp()
@@ -197,6 +115,88 @@ class Zm396LogicGeneratedTest(LogicTest):
         self._boolean_straight_condition(
             lambda x: self.state_manager.world_manager.set_can_speak_with_dead(x),
             self.logic.r45115_condition
+        )
+
+
+class Zm396LogicTest(LogicTest):
+    def setUp(self):
+        super(Zm396LogicTest, self).setUp()
+        self.logic = Zm396Logic(self.state_manager)
+
+
+    def test_get_took_zm396_bandages(self):
+        self._boolean_straight_condition(
+            lambda x: self.state_manager.world_manager.set_has_bandages_zm396(x),
+            self.logic.get_took_zm396_bandages
+        )
+
+
+    def test_r34934_action(self):
+        self._false_then_true_action(
+            self.state_manager.world_manager.get_has_bandages,
+            self.logic.r34934_action
+        )
+
+
+    def test_r34936_action(self):
+        self._false_then_true_action(
+            self.state_manager.world_manager.get_has_bandages,
+            self.logic.r34936_action
+        )
+
+
+    def test_r34936_condition(self):
+        self._boolean_invert_condition(
+            lambda x: self.state_manager.world_manager.set_has_bandages_zm396(x),
+            self.logic.r34936_condition
+        )
+
+
+    def test_r34932_condition(self):
+        self.state_manager.world_manager.set_has_bandages_zm396(True)
+        self.state_manager.world_manager.set_zombie_chaotic(True)
+        self.assertFalse(self.logic.r34932_condition())
+
+        self.state_manager.world_manager.set_has_bandages_zm396(False)
+        self.state_manager.world_manager.set_zombie_chaotic(False)
+        self.assertTrue(self.logic.r34932_condition())
+
+
+    def test_r34935_condition(self):
+        self.state_manager.world_manager.set_has_bandages_zm396(True)
+        self.state_manager.world_manager.set_zombie_chaotic(False)
+        self.assertFalse(self.logic.r34935_condition())
+
+        self.state_manager.world_manager.set_has_bandages_zm396(False)
+        self.state_manager.world_manager.set_zombie_chaotic(True)
+        self.assertTrue(self.logic.r34935_condition())
+
+
+    def test_r45112_condition(self):
+        self.state_manager.world_manager.set_has_bandages_zm396(False)
+        self.state_manager.world_manager.set_zombie_chaotic(True)
+        self.assertFalse(self.logic.r45112_condition())
+
+        self.state_manager.world_manager.set_has_bandages_zm396(True)
+        self.state_manager.world_manager.set_zombie_chaotic(False)
+        self.assertTrue(self.logic.r45112_condition())
+
+
+    def test_r45113_condition(self):
+        self.state_manager.world_manager.set_has_bandages_zm396(False)
+        self.state_manager.world_manager.set_zombie_chaotic(False)
+        self.assertFalse(self.logic.r45113_condition())
+
+        self.state_manager.world_manager.set_has_bandages_zm396(True)
+        self.state_manager.world_manager.set_zombie_chaotic(True)
+        self.assertTrue(self.logic.r45113_condition())
+
+
+    def test_talk(self):
+        self._integer_inc_action(
+            self.state_manager.world_manager.get_talked_to_zm396_times,
+            1,
+            self.logic.talk
         )
 
 

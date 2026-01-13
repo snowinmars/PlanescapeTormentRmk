@@ -5,26 +5,6 @@ from game.engine.tests import (LogicTest)
 from game.dlgs.mortuary.eivene_logic import (EiveneLogicGenerated, EiveneLogic)
 
 
-class EiveneLogicTest(LogicTest):
-    def setUp(self):
-        super(EiveneLogicTest, self).setUp()
-        self.logic = EiveneLogic(self.state_manager)
-
-
-    def test_get_know_eivene_name(self):
-        self._boolean_straight_condition(
-            lambda x: self.state_manager.world_manager.set_know_eivene_name(x),
-            self.logic.get_know_eivene_name
-        )
-
-
-    def test_set_know_eivene_name(self):
-        self._false_then_true_action(
-            self.state_manager.world_manager.get_know_eivene_name,
-            self.logic.set_know_eivene_name
-        )
-
-
 class EiveneLogicGeneratedTest(LogicTest):
     def setUp(self):
         super(EiveneLogicGeneratedTest, self).setUp()
@@ -658,6 +638,34 @@ class EiveneLogicGeneratedTest(LogicTest):
         self._boolean_straight_condition(
             lambda x: self.state_manager.world_manager.set_eivene_delivery(x),
             self.logic.r63481_condition
+        )
+
+
+class EiveneLogicTest(LogicTest):
+    def setUp(self):
+        super(EiveneLogicTest, self).setUp()
+        self.logic = EiveneLogic(self.state_manager)
+
+
+    def test_get_know_eivene_name(self):
+        self._boolean_straight_condition(
+            lambda x: self.state_manager.world_manager.set_know_eivene_name(x),
+            self.logic.get_know_eivene_name
+        )
+
+
+    def test_set_know_eivene_name(self):
+        self._false_then_true_action(
+            self.state_manager.world_manager.get_know_eivene_name,
+            self.logic.set_know_eivene_name
+        )
+
+
+    def test_talk(self):
+        self._integer_inc_action(
+            self.state_manager.world_manager.get_talked_to_eivene_times,
+            1,
+            self.logic.talk
         )
 
 

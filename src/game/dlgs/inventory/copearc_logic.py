@@ -27,3 +27,11 @@ class CopearcLogicGenerated:
 class CopearcLogic(CopearcLogicGenerated):
     def __init__(self, state_manager):
         super().__init__(state_manager)
+
+
+    def talk_closed(self):
+        self.state_manager.world_manager.inc_talked_to_copper_earring_closed_times()
+
+
+    def talk_opened(self):
+        self.state_manager.world_manager.inc_talked_to_copper_earring_opened_times()

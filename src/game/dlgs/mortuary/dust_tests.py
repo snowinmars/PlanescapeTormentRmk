@@ -5,12 +5,6 @@ from game.engine.tests import (LogicTest)
 from game.dlgs.mortuary.dust_logic import (DustLogicGenerated, DustLogic)
 
 
-class DustLogicTest(LogicTest):
-    def setUp(self):
-        super(DustLogicTest, self).setUp()
-        self.logic = DustLogic(self.state_manager)
-
-
 class DustLogicGeneratedTest(LogicTest):
     def setUp(self):
         super(DustLogicGeneratedTest, self).setUp()
@@ -1019,6 +1013,20 @@ class DustLogicGeneratedTest(LogicTest):
             lambda x: self.state_manager.world_manager.set_join_dustmen(x),
             1,
             self.logic.r66679_condition
+        )
+
+
+class DustLogicTest(LogicTest):
+    def setUp(self):
+        super(DustLogicTest, self).setUp()
+        self.logic = DustLogic(self.state_manager)
+
+
+    def test_talk(self):
+        self._integer_inc_action(
+            self.state_manager.world_manager.get_talked_to_dust_times,
+            1,
+            self.logic.talk
         )
 
 

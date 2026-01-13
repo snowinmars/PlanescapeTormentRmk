@@ -5,12 +5,6 @@ from game.engine.tests import (LogicTest)
 from game.dlgs.inventory.copearc_logic import (CopearcLogicGenerated, CopearcLogic)
 
 
-class CopearcLogicTest(LogicTest):
-    def setUp(self):
-        super(CopearcLogicTest, self).setUp()
-        self.logic = CopearcLogic(self.state_manager)
-
-
 class CopearcLogicGeneratedTest(LogicTest):
     def setUp(self):
         super(CopearcLogicGeneratedTest, self).setUp()
@@ -70,6 +64,28 @@ class CopearcLogicGeneratedTest(LogicTest):
         self._boolean_straight_condition(
             lambda x: self.state_manager.world_manager.set_know_copper_earring_secret(x),
             self.logic.r46728_condition
+        )
+
+
+class CopearcLogicTest(LogicTest):
+    def setUp(self):
+        super(CopearcLogicTest, self).setUp()
+        self.logic = CopearcLogic(self.state_manager)
+
+
+    def test_talk_closed(self):
+        self._integer_inc_action(
+            self.state_manager.world_manager.get_talked_to_copper_earring_closed_times,
+            1,
+            self.logic.talk_closed
+        )
+
+
+    def test_talk_opened(self):
+        self._integer_inc_action(
+            self.state_manager.world_manager.get_talked_to_copper_earring_opened_times,
+            1,
+            self.logic.talk_opened
         )
 
 

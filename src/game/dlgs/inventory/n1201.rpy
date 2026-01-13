@@ -11,6 +11,7 @@
 
 # s0 # say44993
 label n1201_s0: # from 1.6 3.0 # IF ~  True()
+    $ n1201Logic.talk()
     'n1201_s0{#n1201_s0}'
     # nr 'This foul-smelling note has a strange looking diagram inscribed beneath the writing. It looks as if it„s instructing you to fold the corners of the note so their points touch the center. There is a series of strange marks on each corner - one mark on the upper right, two marks on the lower right, three marks on the lower left, and no marks on the upper left.{#n1201_s0_1}'
 

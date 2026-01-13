@@ -11,6 +11,7 @@
 
 # s0 # say46723
 label copearc_s0: # - # IF ~  True()
+    $ copearcLogic.talk_closed()
     'copearc_s0{#copearc_s0}'
     # nr 'This copper earring looks extremely old. It looks like it was meant to be worn, but there doesn„t seem to be a hook or any means of actually attaching it to your ear. There is a series of strange grooves on the inside of the earring, however.{#copearc_s0_1}'
 
@@ -47,6 +48,7 @@ label copearc_s1: # from 0.0
 
 # s2 # say46730
 label copearc_s2: # from 0.1 1.0
+    $ copearcLogic.talk_opened()
     'copearc_s2{#copearc_s2}'
     # nr 'You hook your fingernail into the third groove from the top and press it inwards. As you do, there is a *click* and the top of the earring snaps open. Not only can you wear the earring now, it also looks like there is a secret compartment inside the earring.{#copearc_s2_1}'
 

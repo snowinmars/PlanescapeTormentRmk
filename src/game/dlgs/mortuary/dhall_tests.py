@@ -5,26 +5,6 @@ from game.engine.tests import (LogicTest)
 from game.dlgs.mortuary.dhall_logic import (DhallLogicGenerated, DhallLogic)
 
 
-class DhallLogicTest(LogicTest):
-    def setUp(self):
-        super(DhallLogicTest, self).setUp()
-        self.logic = DhallLogic(self.state_manager)
-
-
-    def test_set_know_dhall_name(self):
-        self._false_then_true_action(
-            self.state_manager.world_manager.get_know_dhall_name,
-            self.logic.set_know_dhall_name
-        )
-
-
-    def test_get_know_dhall_name(self):
-        self._boolean_straight_condition(
-            lambda x: self.state_manager.world_manager.set_know_dhall_name(x),
-            self.logic.get_know_dhall_name
-        )
-
-
 class DhallLogicGeneratedTest(LogicTest):
     def setUp(self):
         super(DhallLogicGeneratedTest, self).setUp()
@@ -679,6 +659,34 @@ class DhallLogicGeneratedTest(LogicTest):
         self._boolean_straight_condition(
             lambda x: self.state_manager.world_manager.set_morte_mortuary_walkthrough_1(x),
             self.logic.r6032_condition
+        )
+
+
+class DhallLogicTest(LogicTest):
+    def setUp(self):
+        super(DhallLogicTest, self).setUp()
+        self.logic = DhallLogic(self.state_manager)
+
+
+    def test_set_know_dhall_name(self):
+        self._false_then_true_action(
+            self.state_manager.world_manager.get_know_dhall_name,
+            self.logic.set_know_dhall_name
+        )
+
+
+    def test_get_know_dhall_name(self):
+        self._boolean_straight_condition(
+            lambda x: self.state_manager.world_manager.set_know_dhall_name(x),
+            self.logic.get_know_dhall_name
+        )
+
+
+    def test_talk(self):
+        self._integer_inc_action(
+            self.state_manager.world_manager.get_talked_to_dhall_times,
+            1,
+            self.logic.talk
         )
 
 

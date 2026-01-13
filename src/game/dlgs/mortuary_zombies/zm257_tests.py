@@ -5,44 +5,6 @@ from game.engine.tests import (LogicTest)
 from game.dlgs.mortuary_zombies.zm257_logic import (Zm257LogicGenerated, Zm257Logic)
 
 
-class Zm257LogicTest(LogicTest):
-    def setUp(self):
-        super(Zm257LogicTest, self).setUp()
-        self.logic = Zm257Logic(self.state_manager)
-
-
-    def test_set_know_zm257_spirit(self):
-        logic = Zm257Logic(self.state_manager)
-
-        self._false_then_true_action(
-            self.state_manager.world_manager.get_know_zm257_spirit,
-            logic.set_know_zm257_spirit
-        )
-
-
-    def test_get_know_zm257_spirit(self):
-        self._boolean_straight_condition(
-            lambda x: self.state_manager.world_manager.set_know_zm257_spirit(x),
-            self.logic.get_know_zm257_spirit
-        )
-
-
-    def test_talk(self):
-        self._integer_inc_action(
-            self.state_manager.world_manager.get_talked_to_zm257_times,
-            1,
-            self.logic.talk
-        )
-
-
-    def test_talk_spirit(self):
-        self._integer_inc_action(
-            self.state_manager.world_manager.get_talked_to_zm257_spirit_times,
-            1,
-            self.logic.talk_spirit
-        )
-
-
 class Zm257LogicGeneratedTest(LogicTest):
     def setUp(self):
         super(Zm257LogicGeneratedTest, self).setUp()
@@ -108,6 +70,44 @@ class Zm257LogicGeneratedTest(LogicTest):
         self._boolean_straight_condition(
             lambda x: self.state_manager.world_manager.set_can_speak_with_dead(x),
             self.logic.r6513_condition
+        )
+
+
+class Zm257LogicTest(LogicTest):
+    def setUp(self):
+        super(Zm257LogicTest, self).setUp()
+        self.logic = Zm257Logic(self.state_manager)
+
+
+    def test_set_know_zm257_spirit(self):
+        logic = Zm257Logic(self.state_manager)
+
+        self._false_then_true_action(
+            self.state_manager.world_manager.get_know_zm257_spirit,
+            logic.set_know_zm257_spirit
+        )
+
+
+    def test_get_know_zm257_spirit(self):
+        self._boolean_straight_condition(
+            lambda x: self.state_manager.world_manager.set_know_zm257_spirit(x),
+            self.logic.get_know_zm257_spirit
+        )
+
+
+    def test_talk(self):
+        self._integer_inc_action(
+            self.state_manager.world_manager.get_talked_to_zm257_times,
+            1,
+            self.logic.talk
+        )
+
+
+    def test_talk_spirit(self):
+        self._integer_inc_action(
+            self.state_manager.world_manager.get_talked_to_zm257_spirit_times,
+            1,
+            self.logic.talk_spirit
         )
 
 

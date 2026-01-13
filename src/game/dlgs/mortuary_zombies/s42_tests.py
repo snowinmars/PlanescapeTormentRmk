@@ -5,20 +5,6 @@ from game.engine.tests import (LogicTest)
 from game.dlgs.mortuary_zombies.s42_logic import (S42LogicGenerated, S42Logic)
 
 
-class S42LogicTest(LogicTest):
-    def setUp(self):
-        super(S42LogicTest, self).setUp()
-        self.logic = S42Logic(self.state_manager)
-
-
-    def test_talk(self):
-        self._integer_inc_action(
-            self.state_manager.world_manager.get_talked_to_s42_times,
-            1,
-            self.logic.talk
-        )
-
-
 class S42LogicGeneratedTest(LogicTest):
     def setUp(self):
         super(S42LogicGeneratedTest, self).setUp()
@@ -470,6 +456,20 @@ class S42LogicGeneratedTest(LogicTest):
         self.state_manager.world_manager.set_42_secret(False)
 
         self.assertTrue(self.logic.r6654_condition())
+
+
+class S42LogicTest(LogicTest):
+    def setUp(self):
+        super(S42LogicTest, self).setUp()
+        self.logic = S42Logic(self.state_manager)
+
+
+    def test_talk(self):
+        self._integer_inc_action(
+            self.state_manager.world_manager.get_talked_to_s42_times,
+            1,
+            self.logic.talk
+        )
 
 
 if __name__ == '__main__':

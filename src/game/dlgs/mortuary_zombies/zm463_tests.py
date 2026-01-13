@@ -5,20 +5,6 @@ from game.engine.tests import (LogicTest)
 from game.dlgs.mortuary_zombies.zm463_logic import (Zm463LogicGenerated, Zm463Logic)
 
 
-class Zm463LogicTest(LogicTest):
-    def setUp(self):
-        super(Zm463LogicTest, self).setUp()
-        self.logic = Zm463Logic(self.state_manager)
-
-
-    def test_talk(self):
-        self._integer_inc_action(
-            self.state_manager.world_manager.get_talked_to_zm463_times,
-            1,
-            self.logic.talk
-        )
-
-
 class Zm463LogicGeneratedTest(LogicTest):
     def setUp(self):
         super(Zm463LogicGeneratedTest, self).setUp()
@@ -72,6 +58,20 @@ class Zm463LogicGeneratedTest(LogicTest):
         self._boolean_straight_condition(
             lambda x: self.state_manager.world_manager.set_can_speak_with_dead(x),
             self.logic.r6490_condition
+        )
+
+
+class Zm463LogicTest(LogicTest):
+    def setUp(self):
+        super(Zm463LogicTest, self).setUp()
+        self.logic = Zm463Logic(self.state_manager)
+
+
+    def test_talk(self):
+        self._integer_inc_action(
+            self.state_manager.world_manager.get_talked_to_zm463_times,
+            1,
+            self.logic.talk
         )
 
 

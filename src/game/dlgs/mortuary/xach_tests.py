@@ -5,26 +5,6 @@ from game.engine.tests import (LogicTest)
 from game.dlgs.mortuary.xach_logic import (XachLogicGenerated, XachLogic)
 
 
-class XachLogicTest(LogicTest):
-    def setUp(self):
-        super(XachLogicTest, self).setUp()
-        self.logic = XachLogic(self.state_manager)
-
-
-    def test_set_know_xachariah_name(self):
-        self._false_then_true_action(
-            self.state_manager.world_manager.get_know_xachariah_name,
-            self.logic.set_know_xachariah_name
-        )
-
-
-    def test_get_know_xachariah_name(self):
-        self._boolean_straight_condition(
-            lambda x: self.state_manager.world_manager.set_know_xachariah_name(x),
-            self.logic.get_know_xachariah_name
-        )
-
-
 class XachLogicGeneratedTest(LogicTest):
     def setUp(self):
         super(XachLogicGeneratedTest, self).setUp()
@@ -830,6 +810,42 @@ class XachLogicGeneratedTest(LogicTest):
         self._boolean_straight_condition(
             lambda x: self.state_manager.world_manager.set_xachariah_request(x),
             self.logic.r63629_condition
+        )
+
+
+class XachLogicTest(LogicTest):
+    def setUp(self):
+        super(XachLogicTest, self).setUp()
+        self.logic = XachLogic(self.state_manager)
+
+
+    def test_set_know_xachariah_name(self):
+        self._false_then_true_action(
+            self.state_manager.world_manager.get_know_xachariah_name,
+            self.logic.set_know_xachariah_name
+        )
+
+
+    def test_get_know_xachariah_name(self):
+        self._boolean_straight_condition(
+            lambda x: self.state_manager.world_manager.set_know_xachariah_name(x),
+            self.logic.get_know_xachariah_name
+        )
+
+
+    def test_talk(self):
+        self._integer_inc_action(
+            self.state_manager.world_manager.get_talked_to_zm331_times,
+            1,
+            self.logic.talk
+        )
+
+
+    def test_talk_xach(self):
+        self._integer_inc_action(
+            self.state_manager.world_manager.get_talked_to_xach_times,
+            1,
+            self.logic.talk_xach
         )
 
 

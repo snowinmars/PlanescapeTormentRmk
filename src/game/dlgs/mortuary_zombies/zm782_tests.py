@@ -5,6 +5,12 @@ from game.engine.tests import (LogicTest)
 from game.dlgs.mortuary_zombies.zm782_logic import (Zm782LogicGenerated, Zm782Logic)
 
 
+class Zm782LogicGeneratedTest(LogicTest):
+    def setUp(self):
+        super(Zm782LogicGeneratedTest, self).setUp()
+        self.logic = Zm782LogicGenerated(self.state_manager)
+
+
 class Zm782LogicTest(LogicTest):
     def setUp(self):
         super(Zm782LogicTest, self).setUp()
@@ -69,12 +75,6 @@ class Zm782LogicTest(LogicTest):
             1,
             self.logic.talk
         )
-
-
-class Zm782LogicGeneratedTest(LogicTest):
-    def setUp(self):
-        super(Zm782LogicGeneratedTest, self).setUp()
-        self.logic = Zm782LogicGenerated(self.state_manager)
 
 
 if __name__ == '__main__':

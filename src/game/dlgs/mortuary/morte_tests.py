@@ -5,26 +5,6 @@ from game.engine.tests import (LogicTest)
 from game.dlgs.mortuary.morte_logic import (MorteLogicGenerated, MorteLogic)
 
 
-class MorteLogicTest(LogicTest):
-    def setUp(self):
-        super(MorteLogicTest, self).setUp()
-        self.logic = MorteLogic(self.state_manager)
-
-
-    def test_set_know_morte_name(self):
-        self._false_then_true_action(
-            self.state_manager.world_manager.get_know_morte_name,
-            self.logic.set_know_morte_name
-        )
-
-
-    def test_get_know_morte_name(self):
-        self._boolean_straight_condition(
-            lambda x: self.state_manager.world_manager.set_know_morte_name(x),
-            self.logic.get_know_morte_name
-        )
-
-
 class MorteLogicGeneratedTest(LogicTest):
     def setUp(self):
         super(MorteLogicGeneratedTest, self).setUp()
@@ -7322,6 +7302,34 @@ class MorteLogicGeneratedTest(LogicTest):
         self.state_manager.world_manager.set_fortress_nordom(0)
 
         self.assertTrue(self.logic.r68492_condition())
+
+
+class MorteLogicTest(LogicTest):
+    def setUp(self):
+        super(MorteLogicTest, self).setUp()
+        self.logic = MorteLogic(self.state_manager)
+
+
+    def test_set_know_morte_name(self):
+        self._false_then_true_action(
+            self.state_manager.world_manager.get_know_morte_name,
+            self.logic.set_know_morte_name
+        )
+
+
+    def test_get_know_morte_name(self):
+        self._boolean_straight_condition(
+            lambda x: self.state_manager.world_manager.set_know_morte_name(x),
+            self.logic.get_know_morte_name
+        )
+
+
+    def test_talk(self):
+        self._integer_inc_action(
+            self.state_manager.world_manager.get_talked_to_morte_times,
+            1,
+            self.logic.talk
+        )
 
 
 if __name__ == '__main__':

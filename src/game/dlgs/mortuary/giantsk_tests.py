@@ -5,12 +5,6 @@ from game.engine.tests import (LogicTest)
 from game.dlgs.mortuary.giantsk_logic import (GiantskLogicGenerated, GiantskLogic)
 
 
-class GiantskLogicTest(LogicTest):
-    def setUp(self):
-        super(GiantskLogicTest, self).setUp()
-        self.logic = GiantskLogic(self.state_manager)
-
-
 class GiantskLogicGeneratedTest(LogicTest):
     def setUp(self):
         super(GiantskLogicGeneratedTest, self).setUp()
@@ -922,6 +916,20 @@ class GiantskLogicGeneratedTest(LogicTest):
             lambda x: self.state_manager.world_manager.set_giant_skeleton_enchant(x),
             1,
             self.logic.r64302_condition
+        )
+
+
+class GiantskLogicTest(LogicTest):
+    def setUp(self):
+        super(GiantskLogicTest, self).setUp()
+        self.logic = GiantskLogic(self.state_manager)
+
+
+    def test_talk(self):
+        self._integer_inc_action(
+            self.state_manager.world_manager.get_talked_to_giantsk_times,
+            1,
+            self.logic.talk
         )
 
 

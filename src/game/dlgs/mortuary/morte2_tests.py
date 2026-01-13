@@ -5,30 +5,6 @@ from game.engine.tests import (LogicTest)
 from game.dlgs.mortuary.morte2_logic import (Morte2LogicGenerated, Morte2Logic)
 
 
-class Morte2LogicTest(LogicTest):
-    def setUp(self):
-        super(Morte2LogicTest, self).setUp()
-        self.logic = Morte2Logic(self.state_manager)
-
-
-    def test_s0_action(self):
-        self.state_manager.world_manager.set_warning(1)
-        self._integer_equals_action(
-            self.state_manager.world_manager.get_mortuary_walkthrough,
-            2,
-            self.logic.s0_action
-        )
-
-
-    def test_s11_action(self):
-        self.state_manager.world_manager.set_mortuary_walkthrough(1)
-        self._integer_equals_action(
-            self.state_manager.world_manager.get_mortuary_walkthrough,
-            3,
-            self.logic.s11_action
-        )
-
-
 class Morte2LogicGeneratedTest(LogicTest):
     def setUp(self):
         super(Morte2LogicGeneratedTest, self).setUp()
@@ -305,6 +281,38 @@ class Morte2LogicGeneratedTest(LogicTest):
             prop,
             value,
             self.logic.r41239_condition
+        )
+
+
+class Morte2LogicTest(LogicTest):
+    def setUp(self):
+        super(Morte2LogicTest, self).setUp()
+        self.logic = Morte2Logic(self.state_manager)
+
+
+    def test_s0_action(self):
+        self.state_manager.world_manager.set_warning(1)
+        self._integer_equals_action(
+            self.state_manager.world_manager.get_mortuary_walkthrough,
+            2,
+            self.logic.s0_action
+        )
+
+
+    def test_s11_action(self):
+        self.state_manager.world_manager.set_mortuary_walkthrough(1)
+        self._integer_equals_action(
+            self.state_manager.world_manager.get_mortuary_walkthrough,
+            3,
+            self.logic.s11_action
+        )
+
+
+    def test_talk(self):
+        self._integer_inc_action(
+            self.state_manager.world_manager.get_talked_to_morte_times,
+            1,
+            self.logic.talk
         )
 
 

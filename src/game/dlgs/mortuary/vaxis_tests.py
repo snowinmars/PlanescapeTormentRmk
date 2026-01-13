@@ -5,33 +5,6 @@ from game.engine.tests import (LogicTest)
 from game.dlgs.mortuary.vaxis_logic import (VaxisLogicGenerated, VaxisLogic)
 
 
-class VaxisLogicTest(LogicTest):
-    def setUp(self):
-        super(VaxisLogicTest, self).setUp()
-        self.logic = VaxisLogic(self.state_manager)
-
-
-    def test_set_know_vaxis_name(self):
-        self._false_then_true_action(
-            self.state_manager.world_manager.get_know_vaxis_name,
-            self.logic.set_know_vaxis_name
-        )
-
-
-    def test_kill_vaxis(self):
-        self._false_then_true_action(
-            self.state_manager.world_manager.get_dead_vaxis,
-            self.logic.kill_vaxis
-        )
-
-
-    def test_get_know_vaxis_name(self):
-        self._boolean_straight_condition(
-            lambda x: self.state_manager.world_manager.set_know_vaxis_name(x),
-            self.logic.get_know_vaxis_name
-        )
-
-
 class VaxisLogicGeneratedTest(LogicTest):
     def setUp(self):
         super(VaxisLogicGeneratedTest, self).setUp()
@@ -2883,6 +2856,41 @@ class VaxisLogicGeneratedTest(LogicTest):
             prop,
             value,
             self.logic.r4665_condition
+        )
+
+
+class VaxisLogicTest(LogicTest):
+    def setUp(self):
+        super(VaxisLogicTest, self).setUp()
+        self.logic = VaxisLogic(self.state_manager)
+
+
+    def test_set_know_vaxis_name(self):
+        self._false_then_true_action(
+            self.state_manager.world_manager.get_know_vaxis_name,
+            self.logic.set_know_vaxis_name
+        )
+
+
+    def test_kill_vaxis(self):
+        self._false_then_true_action(
+            self.state_manager.world_manager.get_dead_vaxis,
+            self.logic.kill_vaxis
+        )
+
+
+    def test_get_know_vaxis_name(self):
+        self._boolean_straight_condition(
+            lambda x: self.state_manager.world_manager.set_know_vaxis_name(x),
+            self.logic.get_know_vaxis_name
+        )
+
+
+    def test_talk(self):
+        self._integer_inc_action(
+            self.state_manager.world_manager.get_talked_to_vaxis_times,
+            1,
+            self.logic.talk
         )
 
 

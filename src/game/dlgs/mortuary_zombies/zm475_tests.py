@@ -5,20 +5,6 @@ from game.engine.tests import (LogicTest)
 from game.dlgs.mortuary_zombies.zm475_logic import (Zm475LogicGenerated, Zm475Logic)
 
 
-class Zm475LogicTest(LogicTest):
-    def setUp(self):
-        super(Zm475LogicTest, self).setUp()
-        self.logic = Zm475Logic(self.state_manager)
-
-
-    def test_talk(self):
-        self._integer_inc_action(
-            self.state_manager.world_manager.get_talked_to_zm475_times,
-            1,
-            self.logic.talk
-        )
-
-
 class Zm475LogicGeneratedTest(LogicTest):
     def setUp(self):
         super(Zm475LogicGeneratedTest, self).setUp()
@@ -72,6 +58,20 @@ class Zm475LogicGeneratedTest(LogicTest):
         self._boolean_straight_condition(
             lambda x: self.state_manager.world_manager.set_can_speak_with_dead(x),
             self.logic.r6590_condition
+        )
+
+
+class Zm475LogicTest(LogicTest):
+    def setUp(self):
+        super(Zm475LogicTest, self).setUp()
+        self.logic = Zm475Logic(self.state_manager)
+
+
+    def test_talk(self):
+        self._integer_inc_action(
+            self.state_manager.world_manager.get_talked_to_zm475_times,
+            1,
+            self.logic.talk
         )
 
 
