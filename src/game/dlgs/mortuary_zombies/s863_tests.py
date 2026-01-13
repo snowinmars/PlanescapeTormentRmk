@@ -5,20 +5,6 @@ from game.engine.tests import (LogicTest)
 from game.dlgs.mortuary_zombies.s863_logic import (S863LogicGenerated, S863Logic)
 
 
-class S863LogicTest(LogicTest):
-    def setUp(self):
-        super(S863LogicTest, self).setUp()
-        self.logic = S863Logic(self.state_manager)
-
-
-    def test_talk(self):
-        self._integer_inc_action(
-            self.state_manager.world_manager.get_talked_to_s863_times,
-            1,
-            self.logic.talk
-        )
-
-
 class S863LogicGeneratedTest(LogicTest):
     def setUp(self):
         super(S863LogicGeneratedTest, self).setUp()
@@ -676,6 +662,20 @@ class S863LogicGeneratedTest(LogicTest):
         self._boolean_straight_condition(
             lambda x: self.state_manager.world_manager.set_morte_skel_mort_quip(x),
             self.logic.r35582_condition
+        )
+
+
+class S863LogicTest(LogicTest):
+    def setUp(self):
+        super(S863LogicTest, self).setUp()
+        self.logic = S863Logic(self.state_manager)
+
+
+    def test_talk(self):
+        self._integer_inc_action(
+            self.state_manager.world_manager.get_talked_to_s863_times,
+            1,
+            self.logic.talk
         )
 
 

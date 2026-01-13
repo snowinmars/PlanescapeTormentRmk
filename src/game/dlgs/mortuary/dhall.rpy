@@ -26,6 +26,7 @@ label dhall_s0: # externs morte_s103
 
 # s1 # say826
 label dhall_s1: # externs morte_s104
+    $ dhallLogic.talk()
     'dhall_s1{#dhall_s1}'
     # nr 'Прежде чем Морт успевает закончить, взгляд серых глаз писаря падает на тебя.{#dhall_s1_1}'
     # dhall '«Бремя прожитых лет лежит на мне тяжелым грузом, Неугомонный».{#dhall_s1_2}'
@@ -145,6 +146,7 @@ label dhall_s5: # - # IF ~  Global("Dhall","GLOBAL",0)
 
 # s6 # say841
 label dhall_s6: # from 5.2
+    $ dhallLogic.talk()
     'dhall_s6{#dhall_s6}'
     # nr 'Его серые глаза сверкают, когда он отрывает свой взгляд от книги.{#dhall_s6_1}'
     # dhall '«Подозреваю, что это ты в ответе за нападения в Морге. Это…»{#dhall_s6_2}'
@@ -172,6 +174,7 @@ label dhall_s6: # from 5.2
 
 # s7 # say844
 label dhall_s7: # from 5.1
+    $ dhallLogic.talk()
     'dhall_s7{#dhall_s7}'
     # nr 'Писарь прекращает вести записи в стоящую перед ним книгу и оглядывается. Его глаза похожи на два гвоздя, забитые в его череп.{#dhall_s7_1}'
     # dhall '«Итак…»{#dhall_s7_2}'
@@ -1115,6 +1118,7 @@ label dhall_s39: # -
 
 # s40 # say978
 label dhall_s40: # - # IF ~  Global("Dhall","GLOBAL",1)
+    $ dhallLogic.talk()
     'dhall_s40{#dhall_s40}'
     # nr 'Дхолл мельком смотрит на тебя.{#dhall_s40_1}'
     # dhall '«Итак. Ты вернулся…»{#dhall_s40_2}'

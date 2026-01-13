@@ -11,6 +11,7 @@ init 10 python:
 
 # s0 # say500
 label xach_s0: # - # IF ~  True()
+    $ xachLogic.talk()
     'xach_s0{#xach_s0}'
     # nr 'Перед тобой труп мужчины с выбитым на черепе номером «331». Его веки и губы крепко зашиты, в горле зияет огромная дыра. От него *отвратительно* пахнет.{#xach_s0_1}'
 
@@ -114,6 +115,7 @@ label xach_s3: # from 2.0
 
 # s4 # say512
 label xach_s4: # from 2.4 3.3 30.0 31.0
+    $ xachLogic.talk_xach()
     'xach_s4{#xach_s4}'
     # xach '«Что… ты!»{#xach_s4_1}'
     # nr 'Зомби потрясен, но при этом обрадован.{#xach_s4_2}'

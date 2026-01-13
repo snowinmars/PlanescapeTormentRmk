@@ -12,6 +12,7 @@
 # s0 # say39792
 label morte1_s0: # - # IF WEIGHT #1 /* Triggers after states #: 26 even though they appear after this state */ ~  !InParty("Morte") Global("Morte","GLOBAL",0)
     play sound morte1_s0
+    $ morte1Logic.talk()
     'morte1_s0{#morte1_s0}'
     # morte '«Эй, шеф. Ты в порядке? Изображаешь из себя труп или пытаешься обмануть трухлявых? Я уж думал, что ты дал дуба».{#morte1_s0_1}'
 
@@ -303,6 +304,7 @@ label morte1_s24: # - # IF WEIGHT #4 /* Triggers after states #: 26 even though 
 
 # s26 # say39851
 label morte1_s26: # - # IF WEIGHT #0 ~  !InParty("Morte") GlobalGT("Morte","GLOBAL",0)
+    $ morte1Logic.talk()
     'morte1_s26{#morte1_s26}'
     # morte '«Я знал, что ты вернешься, шеф! Все-таки понял, что я нужен тебе, а?»{#morte1_s26_1}' # [MRT516]
 
@@ -366,6 +368,7 @@ label morte1_s29: # from 28.1
 
 # s30 # say39863
 label morte1_s30: # - # IF WEIGHT #6 ~  Global("Mortuary_Walkthrough","GLOBAL",1)
+    $ morte1Logic.talk()
     'morte1_s30{#morte1_s30}'
     # morte '«Что тебя гложет, шеф?»{#morte1_s30_1}' # [MRT515]
 

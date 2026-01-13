@@ -11,6 +11,7 @@
 
 # s0 # say41144
 label morte2_s0: # - # IF WEIGHT #0 ~  Global("Mortuary_Walkthrough","GLOBAL",1) InParty("Morte")
+    $ morte2Logic.talk()
     'morte2_s0{#morte2_s0}'
     $ morte2Logic.s0_action()
     # nr 'Двери открываются с лёгким шорохом.{#morte2_s0_1}'
@@ -193,6 +194,7 @@ label morte2_s11: # from 10.0
 
 # s12 # say41178
 label morte2_s12: # from 13.1 14.1 15.1 16.1 17.0 18.0 19.1 20.0 21.0 22.0 23.1 24.2 25.1 26.0 # IF WEIGHT #1 ~  !Global("Mortuary_Walkthrough","GLOBAL",0) !Global("Mortuary_Walkthrough","GLOBAL",1) !Global("Mortuary_Walkthrough","GLOBAL",3) InParty("Morte")
+    $ morte2Logic.talk()
     'morte2_s12{#morte2_s12}'
     # morte '«Что гложет тебя, шеф?»{#morte2_s12_1}'
 
@@ -530,6 +532,7 @@ label morte2_s26: # from 25.0
 
 # s27 # say41250
 label morte2_s27: # - # IF WEIGHT #3 /* Triggers after states #: 31 even though they appear after this state */ ~  !InParty("Morte")
+    $ morte2Logic.talk()
     'morte2_s27{#morte2_s27}'
     # morte '«Я знал, что ты вернешься, шеф! Все-таки понял, что я нужен тебе, а?»{#morte2_s27_1}'
 
@@ -593,6 +596,7 @@ label morte2_s30: # from 29.1
 
 # s31 # say41262
 label morte2_s31: # - # IF WEIGHT #2 ~  Global("Mortuary_Walkthrough","GLOBAL",3) InParty("Morte")
+    $ morte2Logic.talk()
     'morte2_s31{#morte2_s31}'
     # morte '«Силы небесные. Это одна из этих ЧЕРТОВЫХ книг».{#morte2_s31_1}'
 

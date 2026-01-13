@@ -5,12 +5,6 @@ from game.engine.tests import (LogicTest)
 from game.dlgs.inventory.n1201_logic import (N1201LogicGenerated, N1201Logic)
 
 
-class N1201LogicTest(LogicTest):
-    def setUp(self):
-        super(N1201LogicTest, self).setUp()
-        self.logic = N1201Logic(self.state_manager)
-
-
 class N1201LogicGeneratedTest(LogicTest):
     def setUp(self):
         super(N1201LogicGeneratedTest, self).setUp()
@@ -405,6 +399,20 @@ class N1201LogicGeneratedTest(LogicTest):
         self.state_manager.world_manager.set_1201_note_quest(2)
 
         self.assertTrue(self.logic.r45005_condition())
+
+
+class N1201LogicTest(LogicTest):
+    def setUp(self):
+        super(N1201LogicTest, self).setUp()
+        self.logic = N1201Logic(self.state_manager)
+
+
+    def test_talk(self):
+        self._integer_inc_action(
+            self.state_manager.world_manager.get_talked_to_1201_note_times,
+            1,
+            self.logic.talk
+        )
 
 
 if __name__ == '__main__':

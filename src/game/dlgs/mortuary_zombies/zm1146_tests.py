@@ -5,34 +5,6 @@ from game.engine.tests import (LogicTest)
 from game.dlgs.mortuary_zombies.zm1146_logic import (Zm1146LogicGenerated, Zm1146Logic)
 
 
-class Zm1146LogicTest(LogicTest):
-    def setUp(self):
-        super(Zm1146LogicTest, self).setUp()
-        self.logic = Zm1146Logic(self.state_manager)
-
-
-    def test_talk(self):
-        self._integer_inc_action(
-            self.state_manager.world_manager.get_talked_to_zm1146_times,
-            1,
-            self.logic.talk
-        )
-
-
-    def test_talk_crispy(self):
-        self._integer_inc_action(
-            self.state_manager.world_manager.get_talked_to_crispy_times,
-            1,
-            self.logic.talk_crispy
-        )
-
-
-    def test_get_crispy_value(self):
-        self.assertNotEqual(self.logic.get_crispy_value(), 3)
-        self.state_manager.world_manager.set_crispy_value(3)
-        self.assertEqual(self.logic.get_crispy_value(), 3)
-
-
 class Zm1146LogicGeneratedTest(LogicTest):
     def setUp(self):
         super(Zm1146LogicGeneratedTest, self).setUp()
@@ -142,6 +114,34 @@ class Zm1146LogicGeneratedTest(LogicTest):
             0,
             self.logic.r9434_condition
         )
+
+
+class Zm1146LogicTest(LogicTest):
+    def setUp(self):
+        super(Zm1146LogicTest, self).setUp()
+        self.logic = Zm1146Logic(self.state_manager)
+
+
+    def test_talk(self):
+        self._integer_inc_action(
+            self.state_manager.world_manager.get_talked_to_zm1146_times,
+            1,
+            self.logic.talk
+        )
+
+
+    def test_talk_crispy(self):
+        self._integer_inc_action(
+            self.state_manager.world_manager.get_talked_to_crispy_times,
+            1,
+            self.logic.talk_crispy
+        )
+
+
+    def test_get_crispy_value(self):
+        self.assertNotEqual(self.logic.get_crispy_value(), 3)
+        self.state_manager.world_manager.set_crispy_value(3)
+        self.assertEqual(self.logic.get_crispy_value(), 3)
 
 
 if __name__ == '__main__':

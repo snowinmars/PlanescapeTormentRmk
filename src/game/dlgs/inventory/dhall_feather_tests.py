@@ -4,6 +4,12 @@ from game.engine.tests import (LogicTest)
 from game.dlgs.inventory.dhall_feather_logic import (DhallFeatherLogicGenerated, DhallFeatherLogic)
 
 
+class DhallFeatherLogicGeneratedTest(LogicTest):
+    def setUp(self):
+        super(DhallFeatherLogicGeneratedTest, self).setUp()
+        self.logic = DhallFeatherLogicGenerated(self.state_manager)
+
+
 class DhallFeatherLogicTest(LogicTest):
     def setUp(self):
         super(DhallFeatherLogicTest, self).setUp()
@@ -23,10 +29,12 @@ class DhallFeatherLogicTest(LogicTest):
         )
 
 
-class DhallFeatherLogicGeneratedTest(LogicTest):
-    def setUp(self):
-        super(DhallFeatherLogicGeneratedTest, self).setUp()
-        self.logic = DhallFeatherLogicGenerated(self.state_manager)
+    def test_talk(self):
+        self._integer_inc_action(
+            self.state_manager.world_manager.get_talked_to_dhall_feather_times,
+            1,
+            self.logic.talk
+        )
 
 
 if __name__ == '__main__':

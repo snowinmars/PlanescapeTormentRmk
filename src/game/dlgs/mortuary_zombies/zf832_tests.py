@@ -5,20 +5,6 @@ from game.engine.tests import (LogicTest)
 from game.dlgs.mortuary_zombies.zf832_logic import (Zf832LogicGenerated, Zf832Logic)
 
 
-class Zf832LogicTest(LogicTest):
-    def setUp(self):
-        super(Zf832LogicTest, self).setUp()
-        self.logic = Zf832Logic(self.state_manager)
-
-
-    def test_talk(self):
-        self._integer_inc_action(
-            self.state_manager.world_manager.get_talked_to_zf832_times,
-            1,
-            self.logic.talk
-        )
-
-
 class Zf832LogicGeneratedTest(LogicTest):
     def setUp(self):
         super(Zf832LogicGeneratedTest, self).setUp()
@@ -197,6 +183,20 @@ class Zf832LogicGeneratedTest(LogicTest):
         self.state_manager.world_manager.set_morte_quip(False)
 
         self.assertTrue(self.logic.r35170_condition())
+
+
+class Zf832LogicTest(LogicTest):
+    def setUp(self):
+        super(Zf832LogicTest, self).setUp()
+        self.logic = Zf832Logic(self.state_manager)
+
+
+    def test_talk(self):
+        self._integer_inc_action(
+            self.state_manager.world_manager.get_talked_to_zf832_times,
+            1,
+            self.logic.talk
+        )
 
 
 if __name__ == '__main__':

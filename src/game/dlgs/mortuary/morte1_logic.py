@@ -47,3 +47,7 @@ class Morte1Logic(Morte1LogicGenerated):
 
     def s24_action(self):
         self.state_manager.world_manager.set_has_intro_key(True)
+
+
+    def talk(self):
+        self.state_manager.world_manager.inc_talked_to_morte_times()

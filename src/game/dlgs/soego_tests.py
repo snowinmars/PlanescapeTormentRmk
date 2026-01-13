@@ -5,34 +5,6 @@ from game.engine.tests import (LogicTest)
 from game.dlgs.soego_logic import (SoegoLogicGenerated, SoegoLogic)
 
 
-class SoegoLogicTest(LogicTest):
-    def setUp(self):
-        super(SoegoLogicTest, self).setUp()
-        self.logic = SoegoLogic(self.state_manager)
-
-
-    def test_set_know_soego_name(self):
-        self._false_then_true_action(
-            self.state_manager.world_manager.get_know_soego_name,
-            self.logic.set_know_soego_name
-        )
-
-
-    def test_get_know_soego_name(self):
-        self._boolean_straight_condition(
-            lambda x: self.state_manager.world_manager.set_know_soego_name(x),
-            self.logic.get_know_soego_name
-        )
-
-
-    def test_talk(self):
-        self._integer_inc_action(
-            self.state_manager.world_manager.get_talked_to_soego_times,
-            1,
-            self.logic.talk
-        )
-
-
 class SoegoLogicGeneratedTest(LogicTest):
     def setUp(self):
         super(SoegoLogicGeneratedTest, self).setUp()
@@ -2706,6 +2678,34 @@ class SoegoLogicGeneratedTest(LogicTest):
             prop,
             value,
             self.logic.r66722_condition
+        )
+
+
+class SoegoLogicTest(LogicTest):
+    def setUp(self):
+        super(SoegoLogicTest, self).setUp()
+        self.logic = SoegoLogic(self.state_manager)
+
+
+    def test_set_know_soego_name(self):
+        self._false_then_true_action(
+            self.state_manager.world_manager.get_know_soego_name,
+            self.logic.set_know_soego_name
+        )
+
+
+    def test_get_know_soego_name(self):
+        self._boolean_straight_condition(
+            lambda x: self.state_manager.world_manager.set_know_soego_name(x),
+            self.logic.get_know_soego_name
+        )
+
+
+    def test_talk(self):
+        self._integer_inc_action(
+            self.state_manager.world_manager.get_talked_to_soego_times,
+            1,
+            self.logic.talk
         )
 
 

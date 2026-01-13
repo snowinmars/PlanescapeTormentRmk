@@ -89,6 +89,7 @@ label eivene_s4: # from 2.0
 
 # s5 # say3423
 label eivene_s5: # from 4.0
+    $ eiveneLogic.talk()
     'eivene_s5{#eivene_s5_1}'
     # nr 'Кажется, она тебя даже не слышала. Щурясь, она наклоняется вперед, как будто не может разглядеть тебя… что бы ни случилось с ее глазами, но ее вид с близкого расстояния вселяет страх.{#eivene_s5_1}'
     # eivene '«Ты».{#eivene_s5_2}'
@@ -320,6 +321,7 @@ label eivene_s16: # from 15.0
 
 # s17 # say3468
 label eivene_s17: # from 6.0 15.1 25.0 27.0
+    $ eiveneLogic.talk()
     'eivene_s17{#eivene_s17}'
     # nr 'Заметив тебя, она поворачивается, а затем хмурится.{#eivene_s17_1}'
     # eivene '«Тупые зомфи».{#eivene_s17_2}'
@@ -398,6 +400,7 @@ label eivene_s21: # from 18.1
 
 # s22 # say3493
 label eivene_s22: # from 15.2 25.1 27.1
+    $ eiveneLogic.talk()
     'eivene_s22{#eivene_s22}'
     # nr 'Заметив тебя, она поворачивается, а затем хмурится.{#eivene_s22_1}'
     # eivene '«Тупые зомфи».{#eivene_s22_2}'

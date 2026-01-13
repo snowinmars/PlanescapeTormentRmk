@@ -5,42 +5,6 @@ from game.engine.tests import (LogicTest)
 from game.dlgs.mortuary_zombies.zm1094_logic import (Zm1094LogicGenerated, Zm1094Logic)
 
 
-class Zm1094LogicTest(LogicTest):
-    def setUp(self):
-        super(Zm1094LogicTest, self).setUp()
-        self.logic = Zm1094Logic(self.state_manager)
-
-
-    def test_set_know_asonje_name(self):
-        self._false_then_true_action(
-            self.state_manager.world_manager.get_know_asonje_name,
-            self.logic.set_know_asonje_name
-        )
-
-
-    def test_get_know_asonje_name(self):
-        self._boolean_straight_condition(
-            lambda x: self.state_manager.world_manager.set_know_asonje_name(x),
-            self.logic.get_know_asonje_name
-        )
-
-
-    def test_talk(self):
-        self._integer_inc_action(
-            self.state_manager.world_manager.get_talked_to_zm1094_times,
-            1,
-            self.logic.talk
-        )
-
-
-    def test_talk_asonje(self):
-        self._integer_inc_action(
-            self.state_manager.world_manager.get_talked_to_asonje_times,
-            1,
-            self.logic.talk_asonje
-        )
-
-
 class Zm1094LogicGeneratedTest(LogicTest):
     def setUp(self):
         super(Zm1094LogicGeneratedTest, self).setUp()
@@ -227,6 +191,42 @@ class Zm1094LogicGeneratedTest(LogicTest):
             lambda x: self.state_manager.world_manager.set_pharod_value(x),
             0,
             self.logic.r9312_condition
+        )
+
+
+class Zm1094LogicTest(LogicTest):
+    def setUp(self):
+        super(Zm1094LogicTest, self).setUp()
+        self.logic = Zm1094Logic(self.state_manager)
+
+
+    def test_set_know_asonje_name(self):
+        self._false_then_true_action(
+            self.state_manager.world_manager.get_know_asonje_name,
+            self.logic.set_know_asonje_name
+        )
+
+
+    def test_get_know_asonje_name(self):
+        self._boolean_straight_condition(
+            lambda x: self.state_manager.world_manager.set_know_asonje_name(x),
+            self.logic.get_know_asonje_name
+        )
+
+
+    def test_talk(self):
+        self._integer_inc_action(
+            self.state_manager.world_manager.get_talked_to_zm1094_times,
+            1,
+            self.logic.talk
+        )
+
+
+    def test_talk_asonje(self):
+        self._integer_inc_action(
+            self.state_manager.world_manager.get_talked_to_asonje_times,
+            1,
+            self.logic.talk_asonje
         )
 
 

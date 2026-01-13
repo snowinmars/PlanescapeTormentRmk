@@ -96,6 +96,7 @@ label dust_s3: # externs morte_s64
 
 # s4 # say321
 label dust_s4: # from 3.0 3.1 3.2 3.3 40.2 40.3
+    $ dustLogic.talk()
     'dust_s4{#dust_s4}'
     # nr 'Тленный медленно поднимает свою голову и оборачивается к тебе.{#dust_s4_1}'
     # dust '«Ты потерялся?»{#dust_s4_2}'
@@ -460,6 +461,7 @@ label dust_s22: # - # IF ~  Global("Appearance","GLOBAL",2)
 
 # s23 # say381
 label dust_s23: # from 22.0
+    $ dustLogic.talk()
     'dust_s23{#dust_s23}'
     # nr 'Он медленно оборачивается, его взгляд мельком скользит по твоей одежде.{#dust_s23_1}'
     # dust '«Приветствую тебя, посвященный».{#dust_s23_2}'
@@ -1015,6 +1017,7 @@ label dust_s50: # from 29.0 35.0 37.0 49.0
 
 # s51 # say66674
 label dust_s51: # - # IF ~  Global("Appearance","GLOBAL",0)
+    $ dustLogic.talk()
     'dust_s51{#dust_s51}'
     # nr 'Тленный бросает на тебя каменный взгляд.{#dust_s51_1}'
     # dust '«Ты потерялся?»{#dust_s51_2}'

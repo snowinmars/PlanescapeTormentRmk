@@ -5,20 +5,6 @@ from game.engine.tests import (LogicTest)
 from game.dlgs.mortuary_zombies.s1221_logic import (S1221LogicGenerated, S1221Logic)
 
 
-class S1221LogicTest(LogicTest):
-    def setUp(self):
-        super(S1221LogicTest, self).setUp()
-        self.logic = S1221Logic(self.state_manager)
-
-
-    def test_talk(self):
-        self._integer_inc_action(
-            self.state_manager.world_manager.get_talked_to_s1221_times,
-            1,
-            self.logic.talk
-        )
-
-
 class S1221LogicGeneratedTest(LogicTest):
     def setUp(self):
         super(S1221LogicGeneratedTest, self).setUp()
@@ -669,6 +655,20 @@ class S1221LogicGeneratedTest(LogicTest):
         self._boolean_straight_condition(
             lambda x: self.state_manager.world_manager.set_morte_skel_mort_quip(x),
             self.logic.r35351_condition
+        )
+
+
+class S1221LogicTest(LogicTest):
+    def setUp(self):
+        super(S1221LogicTest, self).setUp()
+        self.logic = S1221Logic(self.state_manager)
+
+
+    def test_talk(self):
+        self._integer_inc_action(
+            self.state_manager.world_manager.get_talked_to_s1221_times,
+            1,
+            self.logic.talk
         )
 
 

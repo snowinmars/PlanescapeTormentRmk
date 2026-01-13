@@ -5,12 +5,6 @@ from game.engine.tests import (LogicTest)
 from game.dlgs.mortuary.dustfem_logic import (DustfemLogicGenerated, DustfemLogic)
 
 
-class DustfemLogicTest(LogicTest):
-    def setUp(self):
-        super(DustfemLogicTest, self).setUp()
-        self.logic = DustfemLogic(self.state_manager)
-
-
 class DustfemLogicGeneratedTest(LogicTest):
     def setUp(self):
         super(DustfemLogicGeneratedTest, self).setUp()
@@ -1004,6 +998,20 @@ class DustfemLogicGeneratedTest(LogicTest):
             lambda x: self.state_manager.world_manager.set_join_dustmen(x),
             1,
             self.logic.r66688_condition
+        )
+
+
+class DustfemLogicTest(LogicTest):
+    def setUp(self):
+        super(DustfemLogicTest, self).setUp()
+        self.logic = DustfemLogic(self.state_manager)
+
+
+    def test_talk(self):
+        self._integer_inc_action(
+            self.state_manager.world_manager.get_talked_to_dustfem_times,
+            1,
+            self.logic.talk
         )
 
 

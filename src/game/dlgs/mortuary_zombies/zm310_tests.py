@@ -5,42 +5,6 @@ from game.engine.tests import (LogicTest)
 from game.dlgs.mortuary_zombies.zm310_logic import (Zm310LogicGenerated, Zm310Logic)
 
 
-class Zm310LogicTest(LogicTest):
-    def setUp(self):
-        super(Zm310LogicTest, self).setUp()
-        self.logic = Zm310Logic(self.state_manager)
-
-
-    def test_set_know_oinosian_name(self):
-        self._false_then_true_action(
-            self.state_manager.world_manager.get_know_oinosian_name,
-            self.logic.set_know_oinosian_name
-        )
-
-
-    def test_get_know_oinosian_name(self):
-        self._boolean_straight_condition(
-            lambda x: self.state_manager.world_manager.set_know_oinosian_name(x),
-            self.logic.get_know_oinosian_name
-        )
-
-
-    def test_talk(self):
-        self._integer_inc_action(
-            self.state_manager.world_manager.get_talked_to_zm310_times,
-            1,
-            self.logic.talk
-        )
-
-
-    def test_talk_oinosian(self):
-        self._integer_inc_action(
-            self.state_manager.world_manager.get_talked_to_oinosian_times,
-            1,
-            self.logic.talk_oinosian
-        )
-
-
 class Zm310LogicGeneratedTest(LogicTest):
     def setUp(self):
         super(Zm310LogicGeneratedTest, self).setUp()
@@ -111,6 +75,42 @@ class Zm310LogicGeneratedTest(LogicTest):
             lambda x: self.state_manager.world_manager.set_pharod_value(x),
             0,
             self.logic.r9664_condition
+        )
+
+
+class Zm310LogicTest(LogicTest):
+    def setUp(self):
+        super(Zm310LogicTest, self).setUp()
+        self.logic = Zm310Logic(self.state_manager)
+
+
+    def test_set_know_oinosian_name(self):
+        self._false_then_true_action(
+            self.state_manager.world_manager.get_know_oinosian_name,
+            self.logic.set_know_oinosian_name
+        )
+
+
+    def test_get_know_oinosian_name(self):
+        self._boolean_straight_condition(
+            lambda x: self.state_manager.world_manager.set_know_oinosian_name(x),
+            self.logic.get_know_oinosian_name
+        )
+
+
+    def test_talk(self):
+        self._integer_inc_action(
+            self.state_manager.world_manager.get_talked_to_zm310_times,
+            1,
+            self.logic.talk
+        )
+
+
+    def test_talk_oinosian(self):
+        self._integer_inc_action(
+            self.state_manager.world_manager.get_talked_to_oinosian_times,
+            1,
+            self.logic.talk_oinosian
         )
 
 
