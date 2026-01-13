@@ -76,6 +76,14 @@ class GraphicsMenuItemTest(unittest.TestCase):
         self.assertIsNotNone(item.jump().execute())
 
 
+    def _test_graphics_menu_shadow(self, item):
+        self.assertTrue(item.when_unvisited() or item.when_visited())
+        self.assertTrue(len(item.texture()) > 0)
+        self.assertEqual(item.pos()['x'], self.x)
+        self.assertEqual(item.pos()['y'], self.y)
+        self.assertIsNotNone(item.location_id)
+
+
     def mock_logger(self, emscripten, logs_folder):
         return MockLogger()
 

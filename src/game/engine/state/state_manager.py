@@ -17,6 +17,7 @@ class StateManager:
 
 
     def gain_experience(self, name, amount):
+        self._log(f'Gain {amount} experience to {name}')
         if name == 'party':
             self.characters_manager.modify_property('protagonist_character_name', 'experience', amount)
 
