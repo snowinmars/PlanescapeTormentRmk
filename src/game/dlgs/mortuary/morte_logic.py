@@ -3431,10 +3431,9 @@ class MorteLogic(MorteLogicGenerated):
         super().__init__(state_manager)
 
 
-    def set_know_morte_name(self):
-        self.state_manager.world_manager.set_know_morte_name(True)
-
-
     def get_know_morte_name(self):
         return self.state_manager.world_manager.get_know_morte_name()
 
+
+    def set_know_morte_name(self):
+        self.state_manager.world_manager.set_know_morte_name(True)

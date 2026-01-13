@@ -295,6 +295,12 @@ class LogicTest(unittest.TestCase):
         return MockLogger()
 
 
+    def _coords_are_not_none(self, coords):
+        self.assertIsNotNone(coords)
+        self.assertIsNotNone(coords['x'])
+        self.assertIsNotNone(coords['y'])
+
+
 class MockLogger():
     def debug(self, msg):
         return # pragma: no cover

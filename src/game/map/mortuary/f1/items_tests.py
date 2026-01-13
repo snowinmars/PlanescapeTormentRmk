@@ -3,36 +3,41 @@ import unittest
 
 from game.map.graphics_menu_item_tests import (GraphicsMenuItemTest)
 from game.map.mortuary.f1.items import (
-        FromMortuaryF1R1ToMortuaryF2R1,
-        FromMortuaryF1R1ToMortuaryF1R2,
-        FromMortuaryF1R1ToMortuaryF1R4,
-        FromMortuaryF1R1ToMortuaryF1Rc,
-        FromMortuaryF1R1ToGameEnd,
-        InMortuaryF1R1Soego,
+    FromMortuaryF1R1ToMortuaryF2R1,
+    FromMortuaryF1R1ToMortuaryF1R2,
+    FromMortuaryF1R1ToMortuaryF1R4,
+    FromMortuaryF1R1ToMortuaryF1Rc,
+    FromMortuaryF1R1ToGameEnd,
+    MortuaryF1R1Shadow,
+    InMortuaryF1R1Soego,
 
-        FromMortuaryF1R2ToMortuaryF1Rc,
-        FromMortuaryF1R2ToMortuaryF1R3,
-        FromMortuaryF1R2ToMortuaryF1R1,
-        InMortuaryF1R2Deionarra,
+    FromMortuaryF1R2ToMortuaryF1Rc,
+    FromMortuaryF1R2ToMortuaryF1R3,
+    FromMortuaryF1R2ToMortuaryF1R1,
+    MortuaryF1R2Shadow,
+    InMortuaryF1R2Deionarra,
 
-        FromMortuaryF1R3ToMortuaryF1R2,
-        FromMortuaryF1R3ToMortuaryF1R4,
-        FromMortuaryF1R3ToMortuaryF1Rc,
-        InMortuaryF1R3Zf114,
-        InMortuaryF1R3Zm1041,
-        InMortuaryF1R3Xach,
+    FromMortuaryF1R3ToMortuaryF1R2,
+    FromMortuaryF1R3ToMortuaryF1R4,
+    FromMortuaryF1R3ToMortuaryF1Rc,
+    MortuaryF1R3Shadow,
+    InMortuaryF1R3Zf114,
+    InMortuaryF1R3Zm1041,
+    InMortuaryF1R3Xach,
 
-        FromMortuaryF1R4ToMortuaryF1R3,
-        FromMortuaryF1R4ToMortuaryF1R1,
-        FromMortuaryF1R4ToMortuaryF1Rc,
-        FromMortuaryF1R4ToMortuaryF2R7,
-        InMortuaryF1R4Zm732,
+    FromMortuaryF1R4ToMortuaryF1R3,
+    FromMortuaryF1R4ToMortuaryF1R1,
+    FromMortuaryF1R4ToMortuaryF1Rc,
+    FromMortuaryF1R4ToMortuaryF2R7,
+    MortuaryF1R4Shadow,
+    InMortuaryF1R4Zm732,
 
-        FromMortuaryF1RcToMortuaryF1R1,
-        FromMortuaryF1RcToMortuaryF1R2,
-        FromMortuaryF1RcToMortuaryF1R3,
-        FromMortuaryF1RcToMortuaryF1R4,
-        InMortuaryF1RcGiantsk
+    FromMortuaryF1RcToMortuaryF1R1,
+    FromMortuaryF1RcToMortuaryF1R2,
+    FromMortuaryF1RcToMortuaryF1R3,
+    FromMortuaryF1RcToMortuaryF1R4,
+    MortuaryF1RcShadow,
+    InMortuaryF1RcGiantsk
 )
 
 
@@ -60,6 +65,12 @@ class F1ItemsTest(GraphicsMenuItemTest):
         self._test_graphics_menu_item(InMortuaryF1R1Soego(self.state_manager, self.x, self.y))
         self.state_manager.world_manager.set_talked_to_soego_times(1)
         self._test_graphics_menu_item(InMortuaryF1R1Soego(self.state_manager, self.x, self.y))
+    def test_MortuaryF1R1Shadow(self):
+        self.state_manager.locations_manager.set_location('mortuary_f1r2')
+        self._test_graphics_menu_shadow(MortuaryF1R1Shadow(self.state_manager, self.x, self.y))
+        self.state_manager.locations_manager.set_location('mortuary_f1r1')
+        self.state_manager.locations_manager.set_location('mortuary_f1r2')
+        self._test_graphics_menu_shadow(MortuaryF1R1Shadow(self.state_manager, self.x, self.y))
 
 
     ###
@@ -81,6 +92,12 @@ class F1ItemsTest(GraphicsMenuItemTest):
         self._test_graphics_menu_item(InMortuaryF1R2Deionarra(self.state_manager, self.x, self.y))
         self.state_manager.world_manager.set_talked_to_deionarra_times(1)
         self._test_graphics_menu_item(InMortuaryF1R2Deionarra(self.state_manager, self.x, self.y))
+    def test_MortuaryF1R2Shadow(self):
+        self.state_manager.locations_manager.set_location('mortuary_f1r3')
+        self._test_graphics_menu_shadow(MortuaryF1R2Shadow(self.state_manager, self.x, self.y))
+        self.state_manager.locations_manager.set_location('mortuary_f1r2')
+        self.state_manager.locations_manager.set_location('mortuary_f1r3')
+        self._test_graphics_menu_shadow(MortuaryF1R2Shadow(self.state_manager, self.x, self.y))
 
 
     ###
@@ -113,6 +130,12 @@ class F1ItemsTest(GraphicsMenuItemTest):
         self.state_manager.world_manager.set_know_xachariah_name(False)
         self.state_manager.world_manager.set_talked_to_xach_times(1)
         self._test_graphics_menu_item(InMortuaryF1R3Xach(self.state_manager, self.x, self.y))
+    def test_MortuaryF1R3Shadow(self):
+        self.state_manager.locations_manager.set_location('mortuary_f1r4')
+        self._test_graphics_menu_shadow(MortuaryF1R3Shadow(self.state_manager, self.x, self.y))
+        self.state_manager.locations_manager.set_location('mortuary_f1r3')
+        self.state_manager.locations_manager.set_location('mortuary_f1r4')
+        self._test_graphics_menu_shadow(MortuaryF1R3Shadow(self.state_manager, self.x, self.y))
 
 
     ###
@@ -138,6 +161,12 @@ class F1ItemsTest(GraphicsMenuItemTest):
         self._test_graphics_menu_item(InMortuaryF1R4Zm732(self.state_manager, self.x, self.y))
         self.state_manager.world_manager.set_talked_to_zm732_times(1)
         self._test_graphics_menu_item(InMortuaryF1R4Zm732(self.state_manager, self.x, self.y))
+    def test_MortuaryF1R4Shadow(self):
+        self.state_manager.locations_manager.set_location('mortuary_f1rc')
+        self._test_graphics_menu_shadow(MortuaryF1R4Shadow(self.state_manager, self.x, self.y))
+        self.state_manager.locations_manager.set_location('mortuary_f1r4')
+        self.state_manager.locations_manager.set_location('mortuary_f1rc')
+        self._test_graphics_menu_shadow(MortuaryF1R4Shadow(self.state_manager, self.x, self.y))
 
 
     ###
@@ -161,6 +190,13 @@ class F1ItemsTest(GraphicsMenuItemTest):
         self._test_graphics_menu_item(FromMortuaryF1RcToMortuaryF1R4(self.state_manager, self.x, self.y))
     def test_InMortuaryF1RcGiantsk(self):
         self._test_graphics_menu_item(InMortuaryF1RcGiantsk(self.state_manager, self.x, self.y))
+    def test_MortuaryF1RcShadow(self):
+        self.state_manager.locations_manager.set_location('mortuary_f1r1')
+        self._test_graphics_menu_shadow(MortuaryF1RcShadow(self.state_manager, self.x, self.y))
+        self.state_manager.locations_manager.set_location('mortuary_f1rc')
+        self.state_manager.locations_manager.set_location('mortuary_f1r1')
+        self._test_graphics_menu_shadow(MortuaryF1RcShadow(self.state_manager, self.x, self.y))
+
 
 if __name__ == '__main__':
     unittest.main() # pragma: no cover

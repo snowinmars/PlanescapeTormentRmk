@@ -15,8 +15,8 @@ class MortuaryF2LootLogic:
         self.state_manager.world_manager.set_has_copper_earring_closed(True)
 
 
-    def get_where_party_stands(self, state_manager):
-        current_location = state_manager.locations_manager.get_location()
+    def get_where_party_stands(self):
+        current_location = self.state_manager.locations_manager.get_location()
 
         if current_location == 'mortuary_f2r1':
             return { 'x': 1650, 'y': 2222 }
@@ -34,4 +34,4 @@ class MortuaryF2LootLogic:
             return { 'x': 3650, 'y': 2300 }
         if current_location == 'mortuary_f2r8':
             return { 'x': 2630, 'y': 2800 }
-        raise Exception(f'current_location {current_location} is out of range')
+        raise KeyError(f'current_location {current_location} is out of range')

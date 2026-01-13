@@ -13,7 +13,7 @@ class JournalStoreTest(unittest.TestCase):
 
     def test_reserialize_empty_pickle(self):
         dump = pickle.dumps(self.store)
-        expected = b'\x80\x04\x95S\x00\x00\x00\x00\x00\x00\x00\x8c\x1dgame.engine.world.world_store\x94\x8c\nWorldStore\x94\x93\x94)\x81\x94}\x94(\x8c\tonce_keys\x94]\x94\x8c\x08registry\x94}\x94ub.'
+        expected = b'\x80\x05\x95S\x00\x00\x00\x00\x00\x00\x00\x8c\x1dgame.engine.world.world_store\x94\x8c\nWorldStore\x94\x93\x94)\x81\x94}\x94(\x8c\tonce_keys\x94]\x94\x8c\x08registry\x94}\x94ub.'
         self.assertEqual(dump, expected)
 
         store = pickle.loads(dump)
@@ -33,7 +33,7 @@ class JournalStoreTest(unittest.TestCase):
         self._fill_store(self.store)
 
         dump = pickle.dumps(self.store)
-        expected = b'\x80\x04\x95\xb5\x00\x00\x00\x00\x00\x00\x00\x8c\x1dgame.engine.world.world_store\x94\x8c\nWorldStore\x94\x93\x94)\x81\x94}\x94(\x8c\tonce_keys\x94]\x94(\x8c\x0bonce_keys_1\x94\x8c\x0bonce_keys_2\x94e\x8c\x08registry\x94}\x94(\x8c\x0csetting_id_1\x94\x8c\x0fdefault_value_1\x94\x8c\x0csetting_id_2\x94\x8c\x0fdefault_value_2\x94uub.'
+        expected = b'\x80\x05\x95\xb5\x00\x00\x00\x00\x00\x00\x00\x8c\x1dgame.engine.world.world_store\x94\x8c\nWorldStore\x94\x93\x94)\x81\x94}\x94(\x8c\tonce_keys\x94]\x94(\x8c\x0bonce_keys_1\x94\x8c\x0bonce_keys_2\x94e\x8c\x08registry\x94}\x94(\x8c\x0csetting_id_1\x94\x8c\x0fdefault_value_1\x94\x8c\x0csetting_id_2\x94\x8c\x0fdefault_value_2\x94uub.'
         self.assertEqual(dump, expected)
 
         store = pickle.loads(dump)

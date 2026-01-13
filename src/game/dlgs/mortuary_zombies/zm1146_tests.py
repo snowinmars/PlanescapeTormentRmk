@@ -27,6 +27,12 @@ class Zm1146LogicTest(LogicTest):
         )
 
 
+    def test_get_crispy_value(self):
+        self.assertNotEqual(self.logic.get_crispy_value(), 3)
+        self.state_manager.world_manager.set_crispy_value(3)
+        self.assertEqual(self.logic.get_crispy_value(), 3)
+
+
 class Zm1146LogicGeneratedTest(LogicTest):
     def setUp(self):
         super(Zm1146LogicGeneratedTest, self).setUp()
