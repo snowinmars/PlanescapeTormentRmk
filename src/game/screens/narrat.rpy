@@ -1,3 +1,16 @@
+$never = _('strength')
+$never = _('dexterity')
+$never = _('intelligence')
+$never = _('constitution')
+$never = _('wisdom')
+$never = _('charisma')
+$never = _('good')
+$never = _('law')
+$never = _('lore')
+$never = _('experience')
+$never = _('ac')
+
+
 screen narrat():
     zorder 100
     modal False
@@ -110,6 +123,83 @@ screen narrat_history(
 
                                 $ is_change = entry['is_change']
                                 if is_change:
+                                    $ change_id = entry['who']
+                                    $ change_kwargs = entry['what']
+                                    $ change_text = change_id
+                                    if change_id == 'character_manager_modify_property':
+                                        $ change_text =  __('character_manager_modify_property').format(
+                                            name=__(change_kwargs['name']),
+                                            prop=__(change_kwargs['prop']),
+                                            amount=change_kwargs['amount'],
+                                            actual_value=change_kwargs['actual_value']
+                                        )
+                                    if change_id == 'character_manager_modify_property_once':
+                                        $ change_text = __('character_manager_modify_property_once').format(
+                                            name=__(change_kwargs['name']),
+                                            prop=__(change_kwargs['prop']),
+                                            amount=change_kwargs['amount'],
+                                            actual_value=change_kwargs['actual_value']
+                                        )
+                                    if change_id == 'character_manager_set_property':
+                                        $ change_text = __('character_manager_set_property').format(
+                                            name=__(change_kwargs['name']),
+                                            prop=__(change_kwargs['prop']),
+                                            actual_value=change_kwargs['actual_value']
+                                        )
+                                    if change_id == 'journal_manager_update_journal':
+                                        $ change_text = __('journal_manager_update_journal').format(
+                                            note_id=__(change_kwargs['note_id'])
+                                        )
+                                    if change_id == 'new_internal_location_discovered':
+                                        $ change_text = __('new_internal_location_discovered').format(
+                                            internal_location_id=__(change_kwargs['internal_location_id']),
+                                            external_location_id=__(change_kwargs['external_location_id'])
+                                        )
+                                    if change_id == 'locations_manager_set_location_external_unvisited':
+                                        $ change_text = __('locations_manager_set_location_external_unvisited').format(
+                                            external_location_id=__(change_kwargs['external_location_id'])
+                                        )
+                                    if change_id == 'locations_manager_set_location_internal_unvisited':
+                                        $ change_text = __('locations_manager_set_location_internal_unvisited').format(
+                                            internal_location_id=__(change_kwargs['internal_location_id'])
+                                        )
+                                    if change_id == 'world_manager_setter':
+                                        $ change_text = __('world_manager_setter').format(
+                                            setting_id=__(change_kwargs['setting_id']),
+                                            value=str(change_kwargs['value'])
+                                        )
+                                    if change_id == 'world_manager_inc':
+                                        $ change_text = __('world_manager_inc').format(
+                                            setting_id=__(change_kwargs['setting_id']),
+                                            before=change_kwargs['before'],
+                                            delta=change_kwargs['delta'],
+                                            after=change_kwargs['after']
+                                        )
+                                    if change_id == 'world_manager_dec':
+                                        $ change_text = __('world_manager_dec').format(
+                                            setting_id=__(change_kwargs['setting_id']),
+                                            before=change_kwargs['before'],
+                                            delta=change_kwargs['delta'],
+                                            after=change_kwargs['after']
+                                        )
+                                    if change_id == 'world_manager_inc_once':
+                                        $ change_text = __('world_manager_inc_once').format(
+                                            setting_id=__(change_kwargs['setting_id']),
+                                            before=change_kwargs['before'],
+                                            delta=change_kwargs['delta'],
+                                            after=change_kwargs['after']
+                                        )
+                                    if change_id == 'world_manager_dec_once':
+                                        $ change_text = __('world_manager_dec_once').format(
+                                            setting_id=__(change_kwargs['setting_id']),
+                                            before=change_kwargs['before'],
+                                            delta=change_kwargs['delta'],
+                                            after=change_kwargs['after']
+                                        )
+                                    text change_text:
+                                        size 18
+                                        color '#eeeeee'
+                                        xfill True
                                     pass
 
                                 $ is_special = is_br or is_change

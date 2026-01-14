@@ -23,7 +23,6 @@ class StateManager:
         self.characters_manager.register_report_change_callback(self.report_change)
         self.locations_manager.register_report_change_callback(self.report_change)
         self.journal_manager.register_report_change_callback(self.report_change)
-        self.inventory_manager.register_report_change_callback(self.report_change)
 
 
     def report_change(self, change_id, change_kwargs):

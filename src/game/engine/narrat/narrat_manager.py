@@ -29,11 +29,8 @@ class NarratManager:
 
     def report_change(self, change_id, change_kwargs):
         self.add_history_entry(
-            '_report_change',
-            {
-                *change_kwargs,
-                change_id
-            },
+            change_id,
+            change_kwargs,
             is_change = True
         )
 

@@ -1,6 +1,6 @@
-default _location_map_xadj = MyAdjustment(value=0)
-default _location_map_yadj = MyAdjustment(value=0)
-default _location_map_zadj = MyAdjustment(value=1)
+default _location_map_xadj = MyAdjustment(value=700)
+default _location_map_yadj = MyAdjustment(value=2000)
+default _location_map_zadj = MyAdjustment(value=0)
 
 
 screen location_map(background, static_actions, dynamic_actions, shadows, bg_music):

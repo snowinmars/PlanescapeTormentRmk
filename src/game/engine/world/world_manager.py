@@ -66,7 +66,7 @@ class WorldManager:
             self._world_store.registry[setting_id] = after
             self._world_store.once_keys.append(key)
             self._report_change_callback(
-                'world_manager_inc',
+                'world_manager_inc_once',
                 {
                     'setting_id': setting_id,
                     'before': before,
@@ -84,7 +84,7 @@ class WorldManager:
             self._world_store.registry[setting_id] = after
             self._world_store.once_keys.append(key)
             self._report_change_callback(
-                'world_manager_dec',
+                'world_manager_dec_once',
                 {
                     'setting_id': setting_id,
                     'before': before,

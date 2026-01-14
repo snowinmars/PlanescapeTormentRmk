@@ -93,7 +93,7 @@ screen preferences():
             ysize 143 # 143
             background Transform('gui/settings_button_idle.png', fit='cover')
             hover_background Transform('gui/settings_button_hover.png', fit='cover')
-            action NullAction()
+            action ShowMenu("preferences_videos")
             text _("preferences_screen_videos"):
                 size 20
                 color "#eeeeee"
