@@ -68,7 +68,7 @@ label mortuary_f2_map:
 screen mortuary_f2_map():
     $ state_manager = runtime.global_state_manager
     use location_map(
-        mortuary_f2_root,
+        'bg/mortuary/f2/root.png',
         [
             InMortuaryF2R1PickScalpel(state_manager, 900, 2280),
             FromMortuaryF2R1ToMortuaryF2R2(state_manager, 633, 2299),
@@ -102,7 +102,7 @@ screen mortuary_f2_map():
             FromMortuaryF2R8ToMortuaryF2R1(state_manager, 1658, 2842)
         ],
         [
-            *get_party(state_manager, mortuaryF2LootLogic.get_where_party_stands(state_manager)),
+            *get_party(state_manager, mortuaryF2LootLogic.get_where_party_stands()),
 
             InMortuaryF2R1Zm569(state_manager, 950, 2450),
             InMortuaryF2R1Zm782(state_manager, 1275, 2750),

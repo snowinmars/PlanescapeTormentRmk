@@ -175,7 +175,7 @@ init 4 python: # inject narrat
 
 
 init 5 python:
-    renpy.add_layer('dialogue', above='master')
+    renpy.add_layer('dialogue', above='screens')
 
 
 label start:

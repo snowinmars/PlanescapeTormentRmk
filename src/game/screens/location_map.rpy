@@ -24,10 +24,10 @@ screen location_map(background, static_actions, dynamic_actions, shadows, bg_mus
             draggable True
             id "zoom_vp"
             mousewheel "zoom"
-            start_zoom 1
+            start_zoom 1 + _location_map_zadj.value
             zoom_min 1
-            zoom_max 10
-            zoom_amount 2
+            zoom_max 3
+            zoom_amount 0.1
             zoom_speed 0.05
             xadjustment _location_map_xadj
             yadjustment _location_map_yadj
@@ -124,7 +124,7 @@ screen location_map(background, static_actions, dynamic_actions, shadows, bg_mus
             label '[round(img_x)] , [round(img_y)] x[round(zoom, 2)]':
                 text_color '#dbc401'
                 text_size 16
-                font 'NotoSans-Regular.ttf'
+                text_font 'NotoSans-Regular.ttf'
                 # action CopyToClipboard('[offset_x], [offset_y]')
 
 

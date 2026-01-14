@@ -26,6 +26,7 @@ class NarratStore():
 
     def __getstate__(self):
         return {
+            'last_history_id': self.last_history_id,
             'history': self.history,
             'current_speaker': self.current_speaker,
             'current_text': self.current_text,
@@ -35,6 +36,7 @@ class NarratStore():
 
 
     def __setstate__(self, state):
+        self.last_history_id = state['last_history_id']
         self.history = state['history']
         self.current_speaker = state['current_speaker']
         self.current_text = state['current_text']

@@ -30,22 +30,23 @@ label morte1_speak:
 label morte1_s0_ctor:
     $ gsm.locations_manager.set_location('mortuary_f2r1')
     $ gsm.world_manager.set_in_party_morte(True)
-    show morte_img default at center_left_down
+    show bg mortuary_f2_morte1_s0
+    show dialogue_sprite_morte_default at dialogue
     jump morte1_s0
 
 
 label morte1_s24_ctor:
-    show morte_img default at center_left_down
+    show dialogue_sprite_morte default at dialogue
     jump morte1_s24
 
 
 label morte1_s26_ctor:
-    show morte_img default at center_left_down
+    show dialogue_sprite_morte default at dialogue
     jump morte1_s26
 
 
 label morte1_s30_ctor:
-    show morte_img default at center_left_down
+    show dialogue_sprite_morte default at dialogue
     jump morte1_s30
 
 

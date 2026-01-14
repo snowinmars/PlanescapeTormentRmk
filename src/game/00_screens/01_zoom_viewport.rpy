@@ -211,7 +211,7 @@ python early:
             except:
                 pass
             kwargs["zadjustment"] = kwargs.pop("zadjustment", MyAdjustment(1, 0))
-            self.zadjustment = self.kwargs["zadjustment"]
+            self.zadjustment = kwargs["zadjustment"]
             try:
                 if kwargs["zadjustment"].restart_interaction_at_range is None:
                     kwargs["zadjustment"].restart_interaction_at_range = True

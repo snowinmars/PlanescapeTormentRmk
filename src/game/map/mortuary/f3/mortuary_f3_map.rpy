@@ -60,7 +60,7 @@ label mortuary_f3_map:
 screen mortuary_f3_map():
     $ state_manager = runtime.global_state_manager
     use location_map(
-        mortuary_f3_root,
+        'bg/mortuary/f3/root.png',
         [
             FromMortuaryF3R1ToMortuaryF2R1(state_manager, 751, 1552),
             FromMortuaryF3R1uToMortuaryF3Rc(state_manager, 441, 1193),
@@ -92,7 +92,7 @@ screen mortuary_f3_map():
             InMortuaryF3RcPickMortuaryKey(state_manager, 847, 1756),
         ],
         [
-            *get_party(state_manager, mortuaryF3LootLogic.get_where_party_stands(state_manager)),
+            *get_party(state_manager, mortuaryF3LootLogic.get_where_party_stands()),
 
             InMortuaryF3R4Zm79(state_manager, 1660, 2260),
             InMortuaryF3R4Zf679(state_manager, 1620, 2300),
