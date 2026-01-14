@@ -7,15 +7,10 @@ class InventoryManager:
         self._inventory_store = None
         self._player_has_item_callback = player_has_item_callback
         self._selected_item = None
-        self._report_change_callback = None
 
 
     def set_store(self, inventory_store):
         self._inventory_store = inventory_store
-
-
-    def register_report_change_callback(self, report_change_callback):
-        self._report_change_callback = report_change_callback
 
 
     def register(self, inventory_item):

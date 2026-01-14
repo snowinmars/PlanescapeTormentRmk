@@ -66,7 +66,7 @@ class LocationsManager:
             self._report_change_callback(
                 'locations_manager_set_location_external_unvisited',
                 {
-                    'external': external
+                    'external_location_id': external
                 }
             )
         if internal not in self._locations_store.visited_internals:
@@ -74,7 +74,7 @@ class LocationsManager:
             self._report_change_callback(
                 'locations_manager_set_location_internal_unvisited',
                 {
-                    'internal': internal
+                    'internal_location_id': internal
                 }
             )
 

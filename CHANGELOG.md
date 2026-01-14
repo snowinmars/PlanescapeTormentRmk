@@ -1,6 +1,13 @@
 # Change log
 
+## Version 0.08
+- Map zoom does not reset after game reload
+- Add numpad support
+- Working on characters sprites
+- Update introduction dialogue to mention all used libraries' authors
+
 ## Version 0.07
+- Update from RenPy 8.5.1 to 8.5.2
 - Add achievements
 - Fix tests
 - Minor UI changes

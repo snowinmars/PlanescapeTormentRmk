@@ -34,10 +34,12 @@ screen choice(items):
     if len(items) == 1:
         key "mouseup_1" action click_actions(items[0])
         key "K_KP_ENTER" action click_actions(items[0])
+        key "K_KP1" action click_actions(items[0])
 
     for i, item in enumerate(items, 1):
         if i <= 9:
             key str(i) action click_actions(item)
+            key "K_KP{}".format(i) action click_actions(item)
 
     modal False
     frame:
