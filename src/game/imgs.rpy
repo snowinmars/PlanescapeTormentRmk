@@ -1,3 +1,5 @@
+image dialogue_sprite_morte_default = 'dialogue_sprites/dialogue_sprite_morte_default.png'
+
 image morte_img default     = 'morte_default.png'
 image dhall_img default     = 'dhall_default.png'
 image eivene_img default    = 'eivene_default.png'
@@ -51,6 +53,7 @@ image zf1096_img default    = 'dzf1096_default.png'
 image zf1148_img default    = 'dzf1148_default.png'
 
 define config.tag_layer = {
+    'dialogue_sprite_morte_default': 'dialogue',
     'morte_img'    : 'dialogue',
     'dhall_img'    : 'dialogue',
     'eivene_img'   : 'dialogue',

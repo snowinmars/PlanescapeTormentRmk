@@ -47,7 +47,7 @@ label mortuary_f1_map:
 screen mortuary_f1_map():
     $ state_manager = runtime.global_state_manager
     use location_map(
-        mortuary_f1_root,
+        'bg/mortuary/f1/root.png',
         [
             FromMortuaryF1R1ToMortuaryF2R1(state_manager, 1185, 2015),
             FromMortuaryF1R1ToMortuaryF1R2(state_manager, 585, 1717),
@@ -74,7 +74,7 @@ screen mortuary_f1_map():
             FromMortuaryF1RcToMortuaryF1R4(state_manager, 2874, 1934)
         ],
         [
-            *get_party(state_manager, mortuaryF1LootLogic.get_where_party_stands(state_manager)),
+            *get_party(state_manager, mortuaryF1LootLogic.get_where_party_stands()),
 
             InMortuaryF1R1Soego(state_manager, 1300, 2600),
 
