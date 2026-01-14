@@ -16,6 +16,7 @@ class StateManagerTest(LogicTest):
         self.assertNotEqual(len(self.state_manager.world_manager._world_store.registry), 0)
         self.assertIsNotNone(self.state_manager.characters_manager)
         self.assertIsNotNone(self.state_manager.locations_manager)
+        self.assertIsNotNone(self.state_manager.narrat_manager)
 
 
     # def test_update_journal_when_all_ok(self):

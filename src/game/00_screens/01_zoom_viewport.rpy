@@ -132,7 +132,7 @@ python early:
         def __init__(self, child=None, start_zoom=1.0, zoom_min=None,
                 zoom_max=2.0, zoom_amount=0.25, zoom_callback=None,
                 zoom_speed=0.4, zoom_curve=None, zoom_align=None,
-                position_callback=None, zadjustment=None, **kwargs):
+                position_callback=None, **kwargs):
             """
             Initialize the ZoomViewport.
 
@@ -184,7 +184,7 @@ python early:
             self.zoom_amount = abs(zoom_amount)
             self.zoom_callback = zoom_callback
             self.old_zoom = self.zoom
-            self.zadjustment = MyAdjustment(1, 0) if zadjustment is None else zadjustment
+            # self.zadjustment = MyAdjustment(1, 0)
 
             self.zoom_speed = zoom_speed
             self.zoom_curve = zoom_curve
@@ -210,12 +210,21 @@ python early:
                     kwargs["yadjustment"].restart_interaction_at_range = True
             except:
                 pass
+            kwargs["zadjustment"] = kwargs.pop("zadjustment", MyAdjustment(1, 0))
+            self.zadjustment = self.kwargs["zadjustment"]
+            try:
+                if kwargs["zadjustment"].restart_interaction_at_range is None:
+                    kwargs["zadjustment"].restart_interaction_at_range = True
+            except:
+                pass
 
             if self.position_callback is not None:
                 self.old_xadjustment_changed = kwargs['xadjustment'].changed
                 self.old_yadjustment_changed = kwargs['yadjustment'].changed
+                self.old_zadjustment_changed = kwargs['zadjustment'].changed
                 kwargs['xadjustment'].changed = self.changed_xadjustment
                 kwargs['yadjustment'].changed = self.changed_yadjustment
+                kwargs['zadjustment'].changed = self.changed_zadjustment
 
             super(ZoomViewport, self).__init__(**kwargs)
             ## Whether to allow multi-touch gestures.
@@ -239,7 +248,7 @@ python early:
             """
             if self.old_xadjustment_changed:
                 self.old_xadjustment_changed(new_value)
-            self.position_callback(self.xadjustment.value, self.yadjustment.value, self)
+            self.position_callback(self.xadjustment.value, self.yadjustment.value, self.zadjustment.value, self)
 
         def changed_yadjustment(self, new_value):
             """
@@ -248,7 +257,16 @@ python early:
             """
             if self.old_yadjustment_changed:
                 self.old_yadjustment_changed(new_value)
-            self.position_callback(self.xadjustment.value, self.yadjustment.value, self)
+            self.position_callback(self.xadjustment.value, self.yadjustment.value, self.zadjustment.value, self)
+
+        def changed_zadjustment(self, new_value):
+            """
+            A method called when the zadjustment changes. Used to call the
+            position_callback.
+            """
+            if self.old_zadjustment_changed:
+                self.old_zadjustment_changed(new_value)
+            self.position_callback(self.xadjustment.value, self.yadjustment.value, self.zadjustment.value, self)
 
         def per_interact(self):
             """

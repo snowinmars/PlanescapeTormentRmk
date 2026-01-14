@@ -2,13 +2,32 @@ import logging
 
 
 class StateManager:
-    def __init__(self, log_events_manager, world_manager, characters_manager, locations_manager, journal_manager, inventory_manager):
+    def __init__(self,
+        log_events_manager,
+        world_manager,
+        characters_manager,
+        locations_manager,
+        journal_manager,
+        inventory_manager,
+        narrat_manager
+    ):
         self._log_events_manager = log_events_manager
         self.world_manager = world_manager
         self.characters_manager = characters_manager
         self.locations_manager = locations_manager
         self.journal_manager = journal_manager
         self.inventory_manager = inventory_manager
+        self.narrat_manager = narrat_manager
+
+        self.world_manager.register_report_change_callback(self.report_change)
+        self.characters_manager.register_report_change_callback(self.report_change)
+        self.locations_manager.register_report_change_callback(self.report_change)
+        self.journal_manager.register_report_change_callback(self.report_change)
+        self.inventory_manager.register_report_change_callback(self.report_change)
+
+
+    def report_change(self, change_id, change_kwargs):
+        self.narrat_manager.report_change(change_id, change_kwargs)
 
 
     def register(self, setting_id, default_value):

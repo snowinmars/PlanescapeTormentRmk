@@ -1,6 +1,6 @@
 ﻿init 10 python:
     from game.engine.runtime import (runtime)
-    from game.dlgs.mortuary.morte_logic import MorteLogic
+    from game.dlgs.morte_logic import MorteLogic
     morteLogic = MorteLogic(runtime.global_state_manager)
 
 

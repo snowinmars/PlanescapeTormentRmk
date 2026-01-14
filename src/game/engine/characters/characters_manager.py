@@ -7,10 +7,15 @@ class CharactersManager:
     def __init__(self, log_events_manager):
         self._log_events_manager = log_events_manager
         self._characters_store = None
+        self._report_change_callback = None
 
 
     def set_store(self, characters_store):
         self._characters_store = characters_store
+
+
+    def register_report_change_callback(self, report_change_callback):
+        self._report_change_callback = report_change_callback
 
 
     def get_character(self, name):
@@ -61,12 +66,22 @@ class CharactersManager:
         self._char_exists_or_throw(char, name)
         self._char_prop_exists_or_throw(char, prop)
 
-        new_value = getattr(char, prop) + amount
-        setattr(char, prop, new_value)
+        actual_value = getattr(char, prop) + amount
+        setattr(char, prop, actual_value)
 
-        self._log(f"modify '{name}'.'{prop}' + '{amount}' = '{getattr(char, prop)}'")
+        self._report_change_callback(
+            'character_manager_modify_property',
+            {
+                'name': name,
+                'prop': prop,
+                'amount': amount,
+                'actual_value': actual_value
+            }
+        )
 
-        return new_value
+        self._log(f"modify '{name}'.'{prop}' + '{amount}' = '{actual_value}'")
+
+        return actual_value
 
 
     def modify_property_once(self, name, prop, amount, key):
@@ -82,13 +97,23 @@ class CharactersManager:
             self._log(f"already modified '{name}'.'{prop}' with '{key}'")
             return getattr(char, prop)
 
-        new_value = getattr(char, prop) + amount
-        setattr(char, prop, new_value)
+        actual_value = getattr(char, prop) + amount
+        setattr(char, prop, actual_value)
         self._characters_store.once_keys[key].append(prop)
 
-        self._log(f"modify with '{key}' '{name}'.'{prop}' + '{amount}' = '{new_value}'")
+        self._report_change_callback(
+            'character_manager_modify_property_once',
+            {
+                'name': name,
+                'prop': prop,
+                'amount': amount,
+                'actual_value': actual_value
+            }
+        )
 
-        return new_value
+        self._log(f"modify with '{key}' '{name}'.'{prop}' + '{amount}' = '{actual_value}'")
+
+        return actual_value
 
 
     def set_property(self, name, prop, value):
@@ -98,6 +123,15 @@ class CharactersManager:
         self._char_prop_exists_or_throw(char, prop)
 
         setattr(char, prop, value)
+
+        self._report_change_callback(
+            'character_manager_set_property',
+            {
+                'name': name,
+                'prop': prop,
+                'actual_value': value
+            }
+        )
 
         self._log(f"set '{name}'.'{prop}' = '{value}'")
 

@@ -85,15 +85,16 @@ init 3 python:
     runtime.global_journal_manager = JournalManager(runtime.global_log_events_manager)
     runtime.global_world_manager = WorldManager(runtime.global_log_events_manager)
     runtime.global_inventory_manager = InventoryManager(runtime.global_log_events_manager, lambda x: runtime.global_world_manager.get_setting_value(x))
+    runtime.global_narrat_manager = NarratManager(runtime.global_log_events_manager)
     runtime.global_state_manager = StateManager(
         runtime.global_log_events_manager,
         runtime.global_world_manager,
         runtime.global_characters_manager,
         runtime.global_locations_manager,
         runtime.global_journal_manager,
-        runtime.global_inventory_manager
+        runtime.global_inventory_manager,
+        runtime.global_narrat_manager
     )
-    runtime.global_narrat_manager = NarratManager(runtime.global_log_events_manager)
 
 
     def apply_stores():

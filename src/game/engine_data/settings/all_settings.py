@@ -11,10 +11,8 @@ def build_all_settings(manager):
         .register('know_annah_name', False) \
         .register('know_dakkon_name', False) \
         .register('know_deionarra_name', False) \
-        .register('know_eivene_name', False) \
         .register('know_grace_name', False) \
         .register('know_ignus_name', False) \
-        .register('know_morte_name', False) \
         .register('know_nordom_name', False) \
         .register('know_vhail_name', False) \
         .register('gold', 0) \

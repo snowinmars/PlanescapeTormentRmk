@@ -2,10 +2,15 @@ class WorldManager:
     def __init__(self, log_events_manager):
         self._log_events_manager = log_events_manager
         self._world_store = None
+        self._report_change_callback = None
 
 
     def set_store(self, world_store):
         self._world_store = world_store
+
+
+    def register_report_change_callback(self, report_change_callback):
+        self._report_change_callback = report_change_callback
 
 
     def register(self, setting_id, default_value):
@@ -16,16 +21,41 @@ class WorldManager:
         def setter(value):
             self._log(f'set {setting_id} = {value}')
             self._world_store.registry[setting_id] = value
+            self._report_change_callback(
+                'world_manager_setter',
+                {
+                    'setting_id': setting_id,
+                    'value': value
+                }
+            )
         def inc(delta = 1):
             before = self._world_store.registry[setting_id]
             after = self._world_store.registry[setting_id] + delta
             self._log(f"increment '{setting_id}' = {before} + {delta} = {after}")
             self._world_store.registry[setting_id] = after
+            self._report_change_callback(
+                'world_manager_inc',
+                {
+                    'setting_id': setting_id,
+                    'before': before,
+                    'delta': delta,
+                    'after': after,
+                }
+            )
         def dec(delta = 1):
             before = self._world_store.registry[setting_id]
             after = self._world_store.registry[setting_id] - delta
             self._log(f"dec '{setting_id}' = {before} - {delta} = {after}")
             self._world_store.registry[setting_id] = after
+            self._report_change_callback(
+                'world_manager_dec',
+                {
+                    'setting_id': setting_id,
+                    'before': before,
+                    'delta': delta,
+                    'after': after,
+                }
+            )
         def inc_once(key, delta = 1):
             if key in self._world_store.once_keys:
                 self._log(f"already incremented '{setting_id}' with '{key}'")
@@ -35,6 +65,15 @@ class WorldManager:
             self._log(f"increment with '{key}' '{setting_id}' = '{before}' + '{delta}' = '{after}'")
             self._world_store.registry[setting_id] = after
             self._world_store.once_keys.append(key)
+            self._report_change_callback(
+                'world_manager_inc',
+                {
+                    'setting_id': setting_id,
+                    'before': before,
+                    'delta': delta,
+                    'after': after,
+                }
+            )
         def dec_once(key, delta = 1):
             if key in self._world_store.once_keys:
                 self._log(f"already decremented '{setting_id}' with '{key}'")
@@ -44,6 +83,15 @@ class WorldManager:
             self._log(f"decrement with '{key}' '{setting_id}' = '{before}' - '{delta}' = '{after}'")
             self._world_store.registry[setting_id] = after
             self._world_store.once_keys.append(key)
+            self._report_change_callback(
+                'world_manager_dec',
+                {
+                    'setting_id': setting_id,
+                    'before': before,
+                    'delta': delta,
+                    'after': after,
+                }
+            )
 
         setattr(self, f'get_{setting_id}', getter)
         setattr(self, f'set_{setting_id}', setter)

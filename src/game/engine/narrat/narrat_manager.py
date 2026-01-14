@@ -10,12 +10,14 @@ class NarratManager:
         self._narrat_store = narrat_store
 
 
-    def add_history_entry(self, who, what, is_br = False):
+    def add_history_entry(self, who, what, is_br = False, is_change = False):
+        self._narrat_store.last_history_id = self._narrat_store.last_history_id + 1
         entry = {
             'who': who,
             'what': what,
             'is_br': is_br,
-            'id': len(self._narrat_store.history),
+            'is_change': is_change,
+            'id': self._narrat_store.last_history_id,
         }
         self._narrat_store.history.append(entry)
 
@@ -23,6 +25,18 @@ class NarratManager:
             self._narrat_store.history.pop(0)
             for i, e in enumerate(self._narrat_store.history):
                 e['id'] = i
+
+
+    def report_change(self, change_id, change_kwargs):
+        self.add_history_entry(
+            '_report_change',
+            {
+                *change_kwargs,
+                change_id
+            },
+            is_change = True
+        )
+
 
     def get_history(self):
         return self._narrat_store.history

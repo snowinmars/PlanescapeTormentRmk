@@ -7,10 +7,15 @@ class LocationsManager:
     def __init__(self, log_events_manager):
         self._log_events_manager = log_events_manager
         self._locations_store = None
+        self._report_change_callback = None
 
 
     def set_store(self, locations_store):
         self._locations_store = locations_store
+
+
+    def register_report_change_callback(self, report_change_callback):
+        self._report_change_callback = report_change_callback
 
 
     def register(self, internal, externals):
@@ -42,13 +47,36 @@ class LocationsManager:
         # if internal_was_not_registrated:
         #         raise ValueError(f"Internal location id '{internal}' was not registrated to '{external}'")
 
+        if not self.is_visited_internal(internal):
+            self._report_change_callback(
+                'new_internal_location_discovered',
+                {
+                    'internal_location_id': internal,
+                    'external_location_id': external
+                }
+            )
+
+        self._locations_store.previous_external = self._locations_store.current_external
+        self._locations_store.previous_internal = self._locations_store.current_internal
         self._locations_store.current_external = external
         self._locations_store.current_internal = internal
 
         if external not in self._locations_store.visited_externals:
             self._locations_store.visited_externals.append(external)
+            self._report_change_callback(
+                'locations_manager_set_location_external_unvisited',
+                {
+                    'external': external
+                }
+            )
         if internal not in self._locations_store.visited_internals:
             self._locations_store.visited_internals.append(internal)
+            self._report_change_callback(
+                'locations_manager_set_location_internal_unvisited',
+                {
+                    'internal': internal
+                }
+            )
 
         self._log(f"Set location '{external}' as part of '{internal}'")
 

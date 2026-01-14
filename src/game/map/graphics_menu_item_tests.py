@@ -7,6 +7,7 @@ from game.engine.inventory.inventory_manager import (InventoryManager)
 from game.engine.locations.locations_manager import (LocationsManager)
 from game.engine.characters.characters_manager import (CharactersManager)
 from game.engine.journal.journal_manager import (JournalManager)
+from game.engine.narrat.narrat_manager import (NarratManager)
 from game.engine.world.world_manager import (WorldManager)
 
 from game.engine.locations.locations_store import (LocationsStore)
@@ -14,6 +15,7 @@ from game.engine.journal.journal_store import (JournalStore)
 from game.engine.log_events.log_events_store import (LogEventsStore)
 from game.engine.characters.characters_store import (CharactersStore)
 from game.engine.inventory.inventory_store import (InventoryStore)
+from game.engine.narrat.narrat_store import (NarratStore)
 from game.engine.world.world_store import (WorldStore)
 
 from game.engine_data.settings.all_settings import (build_all_settings)
@@ -35,7 +37,16 @@ class GraphicsMenuItemTest(unittest.TestCase):
         self.journal_manager = JournalManager(self.log_events_manager)
         self.world_manager = WorldManager(self.log_events_manager)
         self.inventory_manager = InventoryManager(self.log_events_manager, lambda x: self.state_manager.get_setting_value(x))
-        self.state_manager = StateManager(self.log_events_manager, self.world_manager, self.characters_manager, self.locations_manager, self.journal_manager, self.inventory_manager)
+        self.narrat_manager = NarratManager(self.log_events_manager)
+        self.state_manager = StateManager(
+            self.log_events_manager,
+            self.world_manager,
+            self.characters_manager,
+            self.locations_manager,
+            self.journal_manager,
+            self.inventory_manager,
+            self.narrat_manager
+        )
 
         self.reset_stores()
 
@@ -55,6 +66,9 @@ class GraphicsMenuItemTest(unittest.TestCase):
 
         self.inventory_store = InventoryStore()
         self.inventory_manager.set_store(self.inventory_store)
+
+        self.narrat_store = NarratStore()
+        self.narrat_manager.set_store(self.narrat_store)
 
         self.world_store = WorldStore()
         self.world_manager.set_store(self.world_store)
