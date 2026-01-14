@@ -108,7 +108,13 @@ screen narrat_history(
                                         color nameless_text_color
                                         xfill True
 
-                                $ is_nameless = not is_br and not hasattr(entry['who'], 'name')
+                                $ is_change = entry['is_change']
+                                if is_change:
+                                    pass
+
+                                $ is_special = is_br or is_change
+
+                                $ is_nameless = not is_special and not hasattr(entry['who'], 'name')
                                 if is_nameless:
                                     text __('protagonist_character_name') + ' - ' + __(entry['what']):
                                         size 18
@@ -116,7 +122,7 @@ screen narrat_history(
                                         xfill True
 
 
-                                $ is_npc = not is_br and hasattr(entry['who'], 'name') and entry['who'].name
+                                $ is_npc = not is_special and hasattr(entry['who'], 'name') and entry['who'].name
                                 if is_npc:
                                     $ color = entry['who'].who_args['color']
                                     $ speaker = entry['who'].name
@@ -129,7 +135,7 @@ screen narrat_history(
                                         xfill True
 
 
-                                $ is_nr = not is_br and not is_nameless and not is_npc
+                                $ is_nr = not is_special and not is_nameless and not is_npc
                                 if is_nr:
                                     text entry['what']:
                                         size 18

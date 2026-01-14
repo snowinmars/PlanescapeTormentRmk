@@ -2,7 +2,7 @@ import unittest
 
 
 from game.engine.tests import (LogicTest)
-from game.dlgs.mortuary.morte_logic import (MorteLogicGenerated, MorteLogic)
+from game.dlgs.morte_logic import (MorteLogicGenerated, MorteLogic)
 
 
 class MorteLogicGeneratedTest(LogicTest):

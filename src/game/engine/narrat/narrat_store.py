@@ -4,6 +4,7 @@ import json
 class NarratStore():
     def __init__(self):
         self.history = []
+        self.last_history_id = 0
         self.current_speaker = None
         self.current_text = ""
         self.current_menu_items = []

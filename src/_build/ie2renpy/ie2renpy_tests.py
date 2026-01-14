@@ -420,5 +420,5 @@ class Ie2abstractTest(unittest.TestCase):
         if both_have_other_npc:
             self.assertEqual(lhs['target_state']['other_npc'], rhs['target_state']['other_npc'])
 
-    def _print_dict(self, d):
-        print("\n".join(f"{k}\t{v}" for k, v in d.items()))
+    # def _print_dict(self, d):
+    #     print("\n".join(f"{k}\t{v}" for k, v in d.items()))

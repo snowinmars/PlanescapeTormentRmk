@@ -9,10 +9,15 @@ class JournalManager:
         self._log_events_manager = log_events_manager
         self._journal_store = None
         self._on_update_journal = []
+        self._report_change_callback = None
 
 
     def set_store(self, journal_store):
         self._journal_store = journal_store
+
+
+    def register_report_change_callback(self, report_change_callback):
+        self._report_change_callback = report_change_callback
 
 
     def register_on_update_journal(self, callback):
@@ -45,6 +50,13 @@ class JournalManager:
         found_note.found = True
         found_note.found_at = time.time()
 
+        self._report_change_callback(
+            'journal_manager_update_journal',
+            {
+                'note_id': note_id
+            }
+        )
+
         for callback in self._on_update_journal:
             callback()
 
@@ -72,5 +84,6 @@ class JournalManager:
         }
 
 
-    def __setstate__(self, state):
+    def __setstate__(self, state): # TODO [snow]: is it ok?
+        self._on_update_journal = []
         return
