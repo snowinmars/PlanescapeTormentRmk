@@ -9,7 +9,7 @@ label giantsk_speak:
 
 
 label giantsk_s0_ctor:
-    show giantsk_img default at center_left_down
+    show dialogue_sprite_giantsk_default at dialogue
     jump giantsk_s0
 
 

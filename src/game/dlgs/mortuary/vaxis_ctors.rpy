@@ -14,37 +14,37 @@ label vaxis_speak:
 
 
 label vaxis_s0_ctor:
-    show vaxis_img default at center_left_down
+    show dialogue_sprite_vaxis_default at dialogue
     jump vaxis_s0
 
 
 label vaxis_s1_ctor: # IF ~  False()
-    show vaxis_img default at center_left_down
+    show dialogue_sprite_vaxis_default at dialogue
     jump vaxis_s1
 
 
 label vaxis_s40_ctor: # -
-    show vaxis_img default at center_left_down
+    show dialogue_sprite_vaxis_default at dialogue
     jump vaxis_s40
 
 
 label vaxis_s41_ctor: # -
-    show vaxis_img default at center_left_down
+    show dialogue_sprite_vaxis_default at dialogue
     jump vaxis_s41
 
 
 label vaxis_s57_ctor:
-    show vaxis_img default at center_left_down
+    show dialogue_sprite_vaxis_default at dialogue
     jump vaxis_s57
 
 
 label vaxis_s69_ctor: # -
-    show vaxis_img default at center_left_down
+    show dialogue_sprite_vaxis_default at dialogue
     jump vaxis_s69
 
 
 label vaxis_s73_ctor: # -
-    show vaxis_img default at center_left_down
+    show dialogue_sprite_vaxis_default at dialogue
     jump vaxis_s73
 
 

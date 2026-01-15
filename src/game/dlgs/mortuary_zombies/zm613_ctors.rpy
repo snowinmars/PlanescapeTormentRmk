@@ -9,7 +9,7 @@ label zm613_speak:
 
 
 label zm613_s0_ctor:
-    show zm613_img default at center_left_down
+    show dialogue_sprite_zm613_default at dialogue
     jump zm613_s0
 
 

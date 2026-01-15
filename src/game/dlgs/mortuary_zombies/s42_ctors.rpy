@@ -9,12 +9,12 @@ label s42_speak:
 
 
 label s42_s0_ctor:
-    show s42_img default at center_left_down
+    show dialogue_sprite_s42_default at dialogue
     jump s42_s0
 
 
 label s42_s11_ctor: # -
-    show s42_img default at center_left_down
+    show dialogue_sprite_s42_default at dialogue
     jump s42_s11
 
 

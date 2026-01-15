@@ -14,12 +14,12 @@ label zm965_speak:
 
 
 label zm965_s0_ctor:
-    show zm965_img default at center_left_down
+    show dialogue_sprite_zm965_default at dialogue
     jump zm965_s0
 
 
 label zm965_s1_ctor:
-    show zm965_img default at center_left_down
+    show dialogue_sprite_zm965_default at dialogue
     jump zm965_s1
 
 

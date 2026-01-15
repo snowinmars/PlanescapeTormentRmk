@@ -9,7 +9,7 @@ label zm825_speak:
 
 
 label zm825_s0_ctor:
-    show zm825_img default at center_left_down
+    show dialogue_sprite_zm825_default at dialogue
     jump zm825_s0
 
 

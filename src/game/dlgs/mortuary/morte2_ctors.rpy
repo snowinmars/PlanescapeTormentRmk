@@ -31,22 +31,22 @@ label morte2_speak:
 
 
 label morte2_s0_ctor:
-    show morte_img default at center_left_down
+    show dialogue_sprite_morte_default at dialogue
     jump morte2_s0
 
 
 label morte2_s12_ctor:
-    show morte_img default at center_left_down
+    show dialogue_sprite_morte_default at dialogue
     jump morte2_s12
 
 
 label morte2_s27_ctor:
-    show morte_img default at center_left_down
+    show dialogue_sprite_morte_default at dialogue
     jump morte2_s27
 
 
 label morte2_s31_ctor:
-    show morte_img default at center_left_down
+    show dialogue_sprite_morte_default at dialogue
     jump morte2_s31
 
 

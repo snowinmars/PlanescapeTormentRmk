@@ -9,7 +9,7 @@ label zm782_speak:
 
 
 label zm782_s0_ctor:
-    show zm782_img default at center_left_down
+    show dialogue_sprite_zm782_default at dialogue
     jump zm782_s0
 
 

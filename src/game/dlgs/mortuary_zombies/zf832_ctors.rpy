@@ -9,12 +9,12 @@ label zf832_speak:
 
 
 label zf832_s0_ctor:
-    show zf832_img default at center_left_down
+    show dialogue_sprite_zf832_default at dialogue
     jump zf832_s0
 
 
 label zf832_s3_ctor: # - # IF ~  False()
-    show zf832_img default at center_left_down
+    show dialogue_sprite_zf832_default at dialogue
     jump zf832_s3
 
 

@@ -14,12 +14,12 @@ label zm506_speak:
 
 
 label zm506_s0_ctor:
-    show zm506_img default at center_left_down
+    show dialogue_sprite_zm506_default at dialogue
     jump zm506_s0
 
 
 label zm506_s5_ctor:
-    show zm506_img default at center_left_down
+    show dialogue_sprite_zm506_default at dialogue
     jump zm506_s5
 
 

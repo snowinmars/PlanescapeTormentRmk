@@ -9,7 +9,7 @@ label zm79_speak:
 
 
 label zm79_s0_ctor:
-    show zm79_img default at center_left_down
+    show dialogue_sprite_zm79_default at dialogue
     jump zm79_s0
 
 

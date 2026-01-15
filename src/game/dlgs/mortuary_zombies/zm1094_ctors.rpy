@@ -19,17 +19,17 @@ label zm1094_speak:
 
 
 label zm1094_s0_ctor:
-    show zm1094_img default at center_left_down
+    show dialogue_sprite_zm1094_default at dialogue
     jump zm1094_s0
 
 
 label zm1094_s26_ctor:
-    show zm1094_img default at center_left_down
+    show dialogue_sprite_zm1094_default at dialogue
     jump zm1094_s26
 
 
 label zm1094_s27_ctor:
-    show zm1094_img default at center_left_down
+    show dialogue_sprite_zm1094_default at dialogue
     jump zm1094_s27
 
 

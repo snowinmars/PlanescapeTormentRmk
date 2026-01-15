@@ -14,17 +14,17 @@ label dhall_speak:
 
 
 label dhall_s5_ctor:
-    show dhall_img default at center_left_down
+    show dialogue_sprite_dhall_default at dialogue
     jump dhall_s5
 
 
 label dhall_s39_ctor: # -
-    show dhall_img default at center_left_down
+    show dialogue_sprite_dhall_default at dialogue
     jump dhall_s39
 
 
 label dhall_s40_ctor:
-    show dhall_img default at center_left_down
+    show dialogue_sprite_dhall_default at dialogue
     jump dhall_s40
 
 

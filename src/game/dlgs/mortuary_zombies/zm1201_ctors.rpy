@@ -14,12 +14,12 @@ label zm1201_speak:
 
 
 label zm1201_s0_ctor:
-    show zm1201_img default at center_left_down
+    show dialogue_sprite_zm1201_default at dialogue
     jump zm1201_s0
 
 
 label zm1201_s5_ctor:
-    show zm1201_img default at center_left_down
+    show dialogue_sprite_zm1201_default at dialogue
     jump zm1201_s5
 
 

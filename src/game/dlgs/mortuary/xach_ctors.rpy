@@ -9,22 +9,22 @@ label xach_speak:
 
 
 label xach_s0_ctor:
-    show xach_img default at center_left_down
+    show dialogue_sprite_xach_default at dialogue
     jump xach_s0
 
 
 label xach_s14_ctor: # -
-    show xach_img default at center_left_down
+    show dialogue_sprite_xach_default at dialogue
     jump xach_s14
 
 
 label xach_s15_ctor: # -
-    show xach_img default at center_left_down
+    show dialogue_sprite_xach_default at dialogue
     jump xach_s15
 
 
 label xach_s35_ctor: # -
-    show xach_img default at center_left_down
+    show dialogue_sprite_xach_default at dialogue
     jump xach_s35
 
 

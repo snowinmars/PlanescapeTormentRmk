@@ -9,7 +9,7 @@ label zm463_speak:
 
 
 label zm463_s0_ctor:
-    show zm463_img default at center_left_down
+    show dialogue_sprite_zm463_default at dialogue
     jump zm463_s0
 
 

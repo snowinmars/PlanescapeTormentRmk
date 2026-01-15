@@ -14,12 +14,12 @@ label zm310_speak:
 
 
 label zm310_s0_ctor:
-    show zm310_img default at center_left_down
+    show dialogue_sprite_zm310_default at dialogue
     jump zm310_s0
 
 
 label zm310_s18_ctor:
-    show zm310_img default at center_left_down
+    show dialogue_sprite_zm310_default at dialogue
     jump zm310_s18
 
 
