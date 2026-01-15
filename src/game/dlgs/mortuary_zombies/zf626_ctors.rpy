@@ -9,12 +9,12 @@ label zf626_speak:
 
 
 label zf626_s0_ctor:
-    show zf626_img default at center_left_down
+    show dialogue_sprite_zf626_default at dialogue
     jump zf626_s0
 
 
 label zf626_s3_ctor: # - # IF ~  False()
-    show zf626_img default at center_left_down
+    show dialogue_sprite_zf626_default at dialogue
     jump zf626_s3
 
 

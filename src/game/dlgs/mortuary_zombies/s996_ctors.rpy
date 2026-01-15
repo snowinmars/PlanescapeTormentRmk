@@ -9,12 +9,12 @@ label s996_speak:
 
 
 label s996_s0_ctor:
-    show s996_img default at center_left_down
+    show dialogue_sprite_s996_default at dialogue
     jump s996_s0
 
 
 label s996_s7_ctor: # - # IF ~  False()
-    show s996_img default at center_left_down
+    show dialogue_sprite_s996_default at dialogue
     jump s996_s7
 
 

@@ -9,7 +9,7 @@ label zm1508_speak:
 
 
 label zm1508_s0_ctor:
-    show zm1508_img default at center_left_down
+    show dialogue_sprite_zm1508_default at dialogue
     jump zm1508_s0
 
 

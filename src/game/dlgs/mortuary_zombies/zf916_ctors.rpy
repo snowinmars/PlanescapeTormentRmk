@@ -9,12 +9,12 @@ label zf916_speak:
 
 
 label zf916_s0_ctor:
-    show zf916_img default at center_left_down
+    show dialogue_sprite_zf916_default at dialogue
     jump zf916_s0
 
 
 label zf916_s3_ctor: # - # IF ~  False()
-    show zf916_img default at center_left_down
+    show dialogue_sprite_zf916_default at dialogue
     jump zf916_s3
 
 

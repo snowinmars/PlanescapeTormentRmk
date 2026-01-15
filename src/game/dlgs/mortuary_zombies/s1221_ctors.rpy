@@ -9,12 +9,12 @@ label s1221_speak:
 
 
 label s1221_s0_ctor:
-    show s1221_img default at center_left_down
+    show dialogue_sprite_s1221_default at dialogue
     jump s1221_s0
 
 
 label s1221_s7_ctor: # - # IF ~  False()
-    show s1221_img default at center_left_down
+    show dialogue_sprite_s1221_default at dialogue
     jump s1221_s7
 
 

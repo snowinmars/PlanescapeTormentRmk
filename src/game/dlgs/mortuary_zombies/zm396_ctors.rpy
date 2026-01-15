@@ -14,12 +14,12 @@ label zm396_speak:
 
 
 label zm396_s0_ctor:
-    show zm396_img default at center_left_down
+    show dialogue_sprite_zm396_default at dialogue
     jump zm396_s0
 
 
 label zm396_s4_ctor:
-    show zm396_img default at center_left_down
+    show dialogue_sprite_zm396_default at dialogue
     jump zm396_s4
 
 

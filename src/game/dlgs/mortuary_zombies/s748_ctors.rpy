@@ -9,12 +9,12 @@ label s748_speak:
 
 
 label s748_s0_ctor:
-    show s748_img default at center_left_down
+    show dialogue_sprite_s748_default at dialogue
     jump s748_s0
 
 
 label s748_s7_ctor: # -
-    show s748_img default at center_left_down
+    show dialogue_sprite_s748_default at dialogue
     jump s748_s7
 
 

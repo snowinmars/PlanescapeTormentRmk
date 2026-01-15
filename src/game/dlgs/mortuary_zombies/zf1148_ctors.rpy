@@ -9,12 +9,12 @@ label zf1148_speak:
 
 
 label zf1148_s0_ctor:
-    show zf1148_img default at center_left_down
+    show dialogue_sprite_zf1148_default at dialogue
     jump zf1148_s0
 
 
 label zf1148_s3_ctor: # - # IF ~  False()
-    show zf1148_img default at center_left_down
+    show dialogue_sprite_zf1148_default at dialogue
     jump zf1148_s3
 
 

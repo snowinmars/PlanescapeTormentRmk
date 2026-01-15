@@ -16,12 +16,12 @@ label zm985_speak:
 
 
 label zm985_s0_ctor:
-    show zm985_img default at center_left_down
+    show dialogue_sprite_zm985_default at dialogue
     jump zm985_s0
 
 
 label zm985_s5_ctor:
-    show zm985_img default at center_left_down
+    show dialogue_sprite_zm985_default at dialogue
     jump zm985_s5
 
 

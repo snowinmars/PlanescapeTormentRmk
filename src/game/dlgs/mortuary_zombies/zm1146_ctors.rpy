@@ -14,12 +14,12 @@ label zm1146_speak:
 
 
 label zm1146_s0_ctor:
-    show zm1146_img default at center_left_down
+    show dialogue_sprite_zm1146_default at dialogue
     jump zm1146_s0
 
 
 label zm1146_s20_ctor:
-    show zm1146_img default at center_left_down
+    show dialogue_sprite_zm1146_default at dialogue
     jump zm1146_s20
 
 

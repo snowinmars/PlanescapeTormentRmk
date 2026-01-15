@@ -14,12 +14,12 @@ label zm732_speak:
 
 
 label zm732_s0_ctor:
-    show zm732_img default at center_left_down
+    show dialogue_sprite_zm732_default at dialogue
     jump zm732_s0
 
 
 label zm732_s3_ctor:
-    show zm732_img default at center_left_down
+    show dialogue_sprite_zm732_default at dialogue
     jump zm732_s3
 
 

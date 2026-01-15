@@ -9,7 +9,7 @@ label zm1664_speak:
 
 
 label zm1664_s0_ctor:
-    show zm1664_img default at center_left_down
+    show dialogue_sprite_zm1664_default at dialogue
     jump zm1664_s0
 
 

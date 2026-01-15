@@ -9,7 +9,7 @@ label zm1445_speak:
 
 
 label zm1445_s0_ctor:
-    show zm1445_img default at center_left_down
+    show dialogue_sprite_zm1445_default at dialogue
     jump zm1445_s0
 
 

@@ -14,17 +14,17 @@ label zm1041_speak:
 
 
 label zm1041_s0_ctor:
-    show zm1041_img default at center_left_down
+    show dialogue_sprite_zm1041_default at dialogue
     jump zm1041_s0
 
 
 label zm1041_s35_ctor: # -
-    show zm1041_img default at center_left_down
+    show dialogue_sprite_zm1041_default at dialogue
     jump zm1041_s35
 
 
 label zm1041_s37_ctor:
-    show zm1041_img default at center_left_down
+    show dialogue_sprite_zm1041_default at dialogue
     jump zm1041_s37
 
 

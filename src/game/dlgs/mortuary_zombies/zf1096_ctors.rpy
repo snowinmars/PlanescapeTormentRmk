@@ -9,12 +9,12 @@ label zf1096_speak:
 
 
 label zf1096_s0_ctor:
-    show zf1096_img default at center_left_down
+    show dialogue_sprite_zf1096_default at dialogue
     jump zf1096_s0
 
 
 label zf1096_s3_ctor: # - # IF ~  False()
-    show zf1096_img default at center_left_down
+    show dialogue_sprite_zf1096_default at dialogue
     jump zf1096_s3
 
 

@@ -9,7 +9,7 @@ label zm257_speak:
 
 
 label zm257_s0_ctor:
-    show zm257_img default at center_left_down
+    show dialogue_sprite_zm257_default at dialogue
     jump zm257_s0
 
 

@@ -9,7 +9,7 @@ label zm569_speak:
 
 
 label zm569_s0_ctor:
-    show zm569_img default at center_left_down
+    show dialogue_sprite_zm569_default at dialogue
     jump zm569_s0
 
 

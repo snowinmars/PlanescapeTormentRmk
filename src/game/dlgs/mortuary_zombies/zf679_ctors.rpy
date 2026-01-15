@@ -9,12 +9,12 @@ label zf679_speak:
 
 
 label zf679_s0_ctor:
-    show zf679_img default at center_left_down
+    show dialogue_sprite_zf679_default at dialogue
     jump zf679_s0
 
 
 label zf679_s3_ctor: # - # IF ~  False()
-    show zf679_img default at center_left_down
+    show dialogue_sprite_zf679_default at dialogue
     jump zf679_s3
 
 

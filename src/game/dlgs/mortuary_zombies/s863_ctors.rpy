@@ -14,17 +14,17 @@ label s863_speak:
 
 
 label s863_s0_ctor:
-    show s863_img default at center_left_down
+    show dialogue_sprite_s863_default at dialogue
     jump s863_s0
 
 
 label s863_s7_ctor: # - # IF ~  False()
-    show s863_img default at center_left_down
+    show dialogue_sprite_s863_default at dialogue
     jump s863_s7
 
 
 label s863_s8_ctor:
-    show s863_img default at center_left_down
+    show dialogue_sprite_s863_default at dialogue
     jump s863_s8
 
 

@@ -19,27 +19,27 @@ label dust_speak:
     jump dust_s40_ctor
 
 label dust_s0_ctor:
-    show dust_img default at center_left_down
+    show dialogue_sprite_dust_default at dialogue
     jump dust_s0
 
 
 label dust_s22_ctor:
-    show dust_img default at center_left_down
+    show dialogue_sprite_dust_default at dialogue
     jump dust_s22
 
 
 label dust_s38_ctor: # -
-    show dust_img default at center_left_down
+    show dialogue_sprite_dust_default at dialogue
     jump dust_s38
 
 
 label dust_s40_ctor:
-    show dust_img default at center_left_down
+    show dialogue_sprite_dust_default at dialogue
     jump dust_s40
 
 
 label dust_s51_ctor:
-    show dust_img default at center_left_down
+    show dialogue_sprite_dust_default at dialogue
     jump dust_s51
 
 

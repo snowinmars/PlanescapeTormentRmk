@@ -14,17 +14,17 @@ label eivene_speak:
 
 
 label eivene_s0_ctor:
-    show eivene_img default at center_left_down
+    show dialogue_sprite_eivene_default at dialogue
     jump eivene_s0
 
 
 label eivene_s15_ctor:
-    show eivene_img default at center_left_down
+    show dialogue_sprite_eivene_default at dialogue
     jump eivene_s15
 
 
 label eivene_s25_ctor: # -
-    show eivene_img default at center_left_down
+    show dialogue_sprite_eivene_default at dialogue
     jump eivene_s25
 
 
