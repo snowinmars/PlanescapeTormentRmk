@@ -224,14 +224,20 @@ screen character_screen(character):
 
             label str(character.good):
                 xpos 812
-                ypos 348
+                if character.good >= 0:
+                    ypos 348
+                else:
+                    ypos 332
                 xsize 50
                 text_size 20
                 text_color "#f8f6de"
                 text_align (0.5, 0.5)
 
             label str(character.law):
-                xpos 855
+                if character.law >= 0:
+                    xpos 769
+                else:
+                    xpos 855
                 ypos 364
                 xsize 50
                 text_size 20
@@ -240,6 +246,7 @@ screen character_screen(character):
 
                 # text "Lore: [character.lore]" size 25 color "#0ff"
                 # text "XP: [character.experience]" size 25 color "#f80"
+                # text "looks_like: [character.looks_like]" size 25 color "#f80"
 
             # Close button
             textbutton "Close":

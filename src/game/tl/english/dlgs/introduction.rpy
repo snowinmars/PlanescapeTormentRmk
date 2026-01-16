@@ -226,8 +226,8 @@ translate english introduction_1_83fa65ca:
 # game/dlgs/introduction.rpy:68
 translate english introduction_1_282fd345:
 
-    # snowinmars '«Спасибо также тексту «Planescape: Torment - Novelization» за авторством, вроде как, Chris Avellone and Colin McComb. Я с него иногда беру описания».'
-    snowinmars '«Thanks also to the text «Planescape: Torment - Novelization» by, I believe, Chris Avellone and Colin McComb. I sometimes use it for descriptions».'
+    # snowinmars '«Спасибо также тексту „Planescape: Torment - Novelization“ за авторством, вроде как, Chris Avellone and Colin McComb. Я с него иногда беру описания».'
+    snowinmars '«Thanks also to the text „Planescape: Torment - Novelization“ by, I believe, Chris Avellone and Colin McComb. I sometimes use it for descriptions».'
 
 # game/dlgs/introduction.rpy:69
 translate english introduction_1_c84f4189:
