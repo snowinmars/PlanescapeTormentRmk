@@ -131,6 +131,10 @@ label dhall_s5: # - # IF ~  Global("Dhall","GLOBAL",0)
             # a14 # r839
             jump morte_s102  # EXTERN
 
+        'dhall_s5_r839_extra{#dhall_s5_r839_extra}' if dhallLogic.r839_extra_condition(): # '«Приветствую».{#dhall_s5_r839}'
+            # a14 # r839
+            jump morte_s102_extra1  # EXTERN
+
         'dhall_s5_r835{#dhall_s5_r835}' if dhallLogic.r835_condition(): # '«Приветствую».{#dhall_s5_r835}'
             # a15 # r835
             jump dhall_s7

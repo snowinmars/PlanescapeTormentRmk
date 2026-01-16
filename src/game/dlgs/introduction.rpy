@@ -140,7 +140,7 @@ label introduction_1:
 
 
 label intro:
-    play music mortuary
+    play music mortuary if_changed
     scene black
 
     $ runtime.global_narrat_manager.add_br()

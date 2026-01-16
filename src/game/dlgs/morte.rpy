@@ -1923,6 +1923,25 @@ label morte_s103: # from 102.0
     jump dhall_s0  # EXTERN
 
 
+# s102 # say5049
+label morte_s102_extra1: # externs dhall_s5 # manually added by snowinmars, issue #13
+    'morte_s102_extra1{#morte_s102_extra1}'
+    # morte '«Эй, шеф! Ты что творишь?!»{#morte_s102_extra1_1}'
+
+    menu:
+        'morte_s102_extra1_r5050{#morte_s102_extra1_r5050}': # '«Я хотел поговорить с этим писарем. Он может кое-что знать о том, как я попал сюда».{#morte_s102_extra1_r5050}'
+            # a271 # r5050
+            jump morte_s103_extra2
+
+
+# s103 # say5052
+label morte_s103_extra2: # from 102.0 # manually added by snowinmars, issue #13
+    'morte_s103_extra2{#morte_s103_extra2}'
+    # morte '«Послушай, трясти черепушкой с трухлявыми — это ПОСЛЕДНЯЯ мысль, которая должна…»{#morte_s103_extra2_1}'
+
+    jump dhall_s6  # EXTERN
+
+
 # s104 # say5053
 label morte_s104: # externs dhall_s0
     'morte_s104{#morte_s104}'

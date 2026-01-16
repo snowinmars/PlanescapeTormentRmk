@@ -491,6 +491,10 @@ translate english strings:
     old 'dhall_s5_r839{#dhall_s5_r839}'
     new '«Greetings.»{#dhall_s5_r839}'
 
+    # game/dlgs/mortuary/dhall.rpy:135
+    old "dhall_s5_r839_extra{#dhall_s5_r839_extra}"
+    new "«Greetings.»{#dhall_s5_r839_extra}"
+
     # game/dlgs/mortuary/dhall.rpy:131
     old 'dhall_s5_r835{#dhall_s5_r835}'
     new '«Greetings.»{#dhall_s5_r835}'
@@ -1422,3 +1426,4 @@ translate english strings:
     # game/dlgs/mortuary/dhall.rpy:11
     old 'dhall_he_genitive{#dhall_he_genitive}'
     new 'his{#dhall_he_genitive}'
+

@@ -726,6 +726,18 @@ translate english morte_s103_de6481fa:
     # 'morte_s103{#morte_s103}'
     morte '«Look, rattling your bone-box with Dusties should be the LAST thing-»{#morte_s103_1}'
 
+# game/dlgs/morte.rpy:1928
+translate english morte_s102_extra1_2ab3ad1b:
+
+    # "morte_s102_extra1{#morte_s102_extra1}"
+    morte '«Whoa, chief! What are you doing?!»{#morte_s102_extra1}'
+
+# game/dlgs/morte.rpy:1939
+translate english morte_s103_extra2_aa2f5641:
+
+    # "morte_s103_extra2{#morte_s103_extra2}"
+    morte '«Look, rattling your bone-box with Dusties should be the LAST thing-»{#morte_s103_extra2}'
+
 # game/dlgs/mortuary/morte.rpy:1926
 translate english morte_s104_019987bc:
 
@@ -6256,6 +6268,10 @@ translate english strings:
     # game/dlgs/mortuary/morte.rpy:1910
     old 'morte_s102_r5050{#morte_s102_r5050}'
     new '«I was going to speak with this scribe. He might know something about how I got here».{#morte_s102_r5050}'
+
+    # game/dlgs/morte.rpy:1933
+    old "morte_s102_extra1_r5050{#morte_s102_extra1_r5050}"
+    new '«I was going to speak with this scribe. He might know something about how I got here».{#morte_s102_extra1_r5050}'
 
     # game/dlgs/mortuary/morte.rpy:1937
     old 'morte_s105_r6075{#morte_s105_r6075}'
