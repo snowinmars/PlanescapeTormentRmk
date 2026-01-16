@@ -1,14 +1,6 @@
 init python:
     from game.engine.runtime import (runtime)
 
-
-screen inventory_button():
-    imagebutton:
-        align (0.95, 0.05)
-        idle "images/icons/inventory.png"
-        hover "images/icons/inventory.png"
-        action ShowMenu("inventory_screen")
-
 style inventory_description:
     font gui.text_font
     size 16

@@ -4,12 +4,9 @@ init python:
     from game.engine.runtime import (runtime)
 
 
-screen character_screen_button():
-    textbutton "Character" action Show("character_screen", character=runtime.global_state_manager.characters_manager.get_character('protagonist_character_name')):
-        align (1.0, 0.0)
-        offset (-20, 20)
+screen character_screen(get_character):
+    $ character = get_character()
 
-screen character_screen(character):
     modal True
     zorder 100
 
