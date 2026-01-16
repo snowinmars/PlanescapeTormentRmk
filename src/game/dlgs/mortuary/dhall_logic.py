@@ -144,7 +144,13 @@ class DhallLogicGenerated:
 
 
     def r839_condition(self):
-        return self.state_manager.world_manager.get_in_party_morte()
+        return self.state_manager.world_manager.get_in_party_morte() and \
+               not self.state_manager.world_manager.get_mortualy_alarmed()
+
+
+    def r839_extra_condition(self):
+        return self.state_manager.world_manager.get_in_party_morte() and \
+               self.state_manager.world_manager.get_mortualy_alarmed()
 
 
     def r835_condition(self):

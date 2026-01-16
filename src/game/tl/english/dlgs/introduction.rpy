@@ -224,7 +224,7 @@ translate english introduction_1_83fa65ca:
     snowinmars '«To be true, there is almost no neural network code left here: I rewrote everything by hand several times to shove thoughts into its sophisms».'
 
 # game/dlgs/introduction.rpy:68
-translate english introduction_1_282fd345:
+translate english introduction_1_08ca19eb:
 
     # snowinmars '«Спасибо также тексту „Planescape: Torment - Novelization“ за авторством, вроде как, Chris Avellone and Colin McComb. Я с него иногда беру описания».'
     snowinmars '«Thanks also to the text „Planescape: Torment - Novelization“ by, I believe, Chris Avellone and Colin McComb. I sometimes use it for descriptions».'
@@ -302,13 +302,13 @@ translate english introduction_1_67367a54:
     snowinmars '«I don\'t know yet. I\'m trying to find out. If you help me with it - that would be great».'
 
 # game/dlgs/introduction.rpy:87
-translate english introduction_1_bcfd510c:
+translate english introduction_1_036a2176:
 
     # snowinmars '«Мои контакты:\n telegram: @snowinmars\n email:snowinmars@y«andex.ru».'
     snowinmars '«Contact me at:\n telegram: @snowinmars\n email:snowinmars@yandex.ru».'
 
 # game/dlgs/introduction.rpy:88
-translate english introduction_1_b8d69551:
+translate english introduction_1_8a14e389:
 
     # snowinmars '«Ссылка на репу с этим проектом:\n https://github.com/snowinmars/P«lanescapeTormentRmk».'
     snowinmars '«The repository source code link is:\n https://github.com/snowinmars/PlanescapeTormentRmk».'

@@ -708,6 +708,18 @@ translate russian morte_s103_de6481fa:
     # 'morte_s103{#morte_s103}'
     morte '«Послушай, трясти черепушкой с трухлявыми — это ПОСЛЕДНЯЯ мысль, которая должна…»{#morte_s103_1}'
 
+# game/dlgs/morte.rpy:1928
+translate russian morte_s102_extra1_2ab3ad1b:
+
+    # "morte_s102_extra1{#morte_s102_extra1}"
+    morte '«Эй, шеф! Ты что творишь?!»{#morte_s102_extra1}'
+
+# game/dlgs/morte.rpy:1939
+translate russian morte_s103_extra2_aa2f5641:
+
+    # "morte_s103_extra2{#morte_s103_extra2}"
+    morte '«Послушай, трясти черепушкой с трухлявыми — это ПОСЛЕДНЯЯ мысль, которая должна…»{#morte_s103_extra2}'
+
 # game/dlgs/mortuary/morte.rpy:1926
 translate russian morte_s104_019987bc:
 
@@ -6200,6 +6212,10 @@ translate russian strings:
     # game/dlgs/mortuary/morte.rpy:1910
     old 'morte_s102_r5050{#morte_s102_r5050}'
     new '«Я хотел поговорить с этим писарем. Он может кое-что знать о том, как я попал сюда».{#morte_s102_r5050}'
+
+    # game/dlgs/morte.rpy:1933
+    old "morte_s102_extra1_r5050{#morte_s102_extra1_r5050}"
+    new '«Я хотел поговорить с этим писарем. Он может кое-что знать о том, как я попал сюда».{#morte_s102_extra1_r5050}'
 
     # game/dlgs/mortuary/morte.rpy:1937
     old 'morte_s105_r6075{#morte_s105_r6075}'

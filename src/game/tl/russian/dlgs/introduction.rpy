@@ -223,7 +223,7 @@ translate russian introduction_1_83fa65ca:
     snowinmars '«Правда, именно кода нейронки тут почти не осталось: я всё несколько раз переписал руками, чтобы поселить мысли в её софизмы».'
 
 # game/dlgs/introduction.rpy:68
-translate russian introduction_1_282fd345:
+translate russian introduction_1_08ca19eb:
 
     # snowinmars '«Спасибо также тексту „Planescape: Torment - Novelization“ за авторством, вроде как, Chris Avellone and Colin McComb. Я с него иногда беру описания».'
     snowinmars '«Спасибо также тексту „Planescape: Torment - Novelization“ за авторством, вроде как, Chris Avellone and Colin McComb. Я с него иногда беру описания».'
@@ -301,13 +301,13 @@ translate russian introduction_1_67367a54:
     snowinmars '«Я пока не знаю. Я пытаюсь это узнать. Если ты мне поможешь в этом - будет супер».'
 
 # game/dlgs/introduction.rpy:87
-translate russian introduction_1_bcfd510c:
+translate russian introduction_1_036a2176:
 
     # snowinmars '«Мои контакты:\n telegram: @snowinmars\n email:snowinmars@y«andex.ru»'
     snowinmars '«Мои контакты:\n telegram: @snowinmars\n email:snowinmars@y«andex.ru»'
 
 # game/dlgs/introduction.rpy:88
-translate russian introduction_1_b8d69551:
+translate russian introduction_1_8a14e389:
 
     # snowinmars '«Ссылка на репу с этим проектом:\n https://github.com/snowinmars/P«lanescapeTormentRmk»'
     snowinmars '«Ссылка на репу с этим проектом:\n https://github.com/snowinmars/P«lanescapeTormentRmk»'

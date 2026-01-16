@@ -216,5 +216,5 @@ define dialogue_stack = [] # stack with *_dispose labels
 label dialogues_dispose:
     while dialogue_stack:
         $ label = dialogue_stack.pop()
-        call label
+        $ renpy.call(label)
         jump map_dispatcher

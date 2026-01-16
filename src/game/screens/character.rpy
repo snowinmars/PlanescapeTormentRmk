@@ -1,3 +1,5 @@
+$ never = _('zombie')
+
 init python:
     from game.engine.runtime import (runtime)
 
@@ -227,7 +229,7 @@ screen character_screen(character):
                 if character.good >= 0:
                     ypos 348
                 else:
-                    ypos 332
+                    ypos 440
                 xsize 50
                 text_size 20
                 text_color "#f8f6de"
@@ -235,9 +237,9 @@ screen character_screen(character):
 
             label str(character.law):
                 if character.law >= 0:
-                    xpos 769
-                else:
                     xpos 855
+                else:
+                    xpos 769
                 ypos 364
                 xsize 50
                 text_size 20
@@ -248,7 +250,55 @@ screen character_screen(character):
                 # text "XP: [character.experience]" size 25 color "#f80"
                 # text "looks_like: [character.looks_like]" size 25 color "#f80"
 
-            # Close button
-            textbutton "Close":
-                xalign 0.5
-                action Hide("character_screen")
+    viewport:
+        xpos 1165
+        ypos 100
+        xsize 300
+        ysize 575
+
+        vbox:
+            xfill True
+
+            text _(character.name):
+                size 20
+                color "#dbc401"
+            if character.looks_like:
+                $ looks_like = __('character_screen_looks_like{#character_screen_looks_like}').format(looks_like=__(character.looks_like))
+            else:
+                $ looks_like = _('character_screen_looks_like_default{#character_screen_looks_like_default}')
+            text looks_like:
+                size 20
+                color "#dbc401"
+
+            $ good_treshold = 10
+            $ law_treshold = 10
+            if character.good > good_treshold and character.law > law_treshold:
+                $ alignment = _('character_screen_lawful_good{#character_screen_lawful_good}')
+            if character.good > good_treshold and -law_treshold <= character.law <= law_treshold:
+                $ alignment = _('character_screen_neutral_good{#character_screen_neutral_good}')
+            if character.good > good_treshold and character.law < -law_treshold:
+                $ alignment = _('character_screen_chaotic_good{#character_screen_chaotic_good}')
+            if -good_treshold <= character.good <= good_treshold and character.law > law_treshold:
+                $ alignment = _('character_screen_lawful_neutral{#character_screen_lawful_neutral}')
+            if -good_treshold <= character.good <= good_treshold and -law_treshold <= character.law <= law_treshold:
+                $ alignment = _('character_screen_true_neutral{#character_screen_true_neutral}')
+            if -good_treshold <= character.good <= good_treshold and character.law < -law_treshold:
+                $ alignment = _('character_screen_chaotic_neutral{#character_screen_chaotic_neutral}')
+            if character.good < -good_treshold and character.law > law_treshold:
+                $ alignment = _('character_screen_lawful_evil{#character_screen_lawful_evil}')
+            if character.good < -good_treshold and -law_treshold <= character.law <= law_treshold:
+                $ alignment = _('character_screen_neutral_evil{#character_screen_neutral_evil}')
+            if character.good < -good_treshold and character.law < -law_treshold:
+                $ alignment = _('character_screen_chaotic_evil{#character_screen_chaotic_evil}')
+            text alignment:
+                size 20
+                color "#dbc401"
+
+    button:
+            xpos 1100
+            ypos 100
+            xsize 50
+            ysize 50
+            background Transform('gui/close.png', fit='cover')
+            hover_background Transform('gui/close_hover.png', fit='cover')
+            action Hide("character_screen")

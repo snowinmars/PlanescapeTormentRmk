@@ -496,6 +496,10 @@ translate russian strings:
     old 'dhall_s5_r839{#dhall_s5_r839}'
     new '«Приветствую».{#dhall_s5_r839}'
 
+    # game/dlgs/mortuary/dhall.rpy:135
+    old "dhall_s5_r839_extra{#dhall_s5_r839_extra}"
+    new '«Приветствую».{#dhall_s5_r839_extra}'
+
     # game/dlgs/mortuary/dhall.rpy:131
     old 'dhall_s5_r835{#dhall_s5_r835}'
     new '«Приветствую».{#dhall_s5_r835}'
@@ -1427,3 +1431,4 @@ translate russian strings:
     # game/dlgs/mortuary/dhall.rpy:11
     old 'dhall_he_genitive{#dhall_he_genitive}'
     new 'него{#dhall_he_genitive}'
+

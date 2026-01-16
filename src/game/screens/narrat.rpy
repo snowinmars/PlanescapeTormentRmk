@@ -38,7 +38,6 @@ screen narrat():
             yfill True
             spacing 0
 
-            $ slice_value = -1 if runtime.global_narrat_manager.get_current_speaker() else 0
             $ actual_history = runtime.global_narrat_manager.get_history()
             $ is_inside_dialogue = runtime.global_narrat_manager.get_current_speaker() is not None
             if is_inside_dialogue:

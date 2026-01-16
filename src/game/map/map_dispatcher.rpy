@@ -12,7 +12,7 @@ label map_dispatcher:
         current_location == 'mortuary_f1r3' or \
         current_location == 'mortuary_f1r4' or \
         current_location == 'mortuary_f1rc':
-        SmartPlayMusic(mortuary) # TODO [snow]: will it work?
+        play music mortuary if_changed
         jump mortuary_f1_map
 
     # if in_morutary_f2
@@ -24,7 +24,7 @@ label map_dispatcher:
        current_location == 'mortuary_f2r6' or \
        current_location == 'mortuary_f2r7' or \
        current_location == 'mortuary_f2r8':
-        play music mortuary
+        play music mortuary if_changed
         jump mortuary_f2_map
 
     # if in_morutary_f3
@@ -33,7 +33,7 @@ label map_dispatcher:
        current_location == 'mortuary_f3r3' or \
        current_location == 'mortuary_f3r4' or \
        current_location == 'mortuary_f3rc':
-        play music mortuary
+        play music mortuary if_changed
         jump mortuary_f3_map
 
     $ raise Exception(f"Unknown location '{current_location}'")

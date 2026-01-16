@@ -15,9 +15,9 @@ class NarratStore():
             'nameless_text_color': '#c4a28a',
             'nr_text_color': '#98afb5',
             'screen_width': 600,
-            'screen_height': 1024,
+            'screen_height': 1000,
             'history_area_height': 0.6,
-            'dialogue_area_height': 0.1,
+            'dialogue_area_height': 0.18,
             'menu_area_height': 0.2,
             'history_entry_limit': 50,
             'allow_history_scroll': True

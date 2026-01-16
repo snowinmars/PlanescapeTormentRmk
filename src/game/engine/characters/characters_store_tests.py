@@ -14,7 +14,7 @@ class CharacterStoreTest(unittest.TestCase):
             good=60, law=-60, \
             lore=0, experience=2000, \
             strength=12, dexterity=16, intelligence=13, constitution=16, wisdom=9, charisma=6,
-            looks_like=''
+            looks_like='morte'
         )
         self.annah = Character(
             name='annah_character_name', current_class='Fighter/Thief', race='Tiefling', sex='Female', \
@@ -22,13 +22,13 @@ class CharacterStoreTest(unittest.TestCase):
             good=0, law=-60, \
             lore=0, experience=0, \
             strength=14, dexterity=18, intelligence=12, constitution=16, wisdom=10, charisma=13,
-            looks_like=''
+            looks_like='annah'
         )
 
 
     def test_reserialize_empty_pickle(self):
         dump = pickle.dumps(self.store)
-        expected = b"\x80\x05\x95d\x00\x00\x00\x00\x00\x00\x00\x8c'game.engine.characters.characters_store\x94\x8c\x0fCharactersStore\x94\x93\x94)\x81\x94}\x94(\x8c\ncharacters\x94}\x94\x8c\tonce_keys\x94}\x94ub."
+        expected = b"\x80\x04\x95d\x00\x00\x00\x00\x00\x00\x00\x8c'game.engine.characters.characters_store\x94\x8c\x0fCharactersStore\x94\x93\x94)\x81\x94}\x94(\x8c\ncharacters\x94}\x94\x8c\tonce_keys\x94}\x94ub."
         self.assertEqual(dump, expected)
 
         store = pickle.loads(dump)
@@ -48,7 +48,7 @@ class CharacterStoreTest(unittest.TestCase):
         self._fill_store(self.store)
 
         dump = pickle.dumps(self.store)
-        expected = b'\x80\x05\x95l\x02\x00\x00\x00\x00\x00\x00\x8c\'game.engine.characters.characters_store\x94\x8c\x0fCharactersStore\x94\x93\x94)\x81\x94}\x94(\x8c\ncharacters\x94}\x94(\x8c\x14morte_character_name\x94\x8c game.engine.characters.character\x94\x8c\tCharacter\x94\x93\x94)\x81\x94}\x94(\x8c\x04name\x94h\x07\x8c\rcurrent_class\x94\x8c\x07Fighter\x94\x8c\x04race\x94\x8c\x0bHuman. Once\x94\x8c\x03sex\x94\x8c\x04Male\x94\x8c\nmax_health\x94K\x14\x8c\x0ecurrent_health\x94K\x14\x8c\x02ac\x94K\x04\x8c\x04good\x94K<\x8c\x03law\x94J\xc4\xff\xff\xff\x8c\x04lore\x94K\x00\x8c\nexperience\x94M\xd0\x07\x8c\x08strength\x94K\x0c\x8c\tdexterity\x94K\x10\x8c\x0cintelligence\x94K\r\x8c\x0cconstitution\x94K\x10\x8c\x06wisdom\x94K\t\x8c\x08charisma\x94K\x06\x8c\nlooks_like\x94\x8c\x00\x94ub\x8c\x14annah_character_name\x94h\n)\x81\x94}\x94(h\rh#h\x0e\x8c\rFighter/Thief\x94h\x10\x8c\x08Tiefling\x94h\x12\x8c\x06Female\x94h\x14K&h\x15K&h\x16K\x04h\x17K\x00h\x18J\xc4\xff\xff\xffh\x19K\x00h\x1aK\x00h\x1bK\x0eh\x1cK\x12h\x1dK\x0ch\x1eK\x10h\x1fK\nh K\rh!h"ubu\x8c\tonce_keys\x94}\x94(h\x07]\x94\x8c\rselfmortename\x94ah#]\x94\x8c\rselfannahname\x94auub.'
+        expected = b"\x80\x04\x95w\x02\x00\x00\x00\x00\x00\x00\x8c'game.engine.characters.characters_store\x94\x8c\x0fCharactersStore\x94\x93\x94)\x81\x94}\x94(\x8c\ncharacters\x94}\x94(\x8c\x14morte_character_name\x94\x8c game.engine.characters.character\x94\x8c\tCharacter\x94\x93\x94)\x81\x94}\x94(\x8c\x04name\x94h\x07\x8c\rcurrent_class\x94\x8c\x07Fighter\x94\x8c\x04race\x94\x8c\x0bHuman. Once\x94\x8c\x03sex\x94\x8c\x04Male\x94\x8c\nmax_health\x94K\x14\x8c\x0ecurrent_health\x94K\x14\x8c\x02ac\x94K\x04\x8c\x04good\x94K<\x8c\x03law\x94J\xc4\xff\xff\xff\x8c\x04lore\x94K\x00\x8c\nexperience\x94M\xd0\x07\x8c\x08strength\x94K\x0c\x8c\tdexterity\x94K\x10\x8c\x0cintelligence\x94K\r\x8c\x0cconstitution\x94K\x10\x8c\x06wisdom\x94K\t\x8c\x08charisma\x94K\x06\x8c\nlooks_like\x94\x8c\x05morte\x94ub\x8c\x14annah_character_name\x94h\n)\x81\x94}\x94(h\rh#h\x0e\x8c\rFighter/Thief\x94h\x10\x8c\x08Tiefling\x94h\x12\x8c\x06Female\x94h\x14K&h\x15K&h\x16K\x04h\x17K\x00h\x18J\xc4\xff\xff\xffh\x19K\x00h\x1aK\x00h\x1bK\x0eh\x1cK\x12h\x1dK\x0ch\x1eK\x10h\x1fK\nh K\rh!\x8c\x05annah\x94ubu\x8c\tonce_keys\x94}\x94(h\x07]\x94\x8c\rselfmortename\x94ah#]\x94\x8c\rselfannahname\x94auub."
         self.assertEqual(dump, expected)
 
         store = pickle.loads(dump)
@@ -59,7 +59,7 @@ class CharacterStoreTest(unittest.TestCase):
         self._fill_store(self.store)
 
         dump = self.store.toJson()
-        expected = '{"characters": {"morte_character_name": {"name": "morte_character_name", "current_class": "Fighter", "race": "Human. Once", "sex": "Male", "max_health": 20, "current_health": 20, "ac": 4, "good": 60, "law": -60, "lore": 0, "experience": 2000, "strength": 12, "dexterity": 16, "intelligence": 13, "constitution": 16, "wisdom": 9, "charisma": 6, "looks_like": ""}, "annah_character_name": {"name": "annah_character_name", "current_class": "Fighter/Thief", "race": "Tiefling", "sex": "Female", "max_health": 38, "current_health": 38, "ac": 4, "good": 0, "law": -60, "lore": 0, "experience": 0, "strength": 14, "dexterity": 18, "intelligence": 12, "constitution": 16, "wisdom": 10, "charisma": 13, "looks_like": ""}}, "once_keys": {"morte_character_name": ["selfmortename"], "annah_character_name": ["selfannahname"]}}'
+        expected = '{"characters": {"morte_character_name": {"name": "morte_character_name", "current_class": "Fighter", "race": "Human. Once", "sex": "Male", "max_health": 20, "current_health": 20, "ac": 4, "good": 60, "law": -60, "lore": 0, "experience": 2000, "strength": 12, "dexterity": 16, "intelligence": 13, "constitution": 16, "wisdom": 9, "charisma": 6, "looks_like": "morte"}, "annah_character_name": {"name": "annah_character_name", "current_class": "Fighter/Thief", "race": "Tiefling", "sex": "Female", "max_health": 38, "current_health": 38, "ac": 4, "good": 0, "law": -60, "lore": 0, "experience": 0, "strength": 14, "dexterity": 18, "intelligence": 12, "constitution": 16, "wisdom": 10, "charisma": 13, "looks_like": "annah"}}, "once_keys": {"morte_character_name": ["selfmortename"], "annah_character_name": ["selfannahname"]}}'
         self.assertEqual(dump, expected)
 
         store = CharactersStore.fromJson(dump)

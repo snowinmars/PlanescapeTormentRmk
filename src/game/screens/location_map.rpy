@@ -4,7 +4,7 @@ default _location_map_zadj = MyAdjustment(value=0)
 
 
 screen location_map(background, static_actions, dynamic_actions, shadows, bg_music):
-    on "show" action SmartPlayMusic(bg_music)
+    on "show" action Play("music", bg_music, loop=True, if_changed=True)
     on "show" action Hide("narrat")
 
     default tt = Tooltip('')

@@ -54,56 +54,56 @@ label deionarra_speak:
 
 label deionarra_s1_ctor:
     show dialogue_sprite_deionarra_default at dialogue
-    play music deionarra
+    play music deionarra if_changed
     $ dialogue_stack.append('deionarra_dispose')
     jump deionarra_s1
 
 
 label deionarra_s4_ctor:
     show dialogue_sprite_deionarra_default at dialogue
-    play music deionarra
+    play music deionarra if_changed
     $ dialogue_stack.append('deionarra_dispose')
     jump deionarra_s4
 
 
 label deionarra_s5_ctor:
     show dialogue_sprite_deionarra_default at dialogue
-    play music deionarra
+    play music deionarra if_changed
     $ dialogue_stack.append('deionarra_dispose')
     jump deionarra_s5
 
 
 label deionarra_s49_ctor:
     show dialogue_sprite_deionarra_default at dialogue
-    play music deionarra
+    play music deionarra if_changed
     $ dialogue_stack.append('deionarra_dispose')
     jump deionarra_s49
 
 
 label deionarra_s50_ctor:
     show dialogue_sprite_deionarra_default at dialogue
-    play music deionarra
+    play music deionarra if_changed
     $ dialogue_stack.append('deionarra_dispose')
     jump deionarra_s50
 
 
 label deionarra_s60_ctor:
     show dialogue_sprite_deionarra_default at dialogue
-    play music deionarra
+    play music deionarra if_changed
     $ dialogue_stack.append('deionarra_dispose')
     jump deionarra_s60
 
 
 label deionarra_s61_ctor:
     show dialogue_sprite_deionarra_default at dialogue
-    play music deionarra
+    play music deionarra if_changed
     $ dialogue_stack.append('deionarra_dispose')
     jump deionarra_s61
 
 
 label deionarra_s62_ctor:
     show dialogue_sprite_deionarra_default at dialogue
-    play music deionarra
+    play music deionarra if_changed
     $ dialogue_stack.append('deionarra_dispose')
     jump deionarra_s62
 
