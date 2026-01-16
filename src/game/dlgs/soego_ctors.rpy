@@ -66,104 +66,124 @@ label soego_speak:
 
 label soego_s0_ctor:
     show dialogue_sprite_soego_default at dialogue
+    $ dialogue_stack.append('soego_dispose')
     jump soego_s0
 
 
 label soego_s10_ctor: # -
     show dialogue_sprite_soego_default at dialogue
+    $ dialogue_stack.append('soego_dispose')
     jump soego_s10
 
 
 label soego_s12_ctor:
     show dialogue_sprite_soego_default at dialogue
+    $ dialogue_stack.append('soego_dispose')
     jump soego_s12
 
 
 label soego_s38_ctor:
     show dialogue_sprite_soego_default at dialogue
+    $ dialogue_stack.append('soego_dispose')
     jump soego_s38
 
 
 label soego_s58_ctor:
     show dialogue_sprite_soego_default at dialogue
+    $ dialogue_stack.append('soego_dispose')
     jump soego_s58
 
 
 label soego_s59_ctor:
     show dialogue_sprite_soego_default at dialogue
+    $ dialogue_stack.append('soego_dispose')
     jump soego_s59
 
 
 label soego_s63_ctor:
     show dialogue_sprite_soego_default at dialogue
+    $ dialogue_stack.append('soego_dispose')
     jump soego_s63
 
 
 label soego_s75_ctor: # -
     show dialogue_sprite_soego_default at dialogue
+    $ dialogue_stack.append('soego_dispose')
     jump soego_s75
 
 
 label soego_s76_ctor: # -
     show dialogue_sprite_soego_default at dialogue
+    $ dialogue_stack.append('soego_dispose')
     jump soego_s76
 
 
 label soego_s79_ctor:
     show dialogue_sprite_soego_default at dialogue
+    $ dialogue_stack.append('soego_dispose')
     jump soego_s79
 
 
 label soego_s82_ctor:
     show dialogue_sprite_soego_default at dialogue
+    $ dialogue_stack.append('soego_dispose')
     jump soego_s82
 
 
 label soego_s85_ctor: # -
     show dialogue_sprite_soego_default at dialogue
+    $ dialogue_stack.append('soego_dispose')
     jump soego_s85
 
 
 label soego_s86_ctor: # -
     show dialogue_sprite_soego_default at dialogue
+    $ dialogue_stack.append('soego_dispose')
     jump soego_s86
 
 
 label soego_s87_ctor: # -
     show dialogue_sprite_soego_default at dialogue
+    $ dialogue_stack.append('soego_dispose')
     jump soego_s87
 
 
 label soego_s95_ctor:
     show dialogue_sprite_soego_default at dialogue
+    $ dialogue_stack.append('soego_dispose')
     jump soego_s95
 
 
 label soego_s96_ctor: # -
     show dialogue_sprite_soego_default at dialogue
+    $ dialogue_stack.append('soego_dispose')
     jump soego_s96
 
 
 label soego_s98_ctor: # -
     show dialogue_sprite_soego_default at dialogue
+    $ dialogue_stack.append('soego_dispose')
     jump soego_s98
 
 
 label soego_s99_ctor: # -
     show dialogue_sprite_soego_default at dialogue
+    $ dialogue_stack.append('soego_dispose')
     jump soego_s99
 
 
 label soego_s102_ctor: # -
     show dialogue_sprite_soego_default at dialogue
+    $ dialogue_stack.append('soego_dispose')
     jump soego_s102
 
 
 label soego_s108_ctor:
     show dialogue_sprite_soego_default at dialogue
+    $ dialogue_stack.append('soego_dispose')
     jump soego_s108
 
 
 label soego_dispose:
     scene onlayer dialogue
-    jump map_dispatcher
+    return

@@ -19,7 +19,7 @@ label deionarra_s0: # from 5.2 9.5 10.8 11.3 12.3 13.4 14.2 25.3 27.4 28.4 30.2 
         'deionarra_s0_r701{#deionarra_s0_r701}' if deionarraLogic.r701_condition(): # 'Уйти.{#deionarra_s0_r701}'
             # a0 # r701
             $ deionarraLogic.r701_action()
-            jump deionarra_dispose
+            jump dialogues_dispose
 
         'deionarra_s0_r699{#deionarra_s0_r699}' if deionarraLogic.r699_condition(): # 'Уйти.{#deionarra_s0_r699}'
             # a1 # r699
@@ -29,7 +29,7 @@ label deionarra_s0: # from 5.2 9.5 10.8 11.3 12.3 13.4 14.2 25.3 27.4 28.4 30.2 
         'deionarra_s0_r9616{#deionarra_s0_r9616}' if deionarraLogic.r9616_condition(): # 'Уйти.{#deionarra_s0_r9616}'
             # a2 # r9616
             $ deionarraLogic.r9616_action()
-            jump deionarra_dispose
+            jump dialogues_dispose
 
 
 # s1 # say5
@@ -49,7 +49,7 @@ label deionarra_s1: # - # IF WEIGHT #0 ~  Global("Deionarra","GLOBAL",0) !Global
         'deionarra_s1_r705{#deionarra_s1_r705}': # 'Уйти до того, как дух обратит на тебя внимание.{#deionarra_s1_r705}'
             # a5 # r705
             $ deionarraLogic.r705_action()
-            jump deionarra_dispose
+            jump dialogues_dispose
 
 
 # s2 # say706
@@ -243,7 +243,7 @@ label deionarra_s8: # from 7.0 47.2
         'deionarra_s8_r747{#deionarra_s8_r747}' if deionarraLogic.r747_condition(): # '«Хорошо…»{#deionarra_s8_r747}'
             # a33 # r747
             $ deionarraLogic.r747_action()
-            jump deionarra_dispose
+            jump dialogues_dispose
 
         'deionarra_s8_r1313{#deionarra_s8_r1313}' if deionarraLogic.r1313_condition(): # '«Хорошо…»{#deionarra_s8_r1313}'
             # a34 # r1313
@@ -253,7 +253,7 @@ label deionarra_s8: # from 7.0 47.2
         'deionarra_s8_r13255{#deionarra_s8_r13255}' if deionarraLogic.r13255_condition(): # 'Уйти.{#deionarra_s8_r13255}'
             # a35 # r13255
             $ deionarraLogic.r13255_action()
-            jump deionarra_dispose
+            jump dialogues_dispose
 
 
 # s9 # say726
@@ -505,7 +505,7 @@ label deionarra_s19: # from 17.2 18.1
         'deionarra_s19_r803{#deionarra_s19_r803}' if deionarraLogic.r803_condition(): # 'Уйти.{#deionarra_s19_r803}'
             # a77 # r803
             $ deionarraLogic.r803_action()
-            jump deionarra_dispose
+            jump dialogues_dispose
 
         'deionarra_s19_r6085{#deionarra_s19_r6085}' if deionarraLogic.r6085_condition(): # 'Уйти.{#deionarra_s19_r6085}'
             # a78 # r6085
@@ -515,7 +515,7 @@ label deionarra_s19: # from 17.2 18.1
         'deionarra_s19_r13256{#deionarra_s19_r13256}' if deionarraLogic.r13256_condition(): # 'Уйти.{#deionarra_s19_r13256}'
             # a79 # r13256
             $ deionarraLogic.r13256_action()
-            jump deionarra_dispose
+            jump dialogues_dispose
 
 
 # s20 # say777
@@ -653,7 +653,7 @@ label deionarra_s26: # from 3.5 4.1 6.5 6.6 7.5 15.0 15.3 20.3 21.2 21.5 28.2 47
         'deionarra_s26_r6081{#deionarra_s26_r6081}' if deionarraLogic.r6081_condition(): # 'Уйти.{#deionarra_s26_r6081}'
             # a99 # r6081
             $ deionarraLogic.r6081_action()
-            jump deionarra_dispose
+            jump dialogues_dispose
 
         'deionarra_s26_r6082{#deionarra_s26_r6082}' if deionarraLogic.r6082_condition(): # 'Уйти.{#deionarra_s26_r6082}'
             # a100 # r6082
@@ -663,7 +663,7 @@ label deionarra_s26: # from 3.5 4.1 6.5 6.6 7.5 15.0 15.3 20.3 21.2 21.5 28.2 47
         'deionarra_s26_r13257{#deionarra_s26_r13257}' if deionarraLogic.r13257_condition(): # 'Уйти.{#deionarra_s26_r13257}'
             # a101 # r13257
             $ deionarraLogic.r13257_action()
-            jump deionarra_dispose
+            jump dialogues_dispose
 
 
 # s27 # say795
@@ -1132,7 +1132,7 @@ label deionarra_s48: # from 33.5 39.0 39.1
         'deionarra_s48_r6154{#deionarra_s48_r6154}' if deionarraLogic.r6154_condition(): # 'Уйти.{#deionarra_s48_r6154}'
             # a170 # r6154
             $ deionarraLogic.r6154_action()
-            jump deionarra_dispose
+            jump dialogues_dispose
 
         'deionarra_s48_r6155{#deionarra_s48_r6155}' if deionarraLogic.r6155_condition(): # 'Уйти.{#deionarra_s48_r6155}'
             # a171 # r6155
@@ -1142,7 +1142,7 @@ label deionarra_s48: # from 33.5 39.0 39.1
         'deionarra_s48_r13258{#deionarra_s48_r13258}' if deionarraLogic.r13258_condition(): # 'Уйти.{#deionarra_s48_r13258}'
             # a172 # r13258
             $ deionarraLogic.r13258_action()
-            jump deionarra_dispose
+            jump dialogues_dispose
 
 
 # s49 # say63356
@@ -1231,12 +1231,12 @@ label deionarra_s54: # from 53.0 53.1 53.2 53.3
         'deionarra_s54_r63371{#deionarra_s54_r63371}' if deionarraLogic.r63371_condition(): # 'Прикоснуться к ее руке…{#deionarra_s54_r63371}'
             # a181 # r63371
             $ deionarraLogic.r63371_action()
-            jump deionarra_dispose
+            jump dialogues_dispose
 
         'deionarra_s54_r64594{#deionarra_s54_r64594}' if deionarraLogic.r64594_condition(): # 'Прикоснуться к ее руке…{#deionarra_s54_r64594}'
             # a182 # r64594
             $ deionarraLogic.r64594_action()
-            jump deionarra_dispose
+            jump dialogues_dispose
 
 
 # s55 # say63372
@@ -1337,7 +1337,7 @@ label deionarra_s60: # - # IF WEIGHT #6 /* Triggers after states #: 62 even thou
 
         'deionarra_s60_r63389{#deionarra_s60_r63389}': # 'Оставить призрачную фигуру в покое.{#deionarra_s60_r63389}'
             # a194 # r63389
-            jump deionarra_dispose
+            jump dialogues_dispose
 
 
 # s61 # say63390
@@ -1353,7 +1353,7 @@ label deionarra_s61: # - # IF WEIGHT #7 /* Triggers after states #: 62 even thou
 
         'deionarra_s61_r63392{#deionarra_s61_r63392}': # 'Оставить Дейонарру в покое.{#deionarra_s61_r63392}'
             # a196 # r63392
-            jump deionarra_dispose
+            jump dialogues_dispose
 
 
 # s62 # say63393
@@ -1507,11 +1507,11 @@ label deionarra_s70: # from 75.0
 
         'deionarra_s70_r63420{#deionarra_s70_r63420}' if deionarraLogic.r63420_condition(): # '«Благодарю тебя, дух. Теперь я должен идти».{#deionarra_s70_r63420}'
             # a215 # r63420
-            jump deionarra_dispose
+            jump dialogues_dispose
 
         'deionarra_s70_r63421{#deionarra_s70_r63421}' if deionarraLogic.r63421_condition(): # '«Благодарю тебя, Дейонарра. Теперь я должен идти».{#deionarra_s70_r63421}'
             # a216 # r63421
-            jump deionarra_dispose
+            jump dialogues_dispose
 
 
 # s71 # say63422
@@ -1524,7 +1524,7 @@ label deionarra_s71: # from 70.0
     menu:
         'deionarra_s71_r63423{#deionarra_s71_r63423}' if deionarraLogic.r63423_condition(): # '«Благодарю тебя, Дейонарра. Теперь я должен идти».{#deionarra_s71_r63423}'
             # a217 # r63423
-            jump deionarra_dispose
+            jump dialogues_dispose
 
 
 # s72 # say66912

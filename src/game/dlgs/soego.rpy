@@ -33,7 +33,7 @@ label soego_s0: # - # IF WEIGHT #8 /* Triggers after states #: 59 58 12 63 108 7
 
         'soego_s0_r1436{#soego_s0_r1436}': # 'Оставить его в покое.{#soego_s0_r1436}'
             # a4 # r1436
-            jump soego_dispose
+            jump dialogues_dispose
 
 
 # s1 # say1437
@@ -138,7 +138,7 @@ label soego_s3: # from 1.2
 
         'soego_s3_r1454{#soego_s3_r1454}': # 'Тихо уйти.{#soego_s3_r1454}'
             # a20 # r1454
-            jump soego_dispose
+            jump dialogues_dispose
 
 
 # s4 # say1455
@@ -270,7 +270,7 @@ label soego_s8: # from 2.2 5.2 6.0 13.0 15.2 16.0 17.0 26.0 40.0 41.0 50.0 61.0 
         'soego_s8_r1478{#soego_s8_r1478}' if soegoLogic.r1478_condition(): # '«Спасибо».{#soego_s8_r1478}'
             # a39 # r1478
             $ soegoLogic.r1478_action()
-            jump soego_dispose
+            jump dialogues_dispose
 
         'soego_s8_r1479{#soego_s8_r1479}' if soegoLogic.r1479_condition(): # '«Спасибо».{#soego_s8_r1479}'
             # a40 # r1479
@@ -351,7 +351,7 @@ label soego_s12: # from 11.0 # IF WEIGHT #5 /* Triggers after states #: 63 108 7
         'soego_s12_r1493{#soego_s12_r1493}': # '«Спасибо, Соэго. Я пошел».{#soego_s12_r1493}'
             # a50 # r1493
             $ soegoLogic.r1493_action()
-            jump soego_dispose
+            jump dialogues_dispose
 
 
 # s13 # say1494
@@ -511,7 +511,7 @@ label soego_s18: # from 6.4 9.0 9.1 9.4 16.4 17.4 40.4 40.5 41.6 50.6 53.6 61.4
         'soego_s18_r1525{#soego_s18_r1525}': # '«Ну хорошо…»{#soego_s18_r1525}'
             # a74 # r1525
             $ soegoLogic.r1525_action()
-            jump soego_dispose
+            jump dialogues_dispose
 
 
 # s19 # say1526
@@ -552,7 +552,7 @@ label soego_s21: # from 20.1
         'soego_s21_r1533{#soego_s21_r1533}': # '«Ну хорошо…»{#soego_s21_r1533}'
             # a78 # r1533
             $ soegoLogic.r1533_action()
-            jump soego_dispose
+            jump dialogues_dispose
 
 
 # s22 # say1534
@@ -564,7 +564,7 @@ label soego_s22: # from 3.2 4.3 6.3 9.3 16.3 17.3 40.3 61.3 114.1 115.2
         'soego_s22_r1535{#soego_s22_r1535}': # '«Ну хорошо…»{#soego_s22_r1535}'
             # a79 # r1535
             $ soegoLogic.r1535_action()
-            jump soego_dispose
+            jump dialogues_dispose
 
 
 # s23 # say4792
@@ -667,7 +667,7 @@ label soego_s26: # from 12.0 23.1 25.1 27.2 28.0 29.1 31.1 32.0 33.2 34.2 35.1 3
 
         'soego_s26_r4834{#soego_s26_r4834}' if soegoLogic.r4834_condition(): # '«Неважно. Мне нужно идти. Прощай».{#soego_s26_r4834}'
             # a97 # r4834
-            jump soego_dispose
+            jump dialogues_dispose
 
         'soego_s26_r4835{#soego_s26_r4835}' if soegoLogic.r4835_condition(): # '«Неважно. Мне нужно идти. Прощай».{#soego_s26_r4835}'
             # a98 # r4835
@@ -696,7 +696,7 @@ label soego_s27: # from 26.2
 
         'soego_s27_r4839{#soego_s27_r4839}' if soegoLogic.r4839_condition(): # '«Неважно. Мне нужно идти. Прощай».{#soego_s27_r4839}'
             # a102 # r4839
-            jump soego_dispose
+            jump dialogues_dispose
 
         'soego_s27_r916{#soego_s27_r916}' if soegoLogic.r916_condition(): # '«Неважно. Мне нужно идти. Прощай».{#soego_s27_r916}'
             # a103 # r916
@@ -721,7 +721,7 @@ label soego_s28: # from 27.0 27.1
 
         'soego_s28_r4853{#soego_s28_r4853}' if soegoLogic.r4853_condition(): # '«Неважно. Мне нужно идти. Прощай».{#soego_s28_r4853}'
             # a105 # r4853
-            jump soego_dispose
+            jump dialogues_dispose
 
         'soego_s28_r4854{#soego_s28_r4854}' if soegoLogic.r4854_condition(): # '«Неважно. Мне нужно идти. Прощай».{#soego_s28_r4854}'
             # a106 # r4854
@@ -744,7 +744,7 @@ label soego_s29: # from 26.5
 
         'soego_s29_r4858{#soego_s29_r4858}' if soegoLogic.r4858_condition(): # '«Неважно. Мне нужно идти. Прощай».{#soego_s29_r4858}'
             # a109 # r4858
-            jump soego_dispose
+            jump dialogues_dispose
 
         'soego_s29_r4859{#soego_s29_r4859}' if soegoLogic.r4859_condition(): # '«Неважно. Мне нужно идти. Прощай».{#soego_s29_r4859}'
             # a110 # r4859
@@ -762,12 +762,12 @@ label soego_s30: # from 26.4 29.0
         'soego_s30_r4861{#soego_s30_r4861}': # '«Что за?.. Что ты делаешь?»{#soego_s30_r4861}'
             # a111 # r4861
             $ soegoLogic.r4861_action()
-            jump soego_dispose
+            jump dialogues_dispose
 
         'soego_s30_r4862{#soego_s30_r4862}': # '«Ну хорошо. Приготовься к смерти, Соэго».{#soego_s30_r4862}'
             # a112 # r4862
             $ soegoLogic.r4862_action()
-            jump soego_dispose
+            jump dialogues_dispose
 
 
 # s31 # say4863
@@ -788,7 +788,7 @@ label soego_s31: # from 26.3
 
         'soego_s31_r4866{#soego_s31_r4866}' if soegoLogic.r4866_condition(): # '«Ясно. Что ж, мне нужно идти. Прощай».{#soego_s31_r4866}'
             # a115 # r4866
-            jump soego_dispose
+            jump dialogues_dispose
 
         'soego_s31_r4867{#soego_s31_r4867}' if soegoLogic.r4867_condition(): # '«Ясно. Что ж, мне нужно идти. Прощай».{#soego_s31_r4867}'
             # a116 # r4867
@@ -810,7 +810,7 @@ label soego_s32: # from 31.0
 
         'soego_s32_r4870{#soego_s32_r4870}' if soegoLogic.r4870_condition(): # '«Нет, не хочу тебя больше беспокоить. Спасибо за информацию».{#soego_s32_r4870}'
             # a118 # r4870
-            jump soego_dispose
+            jump dialogues_dispose
 
         'soego_s32_r4871{#soego_s32_r4871}' if soegoLogic.r4871_condition(): # '«Нет, не хочу тебя больше беспокоить. Спасибо за информацию».{#soego_s32_r4871}'
             # a119 # r4871
@@ -839,7 +839,7 @@ label soego_s33: # from 26.6
 
         'soego_s33_r4876{#soego_s33_r4876}' if soegoLogic.r4876_condition(): # '«Понятно. Кажется, мне пора идти».{#soego_s33_r4876}'
             # a123 # r4876
-            jump soego_dispose
+            jump dialogues_dispose
 
         'soego_s33_r4877{#soego_s33_r4877}' if soegoLogic.r4877_condition(): # '«Понятно. Кажется, мне пора идти».{#soego_s33_r4877}'
             # a124 # r4877
@@ -866,7 +866,7 @@ label soego_s34: # from 33.0 36.0
 
         'soego_s34_r4882{#soego_s34_r4882}' if soegoLogic.r4882_condition(): # '«Ясно. Что ж, мне нужно идти. Прощай».{#soego_s34_r4882}'
             # a128 # r4882
-            jump soego_dispose
+            jump dialogues_dispose
 
         'soego_s34_r4883{#soego_s34_r4883}' if soegoLogic.r4883_condition(): # '«Ясно. Что ж, мне нужно идти. Прощай».{#soego_s34_r4883}'
             # a129 # r4883
@@ -889,7 +889,7 @@ label soego_s35: # from 34.0
 
         'soego_s35_r4887{#soego_s35_r4887}' if soegoLogic.r4887_condition(): # '«Спасибо за информацию. Прощай».{#soego_s35_r4887}'
             # a132 # r4887
-            jump soego_dispose
+            jump dialogues_dispose
 
         'soego_s35_r4888{#soego_s35_r4888}' if soegoLogic.r4888_condition(): # '«Спасибо за информацию. Прощай».{#soego_s35_r4888}'
             # a133 # r4888
@@ -912,7 +912,7 @@ label soego_s36: # from 33.1 34.1 35.0
 
         'soego_s36_r4892{#soego_s36_r4892}' if soegoLogic.r4892_condition(): # '«Спасибо за информацию. Прощай».{#soego_s36_r4892}'
             # a136 # r4892
-            jump soego_dispose
+            jump dialogues_dispose
 
         'soego_s36_r4893{#soego_s36_r4893}' if soegoLogic.r4893_condition(): # '«Спасибо за информацию. Прощай».{#soego_s36_r4893}'
             # a137 # r4893
@@ -933,7 +933,7 @@ label soego_s37: # from 26.7
 
         'soego_s37_r4896{#soego_s37_r4896}' if soegoLogic.r4896_condition(): # '«Все равно спасибо. Прощай».{#soego_s37_r4896}'
             # a139 # r4896
-            jump soego_dispose
+            jump dialogues_dispose
 
         'soego_s37_r4897{#soego_s37_r4897}' if soegoLogic.r4897_condition(): # '«Все равно спасибо. Прощай».{#soego_s37_r4897}'
             # a140 # r4897
@@ -960,7 +960,7 @@ label soego_s38: # - # IF WEIGHT #9 /* Triggers after states #: 59 58 63 108 79 
 
         'soego_s38_r66708{#soego_s38_r66708}': # 'Оставить его в раздумьях.{#soego_s38_r66708}'
             # a143 # r66708
-            jump soego_dispose
+            jump dialogues_dispose
 
 
 # s39 # say4904
@@ -1264,7 +1264,7 @@ label soego_s52: # from 51.1
         'soego_s52_r4961{#soego_s52_r4961}': # '«Ну хорошо…»{#soego_s52_r4961}'
             # a188 # r4961
             $ soegoLogic.r4961_action()
-            jump soego_dispose
+            jump dialogues_dispose
 
 
 # s53 # say4962
@@ -1343,7 +1343,7 @@ label soego_s56: # from 55.0 59.1
         'soego_s56_r4975{#soego_s56_r4975}' if soegoLogic.r4975_condition(): # '«Хорошо».{#soego_s56_r4975}'
             # a198 # r4975
             $ soegoLogic.r4975_action()
-            jump soego_dispose
+            jump dialogues_dispose
 
         'soego_s56_r4976{#soego_s56_r4976}' if soegoLogic.r4976_condition(): # '«Хорошо».{#soego_s56_r4976}'
             # a199 # r4976
@@ -1379,7 +1379,7 @@ label soego_s58: # - # IF WEIGHT #6 /* Triggers after states #: 63 108 79 82 95 
 
         'soego_s58_r4982{#soego_s58_r4982}': # '«Я как раз направляюсь к воротам. Прощай».{#soego_s58_r4982}'
             # a203 # r4982
-            jump soego_dispose
+            jump dialogues_dispose
 
 
 # s59 # say4983
@@ -1400,7 +1400,7 @@ label soego_s59: # - # IF WEIGHT #7 /* Triggers after states #: 63 108 79 82 95 
 
         'soego_s59_r4986{#soego_s59_r4986}': # '«Да, я как раз направляюсь к воротам. Прощай».{#soego_s59_r4986}'
             # a206 # r4986
-            jump soego_dispose
+            jump dialogues_dispose
 
 
 # s60 # say4987
@@ -1413,7 +1413,7 @@ label soego_s60: # from 59.0
         'soego_s60_r4988{#soego_s60_r4988}' if soegoLogic.r4988_condition(): # '«Спасибо».{#soego_s60_r4988}'
             # a207 # r4988
             $ soegoLogic.r4988_action()
-            jump soego_dispose
+            jump dialogues_dispose
 
         'soego_s60_r4989{#soego_s60_r4989}' if soegoLogic.r4989_condition(): # '«Спасибо».{#soego_s60_r4989}'
             # a208 # r4989
@@ -1464,7 +1464,7 @@ label soego_s62: # from 44.2 45.1 46.0 47.1 48.0
 
         'soego_s62_r4998{#soego_s62_r4998}': # '«Спасибо. Я скоро вернусь».{#soego_s62_r4998}'
             # a215 # r4998
-            jump soego_dispose
+            jump dialogues_dispose
 
 
 # s63 # say21653
@@ -1705,7 +1705,7 @@ label soego_s71: # from 63.4 64.4 65.3 66.3 67.5 68.4 69.4 70.4 72.6 73.6 74.4 7
         'soego_s71_r64570{#soego_s71_r64570}': # 'Уйти.{#soego_s71_r64570}'
             # a257 # r64570
             $ soegoLogic.j21805_s71_r64570_action()
-            jump soego_dispose
+            jump dialogues_dispose
 
 
 # s72 # say21806
@@ -1810,7 +1810,7 @@ label soego_s75: # -
     'soego_s75{#soego_s75}'
     # nr 'Null node.{#soego_s75_1}'
 
-    jump soego_dispose
+    jump dialogues_dispose
 
 
 # s76 # say21832
@@ -1818,7 +1818,7 @@ label soego_s76: # -
     'soego_s76{#soego_s76}'
     # nr 'Null node.{#soego_s76_1}'
 
-    jump soego_dispose
+    jump dialogues_dispose
 
 
 # s77 # say21837
@@ -1969,7 +1969,7 @@ label soego_s82: # - # IF WEIGHT #1 /* Triggers after states #: 95 even though t
 
         'soego_s82_r21925{#soego_s82_r21925}': # '«Я просто проходил мимо. Прощай».{#soego_s82_r21925}'
             # a300 # r21925
-            jump soego_dispose
+            jump dialogues_dispose
 
 
 # s83 # say21943
@@ -2004,7 +2004,7 @@ label soego_s83: # from 82.7 88.0 89.1 90.0 91.1 92.0 94.1 94.3 111.0
 
         'soego_s83_r21951{#soego_s83_r21951}': # '«Неважно. Прощай».{#soego_s83_r21951}'
             # a307 # r21951
-            jump soego_dispose
+            jump dialogues_dispose
 
 
 # s84 # say21954
@@ -2016,7 +2016,7 @@ label soego_s84: # from 71.0 71.1 82.5 82.6
         'soego_s84_r21956{#soego_s84_r21956}': # '«Спасибо…»{#soego_s84_r21956}'
             # a308 # r21956
             $ soegoLogic.r21956_action()
-            jump soego_dispose
+            jump dialogues_dispose
 
 
 # s85 # say21958
@@ -2024,7 +2024,7 @@ label soego_s85: # -
     'soego_s85{#soego_s85}'
     # nr 'Null Node.{#soego_s85_1}'
 
-    jump soego_dispose
+    jump dialogues_dispose
 
 
 # s86 # say21963
@@ -2032,7 +2032,7 @@ label soego_s86: # -
     'soego_s86{#soego_s86}'
     # nr 'Null Node.{#soego_s86_1}'
 
-    jump soego_dispose
+    jump dialogues_dispose
 
 
 # s87 # say21969
@@ -2040,7 +2040,7 @@ label soego_s87: # -
     'soego_s87{#soego_s87}'
     # nr 'Null Node.{#soego_s87_1}'
 
-    jump soego_dispose
+    jump dialogues_dispose
 
 
 # s88 # say21975
@@ -2055,7 +2055,7 @@ label soego_s88: # from 83.0 91.0
 
         'soego_s88_r21977{#soego_s88_r21977}': # '«Это все, что я хотел узнать. Прощай».{#soego_s88_r21977}'
             # a310 # r21977
-            jump soego_dispose
+            jump dialogues_dispose
 
 
 # s89 # say21978
@@ -2075,7 +2075,7 @@ label soego_s89: # from 83.1
 
         'soego_s89_r21981{#soego_s89_r21981}': # '«Это все, что я хотел узнать. Прощай».{#soego_s89_r21981}'
             # a313 # r21981
-            jump soego_dispose
+            jump dialogues_dispose
 
 
 # s90 # say21982
@@ -2090,7 +2090,7 @@ label soego_s90: # from 83.2
 
         'soego_s90_r21984{#soego_s90_r21984}': # '«Это все, что я хотел узнать. Прощай».{#soego_s90_r21984}'
             # a315 # r21984
-            jump soego_dispose
+            jump dialogues_dispose
 
 
 # s91 # say21985
@@ -2110,7 +2110,7 @@ label soego_s91: # from 83.3 89.0
 
         'soego_s91_r21988{#soego_s91_r21988}': # '«Это все, что я хотел узнать. Прощай».{#soego_s91_r21988}'
             # a318 # r21988
-            jump soego_dispose
+            jump dialogues_dispose
 
 
 # s92 # say21989
@@ -2125,7 +2125,7 @@ label soego_s92: # from 83.4
 
         'soego_s92_r21991{#soego_s92_r21991}': # '«Это все, что я хотел узнать. Прощай».{#soego_s92_r21991}'
             # a320 # r21991
-            jump soego_dispose
+            jump dialogues_dispose
 
 
 # s93 # say21992
@@ -2155,7 +2155,7 @@ label soego_s94: # from 82.0 82.1
         'soego_s94_r25253{#soego_s94_r25253}' if soegoLogic.r25253_condition(): # '«Возможно. Прощай».{#soego_s94_r25253}'
             # a323 # r25253
             $ soegoLogic.j25254_s94_r25253_action()
-            jump soego_dispose
+            jump dialogues_dispose
 
         'soego_s94_r21994{#soego_s94_r21994}' if soegoLogic.r21994_condition(): # '«Хорошо. У меня есть несколько вопросов…»{#soego_s94_r21994}'
             # a324 # r21994
@@ -2165,7 +2165,7 @@ label soego_s94: # from 82.0 82.1
         'soego_s94_r21995{#soego_s94_r21995}' if soegoLogic.r21995_condition(): # '«Тогда я расскажу ему сам. Прощай».{#soego_s94_r21995}'
             # a325 # r21995
             $ soegoLogic.j21996_s94_r21995_action()
-            jump soego_dispose
+            jump dialogues_dispose
 
 
 # s95 # say21997
@@ -2178,7 +2178,7 @@ label soego_s95: # - # IF WEIGHT #0 ~  CreatureInArea("AR1500") GlobalGT("Soego_
         'soego_s95_r21998{#soego_s95_r21998}': # '«Чт…»{#soego_s95_r21998}'
             # a326 # r21998
             $ soegoLogic.r21998_action()
-            jump soego_dispose
+            jump dialogues_dispose
 
 
 # s96 # say22003
@@ -2190,7 +2190,7 @@ label soego_s96: # -
     menu:
         'soego_s96_r22004{#soego_s96_r22004}': # 'Уйти.{#soego_s96_r22004}'
             # a327 # r22004
-            jump soego_dispose
+            jump dialogues_dispose
 
 
 # s97 # say22005
@@ -2201,7 +2201,7 @@ label soego_s97: # from 82.4
     menu:
         'soego_s97_r22006{#soego_s97_r22006}': # '«Прощай».{#soego_s97_r22006}'
             # a328 # r22006
-            jump soego_dispose
+            jump dialogues_dispose
 
 
 # s98 # say22007
@@ -2213,7 +2213,7 @@ label soego_s98: # -
     menu:
         'soego_s98_r22008{#soego_s98_r22008}': # '«Прощай».{#soego_s98_r22008}'
             # a329 # r22008
-            jump soego_dispose
+            jump dialogues_dispose
 
 
 # s99 # say22009
@@ -2225,7 +2225,7 @@ label soego_s99: # -
     menu:
         'soego_s99_r22010{#soego_s99_r22010}': # '«Понятно. Прощай».{#soego_s99_r22010}'
             # a330 # r22010
-            jump soego_dispose
+            jump dialogues_dispose
 
 
 # s100 # say22011
@@ -2239,7 +2239,7 @@ label soego_s100: # from 82.3
         'soego_s100_r22012{#soego_s100_r22012}': # '«Какого?..»{#soego_s100_r22012}'
             # a331 # r22012
             $ soegoLogic.r22012_action()
-            jump soego_dispose
+            jump dialogues_dispose
 
 
 # s101 # say22014
@@ -2285,7 +2285,7 @@ label soego_s102: # -
         'soego_s102_r22024{#soego_s102_r22024}': # '«Какого?..»{#soego_s102_r22024}'
             # a338 # r22024
             $ soegoLogic.r22024_action()
-            jump soego_dispose
+            jump dialogues_dispose
 
 
 # s103 # say22026
@@ -2459,7 +2459,7 @@ label soego_s111: # from 94.0
 
         'soego_s111_r25251{#soego_s111_r25251}': # '«Возможно. Прощай».{#soego_s111_r25251}'
             # a364 # r25251
-            jump soego_dispose
+            jump dialogues_dispose
 
 
 # s112 # say64620
@@ -2497,7 +2497,7 @@ label soego_s113: # from 38.1
 
         'soego_s113_r66714{#soego_s113_r66714}': # '«Я просто проходил мимо. Прощай».{#soego_s113_r66714}'
             # a369 # r66714
-            jump soego_dispose
+            jump dialogues_dispose
 
 
 # s114 # say66710

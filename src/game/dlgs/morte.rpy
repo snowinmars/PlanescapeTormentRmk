@@ -22,16 +22,16 @@ label morte_s0: # -
 
         'morte_s0_r989{#morte_s0_r989}': # 'Не обращать внимания на говорящий череп и изучить комнату.{#morte_s0_r989}'
             # a1 # r989
-            jump morte_dispose
+            jump dialogues_dispose
 
         'morte_s0_r988{#morte_s0_r988}': # 'Вдохнуть поглубже, встряхнуть головой и не обращать внимания на говорящий с тобой череп.{#morte_s0_r988}'
             # a2 # r988
-            jump morte_dispose
+            jump dialogues_dispose
 
         'morte_s0_r17833{#morte_s0_r17833}': # '«Морт, я уверен, что у тебя найдется еще тысяча умных мыслей, но мне нужно, чтобы ты заткнулся, закончил свои дела и присоединился ко мне НЕМЕДЛЕННО».{#morte_s0_r17833}'
             # a3 # r17833
             $ morteLogic.r17833_action()
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s1 # say990
@@ -56,7 +56,7 @@ label morte_s1: # from 0.0 29.0 31.0
 
         'morte_s1_r991{#morte_s1_r991}': # 'Не обращать внимания на череп и изучить комнату.{#morte_s1_r991}'
             # a7 # r991
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s2 # say997
@@ -79,7 +79,7 @@ label morte_s2: # from 1.0 4.0 5.0
 
         'morte_s2_r1087{#morte_s2_r1087}': # 'Не обращать внимания на Морта и изучить комнату.{#morte_s2_r1087}'
             # a11 # r1087
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s3 # say999
@@ -100,7 +100,7 @@ label morte_s3: # from 1.1 4.1 5.1
 
         'morte_s3_r1002{#morte_s3_r1002}': # 'Не обращать внимания на Морта и изучить комнату.{#morte_s3_r1002}'
             # a14 # r1002
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s4 # say1003
@@ -123,7 +123,7 @@ label morte_s4: # from 1.2
 
         'morte_s4_r994{#morte_s4_r994}': # 'Не обращать внимания на череп и изучить комнату.{#morte_s4_r994}'
             # a18 # r994
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s5 # say1008
@@ -142,7 +142,7 @@ label morte_s5: # from 4.2
 
         'morte_s5_r1011{#morte_s5_r1011}': # 'Не обращать внимания на Морта и изучить комнату.{#morte_s5_r1011}'
             # a21 # r1011
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s6 # say1012
@@ -161,7 +161,7 @@ label morte_s6: # from 2.0 29.1 31.1
 
         'morte_s6_r1085{#morte_s6_r1085}': # 'Не обращать внимания на Морта и изучить комнату.{#morte_s6_r1085}'
             # a24 # r1085
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s7 # say1014
@@ -188,7 +188,7 @@ label morte_s7: # from 6.0 9.0
 
         'morte_s7_r1020{#morte_s7_r1020}': # 'Не обращать внимания на Морта и изучить комнату.{#morte_s7_r1020}'
             # a29 # r1020
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s8 # say1021
@@ -210,7 +210,7 @@ label morte_s8: # from 7.3
 
         'morte_s8_r1137{#morte_s8_r1137}': # 'Не обращать внимания на Морта и изучить комнату.{#morte_s8_r1137}'
             # a32 # r1137
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s9 # say1022
@@ -233,7 +233,7 @@ label morte_s9: # from 7.1
 
         'morte_s9_r1116{#morte_s9_r1116}': # 'Не обращать внимания на Морта и изучить комнату.{#morte_s9_r1116}'
             # a36 # r1116
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s10 # say1023
@@ -256,7 +256,7 @@ label morte_s10: # from 7.0
 
         'morte_s10_r1112{#morte_s10_r1112}': # 'Не обращать внимания на Морта и изучить комнату.{#morte_s10_r1112}'
             # a40 # r1112
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s11 # say1024
@@ -279,7 +279,7 @@ label morte_s11: # from 7.2
 
         'morte_s11_r1136{#morte_s11_r1136}': # 'Не обращать внимания на Морта и изучить комнату.{#morte_s11_r1136}'
             # a44 # r1136
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s12 # say1025
@@ -298,7 +298,7 @@ label morte_s12: # from 3.0 33.0
 
         'morte_s12_r1143{#morte_s12_r1143}': # 'Не обращать внимания на Морта и изучить комнату.{#morte_s12_r1143}'
             # a47 # r1143
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s13 # say1026
@@ -320,7 +320,7 @@ label morte_s13: # from 3.1 9.1 10.1 11.1 12.0 33.1
 
         'morte_s13_r1090{#morte_s13_r1090}': # 'Не обращать внимания на Морта и изучить комнату.{#morte_s13_r1090}'
             # a50 # r1090
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s14 # say1031
@@ -339,7 +339,7 @@ label morte_s14: # from 8.0 29.3
 
         'morte_s14_r1142{#morte_s14_r1142}': # 'Не обращать внимания на Морта и изучить комнату.{#morte_s14_r1142}'
             # a53 # r1142
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s15 # say1034
@@ -358,7 +358,7 @@ label morte_s15: # from 14.0
 
         'morte_s15_r1138{#morte_s15_r1138}': # 'Не обращать внимания на Морта и изучить комнату.{#morte_s15_r1138}'
             # a56 # r1138
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s16 # say1037
@@ -386,7 +386,7 @@ label morte_s16: # from 10.0 11.0
 
         'morte_s16_r1150{#morte_s16_r1150}': # 'Не обращать внимания на Морта и изучить комнату.{#morte_s16_r1150}'
             # a61 # r1150
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s17 # say1042
@@ -405,7 +405,7 @@ label morte_s17: # from 16.1 18.0
 
         'morte_s17_r1153{#morte_s17_r1153}': # 'Не обращать внимания на Морта и изучить комнату.{#morte_s17_r1153}'
             # a64 # r1153
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s18 # say1043
@@ -424,7 +424,7 @@ label morte_s18: # from 16.2 17.0
 
         'morte_s18_r1156{#morte_s18_r1156}': # 'Не обращать внимания на Морта и изучить комнату.{#morte_s18_r1156}'
             # a67 # r1156
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s19 # say1044
@@ -443,7 +443,7 @@ label morte_s19: # from 15.0
 
         'morte_s19_r1141{#morte_s19_r1141}': # 'Не обращать внимания на Морта и изучить комнату.{#morte_s19_r1141}'
             # a70 # r1141
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s20 # say1045
@@ -462,7 +462,7 @@ label morte_s20: # from 2.2 31.2
 
         'morte_s20_r1099{#morte_s20_r1099}': # 'Не обращать внимания на Морта и изучить комнату.{#morte_s20_r1099}'
             # a73 # r1099
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s21 # say1046
@@ -493,7 +493,7 @@ label morte_s21: # from 2.1 6.1 29.2 30.0 31.3 34.2 35.1 36.1
 
         'morte_s21_r1081{#morte_s21_r1081}': # 'Не обращать внимания на Морта и изучить комнату.{#morte_s21_r1081}'
             # a79 # r1081
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s22 # say1052
@@ -512,7 +512,7 @@ label morte_s22: # from 21.1
 
         'morte_s22_r1145{#morte_s22_r1145}': # 'Не обращать внимания на Морта и изучить комнату.{#morte_s22_r1145}'
             # a82 # r1145
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s23 # say1055
@@ -535,7 +535,7 @@ label morte_s23: # from 21.3 21.4 22.0 26.0
 
         'morte_s23_r1146{#morte_s23_r1146}': # 'Не обращать внимания на Морта и изучить комнату.{#morte_s23_r1146}'
             # a86 # r1146
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s24 # say1061
@@ -558,7 +558,7 @@ label morte_s24: # from 23.0 23.1
 
         'morte_s24_r1147{#morte_s24_r1147}': # '«Нет уж, спасибо. От твоей трескотни голова раскалывается. Я сам найду выход».{#morte_s24_r1147}'
             # a90 # r1147
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s25 # say1064
@@ -583,7 +583,7 @@ label morte_s25: # from 21.2
 
         'morte_s25_r1149{#morte_s25_r1149}': # 'Не обращать внимания на Морта и изучить комнату.{#morte_s25_r1149}'
             # a94 # r1149
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s26 # say1068
@@ -604,7 +604,7 @@ label morte_s26: # from 25.0 25.1
 
         'morte_s26_r1148{#morte_s26_r1148}': # 'Не обращать внимания на Морта и изучить комнату.{#morte_s26_r1148}'
             # a97 # r1148
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s27 # say1071
@@ -658,7 +658,7 @@ label morte_s29: # -
 
         'morte_s29_r1086{#morte_s29_r1086}': # 'Не обращать внимания на Морта и изучить комнату.{#morte_s29_r1086}'
             # a105 # r1086
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s30 # say1082
@@ -677,7 +677,7 @@ label morte_s30: # from 21.0
 
         'morte_s30_r1144{#morte_s30_r1144}': # 'Не обращать внимания на Морта и изучить комнату.{#morte_s30_r1144}'
             # a108 # r1144
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s31 # say1091
@@ -704,7 +704,7 @@ label morte_s31: # from 8.1 9.2 10.2 11.2 12.1 13.1 14.1 15.1 16.3 17.1 18.1 19.
 
         'morte_s31_r1096{#morte_s31_r1096}': # 'Не обращать внимания на Морта и изучить комнату.{#morte_s31_r1096}'
             # a113 # r1096
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s32 # say1100
@@ -723,7 +723,7 @@ label morte_s32: # from 16.0 19.0 20.0
 
         'morte_s32_r1103{#morte_s32_r1103}': # 'Не обращать внимания на Морта и изучить комнату.{#morte_s32_r1103}'
             # a116 # r1103
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s33 # say1104
@@ -746,7 +746,7 @@ label morte_s33: # from 32.0
 
         'morte_s33_r1108{#morte_s33_r1108}': # 'Не обращать внимания на Морта и изучить комнату.{#morte_s33_r1108}'
             # a120 # r1108
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s34 # say1117
@@ -780,7 +780,7 @@ label morte_s34: # from 13.0
 
         'morte_s34_r1122{#morte_s34_r1122}': # 'Не обращать внимания на Морта и изучить комнату.{#morte_s34_r1122}'
             # a125 # r1122
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s35 # say1123
@@ -803,7 +803,7 @@ label morte_s35: # from 34.1 36.0
 
         'morte_s35_r1127{#morte_s35_r1127}': # 'Не обращать внимания на Морта и изучить комнату.{#morte_s35_r1127}'
             # a129 # r1127
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s36 # say1128
@@ -826,7 +826,7 @@ label morte_s36: # from 34.0 35.0
 
         'morte_s36_r1132{#morte_s36_r1132}': # 'Не обращать внимания на Морта и изучить комнату.{#morte_s36_r1132}'
             # a133 # r1132
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s37 # say1818
@@ -871,7 +871,7 @@ label morte_s38: # -
         'morte_s38_r1847{#morte_s38_r1847}': # '«Послушай, Морт… вообще-то, нам нужно идти. Прощай, красавица».{#morte_s38_r1847}'
             # a140 # r1847
             $ morteLogic.r1847_action()
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s39 # say2000
@@ -959,7 +959,7 @@ label morte_s44: # -
 
         'morte_s44_r9032{#morte_s44_r9032}': # 'Оставить гита в покое.{#morte_s44_r9032}'
             # a151 # r9032
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s45 # say2354
@@ -974,7 +974,7 @@ label morte_s45: # -
 
         'morte_s45_r9034{#morte_s45_r9034}': # 'Оставить гита в покое.{#morte_s45_r9034}'
             # a153 # r9034
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s46 # say2601
@@ -1015,7 +1015,7 @@ label morte_s47: # from 46.0 46.1 121.1 121.2
 
         'morte_s47_r2608{#morte_s47_r2608}': # '«Как знаешь, Морт. Идем».{#morte_s47_r2608}'
             # a159 # r2608
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s48 # say2609
@@ -1026,7 +1026,7 @@ label morte_s48: # from 47.1 47.2
     menu:
         'morte_s48_r2610{#morte_s48_r2610}': # '«Как знаешь, Морт. Идем».{#morte_s48_r2610}'
             # a160 # r2610
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s49 # say2611
@@ -1037,7 +1037,7 @@ label morte_s49: # from 47.0
     menu:
         'morte_s49_r2612{#morte_s49_r2612}': # '«Как знаешь, Морт. Идем».{#morte_s49_r2612}'
             # a161 # r2612
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s50 # say2709
@@ -1117,7 +1117,7 @@ label morte_s55: # externs eivene_s3
 
         'morte_s55_r3476{#morte_s55_r3476}': # 'Оставить ее в покое.{#morte_s55_r3476}'
             # a169 # r3476
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s56 # say3477
@@ -1132,7 +1132,7 @@ label morte_s56: # from 55.0
 
         'morte_s56_r3479{#morte_s56_r3479}': # 'Оставить ее в покое.{#morte_s56_r3479}'
             # a171 # r3479
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s57 # say3480
@@ -1148,7 +1148,7 @@ label morte_s57: # externs eivene_s20
 
         'morte_s57_r3484{#morte_s57_r3484}': # 'Уйти.{#morte_s57_r3484}'
             # a173 # r3484
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s58 # say3481
@@ -1159,7 +1159,7 @@ label morte_s58: # from 57.0
     menu:
         'morte_s58_r3482{#morte_s58_r3482}': # 'Уйти.{#morte_s58_r3482}'
             # a174 # r3482
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s59 # say3487
@@ -1202,7 +1202,7 @@ label morte_s61: # externs dust_s40
 
         'morte_s61_r3872{#morte_s61_r3872}': # '«Ничего. Идем».{#morte_s61_r3872}'
             # a179 # r3872
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s62 # say3873
@@ -1218,7 +1218,7 @@ label morte_s62: # from 61.0
 
         'morte_s62_r3875{#morte_s62_r3875}': # '«Согласен. Идем».{#morte_s62_r3875}'
             # a181 # r3875
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s63 # say3876
@@ -1234,7 +1234,7 @@ label morte_s63: # externs dust_s40
 
         'morte_s63_r3878{#morte_s63_r3878}': # '«Ничего. Идем».{#morte_s63_r3878}'
             # a183 # r3878
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s64 # say3879
@@ -1249,7 +1249,7 @@ label morte_s64: # from 62.0 63.0
 
         'morte_s64_r3881{#morte_s64_r3881}': # '«А, ты прав. Забудь об этом. Идем».{#morte_s64_r3881}'
             # a185 # r3881
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s65 # say3964
@@ -1300,7 +1300,7 @@ label morte_s66: # from 65.0 65.1 65.2
 
         'morte_s66_r3973{#morte_s66_r3973}' if morteLogic.r3973_condition(): # '«Неважно, может быть, в другой раз».{#morte_s66_r3973}'
             # a193 # r3973
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s67 # say3974
@@ -1350,7 +1350,7 @@ label morte_s69: # from 67.1 68.0
 
         'morte_s69_r3983{#morte_s69_r3983}': # '«Ладно. Идем».{#morte_s69_r3983}'
             # a200 # r3983
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s70 # say3984
@@ -1367,7 +1367,7 @@ label morte_s70: # from 67.2 68.1 69.0 127.0
 
         'morte_s70_r3986{#morte_s70_r3986}': # '«Идем».{#morte_s70_r3986}'
             # a202 # r3986
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s71 # say3987
@@ -1383,7 +1383,7 @@ label morte_s71: # from 70.0
 
         'morte_s71_r3989{#morte_s71_r3989}': # '«Идем».{#morte_s71_r3989}'
             # a204 # r3989
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s72 # say3990
@@ -1396,7 +1396,7 @@ label morte_s72: # from 71.0
     menu:
         'morte_s72_r3991{#morte_s72_r3991}': # '«Очень приятно это слышать. Идем».{#morte_s72_r3991}'
             # a205 # r3991
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s73 # say4018
@@ -1458,7 +1458,7 @@ label morte_s75: # from 74.2 74.3
 
         'morte_s75_r4030{#morte_s75_r4030}': # '«Все же я думаю, что лучше оставить его в покое. Идем отсюда».{#morte_s75_r4030}'
             # a214 # r4030
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s76 # say4022
@@ -1480,11 +1480,11 @@ label morte_s76: # from 75.2
 
         'morte_s76_r4033{#morte_s76_r4033}': # '«Извини, я не так сильно о тебе забочусь. Идем».{#morte_s76_r4033}'
             # a217 # r4033
-            jump morte_dispose
+            jump dialogues_dispose
 
         'morte_s76_r4034{#morte_s76_r4034}' if morteLogic.r4034_condition(): # '«Я говорю, оставь его в покое. А теперь идем отсюда».{#morte_s76_r4034}'
             # a218 # r4034
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s77 # say4134
@@ -1501,7 +1501,7 @@ label morte_s77: # -
         'morte_s77_r4145{#morte_s77_r4145}': # '«Ничего. Идем».{#morte_s77_r4145}'
             # a220 # r4145
             $ morteLogic.r4145_action()
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s78 # say4135
@@ -1518,7 +1518,7 @@ label morte_s78: # from 77.0
         'morte_s78_r4143{#morte_s78_r4143}': # '«Согласен. Идем».{#morte_s78_r4143}'
             # a222 # r4143
             $ morteLogic.r4143_action()
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s79 # say4136
@@ -1534,7 +1534,7 @@ label morte_s79: # -
 
         'morte_s79_r4141{#morte_s79_r4141}': # '«Ничего. Идем».{#morte_s79_r4141}'
             # a224 # r4141
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s80 # say4137
@@ -1549,7 +1549,7 @@ label morte_s80: # from 78.0 79.0
 
         'morte_s80_r4139{#morte_s80_r4139}': # '«А, ты прав. Забудь об этом. Идем».{#morte_s80_r4139}'
             # a226 # r4139
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s81 # say4338
@@ -1565,7 +1565,7 @@ label morte_s81: # externs dustfem_s40
 
         'morte_s81_r4340{#morte_s81_r4340}': # '«Ничего. Идем».{#morte_s81_r4340}'
             # a228 # r4340
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s82 # say4341
@@ -1581,7 +1581,7 @@ label morte_s82: # from 81.0
 
         'morte_s82_r4343{#morte_s82_r4343}': # '«Согласен. Идем».{#morte_s82_r4343}'
             # a230 # r4343
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s83 # say4344
@@ -1597,7 +1597,7 @@ label morte_s83: # externs dustfem_s40
 
         'morte_s83_r4346{#morte_s83_r4346}': # '«Ничего. Идем».{#morte_s83_r4346}'
             # a232 # r4346
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s84 # say4347
@@ -1612,7 +1612,7 @@ label morte_s84: # from 82.0 83.0
 
         'morte_s84_r4349{#morte_s84_r4349}': # '«А, ты прав. Забудь об этом. Идем».{#morte_s84_r4349}'
             # a234 # r4349
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s85 # say4675
@@ -1762,7 +1762,7 @@ label morte_s91: # externs vaxis_s46
 
         'morte_s91_r4702{#morte_s91_r4702}': # '«Да этот Фарод просто святой. Возможно, позже у меня будут другие вопросы. Никуда не уходи».{#morte_s91_r4702}'
             # a255 # r4702
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s92 # say4703
@@ -1777,7 +1777,7 @@ label morte_s92: # externs vaxis_s47
 
         'morte_s92_r4705{#morte_s92_r4705}': # '«Да, я жду не дождусь поймать этого вора. Слушай, возможно, позже у меня будут другие вопросы. Никуда не уходи».{#morte_s92_r4705}'
             # a257 # r4705
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s93 # say4706
@@ -1833,7 +1833,7 @@ label morte_s96: # -
 
         'morte_s96_r5031{#morte_s96_r5031}': # '«Ничего. Идем».{#morte_s96_r5031}'
             # a263 # r5031
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s97 # say5032
@@ -1849,7 +1849,7 @@ label morte_s97: # from 96.0
 
         'morte_s97_r5034{#morte_s97_r5034}': # '«Согласен. Идем».{#morte_s97_r5034}'
             # a265 # r5034
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s98 # say5035
@@ -1865,7 +1865,7 @@ label morte_s98: # -
 
         'morte_s98_r5037{#morte_s98_r5037}': # '«Ничего. Идем».{#morte_s98_r5037}'
             # a267 # r5037
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s99 # say5038
@@ -1880,7 +1880,7 @@ label morte_s99: # from 97.0 98.0
 
         'morte_s99_r5040{#morte_s99_r5040}': # '«А, ты прав. Забудь об этом. Идем».{#morte_s99_r5040}'
             # a269 # r5040
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s100 # say5041
@@ -1944,7 +1944,7 @@ label morte_s105: # externs deionarra_s8 deionarra_s48 deionarra_s26 deionarra_s
 
         'morte_s105_r6076{#morte_s105_r6076}': # '«Я в порядке. Идем».{#morte_s105_r6076}'
             # a273 # r6076
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s106 # say6072
@@ -1979,7 +1979,7 @@ label morte_s108: # from 107.0
     menu:
         'morte_s108_r6079{#morte_s108_r6079}': # '«Нет, я в порядке… кажется. Идем».{#morte_s108_r6079}'
             # a276 # r6079
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s109 # say6324
@@ -2016,7 +2016,7 @@ label morte_s109: # -
 
         'morte_s109_r6331{#morte_s109_r6331}': # 'Оставить труп в покое.{#morte_s109_r6331}'
             # a283 # r6331
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s110 # say6609
@@ -2079,7 +2079,7 @@ label morte_s112: # externs s42_s13
 
         'morte_s112_r6667{#morte_s112_r6667}': # 'Оставить скелета в покое.{#morte_s112_r6667}'
             # a293 # r6667
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s113 # say6771
@@ -2226,7 +2226,7 @@ label morte_s122: # from 121.0
 
         'morte_s122_r7061{#morte_s122_r7061}': # '«Понимаю. А теперь идем отсюда, хорошо?»{#morte_s122_r7061}'
             # a307 # r7061
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s123 # say7043
@@ -2243,7 +2243,7 @@ label morte_s123: # from 122.0
 
         'morte_s123_r7063{#morte_s123_r7063}': # '«Как знаешь, Морт. Идем».{#morte_s123_r7063}'
             # a309 # r7063
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s124 # say7044
@@ -2258,7 +2258,7 @@ label morte_s124: # from 122.1
 
         'morte_s124_r7065{#morte_s124_r7065}': # '«Как знаешь, Морт. Идем».{#morte_s124_r7065}'
             # a311 # r7065
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s125 # say7045
@@ -2269,11 +2269,11 @@ label morte_s125: # from 124.0
     menu:
         'morte_s125_r7066{#morte_s125_r7066}': # '«Ну, вообще-то, я могу поспорить на что угодно, что… а, забудь. Идем».{#morte_s125_r7066}'
             # a312 # r7066
-            jump morte_dispose
+            jump dialogues_dispose
 
         'morte_s125_r7067{#morte_s125_r7067}': # '«Как знаешь, Морт. Идем».{#morte_s125_r7067}'
             # a313 # r7067
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s126 # say7046
@@ -2286,7 +2286,7 @@ label morte_s126: # from 123.0
     menu:
         'morte_s126_r7068{#morte_s126_r7068}': # '«Как знаешь, Морт. Идем».{#morte_s126_r7068}'
             # a314 # r7068
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s127 # say7071
@@ -2302,7 +2302,7 @@ label morte_s127: # -
 
         'morte_s127_r7077{#morte_s127_r7077}': # '«Ладно. Идем».{#morte_s127_r7077}'
             # a316 # r7077
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s128 # say7130
@@ -2326,7 +2326,7 @@ label morte_s129: # -
 
         'morte_s129_r7484{#morte_s129_r7484}': # '«Просто уходим отсюда. Прощай, красавица».{#morte_s129_r7484}'
             # a318 # r7484
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s130 # say7188
@@ -2341,7 +2341,7 @@ label morte_s130: # -
         'morte_s130_r7485{#morte_s130_r7485}': # 'Уйти.{#morte_s130_r7485}'
             # a319 # r7485
             $ morteLogic.r7485_action()
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s131 # say7775
@@ -2358,7 +2358,7 @@ label morte_s131: # -
 
         'morte_s131_r7777{#morte_s131_r7777}': # 'Оставить существо в покое.{#morte_s131_r7777}'
             # a321 # r7777
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s132 # say7778
@@ -2375,7 +2375,7 @@ label morte_s132: # from 131.0
 
         'morte_s132_r7780{#morte_s132_r7780}': # 'Оставить существо в покое.{#morte_s132_r7780}'
             # a323 # r7780
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s133 # say7805
@@ -2403,7 +2403,7 @@ label morte_s134: # from 133.0
 
         'morte_s134_r7809{#morte_s134_r7809}': # '«Ладно, неважно. Идем».{#morte_s134_r7809}'
             # a326 # r7809
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s135 # say2349
@@ -2420,7 +2420,7 @@ label morte_s135: # from 44.0 44.1
 
         'morte_s135_r9036{#morte_s135_r9036}': # 'Оставить гита в покое.{#morte_s135_r9036}'
             # a328 # r9036
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s136 # say9860
@@ -2431,7 +2431,7 @@ label morte_s136: # -
     menu:
         'morte_s136_r9882{#morte_s136_r9882}': # '«Ты прав, Морт. Идем».{#morte_s136_r9882}'
             # a329 # r9882
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s137 # say11946
@@ -2447,7 +2447,7 @@ label morte_s137: # -
 
         'morte_s137_r11975{#morte_s137_r11975}': # '«Ничего, неважно».{#morte_s137_r11975}'
             # a331 # r11975
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s138 # say11947
@@ -2458,7 +2458,7 @@ label morte_s138: # from 137.0
     # nr 'Кажется, его покоробило.{#morte_s138_3}'
     # morte '«Вот уж мелкие уродцы, а?»{#morte_s138_4}'
 
-    jump morte_dispose
+    jump dialogues_dispose
 
 
 # s139 # say11948
@@ -2480,7 +2480,7 @@ label morte_s139: # -
 
         'morte_s139_r11978{#morte_s139_r11978}': # '«Тогда неважно».{#morte_s139_r11978}'
             # a334 # r11978
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s140 # say11949
@@ -2493,7 +2493,7 @@ label morte_s140: # from 139.0
     menu:
         'morte_s140_r11979{#morte_s140_r11979}': # 'Осмотреть зубы.{#morte_s140_r11979}'
             # a335 # r11979
-            jump morte_dispose
+            jump dialogues_dispose
 
         'morte_s140_r11980{#morte_s140_r11980}': # 'Схватить Морта, сунуть зубы ему в рот.{#morte_s140_r11980}'
             # a336 # r11980
@@ -2502,7 +2502,7 @@ label morte_s140: # from 139.0
 
         'morte_s140_r11981{#morte_s140_r11981}': # '«Тогда неважно».{#morte_s140_r11981}'
             # a337 # r11981
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s141 # say11950
@@ -2599,11 +2599,11 @@ label morte_s147: # from 146.0 146.1
     menu:
         'morte_s147_r11990{#morte_s147_r11990}' if morteLogic.r11990_condition(): # '«Э… месть еще никому не помогала, Морт… Э, пошли».{#morte_s147_r11990}'
             # a346 # r11990
-            jump morte_dispose
+            jump dialogues_dispose
 
         'morte_s147_r11991{#morte_s147_r11991}' if morteLogic.r11991_condition(): # '«Поблагодаришь меня позже. Вот увидишь».{#morte_s147_r11991}'
             # a347 # r11991
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s148 # say11957
@@ -2664,7 +2664,7 @@ label morte_s152: # -
 
         'morte_s152_r12451{#morte_s152_r12451}': # '«Хорошо, Морт. С этими я закончил».{#morte_s152_r12451}'
             # a352 # r12451
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s153 # say12466
@@ -2681,17 +2681,17 @@ label morte_s153: # -
         'morte_s153_r12554{#morte_s153_r12554}': # '«Умолкни, ноющий череп! А ты, козлик, сдохни…»{#morte_s153_r12554}'
             # a354 # r12554
             $ morteLogic.r12554_action()
-            jump morte_dispose
+            jump dialogues_dispose
 
         'morte_s153_r12555{#morte_s153_r12555}': # '«Э, нет… это все *ты*, и ты об этом пожалеешь…»{#morte_s153_r12555}'
             # a355 # r12555
             $ morteLogic.r12555_action()
-            jump morte_dispose
+            jump dialogues_dispose
 
         'morte_s153_r12556{#morte_s153_r12556}': # '«Тогда забудь об этом. Прощай».{#morte_s153_r12556}'
             # a356 # r12556
             $ morteLogic.r12556_action()
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s154 # say12467
@@ -2845,7 +2845,7 @@ label morte_s162: # -
         'morte_s162_r13776{#morte_s162_r13776}' if morteLogic.r13776_condition(): # '«Я думал, что смогу что-нибудь у него узнать. Ладно, пойдем отсюда».{#morte_s162_r13776}'
             # a375 # r13776
             $ morteLogic.r13776_action()
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s163 # say13749
@@ -2860,7 +2860,7 @@ label morte_s163: # from 162.0 162.1
 
         'morte_s163_r13778{#morte_s163_r13778}': # '«Понятно. Идем».{#morte_s163_r13778}'
             # a377 # r13778
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s164 # say13750
@@ -2871,7 +2871,7 @@ label morte_s164: # from 163.0
     menu:
         'morte_s164_r13779{#morte_s164_r13779}': # '«Понятно. Спасибо за информацию».{#morte_s164_r13779}'
             # a378 # r13779
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s165 # say13828
@@ -2895,7 +2895,7 @@ label morte_s165: # -
         'morte_s165_r13988{#morte_s165_r13988}' if morteLogic.r13988_condition(): # '«Я думал, что смогу что-нибудь у него узнать. Ладно, пойдем отсюда».{#morte_s165_r13988}'
             # a381 # r13988
             $ morteLogic.r13988_action()
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s166 # say13829
@@ -2910,7 +2910,7 @@ label morte_s166: # from 165.0 165.1
 
         'morte_s166_r13990{#morte_s166_r13990}': # '«Понятно. Тогда пойдем».{#morte_s166_r13990}'
             # a383 # r13990
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s167 # say13830
@@ -2921,7 +2921,7 @@ label morte_s167: # from 166.0
     menu:
         'morte_s167_r13991{#morte_s167_r13991}': # '«Понятно. Спасибо за информацию».{#morte_s167_r13991}'
             # a384 # r13991
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s168 # say14075
@@ -3074,7 +3074,7 @@ label morte_s180: # -
         'morte_s180_r15495{#morte_s180_r15495}': # '«Не в этот раз, Морт. Пошли».{#morte_s180_r15495}'
             # a395 # r15495
             $ morteLogic.r15495_action()
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s181 # say16613
@@ -3094,7 +3094,7 @@ label morte_s181: # from 185.0
 
         'morte_s181_r16883{#morte_s181_r16883}': # '«Спасибо, Морт. Прощай, Скорбящий-по-деревьям».{#morte_s181_r16883}'
             # a398 # r16883
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s182 # say16614
@@ -3145,7 +3145,7 @@ label morte_s182: # from 181.1
 
         'morte_s182_r16892{#morte_s182_r16892}': # '«Спасибо, Морт. Прощай, Скорбящий-по-деревьям».{#morte_s182_r16892}'
             # a407 # r16892
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s183 # say16615
@@ -3211,7 +3211,7 @@ label morte_s185: # -
 
         'morte_s185_r16901{#morte_s185_r16901}': # '«Я благодарен тебе, Нордом. Прощай, Скорбящий-по-деревьям».{#morte_s185_r16901}'
             # a416 # r16901
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s186 # say16618
@@ -3243,7 +3243,7 @@ label morte_s187: # -
 
         'morte_s187_r17586{#morte_s187_r17586}' if morteLogic.r17586_condition(): # '«Лучше я поберегу свои медяки, торговец. Прощай».{#morte_s187_r17586}'
             # a420 # r17586
-            jump morte_dispose
+            jump dialogues_dispose
 
         'morte_s187_r17587{#morte_s187_r17587}' if morteLogic.r17587_condition(): # '«У меня не хватает денег, торговец, но у меня есть несколько вопросов…»{#morte_s187_r17587}'
             # a421 # r17587
@@ -3251,7 +3251,7 @@ label morte_s187: # -
 
         'morte_s187_r17588{#morte_s187_r17588}' if morteLogic.r17588_condition(): # '«Неважно, торговец, мне все равно не хватает монет. Прощай».{#morte_s187_r17588}'
             # a422 # r17588
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s188 # say18801
@@ -3405,7 +3405,7 @@ label morte_s194: # -
         'morte_s194_r18830{#morte_s194_r18830}' if morteLogic.r18830_condition(): # '«Прощай, Желтопалый».{#morte_s194_r18830}'
             # a445 # r18830
             $ morteLogic.r18830_action()
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s195 # say18831
@@ -3468,7 +3468,7 @@ label morte_s198: # -
 
         'morte_s198_r19034{#morte_s198_r19034}': # '«Хорошо. Идем».{#morte_s198_r19034}'
             # a452 # r19034
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s199 # say19551
@@ -3531,7 +3531,7 @@ label morte_s202: # -
 
         'morte_s202_r19692{#morte_s202_r19692}': # '«Ладно. Идем».{#morte_s202_r19692}'
             # a460 # r19692
-            jump morte_dispose
+            jump dialogues_dispose
 
         'morte_s202_r19693{#morte_s202_r19693}': # 'Не обращать внимания на Морта, поздороваться с упырем.{#morte_s202_r19693}'
             # a461 # r19693
@@ -3546,7 +3546,7 @@ label morte_s203: # from 202.0
     menu:
         'morte_s203_r19694{#morte_s203_r19694}': # '«Ладно. Идем».{#morte_s203_r19694}'
             # a462 # r19694
-            jump morte_dispose
+            jump dialogues_dispose
 
         'morte_s203_r19695{#morte_s203_r19695}': # '«Я все равно с ним поговорю».{#morte_s203_r19695}'
             # a463 # r19695
@@ -3569,7 +3569,7 @@ label morte_s204: # -
 
         'morte_s204_r19715{#morte_s204_r19715}': # '«Ладно. Идем».{#morte_s204_r19715}'
             # a466 # r19715
-            jump morte_dispose
+            jump dialogues_dispose
 
         'morte_s204_r19716{#morte_s204_r19716}': # 'Не обращать внимания на Морта, поздороваться с упырем.{#morte_s204_r19716}'
             # a467 # r19716
@@ -3584,7 +3584,7 @@ label morte_s205: # from 204.1 206.0
     menu:
         'morte_s205_r19717{#morte_s205_r19717}': # '«Ладно. Идем».{#morte_s205_r19717}'
             # a468 # r19717
-            jump morte_dispose
+            jump dialogues_dispose
 
         'morte_s205_r19718{#morte_s205_r19718}': # '«Я все равно с ней поговорю».{#morte_s205_r19718}'
             # a469 # r19718
@@ -3636,7 +3636,7 @@ label morte_s209: # -
 
         'morte_s209_r20614{#morte_s209_r20614}': # '«Э… ладно. Мне нужно идти, Марта. Прощай».{#morte_s209_r20614}'
             # a472 # r20614
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s210 # say20472
@@ -3792,7 +3792,7 @@ label morte_s220: # externs soego_s93
 
         'morte_s220_r22063{#morte_s220_r22063}': # '«Это все, что я хотел узнать. Прощай».{#morte_s220_r22063}'
             # a487 # r22063
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s221 # say22849
@@ -3808,7 +3808,7 @@ label morte_s221: # -
 
         'morte_s221_r22851{#morte_s221_r22851}': # 'Отложить куб.{#morte_s221_r22851}'
             # a489 # r22851
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s222 # say22852
@@ -3824,7 +3824,7 @@ label morte_s222: # from 221.0
 
         'morte_s222_r22854{#morte_s222_r22854}': # 'Отложить куб.{#morte_s222_r22854}'
             # a491 # r22854
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s223 # say22855
@@ -3840,7 +3840,7 @@ label morte_s223: # from 222.0
 
         'morte_s223_r22857{#morte_s223_r22857}': # 'Отложить куб.{#morte_s223_r22857}'
             # a493 # r22857
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s224 # say22858
@@ -3855,7 +3855,7 @@ label morte_s224: # from 223.0
 
         'morte_s224_r22860{#morte_s224_r22860}': # 'Отложить куб.{#morte_s224_r22860}'
             # a495 # r22860
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s225 # say22861
@@ -3877,7 +3877,7 @@ label morte_s226: # from 225.0
     menu:
         'morte_s226_r22864{#morte_s226_r22864}': # '«Ты что-то слышал, куб-герой? Нет? Я тоже!»{#morte_s226_r22864}'
             # a497 # r22864
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s227 # say22892
@@ -3897,7 +3897,7 @@ label morte_s228: # -
     menu:
         'morte_s228_r24175{#morte_s228_r24175}': # '«Очень смешно, Морт. Пошли».{#morte_s228_r24175}'
             # a498 # r24175
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s229 # say24176
@@ -3908,7 +3908,7 @@ label morte_s229: # -
     menu:
         'morte_s229_r24177{#morte_s229_r24177}': # '«Позже он может пригодиться, Морт. Пошли».{#morte_s229_r24177}'
             # a499 # r24177
-            jump morte_dispose
+            jump dialogues_dispose
 
         'morte_s229_r24178{#morte_s229_r24178}': # '«Так будет правильно, Морт».{#morte_s229_r24178}'
             # a500 # r24178
@@ -3923,7 +3923,7 @@ label morte_s230: # from 229.1
     menu:
         'morte_s230_r24180{#morte_s230_r24180}': # '«Спасибо за одобрение, Морт. Пошли».{#morte_s230_r24180}'
             # a501 # r24180
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s231 # say24903
@@ -3940,7 +3940,7 @@ label morte_s231: # -
         'morte_s231_r24905{#morte_s231_r24905}': # '«Морт, я уверен, что у тебя найдется еще тысяча умных мыслей, но мне нужно, чтобы ты заткнулся и присоединился ко мне НЕМЕДЛЕННО».{#morte_s231_r24905}'
             # a503 # r24905
             $ morteLogic.r24905_action()
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s232 # say24906
@@ -4088,7 +4088,7 @@ label morte_s243: # from 242.0
         'morte_s243_r24932{#morte_s243_r24932}': # '«Хорошо. Спасибо за совет».{#morte_s243_r24932}'
             # a518 # r24932
             $ morteLogic.r24932_action()
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s244 # say25962
@@ -4135,7 +4135,7 @@ label morte_s246: # from 245.0
 
         'morte_s246_r25969{#morte_s246_r25969}': # 'Оставить женщину в покое.{#morte_s246_r25969}'
             # a523 # r25969
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s247 # say25970
@@ -4322,7 +4322,7 @@ label morte_s259: # from 258.0
     menu:
         'morte_s259_r27323{#morte_s259_r27323}': # '«Ладно… Уяснил. Идем».{#morte_s259_r27323}'
             # a546 # r27323
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s260 # say27296
@@ -4333,7 +4333,7 @@ label morte_s260: # -
     menu:
         'morte_s260_r27324{#morte_s260_r27324}': # '«Ладно… Я поищу».{#morte_s260_r27324}'
             # a547 # r27324
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s261 # say27297
@@ -4348,7 +4348,7 @@ label morte_s261: # - # IF WEIGHT #8 /* Triggers after states #: 729 444 325 281
 
         'morte_s261_r27326{#morte_s261_r27326}': # '«Хорошо».{#morte_s261_r27326}'
             # a549 # r27326
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s262 # say27298
@@ -4363,7 +4363,7 @@ label morte_s262: # from 261.0
 
         'morte_s262_r27328{#morte_s262_r27328}': # '«Ну ладно».{#morte_s262_r27328}'
             # a551 # r27328
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s263 # say27299
@@ -4378,7 +4378,7 @@ label morte_s263: # from 262.0
 
         'morte_s263_r27330{#morte_s263_r27330}': # '«Ну ладно».{#morte_s263_r27330}'
             # a553 # r27330
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s264 # say27300
@@ -4389,7 +4389,7 @@ label morte_s264: # from 263.0
     menu:
         'morte_s264_r27331{#morte_s264_r27331}': # '«Рад, что мы друг друга понимаем. За дело».{#morte_s264_r27331}'
             # a554 # r27331
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s265 # say27301
@@ -4400,7 +4400,7 @@ label morte_s265: # -
     menu:
         'morte_s265_r27332{#morte_s265_r27332}': # '«Хорошо».{#morte_s265_r27332}'
             # a555 # r27332
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s266 # say27302
@@ -4411,7 +4411,7 @@ label morte_s266: # -
     menu:
         'morte_s266_r27333{#morte_s266_r27333}': # '«Тогда я перепробую все двери».{#morte_s266_r27333}'
             # a556 # r27333
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s267 # say27911
@@ -4467,7 +4467,7 @@ label morte_s270: # from 269.0
 
         'morte_s270_r27918{#morte_s270_r27918}': # 'Оставить женщину в покое.{#morte_s270_r27918}'
             # a561 # r27918
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s271 # say27919
@@ -4637,7 +4637,7 @@ label morte_s281: # - # IF WEIGHT #4 /* Triggers after states #: 742 737 733 487
         'morte_s281_r28743{#morte_s281_r28743}': # '«Ага. Отлично. Я очень рад, что ты вернулся назад».{#morte_s281_r28743}'
             # a578 # r28743
             $ morteLogic.r28743_action()
-            jump morte_dispose
+            jump dialogues_dispose
 
         'morte_s281_r28744{#morte_s281_r28744}' if morteLogic.r28744_condition(): # '«Извини, приятель. Я хотел его обмануть».{#morte_s281_r28744}'
             # a579 # r28744
@@ -4658,7 +4658,7 @@ label morte_s282: # from 281.1
     menu:
         'morte_s282_r28746{#morte_s282_r28746}': # '«Конечно, Морт. Идем».{#morte_s282_r28746}'
             # a581 # r28746
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s283 # say28740
@@ -4669,11 +4669,11 @@ label morte_s283: # from 281.2
     menu:
         'morte_s283_r28747{#morte_s283_r28747}': # '«Отлично».{#morte_s283_r28747}'
             # a582 # r28747
-            jump morte_dispose
+            jump dialogues_dispose
 
         'morte_s283_r28748{#morte_s283_r28748}': # '«Морт, я блефовал. Вот увидишь».{#morte_s283_r28748}'
             # a583 # r28748
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s284 # say28741
@@ -4686,7 +4686,7 @@ label morte_s284: # -
     menu:
         'morte_s284_r28749{#morte_s284_r28749}': # '«Идем».{#morte_s284_r28749}'
             # a584 # r28749
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s285 # say28962
@@ -4710,7 +4710,7 @@ label morte_s285: # -
 
         'morte_s285_r28970{#morte_s285_r28970}': # 'Уйти.{#morte_s285_r28970}'
             # a588 # r28970
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s286 # say28963
@@ -4730,7 +4730,7 @@ label morte_s286: # from 285.0
 
         'morte_s286_r28973{#morte_s286_r28973}': # 'Уйти.{#morte_s286_r28973}'
             # a591 # r28973
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s287 # say28964
@@ -4762,7 +4762,7 @@ label morte_s288: # from 287.0
 
         'morte_s288_r28977{#morte_s288_r28977}': # 'Уйти.{#morte_s288_r28977}'
             # a595 # r28977
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s289 # say28966
@@ -4786,7 +4786,7 @@ label morte_s289: # -
 
         'morte_s289_r28981{#morte_s289_r28981}': # '«Я потом к тебе загляну. Прощай».{#morte_s289_r28981}'
             # a599 # r28981
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s290 # say29677
@@ -4887,7 +4887,7 @@ label morte_s298: # -
         'morte_s298_r31567{#morte_s298_r31567}': # 'Пасть во тьму, став жертвой страшного проклятья Гангройгидона.{#morte_s298_r31567}'
             # a605 # r31567
             $ morteLogic.r31567_action()
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s299 # say32367
@@ -4908,7 +4908,7 @@ label morte_s299: # -
         'morte_s299_r32370{#morte_s299_r32370}': # '«Ты прав, Морт, идем отсюда».{#morte_s299_r32370}'
             # a608 # r32370
             $ morteLogic.r32370_action()
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s300 # say32371
@@ -4933,7 +4933,7 @@ label morte_s300: # -
         'morte_s300_r32375{#morte_s300_r32375}': # '«Точно. Пошли отсюда, Морт».{#morte_s300_r32375}'
             # a612 # r32375
             $ morteLogic.r32375_action()
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s301 # say32376
@@ -4958,7 +4958,7 @@ label morte_s301: # -
         'morte_s301_r32380{#morte_s301_r32380}': # '«Точно. Пошли отсюда, Морт».{#morte_s301_r32380}'
             # a616 # r32380
             $ morteLogic.r32380_action()
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s302 # say32381
@@ -4983,7 +4983,7 @@ label morte_s302: # -
         'morte_s302_r32385{#morte_s302_r32385}': # '«Точно. Пошли отсюда, Морт».{#morte_s302_r32385}'
             # a620 # r32385
             $ morteLogic.r32385_action()
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s303 # say32386
@@ -5008,7 +5008,7 @@ label morte_s303: # from 301.2
         'morte_s303_r32390{#morte_s303_r32390}': # '«Точно. Пошли отсюда, Морт».{#morte_s303_r32390}'
             # a624 # r32390
             $ morteLogic.r32390_action()
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s304 # say32391
@@ -5033,7 +5033,7 @@ label morte_s304: # -
         'morte_s304_r32395{#morte_s304_r32395}': # '«Точно. Пошли отсюда, Морт».{#morte_s304_r32395}'
             # a628 # r32395
             $ morteLogic.r32395_action()
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s305 # say32396
@@ -5058,7 +5058,7 @@ label morte_s305: # -
         'morte_s305_r32400{#morte_s305_r32400}': # '«Точно. Пошли отсюда, Морт».{#morte_s305_r32400}'
             # a632 # r32400
             $ morteLogic.r32400_action()
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s306 # say32401
@@ -5083,7 +5083,7 @@ label morte_s306: # -
         'morte_s306_r32405{#morte_s306_r32405}': # '«Точно. Пошли отсюда, Морт».{#morte_s306_r32405}'
             # a636 # r32405
             $ morteLogic.r32405_action()
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s307 # say32406
@@ -5195,7 +5195,7 @@ label morte_s314: # -
     # nr 'Морт сдавленно смеется и щелкает зубами.{#morte_s314_1}'
     # morte '«Просто обычный дамский угодник, а, шеф?»{#morte_s314_2}'
 
-    jump morte_dispose
+    jump dialogues_dispose
 
 
 # s315 # say32656
@@ -5203,7 +5203,7 @@ label morte_s315: # -
     'morte_s315{#morte_s315}'
     # morte '«Ой-ой…»{#morte_s315_1}'
 
-    jump morte_dispose
+    jump dialogues_dispose
 
 
 # s316 # say32657
@@ -5258,7 +5258,7 @@ label morte_s320: # -
         'morte_s320_r33076{#morte_s320_r33076}': # '«Ладно, Морт, пошли».{#morte_s320_r33076}'
             # a651 # r33076
             $ morteLogic.r33076_action()
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s321 # say33300
@@ -5321,7 +5321,7 @@ label morte_s325: # - # IF WEIGHT #5 /* Triggers after states #: 742 737 733 487
         'morte_s325_r33959{#morte_s325_r33959}': # '«Да… идем».{#morte_s325_r33959}'
             # a656 # r33959
             $ morteLogic.r33959_action()
-            jump morte_dispose
+            jump dialogues_dispose
 
         'morte_s325_r33960{#morte_s325_r33960}': # '«Не сейчас, Морт».{#morte_s325_r33960}'
             # a657 # r33960
@@ -5341,7 +5341,7 @@ label morte_s326: # from 325.1
         'morte_s326_r33963{#morte_s326_r33963}': # '«Ладно. Я передумал. Давай, идем».{#morte_s326_r33963}'
             # a659 # r33963
             $ morteLogic.r33963_action()
-            jump morte_dispose
+            jump dialogues_dispose
 
         'morte_s326_r33964{#morte_s326_r33964}': # '«Не сейчас, Морт. Может быть, потом».{#morte_s326_r33964}'
             # a660 # r33964
@@ -5357,7 +5357,7 @@ label morte_s327: # from 326.0 326.2
         'morte_s327_r33966{#morte_s327_r33966}': # '«Ладно. Я передумал. Давай, идем».{#morte_s327_r33966}'
             # a661 # r33966
             $ morteLogic.r33966_action()
-            jump morte_dispose
+            jump dialogues_dispose
 
         'morte_s327_r33967{#morte_s327_r33967}': # '«Ничего такого. Просто сейчас я не нуждаюсь в твоей компании. Прощай, Морт».{#morte_s327_r33967}'
             # a662 # r33967
@@ -5372,7 +5372,7 @@ label morte_s328: # from 327.1
     menu:
         'morte_s328_r33969{#morte_s328_r33969}': # '«Я так и сделаю. Прощай, Морт».{#morte_s328_r33969}'
             # a663 # r33969
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s329 # say33970
@@ -5432,7 +5432,7 @@ label morte_s329: # from 649.2 650.2 651.3 652.2 653.1 654.1 655.1 656.1 657.1 6
 
         'morte_s329_r65551{#morte_s329_r65551}': # '«Ничего, Морт. Просто проверяю, что ты все еще со мной».{#morte_s329_r65551}'
             # a676 # r65551
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s330 # say34990
@@ -5473,7 +5473,7 @@ label morte_s331: # from 330.0 330.1
 
         'morte_s331_r35000{#morte_s331_r35000}': # '«Как знаешь, Морт. Идем».{#morte_s331_r35000}'
             # a682 # r35000
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s332 # say34994
@@ -5484,7 +5484,7 @@ label morte_s332: # from 331.0
     menu:
         'morte_s332_r34995{#morte_s332_r34995}': # '«Как знаешь, Морт. Идем».{#morte_s332_r34995}'
             # a683 # r34995
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s333 # say34997
@@ -5495,7 +5495,7 @@ label morte_s333: # from 331.1 331.2
     menu:
         'morte_s333_r34998{#morte_s333_r34998}': # '«Как знаешь, Морт. Идем».{#morte_s333_r34998}'
             # a684 # r34998
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s334 # say35022
@@ -5536,7 +5536,7 @@ label morte_s335: # from 334.0 334.1
 
         'morte_s335_r35032{#morte_s335_r35032}': # '«Как знаешь, Морт. Идем».{#morte_s335_r35032}'
             # a690 # r35032
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s336 # say35026
@@ -5547,7 +5547,7 @@ label morte_s336: # from 335.0
     menu:
         'morte_s336_r35027{#morte_s336_r35027}': # '«Как знаешь, Морт. Идем».{#morte_s336_r35027}'
             # a691 # r35027
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s337 # say35029
@@ -5558,7 +5558,7 @@ label morte_s337: # from 335.1 335.2
     menu:
         'morte_s337_r35030{#morte_s337_r35030}': # '«Как знаешь, Морт. Идем».{#morte_s337_r35030}'
             # a692 # r35030
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s338 # say35054
@@ -5599,7 +5599,7 @@ label morte_s339: # from 338.0 338.1
 
         'morte_s339_r35064{#morte_s339_r35064}': # '«Как знаешь, Морт. Идем».{#morte_s339_r35064}'
             # a698 # r35064
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s340 # say35058
@@ -5610,7 +5610,7 @@ label morte_s340: # from 339.0
     menu:
         'morte_s340_r35059{#morte_s340_r35059}': # '«Как знаешь, Морт. Идем».{#morte_s340_r35059}'
             # a699 # r35059
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s341 # say35061
@@ -5621,7 +5621,7 @@ label morte_s341: # from 339.1 339.2
     menu:
         'morte_s341_r35062{#morte_s341_r35062}': # '«Как знаешь, Морт. Идем».{#morte_s341_r35062}'
             # a700 # r35062
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s342 # say35086
@@ -5662,7 +5662,7 @@ label morte_s343: # from 342.0 342.1
 
         'morte_s343_r35096{#morte_s343_r35096}': # '«Как знаешь, Морт. Идем».{#morte_s343_r35096}'
             # a706 # r35096
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s344 # say35090
@@ -5673,7 +5673,7 @@ label morte_s344: # from 343.0
     menu:
         'morte_s344_r35091{#morte_s344_r35091}': # '«Как знаешь, Морт. Идем».{#morte_s344_r35091}'
             # a707 # r35091
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s345 # say35093
@@ -5684,7 +5684,7 @@ label morte_s345: # from 343.1 343.2
     menu:
         'morte_s345_r35094{#morte_s345_r35094}': # '«Как знаешь, Морт. Идем».{#morte_s345_r35094}'
             # a708 # r35094
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s346 # say35118
@@ -5725,7 +5725,7 @@ label morte_s347: # from 346.0 346.1
 
         'morte_s347_r35128{#morte_s347_r35128}': # '«Как знаешь, Морт. Идем».{#morte_s347_r35128}'
             # a714 # r35128
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s348 # say35122
@@ -5736,7 +5736,7 @@ label morte_s348: # from 347.0
     menu:
         'morte_s348_r35123{#morte_s348_r35123}': # '«Как знаешь, Морт. Идем».{#morte_s348_r35123}'
             # a715 # r35123
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s349 # say35125
@@ -5747,7 +5747,7 @@ label morte_s349: # from 347.1 347.2
     menu:
         'morte_s349_r35126{#morte_s349_r35126}': # '«Как знаешь, Морт. Идем».{#morte_s349_r35126}'
             # a716 # r35126
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s350 # say35150
@@ -5788,7 +5788,7 @@ label morte_s351: # from 350.0 350.1
 
         'morte_s351_r35160{#morte_s351_r35160}': # '«Как знаешь, Морт. Идем».{#morte_s351_r35160}'
             # a722 # r35160
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s352 # say35154
@@ -5799,7 +5799,7 @@ label morte_s352: # from 351.0
     menu:
         'morte_s352_r35155{#morte_s352_r35155}': # '«Как знаешь, Морт. Идем».{#morte_s352_r35155}'
             # a723 # r35155
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s353 # say35157
@@ -5810,7 +5810,7 @@ label morte_s353: # from 351.1 351.2
     menu:
         'morte_s353_r35158{#morte_s353_r35158}': # '«Как знаешь, Морт. Идем».{#morte_s353_r35158}'
             # a724 # r35158
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s354 # say35182
@@ -5851,7 +5851,7 @@ label morte_s355: # from 354.0 354.1
 
         'morte_s355_r35192{#morte_s355_r35192}': # '«Как знаешь, Морт. Идем».{#morte_s355_r35192}'
             # a730 # r35192
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s356 # say35186
@@ -5862,7 +5862,7 @@ label morte_s356: # from 355.0
     menu:
         'morte_s356_r35187{#morte_s356_r35187}': # '«Как знаешь, Морт. Идем».{#morte_s356_r35187}'
             # a731 # r35187
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s357 # say35189
@@ -5873,7 +5873,7 @@ label morte_s357: # from 355.1 355.2
     menu:
         'morte_s357_r35190{#morte_s357_r35190}': # '«Как знаешь, Морт. Идем».{#morte_s357_r35190}'
             # a732 # r35190
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s358 # say35214
@@ -5914,7 +5914,7 @@ label morte_s359: # from 358.0 358.1
 
         'morte_s359_r35224{#morte_s359_r35224}': # '«Как знаешь, Морт. Идем».{#morte_s359_r35224}'
             # a738 # r35224
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s360 # say35218
@@ -5925,7 +5925,7 @@ label morte_s360: # from 359.0
     menu:
         'morte_s360_r35219{#morte_s360_r35219}': # '«Как знаешь, Морт. Идем».{#morte_s360_r35219}'
             # a739 # r35219
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s361 # say35221
@@ -5936,7 +5936,7 @@ label morte_s361: # from 359.1 359.2
     menu:
         'morte_s361_r35222{#morte_s361_r35222}': # '«Как знаешь, Морт. Идем».{#morte_s361_r35222}'
             # a740 # r35222
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s362 # say35246
@@ -5977,7 +5977,7 @@ label morte_s363: # from 362.0 362.1
 
         'morte_s363_r35256{#morte_s363_r35256}': # '«Как знаешь, Морт. Идем».{#morte_s363_r35256}'
             # a746 # r35256
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s364 # say35250
@@ -5988,7 +5988,7 @@ label morte_s364: # from 363.0
     menu:
         'morte_s364_r35251{#morte_s364_r35251}': # '«Как знаешь, Морт. Идем».{#morte_s364_r35251}'
             # a747 # r35251
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s365 # say35253
@@ -5999,7 +5999,7 @@ label morte_s365: # from 363.1 363.2
     menu:
         'morte_s365_r35254{#morte_s365_r35254}': # '«Как знаешь, Морт. Идем».{#morte_s365_r35254}'
             # a748 # r35254
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s366 # say35278
@@ -6040,7 +6040,7 @@ label morte_s367: # from 366.0 366.1
 
         'morte_s367_r35288{#morte_s367_r35288}': # '«Как знаешь, Морт. Идем».{#morte_s367_r35288}'
             # a754 # r35288
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s368 # say35282
@@ -6051,7 +6051,7 @@ label morte_s368: # from 367.0
     menu:
         'morte_s368_r35283{#morte_s368_r35283}': # '«Как знаешь, Морт. Идем».{#morte_s368_r35283}'
             # a755 # r35283
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s369 # say35285
@@ -6062,7 +6062,7 @@ label morte_s369: # from 367.1 367.2
     menu:
         'morte_s369_r35286{#morte_s369_r35286}': # '«Как знаешь, Морт. Идем».{#morte_s369_r35286}'
             # a756 # r35286
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s370 # say35310
@@ -6112,7 +6112,7 @@ label morte_s372: # from 370.1 371.0
 
         'morte_s372_r35324{#morte_s372_r35324}': # '«Ладно. Идем».{#morte_s372_r35324}'
             # a763 # r35324
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s373 # say35316
@@ -6129,7 +6129,7 @@ label morte_s373: # from 370.2 371.1 372.0
 
         'morte_s373_r35323{#morte_s373_r35323}': # '«Идем».{#morte_s373_r35323}'
             # a765 # r35323
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s374 # say35318
@@ -6145,7 +6145,7 @@ label morte_s374: # from 373.0
 
         'morte_s374_r35322{#morte_s374_r35322}': # '«Идем».{#morte_s374_r35322}'
             # a767 # r35322
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s375 # say35320
@@ -6158,7 +6158,7 @@ label morte_s375: # from 374.0
     menu:
         'morte_s375_r35321{#morte_s375_r35321}': # '«Очень приятно это слышать. Идем».{#morte_s375_r35321}'
             # a768 # r35321
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s376 # say35341
@@ -6209,7 +6209,7 @@ label morte_s377: # from 376.0 376.1 376.2
 
         'morte_s377_r35359{#morte_s377_r35359}' if morteLogic.r35359_condition(): # '«Неважно, может быть, в другой раз».{#morte_s377_r35359}'
             # a776 # r35359
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s378 # say35387
@@ -6259,7 +6259,7 @@ label morte_s380: # from 378.1 379.0
 
         'morte_s380_r35401{#morte_s380_r35401}': # '«Ладно. Идем».{#morte_s380_r35401}'
             # a783 # r35401
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s381 # say35393
@@ -6276,7 +6276,7 @@ label morte_s381: # from 378.2 379.1 380.0
 
         'morte_s381_r35400{#morte_s381_r35400}': # '«Идем».{#morte_s381_r35400}'
             # a785 # r35400
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s382 # say35395
@@ -6292,7 +6292,7 @@ label morte_s382: # from 381.0
 
         'morte_s382_r35399{#morte_s382_r35399}': # '«Идем».{#morte_s382_r35399}'
             # a787 # r35399
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s383 # say35397
@@ -6305,7 +6305,7 @@ label morte_s383: # from 382.0
     menu:
         'morte_s383_r35398{#morte_s383_r35398}': # '«Очень приятно это слышать. Идем».{#morte_s383_r35398}'
             # a788 # r35398
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s384 # say35418
@@ -6356,7 +6356,7 @@ label morte_s385: # from 384.0 384.1 384.2
 
         'morte_s385_r35436{#morte_s385_r35436}' if morteLogic.r35436_condition(): # '«Неважно, может быть, в другой раз».{#morte_s385_r35436}'
             # a796 # r35436
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s386 # say35464
@@ -6406,7 +6406,7 @@ label morte_s388: # from 386.1 387.0
 
         'morte_s388_r35478{#morte_s388_r35478}': # '«Ладно. Идем».{#morte_s388_r35478}'
             # a803 # r35478
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s389 # say35470
@@ -6423,7 +6423,7 @@ label morte_s389: # from 386.2 387.1 388.0
 
         'morte_s389_r35477{#morte_s389_r35477}': # '«Идем».{#morte_s389_r35477}'
             # a805 # r35477
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s390 # say35472
@@ -6439,7 +6439,7 @@ label morte_s390: # from 389.0
 
         'morte_s390_r35476{#morte_s390_r35476}': # '«Идем».{#morte_s390_r35476}'
             # a807 # r35476
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s391 # say35474
@@ -6452,7 +6452,7 @@ label morte_s391: # from 390.0
     menu:
         'morte_s391_r35475{#morte_s391_r35475}': # '«Очень приятно это слышать. Идем».{#morte_s391_r35475}'
             # a808 # r35475
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s392 # say35495
@@ -6503,7 +6503,7 @@ label morte_s393: # from 392.0 392.1 392.2
 
         'morte_s393_r35513{#morte_s393_r35513}' if morteLogic.r35513_condition(): # '«Неважно, может быть, в другой раз».{#morte_s393_r35513}'
             # a816 # r35513
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s394 # say35541
@@ -6553,7 +6553,7 @@ label morte_s396: # from 394.1 395.0
 
         'morte_s396_r35555{#morte_s396_r35555}': # '«Ладно. Идем».{#morte_s396_r35555}'
             # a823 # r35555
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s397 # say35547
@@ -6570,7 +6570,7 @@ label morte_s397: # from 394.2 395.1 396.0
 
         'morte_s397_r35554{#morte_s397_r35554}': # '«Идем».{#morte_s397_r35554}'
             # a825 # r35554
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s398 # say35549
@@ -6586,7 +6586,7 @@ label morte_s398: # from 397.0
 
         'morte_s398_r35553{#morte_s398_r35553}': # '«Идем».{#morte_s398_r35553}'
             # a827 # r35553
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s399 # say35551
@@ -6599,7 +6599,7 @@ label morte_s399: # from 398.0
     menu:
         'morte_s399_r35552{#morte_s399_r35552}': # '«Очень приятно это слышать. Идем».{#morte_s399_r35552}'
             # a828 # r35552
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s400 # say35572
@@ -6650,7 +6650,7 @@ label morte_s401: # from 400.0 400.1 400.2
 
         'morte_s401_r35590{#morte_s401_r35590}' if morteLogic.r35590_condition(): # '«Неважно, может быть, в другой раз».{#morte_s401_r35590}'
             # a836 # r35590
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s402 # say38265
@@ -6815,7 +6815,7 @@ label morte_s414: # from 409.1 410.2 411.1 412.0 413.0
 
         'morte_s414_r39726{#morte_s414_r39726}': # '«Морт, мы послушаем ее в другой раз. Счастливо, Ив».{#morte_s414_r39726}'
             # a851 # r39726
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s415 # say39572
@@ -6836,7 +6836,7 @@ label morte_s415: # from 414.0
 
         'morte_s415_r39729{#morte_s415_r39729}': # '«Морт, мы послушаем ее в другой раз. Счастливо, Ив».{#morte_s415_r39729}'
             # a854 # r39729
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s416 # say39573
@@ -6858,7 +6858,7 @@ label morte_s416: # from 415.0
 
         'morte_s416_r39754{#morte_s416_r39754}': # '«Морт, мы послушаем ее в другой раз. Счастливо, Ив».{#morte_s416_r39754}'
             # a857 # r39754
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s417 # say39574
@@ -6925,7 +6925,7 @@ label morte_s421: # -
 
         'morte_s421_r40073{#morte_s421_r40073}': # '«Не волнуйся об этом. Счастливо».{#morte_s421_r40073}'
             # a862 # r40073
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s422 # say40074
@@ -6984,7 +6984,7 @@ label morte_s425: # -
 
         'morte_s425_r40084{#morte_s425_r40084}': # '«Это все, что я хотел узнать, Ненни. Прощай».{#morte_s425_r40084}'
             # a869 # r40084
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s426 # say40222
@@ -7003,7 +7003,7 @@ label morte_s426: # -
 
         'morte_s426_r40225{#morte_s426_r40225}': # '«Забудь об этом, Морт. Идем».{#morte_s426_r40225}'
             # a872 # r40225
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s427 # say40275
@@ -7027,7 +7027,7 @@ label morte_s427: # -
 
         'morte_s427_r40279{#morte_s427_r40279}': # '«Это все, что я хотел узнать, Джульетта. Прощай».{#morte_s427_r40279}'
             # a876 # r40279
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s428 # say40685
@@ -7047,7 +7047,7 @@ label morte_s428: # -
 
         'morte_s428_r40688{#morte_s428_r40688}': # '«В таком случае, прощайте, миледи».{#morte_s428_r40688}'
             # a879 # r40688
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s429 # say40846
@@ -7071,7 +7071,7 @@ label morte_s429: # -
 
         'morte_s429_r40850{#morte_s429_r40850}': # '«Хорошо. Идем, Морт».{#morte_s429_r40850}'
             # a883 # r40850
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s430 # say40851
@@ -7092,7 +7092,7 @@ label morte_s430: # from 429.0
 
         'morte_s430_r40854{#morte_s430_r40854}': # '«Хорошо. Идем, Морт».{#morte_s430_r40854}'
             # a886 # r40854
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s431 # say40855
@@ -7237,7 +7237,7 @@ label morte_s443: # from 442.0
         'morte_s443_r41837{#morte_s443_r41837}': # '«Ладно… Уяснил. Идем».{#morte_s443_r41837}'
             # a896 # r41837
             $ morteLogic.j39516_s443_r41837_action()
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s444 # say41838
@@ -7281,7 +7281,7 @@ label morte_s444: # from 445.1 446.1 447.1 448.1 449.0 450.0 451.1 452.0 453.0 4
 
         'morte_s444_r41848{#morte_s444_r41848}' if morteLogic.r41848_condition(): # '«Пока ничего, Морт. Просто проверяю, что ты еще со мной».{#morte_s444_r41848}'
             # a905 # r41848
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s445 # say41849
@@ -7304,7 +7304,7 @@ label morte_s445: # from 444.0
 
         'morte_s445_r41853{#morte_s445_r41853}' if morteLogic.r41853_condition(): # '«Ладно, забудь. Идем».{#morte_s445_r41853}'
             # a909 # r41853
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s446 # say41854
@@ -7330,7 +7330,7 @@ label morte_s446: # from 445.0
 
         'morte_s446_r41858{#morte_s446_r41858}' if morteLogic.r41858_condition(): # '«Забудь. Я уже достаточно наслушался. Идем».{#morte_s446_r41858}'
             # a913 # r41858
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s447 # say41859
@@ -7356,7 +7356,7 @@ label morte_s447: # from 446.0
 
         'morte_s447_r41863{#morte_s447_r41863}' if morteLogic.r41863_condition(): # '«Забудь. Я уже достаточно наслушался. Идем».{#morte_s447_r41863}'
             # a917 # r41863
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s448 # say41864
@@ -7379,7 +7379,7 @@ label morte_s448: # from 447.0
 
         'morte_s448_r41868{#morte_s448_r41868}' if morteLogic.r41868_condition(): # '«Ладно. Идем».{#morte_s448_r41868}'
             # a921 # r41868
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s449 # say41869
@@ -7398,7 +7398,7 @@ label morte_s449: # from 448.0
 
         'morte_s449_r41872{#morte_s449_r41872}' if morteLogic.r41872_condition(): # '«Ладно. Идем».{#morte_s449_r41872}'
             # a924 # r41872
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s450 # say41873
@@ -7417,7 +7417,7 @@ label morte_s450: # from 444.1
 
         'morte_s450_r41876{#morte_s450_r41876}' if morteLogic.r41876_condition(): # '«Это все, что я хотел узнать. Спасибо».{#morte_s450_r41876}'
             # a927 # r41876
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s451 # say41877
@@ -7440,7 +7440,7 @@ label morte_s451: # from 444.2 444.3
 
         'morte_s451_r41881{#morte_s451_r41881}' if morteLogic.r41881_condition(): # '«Понятно. Тогда я буду осторожен».{#morte_s451_r41881}'
             # a931 # r41881
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s452 # say41882
@@ -7459,7 +7459,7 @@ label morte_s452: # from 451.0
 
         'morte_s452_r41885{#morte_s452_r41885}' if morteLogic.r41885_condition(): # '«Ладно… Я… попробую это запомнить».{#morte_s452_r41885}'
             # a934 # r41885
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s453 # say41886
@@ -7478,7 +7478,7 @@ label morte_s453: # from 444.6
 
         'morte_s453_r41889{#morte_s453_r41889}' if morteLogic.r41889_condition(): # '«Спасибо. Думаю, я смогу с ними справиться».{#morte_s453_r41889}'
             # a937 # r41889
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s454 # say41890
@@ -7497,7 +7497,7 @@ label morte_s454: # from 444.4
 
         'morte_s454_r41893{#morte_s454_r41893}' if morteLogic.r41893_condition(): # '«Ладно… Я… попробую это запомнить».{#morte_s454_r41893}'
             # a940 # r41893
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s455 # say41894
@@ -7516,7 +7516,7 @@ label morte_s455: # from 444.5
 
         'morte_s455_r41897{#morte_s455_r41897}': # '«Ладно… Я… попробую это запомнить».{#morte_s455_r41897}'
             # a943 # r41897
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s456 # say41898
@@ -7539,7 +7539,7 @@ label morte_s456: # from 455.0
 
         'morte_s456_r41902{#morte_s456_r41902}': # '«Я достаточно наслушался. Идем».{#morte_s456_r41902}'
             # a947 # r41902
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s457 # say41903
@@ -7558,7 +7558,7 @@ label morte_s457: # from 456.0 456.1
 
         'morte_s457_r41906{#morte_s457_r41906}': # '«Я достаточно наслушался. Идем».{#morte_s457_r41906}'
             # a950 # r41906
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s458 # say41907
@@ -7575,7 +7575,7 @@ label morte_s458: # from 457.0
 
         'morte_s458_r41909{#morte_s458_r41909}': # '«Я достаточно наслушался. Идем».{#morte_s458_r41909}'
             # a952 # r41909
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s459 # say41910
@@ -7609,7 +7609,7 @@ label morte_s461: # from 460.0
     menu:
         'morte_s461_r41916{#morte_s461_r41916}': # '«Мне нужны ответы. Я поговорю с ним».{#morte_s461_r41916}'
             # a955 # r41916
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s462 # say41919
@@ -7634,7 +7634,7 @@ label morte_s462: # -
 
         'morte_s462_r41922{#morte_s462_r41922}': # '«А теперь я ухожу, Джамбл. Прощай».{#morte_s462_r41922}'
             # a959 # r41922
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s463 # say41923
@@ -7657,7 +7657,7 @@ label morte_s463: # -
 
         'morte_s463_r41927{#morte_s463_r41927}': # '«Пошли уже, Морт».{#morte_s463_r41927}'
             # a963 # r41927
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s464 # say42929
@@ -7716,7 +7716,7 @@ label morte_s467: # -
 
         'morte_s467_r43913{#morte_s467_r43913}': # '«Мне ничего не нужно, Немель. Прощай».{#morte_s467_r43913}'
             # a970 # r43913
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s468 # say43914
@@ -7761,7 +7761,7 @@ label morte_s470: # -
 
         'morte_s470_r43921{#morte_s470_r43921}': # '«Мне ничего не нужно, Немель. Прощай».{#morte_s470_r43921}'
             # a975 # r43921
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s471 # say43922
@@ -7772,7 +7772,7 @@ label morte_s471: # -
     menu:
         'morte_s471_r43923{#morte_s471_r43923}': # '«Забудь об этом, Морт. Идем».{#morte_s471_r43923}'
             # a976 # r43923
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s472 # say44244
@@ -7828,7 +7828,7 @@ label morte_s476: # -
         'morte_s476_r45029{#morte_s476_r45029}': # '«Ты прав, Морт. Идем».{#morte_s476_r45029}'
             # a979 # r45029
             $ morteLogic.r45029_action()
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s477 # say45088
@@ -7859,7 +7859,7 @@ label morte_s478: # from 477.0
 
         'morte_s478_r45094{#morte_s478_r45094}': # '«Ладно. Давай двигаться дальше».{#morte_s478_r45094}'
             # a983 # r45094
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s479 # say45095
@@ -7889,7 +7889,7 @@ label morte_s480: # from 479.0
 
         'morte_s480_r45101{#morte_s480_r45101}': # '«Ладно. Давай двигаться дальше».{#morte_s480_r45101}'
             # a987 # r45101
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s481 # say45102
@@ -7909,7 +7909,7 @@ label morte_s481: # from 478.0 480.0
 
         'morte_s481_r45105{#morte_s481_r45105}': # '«Ладно. Давай двигаться дальше».{#morte_s481_r45105}'
             # a990 # r45105
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s482 # say45540
@@ -7948,7 +7948,7 @@ label morte_s485: # -
 
         'morte_s485_r45713{#morte_s485_r45713}': # '«Тогда давай уходить отсюда».{#morte_s485_r45713}'
             # a992 # r45713
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s486 # say45714
@@ -7963,7 +7963,7 @@ label morte_s486: # -
 
         'morte_s486_r45716{#morte_s486_r45716}': # '«Как скажешь, Морт. Давай оставим в покое этого парня».{#morte_s486_r45716}'
             # a994 # r45716
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s487 # say45996
@@ -7986,7 +7986,7 @@ label morte_s488: # -
 
         'morte_s488_r47815{#morte_s488_r47815}': # '«На этом разговор окончен».{#morte_s488_r47815}'
             # a996 # r47815
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s489 # say49443
@@ -7997,7 +7997,7 @@ label morte_s489: # -
     menu:
         'morte_s489_r49444{#morte_s489_r49444}': # '«Спасибо за ценное замечание, Морт. Идем».{#morte_s489_r49444}'
             # a997 # r49444
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s490 # say50162
@@ -8203,7 +8203,7 @@ label morte_s504: # -
 
         'morte_s504_r50700{#morte_s504_r50700}': # '«Ты прав, Морт: это была не лучшая идея. Пошли».{#morte_s504_r50700}'
             # a1017 # r50700
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s505 # say50701
@@ -8305,7 +8305,7 @@ label morte_s512: # from 522.0 523.0 524.0
 
         'morte_s512_r53628{#morte_s512_r53628}': # '«Хорошо. Тогда пошли».{#morte_s512_r53628}'
             # a1026 # r53628
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s513 # say53626
@@ -8327,7 +8327,7 @@ label morte_s513: # from 512.1
 
         'morte_s513_r53631{#morte_s513_r53631}': # '«Хорошо. Тогда пошли».{#morte_s513_r53631}'
             # a1029 # r53631
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s514 # say53632
@@ -8416,7 +8416,7 @@ label morte_s519: # -
 
         'morte_s519_r53799{#morte_s519_r53799}': # '«Ладно. Пошли, Морт».{#morte_s519_r53799}'
             # a1038 # r53799
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s520 # say53800
@@ -8446,7 +8446,7 @@ label morte_s520: # from 518.1
 
         'morte_s520_r53805{#morte_s520_r53805}': # '«Ладно. Пошли, Морт».{#morte_s520_r53805}'
             # a1043 # r53805
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s521 # say53806
@@ -8483,7 +8483,7 @@ label morte_s522: # from 521.0
 
         'morte_s522_r53812{#morte_s522_r53812}': # '«Хорошо. Идем, Морт».{#morte_s522_r53812}'
             # a1048 # r53812
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s523 # say53813
@@ -8509,7 +8509,7 @@ label morte_s523: # from 519.2 520.2 522.1 524.2
 
         'morte_s523_r53817{#morte_s523_r53817}': # '«Хорошо. Идем, Морт».{#morte_s523_r53817}'
             # a1052 # r53817
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s524 # say53818
@@ -8534,7 +8534,7 @@ label morte_s524: # from 519.3 520.3 522.2 523.2
 
         'morte_s524_r53822{#morte_s524_r53822}': # '«Хорошо. Идем, Морт».{#morte_s524_r53822}'
             # a1056 # r53822
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s525 # say53823
@@ -8645,7 +8645,7 @@ label morte_s530: # from 529.0 529.1 529.2
         'morte_s530_r53843{#morte_s530_r53843}': # 'Схватить Морта и швырнуть его в Колонну Черепов.{#morte_s530_r53843}'
             # a1071 # r53843
             $ morteLogic.r53843_action()
-            jump morte_dispose
+            jump dialogues_dispose
 
         'morte_s530_r53844{#morte_s530_r53844}' if morteLogic.r53844_condition(): # '«Ладно, Морт. Колонна Черепов, какие еще подарки вы примете?»{#morte_s530_r53844}'
             # a1072 # r53844
@@ -8683,7 +8683,7 @@ label morte_s531: # from 529.3
         'morte_s531_r53850{#morte_s531_r53850}': # 'Схватить Морта и швырнуть его в Колонну Черепов.{#morte_s531_r53850}'
             # a1078 # r53850
             $ morteLogic.r53850_action()
-            jump morte_dispose
+            jump dialogues_dispose
 
         'morte_s531_r53851{#morte_s531_r53851}' if morteLogic.r53851_condition(): # '«Ладно, Морт. Колонна Черепов, какие еще подарки вы примете?»{#morte_s531_r53851}'
             # a1079 # r53851
@@ -8761,7 +8761,7 @@ label morte_s534: # from 540.3 541.2 542.2 543.1 544.1 545.2 546.1 547.1 548.4 5
 
         'morte_s534_r54158{#morte_s534_r54158}': # '«Возможно, ты прав… Дай мне подготовиться поосновательней».{#morte_s534_r54158}'
             # a1091 # r54158
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s535 # say54159
@@ -8775,7 +8775,7 @@ label morte_s535: # from 534.1
         'morte_s535_r54160{#morte_s535_r54160}': # '«Ну хорошо…»{#morte_s535_r54160}'
             # a1092 # r54160
             $ morteLogic.r54160_action()
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s536 # say54161
@@ -8875,7 +8875,7 @@ label morte_s540: # from 537.0 537.2 539.0 539.2
         'morte_s540_r54180{#morte_s540_r54180}' if morteLogic.r54180_condition(): # '«Неважно, Морт. Что было — то было. Я собираюсь шагнуть в портал».{#morte_s540_r54180}'
             # a1107 # r54180
             $ morteLogic.r54180_action()
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s541 # say54181
@@ -8899,7 +8899,7 @@ label morte_s541: # from 540.0 540.2
         'morte_s541_r54192{#morte_s541_r54192}' if morteLogic.r54192_condition(): # '«Неважно, Морт. Что было — то было. Я собираюсь шагнуть в портал».{#morte_s541_r54192}'
             # a1111 # r54192
             $ morteLogic.r54192_action()
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s542 # say54193
@@ -8924,7 +8924,7 @@ label morte_s542: # from 540.1
         'morte_s542_r54197{#morte_s542_r54197}' if morteLogic.r54197_condition(): # '«Неважно, Морт. Что было — то было. Я собираюсь шагнуть в портал».{#morte_s542_r54197}'
             # a1115 # r54197
             $ morteLogic.r54197_action()
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s543 # say54198
@@ -8944,7 +8944,7 @@ label morte_s543: # from 541.1 542.1
         'morte_s543_r54201{#morte_s543_r54201}' if morteLogic.r54201_condition(): # '«Неважно, Морт. Что было — то было. Я собираюсь шагнуть в портал».{#morte_s543_r54201}'
             # a1118 # r54201
             $ morteLogic.r54201_action()
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s544 # say54202
@@ -8966,7 +8966,7 @@ label morte_s544: # from 534.0 541.0 542.0
         'morte_s544_r54205{#morte_s544_r54205}' if morteLogic.r54205_condition(): # '«Неважно, Морт. Что было — то было. Я собираюсь шагнуть в портал».{#morte_s544_r54205}'
             # a1121 # r54205
             $ morteLogic.r54205_action()
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s545 # say54206
@@ -8990,7 +8990,7 @@ label morte_s545: # from 543.0 544.0
         'morte_s545_r54210{#morte_s545_r54210}' if morteLogic.r54210_condition(): # '«Неважно, Морт. Что было — то было. Я собираюсь шагнуть в портал».{#morte_s545_r54210}'
             # a1125 # r54210
             $ morteLogic.r54210_action()
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s546 # say54211
@@ -9010,7 +9010,7 @@ label morte_s546: # from 545.1
         'morte_s546_r54214{#morte_s546_r54214}' if morteLogic.r54214_condition(): # '«Неважно, Морт. Что было — то было. Я собираюсь шагнуть в портал».{#morte_s546_r54214}'
             # a1128 # r54214
             $ morteLogic.r54214_action()
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s547 # say54215
@@ -9030,7 +9030,7 @@ label morte_s547: # from 545.0
         'morte_s547_r54218{#morte_s547_r54218}' if morteLogic.r54218_condition(): # '«Неважно, Морт. Что было — то было. Я собираюсь шагнуть в портал».{#morte_s547_r54218}'
             # a1131 # r54218
             $ morteLogic.r54218_action()
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s548 # say54219
@@ -9062,7 +9062,7 @@ label morte_s548: # from 546.0 547.0
         'morte_s548_r54227{#morte_s548_r54227}' if morteLogic.r54227_condition(): # '«Неважно, Морт. Что было — то было. Я собираюсь шагнуть в портал».{#morte_s548_r54227}'
             # a1137 # r54227
             $ morteLogic.r54227_action()
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s549 # say54229
@@ -9087,7 +9087,7 @@ label morte_s549: # from 548.1
         'morte_s549_r54233{#morte_s549_r54233}' if morteLogic.r54233_condition(): # '«Неважно, Морт. Что было — то было. Я собираюсь шагнуть в портал».{#morte_s549_r54233}'
             # a1141 # r54233
             $ morteLogic.r54233_action()
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s550 # say54234
@@ -9112,7 +9112,7 @@ label morte_s550: # from 548.2
         'morte_s550_r54238{#morte_s550_r54238}' if morteLogic.r54238_condition(): # '«Неважно, Морт. Что было — то было. Я собираюсь шагнуть в портал».{#morte_s550_r54238}'
             # a1145 # r54238
             $ morteLogic.r54238_action()
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s551 # say54239
@@ -9133,7 +9133,7 @@ label morte_s551: # from 549.0 549.1 550.0 550.1
         'morte_s551_r54242{#morte_s551_r54242}' if morteLogic.r54242_condition(): # '«Неважно, Морт. Что было — то было. Я собираюсь шагнуть в портал».{#morte_s551_r54242}'
             # a1148 # r54242
             $ morteLogic.r54242_action()
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s552 # say54243
@@ -9154,7 +9154,7 @@ label morte_s552: # from 548.3 551.0
         'morte_s552_r54246{#morte_s552_r54246}' if morteLogic.r54246_condition(): # '«Неважно, Морт. Что было — то было. Я собираюсь шагнуть в портал».{#morte_s552_r54246}'
             # a1151 # r54246
             $ morteLogic.r54246_action()
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s553 # say54249
@@ -9180,7 +9180,7 @@ label morte_s553: # from 552.0
         'morte_s553_r54262{#morte_s553_r54262}' if morteLogic.r54262_condition(): # '«Неважно, Морт. Что было — то было. Я собираюсь шагнуть в портал».{#morte_s553_r54262}'
             # a1155 # r54262
             $ morteLogic.r54262_action()
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s554 # say54263
@@ -9204,7 +9204,7 @@ label morte_s554: # from 553.0
         'morte_s554_r54267{#morte_s554_r54267}' if morteLogic.r54267_condition(): # '«Неважно, Морт. Что было — то было. Я собираюсь шагнуть в портал».{#morte_s554_r54267}'
             # a1159 # r54267
             $ morteLogic.r54267_action()
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s555 # say54268
@@ -9228,7 +9228,7 @@ label morte_s555: # from 553.1
         'morte_s555_r54272{#morte_s555_r54272}' if morteLogic.r54272_condition(): # '«Неважно, Морт. Что было — то было. Я собираюсь шагнуть в портал».{#morte_s555_r54272}'
             # a1163 # r54272
             $ morteLogic.r54272_action()
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s556 # say54273
@@ -9250,7 +9250,7 @@ label morte_s556: # from 554.0 554.1 555.0 555.1
         'morte_s556_r54276{#morte_s556_r54276}' if morteLogic.r54276_condition(): # '«Неважно, Морт. Что было — то было. Я собираюсь шагнуть в портал».{#morte_s556_r54276}'
             # a1166 # r54276
             $ morteLogic.r54276_action()
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s557 # say54277
@@ -9273,7 +9273,7 @@ label morte_s557: # from 556.0
         'morte_s557_r54280{#morte_s557_r54280}' if morteLogic.r54280_condition(): # '«Понятно. Спасибо за совет, Морт. Теперь я собираюсь пройти через портал».{#morte_s557_r54280}'
             # a1169 # r54280
             $ morteLogic.r54280_action()
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s558 # say54281
@@ -9345,7 +9345,7 @@ label morte_s562: # from 558.2
         'morte_s562_r54833{#morte_s562_r54833}' if morteLogic.r54833_condition(): # '«Понятно. Спасибо за совет, Морт. Теперь я собираюсь пройти через портал».{#morte_s562_r54833}'
             # a1176 # r54833
             $ morteLogic.r54833_action()
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s563 # say54834
@@ -9363,7 +9363,7 @@ label morte_s563: # from 558.3
         'morte_s563_r54836{#morte_s563_r54836}' if morteLogic.r54836_condition(): # '«Понятно. Спасибо за совет, Морт. Теперь я собираюсь пройти через портал».{#morte_s563_r54836}'
             # a1178 # r54836
             $ morteLogic.r54836_action()
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s564 # say54837
@@ -9381,7 +9381,7 @@ label morte_s564: # from 558.4
         'morte_s564_r54839{#morte_s564_r54839}' if morteLogic.r54839_condition(): # '«Понятно. Спасибо за совет, Морт. Теперь я собираюсь пройти через портал».{#morte_s564_r54839}'
             # a1180 # r54839
             $ morteLogic.r54839_action()
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s565 # say54840
@@ -9490,7 +9490,7 @@ label morte_s574: # from 573.0
 
         'morte_s574_r55844{#morte_s574_r55844}': # '«Тогда забудь об этом. Пошли дальше».{#morte_s574_r55844}'
             # a1187 # r55844
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s575 # say55845
@@ -9505,7 +9505,7 @@ label morte_s575: # from 574.0
 
         'morte_s575_r55847{#morte_s575_r55847}': # '«Тогда забудь об этом. Пошли дальше».{#morte_s575_r55847}'
             # a1189 # r55847
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s576 # say55848
@@ -9523,7 +9523,7 @@ label morte_s576: # -
 
         'morte_s576_r55850{#morte_s576_r55850}' if morteLogic.r55850_condition(): # '«Неважно, Морт. Я достаточно наслушался. Идем».{#morte_s576_r55850}'
             # a1191 # r55850
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s577 # say55855
@@ -9540,7 +9540,7 @@ label morte_s577: # -
 
         'morte_s577_r55858{#morte_s577_r55858}': # '«Неважно, Морт. Я достаточно наслушался. Идем».{#morte_s577_r55858}'
             # a1193 # r55858
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s578 # say55860
@@ -9561,7 +9561,7 @@ label morte_s578: # -
 
         'morte_s578_r55865{#morte_s578_r55865}': # '«Это все, что я хотел знать. Пошли».{#morte_s578_r55865}'
             # a1196 # r55865
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s579 # say55867
@@ -9586,7 +9586,7 @@ label morte_s581: # -
     'morte_s581{#morte_s581}'
     # nr 'NULL NODE.{#morte_s581_1}'
 
-    jump morte_dispose
+    jump dialogues_dispose
 
 
 # s582 # say55873
@@ -9609,7 +9609,7 @@ label morte_s582: # -
 
         'morte_s582_r55879{#morte_s582_r55879}': # '«Это все, что я хотел знать. Пошли».{#morte_s582_r55879}'
             # a1200 # r55879
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s583 # say55882
@@ -9650,7 +9650,7 @@ label morte_s585: # from 584.0
 
         'morte_s585_r55895{#morte_s585_r55895}': # '«Это все, что я хотел знать. Пошли».{#morte_s585_r55895}'
             # a1205 # r55895
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s586 # say55897
@@ -9690,7 +9690,7 @@ label morte_s587: # -
 
         'morte_s587_r55907{#morte_s587_r55907}': # '«Забудь об этом. Идем».{#morte_s587_r55907}'
             # a1211 # r55907
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s588 # say55909
@@ -9713,7 +9713,7 @@ label morte_s588: # from 587.0
 
         'morte_s588_r55913{#morte_s588_r55913}': # '«Забудь об этом. Идем».{#morte_s588_r55913}'
             # a1214 # r55913
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s589 # say55914
@@ -9732,7 +9732,7 @@ label morte_s589: # from 587.1
 
         'morte_s589_r55918{#morte_s589_r55918}': # '«Забудь об этом. Идем».{#morte_s589_r55918}'
             # a1217 # r55918
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s590 # say55921
@@ -9756,7 +9756,7 @@ label morte_s590: # from 588.0 589.0
 
         'morte_s590_r55928{#morte_s590_r55928}': # '«Забудь об этом. Идем».{#morte_s590_r55928}'
             # a1221 # r55928
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s591 # say55930
@@ -9780,7 +9780,7 @@ label morte_s591: # from 590.1
 
         'morte_s591_r55937{#morte_s591_r55937}': # '«Забудь об этом. Идем».{#morte_s591_r55937}'
             # a1225 # r55937
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s592 # say55938
@@ -9808,7 +9808,7 @@ label morte_s593: # from 592.0
 
         'morte_s593_r55944{#morte_s593_r55944}': # '«Тогда ладно. Давай двигаться дальше».{#morte_s593_r55944}'
             # a1228 # r55944
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s594 # say56029
@@ -9853,7 +9853,7 @@ label morte_s597: # -
     menu:
         'morte_s597_r56937{#morte_s597_r56937}': # '«Да, но он нам помог. Идем».{#morte_s597_r56937}'
             # a1232 # r56937
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s598 # say59827
@@ -9861,7 +9861,7 @@ label morte_s598: # -
     'morte_s598{#morte_s598}'
     # nr 'NULL NODE.{#morte_s598_1}'
 
-    jump morte_dispose
+    jump dialogues_dispose
 
 
 # s599 # say60950
@@ -9872,11 +9872,11 @@ label morte_s599: # -
     menu:
         'morte_s599_r61111{#morte_s599_r61111}': # '«Молчи, Морт. Я с этим разберусь. Ты не мог бы сказать, что случилось?»{#morte_s599_r61111}'
             # a1233 # r61111
-            jump morte_dispose
+            jump dialogues_dispose
 
         'morte_s599_r61112{#morte_s599_r61112}': # '«Забудь. Я оставлю тебя здесь».{#morte_s599_r61112}'
             # a1234 # r61112
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s600 # say61408
@@ -9891,11 +9891,11 @@ label morte_s600: # -
 
         'morte_s600_r61412{#morte_s600_r61412}' if morteLogic.r61412_condition(): # '«Извини, Морт, наличность закончилась. Идем».{#morte_s600_r61412}'
             # a1236 # r61412
-            jump morte_dispose
+            jump dialogues_dispose
 
         'morte_s600_r61413{#morte_s600_r61413}': # '«Морт, нам правда нужно идти. Прощай, красавица».{#morte_s600_r61413}'
             # a1237 # r61413
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s601 # say61409
@@ -9919,7 +9919,7 @@ label morte_s602: # -
     menu:
         'morte_s602_r61415{#morte_s602_r61415}': # '«Хорошо… Думаю, что все прошло хорошо. Прощай, красавица».{#morte_s602_r61415}'
             # a1239 # r61415
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s603 # say61481
@@ -9928,7 +9928,7 @@ label morte_s603: # -
     # morte '«Моим? Я — голова Векны».{#morte_s603_1}' # [MRT562]
 
     $ morteLogic.s603_action()
-    jump morte_dispose
+    jump dialogues_dispose
 
 
 # s604 # say61482
@@ -9937,7 +9937,7 @@ label morte_s604: # -
     # morte '«Боги услышали мои молитвы!»{#morte_s604_1}' # [MRT485]
 
     $ morteLogic.s604_action()
-    jump morte_dispose
+    jump dialogues_dispose
 
 
 # s605 # say61483
@@ -9954,7 +9954,7 @@ label morte_s606: # -
     # morte '«*Пожалуйста*, мы можем сменить тему?»{#morte_s606_1}' # [MRT559B]
 
     $ morteLogic.s606_action()
-    jump morte_dispose
+    jump dialogues_dispose
 
 
 # s607 # say61485
@@ -9963,7 +9963,7 @@ label morte_s607: # -
     # morte '«Я? Я *ле пети Морт*».{#morte_s607_1}' # [MRT560]
 
     $ morteLogic.s607_action()
-    jump morte_dispose
+    jump dialogues_dispose
 
 
 # s608 # say61486
@@ -9972,7 +9972,7 @@ label morte_s608: # -
     # morte '«Что сказать? Я — *Мементо Морте*».{#morte_s608_1}' # [MRT561]
 
     $ morteLogic.s608_action()
-    jump morte_dispose
+    jump dialogues_dispose
 
 
 # s609 # say61487
@@ -9989,7 +9989,7 @@ label morte_s610: # -
     # morte '«Ничего! Ничего такого. Важного».{#morte_s610_1}' # [MRT486B]
 
     $ morteLogic.s610_action()
-    jump morte_dispose
+    jump dialogues_dispose
 
 
 # s611 # say61489
@@ -9998,7 +9998,7 @@ label morte_s611: # -
     # morte '«Гав! Гав! Хе-хе-хе!»{#morte_s611_1}' # [MRT484]
 
     $ morteLogic.s611_action()
-    jump morte_dispose
+    jump dialogues_dispose
 
 
 # s612 # say62890
@@ -10031,7 +10031,7 @@ label morte_s615: # -
     # morte '«Я перестал дышать с тех пор, как увидел тебя, бесовка».{#morte_s615_1}' # [MRT524]
 
     $ morteLogic.s615_action()
-    jump morte_dispose
+    jump dialogues_dispose
 
 
 # s616 # say63457
@@ -10072,7 +10072,7 @@ label morte_s620: # -
     # morte '«Я могу придумать способы и похуже».{#morte_s620_1}' # [MRT525]
 
     $ morteLogic.s620_action()
-    jump morte_dispose
+    jump dialogues_dispose
 
 
 # s621 # say63463
@@ -10089,7 +10089,7 @@ label morte_s622: # -
     # morte '«С той точки, где я парю, она выглядит хорошенькой».{#morte_s622_1}' # [MRT533B]
 
     $ morteLogic.s622_action()
-    jump morte_dispose
+    jump dialogues_dispose
 
 
 # s623 # say63666
@@ -10098,7 +10098,7 @@ label morte_s623: # -
     # morte '«Я заметил. Почему бы тебе не поделиться своей проницательностью с шефом, а?»{#morte_s623_1}' # [MRT563]
 
     $ morteLogic.s623_action()
-    jump morte_dispose
+    jump dialogues_dispose
 
 
 # s624 # say63667
@@ -10115,7 +10115,7 @@ label morte_s625: # -
     # morte '«Тогда почему бы тебе не стать чуточку „эффективнее“, пустомеля-полигон».{#morte_s625_1}' # [MRT469A]
 
     $ morteLogic.s625_action()
-    jump morte_dispose
+    jump dialogues_dispose
 
 
 # s626 # say63669
@@ -10140,7 +10140,7 @@ label morte_s628: # -
     # morte '«Тогда ответ — да».{#morte_s628_1}' # [MRT565B]
 
     $ morteLogic.s628_action()
-    jump morte_dispose
+    jump dialogues_dispose
 
 
 # s629 # say63672
@@ -10149,7 +10149,7 @@ label morte_s629: # -
     # morte '«Я сейчас тебе приделаю девятнадцатую, если ты не заткнешь свою пасть».{#morte_s629_1}' # [MRT564]
 
     $ morteLogic.s629_action()
-    jump morte_dispose
+    jump dialogues_dispose
 
 
 # s630 # say63673
@@ -10166,7 +10166,7 @@ label morte_s631: # -
     # morte '«Добро пожаловать на планы, сынок».{#morte_s631_1}' # [MRT569B]
 
     $ morteLogic.s631_action()
-    jump morte_dispose
+    jump dialogues_dispose
 
 
 # s632 # say63675
@@ -10183,7 +10183,7 @@ label morte_s633: # -
     # morte '«Тогда ответ на твой вопрос — да».{#morte_s633_1}' # [MRT568B]
 
     $ morteLogic.s633_action()
-    jump morte_dispose
+    jump dialogues_dispose
 
 
 # s634 # say63677
@@ -10200,7 +10200,7 @@ label morte_s635: # -
     # morte '«Эй. Некоторые читают словарь, а некоторые — его пишут».{#morte_s635_1}' # [MRT572B]
 
     $ morteLogic.s635_action()
-    jump morte_dispose
+    jump dialogues_dispose
 
 
 # s636 # say63679
@@ -10241,7 +10241,7 @@ label morte_s640: # -
     # morte '«Если ты не заткнешь свою пасть, я тебе сейчас это покажу».{#morte_s640_1}' # [MRT576C]
 
     $ morteLogic.s640_action()
-    jump morte_dispose
+    jump dialogues_dispose
 
 
 # s641 # say63684
@@ -10258,7 +10258,7 @@ label morte_s642: # -
     # morte '«Поверь мне. Анна заслуживает поцелуя».{#morte_s642_1}' # [MRT575B]
 
     $ morteLogic.s642_action()
-    jump morte_dispose
+    jump dialogues_dispose
 
 
 # s643 # say63686
@@ -10267,7 +10267,7 @@ label morte_s643: # -
     # nr '::Невинно посвистывает::{#morte_s643_1}' # [MRT472A]
 
     $ morteLogic.s643_action()
-    jump morte_dispose
+    jump dialogues_dispose
 
 
 # s644 # say63688
@@ -10276,7 +10276,7 @@ label morte_s644: # -
     # morte '«Никто! Никто ему этого не говорил!»{#morte_s644_1}' # [MRT473D]
 
     $ morteLogic.s644_action()
-    jump morte_dispose
+    jump dialogues_dispose
 
 
 # s645 # say63689
@@ -10285,7 +10285,7 @@ label morte_s645: # -
     # morte '«Это чисто добровольное действие с их стороны, идиот. Э… или я не все знаю».{#morte_s645_1}' # [MRT577]
 
     $ morteLogic.s645_action()
-    jump morte_dispose
+    jump dialogues_dispose
 
 
 # s646 # say63858
@@ -10310,7 +10310,7 @@ label morte_s647: # -
 
         'morte_s647_r64993{#morte_s647_r64993}': # '«Может, и так. Идем».{#morte_s647_r64993}'
             # a1241 # r64993
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s648 # say64992
@@ -10321,7 +10321,7 @@ label morte_s648: # from 647.0
     menu:
         'morte_s648_r64994{#morte_s648_r64994}': # '«Тогда я поспрашиваю в округе. Пошли».{#morte_s648_r64994}'
             # a1242 # r64994
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s649 # say65552
@@ -10344,7 +10344,7 @@ label morte_s649: # from 329.0 729.0
 
         'morte_s649_r65556{#morte_s649_r65556}': # '«Ладно, забудь. Идем».{#morte_s649_r65556}'
             # a1246 # r65556
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s650 # say65557
@@ -10370,7 +10370,7 @@ label morte_s650: # from 649.0 649.1
 
         'morte_s650_r65561{#morte_s650_r65561}': # '«Забудь. Я уже достаточно наслушался. Идем».{#morte_s650_r65561}'
             # a1250 # r65561
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s651 # say65562
@@ -10398,7 +10398,7 @@ label morte_s651: # from 650.0 650.1
 
         'morte_s651_r65568{#morte_s651_r65568}': # '«Забудь. Я уже достаточно наслушался. Идем».{#morte_s651_r65568}'
             # a1254 # r65568
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s652 # say65563
@@ -10423,7 +10423,7 @@ label morte_s652: # from 651.1
 
         'morte_s652_r65572{#morte_s652_r65572}': # '«Ладно. Идем».{#morte_s652_r65572}'
             # a1258 # r65572
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s653 # say65564
@@ -10442,7 +10442,7 @@ label morte_s653: # from 651.0
 
         'morte_s653_r65576{#morte_s653_r65576}': # '«Ладно. Идем».{#morte_s653_r65576}'
             # a1261 # r65576
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s654 # say65577
@@ -10461,7 +10461,7 @@ label morte_s654: # from 329.4 652.0 652.1 729.4
 
         'morte_s654_r65580{#morte_s654_r65580}': # '«Ладно. Идем».{#morte_s654_r65580}'
             # a1264 # r65580
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s655 # say65581
@@ -10480,7 +10480,7 @@ label morte_s655: # from 653.0 654.0
 
         'morte_s655_r65584{#morte_s655_r65584}': # '«Ладно. Идем».{#morte_s655_r65584}'
             # a1267 # r65584
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s656 # say65585
@@ -10499,7 +10499,7 @@ label morte_s656: # from 655.0
 
         'morte_s656_r65588{#morte_s656_r65588}': # '«Ладно. Идем».{#morte_s656_r65588}'
             # a1270 # r65588
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s657 # say65589
@@ -10518,7 +10518,7 @@ label morte_s657: # from 656.0
 
         'morte_s657_r65592{#morte_s657_r65592}': # '«Ладно. Идем».{#morte_s657_r65592}'
             # a1273 # r65592
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s658 # say65593
@@ -10533,7 +10533,7 @@ label morte_s658: # from 657.0
 
         'morte_s658_r65595{#morte_s658_r65595}': # '«Очень надеюсь на это. Идем».{#morte_s658_r65595}'
             # a1275 # r65595
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s659 # say65596
@@ -10552,7 +10552,7 @@ label morte_s659: # from 329.1 729.1
 
         'morte_s659_r65599{#morte_s659_r65599}': # '«Это все, что я хотел знать. Идем».{#morte_s659_r65599}'
             # a1278 # r65599
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s660 # say65600
@@ -10571,7 +10571,7 @@ label morte_s660: # from 659.0
 
         'morte_s660_r65603{#morte_s660_r65603}': # '«Это все, что я хотел знать. Идем».{#morte_s660_r65603}'
             # a1281 # r65603
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s661 # say65604
@@ -10590,7 +10590,7 @@ label morte_s661: # from 660.0
 
         'morte_s661_r65607{#morte_s661_r65607}': # '«Это все, что я хотел знать. Идем».{#morte_s661_r65607}'
             # a1284 # r65607
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s662 # say65608
@@ -10605,7 +10605,7 @@ label morte_s662: # from 661.0
 
         'morte_s662_r65610{#morte_s662_r65610}': # '«Это все, что я хотел знать. Идем».{#morte_s662_r65610}'
             # a1286 # r65610
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s663 # say65611
@@ -10630,7 +10630,7 @@ label morte_s663: # from 329.2 729.2
 
         'morte_s663_r65615{#morte_s663_r65615}': # '«Неважно Идем».{#morte_s663_r65615}'
             # a1290 # r65615
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s664 # say65616
@@ -10649,7 +10649,7 @@ label morte_s664: # from 663.0
 
         'morte_s664_r65619{#morte_s664_r65619}': # '«Неважно Идем».{#morte_s664_r65619}'
             # a1293 # r65619
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s665 # say65620
@@ -10674,7 +10674,7 @@ label morte_s665: # from 664.0
 
         'morte_s665_r65624{#morte_s665_r65624}': # '«Хм-м. Это может пригодиться. Идем».{#morte_s665_r65624}'
             # a1297 # r65624
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s666 # say65626
@@ -10693,7 +10693,7 @@ label morte_s666: # from 329.3 665.0 729.3
 
         'morte_s666_r65629{#morte_s666_r65629}': # '«Хм-м. Это может пригодиться. Идем».{#morte_s666_r65629}'
             # a1300 # r65629
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s667 # say65630
@@ -10713,7 +10713,7 @@ label morte_s667: # from 663.1 665.1 666.0
 
         'morte_s667_r65633{#morte_s667_r65633}': # '«Приятно слышать это. Идем».{#morte_s667_r65633}'
             # a1303 # r65633
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s668 # say65634
@@ -10728,7 +10728,7 @@ label morte_s668: # from 667.0
 
         'morte_s668_r65636{#morte_s668_r65636}': # '«Приятно слышать это. Идем».{#morte_s668_r65636}'
             # a1305 # r65636
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s669 # say65638
@@ -10779,7 +10779,7 @@ label morte_s669: # from 329.5 729.5
 
         'morte_s669_r65649{#morte_s669_r65649}': # '«Если подумать, забудь об этом. Пошли».{#morte_s669_r65649}'
             # a1316 # r65649
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s670 # say65650
@@ -10794,7 +10794,7 @@ label morte_s670: # from 669.3
 
         'morte_s670_r65652{#morte_s670_r65652}': # '«Хорошо. Тогда идем».{#morte_s670_r65652}'
             # a1318 # r65652
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s671 # say65653
@@ -10809,7 +10809,7 @@ label morte_s671: # from 669.0
 
         'morte_s671_r65655{#morte_s671_r65655}': # '«Хорошо. Давай тогда искать его».{#morte_s671_r65655}'
             # a1320 # r65655
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s672 # say65656
@@ -10824,7 +10824,7 @@ label morte_s672: # from 669.1
 
         'morte_s672_r65658{#morte_s672_r65658}': # '«Хорошо. Тогда идем».{#morte_s672_r65658}'
             # a1322 # r65658
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s673 # say65659
@@ -10839,7 +10839,7 @@ label morte_s673: # from 669.2
 
         'morte_s673_r65661{#morte_s673_r65661}': # '«Хорошо. Тогда идем».{#morte_s673_r65661}'
             # a1324 # r65661
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s674 # say65662
@@ -10854,7 +10854,7 @@ label morte_s674: # from 669.4
 
         'morte_s674_r65664{#morte_s674_r65664}': # '«Хорошо. Тогда идем».{#morte_s674_r65664}'
             # a1326 # r65664
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s675 # say65665
@@ -10874,7 +10874,7 @@ label morte_s675: # from 669.5
 
         'morte_s675_r65668{#morte_s675_r65668}': # '«Хорошо. Тогда идем».{#morte_s675_r65668}'
             # a1329 # r65668
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s676 # say65670
@@ -10889,7 +10889,7 @@ label morte_s676: # from 675.0
 
         'morte_s676_r65672{#morte_s676_r65672}': # '«Хорошо. Тогда идем».{#morte_s676_r65672}'
             # a1331 # r65672
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s677 # say65673
@@ -10913,7 +10913,7 @@ label morte_s677: # from 669.6
 
         'morte_s677_r65677{#morte_s677_r65677}': # '«Хорошо. Тогда идем».{#morte_s677_r65677}'
             # a1335 # r65677
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s678 # say65679
@@ -10932,7 +10932,7 @@ label morte_s678: # from 677.0
 
         'morte_s678_r65682{#morte_s678_r65682}': # '«Ладно. Продолжим поиски».{#morte_s678_r65682}'
             # a1338 # r65682
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s679 # say65683
@@ -10947,7 +10947,7 @@ label morte_s679: # from 677.1 678.0
 
         'morte_s679_r65685{#morte_s679_r65685}': # '«Хорошо. Тогда идем».{#morte_s679_r65685}'
             # a1340 # r65685
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s680 # say65686
@@ -10962,7 +10962,7 @@ label morte_s680: # from 669.7
 
         'morte_s680_r65688{#morte_s680_r65688}': # '«Ну хорошо. Продолжим путь».{#morte_s680_r65688}'
             # a1342 # r65688
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s681 # say65689
@@ -10977,7 +10977,7 @@ label morte_s681: # from 669.8
 
         'morte_s681_r65691{#morte_s681_r65691}': # '«Ладно. Идем».{#morte_s681_r65691}'
             # a1344 # r65691
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s682 # say65692
@@ -10996,7 +10996,7 @@ label morte_s682: # from 651.2
 
         'morte_s682_r65695{#morte_s682_r65695}': # '«Ладно. Идем».{#morte_s682_r65695}'
             # a1347 # r65695
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s683 # say65696
@@ -11011,7 +11011,7 @@ label morte_s683: # from 682.0
 
         'morte_s683_r65698{#morte_s683_r65698}': # '«Ладно. Идем».{#morte_s683_r65698}'
             # a1349 # r65698
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s684 # say65699
@@ -11030,7 +11030,7 @@ label morte_s684: # from 329.6 729.6
 
         'morte_s684_r65702{#morte_s684_r65702}': # '«Ладно. Идем».{#morte_s684_r65702}'
             # a1352 # r65702
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s685 # say65703
@@ -11049,7 +11049,7 @@ label morte_s685: # from 684.0
 
         'morte_s685_r65706{#morte_s685_r65706}': # '«Ладно. Идем».{#morte_s685_r65706}'
             # a1355 # r65706
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s686 # say65707
@@ -11074,7 +11074,7 @@ label morte_s686: # from 685.0
         'morte_s686_r65711{#morte_s686_r65711}': # '«Тогда неважно. Идем».{#morte_s686_r65711}'
             # a1359 # r65711
             $ morteLogic.j65712_s686_r65711_action()
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s687 # say65713
@@ -11093,7 +11093,7 @@ label morte_s687: # from 686.0 686.1
 
         'morte_s687_r65716{#morte_s687_r65716}': # '«Ладно. Идем».{#morte_s687_r65716}'
             # a1362 # r65716
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s688 # say65717
@@ -11116,7 +11116,7 @@ label morte_s688: # from 687.0
 
         'morte_s688_r65721{#morte_s688_r65721}': # '«Ладно. Идем».{#morte_s688_r65721}'
             # a1366 # r65721
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s689 # say65722
@@ -11135,7 +11135,7 @@ label morte_s689: # from 688.1
 
         'morte_s689_r65725{#morte_s689_r65725}': # '«Забудь об этом. Идем».{#morte_s689_r65725}'
             # a1369 # r65725
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s690 # say65726
@@ -11154,7 +11154,7 @@ label morte_s690: # from 688.0
 
         'morte_s690_r65729{#morte_s690_r65729}': # '«Забудь об этом. Идем».{#morte_s690_r65729}'
             # a1372 # r65729
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s691 # say65730
@@ -11222,7 +11222,7 @@ label morte_s695: # from 694.0
 
         'morte_s695_r65740{#morte_s695_r65740}' if morteLogic.r65740_condition(): # '«Неважно, Морт. Идем дальше».{#morte_s695_r65740}'
             # a1379 # r65740
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s696 # say65741
@@ -11242,7 +11242,7 @@ label morte_s696: # from 695.1
 
         'morte_s696_r65744{#morte_s696_r65744}' if morteLogic.r65744_condition(): # '«Неважно, Морт. Идем дальше».{#morte_s696_r65744}'
             # a1382 # r65744
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s697 # say65745
@@ -11261,7 +11261,7 @@ label morte_s697: # from 695.0
 
         'morte_s697_r65748{#morte_s697_r65748}' if morteLogic.r65748_condition(): # '«Неважно, Морт. Идем дальше».{#morte_s697_r65748}'
             # a1385 # r65748
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s698 # say65749
@@ -11302,7 +11302,7 @@ label morte_s699: # from 698.0 698.1
 
         'morte_s699_r65755{#morte_s699_r65755}' if morteLogic.r65755_condition(): # '«Неважно, Морт. Идем дальше».{#morte_s699_r65755}'
             # a1390 # r65755
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s700 # say65757
@@ -11322,7 +11322,7 @@ label morte_s700: # from 699.0
 
         'morte_s700_r65760{#morte_s700_r65760}' if morteLogic.r65760_condition(): # '«Неважно, Морт. Идем дальше».{#morte_s700_r65760}'
             # a1393 # r65760
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s701 # say65761
@@ -11426,7 +11426,7 @@ label morte_s706: # from 701.1 702.1 703.1 704.1 705.0 705.1
 
         'morte_s706_r65779{#morte_s706_r65779}' if morteLogic.r65779_condition(): # '«Неважно, Морт. Идем дальше».{#morte_s706_r65779}'
             # a1406 # r65779
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s707 # say65780
@@ -11446,7 +11446,7 @@ label morte_s707: # from 706.0
 
         'morte_s707_r65783{#morte_s707_r65783}' if morteLogic.r65783_condition(): # '«Неважно, Морт. Идем дальше».{#morte_s707_r65783}'
             # a1409 # r65783
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s708 # say65784
@@ -11465,7 +11465,7 @@ label morte_s708: # from 707.0
 
         'morte_s708_r65787{#morte_s708_r65787}' if morteLogic.r65787_condition(): # '«Неважно, Морт. Идем дальше».{#morte_s708_r65787}'
             # a1412 # r65787
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s709 # say65788
@@ -11485,7 +11485,7 @@ label morte_s709: # from 708.0
 
         'morte_s709_r65791{#morte_s709_r65791}' if morteLogic.r65791_condition(): # '«Неважно, Морт. Идем дальше».{#morte_s709_r65791}'
             # a1415 # r65791
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s710 # say65792
@@ -11505,7 +11505,7 @@ label morte_s710: # from 709.0
 
         'morte_s710_r65795{#morte_s710_r65795}' if morteLogic.r65795_condition(): # '«Неважно, Морт. Идем дальше».{#morte_s710_r65795}'
             # a1418 # r65795
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s711 # say65796
@@ -11527,7 +11527,7 @@ label morte_s711: # from 710.0
 
         'morte_s711_r65799{#morte_s711_r65799}' if morteLogic.r65799_condition(): # '«Неважно, Морт. Идем дальше».{#morte_s711_r65799}'
             # a1421 # r65799
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s712 # say65800
@@ -11549,7 +11549,7 @@ label morte_s712: # from 711.0
 
         'morte_s712_r65803{#morte_s712_r65803}' if morteLogic.r65803_condition(): # '«Неважно, Морт. Идем дальше».{#morte_s712_r65803}'
             # a1424 # r65803
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s713 # say65804
@@ -11579,7 +11579,7 @@ label morte_s714: # from 713.0
 
         'morte_s714_r65808{#morte_s714_r65808}': # '«Неважно, Морт. Идем дальше».{#morte_s714_r65808}'
             # a1427 # r65808
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s715 # say65809
@@ -11600,7 +11600,7 @@ label morte_s715: # from 329.8 714.0 729.8
 
         'morte_s715_r65812{#morte_s715_r65812}': # '«Забудь об этом, Морт. Пошли».{#morte_s715_r65812}'
             # a1430 # r65812
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s716 # say65813
@@ -11672,7 +11672,7 @@ label morte_s721: # from 720.0
 
         'morte_s721_r65824{#morte_s721_r65824}': # '«Отлично, Морт. Пошли».{#morte_s721_r65824}'
             # a1435 # r65824
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s722 # say65826
@@ -11689,7 +11689,7 @@ label morte_s722: # from 329.10 729.10
 
         'morte_s722_r65828{#morte_s722_r65828}': # '«Ладно. Идем».{#morte_s722_r65828}'
             # a1437 # r65828
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s723 # say65829
@@ -11708,7 +11708,7 @@ label morte_s723: # from 329.9 729.9
 
         'morte_s723_r65832{#morte_s723_r65832}': # '«Ладно. Идем».{#morte_s723_r65832}'
             # a1440 # r65832
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s724 # say65833
@@ -11731,7 +11731,7 @@ label morte_s725: # from 724.0
 
         'morte_s725_r65836{#morte_s725_r65836}': # '«Это все, что я хотел знать. Идем».{#morte_s725_r65836}'
             # a1442 # r65836
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s726 # say65837
@@ -11750,7 +11750,7 @@ label morte_s726: # from 329.11 729.11
 
         'morte_s726_r65841{#morte_s726_r65841}': # '«Ладно. Идем».{#morte_s726_r65841}'
             # a1445 # r65841
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s727 # say65838
@@ -11779,7 +11779,7 @@ label morte_s728: # from 727.1
     menu:
         'morte_s728_r65845{#morte_s728_r65845}': # '«Ой-ой, кто бы говорил. Идем».{#morte_s728_r65845}'
             # a1448 # r65845
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s729 # say66344
@@ -11839,7 +11839,7 @@ label morte_s729: # - # IF WEIGHT #7 /* Triggers after states #: 742 737 733 eve
 
         'morte_s729_r66357{#morte_s729_r66357}': # '«Ничего, Морт. Просто проверяю, что ты все еще со мной».{#morte_s729_r66357}'
             # a1461 # r66357
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s730 # say66816
@@ -11850,7 +11850,7 @@ label morte_s730: # -
     menu:
         'morte_s730_r66817{#morte_s730_r66817}': # '«Я тоже так думаю, Морт. Пошли».{#morte_s730_r66817}'
             # a1462 # r66817
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s731 # say67510
@@ -11908,52 +11908,52 @@ label morte_s735: # from 734.0
         'morte_s735_r68189{#morte_s735_r68189}' if morteLogic.r68189_condition(): # '«Тогда для тебя может найтись кое-какое дело. Поговорим об этом *позже*, Морт…»{#morte_s735_r68189}'
             # a1466 # r68189
             $ morteLogic.r68189_action()
-            jump morte_dispose
+            jump dialogues_dispose
 
         'morte_s735_r68190{#morte_s735_r68190}' if morteLogic.r68190_condition(): # '«Тогда для тебя может найтись кое-какое дело. Поговорим об этом *позже*, Морт…»{#morte_s735_r68190}'
             # a1467 # r68190
             $ morteLogic.r68190_action()
-            jump morte_dispose
+            jump dialogues_dispose
 
         'morte_s735_r68191{#morte_s735_r68191}' if morteLogic.r68191_condition(): # '«Тогда для тебя может найтись кое-какое дело. Поговорим об этом *позже*, Морт…»{#morte_s735_r68191}'
             # a1468 # r68191
             $ morteLogic.r68191_action()
-            jump morte_dispose
+            jump dialogues_dispose
 
         'morte_s735_r68192{#morte_s735_r68192}' if morteLogic.r68192_condition(): # '«Тогда для тебя может найтись кое-какое дело. Поговорим об этом *позже*, Морт…»{#morte_s735_r68192}'
             # a1469 # r68192
             $ morteLogic.r68192_action()
-            jump morte_dispose
+            jump dialogues_dispose
 
         'morte_s735_r68193{#morte_s735_r68193}' if morteLogic.r68193_condition(): # '«Тогда для тебя может найтись кое-какое дело. Поговорим об этом *позже*, Морт…»{#morte_s735_r68193}'
             # a1470 # r68193
             $ morteLogic.r68193_action()
-            jump morte_dispose
+            jump dialogues_dispose
 
         'morte_s735_r68194{#morte_s735_r68194}' if morteLogic.r68194_condition(): # '«Тогда для тебя может найтись кое-какое дело. Поговорим об этом *позже*, Морт…»{#morte_s735_r68194}'
             # a1471 # r68194
             $ morteLogic.r68194_action()
-            jump morte_dispose
+            jump dialogues_dispose
 
         'morte_s735_r68239{#morte_s735_r68239}' if morteLogic.r68239_condition(): # '«Тогда для тебя может найтись кое-какое дело. Поговорим об этом *позже*, Морт…»{#morte_s735_r68239}'
             # a1472 # r68239
             $ morteLogic.r68239_action()
-            jump morte_dispose
+            jump dialogues_dispose
 
         'morte_s735_r68438{#morte_s735_r68438}' if morteLogic.r68438_condition(): # '«Тогда для тебя может найтись кое-какое дело. Поговорим об этом *позже*, Морт…»{#morte_s735_r68438}'
             # a1473 # r68438
             $ morteLogic.r68438_action()
-            jump morte_dispose
+            jump dialogues_dispose
 
         'morte_s735_r68439{#morte_s735_r68439}' if morteLogic.r68439_condition(): # '«Тогда для тебя может найтись кое-какое дело. Поговорим об этом *позже*, Морт…»{#morte_s735_r68439}'
             # a1474 # r68439
             $ morteLogic.r68439_action()
-            jump morte_dispose
+            jump dialogues_dispose
 
         'morte_s735_r68446{#morte_s735_r68446}' if morteLogic.r68446_condition(): # '«Тогда для тебя может найтись кое-какое дело. Поговорим об этом *позже*, Морт…»{#morte_s735_r68446}'
             # a1475 # r68446
             $ morteLogic.r68446_action()
-            jump morte_dispose
+            jump dialogues_dispose
 
         'morte_s735_r68503{#morte_s735_r68503}' if morteLogic.r68503_condition(): # '«Тогда для тебя может найтись кое-какое дело. Поговорим об этом *позже*, Морт…»{#morte_s735_r68503}'
             # a1476 # r68503
@@ -11969,32 +11969,32 @@ label morte_s736: # from 735.0
         'morte_s736_r68175{#morte_s736_r68175}' if morteLogic.r68175_condition(): # 'Возродить Анну.{#morte_s736_r68175}'
             # a1477 # r68175
             $ morteLogic.r68175_action()
-            jump morte_dispose
+            jump dialogues_dispose
 
         'morte_s736_r68179{#morte_s736_r68179}' if morteLogic.r68179_condition(): # 'Возродить Даккона.{#morte_s736_r68179}'
             # a1478 # r68179
             $ morteLogic.r68179_action()
-            jump morte_dispose
+            jump dialogues_dispose
 
         'morte_s736_r68180{#morte_s736_r68180}' if morteLogic.r68180_condition(): # 'Возродить Падшую Грацию.{#morte_s736_r68180}'
             # a1479 # r68180
             $ morteLogic.r68180_action()
-            jump morte_dispose
+            jump dialogues_dispose
 
         'morte_s736_r68181{#morte_s736_r68181}' if morteLogic.r68181_condition(): # 'Возродить Нордома.{#morte_s736_r68181}'
             # a1480 # r68181
             $ morteLogic.r68181_action()
-            jump morte_dispose
+            jump dialogues_dispose
 
         'morte_s736_r68182{#morte_s736_r68182}' if morteLogic.r68182_condition(): # 'Возродить Игнуса.{#morte_s736_r68182}'
             # a1481 # r68182
             $ morteLogic.r68182_action()
-            jump morte_dispose
+            jump dialogues_dispose
 
         'morte_s736_r68183{#morte_s736_r68183}' if morteLogic.r68183_condition(): # 'Возродить Вейлора.{#morte_s736_r68183}'
             # a1482 # r68183
             $ morteLogic.r68183_action()
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s737 # say68310
@@ -12052,52 +12052,52 @@ label morte_s741: # from 740.0
         'morte_s741_r68319{#morte_s741_r68319}' if morteLogic.r68319_condition(): # 'ПРОЩАЙ, МОРТ.{#morte_s741_r68319}'
             # a1487 # r68319
             $ morteLogic.r68319_action()
-            jump morte_dispose
+            jump dialogues_dispose
 
         'morte_s741_r68320{#morte_s741_r68320}' if morteLogic.r68320_condition(): # 'ПРОЩАЙ, МОРТ.{#morte_s741_r68320}'
             # a1488 # r68320
             $ morteLogic.r68320_action()
-            jump morte_dispose
+            jump dialogues_dispose
 
         'morte_s741_r68321{#morte_s741_r68321}' if morteLogic.r68321_condition(): # 'ПРОЩАЙ, МОРТ.{#morte_s741_r68321}'
             # a1489 # r68321
             $ morteLogic.r68321_action()
-            jump morte_dispose
+            jump dialogues_dispose
 
         'morte_s741_r68322{#morte_s741_r68322}' if morteLogic.r68322_condition(): # 'ПРОЩАЙ, МОРТ.{#morte_s741_r68322}'
             # a1490 # r68322
             $ morteLogic.r68322_action()
-            jump morte_dispose
+            jump dialogues_dispose
 
         'morte_s741_r68323{#morte_s741_r68323}' if morteLogic.r68323_condition(): # 'ПРОЩАЙ, МОРТ.{#morte_s741_r68323}'
             # a1491 # r68323
             $ morteLogic.r68323_action()
-            jump morte_dispose
+            jump dialogues_dispose
 
         'morte_s741_r68324{#morte_s741_r68324}' if morteLogic.r68324_condition(): # 'ПРОЩАЙ, МОРТ.{#morte_s741_r68324}'
             # a1492 # r68324
             $ morteLogic.r68324_action()
-            jump morte_dispose
+            jump dialogues_dispose
 
         'morte_s741_r68325{#morte_s741_r68325}' if morteLogic.r68325_condition(): # 'ПРОЩАЙ, МОРТ.{#morte_s741_r68325}'
             # a1493 # r68325
             $ morteLogic.r68325_action()
-            jump morte_dispose
+            jump dialogues_dispose
 
         'morte_s741_r68490{#morte_s741_r68490}' if morteLogic.r68490_condition(): # 'ПРОЩАЙ, МОРТ.{#morte_s741_r68490}'
             # a1494 # r68490
             $ morteLogic.r68490_action()
-            jump morte_dispose
+            jump dialogues_dispose
 
         'morte_s741_r68491{#morte_s741_r68491}' if morteLogic.r68491_condition(): # 'ПРОЩАЙ, МОРТ.{#morte_s741_r68491}'
             # a1495 # r68491
             $ morteLogic.r68491_action()
-            jump morte_dispose
+            jump dialogues_dispose
 
         'morte_s741_r68492{#morte_s741_r68492}' if morteLogic.r68492_condition(): # 'ПРОЩАЙ, МОРТ.{#morte_s741_r68492}'
             # a1496 # r68492
             $ morteLogic.r68492_action()
-            jump morte_dispose
+            jump dialogues_dispose
 
 
 # s742 # say68408
@@ -12109,4 +12109,4 @@ label morte_s742: # - # IF WEIGHT #3 ~  Global("Fortress_Morte","GLOBAL",4)
     menu:
         'morte_s742_r68409{#morte_s742_r68409}': # '«Тогда возьмемся за дело…»{#morte_s742_r68409}'
             # a1497 # r68409
-            jump morte_dispose
+            jump dialogues_dispose
