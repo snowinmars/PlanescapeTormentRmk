@@ -442,6 +442,7 @@ class VaxisLogicGenerated:
         #$% FadeToColor([20.0],0) %$#
         #$% Wait(1) %$#
         self.state_manager.characters_manager.set_property('protagonist_character_name', 'looks_like', 'zombie')
+        self.state_manager.world_manager.set_appearance(1)
         #$% Wait(2) %$#
         #$% FadeFromColor([20.0],0) %$#
         self.state_manager.gain_experience('party', 500)
@@ -456,6 +457,7 @@ class VaxisLogicGenerated:
         #$% FadeToColor([20.0],0) %$#
         #$% Wait(1) %$#
         self.state_manager.characters_manager.set_property('protagonist_character_name', 'looks_like', 'zombie')
+        self.state_manager.world_manager.set_appearance(1)
         #$% Wait(2) %$#
         #$% FadeFromColor([20.0],0) %$#
 
@@ -464,6 +466,7 @@ class VaxisLogicGenerated:
         #$% FadeToColor([20.0],0) %$#
         #$% Wait(1) %$#
         self.state_manager.characters_manager.set_property('protagonist_character_name', 'looks_like', 'zombie')
+        self.state_manager.world_manager.set_appearance(1)
         #$% Wait(2) %$#
         #$% FadeFromColor([20.0],0) %$#
 

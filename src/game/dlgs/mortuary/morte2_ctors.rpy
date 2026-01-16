@@ -20,7 +20,8 @@ label morte2_speak:
     # Manually changed logic
     if  gsm.locations_manager.get_location() == 'mortuary_f2r3' and \
         gsm.world_manager.get_mortuary_walkthrough() == 3 and \
-        gsm.world_manager.get_in_party_morte():
+        gsm.world_manager.get_in_party_morte() and \
+        not gsm.world_manager.get_morte_mortuary_walkthrough_2(): # custom fix to prevent several jumps into this label from Dhall room
         jump morte2_s31_ctor
 
     # IF WEIGHT #3 /* Triggers after states #: 31 even though they appear after this state */ ~  !InParty("Morte")
