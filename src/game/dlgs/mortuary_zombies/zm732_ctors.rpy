@@ -12,6 +12,8 @@ label zm732_speak:
     if not gsm.world_manager.get_has_tome_ba():
         jump zm732_s3_ctor
 
+    jump zm732_s3_ctor # TODO [snow]: should not be possible
+
 
 label zm732_s0_ctor:
     show dialogue_sprite_zm732_default at dialogue

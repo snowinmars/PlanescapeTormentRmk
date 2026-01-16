@@ -15,6 +15,7 @@ def build_all_settings(manager):
         .register('know_ignus_name', False) \
         .register('know_nordom_name', False) \
         .register('know_vhail_name', False) \
+        .register('heard_about_rule_of_threes', False) \
         .register('gold', 0) \
         .register('talked_to_dustfem_times', 0) \
         .register('talked_to_dust_times', 0) \

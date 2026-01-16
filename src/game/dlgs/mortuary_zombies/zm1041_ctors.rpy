@@ -12,6 +12,8 @@ label zm1041_speak:
     if gsm.world_manager.get_bei_value() == 1:
         jump zm1041_s37_ctor
 
+    jump zm1041_s37_ctor # TODO [snow]: should not be possible
+
 
 label zm1041_s0_ctor:
     show dialogue_sprite_zm1041_default at dialogue

@@ -61,6 +61,8 @@ label soego_speak:
         gsm.world_manager.get_soego_value() == 0:
         jump soego_s38_ctor
 
+    jump soego_s38_ctor # TODO [snow]: should not be possible
+
 
 label soego_s0_ctor:
     show dialogue_sprite_soego_default at dialogue

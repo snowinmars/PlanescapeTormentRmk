@@ -12,6 +12,8 @@ label zm396_speak:
     if gsm.world_manager.get_has_bandages_zm396():
         jump zm396_s4_ctor
 
+    jump zm396_s4_ctor # TODO [snow]: should not be possible
+
 
 label zm396_s0_ctor:
     show dialogue_sprite_zm396_default at dialogue
