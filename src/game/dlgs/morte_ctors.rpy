@@ -3,4 +3,4 @@
 
 label morte_dispose:
     scene onlayer dialogue
-    jump map_dispatcher
+    return
