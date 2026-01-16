@@ -149,7 +149,7 @@ init 3 python:
         config.keymap['character_screen'] = ['c', 'C', 'с', 'С']
         config.underlay.append(
             renpy.Keymap(
-                character_screen = Show("character_screen", character=runtime.global_state_manager.characters_manager.get_character('protagonist_character_name'))
+                character_screen = Show("character_screen", get_character=lambda: runtime.global_state_manager.characters_manager.get_character('protagonist_character_name'))
             )
         )
 
@@ -180,8 +180,6 @@ init 5 python:
 
 label start:
     # show screen events_manager_display
-    show screen inventory_button
-    show screen character_screen_button
     show screen hotkey_listener
     show screen narrat
 
