@@ -12,6 +12,8 @@ label zm1201_speak:
     if gsm.world_manager.get_1201_note_retrieved():
         jump zm1201_s5_ctor
 
+    jump zm1201_s5_ctor # TODO [snow]: should not be possible
+
 
 label zm1201_s0_ctor:
     show dialogue_sprite_zm1201_default at dialogue

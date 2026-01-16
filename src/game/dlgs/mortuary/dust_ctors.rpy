@@ -18,6 +18,7 @@ label dust_speak:
 
     jump dust_s40_ctor
 
+
 label dust_s0_ctor:
     show dialogue_sprite_dust_default at dialogue
     jump dust_s0

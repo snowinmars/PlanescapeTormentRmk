@@ -12,6 +12,8 @@ label s863_speak:
     if not gsm.world_manager.get_has_dremind():
         jump s863_s8_ctor
 
+    jump s863_s8_ctor # TODO [snow]: should not be possible
+
 
 label s863_s0_ctor:
     show dialogue_sprite_s863_default at dialogue

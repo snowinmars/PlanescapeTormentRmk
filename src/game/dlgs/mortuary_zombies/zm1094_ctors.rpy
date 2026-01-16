@@ -17,6 +17,8 @@ label zm1094_speak:
     if gsm.world_manager.get_asonje_value() == 3:
         jump zm1094_s27_ctor
 
+    jump zm1094_s27_ctor # TODO [snow]: should not be possible
+
 
 label zm1094_s0_ctor:
     show dialogue_sprite_zm1094_default at dialogue

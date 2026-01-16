@@ -12,6 +12,8 @@ label vaxis_speak:
     if gsm.world_manager.get_vaxis_value() > 0:
         jump vaxis_s57_ctor
 
+    jump vaxis_s57_ctor # TODO [snow]: should not be possible
+
 
 label vaxis_s0_ctor:
     show dialogue_sprite_vaxis_default at dialogue

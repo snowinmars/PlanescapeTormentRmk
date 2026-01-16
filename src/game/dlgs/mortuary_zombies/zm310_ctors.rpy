@@ -12,6 +12,8 @@ label zm310_speak:
     if gsm.world_manager.get_oinosian_value() == 1:
         jump zm310_s18_ctor
 
+    jump zm310_s18_ctor # TODO [snow]: should not be possible
+
 
 label zm310_s0_ctor:
     show dialogue_sprite_zm310_default at dialogue

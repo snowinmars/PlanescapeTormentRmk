@@ -879,11 +879,13 @@ class MorteLogicGenerated:
 
     def j39477_s478_r45093_action(self):
         self.state_manager.journal_manager.update_journal('39477')
+        self.state_manager.world_manager.set_heard_about_rule_of_threes(True)
         #$% .register('39477', 'Морт что-то сказал про какое-то «правило трех». По-видимому, некоторые верят в то, что все на свете происходит по три, придавая глубокий смысл числам.') %$#
 
 
     def j39477_s481_r45103_action(self):
         self.state_manager.journal_manager.update_journal('39477')
+        self.state_manager.world_manager.set_heard_about_rule_of_threes(True)
         #$% .register('39477', 'Морт что-то сказал про какое-то «правило трех». По-видимому, некоторые верят в то, что все на свете происходит по три, придавая глубокий смысл числам.') %$#
 
 

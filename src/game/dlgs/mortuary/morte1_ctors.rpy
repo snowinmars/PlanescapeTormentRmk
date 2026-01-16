@@ -24,7 +24,7 @@ label morte1_speak:
     if gsm.world_manager.get_mortuary_walkthrough() == 1:
         jump morte1_s30_ctor
 
-    jump morte1_s30_ctor
+    jump morte1_s30_ctor # TODO [snow]: should not be possible
 
 
 label morte1_s0_ctor:

@@ -12,6 +12,8 @@ label eivene_speak:
     if gsm.world_manager.get_eivene_value() == 1:
         jump eivene_s15_ctor
 
+    jump eivene_s15_ctor # TODO [snow]: should not be possible
+
 
 label eivene_s0_ctor:
     show dialogue_sprite_eivene_default at dialogue

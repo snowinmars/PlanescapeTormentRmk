@@ -1,7 +1,7 @@
 init 10 python:
     from game.engine.runtime import (runtime)
     gsm = runtime.global_state_manager
-
+    glem = runtime.global_log_events_manager
 
 label dhall_speak:
     # IF ~  Global("Dhall","GLOBAL",0)
@@ -11,6 +11,8 @@ label dhall_speak:
     # IF ~  Global("Dhall","GLOBAL",1)
     if gsm.world_manager.get_dhall_value() == 1:
         jump dhall_s40_ctor
+
+    jump dhall_s40_ctor # TODO [snow]: should not be possible
 
 
 label dhall_s5_ctor:

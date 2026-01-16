@@ -12,6 +12,8 @@ label zm506_speak:
     if gsm.world_manager.get_has_506_thread():
         jump zm506_s5_ctor
 
+    jump zm506_s5_ctor # TODO [snow]: should not be possible
+
 
 label zm506_s0_ctor:
     show dialogue_sprite_zm506_default at dialogue

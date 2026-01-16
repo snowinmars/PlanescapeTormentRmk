@@ -49,6 +49,8 @@ label deionarra_speak:
         not gsm.world_manager.get_1200_cut_scene_2():
         jump deionarra_s61_ctor
 
+    jump deionarra_s61_ctor # TODO [snow]: should not be possible
+
 
 label deionarra_s1_ctor:
     show dialogue_sprite_deionarra_default at dialogue
