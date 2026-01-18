@@ -81,9 +81,9 @@ class SoegoLogicGeneratedTest(LogicTest):
 
 
     def test_r1456_action(self):
-        self.state_manager.world_manager.set_soego_value(2)
+        self.state_manager.world_manager.set_soego(2)
         self._integer_equals_action(
-            self.state_manager.world_manager.get_soego_value,
+            self.state_manager.world_manager.get_soego,
             1,
             self.logic.r1456_action
         )
@@ -99,9 +99,9 @@ class SoegoLogicGeneratedTest(LogicTest):
 
 
     def test_r1457_action(self):
-        self.state_manager.world_manager.set_soego_value(2)
+        self.state_manager.world_manager.set_soego(2)
         self._integer_equals_action(
-            self.state_manager.world_manager.get_soego_value,
+            self.state_manager.world_manager.get_soego,
             1,
             self.logic.r1457_action
         )
@@ -360,9 +360,9 @@ class SoegoLogicGeneratedTest(LogicTest):
 
 
     def test_r66706_action(self):
-        self.state_manager.world_manager.set_soego_value(2)
+        self.state_manager.world_manager.set_soego(2)
         self._integer_equals_action(
-            self.state_manager.world_manager.get_soego_value,
+            self.state_manager.world_manager.get_soego,
             1,
             self.logic.r66706_action
         )
@@ -378,9 +378,9 @@ class SoegoLogicGeneratedTest(LogicTest):
 
 
     def test_r66707_action(self):
-        self.state_manager.world_manager.set_soego_value(2)
+        self.state_manager.world_manager.set_soego(2)
         self._integer_equals_action(
-            self.state_manager.world_manager.get_soego_value,
+            self.state_manager.world_manager.get_soego,
             1,
             self.logic.r66707_action
         )
@@ -523,141 +523,141 @@ class SoegoLogicGeneratedTest(LogicTest):
 
     def test_r21655_action(self):
         self.state_manager.world_manager.set_met_soego2(False)
-        soego_value_before = 1
-        soego_value_after = 3
-        soego_value_after_once = 3
-        self.state_manager.world_manager.set_soego_value(soego_value_before)
+        soego_before = 1
+        soego_after = 3
+        soego_after_once = 3
+        self.state_manager.world_manager.set_soego(soego_before)
         soego_talk_before = 1
         soego_talk_after = 2
         soego_talk_after_once = 2
         self.state_manager.world_manager.set_soego_talk(soego_talk_before)
 
         self.assertFalse(self.state_manager.world_manager.get_met_soego2())
-        self.assertEqual(self.state_manager.world_manager.get_soego_value(), soego_value_before)
+        self.assertEqual(self.state_manager.world_manager.get_soego(), soego_before)
         self.assertEqual(self.state_manager.world_manager.get_soego_talk(), soego_talk_before)
 
         self.logic.r21655_action()
 
         self.assertTrue(self.state_manager.world_manager.get_met_soego2())
-        self.assertEqual(self.state_manager.world_manager.get_soego_value(), soego_value_after)
+        self.assertEqual(self.state_manager.world_manager.get_soego(), soego_after)
         self.assertEqual(self.state_manager.world_manager.get_soego_talk(), soego_talk_after)
 
         self.logic.r21655_action()
 
         self.assertTrue(self.state_manager.world_manager.get_met_soego2())
-        self.assertEqual(self.state_manager.world_manager.get_soego_value(), soego_value_after_once)
+        self.assertEqual(self.state_manager.world_manager.get_soego(), soego_after_once)
         self.assertEqual(self.state_manager.world_manager.get_soego_talk(), soego_talk_after_once)
 
 
     def test_r21656_action(self):
         self.state_manager.world_manager.set_met_soego2(False)
-        soego_value_before = 1
-        soego_value_after = 3
-        soego_value_after_once = 3
-        self.state_manager.world_manager.set_soego_value(soego_value_before)
+        soego_before = 1
+        soego_after = 3
+        soego_after_once = 3
+        self.state_manager.world_manager.set_soego(soego_before)
         soego_talk_before = 1
         soego_talk_after = 2
         soego_talk_after_once = 2
         self.state_manager.world_manager.set_soego_talk(soego_talk_before)
 
         self.assertFalse(self.state_manager.world_manager.get_met_soego2())
-        self.assertEqual(self.state_manager.world_manager.get_soego_value(), soego_value_before)
+        self.assertEqual(self.state_manager.world_manager.get_soego(), soego_before)
         self.assertEqual(self.state_manager.world_manager.get_soego_talk(), soego_talk_before)
 
         self.logic.r21656_action()
 
         self.assertTrue(self.state_manager.world_manager.get_met_soego2())
-        self.assertEqual(self.state_manager.world_manager.get_soego_value(), soego_value_after)
+        self.assertEqual(self.state_manager.world_manager.get_soego(), soego_after)
         self.assertEqual(self.state_manager.world_manager.get_soego_talk(), soego_talk_after)
 
         self.logic.r21656_action()
 
         self.assertTrue(self.state_manager.world_manager.get_met_soego2())
-        self.assertEqual(self.state_manager.world_manager.get_soego_value(), soego_value_after_once)
+        self.assertEqual(self.state_manager.world_manager.get_soego(), soego_after_once)
         self.assertEqual(self.state_manager.world_manager.get_soego_talk(), soego_talk_after_once)
 
 
     def test_r21657_action(self):
         self.state_manager.world_manager.set_met_soego2(False)
-        soego_value_before = 1
-        soego_value_after = 3
-        soego_value_after_once = 3
-        self.state_manager.world_manager.set_soego_value(soego_value_before)
+        soego_before = 1
+        soego_after = 3
+        soego_after_once = 3
+        self.state_manager.world_manager.set_soego(soego_before)
         soego_talk_before = 1
         soego_talk_after = 2
         soego_talk_after_once = 2
         self.state_manager.world_manager.set_soego_talk(soego_talk_before)
 
         self.assertFalse(self.state_manager.world_manager.get_met_soego2())
-        self.assertEqual(self.state_manager.world_manager.get_soego_value(), soego_value_before)
+        self.assertEqual(self.state_manager.world_manager.get_soego(), soego_before)
         self.assertEqual(self.state_manager.world_manager.get_soego_talk(), soego_talk_before)
 
         self.logic.r21657_action()
 
         self.assertTrue(self.state_manager.world_manager.get_met_soego2())
-        self.assertEqual(self.state_manager.world_manager.get_soego_value(), soego_value_after)
+        self.assertEqual(self.state_manager.world_manager.get_soego(), soego_after)
         self.assertEqual(self.state_manager.world_manager.get_soego_talk(), soego_talk_after)
 
         self.logic.r21657_action()
 
         self.assertTrue(self.state_manager.world_manager.get_met_soego2())
-        self.assertEqual(self.state_manager.world_manager.get_soego_value(), soego_value_after_once)
+        self.assertEqual(self.state_manager.world_manager.get_soego(), soego_after_once)
         self.assertEqual(self.state_manager.world_manager.get_soego_talk(), soego_talk_after_once)
 
 
     def test_r21658_action(self):
         self.state_manager.world_manager.set_met_soego2(False)
-        soego_value_before = 1
-        soego_value_after = 3
-        soego_value_after_once = 3
-        self.state_manager.world_manager.set_soego_value(soego_value_before)
+        soego_before = 1
+        soego_after = 3
+        soego_after_once = 3
+        self.state_manager.world_manager.set_soego(soego_before)
         soego_talk_before = 1
         soego_talk_after = 2
         soego_talk_after_once = 2
         self.state_manager.world_manager.set_soego_talk(soego_talk_before)
 
         self.assertFalse(self.state_manager.world_manager.get_met_soego2())
-        self.assertEqual(self.state_manager.world_manager.get_soego_value(), soego_value_before)
+        self.assertEqual(self.state_manager.world_manager.get_soego(), soego_before)
         self.assertEqual(self.state_manager.world_manager.get_soego_talk(), soego_talk_before)
 
         self.logic.r21658_action()
 
         self.assertTrue(self.state_manager.world_manager.get_met_soego2())
-        self.assertEqual(self.state_manager.world_manager.get_soego_value(), soego_value_after)
+        self.assertEqual(self.state_manager.world_manager.get_soego(), soego_after)
         self.assertEqual(self.state_manager.world_manager.get_soego_talk(), soego_talk_after)
 
         self.logic.r21658_action()
 
         self.assertTrue(self.state_manager.world_manager.get_met_soego2())
-        self.assertEqual(self.state_manager.world_manager.get_soego_value(), soego_value_after_once)
+        self.assertEqual(self.state_manager.world_manager.get_soego(), soego_after_once)
         self.assertEqual(self.state_manager.world_manager.get_soego_talk(), soego_talk_after_once)
 
 
     def test_r21660_action(self):
         self.state_manager.world_manager.set_met_soego2(False)
-        soego_value_before = 1
-        soego_value_after = 3
-        soego_value_after_once = 3
-        self.state_manager.world_manager.set_soego_value(soego_value_before)
+        soego_before = 1
+        soego_after = 3
+        soego_after_once = 3
+        self.state_manager.world_manager.set_soego(soego_before)
         soego_talk_before = 1
         soego_talk_after = 2
         soego_talk_after_once = 2
         self.state_manager.world_manager.set_soego_talk(soego_talk_before)
 
         self.assertFalse(self.state_manager.world_manager.get_met_soego2())
-        self.assertEqual(self.state_manager.world_manager.get_soego_value(), soego_value_before)
+        self.assertEqual(self.state_manager.world_manager.get_soego(), soego_before)
         self.assertEqual(self.state_manager.world_manager.get_soego_talk(), soego_talk_before)
 
         self.logic.r21660_action()
 
         self.assertTrue(self.state_manager.world_manager.get_met_soego2())
-        self.assertEqual(self.state_manager.world_manager.get_soego_value(), soego_value_after)
+        self.assertEqual(self.state_manager.world_manager.get_soego(), soego_after)
         self.assertEqual(self.state_manager.world_manager.get_soego_talk(), soego_talk_after)
 
         self.logic.r21660_action()
 
         self.assertTrue(self.state_manager.world_manager.get_met_soego2())
-        self.assertEqual(self.state_manager.world_manager.get_soego_value(), soego_value_after_once)
+        self.assertEqual(self.state_manager.world_manager.get_soego(), soego_after_once)
         self.assertEqual(self.state_manager.world_manager.get_soego_talk(), soego_talk_after_once)
 
 
@@ -690,38 +690,38 @@ class SoegoLogicGeneratedTest(LogicTest):
 
     def test_r66181_action(self):
         self.state_manager.world_manager.set_met_soego2(False)
-        soego_value_before = 1
-        soego_value_after = 4
-        soego_value_after_once = 4
-        self.state_manager.world_manager.set_soego_value(soego_value_before)
+        soego_before = 1
+        soego_after = 4
+        soego_after_once = 4
+        self.state_manager.world_manager.set_soego(soego_before)
         soego_talk_before = 1
         soego_talk_after = 2
         soego_talk_after_once = 2
         self.state_manager.world_manager.set_soego_talk(soego_talk_before)
 
         self.assertFalse(self.state_manager.world_manager.get_met_soego2())
-        self.assertEqual(self.state_manager.world_manager.get_soego_value(), soego_value_before)
+        self.assertEqual(self.state_manager.world_manager.get_soego(), soego_before)
         self.assertEqual(self.state_manager.world_manager.get_soego_talk(), soego_talk_before)
 
         self.logic.r66181_action()
 
         self.assertTrue(self.state_manager.world_manager.get_met_soego2())
-        self.assertEqual(self.state_manager.world_manager.get_soego_value(), soego_value_after)
+        self.assertEqual(self.state_manager.world_manager.get_soego(), soego_after)
         self.assertEqual(self.state_manager.world_manager.get_soego_talk(), soego_talk_after)
 
         self.logic.r66181_action()
 
         self.assertTrue(self.state_manager.world_manager.get_met_soego2())
-        self.assertEqual(self.state_manager.world_manager.get_soego_value(), soego_value_after_once)
+        self.assertEqual(self.state_manager.world_manager.get_soego(), soego_after_once)
         self.assertEqual(self.state_manager.world_manager.get_soego_talk(), soego_talk_after_once)
 
 
     def test_r21852_action(self):
         self.state_manager.world_manager.set_met_soego2(False)
-        soego_value_before = 1
-        soego_value_after = 4
-        soego_value_after_once = 4
-        self.state_manager.world_manager.set_soego_value(soego_value_before)
+        soego_before = 1
+        soego_after = 4
+        soego_after_once = 4
+        self.state_manager.world_manager.set_soego(soego_before)
         soego_talk_before = 1
         soego_talk_after = 2
         soego_talk_after_once = 2
@@ -729,87 +729,87 @@ class SoegoLogicGeneratedTest(LogicTest):
         note_id = '21856'
 
         self.assertFalse(self.state_manager.world_manager.get_met_soego2())
-        self.assertEqual(self.state_manager.world_manager.get_soego_value(), soego_value_before)
+        self.assertEqual(self.state_manager.world_manager.get_soego(), soego_before)
         self.assertEqual(self.state_manager.world_manager.get_soego_talk(), soego_talk_before)
         self.assertFalse(self.state_manager.journal_manager.found_journal_note(note_id))
 
         self.logic.r21852_action()
 
         self.assertTrue(self.state_manager.world_manager.get_met_soego2())
-        self.assertEqual(self.state_manager.world_manager.get_soego_value(), soego_value_after)
+        self.assertEqual(self.state_manager.world_manager.get_soego(), soego_after)
         self.assertEqual(self.state_manager.world_manager.get_soego_talk(), soego_talk_after)
         self.assertTrue(self.state_manager.journal_manager.found_journal_note(note_id))
 
         self.logic.r21852_action()
 
         self.assertTrue(self.state_manager.world_manager.get_met_soego2())
-        self.assertEqual(self.state_manager.world_manager.get_soego_value(), soego_value_after_once)
+        self.assertEqual(self.state_manager.world_manager.get_soego(), soego_after_once)
         self.assertEqual(self.state_manager.world_manager.get_soego_talk(), soego_talk_after_once)
         self.assertTrue(self.state_manager.journal_manager.found_journal_note(note_id))
 
 
     def test_r64623_action(self):
         self.state_manager.world_manager.set_met_soego2(False)
-        soego_value_before = 1
-        soego_value_after = 4
-        soego_value_after_once = 4
-        self.state_manager.world_manager.set_soego_value(soego_value_before)
+        soego_before = 1
+        soego_after = 4
+        soego_after_once = 4
+        self.state_manager.world_manager.set_soego(soego_before)
         soego_talk_before = 1
         soego_talk_after = 2
         soego_talk_after_once = 2
         self.state_manager.world_manager.set_soego_talk(soego_talk_before)
 
         self.assertFalse(self.state_manager.world_manager.get_met_soego2())
-        self.assertEqual(self.state_manager.world_manager.get_soego_value(), soego_value_before)
+        self.assertEqual(self.state_manager.world_manager.get_soego(), soego_before)
         self.assertEqual(self.state_manager.world_manager.get_soego_talk(), soego_talk_before)
 
         self.logic.r64623_action()
 
         self.assertTrue(self.state_manager.world_manager.get_met_soego2())
-        self.assertEqual(self.state_manager.world_manager.get_soego_value(), soego_value_after)
+        self.assertEqual(self.state_manager.world_manager.get_soego(), soego_after)
         self.assertEqual(self.state_manager.world_manager.get_soego_talk(), soego_talk_after)
 
         self.logic.r64623_action()
 
         self.assertTrue(self.state_manager.world_manager.get_met_soego2())
-        self.assertEqual(self.state_manager.world_manager.get_soego_value(), soego_value_after_once)
+        self.assertEqual(self.state_manager.world_manager.get_soego(), soego_after_once)
         self.assertEqual(self.state_manager.world_manager.get_soego_talk(), soego_talk_after_once)
 
 
     def test_r64624_action(self):
         self.state_manager.world_manager.set_met_soego2(False)
-        soego_value_before = 1
-        soego_value_after = 4
-        soego_value_after_once = 4
-        self.state_manager.world_manager.set_soego_value(soego_value_before)
+        soego_before = 1
+        soego_after = 4
+        soego_after_once = 4
+        self.state_manager.world_manager.set_soego(soego_before)
         soego_talk_before = 1
         soego_talk_after = 2
         soego_talk_after_once = 2
         self.state_manager.world_manager.set_soego_talk(soego_talk_before)
 
         self.assertFalse(self.state_manager.world_manager.get_met_soego2())
-        self.assertEqual(self.state_manager.world_manager.get_soego_value(), soego_value_before)
+        self.assertEqual(self.state_manager.world_manager.get_soego(), soego_before)
         self.assertEqual(self.state_manager.world_manager.get_soego_talk(), soego_talk_before)
 
         self.logic.r64624_action()
 
         self.assertTrue(self.state_manager.world_manager.get_met_soego2())
-        self.assertEqual(self.state_manager.world_manager.get_soego_value(), soego_value_after)
+        self.assertEqual(self.state_manager.world_manager.get_soego(), soego_after)
         self.assertEqual(self.state_manager.world_manager.get_soego_talk(), soego_talk_after)
 
         self.logic.r64624_action()
 
         self.assertTrue(self.state_manager.world_manager.get_met_soego2())
-        self.assertEqual(self.state_manager.world_manager.get_soego_value(), soego_value_after_once)
+        self.assertEqual(self.state_manager.world_manager.get_soego(), soego_after_once)
         self.assertEqual(self.state_manager.world_manager.get_soego_talk(), soego_talk_after_once)
 
 
     def test_r21853_action(self):
         self.state_manager.world_manager.set_met_soego2(False)
-        soego_value_before = 1
-        soego_value_after = 4
-        soego_value_after_once = 4
-        self.state_manager.world_manager.set_soego_value(soego_value_before)
+        soego_before = 1
+        soego_after = 4
+        soego_after_once = 4
+        self.state_manager.world_manager.set_soego(soego_before)
         soego_talk_before = 1
         soego_talk_after = 2
         soego_talk_after_once = 2
@@ -817,50 +817,50 @@ class SoegoLogicGeneratedTest(LogicTest):
         note_id = '21857'
 
         self.assertFalse(self.state_manager.world_manager.get_met_soego2())
-        self.assertEqual(self.state_manager.world_manager.get_soego_value(), soego_value_before)
+        self.assertEqual(self.state_manager.world_manager.get_soego(), soego_before)
         self.assertEqual(self.state_manager.world_manager.get_soego_talk(), soego_talk_before)
         self.assertFalse(self.state_manager.journal_manager.found_journal_note(note_id))
 
         self.logic.r21853_action()
 
         self.assertTrue(self.state_manager.world_manager.get_met_soego2())
-        self.assertEqual(self.state_manager.world_manager.get_soego_value(), soego_value_after)
+        self.assertEqual(self.state_manager.world_manager.get_soego(), soego_after)
         self.assertEqual(self.state_manager.world_manager.get_soego_talk(), soego_talk_after)
         self.assertTrue(self.state_manager.journal_manager.found_journal_note(note_id))
 
         self.logic.r21853_action()
 
         self.assertTrue(self.state_manager.world_manager.get_met_soego2())
-        self.assertEqual(self.state_manager.world_manager.get_soego_value(), soego_value_after_once)
+        self.assertEqual(self.state_manager.world_manager.get_soego(), soego_after_once)
         self.assertEqual(self.state_manager.world_manager.get_soego_talk(), soego_talk_after_once)
         self.assertTrue(self.state_manager.journal_manager.found_journal_note(note_id))
 
 
     def test_r21854_action(self):
         self.state_manager.world_manager.set_met_soego2(False)
-        soego_value_before = 1
-        soego_value_after = 4
-        soego_value_after_once = 4
-        self.state_manager.world_manager.set_soego_value(soego_value_before)
+        soego_before = 1
+        soego_after = 4
+        soego_after_once = 4
+        self.state_manager.world_manager.set_soego(soego_before)
         soego_talk_before = 1
         soego_talk_after = 2
         soego_talk_after_once = 2
         self.state_manager.world_manager.set_soego_talk(soego_talk_before)
 
         self.assertFalse(self.state_manager.world_manager.get_met_soego2())
-        self.assertEqual(self.state_manager.world_manager.get_soego_value(), soego_value_before)
+        self.assertEqual(self.state_manager.world_manager.get_soego(), soego_before)
         self.assertEqual(self.state_manager.world_manager.get_soego_talk(), soego_talk_before)
 
         self.logic.r21854_action()
 
         self.assertTrue(self.state_manager.world_manager.get_met_soego2())
-        self.assertEqual(self.state_manager.world_manager.get_soego_value(), soego_value_after)
+        self.assertEqual(self.state_manager.world_manager.get_soego(), soego_after)
         self.assertEqual(self.state_manager.world_manager.get_soego_talk(), soego_talk_after)
 
         self.logic.r21854_action()
 
         self.assertTrue(self.state_manager.world_manager.get_met_soego2())
-        self.assertEqual(self.state_manager.world_manager.get_soego_value(), soego_value_after_once)
+        self.assertEqual(self.state_manager.world_manager.get_soego(), soego_after_once)
         self.assertEqual(self.state_manager.world_manager.get_soego_talk(), soego_talk_after_once)
 
 
@@ -914,23 +914,23 @@ class SoegoLogicGeneratedTest(LogicTest):
 
     def test_r21914_action(self):
         self.state_manager.world_manager.set_met_soego2(False)
-        soego_value_before = 1
-        soego_value_after = 3
-        soego_value_after_once = 3
-        self.state_manager.world_manager.set_soego_value(soego_value_before)
+        soego_before = 1
+        soego_after = 3
+        soego_after_once = 3
+        self.state_manager.world_manager.set_soego(soego_before)
 
         self.assertFalse(self.state_manager.world_manager.get_met_soego2())
-        self.assertEqual(self.state_manager.world_manager.get_soego_value(), soego_value_before)
+        self.assertEqual(self.state_manager.world_manager.get_soego(), soego_before)
 
         self.logic.r21914_action()
 
         self.assertTrue(self.state_manager.world_manager.get_met_soego2())
-        self.assertEqual(self.state_manager.world_manager.get_soego_value(), soego_value_after)
+        self.assertEqual(self.state_manager.world_manager.get_soego(), soego_after)
 
         self.logic.r21914_action()
 
         self.assertTrue(self.state_manager.world_manager.get_met_soego2())
-        self.assertEqual(self.state_manager.world_manager.get_soego_value(), soego_value_after_once)
+        self.assertEqual(self.state_manager.world_manager.get_soego(), soego_after_once)
 
 
     def test_r21916_action(self):
@@ -1047,39 +1047,39 @@ class SoegoLogicGeneratedTest(LogicTest):
 
 
     def test_r22024_action(self):
-        soego_value_before = 1
-        soego_value_after = 4
-        soego_value_after_once = 4
-        self.state_manager.world_manager.set_soego_value(soego_value_before)
+        soego_before = 1
+        soego_after = 4
+        soego_after_once = 4
+        self.state_manager.world_manager.set_soego(soego_before)
         soego_fled_before = 1
         soego_fled_after = 2
         soego_fled_after_once = 2
         self.state_manager.world_manager.set_soego_fled(soego_fled_before)
         note_id = '21856'
 
-        self.assertEqual(self.state_manager.world_manager.get_soego_value(), soego_value_before)
+        self.assertEqual(self.state_manager.world_manager.get_soego(), soego_before)
         self.assertEqual(self.state_manager.world_manager.get_soego_fled(), soego_fled_before)
         self.assertFalse(self.state_manager.journal_manager.found_journal_note(note_id))
 
         self.logic.r22024_action()
 
-        self.assertEqual(self.state_manager.world_manager.get_soego_value(), soego_value_after)
+        self.assertEqual(self.state_manager.world_manager.get_soego(), soego_after)
         self.assertEqual(self.state_manager.world_manager.get_soego_fled(), soego_fled_after)
         self.assertTrue(self.state_manager.journal_manager.found_journal_note(note_id))
 
         self.logic.r22024_action()
 
-        self.assertEqual(self.state_manager.world_manager.get_soego_value(), soego_value_after_once)
+        self.assertEqual(self.state_manager.world_manager.get_soego(), soego_after_once)
         self.assertEqual(self.state_manager.world_manager.get_soego_fled(), soego_fled_after_once)
         self.assertTrue(self.state_manager.journal_manager.found_journal_note(note_id))
 
 
     def test_r22051_action(self):
         self.state_manager.world_manager.set_met_soego2(False)
-        soego_value_before = 1
-        soego_value_after = 3
-        soego_value_after_once = 3
-        self.state_manager.world_manager.set_soego_value(soego_value_before)
+        soego_before = 1
+        soego_after = 3
+        soego_after_once = 3
+        self.state_manager.world_manager.set_soego(soego_before)
         soego_talk_before = 1
         soego_talk_after = 2
         soego_talk_after_once = 2
@@ -1087,50 +1087,50 @@ class SoegoLogicGeneratedTest(LogicTest):
         note_id = '22052'
 
         self.assertFalse(self.state_manager.world_manager.get_met_soego2())
-        self.assertEqual(self.state_manager.world_manager.get_soego_value(), soego_value_before)
+        self.assertEqual(self.state_manager.world_manager.get_soego(), soego_before)
         self.assertEqual(self.state_manager.world_manager.get_soego_talk(), soego_talk_before)
         self.assertFalse(self.state_manager.journal_manager.found_journal_note(note_id))
 
         self.logic.r22051_action()
 
         self.assertTrue(self.state_manager.world_manager.get_met_soego2())
-        self.assertEqual(self.state_manager.world_manager.get_soego_value(), soego_value_after)
+        self.assertEqual(self.state_manager.world_manager.get_soego(), soego_after)
         self.assertEqual(self.state_manager.world_manager.get_soego_talk(), soego_talk_after)
         self.assertTrue(self.state_manager.journal_manager.found_journal_note(note_id))
 
         self.logic.r22051_action()
 
         self.assertTrue(self.state_manager.world_manager.get_met_soego2())
-        self.assertEqual(self.state_manager.world_manager.get_soego_value(), soego_value_after_once)
+        self.assertEqual(self.state_manager.world_manager.get_soego(), soego_after_once)
         self.assertEqual(self.state_manager.world_manager.get_soego_talk(), soego_talk_after_once)
         self.assertTrue(self.state_manager.journal_manager.found_journal_note(note_id))
 
 
     def test_r66173_action(self):
         self.state_manager.world_manager.set_met_soego2(False)
-        soego_value_before = 1
-        soego_value_after = 3
-        soego_value_after_once = 3
-        self.state_manager.world_manager.set_soego_value(soego_value_before)
+        soego_before = 1
+        soego_after = 3
+        soego_after_once = 3
+        self.state_manager.world_manager.set_soego(soego_before)
         soego_talk_before = 1
         soego_talk_after = 2
         soego_talk_after_once = 2
         self.state_manager.world_manager.set_soego_talk(soego_talk_before)
 
         self.assertFalse(self.state_manager.world_manager.get_met_soego2())
-        self.assertEqual(self.state_manager.world_manager.get_soego_value(), soego_value_before)
+        self.assertEqual(self.state_manager.world_manager.get_soego(), soego_before)
         self.assertEqual(self.state_manager.world_manager.get_soego_talk(), soego_talk_before)
 
         self.logic.r66173_action()
 
         self.assertTrue(self.state_manager.world_manager.get_met_soego2())
-        self.assertEqual(self.state_manager.world_manager.get_soego_value(), soego_value_after)
+        self.assertEqual(self.state_manager.world_manager.get_soego(), soego_after)
         self.assertEqual(self.state_manager.world_manager.get_soego_talk(), soego_talk_after)
 
         self.logic.r66173_action()
 
         self.assertTrue(self.state_manager.world_manager.get_met_soego2())
-        self.assertEqual(self.state_manager.world_manager.get_soego_value(), soego_value_after_once)
+        self.assertEqual(self.state_manager.world_manager.get_soego(), soego_after_once)
         self.assertEqual(self.state_manager.world_manager.get_soego_talk(), soego_talk_after_once)
 
 
@@ -1546,14 +1546,14 @@ class SoegoLogicGeneratedTest(LogicTest):
 
 
     def test_r4807_condition(self):
-        self.state_manager.world_manager.set_vaxis_value(0)
+        self.state_manager.world_manager.set_vaxis(0)
         self.state_manager.world_manager.set_dead_vaxis(True)
         self.state_manager.world_manager.set_vaxis_leave(True)
         self.state_manager.world_manager.set_vaxis_betrayed(1)
 
         self.assertFalse(self.logic.r4807_condition())
 
-        self.state_manager.world_manager.set_vaxis_value(1)
+        self.state_manager.world_manager.set_vaxis(1)
         self.state_manager.world_manager.set_dead_vaxis(False)
         self.state_manager.world_manager.set_vaxis_leave(False)
         self.state_manager.world_manager.set_vaxis_betrayed(0)
@@ -1595,7 +1595,7 @@ class SoegoLogicGeneratedTest(LogicTest):
 
     def test_r4832_condition(self):
         self._integer_lt_condition(
-            lambda x: self.state_manager.world_manager.set_pharod_value(x),
+            lambda x: self.state_manager.world_manager.set_pharod(x),
             1,
             self.logic.r4832_condition
         )
@@ -1872,7 +1872,7 @@ class SoegoLogicGeneratedTest(LogicTest):
 
     def test_r4929_condition(self):
         self._integer_gt_condition(
-            lambda x: self.state_manager.world_manager.set_dhall_value(x),
+            lambda x: self.state_manager.world_manager.set_dhall(x),
             0,
             self.logic.r4929_condition
         )
@@ -1880,7 +1880,7 @@ class SoegoLogicGeneratedTest(LogicTest):
 
     def test_r4930_condition(self):
         self._integer_gt_condition(
-            lambda x: self.state_manager.world_manager.set_deionarra_value(x),
+            lambda x: self.state_manager.world_manager.set_deionarra(x),
             0,
             self.logic.r4930_condition
         )
@@ -1972,7 +1972,7 @@ class SoegoLogicGeneratedTest(LogicTest):
 
     def test_r4965_condition(self):
         self._integer_gt_condition(
-            lambda x: self.state_manager.world_manager.set_deionarra_value(x),
+            lambda x: self.state_manager.world_manager.set_deionarra(x),
             0,
             self.logic.r4965_condition
         )
@@ -2100,7 +2100,7 @@ class SoegoLogicGeneratedTest(LogicTest):
 
     def test_r21655_condition(self):
         self._integer_gt_condition(
-            lambda x: self.state_manager.world_manager.set_soego_value(x),
+            lambda x: self.state_manager.world_manager.set_soego(x),
             0,
             self.logic.r21655_condition
         )
@@ -2108,7 +2108,7 @@ class SoegoLogicGeneratedTest(LogicTest):
 
     def test_r21656_condition(self):
         self._integer_equal_condition(
-            lambda x: self.state_manager.world_manager.set_soego_value(x),
+            lambda x: self.state_manager.world_manager.set_soego(x),
             0,
             self.logic.r21656_condition
         )
@@ -2116,7 +2116,7 @@ class SoegoLogicGeneratedTest(LogicTest):
 
     def test_r21657_condition(self):
         self._integer_equal_condition(
-            lambda x: self.state_manager.world_manager.set_soego_value(x),
+            lambda x: self.state_manager.world_manager.set_soego(x),
             0,
             self.logic.r21657_condition
         )
@@ -2124,7 +2124,7 @@ class SoegoLogicGeneratedTest(LogicTest):
 
     def test_r21658_condition(self):
         self._integer_equal_condition(
-            lambda x: self.state_manager.world_manager.set_soego_value(x),
+            lambda x: self.state_manager.world_manager.set_soego(x),
             0,
             self.logic.r21658_condition
         )
@@ -2132,7 +2132,7 @@ class SoegoLogicGeneratedTest(LogicTest):
 
     def test_r21660_condition(self):
         self._integer_equal_condition(
-            lambda x: self.state_manager.world_manager.set_soego_value(x),
+            lambda x: self.state_manager.world_manager.set_soego(x),
             0,
             self.logic.r21660_condition
         )
@@ -2246,26 +2246,26 @@ class SoegoLogicGeneratedTest(LogicTest):
 
     def test_r66181_condition(self):
         self.state_manager.world_manager.set_dustman_initiation(0)
-        self.state_manager.world_manager.set_soego_value(-1)
-        self.state_manager.world_manager.set_soego_value(4)
+        self.state_manager.world_manager.set_soego(-1)
+        self.state_manager.world_manager.set_soego(4)
 
         self.assertFalse(self.logic.r66181_condition())
 
         self.state_manager.world_manager.set_dustman_initiation(5)
-        self.state_manager.world_manager.set_soego_value(1)
-        self.state_manager.world_manager.set_soego_value(2)
+        self.state_manager.world_manager.set_soego(1)
+        self.state_manager.world_manager.set_soego(2)
 
         self.assertTrue(self.logic.r66181_condition())
 
 
     def test_r21852_condition(self):
         self.state_manager.world_manager.set_dustman_initiation(0)
-        self.state_manager.world_manager.set_soego_value(1)
+        self.state_manager.world_manager.set_soego(1)
 
         self.assertFalse(self.logic.r21852_condition())
 
         self.state_manager.world_manager.set_dustman_initiation(5)
-        self.state_manager.world_manager.set_soego_value(0)
+        self.state_manager.world_manager.set_soego(0)
 
         self.assertTrue(self.logic.r21852_condition())
 
@@ -2354,12 +2354,12 @@ class SoegoLogicGeneratedTest(LogicTest):
 
     def test_r21914_condition(self):
         self.state_manager.world_manager.set_dustman_initiation(0)
-        self.state_manager.world_manager.set_soego_value(4)
+        self.state_manager.world_manager.set_soego(4)
 
         self.assertFalse(self.logic.r21914_condition())
 
         self.state_manager.world_manager.set_dustman_initiation(5)
-        self.state_manager.world_manager.set_soego_value(2)
+        self.state_manager.world_manager.set_soego(2)
 
         self.assertTrue(self.logic.r21914_condition())
 
@@ -2553,7 +2553,7 @@ class SoegoLogicGeneratedTest(LogicTest):
 
     def test_r22051_condition(self):
         self._integer_equal_condition(
-            lambda x: self.state_manager.world_manager.set_soego_value(x),
+            lambda x: self.state_manager.world_manager.set_soego(x),
             0,
             self.logic.r22051_condition
         )
@@ -2561,7 +2561,7 @@ class SoegoLogicGeneratedTest(LogicTest):
 
     def test_r66173_condition(self):
         self._integer_gt_condition(
-            lambda x: self.state_manager.world_manager.set_soego_value(x),
+            lambda x: self.state_manager.world_manager.set_soego(x),
             0,
             self.logic.r66173_condition
         )

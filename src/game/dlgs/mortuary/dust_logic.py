@@ -145,32 +145,32 @@ class DustLogicGenerated:
 
 
     def r342_condition(self):
-        return self.state_manager.world_manager.get_dhall_value() > 0 and \
+        return self.state_manager.world_manager.get_dhall() > 0 and \
                self.state_manager.locations_manager.is_visited_internal('AR0202')
 
 
     def r343_condition(self):
-        return self.state_manager.world_manager.get_dhall_value() > 0 and \
+        return self.state_manager.world_manager.get_dhall() > 0 and \
                not self.state_manager.locations_manager.is_visited_internal('AR0202')
 
 
     def r33183_condition(self):
-        return self.state_manager.world_manager.get_deionarra_value() > 0 and \
+        return self.state_manager.world_manager.get_deionarra() > 0 and \
                self.state_manager.locations_manager.is_visited_internal('AR0201')
 
 
     def r33185_condition(self):
-        return self.state_manager.world_manager.get_deionarra_value() > 0 and \
+        return self.state_manager.world_manager.get_deionarra() > 0 and \
                not self.state_manager.locations_manager.is_visited_internal('AR0201')
 
 
     def r33186_condition(self):
-        return self.state_manager.world_manager.get_soego_value() > 0 and \
+        return self.state_manager.world_manager.get_soego() > 0 and \
                self.state_manager.locations_manager.is_visited_internal('AR0201')
 
 
     def r33187_condition(self):
-        return self.state_manager.world_manager.get_soego_value() > 0 and \
+        return self.state_manager.world_manager.get_soego() > 0 and \
                not self.state_manager.locations_manager.is_visited_internal('AR0201')
 
 
@@ -185,7 +185,7 @@ class DustLogicGenerated:
 
 
     def r370_condition(self):
-        return self.state_manager.world_manager.get_deionarra_value() > 0
+        return self.state_manager.world_manager.get_deionarra() > 0
 
 
     def r371_condition(self):

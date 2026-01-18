@@ -197,9 +197,9 @@ class DhallLogicGeneratedTest(LogicTest):
 
 
     def test_r1327_action(self):
-        self.state_manager.world_manager.set_dhall_value(2)
+        self.state_manager.world_manager.set_dhall(2)
         self._integer_equals_action(
-            self.state_manager.world_manager.get_dhall_value,
+            self.state_manager.world_manager.get_dhall,
             1,
             self.logic.r1327_action
         )
@@ -257,7 +257,7 @@ class DhallLogicGeneratedTest(LogicTest):
 
     def test_r5070_condition(self):
         self._integer_equal_condition(
-            lambda x: self.state_manager.world_manager.set_deionarra_value(x),
+            lambda x: self.state_manager.world_manager.set_deionarra(x),
             0,
             self.logic.r5070_condition
         )
@@ -265,7 +265,7 @@ class DhallLogicGeneratedTest(LogicTest):
 
     def test_r5071_condition(self):
         self._integer_equal_condition(
-            lambda x: self.state_manager.world_manager.set_deionarra_value(x),
+            lambda x: self.state_manager.world_manager.set_deionarra(x),
             0,
             self.logic.r5071_condition
         )
@@ -273,7 +273,7 @@ class DhallLogicGeneratedTest(LogicTest):
 
     def test_r5072_condition(self):
         self._integer_gt_condition(
-            lambda x: self.state_manager.world_manager.set_deionarra_value(x),
+            lambda x: self.state_manager.world_manager.set_deionarra(x),
             0,
             self.logic.r5072_condition
         )
@@ -313,7 +313,7 @@ class DhallLogicGeneratedTest(LogicTest):
 
     def test_r6064_condition(self):
         self._integer_equal_condition(
-            lambda x: self.state_manager.world_manager.set_deionarra_value(x),
+            lambda x: self.state_manager.world_manager.set_deionarra(x),
             0,
             self.logic.r6064_condition
         )
@@ -321,7 +321,7 @@ class DhallLogicGeneratedTest(LogicTest):
 
     def test_r13288_condition(self):
         self._integer_gt_condition(
-            lambda x: self.state_manager.world_manager.set_deionarra_value(x),
+            lambda x: self.state_manager.world_manager.set_deionarra(x),
             0,
             self.logic.r13288_condition
         )
@@ -374,7 +374,7 @@ class DhallLogicGeneratedTest(LogicTest):
 
     def test_r842_condition(self):
         self._integer_gt_condition(
-            lambda x: self.state_manager.world_manager.set_dhall_value(x),
+            lambda x: self.state_manager.world_manager.set_dhall(x),
             0,
             self.logic.r842_condition
         )
@@ -382,7 +382,7 @@ class DhallLogicGeneratedTest(LogicTest):
 
     def test_r843_condition(self):
         self._integer_gt_condition(
-            lambda x: self.state_manager.world_manager.set_dhall_value(x),
+            lambda x: self.state_manager.world_manager.set_dhall(x),
             0,
             self.logic.r843_condition
         )
@@ -390,21 +390,21 @@ class DhallLogicGeneratedTest(LogicTest):
 
     def test_r5062_condition(self):
         self._integer_equal_condition(
-            lambda x: self.state_manager.world_manager.set_dhall_value(x),
+            lambda x: self.state_manager.world_manager.set_dhall(x),
             0,
             self.logic.r5062_condition
         )
 
 
     def test_r854_condition(self):
-        self.state_manager.world_manager.set_vaxis_value(0)
+        self.state_manager.world_manager.set_vaxis(0)
         self.state_manager.world_manager.set_dead_vaxis(True)
         self.state_manager.world_manager.set_vaxis_leave(True)
         self.state_manager.world_manager.set_vaxis_betrayed(1)
 
         self.assertFalse(self.logic.r854_condition())
 
-        self.state_manager.world_manager.set_vaxis_value(1)
+        self.state_manager.world_manager.set_vaxis(1)
         self.state_manager.world_manager.set_dead_vaxis(False)
         self.state_manager.world_manager.set_vaxis_leave(False)
         self.state_manager.world_manager.set_vaxis_betrayed(0)
@@ -430,7 +430,7 @@ class DhallLogicGeneratedTest(LogicTest):
 
     def test_r870_condition(self):
         self._integer_equal_condition(
-            lambda x: self.state_manager.world_manager.set_deionarra_value(x),
+            lambda x: self.state_manager.world_manager.set_deionarra(x),
             0,
             self.logic.r870_condition
         )
@@ -438,7 +438,7 @@ class DhallLogicGeneratedTest(LogicTest):
 
     def test_r891_condition(self):
         self._integer_equal_condition(
-            lambda x: self.state_manager.world_manager.set_pharod_value(x),
+            lambda x: self.state_manager.world_manager.set_pharod(x),
             0,
             self.logic.r891_condition
         )
@@ -505,7 +505,7 @@ class DhallLogicGeneratedTest(LogicTest):
 
     def test_r943_condition(self):
         self._integer_equal_condition(
-            lambda x: self.state_manager.world_manager.set_pharod_value(x),
+            lambda x: self.state_manager.world_manager.set_pharod(x),
             0,
             self.logic.r943_condition
         )
@@ -513,7 +513,7 @@ class DhallLogicGeneratedTest(LogicTest):
 
     def test_r6026_condition(self):
         self._integer_equal_condition(
-            lambda x: self.state_manager.world_manager.set_pharod_value(x),
+            lambda x: self.state_manager.world_manager.set_pharod(x),
             0,
             self.logic.r6026_condition
         )
@@ -521,7 +521,7 @@ class DhallLogicGeneratedTest(LogicTest):
 
     def test_r874_condition(self):
         self._integer_gt_condition(
-            lambda x: self.state_manager.world_manager.set_pharod_value(x),
+            lambda x: self.state_manager.world_manager.set_pharod(x),
             0,
             self.logic.r874_condition
         )
@@ -529,7 +529,7 @@ class DhallLogicGeneratedTest(LogicTest):
 
     def test_r948_condition(self):
         self._integer_equal_condition(
-            lambda x: self.state_manager.world_manager.set_pharod_value(x),
+            lambda x: self.state_manager.world_manager.set_pharod(x),
             0,
             self.logic.r948_condition
         )
@@ -537,7 +537,7 @@ class DhallLogicGeneratedTest(LogicTest):
 
     def test_r6027_condition(self):
         self._integer_equal_condition(
-            lambda x: self.state_manager.world_manager.set_pharod_value(x),
+            lambda x: self.state_manager.world_manager.set_pharod(x),
             0,
             self.logic.r6027_condition
         )
@@ -545,7 +545,7 @@ class DhallLogicGeneratedTest(LogicTest):
 
     def test_r6066_condition(self):
         self._integer_gt_condition(
-            lambda x: self.state_manager.world_manager.set_pharod_value(x),
+            lambda x: self.state_manager.world_manager.set_pharod(x),
             0,
             self.logic.r6066_condition
         )
@@ -553,7 +553,7 @@ class DhallLogicGeneratedTest(LogicTest):
 
     def test_r964_condition(self):
         self._integer_equal_condition(
-            lambda x: self.state_manager.world_manager.set_pharod_value(x),
+            lambda x: self.state_manager.world_manager.set_pharod(x),
             0,
             self.logic.r964_condition
         )
@@ -561,7 +561,7 @@ class DhallLogicGeneratedTest(LogicTest):
 
     def test_r968_condition(self):
         self._integer_equal_condition(
-            lambda x: self.state_manager.world_manager.set_pharod_value(x),
+            lambda x: self.state_manager.world_manager.set_pharod(x),
             0,
             self.logic.r968_condition
         )
@@ -569,7 +569,7 @@ class DhallLogicGeneratedTest(LogicTest):
 
     def test_r5076_condition(self):
         self._integer_equal_condition(
-            lambda x: self.state_manager.world_manager.set_deionarra_value(x),
+            lambda x: self.state_manager.world_manager.set_deionarra(x),
             0,
             self.logic.r5076_condition
         )
@@ -577,7 +577,7 @@ class DhallLogicGeneratedTest(LogicTest):
 
     def test_r5077_condition(self):
         self._integer_gt_condition(
-            lambda x: self.state_manager.world_manager.set_deionarra_value(x),
+            lambda x: self.state_manager.world_manager.set_deionarra(x),
             0,
             self.logic.r5077_condition
         )
@@ -617,7 +617,7 @@ class DhallLogicGeneratedTest(LogicTest):
 
     def test_r5081_condition(self):
         self._integer_equal_condition(
-            lambda x: self.state_manager.world_manager.set_deionarra_value(x),
+            lambda x: self.state_manager.world_manager.set_deionarra(x),
             0,
             self.logic.r5081_condition
         )

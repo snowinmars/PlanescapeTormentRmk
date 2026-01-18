@@ -35,7 +35,7 @@ init 1 python:
         return _('vhail_character_name') if vhailLogic.get_know_vhail_name() else '?'
 
     def get_zm1146_name():
-        return _('crispy_character_name') if zm1146Logic.get_crispy_value() else _('zm1146_character_name')
+        return _('crispy_character_name') if zm1146Logic.get_crispy() else _('zm1146_character_name')
     def get_zm257_name():
         return _('zm257_spirit_character_name') if zm257Logic.get_know_zm257_spirit() else _('zm257_character_name')
 

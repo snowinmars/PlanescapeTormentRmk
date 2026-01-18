@@ -37,7 +37,7 @@ class SoegoLogicGenerated:
 
 
     def r1456_action(self):
-        self.state_manager.world_manager.set_soego_value(1)
+        self.state_manager.world_manager.set_soego(1)
 
 
     def j63982_s4_r1457_action(self):
@@ -46,7 +46,7 @@ class SoegoLogicGenerated:
 
 
     def r1457_action(self):
-        self.state_manager.world_manager.set_soego_value(1)
+        self.state_manager.world_manager.set_soego(1)
 
 
     def r1466_action(self):
@@ -165,7 +165,7 @@ class SoegoLogicGenerated:
 
 
     def r66706_action(self):
-        self.state_manager.world_manager.set_soego_value(1)
+        self.state_manager.world_manager.set_soego(1)
 
 
     def j63982_s38_r66707_action(self):
@@ -174,7 +174,7 @@ class SoegoLogicGenerated:
 
 
     def r66707_action(self):
-        self.state_manager.world_manager.set_soego_value(1)
+        self.state_manager.world_manager.set_soego(1)
 
 
     def r4926_action(self):
@@ -219,35 +219,35 @@ class SoegoLogicGenerated:
 
     def r21655_action(self):
         self.state_manager.world_manager.set_met_soego2(True)
-        self.state_manager.world_manager.set_soego_value(3)
+        self.state_manager.world_manager.set_soego(3)
         self.state_manager.world_manager.set_soego_talk(2)
         #$% EndCutSceneMode() %$#
 
 
     def r21656_action(self):
         self.state_manager.world_manager.set_met_soego2(True)
-        self.state_manager.world_manager.set_soego_value(3)
+        self.state_manager.world_manager.set_soego(3)
         self.state_manager.world_manager.set_soego_talk(2)
         #$% EndCutSceneMode() %$#
 
 
     def r21657_action(self):
         self.state_manager.world_manager.set_met_soego2(True)
-        self.state_manager.world_manager.set_soego_value(3)
+        self.state_manager.world_manager.set_soego(3)
         self.state_manager.world_manager.set_soego_talk(2)
         #$% EndCutSceneMode() %$#
 
 
     def r21658_action(self):
         self.state_manager.world_manager.set_met_soego2(True)
-        self.state_manager.world_manager.set_soego_value(3)
+        self.state_manager.world_manager.set_soego(3)
         self.state_manager.world_manager.set_soego_talk(2)
         #$% EndCutSceneMode() %$#
 
 
     def r21660_action(self):
         self.state_manager.world_manager.set_met_soego2(True)
-        self.state_manager.world_manager.set_soego_value(3)
+        self.state_manager.world_manager.set_soego(3)
         self.state_manager.world_manager.set_soego_talk(2)
         #$% EndCutSceneMode() %$#
 
@@ -269,14 +269,14 @@ class SoegoLogicGenerated:
 
     def r66181_action(self):
         self.state_manager.world_manager.set_met_soego2(True)
-        self.state_manager.world_manager.set_soego_value(4)
+        self.state_manager.world_manager.set_soego(4)
         self.state_manager.world_manager.set_soego_talk(2)
         #$% EndCutSceneMode() %$#
 
 
     def r21852_action(self):
         self.state_manager.world_manager.set_met_soego2(True)
-        self.state_manager.world_manager.set_soego_value(4)
+        self.state_manager.world_manager.set_soego(4)
         self.state_manager.world_manager.set_soego_talk(2)
         #$% EndCutSceneMode() %$#
         self.state_manager.journal_manager.update_journal('21856')
@@ -285,21 +285,21 @@ class SoegoLogicGenerated:
 
     def r64623_action(self):
         self.state_manager.world_manager.set_met_soego2(True)
-        self.state_manager.world_manager.set_soego_value(4)
+        self.state_manager.world_manager.set_soego(4)
         self.state_manager.world_manager.set_soego_talk(2)
         #$% EndCutSceneMode() %$#
 
 
     def r64624_action(self):
         self.state_manager.world_manager.set_met_soego2(True)
-        self.state_manager.world_manager.set_soego_value(4)
+        self.state_manager.world_manager.set_soego(4)
         self.state_manager.world_manager.set_soego_talk(2)
         #$% EndCutSceneMode() %$#
 
 
     def r21853_action(self):
         self.state_manager.world_manager.set_met_soego2(True)
-        self.state_manager.world_manager.set_soego_value(4)
+        self.state_manager.world_manager.set_soego(4)
         self.state_manager.world_manager.set_soego_talk(2)
         #$% EndCutSceneMode() %$#
         self.state_manager.journal_manager.update_journal('21857')
@@ -308,7 +308,7 @@ class SoegoLogicGenerated:
 
     def r21854_action(self):
         self.state_manager.world_manager.set_met_soego2(True)
-        self.state_manager.world_manager.set_soego_value(4)
+        self.state_manager.world_manager.set_soego(4)
         self.state_manager.world_manager.set_soego_talk(2)
         #$% EndCutSceneMode() %$#
 
@@ -327,7 +327,7 @@ class SoegoLogicGenerated:
 
     def r21914_action(self):
         self.state_manager.world_manager.set_met_soego2(True)
-        self.state_manager.world_manager.set_soego_value(3)
+        self.state_manager.world_manager.set_soego(3)
 
 
     def r21916_action(self):
@@ -393,7 +393,7 @@ class SoegoLogicGenerated:
 
 
     def r22024_action(self):
-        self.state_manager.world_manager.set_soego_value(4)
+        self.state_manager.world_manager.set_soego(4)
         self.state_manager.world_manager.set_soego_fled(2)
         #$% Enemy() %$#
         self.state_manager.journal_manager.update_journal('21856')
@@ -402,7 +402,7 @@ class SoegoLogicGenerated:
 
     def r22051_action(self):
         self.state_manager.world_manager.set_met_soego2(True)
-        self.state_manager.world_manager.set_soego_value(3)
+        self.state_manager.world_manager.set_soego(3)
         self.state_manager.world_manager.set_soego_talk(2)
         #$% EndCutSceneMode() %$#
         self.state_manager.journal_manager.update_journal('22052')
@@ -411,7 +411,7 @@ class SoegoLogicGenerated:
 
     def r66173_action(self):
         self.state_manager.world_manager.set_met_soego2(True)
-        self.state_manager.world_manager.set_soego_value(3)
+        self.state_manager.world_manager.set_soego(3)
         self.state_manager.world_manager.set_soego_talk(2)
         #$% EndCutSceneMode() %$#
 
@@ -560,7 +560,7 @@ class SoegoLogicGenerated:
 
 
     def r4807_condition(self):
-        return self.state_manager.world_manager.get_vaxis_value() == 1 and \
+        return self.state_manager.world_manager.get_vaxis() == 1 and \
                not self.state_manager.world_manager.get_dead_vaxis() and \
                not self.state_manager.world_manager.get_vaxis_leave() and \
                self.state_manager.world_manager.get_vaxis_betrayed() == 0
@@ -577,7 +577,7 @@ class SoegoLogicGenerated:
 
 
     def r4832_condition(self):
-        return self.state_manager.world_manager.get_pharod_value() < 1
+        return self.state_manager.world_manager.get_pharod() < 1
 
 
     def r4833_condition(self):
@@ -713,11 +713,11 @@ class SoegoLogicGenerated:
 
 
     def r4929_condition(self):
-        return self.state_manager.world_manager.get_dhall_value() > 0
+        return self.state_manager.world_manager.get_dhall() > 0
 
 
     def r4930_condition(self):
-        return self.state_manager.world_manager.get_deionarra_value() > 0
+        return self.state_manager.world_manager.get_deionarra() > 0
 
 
     def r4931_condition(self):
@@ -747,7 +747,7 @@ class SoegoLogicGenerated:
 
 
     def r4965_condition(self):
-        return self.state_manager.world_manager.get_deionarra_value() > 0
+        return self.state_manager.world_manager.get_deionarra() > 0
 
 
     def r4967_condition(self):
@@ -799,23 +799,23 @@ class SoegoLogicGenerated:
 
 
     def r21655_condition(self):
-        return self.state_manager.world_manager.get_soego_value() > 0
+        return self.state_manager.world_manager.get_soego() > 0
 
 
     def r21656_condition(self):
-        return self.state_manager.world_manager.get_soego_value() == 0
+        return self.state_manager.world_manager.get_soego() == 0
 
 
     def r21657_condition(self):
-        return self.state_manager.world_manager.get_soego_value() == 0
+        return self.state_manager.world_manager.get_soego() == 0
 
 
     def r21658_condition(self):
-        return self.state_manager.world_manager.get_soego_value() == 0
+        return self.state_manager.world_manager.get_soego() == 0
 
 
     def r21660_condition(self):
-        return self.state_manager.world_manager.get_soego_value() == 0
+        return self.state_manager.world_manager.get_soego() == 0
 
 
     def r21663_condition(self):
@@ -859,13 +859,13 @@ class SoegoLogicGenerated:
 
     def r66181_condition(self):
         return self.state_manager.world_manager.get_dustman_initiation() == 5 and \
-               self.state_manager.world_manager.get_soego_value() > 0 and \
-               self.state_manager.world_manager.get_soego_value() < 3
+               self.state_manager.world_manager.get_soego() > 0 and \
+               self.state_manager.world_manager.get_soego() < 3
 
 
     def r21852_condition(self):
         return self.state_manager.world_manager.get_dustman_initiation() == 5 and \
-               self.state_manager.world_manager.get_soego_value() == 0
+               self.state_manager.world_manager.get_soego() == 0
 
 
     def r64623_condition(self):
@@ -905,7 +905,7 @@ class SoegoLogicGenerated:
 
     def r21914_condition(self):
         return self.state_manager.world_manager.get_dustman_initiation() == 5 and \
-               self.state_manager.world_manager.get_soego_value() < 3
+               self.state_manager.world_manager.get_soego() < 3
 
 
     def r21916_condition(self):
@@ -990,11 +990,11 @@ class SoegoLogicGenerated:
 
 
     def r22051_condition(self):
-        return self.state_manager.world_manager.get_soego_value() == 0
+        return self.state_manager.world_manager.get_soego() == 0
 
 
     def r66173_condition(self):
-        return self.state_manager.world_manager.get_soego_value() > 0
+        return self.state_manager.world_manager.get_soego() > 0
 
 
     def r64617_condition(self):

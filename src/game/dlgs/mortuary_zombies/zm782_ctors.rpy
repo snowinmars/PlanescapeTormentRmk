@@ -10,6 +10,7 @@ label zm782_speak:
 
 label zm782_s0_ctor:
     show dialogue_sprite_zm782_default at dialogue
+    $ dialogue_stack.append('zm782_dispose')
     jump zm782_s0
 
 

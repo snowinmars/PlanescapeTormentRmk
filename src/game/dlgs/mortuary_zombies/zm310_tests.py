@@ -34,9 +34,9 @@ class Zm310LogicGeneratedTest(LogicTest):
 
 
     def test_r6502_action(self):
-        self.state_manager.world_manager.set_oinosian_value(2)
+        self.state_manager.world_manager.set_oinosian(2)
         self._integer_equals_action(
-            self.state_manager.world_manager.get_oinosian_value,
+            self.state_manager.world_manager.get_oinosian,
             1,
             self.logic.r6502_action
         )
@@ -72,7 +72,7 @@ class Zm310LogicGeneratedTest(LogicTest):
 
     def test_r9664_condition(self):
         self._integer_equal_condition(
-            lambda x: self.state_manager.world_manager.set_pharod_value(x),
+            lambda x: self.state_manager.world_manager.set_pharod(x),
             0,
             self.logic.r9664_condition
         )

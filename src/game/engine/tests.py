@@ -40,7 +40,7 @@ class LogicTest(unittest.TestCase):
         self.world_manager = WorldManager(self.log_events_manager)
         self.inventory_manager = InventoryManager(self.log_events_manager, lambda x: self.world_manager.get_setting_value(x))
         self.narrat_manager = NarratManager(self.log_events_manager)
-        self.quest_manager = QuestManager(self.log_events_manager)
+        self.quests_manager = QuestsManager(self.log_events_manager)
         self.state_manager = StateManager(
             self.log_events_manager,
             self.world_manager,
@@ -49,7 +49,7 @@ class LogicTest(unittest.TestCase):
             self.journal_manager,
             self.inventory_manager,
             self.narrat_manager,
-            self.quest_manager
+            self.quests_manager
         )
 
         self.reset_stores()
@@ -77,15 +77,15 @@ class LogicTest(unittest.TestCase):
         self.world_store = WorldStore()
         self.world_manager.set_store(self.world_store)
 
-        self.quest_store = QuestStore()
-        self.quest_manager.set_store(self.quest_store)
+        self.quests_store = QuestsStore()
+        self.quests_manager.set_store(self.quests_store)
 
         build_all_locations(self.locations_manager)
         build_all_notes(self.journal_manager)
         build_all_characters(self.characters_manager)
         build_all_inventory(self.inventory_manager)
         build_all_settings(self.state_manager)
-        build_all_quests(self.quest_manager)
+        build_all_quests(self.quests_manager)
 
 
     def _methods_are_bound(self):

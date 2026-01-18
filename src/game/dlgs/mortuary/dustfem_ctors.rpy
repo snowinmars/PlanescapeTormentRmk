@@ -21,26 +21,31 @@ label dustfem_speak:
 
 label dustfem_s0_ctor:
     show dialogue_sprite_dustfem_default at dialogue
+    $ dialogue_stack.append('dustfem_dispose')
     jump dustfem_s0
 
 
 label dustfem_s22_ctor:
     show dialogue_sprite_dustfem_default at dialogue
+    $ dialogue_stack.append('dustfem_dispose')
     jump dustfem_s22
 
 
 label dustfem_s38_ctor: # -
     show dialogue_sprite_dustfem_default at dialogue
+    $ dialogue_stack.append('dustfem_dispose')
     jump dustfem_s38
 
 
 label dustfem_s40_ctor:
     show dialogue_sprite_dustfem_default at dialogue
+    $ dialogue_stack.append('dustfem_dispose')
     jump dustfem_s40
 
 
 label dustfem_s51_ctor:
     show dialogue_sprite_dustfem_default at dialogue
+    $ dialogue_stack.append('dustfem_dispose')
     jump dustfem_s51
 
 

@@ -371,12 +371,12 @@ class DustfemLogicTest(LogicTest):
     def test_r1253_condition(self):
         location_AR0202 = 'AR0202' # AR0202
 
-        self.state_manager.world_manager.set_dhall_value(-1)
+        self.state_manager.world_manager.set_dhall(-1)
         self.assertFalse(self.state_manager.locations_manager.is_visited(location_AR0202))
 
         self.assertFalse(self.logic.r1253_condition())
 
-        self.state_manager.world_manager.set_dhall_value(1)
+        self.state_manager.world_manager.set_dhall(1)
         self.state_manager.locations_manager.set_location(location_AR0202)
         self.assertTrue(self.state_manager.locations_manager.is_visited(location_AR0202))
 
@@ -386,13 +386,13 @@ class DustfemLogicTest(LogicTest):
     def test_r1255_condition(self):
         location_AR0202 = 'AR0202' # AR0202
 
-        self.state_manager.world_manager.set_dhall_value(-1)
+        self.state_manager.world_manager.set_dhall(-1)
         self.state_manager.locations_manager.set_location(location_AR0202)
         self.assertTrue(self.state_manager.locations_manager.is_visited(location_AR0202))
 
         self.assertFalse(self.logic.r1255_condition())
 
-        self.state_manager.world_manager.set_dhall_value(1)
+        self.state_manager.world_manager.set_dhall(1)
         self.reset_stores() # TODO [dev]: be carefull to call it in the right place. If you sure - remove this comment
         self.assertFalse(self.state_manager.locations_manager.is_visited(location_AR0202))
 
@@ -402,12 +402,12 @@ class DustfemLogicTest(LogicTest):
     def test_r1258_condition(self):
         location_AR0201 = 'AR0201' # AR0201
 
-        self.state_manager.world_manager.set_deionarra_value(-1)
+        self.state_manager.world_manager.set_deionarra(-1)
         self.assertFalse(self.state_manager.locations_manager.is_visited(location_AR0201))
 
         self.assertFalse(self.logic.r1258_condition())
 
-        self.state_manager.world_manager.set_deionarra_value(1)
+        self.state_manager.world_manager.set_deionarra(1)
         self.state_manager.locations_manager.set_location(location_AR0201)
         self.assertTrue(self.state_manager.locations_manager.is_visited(location_AR0201))
 
@@ -417,13 +417,13 @@ class DustfemLogicTest(LogicTest):
     def test_r4336_condition(self):
         location_AR0201 = 'AR0201' # AR0201
 
-        self.state_manager.world_manager.set_deionarra_value(-1)
+        self.state_manager.world_manager.set_deionarra(-1)
         self.state_manager.locations_manager.set_location(location_AR0201)
         self.assertTrue(self.state_manager.locations_manager.is_visited(location_AR0201))
 
         self.assertFalse(self.logic.r4336_condition())
 
-        self.state_manager.world_manager.set_deionarra_value(1)
+        self.state_manager.world_manager.set_deionarra(1)
         self.reset_stores() # TODO [dev]: be carefull to call it in the right place. If you sure - remove this comment
         self.assertFalse(self.state_manager.locations_manager.is_visited(location_AR0201))
 
@@ -433,12 +433,12 @@ class DustfemLogicTest(LogicTest):
     def test_r33224_condition(self):
         location_AR0201 = 'AR0201' # AR0201
 
-        self.state_manager.world_manager.set_soego_value(-1)
+        self.state_manager.world_manager.set_soego(-1)
         self.assertFalse(self.state_manager.locations_manager.is_visited(location_AR0201))
 
         self.assertFalse(self.logic.r33224_condition())
 
-        self.state_manager.world_manager.set_soego_value(1)
+        self.state_manager.world_manager.set_soego(1)
         self.state_manager.locations_manager.set_location(location_AR0201)
         self.assertTrue(self.state_manager.locations_manager.is_visited(location_AR0201))
 
@@ -448,13 +448,13 @@ class DustfemLogicTest(LogicTest):
     def test_r33226_condition(self):
         location_AR0201 = 'AR0201' # AR0201
 
-        self.state_manager.world_manager.set_soego_value(-1)
+        self.state_manager.world_manager.set_soego(-1)
         self.state_manager.locations_manager.set_location(location_AR0201)
         self.assertTrue(self.state_manager.locations_manager.is_visited(location_AR0201))
 
         self.assertFalse(self.logic.r33226_condition())
 
-        self.state_manager.world_manager.set_soego_value(1)
+        self.state_manager.world_manager.set_soego(1)
         self.reset_stores() # TODO [dev]: be carefull to call it in the right place. If you sure - remove this comment
         self.assertFalse(self.state_manager.locations_manager.is_visited(location_AR0201))
 
@@ -495,7 +495,7 @@ class DustfemLogicTest(LogicTest):
 
     def test_r1272_condition(self):
         self._integer_gt_condition(
-            lambda x: self.state_manager.world_manager.set_deionarra_value(x),
+            lambda x: self.state_manager.world_manager.set_deionarra(x),
             0,
             self.logic.r1272_condition
         )

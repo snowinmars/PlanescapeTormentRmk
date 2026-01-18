@@ -7,7 +7,7 @@ init 1 python:
 
     enabled_dev = True
     config.version = "0.09"
-    build.info['sha8'] = "69225e9c"
+    build.info['sha8'] = "629f75c1"
 
     if not persistent.language:
         persistent.language = 'english'
@@ -233,4 +233,4 @@ label dialogues_dispose:
     while dialogue_stack:
         $ label = dialogue_stack.pop()
         $ renpy.call(label)
-        jump map_dispatcher
+    jump map_dispatcher

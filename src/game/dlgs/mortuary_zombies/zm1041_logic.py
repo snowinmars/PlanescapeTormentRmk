@@ -9,15 +9,15 @@ class Zm1041LogicGenerated:
 
 
     def r6583_action(self):
-        self.state_manager.world_manager.set_bei_value(1)
+        self.state_manager.world_manager.set_bei(1)
 
 
     def r9096_action(self):
-        self.state_manager.world_manager.set_bei_value(1)
+        self.state_manager.world_manager.set_bei(1)
 
 
     def r9097_action(self):
-        self.state_manager.world_manager.set_bei_value(1)
+        self.state_manager.world_manager.set_bei(1)
 
 
     def r9161_action(self):
@@ -69,20 +69,20 @@ class Zm1041LogicGenerated:
 
     def r6579_condition(self):
         return self.state_manager.world_manager.get_can_speak_with_dead() and \
-               self.state_manager.world_manager.get_bei_value() == 0
+               self.state_manager.world_manager.get_bei() == 0
 
 
     def r6580_condition(self):
         return self.state_manager.world_manager.get_can_speak_with_dead() and \
-               self.state_manager.world_manager.get_bei_value() == 1
+               self.state_manager.world_manager.get_bei() == 1
 
 
     def r9109_condition(self):
-        return self.state_manager.world_manager.get_pharod_value() == 0
+        return self.state_manager.world_manager.get_pharod() == 0
 
 
     def r9145_condition(self):
-        return self.state_manager.world_manager.get_pharod_value() == 0
+        return self.state_manager.world_manager.get_pharod() == 0
 
 
     def r9187_condition(self):

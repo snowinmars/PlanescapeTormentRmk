@@ -17,16 +17,19 @@ label s863_speak:
 
 label s863_s0_ctor:
     show dialogue_sprite_s863_default at dialogue
+    $ dialogue_stack.append('s863_dispose')
     jump s863_s0
 
 
 label s863_s7_ctor: # - # IF ~  False()
     show dialogue_sprite_s863_default at dialogue
+    $ dialogue_stack.append('s863_dispose')
     jump s863_s7
 
 
 label s863_s8_ctor:
     show dialogue_sprite_s863_default at dialogue
+    $ dialogue_stack.append('s863_dispose')
     jump s863_s8
 
 

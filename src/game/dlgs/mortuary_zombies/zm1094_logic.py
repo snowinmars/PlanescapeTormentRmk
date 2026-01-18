@@ -9,24 +9,24 @@ class Zm1094LogicGenerated:
 
 
     def r6568_action(self):
-        self.state_manager.world_manager.set_asonje_value(1)
+        self.state_manager.world_manager.set_asonje(1)
 
 
     def r9247_action(self):
         self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'good', -1, 'globalevil_asonje_1')
-        self.state_manager.world_manager.set_asonje_value(3)
+        self.state_manager.world_manager.set_asonje(3)
 
 
     def r9289_action(self):
-        self.state_manager.world_manager.set_asonje_value(2)
+        self.state_manager.world_manager.set_asonje(2)
 
 
     def r9290_action(self):
-        self.state_manager.world_manager.set_asonje_value(2)
+        self.state_manager.world_manager.set_asonje(2)
 
 
     def r9291_action(self):
-        self.state_manager.world_manager.set_asonje_value(2)
+        self.state_manager.world_manager.set_asonje(2)
 
 
     def r9304_action(self):
@@ -50,35 +50,35 @@ class Zm1094LogicGenerated:
 
 
     def r9256_condition(self):
-        return self.state_manager.world_manager.get_pharod_value() == 0
+        return self.state_manager.world_manager.get_pharod() == 0
 
 
     def r9276_condition(self):
-        return self.state_manager.world_manager.get_pharod_value() == 0
+        return self.state_manager.world_manager.get_pharod() == 0
 
 
     def r9282_condition(self):
-        return self.state_manager.world_manager.get_asonje_value() != 2
+        return self.state_manager.world_manager.get_asonje() != 2
 
 
     def r9286_condition(self):
-        return self.state_manager.world_manager.get_asonje_value() == 2
+        return self.state_manager.world_manager.get_asonje() == 2
 
 
     def r9319_condition(self):
-        return self.state_manager.world_manager.get_pharod_value() == 0
+        return self.state_manager.world_manager.get_pharod() == 0
 
 
     def r9306_condition(self):
-        return self.state_manager.world_manager.get_asonje_value() != 2
+        return self.state_manager.world_manager.get_asonje() != 2
 
 
     def r9307_condition(self):
-        return self.state_manager.world_manager.get_asonje_value() == 2
+        return self.state_manager.world_manager.get_asonje() == 2
 
 
     def r9312_condition(self):
-        return self.state_manager.world_manager.get_pharod_value() == 0
+        return self.state_manager.world_manager.get_pharod() == 0
 
 
 class Zm1094Logic(Zm1094LogicGenerated):

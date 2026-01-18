@@ -16,9 +16,9 @@ class EiveneLogicGeneratedTest(LogicTest):
 
 
     def test_r3422_action(self):
-        self.state_manager.world_manager.set_eivene_value(2)
+        self.state_manager.world_manager.set_eivene(2)
         self._integer_equals_action(
-            self.state_manager.world_manager.get_eivene_value,
+            self.state_manager.world_manager.get_eivene,
             1,
             self.logic.r3422_action
         )

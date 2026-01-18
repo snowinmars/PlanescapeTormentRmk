@@ -9,7 +9,7 @@ class Zm1146LogicGenerated:
 
 
     def r6524_action(self):
-        self.state_manager.world_manager.set_crispy_value(1)
+        self.state_manager.world_manager.set_crispy(1)
 
 
     def r9415_action(self):
@@ -38,7 +38,7 @@ class Zm1146LogicGenerated:
 
 
     def r9434_condition(self):
-        return self.state_manager.world_manager.get_pharod_value() == 0
+        return self.state_manager.world_manager.get_pharod() == 0
 
 
 class Zm1146Logic(Zm1146LogicGenerated):
@@ -54,5 +54,5 @@ class Zm1146Logic(Zm1146LogicGenerated):
         self.state_manager.world_manager.inc_talked_to_crispy_times()
 
 
-    def get_crispy_value(self):
-        return self.state_manager.world_manager.get_crispy_value()
+    def get_crispy(self):
+        return self.state_manager.world_manager.get_crispy()

@@ -34,27 +34,27 @@ class Zm1041LogicGeneratedTest(LogicTest):
 
 
     def test_r6583_action(self):
-        self.state_manager.world_manager.set_bei_value(2)
+        self.state_manager.world_manager.set_bei(2)
         self._integer_equals_action(
-            self.state_manager.world_manager.get_bei_value,
+            self.state_manager.world_manager.get_bei,
             1,
             self.logic.r6583_action
         )
 
 
     def test_r9096_action(self):
-        self.state_manager.world_manager.set_bei_value(2)
+        self.state_manager.world_manager.set_bei(2)
         self._integer_equals_action(
-            self.state_manager.world_manager.get_bei_value,
+            self.state_manager.world_manager.get_bei,
             1,
             self.logic.r9096_action
         )
 
 
     def test_r9097_action(self):
-        self.state_manager.world_manager.set_bei_value(2)
+        self.state_manager.world_manager.set_bei(2)
         self._integer_equals_action(
-            self.state_manager.world_manager.get_bei_value,
+            self.state_manager.world_manager.get_bei,
             1,
             self.logic.r9097_action
         )
@@ -197,31 +197,31 @@ class Zm1041LogicGeneratedTest(LogicTest):
 
     def test_r6579_condition(self):
         self.state_manager.world_manager.set_can_speak_with_dead(False)
-        self.state_manager.world_manager.set_bei_value(1)
+        self.state_manager.world_manager.set_bei(1)
 
         self.assertFalse(self.logic.r6579_condition())
 
         self.state_manager.world_manager.set_can_speak_with_dead(True)
-        self.state_manager.world_manager.set_bei_value(0)
+        self.state_manager.world_manager.set_bei(0)
 
         self.assertTrue(self.logic.r6579_condition())
 
 
     def test_r6580_condition(self):
         self.state_manager.world_manager.set_can_speak_with_dead(False)
-        self.state_manager.world_manager.set_bei_value(0)
+        self.state_manager.world_manager.set_bei(0)
 
         self.assertFalse(self.logic.r6580_condition())
 
         self.state_manager.world_manager.set_can_speak_with_dead(True)
-        self.state_manager.world_manager.set_bei_value(1)
+        self.state_manager.world_manager.set_bei(1)
 
         self.assertTrue(self.logic.r6580_condition())
 
 
     def test_r9109_condition(self):
         self._integer_equal_condition(
-            lambda x: self.state_manager.world_manager.set_pharod_value(x),
+            lambda x: self.state_manager.world_manager.set_pharod(x),
             0,
             self.logic.r9109_condition
         )
@@ -229,7 +229,7 @@ class Zm1041LogicGeneratedTest(LogicTest):
 
     def test_r9145_condition(self):
         self._integer_equal_condition(
-            lambda x: self.state_manager.world_manager.set_pharod_value(x),
+            lambda x: self.state_manager.world_manager.set_pharod(x),
             0,
             self.logic.r9145_condition
         )

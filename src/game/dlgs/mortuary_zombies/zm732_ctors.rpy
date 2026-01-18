@@ -17,11 +17,13 @@ label zm732_speak:
 
 label zm732_s0_ctor:
     show dialogue_sprite_zm732_default at dialogue
+    $ dialogue_stack.append('zm732_dispose')
     jump zm732_s0
 
 
 label zm732_s3_ctor:
     show dialogue_sprite_zm732_default at dialogue
+    $ dialogue_stack.append('zm732_dispose')
     jump zm732_s3
 
 

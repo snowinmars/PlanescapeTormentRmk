@@ -35,7 +35,7 @@ init python:
       if runtime.global_state_manager.world_manager.get_know_vhail_name():
         achievement_meet_vhail.grant()
 
-      if runtime.global_state_manager.world_manager.get_crispy_value() > 0:
+      if runtime.global_state_manager.world_manager.get_crispy() > 0:
         achievement_meet_zm1146_spirit.grant()
       if runtime.global_state_manager.world_manager.get_know_zm257_spirit():
         achievement_meet_zm257_spirit.grant()

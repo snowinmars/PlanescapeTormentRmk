@@ -13,29 +13,29 @@ class MorteLogicGeneratedTest(LogicTest):
 
     def test_r17833_action(self):
         self.state_manager.world_manager.set_has_intro_key(False)
-        morte_value_before = 0
-        morte_value_after = 1
-        morte_value_after_once = 1
-        self.state_manager.world_manager.set_morte_value(morte_value_before)
+        morte_before = 0
+        morte_after = 1
+        morte_after_once = 1
+        self.state_manager.world_manager.set_morte(morte_before)
         self.state_manager.world_manager.set_read_scars(False)
         self.state_manager.world_manager.set_in_party_morte(False)
 
         self.assertFalse(self.state_manager.world_manager.get_has_intro_key())
-        self.assertEqual(self.state_manager.world_manager.get_morte_value(), morte_value_before)
+        self.assertEqual(self.state_manager.world_manager.get_morte(), morte_before)
         self.assertFalse(self.state_manager.world_manager.get_read_scars())
         self.assertFalse(self.state_manager.world_manager.get_in_party_morte())
 
         self.logic.r17833_action()
 
         self.assertTrue(self.state_manager.world_manager.get_has_intro_key())
-        self.assertEqual(self.state_manager.world_manager.get_morte_value(), morte_value_after)
+        self.assertEqual(self.state_manager.world_manager.get_morte(), morte_after)
         self.assertTrue(self.state_manager.world_manager.get_read_scars())
         self.assertTrue(self.state_manager.world_manager.get_in_party_morte())
 
         self.logic.r17833_action()
 
         self.assertTrue(self.state_manager.world_manager.get_has_intro_key())
-        self.assertEqual(self.state_manager.world_manager.get_morte_value(), morte_value_after_once)
+        self.assertEqual(self.state_manager.world_manager.get_morte(), morte_after_once)
         self.assertTrue(self.state_manager.world_manager.get_read_scars())
         self.assertTrue(self.state_manager.world_manager.get_in_party_morte())
 
@@ -48,23 +48,23 @@ class MorteLogicGeneratedTest(LogicTest):
 
 
     def test_r1079_action(self):
-        morte_value_before = 0
-        morte_value_after = 1
-        morte_value_after_once = 1
-        self.state_manager.world_manager.set_morte_value(morte_value_before)
+        morte_before = 0
+        morte_after = 1
+        morte_after_once = 1
+        self.state_manager.world_manager.set_morte(morte_before)
         self.state_manager.world_manager.set_in_party_morte(False)
 
-        self.assertEqual(self.state_manager.world_manager.get_morte_value(), morte_value_before)
+        self.assertEqual(self.state_manager.world_manager.get_morte(), morte_before)
         self.assertFalse(self.state_manager.world_manager.get_in_party_morte())
 
         self.logic.r1079_action()
 
-        self.assertEqual(self.state_manager.world_manager.get_morte_value(), morte_value_after)
+        self.assertEqual(self.state_manager.world_manager.get_morte(), morte_after)
         self.assertTrue(self.state_manager.world_manager.get_in_party_morte())
 
         self.logic.r1079_action()
 
-        self.assertEqual(self.state_manager.world_manager.get_morte_value(), morte_value_after_once)
+        self.assertEqual(self.state_manager.world_manager.get_morte(), morte_after_once)
         self.assertTrue(self.state_manager.world_manager.get_in_party_morte())
 
 
@@ -1150,32 +1150,32 @@ class MorteLogicGeneratedTest(LogicTest):
 
 
     def test_r24904_action(self):
-        self.state_manager.world_manager.set_morte_value(2)
+        self.state_manager.world_manager.set_morte(2)
         self._integer_equals_action(
-            self.state_manager.world_manager.get_morte_value,
+            self.state_manager.world_manager.get_morte,
             1,
             self.logic.r24904_action
         )
 
 
     def test_r24905_action(self):
-        morte_value_before = 0
-        morte_value_after = 1
-        morte_value_after_once = 1
-        self.state_manager.world_manager.set_morte_value(morte_value_before)
+        morte_before = 0
+        morte_after = 1
+        morte_after_once = 1
+        self.state_manager.world_manager.set_morte(morte_before)
         self.state_manager.world_manager.set_in_party_morte(False)
 
-        self.assertEqual(self.state_manager.world_manager.get_morte_value(), morte_value_before)
+        self.assertEqual(self.state_manager.world_manager.get_morte(), morte_before)
         self.assertFalse(self.state_manager.world_manager.get_in_party_morte())
 
         self.logic.r24905_action()
 
-        self.assertEqual(self.state_manager.world_manager.get_morte_value(), morte_value_after)
+        self.assertEqual(self.state_manager.world_manager.get_morte(), morte_after)
         self.assertTrue(self.state_manager.world_manager.get_in_party_morte())
 
         self.logic.r24905_action()
 
-        self.assertEqual(self.state_manager.world_manager.get_morte_value(), morte_value_after_once)
+        self.assertEqual(self.state_manager.world_manager.get_morte(), morte_after_once)
         self.assertTrue(self.state_manager.world_manager.get_in_party_morte())
 
 
@@ -2023,26 +2023,26 @@ class MorteLogicGeneratedTest(LogicTest):
         nemelle_after = 3
         nemelle_after_once = 3
         self.state_manager.world_manager.set_nemelle(nemelle_before)
-        aelwyn_value_before = 1
-        aelwyn_value_after = 4
-        aelwyn_value_after_once = 4
-        self.state_manager.world_manager.set_aelwyn_value(aelwyn_value_before)
+        aelwyn_before = 1
+        aelwyn_after = 4
+        aelwyn_after_once = 4
+        self.state_manager.world_manager.set_aelwyn(aelwyn_before)
         note_id = '39490'
 
         self.assertEqual(self.state_manager.world_manager.get_nemelle(), nemelle_before)
-        self.assertEqual(self.state_manager.world_manager.get_aelwyn_value(), aelwyn_value_before)
+        self.assertEqual(self.state_manager.world_manager.get_aelwyn(), aelwyn_before)
         self.assertFalse(self.state_manager.journal_manager.found_journal_note(note_id))
 
         self.logic.r43910_action()
 
         self.assertEqual(self.state_manager.world_manager.get_nemelle(), nemelle_after)
-        self.assertEqual(self.state_manager.world_manager.get_aelwyn_value(), aelwyn_value_after)
+        self.assertEqual(self.state_manager.world_manager.get_aelwyn(), aelwyn_after)
         self.assertTrue(self.state_manager.journal_manager.found_journal_note(note_id))
 
         self.logic.r43910_action()
 
         self.assertEqual(self.state_manager.world_manager.get_nemelle(), nemelle_after_once)
-        self.assertEqual(self.state_manager.world_manager.get_aelwyn_value(), aelwyn_value_after_once)
+        self.assertEqual(self.state_manager.world_manager.get_aelwyn(), aelwyn_after_once)
         self.assertTrue(self.state_manager.journal_manager.found_journal_note(note_id))
 
 
@@ -2051,26 +2051,26 @@ class MorteLogicGeneratedTest(LogicTest):
         nemelle_after = 3
         nemelle_after_once = 3
         self.state_manager.world_manager.set_nemelle(nemelle_before)
-        aelwyn_value_before = 1
-        aelwyn_value_after = 4
-        aelwyn_value_after_once = 4
-        self.state_manager.world_manager.set_aelwyn_value(aelwyn_value_before)
+        aelwyn_before = 1
+        aelwyn_after = 4
+        aelwyn_after_once = 4
+        self.state_manager.world_manager.set_aelwyn(aelwyn_before)
         note_id = '39490'
 
         self.assertEqual(self.state_manager.world_manager.get_nemelle(), nemelle_before)
-        self.assertEqual(self.state_manager.world_manager.get_aelwyn_value(), aelwyn_value_before)
+        self.assertEqual(self.state_manager.world_manager.get_aelwyn(), aelwyn_before)
         self.assertFalse(self.state_manager.journal_manager.found_journal_note(note_id))
 
         self.logic.r43918_action()
 
         self.assertEqual(self.state_manager.world_manager.get_nemelle(), nemelle_after)
-        self.assertEqual(self.state_manager.world_manager.get_aelwyn_value(), aelwyn_value_after)
+        self.assertEqual(self.state_manager.world_manager.get_aelwyn(), aelwyn_after)
         self.assertTrue(self.state_manager.journal_manager.found_journal_note(note_id))
 
         self.logic.r43918_action()
 
         self.assertEqual(self.state_manager.world_manager.get_nemelle(), nemelle_after_once)
-        self.assertEqual(self.state_manager.world_manager.get_aelwyn_value(), aelwyn_value_after_once)
+        self.assertEqual(self.state_manager.world_manager.get_aelwyn(), aelwyn_after_once)
         self.assertTrue(self.state_manager.journal_manager.found_journal_note(note_id))
 
 
@@ -4461,12 +4461,12 @@ class MorteLogicGeneratedTest(LogicTest):
 
     def test_r65549_condition(self):
         self.state_manager.world_manager.set_know_ravel(False)
-        self.state_manager.world_manager.set_ravel_value(1)
+        self.state_manager.world_manager.set_ravel(1)
 
         self.assertFalse(self.logic.r65549_condition())
 
         self.state_manager.world_manager.set_know_ravel(True)
-        self.state_manager.world_manager.set_ravel_value(0)
+        self.state_manager.world_manager.set_ravel(0)
 
         self.assertTrue(self.logic.r65549_condition())
 
@@ -4999,12 +4999,12 @@ class MorteLogicGeneratedTest(LogicTest):
 
 
     def test_r43910_condition(self):
-        self.state_manager.world_manager.set_aelwyn_value(0)
+        self.state_manager.world_manager.set_aelwyn(0)
         self.state_manager.world_manager.set_dead_aelwyn(True)
 
         self.assertFalse(self.logic.r43910_condition())
 
-        self.state_manager.world_manager.set_aelwyn_value(2)
+        self.state_manager.world_manager.set_aelwyn(2)
         self.state_manager.world_manager.set_dead_aelwyn(False)
 
         self.assertTrue(self.logic.r43910_condition())
@@ -5012,7 +5012,7 @@ class MorteLogicGeneratedTest(LogicTest):
 
     def test_r43911_condition(self):
         self._integer_lt_condition(
-            lambda x: self.state_manager.world_manager.set_aelwyn_value(x),
+            lambda x: self.state_manager.world_manager.set_aelwyn(x),
             2,
             self.logic.r43911_condition
         )
@@ -5031,12 +5031,12 @@ class MorteLogicGeneratedTest(LogicTest):
 
 
     def test_r43918_condition(self):
-        self.state_manager.world_manager.set_aelwyn_value(0)
+        self.state_manager.world_manager.set_aelwyn(0)
         self.state_manager.world_manager.set_dead_aelwyn(True)
 
         self.assertFalse(self.logic.r43918_condition())
 
-        self.state_manager.world_manager.set_aelwyn_value(2)
+        self.state_manager.world_manager.set_aelwyn(2)
         self.state_manager.world_manager.set_dead_aelwyn(False)
 
         self.assertTrue(self.logic.r43918_condition())
@@ -5044,7 +5044,7 @@ class MorteLogicGeneratedTest(LogicTest):
 
     def test_r43919_condition(self):
         self._integer_lt_condition(
-            lambda x: self.state_manager.world_manager.set_aelwyn_value(x),
+            lambda x: self.state_manager.world_manager.set_aelwyn(x),
             2,
             self.logic.r43919_condition
         )
@@ -5743,13 +5743,13 @@ class MorteLogicGeneratedTest(LogicTest):
 
         self.state_manager.characters_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence)
         self.state_manager.world_manager.set_in_party_dakkon(True)
-        self.state_manager.world_manager.set_dakkon_value(-1)
+        self.state_manager.world_manager.set_dakkon(-1)
 
         self.assertFalse(self.logic.r54221_condition())
 
         self.state_manager.characters_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence + 1)
         self.state_manager.world_manager.set_in_party_dakkon(False)
-        self.state_manager.world_manager.set_dakkon_value(1)
+        self.state_manager.world_manager.set_dakkon(1)
 
         self.assertTrue(self.logic.r54221_condition())
 
@@ -5761,13 +5761,13 @@ class MorteLogicGeneratedTest(LogicTest):
 
         self.state_manager.characters_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence)
         self.state_manager.world_manager.set_in_party_dakkon(True)
-        self.state_manager.world_manager.set_dakkon_value(1)
+        self.state_manager.world_manager.set_dakkon(1)
 
         self.assertFalse(self.logic.r54223_condition())
 
         self.state_manager.characters_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence + 1)
         self.state_manager.world_manager.set_in_party_dakkon(False)
-        self.state_manager.world_manager.set_dakkon_value(0)
+        self.state_manager.world_manager.set_dakkon(0)
 
         self.assertTrue(self.logic.r54223_condition())
 
@@ -5798,7 +5798,7 @@ class MorteLogicGeneratedTest(LogicTest):
 
     def test_r54230_condition(self):
         self._integer_gt_condition(
-            lambda x: self.state_manager.world_manager.set_deionarra_value(x),
+            lambda x: self.state_manager.world_manager.set_deionarra(x),
             0,
             self.logic.r54230_condition
         )
@@ -5806,7 +5806,7 @@ class MorteLogicGeneratedTest(LogicTest):
 
     def test_r54231_condition(self):
         self._integer_equal_condition(
-            lambda x: self.state_manager.world_manager.set_deionarra_value(x),
+            lambda x: self.state_manager.world_manager.set_deionarra(x),
             0,
             self.logic.r54231_condition
         )
@@ -5838,7 +5838,7 @@ class MorteLogicGeneratedTest(LogicTest):
 
     def test_r54235_condition(self):
         self._integer_gt_condition(
-            lambda x: self.state_manager.world_manager.set_deionarra_value(x),
+            lambda x: self.state_manager.world_manager.set_deionarra(x),
             0,
             self.logic.r54235_condition
         )
@@ -5846,7 +5846,7 @@ class MorteLogicGeneratedTest(LogicTest):
 
     def test_r54236_condition(self):
         self._integer_equal_condition(
-            lambda x: self.state_manager.world_manager.set_deionarra_value(x),
+            lambda x: self.state_manager.world_manager.set_deionarra(x),
             0,
             self.logic.r54236_condition
         )
@@ -6264,7 +6264,7 @@ class MorteLogicGeneratedTest(LogicTest):
 
     def test_r65558_condition(self):
         self._integer_equal_condition(
-            lambda x: self.state_manager.world_manager.set_pharod_value(x),
+            lambda x: self.state_manager.world_manager.set_pharod(x),
             0,
             self.logic.r65558_condition
         )
@@ -6272,7 +6272,7 @@ class MorteLogicGeneratedTest(LogicTest):
 
     def test_r65559_condition(self):
         self._integer_gt_condition(
-            lambda x: self.state_manager.world_manager.set_pharod_value(x),
+            lambda x: self.state_manager.world_manager.set_pharod(x),
             0,
             self.logic.r65559_condition
         )
@@ -6339,19 +6339,19 @@ class MorteLogicGeneratedTest(LogicTest):
 
     def test_r65639_condition(self):
         self._integer_equal_condition(
-            lambda x: self.state_manager.world_manager.set_pharod_value(x),
+            lambda x: self.state_manager.world_manager.set_pharod(x),
             0,
             self.logic.r65639_condition
         )
 
 
     def test_r65640_condition(self):
-        self.state_manager.world_manager.set_pharod_value(0)
+        self.state_manager.world_manager.set_pharod(0)
         self.state_manager.world_manager.set_pharod_quest(0)
 
         self.assertFalse(self.logic.r65640_condition())
 
-        self.state_manager.world_manager.set_pharod_value(1)
+        self.state_manager.world_manager.set_pharod(1)
         self.state_manager.world_manager.set_pharod_quest(1)
 
         self.assertTrue(self.logic.r65640_condition())
@@ -6478,7 +6478,7 @@ class MorteLogicGeneratedTest(LogicTest):
 
     def test_r65693_condition(self):
         self._integer_equal_condition(
-            lambda x: self.state_manager.world_manager.set_pharod_value(x),
+            lambda x: self.state_manager.world_manager.set_pharod(x),
             0,
             self.logic.r65693_condition
         )
@@ -6834,12 +6834,12 @@ class MorteLogicGeneratedTest(LogicTest):
 
     def test_r66355_condition(self):
         self.state_manager.world_manager.set_know_ravel(False)
-        self.state_manager.world_manager.set_ravel_value(1)
+        self.state_manager.world_manager.set_ravel(1)
 
         self.assertFalse(self.logic.r66355_condition())
 
         self.state_manager.world_manager.set_know_ravel(True)
-        self.state_manager.world_manager.set_ravel_value(0)
+        self.state_manager.world_manager.set_ravel(0)
 
         self.assertTrue(self.logic.r66355_condition())
 

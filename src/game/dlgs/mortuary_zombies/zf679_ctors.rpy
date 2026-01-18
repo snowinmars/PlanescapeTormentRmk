@@ -10,11 +10,13 @@ label zf679_speak:
 
 label zf679_s0_ctor:
     show dialogue_sprite_zf679_default at dialogue
+    $ dialogue_stack.append('zf679_dispose')
     jump zf679_s0
 
 
 label zf679_s3_ctor: # - # IF ~  False()
     show dialogue_sprite_zf679_default at dialogue
+    $ dialogue_stack.append('zf679_dispose')
     jump zf679_s3
 
 

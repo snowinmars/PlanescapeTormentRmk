@@ -10,11 +10,13 @@ label s42_speak:
 
 label s42_s0_ctor:
     show dialogue_sprite_s42_default at dialogue
+    $ dialogue_stack.append('s42_dispose')
     jump s42_s0
 
 
 label s42_s11_ctor: # -
     show dialogue_sprite_s42_default at dialogue
+    $ dialogue_stack.append('s42_dispose')
     jump s42_s11
 
 

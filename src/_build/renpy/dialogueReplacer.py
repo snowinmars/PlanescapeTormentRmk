@@ -434,20 +434,19 @@ class DialogueReplacer:
     def npc(self, from_var, to_var, env = 'GLOBAL'):
             self.add_setting(f"talked_to_{to_var}_times", 'integer')
             self.add_setting(f"dead_{to_var}", 'boolean')
-            self.add_setting(f"{to_var}_value", 'integer')
-            self.add_setting(f"{to_var}_value", 'integer')
+            self.add_setting(to_var, 'integer')
 
             if from_var is None:
                 return
 
             for x in range(0, 5):
-                self.add_replacement(f'!Global("{from_var}","{env}",{x})',   f'return self.state_manager.world_manager.get_{to_var}_value() != {x}')
-                self.add_replacement(f'!GlobalGT("{from_var}","{env}",{x})',  f'return self.state_manager.world_manager.get_{to_var}_value() <= {x}')
-                self.add_replacement(f'!GlobalLT("{from_var}","{env}",{x})',  f'return self.state_manager.world_manager.get_{to_var}_value() >= {x}')
-                self.add_replacement(f'Global("{from_var}","{env}",{x})',    f'return self.state_manager.world_manager.get_{to_var}_value() == {x}')
-                self.add_replacement(f'GlobalGT("{from_var}","{env}",{x})',  f'return self.state_manager.world_manager.get_{to_var}_value() > {x}')
-                self.add_replacement(f'GlobalLT("{from_var}","{env}",{x})',  f'return self.state_manager.world_manager.get_{to_var}_value() < {x}')
-                self.add_replacement(f'SetGlobal("{from_var}","{env}",{x})', f'self.state_manager.world_manager.set_{to_var}_value({x})')
+                self.add_replacement(f'!Global("{from_var}","{env}",{x})',   f'return self.state_manager.world_manager.get_{to_var}() != {x}')
+                self.add_replacement(f'!GlobalGT("{from_var}","{env}",{x})',  f'return self.state_manager.world_manager.get_{to_var}() <= {x}')
+                self.add_replacement(f'!GlobalLT("{from_var}","{env}",{x})',  f'return self.state_manager.world_manager.get_{to_var}() >= {x}')
+                self.add_replacement(f'Global("{from_var}","{env}",{x})',    f'return self.state_manager.world_manager.get_{to_var}() == {x}')
+                self.add_replacement(f'GlobalGT("{from_var}","{env}",{x})',  f'return self.state_manager.world_manager.get_{to_var}() > {x}')
+                self.add_replacement(f'GlobalLT("{from_var}","{env}",{x})',  f'return self.state_manager.world_manager.get_{to_var}() < {x}')
+                self.add_replacement(f'SetGlobal("{from_var}","{env}",{x})', f'self.state_manager.world_manager.set_{to_var}({x})')
 
             self.add_replacement(f'!Dead("{from_var}")', f'return not self.state_manager.world_manager.get_dead_{to_var}()')
             self.add_replacement(f'Dead("{from_var}")', f'return self.state_manager.world_manager.get_dead_{to_var}()')

@@ -17,11 +17,13 @@ label zm1201_speak:
 
 label zm1201_s0_ctor:
     show dialogue_sprite_zm1201_default at dialogue
+    $ dialogue_stack.append('zm1201_dispose')
     jump zm1201_s0
 
 
 label zm1201_s5_ctor:
     show dialogue_sprite_zm1201_default at dialogue
+    $ dialogue_stack.append('zm1201_dispose')
     jump zm1201_s5
 
 

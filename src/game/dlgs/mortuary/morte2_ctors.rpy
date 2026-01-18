@@ -33,21 +33,25 @@ label morte2_speak:
 
 label morte2_s0_ctor:
     show dialogue_sprite_morte_default at dialogue
+    $ dialogue_stack.append('morte2_dispose')
     jump morte2_s0
 
 
 label morte2_s12_ctor:
     show dialogue_sprite_morte_default at dialogue
+    $ dialogue_stack.append('morte2_dispose')
     jump morte2_s12
 
 
 label morte2_s27_ctor:
     show dialogue_sprite_morte_default at dialogue
+    $ dialogue_stack.append('morte2_dispose')
     jump morte2_s27
 
 
 label morte2_s31_ctor:
     show dialogue_sprite_morte_default at dialogue
+    $ dialogue_stack.append('morte2_dispose')
     jump morte2_s31
 
 
