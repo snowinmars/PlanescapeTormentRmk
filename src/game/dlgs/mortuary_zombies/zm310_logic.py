@@ -9,7 +9,7 @@ class Zm310LogicGenerated:
 
 
     def r6502_action(self):
-        self.state_manager.world_manager.set_oinosian_value(1)
+        self.state_manager.world_manager.set_oinosian(1)
 
 
     def r6499_condition(self):
@@ -29,7 +29,7 @@ class Zm310LogicGenerated:
 
 
     def r9664_condition(self):
-        return self.state_manager.world_manager.get_pharod_value() == 0
+        return self.state_manager.world_manager.get_pharod() == 0
 
 
 class Zm310Logic(Zm310LogicGenerated):

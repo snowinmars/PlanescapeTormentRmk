@@ -10,11 +10,13 @@ label zf832_speak:
 
 label zf832_s0_ctor:
     show dialogue_sprite_zf832_default at dialogue
+    $ dialogue_stack.append('zf832_dispose')
     jump zf832_s0
 
 
 label zf832_s3_ctor: # - # IF ~  False()
     show dialogue_sprite_zf832_default at dialogue
+    $ dialogue_stack.append('zf832_dispose')
     jump zf832_s3
 
 

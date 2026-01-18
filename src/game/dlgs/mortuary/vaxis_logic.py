@@ -9,7 +9,7 @@ class VaxisLogicGenerated:
 
 
     def r461_action(self):
-        self.state_manager.world_manager.set_vaxis_value(1)
+        self.state_manager.world_manager.set_vaxis(1)
 
 
     def j64513_s2_r464_action(self):
@@ -57,7 +57,7 @@ class VaxisLogicGenerated:
 
 
     def r480_action(self):
-        self.state_manager.world_manager.set_vaxis_value(1)
+        self.state_manager.world_manager.set_vaxis(1)
 
 
     def j64513_s5_r481_action(self):
@@ -66,7 +66,7 @@ class VaxisLogicGenerated:
 
 
     def r481_action(self):
-        self.state_manager.world_manager.set_vaxis_value(1)
+        self.state_manager.world_manager.set_vaxis(1)
 
 
     def j64513_s5_r482_action(self):
@@ -75,7 +75,7 @@ class VaxisLogicGenerated:
 
 
     def r482_action(self):
-        self.state_manager.world_manager.set_vaxis_value(1)
+        self.state_manager.world_manager.set_vaxis(1)
 
 
     def r487_action(self):
@@ -817,19 +817,19 @@ class VaxisLogicGenerated:
 
 
     def r64520_condition(self):
-        return self.state_manager.world_manager.get_eivene_value() == 1
+        return self.state_manager.world_manager.get_eivene() == 1
 
 
     def r4503_condition(self):
-        return self.state_manager.world_manager.get_eivene_value() == 0
+        return self.state_manager.world_manager.get_eivene() == 0
 
 
     def r4506_condition(self):
-        return self.state_manager.world_manager.get_eivene_value() == 1
+        return self.state_manager.world_manager.get_eivene() == 1
 
 
     def r66150_condition(self):
-        return self.state_manager.world_manager.get_eivene_value() == 0
+        return self.state_manager.world_manager.get_eivene() == 0
 
 
     def r4508_condition(self):
@@ -889,7 +889,7 @@ class VaxisLogicGenerated:
 
 
     def r4673_condition(self):
-        return self.state_manager.world_manager.get_pharod_value() < 1
+        return self.state_manager.world_manager.get_pharod() < 1
 
 
     def r4530_condition(self):
@@ -897,15 +897,15 @@ class VaxisLogicGenerated:
 
 
     def r4531_condition(self):
-        return self.state_manager.world_manager.get_dhall_value() > 0
+        return self.state_manager.world_manager.get_dhall() > 0
 
 
     def r4532_condition(self):
-        return self.state_manager.world_manager.get_deionarra_value() > 0
+        return self.state_manager.world_manager.get_deionarra() > 0
 
 
     def r4533_condition(self):
-        return self.state_manager.world_manager.get_soego_value() > 0
+        return self.state_manager.world_manager.get_soego() > 0
 
 
     def r4534_condition(self):

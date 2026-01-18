@@ -17,11 +17,13 @@ label zm506_speak:
 
 label zm506_s0_ctor:
     show dialogue_sprite_zm506_default at dialogue
+    $ dialogue_stack.append('zm506_dispose')
     jump zm506_s0
 
 
 label zm506_s5_ctor:
     show dialogue_sprite_zm506_default at dialogue
+    $ dialogue_stack.append('zm506_dispose')
     jump zm506_s5
 
 

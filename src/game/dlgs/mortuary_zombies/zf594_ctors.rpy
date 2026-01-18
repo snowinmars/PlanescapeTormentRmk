@@ -10,11 +10,13 @@ label zf594_speak:
 
 label zf594_s0_ctor:
     show dialogue_sprite_zf594_default at dialogue
+    $ dialogue_stack.append('zf594_dispose')
     jump zf594_s0
 
 
 label zf594_s3_ctor: # - # IF ~  False()
     show dialogue_sprite_zf594_default at dialogue
+    $ dialogue_stack.append('zf594_dispose')
     jump zf594_s3
 
 

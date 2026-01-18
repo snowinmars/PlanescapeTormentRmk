@@ -12,9 +12,9 @@ class Morte1LogicGeneratedTest(LogicTest):
 
 
     def test_r39793_action(self):
-        self.state_manager.world_manager.set_morte_value(2)
+        self.state_manager.world_manager.set_morte(2)
         self._integer_equals_action(
-            self.state_manager.world_manager.get_morte_value,
+            self.state_manager.world_manager.get_morte,
             1,
             self.logic.r39793_action
         )

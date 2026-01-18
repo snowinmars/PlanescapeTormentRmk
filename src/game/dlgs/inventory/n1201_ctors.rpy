@@ -9,6 +9,7 @@ label n1201_speak:
 
 label n1201_s0_ctor:
     show n1201_img default at center_left_down
+    $ dialogue_stack.append('n1201_dispose')
     jump n1201_s0
 
 

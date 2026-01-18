@@ -10,11 +10,13 @@ label s748_speak:
 
 label s748_s0_ctor:
     show dialogue_sprite_s748_default at dialogue
+    $ dialogue_stack.append('s748_dispose')
     jump s748_s0
 
 
 label s748_s7_ctor: # -
     show dialogue_sprite_s748_default at dialogue
+    $ dialogue_stack.append('s748_dispose')
     jump s748_s7
 
 

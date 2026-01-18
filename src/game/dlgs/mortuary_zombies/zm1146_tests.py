@@ -34,9 +34,9 @@ class Zm1146LogicGeneratedTest(LogicTest):
 
 
     def test_r6524_action(self):
-        self.state_manager.world_manager.set_crispy_value(2)
+        self.state_manager.world_manager.set_crispy(2)
         self._integer_equals_action(
-            self.state_manager.world_manager.get_crispy_value,
+            self.state_manager.world_manager.get_crispy,
             1,
             self.logic.r6524_action
         )
@@ -110,7 +110,7 @@ class Zm1146LogicGeneratedTest(LogicTest):
 
     def test_r9434_condition(self):
         self._integer_equal_condition(
-            lambda x: self.state_manager.world_manager.set_pharod_value(x),
+            lambda x: self.state_manager.world_manager.set_pharod(x),
             0,
             self.logic.r9434_condition
         )
@@ -138,10 +138,10 @@ class Zm1146LogicTest(LogicTest):
         )
 
 
-    def test_get_crispy_value(self):
-        self.assertNotEqual(self.logic.get_crispy_value(), 3)
-        self.state_manager.world_manager.set_crispy_value(3)
-        self.assertEqual(self.logic.get_crispy_value(), 3)
+    def test_get_crispy(self):
+        self.assertNotEqual(self.logic.get_crispy(), 3)
+        self.state_manager.world_manager.set_crispy(3)
+        self.assertEqual(self.logic.get_crispy(), 3)
 
 
 if __name__ == '__main__':

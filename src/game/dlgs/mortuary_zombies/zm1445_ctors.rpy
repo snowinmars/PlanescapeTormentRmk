@@ -10,6 +10,7 @@ label zm1445_speak:
 
 label zm1445_s0_ctor:
     show dialogue_sprite_zm1445_default at dialogue
+    $ dialogue_stack.append('zm1445_dispose')
     jump zm1445_s0
 
 

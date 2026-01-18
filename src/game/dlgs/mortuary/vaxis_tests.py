@@ -34,9 +34,9 @@ class VaxisLogicGeneratedTest(LogicTest):
 
 
     def test_r461_action(self):
-        self.state_manager.world_manager.set_vaxis_value(2)
+        self.state_manager.world_manager.set_vaxis(2)
         self._integer_equals_action(
-            self.state_manager.world_manager.get_vaxis_value,
+            self.state_manager.world_manager.get_vaxis,
             1,
             self.logic.r461_action
         )
@@ -145,9 +145,9 @@ class VaxisLogicGeneratedTest(LogicTest):
 
 
     def test_r480_action(self):
-        self.state_manager.world_manager.set_vaxis_value(2)
+        self.state_manager.world_manager.set_vaxis(2)
         self._integer_equals_action(
-            self.state_manager.world_manager.get_vaxis_value,
+            self.state_manager.world_manager.get_vaxis,
             1,
             self.logic.r480_action
         )
@@ -163,9 +163,9 @@ class VaxisLogicGeneratedTest(LogicTest):
 
 
     def test_r481_action(self):
-        self.state_manager.world_manager.set_vaxis_value(2)
+        self.state_manager.world_manager.set_vaxis(2)
         self._integer_equals_action(
-            self.state_manager.world_manager.get_vaxis_value,
+            self.state_manager.world_manager.get_vaxis,
             1,
             self.logic.r481_action
         )
@@ -181,9 +181,9 @@ class VaxisLogicGeneratedTest(LogicTest):
 
 
     def test_r482_action(self):
-        self.state_manager.world_manager.set_vaxis_value(2)
+        self.state_manager.world_manager.set_vaxis(2)
         self._integer_equals_action(
-            self.state_manager.world_manager.get_vaxis_value,
+            self.state_manager.world_manager.get_vaxis,
             1,
             self.logic.r482_action
         )
@@ -2185,7 +2185,7 @@ class VaxisLogicGeneratedTest(LogicTest):
 
     def test_r64520_condition(self):
         self._integer_equal_condition(
-            lambda x: self.state_manager.world_manager.set_eivene_value(x),
+            lambda x: self.state_manager.world_manager.set_eivene(x),
             1,
             self.logic.r64520_condition
         )
@@ -2193,7 +2193,7 @@ class VaxisLogicGeneratedTest(LogicTest):
 
     def test_r4503_condition(self):
         self._integer_equal_condition(
-            lambda x: self.state_manager.world_manager.set_eivene_value(x),
+            lambda x: self.state_manager.world_manager.set_eivene(x),
             0,
             self.logic.r4503_condition
         )
@@ -2201,7 +2201,7 @@ class VaxisLogicGeneratedTest(LogicTest):
 
     def test_r4506_condition(self):
         self._integer_equal_condition(
-            lambda x: self.state_manager.world_manager.set_eivene_value(x),
+            lambda x: self.state_manager.world_manager.set_eivene(x),
             1,
             self.logic.r4506_condition
         )
@@ -2209,7 +2209,7 @@ class VaxisLogicGeneratedTest(LogicTest):
 
     def test_r66150_condition(self):
         self._integer_equal_condition(
-            lambda x: self.state_manager.world_manager.set_eivene_value(x),
+            lambda x: self.state_manager.world_manager.set_eivene(x),
             0,
             self.logic.r66150_condition
         )
@@ -2333,7 +2333,7 @@ class VaxisLogicGeneratedTest(LogicTest):
 
     def test_r4673_condition(self):
         self._integer_lt_condition(
-            lambda x: self.state_manager.world_manager.set_pharod_value(x),
+            lambda x: self.state_manager.world_manager.set_pharod(x),
             1,
             self.logic.r4673_condition
         )
@@ -2348,7 +2348,7 @@ class VaxisLogicGeneratedTest(LogicTest):
 
     def test_r4531_condition(self):
         self._integer_gt_condition(
-            lambda x: self.state_manager.world_manager.set_dhall_value(x),
+            lambda x: self.state_manager.world_manager.set_dhall(x),
             0,
             self.logic.r4531_condition
         )
@@ -2356,7 +2356,7 @@ class VaxisLogicGeneratedTest(LogicTest):
 
     def test_r4532_condition(self):
         self._integer_gt_condition(
-            lambda x: self.state_manager.world_manager.set_deionarra_value(x),
+            lambda x: self.state_manager.world_manager.set_deionarra(x),
             0,
             self.logic.r4532_condition
         )
@@ -2364,7 +2364,7 @@ class VaxisLogicGeneratedTest(LogicTest):
 
     def test_r4533_condition(self):
         self._integer_gt_condition(
-            lambda x: self.state_manager.world_manager.set_soego_value(x),
+            lambda x: self.state_manager.world_manager.set_soego(x),
             0,
             self.logic.r4533_condition
         )

@@ -1273,7 +1273,7 @@ class AreaLogic:
 
     def r17833_action(self):
         self.state_manager.world_manager.set_has_intro_key(True)
-        self.state_manager.world_manager.set_morte_value(1)
+        self.state_manager.world_manager.set_morte(1)
         self.state_manager.world_manager.set_read_scars(True)
         self.state_manager.world_manager.set_in_party_morte(True)
 '''.strip() + '\n'
@@ -1293,29 +1293,29 @@ class AreaLogicTest(LogicTest):
 
     def test_r17833_action(self):
         self.state_manager.world_manager.set_has_intro_key(False)
-        morte_value_before = 0
-        morte_value_after = 1
-        morte_value_after_once = 1
-        self.state_manager.world_manager.set_morte_value(morte_value_before)
+        morte_before = 0
+        morte_after = 1
+        morte_after_once = 1
+        self.state_manager.world_manager.set_morte(morte_before)
         self.state_manager.world_manager.set_read_scars(False)
         self.state_manager.world_manager.set_in_party_morte(False)
 
         self.assertFalse(self.state_manager.world_manager.get_has_intro_key())
-        self.assertEqual(self.state_manager.world_manager.get_morte_value(), morte_value_before)
+        self.assertEqual(self.state_manager.world_manager.get_morte(), morte_before)
         self.assertFalse(self.state_manager.world_manager.get_read_scars())
         self.assertFalse(self.state_manager.world_manager.get_in_party_morte())
 
         self.logic.r17833_action()
 
         self.assertTrue(self.state_manager.world_manager.get_has_intro_key())
-        self.assertEqual(self.state_manager.world_manager.get_morte_value(), morte_value_after)
+        self.assertEqual(self.state_manager.world_manager.get_morte(), morte_after)
         self.assertTrue(self.state_manager.world_manager.get_read_scars())
         self.assertTrue(self.state_manager.world_manager.get_in_party_morte())
 
         self.logic.r17833_action()
 
         self.assertTrue(self.state_manager.world_manager.get_has_intro_key())
-        self.assertEqual(self.state_manager.world_manager.get_morte_value(), morte_value_after_once)
+        self.assertEqual(self.state_manager.world_manager.get_morte(), morte_after_once)
         self.assertTrue(self.state_manager.world_manager.get_read_scars())
         self.assertTrue(self.state_manager.world_manager.get_in_party_morte())
 
@@ -1503,15 +1503,15 @@ class AreaLogic:
 
 
     def r707_action(self):
-        self.state_manager.world_manager.set_deionarra_value(1)
+        self.state_manager.world_manager.set_deionarra(1)
 
 
     def r708_action(self):
-        self.state_manager.world_manager.set_deionarra_value(1)
+        self.state_manager.world_manager.set_deionarra(1)
 
 
     def r709_action(self):
-        self.state_manager.world_manager.set_deionarra_value(1)
+        self.state_manager.world_manager.set_deionarra(1)
 
 
     def r708_condition(self):
@@ -1537,27 +1537,27 @@ class AreaLogicTest(LogicTest):
 
 
     def test_r707_action(self):
-        self.state_manager.world_manager.set_deionarra_value(2)
+        self.state_manager.world_manager.set_deionarra(2)
         self._integer_equals_action(
-            self.state_manager.world_manager.get_deionarra_value,
+            self.state_manager.world_manager.get_deionarra,
             1,
             self.logic.r707_action
         )
 
 
     def test_r708_action(self):
-        self.state_manager.world_manager.set_deionarra_value(2)
+        self.state_manager.world_manager.set_deionarra(2)
         self._integer_equals_action(
-            self.state_manager.world_manager.get_deionarra_value,
+            self.state_manager.world_manager.get_deionarra,
             1,
             self.logic.r708_action
         )
 
 
     def test_r709_action(self):
-        self.state_manager.world_manager.set_deionarra_value(2)
+        self.state_manager.world_manager.set_deionarra(2)
         self._integer_equals_action(
-            self.state_manager.world_manager.get_deionarra_value,
+            self.state_manager.world_manager.get_deionarra,
             1,
             self.logic.r709_action
         )
@@ -1828,12 +1828,12 @@ class AreaLogic:
 
 
     def r6081_action(self):
-        self.state_manager.world_manager.set_deionarra_value(2)
+        self.state_manager.world_manager.set_deionarra(2)
         #$% SetGlobal("Deio_Wake_Up","GLOBAL",0) %$#
 
 
     def r6082_action(self):
-        self.state_manager.world_manager.set_deionarra_value(2)
+        self.state_manager.world_manager.set_deionarra(2)
         #$% SetGlobal("Deio_Wake_Up","GLOBAL",0) %$#
 
 
@@ -1870,18 +1870,18 @@ class AreaLogicTest(LogicTest):
 
 
     def test_r6081_action(self):
-        self.state_manager.world_manager.set_deionarra_value(3)
+        self.state_manager.world_manager.set_deionarra(3)
         self._integer_equals_action(
-            self.state_manager.world_manager.get_deionarra_value,
+            self.state_manager.world_manager.get_deionarra,
             2,
             self.logic.r6081_action
         )
 
 
     def test_r6082_action(self):
-        self.state_manager.world_manager.set_deionarra_value(3)
+        self.state_manager.world_manager.set_deionarra(3)
         self._integer_equals_action(
-            self.state_manager.world_manager.get_deionarra_value,
+            self.state_manager.world_manager.get_deionarra,
             2,
             self.logic.r6082_action
         )

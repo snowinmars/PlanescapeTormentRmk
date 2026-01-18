@@ -18,10 +18,6 @@ class QuestsStoreTests(unittest.TestCase):
     def test_reserialize_empty_json(self):
         dump = self.store.toJson()
         expected = '{"quests": {}, "quest_state_id_index": {}}'
-        print()
-        print('test_reserialize_empty_json')
-        print(dump)
-        print()
         self.assertEqual(dump, expected)
 
         store = QuestsStore.fromJson(dump)
@@ -33,10 +29,6 @@ class QuestsStoreTests(unittest.TestCase):
 
         dump = self.store.toJson()
         expected = '{"quests": {"A": {"quest_id": "A", "quest_state_ids": ["a1", "a2"], "active_state_id": "a1", "started": false, "finished": false}}, "quest_state_id_index": {"a1": "A", "a2": "A"}}'
-        print()
-        print('test_reserialize_filled_json')
-        print(dump)
-        print()
         self.assertEqual(dump, expected)
 
         store = QuestsStore.fromJson(dump)

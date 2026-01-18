@@ -44,7 +44,6 @@ def build_quests_settings(manager):
         .register('nestor_dead_kaputz', False) \
         .register('rwill_dead_kaputz', False) \
         .register('thesik_dead_kaputz', False) \
-        .register('aelwyn', 0) \
         .register('aelwynn', 0) \
         .register('alpha', 0) \
         .register('beta', 0) \
@@ -77,7 +76,6 @@ def build_quests_settings(manager):
         .register('dustman_pickpocket', 0) \
         .register('e_book', 0) \
         .register('ecco_speak', 0) \
-        .register('eivene', 0) \
         .register('emoric_pharod', 0) \
         .register('evidence_papers', 0) \
         .register('f_ass', 0) \
@@ -123,8 +121,6 @@ def build_quests_settings(manager):
         .register('outland_portal', 0) \
         .register('p_journal', 0) \
         .register('pillow_quest', 0) \
-        .register('pharod', 0) \
-        .register('pharod_quest', 0) \
         .register('pk_quest', 0) \
         .register('plans_quest', 0) \
         .register('porphiron_quest', 0) \
@@ -132,7 +128,6 @@ def build_quests_settings(manager):
         .register('qui_sai_quest', 0) \
         .register('quint_item', 0) \
         .register('rat_quest', 0) \
-        .register('ravel', 0) \
         .register('ravel_trias', 0) \
         .register('receipt', 0) \
         .register('reekwind', 0) \

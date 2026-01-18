@@ -10,6 +10,7 @@ label giantsk_speak:
 
 label giantsk_s0_ctor:
     show dialogue_sprite_giantsk_default at dialogue
+    $ dialogue_stack.append('giantsk_dispose')
     jump giantsk_s0
 
 

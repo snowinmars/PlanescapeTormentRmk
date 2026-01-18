@@ -28,27 +28,27 @@ class DeionarraLogicGeneratedTest(LogicTest):
 
 
     def test_r707_action(self):
-        self.state_manager.world_manager.set_deionarra_value(2)
+        self.state_manager.world_manager.set_deionarra(2)
         self._integer_equals_action(
-            self.state_manager.world_manager.get_deionarra_value,
+            self.state_manager.world_manager.get_deionarra,
             1,
             self.logic.r707_action
         )
 
 
     def test_r708_action(self):
-        self.state_manager.world_manager.set_deionarra_value(2)
+        self.state_manager.world_manager.set_deionarra(2)
         self._integer_equals_action(
-            self.state_manager.world_manager.get_deionarra_value,
+            self.state_manager.world_manager.get_deionarra,
             1,
             self.logic.r708_action
         )
 
 
     def test_r709_action(self):
-        self.state_manager.world_manager.set_deionarra_value(2)
+        self.state_manager.world_manager.set_deionarra(2)
         self._integer_equals_action(
-            self.state_manager.world_manager.get_deionarra_value,
+            self.state_manager.world_manager.get_deionarra,
             1,
             self.logic.r709_action
         )
@@ -81,9 +81,9 @@ class DeionarraLogicGeneratedTest(LogicTest):
 
 
     def test_r700_action(self):
-        self.state_manager.world_manager.set_deionarra_value(3)
+        self.state_manager.world_manager.set_deionarra(3)
         self._integer_equals_action(
-            self.state_manager.world_manager.get_deionarra_value,
+            self.state_manager.world_manager.get_deionarra,
             2,
             self.logic.r700_action
         )
@@ -116,27 +116,27 @@ class DeionarraLogicGeneratedTest(LogicTest):
 
 
     def test_r747_action(self):
-        self.state_manager.world_manager.set_deionarra_value(3)
+        self.state_manager.world_manager.set_deionarra(3)
         self._integer_equals_action(
-            self.state_manager.world_manager.get_deionarra_value,
+            self.state_manager.world_manager.get_deionarra,
             2,
             self.logic.r747_action
         )
 
 
     def test_r1313_action(self):
-        self.state_manager.world_manager.set_deionarra_value(3)
+        self.state_manager.world_manager.set_deionarra(3)
         self._integer_equals_action(
-            self.state_manager.world_manager.get_deionarra_value,
+            self.state_manager.world_manager.get_deionarra,
             2,
             self.logic.r1313_action
         )
 
 
     def test_r13255_action(self):
-        self.state_manager.world_manager.set_deionarra_value(3)
+        self.state_manager.world_manager.set_deionarra(3)
         self._integer_equals_action(
-            self.state_manager.world_manager.get_deionarra_value,
+            self.state_manager.world_manager.get_deionarra,
             2,
             self.logic.r13255_action
         )
@@ -266,27 +266,27 @@ class DeionarraLogicGeneratedTest(LogicTest):
 
 
     def test_r6081_action(self):
-        self.state_manager.world_manager.set_deionarra_value(3)
+        self.state_manager.world_manager.set_deionarra(3)
         self._integer_equals_action(
-            self.state_manager.world_manager.get_deionarra_value,
+            self.state_manager.world_manager.get_deionarra,
             2,
             self.logic.r6081_action
         )
 
 
     def test_r6082_action(self):
-        self.state_manager.world_manager.set_deionarra_value(3)
+        self.state_manager.world_manager.set_deionarra(3)
         self._integer_equals_action(
-            self.state_manager.world_manager.get_deionarra_value,
+            self.state_manager.world_manager.get_deionarra,
             2,
             self.logic.r6082_action
         )
 
 
     def test_r13257_action(self):
-        self.state_manager.world_manager.set_deionarra_value(3)
+        self.state_manager.world_manager.set_deionarra(3)
         self._integer_equals_action(
-            self.state_manager.world_manager.get_deionarra_value,
+            self.state_manager.world_manager.get_deionarra,
             2,
             self.logic.r13257_action
         )
@@ -302,84 +302,84 @@ class DeionarraLogicGeneratedTest(LogicTest):
 
 
     def test_r6129_action(self):
-        deionarra_value_before = 0
-        deionarra_value_after = 1
-        deionarra_value_after_once = 1
-        self.state_manager.world_manager.set_deionarra_value(deionarra_value_before)
+        deionarra_before = 0
+        deionarra_after = 1
+        deionarra_after_once = 1
+        self.state_manager.world_manager.set_deionarra(deionarra_before)
         who_law = 'protagonist_character_name'
         prop_law = 'law'
         delta_law = -1
 
-        self.assertEqual(self.state_manager.world_manager.get_deionarra_value(), deionarra_value_before)
+        self.assertEqual(self.state_manager.world_manager.get_deionarra(), deionarra_before)
         law_before = self.state_manager.characters_manager.get_property(who_law, prop_law)
 
         self.logic.r6129_action()
 
-        self.assertEqual(self.state_manager.world_manager.get_deionarra_value(), deionarra_value_after)
+        self.assertEqual(self.state_manager.world_manager.get_deionarra(), deionarra_after)
         law_after = self.state_manager.characters_manager.get_property(who_law, prop_law)
         self.assertEqual(law_before + delta_law, law_after)
 
         self.logic.r6129_action()
 
-        self.assertEqual(self.state_manager.world_manager.get_deionarra_value(), deionarra_value_after_once)
+        self.assertEqual(self.state_manager.world_manager.get_deionarra(), deionarra_after_once)
         law_after_once = self.state_manager.characters_manager.get_property(who_law, prop_law)
         self.assertEqual(law_after, law_after_once)
 
 
     def test_r6131_action(self):
-        deionarra_value_before = 0
-        deionarra_value_after = 1
-        deionarra_value_after_once = 1
-        self.state_manager.world_manager.set_deionarra_value(deionarra_value_before)
+        deionarra_before = 0
+        deionarra_after = 1
+        deionarra_after_once = 1
+        self.state_manager.world_manager.set_deionarra(deionarra_before)
         who_law = 'protagonist_character_name'
         prop_law = 'law'
         delta_law = -1
 
-        self.assertEqual(self.state_manager.world_manager.get_deionarra_value(), deionarra_value_before)
+        self.assertEqual(self.state_manager.world_manager.get_deionarra(), deionarra_before)
         law_before = self.state_manager.characters_manager.get_property(who_law, prop_law)
 
         self.logic.r6131_action()
 
-        self.assertEqual(self.state_manager.world_manager.get_deionarra_value(), deionarra_value_after)
+        self.assertEqual(self.state_manager.world_manager.get_deionarra(), deionarra_after)
         law_after = self.state_manager.characters_manager.get_property(who_law, prop_law)
         self.assertEqual(law_before + delta_law, law_after)
 
         self.logic.r6131_action()
 
-        self.assertEqual(self.state_manager.world_manager.get_deionarra_value(), deionarra_value_after_once)
+        self.assertEqual(self.state_manager.world_manager.get_deionarra(), deionarra_after_once)
         law_after_once = self.state_manager.characters_manager.get_property(who_law, prop_law)
         self.assertEqual(law_after, law_after_once)
 
 
     def test_r6132_action(self):
-        deionarra_value_before = 0
-        deionarra_value_after = 1
-        deionarra_value_after_once = 1
-        self.state_manager.world_manager.set_deionarra_value(deionarra_value_before)
+        deionarra_before = 0
+        deionarra_after = 1
+        deionarra_after_once = 1
+        self.state_manager.world_manager.set_deionarra(deionarra_before)
         who_law = 'protagonist_character_name'
         prop_law = 'law'
         delta_law = -1
 
-        self.assertEqual(self.state_manager.world_manager.get_deionarra_value(), deionarra_value_before)
+        self.assertEqual(self.state_manager.world_manager.get_deionarra(), deionarra_before)
         law_before = self.state_manager.characters_manager.get_property(who_law, prop_law)
 
         self.logic.r6132_action()
 
-        self.assertEqual(self.state_manager.world_manager.get_deionarra_value(), deionarra_value_after)
+        self.assertEqual(self.state_manager.world_manager.get_deionarra(), deionarra_after)
         law_after = self.state_manager.characters_manager.get_property(who_law, prop_law)
         self.assertEqual(law_before + delta_law, law_after)
 
         self.logic.r6132_action()
 
-        self.assertEqual(self.state_manager.world_manager.get_deionarra_value(), deionarra_value_after_once)
+        self.assertEqual(self.state_manager.world_manager.get_deionarra(), deionarra_after_once)
         law_after_once = self.state_manager.characters_manager.get_property(who_law, prop_law)
         self.assertEqual(law_after, law_after_once)
 
 
     def test_r6133_action(self):
-        self.state_manager.world_manager.set_deionarra_value(2)
+        self.state_manager.world_manager.set_deionarra(2)
         self._integer_equals_action(
-            self.state_manager.world_manager.get_deionarra_value,
+            self.state_manager.world_manager.get_deionarra,
             1,
             self.logic.r6133_action
         )
@@ -446,27 +446,27 @@ class DeionarraLogicGeneratedTest(LogicTest):
 
 
     def test_r6154_action(self):
-        self.state_manager.world_manager.set_deionarra_value(3)
+        self.state_manager.world_manager.set_deionarra(3)
         self._integer_equals_action(
-            self.state_manager.world_manager.get_deionarra_value,
+            self.state_manager.world_manager.get_deionarra,
             2,
             self.logic.r6154_action
         )
 
 
     def test_r6155_action(self):
-        self.state_manager.world_manager.set_deionarra_value(3)
+        self.state_manager.world_manager.set_deionarra(3)
         self._integer_equals_action(
-            self.state_manager.world_manager.get_deionarra_value,
+            self.state_manager.world_manager.get_deionarra,
             2,
             self.logic.r6155_action
         )
 
 
     def test_r13258_action(self):
-        self.state_manager.world_manager.set_deionarra_value(3)
+        self.state_manager.world_manager.set_deionarra(3)
         self._integer_equals_action(
-            self.state_manager.world_manager.get_deionarra_value,
+            self.state_manager.world_manager.get_deionarra,
             2,
             self.logic.r13258_action
         )
@@ -1645,7 +1645,7 @@ class DeionarraLogicGeneratedTest(LogicTest):
 
     def test_r63394_condition(self):
         self._integer_equal_condition(
-            lambda x: self.state_manager.world_manager.set_deionarra_value(x),
+            lambda x: self.state_manager.world_manager.set_deionarra(x),
             0,
             self.logic.r63394_condition
         )
@@ -1653,7 +1653,7 @@ class DeionarraLogicGeneratedTest(LogicTest):
 
     def test_r63395_condition(self):
         self._integer_gt_condition(
-            lambda x: self.state_manager.world_manager.set_deionarra_value(x),
+            lambda x: self.state_manager.world_manager.set_deionarra(x),
             0,
             self.logic.r63395_condition
         )
@@ -1661,7 +1661,7 @@ class DeionarraLogicGeneratedTest(LogicTest):
 
     def test_r63397_condition(self):
         self._integer_equal_condition(
-            lambda x: self.state_manager.world_manager.set_deionarra_value(x),
+            lambda x: self.state_manager.world_manager.set_deionarra(x),
             0,
             self.logic.r63397_condition
         )
@@ -1669,7 +1669,7 @@ class DeionarraLogicGeneratedTest(LogicTest):
 
     def test_r63398_condition(self):
         self._integer_gt_condition(
-            lambda x: self.state_manager.world_manager.set_deionarra_value(x),
+            lambda x: self.state_manager.world_manager.set_deionarra(x),
             0,
             self.logic.r63398_condition
         )
@@ -1707,24 +1707,24 @@ class DeionarraLogicGeneratedTest(LogicTest):
 
     def test_r63408_condition(self):
         self.state_manager.world_manager.set_fortress_party(0)
-        self.state_manager.world_manager.set_deionarra_value(-1)
+        self.state_manager.world_manager.set_deionarra(-1)
 
         self.assertFalse(self.logic.r63408_condition())
 
         self.state_manager.world_manager.set_fortress_party(1)
-        self.state_manager.world_manager.set_deionarra_value(1)
+        self.state_manager.world_manager.set_deionarra(1)
 
         self.assertTrue(self.logic.r63408_condition())
 
 
     def test_r63409_condition(self):
         self.state_manager.world_manager.set_fortress_party(0)
-        self.state_manager.world_manager.set_deionarra_value(1)
+        self.state_manager.world_manager.set_deionarra(1)
 
         self.assertFalse(self.logic.r63409_condition())
 
         self.state_manager.world_manager.set_fortress_party(1)
-        self.state_manager.world_manager.set_deionarra_value(0)
+        self.state_manager.world_manager.set_deionarra(0)
 
         self.assertTrue(self.logic.r63409_condition())
 
@@ -1754,12 +1754,12 @@ class DeionarraLogicGeneratedTest(LogicTest):
 
 
     def test_r63419_condition(self):
-        self.state_manager.world_manager.set_deionarra_value(-1)
+        self.state_manager.world_manager.set_deionarra(-1)
         self.state_manager.world_manager.set_has_wedding_ring(False)
 
         self.assertFalse(self.logic.r63419_condition())
 
-        self.state_manager.world_manager.set_deionarra_value(1)
+        self.state_manager.world_manager.set_deionarra(1)
         self.state_manager.world_manager.set_has_wedding_ring(True)
 
         self.assertTrue(self.logic.r63419_condition())
@@ -1767,7 +1767,7 @@ class DeionarraLogicGeneratedTest(LogicTest):
 
     def test_r63420_condition(self):
         self._integer_equal_condition(
-            lambda x: self.state_manager.world_manager.set_deionarra_value(x),
+            lambda x: self.state_manager.world_manager.set_deionarra(x),
             0,
             self.logic.r63420_condition
         )
@@ -1775,7 +1775,7 @@ class DeionarraLogicGeneratedTest(LogicTest):
 
     def test_r63421_condition(self):
         self._integer_gt_condition(
-            lambda x: self.state_manager.world_manager.set_deionarra_value(x),
+            lambda x: self.state_manager.world_manager.set_deionarra(x),
             0,
             self.logic.r63421_condition
         )
@@ -1783,7 +1783,7 @@ class DeionarraLogicGeneratedTest(LogicTest):
 
     def test_r63423_condition(self):
         self._integer_gt_condition(
-            lambda x: self.state_manager.world_manager.set_deionarra_value(x),
+            lambda x: self.state_manager.world_manager.set_deionarra(x),
             0,
             self.logic.r63423_condition
         )

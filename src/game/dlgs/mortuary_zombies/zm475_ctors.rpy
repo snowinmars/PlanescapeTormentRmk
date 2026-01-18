@@ -10,6 +10,7 @@ label zm475_speak:
 
 label zm475_s0_ctor:
     show dialogue_sprite_zm475_default at dialogue
+    $ dialogue_stack.append('zm475_dispose')
     jump zm475_s0
 
 

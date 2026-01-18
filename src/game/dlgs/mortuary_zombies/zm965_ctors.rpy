@@ -18,11 +18,13 @@ label zm965_speak:
 
 label zm965_s0_ctor:
     show dialogue_sprite_zm965_default at dialogue
+    $ dialogue_stack.append('zm965_dispose')
     jump zm965_s0
 
 
 label zm965_s1_ctor:
     show dialogue_sprite_zm965_default at dialogue
+    $ dialogue_stack.append('zm965_dispose')
     jump zm965_s1
 
 

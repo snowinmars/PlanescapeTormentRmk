@@ -10,11 +10,13 @@ label s996_speak:
 
 label s996_s0_ctor:
     show dialogue_sprite_s996_default at dialogue
+    $ dialogue_stack.append('s996_dispose')
     jump s996_s0
 
 
 label s996_s7_ctor: # - # IF ~  False()
     show dialogue_sprite_s996_default at dialogue
+    $ dialogue_stack.append('s996_dispose')
     jump s996_s7
 
 

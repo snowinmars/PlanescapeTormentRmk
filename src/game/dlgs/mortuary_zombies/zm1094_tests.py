@@ -34,9 +34,9 @@ class Zm1094LogicGeneratedTest(LogicTest):
 
 
     def test_r6568_action(self):
-        self.state_manager.world_manager.set_asonje_value(2)
+        self.state_manager.world_manager.set_asonje(2)
         self._integer_equals_action(
-            self.state_manager.world_manager.get_asonje_value,
+            self.state_manager.world_manager.get_asonje,
             1,
             self.logic.r6568_action
         )
@@ -46,49 +46,49 @@ class Zm1094LogicGeneratedTest(LogicTest):
         who_good = 'protagonist_character_name'
         prop_good = 'good'
         delta_good = -1
-        asonje_value_before = 1
-        asonje_value_after = 3
-        asonje_value_after_once = 3
-        self.state_manager.world_manager.set_asonje_value(asonje_value_before)
+        asonje_before = 1
+        asonje_after = 3
+        asonje_after_once = 3
+        self.state_manager.world_manager.set_asonje(asonje_before)
 
         good_before = self.state_manager.characters_manager.get_property(who_good, prop_good)
-        self.assertEqual(self.state_manager.world_manager.get_asonje_value(), asonje_value_before)
+        self.assertEqual(self.state_manager.world_manager.get_asonje(), asonje_before)
 
         self.logic.r9247_action()
 
         good_after = self.state_manager.characters_manager.get_property(who_good, prop_good)
         self.assertEqual(good_before + delta_good, good_after)
-        self.assertEqual(self.state_manager.world_manager.get_asonje_value(), asonje_value_after)
+        self.assertEqual(self.state_manager.world_manager.get_asonje(), asonje_after)
 
         self.logic.r9247_action()
 
         good_after_once = self.state_manager.characters_manager.get_property(who_good, prop_good)
         self.assertEqual(good_after, good_after_once)
-        self.assertEqual(self.state_manager.world_manager.get_asonje_value(), asonje_value_after_once)
+        self.assertEqual(self.state_manager.world_manager.get_asonje(), asonje_after_once)
 
 
     def test_r9289_action(self):
-        self.state_manager.world_manager.set_asonje_value(3)
+        self.state_manager.world_manager.set_asonje(3)
         self._integer_equals_action(
-            self.state_manager.world_manager.get_asonje_value,
+            self.state_manager.world_manager.get_asonje,
             2,
             self.logic.r9289_action
         )
 
 
     def test_r9290_action(self):
-        self.state_manager.world_manager.set_asonje_value(3)
+        self.state_manager.world_manager.set_asonje(3)
         self._integer_equals_action(
-            self.state_manager.world_manager.get_asonje_value,
+            self.state_manager.world_manager.get_asonje,
             2,
             self.logic.r9290_action
         )
 
 
     def test_r9291_action(self):
-        self.state_manager.world_manager.set_asonje_value(3)
+        self.state_manager.world_manager.set_asonje(3)
         self._integer_equals_action(
-            self.state_manager.world_manager.get_asonje_value,
+            self.state_manager.world_manager.get_asonje,
             2,
             self.logic.r9291_action
         )
@@ -132,7 +132,7 @@ class Zm1094LogicGeneratedTest(LogicTest):
 
     def test_r9256_condition(self):
         self._integer_equal_condition(
-            lambda x: self.state_manager.world_manager.set_pharod_value(x),
+            lambda x: self.state_manager.world_manager.set_pharod(x),
             0,
             self.logic.r9256_condition
         )
@@ -140,7 +140,7 @@ class Zm1094LogicGeneratedTest(LogicTest):
 
     def test_r9276_condition(self):
         self._integer_equal_condition(
-            lambda x: self.state_manager.world_manager.set_pharod_value(x),
+            lambda x: self.state_manager.world_manager.set_pharod(x),
             0,
             self.logic.r9276_condition
         )
@@ -148,7 +148,7 @@ class Zm1094LogicGeneratedTest(LogicTest):
 
     def test_r9282_condition(self):
         self._integer_not_equal_condition(
-            lambda x: self.state_manager.world_manager.set_asonje_value(x),
+            lambda x: self.state_manager.world_manager.set_asonje(x),
             2,
             self.logic.r9282_condition
         )
@@ -156,7 +156,7 @@ class Zm1094LogicGeneratedTest(LogicTest):
 
     def test_r9286_condition(self):
         self._integer_equal_condition(
-            lambda x: self.state_manager.world_manager.set_asonje_value(x),
+            lambda x: self.state_manager.world_manager.set_asonje(x),
             2,
             self.logic.r9286_condition
         )
@@ -164,7 +164,7 @@ class Zm1094LogicGeneratedTest(LogicTest):
 
     def test_r9319_condition(self):
         self._integer_equal_condition(
-            lambda x: self.state_manager.world_manager.set_pharod_value(x),
+            lambda x: self.state_manager.world_manager.set_pharod(x),
             0,
             self.logic.r9319_condition
         )
@@ -172,7 +172,7 @@ class Zm1094LogicGeneratedTest(LogicTest):
 
     def test_r9306_condition(self):
         self._integer_not_equal_condition(
-            lambda x: self.state_manager.world_manager.set_asonje_value(x),
+            lambda x: self.state_manager.world_manager.set_asonje(x),
             2,
             self.logic.r9306_condition
         )
@@ -180,7 +180,7 @@ class Zm1094LogicGeneratedTest(LogicTest):
 
     def test_r9307_condition(self):
         self._integer_equal_condition(
-            lambda x: self.state_manager.world_manager.set_asonje_value(x),
+            lambda x: self.state_manager.world_manager.set_asonje(x),
             2,
             self.logic.r9307_condition
         )
@@ -188,7 +188,7 @@ class Zm1094LogicGeneratedTest(LogicTest):
 
     def test_r9312_condition(self):
         self._integer_equal_condition(
-            lambda x: self.state_manager.world_manager.set_pharod_value(x),
+            lambda x: self.state_manager.world_manager.set_pharod(x),
             0,
             self.logic.r9312_condition
         )

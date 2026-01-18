@@ -10,6 +10,7 @@ label zm825_speak:
 
 label zm825_s0_ctor:
     show dialogue_sprite_zm825_default at dialogue
+    $ dialogue_stack.append('zm825_dispose')
     jump zm825_s0
 
 

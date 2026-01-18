@@ -24,15 +24,15 @@ class DeionarraLogicGenerated:
 
 
     def r707_action(self):
-        self.state_manager.world_manager.set_deionarra_value(1)
+        self.state_manager.world_manager.set_deionarra(1)
 
 
     def r708_action(self):
-        self.state_manager.world_manager.set_deionarra_value(1)
+        self.state_manager.world_manager.set_deionarra(1)
 
 
     def r709_action(self):
-        self.state_manager.world_manager.set_deionarra_value(1)
+        self.state_manager.world_manager.set_deionarra(1)
 
 
     def r712_action(self):
@@ -41,7 +41,7 @@ class DeionarraLogicGenerated:
 
 
     def r700_action(self):
-        self.state_manager.world_manager.set_deionarra_value(2)
+        self.state_manager.world_manager.set_deionarra(2)
 
 
     def r702_action(self):
@@ -50,15 +50,15 @@ class DeionarraLogicGenerated:
 
 
     def r747_action(self):
-        self.state_manager.world_manager.set_deionarra_value(2)
+        self.state_manager.world_manager.set_deionarra(2)
 
 
     def r1313_action(self):
-        self.state_manager.world_manager.set_deionarra_value(2)
+        self.state_manager.world_manager.set_deionarra(2)
 
 
     def r13255_action(self):
-        self.state_manager.world_manager.set_deionarra_value(2)
+        self.state_manager.world_manager.set_deionarra(2)
         #$% SetGlobal("Deio_Wake_Up","GLOBAL",0) %$#
 
 
@@ -102,17 +102,17 @@ class DeionarraLogicGenerated:
 
 
     def r6081_action(self):
-        self.state_manager.world_manager.set_deionarra_value(2)
+        self.state_manager.world_manager.set_deionarra(2)
         #$% SetGlobal("Deio_Wake_Up","GLOBAL",0) %$#
 
 
     def r6082_action(self):
-        self.state_manager.world_manager.set_deionarra_value(2)
+        self.state_manager.world_manager.set_deionarra(2)
         #$% SetGlobal("Deio_Wake_Up","GLOBAL",0) %$#
 
 
     def r13257_action(self):
-        self.state_manager.world_manager.set_deionarra_value(2)
+        self.state_manager.world_manager.set_deionarra(2)
         #$% SetGlobal("Deio_Wake_Up","GLOBAL",0) %$#
 
 
@@ -122,22 +122,22 @@ class DeionarraLogicGenerated:
 
 
     def r6129_action(self):
-        self.state_manager.world_manager.set_deionarra_value(1)
+        self.state_manager.world_manager.set_deionarra(1)
         self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'law', -1, 'globalchaotic_deionarra_4')
 
 
     def r6131_action(self):
-        self.state_manager.world_manager.set_deionarra_value(1)
+        self.state_manager.world_manager.set_deionarra(1)
         self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'law', -1, 'globalchaotic_deionarra_4')
 
 
     def r6132_action(self):
-        self.state_manager.world_manager.set_deionarra_value(1)
+        self.state_manager.world_manager.set_deionarra(1)
         self.state_manager.characters_manager.modify_property_once('protagonist_character_name', 'law', -1, 'globalchaotic_deionarra_4')
 
 
     def r6133_action(self):
-        self.state_manager.world_manager.set_deionarra_value(1)
+        self.state_manager.world_manager.set_deionarra(1)
 
 
     def r6095_action(self):
@@ -162,17 +162,17 @@ class DeionarraLogicGenerated:
 
 
     def r6154_action(self):
-        self.state_manager.world_manager.set_deionarra_value(2)
+        self.state_manager.world_manager.set_deionarra(2)
         #$% SetGlobal("Deio_Wake_Up","GLOBAL",0) %$#
 
 
     def r6155_action(self):
-        self.state_manager.world_manager.set_deionarra_value(2)
+        self.state_manager.world_manager.set_deionarra(2)
         #$% SetGlobal("Deio_Wake_Up","GLOBAL",0) %$#
 
 
     def r13258_action(self):
-        self.state_manager.world_manager.set_deionarra_value(2)
+        self.state_manager.world_manager.set_deionarra(2)
         #$% SetGlobal("Deio_Wake_Up","GLOBAL",0) %$#
 
 
@@ -669,19 +669,19 @@ class DeionarraLogicGenerated:
 
 
     def r63394_condition(self):
-        return self.state_manager.world_manager.get_deionarra_value() == 0
+        return self.state_manager.world_manager.get_deionarra() == 0
 
 
     def r63395_condition(self):
-        return self.state_manager.world_manager.get_deionarra_value() > 0
+        return self.state_manager.world_manager.get_deionarra() > 0
 
 
     def r63397_condition(self):
-        return self.state_manager.world_manager.get_deionarra_value() == 0
+        return self.state_manager.world_manager.get_deionarra() == 0
 
 
     def r63398_condition(self):
-        return self.state_manager.world_manager.get_deionarra_value() > 0
+        return self.state_manager.world_manager.get_deionarra() > 0
 
 
     def r63401_condition(self):
@@ -702,12 +702,12 @@ class DeionarraLogicGenerated:
 
     def r63408_condition(self):
         return self.state_manager.world_manager.get_fortress_party() == 1 and \
-               self.state_manager.world_manager.get_deionarra_value() > 0
+               self.state_manager.world_manager.get_deionarra() > 0
 
 
     def r63409_condition(self):
         return self.state_manager.world_manager.get_fortress_party() == 1 and \
-               self.state_manager.world_manager.get_deionarra_value() == 0
+               self.state_manager.world_manager.get_deionarra() == 0
 
 
     def r63413_condition(self):
@@ -723,20 +723,20 @@ class DeionarraLogicGenerated:
 
 
     def r63419_condition(self):
-        return self.state_manager.world_manager.get_deionarra_value() > 0 and \
+        return self.state_manager.world_manager.get_deionarra() > 0 and \
                self.state_manager.world_manager.get_has_wedding_ring()
 
 
     def r63420_condition(self):
-        return self.state_manager.world_manager.get_deionarra_value() == 0
+        return self.state_manager.world_manager.get_deionarra() == 0
 
 
     def r63421_condition(self):
-        return self.state_manager.world_manager.get_deionarra_value() > 0
+        return self.state_manager.world_manager.get_deionarra() > 0
 
 
     def r63423_condition(self):
-        return self.state_manager.world_manager.get_deionarra_value() > 0
+        return self.state_manager.world_manager.get_deionarra() > 0
 
 
 class DeionarraLogic(DeionarraLogicGenerated):

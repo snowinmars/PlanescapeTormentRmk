@@ -142,32 +142,32 @@ class DustfemLogicGenerated:
 
 
     def r1253_condition(self):
-        return self.state_manager.world_manager.get_dhall_value() > 0 and \
+        return self.state_manager.world_manager.get_dhall() > 0 and \
                self.state_manager.locations_manager.is_visited_internal('AR0202')
 
 
     def r1255_condition(self):
-        return self.state_manager.world_manager.get_dhall_value() > 0 and \
+        return self.state_manager.world_manager.get_dhall() > 0 and \
                not self.state_manager.locations_manager.is_visited_internal('AR0202')
 
 
     def r1258_condition(self):
-        return self.state_manager.world_manager.get_deionarra_value() > 0 and \
+        return self.state_manager.world_manager.get_deionarra() > 0 and \
                self.state_manager.locations_manager.is_visited_internal('AR0201')
 
 
     def r4336_condition(self):
-        return self.state_manager.world_manager.get_deionarra_value() > 0 and \
+        return self.state_manager.world_manager.get_deionarra() > 0 and \
                not self.state_manager.locations_manager.is_visited_internal('AR0201')
 
 
     def r33224_condition(self):
-        return self.state_manager.world_manager.get_soego_value() > 0 and \
+        return self.state_manager.world_manager.get_soego() > 0 and \
                self.state_manager.locations_manager.is_visited_internal('AR0201')
 
 
     def r33226_condition(self):
-        return self.state_manager.world_manager.get_soego_value() > 0 and \
+        return self.state_manager.world_manager.get_soego() > 0 and \
                not self.state_manager.locations_manager.is_visited_internal('AR0201')
 
 
@@ -182,7 +182,7 @@ class DustfemLogicGenerated:
 
 
     def r1272_condition(self):
-        return self.state_manager.world_manager.get_deionarra_value() > 0
+        return self.state_manager.world_manager.get_deionarra() > 0
 
 
     def r1273_condition(self):

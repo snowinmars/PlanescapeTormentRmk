@@ -10,11 +10,13 @@ label s1221_speak:
 
 label s1221_s0_ctor:
     show dialogue_sprite_s1221_default at dialogue
+    $ dialogue_stack.append('s1221_dispose')
     jump s1221_s0
 
 
 label s1221_s7_ctor: # - # IF ~  False()
     show dialogue_sprite_s1221_default at dialogue
+    $ dialogue_stack.append('s1221_dispose')
     jump s1221_s7
 
 

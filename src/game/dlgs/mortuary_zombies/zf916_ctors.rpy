@@ -10,11 +10,13 @@ label zf916_speak:
 
 label zf916_s0_ctor:
     show dialogue_sprite_zf916_default at dialogue
+    $ dialogue_stack.append('zf916_dispose')
     jump zf916_s0
 
 
 label zf916_s3_ctor: # - # IF ~  False()
     show dialogue_sprite_zf916_default at dialogue
+    $ dialogue_stack.append('zf916_dispose')
     jump zf916_s3
 
 

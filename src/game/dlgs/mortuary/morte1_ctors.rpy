@@ -6,12 +6,12 @@ init 10 python:
 label morte1_speak:
     # IF WEIGHT #0 ~  !InParty("Morte") GlobalGT("Morte","GLOBAL",0)
     if  not gsm.world_manager.get_in_party_morte() and \
-        gsm.world_manager.get_morte_value() > 0:
+        gsm.world_manager.get_morte() > 0:
         jump morte1_s26_ctor
 
     # IF WEIGHT #1 /* Triggers after states #: 26 even though they appear after this state */ ~  !InParty("Morte") Global("Morte","GLOBAL",0)
     if  not gsm.world_manager.get_in_party_morte() and \
-        gsm.world_manager.get_morte_value() == 0:
+        gsm.world_manager.get_morte() == 0:
         jump morte1_s0_ctor
 
     # IF WEIGHT #4 /* Triggers after states #: 26 even though they appear after this state */ ~  Global("Mortuary_Walkthrough","GLOBAL",0) !PartyHasItem("KeyPr") Global("ZM782_Dead_KAPUTZ","GLOBAL",1)
@@ -32,21 +32,25 @@ label morte1_s0_ctor:
     $ gsm.world_manager.set_in_party_morte(True)
     # show bg mortuary_f2_morte1_s0
     show dialogue_sprite_morte_default at dialogue
+    $ dialogue_stack.append('morte1_dispose')
     jump morte1_s0
 
 
 label morte1_s24_ctor:
     show dialogue_sprite_morte default at dialogue
+    $ dialogue_stack.append('morte1_dispose')
     jump morte1_s24
 
 
 label morte1_s26_ctor:
     show dialogue_sprite_morte default at dialogue
+    $ dialogue_stack.append('morte1_dispose')
     jump morte1_s26
 
 
 label morte1_s30_ctor:
     show dialogue_sprite_morte default at dialogue
+    $ dialogue_stack.append('morte1_dispose')
     jump morte1_s30
 
 

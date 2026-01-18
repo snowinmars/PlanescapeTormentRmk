@@ -10,6 +10,7 @@ label zm199_speak:
 
 label zm199_s0_ctor:
     show dialogue_sprite_zm199_default at dialogue
+    $ dialogue_stack.append('zm199_dispose')
     jump zm199_s0
 
 

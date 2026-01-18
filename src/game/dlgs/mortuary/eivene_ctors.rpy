@@ -5,11 +5,11 @@ init 10 python:
 
 label eivene_speak:
     # IF ~  Global("EiVene","GLOBAL",0)
-    if gsm.world_manager.get_eivene_value() == 0:
+    if gsm.world_manager.get_eivene() == 0:
         jump eivene_s0_ctor
 
     # IF ~  Global("EiVene","GLOBAL",1)
-    if gsm.world_manager.get_eivene_value() == 1:
+    if gsm.world_manager.get_eivene() == 1:
         jump eivene_s15_ctor
 
     jump eivene_s15_ctor # TODO [snow]: should not be possible
@@ -17,16 +17,19 @@ label eivene_speak:
 
 label eivene_s0_ctor:
     show dialogue_sprite_eivene_default at dialogue
+    $ dialogue_stack.append('eivene_dispose')
     jump eivene_s0
 
 
 label eivene_s15_ctor:
     show dialogue_sprite_eivene_default at dialogue
+    $ dialogue_stack.append('eivene_dispose')
     jump eivene_s15
 
 
 label eivene_s25_ctor: # -
     show dialogue_sprite_eivene_default at dialogue
+    $ dialogue_stack.append('eivene_dispose')
     jump eivene_s25
 
 

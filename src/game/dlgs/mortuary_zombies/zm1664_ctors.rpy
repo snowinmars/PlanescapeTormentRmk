@@ -10,6 +10,7 @@ label zm1664_speak:
 
 label zm1664_s0_ctor:
     show dialogue_sprite_zm1664_default at dialogue
+    $ dialogue_stack.append('zm1664_dispose')
     jump zm1664_s0
 
 

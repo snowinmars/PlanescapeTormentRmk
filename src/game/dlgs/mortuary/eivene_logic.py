@@ -9,7 +9,7 @@ class EiveneLogicGenerated:
 
 
     def r3422_action(self):
-        self.state_manager.world_manager.set_eivene_value(1)
+        self.state_manager.world_manager.set_eivene(1)
 
 
     def j37701_s5_r3424_action(self):

@@ -5,30 +5,30 @@ init 10 python:
 
 label deionarra_speak:
     # IF WEIGHT #0 ~  Global("Deionarra","GLOBAL",0) !Global("Current_Area","GLOBAL",1203) !Global("Current_Area","GLOBAL",1200)
-    if  gsm.world_manager.get_deionarra_value() == 0 and \
+    if  gsm.world_manager.get_deionarra() == 0 and \
         gsm.locations_manager.get_current_internal() != 'AR1203' and \
         gsm.locations_manager.get_current_internal() != 'AR1200':
         jump deionarra_s1_ctor
 
     # IF WEIGHT #1 ~  Global("Deionarra","GLOBAL",2) !Global("Current_Area","GLOBAL",1203) !Global("Current_Area","GLOBAL",1200)
-    if  gsm.world_manager.get_deionarra_value() == 2 and \
+    if  gsm.world_manager.get_deionarra() == 2 and \
         gsm.locations_manager.get_current_internal() != 'AR1203' and \
         gsm.locations_manager.get_current_internal() != 'AR1200':
         jump deionarra_s4_ctor
 
     # IF WEIGHT #2 ~  Global("Deionarra","GLOBAL",1) !Global("Current_Area","GLOBAL",1203) !Global("Current_Area","GLOBAL",1200)
-    if  gsm.world_manager.get_deionarra_value() == 1 and \
+    if  gsm.world_manager.get_deionarra() == 1 and \
         gsm.locations_manager.get_current_internal() != 'AR1203' and \
         gsm.locations_manager.get_current_internal() != 'AR1200':
         jump deionarra_s5_ctor
 
     # IF WEIGHT #3 ~  Global("Deionarra","GLOBAL",0) Global("Current_Area","GLOBAL",1203)
-    if  gsm.world_manager.get_deionarra_value() == 0 and \
+    if  gsm.world_manager.get_deionarra() == 0 and \
         gsm.locations_manager.get_current_internal() == 'AR1203':
         jump deionarra_s49_ctor
 
     # IF WEIGHT #4 ~  GlobalGT("Deionarra","GLOBAL",0) Global("Current_Area","GLOBAL",1203)
-    if  gsm.world_manager.get_deionarra_value() > 0 and \
+    if  gsm.world_manager.get_deionarra() > 0 and \
         gsm.locations_manager.get_current_internal() == 'AR1203':
         jump deionarra_s50_ctor
 
@@ -38,13 +38,13 @@ label deionarra_speak:
         jump deionarra_s62_ctor
 
     # IF WEIGHT #6 /* Triggers after states #: 62 even though they appear after this state */ ~  Global("Deionarra","GLOBAL",0) Global("Current_Area","GLOBAL",1200) Global("1200_Cut_Scene_2","GLOBAL",0)
-    if  gsm.world_manager.get_deionarra_value() == 0 and \
+    if  gsm.world_manager.get_deionarra() == 0 and \
         gsm.locations_manager.get_current_internal() == 'AR1200' and \
         not gsm.world_manager.get_1200_cut_scene_2():
         jump deionarra_s60_ctor
 
     # IF WEIGHT #7 /* Triggers after states #: 62 even though they appear after this state */ ~  GlobalGT("Deionarra","GLOBAL",0) Global("Current_Area","GLOBAL",1200) Global("1200_Cut_Scene_2","GLOBAL",0)
-    if  gsm.world_manager.get_deionarra_value() > 0 and \
+    if  gsm.world_manager.get_deionarra() > 0 and \
         gsm.locations_manager.get_current_internal() == 'AR1200' and \
         not gsm.world_manager.get_1200_cut_scene_2():
         jump deionarra_s61_ctor

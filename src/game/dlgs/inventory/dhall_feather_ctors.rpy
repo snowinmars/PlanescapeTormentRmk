@@ -9,6 +9,7 @@ label dhall_feather_speak:
 
 label dhall_feather_s0_ctor:
     show dhall_feather_img default at center_left_down
+    $ dialogue_stack.append('dhall_feather_dispose')
     jump dhall_feather_s0
 
 
