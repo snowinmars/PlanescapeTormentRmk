@@ -57,7 +57,7 @@ class JournalManager:
             }
         )
 
-        for callback in self._on_update_journal:
+        for callback in self._on_update_journal: # TODO [snow]: extract to state_manager or above. The _report_change_callback is enough here
             callback()
 
 

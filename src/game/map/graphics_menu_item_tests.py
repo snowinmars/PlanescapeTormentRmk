@@ -9,6 +9,7 @@ from game.engine.characters.characters_manager import (CharactersManager)
 from game.engine.journal.journal_manager import (JournalManager)
 from game.engine.narrat.narrat_manager import (NarratManager)
 from game.engine.world.world_manager import (WorldManager)
+from game.engine.quests.quests_manager import (QuestsManager)
 
 from game.engine.locations.locations_store import (LocationsStore)
 from game.engine.journal.journal_store import (JournalStore)
@@ -17,12 +18,14 @@ from game.engine.characters.characters_store import (CharactersStore)
 from game.engine.inventory.inventory_store import (InventoryStore)
 from game.engine.narrat.narrat_store import (NarratStore)
 from game.engine.world.world_store import (WorldStore)
+from game.engine.quests.quests_store import (QuestsStore)
 
 from game.engine_data.settings.all_settings import (build_all_settings)
 from game.engine_data.inventory.all_inventory import (build_all_inventory)
 from game.engine_data.locations.all_locations import (build_all_locations)
 from game.engine_data.characters.build_all_characters import (build_all_characters)
 from game.engine_data.journal.build_all_notes import (build_all_notes)
+from game.engine_data.quests.build_all_quests import (build_all_quests)
 
 
 class GraphicsMenuItemTest(unittest.TestCase):
@@ -38,6 +41,7 @@ class GraphicsMenuItemTest(unittest.TestCase):
         self.world_manager = WorldManager(self.log_events_manager)
         self.inventory_manager = InventoryManager(self.log_events_manager, lambda x: self.state_manager.get_setting_value(x))
         self.narrat_manager = NarratManager(self.log_events_manager)
+        self.quest_manager = QuestManager(self.log_events_manager)
         self.state_manager = StateManager(
             self.log_events_manager,
             self.world_manager,
@@ -45,7 +49,8 @@ class GraphicsMenuItemTest(unittest.TestCase):
             self.locations_manager,
             self.journal_manager,
             self.inventory_manager,
-            self.narrat_manager
+            self.narrat_manager,
+            self.quest_manager
         )
 
         self.reset_stores()
@@ -73,11 +78,15 @@ class GraphicsMenuItemTest(unittest.TestCase):
         self.world_store = WorldStore()
         self.world_manager.set_store(self.world_store)
 
+        self.quest_store = QuestStore()
+        self.quest_manager.set_store(self.quest_store)
+
         build_all_locations(self.locations_manager)
         build_all_notes(self.journal_manager)
         build_all_characters(self.characters_manager)
         build_all_inventory(self.inventory_manager)
         build_all_settings(self.state_manager)
+        build_all_quests(self.quest_manager)
 
 
     def _test_graphics_menu_item(self, item):

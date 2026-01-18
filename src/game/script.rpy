@@ -42,6 +42,7 @@ init 2 python:
     from game.engine.inventory.inventory_store import (InventoryStore)
     from game.engine.world.world_store import (WorldStore)
     from game.engine.narrat.narrat_store import (NarratStore)
+    from game.engine.quests.quests_store import (QuestsStore)
 
     # import types, functools
 
@@ -56,6 +57,7 @@ default characters_store = CharactersStore()
 default inventory_store = InventoryStore()
 default world_store = WorldStore()
 default narrat_store = NarratStore()
+default quests_store = QuestsStore()
 
 define config.rollback_enabled = False # as it is narrat now
 
@@ -71,12 +73,14 @@ init 3 python:
     from game.engine.journal.journal_manager import (JournalManager)
     from game.engine.world.world_manager import (WorldManager)
     from game.engine.narrat.narrat_manager import (NarratManager)
+    from game.engine.quests.quests_manager import (QuestsManager)
 
     from game.engine_data.settings.all_settings import (build_all_settings)
     from game.engine_data.inventory.all_inventory import (build_all_inventory)
     from game.engine_data.locations.all_locations import (build_all_locations)
     from game.engine_data.characters.build_all_characters import (build_all_characters)
     from game.engine_data.journal.build_all_notes import (build_all_notes)
+    from game.engine_data.quests.build_all_quests import (build_all_quests)
 
 
     runtime.global_log_events_manager = LogEventsManager(runtime.logger)
@@ -86,6 +90,7 @@ init 3 python:
     runtime.global_world_manager = WorldManager(runtime.global_log_events_manager)
     runtime.global_inventory_manager = InventoryManager(runtime.global_log_events_manager, lambda x: runtime.global_world_manager.get_setting_value(x))
     runtime.global_narrat_manager = NarratManager(runtime.global_log_events_manager)
+    runtime.global_quests_manager = QuestsManager(runtime.global_log_events_manager)
     runtime.global_state_manager = StateManager(
         runtime.global_log_events_manager,
         runtime.global_world_manager,
@@ -93,7 +98,8 @@ init 3 python:
         runtime.global_locations_manager,
         runtime.global_journal_manager,
         runtime.global_inventory_manager,
-        runtime.global_narrat_manager
+        runtime.global_narrat_manager,
+        runtime.global_quests_manager
     )
 
 
@@ -105,6 +111,7 @@ init 3 python:
         runtime.global_inventory_manager.set_store(inventory_store)
         runtime.global_world_manager.set_store(world_store)
         runtime.global_narrat_manager.set_store(narrat_store)
+        runtime.global_quests_manager.set_store(quests_store)
 
 
     def init_managers():
@@ -139,6 +146,11 @@ init 3 python:
         runtime.global_journal_manager.register_on_update_journal(on_update_journal)
         runtime.logger.info('Done building journal notes, took %s', int(time.time()) - now)
 
+        now = int(time.time())
+        runtime.logger.info('Building quests…')
+        build_all_quests(runtime.global_quests_manager)
+        runtime.logger.info('Done building quests, took %s', int(time.time()) - now)
+
         config.keymap['inventory_screen'] = ['i', 'I', 'ш', 'Ш']
         config.underlay.append(
             renpy.Keymap(
@@ -156,7 +168,13 @@ init 3 python:
         config.keymap['journal_screen'] = ['j', 'J', 'о', 'О']
         config.underlay.append(
             renpy.Keymap(
-                journal_screen = Show("journal_screen", get_notes=runtime.global_journal_manager.build_journal)
+                journal_screen = Show(
+                    "journal_screen",
+                    get_started_quests=runtime.global_quests_manager.build_started_quests,
+                    get_finished_quests=runtime.global_quests_manager.build_finished_quests,
+                    get_notes=runtime.global_journal_manager.build_journal,
+                    # get_beasts=runtime.global_beatiary_manager.build_bestiary,
+                )
             )
         )
 
