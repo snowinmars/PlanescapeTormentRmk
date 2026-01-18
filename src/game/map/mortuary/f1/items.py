@@ -310,7 +310,7 @@ class InMortuaryF1R3Xach(ZombieMenuItem):
     def tooltip(self):
         if self.state_manager.world_manager.get_know_xachariah_name():
             return 'InMortuaryF1R3Xach_tooltip1' # Поговорить с Захарией
-        if self.state_manager.world_manager.get_talked_to_xach_times() > 0:
+        if self.state_manager.world_manager.get_talked_to_zm331_times() > 0:
             return 'InMortuaryF1R3Xach_tooltip2' # Поговорить с трупом «331»
         return 'InMortuaryF1R3Xach_tooltip3' # Поговорить со слепым трупом
     def jump(self):

@@ -201,7 +201,15 @@ screen narrat_history(
                                         xfill True
                                     pass
 
-                                $ is_special = is_br or is_change
+                                $ is_scars = hasattr(entry['who'], 'name') and entry['who'].name == 'scars'
+                                if is_scars:
+                                    text "[entry['what']]":
+                                        size 18
+                                        color entry['who'].who_args['color']
+                                        font 'exocet.ttf'
+                                        xfill True
+
+                                $ is_special = is_br or is_change or is_scars
 
                                 $ is_nameless = not is_special and not hasattr(entry['who'], 'name')
                                 if is_nameless:
@@ -258,16 +266,23 @@ screen narrat_say(
                     $ speaker = current_speaker.name
                 $ speaker = __(speaker)
 
-                $ color = current_speaker.who_args['color']
+                $ is_scars = speaker == 'scars'
+                if is_scars:
+                    text "[current_text]":
+                        size 20
+                        color current_speaker.who_args['color']
+                        font 'exocet.ttf'
+                        xfill True
 
-                $ is_npc = speaker is not None and speaker != ''
+                $ color = current_speaker.who_args['color']
+                $ is_npc = not is_scars and speaker is not None and speaker != ''
                 if is_npc:
                     text "{color=[color]}[speaker]{/color} - [current_text]":
                         size 20
                         color npc_text_color
                         xfill True
 
-                $ is_nr = not is_npc
+                $ is_nr = not is_scars and not is_npc
                 if is_nr:
                     text current_text:
                         size 20
