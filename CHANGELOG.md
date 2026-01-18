@@ -1,5 +1,10 @@
 # Change log
 
+## Version 0.09
+- Fix #1 #2 #5 #7 #8 #9 #10 #13 #14
+- Add images for narrat dialogues
+- Add quests!
+
 ## Version 0.08
 - Map zoom does not reset after game reload
 - Add numpad support
