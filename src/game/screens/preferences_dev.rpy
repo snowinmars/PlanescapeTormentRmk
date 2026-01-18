@@ -170,6 +170,20 @@ screen preferences_dev():
                 xsize 40
                 background "#5036d4"
                 hover_background "#734df5"
+                action SetVariable('preferences_dev_choosed_screen', 'quests_store')
+                text 'QU':
+                    size 20
+                    if preferences_dev_choosed_screen == 'quests_store':
+                        color "#dbc401"
+                    else:
+                        color "#dddddd"
+                    hover_color "#eeeeee"
+                    xalign 0.5
+
+            button:
+                xsize 40
+                background "#5036d4"
+                hover_background "#734df5"
                 action Return()
                 text "X":
                     size 20
@@ -218,6 +232,9 @@ screen preferences_dev():
 
                 if preferences_dev_choosed_screen == 'world_store':
                     use _preferences_dev_stores(runtime.global_state_manager.world_manager._world_store)
+
+                if preferences_dev_choosed_screen == 'quests_store':
+                    use _preferences_dev_stores(runtime.global_state_manager.quests_manager._quests_store)
 
         frame:
             background None
@@ -274,7 +291,7 @@ screen preferences_dev():
 
 
 screen _preferences_dev_stores(store_obj):
-    text '_characters_store':
+    text preferences_dev_choosed_screen:
         size 18
         color "#dbc401"
         xfill True
