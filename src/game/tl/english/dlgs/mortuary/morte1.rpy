@@ -68,9 +68,9 @@ translate english morte1_s9_446ad3e9:
     morte '«Heh! Looks like you come with directions…»{#morte1_s9_1}'
     nr 'Morte clears his throat.{#morte1_s9_2}'
     morte '«Let\'s see… it starts with…»{#morte1_s9_3}'
-    scars '{font=exocet.ttf}«I know you feel like you\'ve been drinking a few kegs of Styx wash, but you need to CENTER yourself».{#morte1_s9_4}{/font}'
-    scars '{font=exocet.ttf}«Among your possessions is a JOURNAL that\'ll shed some light on the dark of the matter».{#morte1_s9_4}{/font}'
-    scars '{font=exocet.ttf}«PHAROD can fill you in on the rest of the chant, if he\'s not in the dead-book already».{#morte1_s9_4}{/font}'
+    scars '«I know you feel like you\'ve been drinking a few kegs of Styx wash, but you need to CENTER yourself».{#morte1_s9_4}'
+    scars '«Among your possessions is a JOURNAL that\'ll shed some light on the dark of the matter».{#morte1_s9_4}'
+    scars '«PHAROD can fill you in on the rest of the chant, if he\'s not in the dead-book already».{#morte1_s9_4}'
 
 # game/dlgs/mortuary/morte1.rpy:139
 translate english morte1_s10_7549d5c3:
@@ -79,9 +79,9 @@ translate english morte1_s10_7549d5c3:
     morte '«Yeah, there\'s a bit more…»{#morte1_s10_1}'
     nr 'Morte pauses.'
     morte '«Let\'s see… it goes on…»{#morte1_s10_3}'
-    scars '{font=exocet.ttf}«Don\'t lose the journal or we\'ll be up the Styx again».{#morte1_s10_4}{/font}'
-    scars '{font=exocet.ttf}«And whatever you do, DO NOT tell anyone WHO you are or WHAT happens to you, or they\'ll put you on a quick pilgrimage to the crematorium».{#morte1_s10_4}{/font}'
-    scars '{font=exocet.ttf}«Do what I tell you: READ the journal, then FIND Pharod».{#morte1_s10_4}{/font}'
+    scars '«Don\'t lose the journal or we\'ll be up the Styx again».{#morte1_s10_4}'
+    scars '«And whatever you do, DO NOT tell anyone WHO you are or WHAT happens to you, or they\'ll put you on a quick pilgrimage to the crematorium».{#morte1_s10_4}'
+    scars '«Do what I tell you: READ the journal, then FIND Pharod».{#morte1_s10_4}'
 
 # game/dlgs/mortuary/morte1.rpy:153
 translate english morte1_s11_8d488b35:
