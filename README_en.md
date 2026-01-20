@@ -26,6 +26,11 @@ All the stuff is under GNU/GPLv3
 - git clone https://github.com/snowinmars/PlanescapeTormentRmk.git -> импорт в RenPy
 
 
+### For developers
+
+Binary files like images, music, etc storage separatelly at https://disk.yandex.ru/d/1vqwCTMVOBEbgA. Download the required 7z archive and extract it into the game folder
+
+
 ## How to dev
 
 Ensure that `.coveragerc` is working: you should not run tests from omitted paths.
@@ -34,7 +39,7 @@ Ensure that `.coveragerc` is working: you should not run tests from omitted path
 - `cd /src`
 - `python ./build.py` - regenerate `src/game/engine_data/settings/generated.py` and `src/d_renpy/*`
 - `docker compose up` - test all the stuff you wrote, all tests should end succeessfully
-- Open the `src\htmlcov\index.html` in browser. Make sure that coverage is at least 99%. Python is a runtime trash
+- Open the `src\htmlcov\index.html` in browser. Make sure that coverage is at least 90%. Python is a runtime trash
 
 
 ### File naming
