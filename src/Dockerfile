@@ -1,4 +1,4 @@
-FROM python:3.10-slim
+FROM python:3.14-slim
 
 ARG PROXY=
 RUN pip install coverage --proxy $PROXY
