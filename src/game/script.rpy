@@ -6,8 +6,8 @@ init 1 python:
     from game.engine.setup_logger import (setup_logger)
 
     enabled_dev = True
-    config.version = "0.09"
-    build.info['sha8'] = "629f75c1"
+    config.version = "0.10"
+    build.info['sha8'] = "899ae389"
 
     if not persistent.language:
         persistent.language = 'english'

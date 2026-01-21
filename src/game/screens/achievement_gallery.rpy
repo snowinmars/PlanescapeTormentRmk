@@ -65,7 +65,7 @@ screen achievement_gallery():
             else:
                 action NullAction()
             background Transform('gui/button.png', fit='cover')
-            hover_background Transform('gui/button_hover.png', fit='cover')
+            hover_background Transform('gui/button.png', fit='cover', matrixcolor=hover_matrix)
 
             text _("achievement_gallery_toggle_selected"): # Переключить эту
                 size 20
@@ -80,7 +80,7 @@ screen achievement_gallery():
             ypos 890
             action Achievement.Reset()
             background Transform('gui/button.png', fit='cover')
-            hover_background Transform('gui/button_hover.png', fit='cover')
+            hover_background Transform('gui/button.png', fit='cover', matrixcolor=hover_matrix)
 
             text _("achievement_gallery_reset_all"): # Сбросить все
                 size 20
@@ -94,7 +94,7 @@ screen achievement_gallery():
             xsize 143
             ysize 143
             background Transform('gui/settings_button_idle.png', fit='cover')
-            hover_background Transform('gui/settings_button_hover.png', fit='cover')
+            hover_background Transform('gui/settings_button_idle.png', fit='cover', matrixcolor=hover_matrix)
             action Return()
             text _("achievement_gallery_back"):
                 size 20

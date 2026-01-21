@@ -1,6 +1,4 @@
 init python:
-    character_creation_hover_matrix = BrightnessMatrix(0.1)
-    character_creation_insensitive_matrix = SaturationMatrix(0.3) * BrightnessMatrix(-0.1)
     min_prop_value = 9
     max_prop_value = 18
     max_props_sum = 75
@@ -94,8 +92,8 @@ screen character_creation():
 
                 button:
                     background Transform('gui/property_minus.png', fit='cover')
-                    hover_background Transform('gui/property_minus.png', fit='cover', matrixcolor=character_creation_hover_matrix)
-                    insensitive_background Transform('gui/property_minus.png', fit='cover', matrixcolor=character_creation_insensitive_matrix)
+                    hover_background Transform('gui/property_minus.png', fit='cover', matrixcolor=hover_matrix)
+                    insensitive_background Transform('gui/property_minus.png', fit='cover', matrixcolor=insensitive_matrix)
                     xpos 23
                     ypos 23
                     xsize 72
@@ -115,8 +113,8 @@ screen character_creation():
 
                 button:
                     background Transform('gui/property_plus.png', fit='cover')
-                    hover_background Transform('gui/property_plus.png', fit='cover', matrixcolor=character_creation_hover_matrix)
-                    insensitive_background Transform('gui/property_plus.png', fit='cover', matrixcolor=character_creation_insensitive_matrix)
+                    hover_background Transform('gui/property_plus.png', fit='cover', matrixcolor=hover_matrix)
+                    insensitive_background Transform('gui/property_plus.png', fit='cover', matrixcolor=insensitive_matrix)
                     xpos 215
                     ypos 20
                     xsize 72
@@ -153,8 +151,8 @@ screen character_creation():
 
                 button:
                     background Transform('gui/property_minus.png', fit='cover')
-                    hover_background Transform('gui/property_minus.png', fit='cover', matrixcolor=character_creation_hover_matrix)
-                    insensitive_background Transform('gui/property_minus.png', fit='cover', matrixcolor=character_creation_insensitive_matrix)
+                    hover_background Transform('gui/property_minus.png', fit='cover', matrixcolor=hover_matrix)
+                    insensitive_background Transform('gui/property_minus.png', fit='cover', matrixcolor=insensitive_matrix)
                     xpos 50
                     ypos 225
                     xsize 72
@@ -177,8 +175,8 @@ screen character_creation():
 
                 button:
                     background Transform('gui/property_plus.png', fit='cover')
-                    hover_background Transform('gui/property_plus.png', fit='cover', matrixcolor=character_creation_hover_matrix)
-                    insensitive_background Transform('gui/property_plus.png', fit='cover', matrixcolor=character_creation_insensitive_matrix)
+                    hover_background Transform('gui/property_plus.png', fit='cover', matrixcolor=hover_matrix)
+                    insensitive_background Transform('gui/property_plus.png', fit='cover', matrixcolor=insensitive_matrix)
                     xpos 145
                     ypos 60
                     xsize 72
@@ -218,8 +216,8 @@ screen character_creation():
 
                 button:
                     background Transform('gui/property_minus.png', fit='cover')
-                    hover_background Transform('gui/property_minus.png', fit='cover', matrixcolor=character_creation_hover_matrix)
-                    insensitive_background Transform('gui/property_minus.png', fit='cover', matrixcolor=character_creation_insensitive_matrix)
+                    hover_background Transform('gui/property_minus.png', fit='cover', matrixcolor=hover_matrix)
+                    insensitive_background Transform('gui/property_minus.png', fit='cover', matrixcolor=insensitive_matrix)
                     xpos 35
                     ypos 55
                     xsize 72
@@ -242,8 +240,8 @@ screen character_creation():
 
                 button:
                     background Transform('gui/property_plus.png', fit='cover')
-                    hover_background Transform('gui/property_plus.png', fit='cover', matrixcolor=character_creation_hover_matrix)
-                    insensitive_background Transform('gui/property_plus.png', fit='cover', matrixcolor=character_creation_insensitive_matrix)
+                    hover_background Transform('gui/property_plus.png', fit='cover', matrixcolor=hover_matrix)
+                    insensitive_background Transform('gui/property_plus.png', fit='cover', matrixcolor=insensitive_matrix)
                     xpos 133
                     ypos 223
                     xsize 72
@@ -280,8 +278,8 @@ screen character_creation():
 
                 button:
                     background Transform('gui/property_minus.png', fit='cover')
-                    hover_background Transform('gui/property_minus.png', fit='cover', matrixcolor=character_creation_hover_matrix)
-                    insensitive_background Transform('gui/property_minus.png', fit='cover', matrixcolor=character_creation_insensitive_matrix)
+                    hover_background Transform('gui/property_minus.png', fit='cover', matrixcolor=hover_matrix)
+                    insensitive_background Transform('gui/property_minus.png', fit='cover', matrixcolor=insensitive_matrix)
                     xpos 15
                     ypos 115
                     xsize 72
@@ -301,8 +299,8 @@ screen character_creation():
 
                 button:
                     background Transform('gui/property_plus.png', fit='cover')
-                    hover_background Transform('gui/property_plus.png', fit='cover', matrixcolor=character_creation_hover_matrix)
-                    insensitive_background Transform('gui/property_plus.png', fit='cover', matrixcolor=character_creation_insensitive_matrix)
+                    hover_background Transform('gui/property_plus.png', fit='cover', matrixcolor=hover_matrix)
+                    insensitive_background Transform('gui/property_plus.png', fit='cover', matrixcolor=insensitive_matrix)
                     xpos 205
                     ypos 115
                     xsize 72
@@ -339,8 +337,8 @@ screen character_creation():
 
                 button:
                     background Transform('gui/property_minus.png', fit='cover')
-                    hover_background Transform('gui/property_minus.png', fit='cover', matrixcolor=character_creation_hover_matrix)
-                    insensitive_background Transform('gui/property_minus.png', fit='cover', matrixcolor=character_creation_insensitive_matrix)
+                    hover_background Transform('gui/property_minus.png', fit='cover', matrixcolor=hover_matrix)
+                    insensitive_background Transform('gui/property_minus.png', fit='cover', matrixcolor=insensitive_matrix)
                     xpos 112
                     ypos 222
                     xsize 72
@@ -363,8 +361,8 @@ screen character_creation():
 
                 button:
                     background Transform('gui/property_plus.png', fit='cover')
-                    hover_background Transform('gui/property_plus.png', fit='cover', matrixcolor=character_creation_hover_matrix)
-                    insensitive_background Transform('gui/property_plus.png', fit='cover', matrixcolor=character_creation_insensitive_matrix)
+                    hover_background Transform('gui/property_plus.png', fit='cover', matrixcolor=hover_matrix)
+                    insensitive_background Transform('gui/property_plus.png', fit='cover', matrixcolor=insensitive_matrix)
                     xpos 210
                     ypos 55
                     xsize 72
@@ -404,8 +402,8 @@ screen character_creation():
 
                 button:
                     background Transform('gui/property_minus.png', fit='cover')
-                    hover_background Transform('gui/property_minus.png', fit='cover', matrixcolor=character_creation_hover_matrix)
-                    insensitive_background Transform('gui/property_minus.png', fit='cover', matrixcolor=character_creation_insensitive_matrix)
+                    hover_background Transform('gui/property_minus.png', fit='cover', matrixcolor=hover_matrix)
+                    insensitive_background Transform('gui/property_minus.png', fit='cover', matrixcolor=insensitive_matrix)
                     xpos 110
                     ypos 48
                     xsize 72
@@ -428,8 +426,8 @@ screen character_creation():
 
                 button:
                     background Transform('gui/property_plus.png', fit='cover')
-                    hover_background Transform('gui/property_plus.png', fit='cover', matrixcolor=character_creation_hover_matrix)
-                    insensitive_background Transform('gui/property_plus.png', fit='cover', matrixcolor=character_creation_insensitive_matrix)
+                    hover_background Transform('gui/property_plus.png', fit='cover', matrixcolor=hover_matrix)
+                    insensitive_background Transform('gui/property_plus.png', fit='cover', matrixcolor=insensitive_matrix)
                     xpos 205
                     ypos 210
                     xsize 72
@@ -525,8 +523,8 @@ screen character_creation():
         xsize 140
         ysize 66
         background Transform('gui/cgback_go.png', fit='cover')
-        hover_background Transform('gui/cgback_go.png', fit='cover', matrixcolor=character_creation_hover_matrix)
-        insensitive_background Transform('gui/cgback_go.png', fit='cover', matrixcolor=character_creation_insensitive_matrix)
+        hover_background Transform('gui/cgback_go.png', fit='cover', matrixcolor=hover_matrix)
+        insensitive_background Transform('gui/cgback_go.png', fit='cover', matrixcolor=insensitive_matrix)
         action Start()
         sensitive (count_all_props_sum(character) == max_props_sum)
         text _("character_screen_go"):
@@ -543,7 +541,7 @@ screen character_creation():
         xsize 140
         ysize 66
         background Transform('gui/cgback_back.png', fit='cover')
-        hover_background Transform('gui/cgback_back.png', fit='cover', matrixcolor=character_creation_hover_matrix)
+        hover_background Transform('gui/cgback_back.png', fit='cover', matrixcolor=hover_matrix)
         action [
             ShowMenu("main_menu"),
             Hide('character_creation_help'),

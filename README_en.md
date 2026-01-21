@@ -5,13 +5,17 @@
 
 Rewriting Planescape:Torment on Renpy. I love this game.
 
-Contact me via telegram `@snowinmars` or email `snowinmars@yandex.ru`, but I almost do not read it.
+Contact me via telegram `@snowinmars` or email `snowinmars@yandex.ru`.
 
 All the stuff is under GNU/GPLv3
 
 
-## Download
+## Play / Download
 
+- run in browser
+  - [itch.io](https://snowinmars.itch.io/planescapetormentrmk)
+  - [gamejolt.com](https://gamejolt.com/games/planescapetormentrmk/1018976)
+  - [newgrounds.com](https://www.newgrounds.com/portal/view/1011470)
 - prebuild - [disk.yandex.ru](https://disk.yandex.ru/d/1vqwCTMVOBEbgA)
   - web - `PlanescapeTormentRmk-*-web.zip`
   - linux - `PlanescapeTormentRmk-*-linux.tar.bz2`
@@ -19,11 +23,8 @@ All the stuff is under GNU/GPLv3
   - mac - `PlanescapeTormentRmk-*-mac.zip`
   - android - `rmk.torment.planescape-*-*-release.apk` (does NOT work)
   - joiPlay - import web build into JoiPlay (have no mobile-optimized UI)
-- run in browser
-  - [itch.io](https://snowinmars.itch.io/planescapetormentrmk)
-  - [gamejolt.com](https://gamejolt.com/games/planescapetormentrmk/1018976)
-  - [newgrounds.com](https://www.newgrounds.com/portal/view/1011470)
-- git clone https://github.com/snowinmars/PlanescapeTormentRmk.git -> импорт в RenPy
+
+- git clone https://github.com/snowinmars/PlanescapeTormentRmk.git -> import into RenPy
 
 
 ### For developers
@@ -80,6 +81,7 @@ Russian:
 | 0.0.7   | 3330 | 40386 | 301336 | 12.1 | 90  | 1452 | 50  | 64  |
 | 0.0.8   | 3344 | 40503 | 302258 | 12.1 | 90  | 1452 | 52  | 62  |
 | 0.0.9   | 3347 | 40519 | 301726 | 12.1 | 90  | 1453 | 51  | 64  |
+| 0.0.10  | 3347 | 40519 | 301726 | 12.1 | 90  | 1453 | 51  | 62  |
 
 English:
 | version | db   | wd    | ch     | aw   | cb  | mn   | im  | sc  |
@@ -92,13 +94,15 @@ English:
 | 0.0.6   | 3429 | 48281 | 311888 | 14.1 | 91  | 1451 | 49  | 60  |
 | 0.0.7   | 3431 | 48298 | 312013 | 14.1 | 91  | 1452 | 50  | 64  |
 | 0.0.8   | 3445 | 48471 | 313078 | 14.1 | 91  | 1452 | 52  | 62  |
-| 0.0.8   | 3447 | 48488 | 312526 | 14.1 | 91  | 1453 | 51  | 64  |
+| 0.0.9   | 3447 | 48488 | 312526 | 14.1 | 91  | 1453 | 51  | 64  |
+| 0.0.10  | 3447 | 48488 | 312526 | 14.1 | 91  | 1453 | 51  | 62  |
 
 ### Build statistic
 
 - mz = windows-build size in kb
 - lz = linux-build size in kb
 - wz = web-build size in kb
+- mc = mac-build size in kb
 
 | version | mz     | lz     | wz     | mc     |
 | ------- | ------ | ------ | ------ | ------ |
@@ -111,3 +115,4 @@ English:
 | 0.0.7   | 197722 | 181624 | 214104 | 206651 |
 | 0.0.8   | 201871 | 185572 | 218261 | 210800 |
 | 0.0.9   | 223434 | 200887 | 239858 | 232364 |
+| 0.0.10  | 194136 | 174128 | 208917 | 203065 |

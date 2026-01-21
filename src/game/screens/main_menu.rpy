@@ -9,8 +9,6 @@
 ##
 ## https://www.renpy.org/doc/html/screen_special.html#main-menu
 
-init python:
-    main_menu_hover_matrix = BrightnessMatrix(0.1)
 
 screen main_menu():
     tag menu
@@ -51,7 +49,7 @@ screen main_menu():
             xsize 315 # 631
             ysize 107 # 215
             background Transform('gui/main_menu_newlife.png', fit='cover')
-            hover_background Transform('gui/main_menu_newlife.png', fit='cover', matrixcolor=main_menu_hover_matrix)
+            hover_background Transform('gui/main_menu_newlife.png', fit='cover', matrixcolor=hover_matrix)
             action ShowMenu('character_creation')
 
             frame:
@@ -68,7 +66,7 @@ screen main_menu():
             xsize 186 # 373
             ysize 297 # 594
             background Transform('gui/main_menu_load.png', fit='cover')
-            hover_background Transform('gui/main_menu_load.png', fit='cover', matrixcolor=main_menu_hover_matrix)
+            hover_background Transform('gui/main_menu_load.png', fit='cover', matrixcolor=hover_matrix)
             action ShowMenu("preferences_load")
 
             frame:
@@ -85,7 +83,7 @@ screen main_menu():
             xsize 186 # 373
             ysize 297 # 594
             background Transform('gui/main_menu_continue.png', fit='cover')
-            hover_background Transform('gui/main_menu_continue.png', fit='cover', matrixcolor=main_menu_hover_matrix)
+            hover_background Transform('gui/main_menu_continue.png', fit='cover', matrixcolor=hover_matrix)
             action Continue()
 
             frame:
@@ -102,7 +100,7 @@ screen main_menu():
             xsize 230 # 460
             ysize 256 # 502
             background Transform('gui/main_menu_settings.png', fit='cover')
-            hover_background Transform('gui/main_menu_settings.png', fit='cover', matrixcolor=main_menu_hover_matrix)
+            hover_background Transform('gui/main_menu_settings.png', fit='cover', matrixcolor=hover_matrix)
             action ShowMenu("preferences")
 
             frame:
@@ -119,7 +117,7 @@ screen main_menu():
             xsize 254 # 508
             ysize 256 # 513
             background Transform('gui/main_menu_exit.png', fit='cover')
-            hover_background Transform('gui/main_menu_exit.png', fit='cover', matrixcolor=main_menu_hover_matrix)
+            hover_background Transform('gui/main_menu_exit.png', fit='cover', matrixcolor=hover_matrix)
             action Quit(confirm=not main_menu)
 
             frame:

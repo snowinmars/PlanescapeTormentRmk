@@ -297,5 +297,5 @@ screen character_screen(get_character):
             xsize 50
             ysize 50
             background Transform('gui/close.png', fit='cover')
-            hover_background Transform('gui/close_hover.png', fit='cover')
+            hover_background Transform('gui/close.png', fit='cover', matrixcolor=hover_matrix)
             action Hide("character_screen")

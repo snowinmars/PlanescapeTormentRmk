@@ -182,6 +182,7 @@ init python:
 
     ## Классифицируйте файлы как None, чтобы исключить их из дистрибутивов.
 
+    build.classify('**.rpy'                , None)
     build.classify('**.bak'                , None)
     build.classify('**/__pycache__'        , None)
     build.classify('**/_build'             , None)
@@ -194,6 +195,7 @@ init python:
     build.classify('**/docker-compose.yaml', None)
     build.classify('**/Dockerfile'         , None)
     build.classify('**/htmlcov'            , None)
+    build.classify('**/sources'            , None)
     build.classify('**/logs'               , None)
     build.classify('**/saves'              , None)
     build.classify('**/thumbs.db'          , None)
@@ -205,7 +207,10 @@ init python:
 
     ## Чтобы архивировать файлы, классифицируйте их, например, как 'archive'.
     build.classify('game/**.png', 'archive')
+    build.classify('game/**.webp', 'archive')
+    build.classify('game/**.webm', 'archive')
     build.classify('game/**.wav', 'archive')
+    build.classify('game/**.ogg', 'archive')
 
     build.include_update = False
 

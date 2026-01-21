@@ -37,19 +37,19 @@ label morte1_s0_ctor:
 
 
 label morte1_s24_ctor:
-    show dialogue_sprite_morte default at dialogue
+    show dialogue_sprite_morte_default at dialogue
     $ dialogue_stack.append('morte1_dispose')
     jump morte1_s24
 
 
 label morte1_s26_ctor:
-    show dialogue_sprite_morte default at dialogue
+    show dialogue_sprite_morte_default at dialogue
     $ dialogue_stack.append('morte1_dispose')
     jump morte1_s26
 
 
 label morte1_s30_ctor:
-    show dialogue_sprite_morte default at dialogue
+    show dialogue_sprite_morte_default at dialogue
     $ dialogue_stack.append('morte1_dispose')
     jump morte1_s30
 

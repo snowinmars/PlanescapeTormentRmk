@@ -68,7 +68,7 @@ label mortuary_f2_map:
 screen mortuary_f2_map():
     $ state_manager = runtime.global_state_manager
     use location_map(
-        'bg/mortuary/f2/root.png',
+        'bg/mortuary/f2/root.webp',
         [
             InMortuaryF2R1PickScalpel(state_manager, 900, 2280),
             FromMortuaryF2R1ToMortuaryF2R2(state_manager, 633, 2299),

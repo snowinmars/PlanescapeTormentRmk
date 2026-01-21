@@ -47,7 +47,7 @@ label mortuary_f1_map:
 screen mortuary_f1_map():
     $ state_manager = runtime.global_state_manager
     use location_map(
-        'bg/mortuary/f1/root.png',
+        'bg/mortuary/f1/root.webp',
         [
             FromMortuaryF1R1ToMortuaryF2R1(state_manager, 1185, 2015),
             FromMortuaryF1R1ToMortuaryF1R2(state_manager, 585, 1717),
@@ -89,11 +89,11 @@ screen mortuary_f1_map():
             InMortuaryF1RcGiantsk(state_manager, 2200, 1250)
         ],
         [
-            MortuaryF1R1Shadow(state_manager, 2225, 1775),
-            MortuaryF1R2Shadow(state_manager, 2230, 1790),
-            MortuaryF1R3Shadow(state_manager, 2230, 1790),
-            MortuaryF1R4Shadow(state_manager, 2230, 1790),
-            MortuaryF1RcShadow(state_manager, 2230, 1790),
+            MortuaryF1R1Shadow(state_manager, 1200, 2450),
+            MortuaryF1R2Shadow(state_manager, 1100, 900),
+            MortuaryF1R3Shadow(state_manager, 3250, 700),
+            MortuaryF1R4Shadow(state_manager, 3300, 2200),
+            MortuaryF1RcShadow(state_manager, 2350, 1400),
         ],
         audio.mortuary
     )

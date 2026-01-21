@@ -17,7 +17,7 @@ class FromMortuaryF1R1ToMortuaryF2R1(MenuItem):
             return 'FromMortuaryF1R1ToMortuaryF2R1_tooltip1' # Подняться на второй этаж
         return 'FromMortuaryF1R1ToMortuaryF2R1_tooltip2' # Подняться по лестнице
     def texture(self):
-        return 'bg/mortuary/f1/door_f1r1_f2r1_opened.png'
+        return 'bg/mortuary/f1/door_f1r1_f2r1_opened.webp'
     def jump(self):
         return NavigationDirective(
             'map_dispatcher',
@@ -35,7 +35,7 @@ class FromMortuaryF1R1ToMortuaryF1R2(MenuItem):
             return 'FromMortuaryF1R1ToMortuaryF1R2_tooltip1' # Пройти в северо-восточную усыпальню
         return 'FromMortuaryF1R1ToMortuaryF1R2_tooltip2' # Пройти в комнату
     def texture(self):
-        return 'bg/mortuary/f1/door_f1r1_f1r2_opened.png'
+        return 'bg/mortuary/f1/door_f1r1_f1r2_opened.webp'
     def jump(self):
         return NavigationDirective(
             'map_dispatcher',
@@ -53,7 +53,7 @@ class FromMortuaryF1R1ToMortuaryF1R4(MenuItem):
             return 'FromMortuaryF1R1ToMortuaryF1R4_tooltip1' # Пройти в юго-западную усыпальню
         return 'FromMortuaryF1R1ToMortuaryF1R4_tooltip2' # Пройти в комнату
     def texture(self):
-        return 'bg/mortuary/f1/door_f1r4_f1r1_opened.png'
+        return 'bg/mortuary/f1/door_f1r4_f1r1_opened.webp'
     def jump(self):
         return NavigationDirective(
             'map_dispatcher',
@@ -71,7 +71,7 @@ class FromMortuaryF1R1ToMortuaryF1Rc(MenuItem):
             return 'FromMortuaryF1R1ToMortuaryF1Rc_tooltip1' # Пройти в центральную усыпальню
         return 'FromMortuaryF1R1ToMortuaryF1Rc_tooltip2' # Пройти в комнату
     def texture(self):
-        return 'bg/mortuary/f1/door_f1r1_f1rc_opened.png'
+        return 'bg/mortuary/f1/door_f1r1_f1rc_opened.webp'
     def jump(self):
         return NavigationDirective(
             'map_dispatcher',
@@ -88,7 +88,7 @@ class FromMortuaryF1R1ToGameEnd(MenuItem):
     def tooltip(self):
         return 'FromMortuaryF1R1ToGameEnd_tooltip1' # Выйти из Морга
     def texture(self):
-        return 'bg/mortuary/f1/door_f1r1_sigil_opened.png'
+        return 'bg/mortuary/f1/door_f1r1_sigil_opened.webp'
     def jump(self):
         return NavigationDirective(
             'end'
@@ -100,7 +100,7 @@ class MortuaryF1R1Shadow(ShadowItem):
         super().__init__(state_manager, x, y)
         self.location_id = 'mortuary_f1r1'
     def texture(self):
-        return 'bg/mortuary/f1/shadow_f1r1.png'
+        return 'bg/mortuary/f1/shadow_f1r1.webp'
 
 
 class InMortuaryF1R1Soego(MenuItem):
@@ -134,7 +134,7 @@ class FromMortuaryF1R2ToMortuaryF1Rc(MenuItem):
             return 'FromMortuaryF1R2ToMortuaryF1Rc_tooltip1' # Пройти в центральную усыпальню
         return 'FromMortuaryF1R2ToMortuaryF1Rc_tooltip2' # Пройти в комнату
     def texture(self):
-        return 'bg/mortuary/f1/door_f1r2_f1rc_opened.png'
+        return 'bg/mortuary/f1/door_f1r2_f1rc_opened.webp'
     def jump(self):
         return NavigationDirective(
             'map_dispatcher',
@@ -152,7 +152,7 @@ class FromMortuaryF1R2ToMortuaryF1R3(MenuItem):
             return 'FromMortuaryF1R2ToMortuaryF1R3_tooltip1' # Пройти в северную усыпальню
         return 'FromMortuaryF1R2ToMortuaryF1R3_tooltip2' # Пройти в комнату
     def texture(self):
-        return 'bg/mortuary/f1/door_f1r2_f1r3_opened.png'
+        return 'bg/mortuary/f1/door_f1r2_f1r3_opened.webp'
     def jump(self):
         return NavigationDirective(
             'map_dispatcher',
@@ -170,7 +170,7 @@ class FromMortuaryF1R2ToMortuaryF1R1(MenuItem):
             return 'FromMortuaryF1R2ToMortuaryF1R1_tooltip1' # Пройти в главный зал
         return 'FromMortuaryF1R2ToMortuaryF1R1_tooltip2' # Пройти в комнату
     def texture(self):
-        return 'bg/mortuary/f1/door_f1r1_f1r2_opened.png'
+        return 'bg/mortuary/f1/door_f1r1_f1r2_opened.webp'
     def jump(self):
         return NavigationDirective(
             'map_dispatcher',
@@ -183,7 +183,7 @@ class MortuaryF1R2Shadow(ShadowItem):
         super().__init__(state_manager, x, y)
         self.location_id = 'mortuary_f1r2'
     def texture(self):
-        return 'bg/mortuary/f1/shadow_f1r2.png'
+        return 'bg/mortuary/f1/shadow_f1r2.webp'
 
 
 class InMortuaryF1R2Deionarra(MenuItem):
@@ -217,7 +217,7 @@ class FromMortuaryF1R3ToMortuaryF1R2(MenuItem):
             return 'FromMortuaryF1R3ToMortuaryF1R2_tooltip1' # Пройти в северо-восточную усыпальню
         return 'FromMortuaryF1R3ToMortuaryF1R2_tooltip2' # Пройти в комнату
     def texture(self):
-        return 'bg/mortuary/f1/door_f1r2_f1r3_opened.png'
+        return 'bg/mortuary/f1/door_f1r2_f1r3_opened.webp'
     def jump(self):
         return NavigationDirective(
             'map_dispatcher',
@@ -235,7 +235,7 @@ class FromMortuaryF1R3ToMortuaryF1R4(MenuItem):
             return 'FromMortuaryF1R3ToMortuaryF1R4_tooltip1' # Пройти в юго-западную усыпальню
         return 'FromMortuaryF1R3ToMortuaryF1R4_tooltip2' # Пройти в комнату
     def texture(self):
-        return 'bg/mortuary/f1/door_f1r3_f1r4_opened.png'
+        return 'bg/mortuary/f1/door_f1r3_f1r4_opened.webp'
     def jump(self):
         return NavigationDirective(
             'map_dispatcher',
@@ -253,7 +253,7 @@ class FromMortuaryF1R3ToMortuaryF1Rc(MenuItem):
             return 'FromMortuaryF1R3ToMortuaryF1Rc_tooltip1' # Пройти в центральную усыпальню
         return 'FromMortuaryF1R3ToMortuaryF1Rc_tooltip2' # Пройти в комнату
     def texture(self):
-        return 'bg/mortuary/f1/door_f1r3_f1rc_opened.png'
+        return 'bg/mortuary/f1/door_f1r3_f1rc_opened.webp'
     def jump(self):
         return NavigationDirective(
             'map_dispatcher',
@@ -266,7 +266,7 @@ class MortuaryF1R3Shadow(ShadowItem):
         super().__init__(state_manager, x, y)
         self.location_id = 'mortuary_f1r3'
     def texture(self):
-        return 'bg/mortuary/f1/shadow_f1r3.png'
+        return 'bg/mortuary/f1/shadow_f1r3.webp'
 
 
 class InMortuaryF1R3Zf114(ZombieMenuItem):
@@ -332,7 +332,7 @@ class FromMortuaryF1R4ToMortuaryF1R3(MenuItem):
             return 'FromMortuaryF1R4ToMortuaryF1R3_tooltip1' # Пройти в северную усыпальню
         return 'FromMortuaryF1R4ToMortuaryF1R3_tooltip2' # Пройти в комнату
     def texture(self):
-        return 'bg/mortuary/f1/door_f1r3_f1r4_opened.png'
+        return 'bg/mortuary/f1/door_f1r3_f1r4_opened.webp'
     def jump(self):
         return NavigationDirective(
             'map_dispatcher',
@@ -350,7 +350,7 @@ class FromMortuaryF1R4ToMortuaryF1R1(MenuItem):
             return 'FromMortuaryF1R4ToMortuaryF1R1_tooltip1' # Пройти в главный зал
         return 'FromMortuaryF1R4ToMortuaryF1R1_tooltip2' # Пройти в комнату
     def texture(self):
-        return 'bg/mortuary/f1/door_f1r4_f1r1_opened.png'
+        return 'bg/mortuary/f1/door_f1r4_f1r1_opened.webp'
     def jump(self):
         return NavigationDirective(
             'map_dispatcher',
@@ -368,7 +368,7 @@ class FromMortuaryF1R4ToMortuaryF1Rc(MenuItem):
             return 'FromMortuaryF1R4ToMortuaryF1Rc_tooltip1' # Пройти в центральную усыпальню
         return 'FromMortuaryF1R4ToMortuaryF1Rc_tooltip2' # Пройти в комнату
     def texture(self):
-        return 'bg/mortuary/f1/door_f1r4_f1rc_opened.png'
+        return 'bg/mortuary/f1/door_f1r4_f1rc_opened.webp'
     def jump(self):
         return NavigationDirective(
             'map_dispatcher',
@@ -381,7 +381,7 @@ class MortuaryF1R4Shadow(ShadowItem):
         super().__init__(state_manager, x, y)
         self.location_id = 'mortuary_f1r4'
     def texture(self):
-        return 'bg/mortuary/f1/shadow_f1r4.png'
+        return 'bg/mortuary/f1/shadow_f1r4.webp'
 
 
 class FromMortuaryF1R4ToMortuaryF2R7(MenuItem):
@@ -394,7 +394,7 @@ class FromMortuaryF1R4ToMortuaryF2R7(MenuItem):
             return 'FromMortuaryF1R4ToMortuaryF2R7_tooltip1' # Подняться на второй этаж
         return 'FromMortuaryF1R4ToMortuaryF2R7_tooltip2' # Подняться по лестнице
     def texture(self):
-        return 'bg/mortuary/f1/door_f1r4_f2r7_opened.png'
+        return 'bg/mortuary/f1/door_f1r4_f2r7_opened.webp'
     def jump(self):
         return NavigationDirective(
             'map_dispatcher',
@@ -431,7 +431,7 @@ class FromMortuaryF1RcToMortuaryF1R1(MenuItem):
             return 'FromMortuaryF1RcToMortuaryF1R1_tooltip1' # Пройти в главный зал
         return 'FromMortuaryF1RcToMortuaryF1R1_tooltip2' # Пройти в комнату
     def texture(self):
-        return 'bg/mortuary/f1/door_f1r1_f1rc_opened.png'
+        return 'bg/mortuary/f1/door_f1r1_f1rc_opened.webp'
     def jump(self):
         return NavigationDirective(
             'map_dispatcher',
@@ -449,7 +449,7 @@ class FromMortuaryF1RcToMortuaryF1R2(MenuItem):
             return 'FromMortuaryF1RcToMortuaryF1R2_tooltip1' # Пройти в северо-восточную усыпальню
         return 'FromMortuaryF1RcToMortuaryF1R2_tooltip2' # Пройти в комнату
     def texture(self):
-        return 'bg/mortuary/f1/door_f1r2_f1rc_opened.png'
+        return 'bg/mortuary/f1/door_f1r2_f1rc_opened.webp'
     def jump(self):
         return NavigationDirective(
             'map_dispatcher',
@@ -467,7 +467,7 @@ class FromMortuaryF1RcToMortuaryF1R3(MenuItem):
             return 'FromMortuaryF1RcToMortuaryF1R3_tooltip1' # Пройти в северную усыпальню
         return 'FromMortuaryF1RcToMortuaryF1R3_tooltip2' # Пройти в комнату
     def texture(self):
-        return 'bg/mortuary/f1/door_f1r3_f1rc_opened.png'
+        return 'bg/mortuary/f1/door_f1r3_f1rc_opened.webp'
     def jump(self):
         return NavigationDirective(
             'map_dispatcher',
@@ -485,7 +485,7 @@ class FromMortuaryF1RcToMortuaryF1R4(MenuItem):
             return 'FromMortuaryF1RcToMortuaryF1R4_tooltip1' # Пройти в юго-западную усыпальню
         return 'FromMortuaryF1RcToMortuaryF1R4_tooltip2' # Пройти в комнату
     def texture(self):
-        return 'bg/mortuary/f1/door_f1r4_f1rc_opened.png'
+        return 'bg/mortuary/f1/door_f1r4_f1rc_opened.webp'
     def jump(self):
         return NavigationDirective(
             'map_dispatcher',
@@ -498,7 +498,7 @@ class MortuaryF1RcShadow(ShadowItem):
         super().__init__(state_manager, x, y)
         self.location_id = 'mortuary_f1rc'
     def texture(self):
-        return 'bg/mortuary/f1/shadow_f1rc.png'
+        return 'bg/mortuary/f1/shadow_f1rc.webp'
 
 
 class InMortuaryF1RcGiantsk(MenuItem):

@@ -72,7 +72,7 @@ screen preferences_graphics():
                 ypos 975
                 action Return()
                 background Transform('gui/button.png', fit='cover')
-                hover_background Transform('gui/button_hover.png', fit='cover')
+                hover_background Transform('gui/button.png', fit='cover', matrixcolor=hover_matrix)
 
                 text _("preferences_screen_return"): # Вернуться
                     size 20

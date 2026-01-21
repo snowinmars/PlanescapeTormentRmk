@@ -60,7 +60,7 @@ label mortuary_f3_map:
 screen mortuary_f3_map():
     $ state_manager = runtime.global_state_manager
     use location_map(
-        'bg/mortuary/f3/root.png',
+        'bg/mortuary/f3/root.webp',
         [
             FromMortuaryF3R1ToMortuaryF2R1(state_manager, 751, 1552),
             FromMortuaryF3R1uToMortuaryF3Rc(state_manager, 441, 1193),

@@ -61,14 +61,14 @@ screen location_map(background, static_actions, dynamic_actions, shadows, bg_mus
 
                     imagebutton:
                         idle dynamic_action_button.texture()
-                        # hover Transform(dynamic_action_button.texture(), matrixcolor=BrightnessMatrix(0.2)) at pulse_effect
+                        # hover Transform(dynamic_action_button.texture(), matrixcolor=hover_matrix) at pulse_effect
                         xpos dynamic_action_button.pos()['x']
                         ypos dynamic_action_button.pos()['y']
                         anchor (0.5, 0.5)
 
                     imagebutton:
                         idle 'images/icons/speak_idle.png'
-                        hover Transform('images/icons/speak_hover.png', matrixcolor=BrightnessMatrix(0.2))
+                        hover Transform('images/icons/speak_idle.png', matrixcolor=hover_matrix)
                         xpos dynamic_action_button.pos()['x'] + 40
                         ypos dynamic_action_button.pos()['y'] - 20
                         action ExecuteNavigationDirective(dynamic_action_button.jump())
