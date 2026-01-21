@@ -1,5 +1,9 @@
 # Change log
 
+## Version 0.10
+- Change some png to webp
+- Minor ui/ux/dev fixes
+
 ## Version 0.09
 - Fix #1 #2 #5 #7 #8 #9 #10 #13 #14 #18 #19
 - Add images for narrat dialogues
