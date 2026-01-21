@@ -28,7 +28,7 @@
 
 ## Разработка
 
-См. [README.dev.md](_build/README.dev.md).
+См. [README.dev.md](src/_build/README.dev.md).
 
 
 ### Статистика
