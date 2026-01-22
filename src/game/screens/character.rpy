@@ -1,4 +1,6 @@
-$ never = _('zombie')
+label never_character_screen:
+    $ never = _('zombie')
+
 
 init python:
     from game.engine.runtime import (runtime)
