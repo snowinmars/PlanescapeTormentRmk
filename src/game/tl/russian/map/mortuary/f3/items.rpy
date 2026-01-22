@@ -160,7 +160,7 @@ translate russian strings:
 
     # game/map/mortuary/f3/items.rpy:62
     old 'InMortuaryF3RcS748_tooltip2'
-    new 'Поговорить со скелетом со вставной челюстью'
+    new 'Поговорить со скелетом со вставными зубами'
 
     # game/map/mortuary/f3/items.rpy:63
     old 'InMortuaryF3RcS863_tooltip1'
@@ -216,7 +216,7 @@ translate russian strings:
 
     # game/map/mortuary/f3/items.rpy:76
     old 'InMortuaryF3RcZm1146_tooltip2'
-    new 'Поговорить с ходячим плешивым трупом'
+    new 'Поговорить со сгоревшим трупом'
 
     # game/map/mortuary/f3/items.rpy:77
     old 'InMortuaryF3RcZf1148_tooltip1'

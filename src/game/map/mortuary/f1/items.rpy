@@ -36,9 +36,9 @@ label never_mortuary_f1_items:
     $ never = _('FromMortuaryF1R3ToMortuaryF1Rc_tooltip1') # Пройти в центральную усыпальню
     $ never = _('FromMortuaryF1R3ToMortuaryF1Rc_tooltip2') # Пройти в комнату
     $ never = _('InMortuaryF1R3Zf114_tooltip1') # Поговорить с трупом «114»
-    $ never = _('InMortuaryF1R3Zf114_tooltip2') # Поговорить с ходячим трупом повешенного
+    $ never = _('InMortuaryF1R3Zf114_tooltip2') # Поговорить с ковыляющим трупом
     $ never = _('InMortuaryF1R3Zm1041_tooltip1') # Поговорить с трупом «1041»
-    $ never = _('InMortuaryF1R3Zm1041_tooltip2') # Поговорить с ходячим трупом повешенного
+    $ never = _('InMortuaryF1R3Zm1041_tooltip2') # Поговорить с экзотическим трупом
     $ never = _('InMortuaryF1R3Xach_tooltip1') # Поговорить с Захарией
     $ never = _('InMortuaryF1R3Xach_tooltip2') # Поговорить с трупом «331»
     $ never = _('InMortuaryF1R3Xach_tooltip3') # Поговорить со слепым трупом
@@ -56,7 +56,7 @@ label never_mortuary_f1_items:
     $ never = _('FromMortuaryF1R4ToMortuaryF2R7_tooltip1') # Подняться на второй этаж
     $ never = _('FromMortuaryF1R4ToMortuaryF2R7_tooltip2') # Подняться по лестнице
     $ never = _('InMortuaryF1R4Zm732_tooltip1') # Поговорить с трупом «732»
-    $ never = _('InMortuaryF1R4Zm732_tooltip2') # Поговорить с ходячим трупом повешенного
+    $ never = _('InMortuaryF1R4Zm732_tooltip2') # Поговорить с трупом без глаз
 
 
     ###

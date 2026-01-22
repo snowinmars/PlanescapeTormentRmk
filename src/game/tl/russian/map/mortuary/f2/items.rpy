@@ -44,7 +44,7 @@ translate russian strings:
 
     # game/map/mortuary/f2/items.rpy:18
     old 'InMortuaryF2R1Zm569_tooltip2'
-    new 'Поговорить с ходячим плешивым трупом'
+    new 'Поговорить с давно мёртвым трупом'
 
     # game/map/mortuary/f2/items.rpy:20
     old 'InMortuaryF2R1Zm825_tooltip1'
@@ -52,7 +52,7 @@ translate russian strings:
 
     # game/map/mortuary/f2/items.rpy:21
     old 'InMortuaryF2R1Zm825_tooltip2'
-    new 'Поговорить с ходячим трупом повешенного'
+    new 'Поговорить с трупом повешенного'
 
     # game/map/mortuary/f2/items.rpy:23
     old 'InMortuaryF2R1Zm782_tooltip1'
@@ -60,7 +60,7 @@ translate russian strings:
 
     # game/map/mortuary/f2/items.rpy:24
     old 'InMortuaryF2R1Zm782_tooltip2'
-    new 'Поговорить с ходячим трупом, полным ненависти'
+    new 'Поговорить с трупом, полным ненависти'
 
     # game/map/mortuary/f2/items.rpy:28
     old 'FromMortuaryF2R2ToMortuaryF2R1_tooltip1'
@@ -92,7 +92,7 @@ translate russian strings:
 
     # game/map/mortuary/f2/items.rpy:38
     old 'InMortuaryF2R2Zf594_tooltip2'
-    new 'Поговорить с неуклюжим трупом'
+    new 'Поговорить с бумажным трупом'
 
     # game/map/mortuary/f2/items.rpy:40
     old 'InMortuaryF2R2Zf626_tooltip1'
@@ -144,7 +144,7 @@ translate russian strings:
 
     # game/map/mortuary/f2/items.rpy:59
     old 'InMortuaryF2R3Zm1201_tooltip2'
-    new 'Поговорить с трупом с чернильницей'
+    new 'Поговорить с трупом в чернилах'
 
     # game/map/mortuary/f2/items.rpy:61
     old 'InMortuaryF2R3Zf1096_tooltip1'
@@ -184,7 +184,7 @@ translate russian strings:
 
     # game/map/mortuary/f2/items.rpy:76
     old 'InMortuaryF2R4Zm1664_tooltip2'
-    new 'Поговорить с трупом без челюсти'
+    new 'Поговорить с трупом библиотекаря'
 
     # game/map/mortuary/f2/items.rpy:78
     old 'FromMortuaryF2R5ToMortuaryF2R6_tooltip1'
@@ -216,7 +216,7 @@ translate russian strings:
 
     # game/map/mortuary/f2/items.rpy:88
     old 'InMortuaryF2R5Zm257_tooltip2'
-    new 'Поговорить с трупом без челюсти'
+    new 'Поговорить с косоглазым трупом'
 
     # game/map/mortuary/f2/items.rpy:90
     old 'InMortuaryF2R5Zm506_tooltip1'
@@ -224,7 +224,7 @@ translate russian strings:
 
     # game/map/mortuary/f2/items.rpy:91
     old 'InMortuaryF2R5Zm506_tooltip2'
-    new 'Поговорить с трупом без челюсти'
+    new 'Поговорить с трупом, похожим на карту'
 
     # game/map/mortuary/f2/items.rpy:93
     old 'InMortuaryF2R5Zm985_tooltip1'
@@ -232,7 +232,7 @@ translate russian strings:
 
     # game/map/mortuary/f2/items.rpy:94
     old 'InMortuaryF2R5Zm985_tooltip2'
-    new 'Поговорить с трупом без челюсти'
+    new 'Поговорить с трупом с гниющим коленом'
 
     # game/map/mortuary/f2/items.rpy:98
     old 'FromMortuaryF2R6ToMortuaryF2R7_tooltip1'
@@ -324,5 +324,5 @@ translate russian strings:
 
     # game/map/mortuary/f2/items.rpy:137
     old 'InMortuaryF2R8Zf891_tooltip2'
-    new 'Поговорить с трупом без челюсти'
+    new 'Поговорить с обезображенным трупом'
 

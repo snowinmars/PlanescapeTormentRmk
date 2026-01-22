@@ -15,13 +15,13 @@ label never_mortuary_f2_items:
     $ never = _('InMortuaryF2R1PickScalpel_tooltip1') # Обыскать
 
     $ never = _('InMortuaryF2R1Zm569_tooltip1') # Поговорить с трупом «569»
-    $ never = _('InMortuaryF2R1Zm569_tooltip2') # Поговорить с ходячим плешивым трупом
+    $ never = _('InMortuaryF2R1Zm569_tooltip2') # Поговорить с давно мёртвым трупом
 
     $ never = _('InMortuaryF2R1Zm825_tooltip1') # Поговорить с трупом «825»
-    $ never = _('InMortuaryF2R1Zm825_tooltip2') # Поговорить с ходячим трупом повешенного
+    $ never = _('InMortuaryF2R1Zm825_tooltip2') # Поговорить с трупом повешенного
 
     $ never = _('InMortuaryF2R1Zm782_tooltip1') # Поговорить с трупом «782»
-    $ never = _('InMortuaryF2R1Zm782_tooltip2') # Поговорить с ходячим трупом, полным ненависти
+    $ never = _('InMortuaryF2R1Zm782_tooltip2') # Поговорить с трупом, полным ненависти
 
     ###
 
@@ -35,7 +35,7 @@ label never_mortuary_f2_items:
     $ never = _('InMortuaryF2R2Zm965_tooltip2') # Поговорить с бродящим трупом
 
     $ never = _('InMortuaryF2R2Zf594_tooltip1') # Поговорить с трупом «594»
-    $ never = _('InMortuaryF2R2Zf594_tooltip2') # Поговорить с неуклюжим трупом
+    $ never = _('InMortuaryF2R2Zf594_tooltip2') # Поговорить с бумажным трупом
 
     $ never = _('InMortuaryF2R2Zf626_tooltip1') # Поговорить с трупом «626»
     $ never = _('InMortuaryF2R2Zf626_tooltip2') # Поговорить с разбитым трупом
@@ -56,7 +56,7 @@ label never_mortuary_f2_items:
     $ never = _('InMortuaryF2R3Zm396_tooltip2') # Поговорить с трупом медбрата
 
     $ never = _('InMortuaryF2R3Zm1201_tooltip1') # Поговорить с трупом «1201»
-    $ never = _('InMortuaryF2R3Zm1201_tooltip2') # Поговорить с трупом с чернильницей
+    $ never = _('InMortuaryF2R3Zm1201_tooltip2') # Поговорить с трупом в чернилах
 
     $ never = _('InMortuaryF2R3Zf1096_tooltip1') # Поговорить с трупом «1096»
     $ never = _('InMortuaryF2R3Zf1096_tooltip2') # Поговорить с трупом с косой на шее
@@ -73,7 +73,7 @@ label never_mortuary_f2_items:
     $ never = _('FromMortuaryF2R4ToMortuaryF2R3_tooltip2') # Пройти в комнату
 
     $ never = _('InMortuaryF2R4Zm1664_tooltip1') # Поговорить с трупом «1664»
-    $ never = _('InMortuaryF2R4Zm1664_tooltip2') # Поговорить с трупом без челюсти
+    $ never = _('InMortuaryF2R4Zm1664_tooltip2') # Поговорить с трупом ,библиотекаря
 
     $ never = _('FromMortuaryF2R5ToMortuaryF2R6_tooltip1') # Пройти в восточную препараторскую
     $ never = _('FromMortuaryF2R5ToMortuaryF2R6_tooltip2') # Пройти в комнату
@@ -85,13 +85,13 @@ label never_mortuary_f2_items:
     $ never = _('InMortuaryF2R5Eivene_tooltip2') # Поговорить с хрупкой девушкой
 
     $ never = _('InMortuaryF2R5Zm257_tooltip1') # Поговорить с трупом «257»
-    $ never = _('InMortuaryF2R5Zm257_tooltip2') # Поговорить с трупом без челюсти
+    $ never = _('InMortuaryF2R5Zm257_tooltip2') # Поговорить с косоглазым трупом
 
     $ never = _('InMortuaryF2R5Zm506_tooltip1') # Поговорить с трупом «506»
-    $ never = _('InMortuaryF2R5Zm506_tooltip2') # Поговорить с трупом без челюсти
+    $ never = _('InMortuaryF2R5Zm506_tooltip2') # Поговорить с трупом, похожим на карту
 
     $ never = _('InMortuaryF2R5Zm985_tooltip1') # Поговорить с трупом «985»
-    $ never = _('InMortuaryF2R5Zm985_tooltip2') # Поговорить с трупом без челюсти
+    $ never = _('InMortuaryF2R5Zm985_tooltip2') # Поговорить с трупом с гниющим коленом
 
     ###
 
@@ -134,4 +134,4 @@ label never_mortuary_f2_items:
     $ never = _('FromMortuaryF2R8ToMortuaryF2R7_tooltip2') # Пройти в комнату
 
     $ never = _('InMortuaryF2R8Zf891_tooltip1') # Поговорить с трупом «891»
-    $ never = _('InMortuaryF2R8Zf891_tooltip2') # Поговорить с трупом без челюсти
+    $ never = _('InMortuaryF2R8Zf891_tooltip2') # Поговорить с обезображенным трупом

@@ -108,7 +108,7 @@ translate english strings:
 
     # game/map/mortuary/f1/items.rpy:39
     old "InMortuaryF1R3Zf114_tooltip2"
-    new "Talk to a corpse"
+    new "Talk to a waddling corpse"
 
     # game/map/mortuary/f1/items.rpy:40
     old "InMortuaryF1R3Zm1041_tooltip1"
@@ -116,7 +116,7 @@ translate english strings:
 
     # game/map/mortuary/f1/items.rpy:41
     old "InMortuaryF1R3Zm1041_tooltip2"
-    new "Talk to a corpse"
+    new "Talk to an exotic corpse"
 
     # game/map/mortuary/f1/items.rpy:42
     old "InMortuaryF1R3Xach_tooltip1"
@@ -168,7 +168,7 @@ translate english strings:
 
     # game/map/mortuary/f1/items.rpy:59
     old "InMortuaryF1R4Zm732_tooltip2"
-    new "Talk to a corpse"
+    new "Talk to a corpse without eyes"
 
     # game/map/mortuary/f1/items.rpy:65
     old "FromMortuaryF1RcToMortuaryF1R1_tooltip1"

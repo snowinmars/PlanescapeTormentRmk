@@ -44,7 +44,7 @@ translate english strings:
 
     # game/map/mortuary/f2/items.rpy:18
     old 'InMortuaryF2R1Zm569_tooltip2'
-    new 'Talk to a corpse'
+    new 'Talk to a dead-for-years corpse'
 
     # game/map/mortuary/f2/items.rpy:20
     old 'InMortuaryF2R1Zm825_tooltip1'
@@ -52,7 +52,7 @@ translate english strings:
 
     # game/map/mortuary/f2/items.rpy:21
     old 'InMortuaryF2R1Zm825_tooltip2'
-    new 'Talk to a corpse'
+    new 'Talk to a hanged corpse'
 
     # game/map/mortuary/f2/items.rpy:23
     old 'InMortuaryF2R1Zm782_tooltip1'
@@ -60,7 +60,7 @@ translate english strings:
 
     # game/map/mortuary/f2/items.rpy:24
     old 'InMortuaryF2R1Zm782_tooltip2'
-    new 'Talk to a corpse'
+    new 'Talk to a blankly corpse'
 
     # game/map/mortuary/f2/items.rpy:28
     old 'FromMortuaryF2R2ToMortuaryF2R1_tooltip1'
@@ -84,7 +84,7 @@ translate english strings:
 
     # game/map/mortuary/f2/items.rpy:35
     old 'InMortuaryF2R2Zm965_tooltip2'
-    new 'Talk to a corpse'
+    new 'Talk to a lumbering corpse'
 
     # game/map/mortuary/f2/items.rpy:37
     old 'InMortuaryF2R2Zf594_tooltip1'
@@ -92,7 +92,7 @@ translate english strings:
 
     # game/map/mortuary/f2/items.rpy:38
     old 'InMortuaryF2R2Zf594_tooltip2'
-    new 'Talk to a corpse'
+    new 'Talk to a paper corpse'
 
     # game/map/mortuary/f2/items.rpy:40
     old 'InMortuaryF2R2Zf626_tooltip1'
@@ -100,7 +100,7 @@ translate english strings:
 
     # game/map/mortuary/f2/items.rpy:41
     old 'InMortuaryF2R2Zf626_tooltip2'
-    new 'Talk to a corpse'
+    new 'Talk to a caved corpse'
 
     # game/map/mortuary/f2/items.rpy:45
     old 'FromMortuaryF2R3ToMortuaryF2R4_tooltip1'
@@ -136,7 +136,7 @@ translate english strings:
 
     # game/map/mortuary/f2/items.rpy:56
     old 'InMortuaryF2R3Zm396_tooltip2'
-    new 'Talk to a corpse'
+    new 'Talk to a nurse corpse'
 
     # game/map/mortuary/f2/items.rpy:58
     old 'InMortuaryF2R3Zm1201_tooltip1'
@@ -144,7 +144,7 @@ translate english strings:
 
     # game/map/mortuary/f2/items.rpy:59
     old 'InMortuaryF2R3Zm1201_tooltip2'
-    new 'Talk to a corpse'
+    new 'Talk to an inked corpse'
 
     # game/map/mortuary/f2/items.rpy:61
     old 'InMortuaryF2R3Zf1096_tooltip1'
@@ -152,7 +152,7 @@ translate english strings:
 
     # game/map/mortuary/f2/items.rpy:62
     old 'InMortuaryF2R3Zf1096_tooltip2'
-    new 'Talk to a corpse'
+    new 'Talk to a corpse with braid around neck'
 
     # game/map/mortuary/f2/items.rpy:64
     old 'InMortuaryF2R3Zf1072_tooltip1'
@@ -160,7 +160,7 @@ translate english strings:
 
     # game/map/mortuary/f2/items.rpy:65
     old 'InMortuaryF2R3Zf1072_tooltip2'
-    new 'Talk to a corpse'
+    new 'Talk to a corpse without jaw'
 
     # game/map/mortuary/f2/items.rpy:69
     old 'FromMortuaryF2R4ToMortuaryF2R5_tooltip1'
@@ -184,7 +184,7 @@ translate english strings:
 
     # game/map/mortuary/f2/items.rpy:76
     old 'InMortuaryF2R4Zm1664_tooltip2'
-    new 'Talk to a corpse'
+    new 'Talk to a librarian corpse'
 
     # game/map/mortuary/f2/items.rpy:78
     old 'FromMortuaryF2R5ToMortuaryF2R6_tooltip1'
@@ -216,7 +216,7 @@ translate english strings:
 
     # game/map/mortuary/f2/items.rpy:88
     old 'InMortuaryF2R5Zm257_tooltip2'
-    new 'Talk to a corpse'
+    new 'Talk to a cross-eyed corpse'
 
     # game/map/mortuary/f2/items.rpy:90
     old 'InMortuaryF2R5Zm506_tooltip1'
@@ -224,7 +224,7 @@ translate english strings:
 
     # game/map/mortuary/f2/items.rpy:91
     old 'InMortuaryF2R5Zm506_tooltip2'
-    new 'Talk to a corpse'
+    new 'Talk to a map-like corpse'
 
     # game/map/mortuary/f2/items.rpy:93
     old 'InMortuaryF2R5Zm985_tooltip1'
@@ -232,7 +232,7 @@ translate english strings:
 
     # game/map/mortuary/f2/items.rpy:94
     old 'InMortuaryF2R5Zm985_tooltip2'
-    new 'Talk to a corpse'
+    new 'Talk to a corpse with tomb rot knee'
 
     # game/map/mortuary/f2/items.rpy:98
     old 'FromMortuaryF2R6ToMortuaryF2R7_tooltip1'
@@ -324,5 +324,5 @@ translate english strings:
 
     # game/map/mortuary/f2/items.rpy:137
     old 'InMortuaryF2R8Zf891_tooltip2'
-    new 'Talk to a corpse'
+    new 'Talk to a disfigured corpse'
 

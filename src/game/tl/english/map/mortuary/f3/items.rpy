@@ -68,7 +68,7 @@ translate english strings:
 
     # game/map/mortuary/f3/items.rpy:34
     old 'InMortuaryF3R4Zm79_tooltip2'
-    new 'Talk to a corpse'
+    new 'Talk to a corpse almost without head'
 
     # game/map/mortuary/f3/items.rpy:35
     old 'InMortuaryF3R4Zf679_tooltip1'
@@ -76,7 +76,7 @@ translate english strings:
 
     # game/map/mortuary/f3/items.rpy:36
     old 'InMortuaryF3R4Zf679_tooltip2'
-    new 'Talk to a corpse'
+    new 'Talk to an ancient corpse'
 
     # game/map/mortuary/f3/items.rpy:37
     old 'InMortuaryF3R4S1221_tooltip1'
@@ -84,7 +84,7 @@ translate english strings:
 
     # game/map/mortuary/f3/items.rpy:38
     old 'InMortuaryF3R4S1221_tooltip2'
-    new 'Talk to a skelet'
+    new 'Talk to a horrible smelly skelet'
 
     # game/map/mortuary/f3/items.rpy:44
     old 'FromMortuaryF3RcToMortuaryF3R1_tooltip1'
@@ -152,7 +152,7 @@ translate english strings:
 
     # game/map/mortuary/f3/items.rpy:60
     old 'InMortuaryF3RcS42_tooltip2'
-    new 'Talk to a skelet'
+    new 'Talk to a skelet in black smock'
 
     # game/map/mortuary/f3/items.rpy:61
     old 'InMortuaryF3RcS748_tooltip1'
@@ -160,7 +160,7 @@ translate english strings:
 
     # game/map/mortuary/f3/items.rpy:62
     old 'InMortuaryF3RcS748_tooltip2'
-    new 'Talk to a skelet'
+    new 'Talk to a skelet with false teeth'
 
     # game/map/mortuary/f3/items.rpy:63
     old 'InMortuaryF3RcS863_tooltip1'
@@ -168,7 +168,7 @@ translate english strings:
 
     # game/map/mortuary/f3/items.rpy:64
     old 'InMortuaryF3RcS863_tooltip2'
-    new 'Talk to a skelet'
+    new 'Talk to a veteran skelet'
 
     # game/map/mortuary/f3/items.rpy:65
     old 'InMortuaryF3RcS996_tooltip1'
@@ -176,7 +176,7 @@ translate english strings:
 
     # game/map/mortuary/f3/items.rpy:66
     old 'InMortuaryF3RcS996_tooltip2'
-    new 'Talk to a skelet'
+    new 'Talk to a skelet with a word on its forehead'
 
     # game/map/mortuary/f3/items.rpy:67
     old 'InMortuaryF3RcZm310_tooltip1'
@@ -184,7 +184,7 @@ translate english strings:
 
     # game/map/mortuary/f3/items.rpy:68
     old 'InMortuaryF3RcZm310_tooltip2'
-    new 'Talk to a corpse'
+    new 'Talk to a lifeless corpse'
 
     # game/map/mortuary/f3/items.rpy:69
     old 'InMortuaryF3RcZm475_tooltip1'
@@ -192,7 +192,7 @@ translate english strings:
 
     # game/map/mortuary/f3/items.rpy:70
     old 'InMortuaryF3RcZm475_tooltip2'
-    new 'Talk to a corpse'
+    new 'Talk to a rusted corpse'
 
     # game/map/mortuary/f3/items.rpy:71
     old 'InMortuaryF3RcZm613_tooltip1'
@@ -200,7 +200,7 @@ translate english strings:
 
     # game/map/mortuary/f3/items.rpy:72
     old 'InMortuaryF3RcZm613_tooltip2'
-    new 'Talk to a corpse'
+    new 'Talk to a deeply cutted corpse'
 
     # game/map/mortuary/f3/items.rpy:73
     old 'InMortuaryF3RcZf832_tooltip1'
@@ -208,7 +208,7 @@ translate english strings:
 
     # game/map/mortuary/f3/items.rpy:74
     old 'InMortuaryF3RcZf832_tooltip2'
-    new 'Talk to a corpse'
+    new 'Talk to a beautiful corpse'
 
     # game/map/mortuary/f3/items.rpy:75
     old 'InMortuaryF3RcZm1146_tooltip1'
@@ -216,7 +216,7 @@ translate english strings:
 
     # game/map/mortuary/f3/items.rpy:76
     old 'InMortuaryF3RcZm1146_tooltip2'
-    new 'Talk to a corpse'
+    new 'Talk to a burned corpse'
 
     # game/map/mortuary/f3/items.rpy:77
     old 'InMortuaryF3RcZf1148_tooltip1'
@@ -224,4 +224,4 @@ translate english strings:
 
     # game/map/mortuary/f3/items.rpy:78
     old 'InMortuaryF3RcZf1148_tooltip2'
-    new 'Talk to a corpse'
+    new 'Talk to a tattooed corpse'

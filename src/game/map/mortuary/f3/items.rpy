@@ -59,7 +59,7 @@ label never_mortuary_f3_items:
     $ never = _('InMortuaryF3RcS42_tooltip1') # Поговорить со скелетом «42»
     $ never = _('InMortuaryF3RcS42_tooltip2') # Поговорить со скелетом в комбинезоне
     $ never = _('InMortuaryF3RcS748_tooltip1') # Поговорить со скелетом «748»
-    $ never = _('InMortuaryF3RcS748_tooltip2') # Поговорить со скелетом со вставной челюстью
+    $ never = _('InMortuaryF3RcS748_tooltip2') # Поговорить со скелетом со вставными зубами
     $ never = _('InMortuaryF3RcS863_tooltip1') # Поговорить со скелетом «863»
     $ never = _('InMortuaryF3RcS863_tooltip2') # Поговорить со скелетом ветерана
     $ never = _('InMortuaryF3RcS996_tooltip1') # Поговорить со скелетом «996»
@@ -73,6 +73,6 @@ label never_mortuary_f3_items:
     $ never = _('InMortuaryF3RcZf832_tooltip1') # Поговорить с трупом «832»
     $ never = _('InMortuaryF3RcZf832_tooltip2') # Поговорить с красивым трупом
     $ never = _('InMortuaryF3RcZm1146_tooltip1') # Поговорить с трупом «1146»
-    $ never = _('InMortuaryF3RcZm1146_tooltip2') # Поговорить с ходячим плешивым трупом
+    $ never = _('InMortuaryF3RcZm1146_tooltip2') # Поговорить со сгоревшим трупом
     $ never = _('InMortuaryF3RcZf1148_tooltip1') # Поговорить с трупом «1148»
     $ never = _('InMortuaryF3RcZf1148_tooltip2') # Поговорить с татуированным трупом
