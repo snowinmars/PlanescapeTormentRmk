@@ -29,6 +29,12 @@ C report:
 -  {"1" if len(self.dialog_replacer.content) > 0 else "0"} dialog_replacer
 -  CTests.setUpClass() took {round(time.time() - started_at)} seconds to warm up
         ''')
+        if self.rpy_files == 0:
+            raise Exception('Raw files were not found. Something is really broken')
+        if self.logic_files == 0:
+            raise Exception('Raw files were not found. Something is really broken')
+        if self.raw_files == 0:
+            raise Exception('Raw files were not found. Something is really broken')
 
 
     def test_c(self):
