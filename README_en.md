@@ -23,35 +23,12 @@ All the stuff is under GNU/GPLv3
   - mac - `PlanescapeTormentRmk-*-mac.zip`
   - android - `rmk.torment.planescape-*-*-release.apk` (does NOT work)
   - joiPlay - import web build into JoiPlay (have no mobile-optimized UI)
-
-- git clone https://github.com/snowinmars/PlanescapeTormentRmk.git -> import into RenPy
-
-
-### For developers
-
-Binary files like images, music, etc storage separatelly at https://disk.yandex.ru/d/1vqwCTMVOBEbgA. Download the required 7z archive and extract it into the game folder
+- git clone https://github.com/snowinmars/PlanescapeTormentRmk.git -> import into RenPy, see [README_en.dev.md](src/_build/README_en.dev.md).
 
 
-## How to dev
+## Development
 
-Ensure that `.coveragerc` is working: you should not run tests from omitted paths.
-
-- Add stuff you want
-- `cd /src`
-- `python ./build.py` - regenerate `src/game/engine_data/settings/generated.py` and `src/d_renpy/*`
-- `docker compose up` - test all the stuff you wrote, all tests should end succeessfully
-- Open the `src\htmlcov\index.html` in browser. Make sure that coverage is at least 90%. Python is a runtime trash
-
-
-### File naming
-
-If the rpy filename is `T.rpy`, than:
-- for constructors:
-  - file name `T_ctors.rpy`
-- for logic:
-  - file name `T_logic.py` with class name `TLogic`
-- for logic tests
-  - file name `T_tests.py` with class name `TLogicTest`
+See [README_en.dev.md](src/_build/README_en.dev.md).
 
 
 ### Linter statistics
@@ -99,12 +76,12 @@ English:
 
 ### Build statistic
 
-- mz = windows-build size in kb
-- lz = linux-build size in kb
-- wz = web-build size in kb
-- mc = mac-build size in kb
+- win = windows-build size in kb
+- lin = linux-build size in kb
+- web = web-build size in kb
+- mac = mac-build size in kb
 
-| version | mz     | lz     | wz     | mc     |
+| version | win    | lin    | web    | mac    |
 | ------- | ------ | ------ | ------ | ------ |
 | 0.0.1   |        |        |        |        |
 | 0.0.2   | 136152 | 122013 | 151831 |        |

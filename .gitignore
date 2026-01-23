@@ -198,3 +198,4 @@ dist
 **/music/
 **/sound/
 src/sources/
+src/htmlcov/

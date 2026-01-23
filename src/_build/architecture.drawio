@@ -1,0 +1,111 @@
+<mxfile host="Electron" modified="2026-01-23T06:05:37.628Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/21.7.5 Chrome/114.0.5735.289 Electron/25.8.1 Safari/537.36" etag="WI7tDaordyYRdhWx1wje" version="21.7.5" type="device">
+  <diagram name="Page-1" id="9QFMOq3qfn3C6IbtV7h9">
+    <mxGraphModel dx="2261" dy="854" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="xFjWeVeSgw4oSNUE3Y-Y-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="xFjWeVeSgw4oSNUE3Y-Y-1" target="xFjWeVeSgw4oSNUE3Y-Y-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="xFjWeVeSgw4oSNUE3Y-Y-1" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="140" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="xFjWeVeSgw4oSNUE3Y-Y-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="xFjWeVeSgw4oSNUE3Y-Y-2" target="xFjWeVeSgw4oSNUE3Y-Y-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="xFjWeVeSgw4oSNUE3Y-Y-2" value="label &lt;font color=&quot;#ff3333&quot;&gt;start&lt;/font&gt;:&lt;br&gt;&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&amp;nbsp; &amp;nbsp; jump &lt;font color=&quot;#ff3333&quot;&gt;map_dispatcher&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="80" y="70" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="xFjWeVeSgw4oSNUE3Y-Y-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="xFjWeVeSgw4oSNUE3Y-Y-3" target="xFjWeVeSgw4oSNUE3Y-Y-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="xFjWeVeSgw4oSNUE3Y-Y-3" value="label &lt;font color=&quot;#ff3333&quot;&gt;map_dispatcher&lt;/font&gt;:&lt;br&gt;&amp;nbsp; &amp;nbsp; if loc = &#39;loc1&#39;:&lt;br&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; jump &lt;font color=&quot;#ff3333&quot;&gt;loc1_map&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="80" y="150" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="xFjWeVeSgw4oSNUE3Y-Y-12" value="onClick&lt;br&gt;jump &lt;font color=&quot;#ff3333&quot;&gt;npc1_speak&lt;/font&gt;" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="xFjWeVeSgw4oSNUE3Y-Y-8" target="xFjWeVeSgw4oSNUE3Y-Y-11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="xFjWeVeSgw4oSNUE3Y-Y-8" value="label &lt;font color=&quot;#ff3333&quot;&gt;loc1_map&lt;/font&gt;:&lt;br&gt;&amp;nbsp; &amp;nbsp; use location_map([&lt;br&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; NavigationDirective, ...&lt;br&gt;])" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="80" y="230" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="xFjWeVeSgw4oSNUE3Y-Y-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="xFjWeVeSgw4oSNUE3Y-Y-11" target="xFjWeVeSgw4oSNUE3Y-Y-13">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="xFjWeVeSgw4oSNUE3Y-Y-11" value="label &lt;font color=&quot;#ff3333&quot;&gt;npc1_speak&lt;/font&gt;:&lt;br&gt;&amp;nbsp; &amp;nbsp; if ...:&lt;br&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; jump &lt;font color=&quot;#ff3333&quot;&gt;npc1_ctor&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="360" y="230" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="xFjWeVeSgw4oSNUE3Y-Y-44" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="xFjWeVeSgw4oSNUE3Y-Y-13" target="xFjWeVeSgw4oSNUE3Y-Y-19">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="xFjWeVeSgw4oSNUE3Y-Y-13" value="label &lt;font color=&quot;#ff3333&quot;&gt;npc1_ctor&lt;/font&gt;:&lt;br&gt;&amp;nbsp; &amp;nbsp; show &lt;font color=&quot;#33ff33&quot;&gt;npc1_sprite&lt;/font&gt; at dialodue&lt;br&gt;&amp;nbsp; &amp;nbsp; $ &lt;font color=&quot;#ffffff&quot;&gt;&lt;u&gt;dialogue_stack&lt;/u&gt;&lt;/font&gt;.append(&#39;&lt;font color=&quot;#ff3333&quot;&gt;npc1_dispose&lt;/font&gt;&#39;)&lt;br&gt;&amp;nbsp; &amp;nbsp; jump &lt;font color=&quot;#ff3333&quot;&gt;npc1_state0&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="320" y="310" width="240" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="xFjWeVeSgw4oSNUE3Y-Y-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="xFjWeVeSgw4oSNUE3Y-Y-15" target="xFjWeVeSgw4oSNUE3Y-Y-13">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="640" y="340" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="xFjWeVeSgw4oSNUE3Y-Y-15" value="&lt;div&gt;&lt;div&gt;# rpy&lt;br&gt;&lt;br&gt;init 5 python:&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; renpy.add_layer(&#39;dialogue&#39;, above=&#39;screens&#39;)&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;define config.tag_layer = {&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &#39;&lt;font color=&quot;#33ff33&quot;&gt;npc1_sprite&lt;/font&gt;&#39;: &#39;dialogue&#39;,&lt;br&gt;}&lt;/div&gt;" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="480" width="320" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="xFjWeVeSgw4oSNUE3Y-Y-25" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="xFjWeVeSgw4oSNUE3Y-Y-18" target="xFjWeVeSgw4oSNUE3Y-Y-3">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="-40" y="760" />
+              <mxPoint x="-40" y="180" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="xFjWeVeSgw4oSNUE3Y-Y-18" value="&lt;div&gt;#rpy&lt;br&gt;&lt;br&gt;define &lt;u&gt;dialogue_stack&lt;/u&gt; = []&lt;/div&gt;&lt;div&gt;label &lt;font color=&quot;#ff3333&quot;&gt;dialogues_dispose&lt;/font&gt;:&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; while dialogue_stack:&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; $ label = dialogue_stack.pop()&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; $ renpy.call(label)&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; jump &lt;font color=&quot;#ff3333&quot;&gt;map_dispatcher&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="317.5" y="680" width="245" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="xFjWeVeSgw4oSNUE3Y-Y-22" value="extern" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="xFjWeVeSgw4oSNUE3Y-Y-19" target="xFjWeVeSgw4oSNUE3Y-Y-21">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="xFjWeVeSgw4oSNUE3Y-Y-19" value="&lt;font color=&quot;#ff9933&quot;&gt;npc1Logic&lt;/font&gt; = Npc1Logic(&lt;font color=&quot;#ff9933&quot;&gt;runtime.&lt;/font&gt;state_manager)&lt;br&gt;&lt;br&gt;label &lt;font color=&quot;#ff3333&quot;&gt;npc1_state0&lt;/font&gt;:&lt;br&gt;&amp;nbsp; &amp;nbsp; npc1 &#39;Hello, world 1!&#39;&lt;br&gt;&amp;nbsp; &amp;nbsp; &lt;font color=&quot;#ff9933&quot;&gt;npc1Logic&lt;/font&gt;.foo()&lt;br&gt;&amp;nbsp; &amp;nbsp; jump &lt;font color=&quot;#ff3333&quot;&gt;npc2_state3&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="280" y="390" width="320" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="xFjWeVeSgw4oSNUE3Y-Y-38" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="xFjWeVeSgw4oSNUE3Y-Y-21" target="xFjWeVeSgw4oSNUE3Y-Y-18">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="xFjWeVeSgw4oSNUE3Y-Y-21" value="&lt;font color=&quot;#ff9933&quot;&gt;nps2Logic&lt;/font&gt; = Nps2Logic(&lt;font color=&quot;#ff9933&quot;&gt;runtime.&lt;/font&gt;state_manager)&lt;br&gt;&lt;br&gt;label &lt;font color=&quot;#ff3333&quot;&gt;npc2_state3&lt;/font&gt;:&lt;br&gt;&amp;nbsp; &amp;nbsp; npc2 &#39;Hello, world 2!&#39;&lt;br&gt;&amp;nbsp; &amp;nbsp; jump &lt;font color=&quot;#ff3333&quot;&gt;dialogues_dispose&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="280" y="550" width="320" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="xFjWeVeSgw4oSNUE3Y-Y-28" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="xFjWeVeSgw4oSNUE3Y-Y-26" target="xFjWeVeSgw4oSNUE3Y-Y-19">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="xFjWeVeSgw4oSNUE3Y-Y-26" value="class Npc1Logic:&lt;br&gt;&amp;nbsp; &amp;nbsp; def __init__(self, state_manager):&lt;br&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; self.&lt;font color=&quot;#ff9933&quot;&gt;state_manager&lt;/font&gt; = state_manager&lt;br&gt;&lt;br&gt;&amp;nbsp; &amp;nbsp; def foo(self):&lt;br&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; self.&lt;font color=&quot;#ff9933&quot;&gt;state_manager&lt;/font&gt;.foo()..." style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="640" y="390" width="240" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="xFjWeVeSgw4oSNUE3Y-Y-29" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="xFjWeVeSgw4oSNUE3Y-Y-27" target="xFjWeVeSgw4oSNUE3Y-Y-21">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="xFjWeVeSgw4oSNUE3Y-Y-27" value="class Npc2Logic:&lt;br&gt;&amp;nbsp; &amp;nbsp; def __init__(self, state_manager):&lt;br&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; self.&lt;font color=&quot;#ff9933&quot;&gt;state_manager&lt;/font&gt; = state_manager" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="640" y="550" width="240" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="xFjWeVeSgw4oSNUE3Y-Y-41" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="xFjWeVeSgw4oSNUE3Y-Y-30" target="xFjWeVeSgw4oSNUE3Y-Y-40">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="xFjWeVeSgw4oSNUE3Y-Y-30" value="class StateManager:&lt;br&gt;&amp;nbsp; &amp;nbsp; def __init__(self):&lt;br&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; ..." style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+          <mxGeometry y="550" width="240" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="xFjWeVeSgw4oSNUE3Y-Y-42" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="xFjWeVeSgw4oSNUE3Y-Y-40" target="xFjWeVeSgw4oSNUE3Y-Y-19">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="xFjWeVeSgw4oSNUE3Y-Y-43" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="xFjWeVeSgw4oSNUE3Y-Y-40" target="xFjWeVeSgw4oSNUE3Y-Y-21">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="260" y="440" />
+              <mxPoint x="260" y="600" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="xFjWeVeSgw4oSNUE3Y-Y-40" value="# rpy&lt;br&gt;&lt;br&gt;init python:&lt;br&gt;&amp;nbsp; &amp;nbsp;&amp;nbsp;&lt;font color=&quot;#ff9933&quot;&gt;runtime&lt;/font&gt;.state_manager = StateManager()" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;align=left;" vertex="1" parent="1">
+          <mxGeometry y="390" width="240" height="100" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

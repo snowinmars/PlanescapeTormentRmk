@@ -10,8 +10,12 @@
 Всё залицензировано под GNU/GPLv3.
 
 
-## Скачать
+## Играть / Скачать
 
+- запустить в браузере
+  - [itch.io](https://snowinmars.itch.io/planescapetormentrmk)
+  - [gamejolt.com](https://gamejolt.com/games/planescapetormentrmk/1018976)
+  - [newgrounds.com](https://www.newgrounds.com/portal/view/1011470)
 - билд - [disk.yandex.ru](https://disk.yandex.ru/d/1vqwCTMVOBEbgA)
   - web - `PlanescapeTormentRmk-*-web.zip`
   - linux - `PlanescapeTormentRmk-*-linux.tar.bz2`
@@ -19,11 +23,7 @@
   - mac - `PlanescapeTormentRmk-*-mac.zip`
   - android - `rmk.torment.planescape-*-*-release.apk` (НЕ работает)
   - joiPlay - запусти web build в JoiPlay (UI не оптимизирован под мобилки)
-- запустить в браузере
-  - [itch.io](https://snowinmars.itch.io/planescapetormentrmk)
-  - [gamejolt.com](https://gamejolt.com/games/planescapetormentrmk/1018976)
-  - [newgrounds.com](https://www.newgrounds.com/portal/view/1011470)
-- git clone https://github.com/snowinmars/PlanescapeTormentRmk.git -> импорт в RenPy
+- git clone https://github.com/snowinmars/PlanescapeTormentRmk.git -> импорт в RenPy, см. [README.dev.md](src/_build/README.dev.md).
 
 
 ## Разработка
@@ -76,12 +76,12 @@ English:
 
 ### Build statistic
 
-- mz = windows-build size in kb
-- lz = linux-build size in kb
-- wz = web-build size in kb
-- mc = mac-build size in kb
+- win = windows-build size in kb
+- lin = linux-build size in kb
+- web = web-build size in kb
+- mac = mac-build size in kb
 
-| version | mz     | lz     | wz     | mc     |
+| version | win    | lin    | web    | mac    |
 | ------- | ------ | ------ | ------ | ------ |
 | 0.0.1   |        |        |        |        |
 | 0.0.2   | 136152 | 122013 | 151831 |        |
