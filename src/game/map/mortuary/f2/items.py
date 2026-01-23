@@ -2,8 +2,7 @@ from game.map.NavigationDirective import (NavigationDirective)
 from game.map.map_items import (
     ShadowItem,
     MenuItem,
-    ContainerMenuItem,
-    ZombieMenuItem
+    ContainerMenuItem
 )
 
 
@@ -141,7 +140,7 @@ class InMortuaryF2R1PickScalpel(ContainerMenuItem):
         )
 
 
-class InMortuaryF2R1Zm569(ZombieMenuItem):
+class InMortuaryF2R1Zm569(MenuItem):
     def __init__(self, state_manager, x, y):
         super().__init__(state_manager, x, y)
     def when(self):
@@ -151,13 +150,15 @@ class InMortuaryF2R1Zm569(ZombieMenuItem):
         if self.state_manager.world_manager.get_talked_to_zm569_times() > 0:
             return 'InMortuaryF2R1Zm569_tooltip1' # Поговорить с трупом «569»
         return 'InMortuaryF2R1Zm569_tooltip2' # Поговорить с ходячим плешивым трупом
+    def texture(self):
+        return 'animated_zm569_stand_s'
     def jump(self):
         return NavigationDirective(
             'zm569_speak'
         )
 
 
-class InMortuaryF2R1Zm825(ZombieMenuItem):
+class InMortuaryF2R1Zm825(MenuItem):
     def __init__(self, state_manager, x, y):
         super().__init__(state_manager, x, y)
     def when(self):
@@ -167,13 +168,15 @@ class InMortuaryF2R1Zm825(ZombieMenuItem):
         if self.state_manager.world_manager.get_talked_to_zm825_times() > 0:
             return 'InMortuaryF2R1Zm825_tooltip1' # Поговорить с трупом «825»
         return 'InMortuaryF2R1Zm825_tooltip2' # Поговорить с ходячим трупом повешенного
+    def texture(self):
+        return 'animated_zm825_stand_s'
     def jump(self):
         return NavigationDirective(
             'zm825_speak'
         )
 
 
-class InMortuaryF2R1Zm782(ZombieMenuItem):
+class InMortuaryF2R1Zm782(MenuItem):
     def __init__(self, state_manager, x, y):
         super().__init__(state_manager, x, y)
     def when(self):
@@ -183,6 +186,8 @@ class InMortuaryF2R1Zm782(ZombieMenuItem):
         if self.state_manager.world_manager.get_talked_to_zm782_times() > 0:
             return 'InMortuaryF2R1Zm782_tooltip1' # Поговорить с трупом «782»
         return 'InMortuaryF2R1Zm782_tooltip2' # Поговорить с ходячим трупом, полным ненависти
+    def texture(self):
+        return 'animated_zm782_stand_s'
     def jump(self):
         return NavigationDirective(
             'zm782_speak'
@@ -245,7 +250,7 @@ class MortuaryF2R2Shadow(ShadowItem):
         return 'bg/mortuary/f2/shadow_f2r2.webp'
 
 
-class InMortuaryF2R2Zm965(ZombieMenuItem):
+class InMortuaryF2R2Zm965(MenuItem):
     def __init__(self, state_manager, x, y):
         super().__init__(state_manager, x, y)
     def when(self):
@@ -255,13 +260,15 @@ class InMortuaryF2R2Zm965(ZombieMenuItem):
         if self.state_manager.world_manager.get_talked_to_zm965_times() > 0:
             return 'InMortuaryF2R2Zm965_tooltip1' # Поговорить с трупом «965»
         return 'InMortuaryF2R2Zm965_tooltip2' # Поговорить с бродящим трупом
+    def texture(self):
+        return 'animated_zm965_stand_s'
     def jump(self):
         return NavigationDirective(
             'zm965_speak'
         )
 
 
-class InMortuaryF2R2Zf594(ZombieMenuItem):
+class InMortuaryF2R2Zf594(MenuItem):
     def __init__(self, state_manager, x, y):
         super().__init__(state_manager, x, y)
     def when(self):
@@ -271,13 +278,15 @@ class InMortuaryF2R2Zf594(ZombieMenuItem):
         if self.state_manager.world_manager.get_talked_to_zf594_times() > 0:
             return 'InMortuaryF2R2Zf594_tooltip1' # Поговорить с трупом «594»
         return 'InMortuaryF2R2Zf594_tooltip2' # Поговорить с неуклюжим трупом
+    def texture(self):
+        return 'animated_zf594_stand_s'
     def jump(self):
         return NavigationDirective(
             'zf594_speak'
         )
 
 
-class InMortuaryF2R2Zf626(ZombieMenuItem):
+class InMortuaryF2R2Zf626(MenuItem):
     def __init__(self, state_manager, x, y):
         super().__init__(state_manager, x, y)
     def when(self):
@@ -287,6 +296,8 @@ class InMortuaryF2R2Zf626(ZombieMenuItem):
         if self.state_manager.world_manager.get_talked_to_zf626_times() > 0:
             return 'InMortuaryF2R2Zf626_tooltip1' # Поговорить с трупом «626»
         return 'InMortuaryF2R2Zf626_tooltip2' # Поговорить с разбитым трупом
+    def texture(self):
+        return 'animated_zf626_stand_s'
     def jump(self):
         return NavigationDirective(
             'zf626_speak'
@@ -351,21 +362,21 @@ class InMortuaryF2R3Dhall(MenuItem):
     def when(self):
         return not self.state_manager.world_manager.get_dead_dhall() and \
                self.state_manager.locations_manager.get_location() == 'mortuary_f2r3'
-    def texture(self):
-        return 'images/menu_sprites/dhall.png'
     def tooltip(self):
         if self.state_manager.world_manager.get_know_dhall_name():
             return 'InMortuaryF2R3Dhall_tooltip1' # Поговорить с Дхаллом
         if self.state_manager.world_manager.get_talked_to_dhall_times() > 0:
             return 'InMortuaryF2R3Dhall_tooltip2' # Поговорить с существом около большой книги
         return 'InMortuaryF2R3Dhall_tooltip3' # Подойти к существу около большой книги
+    def texture(self):
+        return 'animated_dhall_stand_s'
     def jump(self):
         return NavigationDirective(
             'dhall_speak'
         )
 
 
-class InMortuaryF2R3Zm396(ZombieMenuItem):
+class InMortuaryF2R3Zm396(MenuItem):
     def __init__(self, state_manager, x, y):
         super().__init__(state_manager, x, y)
     def when(self):
@@ -375,13 +386,15 @@ class InMortuaryF2R3Zm396(ZombieMenuItem):
         if self.state_manager.world_manager.get_talked_to_zm396_times() > 0:
             return 'InMortuaryF2R3Zm396_tooltip1' # Поговорить с трупом «396»
         return 'InMortuaryF2R3Zm396_tooltip2' # Поговорить с трупом медбрата
+    def texture(self):
+        return 'animated_zm396_stand_s'
     def jump(self):
         return NavigationDirective(
             'zm396_speak'
         )
 
 
-class InMortuaryF2R3Zm1201(ZombieMenuItem):
+class InMortuaryF2R3Zm1201(MenuItem):
     def __init__(self, state_manager, x, y):
         super().__init__(state_manager, x, y)
     def when(self):
@@ -391,13 +404,15 @@ class InMortuaryF2R3Zm1201(ZombieMenuItem):
         if self.state_manager.world_manager.get_talked_to_zm1201_times() > 0:
             return 'InMortuaryF2R3Zm1201_tooltip1' # Поговорить с трупом «1201»
         return 'InMortuaryF2R3Zm1201_tooltip2' # Поговорить с трупом с чернильницей
+    def texture(self):
+        return 'animated_zm1201_stand_s'
     def jump(self):
         return NavigationDirective(
             'zm1201_speak'
         )
 
 
-class InMortuaryF2R3Zf1096(ZombieMenuItem):
+class InMortuaryF2R3Zf1096(MenuItem):
     def __init__(self, state_manager, x, y):
         super().__init__(state_manager, x, y)
     def when(self):
@@ -407,13 +422,15 @@ class InMortuaryF2R3Zf1096(ZombieMenuItem):
         if self.state_manager.world_manager.get_talked_to_zf1096_times() > 0:
             return 'InMortuaryF2R3Zf1096_tooltip1' # Поговорить с трупом «1096»
         return 'InMortuaryF2R3Zf1096_tooltip2' # Поговорить с трупом с косой на шее
+    def texture(self):
+        return 'animated_zf1096_stand_s'
     def jump(self):
         return NavigationDirective(
             'zf1096_speak'
         )
 
 
-class InMortuaryF2R3Zf1072(ZombieMenuItem):
+class InMortuaryF2R3Zf1072(MenuItem):
     def __init__(self, state_manager, x, y):
         super().__init__(state_manager, x, y)
     def when(self):
@@ -423,6 +440,8 @@ class InMortuaryF2R3Zf1072(ZombieMenuItem):
         if self.state_manager.world_manager.get_talked_to_zf1072_times() > 0:
             return 'InMortuaryF2R3Zf1072_tooltip1' # Поговорить с трупом «1072»
         return 'InMortuaryF2R3Zf1072_tooltip2' # Поговорить с трупом без челюсти
+    def texture(self):
+        return 'animated_zf1072_stand_s'
     def jump(self):
         return NavigationDirective(
             'zf1072_speak'
@@ -480,7 +499,7 @@ class MortuaryF2R4Shadow(ShadowItem):
         return 'bg/mortuary/f2/shadow_f2r4.webp'
 
 
-class InMortuaryF2R4Zm1664(ZombieMenuItem):
+class InMortuaryF2R4Zm1664(MenuItem):
     def __init__(self, state_manager, x, y):
         super().__init__(state_manager, x, y)
     def when(self):
@@ -490,6 +509,8 @@ class InMortuaryF2R4Zm1664(ZombieMenuItem):
         if self.state_manager.world_manager.get_talked_to_zm1664_times() > 0:
             return 'InMortuaryF2R4Zm1664_tooltip1' # Поговорить с трупом «1664»
         return 'InMortuaryF2R4Zm1664_tooltip2' # Поговорить с трупом без челюсти
+    def texture(self):
+        return 'animated_zm1664_stand_s'
     def jump(self):
         return NavigationDirective(
             'zm1664_speak'
@@ -559,13 +580,15 @@ class InMortuaryF2R5Eivene(MenuItem):
         if self.state_manager.world_manager.get_know_eivene_name():
             return 'InMortuaryF2R5Eivene_tooltip1' # Поговорить с Эи-Вейн
         return 'InMortuaryF2R5Eivene_tooltip2' # Поговорить с хрупкой девушкой
+    def texture(self):
+        return 'animated_eivene_stand_s'
     def jump(self):
         return NavigationDirective(
             'eivene_speak'
         )
 
 
-class InMortuaryF2R5Zm257(ZombieMenuItem):
+class InMortuaryF2R5Zm257(MenuItem):
     def __init__(self, state_manager, x, y):
         super().__init__(state_manager, x, y)
     def when(self):
@@ -575,13 +598,15 @@ class InMortuaryF2R5Zm257(ZombieMenuItem):
         if self.state_manager.world_manager.get_talked_to_zm257_times() > 0:
             return 'InMortuaryF2R5Zm257_tooltip1' # Поговорить с трупом «257»
         return 'InMortuaryF2R5Zm257_tooltip2' # Поговорить с трупом без челюсти
+    def texture(self):
+        return 'animated_zm257_stand_s'
     def jump(self):
         return NavigationDirective(
             'zm257_speak'
         )
 
 
-class InMortuaryF2R5Zm506(ZombieMenuItem):
+class InMortuaryF2R5Zm506(MenuItem):
     def __init__(self, state_manager, x, y):
         super().__init__(state_manager, x, y)
     def when(self):
@@ -591,13 +616,15 @@ class InMortuaryF2R5Zm506(ZombieMenuItem):
         if self.state_manager.world_manager.get_talked_to_zm506_times() > 0:
             return 'InMortuaryF2R5Zm506_tooltip1' # Поговорить с трупом «506»
         return 'InMortuaryF2R5Zm506_tooltip2' # Поговорить с трупом без челюсти
+    def texture(self):
+        return 'animated_zm506_stand_s'
     def jump(self):
         return NavigationDirective(
             'zm506_speak'
         )
 
 
-class InMortuaryF2R5Zm985(ZombieMenuItem):
+class InMortuaryF2R5Zm985(MenuItem):
     def __init__(self, state_manager, x, y):
         super().__init__(state_manager, x, y)
     def when(self):
@@ -607,6 +634,8 @@ class InMortuaryF2R5Zm985(ZombieMenuItem):
         if self.state_manager.world_manager.get_talked_to_zm985_times() > 0:
             return 'InMortuaryF2R5Zm985_tooltip1' # Поговорить с трупом «985»
         return 'InMortuaryF2R5Zm985_tooltip2' # Поговорить с трупом без челюсти
+    def texture(self):
+        return 'animated_zm985_stand_s'
     def jump(self):
         return NavigationDirective(
             'zm985_speak'
@@ -670,14 +699,14 @@ class InMortuaryF2R6Vaxis(MenuItem):
     def when(self):
         return not self.state_manager.world_manager.get_dead_vaxis() and \
                self.state_manager.locations_manager.get_location() == 'mortuary_f2r6'
-    def texture(self):
-        return 'images/menu_sprites/vaxis.png'
     def tooltip(self):
         if self.state_manager.world_manager.get_know_vaxis_name():
             return 'InMortuaryF2R6Vaxis_tooltip1' # Поговорить c Ваксисом
         if self.state_manager.world_manager.get_talked_to_vaxis_times() > 0:
             return 'InMortuaryF2R6Vaxis_tooltip2' # Поговорить с фальшивым зомби
         return 'InMortuaryF2R6Vaxis_tooltip3' # Поговорить с трупом
+    def texture(self):
+        return 'animated_vaxis_stand_s'
     def jump(self):
         return NavigationDirective(
             'vaxis_speak'
@@ -870,7 +899,7 @@ class MortuaryF2R8Shadow(ShadowItem):
         return 'bg/mortuary/f2/shadow_f2r8.webp'
 
 
-class InMortuaryF2R8Zf891(ZombieMenuItem):
+class InMortuaryF2R8Zf891(MenuItem):
     def __init__(self, state_manager, x, y):
         super().__init__(state_manager, x, y)
     def when(self):
@@ -880,6 +909,8 @@ class InMortuaryF2R8Zf891(ZombieMenuItem):
         if self.state_manager.world_manager.get_talked_to_zf891_times() > 0:
             return 'InMortuaryF2R8Zf891_tooltip1' # Поговорить с трупом «891»
         return 'InMortuaryF2R8Zf891_tooltip2' # Поговорить с трупом без челюсти
+    def texture(self):
+        return 'animated_zf891_stand_s'
     def jump(self):
         return NavigationDirective(
             'zf891_speak'

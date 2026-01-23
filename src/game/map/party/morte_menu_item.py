@@ -10,7 +10,7 @@ class MorteMenuItem(NpcMenuItem):
     def when(self):
         return not self.state_manager.world_manager.get_dead_morte()
     def texture(self):
-        return 'images/menu_sprites/morte.png'
+        return 'animated_morte_stand_s'
     def tooltip(self):
         if self.state_manager.world_manager.get_in_party_morte():
             return 'Поговорить с Мортом'

@@ -50,20 +50,6 @@ class ContainerMenuItem(MenuItem):
         return 'images/icons/open_idle.png'
 
 
-class ZombieMenuItem(MenuItem):
-    def __init__(self, state_manager, x, y):
-        super().__init__(state_manager, x, y)
-    def texture(self):
-        return 'animation_zm782'
-
-
-class SkeletMenuItem(MenuItem):
-    def __init__(self, state_manager, x, y):
-        super().__init__(state_manager, x, y)
-    def texture(self):
-        return 'images/menu_sprites/skelet.png'
-
-
 class NpcMenuItem(MenuItem):
     def __init__(self, state_manager, x, y, npc):
         super().__init__(state_manager, x, y)

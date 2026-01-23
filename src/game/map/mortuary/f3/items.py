@@ -2,9 +2,7 @@ from game.map.NavigationDirective import (NavigationDirective)
 from game.map.map_items import (
     ShadowItem,
     MenuItem,
-    ContainerMenuItem,
-    ZombieMenuItem,
-    SkeletMenuItem
+    ContainerMenuItem
 )
 
 
@@ -284,7 +282,7 @@ class InMortuaryF3R4PickDustmanRequest(ContainerMenuItem):
         )
 
 
-class InMortuaryF3R4Zm79(ZombieMenuItem):
+class InMortuaryF3R4Zm79(MenuItem):
     def __init__(self, state_manager, x, y):
         super().__init__(state_manager, x, y)
     def when(self):
@@ -294,13 +292,15 @@ class InMortuaryF3R4Zm79(ZombieMenuItem):
         if self.state_manager.world_manager.get_talked_to_zm79_times() > 0:
             return 'InMortuaryF3R4Zm79_tooltip1' # Поговорить с трупом «79»
         return 'InMortuaryF3R4Zm79_tooltip2' # Поговорить с трупом почти без головы
+    def texture(self):
+        return 'animated_zm79_stand_s'
     def jump(self):
         return NavigationDirective(
             'zm79_speak',
         )
 
 
-class InMortuaryF3R4Zf679(ZombieMenuItem):
+class InMortuaryF3R4Zf679(MenuItem):
     def __init__(self, state_manager, x, y):
         super().__init__(state_manager, x, y)
     def when(self):
@@ -310,13 +310,15 @@ class InMortuaryF3R4Zf679(ZombieMenuItem):
         if self.state_manager.world_manager.get_talked_to_zf679_times() > 0:
             return 'InMortuaryF3R4Zf679_tooltip1' # Поговорить с трупом «679»
         return 'InMortuaryF3R4Zf679_tooltip2' # Поговорить с древним трупом
+    def texture(self):
+        return 'animated_zf679_stand_s'
     def jump(self):
         return NavigationDirective(
             'zf679_speak',
         )
 
 
-class InMortuaryF3R4S1221(SkeletMenuItem):
+class InMortuaryF3R4S1221(MenuItem):
     def __init__(self, state_manager, x, y):
         super().__init__(state_manager, x, y)
     def when(self):
@@ -326,6 +328,8 @@ class InMortuaryF3R4S1221(SkeletMenuItem):
         if self.state_manager.world_manager.get_talked_to_s1221_times() > 0:
             return 'InMortuaryF3R4S1221_tooltip1' # Поговорить со скелетом «1221»
         return 'InMortuaryF3R4S1221_tooltip2' # Поговорить с вонючим скелетом
+    def texture(self):
+        return 'animated_s1221_stand_s'
     def jump(self):
         return NavigationDirective(
             's1221_speak',
@@ -553,12 +557,12 @@ class InMortuaryF3RcDust(MenuItem):
     def when(self):
         return not self.state_manager.world_manager.get_dead_dust() and \
                self.state_manager.locations_manager.get_location() == 'mortuary_f3rc'
-    def texture(self):
-        return 'images/menu_sprites/dust.png'
     def tooltip(self):
         if self.state_manager.world_manager.get_talked_to_dust_times() > 0:
             return 'InMortuaryF3RcDust_tooltip1' # Поговорить с тленным
         return 'InMortuaryF3RcDust_tooltip2' # Поговорить с человеком
+    def texture(self):
+        return 'animated_dust_stand_s'
     def jump(self):
         return NavigationDirective(
             'dust_speak'
@@ -571,19 +575,19 @@ class InMortuaryF3RcDustfem(MenuItem):
     def when(self):
         return not self.state_manager.world_manager.get_dead_dustfem() and \
                self.state_manager.locations_manager.get_location() == 'mortuary_f3rc'
-    def texture(self):
-        return 'images/menu_sprites/dustfem.png'
     def tooltip(self):
         if self.state_manager.world_manager.get_talked_to_dustfem_times() > 0:
             return 'InMortuaryF3RcDustfem_tooltip1' # Поговорить с тленной
         return 'InMortuaryF3RcDustfem_tooltip2' # Поговорить с человеком
+    def texture(self):
+        return 'animated_dustfem_stand_s'
     def jump(self):
         return NavigationDirective(
             'dustfem_speak'
         )
 
 
-class InMortuaryF3RcS42(SkeletMenuItem):
+class InMortuaryF3RcS42(MenuItem):
     def __init__(self, state_manager, x, y):
         super().__init__(state_manager, x, y)
     def when(self):
@@ -593,13 +597,15 @@ class InMortuaryF3RcS42(SkeletMenuItem):
         if self.state_manager.world_manager.get_talked_to_s42_times() > 0:
             return 'InMortuaryF3RcS42_tooltip1' # Поговорить со скелетом «42»'
         return 'InMortuaryF3RcS42_tooltip2' # Поговорить со скелетом в комбинезоне'
+    def texture(self):
+        return 'animated_s42_stand_s'
     def jump(self):
         return NavigationDirective(
             's42_speak'
         )
 
 
-class InMortuaryF3RcS748(SkeletMenuItem):
+class InMortuaryF3RcS748(MenuItem):
     def __init__(self, state_manager, x, y):
         super().__init__(state_manager, x, y)
     def when(self):
@@ -609,13 +615,15 @@ class InMortuaryF3RcS748(SkeletMenuItem):
         if self.state_manager.world_manager.get_talked_to_s748_times() > 0:
             return 'InMortuaryF3RcS748_tooltip1' # Поговорить со скелетом «748»
         return 'InMortuaryF3RcS748_tooltip2' # Поговорить со скелетом со вставной челюстью
+    def texture(self):
+        return 'animated_s748_stand_s'
     def jump(self):
         return NavigationDirective(
             's748_speak'
         )
 
 
-class InMortuaryF3RcS863(SkeletMenuItem):
+class InMortuaryF3RcS863(MenuItem):
     def __init__(self, state_manager, x, y):
         super().__init__(state_manager, x, y)
     def when(self):
@@ -625,13 +633,15 @@ class InMortuaryF3RcS863(SkeletMenuItem):
         if self.state_manager.world_manager.get_talked_to_s863_times() > 0:
             return 'InMortuaryF3RcS863_tooltip1' # Поговорить со скелетом «863»
         return 'InMortuaryF3RcS863_tooltip2' # Поговорить со скелетом ветерана
+    def texture(self):
+        return 'animated_s863_stand_s'
     def jump(self):
         return NavigationDirective(
             's863_speak'
         )
 
 
-class InMortuaryF3RcS996(SkeletMenuItem):
+class InMortuaryF3RcS996(MenuItem):
     def __init__(self, state_manager, x, y):
         super().__init__(state_manager, x, y)
     def when(self):
@@ -641,13 +651,15 @@ class InMortuaryF3RcS996(SkeletMenuItem):
         if self.state_manager.world_manager.get_talked_to_s996_times() > 0:
             return 'InMortuaryF3RcS996_tooltip1' # Поговорить со скелетом «996»
         return 'InMortuaryF3RcS996_tooltip2' # Поговорить со скелетом со словом на лбу
+    def texture(self):
+        return 'animated_s996_stand_s'
     def jump(self):
         return NavigationDirective(
             's996_speak'
         )
 
 
-class InMortuaryF3RcZm310(ZombieMenuItem):
+class InMortuaryF3RcZm310(MenuItem):
     def __init__(self, state_manager, x, y):
         super().__init__(state_manager, x, y)
     def when(self):
@@ -657,13 +669,15 @@ class InMortuaryF3RcZm310(ZombieMenuItem):
         if self.state_manager.world_manager.get_talked_to_zm310_times() > 0:
             return 'InMortuaryF3RcZm310_tooltip1' # Поговорить с трупом «310»
         return 'InMortuaryF3RcZm310_tooltip2' # Поговорить с безжизненным трупом
+    def texture(self):
+        return 'animated_zm310_stand_s'
     def jump(self):
         return NavigationDirective(
             'zm310_speak'
         )
 
 
-class InMortuaryF3RcZm475(ZombieMenuItem):
+class InMortuaryF3RcZm475(MenuItem):
     def __init__(self, state_manager, x, y):
         super().__init__(state_manager, x, y)
     def when(self):
@@ -673,13 +687,15 @@ class InMortuaryF3RcZm475(ZombieMenuItem):
         if self.state_manager.world_manager.get_talked_to_zm475_times() > 0:
             return 'InMortuaryF3RcZm475_tooltip1' # Поговорить с трупом «475»
         return 'InMortuaryF3RcZm475_tooltip2' # Поговорить с проржавевшим трупом
+    def texture(self):
+        return 'animated_zm475_stand_s'
     def jump(self):
         return NavigationDirective(
             'zm475_speak',
         )
 
 
-class InMortuaryF3RcZm613(ZombieMenuItem):
+class InMortuaryF3RcZm613(MenuItem):
     def __init__(self, state_manager, x, y):
         super().__init__(state_manager, x, y)
     def when(self):
@@ -689,13 +705,15 @@ class InMortuaryF3RcZm613(ZombieMenuItem):
         if self.state_manager.world_manager.get_talked_to_zm613_times() > 0:
             return 'InMortuaryF3RcZm613_tooltip1' # Поговорить с трупом «613»
         return 'InMortuaryF3RcZm613_tooltip2' # Поговорить с изрезанным трупом
+    def texture(self):
+        return 'animated_zm613_stand_s'
     def jump(self):
         return NavigationDirective(
             'zm613_speak'
         )
 
 
-class InMortuaryF3RcZf832(ZombieMenuItem):
+class InMortuaryF3RcZf832(MenuItem):
     def __init__(self, state_manager, x, y):
         super().__init__(state_manager, x, y)
     def when(self):
@@ -705,13 +723,15 @@ class InMortuaryF3RcZf832(ZombieMenuItem):
         if self.state_manager.world_manager.get_talked_to_zf832_times() > 0:
             return 'InMortuaryF3RcZf832_tooltip1' # Поговорить с трупом «832»
         return 'InMortuaryF3RcZf832_tooltip2' # Поговорить с красивым трупом
+    def texture(self):
+        return 'animated_zf832_stand_s'
     def jump(self):
         return NavigationDirective(
             'zf832_speak'
         )
 
 
-class InMortuaryF3RcZm1146(ZombieMenuItem):
+class InMortuaryF3RcZm1146(MenuItem):
     def __init__(self, state_manager, x, y):
         super().__init__(state_manager, x, y)
     def when(self):
@@ -720,13 +740,15 @@ class InMortuaryF3RcZm1146(ZombieMenuItem):
         if self.state_manager.world_manager.get_talked_to_zm1146_times() > 0:
             return 'InMortuaryF3RcZm1146_tooltip1' # Поговорить с трупом «1146»
         return 'InMortuaryF3RcZm1146_tooltip2' # Поговорить с ходячим плешивым трупом
+    def texture(self):
+        return 'animated_zm1146_stand_s'
     def jump(self):
         return NavigationDirective(
             'zm1146_speak'
         )
 
 
-class InMortuaryF3RcZf1148(ZombieMenuItem):
+class InMortuaryF3RcZf1148(MenuItem):
     def __init__(self, state_manager, x, y):
         super().__init__(state_manager, x, y)
     def when(self):
@@ -736,6 +758,8 @@ class InMortuaryF3RcZf1148(ZombieMenuItem):
         if self.state_manager.world_manager.get_talked_to_zf1148_times() > 0:
             return 'InMortuaryF3RcZf1148_tooltip1' # Поговорить с трупом «1148»
         return 'InMortuaryF3RcZf1148_tooltip2' # Поговорить с татуированным трупом
+    def texture(self):
+        return 'animated_zf1148_stand_s'
     def jump(self):
         return NavigationDirective(
             'zf1148_speak'

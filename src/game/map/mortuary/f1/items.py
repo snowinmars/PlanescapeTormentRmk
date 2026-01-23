@@ -2,8 +2,7 @@ from game.map.NavigationDirective import (NavigationDirective)
 from game.map.map_items import (
     ShadowItem,
     MenuItem,
-    ContainerMenuItem,
-    ZombieMenuItem
+    ContainerMenuItem
 )
 
 
@@ -110,7 +109,7 @@ class InMortuaryF1R1Soego(MenuItem):
         return not self.state_manager.world_manager.get_dead_soego() and \
                self.state_manager.locations_manager.get_location() == 'mortuary_f1r1'
     def texture(self):
-        return 'images/menu_sprites/soego.png'
+        return 'animated_soego_stand_s'
     def tooltip(self):
         if self.state_manager.world_manager.get_talked_to_soego_times() > 0:
             return 'InMortuaryF1R1Soego_tooltip1' # Поговорить с Соего
@@ -192,12 +191,12 @@ class InMortuaryF1R2Deionarra(MenuItem):
     def when(self):
         return not self.state_manager.world_manager.get_dead_deionarra() and \
                self.state_manager.locations_manager.get_location() == 'mortuary_f1r2'
-    def texture(self):
-        return 'images/menu_sprites/deionarra.png'
     def tooltip(self):
         if self.state_manager.world_manager.get_talked_to_deionarra_times() > 0:
             return 'InMortuaryF1R2Deionarra_tooltip1' # Поговорить с Дейонаррой
         return 'InMortuaryF1R2Deionarra_tooltip2' # Подойти к призраку
+    def texture(self):
+        return 'animated_deionarra_stand_s'
     def jump(self):
         return NavigationDirective(
             'deionarra_speak'
@@ -269,7 +268,7 @@ class MortuaryF1R3Shadow(ShadowItem):
         return 'bg/mortuary/f1/shadow_f1r3.webp'
 
 
-class InMortuaryF1R3Zf114(ZombieMenuItem):
+class InMortuaryF1R3Zf114(MenuItem):
     def __init__(self, state_manager, x, y):
         super().__init__(state_manager, x, y)
     def when(self):
@@ -279,29 +278,34 @@ class InMortuaryF1R3Zf114(ZombieMenuItem):
         if self.state_manager.world_manager.get_talked_to_zf114_times() > 0:
             return 'InMortuaryF1R3Zf114_tooltip1' # Поговорить с трупом «114»
         return 'InMortuaryF1R3Zf114_tooltip2' # Поговорить с ходячим трупом повешенного
+    def texture(self):
+        return 'animated_zf114_stand_s'
     def jump(self):
         return NavigationDirective(
             'zf114_speak'
         )
 
 
-class InMortuaryF1R3Zm1041(ZombieMenuItem):
+class InMortuaryF1R3Zm1041(MenuItem):
     def __init__(self, state_manager, x, y):
         super().__init__(state_manager, x, y)
     def when(self):
         return not self.state_manager.world_manager.get_dead_zm1041() and \
                self.state_manager.locations_manager.get_location() == 'mortuary_f1r3'
+
     def tooltip(self):
         if self.state_manager.world_manager.get_talked_to_zm1041_times() > 0:
             return 'InMortuaryF1R3Zm1041_tooltip1' # Поговорить с трупом «1041»
         return 'InMortuaryF1R3Zm1041_tooltip2' # Поговорить с ходячим трупом повешенного
+    def texture(self):
+        return 'animated_zm1041_stand_s'
     def jump(self):
         return NavigationDirective(
             'zm1041_speak'
         )
 
 
-class InMortuaryF1R3Xach(ZombieMenuItem):
+class InMortuaryF1R3Xach(MenuItem):
     def __init__(self, state_manager, x, y):
         super().__init__(state_manager, x, y)
     def when(self):
@@ -313,6 +317,8 @@ class InMortuaryF1R3Xach(ZombieMenuItem):
         if self.state_manager.world_manager.get_talked_to_zm331_times() > 0:
             return 'InMortuaryF1R3Xach_tooltip2' # Поговорить с трупом «331»
         return 'InMortuaryF1R3Xach_tooltip3' # Поговорить со слепым трупом
+    def texture(self):
+        return 'animated_xach_stand_s'
     def jump(self):
         return NavigationDirective(
             'xach_speak'
@@ -402,7 +408,7 @@ class FromMortuaryF1R4ToMortuaryF2R7(MenuItem):
         )
 
 
-class InMortuaryF1R4Zm732(ZombieMenuItem):
+class InMortuaryF1R4Zm732(MenuItem):
     def __init__(self, state_manager, x, y):
         super().__init__(state_manager, x, y)
     def when(self):
@@ -412,6 +418,8 @@ class InMortuaryF1R4Zm732(ZombieMenuItem):
         if self.state_manager.world_manager.get_talked_to_zm732_times() > 0:
             return 'InMortuaryF1R4Zm732_tooltip1' # Поговорить с трупом «732»
         return 'InMortuaryF1R4Zm732_tooltip2' # Поговорить с ходячим трупом повешенного
+    def texture(self):
+        return 'animated_zm732_stand_s'
     def jump(self):
         return NavigationDirective(
             'zm732_speak'
@@ -507,10 +515,10 @@ class InMortuaryF1RcGiantsk(MenuItem):
     def when(self):
         return not self.state_manager.world_manager.get_dead_giantsk() and \
                self.state_manager.locations_manager.get_location() == 'mortuary_f1rc'
-    def texture(self):
-        return 'images/menu_sprites/giantsk.png'
     def tooltip(self):
         return 'InMortuaryF1RcGiantsk_tooltip1' # Поговорить с гиганским скелетом
+    def texture(self):
+        return 'animated_giantsk_stand_s'
     def jump(self):
         return NavigationDirective(
             'giantsk_speak'
