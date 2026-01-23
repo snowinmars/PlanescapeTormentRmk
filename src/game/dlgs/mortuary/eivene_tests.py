@@ -34,30 +34,32 @@ class EiveneLogicGeneratedTest(LogicTest):
 
 
     def test_r3424_action(self):
-        self.state_manager.world_manager.set_has_embalm(True)
-        self.state_manager.world_manager.set_has_needle(True)
+        self.state_manager.inventory_manager.pick_item('has_embalm')
+        self.state_manager.inventory_manager.pick_item('has_needle')
         self.state_manager.world_manager.set_eivene_delivery(False)
         who_experience = 'protagonist_character_name'
         prop_experience = 'experience'
         delta_experience = 250
 
-        self.assertTrue(self.state_manager.world_manager.get_has_embalm())
-        self.assertTrue(self.state_manager.world_manager.get_has_needle())
+        self.assertTrue(self.state_manager.inventory_manager.is_own_item('has_embalm'))
+        self.assertTrue(self.state_manager.inventory_manager.is_own_item('has_needle'))
         self.assertFalse(self.state_manager.world_manager.get_eivene_delivery())
         experience_before = self.state_manager.characters_manager.get_property(who_experience, prop_experience)
 
         self.logic.r3424_action()
 
-        self.assertFalse(self.state_manager.world_manager.get_has_embalm())
-        self.assertFalse(self.state_manager.world_manager.get_has_needle())
+        self.assertFalse(self.state_manager.inventory_manager.is_own_item('has_embalm'))
+        self.assertFalse(self.state_manager.inventory_manager.is_own_item('has_needle'))
         self.assertTrue(self.state_manager.world_manager.get_eivene_delivery())
         experience_after = self.state_manager.characters_manager.get_property(who_experience, prop_experience)
         self.assertEqual(experience_before + delta_experience, experience_after)
 
+        self.state_manager.inventory_manager.pick_item('has_embalm')
+        self.state_manager.inventory_manager.pick_item('has_needle')
         self.logic.r3424_action()
 
-        self.assertFalse(self.state_manager.world_manager.get_has_embalm())
-        self.assertFalse(self.state_manager.world_manager.get_has_needle())
+        self.assertFalse(self.state_manager.inventory_manager.is_own_item('has_embalm'))
+        self.assertFalse(self.state_manager.inventory_manager.is_own_item('has_needle'))
         self.assertTrue(self.state_manager.world_manager.get_eivene_delivery())
         experience_after_once = self.state_manager.characters_manager.get_property(who_experience, prop_experience)
         self.assertEqual(experience_after + delta_experience, experience_after_once)
@@ -168,25 +170,25 @@ class EiveneLogicGeneratedTest(LogicTest):
         embalm_key_quest_after = 2
         embalm_key_quest_after_once = 2
         self.state_manager.world_manager.set_embalm_key_quest(embalm_key_quest_before)
-        self.state_manager.world_manager.set_has_keyem(False)
+        self.state_manager.inventory_manager.drop_all_items('has_keyem')
 
         experience_before = self.state_manager.characters_manager.get_property(who_experience, prop_experience)
         self.assertEqual(self.state_manager.world_manager.get_embalm_key_quest(), embalm_key_quest_before)
-        self.assertFalse(self.state_manager.world_manager.get_has_keyem())
+        self.assertFalse(self.state_manager.inventory_manager.is_own_item('has_keyem'))
 
         self.logic.r3456_action()
 
         experience_after = self.state_manager.characters_manager.get_property(who_experience, prop_experience)
         self.assertEqual(experience_before + delta_experience, experience_after)
         self.assertEqual(self.state_manager.world_manager.get_embalm_key_quest(), embalm_key_quest_after)
-        self.assertTrue(self.state_manager.world_manager.get_has_keyem())
+        self.assertTrue(self.state_manager.inventory_manager.is_own_item('has_keyem'))
 
         self.logic.r3456_action()
 
         experience_after_once = self.state_manager.characters_manager.get_property(who_experience, prop_experience)
         self.assertEqual(experience_after + delta_experience, experience_after_once)
         self.assertEqual(self.state_manager.world_manager.get_embalm_key_quest(), embalm_key_quest_after_once)
-        self.assertTrue(self.state_manager.world_manager.get_has_keyem())
+        self.assertTrue(self.state_manager.inventory_manager.is_own_item('has_keyem'))
 
 
     def test_j61612_s15_r3459_action(self):
@@ -216,30 +218,32 @@ class EiveneLogicGeneratedTest(LogicTest):
 
 
     def test_r3469_action(self):
-        self.state_manager.world_manager.set_has_embalm(True)
-        self.state_manager.world_manager.set_has_needle(True)
+        self.state_manager.inventory_manager.pick_item('has_embalm')
+        self.state_manager.inventory_manager.pick_item('has_needle')
         self.state_manager.world_manager.set_eivene_delivery(False)
         who_experience = 'protagonist_character_name'
         prop_experience = 'experience'
         delta_experience = 250
 
-        self.assertTrue(self.state_manager.world_manager.get_has_embalm())
-        self.assertTrue(self.state_manager.world_manager.get_has_needle())
+        self.assertTrue(self.state_manager.inventory_manager.is_own_item('has_embalm'))
+        self.assertTrue(self.state_manager.inventory_manager.is_own_item('has_needle'))
         self.assertFalse(self.state_manager.world_manager.get_eivene_delivery())
         experience_before = self.state_manager.characters_manager.get_property(who_experience, prop_experience)
 
         self.logic.r3469_action()
 
-        self.assertFalse(self.state_manager.world_manager.get_has_embalm())
-        self.assertFalse(self.state_manager.world_manager.get_has_needle())
+        self.assertFalse(self.state_manager.inventory_manager.is_own_item('has_embalm'))
+        self.assertFalse(self.state_manager.inventory_manager.is_own_item('has_needle'))
         self.assertTrue(self.state_manager.world_manager.get_eivene_delivery())
         experience_after = self.state_manager.characters_manager.get_property(who_experience, prop_experience)
         self.assertEqual(experience_before + delta_experience, experience_after)
 
+        self.state_manager.inventory_manager.pick_item('has_embalm')
+        self.state_manager.inventory_manager.pick_item('has_needle')
         self.logic.r3469_action()
 
-        self.assertFalse(self.state_manager.world_manager.get_has_embalm())
-        self.assertFalse(self.state_manager.world_manager.get_has_needle())
+        self.assertFalse(self.state_manager.inventory_manager.is_own_item('has_embalm'))
+        self.assertFalse(self.state_manager.inventory_manager.is_own_item('has_needle'))
         self.assertTrue(self.state_manager.world_manager.get_eivene_delivery())
         experience_after_once = self.state_manager.characters_manager.get_property(who_experience, prop_experience)
         self.assertEqual(experience_after + delta_experience, experience_after_once)
@@ -253,25 +257,25 @@ class EiveneLogicGeneratedTest(LogicTest):
         embalm_key_quest_after = 2
         embalm_key_quest_after_once = 2
         self.state_manager.world_manager.set_embalm_key_quest(embalm_key_quest_before)
-        self.state_manager.world_manager.set_has_keyem(False)
+        self.state_manager.inventory_manager.drop_all_items('has_keyem')
 
         experience_before = self.state_manager.characters_manager.get_property(who_experience, prop_experience)
         self.assertEqual(self.state_manager.world_manager.get_embalm_key_quest(), embalm_key_quest_before)
-        self.assertFalse(self.state_manager.world_manager.get_has_keyem())
+        self.assertFalse(self.state_manager.inventory_manager.is_own_item('has_keyem'))
 
         self.logic.r3470_action()
 
         experience_after = self.state_manager.characters_manager.get_property(who_experience, prop_experience)
         self.assertEqual(experience_before + delta_experience, experience_after)
         self.assertEqual(self.state_manager.world_manager.get_embalm_key_quest(), embalm_key_quest_after)
-        self.assertTrue(self.state_manager.world_manager.get_has_keyem())
+        self.assertTrue(self.state_manager.inventory_manager.is_own_item('has_keyem'))
 
         self.logic.r3470_action()
 
         experience_after_once = self.state_manager.characters_manager.get_property(who_experience, prop_experience)
         self.assertEqual(experience_after + delta_experience, experience_after_once)
         self.assertEqual(self.state_manager.world_manager.get_embalm_key_quest(), embalm_key_quest_after_once)
-        self.assertTrue(self.state_manager.world_manager.get_has_keyem())
+        self.assertTrue(self.state_manager.inventory_manager.is_own_item('has_keyem'))
 
 
     def test_j38203_s18_r3494_action(self):
@@ -327,25 +331,25 @@ class EiveneLogicGeneratedTest(LogicTest):
         embalm_key_quest_after = 2
         embalm_key_quest_after_once = 2
         self.state_manager.world_manager.set_embalm_key_quest(embalm_key_quest_before)
-        self.state_manager.world_manager.set_has_keyem(False)
+        self.state_manager.inventory_manager.drop_all_items('has_keyem')
 
         experience_before = self.state_manager.characters_manager.get_property(who_experience, prop_experience)
         self.assertEqual(self.state_manager.world_manager.get_embalm_key_quest(), embalm_key_quest_before)
-        self.assertFalse(self.state_manager.world_manager.get_has_keyem())
+        self.assertFalse(self.state_manager.inventory_manager.is_own_item('has_keyem'))
 
         self.logic.r3501_action()
 
         experience_after = self.state_manager.characters_manager.get_property(who_experience, prop_experience)
         self.assertEqual(experience_before + delta_experience, experience_after)
         self.assertEqual(self.state_manager.world_manager.get_embalm_key_quest(), embalm_key_quest_after)
-        self.assertTrue(self.state_manager.world_manager.get_has_keyem())
+        self.assertTrue(self.state_manager.inventory_manager.is_own_item('has_keyem'))
 
         self.logic.r3501_action()
 
         experience_after_once = self.state_manager.characters_manager.get_property(who_experience, prop_experience)
         self.assertEqual(experience_after + delta_experience, experience_after_once)
         self.assertEqual(self.state_manager.world_manager.get_embalm_key_quest(), embalm_key_quest_after_once)
-        self.assertTrue(self.state_manager.world_manager.get_has_keyem())
+        self.assertTrue(self.state_manager.inventory_manager.is_own_item('has_keyem'))
 
 
     def test_r63478_action(self):
@@ -399,13 +403,13 @@ class EiveneLogicGeneratedTest(LogicTest):
 
 
     def test_r3424_condition(self):
-        self.state_manager.world_manager.set_has_embalm(False)
-        self.state_manager.world_manager.set_has_needle(False)
+        self.state_manager.inventory_manager.drop_all_items('has_embalm')
+        self.state_manager.inventory_manager.drop_all_items('has_needle')
 
         self.assertFalse(self.logic.r3424_condition())
 
-        self.state_manager.world_manager.set_has_embalm(True)
-        self.state_manager.world_manager.set_has_needle(True)
+        self.state_manager.inventory_manager.pick_item('has_embalm')
+        self.state_manager.inventory_manager.pick_item('has_needle')
 
         self.assertTrue(self.logic.r3424_condition())
 
@@ -482,24 +486,25 @@ class EiveneLogicGeneratedTest(LogicTest):
 
     def test_r3456_condition(self):
         self.state_manager.world_manager.set_embalm_key_quest(0)
-        self.state_manager.world_manager.set_has_keyem(True)
+        self.state_manager.inventory_manager.pick_item('has_keyem')
+
 
         self.assertFalse(self.logic.r3456_condition())
 
         self.state_manager.world_manager.set_embalm_key_quest(1)
-        self.state_manager.world_manager.set_has_keyem(False)
+        self.state_manager.inventory_manager.drop_all_items('has_keyem')
 
         self.assertTrue(self.logic.r3456_condition())
 
 
     def test_r3457_condition(self):
         self.state_manager.world_manager.set_embalm_key_quest(0)
-        self.state_manager.world_manager.set_has_keyem(False)
+        self.state_manager.inventory_manager.drop_all_items('has_keyem')
 
         self.assertFalse(self.logic.r3457_condition())
 
         self.state_manager.world_manager.set_embalm_key_quest(1)
-        self.state_manager.world_manager.set_has_keyem(True)
+        self.state_manager.inventory_manager.pick_item('has_keyem')
 
         self.assertTrue(self.logic.r3457_condition())
 
@@ -526,37 +531,37 @@ class EiveneLogicGeneratedTest(LogicTest):
 
 
     def test_r3469_condition(self):
-        self.state_manager.world_manager.set_has_embalm(False)
-        self.state_manager.world_manager.set_has_needle(False)
+        self.state_manager.inventory_manager.drop_all_items('has_embalm')
+        self.state_manager.inventory_manager.drop_all_items('has_needle')
 
         self.assertFalse(self.logic.r3469_condition())
 
-        self.state_manager.world_manager.set_has_embalm(True)
-        self.state_manager.world_manager.set_has_needle(True)
+        self.state_manager.inventory_manager.pick_item('has_embalm')
+        self.state_manager.inventory_manager.pick_item('has_needle')
 
         self.assertTrue(self.logic.r3469_condition())
 
 
     def test_r3470_condition(self):
         self.state_manager.world_manager.set_embalm_key_quest(0)
-        self.state_manager.world_manager.set_has_keyem(True)
+        self.state_manager.inventory_manager.pick_item('has_keyem')
 
         self.assertFalse(self.logic.r3470_condition())
 
         self.state_manager.world_manager.set_embalm_key_quest(1)
-        self.state_manager.world_manager.set_has_keyem(False)
+        self.state_manager.inventory_manager.drop_all_items('has_keyem')
 
         self.assertTrue(self.logic.r3470_condition())
 
 
     def test_r3497_condition(self):
         self.state_manager.world_manager.set_embalm_key_quest(0)
-        self.state_manager.world_manager.set_has_keyem(False)
+        self.state_manager.inventory_manager.drop_all_items('has_keyem')
 
         self.assertFalse(self.logic.r3497_condition())
 
         self.state_manager.world_manager.set_embalm_key_quest(1)
-        self.state_manager.world_manager.set_has_keyem(True)
+        self.state_manager.inventory_manager.pick_item('has_keyem')
 
         self.assertTrue(self.logic.r3497_condition())
 
@@ -577,24 +582,24 @@ class EiveneLogicGeneratedTest(LogicTest):
 
     def test_r3501_condition(self):
         self.state_manager.world_manager.set_embalm_key_quest(0)
-        self.state_manager.world_manager.set_has_keyem(True)
+        self.state_manager.inventory_manager.pick_item('has_keyem')
 
         self.assertFalse(self.logic.r3501_condition())
 
         self.state_manager.world_manager.set_embalm_key_quest(1)
-        self.state_manager.world_manager.set_has_keyem(False)
+        self.state_manager.inventory_manager.drop_all_items('has_keyem')
 
         self.assertTrue(self.logic.r3501_condition())
 
 
     def test_r3502_condition(self):
         self.state_manager.world_manager.set_embalm_key_quest(0)
-        self.state_manager.world_manager.set_has_keyem(False)
+        self.state_manager.inventory_manager.drop_all_items('has_keyem')
 
         self.assertFalse(self.logic.r3502_condition())
 
         self.state_manager.world_manager.set_embalm_key_quest(1)
-        self.state_manager.world_manager.set_has_keyem(True)
+        self.state_manager.inventory_manager.pick_item('has_keyem')
 
         self.assertTrue(self.logic.r3502_condition())
 

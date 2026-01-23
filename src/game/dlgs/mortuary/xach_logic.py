@@ -356,11 +356,11 @@ class XachLogicGenerated:
 
 
     def r647_condition(self):
-        return self.state_manager.world_manager.get_has_scalpel()
+        return self.state_manager.inventory_manager.is_own_item('has_scalpel')
 
 
     def r653_condition(self):
-        return not self.state_manager.world_manager.get_has_scalpel()
+        return not self.state_manager.inventory_manager.is_own_item('has_scalpel')
 
 
     def r660_condition(self):

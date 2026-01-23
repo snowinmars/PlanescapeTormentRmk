@@ -392,13 +392,13 @@ class DialogueReplacer:
         self.add_replacement('!HasItem("Cobble","Post")', 'return not self.state_manager.world_manager.get_has_cobble() #$% Checks if "Cobble" is in Quick Item Slot 4 Other possible values include "Weapon1", "Weapon2", "Shield", "Armor", "Helmet", "RingLeft", "RingRight", "Cloak", "Amulet", "Belt", "Boots", "Gloves", "QuickItem1-3", or "Inventory" (general inventory).%$#')
         self.add_replacement('HasItem("Cobble","Post")', 'return self.state_manager.world_manager.get_has_cobble() #$% Checks if "Cobble" is in Quick Item Slot 4 Other possible values include "Weapon1", "Weapon2", "Shield", "Armor", "Helmet", "RingLeft", "RingRight", "Cloak", "Amulet", "Belt", "Boots", "Gloves", "QuickItem1-3", or "Inventory" (general inventory).%$#')
 
-        self.add_replacement('TransformPartyItem("CopEarC","CopEarO",1,0,0)', 'self.state_manager.world_manager.set_has_copper_earring_closed(False) self.state_manager.world_manager.set_has_copper_earring_opened(True)')
+        self.add_replacement('TransformPartyItem("CopEarC","CopEarO",1,0,0)', 'self.state_manager.inventory_manager.drop_all_items(\'has_copper_earring_closed\') self.state_manager.inventory_manager.pick_item(\'has_copper_earring_opened\')')
         self.add_replacement('TransformPartyItem("Dwedring","DsupRing",1,0,0)', 'self.state_manager.world_manager.set_has_wedding_ring(False) self.state_manager.world_manager.set_has_sup_ring(True)')
 
-        self.add_replacement('!HasItem("KeyEm","EiVene")', 'return self.state_manager.world_manager.get_has_keyem()')
-        self.add_replacement('HasItem("KeyEm","EiVene")', 'return not self.state_manager.world_manager.get_has_keyem()')
+        self.add_replacement('!HasItem("KeyEm","EiVene")', 'return self.state_manager.inventory_manager.is_own_item(\'has_keyem\')')
+        self.add_replacement('HasItem("KeyEm","EiVene")', 'return not self.state_manager.inventory_manager.is_own_item(\'has_keyem\')')
         self.add_replacement('HasItem("Bandage","ZM396")', 'return not self.state_manager.world_manager.get_has_bandages_zm396()')
-        self.add_replacement('GiveItem("KeyEm","Vaxis")', 'self.state_manager.world_manager.set_has_keyem(False) self.state_manager.world_manager.set_vaxis_has_keyem(True)')
+        self.add_replacement('GiveItem("KeyEm","Vaxis")', 'self.state_manager.inventory_manager.drop_all_items(\'has_keyem\') self.state_manager.world_manager.set_vaxis_has_keyem(True)')
 
         self.add_replacement('HPPercent(Protagonist,100)', 'return self.state_manager.characters_manager.get_property(\'protagonist_character_name\', \'current_health\') == self.state_manager.characters_manager.get_property(\'protagonist_character_name\', \'max_health\')')
         self.add_replacement('HPPercentGT(Protagonist,49)', 'return self.state_manager.characters_manager.get_property(\'protagonist_character_name\', \'current_health\') > self.state_manager.characters_manager.get_property(\'protagonist_character_name\', \'max_health\') / 2')

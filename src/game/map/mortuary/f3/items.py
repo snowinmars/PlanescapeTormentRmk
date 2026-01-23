@@ -20,7 +20,7 @@ class FromMortuaryF3R1ToMortuaryF2R1(MenuItem):
     def texture(self):
         return 'bg/mortuary/f3/door_f3r1_f2r1_opened.webp'
     def jump(self):
-        if self.state_manager.world_manager.get_has_mortuary_key():
+        if self.state_manager.inventory_manager.is_own_item('has_mortuary_key'):
             return NavigationDirective(
                 'map_dispatcher',
                 lambda: self.state_manager.locations_manager.set_location('mortuary_f2r1')
@@ -129,7 +129,7 @@ class InMortuaryF3R2PickTaskList(ContainerMenuItem):
     def __init__(self, state_manager, x, y):
         super().__init__(state_manager, x, y)
     def when(self):
-        return not self.state_manager.world_manager.get_has_mortuary_task_list() and \
+        return not self.state_manager.inventory_manager.is_own_item('has_mortuary_task_list') and \
                self.state_manager.locations_manager.get_location() == 'mortuary_f3r2'
     def tooltip(self):
         return 'InMortuaryF3R2PickTaskList_tooltip1' # Взять бумагу
@@ -256,7 +256,7 @@ class InMortuaryF3R4PickPrybar(ContainerMenuItem):
     def __init__(self, state_manager, x, y):
         super().__init__(state_manager, x, y)
     def when(self):
-        return not self.state_manager.world_manager.get_has_prybar() and \
+        return not self.state_manager.inventory_manager.is_own_item('has_prybar') and \
                self.state_manager.locations_manager.get_location() == 'mortuary_f3r4'
     def tooltip(self):
         return 'InMortuaryF3R4PickPrybar_tooltip1' # Взять ломик
@@ -272,7 +272,7 @@ class InMortuaryF3R4PickDustmanRequest(ContainerMenuItem):
     def __init__(self, state_manager, x, y):
         super().__init__(state_manager, x, y)
     def when(self):
-        return not self.state_manager.world_manager.get_has_dustman_request() and \
+        return not self.state_manager.inventory_manager.is_own_item('has_dustman_request') and \
                self.state_manager.locations_manager.get_location() == 'mortuary_f3r4'
     def tooltip(self):
         return 'InMortuaryF3R4PickDustmanRequest_tooltip1' # Взять бумагу
@@ -349,7 +349,7 @@ class FromMortuaryF3RcToMortuaryF3R1u(MenuItem):
             return 'bg/mortuary/f3/door_f3rc_f3r1u_opened.webp'
         return 'bg/mortuary/f3/door_f3rc_f3r1u_closed.webp'
     def jump(self):
-        if self.state_manager.world_manager.get_has_mortuary_key():
+        if self.state_manager.inventory_manager.is_own_item('has_mortuary_key'):
             return NavigationDirective(
                 'map_dispatcher',
                 lambda: self.state_manager.locations_manager.set_location('mortuary_f3r1')
@@ -373,7 +373,7 @@ class FromMortuaryF3RcToMortuaryF3R1d(MenuItem):
             return 'bg/mortuary/f3/door_f3rc_f3r1d_opened.webp'
         return 'bg/mortuary/f3/door_f3rc_f3r1d_closed.webp'
     def jump(self):
-        if self.state_manager.world_manager.get_has_mortuary_key():
+        if self.state_manager.inventory_manager.is_own_item('has_mortuary_key'):
             return NavigationDirective(
                 'map_dispatcher',
                 lambda: self.state_manager.locations_manager.set_location('mortuary_f3r1')
@@ -519,7 +519,7 @@ class InMortuaryF3RcPickNeedle(ContainerMenuItem):
     def __init__(self, state_manager, x, y):
         super().__init__(state_manager, x, y)
     def when(self):
-        return not self.state_manager.world_manager.get_has_needle() and \
+        return not self.state_manager.inventory_manager.is_own_item('has_needle') and \
                self.state_manager.locations_manager.get_location() == 'mortuary_f3rc'
     def tooltip(self):
         return 'InMortuaryF3RcPickNeedle_tooltip1' # Взять иголку и нитку
@@ -535,7 +535,7 @@ class InMortuaryF3RcPickMortuaryKey(ContainerMenuItem):
     def __init__(self, state_manager, x, y):
         super().__init__(state_manager, x, y)
     def when(self):
-        return not self.state_manager.world_manager.get_has_mortuary_key() and \
+        return not self.state_manager.inventory_manager.is_own_item('has_mortuary_key') and \
                self.state_manager.locations_manager.get_location() == 'mortuary_f3rc'
     def tooltip(self):
         return 'InMortuaryF3RcPickMortuaryKey_tooltip1' # Взять ключ

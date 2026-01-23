@@ -271,17 +271,17 @@ class AreaLogic:
     def r3501_action(self):
         self.state_manager.gain_experience('party', 250)
         self.state_manager.world_manager.set_embalm_key_quest(2)
-        self.state_manager.world_manager.set_has_keyem(True)
+        self.state_manager.inventory_manager.pick_item('has_keyem')
 
 
     def r3501_condition(self):
         return self.state_manager.world_manager.get_embalm_key_quest() == 1 and \\
-               not self.state_manager.world_manager.get_has_keyem()
+               not self.state_manager.inventory_manager.is_own_item('has_keyem')
 
 
     def r3502_condition(self):
         return self.state_manager.world_manager.get_embalm_key_quest() == 1 and \\
-               self.state_manager.world_manager.get_has_keyem()
+               self.state_manager.inventory_manager.is_own_item('has_keyem')
 '''.strip() + '\n'
 test_result3_tests = '''
 import unittest
@@ -305,47 +305,47 @@ class AreaLogicTest(LogicTest):
         embalm_key_quest_after = 2
         embalm_key_quest_after_once = 2
         self.state_manager.world_manager.set_embalm_key_quest(embalm_key_quest_before)
-        self.state_manager.world_manager.set_has_keyem(False)
+        self.state_manager.inventory_manager.drop_all_items('has_keyem')
 
         experience_before = self.state_manager.characters_manager.get_property(who_experience, prop_experience)
         self.assertEqual(self.state_manager.world_manager.get_embalm_key_quest(), embalm_key_quest_before)
-        self.assertFalse(self.state_manager.world_manager.get_has_keyem())
+        self.assertFalse(self.state_manager.inventory_manager.is_own_item('has_keyem'))
 
         self.logic.r3501_action()
 
         experience_after = self.state_manager.characters_manager.get_property(who_experience, prop_experience)
         self.assertEqual(experience_before + delta_experience, experience_after)
         self.assertEqual(self.state_manager.world_manager.get_embalm_key_quest(), embalm_key_quest_after)
-        self.assertTrue(self.state_manager.world_manager.get_has_keyem())
+        self.assertTrue(self.state_manager.inventory_manager.is_own_item('has_keyem'))
 
         self.logic.r3501_action()
 
         experience_after_once = self.state_manager.characters_manager.get_property(who_experience, prop_experience)
         self.assertEqual(experience_after + delta_experience, experience_after_once)
         self.assertEqual(self.state_manager.world_manager.get_embalm_key_quest(), embalm_key_quest_after_once)
-        self.assertTrue(self.state_manager.world_manager.get_has_keyem())
+        self.assertTrue(self.state_manager.inventory_manager.is_own_item('has_keyem'))
 
 
     def test_r3501_condition(self):
         self.state_manager.world_manager.set_embalm_key_quest(0)
-        self.state_manager.world_manager.set_has_keyem(True)
+        self.state_manager.inventory_manager.pick_item('has_keyem')
 
         self.assertFalse(self.logic.r3501_condition())
 
         self.state_manager.world_manager.set_embalm_key_quest(1)
-        self.state_manager.world_manager.set_has_keyem(False)
+        self.state_manager.inventory_manager.drop_item('has_keyem')
 
         self.assertTrue(self.logic.r3501_condition())
 
 
     def test_r3502_condition(self):
         self.state_manager.world_manager.set_embalm_key_quest(0)
-        self.state_manager.world_manager.set_has_keyem(False)
+        self.state_manager.inventory_manager.drop_item('has_keyem')
 
         self.assertFalse(self.logic.r3502_condition())
 
         self.state_manager.world_manager.set_embalm_key_quest(1)
-        self.state_manager.world_manager.set_has_keyem(True)
+        self.state_manager.inventory_manager.pick_item('has_keyem')
 
         self.assertTrue(self.logic.r3502_condition())
 
@@ -1272,7 +1272,7 @@ class AreaLogic:
 
 
     def r17833_action(self):
-        self.state_manager.world_manager.set_has_intro_key(True)
+        self.state_manager.inventory_manager.pick_item('has_intro_key')
         self.state_manager.world_manager.set_morte(1)
         self.state_manager.world_manager.set_read_scars(True)
         self.state_manager.world_manager.set_in_party_morte(True)
@@ -1292,7 +1292,7 @@ class AreaLogicTest(LogicTest):
 
 
     def test_r17833_action(self):
-        self.state_manager.world_manager.set_has_intro_key(False)
+        self.state_manager.inventory_manager.pick_item('has_intro_key')
         morte_before = 0
         morte_after = 1
         morte_after_once = 1
@@ -1300,21 +1300,21 @@ class AreaLogicTest(LogicTest):
         self.state_manager.world_manager.set_read_scars(False)
         self.state_manager.world_manager.set_in_party_morte(False)
 
-        self.assertFalse(self.state_manager.world_manager.get_has_intro_key())
+        self.assertFalse(self.state_manager.inventory_manager.is_own_item('has_intro_key'))
         self.assertEqual(self.state_manager.world_manager.get_morte(), morte_before)
         self.assertFalse(self.state_manager.world_manager.get_read_scars())
         self.assertFalse(self.state_manager.world_manager.get_in_party_morte())
 
         self.logic.r17833_action()
 
-        self.assertTrue(self.state_manager.world_manager.get_has_intro_key())
+        self.assertTrue(self.state_manager.inventory_manager.is_own_item('has_intro_key'))
         self.assertEqual(self.state_manager.world_manager.get_morte(), morte_after)
         self.assertTrue(self.state_manager.world_manager.get_read_scars())
         self.assertTrue(self.state_manager.world_manager.get_in_party_morte())
 
         self.logic.r17833_action()
 
-        self.assertTrue(self.state_manager.world_manager.get_has_intro_key())
+        self.assertTrue(self.state_manager.inventory_manager.is_own_item('has_intro_key'))
         self.assertEqual(self.state_manager.world_manager.get_morte(), morte_after_once)
         self.assertTrue(self.state_manager.world_manager.get_read_scars())
         self.assertTrue(self.state_manager.world_manager.get_in_party_morte())

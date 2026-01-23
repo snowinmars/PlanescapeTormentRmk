@@ -213,7 +213,7 @@ label start:
 
 label dev:
     $ gsm = runtime.global_state_manager
-    $ gsm.world_manager.set_has_mortuary_key(True)
+    $ gsm.world_manager.inventory_manager.pick_item('has_mortuary_key')
 
     jump intro
 

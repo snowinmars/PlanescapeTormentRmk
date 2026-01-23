@@ -34,11 +34,11 @@ class Zm79LogicGenerated:
 
 
     def r64279_condition(self):
-        return not self.state_manager.world_manager.get_has_copper_earring_closed()
+        return not self.state_manager.inventory_manager.is_own_item('has_copper_earring_closed')
 
 
     def r64280_condition(self):
-        return self.state_manager.world_manager.get_has_copper_earring_closed()
+        return self.state_manager.inventory_manager.is_own_item('has_copper_earring_closed')
 
 
 class Zm79Logic(Zm79LogicGenerated):

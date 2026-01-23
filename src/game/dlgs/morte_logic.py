@@ -4,7 +4,7 @@ class MorteLogicGenerated:
 
 
     def r17833_action(self):
-        self.state_manager.world_manager.set_has_intro_key(True)
+        self.state_manager.inventory_manager.pick_item('has_intro_key')
         self.state_manager.world_manager.set_morte(1)
         self.state_manager.world_manager.set_read_scars(True)
         self.state_manager.world_manager.set_in_party_morte(True)
@@ -1609,17 +1609,17 @@ class MorteLogicGenerated:
 
 
     def r3969_condition(self):
-        return not self.state_manager.world_manager.get_has_prybar() and \
+        return not self.state_manager.inventory_manager.is_own_item('has_prybar') and \
                self.state_manager.characters_manager.get_property('protagonist_character_name', 'strength') < 13
 
 
     def r3970_condition(self):
-        return not self.state_manager.world_manager.get_has_prybar() and \
+        return not self.state_manager.inventory_manager.is_own_item('has_prybar') and \
                self.state_manager.characters_manager.get_property('protagonist_character_name', 'strength') > 12
 
 
     def r3971_condition(self):
-        return self.state_manager.world_manager.get_has_prybar()
+        return self.state_manager.inventory_manager.is_own_item('has_prybar')
 
 
     def r3972_condition(self):
@@ -2149,17 +2149,17 @@ class MorteLogicGenerated:
 
 
     def r35344_condition(self):
-        return not self.state_manager.world_manager.get_has_prybar() and \
+        return not self.state_manager.inventory_manager.is_own_item('has_prybar') and \
                self.state_manager.characters_manager.get_property('protagonist_character_name', 'strength') < 13
 
 
     def r35352_condition(self):
-        return not self.state_manager.world_manager.get_has_prybar() and \
+        return not self.state_manager.inventory_manager.is_own_item('has_prybar') and \
                self.state_manager.characters_manager.get_property('protagonist_character_name', 'strength') > 12
 
 
     def r35355_condition(self):
-        return self.state_manager.world_manager.get_has_prybar()
+        return self.state_manager.inventory_manager.is_own_item('has_prybar')
 
 
     def r35358_condition(self):
@@ -2171,17 +2171,17 @@ class MorteLogicGenerated:
 
 
     def r35421_condition(self):
-        return not self.state_manager.world_manager.get_has_prybar() and \
+        return not self.state_manager.inventory_manager.is_own_item('has_prybar') and \
                self.state_manager.characters_manager.get_property('protagonist_character_name', 'strength') < 13
 
 
     def r35429_condition(self):
-        return not self.state_manager.world_manager.get_has_prybar() and \
+        return not self.state_manager.inventory_manager.is_own_item('has_prybar') and \
                self.state_manager.characters_manager.get_property('protagonist_character_name', 'strength') > 12
 
 
     def r35432_condition(self):
-        return self.state_manager.world_manager.get_has_prybar()
+        return self.state_manager.inventory_manager.is_own_item('has_prybar')
 
 
     def r35435_condition(self):
@@ -2193,17 +2193,17 @@ class MorteLogicGenerated:
 
 
     def r35498_condition(self):
-        return not self.state_manager.world_manager.get_has_prybar() and \
+        return not self.state_manager.inventory_manager.is_own_item('has_prybar') and \
                self.state_manager.characters_manager.get_property('protagonist_character_name', 'strength') < 13
 
 
     def r35506_condition(self):
-        return not self.state_manager.world_manager.get_has_prybar() and \
+        return not self.state_manager.inventory_manager.is_own_item('has_prybar') and \
                self.state_manager.characters_manager.get_property('protagonist_character_name', 'strength') > 12
 
 
     def r35509_condition(self):
-        return self.state_manager.world_manager.get_has_prybar()
+        return self.state_manager.inventory_manager.is_own_item('has_prybar')
 
 
     def r35512_condition(self):
@@ -2215,17 +2215,17 @@ class MorteLogicGenerated:
 
 
     def r35575_condition(self):
-        return not self.state_manager.world_manager.get_has_prybar() and \
+        return not self.state_manager.inventory_manager.is_own_item('has_prybar') and \
                self.state_manager.characters_manager.get_property('protagonist_character_name', 'strength') < 13
 
 
     def r35583_condition(self):
-        return not self.state_manager.world_manager.get_has_prybar() and \
+        return not self.state_manager.inventory_manager.is_own_item('has_prybar') and \
                self.state_manager.characters_manager.get_property('protagonist_character_name', 'strength') > 12
 
 
     def r35586_condition(self):
-        return self.state_manager.world_manager.get_has_prybar()
+        return self.state_manager.inventory_manager.is_own_item('has_prybar')
 
 
     def r35589_condition(self):
@@ -2280,7 +2280,7 @@ class MorteLogicGenerated:
 
 
     def r41846_condition(self):
-        return self.state_manager.world_manager.get_has_bandages()
+        return self.state_manager.inventory_manager.is_own_item('has_bandages')
 
 
     def r41847_condition(self):

@@ -13,13 +13,13 @@ class Zm569LogicGeneratedTest(LogicTest):
 
     def test_r24576_condition(self):
         self.state_manager.world_manager.set_mortuary_walkthrough(1)
-        self.state_manager.world_manager.set_has_intro_key(True)
+        self.state_manager.inventory_manager.pick_item('has_intro_key')
         self.state_manager.world_manager.set_in_party_morte(False)
 
         self.assertFalse(self.logic.r24576_condition())
 
         self.state_manager.world_manager.set_mortuary_walkthrough(0)
-        self.state_manager.world_manager.set_has_intro_key(False)
+        self.state_manager.inventory_manager.drop_item('has_intro_key')
         self.state_manager.world_manager.set_in_party_morte(True)
 
         self.assertTrue(self.logic.r24576_condition())
@@ -27,13 +27,13 @@ class Zm569LogicGeneratedTest(LogicTest):
 
     def test_r24579_condition(self):
         self.state_manager.world_manager.set_mortuary_walkthrough(1)
-        self.state_manager.world_manager.set_has_intro_key(True)
+        self.state_manager.inventory_manager.pick_item('has_intro_key')
         self.state_manager.world_manager.set_in_party_morte(True)
 
         self.assertFalse(self.logic.r24579_condition())
 
         self.state_manager.world_manager.set_mortuary_walkthrough(0)
-        self.state_manager.world_manager.set_has_intro_key(False)
+        self.state_manager.inventory_manager.drop_item('has_intro_key')
         self.state_manager.world_manager.set_in_party_morte(False)
 
         self.assertTrue(self.logic.r24579_condition())
@@ -63,12 +63,12 @@ class Zm569LogicGeneratedTest(LogicTest):
 
     def test_r24585_condition(self):
         self.state_manager.world_manager.set_mortuary_walkthrough(1)
-        self.state_manager.world_manager.set_has_intro_key(True)
+        self.state_manager.inventory_manager.pick_item('has_intro_key')
 
         self.assertFalse(self.logic.r24585_condition())
 
         self.state_manager.world_manager.set_mortuary_walkthrough(0)
-        self.state_manager.world_manager.set_has_intro_key(False)
+        self.state_manager.inventory_manager.drop_item('has_intro_key')
 
         self.assertTrue(self.logic.r24585_condition())
 

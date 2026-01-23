@@ -36,21 +36,21 @@ class CopearcLogicGeneratedTest(LogicTest):
 
 
     def test_r46733_action(self):
-        self.state_manager.world_manager.set_has_copper_earring_closed(True)
-        self.state_manager.world_manager.set_has_copper_earring_opened(False)
+        self.state_manager.inventory_manager.pick_item('has_copper_earring_closed')
+        self.state_manager.inventory_manager.drop_all_items('has_copper_earring_opened')
 
-        self.assertTrue(self.state_manager.world_manager.get_has_copper_earring_closed())
-        self.assertFalse(self.state_manager.world_manager.get_has_copper_earring_opened())
-
-        self.logic.r46733_action()
-
-        self.assertFalse(self.state_manager.world_manager.get_has_copper_earring_closed())
-        self.assertTrue(self.state_manager.world_manager.get_has_copper_earring_opened())
+        self.assertTrue(self.state_manager.inventory_manager.is_own_item('has_copper_earring_closed'))
+        self.assertFalse(self.state_manager.inventory_manager.is_own_item('has_copper_earring_opened'))
 
         self.logic.r46733_action()
 
-        self.assertFalse(self.state_manager.world_manager.get_has_copper_earring_closed())
-        self.assertTrue(self.state_manager.world_manager.get_has_copper_earring_opened())
+        self.assertFalse(self.state_manager.inventory_manager.is_own_item('has_copper_earring_closed'))
+        self.assertTrue(self.state_manager.inventory_manager.is_own_item('has_copper_earring_opened'))
+
+        self.logic.r46733_action()
+
+        self.assertFalse(self.state_manager.inventory_manager.is_own_item('has_copper_earring_closed'))
+        self.assertTrue(self.state_manager.inventory_manager.is_own_item('has_copper_earring_opened'))
 
 
     def test_r46725_condition(self):

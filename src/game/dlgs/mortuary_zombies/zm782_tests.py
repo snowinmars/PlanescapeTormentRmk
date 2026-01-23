@@ -23,7 +23,7 @@ class Zm782LogicTest(LogicTest):
 
     def test_pick_key_up(self):
         self._false_then_true_action(
-            self.state_manager.world_manager.get_has_intro_key,
+            lambda: self.state_manager.inventory_manager.is_own_item('has_intro_key'),
             self.logic.pick_key_up
         )
 
@@ -37,34 +37,35 @@ class Zm782LogicTest(LogicTest):
 
     def test_r24709_condition(self):
         self.state_manager.world_manager.set_in_party_morte(False)
-        self.state_manager.world_manager.set_has_intro_key(True)
+        self.state_manager.inventory_manager.pick_item('has_intro_key')
         self.assertFalse(self.logic.r24709_condition())
 
         self.state_manager.world_manager.set_in_party_morte(True)
-        self.state_manager.world_manager.set_has_intro_key(False)
+        self.state_manager.inventory_manager.drop_item('has_intro_key')
         self.assertTrue(self.logic.r24709_condition())
 
 
     def test_r24712_condition(self):
         self.state_manager.world_manager.set_in_party_morte(True)
-        self.state_manager.world_manager.set_has_intro_key(True)
+        self.state_manager.inventory_manager.pick_item('has_intro_key')
         self.assertFalse(self.logic.r24712_condition())
 
         self.state_manager.world_manager.set_in_party_morte(False)
-        self.state_manager.world_manager.set_has_intro_key(False)
+        self.state_manager.inventory_manager.drop_item('has_intro_key')
         self.assertTrue(self.logic.r24712_condition())
 
 
     def test_r24713_condition(self):
+        self.state_manager.inventory_manager.pick_item('has_intro_key')
         self._boolean_invert_condition(
-            lambda x: self.state_manager.world_manager.set_has_intro_key(x),
+            lambda x: self.state_manager.inventory_manager.pick_item('has_intro_key') if x else self.state_manager.inventory_manager.drop_item('has_intro_key'),
             self.logic.r24713_condition
         )
 
 
     def test_r24714_condition(self):
         self._boolean_straight_condition(
-            lambda x: self.state_manager.world_manager.set_has_intro_key(x),
+            lambda x: self.state_manager.inventory_manager.pick_item('has_intro_key') if x else self.state_manager.inventory_manager.drop_item('has_intro_key'),
             self.logic.r24714_condition
         )
 

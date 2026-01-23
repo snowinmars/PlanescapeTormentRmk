@@ -89,8 +89,8 @@ class N1201LogicGenerated:
 
 
     def r45025_action(self):
-        self.state_manager.world_manager.set_has_tearring(True)
-        self.state_manager.world_manager.set_has_1201_note(False)
+        self.state_manager.inventory_manager.pick_item('has_tearring')
+        self.state_manager.inventory_manager.drop_all_items('has_1201_note')
 
 
     def r45000_condition(self):

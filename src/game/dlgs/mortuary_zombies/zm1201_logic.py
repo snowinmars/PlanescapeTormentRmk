@@ -5,7 +5,7 @@ class Zm1201LogicGenerated:
 
     def r34956_action(self):
         self.state_manager.world_manager.set_1201_note_retrieved(True)
-        self.state_manager.world_manager.set_has_1201_note(True)
+        self.state_manager.inventory_manager.pick_item('has_1201_note')
         self.state_manager.gain_experience('party', 250)
 
 
@@ -27,11 +27,11 @@ class Zm1201LogicGenerated:
 
 
     def r34956_condition(self):
-        return self.state_manager.world_manager.get_has_scalpel()
+        return self.state_manager.inventory_manager.is_own_item('has_scalpel')
 
 
     def r45122_condition(self):
-        return not self.state_manager.world_manager.get_has_scalpel()
+        return not self.state_manager.inventory_manager.is_own_item('has_scalpel')
 
 
     def r45129_condition(self):

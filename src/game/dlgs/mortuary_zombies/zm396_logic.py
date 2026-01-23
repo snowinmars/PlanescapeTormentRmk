@@ -64,12 +64,13 @@ class Zm396Logic(Zm396LogicGenerated):
 
     def r34936_action(self):
         self.state_manager.world_manager.set_has_bandages_zm396(True)
-        self.state_manager.world_manager.set_has_bandages(True)
+        self.state_manager.inventory_manager.pick_item('has_bandages')
+
 
 
     def r34934_action(self):
         self.state_manager.world_manager.set_has_bandages_zm396(True)
-        self.state_manager.world_manager.set_has_bandages(True)
+        self.state_manager.inventory_manager.pick_item('has_bandages')
 
 
     def get_took_zm396_bandages(self):

@@ -643,10 +643,9 @@ class GiantskLogicGeneratedTest(LogicTest):
 
     def test_r64294_condition(self):
         self._boolean_straight_condition(
-            lambda x: self.state_manager.world_manager.set_has_tome_ba(x),
+            lambda x: self.state_manager.inventory_manager.pick_item('has_tome_ba') if x else self.state_manager.inventory_manager.drop_item('has_tome_ba'),
             self.logic.r64294_condition
         )
-
 
     def test_r4072_condition(self):
         who = 'protagonist_character_name'
@@ -794,7 +793,7 @@ class GiantskLogicGeneratedTest(LogicTest):
 
     def test_r64296_condition(self):
         self._boolean_straight_condition(
-            lambda x: self.state_manager.world_manager.set_has_tome_ba(x),
+            lambda x: self.state_manager.inventory_manager.pick_item('has_tome_ba') if x else self.state_manager.inventory_manager.drop_item('has_tome_ba'),
             self.logic.r64296_condition
         )
 

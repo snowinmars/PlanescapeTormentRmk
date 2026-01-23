@@ -5,13 +5,13 @@ class Zm569LogicGenerated:
 
     def r24576_condition(self):
         return self.state_manager.world_manager.get_mortuary_walkthrough() == 0 and \
-               not self.state_manager.world_manager.get_has_intro_key() and \
+               not self.state_manager.inventory_manager.is_own_item('has_intro_key') and \
                self.state_manager.world_manager.get_in_party_morte()
 
 
     def r24579_condition(self):
         return self.state_manager.world_manager.get_mortuary_walkthrough() == 0 and \
-               not self.state_manager.world_manager.get_has_intro_key() and \
+               not self.state_manager.inventory_manager.is_own_item('has_intro_key') and \
                not self.state_manager.world_manager.get_in_party_morte()
 
 
@@ -29,7 +29,7 @@ class Zm569LogicGenerated:
 
     def r24585_condition(self):
         return self.state_manager.world_manager.get_mortuary_walkthrough() == 0 and \
-               not self.state_manager.world_manager.get_has_intro_key()
+               not self.state_manager.inventory_manager.is_own_item('has_intro_key')
 
 
     def r42294_condition(self):

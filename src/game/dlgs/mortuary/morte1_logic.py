@@ -46,7 +46,7 @@ class Morte1Logic(Morte1LogicGenerated):
 
 
     def s24_action(self):
-        self.state_manager.world_manager.set_has_intro_key(True)
+        self.state_manager.inventory_manager.pick_item('has_intro_key')
 
 
     def talk(self):

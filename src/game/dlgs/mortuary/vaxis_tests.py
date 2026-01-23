@@ -590,42 +590,34 @@ class VaxisLogicGeneratedTest(LogicTest):
 
     def test_r4469_action(self):
         self.state_manager.world_manager.set_vaxis_leave(False)
-        self.state_manager.world_manager.set_has_bandages(False)
-        self.state_manager.world_manager.set_has_bandages(False)
-        self.state_manager.world_manager.set_has_bandages(False)
-        self.state_manager.world_manager.set_has_embalm(False)
-        self.state_manager.world_manager.set_has_needle(False)
+        self.state_manager.inventory_manager.drop_all_items('has_bandages')
+        self.state_manager.inventory_manager.drop_all_items('has_embalm')
+        self.state_manager.inventory_manager.drop_all_items('has_needle')
         who_experience = 'protagonist_character_name'
         prop_experience = 'experience'
         delta_experience = 500
 
         self.assertFalse(self.state_manager.world_manager.get_vaxis_leave())
-        self.assertFalse(self.state_manager.world_manager.get_has_bandages())
-        self.assertFalse(self.state_manager.world_manager.get_has_bandages())
-        self.assertFalse(self.state_manager.world_manager.get_has_bandages())
-        self.assertFalse(self.state_manager.world_manager.get_has_embalm())
-        self.assertFalse(self.state_manager.world_manager.get_has_needle())
+        self.assertFalse(self.state_manager.inventory_manager.is_own_item('has_bandages'))
+        self.assertFalse(self.state_manager.inventory_manager.is_own_item('has_embalm'))
+        self.assertFalse(self.state_manager.inventory_manager.is_own_item('has_needle'))
         experience_before = self.state_manager.characters_manager.get_property(who_experience, prop_experience)
 
         self.logic.r4469_action()
 
         self.assertTrue(self.state_manager.world_manager.get_vaxis_leave())
-        self.assertTrue(self.state_manager.world_manager.get_has_bandages())
-        self.assertTrue(self.state_manager.world_manager.get_has_bandages())
-        self.assertTrue(self.state_manager.world_manager.get_has_bandages())
-        self.assertTrue(self.state_manager.world_manager.get_has_embalm())
-        self.assertTrue(self.state_manager.world_manager.get_has_needle())
+        self.assertEqual(self.state_manager.inventory_manager.owned_item_count('has_bandages'), 3)
+        self.assertTrue(self.state_manager.inventory_manager.is_own_item('has_embalm'))
+        self.assertTrue(self.state_manager.inventory_manager.is_own_item('has_needle'))
         experience_after = self.state_manager.characters_manager.get_property(who_experience, prop_experience)
         self.assertEqual(experience_before + delta_experience, experience_after)
 
         self.logic.r4469_action()
 
         self.assertTrue(self.state_manager.world_manager.get_vaxis_leave())
-        self.assertTrue(self.state_manager.world_manager.get_has_bandages())
-        self.assertTrue(self.state_manager.world_manager.get_has_bandages())
-        self.assertTrue(self.state_manager.world_manager.get_has_bandages())
-        self.assertTrue(self.state_manager.world_manager.get_has_embalm())
-        self.assertTrue(self.state_manager.world_manager.get_has_needle())
+        self.assertEqual(self.state_manager.inventory_manager.owned_item_count('has_bandages'), 6)
+        self.assertEqual(self.state_manager.inventory_manager.owned_item_count('has_embalm'), 2)
+        self.assertEqual(self.state_manager.inventory_manager.owned_item_count('has_needle'), 2)
         experience_after_once = self.state_manager.characters_manager.get_property(who_experience, prop_experience)
         self.assertEqual(experience_after + delta_experience, experience_after_once)
 
@@ -725,25 +717,25 @@ class VaxisLogicGeneratedTest(LogicTest):
         who_experience = 'protagonist_character_name'
         prop_experience = 'experience'
         delta_experience = 250
-        self.state_manager.world_manager.set_has_keyem(True)
+        self.state_manager.inventory_manager.pick_item('has_keyem')
         self.state_manager.world_manager.set_vaxis_has_keyem(False)
 
         experience_before = self.state_manager.characters_manager.get_property(who_experience, prop_experience)
-        self.assertTrue(self.state_manager.world_manager.get_has_keyem())
+        self.assertTrue(self.state_manager.inventory_manager.is_own_item('has_keyem'))
         self.assertFalse(self.state_manager.world_manager.get_vaxis_has_keyem())
 
         self.logic.r4494_action()
 
         experience_after = self.state_manager.characters_manager.get_property(who_experience, prop_experience)
         self.assertEqual(experience_before + delta_experience, experience_after)
-        self.assertFalse(self.state_manager.world_manager.get_has_keyem())
+        self.assertFalse(self.state_manager.inventory_manager.is_own_item('has_keyem'))
         self.assertTrue(self.state_manager.world_manager.get_vaxis_has_keyem())
 
         self.logic.r4494_action()
 
         experience_after_once = self.state_manager.characters_manager.get_property(who_experience, prop_experience)
         self.assertEqual(experience_after + delta_experience, experience_after_once)
-        self.assertFalse(self.state_manager.world_manager.get_has_keyem())
+        self.assertFalse(self.state_manager.inventory_manager.is_own_item('has_keyem'))
         self.assertTrue(self.state_manager.world_manager.get_vaxis_has_keyem())
 
 
@@ -811,25 +803,25 @@ class VaxisLogicGeneratedTest(LogicTest):
         who_experience = 'protagonist_character_name'
         prop_experience = 'experience'
         delta_experience = 250
-        self.state_manager.world_manager.set_has_keyem(True)
+        self.state_manager.inventory_manager.pick_item('has_keyem')
         self.state_manager.world_manager.set_vaxis_has_keyem(False)
 
         experience_before = self.state_manager.characters_manager.get_property(who_experience, prop_experience)
-        self.assertTrue(self.state_manager.world_manager.get_has_keyem())
+        self.assertTrue(self.state_manager.inventory_manager.is_own_item('has_keyem'))
         self.assertFalse(self.state_manager.world_manager.get_vaxis_has_keyem())
 
         self.logic.r4502_action()
 
         experience_after = self.state_manager.characters_manager.get_property(who_experience, prop_experience)
         self.assertEqual(experience_before + delta_experience, experience_after)
-        self.assertFalse(self.state_manager.world_manager.get_has_keyem())
+        self.assertFalse(self.state_manager.inventory_manager.is_own_item('has_keyem'))
         self.assertTrue(self.state_manager.world_manager.get_vaxis_has_keyem())
 
         self.logic.r4502_action()
 
         experience_after_once = self.state_manager.characters_manager.get_property(who_experience, prop_experience)
         self.assertEqual(experience_after + delta_experience, experience_after_once)
-        self.assertFalse(self.state_manager.world_manager.get_has_keyem())
+        self.assertFalse(self.state_manager.inventory_manager.is_own_item('has_keyem'))
         self.assertTrue(self.state_manager.world_manager.get_vaxis_has_keyem())
 
 
@@ -903,7 +895,7 @@ class VaxisLogicGeneratedTest(LogicTest):
         who_experience = 'protagonist_character_name'
         prop_experience = 'experience'
         delta_experience = 250
-        self.state_manager.world_manager.set_has_keyem(True)
+        self.state_manager.inventory_manager.pick_item('has_keyem')
         self.state_manager.world_manager.set_vaxis_has_keyem(False)
         embalm_key_quest_before = 1
         embalm_key_quest_after = 3
@@ -911,7 +903,7 @@ class VaxisLogicGeneratedTest(LogicTest):
         self.state_manager.world_manager.set_embalm_key_quest(embalm_key_quest_before)
 
         experience_before = self.state_manager.characters_manager.get_property(who_experience, prop_experience)
-        self.assertTrue(self.state_manager.world_manager.get_has_keyem())
+        self.assertTrue(self.state_manager.inventory_manager.is_own_item('has_keyem'))
         self.assertFalse(self.state_manager.world_manager.get_vaxis_has_keyem())
         self.assertEqual(self.state_manager.world_manager.get_embalm_key_quest(), embalm_key_quest_before)
 
@@ -919,7 +911,7 @@ class VaxisLogicGeneratedTest(LogicTest):
 
         experience_after = self.state_manager.characters_manager.get_property(who_experience, prop_experience)
         self.assertEqual(experience_before + delta_experience, experience_after)
-        self.assertFalse(self.state_manager.world_manager.get_has_keyem())
+        self.assertFalse(self.state_manager.inventory_manager.is_own_item('has_keyem'))
         self.assertTrue(self.state_manager.world_manager.get_vaxis_has_keyem())
         self.assertEqual(self.state_manager.world_manager.get_embalm_key_quest(), embalm_key_quest_after)
 
@@ -927,7 +919,7 @@ class VaxisLogicGeneratedTest(LogicTest):
 
         experience_after_once = self.state_manager.characters_manager.get_property(who_experience, prop_experience)
         self.assertEqual(experience_after + delta_experience, experience_after_once)
-        self.assertFalse(self.state_manager.world_manager.get_has_keyem())
+        self.assertFalse(self.state_manager.inventory_manager.is_own_item('has_keyem'))
         self.assertTrue(self.state_manager.world_manager.get_vaxis_has_keyem())
         self.assertEqual(self.state_manager.world_manager.get_embalm_key_quest(), embalm_key_quest_after_once)
 
@@ -1101,44 +1093,44 @@ class VaxisLogicGeneratedTest(LogicTest):
         who_experience = 'protagonist_character_name'
         prop_experience = 'experience'
         delta_experience = 250
-        self.state_manager.world_manager.set_has_keyem(True)
+        self.state_manager.inventory_manager.pick_item('has_keyem')
 
         experience_before = self.state_manager.characters_manager.get_property(who_experience, prop_experience)
-        self.assertTrue(self.state_manager.world_manager.get_has_keyem())
+        self.assertTrue(self.state_manager.inventory_manager.is_own_item('has_keyem'))
 
         self.logic.r4592_action()
 
         experience_after = self.state_manager.characters_manager.get_property(who_experience, prop_experience)
         self.assertEqual(experience_before + delta_experience, experience_after)
-        self.assertFalse(self.state_manager.world_manager.get_has_keyem())
+        self.assertFalse(self.state_manager.inventory_manager.is_own_item('has_keyem'))
 
         self.logic.r4592_action()
 
         experience_after_once = self.state_manager.characters_manager.get_property(who_experience, prop_experience)
         self.assertEqual(experience_after + delta_experience, experience_after_once)
-        self.assertFalse(self.state_manager.world_manager.get_has_keyem())
+        self.assertFalse(self.state_manager.inventory_manager.is_own_item('has_keyem'))
 
 
     def test_r4593_action(self):
         who_experience = 'protagonist_character_name'
         prop_experience = 'experience'
         delta_experience = 250
-        self.state_manager.world_manager.set_has_keyem(True)
+        self.state_manager.inventory_manager.pick_item('has_keyem')
 
         experience_before = self.state_manager.characters_manager.get_property(who_experience, prop_experience)
-        self.assertTrue(self.state_manager.world_manager.get_has_keyem())
+        self.assertTrue(self.state_manager.inventory_manager.is_own_item('has_keyem'))
 
         self.logic.r4593_action()
 
         experience_after = self.state_manager.characters_manager.get_property(who_experience, prop_experience)
         self.assertEqual(experience_before + delta_experience, experience_after)
-        self.assertFalse(self.state_manager.world_manager.get_has_keyem())
+        self.assertFalse(self.state_manager.inventory_manager.is_own_item('has_keyem'))
 
         self.logic.r4593_action()
 
         experience_after_once = self.state_manager.characters_manager.get_property(who_experience, prop_experience)
         self.assertEqual(experience_after + delta_experience, experience_after_once)
-        self.assertFalse(self.state_manager.world_manager.get_has_keyem())
+        self.assertFalse(self.state_manager.inventory_manager.is_own_item('has_keyem'))
 
 
     def test_r4620_action(self):
@@ -1146,24 +1138,26 @@ class VaxisLogicGeneratedTest(LogicTest):
         vaxis_zombie_disguise_after = 2
         vaxis_zombie_disguise_after_once = 2
         self.state_manager.world_manager.set_vaxis_zombie_disguise(vaxis_zombie_disguise_before)
-        self.state_manager.world_manager.set_has_embalm(True)
-        self.state_manager.world_manager.set_has_needle(True)
+        self.state_manager.inventory_manager.pick_item('has_embalm')
+        self.state_manager.inventory_manager.pick_item('has_needle')
 
         self.assertEqual(self.state_manager.world_manager.get_vaxis_zombie_disguise(), vaxis_zombie_disguise_before)
-        self.assertTrue(self.state_manager.world_manager.get_has_embalm())
-        self.assertTrue(self.state_manager.world_manager.get_has_needle())
+        self.assertTrue(self.state_manager.inventory_manager.is_own_item('has_embalm'))
+        self.assertTrue(self.state_manager.inventory_manager.is_own_item('has_needle'))
 
         self.logic.r4620_action()
 
         self.assertEqual(self.state_manager.world_manager.get_vaxis_zombie_disguise(), vaxis_zombie_disguise_after)
-        self.assertFalse(self.state_manager.world_manager.get_has_embalm())
-        self.assertFalse(self.state_manager.world_manager.get_has_needle())
+        self.assertFalse(self.state_manager.inventory_manager.is_own_item('has_embalm'))
+        self.assertFalse(self.state_manager.inventory_manager.is_own_item('has_needle'))
 
+        self.state_manager.inventory_manager.pick_item('has_embalm')
+        self.state_manager.inventory_manager.pick_item('has_needle')
         self.logic.r4620_action()
 
         self.assertEqual(self.state_manager.world_manager.get_vaxis_zombie_disguise(), vaxis_zombie_disguise_after_once)
-        self.assertFalse(self.state_manager.world_manager.get_has_embalm())
-        self.assertFalse(self.state_manager.world_manager.get_has_needle())
+        self.assertFalse(self.state_manager.inventory_manager.is_own_item('has_embalm'))
+        self.assertFalse(self.state_manager.inventory_manager.is_own_item('has_needle'))
 
 
     def test_r4621_action(self):
@@ -2119,7 +2113,7 @@ class VaxisLogicGeneratedTest(LogicTest):
 
     def test_r4494_condition(self):
         self._boolean_straight_condition(
-            lambda x: self.state_manager.world_manager.set_has_keyem(x),
+            lambda x: self.state_manager.inventory_manager.pick_item('has_keyem') if x else self.state_manager.inventory_manager.drop_item('has_keyem'),
             self.logic.r4494_condition
         )
 
@@ -2178,7 +2172,7 @@ class VaxisLogicGeneratedTest(LogicTest):
 
     def test_r4502_condition(self):
         self._boolean_straight_condition(
-            lambda x: self.state_manager.world_manager.set_has_keyem(x),
+            lambda x: self.state_manager.inventory_manager.pick_item('has_keyem') if x else self.state_manager.inventory_manager.drop_item('has_keyem'),
             self.logic.r4502_condition
         )
 
@@ -2526,36 +2520,36 @@ class VaxisLogicGeneratedTest(LogicTest):
 
     def test_r4592_condition(self):
         self.state_manager.world_manager.set_embalm_key_quest(0)
-        self.state_manager.world_manager.set_has_keyem(False)
+        self.state_manager.inventory_manager.drop_all_items('has_keyem')
 
         self.assertFalse(self.logic.r4592_condition())
 
         self.state_manager.world_manager.set_embalm_key_quest(1)
-        self.state_manager.world_manager.set_has_keyem(True)
+        self.state_manager.inventory_manager.pick_item('has_keyem')
 
         self.assertTrue(self.logic.r4592_condition())
 
 
     def test_r4593_condition(self):
         self.state_manager.world_manager.set_embalm_key_quest(0)
-        self.state_manager.world_manager.set_has_keyem(False)
+        self.state_manager.inventory_manager.drop_all_items('has_keyem')
 
         self.assertFalse(self.logic.r4593_condition())
 
         self.state_manager.world_manager.set_embalm_key_quest(2)
-        self.state_manager.world_manager.set_has_keyem(True)
+        self.state_manager.inventory_manager.pick_item('has_keyem')
 
         self.assertTrue(self.logic.r4593_condition())
 
 
     def test_r4594_condition(self):
         self.state_manager.world_manager.set_embalm_key_quest(0)
-        self.state_manager.world_manager.set_has_keyem(True)
+        self.state_manager.inventory_manager.pick_item('has_keyem')
 
         self.assertFalse(self.logic.r4594_condition())
 
         self.state_manager.world_manager.set_embalm_key_quest(1)
-        self.state_manager.world_manager.set_has_keyem(False)
+        self.state_manager.inventory_manager.drop_item('has_keyem')
 
         self.assertTrue(self.logic.r4594_condition())
 
@@ -2729,13 +2723,13 @@ class VaxisLogicGeneratedTest(LogicTest):
 
 
     def test_r4620_condition(self):
-        self.state_manager.world_manager.set_has_embalm(False)
-        self.state_manager.world_manager.set_has_needle(False)
+        self.state_manager.inventory_manager.drop_all_items('has_embalm')
+        self.state_manager.inventory_manager.drop_all_items('has_needle')
 
         self.assertFalse(self.logic.r4620_condition())
 
-        self.state_manager.world_manager.set_has_embalm(True)
-        self.state_manager.world_manager.set_has_needle(True)
+        self.state_manager.inventory_manager.pick_item('has_embalm')
+        self.state_manager.inventory_manager.pick_item('has_needle')
 
         self.assertTrue(self.logic.r4620_condition())
 

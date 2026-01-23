@@ -219,7 +219,7 @@ class S748LogicGeneratedTest(LogicTest):
         self.state_manager.world_manager.set_skeleton_examine(False)
         self.state_manager.world_manager.set_in_party_morte(False)
         self.state_manager.world_manager.set_morte_skel_mort_quip2(False)
-        self.state_manager.world_manager.set_has_prybar(True)
+        self.state_manager.inventory_manager.pick_item('has_prybar')
         self.state_manager.characters_manager.set_property(who_strength, prop_strength, delta_strength)
 
         self.assertFalse(self.logic.r35449_condition())
@@ -227,7 +227,7 @@ class S748LogicGeneratedTest(LogicTest):
         self.state_manager.world_manager.set_skeleton_examine(True)
         self.state_manager.world_manager.set_in_party_morte(True)
         self.state_manager.world_manager.set_morte_skel_mort_quip2(True)
-        self.state_manager.world_manager.set_has_prybar(False)
+        self.state_manager.inventory_manager.drop_item('has_prybar')
         self.state_manager.characters_manager.set_property(who_strength, prop_strength, delta_strength - 1)
 
         self.assertTrue(self.logic.r35449_condition())
@@ -241,7 +241,7 @@ class S748LogicGeneratedTest(LogicTest):
         self.state_manager.world_manager.set_skeleton_examine(False)
         self.state_manager.world_manager.set_in_party_morte(False)
         self.state_manager.world_manager.set_morte_skel_mort_quip2(False)
-        self.state_manager.world_manager.set_has_prybar(True)
+        self.state_manager.inventory_manager.pick_item('has_prybar')
         self.state_manager.characters_manager.set_property(who_strength, prop_strength, delta_strength)
 
         self.assertFalse(self.logic.r35450_condition())
@@ -249,7 +249,7 @@ class S748LogicGeneratedTest(LogicTest):
         self.state_manager.world_manager.set_skeleton_examine(True)
         self.state_manager.world_manager.set_in_party_morte(True)
         self.state_manager.world_manager.set_morte_skel_mort_quip2(True)
-        self.state_manager.world_manager.set_has_prybar(False)
+        self.state_manager.inventory_manager.drop_item('has_prybar')
         self.state_manager.characters_manager.set_property(who_strength, prop_strength, delta_strength + 1)
 
         self.assertTrue(self.logic.r35450_condition())
@@ -259,14 +259,14 @@ class S748LogicGeneratedTest(LogicTest):
         self.state_manager.world_manager.set_skeleton_examine(False)
         self.state_manager.world_manager.set_in_party_morte(False)
         self.state_manager.world_manager.set_morte_skel_mort_quip2(False)
-        self.state_manager.world_manager.set_has_prybar(False)
+        self.state_manager.inventory_manager.drop_all_items('has_prybar')
 
         self.assertFalse(self.logic.r35451_condition())
 
         self.state_manager.world_manager.set_skeleton_examine(True)
         self.state_manager.world_manager.set_in_party_morte(True)
         self.state_manager.world_manager.set_morte_skel_mort_quip2(True)
-        self.state_manager.world_manager.set_has_prybar(True)
+        self.state_manager.inventory_manager.pick_item('has_prybar')
 
         self.assertTrue(self.logic.r35451_condition())
 
@@ -278,14 +278,14 @@ class S748LogicGeneratedTest(LogicTest):
 
         self.state_manager.world_manager.set_in_party_morte(True)
         self.state_manager.world_manager.set_skeleton_examine(False)
-        self.state_manager.world_manager.set_has_prybar(True)
+        self.state_manager.inventory_manager.pick_item('has_prybar')
         self.state_manager.characters_manager.set_property(who_strength, prop_strength, delta_strength)
 
         self.assertFalse(self.logic.r35452_condition())
 
         self.state_manager.world_manager.set_in_party_morte(False)
         self.state_manager.world_manager.set_skeleton_examine(True)
-        self.state_manager.world_manager.set_has_prybar(False)
+        self.state_manager.inventory_manager.drop_item('has_prybar')
         self.state_manager.characters_manager.set_property(who_strength, prop_strength, delta_strength - 1)
 
         self.assertTrue(self.logic.r35452_condition())
@@ -298,14 +298,14 @@ class S748LogicGeneratedTest(LogicTest):
 
         self.state_manager.world_manager.set_in_party_morte(True)
         self.state_manager.world_manager.set_skeleton_examine(False)
-        self.state_manager.world_manager.set_has_prybar(True)
+        self.state_manager.inventory_manager.pick_item('has_prybar')
         self.state_manager.characters_manager.set_property(who_strength, prop_strength, delta_strength)
 
         self.assertFalse(self.logic.r35453_condition())
 
         self.state_manager.world_manager.set_in_party_morte(False)
         self.state_manager.world_manager.set_skeleton_examine(True)
-        self.state_manager.world_manager.set_has_prybar(False)
+        self.state_manager.inventory_manager.drop_item('has_prybar')
         self.state_manager.characters_manager.set_property(who_strength, prop_strength, delta_strength + 1)
 
         self.assertTrue(self.logic.r35453_condition())
@@ -314,13 +314,13 @@ class S748LogicGeneratedTest(LogicTest):
     def test_r35454_condition(self):
         self.state_manager.world_manager.set_in_party_morte(True)
         self.state_manager.world_manager.set_skeleton_examine(False)
-        self.state_manager.world_manager.set_has_prybar(False)
+        self.state_manager.inventory_manager.drop_all_items('has_prybar')
 
         self.assertFalse(self.logic.r35454_condition())
 
         self.state_manager.world_manager.set_in_party_morte(False)
         self.state_manager.world_manager.set_skeleton_examine(True)
-        self.state_manager.world_manager.set_has_prybar(True)
+        self.state_manager.inventory_manager.pick_item('has_prybar')
 
         self.assertTrue(self.logic.r35454_condition())
 
@@ -449,14 +449,14 @@ class S748LogicGeneratedTest(LogicTest):
 
         self.state_manager.world_manager.set_in_party_morte(False)
         self.state_manager.world_manager.set_morte_skel_mort_quip2(False)
-        self.state_manager.world_manager.set_has_prybar(True)
+        self.state_manager.inventory_manager.pick_item('has_prybar')
         self.state_manager.characters_manager.set_property(who_strength, prop_strength, delta_strength)
 
         self.assertFalse(self.logic.r35439_condition())
 
         self.state_manager.world_manager.set_in_party_morte(True)
         self.state_manager.world_manager.set_morte_skel_mort_quip2(True)
-        self.state_manager.world_manager.set_has_prybar(False)
+        self.state_manager.inventory_manager.drop_item('has_prybar')
         self.state_manager.characters_manager.set_property(who_strength, prop_strength, delta_strength - 1)
 
         self.assertTrue(self.logic.r35439_condition())
@@ -469,14 +469,14 @@ class S748LogicGeneratedTest(LogicTest):
 
         self.state_manager.world_manager.set_in_party_morte(False)
         self.state_manager.world_manager.set_morte_skel_mort_quip2(False)
-        self.state_manager.world_manager.set_has_prybar(True)
+        self.state_manager.inventory_manager.pick_item('has_prybar')
         self.state_manager.characters_manager.set_property(who_strength, prop_strength, delta_strength)
 
         self.assertFalse(self.logic.r35440_condition())
 
         self.state_manager.world_manager.set_in_party_morte(True)
         self.state_manager.world_manager.set_morte_skel_mort_quip2(True)
-        self.state_manager.world_manager.set_has_prybar(False)
+        self.state_manager.inventory_manager.drop_item('has_prybar')
         self.state_manager.characters_manager.set_property(who_strength, prop_strength, delta_strength + 1)
 
         self.assertTrue(self.logic.r35440_condition())
@@ -485,13 +485,13 @@ class S748LogicGeneratedTest(LogicTest):
     def test_r35441_condition(self):
         self.state_manager.world_manager.set_in_party_morte(False)
         self.state_manager.world_manager.set_morte_skel_mort_quip2(False)
-        self.state_manager.world_manager.set_has_prybar(False)
+        self.state_manager.inventory_manager.drop_all_items('has_prybar')
 
         self.assertFalse(self.logic.r35441_condition())
 
         self.state_manager.world_manager.set_in_party_morte(True)
         self.state_manager.world_manager.set_morte_skel_mort_quip2(True)
-        self.state_manager.world_manager.set_has_prybar(True)
+        self.state_manager.inventory_manager.pick_item('has_prybar')
 
         self.assertTrue(self.logic.r35441_condition())
 
@@ -502,13 +502,13 @@ class S748LogicGeneratedTest(LogicTest):
         delta_strength = 13
 
         self.state_manager.world_manager.set_in_party_morte(True)
-        self.state_manager.world_manager.set_has_prybar(True)
+        self.state_manager.inventory_manager.pick_item('has_prybar')
         self.state_manager.characters_manager.set_property(who_strength, prop_strength, delta_strength)
 
         self.assertFalse(self.logic.r35442_condition())
 
         self.state_manager.world_manager.set_in_party_morte(False)
-        self.state_manager.world_manager.set_has_prybar(False)
+        self.state_manager.inventory_manager.drop_item('has_prybar')
         self.state_manager.characters_manager.set_property(who_strength, prop_strength, delta_strength - 1)
 
         self.assertTrue(self.logic.r35442_condition())
@@ -520,13 +520,13 @@ class S748LogicGeneratedTest(LogicTest):
         delta_strength = 12
 
         self.state_manager.world_manager.set_in_party_morte(True)
-        self.state_manager.world_manager.set_has_prybar(True)
+        self.state_manager.inventory_manager.pick_item('has_prybar')
         self.state_manager.characters_manager.set_property(who_strength, prop_strength, delta_strength)
 
         self.assertFalse(self.logic.r35443_condition())
 
         self.state_manager.world_manager.set_in_party_morte(False)
-        self.state_manager.world_manager.set_has_prybar(False)
+        self.state_manager.inventory_manager.drop_item('has_prybar')
         self.state_manager.characters_manager.set_property(who_strength, prop_strength, delta_strength + 1)
 
         self.assertTrue(self.logic.r35443_condition())
@@ -534,12 +534,12 @@ class S748LogicGeneratedTest(LogicTest):
 
     def test_r35444_condition(self):
         self.state_manager.world_manager.set_in_party_morte(True)
-        self.state_manager.world_manager.set_has_prybar(False)
+        self.state_manager.inventory_manager.drop_all_items('has_prybar')
 
         self.assertFalse(self.logic.r35444_condition())
 
         self.state_manager.world_manager.set_in_party_morte(False)
-        self.state_manager.world_manager.set_has_prybar(True)
+        self.state_manager.inventory_manager.pick_item('has_prybar')
 
         self.assertTrue(self.logic.r35444_condition())
 

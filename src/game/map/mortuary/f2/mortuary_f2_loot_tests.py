@@ -13,21 +13,21 @@ class MortuaryF2LootLogicTest(LogicTest):
 
     def test_prybar(self):
         self._false_then_true_action(
-            self.state_manager.world_manager.get_has_scalpel,
+            lambda: self.state_manager.inventory_manager.is_own_item('has_scalpel'),
             self.logic.scalpel
         )
 
 
     def test_embalm(self):
         self._false_then_true_action(
-            self.state_manager.world_manager.get_has_embalm,
+            lambda: self.state_manager.inventory_manager.is_own_item('has_embalm'),
             self.logic.embalm
         )
 
 
     def test_copper_earring_closed(self):
         self._false_then_true_action(
-            self.state_manager.world_manager.get_has_copper_earring_closed,
+            lambda: self.state_manager.inventory_manager.is_own_item('has_copper_earring_closed'),
             self.logic.copper_earring_closed
         )
 

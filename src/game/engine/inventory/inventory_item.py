@@ -2,7 +2,7 @@ import json
 
 
 class InventoryItem:
-    def __init__(self, settings_id, orig_id, name, description, grid_image, detail_image=None, jump_on_use_to=None):
+    def __init__(self, settings_id, orig_id, name, description, grid_image, detail_image=None, jump_on_use_to=None, owned_count=0):
         self.settings_id = settings_id
         self.orig_id = orig_id
         self.name = name
@@ -10,6 +10,7 @@ class InventoryItem:
         self.grid_image = grid_image
         self.detail_image = detail_image or grid_image
         self.jump_on_use_to = jump_on_use_to
+        self.owned_count = owned_count
 
 
     def __getstate__(self):
@@ -20,7 +21,8 @@ class InventoryItem:
             'description': self.description,
             'grid_image': self.grid_image,
             'detail_image': self.detail_image,
-            'jump_on_use_to': self.jump_on_use_to
+            'jump_on_use_to': self.jump_on_use_to,
+            'owned_count': self.owned_count
         }
 
 
@@ -32,6 +34,7 @@ class InventoryItem:
         self.grid_image = state['grid_image']
         self.detail_image = state['detail_image']
         self.jump_on_use_to = state['jump_on_use_to']
+        self.owned_count = state['owned_count']
 
 
     def toJson(self, indent=None):

@@ -22,7 +22,7 @@ class Zm782Logic(Zm782LogicGenerated):
 
 
     def pick_key_up(self):
-        self.state_manager.world_manager.set_has_intro_key(True)
+        self.state_manager.inventory_manager.pick_item('has_intro_key')
 
 
     def s24_condition(self):
@@ -31,20 +31,20 @@ class Zm782Logic(Zm782LogicGenerated):
 
     def r24709_condition(self):
         return self.state_manager.world_manager.get_in_party_morte() \
-               and not self.state_manager.world_manager.get_has_intro_key()
+               and not self.state_manager.inventory_manager.is_own_item('has_intro_key')
 
 
     def r24712_condition(self):
         return not self.state_manager.world_manager.get_in_party_morte() \
-               and not self.state_manager.world_manager.get_has_intro_key()
+               and not self.state_manager.inventory_manager.is_own_item('has_intro_key')
 
 
     def r24713_condition(self):
-        return not self.state_manager.world_manager.get_has_intro_key()
+        return not self.state_manager.inventory_manager.is_own_item('has_intro_key')
 
 
     def r24714_condition(self):
-        return self.state_manager.world_manager.get_has_intro_key()
+        return self.state_manager.inventory_manager.is_own_item('has_intro_key')
 
 
     def talk(self):

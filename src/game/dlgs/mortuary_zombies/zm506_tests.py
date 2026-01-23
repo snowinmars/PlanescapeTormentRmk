@@ -13,26 +13,26 @@ class Zm506LogicGeneratedTest(LogicTest):
 
     def test_r45480_action(self):
         self.state_manager.world_manager.set_has_506_thread(False)
-        self.state_manager.world_manager.set_has_needle(False)
+        self.state_manager.inventory_manager.drop_all_items('has_needle')
         who_experience = 'protagonist_character_name'
         prop_experience = 'experience'
         delta_experience = 100
 
         self.assertFalse(self.state_manager.world_manager.get_has_506_thread())
-        self.assertFalse(self.state_manager.world_manager.get_has_needle())
+        self.assertFalse(self.state_manager.inventory_manager.is_own_item('has_needle'))
         experience_before = self.state_manager.characters_manager.get_property(who_experience, prop_experience)
 
         self.logic.r45480_action()
 
         self.assertTrue(self.state_manager.world_manager.get_has_506_thread())
-        self.assertTrue(self.state_manager.world_manager.get_has_needle())
+        self.assertTrue(self.state_manager.inventory_manager.is_own_item('has_needle'))
         experience_after = self.state_manager.characters_manager.get_property(who_experience, prop_experience)
         self.assertEqual(experience_before + delta_experience, experience_after)
 
         self.logic.r45480_action()
 
         self.assertTrue(self.state_manager.world_manager.get_has_506_thread())
-        self.assertTrue(self.state_manager.world_manager.get_has_needle())
+        self.assertTrue(self.state_manager.inventory_manager.is_own_item('has_needle'))
         experience_after_once = self.state_manager.characters_manager.get_property(who_experience, prop_experience)
         self.assertEqual(experience_after + delta_experience, experience_after_once)
 
@@ -104,14 +104,15 @@ class Zm506LogicGeneratedTest(LogicTest):
 
     def test_r45480_condition(self):
         self._boolean_straight_condition(
-            lambda x: self.state_manager.world_manager.set_has_scalpel(x),
+            lambda x: self.state_manager.inventory_manager.pick_item('has_scalpel') if x else self.state_manager.inventory_manager.drop_item('has_scalpel'),
             self.logic.r45480_condition
         )
 
 
     def test_r45481_condition(self):
+        self.state_manager.inventory_manager.pick_item('has_scalpel')
         self._boolean_invert_condition(
-            lambda x: self.state_manager.world_manager.set_has_scalpel(x),
+            lambda x: self.state_manager.inventory_manager.pick_item('has_scalpel') if x else self.state_manager.inventory_manager.drop_item('has_scalpel'),
             self.logic.r45481_condition
         )
 

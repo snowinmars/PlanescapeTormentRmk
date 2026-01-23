@@ -21,6 +21,34 @@ class InventoryManager:
         self._inventory_store.inventory_items[inventory_item.settings_id] = inventory_item
 
 
+    def pick_item(self, settings_id, count=1):
+        item = self.get_item(settings_id)
+        if item.owned_count < 0:
+            raise Exception(f'Why {settings_id} count is below zero?')
+        item.owned_count += count
+
+
+    def drop_item(self, settings_id, count=1):
+        item = self.get_item(settings_id)
+        if item.owned_count <= 0:
+            raise Exception(f'Cannot drop {settings_id} count below zero')
+        item.owned_count -= count
+
+
+    def drop_all_items(self, settings_id):
+        item = self.get_item(settings_id)
+        item.owned_count = 0
+
+
+    def is_own_item(self, settings_id, at_least=1):
+        item = self.get_item(settings_id)
+        return item.owned_count >= at_least
+
+
+    def owned_item_count(self, settings_id):
+        return self.get_item(settings_id).owned_count
+
+
     def get_owned_items(self):
         return [inventory_item for inventory_item in self._inventory_store.inventory_items.values() if self._player_has_item_callback(inventory_item.settings_id)]
 

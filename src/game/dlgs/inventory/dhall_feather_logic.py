@@ -10,7 +10,7 @@ class DhallFeatherLogic(DhallFeatherLogicGenerated):
 
     def break_feather(self):
         self.state_manager.characters_manager.modify_property('protagonist_character_name', 'lore', 1)
-        self.state_manager.world_manager.set_has_dhall_feather(False)
+        self.state_manager.inventory_manager.drop_all_items('has_dhall_feather')
 
 
     def talk(self):

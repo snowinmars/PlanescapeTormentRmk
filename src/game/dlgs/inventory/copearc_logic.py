@@ -12,8 +12,8 @@ class CopearcLogicGenerated:
 
 
     def r46733_action(self):
-        self.state_manager.world_manager.set_has_copper_earring_closed(False)
-        self.state_manager.world_manager.set_has_copper_earring_opened(True)
+        self.state_manager.inventory_manager.drop_all_items('has_copper_earring_closed')
+        self.state_manager.inventory_manager.pick_item('has_copper_earring_opened')
 
 
     def r46725_condition(self):

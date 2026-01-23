@@ -4,23 +4,23 @@ class MortuaryF3LootLogic:
 
 
     def mortuary_key(self):
-        self.state_manager.world_manager.set_has_mortuary_key(True)
+        self.state_manager.inventory_manager.pick_item('has_mortuary_key')
 
 
     def mortuary_task_list(self):
-        self.state_manager.world_manager.set_has_mortuary_task_list(True)
+        self.state_manager.inventory_manager.pick_item('has_mortuary_task_list')
 
 
     def prybar(self):
-        self.state_manager.world_manager.set_has_prybar(True)
+        self.state_manager.inventory_manager.pick_item('has_prybar')
 
 
     def dustman_request(self):
-        self.state_manager.world_manager.set_has_dustman_request(True)
+        self.state_manager.inventory_manager.pick_item('has_dustman_request'),
 
 
     def needle(self):
-        self.state_manager.world_manager.set_has_needle(True)
+        self.state_manager.inventory_manager.pick_item('has_needle')
 
 
     def garbage(self):

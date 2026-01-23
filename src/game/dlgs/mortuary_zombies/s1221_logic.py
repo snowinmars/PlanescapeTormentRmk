@@ -91,7 +91,7 @@ class S1221LogicGenerated:
         return self.state_manager.world_manager.get_skeleton_examine() and \
                self.state_manager.world_manager.get_in_party_morte() and \
                self.state_manager.world_manager.get_morte_skel_mort_quip2() and \
-               not self.state_manager.world_manager.get_has_prybar() and \
+               not self.state_manager.inventory_manager.is_own_item('has_prybar') and \
                self.state_manager.characters_manager.get_property('protagonist_character_name', 'strength') < 13
 
 
@@ -99,7 +99,7 @@ class S1221LogicGenerated:
         return self.state_manager.world_manager.get_skeleton_examine() and \
                self.state_manager.world_manager.get_in_party_morte() and \
                self.state_manager.world_manager.get_morte_skel_mort_quip2() and \
-               not self.state_manager.world_manager.get_has_prybar() and \
+               not self.state_manager.inventory_manager.is_own_item('has_prybar') and \
                self.state_manager.characters_manager.get_property('protagonist_character_name', 'strength') > 12
 
 
@@ -107,27 +107,27 @@ class S1221LogicGenerated:
         return self.state_manager.world_manager.get_skeleton_examine() and \
                self.state_manager.world_manager.get_in_party_morte() and \
                self.state_manager.world_manager.get_morte_skel_mort_quip2() and \
-               self.state_manager.world_manager.get_has_prybar()
+               self.state_manager.inventory_manager.is_own_item('has_prybar')
 
 
     def r35375_condition(self):
         return not self.state_manager.world_manager.get_in_party_morte() and \
                self.state_manager.world_manager.get_skeleton_examine() and \
-               not self.state_manager.world_manager.get_has_prybar() and \
+               not self.state_manager.inventory_manager.is_own_item('has_prybar') and \
                self.state_manager.characters_manager.get_property('protagonist_character_name', 'strength') < 13
 
 
     def r35376_condition(self):
         return not self.state_manager.world_manager.get_in_party_morte() and \
                self.state_manager.world_manager.get_skeleton_examine() and \
-               not self.state_manager.world_manager.get_has_prybar() and \
+               not self.state_manager.inventory_manager.is_own_item('has_prybar') and \
                self.state_manager.characters_manager.get_property('protagonist_character_name', 'strength') > 12
 
 
     def r35377_condition(self):
         return not self.state_manager.world_manager.get_in_party_morte() and \
                self.state_manager.world_manager.get_skeleton_examine() and \
-               self.state_manager.world_manager.get_has_prybar()
+               self.state_manager.inventory_manager.is_own_item('has_prybar')
 
 
     def r35378_condition(self):
@@ -185,38 +185,38 @@ class S1221LogicGenerated:
     def r35362_condition(self):
         return self.state_manager.world_manager.get_in_party_morte() and \
                self.state_manager.world_manager.get_morte_skel_mort_quip2() and \
-               not self.state_manager.world_manager.get_has_prybar() and \
+               not self.state_manager.inventory_manager.is_own_item('has_prybar') and \
                self.state_manager.characters_manager.get_property('protagonist_character_name', 'strength') < 13
 
 
     def r35363_condition(self):
         return self.state_manager.world_manager.get_in_party_morte() and \
                self.state_manager.world_manager.get_morte_skel_mort_quip2() and \
-               not self.state_manager.world_manager.get_has_prybar() and \
+               not self.state_manager.inventory_manager.is_own_item('has_prybar') and \
                self.state_manager.characters_manager.get_property('protagonist_character_name', 'strength') > 12
 
 
     def r35364_condition(self):
         return self.state_manager.world_manager.get_in_party_morte() and \
                self.state_manager.world_manager.get_morte_skel_mort_quip2() and \
-               self.state_manager.world_manager.get_has_prybar()
+               self.state_manager.inventory_manager.is_own_item('has_prybar')
 
 
     def r35365_condition(self):
         return not self.state_manager.world_manager.get_in_party_morte() and \
-               not self.state_manager.world_manager.get_has_prybar() and \
+               not self.state_manager.inventory_manager.is_own_item('has_prybar') and \
                self.state_manager.characters_manager.get_property('protagonist_character_name', 'strength') < 13
 
 
     def r35366_condition(self):
         return not self.state_manager.world_manager.get_in_party_morte() and \
-               not self.state_manager.world_manager.get_has_prybar() and \
+               not self.state_manager.inventory_manager.is_own_item('has_prybar') and \
                self.state_manager.characters_manager.get_property('protagonist_character_name', 'strength') > 12
 
 
     def r35367_condition(self):
         return not self.state_manager.world_manager.get_in_party_morte() and \
-               self.state_manager.world_manager.get_has_prybar()
+               self.state_manager.inventory_manager.is_own_item('has_prybar')
 
 
     def r35368_condition(self):

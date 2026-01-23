@@ -17,7 +17,7 @@ label morte1_speak:
     # IF WEIGHT #4 /* Triggers after states #: 26 even though they appear after this state */ ~  Global("Mortuary_Walkthrough","GLOBAL",0) !PartyHasItem("KeyPr") Global("ZM782_Dead_KAPUTZ","GLOBAL",1)
     # Manually changed logic to extern
     # if  gsm.world_manager.get_mortuary_walkthrough() == 0 and \
-    #     not gsm.world_manager.get_has_intro_key():
+    #     not gsm.inventory_manager.is_own_item('has_intro_key'):
     #     jump morte1_s24_ctor
 
     # IF WEIGHT #6 ~  Global("Mortuary_Walkthrough","GLOBAL",1)

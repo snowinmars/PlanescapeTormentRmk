@@ -112,7 +112,7 @@ class Morte2LogicGeneratedTest(LogicTest):
 
     def test_r41185_condition(self):
         self._boolean_straight_condition(
-            lambda x: self.state_manager.world_manager.set_has_bandages(x),
+            lambda x: self.state_manager.inventory_manager.pick_item('has_bandages') if x else self.state_manager.inventory_manager.drop_item('has_bandages'),
             self.logic.r41185_condition
         )
 

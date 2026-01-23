@@ -70,15 +70,16 @@ class Zm79LogicGeneratedTest(LogicTest):
 
 
     def test_r64279_condition(self):
+        self.state_manager.inventory_manager.pick_item('has_copper_earring_closed')
         self._boolean_invert_condition(
-            lambda x: self.state_manager.world_manager.set_has_copper_earring_closed(x),
+            lambda x: self.state_manager.inventory_manager.pick_item('has_copper_earring_closed') if x else self.state_manager.inventory_manager.drop_item('has_copper_earring_closed'),
             self.logic.r64279_condition
         )
 
 
     def test_r64280_condition(self):
         self._boolean_straight_condition(
-            lambda x: self.state_manager.world_manager.set_has_copper_earring_closed(x),
+            lambda x: self.state_manager.inventory_manager.pick_item('has_copper_earring_closed') if x else self.state_manager.inventory_manager.drop_item('has_copper_earring_closed'),
             self.logic.r64280_condition
         )
 

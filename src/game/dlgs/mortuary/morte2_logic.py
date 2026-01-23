@@ -57,7 +57,7 @@ class Morte2LogicGenerated:
 
 
     def r41185_condition(self):
-        return self.state_manager.world_manager.get_has_bandages()
+        return self.state_manager.inventory_manager.is_own_item('has_bandages')
 
 
     def r41186_condition(self):

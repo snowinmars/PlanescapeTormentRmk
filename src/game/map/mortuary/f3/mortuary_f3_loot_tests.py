@@ -13,35 +13,35 @@ class MortuaryF3LootLogicTest(LogicTest):
 
     def test_mortuary_key(self):
         self._false_then_true_action(
-            self.state_manager.world_manager.get_has_mortuary_key,
+            lambda: self.state_manager.inventory_manager.is_own_item('has_mortuary_key'),
             self.logic.mortuary_key
         )
 
 
     def test_mortuary_task_list(self):
         self._false_then_true_action(
-            self.state_manager.world_manager.get_has_mortuary_task_list,
+            lambda: self.state_manager.inventory_manager.is_own_item('has_mortuary_task_list'),
             self.logic.mortuary_task_list
         )
 
 
     def test_prybar(self):
         self._false_then_true_action(
-            self.state_manager.world_manager.get_has_prybar,
+            lambda: self.state_manager.inventory_manager.is_own_item('has_prybar'),
             self.logic.prybar
         )
 
 
     def test_dustman_request(self):
         self._false_then_true_action(
-            self.state_manager.world_manager.get_has_dustman_request,
+            lambda: self.state_manager.inventory_manager.is_own_item('has_dustman_request'),
             self.logic.dustman_request
         )
 
 
     def test_needle(self):
         self._false_then_true_action(
-            self.state_manager.world_manager.get_has_needle,
+            lambda: self.state_manager.inventory_manager.is_own_item('has_needle'),
             self.logic.needle
         )
 

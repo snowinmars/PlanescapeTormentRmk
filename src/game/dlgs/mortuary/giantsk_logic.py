@@ -219,7 +219,7 @@ class GiantskLogicGenerated:
 
 
     def r64294_condition(self):
-        return self.state_manager.world_manager.get_has_tome_ba()
+        return self.state_manager.inventory_manager.is_own_item('has_tome_ba')
 
 
     def r4072_condition(self):
@@ -273,7 +273,7 @@ class GiantskLogicGenerated:
 
 
     def r64296_condition(self):
-        return self.state_manager.world_manager.get_has_tome_ba()
+        return self.state_manager.inventory_manager.is_own_item('has_tome_ba')
 
 
     def r4087_condition(self):

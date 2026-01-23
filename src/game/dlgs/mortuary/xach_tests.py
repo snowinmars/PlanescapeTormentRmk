@@ -717,14 +717,15 @@ class XachLogicGeneratedTest(LogicTest):
 
     def test_r647_condition(self):
         self._boolean_straight_condition(
-            lambda x: self.state_manager.world_manager.set_has_scalpel(x),
+            lambda x: self.state_manager.inventory_manager.pick_item('has_scalpel') if x else self.state_manager.inventory_manager.drop_item('has_scalpel'),
             self.logic.r647_condition
         )
 
 
     def test_r653_condition(self):
+        self.state_manager.inventory_manager.pick_item('has_scalpel')
         self._boolean_invert_condition(
-            lambda x: self.state_manager.world_manager.set_has_scalpel(x),
+            lambda x: self.state_manager.inventory_manager.pick_item('has_scalpel') if x else self.state_manager.inventory_manager.drop_item('has_scalpel'),
             self.logic.r653_condition
         )
 
