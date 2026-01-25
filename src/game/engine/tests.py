@@ -38,7 +38,7 @@ class LogicTest(unittest.TestCase):
         self.characters_manager = CharactersManager(self.log_events_manager)
         self.journal_manager = JournalManager(self.log_events_manager)
         self.world_manager = WorldManager(self.log_events_manager)
-        self.inventory_manager = InventoryManager(self.log_events_manager, lambda x: self.world_manager.get_setting_value(x))
+        self.inventory_manager = InventoryManager(self.log_events_manager)
         self.narrat_manager = NarratManager(self.log_events_manager)
         self.quests_manager = QuestsManager(self.log_events_manager)
         self.state_manager = StateManager(

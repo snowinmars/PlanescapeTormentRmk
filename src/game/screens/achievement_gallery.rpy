@@ -7,7 +7,7 @@ screen achievement_gallery():
     on 'show' action SetVariable('achievement_gallery_selected_id', '')
 
     frame:
-        background Transform('gui/beastbg.png', fit='cover')
+        background Transform('gui/beastbg.webp', fit='cover')
         xfill True
         yfill True
 

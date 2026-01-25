@@ -89,13 +89,6 @@ class Morte1LogicTest(LogicTest):
         )
 
 
-    def test_s24_action(self):
-        self._false_then_true_action(
-            lambda: self.state_manager.inventory_manager.is_own_item('has_intro_key'),
-            self.logic.s24_action
-        )
-
-
     def test_talk(self):
         self._integer_inc_action(
             self.state_manager.world_manager.get_talked_to_morte_times,

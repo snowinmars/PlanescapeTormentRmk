@@ -291,7 +291,6 @@ label morte1_s23: # from 19.1 20.1 21.1 22.0
 # s24 # say39847
 label morte1_s24: # - # IF WEIGHT #4 /* Triggers after states #: 26 even though they appear after this state */ ~  Global("Mortuary_Walkthrough","GLOBAL",0) !PartyHasItem("KeyPr") Global("ZM782_Dead_KAPUTZ","GLOBAL",1)
     'morte1_s24{#morte1_s24}'
-    $ morte1Logic.s24_action()
     # morte '«Отлично, похоже, ты позаботился о правильном трупе. Теперь надо найти ключ. Он должен быть на его теле. Как только мы его получим, мы сможем выбраться отсюда».{#morte1_s24_1}'
     # nr 'Ты достаёшь из-под тела кусок железа, в котором с трудом можно опознать правильную форму.{#morte1_s24_2}'
     # morte '«Мы можем выбраться отсюда!»{#morte1_s24_3}'

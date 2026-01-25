@@ -12,8 +12,7 @@ class InventoryManagerTest(LogicTest):
         self.assertIsNotNone(self.inventory_manager._log_events_manager)
         self.assertIsNotNone(self.inventory_manager._inventory_store.inventory_items)
         self.assertNotEqual(len(self.inventory_manager._inventory_store.inventory_items), 0)
-        self.assertIsNotNone(self.inventory_manager._player_has_item_callback)
-        self.assertIsNone(self.inventory_manager._selected_item)
+        self.assertIsNone(self.inventory_manager._selected_item_id)
 
 
     def test_register_when_all_ok(self):
@@ -48,13 +47,15 @@ class InventoryManagerTest(LogicTest):
         inventory_item2 = _create_inventory_item('_2')
         delta = 2
 
-        custom_inventory_manager = InventoryManager(self.log_events_manager, lambda x: x == inventory_item2.settings_id)
+        custom_inventory_manager = InventoryManager(self.log_events_manager)
         custom_inventory_manager.set_store(InventoryStore())
 
         before = len(custom_inventory_manager._inventory_store.inventory_items)
 
         custom_inventory_manager.register(inventory_item1)
         custom_inventory_manager.register(inventory_item2)
+
+        custom_inventory_manager.pick_item(inventory_item2.settings_id)
 
         after = len(custom_inventory_manager._inventory_store.inventory_items)
         self.assertEqual(before + delta, after)
@@ -85,48 +86,48 @@ class InventoryManagerTest(LogicTest):
             self.inventory_manager.get_item(id)
 
 
-    def test_get_selected_item_when_all_ok(self):
+    def test_get_selected_item_id_when_all_ok(self):
         inventory_item = _create_inventory_item('_1')
         self.inventory_manager.register(inventory_item)
 
-        self.assertIsNone(self.inventory_manager.get_selected_item())
-        self.inventory_manager.set_selected_item(inventory_item.settings_id)
-        self.assertEqual(self.inventory_manager.get_selected_item(), inventory_item)
+        self.assertIsNone(self.inventory_manager.get_selected_item_id())
+        self.inventory_manager.set_selected_item_id(inventory_item.settings_id)
+        self.assertEqual(self.inventory_manager.get_selected_item_id(), inventory_item.settings_id)
 
 
-    def test_set_selected_item_when_all_ok(self):
+    def test_set_selected_item_id_when_all_ok(self):
         inventory_item = _create_inventory_item('_1')
         self.inventory_manager.register(inventory_item)
 
-        self.inventory_manager.set_selected_item(inventory_item.settings_id)
-        self.assertEqual(self.inventory_manager.get_selected_item(), inventory_item)
+        self.inventory_manager.set_selected_item_id(inventory_item.settings_id)
+        self.assertEqual(self.inventory_manager.get_selected_item_id(), inventory_item.settings_id)
 
 
-    def test_set_selected_item_when_inventory_item_not_found(self):
+    def test_set_selected_item_id_when_inventory_item_not_found(self):
         id = 'non existing inventory item id'
 
         with self.assertRaises(KeyError):
-            self.inventory_manager.set_selected_item(id)
+            self.inventory_manager.set_selected_item_id(id)
 
 
-    def test_has_selected_item_when_all_ok(self):
+    def test_has_selected_item_id_when_all_ok(self):
         inventory_item = _create_inventory_item('_1')
         self.inventory_manager.register(inventory_item)
 
-        self.assertFalse(self.inventory_manager.has_selected_item())
-        self.inventory_manager.set_selected_item(inventory_item.settings_id)
-        self.assertTrue(self.inventory_manager.has_selected_item())
+        self.assertFalse(self.inventory_manager.has_selected_item_id())
+        self.inventory_manager.set_selected_item_id(inventory_item.settings_id)
+        self.assertTrue(self.inventory_manager.has_selected_item_id())
 
 
-    def test_clear_selected_item_when_all_ok(self):
+    def test_clear_selected_item_id_when_all_ok(self):
         inventory_item = _create_inventory_item('_1')
         self.inventory_manager.register(inventory_item)
 
-        self.assertFalse(self.inventory_manager.has_selected_item())
-        self.inventory_manager.set_selected_item(inventory_item.settings_id)
-        self.assertTrue(self.inventory_manager.has_selected_item())
-        self.inventory_manager.clear_selected_item()
-        self.assertFalse(self.inventory_manager.has_selected_item())
+        self.assertFalse(self.inventory_manager.has_selected_item_id())
+        self.inventory_manager.set_selected_item_id(inventory_item.settings_id)
+        self.assertTrue(self.inventory_manager.has_selected_item_id())
+        self.inventory_manager.clear_selected_item_id()
+        self.assertFalse(self.inventory_manager.has_selected_item_id())
 
 
 def _create_inventory_item(postfix=''):

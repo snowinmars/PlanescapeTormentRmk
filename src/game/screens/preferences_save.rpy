@@ -8,7 +8,7 @@ screen preferences_save():
         # ysize 350
         xfill True
         yfill True
-        background Transform('gui/loadbg.png', fit='cover')
+        background Transform('gui/loadbg.webp', fit='cover')
 
         label _('preferences_save_title'):
             xpos 745
@@ -41,8 +41,8 @@ screen preferences_save():
                         ysize 130
 
                         button:
-                            background Transform('gui/loadrowb.png', fit='cover')
-                            hover_background Transform('gui/loadrowc.png', fit='cover')
+                            background Transform('gui/loadrowb.webp', fit='cover')
+                            hover_background Transform('gui/loadrowc.webp', fit='cover')
                             action FileSave(slot)
                             xfill True
                             yfill True

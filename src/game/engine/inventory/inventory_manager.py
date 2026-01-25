@@ -2,11 +2,10 @@ import logging
 
 
 class InventoryManager:
-    def __init__(self, log_events_manager, player_has_item_callback):
+    def __init__(self, log_events_manager):
         self._log_events_manager = log_events_manager
         self._inventory_store = None
-        self._player_has_item_callback = player_has_item_callback
-        self._selected_item = None
+        self._selected_item_id = None
 
 
     def set_store(self, inventory_store):
@@ -50,7 +49,7 @@ class InventoryManager:
 
 
     def get_owned_items(self):
-        return [inventory_item for inventory_item in self._inventory_store.inventory_items.values() if self._player_has_item_callback(inventory_item.settings_id)]
+        return [inventory_item for inventory_item in self._inventory_store.inventory_items.values() if inventory_item.owned_count > 0]
 
 
     def get_item(self, settings_id):
@@ -62,20 +61,21 @@ class InventoryManager:
         return inventory_item
 
 
-    def get_selected_item(self):
-        return self._selected_item
+    def get_selected_item_id(self):
+        return self._selected_item_id
 
 
-    def set_selected_item(self, settings_id):
-        self._selected_item = self.get_item(settings_id)
+    def set_selected_item_id(self, settings_id):
+        item = self.get_item(settings_id)
+        self._selected_item_id = item.settings_id
 
 
-    def has_selected_item(self):
-        return self._selected_item is not None
+    def has_selected_item_id(self):
+        return self._selected_item_id is not None
 
 
-    def clear_selected_item(self):
-        self._selected_item = None
+    def clear_selected_item_id(self):
+        self._selected_item_id = None
 
 
     def _log(self, line):

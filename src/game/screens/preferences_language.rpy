@@ -3,7 +3,7 @@ screen preferences_language():
 
     frame:
         yfill True
-        background Transform('gui/optpop1.png', fit='cover')
+        background Transform('gui/optpop1.webp', fit='cover')
         xsize 1600
         xalign 0.5
         yalign 0.5

@@ -88,7 +88,7 @@ init 3 python:
     runtime.global_characters_manager = CharactersManager(runtime.global_log_events_manager)
     runtime.global_journal_manager = JournalManager(runtime.global_log_events_manager)
     runtime.global_world_manager = WorldManager(runtime.global_log_events_manager)
-    runtime.global_inventory_manager = InventoryManager(runtime.global_log_events_manager, lambda x: runtime.global_world_manager.get_setting_value(x))
+    runtime.global_inventory_manager = InventoryManager(runtime.global_log_events_manager)
     runtime.global_narrat_manager = NarratManager(runtime.global_log_events_manager)
     runtime.global_quests_manager = QuestsManager(runtime.global_log_events_manager)
     runtime.global_state_manager = StateManager(
@@ -154,14 +154,23 @@ init 3 python:
         config.keymap['inventory_screen'] = ['i', 'I', 'ш', 'Ш']
         config.underlay.append(
             renpy.Keymap(
-                inventory_screen = Show("inventory_screen")
+                inventory_screen = Show(
+                    "inventory_screen",
+                    get_owned_items=runtime.global_state_manager.inventory_manager.get_owned_items,
+                    get_selected_item_id=runtime.global_state_manager.inventory_manager.get_selected_item_id,
+                    set_selected_item_id=runtime.global_state_manager.inventory_manager.set_selected_item_id,
+                    get_character=lambda: runtime.global_state_manager.characters_manager.get_character('protagonist_character_name'),
+                    get_gold=runtime.global_state_manager.world_manager.get_gold
+                )
             )
         )
 
         config.keymap['character_screen'] = ['c', 'C', 'с', 'С']
         config.underlay.append(
             renpy.Keymap(
-                character_screen = Show("character_screen", get_character=lambda: runtime.global_state_manager.characters_manager.get_character('protagonist_character_name'))
+                character_screen = Show(
+                    "character_screen",
+                    get_character=lambda: runtime.global_state_manager.characters_manager.get_character('protagonist_character_name'))
             )
         )
 

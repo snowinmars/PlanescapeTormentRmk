@@ -66,7 +66,7 @@ screen character_creation():
     tag menu
 
     frame:
-        background Transform('gui/cgback.png', fit='cover')
+        background Transform('gui/cgback.webp', fit='cover')
 
         ####
         button:

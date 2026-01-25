@@ -7,7 +7,7 @@ screen preferences_videos():
         xsize 1400
         ysize 900
         align (0.5, 0.5)
-        background Transform('gui/creditbg.png', fit='cover')
+        background Transform('gui/creditbg.webp', fit='cover')
 
         viewport:
             scrollbars "vertical"

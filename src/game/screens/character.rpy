@@ -26,7 +26,7 @@ screen character_screen(get_character):
         ysize 1000
         xpadding 30
         ypadding 30
-        background Transform("gui/recbg.png", fit='cover')
+        background Transform("gui/recbg.webp", fit='cover')
 
         vbox:
             label _(character.name):

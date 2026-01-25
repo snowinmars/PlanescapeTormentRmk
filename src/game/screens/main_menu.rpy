@@ -14,7 +14,7 @@ screen main_menu():
     tag menu
 
     frame:
-        background Transform('gui/startbg.png', fit='cover')
+        background Transform('gui/startbg.webp', fit='cover')
         xfill True
         yfill True
 
@@ -48,9 +48,10 @@ screen main_menu():
             ypos 330
             xsize 315 # 631
             ysize 107 # 215
-            background Transform('gui/main_menu_newlife.png', fit='cover')
-            hover_background Transform('gui/main_menu_newlife.png', fit='cover', matrixcolor=hover_matrix)
+            background Transform('gui/main_menu_newlife.webp', fit='cover')
+            hover_background Transform('gui/main_menu_newlife.webp', fit='cover', matrixcolor=hover_matrix)
             action ShowMenu('character_creation')
+            focus_mask True
 
             frame:
                 background CurvedText(
@@ -65,9 +66,10 @@ screen main_menu():
             ypos 525
             xsize 186 # 373
             ysize 297 # 594
-            background Transform('gui/main_menu_load.png', fit='cover')
-            hover_background Transform('gui/main_menu_load.png', fit='cover', matrixcolor=hover_matrix)
+            background Transform('gui/main_menu_load.webp', fit='cover')
+            hover_background Transform('gui/main_menu_load.webp', fit='cover', matrixcolor=hover_matrix)
             action ShowMenu("preferences_load")
+            focus_mask True
 
             frame:
                 background CurvedText(
@@ -82,9 +84,10 @@ screen main_menu():
             ypos 525
             xsize 186 # 373
             ysize 297 # 594
-            background Transform('gui/main_menu_continue.png', fit='cover')
-            hover_background Transform('gui/main_menu_continue.png', fit='cover', matrixcolor=hover_matrix)
+            background Transform('gui/main_menu_continue.webp', fit='cover')
+            hover_background Transform('gui/main_menu_continue.webp', fit='cover', matrixcolor=hover_matrix)
             action Continue()
+            focus_mask True
 
             frame:
                 background CurvedText(
@@ -99,9 +102,10 @@ screen main_menu():
             ypos 710
             xsize 230 # 460
             ysize 256 # 502
-            background Transform('gui/main_menu_settings.png', fit='cover')
-            hover_background Transform('gui/main_menu_settings.png', fit='cover', matrixcolor=hover_matrix)
+            background Transform('gui/main_menu_settings.webp', fit='cover')
+            hover_background Transform('gui/main_menu_settings.webp', fit='cover', matrixcolor=hover_matrix)
             action ShowMenu("preferences")
+            focus_mask True
 
             frame:
                 background CurvedText(
@@ -116,9 +120,10 @@ screen main_menu():
             ypos 710
             xsize 254 # 508
             ysize 256 # 513
-            background Transform('gui/main_menu_exit.png', fit='cover')
-            hover_background Transform('gui/main_menu_exit.png', fit='cover', matrixcolor=hover_matrix)
+            background Transform('gui/main_menu_exit.webp', fit='cover')
+            hover_background Transform('gui/main_menu_exit.webp', fit='cover', matrixcolor=hover_matrix)
             action Quit(confirm=not main_menu)
+            focus_mask True
 
             frame:
                 background CurvedText(

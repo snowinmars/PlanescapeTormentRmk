@@ -20,7 +20,7 @@ screen journal_screen(get_started_quests, get_finished_quests, get_notes ): # ge
         yalign 0
         xsize 1225
         ysize 975
-        background Transform('gui/journal.png', fit='cover')
+        background Transform('gui/journal.webp', fit='cover')
 
         hbox:
             xpos 640

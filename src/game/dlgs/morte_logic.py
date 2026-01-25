@@ -4,6 +4,7 @@ class MorteLogicGenerated:
 
 
     def r17833_action(self):
+        self.state_manager.inventory_manager.drop_all_items('has_intro_key')
         self.state_manager.inventory_manager.pick_item('has_intro_key')
         self.state_manager.world_manager.set_morte(1)
         self.state_manager.world_manager.set_read_scars(True)

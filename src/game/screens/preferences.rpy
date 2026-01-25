@@ -17,7 +17,7 @@ screen preferences():
     tag menu
 
     frame:
-        background Transform('gui/optbg.png', fit='cover')
+        background Transform('gui/optbg.webp', fit='cover')
         xfill True
         yfill True
 

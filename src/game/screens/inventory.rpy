@@ -1,96 +1,162 @@
 init python:
     from game.engine.runtime import (runtime)
 
-style inventory_description:
-    font gui.text_font
-    size 16
-    layout "tex"
 
-style inventory_name:
-    font gui.text_font
-    size 20
-    xalign 0.5
+    inventory_screen_hovered_item_name = ''
 
-screen inventory_screen():
-    python:
-        class UseItemAction(Action):
-            def __init__(self, item):
-                self.item = item
 
-            def __call__(self):
-                if self.item.jump_on_use_to:
-                    renpy.exports.jump(self.item.jump_on_use_to)
-                    # renpy.restart_interaction()
+    class UseItemAction(Action):
+        def __init__(self, item):
+            self.item = item
 
-    modal True
-    zorder 101
+        def __call__(self):
+            if self.item.jump_on_use_to:
+                renpy.exports.jump(self.item.jump_on_use_to)
+                # renpy.restart_interaction()
+
+
+screen inventory_screen(
+    get_owned_items,
+    get_selected_item_id,
+    set_selected_item_id,
+    get_character,
+    get_gold
+):
+    tag menu
+
+    $ owned_items = get_owned_items()
+    $ character = get_character()
+    $ gold = get_gold()
 
     key "i" action Hide("inventory_screen")
     key "mouseup_3" action Hide("inventory_screen")
 
     frame:
-        style_prefix "inventory"
-        background Solid("#333")
-        xalign 0.5
-        yalign 0.5
-        xysize (1200, 700)
-        padding (25, 25)
+        xfill True
+        yfill True
+        background Transform('gui/invbg.webp', fit='cover')
 
-        hbox:
-            spacing 50
+    frame:
+        background None
 
-            vbox:
-                xsize 500
-                label "Инвентарь" xalign 0.5
+        add 'gui/ivpnof.webp':
+            anchor (0.5, 0.5)
+            xsize 300
+            ysize 398
+            xpos 625
+            ypos 325
 
-                vpgrid:
-                    cols 3
-                    spacing 20
-                    mousewheel True
-                    scrollbars "vertical"
+        label _(character.name):
+            xpos 475
+            ypos 710
+            xsize 225
+            ysize 35
+            text_size 20
+            text_color '#f8f6de'
+            text_align (0.5, 0.5)
 
-                    for item in runtime.global_inventory_manager.get_owned_items():
-                        imagebutton:
-                            idle item.grid_image
-                            hover Transform(item.grid_image, matrixcolor=BrightnessMatrix(0.1))
-                            action runtime.global_inventory_manager.set_selected_item(item.settings_id)
-                            xsize 150
-                            ysize 150
+        label _(character.current_class):
+            xpos 475
+            ypos 770
+            xsize 225
+            ysize 35
+            text_size 20
+            text_color '#f8f6de'
+            text_align (0.5, 0.5)
 
-            vbox:
-                xsize 600
-                if runtime.global_inventory_manager.has_selected_item():
-                    label runtime.global_inventory_manager.get_selected_item().name:
-                        style "inventory_name"
+        label _('inventory_screen_ac'):
+            xpos 260
+            ypos 645
+            xsize 50
+            ysize 35
+            text_size 26
+            text_color "#dbc401"
+            text_align (0.5, 0.5)
+            text_font 'exocet.ttf'
 
-                viewport:
-                    xfill True
-                    yfill True
-                    mousewheel True
-                    scrollbars "vertical"
+        label str(character.ac):
+            xpos 260
+            ypos 685
+            xsize 50
+            ysize 35
+            text_size 24
+            text_color "#f8f6de"
+            text_align (0.5, 0.5)
+            text_font 'exocet.ttf'
 
-                    if runtime.global_inventory_manager.has_selected_item():
-                        vbox:
-                            # background Solid("#222")
-                            # padding (20, 20)
-                            spacing 30
-                            add runtime.global_inventory_manager.get_selected_item().detail_image xalign 0.5
-                            text runtime.global_inventory_manager.get_selected_item().description:
-                                style "inventory_description"
+        vbox:
+            xpos 1527
+            ypos 110
+            xsize 140
+            anchor (0.5, 0.5)
 
-                            if runtime.global_inventory_manager.get_selected_item().jump_on_use_to:
-                                textbutton "Использовать":
-                                    action UseItemAction(runtime.global_inventory_manager.get_selected_item())
-                                    xalign 0.5
-                                    ypadding 10
-                                    xpadding 30
-                                    margin (0, 30, 0, 0)
-                    else:
-                        text "Select an item" xalign 0.5 yalign 0.5
+            add Transform('gui/icgold.webp', fit='cover', xsize=140, ysize=140)
 
-    textbutton "Закрыть":
-        action [
-            Hide("inventory_screen"),
-            Jump("map_dispatcher")
-        ]
-        align (0.99, 0.02)
+            label str(gold):
+                background '#ff000066'
+                ypos -30
+                xsize 155
+                text_size 20
+                text_color "#dbc401"
+                text_align (0.5, 0.5)
+
+        ###
+        vbox:
+            xpos 343 # 28
+            ypos 765 # 55
+
+            label str(character.current_health):
+                ypos 0
+                xsize 50
+                text_size 20
+                text_color "#f8f6de"
+                text_align (0.5, 0.5)
+                background Transform('gui/ichpman.png', fit='cover')
+
+            label str(character.max_health):
+                ypos 10
+                xsize 50
+                text_size 20
+                text_color "#f8f6de"
+                text_align (0.5, 0.5)
+
+
+    if inventory_screen_hovered_item_name:
+        label inventory_screen_hovered_item_name:
+            xpos 860
+            ypos 642
+            xsize 525
+            text_size 20
+            text_color "#dbc401"
+            text_align (0.0, 0.5)
+
+
+    vpgrid:
+        xpos 920
+        ypos 731
+        xsize 675
+        ysize 130
+        xfill True
+        yfill True
+
+        cols 10
+        spacing 25
+        mousewheel True
+        scrollbars "vertical"
+
+        for owned_item in owned_items:
+            button:
+                xsize 45
+                ysize 45
+                background Transform(owned_item.grid_image, fit='contain')
+                hover_background Transform(owned_item.grid_image, fit='contain', matrixcolor=hover_matrix)
+                action Function(set_selected_item_id, owned_item.settings_id)
+                hovered SetVariable('inventory_screen_hovered_item_name', owned_item.name)
+                unhovered SetVariable('inventory_screen_hovered_item_name', '')
+
+                if owned_item.owned_count > 1:
+                    text str(owned_item.owned_count):
+                        xpos 35
+                        ypos 25
+                        color '#f8f6de'
+                        size 14

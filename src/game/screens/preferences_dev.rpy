@@ -10,7 +10,7 @@ screen preferences_dev():
         yalign 0
         xsize 1325
         ysize 1025
-        background Transform('gui/journal.png', fit='cover')
+        background Transform('gui/journal.webp', fit='cover')
 
         label preferences_dev_choosed_screen:
             xpos 60
