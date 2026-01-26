@@ -117,7 +117,7 @@ init 3 python: # setup hooks for initialyzing managers and applying stores
 
         now = int(time.time())
         runtime.logger.info('Building settings manager…')
-        build_all_settings(runtime.global_state_manager)
+        build_all_settings(runtime.global_world_manager)
         runtime.logger.info('Done building settings manager, took %s', int(time.time()) - now)
 
         now = int(time.time())
@@ -148,51 +148,49 @@ init 3 python: # setup hooks for initialyzing managers and applying stores
         build_all_quests(runtime.global_quests_manager)
         runtime.logger.info('Done building quests, took %s', int(time.time()) - now)
 
+        config.keymap['inventory_screen'] = keymap_inventory_screen
+        config.underlay.append(
+            renpy.Keymap(
+                inventory_screen=Show(
+                    "inventory_screen",
+                    get_owned_items=runtime.global_state_manager.inventory_manager.get_owned_items,
+                    get_selected_item_id=runtime.global_state_manager.inventory_manager.get_selected_item_id,
+                    set_selected_item_id=runtime.global_state_manager.inventory_manager.set_selected_item_id,
+                    get_character=lambda: runtime.global_state_manager.characters_manager.get_character('protagonist_character_name'),
+                    get_gold=runtime.global_state_manager.world_manager.get_gold
+                )
+            )
+        )
+
+        config.keymap['character_screen'] = keymap_character_screen
+        config.underlay.append(
+            renpy.Keymap(
+                character_screen = Show(
+                    "character_screen",
+                    get_character=lambda: runtime.global_state_manager.characters_manager.get_character('protagonist_character_name'))
+            )
+        )
+
+        config.keymap['journal_screen'] = keymap_journal_screen
+        config.underlay.append(
+            renpy.Keymap(
+                journal_screen = Show(
+                    "journal_screen",
+                    get_started_quests=runtime.global_quests_manager.build_started_quests,
+                    get_finished_quests=runtime.global_quests_manager.build_finished_quests,
+                    get_notes=runtime.global_journal_manager.build_journal,
+                    # get_beasts=runtime.global_beatiary_manager.build_bestiary,
+                )
+            )
+        )
+
     config.after_load_callbacks.append(apply_stores)
     config.start_callbacks.append(init_managers)
 
 
-init 4 python: # register screens
+init 5 python: # inject narrat
     renpy.add_layer('dialogue', above='screens')
 
-    config.keymap['inventory_screen'] = keymap_inventory_screen
-    config.underlay.append(
-        renpy.Keymap(
-            inventory_screen=Show(
-                "inventory_screen",
-                get_owned_items=runtime.global_state_manager.inventory_manager.get_owned_items,
-                get_selected_item_id=runtime.global_state_manager.inventory_manager.get_selected_item_id,
-                set_selected_item_id=runtime.global_state_manager.inventory_manager.set_selected_item_id,
-                get_character=lambda: runtime.global_state_manager.characters_manager.get_character('protagonist_character_name'),
-                get_gold=runtime.global_state_manager.world_manager.get_gold
-            )
-        )
-    )
-
-    config.keymap['character_screen'] = keymap_character_screen
-    config.underlay.append(
-        renpy.Keymap(
-            character_screen = Show(
-                "character_screen",
-                get_character=lambda: runtime.global_state_manager.characters_manager.get_character('protagonist_character_name'))
-        )
-    )
-
-    config.keymap['journal_screen'] = keymap_journal_screen
-    config.underlay.append(
-        renpy.Keymap(
-            journal_screen = Show(
-                "journal_screen",
-                get_started_quests=runtime.global_quests_manager.build_started_quests,
-                get_finished_quests=runtime.global_quests_manager.build_finished_quests,
-                get_notes=runtime.global_journal_manager.build_journal,
-                # get_beasts=runtime.global_beatiary_manager.build_bestiary,
-            )
-        )
-    )
-
-
-init 5 python: # inject narrat
     _original_say = renpy.say
     def narrat_say(who, what, *args, **kwargs):
         runtime.global_narrat_manager.add_history_entry(who, what)

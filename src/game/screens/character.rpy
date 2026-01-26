@@ -13,8 +13,8 @@ screen character_screen(get_character):
     zorder 100
 
     for k in keymap_character_screen:
-        key k action Hide("inventory_screen")
-    key "mouseup_3" action Hide("inventory_screen")
+        key k action Hide("character_screen")
+    key "mouseup_3" action Hide("character_screen")
 
     frame:
         xalign 0

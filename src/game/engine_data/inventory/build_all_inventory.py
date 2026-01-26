@@ -239,11 +239,11 @@ def build_all_inventory(manager):
     ))
     manager.register(InventoryItem(
         settings_id='has_garbage',
-        orig_id='garbage.itm',
+        orig_id='junk.itm',
         name='inventoryitem_has_garbage_name',
         description='inventoryitem_has_garbage_description',
-        grid_image='images/icons/garbage.png',
-        detail_image='images/icons/garbage.png'
+        grid_image='images/icons/junk.png',
+        detail_image='images/icons/junk.png'
     ))
     manager.register(InventoryItem(
         settings_id='has_gs_knife',
@@ -279,7 +279,7 @@ def build_all_inventory(manager):
     ))
     manager.register(InventoryItem(
         settings_id='has_sup_ring',
-        orig_id='sup_ring.itm',
+        orig_id='dsupring.itm',
         name='inventoryitem_has_sup_ring_name',
         description='inventoryitem_has_sup_ring_description',
         grid_image='images/icons/sup_ring.png',
@@ -287,7 +287,7 @@ def build_all_inventory(manager):
     ))
     manager.register(InventoryItem(
         settings_id='has_wedding_ring',
-        orig_id='wedding_ring.itm',
+        orig_id='dwedring.itm',
         name='inventoryitem_has_wedding_ring_name',
         description='inventoryitem_has_wedding_ring_description',
         grid_image='images/icons/wedding_ring.png',
@@ -295,7 +295,7 @@ def build_all_inventory(manager):
     ))
     manager.register(InventoryItem(
         settings_id='has_xac_heart',
-        orig_id='xac_heart.itm',
+        orig_id='xacheart.itm',
         name='inventoryitem_has_xac_heart_name',
         description='inventoryitem_has_xac_heart_description',
         grid_image='images/icons/xac_heart.png',
@@ -303,7 +303,7 @@ def build_all_inventory(manager):
     ))
     manager.register(InventoryItem(
         settings_id='has_xac_liver',
-        orig_id='xac_liver.itm',
+        orig_id='xacliver.itm',
         name='inventoryitem_has_xac_liver_name',
         description='inventoryitem_has_xac_liver_description',
         grid_image='images/icons/xac_liver.png',

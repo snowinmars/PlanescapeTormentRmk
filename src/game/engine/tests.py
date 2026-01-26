@@ -84,7 +84,7 @@ class LogicTest(unittest.TestCase):
         build_all_notes(self.journal_manager)
         build_all_characters(self.characters_manager)
         build_all_inventory(self.inventory_manager)
-        build_all_settings(self.state_manager)
+        build_all_settings(self.world_manager)
         build_all_quests(self.quests_manager)
 
 

@@ -46,11 +46,6 @@ class StateManager:
         self.push_story()
 
 
-    def register(self, setting_id, default_value):
-        self.world_manager.register(setting_id, default_value)
-        return self
-
-
     def gain_experience(self, name, amount):
         self._log(f'Gain {amount} experience to {name}')
         if name == 'party':

@@ -143,143 +143,186 @@ translate english introduction_1_b9691391:
     snowinmars '«I deliberately was not worried about the code quality or the graphics. My goal is to figure out whether the game could even be ported to RenPy».'
 
 # game/dlgs/introduction.rpy:55
-translate english introduction_1_b352fd57:
+translate english introduction_1_6ec53b17:
 
-    # snowinmars '«Проекты вроде „Kill the Princess“ показывают, что ягоды в ягодицах у RenPy вполне есть».'
-    snowinmars '«Projects like „Kill the Princess“ show that RenPy has some jam in the jar».'
+    # snowinmars '«Изначально я думал, что раз на RenPy выходят сложные проекты, то ягоды в ягодицах у RenPy вполне есть».'
+    snowinmars '«At first, I thought, that if big projects run on RenPy - RenPy has some jam in the jar».'
 
 # game/dlgs/introduction.rpy:56
+translate english introduction_1_f2d856f7:
+
+    # snowinmars '«Они и правда есть - но по другим причинам».'
+    snowinmars '«It has - but for different reasons».'
+
+# game/dlgs/introduction.rpy:57
+translate english introduction_1_8fb5b7c4:
+
+    # snowinmars '«Сколько я не декомпилировал знакомые мне новеллы - везде я видел одно и то же».'
+    snowinmars '«But as I decompile a novel - I recognist the same patterns over and over».'
+
+# game/dlgs/introduction.rpy:58
+translate english introduction_1_1f08bf79:
+
+    # snowinmars '«Я видел кучу переменных в глобальной области видимости, отсутствие какой-либо автоматизации тестирования и, как мне кажется, отказ принимать RenPy за более, чем „скриптовый движок“».'
+    snowinmars '«Bunch of global variables, lack of autotesting and, afais, „RenPy is no more than a scripting enging“ paradigm».'
+
+# game/dlgs/introduction.rpy:59
+translate english introduction_1_df61ff44:
+
+    # snowinmars '«Я принёс в код этой игры ту архитектуру, которую я считаю адекватной поставленной задаче».'
+    snowinmars '«I made this game in the architecture I feel adequate the task».'
+
+# game/dlgs/introduction.rpy:60
+translate english introduction_1_f06c8022:
+
+    # snowinmars '«Её описание можно найти в README в репозитории этой игры».'
+    snowinmars '«The architecture description you may find in this game repository».'
+
+# game/dlgs/introduction.rpy:61
 translate english introduction_1_080e5e86:
 
     # snowinmars '«Я искренне сомневался, сможет ли RenPy вытащить этот проект, но сейчас я уверен, что сможет. Мощная штука».'
     snowinmars '«I sincerely doubted that RenPy could brrr this project, but now I\'m confident it can. Tough stuff».'
 
-# game/dlgs/introduction.rpy:57
+# game/dlgs/introduction.rpy:62
 translate english introduction_1_62c5d131:
 
     # snowinmars '«Основная сложность - диалоговая система. Если стандартная визновелла - это простыня текста, выбор - и снова текст, то в PsT игрок делает выбор после пары фраз».'
     snowinmars '«The main challenge is the dialogue system».'
     snowinmars '«While a standard visual novels are kinda wall of text, followed by a choice and even more more text - in PsT the player makes a choice after a couple of sentences».'
 
-# game/dlgs/introduction.rpy:58
+# game/dlgs/introduction.rpy:63
 translate english introduction_1_789d9c3a:
 
     # snowinmars '«Снова и снова. Монологов в привычном смысле тут нет - ну, кроме вот этого, который я сейчас пишу».'
     snowinmars '«Again and again. There are no monologues in the usual sense here—well, except for this one I\'m writing now».'
 
-# game/dlgs/introduction.rpy:59
-translate english introduction_1_2c4e601e:
+# game/dlgs/introduction.rpy:64
+translate english introduction_1_661ff289:
 
-    # snowinmars '«Это создаёт чудовищно сложное диалоговое дерево. Я не был уверен, что на RenPy им можно удобно управлять. Я не был уверен, что его можно написать».'
-    snowinmars '«This creates a monstrously complex dialog tree. I wasn\'t sure it could be easily managed in RenPy. I wasn\'t sure it could be written».'
+    # snowinmars '«Это создаёт чудовищно сложное диалоговое дерево. Я не был уверен, что на RenPy им можно удобно управлять, тестировать. Я не был уверен, что его вообще можно написать».'
+    snowinmars '«This creates a monstrously complex dialog tree. I wasn\'t sure it could be easily managed and tested in RenPy. I wasn\'t sure it could be written at all».'
 
-# game/dlgs/introduction.rpy:60
-translate english introduction_1_70edb7f7:
+# game/dlgs/introduction.rpy:65
+translate english introduction_1_be8a20f2:
 
     # snowinmars '«Благодаря команде NearInfinity я смог упростить перенос диалогового ктулху до тривиальных действий».'
-    snowinmars '«Thanks to a NearInfinity team, I was able to simplify the translation of the dialogue\'s Cthulhu to trivial actions».'
+    snowinmars '«Thanks to NearInfinity team, I was able to simplify the translation of the dialogue\'s Cthulhu to trivial actions».'
 
-# game/dlgs/introduction.rpy:61
-translate english introduction_1_41786167:
+# game/dlgs/introduction.rpy:66
+translate english introduction_1_697157a9:
 
     # snowinmars '«NearInfinity позволяет получить всю необходимую информацию в древнем, но формате. Остальное оказалось делом техники».'
-    snowinmars '«NearInfinity allows you to retrieve all the necessary information in an ancient, but in format. The rest was a matter of technique».'
+    snowinmars '«NearInfinity allows you to retrieve all the necessary information in an ancient, but in format. The rest was a matter of technique».''
 
-# game/dlgs/introduction.rpy:62
-translate english introduction_1_cf7941f6:
+# game/dlgs/introduction.rpy:67
+translate english introduction_1_73acd772:
 
     # snowinmars '«Ссылка на NearInfinity - https://github.com/NearInfinityBrowser/NearInfinity и на главный форк - https://github.com/Argent77/NearInfinity».'
     snowinmars '«Link to the NearInfinity is https://github.com/NearInfinityBrowser/NearInfinity and to the main fork is https://github.com/Argent77/NearInfinity».'
 
-# game/dlgs/introduction.rpy:63
-translate english introduction_1_130e8548:
+# game/dlgs/introduction.rpy:68
+translate english introduction_1_1d7880dd:
 
-    # snowinmars '«А ещё карта и ачивки сделаны на базе feniksdev - огромное ему спасибо за великолепную работу».'
+    # snowinmars '«Карта и ачивки сделаны на базе feniksdev - огромное ему спасибо за великолепную работу».'
     snowinmars '«Also the map and the achievements are made on top of feniksdev work - huge thanks to him for the amazing job».'
 
-# game/dlgs/introduction.rpy:64
+# game/dlgs/introduction.rpy:69
 translate english introduction_1_8832c938:
 
     # snowinmars '«См. оригиналы на https://feniksdev.itch.io, я их немного распилил)»'
     snowinmars '«Take a look at his https://feniksdev.itch.io original work, but I patched it a bit)»'
 
-# game/dlgs/introduction.rpy:65
+# game/dlgs/introduction.rpy:70
 translate english introduction_1_f9a4dd18:
 
     # snowinmars '«Ещё я использую красивый Curved Text из https://lemmasoft.renai.us/forums/viewtopic.php?t=67350, автора обнимаю».'
     snowinmars '«I also use cute Curved Text from https://lemmasoft.renai.us/forums/viewtopic.php?t=67350, while hugging the author».'
 
-# game/dlgs/introduction.rpy:66
-translate english introduction_1_63af75c6:
+# game/dlgs/introduction.rpy:71
+translate english introduction_1_36713c65:
 
-    # snowinmars '«Питоновский код сгенерен deepseek r1, за что ему большое спасибо. Несмотря на десять с хреном лет в разработке, я не могу понять красоту этого языка. И уже не хочу понимать».'
-    snowinmars '«The Python code was generated by deepseek r1, for which I\'m very grateful. Despite ten years of development, I still can\'t get the beauty of this language. And I don\'t want to, anymore».'
+    # snowinmars '«Питоновский код изначально был сгенерен deepseek r1, за что ему большое спасибо. Несмотря на десять с хреном лет в разработке, я не могу понять красоту этого языка. И уже не хочу понимать».'
+    snowinmars '«The first Python code was generated by deepseek r1, for which I\'m very grateful. Despite ten years of development, I still can\'t get the beauty of this language. And I don\'t want to, anymore».'
 
-# game/dlgs/introduction.rpy:67
+# game/dlgs/introduction.rpy:72
 translate english introduction_1_83fa65ca:
 
     # snowinmars '«Правда, именно кода нейронки тут почти не осталось: я всё несколько раз переписал руками, чтобы поселить мысли в её софизмы».'
     snowinmars '«To be true, there is almost no neural network code left here: I rewrote everything by hand several times to shove thoughts into its sophisms».'
 
-# game/dlgs/introduction.rpy:68
+# game/dlgs/introduction.rpy:73
+translate english introduction_1_9159256e:
+
+    # snowinmars '«Картинки пока живут как могут - что-то нейронное, что-то родное. Когда технодемка будет походить на законченный проект, я найму художника. А пока есть то, что есть».'
+    snowinmars '«The images are doing as best they can for now — something is neural, something is original».'
+    snowinmars '«When the tech demo starts to look like as a finished project, I\'ll hire an artist. For now, this is what it is».'
+
+# game/dlgs/introduction.rpy:74
 translate english introduction_1_08ca19eb:
 
     # snowinmars '«Спасибо также тексту „Planescape: Torment - Novelization“ за авторством, вроде как, Chris Avellone and Colin McComb. Я с него иногда беру описания».'
     snowinmars '«Thanks also to the text „Planescape: Torment - Novelization“ by, I believe, Chris Avellone and Colin McComb. I sometimes use it for descriptions».'
 
-# game/dlgs/introduction.rpy:69
+# game/dlgs/introduction.rpy:75
 translate english introduction_1_c84f4189:
 
     # snowinmars '«Абсолютно очевидно: спасибо авторам оригинальной игры».'
     snowinmars '«Trivially obvious: thanks to the authors of the original game».'
 
-# game/dlgs/introduction.rpy:70
+# game/dlgs/introduction.rpy:76
 translate english introduction_1_8edf4270:
 
     # snowinmars '«Их список можно найти в меню настроек».'
     snowinmars '«You may see their names in menu setting».'
 
-# game/dlgs/introduction.rpy:74
+# game/dlgs/introduction.rpy:77
+translate english introduction_1_4026ae92:
+
+    # snowinmars '«Последнее - не по значимости - спасибо я хочу сказать сотням неизвестных мне людей, которые создают и поддерживают базы данных вещей, заданий и прочего для старых игр».'
+    snowinmars '«Last - but not least - I want to thank the hundreds of unknown people, who create and maintain databases of items, quests, and other things for old games».'
+
+# game/dlgs/introduction.rpy:78
+translate english introduction_1_3d1978ac:
+
+    # snowinmars '«Их работа позволяет значительно быстрее ориентироваться в древнем коде».'
+    snowinmars '«Their work allows me to navigate faster in ancient code».'
+
+# game/dlgs/introduction.rpy:79
 translate english introduction_1_a5ffeb3c:
 
     # snowinmars '«Немного технических деатлей».'
     snowinmars '«Some tech details».'
 
-# game/dlgs/introduction.rpy:75
+# game/dlgs/introduction.rpy:80
 translate english introduction_1_fe09aa67:
 
     # snowinmars '«У RenPy из коробки есть откат реплик колёсиком мыши - я эту возможность отключил».'
     snowinmars '«RenPy has a dialogue rollback out of the box - I turned this option off».'
 
-# game/dlgs/introduction.rpy:76
+# game/dlgs/introduction.rpy:81
 translate english introduction_1_f250c30b:
 
     # snowinmars '«Не потому, что я не могу её поддержать - могу. Но я не до конца уверен, что она нужна».'
     snowinmars '«Not because I cannot handle it - I can. But I am not sure enough that it is required».'
 
-# game/dlgs/introduction.rpy:77
+# game/dlgs/introduction.rpy:82
 translate english introduction_1_2e79326b:
 
     # snowinmars '«Если будут запросы - включу».'
     snowinmars '«If there will be demands - I\'ll enable it».'
 
-# game/dlgs/introduction.rpy:78
+# game/dlgs/introduction.rpy:83
 translate english introduction_1_d0f2fbbe:
 
     # snowinmars '«Визуально я опирался на narrat, потому что иного способа отрисовать сложные диалоги я не вижу».'
     snowinmars '«I am inpired with Narrat, because I don\'t see any other way to draw complex dialogues».'
 
-# game/dlgs/introduction.rpy:79
+# game/dlgs/introduction.rpy:84
 translate english introduction_1_631408a0:
 
     # snowinmars '«Пришлось погнуть RenPy, но выглядит, вроде, прикольно».'
     snowinmars '«RenPy was bended a little, but it looks kinda cool».'
-
-# game/dlgs/introduction.rpy:80
-translate english introduction_1_565da5e1:
-
-    # snowinmars '«Кстати, управление:\n c - экран персонажа.\n i - инвентарь\n j - журнал».'
-    snowinmars '«By the way, the controls are:\n c - character\n i - inventory\n j - journal».'
 
 # game/dlgs/introduction.rpy:84
 translate english introduction_1_992c3285:
@@ -305,10 +348,10 @@ translate english introduction_1_036a2176:
     # snowinmars '«Мои контакты:\n telegram: @snowinmars\n email:snowinmars@y«andex.ru».'
     snowinmars '«Contact me at:\n telegram: @snowinmars\n email:snowinmars@yandex.ru».'
 
-# game/dlgs/introduction.rpy:88
-translate english introduction_1_8a14e389:
+# game/dlgs/introduction.rpy:95
+translate english introduction_1_e0ca0b0f:
 
-    # snowinmars '«Ссылка на репу с этим проектом:\n https://github.com/snowinmars/P«lanescapeTormentRmk».'
+    # snowinmars '«Ссылка на репозиторий с этим проектом:\n https://github.com/snowinmars/PlanescapeTormentRmk»'
     snowinmars '«The repository source code link is:\n https://github.com/snowinmars/PlanescapeTormentRmk».'
 
 # game/dlgs/introduction.rpy:89
@@ -347,10 +390,10 @@ translate english introduction_1_adb820b1:
     # snowinmars '«Если хочешь - я поменяю твой билд на рекоммендуемый билд мага».'
     snowinmars '«If you want - I may change your build to the recommended mage one».'
 
-# game/dlgs/introduction.rpy:99
-translate english introduction_1_7b1d4a50:
+# game/dlgs/introduction.rpy:106
+translate english introduction_1_b240ef71:
 
-    # snowinmars '«Ну, так игра создана, что если хочешь играть - играй магом».'
+    # snowinmars '«Ну, игра изначально так создана, что лучше играть магом».'
     snowinmars '«Well, that\'s how game was designed: wanna play - play the mage».'
 
 # game/dlgs/introduction.rpy:103
@@ -371,10 +414,10 @@ translate english introduction_1_19ae2ad2:
     # snowinmars '«В технодемке есть только три этажа Морга. Но в эту локацию можно вернуться много раз по ходу игры, обладая дополнительными способностями».'
     snowinmars '«This tech demo has only three floors of the Mortuary. However, you can return to this location multiple times throughout the game, gaining additional abilities».'
 
-# game/dlgs/introduction.rpy:109
-translate english introduction_1_6192e0fd:
+# game/dlgs/introduction.rpy:116
+translate english introduction_1_5e632f2f:
 
-    # snowinmars 'Хайлвл диалоги я тоже перенёс сюда, и было бы странно не предложить к ним доступа. Если хочешь - возьми».'
+    # snowinmars '«Высокоуровневые диалоги я тоже перенёс сюда, и было бы странно не предложить к ним доступа. Если хочешь - возьми».'
     snowinmars '«Since I\'ve already implemented these high-level dialogues here, it would be strange not to offer access to them. If you want them - take it».'
 
 # game/dlgs/introduction.rpy:114
@@ -395,10 +438,10 @@ translate english introduction_1_3a571870:
     # snowinmars '«Технодемка достаточно короткая».'
     snowinmars '«The tech demo is short enough».'
 
-# game/dlgs/introduction.rpy:120
-translate english introduction_1_e355816f:
+# game/dlgs/introduction.rpy:127
+translate english introduction_1_aed983ca:
 
-    # snowinmars '«Сейчас не хватает мелких деталей, я их постепенно добавляю».'
+    # snowinmars '«Сейчас игре не хватает мелких деталей, я их постепенно добавляю».'
     snowinmars '«There are a lack of minor details - I am adding them one by one».'
 
 # game/dlgs/introduction.rpy:122
@@ -419,10 +462,10 @@ translate english introduction_1_676a1755:
     # snowinmars '«Так как PsT - большая игра, то и спамить эти достижения будут частовато».'
     snowinmars '«Because PsT is a big game, these achievements may feel a little spammy».'
 
-# game/dlgs/introduction.rpy:125
-translate english introduction_1_b84be1b9:
+# game/dlgs/introduction.rpy:132
+translate english introduction_1_cfc51556:
 
-    # snowinmars '«Их всегда можно безболезненно переключить в настройках, но сейчас что ты думаешь?».'
+    # snowinmars '«Их всегда можно безболезненно переключить в настройках, но сейчас - что ты думаешь?»'
     snowinmars '«They can be turned on and off without any consequences in the settings. But what do you think now»?'
 
 # game/dlgs/introduction.rpy:130
