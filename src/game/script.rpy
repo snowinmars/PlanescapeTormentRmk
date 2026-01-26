@@ -1,4 +1,4 @@
-init 1 python:
+init 1 python: # init logger
     import os
     import sys
     import time
@@ -34,7 +34,7 @@ init 1 python:
     runtime.logger.info("Version: %s" % config.version)
 
 
-init 2 python:
+init 2 python: # import and create stores
     from game.engine.locations.locations_store import (LocationsStore)
     from game.engine.journal.journal_store import (JournalStore)
     from game.engine.log_events.log_events_store import (LogEventsStore)
@@ -43,8 +43,6 @@ init 2 python:
     from game.engine.world.world_store import (WorldStore)
     from game.engine.narrat.narrat_store import (NarratStore)
     from game.engine.quests.quests_store import (QuestsStore)
-
-    # import types, functools
 
     renpy.add_python_directory('engine')
     renpy.add_python_directory('engine_data')
@@ -61,8 +59,7 @@ default quests_store = QuestsStore()
 
 define config.rollback_enabled = False # as it is narrat now
 
-init 3 python:
-    # engine warm up
+init 3 python: # setup hooks for initialyzing managers and applying stores
     from game.engine.runtime import (runtime)
 
     from game.engine.log_events.log_events_manager import (LogEventsManager)
@@ -143,7 +140,7 @@ init 3 python:
         build_all_notes(runtime.global_journal_manager)
         def on_update_journal():
             renpy.exports.sound.play(renpy.store.audio.update_journal)
-        runtime.global_journal_manager.register_on_update_journal(on_update_journal)
+        runtime.global_journal_manager.register_on_update_journal(on_update_journal) # TODO [snow]: to store event handling
         runtime.logger.info('Done building journal notes, took %s', int(time.time()) - now)
 
         now = int(time.time())
@@ -151,47 +148,51 @@ init 3 python:
         build_all_quests(runtime.global_quests_manager)
         runtime.logger.info('Done building quests, took %s', int(time.time()) - now)
 
-        config.keymap['inventory_screen'] = ['i', 'I', 'ш', 'Ш']
-        config.underlay.append(
-            renpy.Keymap(
-                inventory_screen = Show(
-                    "inventory_screen",
-                    get_owned_items=runtime.global_state_manager.inventory_manager.get_owned_items,
-                    get_selected_item_id=runtime.global_state_manager.inventory_manager.get_selected_item_id,
-                    set_selected_item_id=runtime.global_state_manager.inventory_manager.set_selected_item_id,
-                    get_character=lambda: runtime.global_state_manager.characters_manager.get_character('protagonist_character_name'),
-                    get_gold=runtime.global_state_manager.world_manager.get_gold
-                )
-            )
-        )
-
-        config.keymap['character_screen'] = ['c', 'C', 'с', 'С']
-        config.underlay.append(
-            renpy.Keymap(
-                character_screen = Show(
-                    "character_screen",
-                    get_character=lambda: runtime.global_state_manager.characters_manager.get_character('protagonist_character_name'))
-            )
-        )
-
-        config.keymap['journal_screen'] = ['j', 'J', 'о', 'О']
-        config.underlay.append(
-            renpy.Keymap(
-                journal_screen = Show(
-                    "journal_screen",
-                    get_started_quests=runtime.global_quests_manager.build_started_quests,
-                    get_finished_quests=runtime.global_quests_manager.build_finished_quests,
-                    get_notes=runtime.global_journal_manager.build_journal,
-                    # get_beasts=runtime.global_beatiary_manager.build_bestiary,
-                )
-            )
-        )
-
     config.after_load_callbacks.append(apply_stores)
     config.start_callbacks.append(init_managers)
 
 
-init 4 python: # inject narrat
+init 4 python: # register screens
+    renpy.add_layer('dialogue', above='screens')
+
+    config.keymap['inventory_screen'] = keymap_inventory_screen
+    config.underlay.append(
+        renpy.Keymap(
+            inventory_screen=Show(
+                "inventory_screen",
+                get_owned_items=runtime.global_state_manager.inventory_manager.get_owned_items,
+                get_selected_item_id=runtime.global_state_manager.inventory_manager.get_selected_item_id,
+                set_selected_item_id=runtime.global_state_manager.inventory_manager.set_selected_item_id,
+                get_character=lambda: runtime.global_state_manager.characters_manager.get_character('protagonist_character_name'),
+                get_gold=runtime.global_state_manager.world_manager.get_gold
+            )
+        )
+    )
+
+    config.keymap['character_screen'] = keymap_character_screen
+    config.underlay.append(
+        renpy.Keymap(
+            character_screen = Show(
+                "character_screen",
+                get_character=lambda: runtime.global_state_manager.characters_manager.get_character('protagonist_character_name'))
+        )
+    )
+
+    config.keymap['journal_screen'] = keymap_journal_screen
+    config.underlay.append(
+        renpy.Keymap(
+            journal_screen = Show(
+                "journal_screen",
+                get_started_quests=runtime.global_quests_manager.build_started_quests,
+                get_finished_quests=runtime.global_quests_manager.build_finished_quests,
+                get_notes=runtime.global_journal_manager.build_journal,
+                # get_beasts=runtime.global_beatiary_manager.build_bestiary,
+            )
+        )
+    )
+
+
+init 5 python: # inject narrat
     _original_say = renpy.say
     def narrat_say(who, what, *args, **kwargs):
         runtime.global_narrat_manager.add_history_entry(who, what)
@@ -199,10 +200,6 @@ init 4 python: # inject narrat
         runtime.global_narrat_manager.update_menu_items([])
         return _original_say(who, what, *args, **kwargs)
     renpy.say = narrat_say
-
-
-init 5 python:
-    renpy.add_layer('dialogue', above='screens')
 
 
 label start:

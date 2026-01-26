@@ -12,12 +12,9 @@ screen character_screen(get_character):
     modal True
     zorder 100
 
-    # Close with 'c' key or right-click
-    key "c" action Hide("character_screen")
-    key "C" action Hide("character_screen")
-    key "с" action Hide("character_screen")
-    key "С" action Hide("character_screen")
-    key "mouseup_3" action Hide("character_screen")
+    for k in keymap_character_screen:
+        key k action Hide("inventory_screen")
+    key "mouseup_3" action Hide("inventory_screen")
 
     frame:
         xalign 0

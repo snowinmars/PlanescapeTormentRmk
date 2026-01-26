@@ -28,7 +28,8 @@ screen inventory_screen(
     $ character = get_character()
     $ gold = get_gold()
 
-    key "i" action Hide("inventory_screen")
+    for k in keymap_inventory_screen:
+        key k action Hide("inventory_screen")
     key "mouseup_3" action Hide("inventory_screen")
 
     frame:

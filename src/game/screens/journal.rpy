@@ -10,8 +10,9 @@ screen journal_screen(get_started_quests, get_finished_quests, get_notes ): # ge
 
     use narrat()
 
-    key "j" action Hide("journal_screen")
-    key "mouseup_3" action Hide("journal_screen")
+    for k in keymap_journal_screen:
+        key k action Hide("inventory_screen")
+    key "mouseup_3" action Hide("inventory_screen")
 
     modal False
 
