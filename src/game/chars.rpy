@@ -68,7 +68,7 @@ define morte_story_1      = Character(_('morte_story_1_character_name') , color=
 define morte_story_2      = Character(_('morte_story_2_character_name') , color='#b8a175')
 
 define nr                 = Character(''                                , color='#b8a175')
-define scars              = Character('scars'                           , color='#bf6b5f') # TODO [snow]: wtf with `what_color='#bf6b5f', what_font='exocet.ttf'` ?????
+define scars              = Character('scars'                           , color='#bf6b5f')
 define the_nameless_one   = Character(_('protagonist_character_name')   , color='#482505')
 
 define snowinmars         = Character('dev'                             , color='#b8a175')
