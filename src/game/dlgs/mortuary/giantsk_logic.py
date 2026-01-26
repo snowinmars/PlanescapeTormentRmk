@@ -47,7 +47,7 @@ class GiantskLogicGenerated:
 
 
     def r4097_action(self):
-        self.state_manager.world_manager.set_has_breast1(True)
+        self.state_manager.inventory_manager.pick_item('has_breast1')
 
 
     def r4098_action(self):
@@ -55,15 +55,15 @@ class GiantskLogicGenerated:
 
 
     def r4099_action(self):
-        self.state_manager.world_manager.set_has_breast2(True)
+        self.state_manager.inventory_manager.pick_item('has_breast2')
 
 
     def r4100_action(self):
-        self.state_manager.world_manager.set_has_breast3(True)
+        self.state_manager.inventory_manager.pick_item('has_breast3')
 
 
     def r4101_action(self):
-        self.state_manager.world_manager.set_has_breast4(True)
+        self.state_manager.inventory_manager.pick_item('has_breast4')
         self.state_manager.world_manager.set_dead_giantsk(True)
 
 

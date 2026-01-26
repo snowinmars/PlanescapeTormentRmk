@@ -4987,12 +4987,12 @@ class MorteLogicGeneratedTest(LogicTest):
 
 
     def test_r43909_condition(self):
-        self.state_manager.world_manager.set_has_decant(False)
+        self.state_manager.inventory_manager.drop_all_items('has_decant')
         self.state_manager.world_manager.set_seek_word(0)
 
         self.assertFalse(self.logic.r43909_condition())
 
-        self.state_manager.world_manager.set_has_decant(True)
+        self.state_manager.inventory_manager.pick_item('has_decant')
         self.state_manager.world_manager.set_seek_word(1)
 
         self.assertTrue(self.logic.r43909_condition())
@@ -5019,12 +5019,12 @@ class MorteLogicGeneratedTest(LogicTest):
 
 
     def test_r43917_condition(self):
-        self.state_manager.world_manager.set_has_decant(False)
+        self.state_manager.inventory_manager.drop_all_items('has_decant')
         self.state_manager.world_manager.set_seek_word(0)
 
         self.assertFalse(self.logic.r43917_condition())
 
-        self.state_manager.world_manager.set_has_decant(True)
+        self.state_manager.inventory_manager.pick_item('has_decant')
         self.state_manager.world_manager.set_seek_word(1)
 
         self.assertTrue(self.logic.r43917_condition())
@@ -5222,25 +5222,25 @@ class MorteLogicGeneratedTest(LogicTest):
 
     def test_r53837_condition(self):
         self.state_manager.world_manager.set_where_fhjull(False)
-        self.state_manager.world_manager.set_has_cube(False)
+        self.state_manager.inventory_manager.drop_all_items('has_cube')
 
         self.assertFalse(self.logic.r53837_condition())
 
         self.state_manager.world_manager.set_where_fhjull(True)
-        self.state_manager.world_manager.set_has_cube(True)
+        self.state_manager.inventory_manager.pick_item('has_cube')
 
         self.assertTrue(self.logic.r53837_condition())
 
 
     def test_r53838_condition(self):
         self.state_manager.world_manager.set_where_fhjull(False)
-        self.state_manager.world_manager.set_has_cube(True)
+        self.state_manager.inventory_manager.pick_item('has_cube')
         self.state_manager.world_manager.set_in_party_grace(False)
 
         self.assertFalse(self.logic.r53838_condition())
 
         self.state_manager.world_manager.set_where_fhjull(True)
-        self.state_manager.world_manager.set_has_cube(False)
+        self.state_manager.inventory_manager.drop_all_items('has_cube')
         self.state_manager.world_manager.set_in_party_grace(True)
 
         self.assertTrue(self.logic.r53838_condition())
@@ -5248,14 +5248,14 @@ class MorteLogicGeneratedTest(LogicTest):
 
     def test_r53839_condition(self):
         self.state_manager.world_manager.set_where_fhjull(False)
-        self.state_manager.world_manager.set_has_cube(True)
+        self.state_manager.inventory_manager.pick_item('has_cube')
         self.state_manager.world_manager.set_in_party_grace(True)
         self.state_manager.world_manager.set_in_party_annah(False)
 
         self.assertFalse(self.logic.r53839_condition())
 
         self.state_manager.world_manager.set_where_fhjull(True)
-        self.state_manager.world_manager.set_has_cube(False)
+        self.state_manager.inventory_manager.drop_all_items('has_cube')
         self.state_manager.world_manager.set_in_party_grace(False)
         self.state_manager.world_manager.set_in_party_annah(True)
 
@@ -5264,14 +5264,14 @@ class MorteLogicGeneratedTest(LogicTest):
 
     def test_r53840_condition(self):
         self.state_manager.world_manager.set_where_fhjull(False)
-        self.state_manager.world_manager.set_has_cube(True)
+        self.state_manager.inventory_manager.pick_item('has_cube')
         self.state_manager.world_manager.set_in_party_grace(True)
         self.state_manager.world_manager.set_in_party_annah(True)
 
         self.assertFalse(self.logic.r53840_condition())
 
         self.state_manager.world_manager.set_where_fhjull(True)
-        self.state_manager.world_manager.set_has_cube(False)
+        self.state_manager.inventory_manager.drop_all_items('has_cube')
         self.state_manager.world_manager.set_in_party_grace(False)
         self.state_manager.world_manager.set_in_party_annah(False)
 
@@ -5287,25 +5287,25 @@ class MorteLogicGeneratedTest(LogicTest):
 
     def test_r53863_condition(self):
         self.state_manager.world_manager.set_where_fhjull(False)
-        self.state_manager.world_manager.set_has_cube(False)
+        self.state_manager.inventory_manager.drop_all_items('has_cube')
 
         self.assertFalse(self.logic.r53863_condition())
 
         self.state_manager.world_manager.set_where_fhjull(True)
-        self.state_manager.world_manager.set_has_cube(True)
+        self.state_manager.inventory_manager.pick_item('has_cube')
 
         self.assertTrue(self.logic.r53863_condition())
 
 
     def test_r53864_condition(self):
         self.state_manager.world_manager.set_where_fhjull(False)
-        self.state_manager.world_manager.set_has_cube(True)
+        self.state_manager.inventory_manager.pick_item('has_cube')
         self.state_manager.world_manager.set_in_party_grace(False)
 
         self.assertFalse(self.logic.r53864_condition())
 
         self.state_manager.world_manager.set_where_fhjull(True)
-        self.state_manager.world_manager.set_has_cube(False)
+        self.state_manager.inventory_manager.drop_all_items('has_cube')
         self.state_manager.world_manager.set_in_party_grace(True)
 
         self.assertTrue(self.logic.r53864_condition())
@@ -5313,14 +5313,14 @@ class MorteLogicGeneratedTest(LogicTest):
 
     def test_r53865_condition(self):
         self.state_manager.world_manager.set_where_fhjull(False)
-        self.state_manager.world_manager.set_has_cube(True)
+        self.state_manager.inventory_manager.pick_item('has_cube')
         self.state_manager.world_manager.set_in_party_grace(True)
         self.state_manager.world_manager.set_in_party_annah(False)
 
         self.assertFalse(self.logic.r53865_condition())
 
         self.state_manager.world_manager.set_where_fhjull(True)
-        self.state_manager.world_manager.set_has_cube(False)
+        self.state_manager.inventory_manager.drop_all_items('has_cube')
         self.state_manager.world_manager.set_in_party_grace(False)
         self.state_manager.world_manager.set_in_party_annah(True)
 
@@ -5329,14 +5329,14 @@ class MorteLogicGeneratedTest(LogicTest):
 
     def test_r53866_condition(self):
         self.state_manager.world_manager.set_where_fhjull(False)
-        self.state_manager.world_manager.set_has_cube(True)
+        self.state_manager.inventory_manager.pick_item('has_cube')
         self.state_manager.world_manager.set_in_party_grace(True)
         self.state_manager.world_manager.set_in_party_annah(True)
 
         self.assertFalse(self.logic.r53866_condition())
 
         self.state_manager.world_manager.set_where_fhjull(True)
-        self.state_manager.world_manager.set_has_cube(False)
+        self.state_manager.inventory_manager.drop_all_items('has_cube')
         self.state_manager.world_manager.set_in_party_grace(False)
         self.state_manager.world_manager.set_in_party_annah(False)
 
@@ -5352,25 +5352,25 @@ class MorteLogicGeneratedTest(LogicTest):
 
     def test_r53852_condition(self):
         self.state_manager.world_manager.set_where_fhjull(False)
-        self.state_manager.world_manager.set_has_cube(False)
+        self.state_manager.inventory_manager.drop_all_items('has_cube')
 
         self.assertFalse(self.logic.r53852_condition())
 
         self.state_manager.world_manager.set_where_fhjull(True)
-        self.state_manager.world_manager.set_has_cube(True)
+        self.state_manager.inventory_manager.pick_item('has_cube')
 
         self.assertTrue(self.logic.r53852_condition())
 
 
     def test_r53853_condition(self):
         self.state_manager.world_manager.set_where_fhjull(False)
-        self.state_manager.world_manager.set_has_cube(True)
+        self.state_manager.inventory_manager.pick_item('has_cube')
         self.state_manager.world_manager.set_in_party_grace(False)
 
         self.assertFalse(self.logic.r53853_condition())
 
         self.state_manager.world_manager.set_where_fhjull(True)
-        self.state_manager.world_manager.set_has_cube(False)
+        self.state_manager.inventory_manager.drop_all_items('has_cube')
         self.state_manager.world_manager.set_in_party_grace(True)
 
         self.assertTrue(self.logic.r53853_condition())
@@ -5378,14 +5378,14 @@ class MorteLogicGeneratedTest(LogicTest):
 
     def test_r53854_condition(self):
         self.state_manager.world_manager.set_where_fhjull(False)
-        self.state_manager.world_manager.set_has_cube(True)
+        self.state_manager.inventory_manager.pick_item('has_cube')
         self.state_manager.world_manager.set_in_party_grace(True)
         self.state_manager.world_manager.set_in_party_annah(False)
 
         self.assertFalse(self.logic.r53854_condition())
 
         self.state_manager.world_manager.set_where_fhjull(True)
-        self.state_manager.world_manager.set_has_cube(False)
+        self.state_manager.inventory_manager.drop_all_items('has_cube')
         self.state_manager.world_manager.set_in_party_grace(False)
         self.state_manager.world_manager.set_in_party_annah(True)
 
@@ -5394,14 +5394,14 @@ class MorteLogicGeneratedTest(LogicTest):
 
     def test_r53855_condition(self):
         self.state_manager.world_manager.set_where_fhjull(False)
-        self.state_manager.world_manager.set_has_cube(True)
+        self.state_manager.inventory_manager.pick_item('has_cube')
         self.state_manager.world_manager.set_in_party_grace(True)
         self.state_manager.world_manager.set_in_party_annah(True)
 
         self.assertFalse(self.logic.r53855_condition())
 
         self.state_manager.world_manager.set_where_fhjull(True)
-        self.state_manager.world_manager.set_has_cube(False)
+        self.state_manager.inventory_manager.drop_all_items('has_cube')
         self.state_manager.world_manager.set_in_party_grace(False)
         self.state_manager.world_manager.set_in_party_annah(False)
 

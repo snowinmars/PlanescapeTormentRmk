@@ -14,6 +14,18 @@ from _build.renpy.templates import (
     set_boolean_action_pattern_before,
     set_boolean_action_pattern_after,
     set_boolean_action_pattern_after_once,
+    inventory_pick_item_action_pattern_preconf,
+    inventory_pick_item_action_pattern_before,
+    inventory_pick_item_action_pattern_after,
+    inventory_pick_item_action_pattern_after_once,
+    inventory_drop_item_action_pattern_preconf,
+    inventory_drop_item_action_pattern_before,
+    inventory_drop_item_action_pattern_after,
+    inventory_drop_item_action_pattern_after_once,
+    inventory_drop_all_items_action_pattern_preconf,
+    inventory_drop_all_items_action_pattern_before,
+    inventory_drop_all_items_action_pattern_after,
+    inventory_drop_all_items_action_pattern_after_once,
     set_integer_action_pattern_preconf,
     set_integer_action_pattern_before,
     set_integer_action_pattern_after,
@@ -107,6 +119,18 @@ from _build.renpy.templates import (
     count_in_party_gt_zero_condition_pattern_preconf,
     count_in_party_gt_zero_condition_pattern_before,
     count_in_party_gt_zero_condition_pattern_after,
+    inventory_pick_item_condition_pattern_preconf,
+    inventory_pick_item_condition_pattern_before,
+    inventory_pick_item_condition_pattern_after,
+    inventory_drop_item_condition_pattern_preconf,
+    inventory_drop_item_condition_pattern_before,
+    inventory_drop_item_condition_pattern_after,
+    inventory_is_own_item_condition_pattern_preconf,
+    inventory_is_own_item_condition_pattern_before,
+    inventory_is_own_item_condition_pattern_after,
+    inventory_not_is_own_item_condition_pattern_preconf,
+    inventory_not_is_own_item_condition_pattern_before,
+    inventory_not_is_own_item_condition_pattern_after
 )
 
 
@@ -122,11 +146,18 @@ is_visited_internal_condition_pattern = re.compile(r"^locations_manager\.is_visi
 not_is_visited_internal_condition_pattern = re.compile(r"^not locations_manager\.is_visited_internal\('(.*?)'\)$")
 count_in_party_eq_zero_condition_pattern = re.compile(r"^count_in_party\(\) == 0$")
 count_in_party_gt_zero_condition_pattern = re.compile(r"^count_in_party\(\) > 0$")
+inventory_pick_item_condition_pattern = re.compile(r"^inventory_manager.pick_item\(\'(.*)\'\)$")
+inventory_drop_item_condition_pattern = re.compile(r"^inventory_manager.drop_item\(\'(.*)\'\)$")
+inventory_is_own_item_condition_pattern = re.compile(r"^inventory_manager.is_own_item\(\'(.*)\'\)$")
+inventory_not_is_own_item_condition_pattern = re.compile(r"^not inventory_manager.is_own_item\(\'(.*)\'\)$")
 current_health_eq_max_health_condition_pattern = re.compile(r"^characters_manager\.get_property\(\'protagonist_character_name\', \'current_health\'\) == characters_manager.get_property\(\'protagonist_character_name\', \'max_health\'\)$")
 current_health_gt_max_health_condition_pattern = re.compile(r"^characters_manager\.get_property\(\'protagonist_character_name\', \'current_health\'\) > characters_manager.get_property\(\'protagonist_character_name\', \'max_health\'\) / 2$")
 current_health_lt_max_health_condition_pattern = re.compile(r"^characters_manager\.get_property\(\'protagonist_character_name\', \'current_health\'\) <= characters_manager.get_property\(\'protagonist_character_name\', \'max_health\'\) / 2$")
 
 set_boolean_action_pattern = re.compile(r'^world_manager\.set_(.*?)\((True|False)\)$')
+inventory_pick_item_action_pattern = re.compile(r'^inventory_manager.pick_item\(\'(.*)\'\)$')
+inventory_drop_item_action_pattern = re.compile(r'^inventory_manager.drop_item\(\'(.*)\'\)$')
+inventory_drop_all_items_action_pattern = re.compile(r'^inventory_manager.drop_all_items\(\'(.*)\'\)$')
 set_integer_action_pattern = re.compile(r'^world_manager\.set_(.*?)\((\d+)\)$')
 inc_once_integer_action_pattern = re.compile(r'^world_manager\.inc_once_(.*?)\((\d*)\)$')
 dec_once_integer_action_pattern = re.compile(r'^world_manager\.dec_once_(.*?)\((\d*)\)$')
@@ -341,6 +372,27 @@ def _build_test_actions_parts(operation):
                set_location_action_pattern_before.format(v=value), \
                set_location_action_pattern_after.format(v=value), \
                set_location_action_pattern_after_once.format(v=value)
+    if inventory_pick_item_action_pattern.match(operation):
+        match = inventory_pick_item_action_pattern.search(operation)
+        value = match.group(1)
+        return inventory_pick_item_action_pattern_preconf.format(v=value), \
+               inventory_pick_item_action_pattern_before.format(v=value), \
+               inventory_pick_item_action_pattern_after.format(v=value), \
+               inventory_pick_item_action_pattern_after_once.format(v=value)
+    if inventory_drop_item_action_pattern.match(operation):
+        match = inventory_drop_item_action_pattern.search(operation)
+        value = match.group(1)
+        return inventory_drop_item_action_pattern_preconf.format(v=value), \
+               inventory_drop_item_action_pattern_before.format(v=value), \
+               inventory_drop_item_action_pattern_after.format(v=value), \
+               inventory_drop_item_action_pattern_after_once.format(v=value)
+    if inventory_drop_all_items_action_pattern.match(operation):
+        match = inventory_drop_all_items_action_pattern.search(operation)
+        value = match.group(1)
+        return inventory_drop_all_items_action_pattern_preconf.format(v=value), \
+               inventory_drop_all_items_action_pattern_before.format(v=value), \
+               inventory_drop_all_items_action_pattern_after.format(v=value), \
+               inventory_drop_all_items_action_pattern_after_once.format(v=value)
 
     return 'unknown', '', '', ''
 
@@ -445,6 +497,30 @@ def _build_test_conditions_parts(operation):
         return count_in_party_gt_zero_condition_pattern_preconf, \
                count_in_party_gt_zero_condition_pattern_before, \
                count_in_party_gt_zero_condition_pattern_after
+    if inventory_pick_item_condition_pattern.match(operation):
+        match = inventory_pick_item_condition_pattern.search(operation)
+        value = match.group(1)
+        return inventory_pick_item_condition_pattern_preconf.format(v=value), \
+               inventory_pick_item_condition_pattern_before.format(v=value), \
+               inventory_pick_item_condition_pattern_after.format(v=value)
+    if inventory_drop_item_condition_pattern.match(operation):
+        match = inventory_drop_item_condition_pattern.search(operation)
+        value = match.group(1)
+        return inventory_drop_item_condition_pattern_preconf.format(v=value), \
+               inventory_drop_item_condition_pattern_before.format(v=value), \
+               inventory_drop_item_condition_pattern_after.format(v=value)
+    if inventory_is_own_item_condition_pattern.match(operation):
+        match = inventory_is_own_item_condition_pattern.search(operation)
+        value = match.group(1)
+        return inventory_is_own_item_condition_pattern_preconf.format(v=value), \
+               inventory_is_own_item_condition_pattern_before.format(v=value), \
+               inventory_is_own_item_condition_pattern_after.format(v=value)
+    if inventory_not_is_own_item_condition_pattern.match(operation):
+        match = inventory_not_is_own_item_condition_pattern.search(operation)
+        value = match.group(1)
+        return inventory_not_is_own_item_condition_pattern_preconf.format(v=value), \
+               inventory_not_is_own_item_condition_pattern_before.format(v=value), \
+               inventory_not_is_own_item_condition_pattern_after.format(v=value)
 
     return 'unknown', '', ''
 
@@ -633,6 +709,9 @@ def _generate_tests_for_function(func_name, body, target_npc, warnings):
     # Try to match against templates
     for pattern in all_patterns:
         match = pattern.pattern.match(code_line)
+
+        # if 'gain_experience' in code_line:
+        #     print(f'.{code_line}. / .{str(pattern.pattern)}. / .{str(match)}.')
 
         if match:
             for key, extractor in pattern.extractors.items():

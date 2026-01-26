@@ -43,13 +43,6 @@ class GoToLocationMenuItem(MenuItem):
         return 'images/icons/open_idle.png'
 
 
-class ContainerMenuItem(MenuItem):
-    def __init__(self, state_manager, x, y):
-        super().__init__(state_manager, x, y)
-    def texture(self):
-        return 'images/icons/open_idle.png'
-
-
 class NpcMenuItem(MenuItem):
     def __init__(self, state_manager, x, y, npc):
         super().__init__(state_manager, x, y)

@@ -1,8 +1,7 @@
 from game.map.NavigationDirective import (NavigationDirective)
 from game.map.map_items import (
     ShadowItem,
-    MenuItem,
-    ContainerMenuItem
+    MenuItem
 )
 
 
@@ -123,11 +122,11 @@ class MortuaryF3R2Shadow(ShadowItem):
         return 'bg/mortuary/f3/shadow_f3r2.webp'
 
 
-class InMortuaryF3R2PickTaskList(ContainerMenuItem):
+class InMortuaryF3R2PickTaskList(MenuItem):
     def __init__(self, state_manager, x, y):
         super().__init__(state_manager, x, y)
     def when(self):
-        return not self.state_manager.inventory_manager.is_own_item('has_mortuary_task_list') and \
+        return not self.state_manager.world_manager.get_looted_InMortuaryF3R2PickTaskList() and \
                self.state_manager.locations_manager.get_location() == 'mortuary_f3r2'
     def tooltip(self):
         return 'InMortuaryF3R2PickTaskList_tooltip1' # Взять бумагу
@@ -136,6 +135,7 @@ class InMortuaryF3R2PickTaskList(ContainerMenuItem):
     def jump(self):
         return NavigationDirective(
             'mortuary_f3r2_loot_mortuary_task_list',
+            lambda: self.state_manager.world_manager.set_looted_InMortuaryF3R2PickTaskList(True)
         )
 
 ###
@@ -250,11 +250,11 @@ class MortuaryF3R4Shadow(ShadowItem):
         return 'bg/mortuary/f3/shadow_f3r4.webp'
 
 
-class InMortuaryF3R4PickPrybar(ContainerMenuItem):
+class InMortuaryF3R4PickPrybar(MenuItem):
     def __init__(self, state_manager, x, y):
         super().__init__(state_manager, x, y)
     def when(self):
-        return not self.state_manager.inventory_manager.is_own_item('has_prybar') and \
+        return not self.state_manager.world_manager.get_looted_InMortuaryF3R4PickPrybar() and \
                self.state_manager.locations_manager.get_location() == 'mortuary_f3r4'
     def tooltip(self):
         return 'InMortuaryF3R4PickPrybar_tooltip1' # Взять ломик
@@ -263,14 +263,15 @@ class InMortuaryF3R4PickPrybar(ContainerMenuItem):
     def jump(self):
         return NavigationDirective(
             'mortuary_f3r4_loot_prybar',
+            lambda: self.state_manager.world_manager.set_looted_InMortuaryF3R4PickPrybar(True)
         )
 
 
-class InMortuaryF3R4PickDustmanRequest(ContainerMenuItem):
+class InMortuaryF3R4PickDustmanRequest(MenuItem):
     def __init__(self, state_manager, x, y):
         super().__init__(state_manager, x, y)
     def when(self):
-        return not self.state_manager.inventory_manager.is_own_item('has_dustman_request') and \
+        return not self.state_manager.world_manager.get_looted_InMortuaryF3R4PickDustmanRequest() and \
                self.state_manager.locations_manager.get_location() == 'mortuary_f3r4'
     def tooltip(self):
         return 'InMortuaryF3R4PickDustmanRequest_tooltip1' # Взять бумагу
@@ -279,6 +280,7 @@ class InMortuaryF3R4PickDustmanRequest(ContainerMenuItem):
     def jump(self):
         return NavigationDirective(
             'mortuary_f3r4_loot_dustman_request',
+            lambda: self.state_manager.world_manager.set_looted_InMortuaryF3R4PickDustmanRequest(True)
         )
 
 
@@ -503,11 +505,11 @@ class MortuaryF3RcShadow(ShadowItem):
         return 'bg/mortuary/f3/shadow_f3rc.webp'
 
 
-class InMortuaryF3RcPickGarbage(ContainerMenuItem):
+class InMortuaryF3RcPickGarbage(MenuItem):
     def __init__(self, state_manager, x, y):
         super().__init__(state_manager, x, y)
     def when(self):
-        return not self.state_manager.world_manager.get_has_garbage() and \
+        return not self.state_manager.world_manager.get_looted_InMortuaryF3RcPickGarbage() and \
                self.state_manager.locations_manager.get_location() == 'mortuary_f3rc'
     def tooltip(self):
         return 'InMortuaryF3RcPickGarbage_tooltip1' # Взять мусор
@@ -515,15 +517,16 @@ class InMortuaryF3RcPickGarbage(ContainerMenuItem):
         return 'bg/mortuary/f3/loot_f3rc_garbage.webp'
     def jump(self):
         return NavigationDirective(
-            'mortuary_f3r2_loot_garbage'
+            'mortuary_f3r2_loot_garbage',
+            lambda: self.state_manager.world_manager.set_looted_InMortuaryF3RcPickGarbage(True)
         )
 
 
-class InMortuaryF3RcPickNeedle(ContainerMenuItem):
+class InMortuaryF3RcPickNeedle(MenuItem):
     def __init__(self, state_manager, x, y):
         super().__init__(state_manager, x, y)
     def when(self):
-        return not self.state_manager.inventory_manager.is_own_item('has_needle') and \
+        return not self.state_manager.world_manager.get_looted_InMortuaryF3RcPickNeedle() and \
                self.state_manager.locations_manager.get_location() == 'mortuary_f3rc'
     def tooltip(self):
         return 'InMortuaryF3RcPickNeedle_tooltip1' # Взять иголку и нитку
@@ -531,15 +534,16 @@ class InMortuaryF3RcPickNeedle(ContainerMenuItem):
         return 'bg/mortuary/f3/loot_f3rc_needle.webp'
     def jump(self):
         return NavigationDirective(
-            'mortuary_f3r2_loot_needle'
+            'mortuary_f3r2_loot_needle',
+            lambda: self.state_manager.world_manager.set_looted_InMortuaryF3RcPickNeedle(True)
         )
 
 
-class InMortuaryF3RcPickMortuaryKey(ContainerMenuItem):
+class InMortuaryF3RcPickMortuaryKey(MenuItem):
     def __init__(self, state_manager, x, y):
         super().__init__(state_manager, x, y)
     def when(self):
-        return not self.state_manager.inventory_manager.is_own_item('has_mortuary_key') and \
+        return not self.state_manager.world_manager.get_looted_InMortuaryF3RcPickMortuaryKey() and \
                self.state_manager.locations_manager.get_location() == 'mortuary_f3rc'
     def tooltip(self):
         return 'InMortuaryF3RcPickMortuaryKey_tooltip1' # Взять ключ
@@ -548,6 +552,7 @@ class InMortuaryF3RcPickMortuaryKey(ContainerMenuItem):
     def jump(self):
         return NavigationDirective(
             'mortuary_f3r4_loot_mortuary_key',
+            lambda: self.state_manager.world_manager.set_looted_InMortuaryF3RcPickMortuaryKey(True)
         )
 
 

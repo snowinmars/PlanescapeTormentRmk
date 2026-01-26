@@ -1,8 +1,7 @@
 from game.map.NavigationDirective import (NavigationDirective)
 from game.map.map_items import (
     ShadowItem,
-    MenuItem,
-    ContainerMenuItem
+    MenuItem
 )
 
 

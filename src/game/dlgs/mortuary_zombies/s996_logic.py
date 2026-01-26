@@ -51,14 +51,14 @@ class S996LogicGenerated:
 
     def r35508_action(self):
         self.state_manager.world_manager.set_dead_s996(True)
-        self.state_manager.world_manager.set_has_spike(True)
-        self.state_manager.world_manager.set_has_strap(True)
+        self.state_manager.inventory_manager.pick_item('has_spike')
+        self.state_manager.inventory_manager.pick_item('has_strap')
 
 
     def r35511_action(self):
         self.state_manager.world_manager.set_dead_s996(True)
-        self.state_manager.world_manager.set_has_spike(True)
-        self.state_manager.world_manager.set_has_strap(True)
+        self.state_manager.inventory_manager.pick_item('has_spike')
+        self.state_manager.inventory_manager.pick_item('has_strap')
 
 
     def r35461_condition(self):

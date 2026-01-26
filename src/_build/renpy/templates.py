@@ -182,6 +182,42 @@ self.assert{v}(self.state_manager.world_manager.get_{s}())
 set_boolean_action_pattern_after_once = """
 self.assert{v}(self.state_manager.world_manager.get_{s}())
 """.strip()
+inventory_pick_item_action_pattern_preconf = """
+self.state_manager.inventory_manager.drop_all_items('{v}')
+""".strip()
+inventory_pick_item_action_pattern_before = """
+self.assertFalse(self.state_manager.inventory_manager.is_own_item('{v}'))
+""".strip()
+inventory_pick_item_action_pattern_after = """
+self.assertTrue(self.state_manager.inventory_manager.is_own_item('{v}'))
+""".strip()
+inventory_pick_item_action_pattern_after_once = """
+self.assertTrue(self.state_manager.inventory_manager.is_own_item('{v}'))
+""".strip()
+inventory_drop_item_action_pattern_preconf = """
+    # TODO [snow]: add inventory_drop_item_action_pattern_preconf
+""".strip()
+inventory_drop_item_action_pattern_before = """
+    # TODO [snow]: add inventory_drop_item_action_pattern_before
+""".strip()
+inventory_drop_item_action_pattern_after = """
+    # TODO [snow]: add inventory_drop_item_action_pattern_after
+""".strip()
+inventory_drop_item_action_pattern_after_once = """
+    # TODO [snow]: add inventory_drop_item_action_pattern_after_once
+""".strip()
+inventory_drop_all_items_action_pattern_preconf = """
+    # TODO [snow]: add inventory_drop_all_items_action_pattern_preconf
+""".strip()
+inventory_drop_all_items_action_pattern_before = """
+    # TODO [snow]: add inventory_drop_all_items_action_pattern_before
+""".strip()
+inventory_drop_all_items_action_pattern_after = """
+    # TODO [snow]: add inventory_drop_all_items_action_pattern_after
+""".strip()
+inventory_drop_all_items_action_pattern_after_once = """
+    # TODO [snow]: add inventory_drop_all_items_action_pattern_after_once
+""".strip()
 set_integer_action_pattern_preconf = """
 {s}_before = {ov}
 {s}_after = {v}
@@ -541,4 +577,38 @@ self.state_manager.world_manager.set_in_party_grace(False)
 self.state_manager.world_manager.set_in_party_dakkon(False)
 self.state_manager.world_manager.set_in_party_nordom(False)
 self.state_manager.world_manager.set_in_party_vhail(False)
+""".strip()
+inventory_pick_item_condition_pattern_preconf = """
+    # TODO [snow]: add inventory_pick_item_condition_pattern_preconf
+""".strip()
+inventory_pick_item_condition_pattern_before = """
+    # TODO [snow]: add inventory_pick_item_condition_pattern_before
+""".strip()
+inventory_pick_item_condition_pattern_after = """
+    # TODO [snow]: add inventory_pick_item_condition_pattern_after
+""".strip()
+inventory_drop_item_condition_pattern_preconf = """
+    # TODO [snow]: add inventory_drop_item_condition_pattern_preconf
+""".strip()
+inventory_drop_item_condition_pattern_before = """
+    # TODO [snow]: add inventory_drop_item_condition_pattern_before
+""".strip()
+inventory_drop_item_condition_pattern_after = """
+    # TODO [snow]: add inventory_drop_item_condition_pattern_after
+""".strip()
+inventory_is_own_item_condition_pattern_preconf = """
+""".strip()
+inventory_is_own_item_condition_pattern_before = """
+self.state_manager.inventory_manager.drop_item('{v}')
+""".strip()
+inventory_is_own_item_condition_pattern_after = """
+self.state_manager.inventory_manager.pick_item('{v}')
+""".strip()
+inventory_not_is_own_item_condition_pattern_preconf = """
+""".strip()
+inventory_not_is_own_item_condition_pattern_before = """
+self.state_manager.inventory_manager.pick_item('{v}')
+""".strip()
+inventory_not_is_own_item_condition_pattern_after = """
+self.state_manager.inventory_manager.drop_item('{v}')
 """.strip()

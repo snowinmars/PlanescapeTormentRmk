@@ -51,7 +51,7 @@ class XachLogicGeneratedTest(LogicTest):
 
     def test_r663_action(self):
         self._false_then_true_action(
-            self.state_manager.world_manager.get_has_xac_liver,
+            lambda: self.state_manager.inventory_manager.is_own_item('has_xac_liver'),
             self.logic.r663_action
         )
 
@@ -61,20 +61,22 @@ class XachLogicGeneratedTest(LogicTest):
         xachariah_ring_after = 2
         xachariah_ring_after_once = 2
         self.state_manager.world_manager.set_xachariah_ring(xachariah_ring_before)
-        self.state_manager.world_manager.set_has_xac_heart(False)
+        self.state_manager.inventory_manager.drop_all_items('has_xac_heart')
 
         self.assertEqual(self.state_manager.world_manager.get_xachariah_ring(), xachariah_ring_before)
-        self.assertFalse(self.state_manager.world_manager.get_has_xac_heart())
+        self.assertFalse(self.state_manager.inventory_manager.is_own_item('has_xac_heart'))
 
         self.logic.r666_action()
 
         self.assertEqual(self.state_manager.world_manager.get_xachariah_ring(), xachariah_ring_after)
-        self.assertTrue(self.state_manager.world_manager.get_has_xac_heart())
+        self.assertTrue(self.state_manager.inventory_manager.is_own_item('has_xac_heart'))
+        self.assertEqual(self.state_manager.inventory_manager.owned_item_count('has_xac_heart'), 1)
 
         self.logic.r666_action()
 
         self.assertEqual(self.state_manager.world_manager.get_xachariah_ring(), xachariah_ring_after_once)
-        self.assertTrue(self.state_manager.world_manager.get_has_xac_heart())
+        self.assertTrue(self.state_manager.inventory_manager.is_own_item('has_xac_heart'))
+        self.assertEqual(self.state_manager.inventory_manager.owned_item_count('has_xac_heart'), 2)
 
 
     def test_r672_action(self):

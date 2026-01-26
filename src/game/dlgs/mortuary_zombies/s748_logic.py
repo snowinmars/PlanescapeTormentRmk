@@ -51,14 +51,14 @@ class S748LogicGenerated:
 
     def r35431_action(self):
         self.state_manager.world_manager.set_dead_s748(True)
-        self.state_manager.world_manager.set_has_spike(True)
-        self.state_manager.world_manager.set_has_strap(True)
+        self.state_manager.inventory_manager.pick_item('has_spike')
+        self.state_manager.inventory_manager.pick_item('has_strap')
 
 
     def r35434_action(self):
         self.state_manager.world_manager.set_dead_s748(True)
-        self.state_manager.world_manager.set_has_spike(True)
-        self.state_manager.world_manager.set_has_strap(True)
+        self.state_manager.inventory_manager.pick_item('has_spike')
+        self.state_manager.inventory_manager.pick_item('has_strap')
 
 
     def r35384_condition(self):

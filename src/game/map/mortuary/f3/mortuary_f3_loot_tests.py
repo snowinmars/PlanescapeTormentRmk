@@ -48,7 +48,7 @@ class MortuaryF3LootLogicTest(LogicTest):
 
     def test_garbage(self):
         self._false_then_true_action(
-            self.state_manager.world_manager.get_has_garbage,
+            lambda: self.state_manager.inventory_manager.is_own_item('has_garbage'),
             self.logic.garbage
         )
 

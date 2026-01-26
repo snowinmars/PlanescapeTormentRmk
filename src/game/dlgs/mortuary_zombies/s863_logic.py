@@ -51,14 +51,14 @@ class S863LogicGenerated:
 
     def r35585_action(self):
         self.state_manager.world_manager.set_dead_s863(True)
-        self.state_manager.world_manager.set_has_spike(True)
-        self.state_manager.world_manager.set_has_strap(True)
+        self.state_manager.inventory_manager.pick_item('has_spike')
+        self.state_manager.inventory_manager.pick_item('has_strap')
 
 
     def r35588_action(self):
         self.state_manager.world_manager.set_dead_s863(True)
-        self.state_manager.world_manager.set_has_spike(True)
-        self.state_manager.world_manager.set_has_strap(True)
+        self.state_manager.inventory_manager.pick_item('has_spike')
+        self.state_manager.inventory_manager.pick_item('has_strap')
 
 
     def r64266_action(self):

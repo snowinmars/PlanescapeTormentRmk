@@ -12,34 +12,33 @@ class Zm1664LogicGeneratedTest(LogicTest):
 
 
     def test_r47014_action(self):
-        self.state_manager.world_manager.set_has_logpage(False)
-        self.state_manager.inventory_manager.drop_all_items('has_zm1664_page')
+        self.state_manager.inventory_manager.drop_all_items('has_logpage')
+        self.state_manager.world_manager.set_has_zm1664_page(False)
 
-        self.assertFalse(self.state_manager.world_manager.get_has_logpage())
-        self.assertFalse(self.state_manager.inventory_manager.is_own_item('has_zm1664_page'))
-
-        self.logic.r47014_action()
-
-        self.assertTrue(self.state_manager.world_manager.get_has_logpage())
-        self.assertTrue(self.state_manager.inventory_manager.is_own_item('has_zm1664_page'))
+        self.assertFalse(self.state_manager.inventory_manager.is_own_item('has_logpage'))
+        self.assertFalse(self.state_manager.world_manager.get_has_zm1664_page())
 
         self.logic.r47014_action()
 
-        self.assertTrue(self.state_manager.world_manager.get_has_logpage())
-        self.assertTrue(self.state_manager.inventory_manager.is_own_item('has_zm1664_page'))
+        self.assertTrue(self.state_manager.inventory_manager.is_own_item('has_logpage'))
+        self.assertTrue(self.state_manager.world_manager.get_has_zm1664_page())
+
+        self.logic.r47014_action()
+
+        self.assertTrue(self.state_manager.inventory_manager.is_own_item('has_logpage'))
+        self.assertTrue(self.state_manager.world_manager.get_has_zm1664_page())
 
 
     def test_r47003_condition(self):
-        self.state_manager.inventory_manager.pick_item('has_zm1664_page')
         self._boolean_invert_condition(
-            lambda x: self.state_manager.inventory_manager.pick_item('has_zm1664_page') if x else self.state_manager.inventory_manager.drop_item('has_zm1664_page'),
+            self.state_manager.world_manager.set_has_zm1664_page,
             self.logic.r47003_condition
         )
 
 
     def test_r47004_condition(self):
         self._boolean_straight_condition(
-            lambda x: self.state_manager.inventory_manager.pick_item('has_zm1664_page') if x else self.state_manager.inventory_manager.drop_item('has_zm1664_page'),
+            self.state_manager.world_manager.set_has_zm1664_page,
             self.logic.r47004_condition
         )
 

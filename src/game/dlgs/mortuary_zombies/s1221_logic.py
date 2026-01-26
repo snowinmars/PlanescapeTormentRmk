@@ -51,14 +51,14 @@ class S1221LogicGenerated:
 
     def r35354_action(self):
         self.state_manager.world_manager.set_dead_s1221(True)
-        self.state_manager.world_manager.set_has_spike(True)
-        self.state_manager.world_manager.set_has_strap(True)
+        self.state_manager.inventory_manager.pick_item('has_spike')
+        self.state_manager.inventory_manager.pick_item('has_strap')
 
 
     def r35357_action(self):
         self.state_manager.world_manager.set_dead_s1221(True)
-        self.state_manager.world_manager.set_has_spike(True)
-        self.state_manager.world_manager.set_has_strap(True)
+        self.state_manager.inventory_manager.pick_item('has_spike')
+        self.state_manager.inventory_manager.pick_item('has_strap')
 
 
     def r35307_condition(self):

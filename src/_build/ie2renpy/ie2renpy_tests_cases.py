@@ -1292,7 +1292,7 @@ class AreaLogicTest(LogicTest):
 
 
     def test_r17833_action(self):
-        self.state_manager.inventory_manager.pick_item('has_intro_key')
+        self.state_manager.inventory_manager.drop_all_items('has_intro_key')
         morte_before = 0
         morte_after = 1
         morte_after_once = 1

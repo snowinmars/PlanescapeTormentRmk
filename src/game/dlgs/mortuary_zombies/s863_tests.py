@@ -120,46 +120,46 @@ class S863LogicGeneratedTest(LogicTest):
 
     def test_r35585_action(self):
         self.state_manager.world_manager.set_dead_s863(False)
-        self.state_manager.world_manager.set_has_spike(False)
-        self.state_manager.world_manager.set_has_strap(False)
+        self.state_manager.inventory_manager.drop_all_items('has_spike')
+        self.state_manager.inventory_manager.drop_all_items('has_strap')
 
         self.assertFalse(self.state_manager.world_manager.get_dead_s863())
-        self.assertFalse(self.state_manager.world_manager.get_has_spike())
-        self.assertFalse(self.state_manager.world_manager.get_has_strap())
+        self.assertFalse(self.state_manager.inventory_manager.is_own_item('has_spike'))
+        self.assertFalse(self.state_manager.inventory_manager.is_own_item('has_strap'))
 
         self.logic.r35585_action()
 
         self.assertTrue(self.state_manager.world_manager.get_dead_s863())
-        self.assertTrue(self.state_manager.world_manager.get_has_spike())
-        self.assertTrue(self.state_manager.world_manager.get_has_strap())
+        self.assertTrue(self.state_manager.inventory_manager.is_own_item('has_spike'))
+        self.assertTrue(self.state_manager.inventory_manager.is_own_item('has_strap'))
 
         self.logic.r35585_action()
 
         self.assertTrue(self.state_manager.world_manager.get_dead_s863())
-        self.assertTrue(self.state_manager.world_manager.get_has_spike())
-        self.assertTrue(self.state_manager.world_manager.get_has_strap())
+        self.assertTrue(self.state_manager.inventory_manager.is_own_item('has_spike'))
+        self.assertTrue(self.state_manager.inventory_manager.is_own_item('has_strap'))
 
 
     def test_r35588_action(self):
         self.state_manager.world_manager.set_dead_s863(False)
-        self.state_manager.world_manager.set_has_spike(False)
-        self.state_manager.world_manager.set_has_strap(False)
+        self.state_manager.inventory_manager.drop_all_items('has_spike')
+        self.state_manager.inventory_manager.drop_all_items('has_strap')
 
         self.assertFalse(self.state_manager.world_manager.get_dead_s863())
-        self.assertFalse(self.state_manager.world_manager.get_has_spike())
-        self.assertFalse(self.state_manager.world_manager.get_has_strap())
+        self.assertFalse(self.state_manager.inventory_manager.is_own_item('has_spike'))
+        self.assertFalse(self.state_manager.inventory_manager.is_own_item('has_strap'))
 
         self.logic.r35588_action()
 
         self.assertTrue(self.state_manager.world_manager.get_dead_s863())
-        self.assertTrue(self.state_manager.world_manager.get_has_spike())
-        self.assertTrue(self.state_manager.world_manager.get_has_strap())
+        self.assertTrue(self.state_manager.inventory_manager.is_own_item('has_spike'))
+        self.assertTrue(self.state_manager.inventory_manager.is_own_item('has_strap'))
 
         self.logic.r35588_action()
 
         self.assertTrue(self.state_manager.world_manager.get_dead_s863())
-        self.assertTrue(self.state_manager.world_manager.get_has_spike())
-        self.assertTrue(self.state_manager.world_manager.get_has_strap())
+        self.assertTrue(self.state_manager.inventory_manager.is_own_item('has_spike'))
+        self.assertTrue(self.state_manager.inventory_manager.is_own_item('has_strap'))
 
 
     def test_r64266_action(self):

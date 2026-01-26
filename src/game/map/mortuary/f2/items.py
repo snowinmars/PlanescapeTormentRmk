@@ -1,8 +1,7 @@
 from game.map.NavigationDirective import (NavigationDirective)
 from game.map.map_items import (
     ShadowItem,
-    MenuItem,
-    ContainerMenuItem
+    MenuItem
 )
 
 
@@ -124,11 +123,11 @@ class MortuaryF2R1Shadow(ShadowItem):
         return 'bg/mortuary/f2/shadow_f2r1.webp'
 
 
-class InMortuaryF2R1PickScalpel(ContainerMenuItem):
+class InMortuaryF2R1PickScalpel(MenuItem):
     def __init__(self, state_manager, x, y):
         super().__init__(state_manager, x, y)
     def when(self):
-        return not self.state_manager.inventory_manager.is_own_item('has_scalpel') and \
+        return not self.state_manager.world_manager.get_looted_InMortuaryF2R1PickScalpel() and \
                self.state_manager.locations_manager.get_location() == 'mortuary_f2r1'
     def tooltip(self):
         return 'InMortuaryF2R1PickScalpel_tooltip1' # Обыскать
@@ -136,7 +135,8 @@ class InMortuaryF2R1PickScalpel(ContainerMenuItem):
         return 'bg/mortuary/f2/loot_f2r1_scalpel.webp'
     def jump(self):
         return NavigationDirective(
-            'mortuary_f2r1_loot_scalpel'
+            'mortuary_f2r1_loot_scalpel',
+            lambda: self.state_manager.world_manager.set_looted_InMortuaryF2R1PickScalpel(True)
         )
 
 
@@ -816,11 +816,11 @@ class MortuaryF2R7Shadow(ShadowItem):
         return 'bg/mortuary/f2/shadow_f2r7.webp'
 
 
-class InMortuaryF2R7PickCopperEarringClosed(ContainerMenuItem):
+class InMortuaryF2R7PickCopperEarringClosed(MenuItem):
     def __init__(self, state_manager, x, y):
         super().__init__(state_manager, x, y)
     def when(self):
-        return not self.state_manager.inventory_manager.is_own_item('has_copper_earring_closed') and \
+        return not self.state_manager.world_manager.get_looted_InMortuaryF2R7PickCopperEarringClosed() and \
                self.state_manager.locations_manager.get_location() == 'mortuary_f2r7'
     def tooltip(self):
         return 'InMortuaryF2R7PickCopperEarringClosed_tooltip1' # Взять серьгу
@@ -828,15 +828,16 @@ class InMortuaryF2R7PickCopperEarringClosed(ContainerMenuItem):
         return 'bg/mortuary/f2/loot_f2r7_copper_earing.webp'
     def jump(self):
         return NavigationDirective(
-            'mortuary_f2r7_loot_copper_earring_closed'
+            'mortuary_f2r7_loot_copper_earring_closed',
+            lambda: self.state_manager.world_manager.set_looted_InMortuaryF2R7PickCopperEarringClosed(True)
         )
 
 
-class InMortuaryF2R7PickEmbalm(ContainerMenuItem):
+class InMortuaryF2R7PickEmbalm(MenuItem):
     def __init__(self, state_manager, x, y):
         super().__init__(state_manager, x, y)
     def when(self):
-        return not self.state_manager.inventory_manager.is_own_item('has_embalm') and \
+        return not self.state_manager.world_manager.get_looted_InMortuaryF2R7PickEmbalm() and \
                self.state_manager.locations_manager.get_location() == 'mortuary_f2r7'
     def tooltip(self):
         return 'InMortuaryF2R7PickEmbalm_tooltip1' # Взять бальзамирующую жидкость
@@ -844,7 +845,8 @@ class InMortuaryF2R7PickEmbalm(ContainerMenuItem):
         return 'bg/mortuary/f2/loot_f2r7_elbam.webp'
     def jump(self):
         return NavigationDirective(
-            'mortuary_f2r7_loot_embalm'
+            'mortuary_f2r7_loot_embalm',
+            lambda: self.state_manager.world_manager.set_looted_InMortuaryF2R7PickEmbalm(True)
         )
 
 

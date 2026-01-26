@@ -952,15 +952,15 @@ class VaxisLogicGenerated:
 
 
     def r64527_condition(self):
-        return not self.state_manager.world_manager.get_has_bone_chrm()
+        return not self.state_manager.inventory_manager.is_own_item('has_bone_chrm')
 
 
     def r4568_condition(self):
-        return self.state_manager.world_manager.get_has_bone_chrm()
+        return self.state_manager.inventory_manager.is_own_item('has_bone_chrm')
 
 
     def r4569_condition(self):
-        return self.state_manager.world_manager.get_has_bone_chrm()
+        return self.state_manager.inventory_manager.is_own_item('has_bone_chrm')
 
 
     def r4586_condition(self):

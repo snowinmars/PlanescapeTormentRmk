@@ -33,6 +33,39 @@ def test_{f}(self):
 """.strip(), extractors={'s': lambda m: m.group(1)})
 
 
+action_inventory_is_own_item_pattern = PatternConfig(
+    pattern=re.compile(r"return self\.state_manager\.inventory_manager\.is_own_item\('(.*)'\)$"),
+    template="""
+def test_{f}(self):
+    self._boolean_straight_condition(
+        lambda x: self.state_manager.inventory_manager.pick_item('{v}') if x else self.state_manager.inventory_manager.drop_item('{v}'),
+        self.logic.{f}
+    )
+""".strip(), extractors={'v': lambda m: m.group(1)})
+
+
+action_inventory_not_is_own_item_pattern = PatternConfig(
+    pattern=re.compile(r"return not self\.state_manager\.inventory_manager\.is_own_item\('(.*)'\)$"),
+    template="""
+def test_{f}(self):
+    self._boolean_straight_condition(
+        lambda x: self.state_manager.inventory_manager.pick_item('{v}') if x else self.state_manager.inventory_manager.drop_item('{v}'),
+        self.logic.{f}
+    )
+""".strip(), extractors={'v': lambda m: m.group(1)})
+
+
+action_inventory_pick_item_pattern = PatternConfig(
+    pattern=re.compile(r"self\.state_manager\.inventory_manager\.pick_item\('(.*)'\)$"),
+    template="""
+def test_{f}(self):
+    self._false_then_true_action(
+        lambda: self.state_manager.inventory_manager.is_own_item('{v}'),
+        self.logic.{f}
+    )
+""".strip(), extractors={'v': lambda m: m.group(1)})
+
+
 action_set_false_pattern = PatternConfig(
     pattern=re.compile(r"self\.state_manager\.world_manager\.set_(.*?)\(False\)$"),
     template="""
@@ -346,6 +379,9 @@ def test_{f}(self):
 all_patterns = [
     action_set_location_pattern,
     action_set_true_pattern,
+    action_inventory_is_own_item_pattern,
+    action_inventory_not_is_own_item_pattern,
+    action_inventory_pick_item_pattern,
     action_set_false_pattern,
     action_gain_experience_pattern,
     action_modify_property_once_pattern,

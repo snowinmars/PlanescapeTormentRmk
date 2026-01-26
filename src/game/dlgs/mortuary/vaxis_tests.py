@@ -2454,22 +2454,23 @@ class VaxisLogicGeneratedTest(LogicTest):
 
 
     def test_r64527_condition(self):
+        self.state_manager.inventory_manager.pick_item('has_bone_chrm')
         self._boolean_invert_condition(
-            lambda x: self.state_manager.world_manager.set_has_bone_chrm(x),
+            lambda x: self.state_manager.inventory_manager.pick_item('has_bone_chrm') if x else self.state_manager.inventory_manager.drop_item('has_bone_chrm'),
             self.logic.r64527_condition
         )
 
 
     def test_r4568_condition(self):
         self._boolean_straight_condition(
-            lambda x: self.state_manager.world_manager.set_has_bone_chrm(x),
+            lambda x: self.state_manager.inventory_manager.pick_item('has_bone_chrm') if x else self.state_manager.inventory_manager.drop_item('has_bone_chrm'),
             self.logic.r4568_condition
         )
 
 
     def test_r4569_condition(self):
         self._boolean_straight_condition(
-            lambda x: self.state_manager.world_manager.set_has_bone_chrm(x),
+            lambda x: self.state_manager.inventory_manager.pick_item('has_bone_chrm') if x else self.state_manager.inventory_manager.drop_item('has_bone_chrm'),
             self.logic.r4569_condition
         )
 

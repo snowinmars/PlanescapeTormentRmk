@@ -38,8 +38,8 @@ class S42LogicGenerated:
 
     def r6642_action(self):
         self.state_manager.world_manager.set_dead_s42(True)
-        self.state_manager.world_manager.set_has_spike(True)
-        self.state_manager.world_manager.set_has_strap(True)
+        self.state_manager.inventory_manager.pick_item('has_spike')
+        self.state_manager.inventory_manager.pick_item('has_strap')
 
 
     def r6645_action(self):
@@ -55,10 +55,9 @@ class S42LogicGenerated:
 
 
     def r58984_action(self):
-        self.state_manager.world_manager.set_has_gs_knife(True)
-        self.state_manager.world_manager.set_has_rags(True)
-        self.state_manager.world_manager.set_has_clotchrm(True)
-        self.state_manager.world_manager.set_has_clotchrm(True)
+        self.state_manager.inventory_manager.pick_item('has_gs_knife')
+        self.state_manager.inventory_manager.pick_item('has_rags')
+        self.state_manager.inventory_manager.pick_item('has_clotchrm', 2)
         self.state_manager.world_manager.inc_gold(99)
 
 

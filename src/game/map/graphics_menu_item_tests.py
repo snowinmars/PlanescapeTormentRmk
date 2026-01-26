@@ -21,7 +21,7 @@ from game.engine.world.world_store import (WorldStore)
 from game.engine.quests.quests_store import (QuestsStore)
 
 from game.engine_data.settings.all_settings import (build_all_settings)
-from game.engine_data.inventory.all_inventory import (build_all_inventory)
+from game.engine_data.inventory.build_all_inventory import (build_all_inventory)
 from game.engine_data.locations.all_locations import (build_all_locations)
 from game.engine_data.characters.build_all_characters import (build_all_characters)
 from game.engine_data.journal.build_all_notes import (build_all_notes)

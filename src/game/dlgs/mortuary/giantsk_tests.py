@@ -130,7 +130,7 @@ class GiantskLogicGeneratedTest(LogicTest):
 
     def test_r4097_action(self):
         self._false_then_true_action(
-            self.state_manager.world_manager.get_has_breast1,
+            lambda: self.state_manager.inventory_manager.is_own_item('has_breast1'),
             self.logic.r4097_action
         )
 
@@ -149,33 +149,33 @@ class GiantskLogicGeneratedTest(LogicTest):
 
     def test_r4099_action(self):
         self._false_then_true_action(
-            self.state_manager.world_manager.get_has_breast2,
+            lambda: self.state_manager.inventory_manager.is_own_item('has_breast2'),
             self.logic.r4099_action
         )
 
 
     def test_r4100_action(self):
         self._false_then_true_action(
-            self.state_manager.world_manager.get_has_breast3,
+            lambda: self.state_manager.inventory_manager.is_own_item('has_breast3'),
             self.logic.r4100_action
         )
 
 
     def test_r4101_action(self):
-        self.state_manager.world_manager.set_has_breast4(False)
+        self.state_manager.inventory_manager.drop_all_items('has_breast4')
         self.state_manager.world_manager.set_dead_giantsk(False)
 
-        self.assertFalse(self.state_manager.world_manager.get_has_breast4())
+        self.assertFalse(self.state_manager.inventory_manager.is_own_item('has_breast4'))
         self.assertFalse(self.state_manager.world_manager.get_dead_giantsk())
 
         self.logic.r4101_action()
 
-        self.assertTrue(self.state_manager.world_manager.get_has_breast4())
+        self.assertTrue(self.state_manager.inventory_manager.is_own_item('has_breast4'))
         self.assertTrue(self.state_manager.world_manager.get_dead_giantsk())
 
         self.logic.r4101_action()
 
-        self.assertTrue(self.state_manager.world_manager.get_has_breast4())
+        self.assertTrue(self.state_manager.inventory_manager.is_own_item('has_breast4'))
         self.assertTrue(self.state_manager.world_manager.get_dead_giantsk())
 
 

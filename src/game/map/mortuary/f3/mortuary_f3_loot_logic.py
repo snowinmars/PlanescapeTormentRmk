@@ -24,7 +24,7 @@ class MortuaryF3LootLogic:
 
 
     def garbage(self):
-        self.state_manager.world_manager.set_has_garbage(True)
+        self.state_manager.inventory_manager.pick_item('has_garbage')
 
 
     def get_where_party_stands(self):

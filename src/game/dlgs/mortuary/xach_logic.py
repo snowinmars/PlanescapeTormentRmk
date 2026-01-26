@@ -17,12 +17,12 @@ class XachLogicGenerated:
 
 
     def r663_action(self):
-        self.state_manager.world_manager.set_has_xac_liver(True)
+        self.state_manager.inventory_manager.pick_item('has_xac_liver')
 
 
     def r666_action(self):
         self.state_manager.world_manager.set_xachariah_ring(2)
-        self.state_manager.world_manager.set_has_xac_heart(True)
+        self.state_manager.inventory_manager.pick_item('has_xac_heart')
 
 
     def r672_action(self):

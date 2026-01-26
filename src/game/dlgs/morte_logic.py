@@ -2386,7 +2386,7 @@ class MorteLogicGenerated:
 
 
     def r43909_condition(self):
-        return self.state_manager.world_manager.get_has_decant() and \
+        return self.state_manager.inventory_manager.is_own_item('has_decant') and \
                self.state_manager.world_manager.get_seek_word() == 1
 
 
@@ -2400,7 +2400,7 @@ class MorteLogicGenerated:
 
 
     def r43917_condition(self):
-        return self.state_manager.world_manager.get_has_decant() and \
+        return self.state_manager.inventory_manager.is_own_item('has_decant') and \
                self.state_manager.world_manager.get_seek_word() == 1
 
 
@@ -2501,25 +2501,25 @@ class MorteLogicGenerated:
 
     def r53837_condition(self):
         return self.state_manager.world_manager.get_where_fhjull() and \
-               self.state_manager.world_manager.get_has_cube()
+               self.state_manager.inventory_manager.is_own_item('has_cube')
 
 
     def r53838_condition(self):
         return self.state_manager.world_manager.get_where_fhjull() and \
-               not self.state_manager.world_manager.get_has_cube() and \
+               not self.state_manager.inventory_manager.is_own_item('has_cube') and \
                self.state_manager.world_manager.get_in_party_grace()
 
 
     def r53839_condition(self):
         return self.state_manager.world_manager.get_where_fhjull() and \
-               not self.state_manager.world_manager.get_has_cube() and \
+               not self.state_manager.inventory_manager.is_own_item('has_cube') and \
                not self.state_manager.world_manager.get_in_party_grace() and \
                self.state_manager.world_manager.get_in_party_annah()
 
 
     def r53840_condition(self):
         return self.state_manager.world_manager.get_where_fhjull() and \
-               not self.state_manager.world_manager.get_has_cube() and \
+               not self.state_manager.inventory_manager.is_own_item('has_cube') and \
                not self.state_manager.world_manager.get_in_party_grace() and \
                not self.state_manager.world_manager.get_in_party_annah()
 
@@ -2530,25 +2530,25 @@ class MorteLogicGenerated:
 
     def r53863_condition(self):
         return self.state_manager.world_manager.get_where_fhjull() and \
-               self.state_manager.world_manager.get_has_cube()
+               self.state_manager.inventory_manager.is_own_item('has_cube')
 
 
     def r53864_condition(self):
         return self.state_manager.world_manager.get_where_fhjull() and \
-               not self.state_manager.world_manager.get_has_cube() and \
+               not self.state_manager.inventory_manager.is_own_item('has_cube') and \
                self.state_manager.world_manager.get_in_party_grace()
 
 
     def r53865_condition(self):
         return self.state_manager.world_manager.get_where_fhjull() and \
-               not self.state_manager.world_manager.get_has_cube() and \
+               not self.state_manager.inventory_manager.is_own_item('has_cube') and \
                not self.state_manager.world_manager.get_in_party_grace() and \
                self.state_manager.world_manager.get_in_party_annah()
 
 
     def r53866_condition(self):
         return self.state_manager.world_manager.get_where_fhjull() and \
-               not self.state_manager.world_manager.get_has_cube() and \
+               not self.state_manager.inventory_manager.is_own_item('has_cube') and \
                not self.state_manager.world_manager.get_in_party_grace() and \
                not self.state_manager.world_manager.get_in_party_annah()
 
@@ -2559,25 +2559,25 @@ class MorteLogicGenerated:
 
     def r53852_condition(self):
         return self.state_manager.world_manager.get_where_fhjull() and \
-               self.state_manager.world_manager.get_has_cube()
+               self.state_manager.inventory_manager.is_own_item('has_cube')
 
 
     def r53853_condition(self):
         return self.state_manager.world_manager.get_where_fhjull() and \
-               not self.state_manager.world_manager.get_has_cube() and \
+               not self.state_manager.inventory_manager.is_own_item('has_cube') and \
                self.state_manager.world_manager.get_in_party_grace()
 
 
     def r53854_condition(self):
         return self.state_manager.world_manager.get_where_fhjull() and \
-               not self.state_manager.world_manager.get_has_cube() and \
+               not self.state_manager.inventory_manager.is_own_item('has_cube') and \
                not self.state_manager.world_manager.get_in_party_grace() and \
                self.state_manager.world_manager.get_in_party_annah()
 
 
     def r53855_condition(self):
         return self.state_manager.world_manager.get_where_fhjull() and \
-               not self.state_manager.world_manager.get_has_cube() and \
+               not self.state_manager.inventory_manager.is_own_item('has_cube') and \
                not self.state_manager.world_manager.get_in_party_grace() and \
                not self.state_manager.world_manager.get_in_party_annah()
 

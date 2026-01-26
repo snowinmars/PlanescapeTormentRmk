@@ -3,20 +3,20 @@ from _build.update_translations import (update_translations)
 
 build('russian')
 
-build('czech')
+# build('czech')
 # update_translations('czech')
 
-build('deutsch')
+# build('deutsch')
 # update_translations('deutsch')
 
 build('english')
 # update_translations('english')
 
-build('french')
+# build('french')
 # update_translations('french')
 
-build('korean')
+# build('korean')
 # update_translations('korean')
 
-build('polski')
+# build('polski')
 # update_translations('polski')
