@@ -1,14 +1,15 @@
-$never = _('strength')
-$never = _('dexterity')
-$never = _('intelligence')
-$never = _('constitution')
-$never = _('wisdom')
-$never = _('charisma')
-$never = _('good')
-$never = _('law')
-$never = _('lore')
-$never = _('experience')
-$never = _('ac')
+label never_narrat:
+    $never = _('strength')
+    $never = _('dexterity')
+    $never = _('intelligence')
+    $never = _('constitution')
+    $never = _('wisdom')
+    $never = _('charisma')
+    $never = _('good')
+    $never = _('law')
+    $never = _('lore')
+    $never = _('experience')
+    $never = _('ac')
 
 
 screen narrat():

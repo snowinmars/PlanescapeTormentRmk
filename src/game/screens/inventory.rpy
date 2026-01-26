@@ -22,6 +22,8 @@ screen inventory_screen(
     get_character,
     get_gold
 ):
+    on 'show' action SetVariable('inventory_screen_hovered_item_name', '')
+
     tag menu
 
     $ owned_items = get_owned_items()
@@ -30,12 +32,21 @@ screen inventory_screen(
 
     for k in keymap_inventory_screen:
         key k action Hide("inventory_screen")
-    key "mouseup_3" action Hide("inventory_screen")
+    key "K_ESCAPE" action Hide("inventory_screen")
 
     frame:
         xfill True
         yfill True
         background Transform('gui/invbg.webp', fit='cover')
+
+    button:
+        xpos 1350
+        ypos 50
+        xsize 50
+        ysize 50
+        background Transform('gui/close.png', fit='cover')
+        hover_background Transform('gui/close.png', fit='cover', matrixcolor=hover_matrix)
+        action Hide("inventory_screen")
 
     frame:
         background None
@@ -94,7 +105,6 @@ screen inventory_screen(
             add Transform('gui/icgold.webp', fit='cover', xsize=140, ysize=140)
 
             label str(gold):
-                background '#ff000066'
                 ypos -30
                 xsize 155
                 text_size 20
@@ -123,7 +133,7 @@ screen inventory_screen(
 
 
     if inventory_screen_hovered_item_name:
-        label inventory_screen_hovered_item_name:
+        label _(inventory_screen_hovered_item_name):
             xpos 860
             ypos 642
             xsize 525
@@ -135,7 +145,7 @@ screen inventory_screen(
     vpgrid:
         xpos 920
         ypos 731
-        xsize 675
+        xsize 710
         ysize 130
         xfill True
         yfill True

@@ -5,14 +5,18 @@ init python:
     def _quests_screen_get_quest_line(quest_id):
         return __(f'quest_line_{quest_id}{{#quest_line_{quest_id}}}')
 
+
 screen journal_screen(get_started_quests, get_finished_quests, get_notes ): # get_beasts
+    on 'show' action SetVariable('journal_screen_choosed_screen', '')
+    on 'show' action SetVariable('journal_screen_choosed_quest_id', '')
+
     $ gsm = runtime.global_state_manager
 
     use narrat()
 
     for k in keymap_journal_screen:
         key k action Hide("journal_screen")
-    key "mouseup_3" action Hide("journal_screen")
+    key "K_ESCAPE" action Hide("journal_screen")
 
     modal False
 

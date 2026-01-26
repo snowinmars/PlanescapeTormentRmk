@@ -14,7 +14,7 @@ screen character_screen(get_character):
 
     for k in keymap_character_screen:
         key k action Hide("character_screen")
-    key "mouseup_3" action Hide("character_screen")
+    key "K_ESCAPE" action Hide("character_screen")
 
     frame:
         xalign 0

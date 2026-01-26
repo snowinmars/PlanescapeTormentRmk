@@ -23,8 +23,8 @@ def build_all_inventory(manager):
         orig_id='tomeba.itm',
         name='inventoryitem_has_tome_ba_name',
         description='inventoryitem_has_tome_ba_description',
-        grid_image='images/icons/tome_ba.png',
-        detail_image='images/icons/tome_ba.png'
+        grid_image='images/icons/tomeba.png',
+        detail_image='images/icons/tomeba.png'
     ))
     manager.register(InventoryItem(
         settings_id='has_copper_earring_closed',
@@ -64,8 +64,8 @@ def build_all_inventory(manager):
         orig_id='n1201.itm',
         name='inventoryitem_has_1201_note_name',
         description='inventoryitem_has_1201_note_description',
-        grid_image='images/icons/1201_note.png',
-        detail_image='images/icons/1201_note.png',
+        grid_image='images/icons/n1201.png',
+        detail_image='images/icons/n1201.png',
         jump_on_use_to='n1201_speak'
     ))
     manager.register(InventoryItem(
@@ -81,8 +81,8 @@ def build_all_inventory(manager):
         orig_id='bandage.itm',
         name='inventoryitem_has_bandages_name',
         description='inventoryitem_has_bandages_description',
-        grid_image='images/icons/bandages.png',
-        detail_image='images/icons/bandages.png'
+        grid_image='images/icons/bandage.png',
+        detail_image='images/icons/bandage.png'
     ))
     manager.register(InventoryItem(
         settings_id='has_embalm',
