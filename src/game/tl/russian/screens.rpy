@@ -1,6 +1,4 @@
-﻿# TODO: Translation updated at 2025-11-27 23:07
-
-translate russian strings:
+﻿translate russian strings:
 
     # game/screens.rpy:261
     old 'Назад'

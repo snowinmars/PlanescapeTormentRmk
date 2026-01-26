@@ -1,5 +1,3 @@
-# TODO: Translation updated at 2025-12-16 20:33
-
 # game/dlgs/mortuary/morte.rpy:14
 translate english morte_s0_38ac777f:
 

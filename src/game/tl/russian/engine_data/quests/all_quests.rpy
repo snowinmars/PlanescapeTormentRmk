@@ -1,6 +1,4 @@
-﻿# TODO: Translation updated at 2026-01-18 22:40
-
-translate russian strings:
+﻿translate russian strings:
 
     # game/engine_data/quests/all_quests.rpy:2
     old 'quest_line_106699{#quest_line_106699}'

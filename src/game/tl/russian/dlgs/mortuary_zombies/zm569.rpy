@@ -1,6 +1,4 @@
-﻿# TODO: Translation updated at 2025-12-07 17:45
-
-# game/dlgs/mortuary_zombies/zm569.rpy:14
+﻿# game/dlgs/mortuary_zombies/zm569.rpy:14
 translate russian zm569_s0_9a1d93fb:
 
     # 'zm569_s0{#zm569_s0}'

@@ -1,6 +1,4 @@
-﻿# TODO: Translation updated at 2025-12-06 04:27
-
-# game/dlgs/inventory/copearc.rpy:14
+﻿# game/dlgs/inventory/copearc.rpy:14
 translate russian copearc_s0_0a62cf2e:
 
     # 'copearc_s0{#copearc_s0}'

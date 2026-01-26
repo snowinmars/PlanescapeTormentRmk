@@ -1,5 +1,3 @@
-# TODO: Translation updated at 2025-11-28 22:23
-
 # game/dlgs/mortuary/dhall.rpy:24
 translate english dhall_s0_2ec5d757:
 

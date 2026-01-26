@@ -1,6 +1,4 @@
-﻿# TODO: Translation updated at 2025-12-06 04:27
-
-# game/dlgs/inventory/n1201.rpy:14
+﻿# game/dlgs/inventory/n1201.rpy:14
 translate russian n1201_s0_9562924b:
 
     # 'n1201_s0{#n1201_s0}'

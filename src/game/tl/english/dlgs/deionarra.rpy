@@ -1,5 +1,3 @@
-# TODO: Translation updated at 2025-12-06 05:02
-
 # game/dlgs/deionarra.rpy:14
 translate english deionarra_s0_94b82b59:
 

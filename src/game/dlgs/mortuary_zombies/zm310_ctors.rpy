@@ -12,7 +12,7 @@ label zm310_speak:
     if gsm.world_manager.get_oinosian() == 1:
         jump zm310_s18_ctor
 
-    jump zm310_s18_ctor # TODO [snow]: should not be possible
+    jump zm310_s18_ctor # NOTE [snow]: should not be possible
 
 
 label zm310_s0_ctor:

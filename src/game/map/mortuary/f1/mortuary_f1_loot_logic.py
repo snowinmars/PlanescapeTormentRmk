@@ -9,9 +9,9 @@ class MortuaryF1LootLogic:
         if current_location == 'mortuary_f1r1':
             return { 'x': 1200, 'y': 2300 }
         if current_location == 'mortuary_f1r2':
-            return { 'x': 590, 'y': 1300 }
+            return { 'x':  590, 'y': 1300 }
         if current_location == 'mortuary_f1r3':
-            return { 'x': 3200, 'y': 700 }
+            return { 'x': 3200, 'y':  700 }
         if current_location == 'mortuary_f1r4':
             return { 'x': 3700, 'y': 2000 }
         if current_location == 'mortuary_f1rc':

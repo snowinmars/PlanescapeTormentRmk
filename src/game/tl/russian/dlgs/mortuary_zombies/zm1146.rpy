@@ -1,6 +1,4 @@
-﻿# TODO: Translation updated at 2025-12-07 17:45
-
-# game/dlgs/mortuary_zombies/zm1146.rpy:14
+﻿# game/dlgs/mortuary_zombies/zm1146.rpy:14
 translate russian zm1146_s0_28458111:
 
     # 'zm1146_s0{#zm1146_s0}'

@@ -1,6 +1,4 @@
-﻿# TODO: Translation updated at 2026-01-15 00:18
-
-translate russian strings:
+﻿translate russian strings:
 
     # game/screens/narrat.rpy:1
     old "strength"

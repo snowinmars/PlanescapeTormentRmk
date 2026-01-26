@@ -12,7 +12,7 @@ label eivene_speak:
     if gsm.world_manager.get_eivene() == 1:
         jump eivene_s15_ctor
 
-    jump eivene_s15_ctor # TODO [snow]: should not be possible
+    jump eivene_s15_ctor # NOTE [snow]: should not be possible
 
 
 label eivene_s0_ctor:

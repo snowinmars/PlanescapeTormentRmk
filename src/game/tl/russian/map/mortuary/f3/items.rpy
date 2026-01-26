@@ -1,6 +1,4 @@
-﻿# TODO: Translation updated at 2026-01-04 02:08
-
-translate russian strings:
+﻿translate russian strings:
 
     # game/map/mortuary/f3/items.rpy:3
     old 'FromMortuaryF3R1ToMortuaryF2R1_tooltip1'

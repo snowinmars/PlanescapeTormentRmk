@@ -12,7 +12,7 @@ label zm1146_speak:
     if gsm.world_manager.get_crispy() == 1:
         jump zm1146_s20_ctor
 
-    jump zm1146_s20_ctor # TODO [snow]: should not be possible
+    jump zm1146_s20_ctor # NOTE [snow]: should not be possible
 
 
 label zm1146_s0_ctor:

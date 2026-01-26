@@ -61,7 +61,7 @@ label soego_speak:
         gsm.world_manager.get_soego() == 0:
         jump soego_s38_ctor
 
-    jump soego_s38_ctor # TODO [snow]: should not be possible
+    jump soego_s38_ctor # NOTE [snow]: should not be possible
 
 
 label soego_s0_ctor:

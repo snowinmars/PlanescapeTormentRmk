@@ -1,5 +1,3 @@
-# TODO: Translation updated at 2025-11-28 22:23
-
 translate english strings:
 
     # game/screens.rpy:281

@@ -1,5 +1,3 @@
-# TODO: Translation updated at 2025-11-28 22:23
-
 # game/script.rpy:186
 translate english end_06023550:
 

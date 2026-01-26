@@ -1,6 +1,4 @@
-﻿# TODO: Translation updated at 2025-12-07 05:27
-
-# game/dlgs/mortuary/eivene.rpy:14
+﻿# game/dlgs/mortuary/eivene.rpy:14
 translate russian eivene_s0_8e67f66b:
 
     # 'eivene_s0{#eivene_s0}'

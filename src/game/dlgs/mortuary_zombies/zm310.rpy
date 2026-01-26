@@ -71,7 +71,7 @@ label zm310_s2: # from 0.3
 
 # s3 # say9642
 label zm310_s3: # from 2.0 4.2 5.2 6.2 7.2 8.1 9.0 10.0 11.2 12.1 13.1 14.1 15.1 16.0 18.0
-    $ zm310Logic.talk_oinosian() # TODO [snow]: minor bug: calls several times per dialogue. Affects nothing
+    $ zm310Logic.talk_oinosian() # NOTE [snow]: minor bug: calls several times per dialogue. Affects nothing
     'zm310_s3{#zm310_s3}'
     # nr 'Он говорит медленно и монотонно, его голос полон страдания и безысходности. Даже сейчас его почти не отличить от бездушного зомби.{#zm310_s3_1}'
     # arabhiem '«Что ты хочешь знать, милорд?»{#zm310_s3_2}'

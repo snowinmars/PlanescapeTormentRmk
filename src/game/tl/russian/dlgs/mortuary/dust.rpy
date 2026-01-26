@@ -1,6 +1,4 @@
-﻿# TODO: Translation updated at 2025-12-07 04:54
-
-# game/dlgs/mortuary/dust.rpy:14
+﻿# game/dlgs/mortuary/dust.rpy:14
 translate russian dust_s0_6ffe3b89:
 
     # 'dust_s0{#dust_s0}'

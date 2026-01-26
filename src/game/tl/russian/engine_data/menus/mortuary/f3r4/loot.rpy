@@ -1,6 +1,4 @@
-﻿# TODO: Translation updated at 2025-11-28 19:45
-
-# game/engine_data/menus/mortuary/f3r4/loot.rpy:9
+﻿# game/engine_data/menus/mortuary/f3r4/loot.rpy:9
 translate russian mortuary_f3r4_loot_prybar_735f9bd1:
 
     # nr 'Ты подбираешь ломик.'

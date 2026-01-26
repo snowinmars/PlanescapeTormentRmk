@@ -1,6 +1,4 @@
-﻿# TODO: Translation updated at 2025-12-10 01:13
-
-# game/dlgs/soego.rpy:14
+﻿# game/dlgs/soego.rpy:14
 translate russian soego_s0_42681654:
 
     # 'soego_s0{#soego_s0}'

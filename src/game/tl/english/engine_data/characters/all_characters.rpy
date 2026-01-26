@@ -1,6 +1,4 @@
-﻿# TODO: Translation updated at 2025-12-20 21:55
-
-translate english strings:
+﻿translate english strings:
 
     # game/engine_data/characters/all_characters.rpy:5
     old 'protagonist_character_name'

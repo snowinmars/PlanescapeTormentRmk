@@ -1,6 +1,4 @@
-﻿# TODO: Translation updated at 2025-12-07 04:54
-
-# game/dlgs/mortuary/dustfem.rpy:14
+﻿# game/dlgs/mortuary/dustfem.rpy:14
 translate russian dustfem_s0_9bc395f0:
 
     # 'dustfem_s0{#dustfem_s0}'

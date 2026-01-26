@@ -1,6 +1,4 @@
-﻿# TODO: Translation updated at 2026-01-12 20:35
-
-translate english strings:
+﻿translate english strings:
     # game/achievements/custom_achievements.rpy:8
     old "meet_arabhiem_name"
     new "Arabhiem"

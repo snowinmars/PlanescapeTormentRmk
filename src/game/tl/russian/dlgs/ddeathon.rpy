@@ -1,6 +1,4 @@
-﻿# TODO: Translation updated at 2025-11-28 22:01
-
-# game/dlgs/ddeathon.rpy:102
+﻿# game/dlgs/ddeathon.rpy:102
 translate russian ddeathon_s0_5ee0decf:
 
     # nr "Перед тобой тленный с кривой улыбкой, застывшей на его лице. Несмотря на улыбку, его глаза безжизненны."

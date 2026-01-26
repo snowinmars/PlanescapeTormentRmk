@@ -1,6 +1,4 @@
-﻿# TODO: Translation updated at 2025-12-21 13:52
-
-translate english strings:
+﻿translate english strings:
 
     # game/screens/preferences_language.rpy:45
     old 'preferences_language_screen_russian'

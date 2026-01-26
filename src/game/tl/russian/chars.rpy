@@ -1,6 +1,4 @@
-﻿# TODO: Translation updated at 2025-12-01 23:38
-
-translate russian strings:
+﻿translate russian strings:
 
     # game/chars.rpy:2
     old 'Безымянный'
@@ -241,8 +239,6 @@ translate russian strings:
     # game/chars.rpy:79
     old 'Зомби 1148'
     new 'Зомби 1148'
-
-# TODO: Translation updated at 2025-12-27 15:38
 
 translate russian strings:
 

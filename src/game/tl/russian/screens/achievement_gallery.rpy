@@ -1,6 +1,4 @@
-﻿# TODO: Translation updated at 2026-01-13 00:43
-
-translate russian strings:
+﻿translate russian strings:
 
     # game/screens/achievement_gallery.rpy:14
     old "achievement_gallery_statistics"

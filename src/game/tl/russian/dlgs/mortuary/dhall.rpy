@@ -1,6 +1,4 @@
-﻿# TODO: Translation updated at 2025-12-06 01:14
-
-# game/dlgs/mortuary/dhall.rpy:24
+﻿# game/dlgs/mortuary/dhall.rpy:24
 translate russian dhall_s0_2ec5d757:
 
     # 'dhall_s0{#dhall_s0}'

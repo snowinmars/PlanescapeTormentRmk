@@ -1,6 +1,4 @@
-﻿# TODO: Translation updated at 2025-12-10 02:54
-
-# game/dlgs/mortuary/vaxis.rpy:14
+﻿# game/dlgs/mortuary/vaxis.rpy:14
 translate russian vaxis_s0_82ffb922:
 
     # 'vaxis_s0{#vaxis_s0}'

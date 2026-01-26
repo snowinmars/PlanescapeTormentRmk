@@ -1,6 +1,4 @@
-﻿# TODO: Translation updated at 2025-11-28 19:45
-
-# game/engine_data/menus/mortuary/f2r1/loot.rpy:8
+﻿# game/engine_data/menus/mortuary/f2r1/loot.rpy:8
 translate russian from_mortuary_f2r1_to_mortuary_f2r8_closed_b2193a50:
 
     # nr 'Дверь заперта. Судя по всему, она ведёт в соседнюю комнату. Тебе понадобится ключ.'

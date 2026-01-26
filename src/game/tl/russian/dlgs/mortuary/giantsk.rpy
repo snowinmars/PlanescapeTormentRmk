@@ -1,6 +1,4 @@
-﻿# TODO: Translation updated at 2025-12-07 05:36
-
-# game/dlgs/mortuary/giantsk.rpy:14
+﻿# game/dlgs/mortuary/giantsk.rpy:14
 translate russian giantsk_s0_fac020de:
 
     # 'giantsk_s0{#giantsk_s0}'

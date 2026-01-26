@@ -1,5 +1,3 @@
-# TODO: Translation updated at 2025-12-07 06:44
-
 # game/dlgs/mortuary_zombies/zm1201.rpy:14
 translate english zm1201_s0_4a443601:
 

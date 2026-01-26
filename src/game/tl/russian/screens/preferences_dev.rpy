@@ -1,5 +1,3 @@
-# TODO: Translation updated at 2025-12-21 13:42
-
 translate russian strings:
 
     # game/screens/preferences_dev.rpy:125

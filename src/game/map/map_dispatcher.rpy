@@ -8,10 +8,10 @@ label map_dispatcher:
 
     # if in_morutary_f1
     if current_location == 'mortuary_f1r1' or \
-        current_location == 'mortuary_f1r2' or \
-        current_location == 'mortuary_f1r3' or \
-        current_location == 'mortuary_f1r4' or \
-        current_location == 'mortuary_f1rc':
+       current_location == 'mortuary_f1r2' or \
+       current_location == 'mortuary_f1r3' or \
+       current_location == 'mortuary_f1r4' or \
+       current_location == 'mortuary_f1rc':
         play music mortuary if_changed
         jump mortuary_f1_map
 

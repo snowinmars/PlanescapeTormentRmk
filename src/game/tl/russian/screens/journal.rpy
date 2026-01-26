@@ -1,6 +1,4 @@
-﻿# TODO: Translation updated at 2025-12-20 21:55
-
-translate russian strings:
+﻿translate russian strings:
 
     # game/screens/journal.rpy:37
     old 'journal_screen_quests_button'

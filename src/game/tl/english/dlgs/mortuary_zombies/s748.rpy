@@ -1,5 +1,3 @@
-# TODO: Translation updated at 2025-12-07 06:44
-
 # game/dlgs/mortuary_zombies/s748.rpy:14
 translate english s748_s0_2b85e4d0:
 

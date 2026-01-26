@@ -158,11 +158,11 @@ class Morte2Logic(Morte2LogicGenerated):
 
 
     def s0_action(self):
-        self.state_manager.world_manager.set_mortuary_walkthrough(2) # TODO [snow]: I guess
+        self.state_manager.world_manager.set_mortuary_walkthrough(2)
 
 
     def s11_action(self):
-        self.state_manager.world_manager.set_mortuary_walkthrough(3) # TODO [snow]: I guess
+        self.state_manager.world_manager.set_mortuary_walkthrough(3)
 
 
     def talk(self):

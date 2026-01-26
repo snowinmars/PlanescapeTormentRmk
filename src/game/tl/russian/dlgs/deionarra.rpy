@@ -1,6 +1,4 @@
-﻿# TODO: Translation updated at 2025-12-06 04:50
-
-# game/dlgs/deionarra.rpy:14
+﻿# game/dlgs/deionarra.rpy:14
 translate russian deionarra_s0_94b82b59:
 
     # 'deionarra_s0{#deionarra_s0}'

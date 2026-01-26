@@ -1,6 +1,4 @@
-﻿# TODO: Translation updated at 2025-12-28 03:55
-
-translate russian strings:
+﻿translate russian strings:
 
     # game/screens/character_creation.rpy:408
     old 'character_screen_points'

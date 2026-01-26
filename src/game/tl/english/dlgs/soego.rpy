@@ -1,5 +1,3 @@
-# TODO: Translation updated at 2025-12-10 01:13
-
 # game/dlgs/soego.rpy:14
 translate english soego_s0_42681654:
 

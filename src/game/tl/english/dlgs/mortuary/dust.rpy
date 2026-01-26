@@ -1,5 +1,3 @@
-# TODO: Translation updated at 2025-12-07 04:53
-
 # game/dlgs/mortuary/dust.rpy:14
 translate english dust_s0_6ffe3b89:
 

@@ -1,6 +1,4 @@
-﻿# TODO: Translation updated at 2025-12-07 17:45
-
-# game/dlgs/mortuary_zombies/zf679.rpy:14
+﻿# game/dlgs/mortuary_zombies/zf679.rpy:14
 translate russian zf679_s0_0a5046a1:
 
     # 'zf679_s0{#zf679_s0}'

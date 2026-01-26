@@ -96,4 +96,4 @@ label zm782_take_key_2:
     $ zm782Logic.pick_key_up()
     if zm782Logic.s24_condition():
         jump morte1_s24  # EXTERN
-    jump zm782_dispose # TODO [snow]: is it ok that I may not dispose dialogue after extern?
+    jump zm782_dispose

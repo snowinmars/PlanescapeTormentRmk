@@ -1,6 +1,4 @@
-﻿# TODO: Translation updated at 2026-01-12 20:35
-
-translate russian strings:
+﻿translate russian strings:
 
     # game/00_screens/achievement_backend.rpy:181
     old "Unlocked "

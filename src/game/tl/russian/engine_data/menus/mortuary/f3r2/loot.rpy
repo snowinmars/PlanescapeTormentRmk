@@ -1,6 +1,4 @@
-﻿# TODO: Translation updated at 2025-11-28 19:45
-
-# game/engine_data/menus/mortuary/f3r2/loot.rpy:9
+﻿# game/engine_data/menus/mortuary/f3r2/loot.rpy:9
 translate russian mortuary_f3r2_loot_needle_c76edb24:
 
     # nr 'Ты подбираешь нитку с иголкой.'

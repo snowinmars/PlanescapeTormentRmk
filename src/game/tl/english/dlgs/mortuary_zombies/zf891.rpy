@@ -1,5 +1,3 @@
-# TODO: Translation updated at 2025-12-07 06:44
-
 # game/dlgs/mortuary_zombies/zf891.rpy:14
 translate english zf891_s0_5f219d88:
 

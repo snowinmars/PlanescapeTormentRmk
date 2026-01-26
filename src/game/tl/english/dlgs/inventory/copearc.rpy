@@ -1,5 +1,3 @@
-# TODO: Translation updated at 2025-12-06 04:27
-
 # game/dlgs/inventory/copearc.rpy:14
 translate english copearc_s0_0a62cf2e:
 

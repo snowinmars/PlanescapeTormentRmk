@@ -1,5 +1,3 @@
-# TODO: Translation updated at 2025-12-07 06:44
-
 # game/dlgs/mortuary_zombies/zf679.rpy:14
 translate english zf679_s0_0a5046a1:
 

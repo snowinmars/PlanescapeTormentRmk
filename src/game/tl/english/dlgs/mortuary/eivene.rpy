@@ -1,5 +1,3 @@
-# TODO: Translation updated at 2025-12-07 05:27
-
 # game/dlgs/mortuary/eivene.rpy:14
 translate english eivene_s0_8e67f66b:
 

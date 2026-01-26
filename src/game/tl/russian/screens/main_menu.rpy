@@ -1,6 +1,4 @@
-﻿# TODO: Translation updated at 2025-12-27 15:38
-
-translate russian strings:
+﻿translate russian strings:
 
     # game/screens/main_menu.rpy:58
     old "main_menu_newlife"

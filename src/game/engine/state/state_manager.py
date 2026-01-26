@@ -37,7 +37,7 @@ class StateManager:
         #     -> set_entry_*() ->
         #       -> _report_change_callback() -> # if required
         #         -> report_change()
-        # The if in the set_entry_* should be enough to exit recursion
+        # The `if` in the set_entry_* should be enough to exit recursion
         # There are a lot of places, where push_story() should be executed,
         # and I do not have all of them right now
         # So it seems like a appropriate solution here

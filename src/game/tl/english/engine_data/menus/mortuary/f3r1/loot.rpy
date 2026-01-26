@@ -1,5 +1,3 @@
-# TODO: Translation updated at 2025-11-28 22:23
-
 # game/engine_data/menus/mortuary/f3r1/loot.rpy:8
 translate english from_mortuary_f3r1_to_mortuary_f2r1_closed_72003171:
 

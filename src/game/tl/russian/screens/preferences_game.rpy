@@ -1,6 +1,4 @@
-﻿# TODO: Translation updated at 2025-12-21 13:42
-
-translate russian strings:
+﻿translate russian strings:
 
     # game/screens/preferences_game.rpy:45
     old 'preferences_game_screen_skip_unseen'

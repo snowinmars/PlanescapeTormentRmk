@@ -1,5 +1,3 @@
-# TODO: Translation updated at 2025-12-07 06:44
-
 # game/dlgs/mortuary_zombies/zm965.rpy:14
 translate english zm965_s0_dbf4c313:
 

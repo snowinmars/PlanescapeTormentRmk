@@ -96,7 +96,7 @@ label dustfem_s3: # externs morte_s84
 
 # s4 # say1178
 label dustfem_s4: # from 3.0 3.1 3.2 3.3 40.2 40.3
-    $ dustfemLogic.talk() # TODO [snow]: minor bug: calls several times per dialogue. Affects nothing
+    $ dustfemLogic.talk() # NOTE [snow]: minor bug: calls several times per dialogue. Affects nothing
     'dustfem_s4{#dustfem_s4}'
     # nr 'Тленная медленно поднимает свою голову и оборачивается к тебе.{#dustfem_s4_1}'
     # dustfem '«Ты потерялся?»{#dustfem_s4_2}'

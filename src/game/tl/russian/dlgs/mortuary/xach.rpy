@@ -1,6 +1,4 @@
-﻿# TODO: Translation updated at 2025-12-24 18:14
-
-# game/dlgs/mortuary/xach.rpy:14
+﻿# game/dlgs/mortuary/xach.rpy:14
 translate russian xach_s0_e30d30bf:
 
     # 'xach_s0{#xach_s0}'

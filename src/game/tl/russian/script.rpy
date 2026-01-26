@@ -1,6 +1,4 @@
-﻿# TODO: Translation updated at 2025-11-27 23:07
-
-# game/script.rpy:188
+﻿# game/script.rpy:188
 translate russian end_7fd59d57:
 
     # snowinmars 'Спасибо.'
@@ -25,8 +23,6 @@ translate russian strings:
     # game/script.rpy:147
     old 'Новая жизнь'
     new 'Новая жизнь'
-
-# TODO: Translation updated at 2025-11-27 23:09
 
 # game/script.rpy:186
 translate russian end_06023550:

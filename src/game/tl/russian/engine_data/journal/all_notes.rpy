@@ -1,6 +1,4 @@
-﻿# TODO: Translation updated at 2025-12-17 18:44
-
-translate russian strings:
+﻿translate russian strings:
 
     # game/engine_data/journal/all_notes.rpy:4
     old 'note_id_20538{#note_id_20538}'

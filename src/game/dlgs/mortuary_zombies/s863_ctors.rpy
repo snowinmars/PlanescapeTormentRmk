@@ -12,7 +12,7 @@ label s863_speak:
     if not gsm.inventory_manager.is_own_item('has_dremind'):
         jump s863_s8_ctor
 
-    jump s863_s8_ctor # TODO [snow]: should not be possible
+    jump s863_s8_ctor # NOTE [snow]: should not be possible
 
 
 label s863_s0_ctor:

@@ -1,6 +1,4 @@
-﻿# TODO: Translation updated at 2025-12-01 23:38
-
-translate english strings:
+﻿translate english strings:
 
     # game/chars.rpy:2
     old 'Безымянный'

@@ -1,6 +1,4 @@
-﻿# TODO: Translation updated at 2025-11-28 19:45
-
-# game/engine_data/menus/mortuary/f2r7/loot.rpy:8
+﻿# game/engine_data/menus/mortuary/f2r7/loot.rpy:8
 translate russian from_mortuary_f2r7_to_mortuary_f1r4_closed_72003171:
 
     # nr 'За запертой решёткой видна лестница вниз. Тебе понадобится ключ.'

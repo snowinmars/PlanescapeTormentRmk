@@ -1,6 +1,4 @@
-﻿# TODO: Translation updated at 2025-12-07 17:45
-
-# game/dlgs/mortuary_zombies/s863.rpy:14
+﻿# game/dlgs/mortuary_zombies/s863.rpy:14
 translate russian s863_s0_f2065e2b:
 
     # 's863_s0{#s863_s0}'

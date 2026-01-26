@@ -42,7 +42,7 @@ class Morte1Logic(Morte1LogicGenerated):
 
 
     def s23_action(self):
-        self.state_manager.world_manager.set_mortuary_walkthrough(1) # TODO [snow]: I guess
+        self.state_manager.world_manager.set_mortuary_walkthrough(1)
 
 
     def talk(self):

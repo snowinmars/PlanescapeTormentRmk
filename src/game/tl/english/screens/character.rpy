@@ -1,6 +1,4 @@
-﻿# TODO: Translation updated at 2025-12-20 21:55
-
-translate english strings:
+﻿translate english strings:
 
     # game/screens/character.rpy:1
     old "zombie"

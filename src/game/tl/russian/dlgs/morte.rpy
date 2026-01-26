@@ -1,6 +1,4 @@
-﻿# TODO: Translation updated at 2025-12-16 20:32
-
-# game/dlgs/mortuary/morte.rpy:14
+﻿# game/dlgs/mortuary/morte.rpy:14
 translate russian morte_s0_38ac777f:
 
     # 'morte_s0{#morte_s0}'

@@ -12,7 +12,7 @@ label dhall_speak:
     if gsm.world_manager.get_dhall() == 1:
         jump dhall_s40_ctor
 
-    jump dhall_s40_ctor # TODO [snow]: should not be possible
+    jump dhall_s40_ctor # NOTE [snow]: should not be possible
 
 
 label dhall_s5_ctor:

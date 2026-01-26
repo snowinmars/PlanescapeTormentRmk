@@ -1,5 +1,3 @@
-# TODO: Translation updated at 2025-11-28 22:23
-
 # game/engine_data/menus/mortuary/f3r4/loot.rpy:9
 translate english mortuary_f3r4_loot_prybar_735f9bd1:
 

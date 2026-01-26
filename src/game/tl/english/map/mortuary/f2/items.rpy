@@ -1,6 +1,4 @@
-﻿# TODO: Translation updated at 2025-12-29 18:28
-
-translate english strings:
+﻿translate english strings:
 
     # game/map/mortuary/f2/items.rpy:3
     old 'FromMortuaryF2R1ToMortuaryF2R2_tooltip1'

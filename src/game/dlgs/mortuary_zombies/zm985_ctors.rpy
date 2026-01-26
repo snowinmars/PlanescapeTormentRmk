@@ -14,7 +14,7 @@ label zm985_speak:
     if gsm.world_manager.get_topple_985():
         jump zm985_s5_ctor
 
-    jump zm985_s5_ctor # TODO [snow]: should not be possible
+    jump zm985_s5_ctor # NOTE [snow]: should not be possible
 
 
 label zm985_s0_ctor:

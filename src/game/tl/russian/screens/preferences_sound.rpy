@@ -1,6 +1,4 @@
-﻿# TODO: Translation updated at 2025-12-21 13:42
-
-translate russian strings:
+﻿translate russian strings:
 
     # game/screens/preferences_sound.rpy:42
     old 'preferences_sound_screen_main_volume'

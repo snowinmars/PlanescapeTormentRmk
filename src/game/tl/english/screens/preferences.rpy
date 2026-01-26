@@ -1,6 +1,4 @@
-﻿# TODO: Translation updated at 2025-12-21 13:52
-
-translate english strings:
+﻿translate english strings:
 
     # game/screens/preferences.rpy:28
     old 'preferences_screen_game_settings'

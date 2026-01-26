@@ -1,6 +1,4 @@
-﻿# TODO: Translation updated at 2026-01-14 22:09
-
-# game/dlgs/introduction.rpy:14
+﻿# game/dlgs/introduction.rpy:14
 translate russian introduction_386bd5f5:
 
     # snowinmars '«Привет. Сразу вопрос».'

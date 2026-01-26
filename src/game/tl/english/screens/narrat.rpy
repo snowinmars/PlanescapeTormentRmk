@@ -1,6 +1,4 @@
-﻿# TODO: Translation updated at 2026-01-15 00:47
-
-translate english strings:
+﻿translate english strings:
 
     # game/screens/narrat.rpy:1
     old "strength"

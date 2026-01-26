@@ -1,5 +1,3 @@
-# TODO: Translation updated at 2025-12-07 06:44
-
 # game/dlgs/mortuary_zombies/s42.rpy:14
 translate english s42_s0_726413fe:
 
