@@ -1,9 +1,9 @@
 # PlanescapeTormentRmk
 
 
-## [Russian](README.md)
+[Russian](README.md)
 
-Rewriting Planescape:Torment on Renpy. I love this game.
+I am rewriting Planescape:Torment on Renpy. I love this game.
 
 Contact me via telegram `@snowinmars` or email `snowinmars@yandex.ru`.
 

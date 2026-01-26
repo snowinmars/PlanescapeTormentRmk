@@ -178,20 +178,20 @@ translate english introduction_1_2c4e601e:
 # game/dlgs/introduction.rpy:60
 translate english introduction_1_70edb7f7:
 
-    # snowinmars '«Благодаря незнакомому мне человеку - Argent77 - я смог упростить перенос диалогового ктулху до тривиальных действий».'
-    snowinmars '«Thanks to a stranger to me - Argent77 - I was able to simplify the translation of the dialogue\'s Cthulhu to trivial actions».'
+    # snowinmars '«Благодаря команде NearInfinity я смог упростить перенос диалогового ктулху до тривиальных действий».'
+    snowinmars '«Thanks to a NearInfinity team, I was able to simplify the translation of the dialogue\'s Cthulhu to trivial actions».'
 
 # game/dlgs/introduction.rpy:61
 translate english introduction_1_41786167:
 
-    # snowinmars '«Его расширение MassExporter для NearInfinity позволяет получить всю необходимую информацию в древнем, но формате. Остальное оказалось делом техники».'
-    snowinmars '«His MassExporter extension for NearInfinity allows you to retrieve all the necessary information in an ancient, but in format. The rest was a matter of technique».'
+    # snowinmars '«NearInfinity позволяет получить всю необходимую информацию в древнем, но формате. Остальное оказалось делом техники».'
+    snowinmars '«NearInfinity allows you to retrieve all the necessary information in an ancient, but in format. The rest was a matter of technique».'
 
 # game/dlgs/introduction.rpy:62
 translate english introduction_1_cf7941f6:
 
-    # snowinmars '«Ссылка на его форк: https://github.com/Argent77/NearInfinity».'
-    snowinmars '«Link to his fork is https://github.com/Argent77/NearInfinity».'
+    # snowinmars '«Ссылка на NearInfinity - https://github.com/NearInfinityBrowser/NearInfinity и на главный форк - https://github.com/Argent77/NearInfinity».'
+    snowinmars '«Link to the NearInfinity is https://github.com/NearInfinityBrowser/NearInfinity and to the main fork is https://github.com/Argent77/NearInfinity».'
 
 # game/dlgs/introduction.rpy:63
 translate english introduction_1_130e8548:

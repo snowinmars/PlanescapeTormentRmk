@@ -1,3 +1,5 @@
+[English](src/_build/README_en.dev.md)
+
 ## Локальный импорт в RenPy
 
 Бинарные файлы - картинки, музыка и т.д. - лежат отдельно на https://disk.yandex.ru/d/1vqwCTMVOBEbgA . Скачай архив `for_devs/resources-v*.zip` и распакуй в каталог game.

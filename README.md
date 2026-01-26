@@ -1,7 +1,7 @@
 # PlanescapeTormentRmk
 
 
-## [English](README_en.md)
+[English](README_en.md)
 
 Я переписываю Planescape:Torment на RenPy. Потому что я люблю эту игру, и потому что это нетривиально)
 

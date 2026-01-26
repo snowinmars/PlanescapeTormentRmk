@@ -1,3 +1,5 @@
+[Русский](src/_build/README.dev.md).
+
 ## Local RenPy import
 
 Binary files - like art, music etc - exist separatelly at https://disk.yandex.ru/d/1vqwCTMVOBEbgA . Download the `for_devs/resources-v*.zip` and extract it into the game catalog.
