@@ -73,13 +73,6 @@ class Morte1LogicTest(LogicTest):
         )
 
 
-    def test_get_know_morte_name(self):
-        self._boolean_straight_condition(
-            lambda x: self.state_manager.world_manager.set_know_morte_name(x),
-            self.logic.get_know_morte_name
-        )
-
-
     def test_s23_action(self):
         self.state_manager.world_manager.set_mortuary_walkthrough(2)
         self._integer_equals_action(

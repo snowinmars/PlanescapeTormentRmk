@@ -3,13 +3,14 @@ import sys
 
 # Regex patterns for matching function calls and definitions
 CALL_PATTERN = re.compile(r'(?:if|\$)(?: not)? ([^\s]*?)Logic\.(.*?)\(')
+CALL_MAP_PATTERN = re.compile(r'get_party\(state_manager, ([^\s]*?)Logic\.(.*?)\(')
 DEF_PATTERN = re.compile(r'def (.*?)\(self(.*)')
 
 
 def extract_used_functions(rpy_files):
     used_functions = set()
     for rpy_file in rpy_files:
-        matches = CALL_PATTERN.findall(rpy_file.content)
+        matches = CALL_PATTERN.findall(rpy_file.content) + CALL_MAP_PATTERN.findall(rpy_file.content)
         for base, func_name in matches:
             private_func = func_name.startswith('__')
             if private_func:

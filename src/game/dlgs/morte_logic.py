@@ -3440,9 +3440,5 @@ class MorteLogic(MorteLogicGenerated):
         return self.state_manager.world_manager.get_know_morte_name()
 
 
-    def set_know_morte_name(self):
-        self.state_manager.world_manager.set_know_morte_name(True)
-
-
     def talk(self):
         self.state_manager.world_manager.inc_talked_to_morte_times()

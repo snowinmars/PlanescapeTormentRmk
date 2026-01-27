@@ -1,6 +1,6 @@
 import json
 
-from game.engine.inventory.inventory_item import (InventoryItem)
+from game.engine.inventory.InventoryItem import (InventoryItem)
 
 
 class InventoryStore():
@@ -38,13 +38,16 @@ class InventoryStore():
         data['inventory_items'] = dict(map(lambda x: (
             x[0],
             InventoryItem(
-                x[1]['settings_id'],
-                x[1]['orig_id'],
-                x[1]['name'],
-                x[1]['description'],
-                x[1]['grid_image'],
-                x[1]['detail_image'],
-                x[1]['jump_on_use_to']
+                settings_id=x[1]['settings_id'],
+                orig_id=x[1]['orig_id'],
+                name=x[1]['name'],
+                description=x[1]['description'],
+                used_by=x[1]['used_by'],
+                properties=x[1]['properties'],
+                grid_image=x[1]['grid_image'],
+                detail_image=x[1]['detail_image'],
+                jump_on_use_to=x[1]['jump_on_use_to'],
+                owned_count=x[1]['owned_count']
             )), data['inventory_items'].items()))
         obj.__setstate__(data)
         return obj

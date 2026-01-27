@@ -37,10 +37,6 @@ class Morte1Logic(Morte1LogicGenerated):
         self.state_manager.world_manager.set_know_morte_name(True)
 
 
-    def get_know_morte_name(self):
-        return self.state_manager.world_manager.get_know_morte_name()
-
-
     def s23_action(self):
         self.state_manager.world_manager.set_mortuary_walkthrough(1)
 

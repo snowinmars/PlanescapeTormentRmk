@@ -236,7 +236,7 @@ class StateManagerTest(LogicTest):
 
         self.assertFalse(setting_id in self.state_manager.world_manager._world_store.registry)
 
-        self.state_manager.register(setting_id, default_value)
+        self.state_manager.world_manager.register(setting_id, default_value)
 
         self.assertEqual(self.state_manager.world_manager._world_store.registry[setting_id], default_value)
         self.assertEqual(getattr(self.state_manager.world_manager, f'get_{setting_id}')(), default_value)
@@ -264,7 +264,7 @@ class StateManagerTest(LogicTest):
 
         self.assertFalse(setting_id in self.state_manager.world_manager._world_store.registry)
 
-        self.state_manager.register(setting_id, default_value)
+        self.state_manager.world_manager.register(setting_id, default_value)
 
         self.assertEqual(self.state_manager.world_manager._world_store.registry[setting_id], default_value)
         self.assertEqual(getattr(self.state_manager.world_manager, f'get_{setting_id}')(), default_value)
@@ -294,7 +294,7 @@ class StateManagerTest(LogicTest):
 
         self.assertFalse(setting_id in self.state_manager.world_manager._world_store.registry)
 
-        self.state_manager.register(setting_id, default_value)
+        self.state_manager.world_manager.register(setting_id, default_value)
 
         self.assertEqual(self.state_manager.world_manager._world_store.registry[setting_id], default_value)
         self.assertEqual(getattr(self.state_manager.world_manager, f'get_{setting_id}')(), default_value)
@@ -321,7 +321,7 @@ class StateManagerTest(LogicTest):
 
         self.assertFalse(setting_id in self.state_manager.world_manager._world_store.registry)
 
-        self.state_manager.register(setting_id, default_value)
+        self.state_manager.world_manager.register(setting_id, default_value)
 
         self.assertEqual(self.state_manager.world_manager._world_store.registry[setting_id], default_value)
         self.assertEqual(getattr(self.state_manager.world_manager, f'get_{setting_id}')(), self.state_manager.world_manager.get_setting_value(setting_id))

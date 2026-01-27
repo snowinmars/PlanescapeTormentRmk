@@ -1,7 +1,7 @@
 import unittest
 
 from game.engine.tests import (LogicTest)
-from game.engine.inventory.inventory_item import (InventoryItem)
+from game.engine.inventory.InventoryItem import (InventoryItem)
 from game.engine.inventory.inventory_manager import (InventoryManager)
 from game.engine.inventory.inventory_store import (InventoryStore)
 
