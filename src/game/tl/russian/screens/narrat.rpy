@@ -57,7 +57,7 @@
     new "{name}: {prop} = {actual_value}." # name prop actual_value
 
     # game/screens/narrat.rpy:149
-    old "journal_manager_update_journal"
+    old "journal_notes_manager_update_journal"
     new "Обновил мой дневник." # note_id
 
     # game/screens/narrat.rpy:153

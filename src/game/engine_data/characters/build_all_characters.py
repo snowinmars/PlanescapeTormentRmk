@@ -1,6 +1,7 @@
-from game.engine.characters.character import (Character)
+from game.engine.characters.Character import (Character)
 
-def build_all_characters(gcm):
+
+def build_all_characters(characters_manager):
     protagonist = Character(
         name='protagonist_character_name', # The Nameless One
         current_class='protagonist_character_current_class', # Fighter
@@ -90,11 +91,13 @@ def build_all_characters(gcm):
         looks_like=''
     ) # 18/51
 
-    gcm.add_character(protagonist)
-    gcm.add_character(morte)
-    gcm.add_character(annah)
-    gcm.add_character(ignus)
-    gcm.add_character(grace)
-    gcm.add_character(dakkon)
-    gcm.add_character(nordom)
-    gcm.add_character(vhail)
+    characters_manager.add_character(protagonist)
+    characters_manager.add_character(morte)
+    characters_manager.add_character(annah)
+    characters_manager.add_character(ignus)
+    characters_manager.add_character(grace)
+    characters_manager.add_character(dakkon)
+    characters_manager.add_character(nordom)
+    characters_manager.add_character(vhail)
+
+    return characters_manager

@@ -23,13 +23,13 @@ test_header_template = """
 import unittest
 
 
-from game.engine.tests import (LogicTest)
+from game.engine.LogicTests import (LogicTests)
 from game.dlgs.{npc}_logic import {Npc}Logic
 
 
-class {Npc}LogicTest(LogicTest):
+class {Npc}LogicTests(LogicTests):
     def setUp(self):
-        super({Npc}LogicTest, self).setUp()
+        super({Npc}LogicTests, self).setUp()
         self.logic = {Npc}Logic(self.state_manager)
 """.strip()
 
@@ -51,7 +51,7 @@ label {tnpc}{pfx}{sid}: # {fp}{fc}
 
 logic_action_update_journal_template = """
 def j{sid}_action(self):
-    self.state_manager.journal_manager.update_journal('{jid}') #$% .register('{jid}', '{jb}') %$#
+    self.state_manager.journal_notes_manager.update_journal('{jid}') #$% .register('{jid}', '{jb}') %$#
 """.strip()
 
 execute_state_update_journal_template = """
@@ -183,16 +183,16 @@ set_boolean_action_pattern_after_once = """
 self.assert{v}(self.state_manager.world_manager.get_{s}())
 """.strip()
 inventory_pick_item_action_pattern_preconf = """
-self.state_manager.inventory_manager.drop_all_items('{v}')
+self.state_manager.inventory_items_manager.drop_all_items('{v}')
 """.strip()
 inventory_pick_item_action_pattern_before = """
-self.assertFalse(self.state_manager.inventory_manager.is_own_item('{v}'))
+self.assertFalse(self.state_manager.inventory_items_manager.is_own_item('{v}'))
 """.strip()
 inventory_pick_item_action_pattern_after = """
-self.assertTrue(self.state_manager.inventory_manager.is_own_item('{v}'))
+self.assertTrue(self.state_manager.inventory_items_manager.is_own_item('{v}'))
 """.strip()
 inventory_pick_item_action_pattern_after_once = """
-self.assertTrue(self.state_manager.inventory_manager.is_own_item('{v}'))
+self.assertTrue(self.state_manager.inventory_items_manager.is_own_item('{v}'))
 """.strip()
 inventory_drop_item_action_pattern_preconf = """
     # TODO [snow]: add inventory_drop_item_action_pattern_preconf
@@ -361,13 +361,13 @@ update_journal_action_pattern_preconf = """
 note_id = '{v}'
 """.strip()
 update_journal_action_pattern_before = """
-self.assertFalse(self.state_manager.journal_manager.found_journal_note(note_id))
+self.assertFalse(self.state_manager.journal_notes_manager.found_journal_note(note_id))
 """.strip()
 update_journal_action_pattern_after = """
-self.assertTrue(self.state_manager.journal_manager.found_journal_note(note_id))
+self.assertTrue(self.state_manager.journal_notes_manager.found_journal_note(note_id))
 """.strip()
 update_journal_action_pattern_after_once = """
-self.assertTrue(self.state_manager.journal_manager.found_journal_note(note_id))
+self.assertTrue(self.state_manager.journal_notes_manager.found_journal_note(note_id))
 """.strip()
 full_heal_action_pattern_preconf = """
 who = '{w}'
@@ -599,16 +599,16 @@ inventory_drop_item_condition_pattern_after = """
 inventory_is_own_item_condition_pattern_preconf = """
 """.strip()
 inventory_is_own_item_condition_pattern_before = """
-self.state_manager.inventory_manager.drop_item('{v}')
+self.state_manager.inventory_items_manager.drop_item('{v}')
 """.strip()
 inventory_is_own_item_condition_pattern_after = """
-self.state_manager.inventory_manager.pick_item('{v}')
+self.state_manager.inventory_items_manager.pick_item('{v}')
 """.strip()
 inventory_not_is_own_item_condition_pattern_preconf = """
 """.strip()
 inventory_not_is_own_item_condition_pattern_before = """
-self.state_manager.inventory_manager.pick_item('{v}')
+self.state_manager.inventory_items_manager.pick_item('{v}')
 """.strip()
 inventory_not_is_own_item_condition_pattern_after = """
-self.state_manager.inventory_manager.drop_item('{v}')
+self.state_manager.inventory_items_manager.drop_item('{v}')
 """.strip()

@@ -1,6 +1,7 @@
 ﻿init 10 python:
     from game.engine.runtime import (runtime)
-    from game.dlgs.mortuary.vaxis_logic import VaxisLogic
+    from game.dlgs.mortuary.VaxisLogic import (VaxisLogic)
+
     vaxisLogic = VaxisLogic(runtime.global_state_manager)
 
 

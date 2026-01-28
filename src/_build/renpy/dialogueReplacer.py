@@ -392,13 +392,13 @@ class DialogueReplacer:
         self.add_replacement('!HasItem("Cobble","Post")', 'return not self.state_manager.world_manager.get_has_cobble() #$% Checks if "Cobble" is in Quick Item Slot 4 Other possible values include "Weapon1", "Weapon2", "Shield", "Armor", "Helmet", "RingLeft", "RingRight", "Cloak", "Amulet", "Belt", "Boots", "Gloves", "QuickItem1-3", or "Inventory" (general inventory).%$#')
         self.add_replacement('HasItem("Cobble","Post")', 'return self.state_manager.world_manager.get_has_cobble() #$% Checks if "Cobble" is in Quick Item Slot 4 Other possible values include "Weapon1", "Weapon2", "Shield", "Armor", "Helmet", "RingLeft", "RingRight", "Cloak", "Amulet", "Belt", "Boots", "Gloves", "QuickItem1-3", or "Inventory" (general inventory).%$#')
 
-        self.add_replacement('TransformPartyItem("CopEarC","CopEarO",1,0,0)', 'self.state_manager.inventory_manager.drop_all_items(\'has_copper_earring_closed\') self.state_manager.inventory_manager.pick_item(\'has_copper_earring_opened\')')
-        self.add_replacement('TransformPartyItem("Dwedring","DsupRing",1,0,0)', 'self.state_manager.inventory_manager.drop_all_items(\'has_wedding_ring\') self.state_manager.inventory_manager.pick_item(\'has_sup_ring\')')
+        self.add_replacement('TransformPartyItem("CopEarC","CopEarO",1,0,0)', 'self.state_manager.inventory_items_manager.drop_all_items(\'has_copper_earring_closed\') self.state_manager.inventory_items_manager.pick_item(\'has_copper_earring_opened\')')
+        self.add_replacement('TransformPartyItem("Dwedring","DsupRing",1,0,0)', 'self.state_manager.inventory_items_manager.drop_all_items(\'has_wedding_ring\') self.state_manager.inventory_items_manager.pick_item(\'has_sup_ring\')')
 
-        self.add_replacement('!HasItem("KeyEm","EiVene")', 'return self.state_manager.inventory_manager.is_own_item(\'has_keyem\')')
-        self.add_replacement('HasItem("KeyEm","EiVene")', 'return not self.state_manager.inventory_manager.is_own_item(\'has_keyem\')')
+        self.add_replacement('!HasItem("KeyEm","EiVene")', 'return self.state_manager.inventory_items_manager.is_own_item(\'has_keyem\')')
+        self.add_replacement('HasItem("KeyEm","EiVene")', 'return not self.state_manager.inventory_items_manager.is_own_item(\'has_keyem\')')
         self.add_replacement('HasItem("Bandage","ZM396")', 'return not self.state_manager.world_manager.get_has_bandages_zm396()')
-        self.add_replacement('GiveItem("KeyEm","Vaxis")', 'self.state_manager.inventory_manager.drop_all_items(\'has_keyem\') self.state_manager.world_manager.set_vaxis_has_keyem(True)')
+        self.add_replacement('GiveItem("KeyEm","Vaxis")', 'self.state_manager.inventory_items_manager.drop_all_items(\'has_keyem\') self.state_manager.world_manager.set_vaxis_has_keyem(True)')
 
         self.add_replacement('HPPercent(Protagonist,100)', 'return self.state_manager.characters_manager.get_property(\'protagonist_character_name\', \'current_health\') == self.state_manager.characters_manager.get_property(\'protagonist_character_name\', \'max_health\')')
         self.add_replacement('HPPercentGT(Protagonist,49)', 'return self.state_manager.characters_manager.get_property(\'protagonist_character_name\', \'current_health\') > self.state_manager.characters_manager.get_property(\'protagonist_character_name\', \'max_health\') / 2')
@@ -457,20 +457,20 @@ class DialogueReplacer:
         self.add_setting(f"talked_to_{to_var}_times", 'integer')
 
         for i in range(0, 6):  # manually add new values
-            self.add_replacement(f'GiveItemCreate("{from_var}",Protagonist,{i},0,0)', f'self.state_manager.inventory_manager.pick_item(\'has_{to_var}\')')
-            self.add_replacement(f'GiveItemCreate("{from_var}",Protagonist,{i},1,0)', f'self.state_manager.inventory_manager.pick_item(\'has_{to_var}\')')
+            self.add_replacement(f'GiveItemCreate("{from_var}",Protagonist,{i},0,0)', f'self.state_manager.inventory_items_manager.pick_item(\'has_{to_var}\')')
+            self.add_replacement(f'GiveItemCreate("{from_var}",Protagonist,{i},1,0)', f'self.state_manager.inventory_items_manager.pick_item(\'has_{to_var}\')')
 
         # in `HasItem(x,Myself)` the `Myself` is the `this` character of current dialogue,
         # in other words, `Myself` is the npc, that protagonist is talking to.
-        self.add_replacement(f'!HasItem("{from_var}",Myself)', f'return not self.state_manager.inventory_manager.is_own_item(\'has_{to_var}\')')
-        self.add_replacement(f'!PartyHasItem("{from_var}")', f'return not self.state_manager.inventory_manager.is_own_item(\'has_{to_var}\')')
-        self.add_replacement(f'DestroyPartyItem("{from_var}",TRUE)', f'self.state_manager.inventory_manager.drop_item(\'has_{to_var}\')')
-        self.add_replacement(f'DestroyPartyItem("{from_var}",FALSE)', f'self.state_manager.inventory_manager.drop_item(\'has_{to_var}\')')
-        self.add_replacement(f'GiveItem("{from_var}",Protagonist)', f'self.state_manager.inventory_manager.pick_item(\'has_{to_var}\')')
-        self.add_replacement(f'HasItem("{from_var}",Myself)', f'return not self.state_manager.inventory_manager.is_own_item(\'has_{to_var}\')')
-        self.add_replacement(f'PartyHasItem("{from_var}")', f'return self.state_manager.inventory_manager.is_own_item(\'has_{to_var}\')')
-        self.add_replacement(f'TakeItem("{from_var}",Protagonist)', f'self.state_manager.inventory_manager.drop_item(\'has_{to_var}\')')
-        self.add_replacement(f'TakePartyItemNum("{from_var}",1)', f'self.state_manager.inventory_manager.drop_item(\'has_{to_var}\')')
+        self.add_replacement(f'!HasItem("{from_var}",Myself)', f'return not self.state_manager.inventory_items_manager.is_own_item(\'has_{to_var}\')')
+        self.add_replacement(f'!PartyHasItem("{from_var}")', f'return not self.state_manager.inventory_items_manager.is_own_item(\'has_{to_var}\')')
+        self.add_replacement(f'DestroyPartyItem("{from_var}",TRUE)', f'self.state_manager.inventory_items_manager.drop_item(\'has_{to_var}\')')
+        self.add_replacement(f'DestroyPartyItem("{from_var}",FALSE)', f'self.state_manager.inventory_items_manager.drop_item(\'has_{to_var}\')')
+        self.add_replacement(f'GiveItem("{from_var}",Protagonist)', f'self.state_manager.inventory_items_manager.pick_item(\'has_{to_var}\')')
+        self.add_replacement(f'HasItem("{from_var}",Myself)', f'return not self.state_manager.inventory_items_manager.is_own_item(\'has_{to_var}\')')
+        self.add_replacement(f'PartyHasItem("{from_var}")', f'return self.state_manager.inventory_items_manager.is_own_item(\'has_{to_var}\')')
+        self.add_replacement(f'TakeItem("{from_var}",Protagonist)', f'self.state_manager.inventory_items_manager.drop_item(\'has_{to_var}\')')
+        self.add_replacement(f'TakePartyItemNum("{from_var}",1)', f'self.state_manager.inventory_items_manager.drop_item(\'has_{to_var}\')')
 
 
     def boolean(self, from_var, to_var, env = 'GLOBAL'):

@@ -1,6 +1,6 @@
 init 10 python:
     from game.engine.runtime import (runtime)
-    from game.dlgs.deionarra_logic import DeionarraLogic
+    from game.dlgs.DeionarraLogic import (DeionarraLogic)
     deionarraLogic = DeionarraLogic(runtime.global_state_manager)
 
 

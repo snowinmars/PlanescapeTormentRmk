@@ -146,8 +146,8 @@ screen narrat_history(
                                             prop=__(change_kwargs['prop']),
                                             actual_value=change_kwargs['actual_value']
                                         )
-                                    if change_id == 'journal_manager_update_journal':
-                                        $ change_text = __('journal_manager_update_journal').format(
+                                    if change_id == 'journal_notes_manager_update_journal':
+                                        $ change_text = __('journal_notes_manager_update_journal').format(
                                             note_id=__(change_kwargs['note_id'])
                                         )
                                     if change_id == 'new_internal_location_discovered':

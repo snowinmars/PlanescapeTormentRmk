@@ -17,7 +17,7 @@ class FromMortuaryF3R1ToMortuaryF2R1(MenuItem):
     def texture(self):
         return 'bg/mortuary/f3/door_f3r1_f2r1_opened.webp'
     def jump(self):
-        if self.state_manager.inventory_manager.is_own_item('has_mortuary_key'):
+        if self.state_manager.inventory_items_manager.is_own_item('has_mortuary_key'):
             return NavigationDirective(
                 'map_dispatcher',
                 lambda: self.state_manager.locations_manager.set_location('mortuary_f2r1')
@@ -355,7 +355,7 @@ class FromMortuaryF3RcToMortuaryF3R1u(MenuItem):
             return 'bg/mortuary/f3/door_f3rc_f3r1u_opened.webp'
         return 'bg/mortuary/f3/door_f3rc_f3r1u_closed.webp'
     def jump(self):
-        if self.state_manager.inventory_manager.is_own_item('has_mortuary_key'):
+        if self.state_manager.inventory_items_manager.is_own_item('has_mortuary_key'):
             return NavigationDirective(
                 'map_dispatcher',
                 lambda: self.state_manager.locations_manager.set_location('mortuary_f3r1')
@@ -379,7 +379,7 @@ class FromMortuaryF3RcToMortuaryF3R1d(MenuItem):
             return 'bg/mortuary/f3/door_f3rc_f3r1d_opened.webp'
         return 'bg/mortuary/f3/door_f3rc_f3r1d_closed.webp'
     def jump(self):
-        if self.state_manager.inventory_manager.is_own_item('has_mortuary_key'):
+        if self.state_manager.inventory_items_manager.is_own_item('has_mortuary_key'):
             return NavigationDirective(
                 'map_dispatcher',
                 lambda: self.state_manager.locations_manager.set_location('mortuary_f3r1')

@@ -1,6 +1,7 @@
 init 10 python:
     from game.engine.runtime import (runtime)
-    from game.dlgs.introduction_logic import IntroductionLogic
+    from game.dlgs.IntroductionLogic import (IntroductionLogic)
+
     introductionLogic = IntroductionLogic(runtime.global_state_manager)
 
 

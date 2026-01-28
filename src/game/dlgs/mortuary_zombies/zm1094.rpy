@@ -1,6 +1,7 @@
 init 10 python:
     from game.engine.runtime import (runtime)
-    from game.dlgs.mortuary_zombies.zm1094_logic import Zm1094Logic
+    from game.dlgs.mortuary_zombies.Zm1094Logic import (Zm1094Logic)
+
     zm1094Logic = Zm1094Logic(runtime.global_state_manager)
 
 

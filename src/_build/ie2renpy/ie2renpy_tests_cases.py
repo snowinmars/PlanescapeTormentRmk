@@ -54,20 +54,20 @@ class AreaLogic:
 
 
     def j38205_s19_action(self):
-        self.state_manager.journal_manager.update_journal('38205')
+        self.state_manager.journal_notes_manager.update_journal('38205')
         #$% .register('38205', 'Недавно я встретил тленную-бальзамировщицу, которая оказалась «тифлингом», тем, у кого в жилах течет кровь нечисти. По всей видимости, кровь нечистых искажает их тела и, в некоторых случаях, также затрагивает и рассудок. Как сказал Морт, тифлингов в округе достаточно много... что может означать, что нечисти здесь тоже не меньше.') %$#
 '''.strip() + '\n'
 test_result1_tests = '''
 import unittest
 
 
-from game.engine.tests import (LogicTest)
+from game.engine.LogicTests import (LogicTests)
 from game.dlgs.area_logic import AreaLogic
 
 
-class AreaLogicTest(LogicTest):
+class AreaLogicTests(LogicTests):
     def setUp(self):
-        super(AreaLogicTest, self).setUp()
+        super(AreaLogicTests, self).setUp()
         self.logic = AreaLogic(self.state_manager)
 
 
@@ -150,13 +150,13 @@ test_result2_tests = '''
 import unittest
 
 
-from game.engine.tests import (LogicTest)
+from game.engine.LogicTests import (LogicTests)
 from game.dlgs.area_logic import AreaLogic
 
 
-class AreaLogicTest(LogicTest):
+class AreaLogicTests(LogicTests):
     def setUp(self):
-        super(AreaLogicTest, self).setUp()
+        super(AreaLogicTests, self).setUp()
         self.logic = AreaLogic(self.state_manager)
 
 
@@ -271,29 +271,29 @@ class AreaLogic:
     def r3501_action(self):
         self.state_manager.gain_experience('party', 250)
         self.state_manager.world_manager.set_embalm_key_quest(2)
-        self.state_manager.inventory_manager.pick_item('has_keyem')
+        self.state_manager.inventory_items_manager.pick_item('has_keyem')
 
 
     def r3501_condition(self):
         return self.state_manager.world_manager.get_embalm_key_quest() == 1 and \\
-               not self.state_manager.inventory_manager.is_own_item('has_keyem')
+               not self.state_manager.inventory_items_manager.is_own_item('has_keyem')
 
 
     def r3502_condition(self):
         return self.state_manager.world_manager.get_embalm_key_quest() == 1 and \\
-               self.state_manager.inventory_manager.is_own_item('has_keyem')
+               self.state_manager.inventory_items_manager.is_own_item('has_keyem')
 '''.strip() + '\n'
 test_result3_tests = '''
 import unittest
 
 
-from game.engine.tests import (LogicTest)
+from game.engine.LogicTests import (LogicTests)
 from game.dlgs.area_logic import AreaLogic
 
 
-class AreaLogicTest(LogicTest):
+class AreaLogicTests(LogicTests):
     def setUp(self):
-        super(AreaLogicTest, self).setUp()
+        super(AreaLogicTests, self).setUp()
         self.logic = AreaLogic(self.state_manager)
 
 
@@ -305,47 +305,47 @@ class AreaLogicTest(LogicTest):
         embalm_key_quest_after = 2
         embalm_key_quest_after_once = 2
         self.state_manager.world_manager.set_embalm_key_quest(embalm_key_quest_before)
-        self.state_manager.inventory_manager.drop_all_items('has_keyem')
+        self.state_manager.inventory_items_manager.drop_all_items('has_keyem')
 
         experience_before = self.state_manager.characters_manager.get_property(who_experience, prop_experience)
         self.assertEqual(self.state_manager.world_manager.get_embalm_key_quest(), embalm_key_quest_before)
-        self.assertFalse(self.state_manager.inventory_manager.is_own_item('has_keyem'))
+        self.assertFalse(self.state_manager.inventory_items_manager.is_own_item('has_keyem'))
 
         self.logic.r3501_action()
 
         experience_after = self.state_manager.characters_manager.get_property(who_experience, prop_experience)
         self.assertEqual(experience_before + delta_experience, experience_after)
         self.assertEqual(self.state_manager.world_manager.get_embalm_key_quest(), embalm_key_quest_after)
-        self.assertTrue(self.state_manager.inventory_manager.is_own_item('has_keyem'))
+        self.assertTrue(self.state_manager.inventory_items_manager.is_own_item('has_keyem'))
 
         self.logic.r3501_action()
 
         experience_after_once = self.state_manager.characters_manager.get_property(who_experience, prop_experience)
         self.assertEqual(experience_after + delta_experience, experience_after_once)
         self.assertEqual(self.state_manager.world_manager.get_embalm_key_quest(), embalm_key_quest_after_once)
-        self.assertTrue(self.state_manager.inventory_manager.is_own_item('has_keyem'))
+        self.assertTrue(self.state_manager.inventory_items_manager.is_own_item('has_keyem'))
 
 
     def test_r3501_condition(self):
         self.state_manager.world_manager.set_embalm_key_quest(0)
-        self.state_manager.inventory_manager.pick_item('has_keyem')
+        self.state_manager.inventory_items_manager.pick_item('has_keyem')
 
         self.assertFalse(self.logic.r3501_condition())
 
         self.state_manager.world_manager.set_embalm_key_quest(1)
-        self.state_manager.inventory_manager.drop_item('has_keyem')
+        self.state_manager.inventory_items_manager.drop_item('has_keyem')
 
         self.assertTrue(self.logic.r3501_condition())
 
 
     def test_r3502_condition(self):
         self.state_manager.world_manager.set_embalm_key_quest(0)
-        self.state_manager.inventory_manager.drop_item('has_keyem')
+        self.state_manager.inventory_items_manager.drop_item('has_keyem')
 
         self.assertFalse(self.logic.r3502_condition())
 
         self.state_manager.world_manager.set_embalm_key_quest(1)
-        self.state_manager.inventory_manager.pick_item('has_keyem')
+        self.state_manager.inventory_items_manager.pick_item('has_keyem')
 
         self.assertTrue(self.logic.r3502_condition())
 
@@ -425,13 +425,13 @@ test_result4_tests = '''
 import unittest
 
 
-from game.engine.tests import (LogicTest)
+from game.engine.LogicTests import (LogicTests)
 from game.dlgs.area_logic import AreaLogic
 
 
-class AreaLogicTest(LogicTest):
+class AreaLogicTests(LogicTests):
     def setUp(self):
-        super(AreaLogicTest, self).setUp()
+        super(AreaLogicTests, self).setUp()
         self.logic = AreaLogic(self.state_manager)
 
 
@@ -508,13 +508,13 @@ test_result5_tests = '''
 import unittest
 
 
-from game.engine.tests import (LogicTest)
+from game.engine.LogicTests import (LogicTests)
 from game.dlgs.area_logic import AreaLogic
 
 
-class AreaLogicTest(LogicTest):
+class AreaLogicTests(LogicTests):
     def setUp(self):
-        super(AreaLogicTest, self).setUp()
+        super(AreaLogicTests, self).setUp()
         self.logic = AreaLogic(self.state_manager)
 
 
@@ -601,13 +601,13 @@ test_result6_tests = '''
 import unittest
 
 
-from game.engine.tests import (LogicTest)
+from game.engine.LogicTests import (LogicTests)
 from game.dlgs.area_logic import AreaLogic
 
 
-class AreaLogicTest(LogicTest):
+class AreaLogicTests(LogicTests):
     def setUp(self):
-        super(AreaLogicTest, self).setUp()
+        super(AreaLogicTests, self).setUp()
         self.logic = AreaLogic(self.state_manager)
 
 
@@ -747,13 +747,13 @@ test_result7_tests = '''
 import unittest
 
 
-from game.engine.tests import (LogicTest)
+from game.engine.LogicTests import (LogicTests)
 from game.dlgs.area_logic import AreaLogic
 
 
-class AreaLogicTest(LogicTest):
+class AreaLogicTests(LogicTests):
     def setUp(self):
-        super(AreaLogicTest, self).setUp()
+        super(AreaLogicTests, self).setUp()
         self.logic = AreaLogic(self.state_manager)
 
 
@@ -826,13 +826,13 @@ test_result8_tests = '''
 import unittest
 
 
-from game.engine.tests import (LogicTest)
+from game.engine.LogicTests import (LogicTests)
 from game.dlgs.area_logic import AreaLogic
 
 
-class AreaLogicTest(LogicTest):
+class AreaLogicTests(LogicTests):
     def setUp(self):
-        super(AreaLogicTest, self).setUp()
+        super(AreaLogicTests, self).setUp()
         self.logic = AreaLogic(self.state_manager)
 
 
@@ -931,13 +931,13 @@ test_result9_tests = '''
 import unittest
 
 
-from game.engine.tests import (LogicTest)
+from game.engine.LogicTests import (LogicTests)
 from game.dlgs.area_logic import AreaLogic
 
 
-class AreaLogicTest(LogicTest):
+class AreaLogicTests(LogicTests):
     def setUp(self):
-        super(AreaLogicTest, self).setUp()
+        super(AreaLogicTests, self).setUp()
         self.logic = AreaLogic(self.state_manager)
 
 
@@ -1029,13 +1029,13 @@ test_result10_tests = '''
 import unittest
 
 
-from game.engine.tests import (LogicTest)
+from game.engine.LogicTests import (LogicTests)
 from game.dlgs.area_logic import AreaLogic
 
 
-class AreaLogicTest(LogicTest):
+class AreaLogicTests(LogicTests):
     def setUp(self):
-        super(AreaLogicTest, self).setUp()
+        super(AreaLogicTests, self).setUp()
         self.logic = AreaLogic(self.state_manager)
 
 
@@ -1135,13 +1135,13 @@ test_result11_tests = '''
 import unittest
 
 
-from game.engine.tests import (LogicTest)
+from game.engine.LogicTests import (LogicTests)
 from game.dlgs.area_logic import AreaLogic
 
 
-class AreaLogicTest(LogicTest):
+class AreaLogicTests(LogicTests):
     def setUp(self):
-        super(AreaLogicTest, self).setUp()
+        super(AreaLogicTests, self).setUp()
         self.logic = AreaLogic(self.state_manager)
 
 
@@ -1272,7 +1272,7 @@ class AreaLogic:
 
 
     def r17833_action(self):
-        self.state_manager.inventory_manager.pick_item('has_intro_key')
+        self.state_manager.inventory_items_manager.pick_item('has_intro_key')
         self.state_manager.world_manager.set_morte(1)
         self.state_manager.world_manager.set_read_scars(True)
         self.state_manager.world_manager.set_in_party_morte(True)
@@ -1281,18 +1281,18 @@ test_result12_tests = '''
 import unittest
 
 
-from game.engine.tests import (LogicTest)
+from game.engine.LogicTests import (LogicTests)
 from game.dlgs.area_logic import AreaLogic
 
 
-class AreaLogicTest(LogicTest):
+class AreaLogicTests(LogicTests):
     def setUp(self):
-        super(AreaLogicTest, self).setUp()
+        super(AreaLogicTests, self).setUp()
         self.logic = AreaLogic(self.state_manager)
 
 
     def test_r17833_action(self):
-        self.state_manager.inventory_manager.drop_all_items('has_intro_key')
+        self.state_manager.inventory_items_manager.drop_all_items('has_intro_key')
         morte_before = 0
         morte_after = 1
         morte_after_once = 1
@@ -1300,21 +1300,21 @@ class AreaLogicTest(LogicTest):
         self.state_manager.world_manager.set_read_scars(False)
         self.state_manager.world_manager.set_in_party_morte(False)
 
-        self.assertFalse(self.state_manager.inventory_manager.is_own_item('has_intro_key'))
+        self.assertFalse(self.state_manager.inventory_items_manager.is_own_item('has_intro_key'))
         self.assertEqual(self.state_manager.world_manager.get_morte(), morte_before)
         self.assertFalse(self.state_manager.world_manager.get_read_scars())
         self.assertFalse(self.state_manager.world_manager.get_in_party_morte())
 
         self.logic.r17833_action()
 
-        self.assertTrue(self.state_manager.inventory_manager.is_own_item('has_intro_key'))
+        self.assertTrue(self.state_manager.inventory_items_manager.is_own_item('has_intro_key'))
         self.assertEqual(self.state_manager.world_manager.get_morte(), morte_after)
         self.assertTrue(self.state_manager.world_manager.get_read_scars())
         self.assertTrue(self.state_manager.world_manager.get_in_party_morte())
 
         self.logic.r17833_action()
 
-        self.assertTrue(self.state_manager.inventory_manager.is_own_item('has_intro_key'))
+        self.assertTrue(self.state_manager.inventory_items_manager.is_own_item('has_intro_key'))
         self.assertEqual(self.state_manager.world_manager.get_morte(), morte_after_once)
         self.assertTrue(self.state_manager.world_manager.get_read_scars())
         self.assertTrue(self.state_manager.world_manager.get_in_party_morte())
@@ -1384,13 +1384,13 @@ test_result13_tests = '''
 import unittest
 
 
-from game.engine.tests import (LogicTest)
+from game.engine.LogicTests import (LogicTests)
 from game.dlgs.area_logic import AreaLogic
 
 
-class AreaLogicTest(LogicTest):
+class AreaLogicTests(LogicTests):
     def setUp(self):
-        super(AreaLogicTest, self).setUp()
+        super(AreaLogicTests, self).setUp()
         self.logic = AreaLogic(self.state_manager)
 
 
@@ -1526,13 +1526,13 @@ test_result14_tests = """
 import unittest
 
 
-from game.engine.tests import (LogicTest)
+from game.engine.LogicTests import (LogicTests)
 from game.dlgs.area_logic import AreaLogic
 
 
-class AreaLogicTest(LogicTest):
+class AreaLogicTests(LogicTests):
     def setUp(self):
-        super(AreaLogicTest, self).setUp()
+        super(AreaLogicTests, self).setUp()
         self.logic = AreaLogic(self.state_manager)
 
 
@@ -1664,20 +1664,20 @@ class AreaLogic:
 
 
     def j26087_s29_r810_action(self):
-        self.state_manager.journal_manager.update_journal('26087')
+        self.state_manager.journal_notes_manager.update_journal('26087')
         #$% .register('26087', 'Я встретил призрак женщины по имени Дейонарра, и она предсказала мне, что я столкнусь с тремя врагами, но «ни один из них не был бы мне ровней в период полного расцвета моих сил». Они — тени зла, добра и нейтральности, которых породили и извратили законы планов. Она сказала, что я попаду в тюрьму, построенную из «сожалений и скорби», где «даже тени теряют рассудок». Там меня попросят принести ужасную жертву... чтобы обрести покой, я должен «уничтожить то, что удерживает меня в живых, и отринуть свое бессмертие».') %$#
 """.strip() + '\n'
 test_result15_tests = """
 import unittest
 
 
-from game.engine.tests import (LogicTest)
+from game.engine.LogicTests import (LogicTests)
 from game.dlgs.area_logic import AreaLogic
 
 
-class AreaLogicTest(LogicTest):
+class AreaLogicTests(LogicTests):
     def setUp(self):
-        super(AreaLogicTest, self).setUp()
+        super(AreaLogicTests, self).setUp()
         self.logic = AreaLogic(self.state_manager)
 
 
@@ -1859,13 +1859,13 @@ test_result16_tests = """
 import unittest
 
 
-from game.engine.tests import (LogicTest)
+from game.engine.LogicTests import (LogicTests)
 from game.dlgs.area_logic import AreaLogic
 
 
-class AreaLogicTest(LogicTest):
+class AreaLogicTests(LogicTests):
     def setUp(self):
-        super(AreaLogicTest, self).setUp()
+        super(AreaLogicTests, self).setUp()
         self.logic = AreaLogic(self.state_manager)
 
 
@@ -2013,13 +2013,13 @@ test_result17_tests = """
 import unittest
 
 
-from game.engine.tests import (LogicTest)
+from game.engine.LogicTests import (LogicTests)
 from game.dlgs.area_logic import AreaLogic
 
 
-class AreaLogicTest(LogicTest):
+class AreaLogicTests(LogicTests):
     def setUp(self):
-        super(AreaLogicTest, self).setUp()
+        super(AreaLogicTests, self).setUp()
         self.logic = AreaLogic(self.state_manager)
 
 
@@ -2157,13 +2157,13 @@ test_result18_tests = """
 import unittest
 
 
-from game.engine.tests import (LogicTest)
+from game.engine.LogicTests import (LogicTests)
 from game.dlgs.area_logic import AreaLogic
 
 
-class AreaLogicTest(LogicTest):
+class AreaLogicTests(LogicTests):
     def setUp(self):
-        super(AreaLogicTest, self).setUp()
+        super(AreaLogicTests, self).setUp()
         self.logic = AreaLogic(self.state_manager)
 
 
@@ -2327,7 +2327,7 @@ class AreaLogic:
 
 
     def j66917_s73_r66914_action(self):
-        self.state_manager.journal_manager.update_journal('66917')
+        self.state_manager.journal_notes_manager.update_journal('66917')
         #$% .register('66917', 'Я не знаю, ужасаться мне или удивляться... когда я пообщался с Дейонаррой в Морге, она сказала, что через свои бесконечные перерождения я обрел некоторую власть над жизнью и смертью. Если я вижу тело, то могу разглядеть слабые следы жизни в нем и воскресить его. По какой-то причине это действует только на тех, кто путешествовал вместе со мной, и только в том случае, если они умерли в моем присутствии... но почему? Быть может, в пути между нами появляется какая-то связь?') %$#
 
 
@@ -2342,13 +2342,13 @@ test_result19_tests = """
 import unittest
 
 
-from game.engine.tests import (LogicTest)
+from game.engine.LogicTests import (LogicTests)
 from game.dlgs.area_logic import AreaLogic
 
 
-class AreaLogicTest(LogicTest):
+class AreaLogicTests(LogicTests):
     def setUp(self):
-        super(AreaLogicTest, self).setUp()
+        super(AreaLogicTests, self).setUp()
         self.logic = AreaLogic(self.state_manager)
 
 
@@ -2497,13 +2497,13 @@ test_result20_tests = """
 import unittest
 
 
-from game.engine.tests import (LogicTest)
+from game.engine.LogicTests import (LogicTests)
 from game.dlgs.area_logic import AreaLogic
 
 
-class AreaLogicTest(LogicTest):
+class AreaLogicTests(LogicTests):
     def setUp(self):
-        super(AreaLogicTest, self).setUp()
+        super(AreaLogicTests, self).setUp()
         self.logic = AreaLogic(self.state_manager)
 
 

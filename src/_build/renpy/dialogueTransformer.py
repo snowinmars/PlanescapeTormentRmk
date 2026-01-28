@@ -264,7 +264,7 @@ class DialogueTransformer:
         def rule(match):
             note_id, note_text, = match.groups()
 
-            return f"self.state_manager.journal_manager.update_journal('{note_id}')    #$% .register('{note_id}', '{note_text.replace(' ~', '').replace('~ ', '').strip()} %$#')"
+            return f"self.state_manager.journal_notes_manager.update_journal('{note_id}')    #$% .register('{note_id}', '{note_text.replace(' ~', '').replace('~ ', '').strip()} %$#')"
 
         return JOURNAL_REGEX.sub(rule, script)
 

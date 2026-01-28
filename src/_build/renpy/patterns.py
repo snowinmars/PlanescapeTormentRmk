@@ -34,33 +34,33 @@ def test_{f}(self):
 
 
 action_inventory_is_own_item_pattern = PatternConfig(
-    pattern=re.compile(r"return self\.state_manager\.inventory_manager\.is_own_item\('(.*)'\)$"),
+    pattern=re.compile(r"return self\.state_manager\.inventory_items_manager\.is_own_item\('(.*)'\)$"),
     template="""
 def test_{f}(self):
     self._boolean_straight_condition(
-        lambda x: self.state_manager.inventory_manager.pick_item('{v}') if x else self.state_manager.inventory_manager.drop_item('{v}'),
+        lambda x: self.state_manager.inventory_items_manager.pick_item('{v}') if x else self.state_manager.inventory_items_manager.drop_item('{v}'),
         self.logic.{f}
     )
 """.strip(), extractors={'v': lambda m: m.group(1)})
 
 
 action_inventory_not_is_own_item_pattern = PatternConfig(
-    pattern=re.compile(r"return not self\.state_manager\.inventory_manager\.is_own_item\('(.*)'\)$"),
+    pattern=re.compile(r"return not self\.state_manager\.inventory_items_manager\.is_own_item\('(.*)'\)$"),
     template="""
 def test_{f}(self):
     self._boolean_straight_condition(
-        lambda x: self.state_manager.inventory_manager.pick_item('{v}') if x else self.state_manager.inventory_manager.drop_item('{v}'),
+        lambda x: self.state_manager.inventory_items_manager.pick_item('{v}') if x else self.state_manager.inventory_items_manager.drop_item('{v}'),
         self.logic.{f}
     )
 """.strip(), extractors={'v': lambda m: m.group(1)})
 
 
 action_inventory_pick_item_pattern = PatternConfig(
-    pattern=re.compile(r"self\.state_manager\.inventory_manager\.pick_item\('(.*)'\)$"),
+    pattern=re.compile(r"self\.state_manager\.inventory_items_manager\.pick_item\('(.*)'\)$"),
     template="""
 def test_{f}(self):
     self._false_then_true_action(
-        lambda: self.state_manager.inventory_manager.is_own_item('{v}'),
+        lambda: self.state_manager.inventory_items_manager.is_own_item('{v}'),
         self.logic.{f}
     )
 """.strip(), extractors={'v': lambda m: m.group(1)})
@@ -143,7 +143,7 @@ def test_{f}(self):
 
 
 action_update_journal_pattern = PatternConfig(
-    pattern=re.compile(r"self\.state_manager\.journal_manager\.update_journal\((.*?)\)$"),
+    pattern=re.compile(r"self\.state_manager\.journal_notes_manager\.update_journal\((.*?)\)$"),
     template="""
 def test_{f}(self):
     note_id = {v}

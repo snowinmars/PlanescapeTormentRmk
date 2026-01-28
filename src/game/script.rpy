@@ -35,24 +35,24 @@ init 1 python: # init logger
 
 
 init 2 python: # import and create stores
-    from game.engine.locations.locations_store import (LocationsStore)
-    from game.engine.journal.journal_store import (JournalStore)
-    from game.engine.log_events.log_events_store import (LogEventsStore)
-    from game.engine.characters.characters_store import (CharactersStore)
-    from game.engine.inventory.inventory_store import (InventoryStore)
-    from game.engine.world.world_store import (WorldStore)
-    from game.engine.narrat.narrat_store import (NarratStore)
-    from game.engine.quests.quests_store import (QuestsStore)
+    from game.engine.locations.LocationsStore import (LocationsStore)
+    from game.engine.journal_notes.JournalNotesStore import (JournalNotesStore)
+    from game.engine.log_events.LogEventsStore import (LogEventsStore)
+    from game.engine.characters.CharactersStore import (CharactersStore)
+    from game.engine.inventory_items.InventoryItemsStore import (InventoryItemsStore)
+    from game.engine.world.WorldStore import (WorldStore)
+    from game.engine.narrat.NarratStore import (NarratStore)
+    from game.engine.quests.QuestsStore import (QuestsStore)
 
     renpy.add_python_directory('engine')
     renpy.add_python_directory('engine_data')
 
 
 default locations_store = LocationsStore()
-default journal_store = JournalStore()
+default journal_notes_store = JournalNotesStore()
 default log_events_store = LogEventsStore()
 default characters_store = CharactersStore()
-default inventory_store = InventoryStore()
+default inventory_items_store = InventoryItemsStore()
 default world_store = WorldStore()
 default narrat_store = NarratStore()
 default quests_store = QuestsStore()
@@ -62,30 +62,30 @@ define config.rollback_enabled = False # as it is narrat now
 init 3 python: # setup hooks for initialyzing managers and applying stores
     from game.engine.runtime import (runtime)
 
-    from game.engine.log_events.log_events_manager import (LogEventsManager)
-    from game.engine.state.state_manager import (StateManager)
-    from game.engine.inventory.inventory_manager import (InventoryManager)
-    from game.engine.locations.locations_manager import (LocationsManager)
-    from game.engine.characters.characters_manager import (CharactersManager)
-    from game.engine.journal.journal_manager import (JournalManager)
-    from game.engine.world.world_manager import (WorldManager)
-    from game.engine.narrat.narrat_manager import (NarratManager)
-    from game.engine.quests.quests_manager import (QuestsManager)
+    from game.engine.log_events.LogEventsManager import (LogEventsManager)
+    from game.engine.state.StateManager import (StateManager)
+    from game.engine.inventory_items.InventoryItemsManager import (InventoryItemsManager)
+    from game.engine.locations.LocationsManager import (LocationsManager)
+    from game.engine.characters.CharactersManager import (CharactersManager)
+    from game.engine.journal_notes.JournalNotesManager import (JournalNotesManager)
+    from game.engine.world.WorldManager import (WorldManager)
+    from game.engine.narrat.NarratManager import (NarratManager)
+    from game.engine.quests.QuestsManager import (QuestsManager)
 
-    from game.engine_data.settings.all_settings import (build_all_settings)
-    from game.engine_data.inventory.build_all_inventory import (build_all_inventory)
-    from game.engine_data.locations.all_locations import (build_all_locations)
+    from game.engine_data.settings.build_all_settings import (build_all_settings)
+    from game.engine_data.inventory_items.build_all_inventory_items import (build_all_inventory_items)
+    from game.engine_data.locations.build_all_locations import (build_all_locations)
     from game.engine_data.characters.build_all_characters import (build_all_characters)
-    from game.engine_data.journal.build_all_notes import (build_all_notes)
+    from game.engine_data.journal_notes.build_all_journal_notes import (build_all_journal_notes)
     from game.engine_data.quests.build_all_quests import (build_all_quests)
 
 
     runtime.global_log_events_manager = LogEventsManager(runtime.logger)
     runtime.global_locations_manager = LocationsManager(runtime.global_log_events_manager)
     runtime.global_characters_manager = CharactersManager(runtime.global_log_events_manager)
-    runtime.global_journal_manager = JournalManager(runtime.global_log_events_manager)
+    runtime.global_journal_notes_manager = JournalNotesManager(runtime.global_log_events_manager)
     runtime.global_world_manager = WorldManager(runtime.global_log_events_manager)
-    runtime.global_inventory_manager = InventoryManager(runtime.global_log_events_manager)
+    runtime.global_inventory_items_manager = InventoryItemsManager(runtime.global_log_events_manager)
     runtime.global_narrat_manager = NarratManager(runtime.global_log_events_manager)
     runtime.global_quests_manager = QuestsManager(runtime.global_log_events_manager)
     runtime.global_state_manager = StateManager(
@@ -93,8 +93,8 @@ init 3 python: # setup hooks for initialyzing managers and applying stores
         runtime.global_world_manager,
         runtime.global_characters_manager,
         runtime.global_locations_manager,
-        runtime.global_journal_manager,
-        runtime.global_inventory_manager,
+        runtime.global_journal_notes_manager,
+        runtime.global_inventory_items_manager,
         runtime.global_narrat_manager,
         runtime.global_quests_manager
     )
@@ -102,10 +102,10 @@ init 3 python: # setup hooks for initialyzing managers and applying stores
 
     def apply_stores():
         runtime.global_locations_manager.set_store(locations_store)
-        runtime.global_journal_manager.set_store(journal_store)
+        runtime.global_journal_notes_manager.set_store(journal_notes_store)
         runtime.global_log_events_manager.set_store(log_events_store)
         runtime.global_characters_manager.set_store(characters_store)
-        runtime.global_inventory_manager.set_store(inventory_store)
+        runtime.global_inventory_items_manager.set_store(inventory_items_store)
         runtime.global_world_manager.set_store(world_store)
         runtime.global_narrat_manager.set_store(narrat_store)
         runtime.global_quests_manager.set_store(quests_store)
@@ -122,7 +122,7 @@ init 3 python: # setup hooks for initialyzing managers and applying stores
 
         now = int(time.time())
         runtime.logger.info('Building inventory manager…')
-        build_all_inventory(runtime.global_inventory_manager)
+        build_all_inventory_items(runtime.global_inventory_items_manager)
         runtime.logger.info('Done building inventory manager, took %s', int(time.time()) - now)
 
         now = int(time.time())
@@ -137,10 +137,10 @@ init 3 python: # setup hooks for initialyzing managers and applying stores
 
         now = int(time.time())
         runtime.logger.info('Building journal notes…')
-        build_all_notes(runtime.global_journal_manager)
+        build_all_journal_notes(runtime.global_journal_notes_manager)
         def on_update_journal():
             renpy.exports.sound.play(renpy.store.audio.update_journal)
-        runtime.global_journal_manager.register_on_update_journal(on_update_journal) # TODO [snow]: to store event handling
+        runtime.global_journal_notes_manager.register_on_update_journal(on_update_journal) # TODO [snow]: to store event handling
         runtime.logger.info('Done building journal notes, took %s', int(time.time()) - now)
 
         now = int(time.time())
@@ -153,9 +153,9 @@ init 3 python: # setup hooks for initialyzing managers and applying stores
             renpy.Keymap(
                 inventory_screen=Show(
                     "inventory_screen",
-                    get_owned_items=runtime.global_state_manager.inventory_manager.get_owned_items,
-                    get_selected_item_id=runtime.global_state_manager.inventory_manager.get_selected_item_id,
-                    set_selected_item_id=runtime.global_state_manager.inventory_manager.set_selected_item_id,
+                    get_owned_items=runtime.global_state_manager.inventory_items_manager.get_owned_items,
+                    get_selected_item_id=runtime.global_state_manager.inventory_items_manager.get_selected_item_id,
+                    set_selected_item_id=runtime.global_state_manager.inventory_items_manager.set_selected_item_id,
                     get_character=lambda: runtime.global_state_manager.characters_manager.get_character('protagonist_character_name'),
                     get_gold=runtime.global_state_manager.world_manager.get_gold
                 )
@@ -178,7 +178,7 @@ init 3 python: # setup hooks for initialyzing managers and applying stores
                     "journal_screen",
                     get_started_quests=runtime.global_quests_manager.build_started_quests,
                     get_finished_quests=runtime.global_quests_manager.build_finished_quests,
-                    get_notes=runtime.global_journal_manager.build_journal,
+                    get_notes=runtime.global_journal_notes_manager.build_journal,
                     # get_beasts=runtime.global_beatiary_manager.build_bestiary,
                 )
             )
@@ -216,7 +216,7 @@ label start:
 
 label dev:
     $ gsm = runtime.global_state_manager
-    $ gsm.world_manager.inventory_manager.pick_item('has_mortuary_key')
+    $ gsm.world_manager.inventory_items_manager.pick_item('has_mortuary_key')
 
     jump intro
 

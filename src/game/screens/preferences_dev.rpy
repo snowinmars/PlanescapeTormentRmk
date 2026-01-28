@@ -114,10 +114,10 @@ screen preferences_dev():
                 xsize 40
                 background "#5036d4"
                 hover_background "#734df5"
-                action SetVariable('preferences_dev_choosed_screen', 'inventory_store')
+                action SetVariable('preferences_dev_choosed_screen', 'inventory_items_store')
                 text 'IV':
                     size 20
-                    if preferences_dev_choosed_screen == 'inventory_store':
+                    if preferences_dev_choosed_screen == 'inventory_items_store':
                         color "#dbc401"
                     else:
                         color "#dddddd"
@@ -128,10 +128,10 @@ screen preferences_dev():
                 xsize 40
                 background "#5036d4"
                 hover_background "#734df5"
-                action SetVariable('preferences_dev_choosed_screen', 'journal_store')
+                action SetVariable('preferences_dev_choosed_screen', 'journal_notes_store')
                 text 'JR':
                     size 20
-                    if preferences_dev_choosed_screen == 'journal_store':
+                    if preferences_dev_choosed_screen == 'journal_notes_store':
                         color "#dbc401"
                     else:
                         color "#dddddd"
@@ -221,11 +221,11 @@ screen preferences_dev():
                 if preferences_dev_choosed_screen == 'log_events_store':
                     use _preferences_dev_stores(runtime.global_log_events_manager._log_events_store)
 
-                if preferences_dev_choosed_screen == 'inventory_store':
-                    use _preferences_dev_stores(runtime.global_state_manager.inventory_manager._inventory_store)
+                if preferences_dev_choosed_screen == 'inventory_items_store':
+                    use _preferences_dev_stores(runtime.global_state_manager.inventory_items_manager._inventory_items_store)
 
-                if preferences_dev_choosed_screen == 'journal_store':
-                    use _preferences_dev_stores(runtime.global_state_manager.journal_manager._journal_store)
+                if preferences_dev_choosed_screen == 'journal_notes_store':
+                    use _preferences_dev_stores(runtime.global_state_manager.journal_notes_manager._journal_notes_store)
 
                 if preferences_dev_choosed_screen == 'locations_store':
                     use _preferences_dev_stores(runtime.global_state_manager.locations_manager._locations_store)

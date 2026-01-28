@@ -1,12 +1,14 @@
 ﻿init 10 python:
     from game.engine.runtime import (runtime)
-    from game.dlgs.mortuary.dhall_logic import DhallLogic
+    from game.dlgs.mortuary.DhallLogic import (DhallLogic)
+
     dhallLogic = DhallLogic(runtime.global_state_manager)
 
     def get_dhall_appeal(upper_case=True):
         if upper_case:
             return __('dhall_name{#dhall_name}') if dhallLogic.get_know_dhall_name() else __('dhall_he_upper{#dhall_he_upper}')
         return __('dhall_name{#dhall_name}') if dhallLogic.get_know_dhall_name() else __('dhall_he_lower{#dhall_he_lower}')
+
     def get_dhall_appeal_genitive():
         return __('dhall_name_genitive{#dhall_name_genitive}') if dhallLogic.get_know_dhall_name() else __('dhall_he_genitive{#dhall_he_genitive}')
 

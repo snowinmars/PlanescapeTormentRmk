@@ -1,0 +1,51 @@
+class Zm782LogicGenerated:
+    def __init__(self, state_manager):
+        self.state_manager = state_manager
+
+
+#     def r24716_action(self): # unused
+#         #$% ?.attack('protagonist_character_name').by('ZM782') %$#
+#         return
+
+
+#     def r24709_condition(self): # wrong, overrided
+#         return self.state_manager.world_manager.get_in_party_morte()
+
+
+#     def r24712_condition(self): # wrong, overrided
+#         return not self.state_manager.world_manager.get_in_party_morte()
+
+
+class Zm782Logic(Zm782LogicGenerated):
+    def __init__(self, state_manager):
+        super().__init__(state_manager)
+
+
+    def pick_key_up(self):
+        self.state_manager.inventory_items_manager.pick_item('has_intro_key')
+
+
+    def s24_condition(self):
+        return self.state_manager.world_manager.get_in_party_morte()
+
+
+    def r24709_condition(self):
+        return self.state_manager.world_manager.get_in_party_morte() \
+               and not self.state_manager.inventory_items_manager.is_own_item('has_intro_key')
+
+
+    def r24712_condition(self):
+        return not self.state_manager.world_manager.get_in_party_morte() \
+               and not self.state_manager.inventory_items_manager.is_own_item('has_intro_key')
+
+
+    def r24713_condition(self):
+        return not self.state_manager.inventory_items_manager.is_own_item('has_intro_key')
+
+
+    def r24714_condition(self):
+        return self.state_manager.inventory_items_manager.is_own_item('has_intro_key')
+
+
+    def talk(self):
+        self.state_manager.world_manager.inc_talked_to_zm782_times()
