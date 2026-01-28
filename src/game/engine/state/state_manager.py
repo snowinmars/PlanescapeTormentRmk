@@ -10,7 +10,8 @@ class StateManager:
         journal_manager,
         inventory_manager,
         narrat_manager,
-        quests_manager
+        quests_manager,
+        external_report_change=None
     ):
         self._log_events_manager = log_events_manager
         self.world_manager = world_manager
@@ -20,6 +21,7 @@ class StateManager:
         self.inventory_manager = inventory_manager
         self.narrat_manager = narrat_manager
         self.quests_manager = quests_manager
+        self.external_report_change = external_report_change
 
         self.world_manager.register_report_change_callback(self.report_change)
         self.characters_manager.register_report_change_callback(self.report_change)
@@ -29,6 +31,9 @@ class StateManager:
 
 
     def report_change(self, change_id, change_kwargs):
+        if self.external_report_change:
+            self.external_report_change(change_id, change_kwargs)
+
         self.narrat_manager.report_change(change_id, change_kwargs)
 
         # TODO [snow]: small recursion:

@@ -1,5 +1,6 @@
 import pickle
 
+
 class NarratManager:
     def __init__(self, log_events_manager):
         self._log_events_manager = log_events_manager

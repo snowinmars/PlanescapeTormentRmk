@@ -28,7 +28,7 @@ class QuestsManager:
         self._quests_store.quests[quest_id] = quest
         for state_id in quest_state_ids:
             if state_id in self._quests_store.quest_state_id_index:
-                raise KeyError(f'state_id {state_id} already registrated for quest {self._quests_store.quest_state_id_index[state_id].quest_id}')
+                raise KeyError(f'state_id {state_id} already registrated for quest {self._quests_store.quest_state_id_index[state_id]}')
             self._quests_store.quest_state_id_index[state_id] = quest.quest_id
 
 
@@ -72,6 +72,7 @@ class QuestsManager:
                     'quest_state_id': quest_state_id
                 }
             )
+
 
     def set_entry_done(self, quest_state_id):
         quest = self.get_quest_entry(quest_state_id)

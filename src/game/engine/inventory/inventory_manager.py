@@ -23,14 +23,14 @@ class InventoryManager:
     def pick_item(self, settings_id, count=1):
         item = self.get_item(settings_id)
         if item.owned_count < 0:
-            raise Exception(f'Why {settings_id} count is below zero?')
+            raise IndexError(f'Why {settings_id} count is below zero?')
         item.owned_count += count
 
 
     def drop_item(self, settings_id, count=1):
         item = self.get_item(settings_id)
         if item.owned_count <= 0:
-            raise Exception(f'Cannot drop {settings_id} count below zero')
+            raise IndexError(f'Cannot drop {settings_id} count below zero')
         item.owned_count -= count
 
 

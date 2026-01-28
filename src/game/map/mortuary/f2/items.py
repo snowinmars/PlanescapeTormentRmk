@@ -574,8 +574,6 @@ class InMortuaryF2R5Eivene(MenuItem):
     def when(self):
         return not self.state_manager.world_manager.get_dead_eivene() and \
                self.state_manager.locations_manager.get_location() == 'mortuary_f2r5'
-    def texture(self):
-        return 'images/menu_sprites/eivene.png'
     def tooltip(self):
         if self.state_manager.world_manager.get_know_eivene_name():
             return 'InMortuaryF2R5Eivene_tooltip1' # Поговорить с Эи-Вейн

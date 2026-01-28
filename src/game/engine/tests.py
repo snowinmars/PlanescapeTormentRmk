@@ -49,8 +49,10 @@ class LogicTest(unittest.TestCase):
             self.journal_manager,
             self.inventory_manager,
             self.narrat_manager,
-            self.quests_manager
+            self.quests_manager,
+            external_report_change=lambda change_id, change_kwargs: None
         )
+        self.journal_manager.register_on_update_journal(lambda: None)
 
         self.reset_stores()
 

@@ -211,7 +211,6 @@ label start:
         "Вступление для технодемки":
             jump introduction
         "Новая жизнь":
-            call quick_setup_as_mage from _call_quick_setup_as_mage_1
             jump intro
 
 

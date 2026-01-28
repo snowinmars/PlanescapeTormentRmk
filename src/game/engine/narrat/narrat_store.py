@@ -3,12 +3,12 @@ import json
 
 class NarratStore():
     def __init__(self):
-        self.history = []
         self.last_history_id = 0
+        self.history = []
         self.current_speaker = None
         self.current_text = ""
         self.current_menu_items = []
-        self.config = {
+        self.config = { # TODO [snow]: remove this config?
             'choice_text_color': '#ff2e21',
             'choice_text_hover_color': '#f0ede4',
             'npc_text_color': '#9ba290',
@@ -42,6 +42,7 @@ class NarratStore():
         self.current_text = state['current_text']
         self.current_menu_items = state['current_menu_items']
         self.config = state['config']
+
 
     # cannot be friend with json
     # because must have links to ADVCharacter etc

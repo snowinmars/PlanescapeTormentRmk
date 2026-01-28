@@ -1,3 +1,6 @@
+import json
+
+
 class Quest:
     def __init__(self, quest_id, quest_state_ids, active_state_id=None, started=False, finished=False):
         self.quest_id = quest_id
@@ -43,8 +46,8 @@ class Quest:
 
     def set_entry_active(self, quest_state_id):
         if quest_state_id not in self.quest_state_ids:
-            raise KeyError(f'quest_state_id {quest_state_id} is not in quest_id {quest_id} states')
-        something_changed = self.active_state_id != quest_state_id or self.started != True
+            raise KeyError(f'quest_state_id {quest_state_id} is not in quest_id {self.quest_id} states')
+        something_changed = self.active_state_id != quest_state_id or not self.started
         self.active_state_id = quest_state_id
         self.started = True
         return something_changed
@@ -52,6 +55,6 @@ class Quest:
 
     def set_entry_done(self, quest_state_id):
         something_changed = self.set_entry_active(quest_state_id)
-        something_changed = something_changed or self.finished != False
-        self.finished = False
+        something_changed = something_changed or not self.finished
+        self.finished = True
         return something_changed

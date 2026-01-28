@@ -342,10 +342,27 @@ class DhallLogicGeneratedTest(LogicTest):
 
 
     def test_r839_condition(self):
-        self._boolean_straight_condition(
-            lambda x: self.state_manager.world_manager.set_in_party_morte(x),
-            self.logic.r839_condition
-        )
+        self.state_manager.world_manager.set_in_party_morte(False)
+        self.state_manager.world_manager.set_mortualy_alarmed(True)
+
+        self.assertFalse(self.logic.r839_condition())
+
+        self.state_manager.world_manager.set_in_party_morte(True)
+        self.state_manager.world_manager.set_mortualy_alarmed(False)
+
+        self.assertTrue(self.logic.r839_condition())
+
+
+    def test_r839_extra_condition(self):
+        self.state_manager.world_manager.set_in_party_morte(False)
+        self.state_manager.world_manager.set_mortualy_alarmed(False)
+
+        self.assertFalse(self.logic.r839_extra_condition())
+
+        self.state_manager.world_manager.set_in_party_morte(True)
+        self.state_manager.world_manager.set_mortualy_alarmed(True)
+
+        self.assertTrue(self.logic.r839_extra_condition())
 
 
     def test_r835_condition(self):

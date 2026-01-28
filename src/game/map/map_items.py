@@ -12,35 +12,26 @@ class ShadowItem:
     def when_visited(self):
         return self.state_manager.locations_manager.get_location() != self.location_id and \
                self.state_manager.locations_manager.is_visited(self.location_id)
-    def texture(self):
-        return 'images/icons/unknown.png'
     def pos(self):
         return self._pos
+    def texture(self):
+        raise NotImplementedError("Implement method 'texture(self)' before executing it") # pragma: no cover
 
 
 class MenuItem:
     def __init__(self, state_manager, x, y):
         self.state_manager = state_manager
         self._pos = { 'x': x, 'y': y }
-    def when(self):
-        return True
-    def texture(self):
-        return 'images/icons/unknown.png'
     def pos(self):
         return self._pos
-    def tooltip(self):
-        return 'Unknown'
-    def jump(self):
-        return NavigationDirective(
-            'map_dispatcher',
-        )
-
-
-class GoToLocationMenuItem(MenuItem):
-    def __init__(self, state_manager, x, y):
-        super().__init__(state_manager, x, y)
+    def when(self):
+        raise NotImplementedError("Implement method 'when(self)' before executing it") # pragma: no cover
     def texture(self):
-        return 'images/icons/open_idle.png'
+        raise NotImplementedError("Implement method 'texture(self)' before executing it") # pragma: no cover
+    def tooltip(self):
+        raise NotImplementedError("Implement method 'tooltip(self)' before executing it") # pragma: no cover
+    def jump(self):
+        raise NotImplementedError("Implement method 'jump(self)' before executing it") # pragma: no cover
 
 
 class NpcMenuItem(MenuItem):

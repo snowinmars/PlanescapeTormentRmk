@@ -15,6 +15,15 @@ class QuestsStoreTests(unittest.TestCase):
         )
 
 
+    def test_reserialize_empty_pickle(self):
+        dump = pickle.dumps(self.store)
+        expected = b'\x80\x05\x95_\x00\x00\x00\x00\x00\x00\x00\x8c\x1fgame.engine.quests.quests_store\x94\x8c\x0bQuestsStore\x94\x93\x94)\x81\x94}\x94(\x8c\x06quests\x94}\x94\x8c\x14quest_state_id_index\x94}\x94ub.'
+        self.assertEqual(dump, expected)
+
+        store = pickle.loads(dump)
+        self._assert_empty_store(store)
+
+
     def test_reserialize_empty_json(self):
         dump = self.store.toJson()
         expected = '{"quests": {}, "quest_state_id_index": {}}'
@@ -22,6 +31,17 @@ class QuestsStoreTests(unittest.TestCase):
 
         store = QuestsStore.fromJson(dump)
         self._assert_empty_store(store)
+
+
+    def test_reserialize_filled_pickle(self):
+        self._fill_store(self.store)
+
+        dump = pickle.dumps(self.store)
+        expected =  b'\x80\x05\x95\xf3\x00\x00\x00\x00\x00\x00\x00\x8c\x1fgame.engine.quests.quests_store\x94\x8c\x0bQuestsStore\x94\x93\x94)\x81\x94}\x94(\x8c\x06quests\x94}\x94\x8c\x01A\x94\x8c\x18game.engine.quests.Quest\x94\x8c\x05Quest\x94\x93\x94)\x81\x94}\x94(\x8c\x08quest_id\x94h\x07\x8c\x0fquest_state_ids\x94]\x94(\x8c\x02a1\x94\x8c\x02a2\x94e\x8c\x0factive_state_id\x94h\x10\x8c\x07started\x94\x89\x8c\x08finished\x94\x89ubs\x8c\x14quest_state_id_index\x94}\x94(h\x10h\x07h\x11h\x07uub.'
+        self.assertEqual(dump, expected)
+
+        store = pickle.loads(dump)
+        self._assert_filled_store(self.store)
 
 
     def test_reserialize_filled_json(self):

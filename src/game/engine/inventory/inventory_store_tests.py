@@ -6,7 +6,7 @@ from game.engine.inventory.InventoryItem import (InventoryItem)
 from game.engine.inventory.inventory_store import (InventoryStore)
 
 
-class CharacterStoreTest(unittest.TestCase):
+class InventoryStoreTest(unittest.TestCase):
     def setUp(self):
         self.store = InventoryStore()
         self.inventory_item_a = InventoryItem(
@@ -93,6 +93,7 @@ class CharacterStoreTest(unittest.TestCase):
         self._assert_equal_inventory_items(store.inventory_items[self.inventory_item_a.name], self.inventory_item_a)
         self._assert_equal_inventory_items(store.inventory_items[self.inventory_item_b.name], self.inventory_item_b)
 
+
     def _assert_equal_inventory_items(self, lhs, rhs):
         self.assertEqual(lhs.settings_id, rhs.settings_id)
         self.assertEqual(lhs.orig_id, rhs.orig_id)
@@ -107,4 +108,4 @@ class CharacterStoreTest(unittest.TestCase):
 
 
 if __name__ == "__main__":
-    unittest.main()
+    unittest.main() # pragma: no cover
