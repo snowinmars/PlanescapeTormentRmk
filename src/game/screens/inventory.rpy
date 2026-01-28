@@ -161,7 +161,7 @@ screen inventory_screen(
                 ysize 45
                 background Transform(owned_item.grid_image, fit='contain')
                 hover_background Transform(owned_item.grid_image, fit='contain', matrixcolor=hover_matrix)
-                action Function(set_selected_item_id, owned_item.settings_id)
+                action Show('inventory_item_screen', item=owned_item)
                 hovered SetVariable('inventory_screen_hovered_item_name', owned_item.name)
                 unhovered SetVariable('inventory_screen_hovered_item_name', '')
 

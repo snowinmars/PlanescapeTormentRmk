@@ -2,21 +2,17 @@ screen preferences_videos():
     tag menu
 
     frame:
-        # xpos 850
-        # ypos 575
-        xsize 1400
-        ysize 900
+        xfill True
+        yfill True
         align (0.5, 0.5)
-        background Transform('gui/creditbg.webp', fit='cover')
+        background Transform('gui/creditbg.webp')
+
 
         viewport:
+            area (1035, 100, 640, 850)
             scrollbars "vertical"
             mousewheel True
             draggable True
-            xpos 775
-            ypos 85
-            xsize 525
-            ysize 700
 
             vbox:
                 spacing 10
@@ -428,26 +424,26 @@ screen preferences_videos():
                 text '© 2017 Beamdog. © 2017 Hasbro, Inc. All Rights Reserved. Planescape: Torment, Dungeons & Dragons, D&D, Wizards of the Coast, their respective logos, Planescape, and the dragon ampersand are trademarks of Wizards of the Coast LLC in the U.S.A. and other countries, and are used with permission. Hasbro and its logo are trademarks of Hasbro, Inc. and are used with permission. ©1998 BioWare Corp. All Rights Reserved. Bioware, the BioWare Infinity Engine and the BioWare logo are trademarks of Bioware Corp. Black Isle Studios and the Black Isle Studios logo are trademarks of Interplay Entertainment Corp..All other trademarks are the property of their respective owners.' style 'preferences_videos_text'
 
         button:
-            xsize 193
-            ysize 78
-            xpos 525
-            ypos 775
+            area (775, 935, 193, 78)
             action Return()
-            background Transform('gui/button.png', fit='cover')
-            hover_background Transform('gui/button.png', fit='cover', matrixcolor=hover_matrix)
+            background Transform('gui/button.png')
+            hover_background Transform('gui/button.png', matrixcolor=hover_matrix)
 
             text _("preferences_screen_return"): # Вернуться
-                size 20
-                color "#eeeeee"
-                xalign 0.5
-                yalign 0.5
+                style 'preferences_videos_screen_style_button_text'
+                align (0.5, 0.5)
 
 
 style preferences_videos_header:
     size 22
     color '#eeeeee'
     xalign 0.5
+    text_align 0.5
 style preferences_videos_text:
     size 18
     color '#dbc401'
     xalign 0.5
+    text_align 0.5
+style preferences_videos_screen_style_button_text:
+    size 20
+    color color_white

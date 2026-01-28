@@ -2,13 +2,9 @@ screen preferences_save():
     tag menu
 
     frame:
-        # xpos 850
-        # ypos 575
-        # xsize 600
-        # ysize 350
         xfill True
         yfill True
-        background Transform('gui/loadbg.webp', fit='cover')
+        background Transform('gui/loadbg.webp')
 
         label _('preferences_save_title'):
             xpos 745

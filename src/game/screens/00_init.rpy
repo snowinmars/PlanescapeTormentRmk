@@ -10,3 +10,7 @@ init 2 python:
     keymap_inventory_screen = [ 'K_i' ]
     keymap_character_screen = [ 'K_c' ]
     keymap_journal_screen   = [ 'K_j' ]
+
+define color_yellow = '#dbc401'
+define color_white = '#f8f6de'
+

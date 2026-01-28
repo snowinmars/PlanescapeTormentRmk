@@ -14,7 +14,7 @@ screen main_menu():
     tag menu
 
     frame:
-        background Transform('gui/startbg.webp', fit='cover')
+        background Transform('gui/startbg.webp')
         xfill True
         yfill True
 
@@ -46,10 +46,8 @@ screen main_menu():
         button:
             xpos 802
             ypos 330
-            xsize 315 # 631
-            ysize 107 # 215
-            background Transform('gui/main_menu_newlife.webp', fit='cover')
-            hover_background Transform('gui/main_menu_newlife.webp', fit='cover', matrixcolor=hover_matrix)
+            background Transform('gui/main_menu_newlife.webp')
+            hover_background Transform('gui/main_menu_newlife.webp', matrixcolor=hover_matrix)
             action ShowMenu('character_creation')
             focus_mask True
 
@@ -64,10 +62,8 @@ screen main_menu():
         button:
             xpos 715
             ypos 525
-            xsize 186 # 373
-            ysize 297 # 594
-            background Transform('gui/main_menu_load.webp', fit='cover')
-            hover_background Transform('gui/main_menu_load.webp', fit='cover', matrixcolor=hover_matrix)
+            background Transform('gui/main_menu_load.webp')
+            hover_background Transform('gui/main_menu_load.webp', matrixcolor=hover_matrix)
             action ShowMenu("preferences_load")
             focus_mask True
 
@@ -82,10 +78,8 @@ screen main_menu():
         button:
             xpos 1015
             ypos 525
-            xsize 186 # 373
-            ysize 297 # 594
-            background Transform('gui/main_menu_continue.webp', fit='cover')
-            hover_background Transform('gui/main_menu_continue.webp', fit='cover', matrixcolor=hover_matrix)
+            background Transform('gui/main_menu_continue.webp')
+            hover_background Transform('gui/main_menu_continue.webp', matrixcolor=hover_matrix)
             action Continue()
             focus_mask True
 
@@ -100,10 +94,8 @@ screen main_menu():
         button:
             xpos 1130
             ypos 710
-            xsize 230 # 460
-            ysize 256 # 502
-            background Transform('gui/main_menu_settings.webp', fit='cover')
-            hover_background Transform('gui/main_menu_settings.webp', fit='cover', matrixcolor=hover_matrix)
+            background Transform('gui/main_menu_settings.webp')
+            hover_background Transform('gui/main_menu_settings.webp', matrixcolor=hover_matrix)
             action ShowMenu("preferences")
             focus_mask True
 
@@ -118,10 +110,8 @@ screen main_menu():
         button:
             xpos 550
             ypos 710
-            xsize 254 # 508
-            ysize 256 # 513
-            background Transform('gui/main_menu_exit.webp', fit='cover')
-            hover_background Transform('gui/main_menu_exit.webp', fit='cover', matrixcolor=hover_matrix)
+            background Transform('gui/main_menu_exit.webp')
+            hover_background Transform('gui/main_menu_exit.webp', matrixcolor=hover_matrix)
             action Quit(confirm=not main_menu)
             focus_mask True
 

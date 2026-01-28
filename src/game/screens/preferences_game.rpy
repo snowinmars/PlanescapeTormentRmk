@@ -2,199 +2,149 @@ screen preferences_game():
     tag menu
 
     frame:
+        xfill True
         yfill True
-        background Transform('gui/optpop1.webp', fit='cover')
-        xsize 1600
-        xalign 0.5
-        yalign 0.5
+        align (0.5, 0.5)
+        background Transform('gui/optpop1.webp')
 
-        vbox:
-            xfill True
-            yfill True
 
-            frame:
-                background None
-                xpos 850
-                ypos 575
-                xsize 600
-                ysize 350
+        viewport:
+            area (1005, 520, 570, 350)
+            scrollbars "vertical"
+            mousewheel True
+            draggable True
 
-                viewport:
-                    scrollbars "vertical"
-                    mousewheel True
-                    draggable True
-                    xfill True
-                    yfill True
+            vbox:
+                style 'preferences_game_screen_style_settings_item_list'
 
-                    vbox:
-                        spacing 0
-                        xfill True
+                hbox:
+                    style 'preferences_game_screen_style_settings_item'
 
-                        frame:
-                            background None
-                            xsize 500
+                    button :
+                        style 'preferences_game_screen_style_settings_item_button'
+                        action Preference('skip', "toggle")
+                        text _('preferences_game_screen_skip_unseen'): # 'Пропуск всего текста'
+                            style 'preferences_game_screen_style_settings_item_text'
 
-                            hbox:
-                                spacing 10
+                    button:
+                        xysize (32, 32) # TODO [snow]: why extracting this line into style breaks render?
+                        action Preference('skip', "toggle")
+                        if _preferences.skip_unseen:
+                            style 'preferences_game_screen_style_settings_item_button_on'
+                        else:
+                            style 'preferences_game_screen_style_settings_item_button_off'
 
-                                button :
-                                    action Preference('skip', "toggle")
-                                    xfill True
-                                    yalign 0.5
+                hbox:
+                    style 'preferences_game_screen_style_settings_item'
 
-                                    text _('preferences_game_screen_skip_unseen'): # 'Пропуск всего текста'
-                                        size 18
-                                        color '#dbc401'
-                                        hover_color '#eeeeee'
+                    button:
+                        style 'preferences_game_screen_style_settings_item_button'
+                        action Preference('after choices', "toggle")
+                        text _('preferences_game_screen_skip_after_choices'): # 'Пропуск после выборов'
+                            style 'preferences_game_screen_style_settings_item_text'
 
-                                button:
-                                    action Preference('skip', "toggle")
-                                    xysize (32, 32)
+                    button:
+                        xysize (32, 32)
+                        action Preference('after choices', "toggle")
+                        if _preferences.skip_after_choices:
+                            style 'preferences_game_screen_style_settings_item_button_on'
+                        else:
+                            style 'preferences_game_screen_style_settings_item_button_off'
 
-                                    if _preferences.skip_unseen:
-                                        background "gui/switch_on.png"
-                                    else:
-                                        background "gui/switch_off.png"
+                hbox:
+                    style 'preferences_game_screen_style_settings_item'
 
-                        frame:
-                            background None
-                            xsize 500
+                    button:
+                        style 'preferences_game_screen_style_settings_item_button'
+                        action InvertSelected(Preference("transitions", "toggle"))
+                        text _('preferences_game_screen_skip_transitions'): # 'Пропуск переходов'
+                            style 'preferences_game_screen_style_settings_item_text'
 
-                            hbox:
-                                spacing 10
+                    button:
+                        xysize (32, 32)
+                        action InvertSelected(Preference("transitions", "toggle"))
+                        if _preferences.transitions == 0:
+                            style 'preferences_game_screen_style_settings_item_button_on'
+                        else:
+                            style 'preferences_game_screen_style_settings_item_button_off'
 
-                                button:
-                                    action Preference('after choices', "toggle")
-                                    xfill True
-                                    yalign 0.5
+                hbox:
+                    style 'preferences_game_screen_style_settings_item'
 
-                                    text _('preferences_game_screen_skip_after_choices'): # 'Пропуск после выборов'
-                                        size 18
-                                        color '#dbc401'
-                                        hover_color '#eeeeee'
+                    button:
+                        style 'preferences_game_screen_style_settings_item_button'
+                        action [
+                            ToggleField(persistent, "add_custom_achievements"),
+                            Function(regain_custom_achievements)
+                        ]
 
-                                button:
-                                    action Preference('after choices', "toggle")
-                                    xysize (32, 32)
+                        text _('preferences_game_screen_add_custom_achievements'): # 'Включить дополнительные достижения'
+                            style 'preferences_game_screen_style_settings_item_text'
 
-                                    if _preferences.skip_after_choices:
-                                        background "gui/switch_on.png"
-                                    else:
-                                        background "gui/switch_off.png"
+                    button:
+                        xysize (32, 32)
+                        action [
+                            ToggleField(persistent, "add_custom_achievements"),
+                            Function(regain_custom_achievements)
+                        ]
 
-                        frame:
-                            background None
-                            xsize 500
+                        if persistent.add_custom_achievements:
+                            style 'preferences_game_screen_style_settings_item_button_on'
+                        else:
+                            style 'preferences_game_screen_style_settings_item_button_off'
 
-                            hbox:
-                                spacing 10
 
-                                button:
-                                    action InvertSelected(Preference("transitions", "toggle"))
-                                    xfill True
-                                    yalign 0.5
+        viewport:
+            area (380, 510, 570, 350)
+            scrollbars "vertical"
+            mousewheel True
+            draggable True
 
-                                    text _('preferences_game_screen_skip_transitions'): # 'Пропуск переходов'
-                                        size 18
-                                        color '#dbc401'
-                                        hover_color '#eeeeee'
+            vbox:
+                style 'preferences_game_screen_style_settings_item_list'
 
-                                button:
-                                    action InvertSelected(Preference("transitions", "toggle"))
-                                    padding (0, 0)
-                                    xysize (60, 30)
+                hbox:
+                    style 'preferences_game_screen_style_settings_bar_item'
 
-                                    if _preferences.transitions == 0:
-                                        background "gui/switch_on.png"
-                                    else:
-                                        background "gui/switch_off.png"
+                    button:
+                        style 'preferences_game_screen_style_settings_item_button'
+                        action NullAction()
+                        text _('preferences_game_screen_auto_forward_time'): # Скорость авточтения
+                            style 'preferences_game_screen_style_settings_item_text'
 
-                        frame:
-                            background None
-                            xsize 500
+                    bar:
+                        xsize 250
+                        value Preference("auto-forward time")
+                        thumb_offset 10
 
-                            hbox:
-                                spacing 10
 
-                                button:
-                                    action [
-                                        ToggleField(persistent, "add_custom_achievements"),
-                                        Function(regain_custom_achievements)
-                                    ]
-                                    xfill True
-                                    yalign 0.5
+        button:
+            area (1395, 900, 193, 78)
+            action Return()
+            background Transform('gui/button.png')
+            hover_background Transform('gui/button.png', matrixcolor=hover_matrix)
 
-                                    text _('preferences_game_screen_add_custom_achievements'): # 'Включить дополнительные достижения'
-                                        size 18
-                                        color '#dbc401'
-                                        hover_color '#eeeeee'
+            text _("preferences_screen_return"): # Вернуться
+                style 'preferences_game_screen_style_button_text'
+                align (0.5, 0.5)
 
-                                button:
-                                    action [
-                                        ToggleField(persistent, "add_custom_achievements"),
-                                        Function(regain_custom_achievements)
-                                    ]
-                                    padding (0, 0)
-                                    xysize (60, 30)
 
-                                    if persistent.add_custom_achievements:
-                                        background "gui/switch_on.png"
-                                    else:
-                                        background "gui/switch_off.png"
-
-        vbox:
-            xfill True
-            yfill True
-
-            frame:
-                background None
-                xpos 170
-                ypos 575
-                xsize 600
-                ysize 350
-
-                viewport:
-                    scrollbars "vertical"
-                    mousewheel True
-                    draggable True
-                    xfill True
-                    yfill True
-
-                    vbox:
-                        spacing 0
-                        xfill True
-
-                        frame:
-                            background None
-                            xsize 550
-
-                            hbox:
-                                button:
-                                    action NullAction()
-                                    xsize 250
-                                    text _('preferences_game_screen_auto_forward_time'): # Скорость авточтения
-                                        size 20
-                                        color '#dbc401'
-                                        hover_color '#eeeeee'
-
-                                bar:
-                                    value Preference("auto-forward time")
-                                    thumb_offset 10
-
-        vbox:
-            xfill True
-            yfill True
-            button:
-                xsize 193
-                ysize 78
-                xpos 1290
-                ypos 975
-                action Return()
-                background Transform('gui/button.png', fit='cover')
-                hover_background Transform('gui/button.png', fit='cover', matrixcolor=hover_matrix)
-
-                text _("preferences_screen_return"): # Вернуться
-                    size 20
-                    color "#eeeeee"
-                    xalign 0.5
-                    yalign 0.5
+style preferences_game_screen_style_settings_item_list:
+    spacing 10
+style preferences_game_screen_style_settings_item:
+    xsize 500
+style preferences_game_screen_style_settings_bar_item:
+    xsize 300
+style preferences_game_screen_style_settings_item_text:
+    size 18
+    color color_yellow
+    hover_color color_white
+style preferences_game_screen_style_settings_item_button:
+    xfill True
+style preferences_game_screen_style_settings_item_button_on:
+    background "gui/switch_on.png"
+style preferences_game_screen_style_settings_item_button_off:
+    background "gui/switch_off.png"
+style preferences_game_screen_style_button_text:
+    size 20
+    color color_white

@@ -20,9 +20,9 @@ label introduction:
         # snowinmars '«В 1999 году игра была создана так, чтобы играть магом».'
         # snowinmars '«Ты последовал тому совету?»'
         menu:
-            'introduction_5{#introduction_5}': # '«Я играл магом».'
+            'introduction_5{#introduction_5}': # '«Я был магом».'
                 $ introductionLogic.setup_new_life_as_mage()
-            'introduction_6{#introduction_6}': # '«Я играл тем персонажем, которого создал ранее сам».'
+            'introduction_6{#introduction_6}': # '«Я был тем, кто я есть».'
                 pass
 
         'introduction_7{#introduction_7}'
@@ -35,11 +35,11 @@ label introduction:
 
     'introduction_10{#introduction_10}'
     # snowinmars '«В игру было добавлено большое количество мелких достижений. Ты включал их?»'
-        menu:
-            'introduction_11{#introduction_11}': # '«Я видел мелкие достижения».'
-                $ persistent.add_custom_achievements = True
-            'introduction_12{#introduction_12}': # '«Я скрыл мелких достижений».'
-                $ persistent.add_custom_achievements = False
+    menu:
+        'introduction_11{#introduction_11}': # '«Я видел мелкие достижения».'
+            $ persistent.add_custom_achievements = True
+        'introduction_12{#introduction_12}': # '«Я скрыл мелких достижений».'
+            $ persistent.add_custom_achievements = False
 
     'introduction_13{#introduction_13}'
     # snowinmars 'Напоследок ты увидел общую информацию и благодарности.'

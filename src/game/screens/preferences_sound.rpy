@@ -3,143 +3,121 @@ screen preferences_sound():
     tag menu
 
     frame:
+        xfill True
         yfill True
-        background Transform('gui/optpop1.webp', fit='cover')
-        xsize 1600
-        xalign 0.5
-        yalign 0.5
+        align (0.5, 0.5)
+        background Transform('gui/optpop1.webp')
 
-        vbox:
-            xfill True
-            yfill True
 
-            frame:
-                background None
-                xpos 170
-                ypos 575
-                xsize 600
-                ysize 350
+        viewport:
+            area (380, 510, 570, 350)
+            scrollbars "vertical"
+            mousewheel True
+            draggable True
 
-                viewport:
-                    scrollbars "vertical"
-                    mousewheel True
-                    draggable True
-                    xfill True
-                    yfill True
+            vbox:
+                style 'preferences_sound_screen_style_settings_item_list'
 
-                    vbox:
-                        spacing 0
-                        xfill True
+                hbox:
+                    style 'preferences_sound_screen_style_settings_bar_item'
 
-                        frame:
-                            background None
-                            xsize 550
+                    button:
+                        style 'preferences_sound_screen_style_settings_item_button'
+                        action NullAction()
+                        text _('preferences_sound_screen_main_volume'): # Громкость
+                            style 'preferences_sound_screen_style_settings_item_text'
 
-                            hbox:
-                                button:
-                                    action NullAction()
-                                    xsize 250
-                                    text _('preferences_sound_screen_main_volume'): # Громкость
-                                        size 20
-                                        color '#dbc401'
-                                        hover_color '#eeeeee'
+                    bar:
+                        xsize 250
+                        value Preference("main volume")
+                        thumb_offset 10
 
-                                bar:
-                                    value Preference("main volume")
-                                    thumb_offset 10
+                hbox:
+                    style 'preferences_sound_screen_style_settings_bar_item'
 
-                        frame:
-                            background None
-                            xsize 550
+                    button:
+                        style 'preferences_sound_screen_style_settings_item_button'
+                        action NullAction()
+                        text _('preferences_sound_screen_music_volume'): # Громкость музыки
+                            style 'preferences_sound_screen_style_settings_item_text'
 
-                            hbox:
-                                button:
-                                    action NullAction()
-                                    xsize 250
-                                    text _('preferences_sound_screen_music_volume'): # Громкость музыки
-                                        size 20
-                                        color '#dbc401'
-                                        hover_color '#eeeeee'
+                    bar:
+                        xsize 250
+                        value Preference("music volume")
+                        thumb_offset 10
 
-                                bar:
-                                    value Preference("music volume")
-                                    thumb_offset 10
+                hbox:
+                    style 'preferences_sound_screen_style_settings_bar_item'
 
-                        frame:
-                            background None
-                            xsize 550
+                    button:
+                        style 'preferences_sound_screen_style_settings_item_button'
+                        action NullAction()
+                        text _('preferences_sound_screen_sound_volume'): # Громкость звуков
+                            style 'preferences_sound_screen_style_settings_item_text'
 
-                            hbox:
-                                button:
-                                    action NullAction()
-                                    xsize 250
-                                    text _('preferences_sound_screen_sound_volume'): # Громкость звуков
-                                        size 20
-                                        color '#dbc401'
-                                        hover_color '#eeeeee'
+                    bar:
+                        xsize 250
+                        value Preference("sound volume")
+                        thumb_offset 10
 
-                                bar:
-                                    value Preference("sound volume")
-                                    thumb_offset 10
+                hbox:
+                    style 'preferences_sound_screen_style_settings_bar_item'
 
-                        frame:
-                            background None
-                            xsize 550
+                    button:
+                        style 'preferences_sound_screen_style_settings_item_button'
+                        action NullAction()
+                        text _('preferences_sound_screen_voice_volume'): # Громкость звуков
+                            style 'preferences_sound_screen_style_settings_item_text'
 
-                            hbox:
-                                button:
-                                    action NullAction()
-                                    xsize 250
-                                    text _('preferences_sound_screen_voice_volume'): # Громкость звуков
-                                        size 20
-                                        color '#dbc401'
-                                        hover_color '#eeeeee'
+                    bar:
+                        xsize 250
+                        value Preference("voice volume")
+                        thumb_offset 10
 
-                                bar:
-                                    value Preference("voice volume")
-                                    thumb_offset 10
+                hbox:
+                    style 'preferences_sound_screen_style_settings_item'
 
-                        frame:
-                            background None
-                            xsize 500
+                    button:
+                        style 'preferences_sound_screen_style_settings_item_button'
+                        action Preference("all mute", "toggle")
 
-                            hbox:
-                                spacing 10
+                        text _('preferences_sound_screen_mute_all'): # 'Без звука'
+                            style 'preferences_sound_screen_style_settings_item_text'
 
-                                button:
-                                    action Preference("all mute", "toggle")
-                                    xfill True
-                                    yalign 0.5
+                    button:
+                        xysize (32, 32)
+                        action Preference("all mute", "toggle")
 
-                                    text _('preferences_sound_screen_mute_all'): # 'Без звука'
-                                        size 18
-                                        color '#dbc401'
-                                        hover_color '#eeeeee'
+                        if _preferences.mute['music'] == True and _preferences.mute['sfx'] == True and _preferences.mute['voice'] == True and _preferences.mute['main'] == True:
+                            style 'preferences_sound_screen_style_settings_item_button_on'
+                        else:
+                            style 'preferences_sound_screen_style_settings_item_button_off'
 
-                                button:
-                                    action Preference("all mute", "toggle")
-                                    padding (0, 0)
-                                    xysize (60, 30)
 
-                                    if _preferences.mute['music'] == True and _preferences.mute['sfx'] == True and _preferences.mute['voice'] == True and _preferences.mute['main'] == True:
-                                        background "gui/switch_on.png"
-                                    else:
-                                        background "gui/switch_off.png"
+        button:
+            area (1395, 900, 193, 78)
+            action Return()
+            background Transform('gui/button.png')
+            hover_background Transform('gui/button.png', matrixcolor=hover_matrix)
 
-        vbox:
-            xfill True
-            yfill True
-            button:
-                xsize 193
-                ysize 78
-                xpos 1290
-                ypos 975
-                action Return()
-                background Transform('gui/button.png', fit='cover')
-                hover_background Transform('gui/button.png', fit='cover', matrixcolor=hover_matrix)
+            text _("preferences_screen_return"): # Вернуться
+                style 'preferences_game_screen_style_button_text'
+                align (0.5, 0.5)
 
-                text _("preferences_screen_return"): # Вернуться
-                    size 20
-                    color "#eeeeee"
-                    xalign 0.5
-                    yalign 0.5
+
+style preferences_sound_screen_style_settings_item_list:
+    spacing 10
+style preferences_sound_screen_style_settings_bar_item:
+    xsize 300
+style preferences_sound_screen_style_settings_item_button:
+    xfill True
+style preferences_sound_screen_style_settings_item_button_on:
+    background "gui/switch_on.png"
+style preferences_sound_screen_style_settings_item_button_off:
+    background "gui/switch_off.png"
+style preferences_sound_screen_style_settings_item_text:
+    size 18
+    color color_yellow
+    hover_color color_white
+style preferences_sound_screen_style_settings_item:
+    xsize 500
