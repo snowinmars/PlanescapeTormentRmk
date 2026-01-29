@@ -25,9 +25,9 @@ def extract_declared_functions(logic_files):
     declared_functions = set()
     for logic_file in logic_files:
         base_name = logic_file.name
-        if not base_name.endswith('_logic.py'):
+        if not base_name.endswith('Logic.py'):
             continue
-        base = base_name[:-len('_logic.py')]
+        base = base_name[:-len('Logic.py')]
 
         matches = DEF_PATTERN.findall(logic_file.content)
         for func_name, tail in matches:

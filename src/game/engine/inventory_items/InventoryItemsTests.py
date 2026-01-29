@@ -46,7 +46,7 @@ class InventoryItemsTests(LogicTests):
         inventory_item = self._create_inventory_item()
 
         dump = pickle.dumps(inventory_item)
-        expected = b"\x80\x05\x95d\x00\x00\x00\x00\x00\x00\x00\x8c'game.engine.characters.characters_store\x94\x8c\x0fCharactersStore\x94\x93\x94)\x81\x94}\x94(\x8c\ncharacters\x94}\x94\x8c\tonce_keys\x94}\x94ub."
+        expected = b'\x80\x05\x95\xda\x00\x00\x00\x00\x00\x00\x00\x8c)game.engine.inventory_items.InventoryItem\x94\x8c\rInventoryItem\x94\x93\x94)\x81\x94}\x94(\x8c\x0bsettings_id\x94h\x05\x8c\x07orig_id\x94h\x06\x8c\x04name\x94h\x07\x8c\x0bdescription\x94h\x08\x8c\x07used_by\x94h\t\x8c\nproperties\x94h\n\x8c\ngrid_image\x94h\x0b\x8c\x0cdetail_image\x94h\x0c\x8c\x0ejump_on_use_to\x94h\r\x8c\x0bowned_count\x94K\x00ub.'
         self.assertEqual(dump, expected)
 
         restored_inventory_item = pickle.loads(dump)
@@ -57,7 +57,7 @@ class InventoryItemsTests(LogicTests):
         inventory_item = self._create_inventory_item()
 
         dump = inventory_item.toJson()
-        expected = '{"characters": {}, "once_keys": {}}'
+        expected = '{"settings_id": "settings_id", "orig_id": "orig_id", "name": "name", "description": "description", "used_by": "used_by", "properties": "properties", "grid_image": "grid_image", "detail_image": "detail_image", "jump_on_use_to": "jump_on_use_to", "owned_count": 0}'
         self.assertEqual(dump, expected)
 
         restored_inventory_item = InventoryItem.fromJson(dump)

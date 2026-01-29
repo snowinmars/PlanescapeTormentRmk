@@ -87,7 +87,7 @@ def find_files(root_dir):
                 content=rpy_file.read_text(encoding='utf-8')
             ))
 
-    logics = root_path.rglob('./game/**/*_logic.py')
+    logics = root_path.rglob('./game/**/*Logic.py')
     logic_files = []
     for logic_file in logics:
         if 'd_renpy' not in logic_file.parts:
@@ -114,3 +114,7 @@ def find_files(root_dir):
         ))
 
     return rpy_files, logic_files, raw_files, dialog_replacer
+
+
+if __name__ == '__main__':
+    unittest.main() # pragma: no cover

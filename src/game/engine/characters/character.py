@@ -88,6 +88,24 @@ class Character:
     @classmethod
     def fromJson(cls, json_str):
         data = json.loads(json_str)
-        obj = cls()
-        obj.__setstate__(data)
+        obj = cls(
+            name=data['name'],
+            current_class=data['current_class'],
+            race=data['race'],
+            sex=data['sex'],
+            max_health=data['max_health'],
+            current_health=data['current_health'],
+            ac=data['ac'],
+            good=data['good'],
+            law=data['law'],
+            lore=data['lore'],
+            experience=data['experience'],
+            strength=data['strength'],
+            dexterity=data['dexterity'],
+            intelligence=data['intelligence'],
+            constitution=data['constitution'],
+            wisdom=data['wisdom'],
+            charisma=data['charisma'],
+            looks_like=data['looks_like']
+        )
         return obj

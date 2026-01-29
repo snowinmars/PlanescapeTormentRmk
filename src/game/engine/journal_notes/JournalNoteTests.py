@@ -31,7 +31,7 @@ class InventoryItemsTests(LogicTests):
         journal_note = self._create_journal_note()
 
         dump = pickle.dumps(journal_note)
-        expected = b"\x80\x05\x95d\x00\x00\x00\x00\x00\x00\x00\x8c'game.engine.characters.characters_store\x94\x8c\x0fCharactersStore\x94\x93\x94)\x81\x94}\x94(\x8c\ncharacters\x94}\x94\x8c\tonce_keys\x94}\x94ub."
+        expected = b'\x80\x05\x95l\x00\x00\x00\x00\x00\x00\x00\x8c%game.engine.journal_notes.JournalNote\x94\x8c\x0bJournalNote\x94\x93\x94)\x81\x94}\x94(\x8c\x02id\x94\x8c\x01d\x94\x8c\x07content\x94h\x07\x8c\x05found\x94\x89\x8c\x08found_at\x94K\x00ub.'
         self.assertEqual(dump, expected)
 
         restored_journal_note = pickle.loads(dump)
@@ -42,10 +42,10 @@ class InventoryItemsTests(LogicTests):
         journal_note = self._create_journal_note()
 
         dump = journal_note.toJson()
-        expected = '{"characters": {}, "once_keys": {}}'
+        expected = '{"id": "d", "content": "content", "found": false, "found_at": 0}'
         self.assertEqual(dump, expected)
 
-        restored_journal_note = InventoryItem.fromJson(dump)
+        restored_journal_note = JournalNote.fromJson(dump)
         self._assert_journal_note(journal_note, restored_journal_note)
 
 

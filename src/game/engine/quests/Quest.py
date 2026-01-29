@@ -39,8 +39,13 @@ class Quest:
     @classmethod
     def fromJson(cls, json_str):
         data = json.loads(json_str)
-        obj = cls()
-        obj.__setstate__(data)
+        obj = cls(
+            quest_id=data['quest_id'],
+            quest_state_ids=data['quest_state_ids'],
+            active_state_id=data['active_state_id'],
+            started=data['started'],
+            finished=data['finished']
+        )
         return obj
 
 

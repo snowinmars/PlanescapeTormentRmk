@@ -422,3 +422,7 @@ class Ie2abstractTests(unittest.TestCase):
 
     # def _print_dict(self, d):
     #     print("\n".join(f"{k}\t{v}" for k, v in d.items()))
+
+
+if __name__ == '__main__':
+    unittest.main() # pragma: no cover

@@ -35,7 +35,7 @@ class QuestTests(LogicTests):
         quest = self._create_quest()
 
         dump = pickle.dumps(quest)
-        expected = b"\x80\x05\x95d\x00\x00\x00\x00\x00\x00\x00\x8c'game.engine.characters.characters_store\x94\x8c\x0fCharactersStore\x94\x93\x94)\x81\x94}\x94(\x8c\ncharacters\x94}\x94\x8c\tonce_keys\x94}\x94ub."
+        expected = b'\x80\x05\x95\xa2\x00\x00\x00\x00\x00\x00\x00\x8c\x18game.engine.quests.Quest\x94\x8c\x05Quest\x94\x93\x94)\x81\x94}\x94(\x8c\x08quest_id\x94h\x05\x8c\x0fquest_state_ids\x94]\x94(\x8c\x10quest_id_state_1\x94\x8c\x10quest_id_state_2\x94e\x8c\x0factive_state_id\x94h\x08\x8c\x07started\x94\x89\x8c\x08finished\x94\x89ub.'
         self.assertEqual(dump, expected)
 
         restored_quest = pickle.loads(dump)
@@ -46,10 +46,10 @@ class QuestTests(LogicTests):
         quest = self._create_quest()
 
         dump = quest.toJson()
-        expected = '{"characters": {}, "once_keys": {}}'
+        expected = '{"quest_id": "quest_id", "quest_state_ids": ["quest_id_state_1", "quest_id_state_2"], "active_state_id": "quest_id_state_1", "started": false, "finished": false}'
         self.assertEqual(dump, expected)
 
-        restored_quest = InventoryItem.fromJson(dump)
+        restored_quest = Quest.fromJson(dump)
         self._assert_quest(quest, restored_quest)
 
 
@@ -161,3 +161,12 @@ class QuestTests(LogicTests):
             started=started,
             finished=finished
         )
+
+    def _assert_quest(self, lhs, rhs):
+        self.assertEqual(lhs.quest_id              , rhs.quest_id)
+        self.assertEqual(len(lhs.quest_state_ids)  , len(rhs.quest_state_ids))
+        for i in range(0, len(lhs.quest_state_ids)):
+            self.assertEqual(lhs.quest_state_ids[i], rhs.quest_state_ids[i])
+        self.assertEqual(lhs.active_state_id       , rhs.active_state_id)
+        self.assertEqual(lhs.started               , rhs.started)
+        self.assertEqual(lhs.finished              , rhs.finished)

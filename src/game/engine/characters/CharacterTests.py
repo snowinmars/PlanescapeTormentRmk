@@ -112,7 +112,7 @@ class CharacterTests(LogicTests):
         character = self._create_character()
 
         dump = pickle.dumps(character)
-        expected = b"\x80\x05\x95d\x00\x00\x00\x00\x00\x00\x00\x8c'game.engine.characters.characters_store\x94\x8c\x0fCharactersStore\x94\x93\x94)\x81\x94}\x94(\x8c\ncharacters\x94}\x94\x8c\tonce_keys\x94}\x94ub."
+        expected = b'\x80\x05\x95G\x01\x00\x00\x00\x00\x00\x00\x8c game.engine.characters.Character\x94\x8c\tCharacter\x94\x93\x94)\x81\x94}\x94(\x8c\x04name\x94\x8c\x1aprotagonist_character_name\x94\x8c\rcurrent_class\x94\x8c\x04Mage\x94\x8c\x04race\x94\x8c\x05Human\x94\x8c\x03sex\x94\x8c\x04Male\x94\x8c\nmax_health\x94K\x1f\x8c\x0ecurrent_health\x94K\x1f\x8c\x02ac\x94K\n\x8c\x04good\x94K\x03\x8c\x03law\x94K\x05\x8c\x04lore\x94K\x07\x8c\nexperience\x94K\t\x8c\x08strength\x94K\x0b\x8c\tdexterity\x94K\r\x8c\x0cintelligence\x94K\x11\x8c\x0cconstitution\x94K\x13\x8c\x06wisdom\x94K\x17\x8c\x08charisma\x94K\x1b\x8c\nlooks_like\x94h\x1aub.'
         self.assertEqual(dump, expected)
 
         restored_character = pickle.loads(dump)
@@ -123,7 +123,7 @@ class CharacterTests(LogicTests):
         character = self._create_character()
 
         dump = character.toJson()
-        expected = '{"characters": {}, "once_keys": {}}'
+        expected = '{"name": "protagonist_character_name", "current_class": "Mage", "race": "Human", "sex": "Male", "max_health": 31, "current_health": 31, "ac": 10, "good": 3, "law": 5, "lore": 7, "experience": 9, "strength": 11, "dexterity": 13, "intelligence": 17, "constitution": 19, "wisdom": 23, "charisma": 27, "looks_like": "looks_like"}'
         self.assertEqual(dump, expected)
 
         restored_character = Character.fromJson(dump)

@@ -64,6 +64,16 @@ class InventoryItem:
     @classmethod
     def fromJson(cls, json_str):
         data = json.loads(json_str)
-        obj = cls()
-        obj.__setstate__(data)
+        obj = cls(
+            settings_id=data['settings_id'],
+            orig_id=data['orig_id'],
+            name=data['name'],
+            description=data['description'],
+            grid_image=data['grid_image'],
+            used_by=data['used_by'],
+            properties=data['properties'],
+            detail_image=data['detail_image'],
+            jump_on_use_to=data['jump_on_use_to'],
+            owned_count=data['owned_count']
+        )
         return obj

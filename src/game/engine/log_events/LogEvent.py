@@ -2,7 +2,11 @@ import json
 
 
 class LogEvent:
-    def __init__(self, timestamp, category, text):
+    def __init__(self,
+        timestamp,
+        category,
+        text
+    ):
         self.timestamp = timestamp
         self.category = category
         self.text = text
@@ -33,6 +37,9 @@ class LogEvent:
     @classmethod
     def fromJson(cls, json_str):
         data = json.loads(json_str)
-        obj = cls()
-        obj.__setstate__(data)
+        obj = cls(
+            timestamp=data['timestamp'],
+            category=data['category'],
+            text=data['text']
+        )
         return obj
