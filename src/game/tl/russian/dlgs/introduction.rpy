@@ -4,14 +4,14 @@ translate russian introduction_b7295593:
     # snowinmars 'introduction_1{#introduction_1}'
     snowinmars '«Привет. Как ты относился к спойлерам?»'
 
-# game/dlgs/introduction.rpy:28
-translate russian introduction_bde42912:
+# game/dlgs/introduction.rpy:20
+translate russian introduction_74faf640:
 
     # 'introduction_4{#introduction_4}'
     snowinmars '«Ты помнил прошлое?»'
 
-# game/dlgs/introduction.rpy:44
-translate russian introduction_77cf396b:
+# game/dlgs/introduction.rpy:28
+translate russian introduction_bde42912:
 
     # 'introduction_7{#introduction_7}'
     snowinmars '«Напоследок ты увидел общую информацию и благодарности».'
@@ -23,9 +23,9 @@ translate russian introduction_77cf396b:
     snowinmars '«И сотням людей, любящим то, что и я люблю».'
     snowinmars '«Этот мир рождён под знаком GNU/GPLv3 - а, значит, свободен».'
     snowinmars '«https://t.me/@snowinmars ; snowinmars@yandex.ru».'
-    snowinmars '«Вспомни».'
+    snowinmars '«…».'
 
-# game/dlgs/introduction.rpy:58
+# game/dlgs/introduction.rpy:42
 translate russian intro_bcf9c742:
 
     # 'intro{#intro}'
@@ -47,23 +47,23 @@ translate russian intro_bcf9c742:
 
 translate russian strings:
 
-    # game/dlgs/introduction.rpy:13
+    # game/dlgs/introduction.rpy:14
     old 'introduction_2{#introduction_2}'
     new '«Я не опасался спойлеров».'
 
-    # game/dlgs/introduction.rpy:15
+    # game/dlgs/introduction.rpy:16
     old 'introduction_3{#introduction_3}'
     new '«Я не любил спойлеры».'
 
-    # game/dlgs/introduction.rpy:31
+    # game/dlgs/introduction.rpy:23
     old 'introduction_5{#introduction_5}'
     new '«Я помнил, что „История костей“ позволяла мне говорить с мёртвыми, и что слепого лучника звали Захарией».'
 
-    # game/dlgs/introduction.rpy:33
+    # game/dlgs/introduction.rpy:25
     old 'introduction_6{#introduction_6}'
     new '«Я не помнил».'
 
-    # game/dlgs/introduction.rpy:48
+    # game/dlgs/introduction.rpy:32
     old 'introduction_8{#introduction_8}'
     new 'Вспомнить.'
 

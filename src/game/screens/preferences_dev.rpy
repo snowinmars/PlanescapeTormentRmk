@@ -255,12 +255,11 @@ style preferences_dev_screen_style_text:
     color color_white
 style preferences_dev_screen_choice_button:
     xsize 40
-    background "#5036d4"
-    hover_background "#734df5"
 style preferences_dev_screen_choice_button_text:
     xalign 0.5
     size 20
     color color_white
+    hover_color color_yellow
 style preferences_dev_screen_style_button_text:
     size 20
     color color_white

@@ -1,661 +1,388 @@
-init python:
-    min_prop_value = 9
-    max_prop_value = 18
-    max_props_sum = 75
-    default_health = 20
-    health_threshhold = 15
-
-
-    def dec_prop(character, prop):
-        if character.get_all_properties()[prop] <= min_prop_value:
-            return
-
-        runtime.global_state_manager.characters_manager.modify_property('protagonist_character_name', prop, -1)
-
-        if prop == 'constitution':
-            update_max_health(character)
-
-
-    def inc_prop(character, prop):
-        if count_all_props_sum(character) >= max_props_sum:
-            return
-
-        if character.get_all_properties()[prop] >= max_prop_value:
-            return
-
-        runtime.global_state_manager.characters_manager.modify_property('protagonist_character_name', prop, 1)
-
-        if prop == 'constitution':
-            update_max_health(character)
-
-
-    def update_max_health(character):
-        extra_health = 0
-        if character.constitution >= min_prop_value and \
-            character.constitution < health_threshhold:
-            extra_health = (character.constitution - min_prop_value) * 2
-        if character.constitution >= health_threshhold:
-            extra_health = (character.constitution - min_prop_value) * 2 + (character.constitution - health_threshhold) + 1
-
-        runtime.global_state_manager.characters_manager.set_property('protagonist_character_name', 'max_health', default_health + extra_health)
-
-
-
-    def count_all_props_sum(character):
-        return \
-            character.strength + \
-            character.dexterity + \
-            character.intelligence + \
-            character.constitution + \
-            character.wisdom + \
-            character.charisma
-
-
-    def set_mage(character):
-        runtime.global_state_manager.characters_manager.set_property('protagonist_character_name', 'strength', 9)
-        runtime.global_state_manager.characters_manager.set_property('protagonist_character_name', 'dexterity', 9)
-        runtime.global_state_manager.characters_manager.set_property('protagonist_character_name', 'intelligence', 16)
-        runtime.global_state_manager.characters_manager.set_property('protagonist_character_name', 'constitution', 9)
-        runtime.global_state_manager.characters_manager.set_property('protagonist_character_name', 'wisdom', 17)
-        runtime.global_state_manager.characters_manager.set_property('protagonist_character_name', 'charisma', 15)
+init 10 python:
+    from game.engine.runtime import (runtime)
+    from game.screens.CharacterCreationLogic import (CharacterCreationLogic)
+    characterCreationLogic = CharacterCreationLogic(runtime.global_state_manager)
 
 
 screen character_creation():
-    $ character=runtime.global_state_manager.characters_manager.get_character('protagonist_character_name')
+    on 'show' action Function(characterCreationLogic.reset_character)
 
     tag menu
 
     frame:
-        background Transform('gui/cgback.webp', fit='cover')
+        background Transform('gui/cgback.webp')
 
-        ####
-        button:
-            xpos 970
-            ypos 30
-            xsize 325
-            ysize 210
-            action NullAction()
-            hovered [Show('character_creation_strength'), Hide('character_creation_help')]
-            unhovered [Hide('character_creation_strength'), Show('character_creation_help')]
-
-            frame:
-                background None
-
-                label _("character_screen_strength"):
-                    xpos 75
-                    ypos 140
-                    xsize 150
-                    text_size 26
-                    text_color "#dbc401"
-                    text_align (0.5, 0.5)
-                    text_font 'exocet.ttf'
-
-                button:
-                    background Transform('gui/property_minus.png', fit='cover')
-                    hover_background Transform('gui/property_minus.png', fit='cover', matrixcolor=hover_matrix)
-                    insensitive_background Transform('gui/property_minus.png', fit='cover', matrixcolor=insensitive_matrix)
-                    xpos 23
-                    ypos 23
-                    xsize 72
-                    ysize 57
-                    action [Function(dec_prop, character, 'strength')]
-                    hovered [Show('character_creation_strength'), Hide('character_creation_help')]
-                    unhovered [Hide('character_creation_strength'), Show('character_creation_help')]
-                    sensitive (character.strength > min_prop_value)
-
-                label str(character.strength):
-                    xpos 125
-                    ypos 33
-                    xsize 50
-                    text_size 20
-                    text_color "#f8f6de"
-                    text_align (0.5, 0.5)
-
-                button:
-                    background Transform('gui/property_plus.png', fit='cover')
-                    hover_background Transform('gui/property_plus.png', fit='cover', matrixcolor=hover_matrix)
-                    insensitive_background Transform('gui/property_plus.png', fit='cover', matrixcolor=insensitive_matrix)
-                    xpos 215
-                    ypos 20
-                    xsize 72
-                    ysize 57
-                    action [Function(inc_prop, character, 'strength')]
-                    hovered [Show('character_creation_strength'), Hide('character_creation_help')]
-                    unhovered [Hide('character_creation_strength'), Show('character_creation_help')]
-                    sensitive (character.strength < max_prop_value and count_all_props_sum(character) < max_props_sum)
-
-        ####
-        button:
-            xpos 685
-            ypos 135
-            xsize 275
-            ysize 300
-            action NullAction()
-            hovered [Show('character_creation_intelligence'), Hide('character_creation_help')]
-            unhovered [Hide('character_creation_intelligence'), Show('character_creation_help')]
-
-            frame:
-                background None
-
-                label _("character_screen_intelligence"):
-                    xpos 190
-                    ypos 190
-                    xsize 150
-                    text_size 26
-                    text_color "#dbc401"
-                    text_align (0.5, 0.5)
-                    text_font 'exocet.ttf'
-                    at transform:
-                        anchor (0.5, 0.5)
-                        rotate -60
-
-                button:
-                    background Transform('gui/property_minus.png', fit='cover')
-                    hover_background Transform('gui/property_minus.png', fit='cover', matrixcolor=hover_matrix)
-                    insensitive_background Transform('gui/property_minus.png', fit='cover', matrixcolor=insensitive_matrix)
-                    xpos 50
-                    ypos 225
-                    xsize 72
-                    ysize 57
-                    action [Function(dec_prop, character, 'intelligence')]
-                    at transform:
-                        anchor (0.5, 0.5)
-                        rotate -60
-                    hovered [Show('character_creation_intelligence'), Hide('character_creation_help')]
-                    unhovered [Hide('character_creation_intelligence'), Show('character_creation_help')]
-                    sensitive (character.intelligence > min_prop_value)
-
-                label str(character.intelligence):
-                    xpos 80
-                    ypos 125
-                    xsize 50
-                    text_size 20
-                    text_color "#f8f6de"
-                    text_align (0.5, 0.5)
-
-                button:
-                    background Transform('gui/property_plus.png', fit='cover')
-                    hover_background Transform('gui/property_plus.png', fit='cover', matrixcolor=hover_matrix)
-                    insensitive_background Transform('gui/property_plus.png', fit='cover', matrixcolor=insensitive_matrix)
-                    xpos 145
-                    ypos 60
-                    xsize 72
-                    ysize 57
-                    action [Function(inc_prop, character, 'intelligence')]
-                    at transform:
-                        anchor (0.5, 0.5)
-                        rotate -60
-                    hovered [Show('character_creation_intelligence'), Hide('character_creation_help')]
-                    unhovered [Hide('character_creation_intelligence'), Show('character_creation_help')]
-                    sensitive (character.intelligence < max_prop_value and count_all_props_sum(character) < max_props_sum)
-
-        ####
-        button:
-            xpos 700
-            ypos 525
-            xsize 250
-            ysize 275
-            action NullAction()
-            hovered [Show('character_creation_wisdom'), Hide('character_creation_help')]
-            unhovered [Hide('character_creation_wisdom'), Show('character_creation_help')]
-
-            frame:
-                background None
-
-                label _("character_screen_wisdom"):
-                    xpos 170
-                    ypos 90
-                    xsize 150
-                    text_size 26
-                    text_color "#dbc401"
-                    text_align (0.5, 0.5)
-                    text_font 'exocet.ttf'
-                    at transform:
-                        anchor (0.5, 0.5)
-                        rotate 60
-
-                button:
-                    background Transform('gui/property_minus.png', fit='cover')
-                    hover_background Transform('gui/property_minus.png', fit='cover', matrixcolor=hover_matrix)
-                    insensitive_background Transform('gui/property_minus.png', fit='cover', matrixcolor=insensitive_matrix)
-                    xpos 35
-                    ypos 55
-                    xsize 72
-                    ysize 57
-                    action [Function(dec_prop, character, 'wisdom')]
-                    at transform:
-                        anchor (0.5, 0.5)
-                        rotate 60
-                    hovered [Show('character_creation_wisdom'), Hide('character_creation_help')]
-                    unhovered [Hide('character_creation_wisdom'), Show('character_creation_help')]
-                    sensitive (character.wisdom > min_prop_value)
-
-                label str(character.wisdom):
-                    xpos 62
-                    ypos 118
-                    xsize 50
-                    text_size 20
-                    text_color "#f8f6de"
-                    text_align (0.5, 0.5)
-
-                button:
-                    background Transform('gui/property_plus.png', fit='cover')
-                    hover_background Transform('gui/property_plus.png', fit='cover', matrixcolor=hover_matrix)
-                    insensitive_background Transform('gui/property_plus.png', fit='cover', matrixcolor=insensitive_matrix)
-                    xpos 133
-                    ypos 223
-                    xsize 72
-                    ysize 57
-                    action [Function(inc_prop, character, 'wisdom')]
-                    at transform:
-                        anchor (0.5, 0.5)
-                        rotate 60
-                    hovered [Show('character_creation_wisdom'), Hide('character_creation_help')]
-                    unhovered [Hide('character_creation_wisdom'), Show('character_creation_help')]
-                    sensitive (character.wisdom < max_prop_value and count_all_props_sum(character) < max_props_sum)
-
-        ####
-        button:
-            xpos 975
-            ypos 725
-            xsize 315
-            ysize 200
-            action NullAction()
-            hovered [Show('character_creation_dexterity'), Hide('character_creation_help')]
-            unhovered [Hide('character_creation_dexterity'), Show('character_creation_help')]
-
-            frame:
-                background None
-
-                label _("character_screen_dexterity"):
-                    xpos 70
-                    ypos 30
-                    xsize 150
-                    text_size 26
-                    text_color "#dbc401"
-                    text_align (0.5, 0.5)
-                    text_font 'exocet.ttf'
-
-                button:
-                    background Transform('gui/property_minus.png', fit='cover')
-                    hover_background Transform('gui/property_minus.png', fit='cover', matrixcolor=hover_matrix)
-                    insensitive_background Transform('gui/property_minus.png', fit='cover', matrixcolor=insensitive_matrix)
-                    xpos 15
-                    ypos 115
-                    xsize 72
-                    ysize 57
-                    action [Function(dec_prop, character, 'dexterity')]
-                    hovered [Show('character_creation_dexterity'), Hide('character_creation_help')]
-                    unhovered [Hide('character_creation_dexterity'), Show('character_creation_help')]
-                    sensitive (character.dexterity > min_prop_value)
-
-                label str(character.dexterity):
-                    xpos 120
-                    ypos 125
-                    xsize 50
-                    text_size 20
-                    text_color "#f8f6de"
-                    text_align (0.5, 0.5)
-
-                button:
-                    background Transform('gui/property_plus.png', fit='cover')
-                    hover_background Transform('gui/property_plus.png', fit='cover', matrixcolor=hover_matrix)
-                    insensitive_background Transform('gui/property_plus.png', fit='cover', matrixcolor=insensitive_matrix)
-                    xpos 205
-                    ypos 115
-                    xsize 72
-                    ysize 57
-                    action [Function(inc_prop, character, 'dexterity')]
-                    hovered [Show('character_creation_dexterity'), Hide('character_creation_help')]
-                    unhovered [Hide('character_creation_dexterity'), Show('character_creation_help')]
-                    sensitive (character.dexterity < max_prop_value and count_all_props_sum(character) < max_props_sum)
-
-        ####
-        button:
-            xpos 1300
-            ypos 525
-            xsize 265
-            ysize 285
-            action NullAction()
-            hovered [Show('character_creation_constitution'), Hide('character_creation_help')]
-            unhovered [Hide('character_creation_constitution'), Show('character_creation_help')]
-
-            frame:
-                background None
-
-                label _("character_screen_constitution"):
-                    xpos 75
-                    ypos 90
-                    xsize 150
-                    text_size 26
-                    text_color "#dbc401"
-                    text_align (0.5, 0.5)
-                    text_font 'exocet.ttf'
-                    at transform:
-                        anchor (0.5, 0.5)
-                        rotate -60
-
-                button:
-                    background Transform('gui/property_minus.png', fit='cover')
-                    hover_background Transform('gui/property_minus.png', fit='cover', matrixcolor=hover_matrix)
-                    insensitive_background Transform('gui/property_minus.png', fit='cover', matrixcolor=insensitive_matrix)
-                    xpos 112
-                    ypos 222
-                    xsize 72
-                    ysize 57
-                    action [Function(dec_prop, character, 'constitution')]
-                    at transform:
-                        anchor (0.5, 0.5)
-                        rotate -60
-                    hovered [Show('character_creation_constitution'), Hide('character_creation_help')]
-                    unhovered [Hide('character_creation_constitution'), Show('character_creation_help')]
-                    sensitive (character.constitution > min_prop_value)
-
-                label str(character.constitution):
-                    xpos 123
-                    ypos 116
-                    xsize 50
-                    text_size 20
-                    text_color "#f8f6de"
-                    text_align (0.5, 0.5)
-
-                button:
-                    background Transform('gui/property_plus.png', fit='cover')
-                    hover_background Transform('gui/property_plus.png', fit='cover', matrixcolor=hover_matrix)
-                    insensitive_background Transform('gui/property_plus.png', fit='cover', matrixcolor=insensitive_matrix)
-                    xpos 210
-                    ypos 55
-                    xsize 72
-                    ysize 57
-                    action [Function(inc_prop, character, 'constitution')]
-                    at transform:
-                        anchor (0.5, 0.5)
-                        rotate -60
-                    hovered [Show('character_creation_constitution'), Hide('character_creation_help')]
-                    unhovered [Hide('character_creation_constitution'), Show('character_creation_help')]
-                    sensitive (character.constitution < max_prop_value and count_all_props_sum(character) < max_props_sum)
-
-        ####
-        button:
-            xpos 1300
-            ypos 150
-            xsize 265
-            ysize 285
-            action NullAction()
-            hovered [Show('character_creation_charisma'), Hide('character_creation_help')]
-            unhovered [Hide('character_creation_charisma'), Show('character_creation_help')]
-
-            frame:
-                background None
-
-                label _("character_screen_charisma"):
-                    xpos 72
-                    ypos 177
-                    xsize 150
-                    text_size 26
-                    text_color "#dbc401"
-                    text_align (0.5, 0.5)
-                    text_font 'exocet.ttf'
-                    at transform:
-                        anchor (0.5, 0.5)
-                        rotate 60
-
-                button:
-                    background Transform('gui/property_minus.png', fit='cover')
-                    hover_background Transform('gui/property_minus.png', fit='cover', matrixcolor=hover_matrix)
-                    insensitive_background Transform('gui/property_minus.png', fit='cover', matrixcolor=insensitive_matrix)
-                    xpos 110
-                    ypos 48
-                    xsize 72
-                    ysize 57
-                    action [Function(dec_prop, character, 'charisma')]
-                    at transform:
-                        anchor (0.5, 0.5)
-                        rotate 60
-                    hovered [Show('character_creation_charisma'), Hide('character_creation_help')]
-                    unhovered [Hide('character_creation_charisma'), Show('character_creation_help')]
-                    sensitive (character.charisma > min_prop_value)
-
-                label str(character.charisma):
-                    xpos 125
-                    ypos 110
-                    xsize 50
-                    text_size 20
-                    text_color "#f8f6de"
-                    text_align (0.5, 0.5)
-
-                button:
-                    background Transform('gui/property_plus.png', fit='cover')
-                    hover_background Transform('gui/property_plus.png', fit='cover', matrixcolor=hover_matrix)
-                    insensitive_background Transform('gui/property_plus.png', fit='cover', matrixcolor=insensitive_matrix)
-                    xpos 205
-                    ypos 210
-                    xsize 72
-                    ysize 57
-                    action [Function(inc_prop, character, 'charisma')]
-                    at transform:
-                        anchor (0.5, 0.5)
-                        rotate 60
-                    hovered [Show('character_creation_charisma'), Hide('character_creation_help')]
-                    unhovered [Hide('character_creation_charisma'), Show('character_creation_help')]
-                    sensitive (character.charisma < max_prop_value and count_all_props_sum(character) < max_props_sum)
+        use _strength_input()
+        use _intelligence_input()
+        use _wisdom_input()
+        use _dexterity_input()
+        use _constitution_input()
+        use _charisma_input()
 
         vbox:
+            pos (300, 831)
+            spacing 43
+
             text _('character_screen_points'):
-                xpos 300
-                ypos 825
-                xsize 300
-                ysize 50
-                size 20
-                color "#f8f6dE"
-                text_align 0.5
+                xysize (300, 50)
+                style '_input_screen_style_value'
 
             text _('character_screen_ac'):
-                xpos 300
-                ypos 875
-                xsize 300
-                ysize 50
-                size 20
-                color "#f8f6dE"
-                text_align 0.5
+                xysize (300, 50)
+                style '_input_screen_style_value'
 
             text _('character_screen_hp'):
-                xpos 300
-                ypos 915
-                xsize 300
-                ysize 50
-                size 20
-                color "#f8f6dE"
-                text_align 0.5
+                xysize (300, 50)
+                style '_input_screen_style_value'
 
         vbox:
-            label str(max_props_sum - count_all_props_sum(character)):
-                xpos 615
-                ypos 830
-                xsize 70
-                text_size 20
-                text_color "#f8f6dE"
-                text_align (0.5, 0.5)
+            pos (640, 831)
+            spacing 43
 
-            label str(character.ac):
-                xpos 615
-                ypos 875
+            text str(characterCreationLogic.remaning_points()):
                 xsize 70
-                text_size 20
-                text_color "#f8f6dE"
-                text_align (0.5, 0.5)
+                style '_input_screen_style_value'
 
-            label str(character.max_health):
-                xpos 615
-                ypos 915
+            text str(characterCreationLogic.get_character().ac):
                 xsize 70
-                text_size 20
-                text_color "#f8f6dE"
-                text_align (0.5, 0.5)
+                style '_input_screen_style_value'
 
-    label _('protagonist_character_new_life'):
-        xpos 340
-        ypos 50
-        xsize 500
-        ysize 50
+            text str(characterCreationLogic.get_character().max_health):
+                xsize 70
+                style '_input_screen_style_value'
+
+    button :
+        xpos 0
+        ypos 175
+        xsize 128
+        action [Function(characterCreationLogic.set_mage)]
+
+        text _('character_screen_set_mage'): # 'Выбрать мага (РЕКОММЕНДУЕТСЯ!)'
+            style '_input_screen_style_button'
+
+    label _('protagonist_character_new_life'): # Новая жизнь
+        area (340, 50, 500, 50)
         text_size 30
-        text_color "#dbc401"
+        text_color color_yellow
         text_align (0.5, 0.5)
+        text_font 'exocet.ttf'
 
     label _('protagonist_character_name'):
-        xpos 980
-        ypos 970
-        xsize 295
-        ysize 25
+        area (980, 970, 295, 25)
         text_size 20
-        text_color "#dbc401"
+        text_color color_yellow
         text_align (0.5, 0.5)
 
-    add Transform('gui/stpnoa.png', fit='cover'):
-        xpos 965
-        ypos 320
-        xsize 340
-        ysize 340
+    add Transform('gui/stpnoa.png'):
+        pos (965, 320)
+        size (340, 340)
 
     button:
-        xpos 1450
-        ypos 860
-        xsize 140
-        ysize 66
-        background Transform('gui/cgback_go.png', fit='cover')
-        hover_background Transform('gui/cgback_go.png', fit='cover', matrixcolor=hover_matrix)
-        insensitive_background Transform('gui/cgback_go.png', fit='cover', matrixcolor=insensitive_matrix)
+        area (1450, 860, 140, 66)
+        background Transform('gui/cgback_go.png')
+        hover_background Transform('gui/cgback_go.png', matrixcolor=hover_matrix)
+        insensitive_background Transform('gui/cgback_go.png', matrixcolor=insensitive_matrix)
         action Start()
-        sensitive (count_all_props_sum(character) == max_props_sum)
-        text _("character_screen_go"):
-            xpos 35
-            ypos 25
-            size 20
-            color "#f8f6dE"
-            insensitive_color "#ccdcb8"
-
+        sensitive (characterCreationLogic.done())
+        text _("character_screen_go"): # Готово
+            pos (35, 25)
+            style '_input_screen_style_button'
 
     button:
-        xpos 1450
-        ypos 940
-        xsize 140
-        ysize 66
-        background Transform('gui/cgback_back.png', fit='cover')
-        hover_background Transform('gui/cgback_back.png', fit='cover', matrixcolor=hover_matrix)
+        area (1450, 940, 140, 66)
+        background Transform('gui/cgback_back.png')
+        hover_background Transform('gui/cgback_back.png', matrixcolor=hover_matrix)
         action [
             ShowMenu("main_menu"),
-            Hide('character_creation_help'),
-            Hide('character_creation_strength'),
-            Hide('character_creation_intelligence'),
-            Hide('character_creation_wisdom'),
-            Hide('character_creation_dexterity'),
-            Hide('character_creation_constitution'),
-            Hide('character_creation_charisma')
+            Hide('_character_creation_descrption'),
+            Hide('character_creation')
         ]
-        text _("character_screen_back"):
-            xpos 35
-            ypos 5
-            size 20
-            color "#f8f6dE"
-
-    frame:
-        xpos 0
-        ypos 150
-        xsize 128
-        background None
-
-        vbox:
-            spacing 10
-
-            button :
-                action [Function(set_mage, character)]
-
-                text _('character_screen_set_mage'): # 'Маг'
-                    size 18
-                    color '#dbc401'
-                    hover_color '#eeeeee'
+        text _("character_screen_back"): # 'Отмена'
+            pos (35, 5)
+            style '_input_screen_style_button'
 
 
-screen character_creation_help():
-    frame:
-        xpos 310
-        ypos 200
-        xsize 330
-        ysize 525
-        background None
+screen _character_creation_descrption(x):
+    text _(x):
+        area (310, 200, 330, 525)
+        style '_input_screen_style_descrption'
 
-        label _('character_screen_help'):
-            text_size 20
-            text_color "dbc401"
 
-screen character_creation_strength():
-    frame:
-        xpos 310
-        ypos 200
-        xsize 330
-        ysize 525
-        background None
+###
 
-        label _('character_screen_strength_help'):
-            text_size 20
-            text_color "dbc401"
 
-screen character_creation_intelligence():
-    frame:
-        xpos 310
-        ypos 200
-        xsize 330
-        ysize 525
-        background None
+screen _strength_input():
+    button:
+        area (970, 30, 315, 185)
+        action NullAction()
+        hovered Show('_character_creation_descrption', x='character_screen_strength_help')
+        unhovered Show('_character_creation_descrption', x='character_screen_help')
 
-        label _('character_screen_intelligence_help'):
-            text_size 20
-            text_color "dbc401"
+        text _("character_screen_strength"):
+            pos (125, 145)
+            xsize 150
+            style '_input_screen_style_title'
 
-screen character_creation_wisdom():
-    frame:
-        xpos 310
-        ypos 200
-        xsize 330
-        ysize 525
-        background None
+        button:
+            area (30, 30, 72, 57)
+            style '_input_screen_style_property_minus'
+            sensitive (characterCreationLogic.strength_minus_sensitive())
+            action [
+                Function(characterCreationLogic.dec_prop, 'strength')
+            ]
+            hovered Show('_character_creation_descrption', x='character_screen_strength_help')
+            unhovered Show('_character_creation_descrption', x='character_screen_help')
 
-        label _('character_screen_wisdom_help'):
-            text_size 20
-            text_color "dbc401"
+        text str(characterCreationLogic.get_character().strength):
+            pos (150, 40)
+            xsize 50
+            style '_input_screen_style_value'
 
-screen character_creation_dexterity():
-    frame:
-        xpos 310
-        ypos 200
-        xsize 330
-        ysize 525
-        background None
+        button:
+            area (220, 25, 72, 57)
+            style '_input_screen_style_property_plus'
+            sensitive (characterCreationLogic.strength_plus_sensitive())
+            action [
+                Function(characterCreationLogic.inc_prop, 'strength')
+            ]
+            hovered Show('_character_creation_descrption', x='character_screen_strength_help')
+            unhovered Show('_character_creation_descrption', x='character_screen_help')
 
-        label _('character_screen_dexterity_help'):
-            text_size 20
-            text_color "dbc401"
 
-screen character_creation_constitution():
-    frame:
-        xpos 310
-        ypos 200
-        xsize 330
-        ysize 525
-        background None
+###
 
-        label _('character_screen_constitution_help'):
-            text_size 20
-            text_color "dbc401"
 
-screen character_creation_charisma():
-    frame:
-        xpos 310
-        ypos 200
-        xsize 330
-        ysize 525
-        background None
+screen _intelligence_input():
+    button:
+        area (685, 135, 275, 300)
+        action NullAction()
+        hovered Show('_character_creation_descrption', x='character_screen_intelligence_help')
+        unhovered Show('_character_creation_descrption', x='character_screen_help')
 
-        label _('character_screen_charisma_help'):
-            text_size 20
-            text_color "dbc401"
+        text _("character_screen_intelligence"):
+            pos (195, 195)
+            xsize 150
+            style '_input_screen_style_title'
+            at _input_screen_intelligence_transform
+
+        button:
+            area (57, 230, 72, 57)
+            style '_input_screen_style_property_minus'
+            sensitive (characterCreationLogic.intelligence_minus_sensitive())
+            action [
+                Function(characterCreationLogic.dec_prop, 'intelligence')
+            ]
+            hovered Show('_character_creation_descrption', x='character_screen_intelligence_help')
+            unhovered Show('_character_creation_descrption', x='character_screen_help')
+            at _input_screen_intelligence_transform
+
+        text str(characterCreationLogic.get_character().intelligence):
+            pos (105, 130)
+            xsize 50
+            style '_input_screen_style_value'
+
+        button:
+            area (150, 65, 72, 57)
+            style '_input_screen_style_property_plus'
+            sensitive (characterCreationLogic.intelligence_plus_sensitive())
+            action Function(characterCreationLogic.inc_prop, 'intelligence')
+            hovered Show('_character_creation_descrption', x='character_screen_intelligence_help')
+            unhovered Show('_character_creation_descrption', x='character_screen_help')
+            at _input_screen_intelligence_transform
+
+
+###
+
+
+screen _wisdom_input():
+    button:
+        area (700, 525, 250, 275)
+        action NullAction()
+        hovered Show('_character_creation_descrption', x='character_screen_wisdom_help')
+        unhovered Show('_character_creation_descrption', x='character_screen_help')
+
+        text _("character_screen_wisdom"):
+            pos (180, 95)
+            xsize 150
+            style '_input_screen_style_title'
+            at _input_screen_wisdom_transform
+
+        button:
+            area (42, 62, 72, 57)
+            style '_input_screen_style_property_minus'
+            sensitive (characterCreationLogic.wisdom_minus_sensitive())
+            action Function(characterCreationLogic.dec_prop, 'wisdom')
+            hovered Show('_character_creation_descrption', x='character_screen_wisdom_help')
+            unhovered Show('_character_creation_descrption', x='character_screen_help')
+            at _input_screen_wisdom_transform
+
+        text str(characterCreationLogic.get_character().wisdom):
+            pos (85, 120)
+            xsize 50
+            style '_input_screen_style_value'
+
+        button:
+            area (140, 223, 72, 57)
+            style '_input_screen_style_property_plus'
+            sensitive (characterCreationLogic.wisdom_plus_sensitive())
+            action Function(characterCreationLogic.inc_prop, 'wisdom')
+            hovered Show('_character_creation_descrption', x='character_screen_wisdom_help')
+            unhovered Show('_character_creation_descrption', x='character_screen_help')
+            at _input_screen_wisdom_transform
+
+
+###
+
+
+screen _dexterity_input():
+    button:
+        area (975, 725, 315, 200)
+        action NullAction()
+        hovered Show('_character_creation_descrption', x='character_screen_dexterity_help')
+        unhovered Show('_character_creation_descrption', x='character_screen_help')
+
+        text _("character_screen_dexterity"):
+            pos (120, 35)
+            xsize 150
+            style '_input_screen_style_title'
+
+        button:
+            area (20, 120, 72, 57)
+            style '_input_screen_style_property_minus'
+            sensitive (characterCreationLogic.dexterity_minus_sensitive())
+            action Function(characterCreationLogic.dec_prop, 'dexterity')
+            hovered Show('_character_creation_descrption', x='character_screen_dexterity_help')
+            unhovered Show('_character_creation_descrption', x='character_screen_help')
+
+        text str(characterCreationLogic.get_character().dexterity):
+            pos (145, 130)
+            xsize 50
+            style '_input_screen_style_value'
+
+        button:
+            area (215, 120, 72, 57)
+            style '_input_screen_style_property_plus'
+            sensitive (characterCreationLogic.dexterity_plus_sensitive())
+            action Function(characterCreationLogic.inc_prop, 'dexterity')
+            hovered Show('_character_creation_descrption', x='character_screen_dexterity_help')
+            unhovered Show('_character_creation_descrption', x='character_screen_help')
+
+
+###
+
+
+screen _constitution_input():
+    button:
+        area (1300, 525, 265, 285)
+        action NullAction()
+        hovered Show('_character_creation_descrption', x='character_screen_constitution_help')
+        unhovered Show('_character_creation_descrption', x='character_screen_help')
+
+        text _("character_screen_constitution"):
+            pos (80, 95)
+            xsize 150
+            style '_input_screen_style_title'
+            at _input_screen_constitution_transform
+
+        button:
+            area (120, 225, 72, 57)
+            style '_input_screen_style_property_minus'
+            sensitive (characterCreationLogic.constitution_minus_sensitive())
+            action Function(characterCreationLogic.dec_prop, 'constitution')
+            hovered Show('_character_creation_descrption', x='character_screen_constitution_help')
+            unhovered Show('_character_creation_descrption', x='character_screen_help')
+            at _input_screen_constitution_transform
+
+        text str(characterCreationLogic.get_character().constitution):
+            pos (145, 122)
+            xsize 50
+            style '_input_screen_style_value'
+
+        button:
+            area (212, 62, 72, 57)
+            style '_input_screen_style_property_plus'
+            sensitive (characterCreationLogic.constitution_plus_sensitive())
+            action Function(characterCreationLogic.inc_prop, 'constitution')
+            hovered Show('_character_creation_descrption', x='character_screen_constitution_help')
+            unhovered Show('_character_creation_descrption', x='character_screen_help')
+            at _input_screen_constitution_transform
+
+
+###
+
+
+screen _charisma_input():
+    button:
+        area (1300, 150, 265, 285)
+        action NullAction()
+        hovered Show('_character_creation_descrption', x='character_screen_charisma_help')
+        unhovered Show('_character_creation_descrption', x='character_screen_help')
+
+        text _("character_screen_charisma"):
+            pos (80, 180)
+            xsize 150
+            style '_input_screen_style_title'
+            at _input_screen_charisma_transform
+
+        button:
+            area (115, 55, 72, 57)
+            style '_input_screen_style_property_minus'
+            sensitive (characterCreationLogic.charisma_minus_sensitive())
+            action Function(characterCreationLogic.dec_prop, 'charisma')
+            hovered Show('_character_creation_descrption', x='character_screen_charisma_help')
+            unhovered Show('_character_creation_descrption', x='character_screen_help')
+            at _input_screen_charisma_transform
+
+        text str(characterCreationLogic.get_character().charisma):
+            pos (145, 115)
+            xsize 50
+            style '_input_screen_style_value'
+
+        button:
+            area (210, 215, 72, 57)
+            style '_input_screen_style_property_plus'
+            sensitive (characterCreationLogic.charisma_plus_sensitive())
+            action Function(characterCreationLogic.inc_prop, 'charisma')
+            hovered Show('_character_creation_descrption', x='character_screen_charisma_help')
+            unhovered Show('_character_creation_descrption', x='character_screen_help')
+            at _input_screen_charisma_transform
+
+
+###
+
+
+style _input_screen_style_title:
+    size 26
+    color color_yellow
+    font 'exocet.ttf'
+style _input_screen_style_value:
+    size 20
+    color color_white
+style _input_screen_style_descrption:
+    size 20
+    color color_yellow
+style _input_screen_style_button:
+    size 20
+    color color_white
+    hover_color color_yellow
+    insensitive_color change_hex(color_yellow, saturation_percent=50, value_percent=50)
+style _input_screen_style_property_minus:
+    background Transform('gui/property_minus.png')
+    hover_background Transform('gui/property_minus.png', matrixcolor=hover_matrix)
+    insensitive_background Transform('gui/property_minus.png', matrixcolor=insensitive_matrix)
+style _input_screen_style_property_plus:
+    background Transform('gui/property_plus.png')
+    hover_background Transform('gui/property_plus.png', matrixcolor=hover_matrix)
+    insensitive_background Transform('gui/property_plus.png', matrixcolor=insensitive_matrix)
+transform _input_screen_intelligence_transform:
+    anchor (0.5, 0.5)
+    rotate -60
+transform _input_screen_wisdom_transform:
+    anchor (0.5, 0.5)
+    rotate 60
+transform _input_screen_constitution_transform:
+    anchor (0.5, 0.5)
+    rotate -60
+transform _input_screen_charisma_transform:
+    anchor (0.5, 0.5)
+    rotate 60

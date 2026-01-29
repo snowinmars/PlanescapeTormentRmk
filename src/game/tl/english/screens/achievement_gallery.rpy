@@ -6,7 +6,7 @@
 
     # game/screens/achievement_gallery.rpy:70
     old "achievement_gallery_toggle_selected"
-    new "Toggle this"
+    new "Toggle"
 
     # game/screens/achievement_gallery.rpy:85
     old "achievement_gallery_reset_all"

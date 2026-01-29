@@ -423,6 +423,7 @@ screen preferences_videos():
 
                 text '© 2017 Beamdog. © 2017 Hasbro, Inc. All Rights Reserved. Planescape: Torment, Dungeons & Dragons, D&D, Wizards of the Coast, their respective logos, Planescape, and the dragon ampersand are trademarks of Wizards of the Coast LLC in the U.S.A. and other countries, and are used with permission. Hasbro and its logo are trademarks of Hasbro, Inc. and are used with permission. ©1998 BioWare Corp. All Rights Reserved. Bioware, the BioWare Infinity Engine and the BioWare logo are trademarks of Bioware Corp. Black Isle Studios and the Black Isle Studios logo are trademarks of Interplay Entertainment Corp..All other trademarks are the property of their respective owners.' style 'preferences_videos_text'
 
+
         button:
             area (775, 935, 193, 78)
             action Return()

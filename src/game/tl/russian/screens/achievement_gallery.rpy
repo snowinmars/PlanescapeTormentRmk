@@ -6,7 +6,7 @@
 
     # game/screens/achievement_gallery.rpy:70
     old "achievement_gallery_toggle_selected"
-    new "Переключить эту"
+    new "Переключить"
 
     # game/screens/achievement_gallery.rpy:85
     old "achievement_gallery_reset_all"

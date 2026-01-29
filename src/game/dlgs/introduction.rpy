@@ -8,7 +8,8 @@ init 10 python:
 label introduction:
     scene black
 
-    snowinmars 'introduction_1{#introduction_1}' # '«Привет. Как ты относился к спойлерам?»'
+    snowinmars 'introduction_1{#introduction_1}'
+    # '«Привет. Как ты относился к спойлерам?»'
     menu:
         'introduction_2{#introduction_2}': # '«Я не опасался спойлеров».'
             $ introductionLogic.set_can_spoiler_true()

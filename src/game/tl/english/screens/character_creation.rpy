@@ -14,7 +14,7 @@
 
     # game/screens/character_creation.rpy:464
     old "protagonist_character_new_life"
-    new "{font=exocet.ttf}New life{/font}"
+    new "New life"
 
     # game/screens/character_creation.rpy:483
     old 'character_screen_go'

@@ -1,33 +1,31 @@
 init python:
-    achievement_gallery_selected_id = 'meet_morte'
+    achievement_gallery_screen_choice = ''
 
 
 screen achievement_gallery():
+    on 'show' action SetVariable('achievement_gallery_screen_choice', '')
+
     tag menu
-    on 'show' action SetVariable('achievement_gallery_selected_id', '')
 
     frame:
-        background Transform('gui/beastbg.webp', fit='cover')
         xfill True
         yfill True
+        align (0.5, 0.5)
+        background Transform('gui/beastbg.webp', fit='cover')
+
 
         label __("achievement_gallery_statistics").format(earned=Achievement.num_earned(), total=Achievement.num_total()):
-            xpos 960
-            ypos 60
-            xsize 627
-            ysize 60
+            area (960, 60, 627, 60)
             text_align (0.5, 0.5)
             text_size 20
-            text_color "#dbc401"
+            text_color color_yellow
+
 
         viewport:
+            area (425, 125, 375, 625)
             scrollbars "vertical"
             mousewheel True
             draggable True
-            xpos 425
-            ypos 125
-            xsize 375
-            ysize 625
 
             vbox:
                 spacing 10
@@ -38,118 +36,109 @@ screen achievement_gallery():
 
                 for a in sorted(achievements, key=lambda x: (not x.has(), __(x.name))):
                     button:
-                        action SetVariable('achievement_gallery_selected_id', a.id)
+                        action SetVariable('achievement_gallery_screen_choice', a.id)
 
                         text a.name:
                             size 18
-                            if a.id == achievement_gallery_selected_id:
-                                color "#eeeeee"
+                            hover_color color_white
+                            if a.id == achievement_gallery_screen_choice:
+                                color color_white
                             elif a.has():
-                                color "#dbc401"
-                                hover_color "#eeeeee"
+                                color color_yellow
                             else:
-                                color "#584c22"
-                                hover_color "#4a3a29"
+                                color change_hex(color_yellow, saturation_percent=50, value_percent=50)
 
-        if achievement_gallery_selected_id:
-            $ selected = list(filter(lambda x: x.id == achievement_gallery_selected_id, Achievement.all_achievements))[0]
+
+        $ selected = None
+        if achievement_gallery_screen_choice:
+            $ selected = list(filter(lambda x: x.id == achievement_gallery_screen_choice, Achievement.all_achievements))[0]
             use _selected_achievement(selected)
 
+
         button:
-            xsize 193
-            ysize 78
-            xpos 350
-            ypos 890
+            area (365, 890, 193, 78)
             if selected:
                 action selected.Toggle()
             else:
                 action NullAction()
-            background Transform('gui/button.png', fit='cover')
-            hover_background Transform('gui/button.png', fit='cover', matrixcolor=hover_matrix)
+            background Transform('gui/button.png')
+            hover_background Transform('gui/button.png', matrixcolor=hover_matrix)
+            insensitive_background Transform('gui/button.png', matrixcolor=insensitive_matrix)
+            sensitive (selected is not None)
 
-            text _("achievement_gallery_toggle_selected"): # Переключить эту
-                size 20
-                color "#eeeeee"
-                xalign 0.5
-                yalign 0.5
+            text _("achievement_gallery_toggle_selected"): # Переключить
+                style 'achievement_screen_style_button_text'
+                align (0.5, 0.5)
+
 
         button:
-            xsize 193
-            ysize 78
-            xpos 690
-            ypos 890
+            area (650, 890, 193, 78)
             action Achievement.Reset()
-            background Transform('gui/button.png', fit='cover')
-            hover_background Transform('gui/button.png', fit='cover', matrixcolor=hover_matrix)
+            background Transform('gui/button.png')
+            hover_background Transform('gui/button.png', matrixcolor=hover_matrix)
 
             text _("achievement_gallery_reset_all"): # Сбросить все
-                size 20
-                color "#eeeeee"
-                xalign 0.5
-                yalign 0.5
+                style 'achievement_screen_style_button_text'
+                align (0.5, 0.5)
+
 
         button:
-            xpos 1432
-            ypos 835
-            xsize 143
-            ysize 143
-            background Transform('gui/settings_button_idle.png', fit='cover')
-            hover_background Transform('gui/settings_button_idle.png', fit='cover', matrixcolor=hover_matrix)
+            area (1432, 835, 143, 143)
             action Return()
-            text _("achievement_gallery_back"):
-                size 20
-                color "#eeeeee"
+            background Transform('gui/settings_button_idle.png')
+            hover_background Transform('gui/settings_button_idle.png', matrixcolor=hover_matrix)
+
+            text _("achievement_gallery_back"): # Назад
+                style 'achievement_screen_style_button_text'
                 align (0.5, 0.5)
 
 
 screen _selected_achievement(a):
     frame:
+        area (960, 65, 627, 620)
         background None
-        xpos 960
-        ypos 65
-        xsize 627
-        ysize 620
 
         fixed:
-            xpos 0
-            ypos 55
+            pos (0, 55)
             add a.idle_img:
-                xsize 270
-                ysize 270
+                size (270, 270)
 
         vbox:
-            xpos 275
-            ypos 60
+            pos (275, 60)
             xsize 340
             spacing 10
 
-            label a.name:
-                xfill True
-                text_align (0.5, 0.5)
-                text_size 24
-                text_color "#dbc401"
+            text a.name:
+                style 'achievement_screen_style_achievement_header'
 
-            label a.timestamp:
-                xfill True
-                text_align (0.5, 0.5)
-                text_size 18
-                text_color "#dbc401"
+            text a.timestamp:
+                style 'achievement_screen_style_achievement_text'
 
             if a.is_custom:
-                label _('achievement_gallery_is_custom'):
-                    xfill True
-                    text_align (0.5, 0.5)
-                    text_size 18
-                    text_color "#dbc401"
+                text _('achievement_gallery_is_custom'):
+                    style 'achievement_screen_style_achievement_text'
             else:
-                label _('achievement_gallery_is_not_custom'):
-                    xfill True
-                    text_align (0.5, 0.5)
-                    text_size 18
-                    text_color "#dbc401"
+                text _('achievement_gallery_is_not_custom'):
+                    style 'achievement_screen_style_achievement_text'
 
-        label a.description:
+        text a.description:
             ypos 340
-            xfill True
-            text_size 18
-            text_color "#dbc401"
+            style 'achievement_screen_style_achievement_description'
+
+
+style achievement_screen_style_button_text:
+    size 20
+    color color_white
+style achievement_screen_style_achievement_header:
+    align (0.5, 0.5)
+    size 24
+    color color_yellow
+style achievement_screen_style_achievement_text:
+    align (0.5, 0.5)
+    size 18
+    color color_yellow
+style achievement_screen_style_achievement_description:
+    align (0.0, 0.0)
+    size 18
+    xfill True
+    color color_yellow

@@ -41,6 +41,7 @@ screen preferences_graphics():
                         else:
                             style 'preferences_graphics_screen_style_settings_item_button_off'
 
+
         button:
             area (1395, 900, 193, 78)
             action Return()

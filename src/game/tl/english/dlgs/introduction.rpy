@@ -4,7 +4,7 @@ translate english introduction_b7295593:
     # snowinmars 'introduction_1{#introduction_1}'
     snowinmars '«Hello. How did you feel about spoilers?».'
 
-# game/dlgs/introduction.rpy:19
+# game/dlgs/introduction.rpy:20
 translate english introduction_74faf640:
 
     # 'introduction_4{#introduction_4}'
@@ -23,9 +23,9 @@ translate english introduction_bde42912:
     snowinmars '«And to hundreds who love what I love».'
     snowinmars '«This world was born under the sign of GNU/GPLv3 - thus, it is open».'
     snowinmars '«https://t.me/@snowinmars ; snowinmars@yandex.ru».'
-    snowinmars '«Remember».'
+    snowinmars '«…».'
 
-# game/dlgs/introduction.rpy:58
+# game/dlgs/introduction.rpy:42
 translate english intro_bcf9c742:
 
     # 'intro{#intro}'
@@ -46,11 +46,11 @@ translate english intro_bcf9c742:
 
 translate english strings:
 
-    # game/dlgs/introduction.rpy:13
+    # game/dlgs/introduction.rpy:14
     old 'introduction_2{#introduction_2}'
     new '«I did not fear spoilers».'
 
-    # game/dlgs/introduction.rpy:15
+    # game/dlgs/introduction.rpy:16
     old 'introduction_3{#introduction_3}'
     new '«I disliked spoilers».'
 
@@ -62,6 +62,7 @@ translate english strings:
     old 'introduction_6{#introduction_6}'
     new '«I did not remember».'
 
-    # game/dlgs/introduction.rpy:31
+    # game/dlgs/introduction.rpy:32
     old 'introduction_8{#introduction_8}'
     new 'Remember.'
+

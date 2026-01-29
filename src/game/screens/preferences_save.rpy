@@ -6,25 +6,19 @@ screen preferences_save():
         yfill True
         background Transform('gui/loadbg.webp')
 
+
         label _('preferences_save_title'):
-            xpos 745
-            ypos 23
-            xsize 310
-            ysize 45
+            area (745, 23, 310, 45)
             text_align (0.5, 0.5)
-            text_color '#dbc401'
+            text_color color_yellow
             text_size 26
 
+
         viewport:
+            area (235, 155, 1431, 745)
             scrollbars "vertical"
             mousewheel True
             draggable True
-            xfill True
-            yfill True
-            xpos 235
-            ypos 155
-            xsize 1431
-            ysize 745
 
             grid gui.file_slot_cols gui.file_slot_rows:
                 spacing 20
@@ -33,57 +27,43 @@ screen preferences_save():
                     $ slot = i + 1
 
                     vbox:
-                        xsize 1350
-                        ysize 130
+                        xysize (1350, 130)
 
                         button:
                             background Transform('gui/loadrowb.webp', fit='cover')
                             hover_background Transform('gui/loadrowc.webp', fit='cover')
                             action FileSave(slot)
-                            xfill True
-                            yfill True
 
                             add FileScreenshot(slot):
-                                xpos 312
-                                ypos 14
-                                xsize 162
-                                ysize 115
+                                pos (312, 14)
+                                size (162, 115)
 
                             text FileTime(slot, format=_("{#file_time}%A, %d %B %Y, %H:%M"), empty=_("Пустой слот")):
-                                xpos 480
-                                ypos 45
-                                xsize 500
-                                ysize 100
-                                color '#dbc401'
-                                hover_color '#eeeeee'
-                                size 20
+                                area (480, 45, 500, 100)
+                                style 'preferences_save_screen_style_item_text'
 
                             text FileSaveName(slot):
-                                xpos 480
-                                ypos 10
-                                xsize 500
-                                ysize 100
-                                color '#dbc401'
-                                hover_color '#eeeeee'
-                                size 20
+                                area (480, 10, 500, 100)
+                                style 'preferences_save_screen_style_item_text'
 
                             key "save_delete" action FileDelete(slot)
 
-    vbox:
-        xfill True
-        yfill True
 
-        button:
-            xsize 193
-            ysize 78
-            xpos 1460
-            ypos 960
-            action Return()
-            background Transform('gui/button.png', fit='cover')
-            hover_background Transform('gui/button.png', fit='cover', matrixcolor=hover_matrix)
+    button:
+        area (1400, 960, 193, 78)
+        action Return()
+        background Transform('gui/button.png')
+        hover_background Transform('gui/button.png', matrixcolor=hover_matrix)
 
-            text _("preferences_screen_return"): # Вернуться
-                size 20
-                color "#eeeeee"
-                xalign 0.5
-                yalign 0.5
+        text _("preferences_screen_return"): # Вернуться
+            style 'preferences_save_screen_style_button_text'
+            align (0.5, 0.5)
+
+
+style preferences_save_screen_style_item_text:
+    size 20
+    color color_yellow
+    hover_color color_white
+style preferences_save_screen_style_button_text:
+    size 20
+    color color_white
