@@ -10,42 +10,25 @@ label introduction:
 
     snowinmars 'introduction_1{#introduction_1}' # '«Привет. Как ты относился к спойлерам?»'
     menu:
-        'introduction_2{#introduction_2}': # '«Я не боялся спойлеров».'
+        'introduction_2{#introduction_2}': # '«Я не опасался спойлеров».'
             $ introductionLogic.set_can_spoiler_true()
-        'introduction_3{#introduction_3}': # '«Я не хотел спойлерить игру».'
+        'introduction_3{#introduction_3}': # '«Я не любил спойлеры».'
             pass
 
     if introductionLogic.can_spoiler:
         'introduction_4{#introduction_4}'
-        # snowinmars '«В 1999 году игра была создана так, чтобы играть магом».'
-        # snowinmars '«Ты последовал тому совету?»'
+        # snowinmars '«Ты помнил прошлое?»'
         menu:
-            'introduction_5{#introduction_5}': # '«Я был магом».'
-                $ introductionLogic.setup_new_life_as_mage()
-            'introduction_6{#introduction_6}': # '«Я был тем, кто я есть».'
-                pass
-
-        'introduction_7{#introduction_7}'
-        # snowinmars '«Ты проходил оригинальную игру?»'
-        menu:
-            'introduction_8{#introduction_8}': # '«„История костей“ позволяла мне говорить с мёртвыми, слепого лучника звали „Захария“».'
+            'introduction_5{#introduction_5}': # '«Я помнил. „История костей“ позволяла мне говорить с мёртвыми, слепого лучника звали Захарией».'
                 $ introductionLogic.setup_as_highlvl()
-            'introduction_9{#introduction_9}': # '«Я играл как в первый раз».'
+            'introduction_6{#introduction_6}': # '«Я не помнил».'
                 pass
 
-    'introduction_10{#introduction_10}'
-    # snowinmars '«В игру было добавлено большое количество мелких достижений. Ты включал их?»'
-    menu:
-        'introduction_11{#introduction_11}': # '«Я видел мелкие достижения».'
-            $ persistent.add_custom_achievements = True
-        'introduction_12{#introduction_12}': # '«Я скрыл мелких достижений».'
-            $ persistent.add_custom_achievements = False
-
-    'introduction_13{#introduction_13}'
+    'introduction_7{#introduction_7}'
     # snowinmars 'Напоследок ты увидел общую информацию и благодарности.'
 
     menu:
-        'introduction_14{#introduction_14}': # 'Вспомнить.'
+        'introduction_8{#introduction_8}': # 'Вспомнить.'
             jump intro
 
 

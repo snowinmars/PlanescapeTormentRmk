@@ -4,30 +4,26 @@ translate russian introduction_b7295593:
     # snowinmars 'introduction_1{#introduction_1}'
     snowinmars '«Привет. Как ты относился к спойлерам?»'
 
-# game/dlgs/introduction.rpy:19
-translate russian introduction_74faf640:
-
-    # 'introduction_4{#introduction_4}'
-    snowinmars '«В 1999 году игра была создана так, чтобы играть магом».'
-    snowinmars '«Ты последовал тому совету?»'
-
 # game/dlgs/introduction.rpy:28
 translate russian introduction_bde42912:
 
-    # 'introduction_7{#introduction_7}'
-    snowinmars '«Ты проходил оригинальную игру?»'
-
-# game/dlgs/introduction.rpy:36
-translate russian introduction_c9465085:
-
-    # 'introduction_10{#introduction_10}'
-    snowinmars '«В игру было добавлено большое количество мелких достижений. Ты включал их?»'
+    # 'introduction_4{#introduction_4}'
+    snowinmars '«Ты помнил прошлое?»'
 
 # game/dlgs/introduction.rpy:44
 translate russian introduction_77cf396b:
 
-    # 'introduction_13{#introduction_13}'
-    snowinmars 'Напоследок ты увидел общую информацию и благодарности.'
+    # 'introduction_7{#introduction_7}'
+    snowinmars '«Напоследок ты увидел общую информацию и благодарности».'
+    snowinmars '«Спасибо тем, кто рассказывал о городе дверей».'
+    snowinmars '«Тем, кто создал NearInfinity MassExporter - https://github.com/NearInfinityBrowser/NearInfinity».'
+    snowinmars '«Кто создавал сложные технологии - https://feniksdev.itch.io».'
+    snowinmars '«И тем, кто создавал небольние - https://lemmasoft.renai.us/forums/viewtopic.php?t=67350».'
+    snowinmars '«Спасибо неожиданному „Planescape: Torment - Novelization“».'
+    snowinmars '«И сотням людей, любящим то, что и я люблю».'
+    snowinmars '«Этот мир рождён под знаком GNU/GPLv3 - а, значит, свободен».'
+    snowinmars '«https://t.me/@snowinmars ; snowinmars@yandex.ru».'
+    snowinmars '«Вспомни».'
 
 # game/dlgs/introduction.rpy:58
 translate russian intro_bcf9c742:
@@ -53,37 +49,21 @@ translate russian strings:
 
     # game/dlgs/introduction.rpy:13
     old 'introduction_2{#introduction_2}'
-    new '«Я не боялся спойлеров».'
+    new '«Я не опасался спойлеров».'
 
     # game/dlgs/introduction.rpy:15
     old 'introduction_3{#introduction_3}'
-    new '«Я не хотел спойлерить игру».'
-
-    # game/dlgs/introduction.rpy:23
-    old 'introduction_5{#introduction_5}'
-    new '«Я был магом».'
-
-    # game/dlgs/introduction.rpy:25
-    old 'introduction_6{#introduction_6}'
-    new '«Я был тем, кто я есть».'
+    new '«Я не любил спойлеры».'
 
     # game/dlgs/introduction.rpy:31
-    old 'introduction_8{#introduction_8}'
-    new '«„История костей“ позволяла мне говорить с мёртвыми, слепого лучника звали „Захария“».'
+    old 'introduction_5{#introduction_5}'
+    new '«Я помнил, что „История костей“ позволяла мне говорить с мёртвыми, и что слепого лучника звали Захарией».'
 
     # game/dlgs/introduction.rpy:33
-    old 'introduction_9{#introduction_9}'
-    new '«Я играл как в первый раз».'
-
-    # game/dlgs/introduction.rpy:39
-    old 'introduction_11{#introduction_11}'
-    new '«Я видел мелкие достижения».'
-
-    # game/dlgs/introduction.rpy:41
-    old 'introduction_12{#introduction_12}'
-    new '«Я скрыл мелких достижений».'
+    old 'introduction_6{#introduction_6}'
+    new '«Я не помнил».'
 
     # game/dlgs/introduction.rpy:48
-    old 'introduction_14{#introduction_14}'
+    old 'introduction_8{#introduction_8}'
     new 'Вспомнить.'
 
