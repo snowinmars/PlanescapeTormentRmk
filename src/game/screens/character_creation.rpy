@@ -55,7 +55,7 @@ screen character_creation():
         xpos 0
         ypos 175
         xsize 128
-        action [Function(characterCreationLogic.set_mage)]
+        action Function(characterCreationLogic.set_mage)
 
         text _('character_screen_set_mage'): # 'Выбрать мага (РЕКОММЕНДУЕТСЯ!)'
             style '_input_screen_style_button'
@@ -102,6 +102,9 @@ screen character_creation():
             style '_input_screen_style_button'
 
 
+###
+
+
 screen _character_creation_descrption(x):
     text _(x):
         area (310, 200, 330, 525)
@@ -126,10 +129,8 @@ screen _strength_input():
         button:
             area (30, 30, 72, 57)
             style '_input_screen_style_property_minus'
-            sensitive (characterCreationLogic.strength_minus_sensitive())
-            action [
-                Function(characterCreationLogic.dec_prop, 'strength')
-            ]
+            sensitive (characterCreationLogic.minus_sensitive('strength'))
+            action Function(characterCreationLogic.dec_prop, 'strength')
             hovered Show('_character_creation_descrption', x='character_screen_strength_help')
             unhovered Show('_character_creation_descrption', x='character_screen_help')
 
@@ -141,10 +142,8 @@ screen _strength_input():
         button:
             area (220, 25, 72, 57)
             style '_input_screen_style_property_plus'
-            sensitive (characterCreationLogic.strength_plus_sensitive())
-            action [
-                Function(characterCreationLogic.inc_prop, 'strength')
-            ]
+            sensitive (characterCreationLogic.plus_sensitive('strength'))
+            action Function(characterCreationLogic.inc_prop, 'strength')
             hovered Show('_character_creation_descrption', x='character_screen_strength_help')
             unhovered Show('_character_creation_descrption', x='character_screen_help')
 
@@ -163,18 +162,16 @@ screen _intelligence_input():
             pos (195, 195)
             xsize 150
             style '_input_screen_style_title'
-            at _input_screen_intelligence_transform
+            at _input_screen_counterclockwise_transform
 
         button:
             area (57, 230, 72, 57)
             style '_input_screen_style_property_minus'
-            sensitive (characterCreationLogic.intelligence_minus_sensitive())
-            action [
-                Function(characterCreationLogic.dec_prop, 'intelligence')
-            ]
+            sensitive (characterCreationLogic.minus_sensitive('intelligence'))
+            action Function(characterCreationLogic.dec_prop, 'intelligence')
             hovered Show('_character_creation_descrption', x='character_screen_intelligence_help')
             unhovered Show('_character_creation_descrption', x='character_screen_help')
-            at _input_screen_intelligence_transform
+            at _input_screen_counterclockwise_transform
 
         text str(characterCreationLogic.get_character().intelligence):
             pos (105, 130)
@@ -184,11 +181,11 @@ screen _intelligence_input():
         button:
             area (150, 65, 72, 57)
             style '_input_screen_style_property_plus'
-            sensitive (characterCreationLogic.intelligence_plus_sensitive())
+            sensitive (characterCreationLogic.plus_sensitive('intelligence'))
             action Function(characterCreationLogic.inc_prop, 'intelligence')
             hovered Show('_character_creation_descrption', x='character_screen_intelligence_help')
             unhovered Show('_character_creation_descrption', x='character_screen_help')
-            at _input_screen_intelligence_transform
+            at _input_screen_counterclockwise_transform
 
 
 ###
@@ -205,16 +202,16 @@ screen _wisdom_input():
             pos (180, 95)
             xsize 150
             style '_input_screen_style_title'
-            at _input_screen_wisdom_transform
+            at _input_screen_clockwise_transform
 
         button:
             area (42, 62, 72, 57)
             style '_input_screen_style_property_minus'
-            sensitive (characterCreationLogic.wisdom_minus_sensitive())
+            sensitive (characterCreationLogic.minus_sensitive('wisdom'))
             action Function(characterCreationLogic.dec_prop, 'wisdom')
             hovered Show('_character_creation_descrption', x='character_screen_wisdom_help')
             unhovered Show('_character_creation_descrption', x='character_screen_help')
-            at _input_screen_wisdom_transform
+            at _input_screen_clockwise_transform
 
         text str(characterCreationLogic.get_character().wisdom):
             pos (85, 120)
@@ -224,11 +221,11 @@ screen _wisdom_input():
         button:
             area (140, 223, 72, 57)
             style '_input_screen_style_property_plus'
-            sensitive (characterCreationLogic.wisdom_plus_sensitive())
+            sensitive (characterCreationLogic.plus_sensitive('wisdom'))
             action Function(characterCreationLogic.inc_prop, 'wisdom')
             hovered Show('_character_creation_descrption', x='character_screen_wisdom_help')
             unhovered Show('_character_creation_descrption', x='character_screen_help')
-            at _input_screen_wisdom_transform
+            at _input_screen_clockwise_transform
 
 
 ###
@@ -249,7 +246,7 @@ screen _dexterity_input():
         button:
             area (20, 120, 72, 57)
             style '_input_screen_style_property_minus'
-            sensitive (characterCreationLogic.dexterity_minus_sensitive())
+            sensitive (characterCreationLogic.minus_sensitive('dexterity'))
             action Function(characterCreationLogic.dec_prop, 'dexterity')
             hovered Show('_character_creation_descrption', x='character_screen_dexterity_help')
             unhovered Show('_character_creation_descrption', x='character_screen_help')
@@ -262,7 +259,7 @@ screen _dexterity_input():
         button:
             area (215, 120, 72, 57)
             style '_input_screen_style_property_plus'
-            sensitive (characterCreationLogic.dexterity_plus_sensitive())
+            sensitive (characterCreationLogic.plus_sensitive('dexterity'))
             action Function(characterCreationLogic.inc_prop, 'dexterity')
             hovered Show('_character_creation_descrption', x='character_screen_dexterity_help')
             unhovered Show('_character_creation_descrption', x='character_screen_help')
@@ -282,16 +279,16 @@ screen _constitution_input():
             pos (80, 95)
             xsize 150
             style '_input_screen_style_title'
-            at _input_screen_constitution_transform
+            at _input_screen_counterclockwise_transform
 
         button:
             area (120, 225, 72, 57)
             style '_input_screen_style_property_minus'
-            sensitive (characterCreationLogic.constitution_minus_sensitive())
+            sensitive (characterCreationLogic.minus_sensitive('constitution'))
             action Function(characterCreationLogic.dec_prop, 'constitution')
             hovered Show('_character_creation_descrption', x='character_screen_constitution_help')
             unhovered Show('_character_creation_descrption', x='character_screen_help')
-            at _input_screen_constitution_transform
+            at _input_screen_counterclockwise_transform
 
         text str(characterCreationLogic.get_character().constitution):
             pos (145, 122)
@@ -301,11 +298,11 @@ screen _constitution_input():
         button:
             area (212, 62, 72, 57)
             style '_input_screen_style_property_plus'
-            sensitive (characterCreationLogic.constitution_plus_sensitive())
+            sensitive (characterCreationLogic.plus_sensitive('constitution'))
             action Function(characterCreationLogic.inc_prop, 'constitution')
             hovered Show('_character_creation_descrption', x='character_screen_constitution_help')
             unhovered Show('_character_creation_descrption', x='character_screen_help')
-            at _input_screen_constitution_transform
+            at _input_screen_counterclockwise_transform
 
 
 ###
@@ -322,16 +319,16 @@ screen _charisma_input():
             pos (80, 180)
             xsize 150
             style '_input_screen_style_title'
-            at _input_screen_charisma_transform
+            at _input_screen_clockwise_transform
 
         button:
             area (115, 55, 72, 57)
             style '_input_screen_style_property_minus'
-            sensitive (characterCreationLogic.charisma_minus_sensitive())
+            sensitive (characterCreationLogic.minus_sensitive('charisma'))
             action Function(characterCreationLogic.dec_prop, 'charisma')
             hovered Show('_character_creation_descrption', x='character_screen_charisma_help')
             unhovered Show('_character_creation_descrption', x='character_screen_help')
-            at _input_screen_charisma_transform
+            at _input_screen_clockwise_transform
 
         text str(characterCreationLogic.get_character().charisma):
             pos (145, 115)
@@ -341,11 +338,11 @@ screen _charisma_input():
         button:
             area (210, 215, 72, 57)
             style '_input_screen_style_property_plus'
-            sensitive (characterCreationLogic.charisma_plus_sensitive())
+            sensitive (characterCreationLogic.plus_sensitive('charisma'))
             action Function(characterCreationLogic.inc_prop, 'charisma')
             hovered Show('_character_creation_descrption', x='character_screen_charisma_help')
             unhovered Show('_character_creation_descrption', x='character_screen_help')
-            at _input_screen_charisma_transform
+            at _input_screen_clockwise_transform
 
 
 ###
@@ -374,15 +371,9 @@ style _input_screen_style_property_plus:
     background Transform('gui/property_plus.png')
     hover_background Transform('gui/property_plus.png', matrixcolor=hover_matrix)
     insensitive_background Transform('gui/property_plus.png', matrixcolor=insensitive_matrix)
-transform _input_screen_intelligence_transform:
+transform _input_screen_counterclockwise_transform:
     anchor (0.5, 0.5)
     rotate -60
-transform _input_screen_wisdom_transform:
-    anchor (0.5, 0.5)
-    rotate 60
-transform _input_screen_constitution_transform:
-    anchor (0.5, 0.5)
-    rotate -60
-transform _input_screen_charisma_transform:
+transform _input_screen_clockwise_transform:
     anchor (0.5, 0.5)
     rotate 60

@@ -4,15 +4,6 @@ class IntroductionLogic:
         self.can_spoiler = False
 
 
-    def setup_new_life_as_mage(self):
-        self.state_manager.characters_manager.set_property('protagonist_character_name', 'strength', 9)
-        self.state_manager.characters_manager.set_property('protagonist_character_name', 'dexterity', 9)
-        self.state_manager.characters_manager.set_property('protagonist_character_name', 'intelligence', 16)
-        self.state_manager.characters_manager.set_property('protagonist_character_name', 'constitution', 9)
-        self.state_manager.characters_manager.set_property('protagonist_character_name', 'wisdom', 17)
-        self.state_manager.characters_manager.set_property('protagonist_character_name', 'charisma', 15)
-
-
     def setup_as_highlvl(self):
         self.state_manager.world_manager.set_can_speak_with_dead(True)
         self.state_manager.world_manager.set_know_xachariah_name(True)

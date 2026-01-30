@@ -4,15 +4,21 @@ import sys
 # Regex patterns for matching function calls and definitions
 CALL_PATTERN = re.compile(r'(?:if|\$)(?: not)? ([^\s]*?)Logic\.(.*?)\(')
 CALL_MAP_PATTERN = re.compile(r'get_party\(state_manager, ([^\s]*?)Logic\.(.*?)\(')
+CALL_SCREEN_PATTERN = re.compile(r'(?:sensitive |Function|str)\(([^\s]*?)Logic\.(.*?)(?:\(\)|,|\))')
 DEF_PATTERN = re.compile(r'def (.*?)\(self(.*)')
 
 
 def extract_used_functions(rpy_files):
     used_functions = set()
     for rpy_file in rpy_files:
-        matches = CALL_PATTERN.findall(rpy_file.content) + CALL_MAP_PATTERN.findall(rpy_file.content)
+        matches = CALL_PATTERN.findall(rpy_file.content) + \
+                  CALL_MAP_PATTERN.findall(rpy_file.content) + \
+                  CALL_SCREEN_PATTERN.findall(rpy_file.content)
         for base, func_name in matches:
-            private_func = func_name.startswith('__')
+            system_func = func_name.startswith('__')
+            if system_func:
+                continue
+            private_func = func_name.startswith('_')
             if private_func:
                 continue
 
@@ -31,9 +37,10 @@ def extract_declared_functions(logic_files):
 
         matches = DEF_PATTERN.findall(logic_file.content)
         for func_name, tail in matches:
-            private_func = func_name.startswith('__')
-            known_unused_func = tail.endswith('unused')
-            if private_func or known_unused_func:
+            system_func = func_name.startswith('__')
+            private_func = func_name.startswith('_')
+            known_unused_func = tail.endswith('unused') # TODO [snow]: these functions is always commented. Is it enough to check for commented status?
+            if system_func or private_func or known_unused_func:
                 continue
 
             identifier = f"{base.replace('_', '')}Logic.{func_name}".lower()
