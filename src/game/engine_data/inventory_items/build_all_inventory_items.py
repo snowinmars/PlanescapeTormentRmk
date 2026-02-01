@@ -287,7 +287,7 @@ def build_all_inventory_items(inventory_items_manager):
         )) \
         .register(InventoryItem(
             settings_id='has_gs_knife',
-            orig_id='gs_knife.itm',
+            orig_id='gsknife.itm',
             name='inventoryitem_has_gs_knife_name',
             description='inventoryitem_has_gs_knife_description',
             grid_image='images/icons/gs_knife.png',

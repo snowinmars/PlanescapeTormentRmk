@@ -24,15 +24,15 @@ translate english strings:
 
     # game/engine_data/inventory_items/all_inventory.rpy:8
     old 'inventoryitem_has_prybar_description'
-    new 'Usable only by Fighters and Thieves.\nThis iron prybar can be used to pry open doors, chests, and even the occasional reluctant rib cage. It also makes a good bludgeoning weapon when there\'s no time for subtlety.'
+    new 'This iron prybar can be used to pry open doors, chests, and even the occasional reluctant rib cage. It also makes a good bludgeoning weapon when there\'s no time for subtlety.'
 
     # game/engine_data/inventory_items/all_inventory.rpy:9
     old 'inventoryitem_has_prybar_used_by'
-    new ''
+    new 'Usable only by Fighters and Thieves'
 
     # game/engine_data/inventory_items/all_inventory.rpy:10
     old 'inventoryitem_has_prybar_properties'
-    new ''
+    new 'Damage: 1-6 Crushing\nSpeed: 4\nProficiency: Clubs'
 
     # game/engine_data/inventory_items/all_inventory.rpy:12
     old 'inventoryitem_has_tome_ba_name'
@@ -52,7 +52,7 @@ translate english strings:
 
     # game/engine_data/inventory_items/all_inventory.rpy:17
     old 'inventoryitem_has_copper_earring_closed_name'
-    new 'Ancient copper earring'
+    new 'Ancient copper earring (closed)'
 
     # game/engine_data/inventory_items/all_inventory.rpy:18
     old 'inventoryitem_has_copper_earring_closed_description'
@@ -64,11 +64,11 @@ translate english strings:
 
     # game/engine_data/inventory_items/all_inventory.rpy:20
     old 'inventoryitem_has_copper_earring_closed_properties'
-    new ''
+    new 'Unusable (Closed)'
 
     # game/engine_data/inventory_items/all_inventory.rpy:22
     old 'inventoryitem_has_copper_earring_opened_name'
-    new 'Ancient copper earring'
+    new 'Ancient copper earring (hollow)'
 
     # game/engine_data/inventory_items/all_inventory.rpy:23
     old 'inventoryitem_has_copper_earring_opened_description'
@@ -88,15 +88,15 @@ translate english strings:
 
     # game/engine_data/inventory_items/all_inventory.rpy:28
     old 'inventoryitem_has_scalpel_description'
-    new 'Not usable by Priests.\nThis simple surgical cutting tool looks like it\'s seen a lot of use.'
+    new 'This simple surgical cutting tool looks like it\'s seen a lot of use.'
 
     # game/engine_data/inventory_items/all_inventory.rpy:29
     old 'inventoryitem_has_scalpel_used_by'
-    new ''
+    new 'Not usable by Priests'
 
     # game/engine_data/inventory_items/all_inventory.rpy:30
     old 'inventoryitem_has_scalpel_properties'
-    new ''
+    new 'Damage: 1-3 Piercing\nSpeed: 1\nProficiency: Edged'
 
     # game/engine_data/inventory_items/all_inventory.rpy:32
     old 'inventoryitem_has_needle_name'
@@ -104,7 +104,7 @@ translate english strings:
 
     # game/engine_data/inventory_items/all_inventory.rpy:33
     old 'inventoryitem_has_needle_description'
-    new 'Special: Heals 6 Hit Points\nThis is a spool of thread and a small bone needle. They look like they\'re used for stitching up wounds... in living or dead bodies.'
+    new 'This is a spool of thread and a small bone needle. They look like they\'re used for stitching up wounds... in living or dead bodies.'
 
     # game/engine_data/inventory_items/all_inventory.rpy:34
     old 'inventoryitem_has_needle_used_by'
@@ -112,7 +112,7 @@ translate english strings:
 
     # game/engine_data/inventory_items/all_inventory.rpy:35
     old 'inventoryitem_has_needle_properties'
-    new ''
+    new 'Special: Heals 6 Hit Points'
 
     # game/engine_data/inventory_items/all_inventory.rpy:37
     old 'inventoryitem_has_1201_note_name'
@@ -152,7 +152,7 @@ translate english strings:
 
     # game/engine_data/inventory_items/all_inventory.rpy:48
     old 'inventoryitem_has_bandages_description'
-    new 'Special: Heals 3 Hit Points\nThis is a roll of bandages, useful for stanching minor wounds.'
+    new 'This is a roll of bandages, useful for stanching minor wounds.'
 
     # game/engine_data/inventory_items/all_inventory.rpy:49
     old 'inventoryitem_has_bandages_used_by'
@@ -160,7 +160,7 @@ translate english strings:
 
     # game/engine_data/inventory_items/all_inventory.rpy:50
     old 'inventoryitem_has_bandages_properties'
-    new ''
+    new 'Special: Heals 3 Hit Points'
 
     # game/engine_data/inventory_items/all_inventory.rpy:52
     old 'inventoryitem_has_embalm_name'
@@ -168,15 +168,15 @@ translate english strings:
 
     # game/engine_data/inventory_items/all_inventory.rpy:53
     old 'inventoryitem_has_embalm_description'
-    new 'Special:\n  +2-8 to Hit Points\n  +1 to Armor Class\nUsable only by the Nameless One and Morte\nThis is a sealed jar of embalming fluid. It is used as a preservative for dead bodies. As an added benefit, the smell of the fluid is more than sufficient to mask the smell of any rotting bodies it is used on. Effects are temporary.'
+    new 'This is a sealed jar of embalming fluid. It is used as a preservative for dead bodies. As an added benefit, the smell of the fluid is more than sufficient to mask the smell of any rotting bodies it is used on. Effects are temporary.'
 
     # game/engine_data/inventory_items/all_inventory.rpy:54
     old 'inventoryitem_has_embalm_used_by'
-    new ''
+    new 'Usable only by the Nameless One and Morte'
 
     # game/engine_data/inventory_items/all_inventory.rpy:55
     old 'inventoryitem_has_embalm_properties'
-    new ''
+    new 'Special:\n  +2-8 to Hit Points\n  +1 to Armor Class'
 
     # game/engine_data/inventory_items/all_inventory.rpy:57
     old 'inventoryitem_has_keyem_name'
@@ -208,15 +208,15 @@ translate english strings:
 
     # game/engine_data/inventory_items/all_inventory.rpy:65
     old 'inventoryitem_has_tearring_properties'
-    new ''
+    new 'Minor Copper Blessing'
 
     # game/engine_data/inventory_items/all_inventory.rpy:67
     old "inventoryitem_has_keymo_name"
-    new ""
+    new "Mortuary front gate key"
 
     # game/engine_data/inventory_items/all_inventory.rpy:68
     old "inventoryitem_has_keymo_description"
-    new ""
+    new "This is a large, unimaginative iron key. For some reason, its somber appearance reminds you of the Mortuary."
 
     # game/engine_data/inventory_items/all_inventory.rpy:69
     old "inventoryitem_has_keymo_used_by"
@@ -248,15 +248,15 @@ translate english strings:
 
     # game/engine_data/inventory_items/all_inventory.rpy:73
     old 'inventoryitem_has_dhall_feather_description'
-    new 'Usable only by Mages\nExamination of the quill pen reveals that the feather is from a Vrock, one of the many races of tanar\'ri that fill the Abyss. The Vrock resemble huge vultures, and they are often used as scouts for the tanar\'ri forces in the Blood War.\nDhall used this quill pen all of his life, and as such, it carries some of his experiences and memories inside it. By snapping it, you will absorb a portion of his knowledge, giving you a permanent bonus to your Lore skill.'
+    new 'Examination of the quill pen reveals that the feather is from a Vrock, one of the many races of tanar\'ri that fill the Abyss. The Vrock resemble huge vultures, and they are often used as scouts for the tanar\'ri forces in the Blood War.\nDhall used this quill pen all of his life, and as such, it carries some of his experiences and memories inside it. By snapping it, you will absorb a portion of his knowledge, giving you a permanent bonus to your Lore skill.'
 
     # game/engine_data/inventory_items/all_inventory.rpy:74
     old 'inventoryitem_has_dhall_feather_used_by'
-    new ''
+    new 'Usable only by Mages'
 
     # game/engine_data/inventory_items/all_inventory.rpy:75
     old 'inventoryitem_has_dhall_feather_properties'
-    new ''
+    new 'Special: Permanent +1 to Lore Skill'
 
     # game/engine_data/inventory_items/all_inventory.rpy:77
     old 'inventoryitem_has_finger_bone_name'
@@ -280,15 +280,15 @@ translate english strings:
 
     # game/engine_data/inventory_items/all_inventory.rpy:83
     old 'inventoryitem_has_dustrobe_description'
-    new 'Usable only in the Mortuary\nThese frayed robes are commonly worn by members of the Dustmen faction. They have an old, musty smell about them, and they don\'t fit you very well. You doubt the Dustman disguise will hold up under scrutiny - and certainly not if the Dustmen are looking for an intruder.'
+    new 'These frayed robes are commonly worn by members of the Dustmen faction. They have an old, musty smell about them, and they don\'t fit you very well. You doubt the Dustman disguise will hold up under scrutiny - and certainly not if the Dustmen are looking for an intruder.'
 
     # game/engine_data/inventory_items/all_inventory.rpy:84
     old 'inventoryitem_has_dustrobe_used_by'
-    new ''
+    new 'Usable only in the Mortuary'
 
     # game/engine_data/inventory_items/all_inventory.rpy:85
     old 'inventoryitem_has_dustrobe_properties'
-    new ''
+    new 'Special: Disguises user as a Dustman'
 
     # game/engine_data/inventory_items/all_inventory.rpy:87
     old 'inventoryitem_has_dremind_name'
@@ -360,7 +360,7 @@ translate english strings:
 
     # game/engine_data/inventory_items/all_inventory.rpy:108
     old 'inventoryitem_has_bone_chrm_description'
-    new 'Special:\n  +2 to Armor Class\n  +2 to Armor Class vs. Crushing Attacks\n  +15% Resistance to Crushing Attacks\nThis old finger bone charm has been hollowed out and tiny symbols have been scratched on its surface. A user must snap it in two to activate it.\nWhen snapped, the bone charm temporarily strengthens the user\'s skeleton and acts as a ward against breaks and fractures. The charm gives the user an overall bonus to their armor class and additional resistance against crushing attacks.'
+    new 'This old finger bone charm has been hollowed out and tiny symbols have been scratched on its surface. A user must snap it in two to activate it.\nWhen snapped, the bone charm temporarily strengthens the user\'s skeleton and acts as a ward against breaks and fractures. The charm gives the user an overall bonus to their armor class and additional resistance against crushing attacks.'
 
     # game/engine_data/inventory_items/all_inventory.rpy:109
     old 'inventoryitem_has_bone_chrm_used_by'
@@ -368,7 +368,7 @@ translate english strings:
 
     # game/engine_data/inventory_items/all_inventory.rpy:110
     old 'inventoryitem_has_bone_chrm_properties'
-    new ''
+    new 'Special:\n  +2 to Armor Class\n  +2 to Armor Class vs. Crushing Attacks\n  +15% Resistance to Crushing Attacks'
 
     # game/engine_data/inventory_items/all_inventory.rpy:112
     old 'inventoryitem_has_breast1_name'
@@ -376,15 +376,15 @@ translate english strings:
 
     # game/engine_data/inventory_items/all_inventory.rpy:113
     old 'inventoryitem_has_breast1_description'
-    new 'Teaches user „Armor“\nUsable only by Mages\nUpon closer examination of the runes covering the surface of this breastplate, you think you might be able to unlock the rune\'s power and use it to invoke a primitive warding enchantment, similar to the one that protected the giant skeleton. Activating the rune will destroy the breastplate, however.'
+    new 'Upon closer examination of the runes covering the surface of this breastplate, you think you might be able to unlock the rune\'s power and use it to invoke a primitive warding enchantment, similar to the one that protected the giant skeleton. Activating the rune will destroy the breastplate, however.'
 
     # game/engine_data/inventory_items/all_inventory.rpy:114
     old 'inventoryitem_has_breast1_used_by'
-    new ''
+    new 'Usable only by Mages'
 
     # game/engine_data/inventory_items/all_inventory.rpy:115
     old 'inventoryitem_has_breast1_properties'
-    new ''
+    new 'Invokes: «Armor»\nTeaches user «Armor»\nLevel: 1 / Wizard\nRange: 0\nDuration: Until destroyed by damage\nSpeed: 1\nArea of Effect: 1 creature\nSaving Throw: None'
 
     # game/engine_data/inventory_items/all_inventory.rpy:117
     old 'inventoryitem_has_breast2_name'
@@ -392,15 +392,15 @@ translate english strings:
 
     # game/engine_data/inventory_items/all_inventory.rpy:118
     old 'inventoryitem_has_breast2_description'
-    new 'Teaches user „Armor“\nUsable only by Mages\nUpon closer examination of this breastplate, you realize you didn\'t mar the warding rune beyond recognition. In fact, unlike the other breastplates, the spell that maintained the integrity of the giant skeleton is mostly intact, so much so you could either cast the runes as a spell or copy them into a spell book and keep it as part of your arsenal. Either casting or copying the spell will destroy the breastplate, however.'
+    new 'Upon closer examination of this breastplate, you realize you didn\'t mar the warding rune beyond recognition. In fact, unlike the other breastplates, the spell that maintained the integrity of the giant skeleton is mostly intact, so much so you could either cast the runes as a spell or copy them into a spell book and keep it as part of your arsenal. Either casting or copying the spell will destroy the breastplate, however.'
 
     # game/engine_data/inventory_items/all_inventory.rpy:119
     old 'inventoryitem_has_breast2_used_by'
-    new ''
+    new 'Usable only by Mages'
 
     # game/engine_data/inventory_items/all_inventory.rpy:120
     old 'inventoryitem_has_breast2_properties'
-    new ''
+    new 'Invokes: «Armor»\nTeaches user «Armor»\nLevel: 1 / Wizard\nRange: 0\nDuration: Until destroyed by damage\nSpeed: 1\nArea of Effect: 1 creature\nSaving Throw: None'
 
     # game/engine_data/inventory_items/all_inventory.rpy:122
     old 'inventoryitem_has_breast3_name'
@@ -408,15 +408,15 @@ translate english strings:
 
     # game/engine_data/inventory_items/all_inventory.rpy:123
     old 'inventoryitem_has_breast3_description'
-    new 'Teaches user „Shield“\nUsable only by Mages\nUpon closer examination of the runes covering the surface of this breastplate, you think you might be able to unlock the rune\'s power and use it to invoke a primitive warding enchantment, similar to the one that protected the giant skeleton. Activating the rune will destroy the breastplate, however.'
+    new 'Upon closer examination of the runes covering the surface of this breastplate, you think you might be able to unlock the rune\'s power and use it to invoke a primitive warding enchantment, similar to the one that protected the giant skeleton. Activating the rune will destroy the breastplate, however.'
 
     # game/engine_data/inventory_items/all_inventory.rpy:124
     old 'inventoryitem_has_breast3_used_by'
-    new ''
+    new 'Usable only by Mages'
 
     # game/engine_data/inventory_items/all_inventory.rpy:125
     old 'inventoryitem_has_breast3_properties'
-    new ''
+    new 'Invokes: «Shield»\nTeaches user «Shield»\nLevel: 1 / Wizard\nRange: 10 feet\nDuration: 25 sec. / level\nSpeed: 1\nArea of Effect: 1 creature\nSaving Throw: None'
 
     # game/engine_data/inventory_items/all_inventory.rpy:127
     old 'inventoryitem_has_breast4_name'
@@ -424,15 +424,15 @@ translate english strings:
 
     # game/engine_data/inventory_items/all_inventory.rpy:128
     old 'inventoryitem_has_breast4_description'
-    new 'Teaches user „Shield“\nUsable only by Mages\nUpon closer examination of this breastplate, you realize you didn\'t mar the warding rune beyond recognition. In fact, unlike the other breastplates, the spell that maintained the integrity of the giant skeleton is mostly intact, so much so you could either cast the runes as a spell or copy them into a spell book and keep it as part of your arsenal. Either casting or copying the spell will destroy the breastplate, however.'
+    new 'Upon closer examination of this breastplate, you realize you didn\'t mar the warding rune beyond recognition. In fact, unlike the other breastplates, the spell that maintained the integrity of the giant skeleton is mostly intact, so much so you could either cast the runes as a spell or copy them into a spell book and keep it as part of your arsenal. Either casting or copying the spell will destroy the breastplate, however.'
 
     # game/engine_data/inventory_items/all_inventory.rpy:129
     old 'inventoryitem_has_breast4_used_by'
-    new ''
+    new 'Usable only by Mages'
 
     # game/engine_data/inventory_items/all_inventory.rpy:130
     old 'inventoryitem_has_breast4_properties'
-    new ''
+    new 'Invokes: «Shield»\nTeaches user «Shield»\nLevel: 1 / Wizard\nRange: 10 feet\nDuration: 25 sec. / level\nSpeed: 1\nArea of Effect: 1 creature\nSaving Throw: None'
 
     # game/engine_data/inventory_items/all_inventory.rpy:132
     old 'inventoryitem_has_clotchrm_name'
@@ -440,7 +440,7 @@ translate english strings:
 
     # game/engine_data/inventory_items/all_inventory.rpy:133
     old 'inventoryitem_has_clotchrm_description'
-    new 'Special:\n  Heals 9 Hit Points\n  +5% Resistance to Slashing Attacks\n  +10% Resistance to Piercing Attacks\nThis glistening blood drop is as hard and smooth as a pearl. When placed on the tongue, it dissolves instantly and spreads through the user\'s bloodstream.\nThe charm stimulates the user\'s blood into clotting and scabbing over existing wounds, healing any minor damage the user may have suffered before consuming the charm. Furthermore, as long as the charm is in effect, the player\'s blood becomes more "aware" of new wounds that occur, especially any attacks that draw blood. The charmed individual becomes more resistant to slashing and piercing attacks, as their blood clots and scabs over the wound as soon as the flesh is torn. '
+    new 'This glistening blood drop is as hard and smooth as a pearl. When placed on the tongue, it dissolves instantly and spreads through the user\'s bloodstream.\nThe charm stimulates the user\'s blood into clotting and scabbing over existing wounds, healing any minor damage the user may have suffered before consuming the charm. Furthermore, as long as the charm is in effect, the player\'s blood becomes more "aware" of new wounds that occur, especially any attacks that draw blood. The charmed individual becomes more resistant to slashing and piercing attacks, as their blood clots and scabs over the wound as soon as the flesh is torn. '
 
     # game/engine_data/inventory_items/all_inventory.rpy:134
     old 'inventoryitem_has_clotchrm_used_by'
@@ -448,7 +448,7 @@ translate english strings:
 
     # game/engine_data/inventory_items/all_inventory.rpy:135
     old 'inventoryitem_has_clotchrm_properties'
-    new ''
+    new 'Special:\n  Heals 9 Hit Points\n  +5% Resistance to Slashing Attacks\n  +10% Resistance to Piercing Attacks'
 
     # game/engine_data/inventory_items/all_inventory.rpy:137
     old 'inventoryitem_has_cube_name'
@@ -504,15 +504,15 @@ translate english strings:
 
     # game/engine_data/inventory_items/all_inventory.rpy:153
     old 'inventoryitem_has_gs_knife_description'
-    new 'Not usable by Priests\nThis razor sharp knife has been forged out of the famed Baatorian green steel. Found only in the wastelands of Avernus, this peculiar green ore can be tempered into metal much lighter than normal steel. In addition, green steel weapons tend to retain their remarkably fine edges and are capable of dealing out more damage than their standard counterparts.'
+    new 'This razor sharp knife has been forged out of the famed Baatorian green steel. Found only in the wastelands of Avernus, this peculiar green ore can be tempered into metal much lighter than normal steel. In addition, green steel weapons tend to retain their remarkably fine edges and are capable of dealing out more damage than their standard counterparts.'
 
     # game/engine_data/inventory_items/all_inventory.rpy:154
     old 'inventoryitem_has_gs_knife_used_by'
-    new ''
+    new 'Not usable by Priests'
 
     # game/engine_data/inventory_items/all_inventory.rpy:155
     old 'inventoryitem_has_gs_knife_properties'
-    new ''
+    new 'Damage: 1-4 Piercing\nSpeed: 1\nProficiency: Edged'
 
     # game/engine_data/inventory_items/all_inventory.rpy:157
     old 'inventoryitem_has_rags_name'
@@ -536,15 +536,15 @@ translate english strings:
 
     # game/engine_data/inventory_items/all_inventory.rpy:163
     old 'inventoryitem_has_spike_description'
-    new 'Not usable by Priests\nThis is a crude iron spike, covered with rust. If necessary, you could use it as a dagger.'
+    new 'This is a crude iron spike, covered with rust. If necessary, you could use it as a dagger.'
 
     # game/engine_data/inventory_items/all_inventory.rpy:164
     old 'inventoryitem_has_spike_used_by'
-    new ''
+    new 'Not usable by Priests'
 
     # game/engine_data/inventory_items/all_inventory.rpy:165
     old 'inventoryitem_has_spike_properties'
-    new ''
+    new 'Damage: 1-3 Piercing\nSpeed: 2\nProficiency: Edged'
 
     # game/engine_data/inventory_items/all_inventory.rpy:167
     old 'inventoryitem_has_strap_name'
@@ -568,15 +568,15 @@ translate english strings:
 
     # game/engine_data/inventory_items/all_inventory.rpy:173
     old 'inventoryitem_has_sup_ring_description'
-    new 'Special:\n  +3 to All Saving Throws\n  +3 to Armor Class\n  +3 to Armor Class vs. Piercing\nUsable only by Nameless One\nThis ivory ring was part of Deionarra\'s legacy, and through some unknown means, she has enhanced its power three-fold. Where it radiated only a slight glow before, it now burns with a cold, white fire along the edges. The fire does not burn - if anything, its touch is comforting.\nAs with wearing Deionarra\'s normal soulstone ring, you gain added protection from all attacks, and additional protection from any piercing attacks... presumably, the ring\'s purpose is to shield the heart from shock and trauma, and this extends to any physical pain the wearer suffers as well.'
+    new 'This ivory ring was part of Deionarra\'s legacy, and through some unknown means, she has enhanced its power three-fold. Where it radiated only a slight glow before, it now burns with a cold, white fire along the edges. The fire does not burn - if anything, its touch is comforting.\nAs with wearing Deionarra\'s normal soulstone ring, you gain added protection from all attacks, and additional protection from any piercing attacks... presumably, the ring\'s purpose is to shield the heart from shock and trauma, and this extends to any physical pain the wearer suffers as well.'
 
     # game/engine_data/inventory_items/all_inventory.rpy:174
     old 'inventoryitem_has_sup_ring_used_by'
-    new ''
+    new 'Usable only by Nameless One'
 
     # game/engine_data/inventory_items/all_inventory.rpy:175
     old 'inventoryitem_has_sup_ring_properties'
-    new ''
+    new 'Special:\n  +3 to All Saving Throws\n  +3 to Armor Class\n  +3 to Armor Class vs. Piercing'
 
     # game/engine_data/inventory_items/all_inventory.rpy:177
     old 'inventoryitem_has_wedding_ring_name'
@@ -584,15 +584,15 @@ translate english strings:
 
     # game/engine_data/inventory_items/all_inventory.rpy:178
     old 'inventoryitem_has_wedding_ring_description'
-    new 'Special:\n  +1 to All Saving Throws\n  +1 to Armor Class\n  +3 to Armor Class vs. Piercing\nUsable only by Nameless One\nThis ivory ring was part of Deionarra\'s legacy. It radiates a slight glow, and though it is cold to the touch, the chill is strangely comforting. The ivory band stretches to fit the width of any finger.\nAmong the many secrets of the Society of Sensation is the ability to shape a peculiar stone from Elysium, dubbed "soulstone." While this stone is not as powerful as the sensory stones, the soul stone is said to carry an imprint of the shaper\'s feelings. These rings are often used in Sensate marriage ceremonies, each ring inscribed with the feelings of the other. This ring was obviously intended for you.\nWhen wearing Deionarra\'s ring, you gain added protection from all attacks, and additional protection from any piercing attacks... presumably, the ring\'s purpose is to shield the heart from shock and trauma, and this extends to any physical pain the wearer suffers as well.'
+    new 'This ivory ring was part of Deionarra\'s legacy. It radiates a slight glow, and though it is cold to the touch, the chill is strangely comforting. The ivory band stretches to fit the width of any finger.\nAmong the many secrets of the Society of Sensation is the ability to shape a peculiar stone from Elysium, dubbed "soulstone." While this stone is not as powerful as the sensory stones, the soul stone is said to carry an imprint of the shaper\'s feelings. These rings are often used in Sensate marriage ceremonies, each ring inscribed with the feelings of the other. This ring was obviously intended for you.\nWhen wearing Deionarra\'s ring, you gain added protection from all attacks, and additional protection from any piercing attacks... presumably, the ring\'s purpose is to shield the heart from shock and trauma, and this extends to any physical pain the wearer suffers as well.'
 
     # game/engine_data/inventory_items/all_inventory.rpy:179
     old 'inventoryitem_has_wedding_ring_used_by'
-    new ''
+    new 'Usable only by Nameless One'
 
     # game/engine_data/inventory_items/all_inventory.rpy:180
     old 'inventoryitem_has_wedding_ring_properties'
-    new ''
+    new 'Special:\n  +1 to All Saving Throws\n  +1 to Armor Class\n  +3 to Armor Class vs. Piercing'
 
     # game/engine_data/inventory_items/all_inventory.rpy:182
     old 'inventoryitem_has_xac_heart_name'
@@ -600,15 +600,15 @@ translate english strings:
 
     # game/engine_data/inventory_items/all_inventory.rpy:183
     old 'inventoryitem_has_xac_heart_description'
-    new 'Special:\n  Permanent +1 to Dexterity when broken\n  Permanent +1 to Armor Class vs. Missiles\nUsable only by Fighters\nThis blackened, fist-sized object looks more like a lump of burned charcoal than Xachariah\'s heart. It is extremely heavy for its size, and cracks run across its surface... it looks like it might break in two at any moment. Handling it leaves strange rust-colored streaks on your hands that won\'t come off.\nSomething about the object\'s weight makes you curious enough to study it for a while; upon closer examination, what you at first took for Xachariah\'s heart is, in fact, a stone. As far as you can tell, there is no sign that this was ever living tissue. How Xachariah survived with -this- beating in his chest is unknown.\nWhatever blessing was laid upon Xachariah\'s eyes that allowed his arrows to fly true has left its mark upon his heart as well. When Xachariah\'s heart is broken in two, the breaker of his heart will gain a portion of Xachariah\'s sight, agility and perception. This gives the breaker a bonus to their dexterity and a chance of spotting and dodging any missiles aimed at them.'
+    new 'This blackened, fist-sized object looks more like a lump of burned charcoal than Xachariah\'s heart. It is extremely heavy for its size, and cracks run across its surface... it looks like it might break in two at any moment. Handling it leaves strange rust-colored streaks on your hands that won\'t come off.\nSomething about the object\'s weight makes you curious enough to study it for a while; upon closer examination, what you at first took for Xachariah\'s heart is, in fact, a stone. As far as you can tell, there is no sign that this was ever living tissue. How Xachariah survived with -this- beating in his chest is unknown.\nWhatever blessing was laid upon Xachariah\'s eyes that allowed his arrows to fly true has left its mark upon his heart as well. When Xachariah\'s heart is broken in two, the breaker of his heart will gain a portion of Xachariah\'s sight, agility and perception. This gives the breaker a bonus to their dexterity and a chance of spotting and dodging any missiles aimed at them.'
 
     # game/engine_data/inventory_items/all_inventory.rpy:184
     old 'inventoryitem_has_xac_heart_used_by'
-    new ''
+    new 'Usable only by Fighters'
 
     # game/engine_data/inventory_items/all_inventory.rpy:185
     old 'inventoryitem_has_xac_heart_properties'
-    new ''
+    new 'Special:\n  Permanent +1 to Dexterity when broken\n  Permanent +1 to Armor Class vs. Missiles'
 
     # game/engine_data/inventory_items/all_inventory.rpy:187
     old 'inventoryitem_has_xac_liver_name'

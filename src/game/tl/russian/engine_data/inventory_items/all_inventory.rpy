@@ -24,15 +24,15 @@ translate russian strings:
 
     # game/engine_data/inventory_items/all_inventory.rpy:8
     old 'inventoryitem_has_prybar_description'
-    new 'Используется только бойцами и ворами\nЭтим железным ломиком можно вскрывать двери, сундуки и даже случайно подвернувшиеся грудные клетки. Его также можно использовать в качестве дубинки в случае острой необходимости.'
+    new 'Этим железным ломиком можно вскрывать двери, сундуки и даже случайно подвернувшиеся грудные клетки. Его также можно использовать в качестве дубинки в случае острой необходимости.'
 
     # game/engine_data/inventory_items/all_inventory.rpy:9
     old 'inventoryitem_has_prybar_used_by'
-    new ''
+    new 'Используется только бойцами и ворами'
 
     # game/engine_data/inventory_items/all_inventory.rpy:10
     old 'inventoryitem_has_prybar_properties'
-    new ''
+    new 'Урон: 1-6 дробящий\nСкорость: 4\nСпециализация: дубинки'
 
     # game/engine_data/inventory_items/all_inventory.rpy:12
     old 'inventoryitem_has_tome_ba_name'
@@ -52,7 +52,7 @@ translate russian strings:
 
     # game/engine_data/inventory_items/all_inventory.rpy:17
     old 'inventoryitem_has_copper_earring_closed_name'
-    new 'Cтаринная медная серьга'
+    new 'Cтаринная медная серьга (закрытая)'
 
     # game/engine_data/inventory_items/all_inventory.rpy:18
     old 'inventoryitem_has_copper_earring_closed_description'
@@ -64,11 +64,11 @@ translate russian strings:
 
     # game/engine_data/inventory_items/all_inventory.rpy:20
     old 'inventoryitem_has_copper_earring_closed_properties'
-    new ''
+    new 'Бесполезная (закрыта)'
 
     # game/engine_data/inventory_items/all_inventory.rpy:22
     old 'inventoryitem_has_copper_earring_opened_name'
-    new 'Cтаринная медная серьга'
+    new 'Cтаринная медная серьга (пустая)'
 
     # game/engine_data/inventory_items/all_inventory.rpy:23
     old 'inventoryitem_has_copper_earring_opened_description'
@@ -92,11 +92,11 @@ translate russian strings:
 
     # game/engine_data/inventory_items/all_inventory.rpy:29
     old 'inventoryitem_has_scalpel_used_by'
-    new ''
+    new 'Не используется жрецами'
 
     # game/engine_data/inventory_items/all_inventory.rpy:30
     old 'inventoryitem_has_scalpel_properties'
-    new ''
+    new 'Урон: 1-3 колющий\nСкорость: 1\nСпециализация: клинковые'
 
     # game/engine_data/inventory_items/all_inventory.rpy:32
     old 'inventoryitem_has_needle_name'
@@ -104,7 +104,7 @@ translate russian strings:
 
     # game/engine_data/inventory_items/all_inventory.rpy:33
     old 'inventoryitem_has_needle_description'
-    new 'Специальное: исцеляет 6 очков жизни\n\nЭто катушка ниток и небольшая костяная игла. Похоже, ими пользуются для зашивания ран… на живых или мертвых телах.'
+    new 'Это катушка ниток и небольшая костяная игла. Похоже, ими пользуются для зашивания ран… на живых или мертвых телах.'
 
     # game/engine_data/inventory_items/all_inventory.rpy:34
     old 'inventoryitem_has_needle_used_by'
@@ -112,7 +112,7 @@ translate russian strings:
 
     # game/engine_data/inventory_items/all_inventory.rpy:35
     old 'inventoryitem_has_needle_properties'
-    new ''
+    new 'Специальное: исцеляет 6 очков жизни'
 
     # game/engine_data/inventory_items/all_inventory.rpy:37
     old 'inventoryitem_has_1201_note_name'
@@ -152,7 +152,7 @@ translate russian strings:
 
     # game/engine_data/inventory_items/all_inventory.rpy:48
     old 'inventoryitem_has_bandages_description'
-    new 'Лечат 3 Очка Жизни.\n\nЭто рулон бинтов, полезный для перевязывания легких ран.'
+    new 'Это рулон бинтов, полезный для перевязывания легких ран.'
 
     # game/engine_data/inventory_items/all_inventory.rpy:49
     old 'inventoryitem_has_bandages_used_by'
@@ -160,7 +160,7 @@ translate russian strings:
 
     # game/engine_data/inventory_items/all_inventory.rpy:50
     old 'inventoryitem_has_bandages_properties'
-    new ''
+    new 'Лечат 3 Очка Жизни.'
 
     # game/engine_data/inventory_items/all_inventory.rpy:52
     old 'inventoryitem_has_embalm_name'
@@ -168,15 +168,15 @@ translate russian strings:
 
     # game/engine_data/inventory_items/all_inventory.rpy:53
     old 'inventoryitem_has_embalm_description'
-    new 'Специальное:\n  +2-8 к Очкам Жизни\n  +1 к Классу Брони\n\nИспользуется только Безымянным и Мортом\n\nЭто запечатанная банка с бальзамирующей жидкостью. Она используется для сохранения мертвых тел. В добавок к этому запах жидкости начисто перебивает запах гниющего тела.'
+    new 'Это запечатанная банка с бальзамирующей жидкостью. Она используется для сохранения мертвых тел. В добавок к этому запах жидкости начисто перебивает запах гниющего тела.'
 
     # game/engine_data/inventory_items/all_inventory.rpy:54
     old 'inventoryitem_has_embalm_used_by'
-    new ''
+    new 'Используется только Безымянным и Мортом.'
 
     # game/engine_data/inventory_items/all_inventory.rpy:55
     old 'inventoryitem_has_embalm_properties'
-    new ''
+    new 'Специальное:\n  +2-8 к Очкам Жизни\n  +1 к Классу Брони'
 
     # game/engine_data/inventory_items/all_inventory.rpy:57
     old 'inventoryitem_has_keyem_name'
@@ -208,15 +208,15 @@ translate russian strings:
 
     # game/engine_data/inventory_items/all_inventory.rpy:65
     old 'inventoryitem_has_tearring_properties'
-    new ''
+    new 'Слабое благословение медью.'
 
     # game/engine_data/inventory_items/all_inventory.rpy:67
     old "inventoryitem_has_keymo_name"
-    new ""
+    new "Ключ от передних ворот Морга"
 
     # game/engine_data/inventory_items/all_inventory.rpy:68
     old "inventoryitem_has_keymo_description"
-    new ""
+    new "Это обычный крупный железный ключ. По какой-то причине его мрачный вид напоминает тебе о Морге."
 
     # game/engine_data/inventory_items/all_inventory.rpy:69
     old "inventoryitem_has_keymo_used_by"
@@ -248,15 +248,15 @@ translate russian strings:
 
     # game/engine_data/inventory_items/all_inventory.rpy:73
     old 'inventoryitem_has_dhall_feather_description'
-    new 'Особенность: постоянно +1 к Осведомленности\n\nИспользуется только магами\n\nЭто перо для письма, похоже, принадлежало какой-то огромной птице. Оно слегка отдает пеплом. Изучение пера показывает, что оно принадлежало вроку, одной из многих рас танарри, которыми наполнена Бездна. Вроки напоминают огромных стервятников; они часто использовались как разведчики войск танарри в Кровавой войне.\n\nДхолл пользовался этим пером всю свою жизнь, и, таким образом, оно несет в себе его опыт и воспоминания. Разломив его, ты впитаешь часть его знаний, что даст тебе постоянную прибавку к Осведомленности.'
+    new 'Это перо для письма, похоже, принадлежало какой-то огромной птице. Оно слегка отдает пеплом. Изучение пера показывает, что оно принадлежало вроку, одной из многих рас танарри, которыми наполнена Бездна. Вроки напоминают огромных стервятников; они часто использовались как разведчики войск танарри в Кровавой войне.\n\nДхолл пользовался этим пером всю свою жизнь, и, таким образом, оно несет в себе его опыт и воспоминания. Разломив его, ты впитаешь часть его знаний, что даст тебе постоянную прибавку к Осведомленности.'
 
     # game/engine_data/inventory_items/all_inventory.rpy:74
     old 'inventoryitem_has_dhall_feather_used_by'
-    new ''
+    new 'Используется только магами'
 
     # game/engine_data/inventory_items/all_inventory.rpy:75
     old 'inventoryitem_has_dhall_feather_properties'
-    new ''
+    new 'Особенность: постоянно +1 к Осведомленности'
 
     # game/engine_data/inventory_items/all_inventory.rpy:77
     old 'inventoryitem_has_finger_bone_name'
@@ -280,15 +280,15 @@ translate russian strings:
 
     # game/engine_data/inventory_items/all_inventory.rpy:83
     old 'inventoryitem_has_dustrobe_description'
-    new 'Особенность: маскирует под тленного\n\nИспользуется только в Морге\n\nЭту потрепанную одежду обычно носят члены фракции Тленных. У нее старый, затхлый запах, и она тебе не совсем подходит. Ты сомневаешься, что эта маскировка выдержит досмотр или свет Солнца — и наверняка не выдержит, если тленные будут искать нарушителя.'
+    new 'Эту потрепанную одежду обычно носят члены фракции Тленных. У нее старый, затхлый запах, и она тебе не совсем подходит. Ты сомневаешься, что эта маскировка выдержит досмотр или свет Солнца — и наверняка не выдержит, если тленные будут искать нарушителя.'
 
     # game/engine_data/inventory_items/all_inventory.rpy:84
     old 'inventoryitem_has_dustrobe_used_by'
-    new ''
+    new 'Используется только в Морге'
 
     # game/engine_data/inventory_items/all_inventory.rpy:85
     old 'inventoryitem_has_dustrobe_properties'
-    new ''
+    new 'Особенность: маскирует под тленного'
 
     # game/engine_data/inventory_items/all_inventory.rpy:87
     old 'inventoryitem_has_dremind_name'
@@ -360,7 +360,7 @@ translate russian strings:
 
     # game/engine_data/inventory_items/all_inventory.rpy:108
     old 'inventoryitem_has_bone_chrm_description'
-    new 'Особенности:\n  +2 к Классу Брони\n  +2 к Классу Брони против дробящих атак\n  +15% устойчивости к дробящим атакам\nЭта старая кость фаланги вычищена, а на ее поверхность нанесены крохотные символы. Для активизации нужно переломить ее надвое.\nКостяной амулет, если его переломить, временно укрепляет скелет и защищает от переломов. Также он дает всеобщий бонус к броне и дополнительную устойчивость к дробящим атакам.'
+    new 'Эта старая кость фаланги вычищена, а на ее поверхность нанесены крохотные символы. Для активизации нужно переломить ее надвое.\nКостяной амулет, если его переломить, временно укрепляет скелет и защищает от переломов. Также он дает всеобщий бонус к броне и дополнительную устойчивость к дробящим атакам.'
 
     # game/engine_data/inventory_items/all_inventory.rpy:109
     old 'inventoryitem_has_bone_chrm_used_by'
@@ -368,7 +368,7 @@ translate russian strings:
 
     # game/engine_data/inventory_items/all_inventory.rpy:110
     old 'inventoryitem_has_bone_chrm_properties'
-    new ''
+    new 'Особенности:\n  +2 к Классу Брони\n  +2 к Классу Брони против дробящих атак\n  +15% устойчивости к дробящим атакам'
 
     # game/engine_data/inventory_items/all_inventory.rpy:112
     old 'inventoryitem_has_breast1_name'
@@ -376,15 +376,15 @@ translate russian strings:
 
     # game/engine_data/inventory_items/all_inventory.rpy:113
     old 'inventoryitem_has_breast1_description'
-    new 'Учит владельца заклинанию «Броня»\nИспользуется только магами\nПосле внимательного исследования рун, которыми покрыта поверхность этого нагрудника, ты делаешь вывод, что можешь высвободить силу рун и использовать ее для создания простого защитного заклинания, похожего на то, что защищало гигантского скелета. Однако активизация рун разрушит нагрудник.'
+    new 'После внимательного исследования рун, которыми покрыта поверхность этого нагрудника, ты делаешь вывод, что можешь высвободить силу рун и использовать ее для создания простого защитного заклинания, похожего на то, что защищало гигантского скелета. Однако активизация рун разрушит нагрудник.'
 
     # game/engine_data/inventory_items/all_inventory.rpy:114
     old 'inventoryitem_has_breast1_used_by'
-    new ''
+    new 'Используется только магами'
 
     # game/engine_data/inventory_items/all_inventory.rpy:115
     old 'inventoryitem_has_breast1_properties'
-    new ''
+    new 'Вызывает: «Броня»\nУчит владельца заклинанию «Броня»\nУровень: 1 / маг\nДальность: 0\nДлительность: пока не будет разрушена уроном\nСкорость: 1\nОбласть действия: 1 существо\nСпасбросок: нет'
 
     # game/engine_data/inventory_items/all_inventory.rpy:117
     old 'inventoryitem_has_breast2_name'
@@ -392,15 +392,15 @@ translate russian strings:
 
     # game/engine_data/inventory_items/all_inventory.rpy:118
     old 'inventoryitem_has_breast2_description'
-    new 'Учит владельца заклинанию «Броня»\nИспользуется только магами\nПосле внимательного исследования  этого нагрудника ты понимаешь, что не развеял защитную руну перед тем, как обнаружил ее. Так что, в отличие от остальных нагрудников, заклинание, обеспечивающее целостность гигантского скелета, почти нетронуто, и ты можешь либо создать из рун заклинание, либо скопировать руны в книгу заклинаний для дальнейшего использования их в своем арсенале. Однако создание заклинания или его копирование уничтожит нагрудник.'
+    new 'После внимательного исследования  этого нагрудника ты понимаешь, что не развеял защитную руну перед тем, как обнаружил ее. Так что, в отличие от остальных нагрудников, заклинание, обеспечивающее целостность гигантского скелета, почти нетронуто, и ты можешь либо создать из рун заклинание, либо скопировать руны в книгу заклинаний для дальнейшего использования их в своем арсенале. Однако создание заклинания или его копирование уничтожит нагрудник.'
 
     # game/engine_data/inventory_items/all_inventory.rpy:119
     old 'inventoryitem_has_breast2_used_by'
-    new ''
+    new 'Используется только магами'
 
     # game/engine_data/inventory_items/all_inventory.rpy:120
     old 'inventoryitem_has_breast2_properties'
-    new ''
+    new 'Вызывает: «Броня»\nУчит владельца заклинанию «Броня»\nУровень: 1 / маг\nДальность: 0\nДлительность: пока не будет разрушена уроном\nСкорость: 1\nОбласть действия: 1 существо\nСпасбросок: нет'
 
     # game/engine_data/inventory_items/all_inventory.rpy:122
     old 'inventoryitem_has_breast3_name'
@@ -408,15 +408,15 @@ translate russian strings:
 
     # game/engine_data/inventory_items/all_inventory.rpy:123
     old 'inventoryitem_has_breast3_description'
-    new 'Учит владельца заклинанию «Щит»\nИспользуется только магами\nПосле внимательного исследования рун, которыми покрыта поверхность этого нагрудника, ты делаешь вывод, что можешь высвободить силу рун и использовать ее для создания простого защитного заклинания, похожего на то, что защищало гигантского скелета. Однако активизация рун разрушит нагрудник.'
+    new 'После внимательного исследования рун, которыми покрыта поверхность этого нагрудника, ты делаешь вывод, что можешь высвободить силу рун и использовать ее для создания простого защитного заклинания, похожего на то, что защищало гигантского скелета. Однако активизация рун разрушит нагрудник.'
 
     # game/engine_data/inventory_items/all_inventory.rpy:124
     old 'inventoryitem_has_breast3_used_by'
-    new ''
+    new 'Используется только магами'
 
     # game/engine_data/inventory_items/all_inventory.rpy:125
     old 'inventoryitem_has_breast3_properties'
-    new ''
+    new 'Вызывает: «Щит»\nУчит владельца заклинанию «Щит»\nУровень: 1 / маг\nДальность: 10 футов\nДлительность: 25 сек. / уровень\nСкорость: 1\nОбласть действия: 1 существо\nСпасбросок: нет'
 
     # game/engine_data/inventory_items/all_inventory.rpy:127
     old 'inventoryitem_has_breast4_name'
@@ -424,15 +424,15 @@ translate russian strings:
 
     # game/engine_data/inventory_items/all_inventory.rpy:128
     old 'inventoryitem_has_breast4_description'
-    new 'Учит владельца заклинанию «Щит»\nИспользуется только магами\nПосле внимательного исследования  этого нагрудника ты понимаешь, что не развеял защитную руну перед тем, как обнаружил ее. Так что, в отличие от остальных нагрудников, заклинание, обеспечивающее целостность гигантского скелета, почти нетронуто, и ты можешь либо создать из рун заклинание, либо скопировать руны в книгу заклинаний для дальнейшего использования их в своем арсенале. Однако создание заклинания или его копирование уничтожит нагрудник.'
+    new 'После внимательного исследования  этого нагрудника ты понимаешь, что не развеял защитную руну перед тем, как обнаружил ее. Так что, в отличие от остальных нагрудников, заклинание, обеспечивающее целостность гигантского скелета, почти нетронуто, и ты можешь либо создать из рун заклинание, либо скопировать руны в книгу заклинаний для дальнейшего использования их в своем арсенале. Однако создание заклинания или его копирование уничтожит нагрудник.'
 
     # game/engine_data/inventory_items/all_inventory.rpy:129
     old 'inventoryitem_has_breast4_used_by'
-    new ''
+    new 'Используется только магами'
 
     # game/engine_data/inventory_items/all_inventory.rpy:130
     old 'inventoryitem_has_breast4_properties'
-    new ''
+    new 'Вызывает: «Щит»\nУчит владельца заклинанию «Щит»\nУровень: 1 / маг\nДальность: 10 футов\nДлительность: 25 сек. / уровень\nСкорость: 1\nОбласть действия: 1 существо\nСпасбросок: нет'
 
     # game/engine_data/inventory_items/all_inventory.rpy:132
     old 'inventoryitem_has_clotchrm_name'
@@ -440,7 +440,7 @@ translate russian strings:
 
     # game/engine_data/inventory_items/all_inventory.rpy:133
     old 'inventoryitem_has_clotchrm_description'
-    new 'Особенности:\n  Исцеляет 9 очков жизни\n  +5% устойчивости к рубящим атакам\n  +10% устойчивости к колющим атакам\nЭто блестящая капля крови, твердая и гладкая, как жемчужина. Если положить ее на язык, она мгновенно растворяется и разносится по жилам использующего.\nАмулет стимулирует запекание крови на ранах использующего его, восстанавливая любые незначительные повреждения, полученные до момента употребления амулета. Более того, во время действия амулета кровь запекается быстрее на новых полученных ранах, особенно от кровопускающих атак. Находящийся под действием амулета становится более устойчивым к рубящим и колющим атакам, поскольку кровь сразу же запекается на полученных ранах.'
+    new 'Это блестящая капля крови, твердая и гладкая, как жемчужина. Если положить ее на язык, она мгновенно растворяется и разносится по жилам использующего.\nАмулет стимулирует запекание крови на ранах использующего его, восстанавливая любые незначительные повреждения, полученные до момента употребления амулета. Более того, во время действия амулета кровь запекается быстрее на новых полученных ранах, особенно от кровопускающих атак. Находящийся под действием амулета становится более устойчивым к рубящим и колющим атакам, поскольку кровь сразу же запекается на полученных ранах.'
 
     # game/engine_data/inventory_items/all_inventory.rpy:134
     old 'inventoryitem_has_clotchrm_used_by'
@@ -448,7 +448,7 @@ translate russian strings:
 
     # game/engine_data/inventory_items/all_inventory.rpy:135
     old 'inventoryitem_has_clotchrm_properties'
-    new ''
+    new 'Особенности:\n  Исцеляет 9 очков жизни\n  +5% устойчивости к рубящим атакам\n  +10% устойчивости к колющим атакам'
 
     # game/engine_data/inventory_items/all_inventory.rpy:137
     old 'inventoryitem_has_cube_name'
@@ -504,15 +504,15 @@ translate russian strings:
 
     # game/engine_data/inventory_items/all_inventory.rpy:153
     old 'inventoryitem_has_gs_knife_description'
-    new 'Не используется жрецами\nЭтот острый нож был выкован из знаменитой бааторийской зеленой стали. Особую зеленую руду можно найти только в пустошах Авернуса, и, будучи выкованной в металл, она становится легче обычной стали. Вдобавок, оружие из зеленой стали дольше сохраняет остроту лезвия и способно наносить больший урон, чем обычное.'
+    new 'Этот острый нож был выкован из знаменитой бааторийской зеленой стали. Особую зеленую руду можно найти только в пустошах Авернуса, и, будучи выкованной в металл, она становится легче обычной стали. Вдобавок, оружие из зеленой стали дольше сохраняет остроту лезвия и способно наносить больший урон, чем обычное.'
 
     # game/engine_data/inventory_items/all_inventory.rpy:154
     old 'inventoryitem_has_gs_knife_used_by'
-    new ''
+    new 'Не используется жрецами'
 
     # game/engine_data/inventory_items/all_inventory.rpy:155
     old 'inventoryitem_has_gs_knife_properties'
-    new ''
+    new 'Урон: 1-4 колющий\nСкорость: 1\nСпециализация: клинковые'
 
     # game/engine_data/inventory_items/all_inventory.rpy:157
     old 'inventoryitem_has_rags_name'
@@ -540,11 +540,11 @@ translate russian strings:
 
     # game/engine_data/inventory_items/all_inventory.rpy:164
     old 'inventoryitem_has_spike_used_by'
-    new ''
+    new 'Не используется жрецами'
 
     # game/engine_data/inventory_items/all_inventory.rpy:165
     old 'inventoryitem_has_spike_properties'
-    new ''
+    new 'Урон: 1-3 колющий\nСкорость: 2\nСпециализация: клинковые'
 
     # game/engine_data/inventory_items/all_inventory.rpy:167
     old 'inventoryitem_has_strap_name'
@@ -568,15 +568,15 @@ translate russian strings:
 
     # game/engine_data/inventory_items/all_inventory.rpy:173
     old 'inventoryitem_has_sup_ring_description'
-    new 'Особенности:\n  +3 ко всем спасброскам\n  +3 к Классу Брони\n  +3 к Классу Брони против колющих атак\nИспользуется только Безымянным\nЭто кольцо из слоновой кости — часть наследства Дейонарры, и каким-то неизвестным способом она втрое увеличила его силу. Раньше оно слегка светилось, сейчас же оно пылает холодным белым огнем по краям. Этот огонь не жжет — напротив, его прикосновение приятно.\nКак и при ношении обычного кольца Дейонарры из камня души, ты получаешь дополнительную защиту против всех атак, а также дополнительную защиту от колющих атак… вероятно, предназначением кольца была защита души от потрясений и травм, что также распространяется и на любую физическую боль, испытываемую владельцем.'
+    new 'Это кольцо из слоновой кости — часть наследства Дейонарры, и каким-то неизвестным способом она втрое увеличила его силу. Раньше оно слегка светилось, сейчас же оно пылает холодным белым огнем по краям. Этот огонь не жжет — напротив, его прикосновение приятно.\nКак и при ношении обычного кольца Дейонарры из камня души, ты получаешь дополнительную защиту против всех атак, а также дополнительную защиту от колющих атак… вероятно, предназначением кольца была защита души от потрясений и травм, что также распространяется и на любую физическую боль, испытываемую владельцем.'
 
     # game/engine_data/inventory_items/all_inventory.rpy:174
     old 'inventoryitem_has_sup_ring_used_by'
-    new ''
+    new 'Используется только Безымянным'
 
     # game/engine_data/inventory_items/all_inventory.rpy:175
     old 'inventoryitem_has_sup_ring_properties'
-    new ''
+    new 'Особенности:\n  +3 ко всем спасброскам\n  +3 к Классу Брони\n  +3 к Классу Брони против колющих атак'
 
     # game/engine_data/inventory_items/all_inventory.rpy:177
     old 'inventoryitem_has_wedding_ring_name'
@@ -584,15 +584,15 @@ translate russian strings:
 
     # game/engine_data/inventory_items/all_inventory.rpy:178
     old 'inventoryitem_has_wedding_ring_description'
-    new 'Особенности:\n  +1 ко всем спасброскам\n  +1 к Классу Брони\n  +3 к Классу Брони против колющих атак\nИспользуется только Безымянным\nЭто кольцо из слоновой кости было частью наследства Дейонарры. Оно слегка светится, и несмотря на то, что на ощупь оно холодное, эта прохлада на удивление приятна. Кромка растягивается, так что кольцо подходит любому пальцу.\nОдним из множества таинств Общества Восприятия является способность обрабатывать особые камни из Элизиума, именуемые «камнями души». Хотя эти камни не столь могущественны, как камни переживаний, говорят, что они несут в себе отпечаток эмоций того, кто придавал им форму. Кольца, подобные этому, нередко используются в свадебных церемониях чувствующих, где каждое из колец запечатлевает чувства одного из молодоженов. Это кольцо, по всей видимости, предназначено для тебя.\nНося кольцо Дейонарры, ты получаешь дополнительную защиту от всех атак, а также дополнительную защиту от колющих атак… вероятно, предназначением кольца была защита сердца от потрясений и травм, что также распространяется и на любую физическую боль, испытываемую владельцем.'
+    new 'Это кольцо из слоновой кости было частью наследства Дейонарры. Оно слегка светится, и несмотря на то, что на ощупь оно холодное, эта прохлада на удивление приятна. Кромка растягивается, так что кольцо подходит любому пальцу.\nОдним из множества таинств Общества Восприятия является способность обрабатывать особые камни из Элизиума, именуемые «камнями души». Хотя эти камни не столь могущественны, как камни переживаний, говорят, что они несут в себе отпечаток эмоций того, кто придавал им форму. Кольца, подобные этому, нередко используются в свадебных церемониях чувствующих, где каждое из колец запечатлевает чувства одного из молодоженов. Это кольцо, по всей видимости, предназначено для тебя.\nНося кольцо Дейонарры, ты получаешь дополнительную защиту от всех атак, а также дополнительную защиту от колющих атак… вероятно, предназначением кольца была защита сердца от потрясений и травм, что также распространяется и на любую физическую боль, испытываемую владельцем.'
 
     # game/engine_data/inventory_items/all_inventory.rpy:179
     old 'inventoryitem_has_wedding_ring_used_by'
-    new ''
+    new 'Используется только Безымянным'
 
     # game/engine_data/inventory_items/all_inventory.rpy:180
     old 'inventoryitem_has_wedding_ring_properties'
-    new ''
+    new 'Особенности:\n  +1 ко всем спасброскам\n  +1 к Классу Брони\n  +3 к Классу Брони против колющих атак'
 
     # game/engine_data/inventory_items/all_inventory.rpy:182
     old 'inventoryitem_has_xac_heart_name'
@@ -600,15 +600,15 @@ translate russian strings:
 
     # game/engine_data/inventory_items/all_inventory.rpy:183
     old 'inventoryitem_has_xac_heart_description'
-    new 'Особенности:\n  Навсегда +1 к Ловкости, если расколоть\n  Навсегда +1 к Классу брони против снарядов\nИспользуется только бойцами\nЭтот почерневший предмет размером с кулак похож скорее на кусок сгоревшего древесного угля, чем на сердце Захарии. Для своего размера он невероятно тяжел, и по всей его поверхности тянутся трещины... Похоже, он может расколоться надвое в любой момент. Если подержать его, на руках остаются странные ржавые полосы, которые невозможно стереть.\nНеобычайная тяжесть предмета кажется тебе достаточно любопытной, чтобы немного рассмотреть его; при внимательном осмотре то, что ты сперва принял за сердце Захарии, на самом деле оказывается камнем. Насколько ты можешь судить, в нем нет ни намека на то, что это когда-либо было живой тканью. Как Захария жил с *этим*, бьющимся в его груди, — неизвестно.\nКакое бы благословение, позволяющее стрелам Захарии бить без промаха, не было наложено на его глаза, оно оставило свой след и в его сердце. Если расколоть сердце Захарии надвое, сделавший это получит часть его зрения, проворства и восприятия. Это дает прибавку к ловкости, а также шанс обнаружить любой летящий снаряд и уклонится от него.'
+    new 'Этот почерневший предмет размером с кулак похож скорее на кусок сгоревшего древесного угля, чем на сердце Захарии. Для своего размера он невероятно тяжел, и по всей его поверхности тянутся трещины... Похоже, он может расколоться надвое в любой момент. Если подержать его, на руках остаются странные ржавые полосы, которые невозможно стереть.\nНеобычайная тяжесть предмета кажется тебе достаточно любопытной, чтобы немного рассмотреть его; при внимательном осмотре то, что ты сперва принял за сердце Захарии, на самом деле оказывается камнем. Насколько ты можешь судить, в нем нет ни намека на то, что это когда-либо было живой тканью. Как Захария жил с *этим*, бьющимся в его груди, — неизвестно.\nКакое бы благословение, позволяющее стрелам Захарии бить без промаха, не было наложено на его глаза, оно оставило свой след и в его сердце. Если расколоть сердце Захарии надвое, сделавший это получит часть его зрения, проворства и восприятия. Это дает прибавку к ловкости, а также шанс обнаружить любой летящий снаряд и уклонится от него.'
 
     # game/engine_data/inventory_items/all_inventory.rpy:184
     old 'inventoryitem_has_xac_heart_used_by'
-    new ''
+    new 'Используется только бойцами'
 
     # game/engine_data/inventory_items/all_inventory.rpy:185
     old 'inventoryitem_has_xac_heart_properties'
-    new ''
+    new 'Особенности:\n  Навсегда +1 к Ловкости, если расколоть\n  Навсегда +1 к Классу брони против снарядов'
 
     # game/engine_data/inventory_items/all_inventory.rpy:187
     old 'inventoryitem_has_xac_liver_name'

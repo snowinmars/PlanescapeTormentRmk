@@ -14,31 +14,39 @@ screen inventory_item_screen(item):
             area (825, 250, 440, 25)
             text_style '_inventory_item_screen_style_header'
 
-        vbox:
-            pos (825, 310)
-            xsize 600
-            spacing 0
-
-            if __(item.properties):
-                label __(item.properties):
-                    xfill True
-                    text_style '_inventory_item_screen_style_text'
-                    text_align (0.0, 0.0)
-
-            if __(item.used_by):
-                label __(item.used_by):
-                    xfill True
-                    text_style '_inventory_item_screen_style_text'
-                    text_align (0.0, 0.0)
-
-            label __(item.description):
-                xfill True
-                text_style '_inventory_item_screen_style_text'
-                text_align (0.0, 0.0)
-
         add Transform(item.detail_image):
             pos (622, 317)
             size (125, 125)
+
+        viewport:
+            area (825, 310, 600, 500)
+            mousewheel True
+            draggable True
+            scrollbars 'vertical'
+
+            vbox:
+                spacing 0
+
+                if __(item.properties):
+                    label __(item.properties):
+                        xfill True
+                        text_style '_inventory_item_screen_style_text'
+                        text_align (0.0, 0.0)
+
+                if __(item.used_by):
+                    label __(item.used_by):
+                        xfill True
+                        text_style '_inventory_item_screen_style_text'
+                        text_align (0.0, 0.0)
+
+                if __(item.properties) or __(item.used_by):
+                    label '':
+                        text_style '_inventory_item_screen_style_text'
+
+                label __(item.description):
+                    xfill True
+                    text_style '_inventory_item_screen_style_text'
+                    text_align (0.0, 0.0)
 
 
     button:

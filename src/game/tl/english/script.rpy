@@ -16,12 +16,6 @@ translate english end_7fd59d57:
     # snowinmars 'Спасибо.'
     snowinmars 'Thanks.'
 
-# game/script.rpy:190
-translate english end_5625e4d0:
-
-    # 'The conversation ends.'
-    'The conversation ends.'
-
 translate english strings:
 
     # game/script.rpy:147
@@ -35,4 +29,8 @@ translate english strings:
     # game/script.rpy:147
     old 'Новая жизнь'
     new 'New life'
+
+    # game/script.rpy:251
+    old "Выйти."
+    new "Exit."
 
