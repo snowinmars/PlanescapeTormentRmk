@@ -62,6 +62,8 @@ init 10 python:
 
 
 label mortuary_f2_map:
+    $ renpy.scene(layer = "screens")
+    $ renpy.music.play(audio.mortuary, channel="music", loop=True, if_changed=True)
     call screen mortuary_f2_map()
 
 
@@ -138,6 +140,5 @@ screen mortuary_f2_map():
             MortuaryF2R6Shadow(state_manager, 3425, 1550),
             MortuaryF2R7Shadow(state_manager, 3227, 2280),
             MortuaryF2R8Shadow(state_manager, 2320, 2620),
-        ],
-        audio.mortuary
+        ]
     )

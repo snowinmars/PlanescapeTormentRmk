@@ -14,7 +14,7 @@ screen achievement_gallery():
         background Transform('gui/beastbg.webp', fit='cover')
 
 
-        label __("achievement_gallery_statistics").format(earned=Achievement.num_earned(), total=Achievement.num_total()):
+        label __('achievement_gallery_statistics').format(earned=Achievement.num_earned(), total=Achievement.num_total()):
             area (960, 60, 627, 60)
             text_align (0.5, 0.5)
             text_size 20
@@ -23,7 +23,7 @@ screen achievement_gallery():
 
         viewport:
             area (425, 125, 375, 625)
-            scrollbars "vertical"
+            scrollbars 'vertical'
             mousewheel True
             draggable True
 
@@ -66,7 +66,7 @@ screen achievement_gallery():
             insensitive_background Transform('gui/button.png', matrixcolor=insensitive_matrix)
             sensitive (selected is not None)
 
-            text _("achievement_gallery_toggle_selected"): # Переключить
+            text _('achievement_gallery_toggle_selected'): # Переключить
                 style 'achievement_screen_style_button_text'
                 align (0.5, 0.5)
 
@@ -77,7 +77,7 @@ screen achievement_gallery():
             background Transform('gui/button.png')
             hover_background Transform('gui/button.png', matrixcolor=hover_matrix)
 
-            text _("achievement_gallery_reset_all"): # Сбросить все
+            text _('achievement_gallery_reset_all'): # Сбросить все
                 style 'achievement_screen_style_button_text'
                 align (0.5, 0.5)
 
@@ -88,7 +88,7 @@ screen achievement_gallery():
             background Transform('gui/settings_button_idle.png')
             hover_background Transform('gui/settings_button_idle.png', matrixcolor=hover_matrix)
 
-            text _("achievement_gallery_back"): # Назад
+            text _('achievement_gallery_back'): # Назад
                 style 'achievement_screen_style_button_text'
                 align (0.5, 0.5)
 

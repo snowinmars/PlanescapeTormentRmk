@@ -67,8 +67,8 @@ define dustfem            = Character(_('dustfem_character_name')       , color=
 define morte_story_1      = Character(_('morte_story_1_character_name') , color='#b8a175')
 define morte_story_2      = Character(_('morte_story_2_character_name') , color='#b8a175')
 
-define nr                 = Character(''                                , color='#b8a175')
+define nr                 = Character(''                                , color='#98afb5')
 define scars              = Character('scars'                           , color='#bf6b5f')
-define the_nameless_one   = Character(_('protagonist_character_name')   , color='#482505')
+define the_nameless_one   = Character(_('protagonist_character_name')   , color='#ff2e21')
 
 define snowinmars         = Character('dev'                             , color='#b8a175')

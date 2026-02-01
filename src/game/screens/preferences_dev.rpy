@@ -11,7 +11,7 @@ screen preferences_dev():
         xfill True
         yfill True
         align (0.5, 0.5)
-        background Transform('gui/journal.png')
+        background Transform('gui/journal.webp')
 
 
         label preferences_dev_screen_choice:

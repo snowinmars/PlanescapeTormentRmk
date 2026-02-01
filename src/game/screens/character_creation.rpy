@@ -84,7 +84,7 @@ screen character_creation():
         insensitive_background Transform('gui/cgback_go.png', matrixcolor=insensitive_matrix)
         action Start()
         sensitive (characterCreationLogic.done())
-        text _("character_screen_go"): # Готово
+        text _('character_screen_go'): # Готово
             pos (35, 25)
             style '_input_screen_style_button'
 
@@ -93,11 +93,11 @@ screen character_creation():
         background Transform('gui/cgback_back.png')
         hover_background Transform('gui/cgback_back.png', matrixcolor=hover_matrix)
         action [
-            ShowMenu("main_menu"),
+            ShowMenu('main_menu'),
             Hide('_character_creation_descrption'),
             Hide('character_creation')
         ]
-        text _("character_screen_back"): # 'Отмена'
+        text _('character_screen_back'): # 'Отмена'
             pos (35, 5)
             style '_input_screen_style_button'
 
@@ -121,7 +121,7 @@ screen _strength_input():
         hovered Show('_character_creation_descrption', x='character_screen_strength_help')
         unhovered Show('_character_creation_descrption', x='character_screen_help')
 
-        text _("character_screen_strength"):
+        text _('character_screen_strength'):
             pos (125, 145)
             xsize 150
             style '_input_screen_style_title'
@@ -158,7 +158,7 @@ screen _intelligence_input():
         hovered Show('_character_creation_descrption', x='character_screen_intelligence_help')
         unhovered Show('_character_creation_descrption', x='character_screen_help')
 
-        text _("character_screen_intelligence"):
+        text _('character_screen_intelligence'):
             pos (195, 195)
             xsize 150
             style '_input_screen_style_title'
@@ -198,7 +198,7 @@ screen _wisdom_input():
         hovered Show('_character_creation_descrption', x='character_screen_wisdom_help')
         unhovered Show('_character_creation_descrption', x='character_screen_help')
 
-        text _("character_screen_wisdom"):
+        text _('character_screen_wisdom'):
             pos (180, 95)
             xsize 150
             style '_input_screen_style_title'
@@ -238,7 +238,7 @@ screen _dexterity_input():
         hovered Show('_character_creation_descrption', x='character_screen_dexterity_help')
         unhovered Show('_character_creation_descrption', x='character_screen_help')
 
-        text _("character_screen_dexterity"):
+        text _('character_screen_dexterity'):
             pos (120, 35)
             xsize 150
             style '_input_screen_style_title'
@@ -275,7 +275,7 @@ screen _constitution_input():
         hovered Show('_character_creation_descrption', x='character_screen_constitution_help')
         unhovered Show('_character_creation_descrption', x='character_screen_help')
 
-        text _("character_screen_constitution"):
+        text _('character_screen_constitution'):
             pos (80, 95)
             xsize 150
             style '_input_screen_style_title'
@@ -315,7 +315,7 @@ screen _charisma_input():
         hovered Show('_character_creation_descrption', x='character_screen_charisma_help')
         unhovered Show('_character_creation_descrption', x='character_screen_help')
 
-        text _("character_screen_charisma"):
+        text _('character_screen_charisma'):
             pos (80, 180)
             xsize 150
             style '_input_screen_style_title'

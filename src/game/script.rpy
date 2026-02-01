@@ -174,13 +174,7 @@ init 3 python: # setup hooks for initialyzing managers and applying stores
         config.keymap['journal_screen'] = keymap_journal_screen
         config.underlay.append(
             renpy.Keymap(
-                journal_screen = Show(
-                    "journal_screen",
-                    get_started_quests=runtime.global_quests_manager.build_started_quests,
-                    get_finished_quests=runtime.global_quests_manager.build_finished_quests,
-                    get_notes=runtime.global_journal_notes_manager.build_journal,
-                    # get_beasts=runtime.global_beatiary_manager.build_bestiary,
-                )
+                journal_screen = Show("journal_screen")
             )
         )
 
@@ -193,8 +187,34 @@ init 5 python: # inject narrat
 
     _original_say = renpy.say
     def narrat_say(who, what, *args, **kwargs):
-        runtime.global_narrat_manager.add_history_entry(who, what)
-        runtime.global_narrat_manager.update_current_dialogue(who, what)
+        is_br = False # never sets here, but in narrat_manager.add_br
+        is_change = False # never sets here, but in narrat_manager.report_change
+        is_scars = hasattr(who, 'name') and who.name == 'scars'
+        is_nameless = False # never sets here, but in narrat_manager.add_menu_choice
+        is_npc = not is_scars and hasattr(who, 'name') and who.name is not None and who.name != ''
+        is_nr = not is_scars and not is_npc
+        runtime.global_narrat_manager.add_history_entry(
+            who,
+            who.who_args['color'],
+            what,
+            is_br=is_br,
+            is_change=is_change,
+            is_scars=is_scars,
+            is_nameless=is_nameless,
+            is_npc=is_npc,
+            is_nr=is_nr
+        )
+        runtime.global_narrat_manager.update_current_dialogue(
+            who,
+            who.who_args['color'],
+            what,
+            is_br=is_br,
+            is_change=is_change,
+            is_scars=is_scars,
+            is_nameless=is_nameless,
+            is_npc=is_npc,
+            is_nr=is_nr
+        )
         runtime.global_narrat_manager.update_menu_items([])
         return _original_say(who, what, *args, **kwargs)
     renpy.say = narrat_say
@@ -221,14 +241,15 @@ label dev:
     jump intro
 
 
+# do not modify the next line. It's one of the first line in the game)
 label end:
     $ achievement_mortuary_gate.grant()
     snowinmars '…'
     snowinmars '………'
     snowinmars 'Спасибо.'
-    # do not modify the next line. It's one of the first line in the game)
-    'The conversation ends.'
-    return
+    menu:
+        'Выйти.':
+            $ renpy.full_restart()
 
 
 define dialogue_stack = [] # stack with *_dispose labels

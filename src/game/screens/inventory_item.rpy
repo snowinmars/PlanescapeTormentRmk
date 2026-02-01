@@ -1,18 +1,62 @@
 screen inventory_item_screen(item):
+    modal True
+    zorder 100
+
     key "K_ESCAPE" action Hide("inventory_item_screen")
 
     frame:
-        xsize 600
-        ysize 400
-        xpos 600
-        ypos 200
-        background Transform('gui/popup1.webp', fit='cover')
+        xfill True
+        yfill True
+        align (0.5, 0.5)
+        background Transform('gui/popup1.webp')
 
-    label item.name:
-        xpos 475
-        ypos 710
-        xsize 225
-        ysize 35
-        text_size 20
-        text_color '#f8f6de'
-        text_align (0.5, 0.5)
+        label item.name:
+            area (825, 250, 440, 25)
+            text_style '_inventory_item_screen_style_header'
+
+        vbox:
+            pos (825, 310)
+            xsize 600
+            spacing 0
+
+            if __(item.properties):
+                label __(item.properties):
+                    xfill True
+                    text_style '_inventory_item_screen_style_text'
+                    text_align (0.0, 0.0)
+
+            if __(item.used_by):
+                label __(item.used_by):
+                    xfill True
+                    text_style '_inventory_item_screen_style_text'
+                    text_align (0.0, 0.0)
+
+            label __(item.description):
+                xfill True
+                text_style '_inventory_item_screen_style_text'
+                text_align (0.0, 0.0)
+
+        add Transform(item.detail_image):
+            pos (622, 317)
+            size (125, 125)
+
+
+    button:
+        area (1250, 835, 193, 78)
+        action Hide('inventory_item_screen')
+        background Transform('gui/button.png')
+        hover_background Transform('gui/button.png', matrixcolor=hover_matrix)
+
+        text _('preferences_screen_return'): # Вернуться
+            style 'preferences_dev_screen_style_button_text'
+            align (0.5, 0.5)
+
+
+style _inventory_item_screen_style_header:
+    size 24
+    color color_white
+    align (0.5, 0.5)
+style _inventory_item_screen_style_text:
+    size 18
+    color color_yellow
+    align (0.5, 0.5)

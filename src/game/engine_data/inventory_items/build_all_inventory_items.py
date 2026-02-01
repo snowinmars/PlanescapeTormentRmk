@@ -123,6 +123,15 @@ def build_all_inventory_items(inventory_items_manager):
             properties='inventoryitem_has_tearring_properties'
         )) \
         .register(InventoryItem(
+            settings_id='has_keymo',
+            orig_id='keymo.itm',
+            name='inventoryitem_has_keymo_name',
+            description='inventoryitem_has_keymo_description',
+            grid_image='images/icons/keymo.png',
+            used_by='inventoryitem_has_keymo_used_by',
+            properties='inventoryitem_has_keymo_properties'
+        )) \
+        .register(InventoryItem(
             settings_id='has_mortuary_key',
             orig_id='keymo2.itm',
             name='inventoryitem_has_mortuary_key_name',

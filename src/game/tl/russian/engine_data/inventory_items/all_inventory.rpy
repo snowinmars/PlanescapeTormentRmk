@@ -211,6 +211,22 @@ translate russian strings:
     new ''
 
     # game/engine_data/inventory_items/all_inventory.rpy:67
+    old "inventoryitem_has_keymo_name"
+    new ""
+
+    # game/engine_data/inventory_items/all_inventory.rpy:68
+    old "inventoryitem_has_keymo_description"
+    new ""
+
+    # game/engine_data/inventory_items/all_inventory.rpy:69
+    old "inventoryitem_has_keymo_used_by"
+    new ""
+
+    # game/engine_data/inventory_items/all_inventory.rpy:70
+    old "inventoryitem_has_keymo_properties"
+    new ""
+
+    # game/engine_data/inventory_items/all_inventory.rpy:67
     old 'inventoryitem_has_mortuary_key_name'
     new 'Ключ внутренних покоев Морга'
 

@@ -64,6 +64,11 @@ label never_inventory:
     $ never = _('inventoryitem_has_tearring_used_by')
     $ never = _('inventoryitem_has_tearring_properties')
 
+    $ never = _('inventoryitem_has_keymo_name')
+    $ never = _('inventoryitem_has_keymo_description')
+    $ never = _('inventoryitem_has_keymo_used_by')
+    $ never = _('inventoryitem_has_keymo_properties')
+
     $ never = _('inventoryitem_has_mortuary_key_name')
     $ never = _('inventoryitem_has_mortuary_key_description')
     $ never = _('inventoryitem_has_mortuary_key_used_by')

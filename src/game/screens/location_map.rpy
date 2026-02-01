@@ -3,10 +3,12 @@ default _location_map_yadj = MyAdjustment(value=2000)
 default _location_map_zadj = MyAdjustment(value=0)
 
 
-screen location_map(background, static_actions, dynamic_actions, shadows, bg_music):
-    on "show" action Play("music", bg_music, loop=True, if_changed=True)
-    on "show" action Hide("narrat")
-
+screen location_map(
+    background,
+    static_actions,  # only one possible action: door (go through), chest (loot)
+    dynamic_actions, # sevaral possible actions: npc (talk, kill)
+    shadows          # images to hide rooms other, than player currently is
+):
     default tt = Tooltip('')
 
     default bg_displayable = renpy.displayable(background)
@@ -34,83 +36,72 @@ screen location_map(background, static_actions, dynamic_actions, shadows, bg_mus
             zadjustment _location_map_zadj
 
             frame:
-                xsize int(bg_size[0])
-                ysize int(bg_size[1])
+                xysize (int(bg_size[0]), int(bg_size[1]))
                 anchor (0.5, 0.5)
                 add background:
-                    xalign 0.5
-                    yalign 0.5
+                    align (0.5, 0.5)
+
 
                 for static_action_button in static_actions:
                     if not static_action_button.when():
                         continue
 
                     imagebutton:
+                        pos (static_action_button.pos()['x'], static_action_button.pos()['y'])
+                        anchor (0.5, 0.5)
                         idle static_action_button.texture()
-                        hover Transform(static_action_button.texture(), matrixcolor=BrightnessMatrix(0.2))
-                        xpos static_action_button.pos()['x']
-                        ypos static_action_button.pos()['y']
+                        hover Transform(static_action_button.texture(), matrixcolor=hover_matrix)
                         action ExecuteNavigationDirective(static_action_button.jump())
                         hovered tt.Action(static_action_button.tooltip())
                         unhovered tt.Action('')
-                        anchor (0.5, 0.5)
 
                 for dynamic_action_button in dynamic_actions:
                     if not dynamic_action_button.when():
                         continue
 
                     imagebutton:
-                        idle dynamic_action_button.texture()
-                        # hover Transform(dynamic_action_button.texture(), matrixcolor=hover_matrix) at pulse_effect
-                        xpos dynamic_action_button.pos()['x']
-                        ypos dynamic_action_button.pos()['y']
+                        pos (dynamic_action_button.pos()['x'], dynamic_action_button.pos()['y'])
                         anchor (0.5, 0.5)
+                        idle dynamic_action_button.texture()
 
                     imagebutton:
+                        pos (dynamic_action_button.pos()['x'] + 40, dynamic_action_button.pos()['y'] - 20)
+                        anchor (0.5, 0.5)
                         idle 'images/icons/speak_idle.png'
                         hover Transform('images/icons/speak_idle.png', matrixcolor=hover_matrix)
-                        xpos dynamic_action_button.pos()['x'] + 40
-                        ypos dynamic_action_button.pos()['y'] - 20
                         action ExecuteNavigationDirective(dynamic_action_button.jump())
                         hovered tt.Action(dynamic_action_button.tooltip())
                         unhovered tt.Action('')
-                        anchor (0.5, 0.5)
 
                 for shadow in shadows:
-                    if shadow.when_unvisited():
+                    if shadow.when_unvisited() or shadow.when_visited():
                         imagebutton:
-                            idle Transform(shadow.texture(), matrixcolor=OpacityMatrix(1))
-                            xpos shadow.pos()['x']
-                            ypos shadow.pos()['y']
+                            pos (shadow.pos()['x'], shadow.pos()['y'])
                             anchor (0.5, 0.5)
-                    if shadow.when_visited():
-                        imagebutton:
-                            idle Transform(shadow.texture(), matrixcolor=OpacityMatrix(0.9)) # * ColorizeMatrix("#ff0000", '#00ff00')
-                            xpos shadow.pos()['x']
-                            ypos shadow.pos()['y']
-                            anchor (0.5, 0.5)
+                            if shadow.when_unvisited():
+                                idle Transform(shadow.texture(), matrixcolor=no_opacity)
+                            if shadow.when_visited():
+                                idle Transform(shadow.texture(), matrixcolor=small_opacity)
+                                # idle Transform(shadow.texture(), matrixcolor=colorized_opacity) # for development usage
+
 
     frame:
-        xalign 0.5
-        yalign 0.0
-        xsize 600
-        ysize 50
+        xysize (600, 50)
+        align (0.5, 0.0)
 
         if tt.value:
-            background Transform('gui/tooltip.png', fit='cover') at ease_in_background
+            background Transform('gui/tooltip.png') at ease_in_background
         else:
-            background Transform('gui/tooltip.png', fit='cover') at ease_out_background
+            background Transform('gui/tooltip.png') at ease_out_background
 
         text _(tt.value):
-            size 18
-            color '#dbc401'
-            xalign 0.5
-            yalign 0.5
+            style '_location_map_screen_style_tooltip'
+            align (0.5, 0.5)
+
 
     if _preferences.show_mouse_screen:
         frame:
-            xalign 0.0
-            yalign 1.0
+            align (0.0, 1.0)
 
             # default vp = renpy.get_widget(screen="location_map", id="zoom_vp")
             # $ img_x, img_y = vp.get_cursor_coordinates() # TODO [snow]: why there is the difference between this and that?
@@ -122,17 +113,22 @@ screen location_map(background, static_actions, dynamic_actions, shadows, bg_mus
             $ img_y = scaled_y / zoom
 
             label '[round(img_x)] , [round(img_y)] x[round(zoom, 2)]':
-                text_color '#dbc401'
-                text_size 16
-                text_font 'NotoSans-Regular.ttf'
+                text_style '_location_map_screen_style_mouse_text'
                 # action CopyToClipboard('[offset_x], [offset_y]')
 
 
 transform ease_in_background:
     alpha 0.0
     easein 0.1 alpha 1.0
-
-
 transform ease_out_background:
     alpha 1.0
     easeout 0.1 alpha 0.0
+
+
+style _location_map_screen_style_tooltip:
+    size 18
+    color color_yellow
+style _location_map_screen_style_mouse_text:
+    size 16
+    color color_yellow
+    font 'NotoSans-Regular.ttf'

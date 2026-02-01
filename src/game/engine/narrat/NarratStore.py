@@ -3,46 +3,29 @@ import json
 
 class NarratStore():
     def __init__(self):
-        self.last_history_id = 0
-        self.history = []
-        self.current_speaker = None
-        self.current_text = ""
-        self.current_menu_items = []
-        self.config = { # TODO [snow]: remove this config?
-            'choice_text_color': '#ff2e21',
-            'choice_text_hover_color': '#f0ede4',
-            'npc_text_color': '#9ba290',
-            'nameless_text_color': '#c4a28a',
-            'nr_text_color': '#98afb5',
-            'screen_width': 600,
-            'screen_height': 1000,
-            'history_area_height': 0.6,
-            'dialogue_area_height': 0.18,
-            'menu_area_height': 0.2,
-            'history_entry_limit': 50,
-            'allow_history_scroll': True
-        }
+        self.last_history_id        = 0
+        self.history                = []
+        self.current_line           = None
+        self.current_menu_items     = []
+        self.history_entry_limit    = 50
 
 
     def __getstate__(self):
         return {
             'last_history_id': self.last_history_id,
             'history': self.history,
-            'current_speaker': self.current_speaker,
-            'current_text': self.current_text,
+            'current_line': self.current_line,
             'current_menu_items': self.current_menu_items,
-            'config': self.config
+            'history_entry_limit': self.history_entry_limit
         }
 
 
     def __setstate__(self, state):
         self.last_history_id = state['last_history_id']
         self.history = state['history']
-        self.current_speaker = state['current_speaker']
-        self.current_text = state['current_text']
+        self.current_line = state['current_line']
         self.current_menu_items = state['current_menu_items']
-        self.config = state['config']
-
+        self.history_entry_limit = state['history_entry_limit']
 
     # cannot be friend with json
     # because must have links to ADVCharacter etc

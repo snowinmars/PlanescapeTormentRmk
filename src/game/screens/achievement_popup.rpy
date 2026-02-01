@@ -13,37 +13,45 @@ screen achievement_popup(a, tag, num):
     default achievement_yoffset = num*100
 
     frame:
-        xsize 450
-        ysize 100
-        ## The transform that makes it pop out
-        at achievement_popout()
-        ## Offsets the achievement down if there are multiple
-        yoffset achievement_yoffset
+        background Transform('gui/ablrow.webp')
+        xysize (512, 128)
+        at achievement_popout() # The transform that makes it pop out
+        yoffset achievement_yoffset # Offsets the achievement down if there are multiple
 
         hbox:
-
             add a.unlocked_image:
-                xpos 15
-                ypos 15
-                ## Make sure the image is within a certain size. Useful because
-                ## often popups are smaller than the full gallery image.
-                ## In this case it will not exceed 95 pixels tall but will retain
-                ## its dimensions.
-                fit "contain"
-                ysize 60
+                pos (2, 2)
+                size (113, 113)
+                fit 'contain'
 
             vbox:
-                xpos 20
-                ypos 10
+                pos (15, 5)
 
                 text a.name:
                     size 18
-                    color "#dbc401"
+                    color color_yellow
                 text a.description:
                     size 16
-                    color "#eeeeee"
+                    color color_white
 
-    ## Hide the screen after 5 seconds. You can change the time but shouldn't
-    ## change the action.
-    timer 5.0 action [Hide("achievement_popup"),
-            Show('finish_animating_achievement', num=num, _tag=tag+"1")]
+
+    timer 5.0 action [ # Hide the screen after 5 seconds. You can change the time but shouldn't change the action.
+        Hide('achievement_popup'),
+        Show('finish_animating_achievement', num=num, _tag=tag+'1')
+    ]
+
+
+transform achievement_popout():
+    ## The `on show` event occurs when the screen is first shown.
+    on show:
+        ## Align it off-screen at the left. Note that no y information is
+        ## given, as that is handled on the popup screen.
+        xpos 0.0 xanchor 1.0
+        ## Ease it on-screen
+        easein_back 1.0 xpos 0.0 xanchor 0.0
+    ## The `on hide, replaced` event occurs when the screen is hidden.
+    on hide, replaced:
+        ## Ease it off-screen again.
+        ## This uses the hide time above so it supports displaying multiple
+        ## achievements at once.
+        easeout_back myconfig.ACHIEVEMENT_HIDE_TIME xpos 0.0 xanchor 1.0

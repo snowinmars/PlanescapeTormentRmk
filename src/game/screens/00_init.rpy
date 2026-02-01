@@ -5,8 +5,12 @@
 init offset = -1
 define hover_matrix = BrightnessMatrix(0.2)
 define insensitive_matrix = SaturationMatrix(0.3) * BrightnessMatrix(-0.1)
+define no_opacity = OpacityMatrix(1)
+define small_opacity = OpacityMatrix(0.9)
+define colorized_opacity = small_opacity * ColorizeMatrix("#ff0000", '#00ff00')
 
 define color_yellow = '#dbc401'
+define color_orange = '#bd7a10'
 define color_white = '#f8f6de'
 
 init 2 python:

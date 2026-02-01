@@ -15,7 +15,7 @@
 ##
 ## https://www.renpy.org/doc/html/screen_special.html#say
 
-# Narrated
+# Narrated: lines renders in the 'narrat' screen, but RenPy does not want to work without this screen defined
 screen say(who, what):
     modal False
     frame:

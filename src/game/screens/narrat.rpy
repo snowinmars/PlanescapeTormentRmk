@@ -1,3 +1,14 @@
+init 10 python:
+    from game.engine.runtime import (runtime)
+    from game.screens.NarratLogic import (NarratLogic)
+    narratLogic = NarratLogic(runtime.global_state_manager)
+
+    infinite_float_value       = float('inf')
+    narrat_history_yadjustment = ui.adjustment()
+    narrat_say_yadjustment     = ui.adjustment()
+    narrat_menu_yadjustment    = ui.adjustment()
+
+
 label never_narrat:
     $never = _('strength')
     $never = _('dexterity')
@@ -14,24 +25,17 @@ label never_narrat:
 
 screen narrat():
     zorder 100
-    modal False
-    on 'hide' action Function(runtime.global_narrat_manager.update_current_dialogue, None, None)
-    on 'hide' action Function(runtime.global_narrat_manager.add_br)
 
-    $ config = runtime.global_narrat_manager.get_config()
-    $ screen_width = config.get('screen_width')
-    $ history_height = int(config.get('screen_height') * config.get('history_area_height'))
-    $ say_height = int(config.get('screen_height') * config.get('dialogue_area_height'))
-    $ menu_height = int(config.get('screen_height') * config.get('menu_area_height'))
+    on 'hide' action Function(narratLogic.exit_dialogue)
+
+    modal False # Do not set to True: if it is True, it cannot capture input events like mouse clicks, keyboard press, etc.
 
     frame:
-        background "gui/diabg_his.webp"
-        xsize screen_width
         xfill True
         yfill True
-        xalign 1.0
-        yalign 0.0
-        yoffset 0
+        xsize narratLogic.get_screen_width()
+        align (1.0, 0.0)
+        background Transform('gui/diabg_his.webp')
         padding (20, 40)
 
         vbox:
@@ -39,288 +43,230 @@ screen narrat():
             yfill True
             spacing 0
 
-            $ actual_history = runtime.global_narrat_manager.get_history()
-            $ is_inside_dialogue = runtime.global_narrat_manager.get_current_speaker() is not None
-            if is_inside_dialogue:
-                $ actual_history = actual_history[:-1] # the last history line displays in 'say' screen
-
-            use narrat_history(
-                actual_history,
-                history_height,
-                config['npc_text_color'],
-                config['nr_text_color'],
-                config['nameless_text_color']
-            )
-            use narrat_say(
-                runtime.global_narrat_manager.get_current_speaker(),
-                runtime.global_narrat_manager.get_current_text(),
-                say_height,
-                config['npc_text_color'],
-                config['nr_text_color']
-            )
-            use narrat_menu(
-                runtime.global_narrat_manager.get_current_menu_items(),
-                runtime.global_narrat_manager.add_menu_choice,
-                menu_height,
-                config['choice_text_color'],
-                config['choice_text_hover_color']
-            )
+            use narrat_history()
+            use narrat_say()
+            use narrat_menu()
 
 
-init python:
-    infinite_float_value = float("inf")
-    narrat_history_yadjustment = ui.adjustment()
-
-
-screen narrat_history(
-    history,
-    history_height,
-    npc_text_color,
-    nr_text_color,
-    nameless_text_color
-):
+screen narrat_history():
     $ narrat_history_yadjustment.value = infinite_float_value
-    frame:
-        background None
-        xfill True
-        ysize history_height
+
+    viewport:
+        ysize narratLogic.get_history_height()
+        yadjustment narrat_history_yadjustment
+        mousewheel True
+        draggable True
+        scrollbars 'vertical'
+        yinitial 1.0
 
         vbox:
             xfill True
-            yfill True
+            spacing 10
+            at transform:
+                alpha 0.7
 
-            viewport:
-                yadjustment narrat_history_yadjustment
-                id "history_viewport"
-                xfill True
-                yfill True
-                mousewheel True
-                draggable True
-                scrollbars "vertical"
-                yinitial 1.0
+            for entry in narratLogic.actual_history():
+                if narratLogic.is_br_entry(entry):
+                    use _narrat_br_screen(entry)
+                    continue
 
-                vbox:
+                if narratLogic.is_entry_change(entry):
+                    use _narrat_change_screen(entry)
+                    continue
+
+                if narratLogic.is_scars_entry(entry):
+                    use _narrat_scars_screen(entry)
+                    continue
+
+                if narratLogic.is_nameless_entry(entry):
+                    use _narrat_nameless_screen(entry)
+                    continue
+
+                if narratLogic.is_npc_entry(entry):
+                    use _narrat_npc_screen(entry)
+                    continue
+
+                if narratLogic.is_nr_entry(entry):
+                    use _narrat_nr_screen(entry)
+                    continue
+
+                text 'BUG narrat_history_oor: send screenshot to snowinmars@yandex.ru'
+
+
+screen narrat_say():
+    $ narrat_say_yadjustment.value = infinite_float_value
+
+    viewport:
+        ysize narratLogic.get_say_height()
+        yadjustment narrat_say_yadjustment
+        mousewheel True
+        draggable True
+        scrollbars 'vertical'
+        yinitial 1.0
+
+        $ entry = narratLogic.get_current_line()
+        if entry:
+            if narratLogic.is_scars_entry(entry):
+                use _narrat_scars_screen(entry)
+            elif narratLogic.is_npc_entry(entry):
+                use _narrat_npc_screen(entry)
+            elif narratLogic.is_nr_entry(entry):
+                use _narrat_nr_screen(entry)
+            else:
+                text 'BUG narrat_say_oor: send screenshot to snowinmars@yandex.ru'
+
+
+screen narrat_menu():
+    $ narrat_menu_yadjustment.value = infinite_float_value
+
+    viewport:
+        ysize narratLogic.get_menu_height()
+        scrollbars 'vertical'
+        yadjustment narrat_menu_yadjustment
+        mousewheel True
+        draggable True
+
+        vbox:
+            spacing 0
+
+            for i, item in enumerate(narratLogic.get_current_menu_items(), 1):
+                $ caption = item[0] if len(item) > 0 else ''
+                $ action = item[1] if len(item) > 1 else None
+
+                button:
                     xfill True
+                    padding (10, 5)
 
-                    for entry in history:
-                        frame:
-                            background None
-                            xfill True
-                            padding (10, 8)
+                    action [
+                        Function(narratLogic.add_menu_choice, caption),
+                        action
+                    ]
 
-                            vbox:
-                                xfill True
-                                spacing 2
-                                at transform:
-                                    alpha 0.7
-
-                                $ is_br = entry['is_br']
-                                if is_br:
-                                    text '----------------':
-                                        size 12
-                                        color nameless_text_color
-                                        xfill True
-
-                                $ is_change = entry['is_change']
-                                if is_change:
-                                    $ change_id = entry['who']
-                                    $ change_kwargs = entry['what']
-                                    $ change_text = change_id
-                                    if change_id == 'character_manager_modify_property':
-                                        $ change_text =  __('character_manager_modify_property').format(
-                                            name=__(change_kwargs['name']),
-                                            prop=__(change_kwargs['prop']),
-                                            amount=change_kwargs['amount'],
-                                            actual_value=change_kwargs['actual_value']
-                                        )
-                                    if change_id == 'character_manager_modify_property_once':
-                                        $ change_text = __('character_manager_modify_property_once').format(
-                                            name=__(change_kwargs['name']),
-                                            prop=__(change_kwargs['prop']),
-                                            amount=change_kwargs['amount'],
-                                            actual_value=change_kwargs['actual_value']
-                                        )
-                                    if change_id == 'character_manager_set_property':
-                                        $ change_text = __('character_manager_set_property').format(
-                                            name=__(change_kwargs['name']),
-                                            prop=__(change_kwargs['prop']),
-                                            actual_value=change_kwargs['actual_value']
-                                        )
-                                    if change_id == 'journal_notes_manager_update_journal':
-                                        $ change_text = __('journal_notes_manager_update_journal').format(
-                                            note_id=__(change_kwargs['note_id'])
-                                        )
-                                    if change_id == 'new_internal_location_discovered':
-                                        $ change_text = __('new_internal_location_discovered').format(
-                                            internal_location_id=__(change_kwargs['internal_location_id']),
-                                            external_location_id=__(change_kwargs['external_location_id'])
-                                        )
-                                    if change_id == 'locations_manager_set_location_external_unvisited':
-                                        $ change_text = __('locations_manager_set_location_external_unvisited').format(
-                                            external_location_id=__(change_kwargs['external_location_id'])
-                                        )
-                                    if change_id == 'locations_manager_set_location_internal_unvisited':
-                                        $ change_text = __('locations_manager_set_location_internal_unvisited').format(
-                                            internal_location_id=__(change_kwargs['internal_location_id'])
-                                        )
-                                    if change_id == 'world_manager_setter':
-                                        $ change_text = __('world_manager_setter').format(
-                                            setting_id=__(change_kwargs['setting_id']),
-                                            value=str(change_kwargs['value'])
-                                        )
-                                    if change_id == 'world_manager_inc':
-                                        $ change_text = __('world_manager_inc').format(
-                                            setting_id=__(change_kwargs['setting_id']),
-                                            before=change_kwargs['before'],
-                                            delta=change_kwargs['delta'],
-                                            after=change_kwargs['after']
-                                        )
-                                    if change_id == 'world_manager_dec':
-                                        $ change_text = __('world_manager_dec').format(
-                                            setting_id=__(change_kwargs['setting_id']),
-                                            before=change_kwargs['before'],
-                                            delta=change_kwargs['delta'],
-                                            after=change_kwargs['after']
-                                        )
-                                    if change_id == 'world_manager_inc_once':
-                                        $ change_text = __('world_manager_inc_once').format(
-                                            setting_id=__(change_kwargs['setting_id']),
-                                            before=change_kwargs['before'],
-                                            delta=change_kwargs['delta'],
-                                            after=change_kwargs['after']
-                                        )
-                                    if change_id == 'world_manager_dec_once':
-                                        $ change_text = __('world_manager_dec_once').format(
-                                            setting_id=__(change_kwargs['setting_id']),
-                                            before=change_kwargs['before'],
-                                            delta=change_kwargs['delta'],
-                                            after=change_kwargs['after']
-                                        )
-                                    text change_text:
-                                        size 18
-                                        color '#eeeeee'
-                                        xfill True
-                                    pass
-
-                                $ is_scars = hasattr(entry['who'], 'name') and entry['who'].name == 'scars'
-                                if is_scars:
-                                    text "[entry['what']]":
-                                        size 18
-                                        color entry['who'].who_args['color']
-                                        font 'exocet.ttf'
-                                        xfill True
-
-                                $ is_special = is_br or is_change or is_scars
-
-                                $ is_nameless = not is_special and not hasattr(entry['who'], 'name')
-                                if is_nameless:
-                                    text __('protagonist_character_name') + ' - ' + __(entry['what']):
-                                        size 18
-                                        color nameless_text_color
-                                        xfill True
+                    text str(i) + '. ' + __(caption):
+                        style '_narrat_screen_style_history_text'
+                        layout 'tex'
+                        color '#ff2e21'
+                        hover_color '#f0ede4'
 
 
-                                $ is_npc = not is_special and hasattr(entry['who'], 'name') and entry['who'].name
-                                if is_npc:
-                                    $ color = entry['who'].who_args['color']
-                                    $ speaker = entry['who'].name
-                                    if speaker.startswith('get_') and speaker.endswith('()'):
-                                        $ speaker = eval(speaker)
-                                    $ speaker = __(speaker)
-                                    text "{color=[color]}[speaker]{/color} - [entry['what']]":
-                                        size 18
-                                        color npc_text_color
-                                        xfill True
+screen _narrat_br_screen(entry):
+    text '----------------':
+        style '_narrat_screen_style_br_text'
+        color entry['who_color']
 
 
-                                $ is_nr = not is_special and not is_nameless and not is_npc
-                                if is_nr:
-                                    text entry['what']:
-                                        size 18
-                                        color nr_text_color
-                                        xfill True
+screen _narrat_change_screen(entry):
+    default change_id = entry['who']
+    default change_kwargs = entry['what']
+    default change_text = 'BUG narrat_change_oor: send screenshot to snowinmars@yandex.ru ' + change_id
+
+    if change_id == 'character_manager_modify_property':
+        $ change_text =  __('character_manager_modify_property').format(
+            name=__(change_kwargs['name']),
+            prop=__(change_kwargs['prop']),
+            amount=change_kwargs['amount'],
+            actual_value=change_kwargs['actual_value']
+        )
+    if change_id == 'character_manager_modify_property_once':
+        $ change_text = __('character_manager_modify_property_once').format(
+            name=__(change_kwargs['name']),
+            prop=__(change_kwargs['prop']),
+            amount=change_kwargs['amount'],
+            actual_value=change_kwargs['actual_value']
+        )
+    if change_id == 'character_manager_set_property':
+        $ change_text = __('character_manager_set_property').format(
+            name=__(change_kwargs['name']),
+            prop=__(change_kwargs['prop']),
+            actual_value=change_kwargs['actual_value']
+        )
+    if change_id == 'journal_notes_manager_update_journal':
+        $ change_text = __('journal_notes_manager_update_journal').format(
+            note_id=__(change_kwargs['note_id'])
+        )
+    if change_id == 'new_internal_location_discovered':
+        $ change_text = __('new_internal_location_discovered').format(
+            internal_location_id=__(change_kwargs['internal_location_id']),
+            external_location_id=__(change_kwargs['external_location_id'])
+        )
+    if change_id == 'locations_manager_set_location_external_unvisited':
+        $ change_text = __('locations_manager_set_location_external_unvisited').format(
+            external_location_id=__(change_kwargs['external_location_id'])
+        )
+    if change_id == 'locations_manager_set_location_internal_unvisited':
+        $ change_text = __('locations_manager_set_location_internal_unvisited').format(
+            internal_location_id=__(change_kwargs['internal_location_id'])
+        )
+    if change_id == 'world_manager_setter':
+        $ change_text = __('world_manager_setter').format(
+            setting_id=__(change_kwargs['setting_id']),
+            value=str(change_kwargs['value'])
+        )
+    if change_id == 'world_manager_inc':
+        $ change_text = __('world_manager_inc').format(
+            setting_id=__(change_kwargs['setting_id']),
+            before=change_kwargs['before'],
+            delta=change_kwargs['delta'],
+            after=change_kwargs['after']
+        )
+    if change_id == 'world_manager_dec':
+        $ change_text = __('world_manager_dec').format(
+            setting_id=__(change_kwargs['setting_id']),
+            before=change_kwargs['before'],
+            delta=change_kwargs['delta'],
+            after=change_kwargs['after']
+        )
+    if change_id == 'world_manager_inc_once':
+        $ change_text = __('world_manager_inc_once').format(
+            setting_id=__(change_kwargs['setting_id']),
+            before=change_kwargs['before'],
+            delta=change_kwargs['delta'],
+            after=change_kwargs['after']
+        )
+    if change_id == 'world_manager_dec_once':
+        $ change_text = __('world_manager_dec_once').format(
+            setting_id=__(change_kwargs['setting_id']),
+            before=change_kwargs['before'],
+            delta=change_kwargs['delta'],
+            after=change_kwargs['after']
+        )
+    text '    ' + change_text:
+        style '_narrat_screen_style_history_text'
+        color entry['who_color']
 
 
-screen narrat_say(
-    current_speaker,
-    current_text,
-    say_height,
-    npc_text_color,
-    nr_text_color
-):
-    frame:
-        background None
+screen _narrat_scars_screen(entry):
+    text '[entry["what"]]':
+        style '_narrat_screen_style_scars_text'
+        color entry['who_color']
+
+
+screen _narrat_nameless_screen(entry):
+    text '{color=[entry["who_color"]]}[__("protagonist_character_name")]{/color} - [__(entry["what"])]':
+        style '_narrat_screen_style_history_text'
+        color '#98afb5'
         xfill True
-        ysize say_height
-
-        vbox:
-            xfill True
-            yfill True
-
-            if current_speaker:
-                $ speaker_is_function_string = current_speaker.name.startswith('get_') and current_speaker.name.endswith('()')
-                if speaker_is_function_string:
-                    $ speaker = eval(current_speaker.name)
-
-                $ speaker_is_character = not speaker_is_function_string
-                if speaker_is_character:
-                    $ speaker = current_speaker.name
-                $ speaker = __(speaker)
-
-                $ is_scars = speaker == 'scars'
-                if is_scars:
-                    text "[current_text]":
-                        size 20
-                        color current_speaker.who_args['color']
-                        font 'exocet.ttf'
-                        xfill True
-
-                $ color = current_speaker.who_args['color']
-                $ is_npc = not is_scars and speaker is not None and speaker != ''
-                if is_npc:
-                    text "{color=[color]}[speaker]{/color} - [current_text]":
-                        size 20
-                        color npc_text_color
-                        xfill True
-
-                $ is_nr = not is_scars and not is_npc
-                if is_nr:
-                    text current_text:
-                        size 20
-                        color nr_text_color
-                        xfill True
 
 
-screen narrat_menu(menu_items, on_action, menu_height, choice_text_color, choice_text_hover_color):
-    frame:
-        background None
-        ysize menu_height
+screen _narrat_npc_screen(entry):
+    default speaker = entry['who'].name
+    if speaker.startswith('get_') and speaker.endswith('()'):
+        $ speaker = eval(speaker)
+    text '{color=[entry["who_color"]]}[__(speaker)]{/color} - [entry["what"]]':
+        style '_narrat_screen_style_history_text'
+        color '#9ba290'
 
-        viewport:
-            scrollbars "vertical"
-            mousewheel True
-            draggable True
 
-            vbox:
-                spacing 0
+screen _narrat_nr_screen(entry):
+    text entry['what']:
+        style '_narrat_screen_style_history_text'
+        color '#98afb5'
 
-                for i, item in enumerate(menu_items, 1):
-                    $ caption = item[0] if len(item) > 0 else ""
-                    $ action = item[1] if len(item) > 1 else None
-                    $ chosen = item[2] if len(item) > 2 else False
 
-                    button:
-                        xfill True
-                        padding (10, 5)
-
-                        action [
-                            Function(on_action, caption),
-                            action
-                        ]
-
-                        text str(i) + '. ' + __(item.caption):
-                            layout "tex"
-                            xfill True
-                            size 18
-                            color choice_text_color
-                            hover_color choice_text_hover_color
+style _narrat_screen_style_br_text:
+    size 12
+    color '#c4a28a'
+style _narrat_screen_style_history_text:
+    size 18
+style _narrat_screen_style_scars_text is _narrat_screen_style_history_text:
+    font 'exocet.ttf'

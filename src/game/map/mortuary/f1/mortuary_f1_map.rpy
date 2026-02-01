@@ -41,6 +41,8 @@ init 10 python:
 
 
 label mortuary_f1_map:
+    $ renpy.scene(layer = "screens")
+    $ renpy.music.play(audio.mortuary, channel="music", loop=True, if_changed=True)
     call screen mortuary_f1_map()
 
 
@@ -94,6 +96,5 @@ screen mortuary_f1_map():
             MortuaryF1R3Shadow(state_manager, 3250,  700),
             MortuaryF1R4Shadow(state_manager, 3300, 2200),
             MortuaryF1RcShadow(state_manager, 2350, 1400),
-        ],
-        audio.mortuary
+        ]
     )
