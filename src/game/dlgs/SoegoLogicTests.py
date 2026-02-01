@@ -1300,16 +1300,16 @@ class SoegoLogicGeneratedTests(LogicTests):
 
 
     def test_r1478_condition(self):
-        self.state_manager.inventory_items_manager.pick_item('has_mortuary_key')
+        self.state_manager.inventory_items_manager.pick_item('has_keymo')
         self._boolean_invert_condition(
-            lambda x: self.state_manager.inventory_items_manager.pick_item('has_mortuary_key') if x else self.state_manager.inventory_items_manager.drop_item('has_mortuary_key'),
+            lambda x: self.state_manager.inventory_items_manager.pick_item('has_keymo') if x else self.state_manager.inventory_items_manager.drop_item('has_keymo'),
             self.logic.r1478_condition
         )
 
 
     def test_r1479_condition(self):
         self._boolean_straight_condition(
-            lambda x: self.state_manager.inventory_items_manager.pick_item('has_mortuary_key') if x else self.state_manager.inventory_items_manager.drop_item('has_mortuary_key'),
+            lambda x: self.state_manager.inventory_items_manager.pick_item('has_keymo') if x else self.state_manager.inventory_items_manager.drop_item('has_keymo'),
             self.logic.r1479_condition
         )
 
@@ -1994,16 +1994,16 @@ class SoegoLogicGeneratedTests(LogicTests):
 
 
     def test_r4975_condition(self):
-        self.state_manager.inventory_items_manager.pick_item('has_mortuary_key')
+        self.state_manager.inventory_items_manager.pick_item('has_keymo')
         self._boolean_invert_condition(
-            lambda x: self.state_manager.inventory_items_manager.pick_item('has_mortuary_key') if x else self.state_manager.inventory_items_manager.drop_item('has_mortuary_key'),
+            lambda x: self.state_manager.inventory_items_manager.pick_item('has_keymo') if x else self.state_manager.inventory_items_manager.drop_item('has_keymo'),
             self.logic.r4975_condition
         )
 
 
     def test_r4976_condition(self):
         self._boolean_straight_condition(
-            lambda x: self.state_manager.inventory_items_manager.pick_item('has_mortuary_key') if x else self.state_manager.inventory_items_manager.drop_item('has_mortuary_key'),
+            lambda x: self.state_manager.inventory_items_manager.pick_item('has_keymo') if x else self.state_manager.inventory_items_manager.drop_item('has_keymo'),
             self.logic.r4976_condition
         )
 
@@ -2035,16 +2035,16 @@ class SoegoLogicGeneratedTests(LogicTests):
 
 
     def test_r4988_condition(self):
-        self.state_manager.inventory_items_manager.pick_item('has_mortuary_key')
+        self.state_manager.inventory_items_manager.pick_item('has_keymo')
         self._boolean_invert_condition(
-            lambda x: self.state_manager.inventory_items_manager.pick_item('has_mortuary_key') if x else self.state_manager.inventory_items_manager.drop_item('has_mortuary_key'),
+            lambda x: self.state_manager.inventory_items_manager.pick_item('has_keymo') if x else self.state_manager.inventory_items_manager.drop_item('has_keymo'),
             self.logic.r4988_condition
         )
 
 
     def test_r4989_condition(self):
         self._boolean_straight_condition(
-            lambda x: self.state_manager.inventory_items_manager.pick_item('has_mortuary_key') if x else self.state_manager.inventory_items_manager.drop_item('has_mortuary_key'),
+            lambda x: self.state_manager.inventory_items_manager.pick_item('has_keymo') if x else self.state_manager.inventory_items_manager.drop_item('has_keymo'),
             self.logic.r4989_condition
         )
 

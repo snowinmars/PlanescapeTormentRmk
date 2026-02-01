@@ -470,11 +470,11 @@ class SoegoLogicGenerated:
 
 
     def r1478_condition(self):
-        return not self.state_manager.inventory_items_manager.is_own_item('has_mortuary_key')
+        return not self.state_manager.inventory_items_manager.is_own_item('has_keymo')
 
 
     def r1479_condition(self):
-        return self.state_manager.inventory_items_manager.is_own_item('has_mortuary_key')
+        return self.state_manager.inventory_items_manager.is_own_item('has_keymo')
 
 
     def r1483_condition(self):
@@ -759,11 +759,11 @@ class SoegoLogicGenerated:
 
 
     def r4975_condition(self):
-        return not self.state_manager.inventory_items_manager.is_own_item('has_mortuary_key')
+        return not self.state_manager.inventory_items_manager.is_own_item('has_keymo')
 
 
     def r4976_condition(self):
-        return self.state_manager.inventory_items_manager.is_own_item('has_mortuary_key')
+        return self.state_manager.inventory_items_manager.is_own_item('has_keymo')
 
 
     def r4984_condition(self):
@@ -775,11 +775,11 @@ class SoegoLogicGenerated:
 
 
     def r4988_condition(self):
-        return not self.state_manager.inventory_items_manager.is_own_item('has_mortuary_key')
+        return not self.state_manager.inventory_items_manager.is_own_item('has_keymo')
 
 
     def r4989_condition(self):
-        return self.state_manager.inventory_items_manager.is_own_item('has_mortuary_key')
+        return self.state_manager.inventory_items_manager.is_own_item('has_keymo')
 
 
     def r4991_condition(self):
