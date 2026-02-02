@@ -30,16 +30,16 @@ screen inventory_screen(
     on 'show' action SetVariable('gold', get_gold())
 
     for k in keymap_inventory_screen:
-        key k action Hide("inventory_screen")
-    key "K_ESCAPE" action Hide("inventory_screen")
+        key k action Hide('inventory_screen')
+    key 'K_ESCAPE' action Hide('inventory_screen')
 
     frame:
         xfill True
         yfill True
         align (0.5, 0.5)
-        background Transform('gui/invbg.webp', fit='cover')
+        background 'gui_invbg'
 
-        add 'gui/ivpnof.webp':
+        add 'gui_ivpnof':
             pos (625, 325)
             size (300, 398)
             anchor (0.5, 0.5)
@@ -75,7 +75,7 @@ screen inventory_screen(
             xsize 140
             spacing 15
 
-            add Transform('gui/icgold.webp'):
+            add 'gui_icgold':
                 pos (10, 0)
                 size (140, 140)
 
@@ -87,7 +87,7 @@ screen inventory_screen(
         ####
         frame:
             pos (342, 765)
-            background Transform('gui/ichpman.png')
+            background 'gui_ichpman'
             padding (0, 0)
 
             vbox:
@@ -109,7 +109,7 @@ screen inventory_screen(
         cols 10
         spacing 20
         mousewheel True
-        scrollbars "vertical"
+        scrollbars 'vertical'
 
         for owned_item in owned_items:
             button:
@@ -129,8 +129,8 @@ screen inventory_screen(
     button:
         area (1200, 20, 193, 78)
         action Hide('inventory_screen')
-        background Transform('gui/button.png')
-        hover_background Transform('gui/button.png', matrixcolor=hover_matrix)
+        background 'gui_button'
+        hover_background Transform('gui_button', matrixcolor=hover_matrix)
 
         text _('preferences_screen_return'): # Вернуться
             style 'preferences_dev_screen_style_button_text'
@@ -164,9 +164,9 @@ style _inventory_screen_style_ac_title:
     size 24
     color color_yellow
     align (0.5, 0.5)
-    font 'exocet.ttf'
+    font font_exocet
 style _inventory_screen_style_ac_text:
     size 24
     color color_white
     align (0.5, 0.5)
-    font 'exocet.ttf'
+    font font_exocet

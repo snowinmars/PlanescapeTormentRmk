@@ -2,19 +2,19 @@ screen inventory_item_screen(item):
     modal True
     zorder 100
 
-    key "K_ESCAPE" action Hide("inventory_item_screen")
+    key 'K_ESCAPE' action Hide('inventory_item_screen')
 
     frame:
         xfill True
         yfill True
         align (0.5, 0.5)
-        background Transform('gui/popup1.webp')
+        background 'gui_popup1'
 
         label item.name:
             area (825, 250, 440, 25)
             text_style '_inventory_item_screen_style_header'
 
-        add Transform(item.detail_image):
+        add item.detail_image:
             pos (622, 317)
             size (125, 125)
 
@@ -52,8 +52,8 @@ screen inventory_item_screen(item):
     button:
         area (1250, 835, 193, 78)
         action Hide('inventory_item_screen')
-        background Transform('gui/button.png')
-        hover_background Transform('gui/button.png', matrixcolor=hover_matrix)
+        background 'gui_button'
+        hover_background Transform('gui_button', matrixcolor=hover_matrix)
 
         text _('preferences_screen_return'): # Вернуться
             style 'preferences_dev_screen_style_button_text'

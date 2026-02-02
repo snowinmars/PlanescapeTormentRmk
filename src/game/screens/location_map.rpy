@@ -24,8 +24,8 @@ screen location_map(
         zoom_viewport:
             xysize (config.screen_width, config.screen_height)
             draggable True
-            id "zoom_vp"
-            mousewheel "zoom"
+            id 'zoom_vp'
+            mousewheel 'zoom'
             start_zoom 1 + _location_map_zadj.value
             zoom_min 1
             zoom_max 3
@@ -67,8 +67,8 @@ screen location_map(
                     imagebutton:
                         pos (dynamic_action_button.pos()['x'] + 40, dynamic_action_button.pos()['y'] - 20)
                         anchor (0.5, 0.5)
-                        idle 'images/icons/speak_idle.png'
-                        hover Transform('images/icons/speak_idle.png', matrixcolor=hover_matrix)
+                        idle 'images_icons_speak_idle'
+                        hover Transform('images_icons_speak_idle', matrixcolor=hover_matrix)
                         action ExecuteNavigationDirective(dynamic_action_button.jump())
                         hovered tt.Action(dynamic_action_button.tooltip())
                         unhovered tt.Action('')
@@ -90,9 +90,9 @@ screen location_map(
         align (0.5, 0.0)
 
         if tt.value:
-            background Transform('gui/tooltip.png') at ease_in_background
+            background 'gui_tooltip' at ease_in_background
         else:
-            background Transform('gui/tooltip.png') at ease_out_background
+            background 'gui_tooltip' at ease_out_background
 
         text _(tt.value):
             style '_location_map_screen_style_tooltip'
@@ -103,7 +103,7 @@ screen location_map(
         frame:
             align (0.0, 1.0)
 
-            # default vp = renpy.get_widget(screen="location_map", id="zoom_vp")
+            # default vp = renpy.get_widget(screen='location_map', id='zoom_vp')
             # $ img_x, img_y = vp.get_cursor_coordinates() # TODO [snow]: why there is the difference between this and that?
             $ vp_x, vp_y = renpy.get_mouse_pos()
             $ scaled_x = vp_x + _location_map_xadj.value
@@ -131,4 +131,4 @@ style _location_map_screen_style_tooltip:
 style _location_map_screen_style_mouse_text:
     size 16
     color color_yellow
-    font 'NotoSans-Regular.ttf'
+    font font_notosans

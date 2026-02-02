@@ -43,7 +43,7 @@ screen character_screen(get_character):
         xfill True
         yfill True
         align (0.5, 0.5)
-        background Transform('gui/recbg.webp')
+        background 'gui_recbg'
 
         vbox:
             pos (685, 55)
@@ -87,7 +87,7 @@ screen character_screen(get_character):
         ####
         frame:
             pos (1226, 440)
-            background Transform('gui/ichpman.png')
+            background 'gui_ichpman'
             padding (0, 0)
 
             vbox:
@@ -107,10 +107,10 @@ screen character_screen(get_character):
         ###
         frame:
             area (1021, 486, 117, 117)
-            background Transform('gui/aligment_neutral.png', align=(0.5, 0.5))
+            background 'gui_aligment_neutral' # align=(0.5, 0.5)
             padding (0, 0)
 
-            # add Transform('gui/aligment_neutral.png'):
+            # add 'gui_aligment_neutral':
             #     pos (0, 0)
 
             vbox:
@@ -250,8 +250,8 @@ screen character_screen(get_character):
     button:
         area (1390, 720, 193, 78)
         action Hide('character_screen')
-        background Transform('gui/button.png')
-        hover_background Transform('gui/button.png', matrixcolor=hover_matrix)
+        background 'gui_button'
+        hover_background Transform('gui_button', matrixcolor=hover_matrix)
 
         text _('preferences_screen_return'): # Вернуться
             style 'preferences_dev_screen_style_button_text'
@@ -266,7 +266,7 @@ style _character_screen_style_title:
     size 20
     color color_yellow
     align (0.5, 0.5)
-    font 'exocet.ttf'
+    font font_exocet
 style _character_screen_style_value:
     size 20
     color color_white

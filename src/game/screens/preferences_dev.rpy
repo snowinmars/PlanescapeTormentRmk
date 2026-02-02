@@ -11,7 +11,7 @@ screen preferences_dev():
         xfill True
         yfill True
         align (0.5, 0.5)
-        background Transform('gui/journal.webp')
+        background 'gui_journal'
 
 
         label preferences_dev_screen_choice:
@@ -119,7 +119,7 @@ screen preferences_dev():
 
         viewport:
             area (340, 120, 445, 635)
-            scrollbars "vertical"
+            scrollbars 'vertical'
             mousewheel True
             draggable True
 
@@ -162,7 +162,7 @@ screen preferences_dev():
 
         viewport:
             area (955, 120, 650, 560)
-            scrollbars "vertical"
+            scrollbars 'vertical'
             mousewheel True
             draggable True
 
@@ -208,10 +208,10 @@ screen preferences_dev():
     button:
         area (635, 960, 193, 78)
         action Return()
-        background Transform('gui/button.png')
-        hover_background Transform('gui/button.png', matrixcolor=hover_matrix)
+        background 'gui_button'
+        hover_background Transform('gui_button', matrixcolor=hover_matrix)
 
-        text _("preferences_screen_return"): # Вернуться
+        text _('preferences_screen_return'): # Вернуться
             style 'preferences_dev_screen_style_button_text'
             align (0.5, 0.5)
 
@@ -274,6 +274,6 @@ style preferences_dev_screen_style_settings_item_text:
     color color_yellow
     hover_color color_white
 style preferences_dev_screen_style_settings_item_button_on:
-    background "gui/switch_on.png"
+    background 'gui_switch_on'
 style preferences_dev_screen_style_settings_item_button_off:
-    background "gui/switch_off.png"
+    background 'gui_switch_off'

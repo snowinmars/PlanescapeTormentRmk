@@ -55,4 +55,4 @@ style skip_text:
 
 style skip_triangle:
     ## Нам надо использовать шрифт, имеющий в себе символ U+25B8 (стрелку выше).
-    font "DejaVuSans.ttf"
+    font font_dejavusans

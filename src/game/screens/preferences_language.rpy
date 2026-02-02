@@ -5,12 +5,12 @@ screen preferences_language():
         xfill True
         yfill True
         align (0.5, 0.5)
-        background Transform('gui/optpop1.webp')
+        background 'gui_optpop1'
 
 
         viewport:
             area (1005, 520, 570, 350)
-            scrollbars "vertical"
+            scrollbars 'vertical'
             mousewheel True
             draggable True
 
@@ -23,8 +23,8 @@ screen preferences_language():
                     button :
                         style 'preferences_language_screen_style_settings_item_button'
                         action [
-                            SetField(persistent, "language", "russian"),
-                            Language("russian")
+                            SetField(persistent, 'language', 'russian'),
+                            Language('russian')
                         ]
                         text _('preferences_language_screen_russian'): # 'Русский'
                             style 'preferences_language_screen_style_settings_item_text'
@@ -32,8 +32,8 @@ screen preferences_language():
                     button:
                         xysize (32, 32)
                         action [
-                            SetField(persistent, "language", "russian"),
-                            Language("russian")
+                            SetField(persistent, 'language', 'russian'),
+                            Language('russian')
                         ]
                         if persistent.language == 'russian':
                             style 'preferences_language_screen_style_settings_item_button_on'
@@ -47,8 +47,8 @@ screen preferences_language():
                     button :
                         style 'preferences_language_screen_style_settings_item_button'
                         action [
-                            SetField(persistent, "language", "english"),
-                            Language("english")
+                            SetField(persistent, 'language', 'english'),
+                            Language('english')
                         ]
                         text _('preferences_language_screen_english'): # 'English'
                             style 'preferences_language_screen_style_settings_item_text'
@@ -56,8 +56,8 @@ screen preferences_language():
                     button:
                         xysize (32, 32)
                         action [
-                            SetField(persistent, "language", "english"),
-                            Language("english")
+                            SetField(persistent, 'language', 'english'),
+                            Language('english')
                         ]
                         if persistent.language == 'english':
                             style 'preferences_language_screen_style_settings_item_button_on'
@@ -68,10 +68,10 @@ screen preferences_language():
         button:
             area (1395, 900, 193, 78)
             action Return()
-            background Transform('gui/button.png')
-            hover_background Transform('gui/button.png', matrixcolor=hover_matrix)
+            background 'gui_button'
+            hover_background Transform('gui_button', matrixcolor=hover_matrix)
 
-            text _("preferences_screen_return"): # Вернуться
+            text _('preferences_screen_return'): # Вернуться
                 style 'preferences_language_screen_style_button_text'
                 align (0.5, 0.5)
 
@@ -87,9 +87,9 @@ style preferences_language_screen_style_settings_item_text:
     color color_yellow
     hover_color color_white
 style preferences_language_screen_style_settings_item_button_on:
-    background "gui/switch_on.png"
+    background 'gui_switch_on'
 style preferences_language_screen_style_settings_item_button_off:
-    background "gui/switch_off.png"
+    background 'gui_switch_off'
 style preferences_language_screen_style_button_text:
     size 20
     color color_white

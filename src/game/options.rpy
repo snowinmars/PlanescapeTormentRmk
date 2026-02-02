@@ -206,11 +206,11 @@ init python:
     build.classify('**.rpyc', 'all')
 
     ## Чтобы архивировать файлы, классифицируйте их, например, как 'archive'.
-    build.classify('game/**.png', 'archive')
+    build.classify('game/**.png' , 'archive')
     build.classify('game/**.webp', 'archive')
     build.classify('game/**.webm', 'archive')
-    build.classify('game/**.wav', 'archive')
-    build.classify('game/**.ogg', 'archive')
+    build.classify('game/**.wav' , 'archive')
+    build.classify('game/**.ogg' , 'archive')
 
     build.include_update = False
 

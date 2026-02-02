@@ -7,11 +7,21 @@ define hover_matrix = BrightnessMatrix(0.2)
 define insensitive_matrix = SaturationMatrix(0.3) * BrightnessMatrix(-0.1)
 define no_opacity = OpacityMatrix(1)
 define small_opacity = OpacityMatrix(0.9)
-define colorized_opacity = small_opacity * ColorizeMatrix("#ff0000", '#00ff00')
+define colorized_opacity = small_opacity * ColorizeMatrix('#ff0000', '#00ff00')
 
-define color_yellow = '#dbc401'
-define color_orange = '#bd7a10'
-define color_white = '#f8f6de'
+define color_yellow       = '#dbc401'
+define color_orange       = '#bd7a10'
+define color_white        = '#f8f6de'
+define color_narrator     = '#98afb5'
+define color_npc          = '#9ba290'
+define color_br           = '#c4a28a'
+define color_scars        = '#bf6b5f'
+define color_nameless_one = '#ff2e21'
+define color_default      = '#b8a175'
+
+define font_exocet        = 'exocet.ttf'
+define font_notosans      = 'NotoSans-Regular.ttf'
+define font_dejavusans    = 'DejaVuSans.ttf'
 
 init 2 python:
     keymap_inventory_screen = [ 'K_i' ]

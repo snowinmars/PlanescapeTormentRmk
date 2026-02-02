@@ -6,12 +6,12 @@ screen preferences_sound():
         xfill True
         yfill True
         align (0.5, 0.5)
-        background Transform('gui/optpop1.webp')
+        background 'gui_optpop1'
 
 
         viewport:
             area (380, 510, 570, 350)
-            scrollbars "vertical"
+            scrollbars 'vertical'
             mousewheel True
             draggable True
 
@@ -29,7 +29,7 @@ screen preferences_sound():
 
                     bar:
                         xsize 250
-                        value Preference("main volume")
+                        value Preference('main volume')
                         thumb_offset 10
 
                 hbox:
@@ -43,7 +43,7 @@ screen preferences_sound():
 
                     bar:
                         xsize 250
-                        value Preference("music volume")
+                        value Preference('music volume')
                         thumb_offset 10
 
                 hbox:
@@ -57,7 +57,7 @@ screen preferences_sound():
 
                     bar:
                         xsize 250
-                        value Preference("sound volume")
+                        value Preference('sound volume')
                         thumb_offset 10
 
                 hbox:
@@ -71,7 +71,7 @@ screen preferences_sound():
 
                     bar:
                         xsize 250
-                        value Preference("voice volume")
+                        value Preference('voice volume')
                         thumb_offset 10
 
                 hbox:
@@ -79,14 +79,14 @@ screen preferences_sound():
 
                     button:
                         style 'preferences_sound_screen_style_settings_item_button'
-                        action Preference("all mute", "toggle")
+                        action Preference('all mute', 'toggle')
 
                         text _('preferences_sound_screen_mute_all'): # 'Без звука'
                             style 'preferences_sound_screen_style_settings_item_text'
 
                     button:
                         xysize (32, 32)
-                        action Preference("all mute", "toggle")
+                        action Preference('all mute', 'toggle')
 
                         if _preferences.mute['music'] == True and _preferences.mute['sfx'] == True and _preferences.mute['voice'] == True and _preferences.mute['main'] == True:
                             style 'preferences_sound_screen_style_settings_item_button_on'
@@ -97,10 +97,10 @@ screen preferences_sound():
         button:
             area (1395, 900, 193, 78)
             action Return()
-            background Transform('gui/button.png')
-            hover_background Transform('gui/button.png', matrixcolor=hover_matrix)
+            background 'gui_button'
+            hover_background Transform('gui_button', matrixcolor=hover_matrix)
 
-            text _("preferences_screen_return"): # Вернуться
+            text _('preferences_screen_return'): # Вернуться
                 style 'preferences_game_screen_style_button_text'
                 align (0.5, 0.5)
 
@@ -112,9 +112,9 @@ style preferences_sound_screen_style_settings_bar_item:
 style preferences_sound_screen_style_settings_item_button:
     xfill True
 style preferences_sound_screen_style_settings_item_button_on:
-    background "gui/switch_on.png"
+    background 'gui_switch_on'
 style preferences_sound_screen_style_settings_item_button_off:
-    background "gui/switch_off.png"
+    background 'gui_switch_off'
 style preferences_sound_screen_style_settings_item_text:
     size 18
     color color_yellow

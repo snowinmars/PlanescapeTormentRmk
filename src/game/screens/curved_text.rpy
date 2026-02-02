@@ -11,7 +11,7 @@ init python:
             rot: whether or not to rotate the letters along the curve
             t_start: where to start on the curve (0.0 <= t_start < 1.0)
             t_end: where to end on the curve (0.0 < t_end <= 1.0)
-            optional: pass keyword arguments for the text like "style", "font", "size", "color" etc.
+            optional: pass keyword arguments for the text like 'style', 'font', 'size', 'color' etc.
             '''
             super(CurvedText, self).__init__(**kwargs)
 
@@ -30,7 +30,7 @@ init python:
                 if not what[i].strip():
                     t += td
                     continue
-                # use "De Casteljau's algorithm" to find the point (x, y) on the curve at value t
+                # use 'De Casteljau's algorithm' to find the point (x, y) on the curve at value t
                 q = [list(p) for p in points]
                 t0 = 1 - t
                 for j in range(1, n):

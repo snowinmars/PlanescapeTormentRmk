@@ -13,7 +13,7 @@ screen achievement_popup(a, tag, num):
     default achievement_yoffset = num*100
 
     frame:
-        background Transform('gui/ablrow.webp')
+        background 'gui_ablrow'
         xysize (512, 128)
         at achievement_popout() # The transform that makes it pop out
         yoffset achievement_yoffset # Offsets the achievement down if there are multiple

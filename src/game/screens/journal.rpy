@@ -8,8 +8,8 @@ screen journal_screen():
     on 'show' action Function(journalLogic.reset)
 
     for k in keymap_journal_screen:
-        key k action Hide("journal_screen")
-    key "K_ESCAPE" action Hide("journal_screen")
+        key k action Hide('journal_screen')
+    key 'K_ESCAPE' action Hide('journal_screen')
 
     use narrat()
 
@@ -19,7 +19,7 @@ screen journal_screen():
         xfill True
         yfill True
         align (0.5, 0.5)
-        background Transform('gui/journal.webp')
+        background 'gui_journal'
 
         hbox:
             area (690, 115, 590, 60)
@@ -28,7 +28,7 @@ screen journal_screen():
             button:
                 style '_journal_screen_style_button'
                 action Function(journalLogic.set_show_quest)
-                text _("journal_screen_quests_button"): # Задания
+                text _('journal_screen_quests_button'): # Задания
                     style '_journal_screen_style_button_text'
                     if journalLogic.get_show_quest():
                         color color_white
@@ -45,7 +45,7 @@ screen journal_screen():
                 style '_journal_screen_style_button'
                 action Function(journalLogic.set_show_bestiary)
                 sensitive False
-                text _("journal_screen_bestiary_button"): # Существа
+                text _('journal_screen_bestiary_button'): # Существа
                     style '_journal_screen_style_button_text'
                     if journalLogic.get_show_bestiary():
                         color color_white
@@ -62,8 +62,8 @@ screen journal_screen():
     button:
         area (400, 825, 193, 78)
         action Hide('journal_screen')
-        background Transform('gui/button.png')
-        hover_background Transform('gui/button.png', matrixcolor=hover_matrix)
+        background 'gui_button'
+        hover_background Transform('gui_button', matrixcolor=hover_matrix)
 
         text _('preferences_screen_return'): # Вернуться
             style 'preferences_dev_screen_style_button_text'
@@ -79,7 +79,7 @@ screen _quests_screen():
 
     viewport:
         area(200, 200, 385, 540)
-        scrollbars "vertical"
+        scrollbars 'vertical'
         mousewheel True
         draggable True
 
@@ -99,7 +99,7 @@ screen _quests_screen():
 
     viewport:
         area(715, 200, 535, 465)
-        scrollbars "vertical"
+        scrollbars 'vertical'
         mousewheel True
         draggable True
 
@@ -116,7 +116,7 @@ screen _journal_screen():
 
     viewport:
         area(200, 200, 385, 540)
-        scrollbars "vertical"
+        scrollbars 'vertical'
         mousewheel True
         draggable True
 
@@ -130,7 +130,7 @@ screen _journal_screen():
                 if len(notes) > 1:
                     text '-------':
                         size 12
-                        color "#FFFFFF"
+                        color color_white
                         xfill True
 
 
@@ -140,7 +140,7 @@ screen _bestiary_screen():
     on 'show' action SetVariable('beasts', journalLogic.get_beasts())
 
     frame:
-        background "#0000ff99"
+        background '#0000ff99'
         xpos 0
         ypos 0
         xsize 100
@@ -149,8 +149,8 @@ screen _bestiary_screen():
 
 style _journal_screen_style_button:
     xysize (150, 60)
-    background Transform('gui/button.png', fit='cover')
-    hover_background Transform('gui/button.png', fit='cover', matrixcolor=hover_matrix)
+    background Transform('gui_button', fit='cover')
+    hover_background Transform('gui_button', fit='cover', matrixcolor=hover_matrix)
 style _journal_screen_style_button_text:
     size 20
     color color_yellow

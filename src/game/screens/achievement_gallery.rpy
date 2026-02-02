@@ -11,7 +11,7 @@ screen achievement_gallery():
         xfill True
         yfill True
         align (0.5, 0.5)
-        background Transform('gui/beastbg.webp', fit='cover')
+        background 'gui_beastbg'
 
 
         label __('achievement_gallery_statistics').format(earned=Achievement.num_earned(), total=Achievement.num_total()):
@@ -61,9 +61,9 @@ screen achievement_gallery():
                 action selected.Toggle()
             else:
                 action NullAction()
-            background Transform('gui/button.png')
-            hover_background Transform('gui/button.png', matrixcolor=hover_matrix)
-            insensitive_background Transform('gui/button.png', matrixcolor=insensitive_matrix)
+            background 'gui_button'
+            hover_background Transform('gui_button', matrixcolor=hover_matrix)
+            insensitive_background Transform('gui_button', matrixcolor=insensitive_matrix)
             sensitive (selected is not None)
 
             text _('achievement_gallery_toggle_selected'): # Переключить
@@ -74,8 +74,8 @@ screen achievement_gallery():
         button:
             area (650, 890, 193, 78)
             action Achievement.Reset()
-            background Transform('gui/button.png')
-            hover_background Transform('gui/button.png', matrixcolor=hover_matrix)
+            background 'gui_button'
+            hover_background Transform('gui_button', matrixcolor=hover_matrix)
 
             text _('achievement_gallery_reset_all'): # Сбросить все
                 style 'achievement_screen_style_button_text'
@@ -85,8 +85,8 @@ screen achievement_gallery():
         button:
             area (1432, 835, 143, 143)
             action Return()
-            background Transform('gui/settings_button_idle.png')
-            hover_background Transform('gui/settings_button_idle.png', matrixcolor=hover_matrix)
+            background 'gui_settings_button_idle'
+            hover_background Transform('gui_settings_button_idle', matrixcolor=hover_matrix)
 
             text _('achievement_gallery_back'): # Назад
                 style 'achievement_screen_style_button_text'

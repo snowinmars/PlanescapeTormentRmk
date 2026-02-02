@@ -17,7 +17,7 @@ screen main_menu():
         xfill True
         yfill True
         align (0.5, 0.5)
-        background Transform('gui/startbg.webp')
+        background 'gui_startbg'
 
 
         vbox:
@@ -26,16 +26,16 @@ screen main_menu():
 
             button :
                 action [
-                    SetField(persistent, "language", "russian"),
-                    Language("russian")
+                    SetField(persistent, 'language', 'russian'),
+                    Language('russian')
                 ]
                 text _('preferences_language_screen_russian'): # 'Русский'
                     style '_main_menu_screen_style_language'
 
             button :
                 action [
-                    SetField(persistent, "language", "english"),
-                    Language("english")
+                    SetField(persistent, 'language', 'english'),
+                    Language('english')
                 ]
                 text _('preferences_language_screen_english'): # 'English'
                     style '_main_menu_screen_style_language'
@@ -43,77 +43,77 @@ screen main_menu():
 
         button:
             pos (802, 330)
-            background Transform('gui/main_menu_newlife.webp')
-            hover_background Transform('gui/main_menu_newlife.webp', matrixcolor=hover_matrix)
+            background 'gui_main_menu_newlife'
+            hover_background Transform('gui_main_menu_newlife', matrixcolor=hover_matrix)
             action ShowMenu('character_creation')
             focus_mask True
 
             frame:
                 background CurvedText(
-                    __('main_menu_newlife'), # "Новая жизнь"
+                    __('main_menu_newlife'), # 'Новая жизнь'
                     [(60, 50), (155, 50), (250, 50)],
-                    font='exocet.ttf',
+                    font=font_exocet,
                     color=color_orange
                 )
 
 
         button:
             pos (715, 525)
-            background Transform('gui/main_menu_load.webp')
-            hover_background Transform('gui/main_menu_load.webp', matrixcolor=hover_matrix)
-            action ShowMenu("preferences_load")
+            background 'gui_main_menu_load'
+            hover_background Transform('gui_main_menu_load', matrixcolor=hover_matrix)
+            action ShowMenu('preferences_load')
             focus_mask True
 
             frame:
                 background CurvedText(
-                    __('main_menu_load'), # "Выбрать жизнь"
+                    __('main_menu_load'), # 'Выбрать жизнь'
                     [(30, 60), (40, 190), (139, 243)],
-                    font='exocet.ttf',
+                    font=font_exocet,
                     color=color_orange
                 )
 
         button:
             pos (1015, 525)
-            background Transform('gui/main_menu_continue.webp')
-            hover_background Transform('gui/main_menu_continue.webp', matrixcolor=hover_matrix)
+            background 'gui_main_menu_continue'
+            hover_background Transform('gui_main_menu_continue', matrixcolor=hover_matrix)
             action Continue()
             focus_mask True
 
             frame:
                 background CurvedText(
-                    __('main_menu_continue'), # "Возродиться"
+                    __('main_menu_continue'), # 'Возродиться'
                     [(57, 237), (145, 185), (157, 77)],
-                    font='exocet.ttf',
+                    font=font_exocet,
                     color=color_orange
                 )
 
         button:
             pos (1130, 710)
-            background Transform('gui/main_menu_settings.webp')
-            hover_background Transform('gui/main_menu_settings.webp', matrixcolor=hover_matrix)
-            action ShowMenu("preferences")
+            background 'gui_main_menu_settings'
+            hover_background Transform('gui_main_menu_settings', matrixcolor=hover_matrix)
+            action ShowMenu('preferences')
             focus_mask True
 
             frame:
                 background CurvedText(
-                    __('main_menu_settings'), # "Восприятие"
+                    __('main_menu_settings'), # 'Восприятие'
                     [(67, 205), (150, 150), (190, 75)],
-                    font='exocet.ttf',
+                    font=font_exocet,
                     color=color_orange
                 )
 
         button:
             pos (550, 710)
-            background Transform('gui/main_menu_exit.webp')
-            hover_background Transform('gui/main_menu_exit.webp', matrixcolor=hover_matrix)
+            background 'gui_main_menu_exit'
+            hover_background Transform('gui_main_menu_exit', matrixcolor=hover_matrix)
             action Quit(confirm=not main_menu)
             focus_mask True
 
             frame:
                 background CurvedText(
-                    __('main_menu_exit'), # "Бездна"
+                    __('main_menu_exit'), # 'Бездна'
                     [(65, 95), (90, 140), (145, 185)],
-                    font='exocet.ttf',
+                    font=font_exocet,
                     color=color_orange
                 )
 

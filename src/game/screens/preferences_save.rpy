@@ -4,7 +4,7 @@ screen preferences_save():
     frame:
         xfill True
         yfill True
-        background Transform('gui/loadbg.webp')
+        background 'gui_loadbg'
 
 
         label _('preferences_save_title'):
@@ -16,7 +16,7 @@ screen preferences_save():
 
         viewport:
             area (235, 155, 1431, 745)
-            scrollbars "vertical"
+            scrollbars 'vertical'
             mousewheel True
             draggable True
 
@@ -30,15 +30,15 @@ screen preferences_save():
                         xysize (1350, 130)
 
                         button:
-                            background Transform('gui/loadrowb.webp', fit='cover')
-                            hover_background Transform('gui/loadrowc.webp', fit='cover')
+                            background 'gui_loadrowb'
+                            hover_background 'gui_loadrowc'
                             action FileSave(slot)
 
                             add FileScreenshot(slot):
                                 pos (312, 14)
                                 size (162, 115)
 
-                            text FileTime(slot, format=_("{#file_time}%A, %d %B %Y, %H:%M"), empty=_("Пустой слот")):
+                            text FileTime(slot, format=_('{#file_time}%A, %d %B %Y, %H:%M'), empty=_('Пустой слот')):
                                 area (480, 45, 500, 100)
                                 style 'preferences_save_screen_style_item_text'
 
@@ -46,16 +46,16 @@ screen preferences_save():
                                 area (480, 10, 500, 100)
                                 style 'preferences_save_screen_style_item_text'
 
-                            key "save_delete" action FileDelete(slot)
+                            key 'save_delete' action FileDelete(slot)
 
 
     button:
         area (1400, 960, 193, 78)
         action Return()
-        background Transform('gui/button.png')
-        hover_background Transform('gui/button.png', matrixcolor=hover_matrix)
+        background 'gui_button'
+        hover_background Transform('gui_button', matrixcolor=hover_matrix)
 
-        text _("preferences_screen_return"): # Вернуться
+        text _('preferences_screen_return'): # Вернуться
             style 'preferences_save_screen_style_button_text'
             align (0.5, 0.5)
 

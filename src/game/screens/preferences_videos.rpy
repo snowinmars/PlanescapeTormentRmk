@@ -5,12 +5,12 @@ screen preferences_videos():
         xfill True
         yfill True
         align (0.5, 0.5)
-        background Transform('gui/creditbg.webp')
+        background 'gui_creditbg'
 
 
         viewport:
             area (1035, 100, 640, 850)
-            scrollbars "vertical"
+            scrollbars 'vertical'
             mousewheel True
             draggable True
 
@@ -427,22 +427,22 @@ screen preferences_videos():
         button:
             area (775, 935, 193, 78)
             action Return()
-            background Transform('gui/button.png')
-            hover_background Transform('gui/button.png', matrixcolor=hover_matrix)
+            background 'gui_button'
+            hover_background Transform('gui_button', matrixcolor=hover_matrix)
 
-            text _("preferences_screen_return"): # Вернуться
+            text _('preferences_screen_return'): # Вернуться
                 style 'preferences_videos_screen_style_button_text'
                 align (0.5, 0.5)
 
 
 style preferences_videos_header:
     size 22
-    color '#eeeeee'
+    color color_white
     xalign 0.5
     text_align 0.5
 style preferences_videos_text:
     size 18
-    color '#dbc401'
+    color color_yellow
     xalign 0.5
     text_align 0.5
 style preferences_videos_screen_style_button_text:

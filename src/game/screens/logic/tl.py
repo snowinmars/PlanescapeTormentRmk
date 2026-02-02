@@ -1,10 +1,10 @@
 def get_available_translations():
     priority = {'russian': 0, 'english': 1}
-    tl_path = os.path.join(renpy.config.gamedir, "tl")
+    tl_path = os.path.join(renpy.config.gamedir, 'tl')
     available_translations = []
     if os.path.isdir(tl_path):
         for folder_name in os.listdir(tl_path):
-            if folder_name != "None" and not folder_name.startswith('.'): # Exclude "None" folder and any hidden files
+            if folder_name != 'None' and not folder_name.startswith('.'): # Exclude 'None' folder and any hidden files
                 available_translations.append(folder_name)
     return sorted(available_translations, key=lambda x: priority.get(x, 2))
 
