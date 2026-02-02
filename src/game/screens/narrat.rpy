@@ -58,6 +58,16 @@ init 10 python:
                 change_text = __('locations_manager_set_location_internal_unvisited').format(
                     internal_location_id=__(change_kwargs['internal_location_id'])
                 )
+            if change_id == 'quest_manager_set_entry_active':
+                change_text = __('quest_manager_set_entry_active').format(
+                    quest_id=change_kwargs['quest_id'],
+                    quest_state_id=change_kwargs['quest_state_id']
+                )
+            if change_id == 'quest_manager_set_entry_done':
+                change_text = __('quest_manager_set_entry_done').format(
+                    quest_id=change_kwargs['quest_id'],
+                    quest_state_id=change_kwargs['quest_state_id']
+                )
             if change_id == 'world_manager_setter':
                 change_text = __('world_manager_setter').format(
                     setting_id=__(change_kwargs['setting_id']),
@@ -155,7 +165,7 @@ label never_narrat:
 
 
 define narrat_screen_width = 600
-define narrat_screen_height = 1000
+define narrat_screen_height = 1080
 define narrat_screen_history_height = int(narrat_screen_height * 0.6)
 define narrat_screen_say_height = int(narrat_screen_height * 0.18)
 define narrat_screen_menu_height = int(narrat_screen_height * 0.2)

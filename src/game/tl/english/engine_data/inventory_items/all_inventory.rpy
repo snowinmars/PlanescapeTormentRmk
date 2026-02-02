@@ -1,6 +1,4 @@
-﻿# TODO: Translation updated at 2026-01-28 19:44
-
-translate english strings:
+﻿translate english strings:
 
     # game/engine_data/inventory_items/all_inventory.rpy:2
     old 'inventoryitem_has_intro_key_name'
