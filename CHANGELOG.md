@@ -1,5 +1,9 @@
 # Change log
 
+## Version 0.12
+- Improve narrat screen perfomance
+- Minor mobile ui improvements
+
 ## Version 0.11
 - Add almost normal inventory system
 - Reduce size of webp to 1920x1080 max

@@ -6,8 +6,8 @@ init 1 python: # init logger
     from game.engine.setup_logger import (setup_logger)
 
     enabled_dev = True
-    config.version = "0.11"
-    build.info['sha8'] = "ca092904"
+    config.version = '0.12'
+    build.info['sha8'] = '27a10c2b'
 
     if not persistent.language:
         persistent.language = 'english'
@@ -31,7 +31,7 @@ init 1 python: # init logger
     # config.use_cpickle = False
 
     runtime.logger = setup_logger(renpy.emscripten, renpy.android, logs_folder)
-    runtime.logger.info("Version: %s" % config.version)
+    runtime.logger.info('Version: %s' % config.version)
 
 
 init 2 python: # import and create stores
@@ -152,7 +152,7 @@ init 3 python: # setup hooks for initialyzing managers and applying stores
         config.underlay.append(
             renpy.Keymap(
                 inventory_screen=Show(
-                    "inventory_screen",
+                    'inventory_screen',
                     get_owned_items=runtime.global_state_manager.inventory_items_manager.get_owned_items,
                     get_selected_item_id=runtime.global_state_manager.inventory_items_manager.get_selected_item_id,
                     set_selected_item_id=runtime.global_state_manager.inventory_items_manager.set_selected_item_id,
@@ -166,7 +166,7 @@ init 3 python: # setup hooks for initialyzing managers and applying stores
         config.underlay.append(
             renpy.Keymap(
                 character_screen = Show(
-                    "character_screen",
+                    'character_screen',
                     get_character=lambda: runtime.global_state_manager.characters_manager.get_character('protagonist_character_name'))
             )
         )
@@ -174,7 +174,7 @@ init 3 python: # setup hooks for initialyzing managers and applying stores
         config.keymap['journal_screen'] = keymap_journal_screen
         config.underlay.append(
             renpy.Keymap(
-                journal_screen = Show("journal_screen")
+                journal_screen = Show('journal_screen')
             )
         )
 
@@ -253,11 +253,11 @@ label start:
     show screen narrat
 
     menu:
-        "dev" if enabled_dev:
+        'dev' if enabled_dev:
             jump dev
-        "Вступление для технодемки":
+        'Вступление для технодемки':
             jump introduction
-        "Новая жизнь":
+        'Новая жизнь':
             jump intro
 
 

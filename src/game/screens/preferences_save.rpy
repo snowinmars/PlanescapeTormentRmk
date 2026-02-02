@@ -36,15 +36,15 @@ screen preferences_save():
                             action FileSave(slot)
 
                             add FileScreenshot(slot):
-                                pos (312, 14)
-                                size (162, 115)
+                                pos (444, 17)
+                                size (231, 134)
 
                             text FileTime(slot, format=_('{#file_time}%A, %d %B %Y, %H:%M'), empty=_('Пустой слот')):
-                                area (480, 45, 500, 100)
+                                area (690, 20, 500, 100)
                                 style 'preferences_save_screen_style_item_text'
 
                             text FileSaveName(slot):
-                                area (480, 10, 500, 100)
+                                area (690, 45, 500, 100)
                                 style 'preferences_save_screen_style_item_text'
 
                             key 'save_delete' action FileDelete(slot)

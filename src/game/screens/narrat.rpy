@@ -8,7 +8,61 @@ init 10 python:
     narrat_say_yadjustment     = ui.adjustment()
     narrat_menu_yadjustment    = ui.adjustment()
 
+    # The point is that render_entry function recretes elements each frame (!),
+    # but render_cached_entry stores the elements in cache, so it can be accessed easily.
+    # The difference is visible on mobile devices - just switch from render_cached_entry to render_entry to see how it lags
+    _narrat_render_cache = {}
+
+    def render_cached_entry(entry):
+        entry_id = entry.get('id')
+
+        cached = _narrat_render_cache.get(entry_id)
+        if cached is not None:
+            return cached
+
+        result = render_entry(entry)
+
+        if len(_narrat_render_cache) > 100:
+            for key in list(_narrat_render_cache.keys())[:70]:
+                del _narrat_render_cache[key]
+
+        _narrat_render_cache[entry_id] = result
+        return result
+
+
     def render_entry(entry):
+        if entry['is_nameless']:
+            return Text(
+                __('world_manager_nameless_text').format(
+                    who_color=entry["who_color"],
+                    who=__("protagonist_character_name"),
+                    what=__(entry["what"])
+                ),
+                style='_narrat_screen_style_history_text',
+                color=color_narrator
+            )
+
+        if entry['is_npc']:
+            speaker = entry['who'].name
+            if speaker.startswith('get_') and speaker.endswith('()'):
+                speaker = eval(speaker)
+            return Text(
+                __('world_manager_npc_text').format(
+                    who_color=entry["who_color"],
+                    who=__(speaker),
+                    what=__(entry["what"])
+                ),
+                style='_narrat_screen_style_history_text',
+                color=color_npc
+            )
+
+        if entry['is_nr']:
+            return Text(
+                entry['what'],
+                style='_narrat_screen_style_history_text',
+                color=color_narrator
+            )
+
         if entry['is_br']:
             return Text(
                 '----------------',
@@ -107,44 +161,11 @@ init 10 python:
                 color=entry['who_color']
             )
 
-
         if entry['is_scars']:
             return Text(
                 entry['what'],
                 style='_narrat_screen_style_scars_text',
                 color=entry['who_color']
-            )
-
-        if entry['is_nameless']:
-            return Text(
-                __('world_manager_nameless_text').format(
-                    who_color=entry["who_color"],
-                    who=__("protagonist_character_name"),
-                    what=__(entry["what"])
-                ),
-                style='_narrat_screen_style_history_text',
-                color=color_narrator
-            )
-
-        if entry['is_npc']:
-            speaker = entry['who'].name
-            if speaker.startswith('get_') and speaker.endswith('()'):
-                speaker = eval(speaker)
-            return Text(
-                __('world_manager_npc_text').format(
-                    who_color=entry["who_color"],
-                    who=__(speaker),
-                    what=__(entry["what"])
-                ),
-                style='_narrat_screen_style_history_text',
-                color=color_npc
-            )
-
-        if entry['is_nr']:
-            return Text(
-                entry['what'],
-                style='_narrat_screen_style_history_text',
-                color=color_narrator
             )
 
         return Text('BUG narrat_history_oor: send screenshot to snowinmars@yandex.ru')
@@ -167,8 +188,8 @@ label never_narrat:
 define narrat_screen_width = 600
 define narrat_screen_height = 1080
 define narrat_screen_history_height = int(narrat_screen_height * 0.6)
-define narrat_screen_say_height = int(narrat_screen_height * 0.18)
-define narrat_screen_menu_height = int(narrat_screen_height * 0.2)
+define narrat_screen_say_height = int(narrat_screen_height * 0.10)
+define narrat_screen_menu_height = int(narrat_screen_height * 0.28)
 
 
 screen narrat():
@@ -200,7 +221,7 @@ screen narrat():
         vbox:
             xfill True
             yfill True
-            spacing 0
+            spacing 5
 
             # <narrat_history>
             viewport:
@@ -219,12 +240,11 @@ screen narrat():
                         alpha 0.7
 
                     for entry in cached_history:
-                        add render_entry(entry)
+                        add render_cached_entry(entry)
             # </narrat_history>
 
 
             # <narrat_say>
-
             viewport:
                 ysize narrat_screen_say_height
                 yadjustment narrat_say_yadjustment
@@ -236,12 +256,11 @@ screen narrat():
 
                 $ entry = narratLogic.get_current_line()
                 if entry:
-                    add render_entry(entry)
+                    add render_cached_entry(entry)
             # </narrat_say>
 
 
             # <narrat_menu>
-
             viewport:
                 ysize narrat_screen_menu_height
                 yadjustment narrat_menu_yadjustment

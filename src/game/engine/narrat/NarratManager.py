@@ -44,8 +44,6 @@ class NarratManager:
 
         if len(self._narrat_store.history) > self._narrat_store.history_entry_limit:
             self._narrat_store.history.pop(0)
-            for i, e in enumerate(self._narrat_store.history):
-                e['id'] = i
 
 
     def report_change(self, change_id, change_kwargs):
