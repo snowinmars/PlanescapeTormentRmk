@@ -323,20 +323,6 @@ screen _character_creation_descrption(x):
 ###
 
 
-screen _constitution_input():
-
-
-
-###
-
-
-screen _charisma_input():
-
-
-
-###
-
-
 style _input_screen_style_title:
     size 26
     color color_yellow

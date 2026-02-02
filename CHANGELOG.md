@@ -1,5 +1,10 @@
 # Change log
 
+## Version 0.11
+- Add almost normal inventory system
+- Reduce size of webp to 1920x1080 max
+- Refactor all screens
+
 ## Version 0.10
 - Change some png to webp
 - Minor ui/ux/dev fixes

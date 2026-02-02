@@ -92,7 +92,7 @@ init 10 python:
                     after=change_kwargs['after']
                 )
             return Text(
-                '    [change_text]',
+                '    ' + change_text,
                 style='_narrat_screen_style_history_text',
                 color=entry['who_color']
             )
@@ -107,7 +107,11 @@ init 10 python:
 
         if entry['is_nameless']:
             return Text(
-                '{color=[entry["who_color"]]}[__("protagonist_character_name")]{/color} - [__(entry["what"])]',
+                __('world_manager_nameless_text').format(
+                    who_color=entry["who_color"],
+                    who=__("protagonist_character_name"),
+                    what=__(entry["what"])
+                ),
                 style='_narrat_screen_style_history_text',
                 color=color_narrator
             )
@@ -115,9 +119,13 @@ init 10 python:
         if entry['is_npc']:
             speaker = entry['who'].name
             if speaker.startswith('get_') and speaker.endswith('()'):
-                $ speaker = eval(speaker)
+                speaker = eval(speaker)
             return Text(
-                '{color=[entry["who_color"]]}[__(speaker)]{/color} - [entry["what"]]',
+                __('world_manager_npc_text').format(
+                    who_color=entry["who_color"],
+                    who=__(speaker),
+                    what=__(entry["what"])
+                ),
                 style='_narrat_screen_style_history_text',
                 color=color_npc
             )
@@ -148,9 +156,9 @@ label never_narrat:
 
 define narrat_screen_width = 600
 define narrat_screen_height = 1000
-define narrat_screen_history_height = narrat_screen_height * 0.6
-define narrat_screen_say_height = narrat_screen_height * 0.18
-define narrat_screen_menu_height = narrat_screen_height * 0.2
+define narrat_screen_history_height = int(narrat_screen_height * 0.6)
+define narrat_screen_say_height = int(narrat_screen_height * 0.18)
+define narrat_screen_menu_height = int(narrat_screen_height * 0.2)
 
 
 screen narrat():
