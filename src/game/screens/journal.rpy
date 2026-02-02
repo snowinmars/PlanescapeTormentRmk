@@ -80,6 +80,7 @@ screen _quests_screen():
     viewport:
         area(200, 200, 385, 540)
         scrollbars 'vertical'
+        vscrollbar_unscrollable 'hide'
         mousewheel True
         draggable True
 
@@ -97,9 +98,21 @@ screen _quests_screen():
                         if journalLogic.is_choosed_quest_id(started_quest.quest_id):
                             color color_white
 
+            for finished_quest in finished_quests: # TODO [snow]: should I sort?
+                button:
+                    xsize 385
+                    action Function(journalLogic.choice_quest_id, finished_quest.quest_id)
+                    text journalLogic.get_quest_line(finished_quest.quest_id):
+                        style '_journal_screen_style_button_finished_text'
+                        align (0.0, 0.0)
+                        strikethrough True
+                        if journalLogic.is_choosed_quest_id(finished_quest.quest_id):
+                            color color_white
+
     viewport:
         area(715, 200, 535, 465)
         scrollbars 'vertical'
+        vscrollbar_unscrollable 'hide'
         mousewheel True
         draggable True
 
@@ -117,6 +130,7 @@ screen _journal_screen():
     viewport:
         area(200, 200, 385, 540)
         scrollbars 'vertical'
+        vscrollbar_unscrollable 'hide'
         mousewheel True
         draggable True
 
@@ -154,6 +168,11 @@ style _journal_screen_style_button:
 style _journal_screen_style_button_text:
     size 20
     color color_yellow
+    hover_color color_white
+    align (0.5, 0.5)
+style _journal_screen_style_button_finished_text:
+    size 20
+    color color_default
     hover_color color_white
     align (0.5, 0.5)
 style _journal_screen_style_text:

@@ -15,8 +15,8 @@ screen preferences_dev():
 
 
         label preferences_dev_screen_choice:
-            pos (315, 35)
-            xsize 500
+            pos (170, 115)
+            xsize 420
             style 'preferences_dev_screen_style_header'
             text_size 20
             text_align (0.5, 0.5)
@@ -24,8 +24,8 @@ screen preferences_dev():
 
 
         hbox:
-            pos (945, 50)
-            xsize 700
+            pos (700, 125)
+            xsize 550
             spacing 10
 
             button:
@@ -118,8 +118,9 @@ screen preferences_dev():
 
 
         viewport:
-            area (340, 120, 445, 635)
+            area (180, 160, 410, 615)
             scrollbars 'vertical'
+            vscrollbar_unscrollable 'hide'
             mousewheel True
             draggable True
 
@@ -129,40 +130,41 @@ screen preferences_dev():
                 if preferences_dev_screen_choice == 'persistent':
                     use _preferences_dev(persistent, preferences_dev_screen_choice)
 
-                if preferences_dev_screen_choice == '_preferences':
+                elif preferences_dev_screen_choice == '_preferences':
                     use _preferences_dev(_preferences, preferences_dev_screen_choice)
 
-                if preferences_dev_screen_choice == 'config':
+                elif preferences_dev_screen_choice == 'config':
                     use _preferences_dev(renpy.config, preferences_dev_screen_choice)
 
-                if preferences_dev_screen_choice == 'build':
+                elif preferences_dev_screen_choice == 'build':
                     use _preferences_dev(build, preferences_dev_screen_choice)
 
-                if preferences_dev_screen_choice == 'characters_store':
+                elif preferences_dev_screen_choice == 'characters_store':
                     use _preferences_dev_stores(runtime.global_state_manager.characters_manager._characters_store)
 
-                if preferences_dev_screen_choice == 'log_events_store':
+                elif preferences_dev_screen_choice == 'log_events_store':
                     use _preferences_dev_stores(runtime.global_log_events_manager._log_events_store)
 
-                if preferences_dev_screen_choice == 'inventory_items_store':
+                elif preferences_dev_screen_choice == 'inventory_items_store':
                     use _preferences_dev_stores(runtime.global_state_manager.inventory_items_manager._inventory_items_store)
 
-                if preferences_dev_screen_choice == 'journal_notes_store':
+                elif preferences_dev_screen_choice == 'journal_notes_store':
                     use _preferences_dev_stores(runtime.global_state_manager.journal_notes_manager._journal_notes_store)
 
-                if preferences_dev_screen_choice == 'locations_store':
+                elif preferences_dev_screen_choice == 'locations_store':
                     use _preferences_dev_stores(runtime.global_state_manager.locations_manager._locations_store)
 
-                if preferences_dev_screen_choice == 'world_store':
+                elif preferences_dev_screen_choice == 'world_store':
                     use _preferences_dev_stores(runtime.global_state_manager.world_manager._world_store)
 
-                if preferences_dev_screen_choice == 'quests_store':
+                elif preferences_dev_screen_choice == 'quests_store':
                     use _preferences_dev_stores(runtime.global_state_manager.quests_manager._quests_store)
 
 
         viewport:
-            area (955, 120, 650, 560)
+            area (700, 180, 550, 485)
             scrollbars 'vertical'
+            vscrollbar_unscrollable 'hide'
             mousewheel True
             draggable True
 
@@ -206,7 +208,7 @@ screen preferences_dev():
 
 
     button:
-        area (635, 960, 193, 78)
+        area (400, 825, 193, 78)
         action Return()
         background 'gui_button'
         hover_background Transform('gui_button', matrixcolor=hover_matrix)
@@ -266,7 +268,7 @@ style preferences_dev_screen_style_button_text:
 style preferences_dev_screen_style_settings_item_list:
     spacing 10
 style preferences_dev_screen_style_settings_item:
-    xsize 575
+    xsize 475
 style preferences_dev_screen_style_settings_item_button:
     xfill True
 style preferences_dev_screen_style_settings_item_text:

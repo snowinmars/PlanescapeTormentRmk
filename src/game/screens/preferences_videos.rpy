@@ -11,6 +11,7 @@ screen preferences_videos():
         viewport:
             area (1035, 100, 640, 850)
             scrollbars 'vertical'
+            vscrollbar_unscrollable 'hide'
             mousewheel True
             draggable True
 

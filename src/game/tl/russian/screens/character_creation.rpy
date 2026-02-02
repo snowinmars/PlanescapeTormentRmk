@@ -42,7 +42,7 @@
 
     # game/screens/character_creation.rpy:547
     old 'character_screen_set_mage'
-    new 'Выбрать мага (РЕКОММЕНДУЕТСЯ!)'
+    new 'Выбрать РЕКОММЕНДОВАННЫЙ билд'
 
     # game/screens/character_creation.rpy:548
     old 'character_screen_dexterity_help'

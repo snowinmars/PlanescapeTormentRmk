@@ -38,7 +38,7 @@ class QuestsManager:
         return list(map(
             lambda x: x[1],
             filter(
-                lambda x: x[1].started,
+                lambda x: x[1].started and not x[1].finished,
                 self._quests_store.quests.items()
             )
         ))

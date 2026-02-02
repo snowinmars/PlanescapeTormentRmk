@@ -110,6 +110,7 @@ screen inventory_screen(
         spacing 20
         mousewheel True
         scrollbars 'vertical'
+        vscrollbar_unscrollable 'hide'
 
         for owned_item in owned_items:
             button:

@@ -23,6 +23,7 @@ screen inventory_item_screen(item):
             mousewheel True
             draggable True
             scrollbars 'vertical'
+            vscrollbar_unscrollable 'hide'
 
             vbox:
                 spacing 0

@@ -174,6 +174,9 @@ screen narrat():
     if narratLogic.get_last_history_id() != cached_last_history_id:
         $ cached_history = narratLogic.actual_history()
         $ cached_last_history_id = narratLogic.get_last_history_id()
+        $ narrat_history_yadjustment.value = infinite_float_value
+        $ narrat_say_yadjustment.value = infinite_float_value
+        $ narrat_menu_yadjustment.value = infinite_float_value
 
 
     frame:
@@ -190,8 +193,6 @@ screen narrat():
             spacing 0
 
             # <narrat_history>
-            $ narrat_history_yadjustment.value = infinite_float_value
-
             viewport:
                 ysize narrat_screen_history_height
                 yadjustment narrat_history_yadjustment
@@ -213,7 +214,6 @@ screen narrat():
 
 
             # <narrat_say>
-            $ narrat_say_yadjustment.value = infinite_float_value
 
             viewport:
                 ysize narrat_screen_say_height
@@ -231,7 +231,6 @@ screen narrat():
 
 
             # <narrat_menu>
-            $ narrat_menu_yadjustment.value = infinite_float_value
 
             viewport:
                 ysize narrat_screen_menu_height
@@ -241,7 +240,6 @@ screen narrat():
                 scrollbars 'vertical'
                 vscrollbar_unscrollable 'hide'
                 yinitial 0.0
-
 
                 vbox:
                     spacing 0

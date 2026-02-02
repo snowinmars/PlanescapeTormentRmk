@@ -24,6 +24,7 @@ screen achievement_gallery():
         viewport:
             area (425, 125, 375, 625)
             scrollbars 'vertical'
+            vscrollbar_unscrollable 'hide'
             mousewheel True
             draggable True
 

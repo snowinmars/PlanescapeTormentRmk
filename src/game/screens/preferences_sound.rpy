@@ -12,6 +12,7 @@ screen preferences_sound():
         viewport:
             area (380, 510, 570, 350)
             scrollbars 'vertical'
+            vscrollbar_unscrollable 'hide'
             mousewheel True
             draggable True
 

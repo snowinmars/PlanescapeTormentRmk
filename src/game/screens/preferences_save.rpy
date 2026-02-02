@@ -17,6 +17,7 @@ screen preferences_save():
         viewport:
             area (235, 155, 1431, 745)
             scrollbars 'vertical'
+            vscrollbar_unscrollable 'hide'
             mousewheel True
             draggable True
 

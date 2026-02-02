@@ -11,6 +11,7 @@ screen preferences_graphics():
         viewport:
             area (1005, 520, 570, 350)
             scrollbars 'vertical'
+            vscrollbar_unscrollable 'hide'
             mousewheel True
             draggable True
 
