@@ -1,4 +1,4 @@
-screen preferences_language():
+screen screen_preferences_language():
     tag menu
 
     frame:
@@ -16,19 +16,19 @@ screen preferences_language():
             draggable True
 
             vbox:
-                style 'preferences_language_screen_style_settings_item_list'
+                style 'screen_preferences_language_style_settings_item_list'
 
                 hbox:
-                    style 'preferences_language_screen_style_settings_item'
+                    style 'screen_preferences_language_style_settings_item'
 
                     button :
-                        style 'preferences_language_screen_style_settings_item_button'
+                        style 'screen_preferences_language_style_settings_item_button'
                         action [
                             SetField(persistent, 'language', 'russian'),
                             Language('russian')
                         ]
-                        text _('preferences_language_screen_russian'): # 'Русский'
-                            style 'preferences_language_screen_style_settings_item_text'
+                        text _('screen_preferences_language_russian'): # 'Русский'
+                            style 'screen_preferences_language_style_settings_item_text'
 
                     button:
                         xysize (32, 32)
@@ -37,22 +37,22 @@ screen preferences_language():
                             Language('russian')
                         ]
                         if persistent.language == 'russian':
-                            style 'preferences_language_screen_style_settings_item_button_on'
+                            style 'screen_preferences_language_style_settings_item_button_on'
                         else:
-                            style 'preferences_language_screen_style_settings_item_button_off'
+                            style 'screen_preferences_language_style_settings_item_button_off'
 
 
                 hbox:
-                    style 'preferences_language_screen_style_settings_item'
+                    style 'screen_preferences_language_style_settings_item'
 
                     button :
-                        style 'preferences_language_screen_style_settings_item_button'
+                        style 'screen_preferences_language_style_settings_item_button'
                         action [
                             SetField(persistent, 'language', 'english'),
                             Language('english')
                         ]
-                        text _('preferences_language_screen_english'): # 'English'
-                            style 'preferences_language_screen_style_settings_item_text'
+                        text _('screen_preferences_language_english'): # 'English'
+                            style 'screen_preferences_language_style_settings_item_text'
 
                     button:
                         xysize (32, 32)
@@ -61,36 +61,36 @@ screen preferences_language():
                             Language('english')
                         ]
                         if persistent.language == 'english':
-                            style 'preferences_language_screen_style_settings_item_button_on'
+                            style 'screen_preferences_language_style_settings_item_button_on'
                         else:
-                            style 'preferences_language_screen_style_settings_item_button_off'
+                            style 'screen_preferences_language_style_settings_item_button_off'
 
 
         button:
             area (1395, 900, 193, 78)
             action Return()
-            background 'gui_button'
-            hover_background Transform('gui_button', matrixcolor=hover_matrix)
+            background cached_button_background
+            hover_background cached_button_hover_background
 
-            text _('preferences_screen_return'): # Вернуться
-                style 'preferences_language_screen_style_button_text'
+            text _('screen_preferences_language_return'): # Вернуться
+                style 'screen_preferences_language_style_button_text'
                 align (0.5, 0.5)
 
 
-style preferences_language_screen_style_settings_item_list:
+style screen_preferences_language_style_settings_item_list:
     spacing 10
-style preferences_language_screen_style_settings_item:
+style screen_preferences_language_style_settings_item:
     xsize 500
-style preferences_language_screen_style_settings_item_button:
+style screen_preferences_language_style_settings_item_button:
     xfill True
-style preferences_language_screen_style_settings_item_text:
+style screen_preferences_language_style_settings_item_text:
     size 18
     color color_yellow
     hover_color color_white
-style preferences_language_screen_style_settings_item_button_on:
+style screen_preferences_language_style_settings_item_button_on:
     background 'gui_switch_on'
-style preferences_language_screen_style_settings_item_button_off:
+style screen_preferences_language_style_settings_item_button_off:
     background 'gui_switch_off'
-style preferences_language_screen_style_button_text:
+style screen_preferences_language_style_button_text:
     size 20
     color color_white

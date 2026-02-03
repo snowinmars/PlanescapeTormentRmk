@@ -1,10 +1,14 @@
 ﻿translate english strings:
 
-    # game/screens/preferences_language.rpy:45
-    old 'preferences_language_screen_russian'
+    # game/screens/preferences_language.rpy:30
+    old 'screen_preferences_language_russian'
     new 'Русский'
 
-    # game/screens/preferences_language.rpy:71
-    old 'preferences_language_screen_english'
+    # game/screens/preferences_language.rpy:54
+    old 'screen_preferences_language_english'
     new 'English'
+
+    # game/screens/preferences_language.rpy:75
+    old 'screen_preferences_language_return'
+    new 'Back'
 

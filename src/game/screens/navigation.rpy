@@ -8,4 +8,4 @@
 ## другим меню и к началу игры.
 
 screen navigation():
-    use preferences()
+    use screen_preferences()

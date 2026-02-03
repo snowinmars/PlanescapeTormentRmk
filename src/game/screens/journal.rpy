@@ -3,17 +3,24 @@ init 10 python:
     from game.screens.JournalLogic import (JournalLogic)
     journalLogic = JournalLogic(runtime.global_state_manager)
 
+    screen_journal_cached_button_background = Transform('gui_button', fit='cover')
+    screen_journal_cached_button_hover_background = Transform('gui_button', fit='cover', matrixcolor=hover_matrix)
 
-screen journal_screen():
-    on 'show' action Function(journalLogic.reset)
 
+screen screen_journal():
     for k in keymap_journal_screen:
-        key k action Hide('journal_screen')
-    key 'K_ESCAPE' action Hide('journal_screen')
+        key k action Hide('screen_journal')
+    key 'K_ESCAPE' action Hide('screen_journal')
 
-    use narrat()
+    use screen_narrat()
 
     modal True
+
+    default screen_journal_choosed_tab      = ''
+    default screen_journal_choosed_quest_id = ''
+    default screen_journal_started_quests   = journalLogic.get_started_quests()
+    default screen_journal_finished_quests  = journalLogic.get_finished_quests()
+    default screen_journal_notes            = journalLogic.get_notes()
 
     frame:
         xfill True
@@ -26,156 +33,142 @@ screen journal_screen():
             spacing 0
 
             button:
-                style '_journal_screen_style_button'
-                action Function(journalLogic.set_show_quest)
-                text _('journal_screen_quests_button'): # Задания
-                    style '_journal_screen_style_button_text'
-                    if journalLogic.get_show_quest():
+                style 'screen_journal_style_button'
+                action SetScreenVariable('screen_journal_choosed_tab', 'quests')
+                text _('screen_journal_quests_button'): # Задания
+                    style 'screen_journal_style_button_text'
+                    if screen_journal_choosed_tab == 'quests':
                         color color_white
 
             button:
-                style '_journal_screen_style_button'
-                action Function(journalLogic.set_show_journal)
-                text _('journal_screen_journal_button'): # Журнал
-                    style '_journal_screen_style_button_text'
-                    if journalLogic.get_show_journal():
+                style 'screen_journal_style_button'
+                action SetScreenVariable('screen_journal_choosed_tab', 'journal')
+                text _('screen_journal_journal_button'): # Журнал
+                    style 'screen_journal_style_button_text'
+                    if screen_journal_choosed_tab == 'journal':
                         color color_white
 
             button:
-                style '_journal_screen_style_button'
-                action Function(journalLogic.set_show_bestiary)
+                style 'screen_journal_style_button'
+                action SetScreenVariable('screen_journal_choosed_tab', 'bestiary')
                 sensitive False
-                text _('journal_screen_bestiary_button'): # Существа
-                    style '_journal_screen_style_button_text'
-                    if journalLogic.get_show_bestiary():
+                text _('screen_journal_bestiary_button'): # Существа
+                    style 'screen_journal_style_button_text'
+                    if screen_journal_choosed_tab == 'bestiary':
                         color color_white
 
 
-    if journalLogic.get_show_quest():
-        use _quests_screen()
-    if journalLogic.get_show_journal():
-        use _journal_screen()
-    if journalLogic.get_show_bestiary():
-        use _bestiary_screen()
+    # <quest_screen>
+    if screen_journal_choosed_tab == 'quests':
+        viewport:
+            area(200, 200, 385, 540)
+            scrollbars 'vertical'
+            vscrollbar_unscrollable 'hide'
+            mousewheel True
+            draggable True
+
+            vbox:
+                spacing 5
+                xfill True
+
+                for started_quest in screen_journal_started_quests: # TODO [snow]: should I sort?
+                    button:
+                        xsize 385
+                        action SetScreenVariable('screen_journal_choosed_quest_id', started_quest.quest_id)
+                        text journalLogic.get_quest_line(started_quest.quest_id):
+                            style 'screen_journal_style_button_text'
+                            align (0.0, 0.0)
+                            if screen_journal_choosed_quest_id == started_quest.quest_id:
+                                color color_white
+
+                for finished_quest in screen_journal_finished_quests: # TODO [snow]: should I sort?
+                    button:
+                        xsize 385
+                        action SetScreenVariable('screen_journal_choosed_quest_id', finished_quest.quest_id)
+                        text journalLogic.get_quest_line(finished_quest.quest_id):
+                            style 'screen_journal__style_button_finished_text'
+                            align (0.0, 0.0)
+                            strikethrough True
+                            if screen_journal_choosed_quest_id == finished_quest.quest_id:
+                                color color_white
+
+        viewport:
+            area(715, 200, 535, 465)
+            scrollbars 'vertical'
+            vscrollbar_unscrollable 'hide'
+            mousewheel True
+            draggable True
+
+            if choosed_quest_id:
+                text journalLogic.get_quest_state_line(choosed_quest_id):
+                    style 'screen_journal__style_text'
+                    xalign 0.0
+    # </quest_screen>
 
 
-    button:
-        area (400, 825, 193, 78)
-        action Hide('journal_screen')
-        background 'gui_button'
-        hover_background Transform('gui_button', matrixcolor=hover_matrix)
+    # <journal_screen>
+    if screen_journal_choosed_tab == 'journal':
+        viewport:
+            area(200, 200, 385, 540)
+            scrollbars 'vertical'
+            vscrollbar_unscrollable 'hide'
+            mousewheel True
+            draggable True
 
-        text _('preferences_screen_return'): # Вернуться
-            style 'preferences_dev_screen_style_button_text'
-            align (0.5, 0.5)
+            vbox:
+                spacing 5
+                xfill True
 
-
-screen _quests_screen():
-    default started_quests = journalLogic.get_started_quests()
-    default finished_quests = journalLogic.get_finished_quests()
-
-    on 'show' action SetScreenVariable('started_quests', journalLogic.get_started_quests())
-    on 'show' action SetScreenVariable('finished_quests', journalLogic.get_finished_quests())
-
-    viewport:
-        area(200, 200, 385, 540)
-        scrollbars 'vertical'
-        vscrollbar_unscrollable 'hide'
-        mousewheel True
-        draggable True
-
-        vbox:
-            spacing 5
-            xfill True
-
-            for started_quest in started_quests: # TODO [snow]: should I sort?
-                button:
-                    xsize 385
-                    action Function(journalLogic.choice_quest_id, started_quest.quest_id)
-                    text journalLogic.get_quest_line(started_quest.quest_id):
-                        style '_journal_screen_style_button_text'
-                        align (0.0, 0.0)
-                        if journalLogic.is_choosed_quest_id(started_quest.quest_id):
-                            color color_white
-
-            for finished_quest in finished_quests: # TODO [snow]: should I sort?
-                button:
-                    xsize 385
-                    action Function(journalLogic.choice_quest_id, finished_quest.quest_id)
-                    text journalLogic.get_quest_line(finished_quest.quest_id):
-                        style '_journal_screen_style_button_finished_text'
-                        align (0.0, 0.0)
-                        strikethrough True
-                        if journalLogic.is_choosed_quest_id(finished_quest.quest_id):
-                            color color_white
-
-    viewport:
-        area(715, 200, 535, 465)
-        scrollbars 'vertical'
-        vscrollbar_unscrollable 'hide'
-        mousewheel True
-        draggable True
-
-        if journalLogic.choosed_quest_id:
-            text journalLogic.get_quest_state_line():
-                style '_journal_screen_style_text'
-                xalign 0.0
-
-
-screen _journal_screen():
-    default notes = journalLogic.get_notes()
-
-    on 'show' action SetVariable('notes', journalLogic.get_notes())
-
-    viewport:
-        area(200, 200, 385, 540)
-        scrollbars 'vertical'
-        vscrollbar_unscrollable 'hide'
-        mousewheel True
-        draggable True
-
-        vbox:
-            spacing 5
-            xfill True
-
-            for note in notes:
-                text note.content:
-                    style '_journal_screen_style_text'
-                if len(notes) > 1:
+                for note in screen_journal_notes:
+                    text note.content:
+                        style 'screen_journal__style_text'
                     text '-------':
                         size 12
                         color color_white
                         xfill True
+    # </journal_screen>
 
 
-screen _bestiary_screen():
-    default beasts = journalLogic.get_beasts()
-
-    on 'show' action SetVariable('beasts', journalLogic.get_beasts())
-
-    frame:
-        background '#0000ff99'
-        xpos 0
-        ypos 0
-        xsize 100
-        ysize 100
+    # <bestiary_screen>
+    if screen_journal_choosed_tab == 'bestiary':
+        frame:
+            background '#0000ff99'
+            xpos 0
+            ypos 0
+            xsize 100
+            ysize 100
+    # </bestiary_screen>
 
 
-style _journal_screen_style_button:
+    button:
+        area (400, 825, 193, 78)
+        action Hide('screen_journal')
+        background cached_button_background
+        hover_background cached_button_hover_background
+
+        text _('screen_journal__return'): # Вернуться
+            style 'screen_journal__style_button_text'
+            align (0.5, 0.5)
+
+
+style screen_journal_style_button:
     xysize (150, 60)
-    background Transform('gui_button', fit='cover')
-    hover_background Transform('gui_button', fit='cover', matrixcolor=hover_matrix)
-style _journal_screen_style_button_text:
+    background screen_journal_cached_button_background
+    hover_background screen_journal_cached_button_hover_background
+style screen_journal_style_button_text:
     size 20
     color color_yellow
     hover_color color_white
     align (0.5, 0.5)
-style _journal_screen_style_button_finished_text:
+style screen_journal_style_button_finished_text:
     size 20
     color color_default
     hover_color color_white
     align (0.5, 0.5)
-style _journal_screen_style_text:
+style screen_journal_style_text:
     size 20
     color color_yellow
     align (0.0, 0.0)
+style screen_journal_style_button_text:
+    size 20
+    color color_white

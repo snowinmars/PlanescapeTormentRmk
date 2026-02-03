@@ -20,7 +20,7 @@
 ## achievements unless you specify something else.
 ##
 ## Then you can make a button to go to your achievement gallery screen, e.g.
-# textbutton _("Achievements") action ShowMenu("achievement_gallery")
+# textbutton _("Achievements") action ShowMenu("screen_achievement_gallery")
 ## This will show the achievement gallery screen, declared below. You can
 ## further customize it however you like.
 ## If you click on an achievement in the gallery during development (this will

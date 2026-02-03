@@ -1,5 +1,5 @@
 
-screen preferences_sound():
+screen screen_preferences_sound():
     tag menu
 
     frame:
@@ -17,16 +17,16 @@ screen preferences_sound():
             draggable True
 
             vbox:
-                style 'preferences_sound_screen_style_settings_item_list'
+                style 'screen_preferences_sound_style_settings_item_list'
 
                 hbox:
-                    style 'preferences_sound_screen_style_settings_bar_item'
+                    style 'screen_preferences_sound_style_settings_bar_item'
 
                     button:
-                        style 'preferences_sound_screen_style_settings_item_button'
+                        style 'screen_preferences_sound_style_settings_item_button'
                         action NullAction()
-                        text _('preferences_sound_screen_main_volume'): # Громкость
-                            style 'preferences_sound_screen_style_settings_item_text'
+                        text _('screen_preferences_sound_main_volume'): # Громкость
+                            style 'screen_preferences_sound_style_settings_item_text'
 
                     bar:
                         xsize 250
@@ -34,13 +34,13 @@ screen preferences_sound():
                         thumb_offset 10
 
                 hbox:
-                    style 'preferences_sound_screen_style_settings_bar_item'
+                    style 'screen_preferences_sound_style_settings_bar_item'
 
                     button:
-                        style 'preferences_sound_screen_style_settings_item_button'
+                        style 'screen_preferences_sound_style_settings_item_button'
                         action NullAction()
-                        text _('preferences_sound_screen_music_volume'): # Громкость музыки
-                            style 'preferences_sound_screen_style_settings_item_text'
+                        text _('screen_preferences_sound_music_volume'): # Громкость музыки
+                            style 'screen_preferences_sound_style_settings_item_text'
 
                     bar:
                         xsize 250
@@ -48,13 +48,13 @@ screen preferences_sound():
                         thumb_offset 10
 
                 hbox:
-                    style 'preferences_sound_screen_style_settings_bar_item'
+                    style 'screen_preferences_sound_style_settings_bar_item'
 
                     button:
-                        style 'preferences_sound_screen_style_settings_item_button'
+                        style 'screen_preferences_sound_style_settings_item_button'
                         action NullAction()
-                        text _('preferences_sound_screen_sound_volume'): # Громкость звуков
-                            style 'preferences_sound_screen_style_settings_item_text'
+                        text _('screen_preferences_sound_sound_volume'): # Громкость звуков
+                            style 'screen_preferences_sound_style_settings_item_text'
 
                     bar:
                         xsize 250
@@ -62,13 +62,13 @@ screen preferences_sound():
                         thumb_offset 10
 
                 hbox:
-                    style 'preferences_sound_screen_style_settings_bar_item'
+                    style 'screen_preferences_sound_style_settings_bar_item'
 
                     button:
-                        style 'preferences_sound_screen_style_settings_item_button'
+                        style 'screen_preferences_sound_style_settings_item_button'
                         action NullAction()
-                        text _('preferences_sound_screen_voice_volume'): # Громкость звуков
-                            style 'preferences_sound_screen_style_settings_item_text'
+                        text _('screen_preferences_sound_voice_volume'): # Громкость звуков
+                            style 'screen_preferences_sound_style_settings_item_text'
 
                     bar:
                         xsize 250
@@ -76,49 +76,49 @@ screen preferences_sound():
                         thumb_offset 10
 
                 hbox:
-                    style 'preferences_sound_screen_style_settings_item'
+                    style 'screen_preferences_sound_style_settings_item'
 
                     button:
-                        style 'preferences_sound_screen_style_settings_item_button'
+                        style 'screen_preferences_sound_style_settings_item_button'
                         action Preference('all mute', 'toggle')
 
-                        text _('preferences_sound_screen_mute_all'): # 'Без звука'
-                            style 'preferences_sound_screen_style_settings_item_text'
+                        text _('screen_preferences_sound_mute_all'): # 'Без звука'
+                            style 'screen_preferences_sound_style_settings_item_text'
 
                     button:
                         xysize (32, 32)
                         action Preference('all mute', 'toggle')
 
                         if _preferences.mute['music'] == True and _preferences.mute['sfx'] == True and _preferences.mute['voice'] == True and _preferences.mute['main'] == True:
-                            style 'preferences_sound_screen_style_settings_item_button_on'
+                            style 'screen_preferences_sound_style_settings_item_button_on'
                         else:
-                            style 'preferences_sound_screen_style_settings_item_button_off'
+                            style 'screen_preferences_sound_style_settings_item_button_off'
 
 
         button:
             area (1395, 900, 193, 78)
             action Return()
-            background 'gui_button'
-            hover_background Transform('gui_button', matrixcolor=hover_matrix)
+            background cached_button_background
+            hover_background cached_button_hover_background
 
-            text _('preferences_screen_return'): # Вернуться
-                style 'preferences_game_screen_style_button_text'
+            text _('screen_preferences_sound_return'): # Вернуться
+                style 'screen_preferences_sound_style_button_text'
                 align (0.5, 0.5)
 
 
-style preferences_sound_screen_style_settings_item_list:
+style screen_preferences_sound_style_settings_item_list:
     spacing 10
-style preferences_sound_screen_style_settings_bar_item:
+style screen_preferences_sound_style_settings_bar_item:
     xsize 300
-style preferences_sound_screen_style_settings_item_button:
+style screen_preferences_sound_style_settings_item_button:
     xfill True
-style preferences_sound_screen_style_settings_item_button_on:
+style screen_preferences_sound_style_settings_item_button_on:
     background 'gui_switch_on'
-style preferences_sound_screen_style_settings_item_button_off:
+style screen_preferences_sound_style_settings_item_button_off:
     background 'gui_switch_off'
-style preferences_sound_screen_style_settings_item_text:
+style screen_preferences_sound_style_settings_item_text:
     size 18
     color color_yellow
     hover_color color_white
-style preferences_sound_screen_style_settings_item:
+style screen_preferences_sound_style_settings_item:
     xsize 500

@@ -11,5 +11,5 @@ init python:
         def __call__(self):
             # This is called when the button is clicked.
             target_label = self.directive.execute()
-            renpy.show_screen('narrat')
+            renpy.show_screen('screen_narrat')
             renpy.jump(target_label)

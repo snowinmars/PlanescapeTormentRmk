@@ -7,7 +7,7 @@ init 1 python: # init logger
 
     enabled_dev = True
     config.version = '0.12'
-    build.info['sha8'] = '27a10c2b'
+    build.info['sha8'] = '04f59f2d'
 
     if not persistent.language:
         persistent.language = 'english'
@@ -148,35 +148,14 @@ init 3 python: # setup hooks for initialyzing managers and applying stores
         build_all_quests(runtime.global_quests_manager)
         runtime.logger.info('Done building quests, took %s', int(time.time()) - now)
 
-        config.keymap['inventory_screen'] = keymap_inventory_screen
-        config.underlay.append(
-            renpy.Keymap(
-                inventory_screen=Show(
-                    'inventory_screen',
-                    get_owned_items=runtime.global_state_manager.inventory_items_manager.get_owned_items,
-                    get_selected_item_id=runtime.global_state_manager.inventory_items_manager.get_selected_item_id,
-                    set_selected_item_id=runtime.global_state_manager.inventory_items_manager.set_selected_item_id,
-                    get_character=lambda: runtime.global_state_manager.characters_manager.get_character('protagonist_character_name'),
-                    get_gold=runtime.global_state_manager.world_manager.get_gold
-                )
-            )
-        )
+        config.keymap['screen_inventory'] = keymap_inventory_screen
+        config.underlay.append(renpy.Keymap(screen_inventory=Show('screen_inventory')))
 
-        config.keymap['character_screen'] = keymap_character_screen
-        config.underlay.append(
-            renpy.Keymap(
-                character_screen = Show(
-                    'character_screen',
-                    get_character=lambda: runtime.global_state_manager.characters_manager.get_character('protagonist_character_name'))
-            )
-        )
+        config.keymap['screen_character_screen'] = keymap_character_screen
+        config.underlay.append(renpy.Keymap(screen_character_screen=Show('screen_character_screen')))
 
-        config.keymap['journal_screen'] = keymap_journal_screen
-        config.underlay.append(
-            renpy.Keymap(
-                journal_screen = Show('journal_screen')
-            )
-        )
+        config.keymap['screen_journal'] = keymap_journal_screen
+        config.underlay.append(renpy.Keymap(screen_journal=Show('screen_journal')))
 
     config.after_load_callbacks.append(apply_stores)
     config.start_callbacks.append(init_managers)
@@ -250,7 +229,7 @@ label start:
     # for x in ['x', 'X', 'ч', 'Ч']:
     #     key x action Function(_dump_settings)
 
-    show screen narrat
+    show screen screen_narrat
 
     menu:
         'dev' if enabled_dev:

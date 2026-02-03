@@ -13,4 +13,4 @@
 ## элементами, которые трансклюдируются (помещаются) внутрь него.
 
 screen game_menu(title, scroll=None, yinitial=0.0, spacing=0):
-    use preferences()
+    use screen_preferences()

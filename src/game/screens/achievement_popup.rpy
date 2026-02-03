@@ -5,7 +5,7 @@
 ## a.description = the description
 ## a.unlocked_image = the image of the achievement, now that it's unlocked
 ## a.timestamp = the time the achievement was unlocked at
-screen achievement_popup(a, tag, num):
+screen screen_achievement_popup(a, tag, num):
     zorder 190
 
     ## Allows multiple achievements to be slightly offset from each other.
@@ -15,7 +15,7 @@ screen achievement_popup(a, tag, num):
     frame:
         background 'gui_ablrow'
         xysize (512, 128)
-        at achievement_popout() # The transform that makes it pop out
+        at transform_achievement_popout() # The transform that makes it pop out
         yoffset achievement_yoffset # Offsets the achievement down if there are multiple
 
         hbox:
@@ -36,12 +36,12 @@ screen achievement_popup(a, tag, num):
 
 
     timer 5.0 action [ # Hide the screen after 5 seconds. You can change the time but shouldn't change the action.
-        Hide('achievement_popup'),
+        Hide('screen_achievement_popup'),
         Show('finish_animating_achievement', num=num, _tag=tag+'1')
     ]
 
 
-transform achievement_popout():
+transform transform_achievement_popout():
     ## The `on show` event occurs when the screen is first shown.
     on show:
         ## Align it off-screen at the left. Note that no y information is

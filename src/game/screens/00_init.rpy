@@ -23,6 +23,15 @@ define font_exocet        = 'exocet.ttf'
 define font_notosans      = 'NotoSans-Regular.ttf'
 define font_dejavusans    = 'DejaVuSans.ttf'
 
+define cached_button_background = 'gui_button'
+define cached_button_hover_background = Transform('gui_button', matrixcolor=hover_matrix)
+define cached_button_insensitive_background = Transform('gui_button', matrixcolor=insensitive_matrix)
+define cached_settings_button_background = 'gui_settings_button_idle'
+define cached_settings_button_hover_background = Transform('gui_settings_button_idle', matrixcolor=hover_matrix)
+
+
+define infinite_float_value       = float('inf')
+
 init 2 python:
     keymap_inventory_screen = [ 'K_i' ]
     keymap_character_screen = [ 'K_c' ]
@@ -46,3 +55,51 @@ init 2 python:
         return '#{:02x}{:02x}{:02x}'.format(int(r*255), int(g*255), int(b*255))
 
 
+    MAX_TEXTURE_CACHE_LENGTH = 100
+    _inventory_item_cache = {}
+    def get_cached_inventory_item(texture_path):
+        if texture_path in _inventory_item_cache:
+            return _inventory_item_cache[texture_path]
+        if len(_inventory_item_cache) > MAX_TEXTURE_CACHE_LENGTH:
+            _inventory_item_cache.clear()
+        idle  = Transform(texture_path, fit='contain', align=(0.5, 0.5))
+        hover = Transform(texture_path, fit='contain', align=(0.5, 0.5), matrixcolor=hover_matrix)
+        item = (idle, hover)
+        _inventory_item_cache[texture_path] = item
+        return item
+
+
+    _menu_item_cache = {}
+    def get_cached_menu_item(texture_path):
+        if texture_path in _menu_item_cache:
+            return _menu_item_cache[texture_path]
+        if len(_menu_item_cache) > MAX_TEXTURE_CACHE_LENGTH:
+            _menu_item_cache.clear()
+        idle  = texture_path
+        hover = Transform(texture_path, matrixcolor=hover_matrix)
+        item = (idle, hover)
+        _menu_item_cache[texture_path] = item
+        return item
+
+
+    _shadow_cache = {}
+    def get_cached_shadow(texture_path):
+        if texture_path in _shadow_cache:
+            return _shadow_cache[texture_path]
+        if len(_shadow_cache) > MAX_TEXTURE_CACHE_LENGTH:
+            _shadow_cache.clear()
+        idle  = Transform(texture_path, matrixcolor=no_opacity)
+        hover = Transform(texture_path, matrixcolor=small_opacity)
+        item = (idle, hover)
+        _shadow_cache[texture_path] = item
+        return item
+
+    _curved_text_cache = {}
+    def get_cached_curved_text(what, points, rot=True, t_start=0.0, t_end=1.0, **kwargs):
+        if what in _curved_text_cache:
+            return _curved_text_cache[what]
+        if len(_curved_text_cache) > MAX_TEXTURE_CACHE_LENGTH:
+            _curved_text_cache.clear()
+        item = CurvedText(what, points, rot, t_start, t_end, **kwargs)
+        _curved_text_cache[what] = item
+        return item

@@ -597,14 +597,13 @@ python early:
             else:
                 return not_touch
 
-        def zoom_in_out(self, amount, x=None, y=None, st=None, drift=True):
+        def zoom_in_out(self, amount, x=None, y=None, st=None, drift=False):
             """
             Zoom in or out by the provided amount. If x and y are provided,
             the zoom will be centered around that point. If drift is True,
             the zoom will drift to the new zoom level. If drift is False, the
             zoom will instantly jump to the new zoom level.
             """
-
             if x is None:
                 x = 0.5
             if x < 1.0:
@@ -1190,7 +1189,7 @@ init python:
             it will instantly zoom there.
         """
 
-        def __init__(self, id, direction="in", amount=None, drift=True):
+        def __init__(self, id, direction="in", amount=None, drift=False):
             self.id = id
             self.direction = direction
             self.amount = amount

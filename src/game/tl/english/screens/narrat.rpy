@@ -1,110 +1,110 @@
 ﻿translate english strings:
 
-    # game/screens/narrat.rpy:25
-    old 'character_manager_modify_property'
+    # game/screens/narrat.rpy:30
+    old 'screen_narrat_world_manager_nameless_text'
+    new '{{color={who_color}}}{who}{{/color}} - {what}' # who_color who what
+
+    # game/screens/narrat.rpy:44
+    old 'screen_narrat_world_manager_npc_text'
+    new '{{color={who_color}}}{who}{{/color}} - {what}' # who_color who what
+
+    # game/screens/narrat.rpy:74
+    old 'screen_narrat_character_manager_modify_property'
     new '{name}: {prop} {amount:+}.' # name prop amount actual_value
 
-    # game/screens/narrat.rpy:32
-    old 'character_manager_modify_property_once'
+    # game/screens/narrat.rpy:81
+    old 'screen_narrat_character_manager_modify_property_once'
     new '{name}: {prop} {amount:+}.' # name prop amount actual_value
 
-    # game/screens/narrat.rpy:39
-    old 'character_manager_set_property'
+    # game/screens/narrat.rpy:88
+    old 'screen_narrat_character_manager_set_property'
     new '{name}: {prop} = {actual_value}.' # name prop actual_value
 
-    # game/screens/narrat.rpy:45
-    old 'journal_notes_manager_update_journal'
+    # game/screens/narrat.rpy:94
+    old 'screen_narrat_journal_notes_manager_update_journal'
     new 'Updated my journal.' # note_id
 
-    # game/screens/narrat.rpy:49
-    old 'new_internal_location_discovered'
+    # game/screens/narrat.rpy:98
+    old 'screen_narrat_new_internal_location_discovered'
     new 'New location found.' # internal_location_id external_location_id
 
-    # game/screens/narrat.rpy:54
-    old 'locations_manager_set_location_external_unvisited'
+    # game/screens/narrat.rpy:103
+    old 'screen_narrat_locations_manager_set_location_external_unvisited'
     new 'New location found.' # external_location_id
 
-    # game/screens/narrat.rpy:58
-    old 'locations_manager_set_location_internal_unvisited'
+    # game/screens/narrat.rpy:107
+    old 'screen_narrat_locations_manager_set_location_internal_unvisited'
     new 'New location found.' # internal_location_id
 
-    # game/screens/narrat.rpy:62
-    old 'quest_manager_set_entry_active'
+    # game/screens/narrat.rpy:111
+    old 'screen_narrat_quest_manager_set_entry_active'
     new 'Quest started.' # quest_id quest_state_id
 
-    # game/screens/narrat.rpy:67
-    old 'quest_manager_set_entry_done'
+    # game/screens/narrat.rpy:116
+    old 'screen_narrat_quest_manager_set_entry_done'
     new 'Quest done.' # quest_id quest_state_id
 
-    # game/screens/narrat.rpy:72
-    old 'world_manager_setter'
+    # game/screens/narrat.rpy:121
+    old 'screen_narrat_world_manager_setter'
     new '{setting_id} = {value}' # setting_id value
 
-    # game/screens/narrat.rpy:77
-    old 'world_manager_inc'
+    # game/screens/narrat.rpy:126
+    old 'screen_narrat_world_manager_inc'
     new '{setting_id} {delta:+}' # setting_id before delta after
-
-    # game/screens/narrat.rpy:84
-    old 'world_manager_dec'
-    new '{setting_id} {delta:+}' # setting_id before delta after
-
-    # game/screens/narrat.rpy:91
-    old 'world_manager_inc_once'
-    new '{setting_id} {delta:+}' # setting_id before delta after
-
-    # game/screens/narrat.rpy:98
-    old 'world_manager_dec_once'
-    new '{setting_id} {delta:+}' # setting_id before delta after
-
-    # game/screens/narrat.rpy:119
-    old 'world_manager_nameless_text'
-    new '{{color={who_color}}}{who}{{/color}} - {what}' # who_color who what
 
     # game/screens/narrat.rpy:133
-    old 'world_manager_npc_text'
-    new '{{color={who_color}}}{who}{{/color}} - {what}' # who_color who what
+    old 'screen_narrat_world_manager_dec'
+    new '{setting_id} {delta:+}' # setting_id before delta after
 
-    # game/screens/narrat.rpy:154
+    # game/screens/narrat.rpy:140
+    old 'screen_narrat_world_manager_inc_once'
+    new '{setting_id} {delta:+}' # setting_id before delta after
+
+    # game/screens/narrat.rpy:147
+    old 'screen_narrat_world_manager_dec_once'
+    new '{setting_id} {delta:+}' # setting_id before delta after
+
+    # game/screens/narrat.rpy:170
     old 'strength'
     new 'strength'
 
-    # game/screens/narrat.rpy:155
+    # game/screens/narrat.rpy:171
     old 'dexterity'
     new 'dexterity'
 
-    # game/screens/narrat.rpy:156
+    # game/screens/narrat.rpy:172
     old 'intelligence'
     new 'intelligence'
 
-    # game/screens/narrat.rpy:157
+    # game/screens/narrat.rpy:173
     old 'constitution'
     new 'constitution'
 
-    # game/screens/narrat.rpy:158
+    # game/screens/narrat.rpy:174
     old 'wisdom'
     new 'wisdom'
 
-    # game/screens/narrat.rpy:159
+    # game/screens/narrat.rpy:175
     old 'charisma'
     new 'charisma'
 
-    # game/screens/narrat.rpy:160
+    # game/screens/narrat.rpy:176
     old 'good'
     new 'good'
 
-    # game/screens/narrat.rpy:161
+    # game/screens/narrat.rpy:177
     old 'law'
     new 'law'
 
-    # game/screens/narrat.rpy:162
+    # game/screens/narrat.rpy:178
     old 'lore'
     new 'lore'
 
-    # game/screens/narrat.rpy:163
+    # game/screens/narrat.rpy:179
     old 'experience'
     new 'experience'
 
-    # game/screens/narrat.rpy:164
+    # game/screens/narrat.rpy:180
     old 'ac'
     new 'ac'
 

@@ -1,4 +1,4 @@
-screen preferences_save():
+screen screen_preferences_save():
     tag menu
 
     frame:
@@ -7,7 +7,7 @@ screen preferences_save():
         background 'gui_loadbg'
 
 
-        label _('preferences_save_title'):
+        label _('screen_preferences_save_title'):
             area (745, 23, 310, 45)
             text_align (0.5, 0.5)
             text_color color_yellow
@@ -41,11 +41,11 @@ screen preferences_save():
 
                             text FileTime(slot, format=_('{#file_time}%A, %d %B %Y, %H:%M'), empty=_('Пустой слот')):
                                 area (690, 20, 500, 100)
-                                style 'preferences_save_screen_style_item_text'
+                                style 'screen_preferences_save_style_item_text'
 
                             text FileSaveName(slot):
                                 area (690, 45, 500, 100)
-                                style 'preferences_save_screen_style_item_text'
+                                style 'screen_preferences_save_style_item_text'
 
                             key 'save_delete' action FileDelete(slot)
 
@@ -53,18 +53,18 @@ screen preferences_save():
     button:
         area (1400, 960, 193, 78)
         action Return()
-        background 'gui_button'
-        hover_background Transform('gui_button', matrixcolor=hover_matrix)
+        background cached_button_background
+        hover_background cached_button_hover_background
 
-        text _('preferences_screen_return'): # Вернуться
-            style 'preferences_save_screen_style_button_text'
+        text _('screen_preferences_save_return'): # Вернуться
+            style 'screen_preferences_save_style_button_text'
             align (0.5, 0.5)
 
 
-style preferences_save_screen_style_item_text:
+style screen_preferences_save_style_item_text:
     size 20
     color color_yellow
     hover_color color_white
-style preferences_save_screen_style_button_text:
+style screen_preferences_save_style_button_text:
     size 20
     color color_white

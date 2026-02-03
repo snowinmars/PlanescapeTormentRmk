@@ -3,246 +3,285 @@ init 10 python:
     from game.screens.CharacterCreationLogic import (CharacterCreationLogic)
     characterCreationLogic = CharacterCreationLogic(runtime.global_state_manager, character_id = 'protagonist_character_name')
 
+    screen_character_creation_cached_cgback_go_background = 'gui_cgback_go'
+    screen_character_creation_cached_cgback_go_hover_background = Transform('gui_cgback_go', matrixcolor=hover_matrix)
+    screen_character_creation_cached_cgback_go_insensitive_background = Transform('gui_cgback_go', matrixcolor=insensitive_matrix)
+    screen_character_creation_cached_cgback_back_background = 'gui_cgback_back'
+    screen_character_creation_cached_cgback_back_hover_background = Transform('gui_cgback_back', matrixcolor=hover_matrix)
+    screen_character_creation_cached_minus_background = 'gui_property_minus'
+    screen_character_creation_cached_minus_hover_background = Transform('gui_property_minus', matrixcolor=hover_matrix)
+    screen_character_creation_cached_minus_insensitive_background = Transform('gui_property_minus', matrixcolor=insensitive_matrix)
+    screen_character_creation_cached_plus_background = 'gui_property_plus'
+    screen_character_creation_cached_plus_hover_background = Transform('gui_property_plus', matrixcolor=hover_matrix)
+    screen_character_creation_cached_plus_insensitive_background = Transform('gui_property_plus', matrixcolor=insensitive_matrix)
 
-screen character_creation():
+
+label never_screen_character_creation:
+    $ never = _('screen_character_creation_strength_help')
+    $ never = _('screen_character_creation_strength_help')
+    $ never = _('screen_character_creation_strength_help')
+    $ never = _('screen_character_creation_intelligence_help')
+    $ never = _('screen_character_creation_intelligence_help')
+    $ never = _('screen_character_creation_intelligence_help')
+    $ never = _('screen_character_creation_wisdom_help')
+    $ never = _('screen_character_creation_wisdom_help')
+    $ never = _('screen_character_creation_wisdom_help')
+    $ never = _('screen_character_creation_dexterity_help')
+    $ never = _('screen_character_creation_dexterity_help')
+    $ never = _('screen_character_creation_dexterity_help')
+    $ never = _('screen_character_creation_constitution_help')
+    $ never = _('screen_character_creation_constitution_help')
+    $ never = _('screen_character_creation_constitution_help')
+    $ never = _('screen_character_creation_charisma_help')
+    $ never = _('screen_character_creation_charisma_help')
+    $ never = _('screen_character_creation_charisma_help')
+
+
+screen screen_character_creation():
     on 'show' action Function(characterCreationLogic.reset_character)
 
     tag menu
 
+    default screen_character_creation_descrption = _('screen_character_creation_help')
+
     frame:
         background 'gui_cgback'
+
+        text _(screen_character_creation_descrption):
+            area (310, 200, 330, 525)
+            style 'screen_character_creation_style_descrption'
 
         # <strength_input>
         button:
             area (970, 30, 315, 185)
             action NullAction()
-            hovered Show('_character_creation_descrption', x='character_screen_strength_help')
-            unhovered Show('_character_creation_descrption', x='character_screen_help')
+            hovered SetScreenVariable('screen_character_creation_descrption', 'screen_character_creation_strength_help')
+            unhovered SetScreenVariable('screen_character_creation_descrption', 'screen_character_creation_help')
 
-            text _('character_screen_strength'):
+            text _('screen_character_creation_strength'):
                 pos (125, 145)
                 xsize 150
-                style '_input_screen_style_title'
+                style 'screen_character_creation_style_title'
 
             button:
                 area (30, 30, 72, 57)
-                style '_input_screen_style_property_minus'
+                style 'screen_character_creation_style_minus'
                 sensitive (characterCreationLogic.minus_sensitive(prop='strength'))
                 action Function(characterCreationLogic.dec_prop, None, 'strength')
-                hovered Show('_character_creation_descrption', x='character_screen_strength_help')
-                unhovered Show('_character_creation_descrption', x='character_screen_help')
+                hovered SetScreenVariable('screen_character_creation_descrption', 'screen_character_creation_strength_help')
+                unhovered SetScreenVariable('screen_character_creation_descrption', 'screen_character_creation_help')
 
             text str(characterCreationLogic.get_character().strength):
                 pos (150, 40)
                 xsize 50
-                style '_input_screen_style_value'
+                style 'screen_character_creation_style_value'
 
             button:
                 area (220, 25, 72, 57)
-                style '_input_screen_style_property_plus'
+                style 'screen_character_creation_style_plus'
                 sensitive (characterCreationLogic.plus_sensitive(prop='strength'))
                 action Function(characterCreationLogic.inc_prop, None, 'strength')
-                hovered Show('_character_creation_descrption', x='character_screen_strength_help')
-                unhovered Show('_character_creation_descrption', x='character_screen_help')
+                hovered SetScreenVariable('screen_character_creation_descrption', 'screen_character_creation_strength_help')
+                unhovered SetScreenVariable('screen_character_creation_descrption', 'screen_character_creation_help')
         # </strength_input>
 
         # <intelligence_input>
         button:
             area (685, 135, 275, 300)
             action NullAction()
-            hovered Show('_character_creation_descrption', x='character_screen_intelligence_help')
-            unhovered Show('_character_creation_descrption', x='character_screen_help')
+            hovered SetScreenVariable('screen_character_creation_descrption', 'screen_character_creation_intelligence_help')
+            unhovered SetScreenVariable('screen_character_creation_descrption', 'screen_character_creation_help')
 
-            text _('character_screen_intelligence'):
+            text _('screen_character_creation_intelligence'):
                 pos (195, 195)
                 xsize 150
-                style '_input_screen_style_title'
-                at _input_screen_counterclockwise_transform
+                style 'screen_character_creation_style_title'
+                at transform_counterclockwise_60
 
             button:
                 area (57, 230, 72, 57)
-                style '_input_screen_style_property_minus'
+                style 'screen_character_creation_style_minus'
                 sensitive (characterCreationLogic.minus_sensitive(prop='intelligence'))
                 action Function(characterCreationLogic.dec_prop, None, 'intelligence')
-                hovered Show('_character_creation_descrption', x='character_screen_intelligence_help')
-                unhovered Show('_character_creation_descrption', x='character_screen_help')
-                at _input_screen_counterclockwise_transform
+                hovered SetScreenVariable('screen_character_creation_descrption', 'screen_character_creation_intelligence_help')
+                unhovered SetScreenVariable('screen_character_creation_descrption', 'screen_character_creation_help')
+                at transform_counterclockwise_60
 
             text str(characterCreationLogic.get_character().intelligence):
                 pos (105, 130)
                 xsize 50
-                style '_input_screen_style_value'
+                style 'screen_character_creation_style_value'
 
             button:
                 area (150, 65, 72, 57)
-                style '_input_screen_style_property_plus'
+                style 'screen_character_creation_style_plus'
                 sensitive (characterCreationLogic.plus_sensitive(prop='intelligence'))
                 action Function(characterCreationLogic.inc_prop, None, 'intelligence')
-                hovered Show('_character_creation_descrption', x='character_screen_intelligence_help')
-                unhovered Show('_character_creation_descrption', x='character_screen_help')
-                at _input_screen_counterclockwise_transform
+                hovered SetScreenVariable('screen_character_creation_descrption', 'screen_character_creation_intelligence_help')
+                unhovered SetScreenVariable('screen_character_creation_descrption', 'screen_character_creation_help')
+                at transform_counterclockwise_60
         # </intelligence_input>
 
         # <wisdom_input>
         button:
             area (700, 525, 250, 275)
             action NullAction()
-            hovered Show('_character_creation_descrption', x='character_screen_wisdom_help')
-            unhovered Show('_character_creation_descrption', x='character_screen_help')
+            hovered SetScreenVariable('screen_character_creation_descrption', 'screen_character_creation_wisdom_help')
+            unhovered SetScreenVariable('screen_character_creation_descrption', 'screen_character_creation_help')
 
-            text _('character_screen_wisdom'):
+            text _('screen_character_creation_wisdom'):
                 pos (180, 95)
                 xsize 150
-                style '_input_screen_style_title'
-                at _input_screen_clockwise_transform
+                style 'screen_character_creation_style_title'
+                at transform_clockwise_60
 
             button:
                 area (42, 62, 72, 57)
-                style '_input_screen_style_property_minus'
+                style 'screen_character_creation_style_minus'
                 sensitive (characterCreationLogic.minus_sensitive(prop='wisdom'))
                 action Function(characterCreationLogic.dec_prop, None, 'wisdom')
-                hovered Show('_character_creation_descrption', x='character_screen_wisdom_help')
-                unhovered Show('_character_creation_descrption', x='character_screen_help')
-                at _input_screen_clockwise_transform
+                hovered SetScreenVariable('screen_character_creation_descrption', 'screen_character_creation_wisdom_help')
+                unhovered SetScreenVariable('screen_character_creation_descrption', 'screen_character_creation_help')
+                at transform_clockwise_60
 
             text str(characterCreationLogic.get_character().wisdom):
                 pos (85, 120)
                 xsize 50
-                style '_input_screen_style_value'
+                style 'screen_character_creation_style_value'
 
             button:
                 area (140, 223, 72, 57)
-                style '_input_screen_style_property_plus'
+                style 'screen_character_creation_style_plus'
                 sensitive (characterCreationLogic.plus_sensitive(prop='wisdom'))
                 action Function(characterCreationLogic.inc_prop, None, 'wisdom')
-                hovered Show('_character_creation_descrption', x='character_screen_wisdom_help')
-                unhovered Show('_character_creation_descrption', x='character_screen_help')
-                at _input_screen_clockwise_transform
+                hovered SetScreenVariable('screen_character_creation_descrption', 'screen_character_creation_wisdom_help')
+                unhovered SetScreenVariable('screen_character_creation_descrption', 'screen_character_creation_help')
+                at transform_clockwise_60
         # </wisdom_input>
 
         # <dexterity_input>
         button:
             area (975, 725, 315, 200)
             action NullAction()
-            hovered Show('_character_creation_descrption', x='character_screen_dexterity_help')
-            unhovered Show('_character_creation_descrption', x='character_screen_help')
+            hovered SetScreenVariable('screen_character_creation_descrption', 'screen_character_creation_dexterity_help')
+            unhovered SetScreenVariable('screen_character_creation_descrption', 'screen_character_creation_help')
 
-            text _('character_screen_dexterity'):
+            text _('screen_character_creation_dexterity'):
                 pos (120, 35)
                 xsize 150
-                style '_input_screen_style_title'
+                style 'screen_character_creation_style_title'
 
             button:
                 area (20, 120, 72, 57)
-                style '_input_screen_style_property_minus'
+                style 'screen_character_creation_style_minus'
                 sensitive (characterCreationLogic.minus_sensitive(prop='dexterity'))
                 action Function(characterCreationLogic.dec_prop, None, 'dexterity')
-                hovered Show('_character_creation_descrption', x='character_screen_dexterity_help')
-                unhovered Show('_character_creation_descrption', x='character_screen_help')
+                hovered SetScreenVariable('screen_character_creation_descrption', 'screen_character_creation_dexterity_help')
+                unhovered SetScreenVariable('screen_character_creation_descrption', 'screen_character_creation_help')
 
             text str(characterCreationLogic.get_character().dexterity):
                 pos (145, 130)
                 xsize 50
-                style '_input_screen_style_value'
+                style 'screen_character_creation_style_value'
 
             button:
                 area (215, 120, 72, 57)
-                style '_input_screen_style_property_plus'
+                style 'screen_character_creation_style_plus'
                 sensitive (characterCreationLogic.plus_sensitive(prop='dexterity'))
                 action Function(characterCreationLogic.inc_prop, None, 'dexterity')
-                hovered Show('_character_creation_descrption', x='character_screen_dexterity_help')
-                unhovered Show('_character_creation_descrption', x='character_screen_help')
+                hovered SetScreenVariable('screen_character_creation_descrption', 'screen_character_creation_dexterity_help')
+                unhovered SetScreenVariable('screen_character_creation_descrption', 'screen_character_creation_help')
         # </dexterity_input>
 
         # <constitution_input>
         button:
             area (1300, 525, 265, 285)
             action NullAction()
-            hovered Show('_character_creation_descrption', x='character_screen_constitution_help')
-            unhovered Show('_character_creation_descrption', x='character_screen_help')
+            hovered SetScreenVariable('screen_character_creation_descrption', 'screen_character_creation_constitution_help')
+            unhovered SetScreenVariable('screen_character_creation_descrption', 'screen_character_creation_help')
 
-            text _('character_screen_constitution'):
+            text _('screen_character_creation_constitution'):
                 pos (80, 95)
                 xsize 150
-                style '_input_screen_style_title'
-                at _input_screen_counterclockwise_transform
+                style 'screen_character_creation_style_title'
+                at transform_counterclockwise_60
 
             button:
                 area (120, 225, 72, 57)
-                style '_input_screen_style_property_minus'
+                style 'screen_character_creation_style_minus'
                 sensitive (characterCreationLogic.minus_sensitive(prop='constitution'))
                 action Function(characterCreationLogic.dec_prop, None, 'constitution')
-                hovered Show('_character_creation_descrption', x='character_screen_constitution_help')
-                unhovered Show('_character_creation_descrption', x='character_screen_help')
-                at _input_screen_counterclockwise_transform
+                hovered SetScreenVariable('screen_character_creation_descrption', 'screen_character_creation_constitution_help')
+                unhovered SetScreenVariable('screen_character_creation_descrption', 'screen_character_creation_help')
+                at transform_counterclockwise_60
 
             text str(characterCreationLogic.get_character().constitution):
                 pos (145, 122)
                 xsize 50
-                style '_input_screen_style_value'
+                style 'screen_character_creation_style_value'
 
             button:
                 area (212, 62, 72, 57)
-                style '_input_screen_style_property_plus'
+                style 'screen_character_creation_style_plus'
                 sensitive (characterCreationLogic.plus_sensitive(prop='constitution'))
                 action Function(characterCreationLogic.inc_prop, None, 'constitution')
-                hovered Show('_character_creation_descrption', x='character_screen_constitution_help')
-                unhovered Show('_character_creation_descrption', x='character_screen_help')
-                at _input_screen_counterclockwise_transform
+                hovered SetScreenVariable('screen_character_creation_descrption', 'screen_character_creation_constitution_help')
+                unhovered SetScreenVariable('screen_character_creation_descrption', 'screen_character_creation_help')
+                at transform_counterclockwise_60
         # </constitution_input>
 
         # <charisma_input>
         button:
             area (1300, 150, 265, 285)
             action NullAction()
-            hovered Show('_character_creation_descrption', x='character_screen_charisma_help')
-            unhovered Show('_character_creation_descrption', x='character_screen_help')
+            hovered SetScreenVariable('screen_character_creation_descrption', 'screen_character_creation_charisma_help')
+            unhovered SetScreenVariable('screen_character_creation_descrption', 'screen_character_creation_help')
 
-            text _('character_screen_charisma'):
+            text _('screen_character_creation_charisma'):
                 pos (80, 180)
                 xsize 150
-                style '_input_screen_style_title'
-                at _input_screen_clockwise_transform
+                style 'screen_character_creation_style_title'
+                at transform_clockwise_60
 
             button:
                 area (115, 55, 72, 57)
-                style '_input_screen_style_property_minus'
+                style 'screen_character_creation_style_minus'
                 sensitive (characterCreationLogic.minus_sensitive(prop='charisma'))
                 action Function(characterCreationLogic.dec_prop, None, 'charisma')
-                hovered Show('_character_creation_descrption', x='character_screen_charisma_help')
-                unhovered Show('_character_creation_descrption', x='character_screen_help')
-                at _input_screen_clockwise_transform
+                hovered SetScreenVariable('screen_character_creation_descrption', 'screen_character_creation_charisma_help')
+                unhovered SetScreenVariable('screen_character_creation_descrption', 'screen_character_creation_help')
+                at transform_clockwise_60
 
             text str(characterCreationLogic.get_character().charisma):
                 pos (145, 115)
                 xsize 50
-                style '_input_screen_style_value'
+                style 'screen_character_creation_style_value'
 
             button:
                 area (210, 215, 72, 57)
-                style '_input_screen_style_property_plus'
+                style 'screen_character_creation_style_plus'
                 sensitive (characterCreationLogic.plus_sensitive(prop='charisma'))
                 action Function(characterCreationLogic.inc_prop, None, 'charisma')
-                hovered Show('_character_creation_descrption', x='character_screen_charisma_help')
-                unhovered Show('_character_creation_descrption', x='character_screen_help')
-                at _input_screen_clockwise_transform
+                hovered SetScreenVariable('screen_character_creation_descrption', 'screen_character_creation_charisma_help')
+                unhovered SetScreenVariable('screen_character_creation_descrption', 'screen_character_creation_help')
+                at transform_clockwise_60
         # </charisma_input>
 
         vbox:
             pos (300, 831)
             spacing 43
 
-            text _('character_screen_points'):
+            text _('screen_character_creation_points'):
                 xysize (300, 50)
-                style '_input_screen_style_value'
+                style 'screen_character_creation_style_value'
 
-            text _('character_screen_ac'):
+            text _('screen_character_creation_ac'):
                 xysize (300, 50)
-                style '_input_screen_style_value'
+                style 'screen_character_creation_style_value'
 
-            text _('character_screen_hp'):
+            text _('screen_character_creation_hp'):
                 xysize (300, 50)
-                style '_input_screen_style_value'
+                style 'screen_character_creation_style_value'
 
         vbox:
             pos (640, 831)
@@ -250,24 +289,24 @@ screen character_creation():
 
             text str(characterCreationLogic.remaning_points()):
                 xsize 70
-                style '_input_screen_style_value'
+                style 'screen_character_creation_style_value'
 
             text str(characterCreationLogic.get_character().ac):
                 xsize 70
-                style '_input_screen_style_value'
+                style 'screen_character_creation_style_value'
 
             text str(characterCreationLogic.get_character().max_health):
                 xsize 70
-                style '_input_screen_style_value'
+                style 'screen_character_creation_style_value'
 
     button :
         xpos 0
         ypos 175
-        xsize 128
+        xsize 256
         action Function(characterCreationLogic.set_mage)
 
-        text _('character_screen_set_mage'): # 'Выбрать мага (РЕКОММЕНДУЕТСЯ!)'
-            style '_input_screen_style_button'
+        text _('screen_character_creation_set_mage'): # 'Выбрать РЕКОММЕНДУЕМЫЙ билд'
+            style 'screen_character_creation_style_button'
 
     label _('protagonist_character_new_life'): # Новая жизнь
         area (340, 50, 500, 50)
@@ -288,67 +327,48 @@ screen character_creation():
 
     button:
         area (1450, 860, 140, 66)
-        background 'gui_cgback_go'
-        hover_background Transform('gui_cgback_go', matrixcolor=hover_matrix)
-        insensitive_background Transform('gui_cgback_go', matrixcolor=insensitive_matrix)
+        background screen_character_creation_cached_cgback_go_background
+        hover_background screen_character_creation_cached_cgback_go_hover_background
+        insensitive_background screen_character_creation_cached_cgback_go_insensitive_background
         action Start()
         sensitive (characterCreationLogic.done())
-        text _('character_screen_go'): # Готово
+        text _('screen_character_creation_go'): # Готово
             pos (35, 25)
-            style '_input_screen_style_button'
+            style 'screen_character_creation_style_button'
 
     button:
         area (1450, 940, 140, 66)
-        background 'gui_cgback_back'
-        hover_background Transform('gui_cgback_back', matrixcolor=hover_matrix)
+        background screen_character_creation_cached_cgback_back_background
+        hover_background screen_character_creation_cached_cgback_back_hover_background
         action [
             ShowMenu('main_menu'),
-            Hide('_character_creation_descrption'),
-            Hide('character_creation')
+            Hide('screen_character_creation')
         ]
-        text _('character_screen_back'): # 'Отмена'
+        text _('screen_character_creation_back'): # 'Отмена'
             pos (35, 5)
-            style '_input_screen_style_button'
+            style 'screen_character_creation_style_button'
 
 
-###
-
-
-screen _character_creation_descrption(x):
-    text _(x):
-        area (310, 200, 330, 525)
-        style '_input_screen_style_descrption'
-
-
-###
-
-
-style _input_screen_style_title:
+style screen_character_creation_style_title:
     size 26
     color color_yellow
     font font_exocet
-style _input_screen_style_value:
+style screen_character_creation_style_value:
     size 20
     color color_white
-style _input_screen_style_descrption:
+style screen_character_creation_style_descrption:
     size 20
     color color_yellow
-style _input_screen_style_button:
+style screen_character_creation_style_button:
     size 20
     color color_white
     hover_color color_yellow
     insensitive_color change_hex(color_yellow, saturation_percent=50, value_percent=50)
-style _input_screen_style_property_minus:
-    background 'gui_property_minus'
-    hover_background Transform('gui_property_minus', matrixcolor=hover_matrix)
-    insensitive_background Transform('gui_property_minus', matrixcolor=insensitive_matrix)
-style _input_screen_style_property_plus:
-    background 'gui_property_plus'
-    hover_background Transform('gui_property_plus', matrixcolor=hover_matrix)
-    insensitive_background Transform('gui_property_plus', matrixcolor=insensitive_matrix)
-transform _input_screen_counterclockwise_transform:
-    anchor (0.5, 0.5)
-    rotate -60
-transform _input_screen_clockwise_transform:
-    anchor (0.5, 0.5)
-    rotate 60
+style screen_character_creation_style_minus:
+    background screen_character_creation_cached_minus_background
+    hover_background screen_character_creation_cached_minus_hover_background
+    insensitive_background screen_character_creation_cached_minus_insensitive_background
+style screen_character_creation_style_plus:
+    background screen_character_creation_cached_plus_background
+    hover_background screen_character_creation_cached_plus_hover_background
+    insensitive_background screen_character_creation_cached_plus_insensitive_background

@@ -13,7 +13,8 @@ init python:
     def full_restart_with_save():
         renpy.full_restart(save=True)
 
-screen preferences():
+
+screen screen_preferences():
     tag menu
 
     frame:
@@ -26,10 +27,10 @@ screen preferences():
             ypos 50
             xsize 143
             ysize 143
-            background 'gui_settings_button_idle'
-            hover_background Transform('gui_settings_button_idle', matrixcolor=hover_matrix)
-            action ShowMenu('preferences_game')
-            text _('preferences_screen_game_settings'):
+            background cached_settings_button_background
+            hover_background cached_settings_button_hover_background
+            action ShowMenu('screen_preferences_game')
+            text _('screen_preferences_game_settings'):
                 size 20
                 color color_white
                 align (0.5, 0.5)
@@ -39,10 +40,11 @@ screen preferences():
             ypos 160
             xsize 143
             ysize 143
-            background 'gui_settings_button_idle'
-            hover_background Transform('gui_settings_button_idle', matrixcolor=hover_matrix)
-            action ShowMenu('preferences_save')
-            text _('preferences_screen_save'):
+            background cached_settings_button_background
+            hover_background cached_settings_button_hover_background
+            sensitive main_menu
+            action ShowMenu('screen_preferences_save')
+            text _('screen_preferences_save'):
                 size 20
                 color color_white
                 align (0.5, 0.5)
@@ -52,10 +54,10 @@ screen preferences():
             ypos 450
             xsize 143
             ysize 143
-            background 'gui_settings_button_idle'
-            hover_background Transform('gui_settings_button_idle', matrixcolor=hover_matrix)
-            action ShowMenu('preferences_load')
-            text _('preferences_screen_load'):
+            background cached_settings_button_background
+            hover_background cached_settings_button_hover_background
+            action ShowMenu('screen_preferences_load')
+            text _('screen_preferences_load'):
                 size 20
                 color color_white
                 align (0.5, 0.5)
@@ -65,10 +67,10 @@ screen preferences():
             ypos 730
             xsize 143
             ysize 143
-            background 'gui_settings_button_idle'
-            hover_background Transform('gui_settings_button_idle', matrixcolor=hover_matrix)
+            background cached_settings_button_background
+            hover_background cached_settings_button_hover_background
             action Return()
-            text _('preferences_screen_back'):
+            text _('screen_preferences_back'):
                 size 20
                 color color_white
                 align (0.5, 0.5)
@@ -78,10 +80,10 @@ screen preferences():
             ypos 835
             xsize 143
             ysize 143
-            background 'gui_settings_button_idle'
-            hover_background Transform('gui_settings_button_idle', matrixcolor=hover_matrix)
-            action ShowMenu('preferences_language')
-            text _('preferences_screen_language_settings'):
+            background cached_settings_button_background
+            hover_background cached_settings_button_hover_background
+            action ShowMenu('screen_preferences_language')
+            text _('screen_preferences_language_settings'):
                 size 20
                 color color_white
                 align (0.5, 0.5)
@@ -91,10 +93,10 @@ screen preferences():
             ypos 725
             xsize 143
             ysize 143
-            background 'gui_settings_button_idle'
-            hover_background Transform('gui_settings_button_idle', matrixcolor=hover_matrix)
-            action ShowMenu('preferences_videos')
-            text _('preferences_screen_videos'):
+            background cached_settings_button_background
+            hover_background cached_settings_button_hover_background
+            action ShowMenu('screen_preferences_videos')
+            text _('screen_preferences_videos'):
                 size 20
                 color color_white
                 align (0.5, 0.5)
@@ -104,10 +106,10 @@ screen preferences():
             ypos 450
             xsize 143
             ysize 143
-            background 'gui_settings_button_idle'
-            hover_background Transform('gui_settings_button_idle', matrixcolor=hover_matrix)
-            action ShowMenu('preferences_sound')
-            text _('preferences_screen_sound_settings'):
+            background cached_settings_button_background
+            hover_background cached_settings_button_hover_background
+            action ShowMenu('screen_preferences_sound')
+            text _('screen_preferences_sound_settings'):
                 size 20
                 color color_white
                 align (0.5, 0.5)
@@ -117,10 +119,10 @@ screen preferences():
             ypos 160
             xsize 143
             ysize 143
-            background 'gui_settings_button_idle'
-            hover_background Transform('gui_settings_button_idle', matrixcolor=hover_matrix)
-            action ShowMenu('preferences_graphics')
-            text _('preferences_screen_graphics_settings'):
+            background cached_settings_button_background
+            hover_background cached_settings_button_hover_background
+            action ShowMenu('screen_preferences_graphics')
+            text _('screen_preferences_graphics_settings'):
                 size 20
                 color color_white
                 align (0.5, 0.5)
@@ -130,10 +132,10 @@ screen preferences():
             ypos 925
             xsize 143
             ysize 143
-            background 'gui_settings_button_idle'
-            hover_background Transform('gui_settings_button_idle', matrixcolor=hover_matrix)
+            background cached_settings_button_background
+            hover_background cached_settings_button_hover_background
             action Function(full_restart_with_save)
-            text _('preferences_screen_main_menu'):
+            text _('screen_preferences_main_menu'):
                 size 20
                 color color_white
                 align (0.5, 0.5)
@@ -143,10 +145,10 @@ screen preferences():
             ypos 925
             xsize 143
             ysize 143
-            background 'gui_settings_button_idle'
-            hover_background Transform('gui_settings_button_idle', matrixcolor=hover_matrix)
-            action ShowMenu('achievement_gallery')
-            text _('preferences_screen_achievements'):
+            background cached_settings_button_background
+            hover_background cached_settings_button_hover_background
+            action ShowMenu('screen_achievement_gallery')
+            text _('screen_preferences_achievement_gallery'):
                 size 20
                 color color_white
                 align (0.5, 0.5)
@@ -158,9 +160,9 @@ screen preferences():
             ypos 10
             xsize 143
             ysize 143
-            background 'gui_settings_button_idle'
-            hover_background Transform('gui_settings_button_idle', matrixcolor=hover_matrix)
-            action ShowMenu('preferences_dev')
+            background cached_settings_button_background
+            hover_background cached_settings_button_hover_background
+            action ShowMenu('screen_preferences_dev')
             text 'dev':
                 size 20
                 color color_white

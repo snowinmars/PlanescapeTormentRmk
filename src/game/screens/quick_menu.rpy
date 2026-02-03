@@ -25,10 +25,10 @@ screen quick_menu():
             textbutton _("История") action ShowMenu('history')
             textbutton _("Пропуск") action Skip() alternate Skip(fast=True, confirm=True)
             textbutton _("Авто") action Preference("auto-forward", "toggle")
-            textbutton _("Сохранить") action ShowMenu('save')
+            textbutton _("Сохранить") action ShowMenu('screen_preferences_save')
             textbutton _("Б.Сохр") action QuickSave()
             textbutton _("Б.Загр") action QuickLoad()
-            textbutton _("Опции") action ShowMenu('preferences')
+            textbutton _("Опции") action ShowMenu('screen_preferences')
 
 
 ## Данный код гарантирует, что экран быстрого меню будет показан в игре в любое

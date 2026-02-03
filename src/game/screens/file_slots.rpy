@@ -12,10 +12,10 @@
 ## https://www.renpy.org/doc/html/screen_special.html#save
 
 screen save():
-    use preferences()
+    use screen_preferences()
 
 screen load():
-    use preferences()
+    use screen_preferences()
 
 screen file_slots(title):
-    use preferences()
+    use screen_preferences()

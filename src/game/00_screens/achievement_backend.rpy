@@ -355,7 +355,7 @@ init -500 python in custom_achievements:
             if myconfig.ACHIEVEMENT_SOUND:
                 renpy.music.play(myconfig.ACHIEVEMENT_SOUND,
                     channel=myconfig.ACHIEVEMENT_CHANNEL)
-            renpy.show_screen('achievement_popup', a=self, tag=tag, num=i,
+            renpy.show_screen('screen_achievement_popup', a=self, tag=tag, num=i,
                 _tag=tag)
 
         def AddProgress(self, amount=1):

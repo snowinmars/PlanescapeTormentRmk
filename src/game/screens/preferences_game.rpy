@@ -1,4 +1,4 @@
-screen preferences_game():
+screen screen_preferences_game():
     tag menu
 
     frame:
@@ -16,71 +16,71 @@ screen preferences_game():
             draggable True
 
             vbox:
-                style 'preferences_game_screen_style_settings_item_list'
+                style 'screen_preferences_game_style_settings_item_list'
 
                 hbox:
-                    style 'preferences_game_screen_style_settings_item'
+                    style 'screen_preferences_game_style_settings_item'
 
                     button :
-                        style 'preferences_game_screen_style_settings_item_button'
+                        style 'screen_preferences_game_style_settings_item_button'
                         action Preference('skip', 'toggle')
-                        text _('preferences_game_screen_skip_unseen'): # 'Пропуск всего текста'
-                            style 'preferences_game_screen_style_settings_item_text'
+                        text _('screen_preferences_game_skip_unseen'): # 'Пропуск всего текста'
+                            style 'screen_preferences_game_style_settings_item_text'
 
                     button:
                         xysize (32, 32) # TODO [snow]: why extracting this line into style breaks render?
                         action Preference('skip', 'toggle')
                         if _preferences.skip_unseen:
-                            style 'preferences_game_screen_style_settings_item_button_on'
+                            style 'screen_preferences_game_style_settings_item_button_on'
                         else:
-                            style 'preferences_game_screen_style_settings_item_button_off'
+                            style 'screen_preferences_game_style_settings_item_button_off'
 
                 hbox:
-                    style 'preferences_game_screen_style_settings_item'
+                    style 'screen_preferences_game_style_settings_item'
 
                     button:
-                        style 'preferences_game_screen_style_settings_item_button'
+                        style 'screen_preferences_game_style_settings_item_button'
                         action Preference('after choices', 'toggle')
-                        text _('preferences_game_screen_skip_after_choices'): # 'Пропуск после выборов'
-                            style 'preferences_game_screen_style_settings_item_text'
+                        text _('screen_preferences_game_skip_after_choices'): # 'Пропуск после выборов'
+                            style 'screen_preferences_game_style_settings_item_text'
 
                     button:
                         xysize (32, 32)
                         action Preference('after choices', 'toggle')
                         if _preferences.skip_after_choices:
-                            style 'preferences_game_screen_style_settings_item_button_on'
+                            style 'screen_preferences_game_style_settings_item_button_on'
                         else:
-                            style 'preferences_game_screen_style_settings_item_button_off'
+                            style 'screen_preferences_game_style_settings_item_button_off'
 
                 hbox:
-                    style 'preferences_game_screen_style_settings_item'
+                    style 'screen_preferences_game_style_settings_item'
 
                     button:
-                        style 'preferences_game_screen_style_settings_item_button'
+                        style 'screen_preferences_game_style_settings_item_button'
                         action InvertSelected(Preference('transitions', 'toggle'))
-                        text _('preferences_game_screen_skip_transitions'): # 'Пропуск переходов'
-                            style 'preferences_game_screen_style_settings_item_text'
+                        text _('screen_preferences_game_skip_transitions'): # 'Пропуск переходов'
+                            style 'screen_preferences_game_style_settings_item_text'
 
                     button:
                         xysize (32, 32)
                         action InvertSelected(Preference('transitions', 'toggle'))
                         if _preferences.transitions == 0:
-                            style 'preferences_game_screen_style_settings_item_button_on'
+                            style 'screen_preferences_game_style_settings_item_button_on'
                         else:
-                            style 'preferences_game_screen_style_settings_item_button_off'
+                            style 'screen_preferences_game_style_settings_item_button_off'
 
                 hbox:
-                    style 'preferences_game_screen_style_settings_item'
+                    style 'screen_preferences_game_style_settings_item'
 
                     button:
-                        style 'preferences_game_screen_style_settings_item_button'
+                        style 'screen_preferences_game_style_settings_item_button'
                         action [
                             ToggleField(persistent, 'add_custom_achievements'),
                             Function(regain_custom_achievements)
                         ]
 
-                        text _('preferences_game_screen_add_custom_achievements'): # 'Включить дополнительные достижения'
-                            style 'preferences_game_screen_style_settings_item_text'
+                        text _('screen_preferences_game_add_custom_achievements'): # 'Включить дополнительные достижения'
+                            style 'screen_preferences_game_style_settings_item_text'
 
                     button:
                         xysize (32, 32)
@@ -90,9 +90,9 @@ screen preferences_game():
                         ]
 
                         if persistent.add_custom_achievements:
-                            style 'preferences_game_screen_style_settings_item_button_on'
+                            style 'screen_preferences_game_style_settings_item_button_on'
                         else:
-                            style 'preferences_game_screen_style_settings_item_button_off'
+                            style 'screen_preferences_game_style_settings_item_button_off'
 
 
         viewport:
@@ -103,16 +103,16 @@ screen preferences_game():
             draggable True
 
             vbox:
-                style 'preferences_game_screen_style_settings_item_list'
+                style 'screen_preferences_game_style_settings_item_list'
 
                 hbox:
-                    style 'preferences_game_screen_style_settings_bar_item'
+                    style 'screen_preferences_game_style_settings_bar_item'
 
                     button:
-                        style 'preferences_game_screen_style_settings_item_button'
+                        style 'screen_preferences_game_style_settings_item_button'
                         action NullAction()
-                        text _('preferences_game_screen_auto_forward_time'): # Скорость авточтения
-                            style 'preferences_game_screen_style_settings_item_text'
+                        text _('screen_preferences_game_auto_forward_time'): # Скорость авточтения
+                            style 'screen_preferences_game_style_settings_item_text'
 
                     bar:
                         xsize 250
@@ -123,30 +123,30 @@ screen preferences_game():
         button:
             area (1395, 900, 193, 78)
             action Return()
-            background 'gui_button'
-            hover_background Transform('gui_button', matrixcolor=hover_matrix)
+            background cached_button_background
+            hover_background cached_button_hover_background
 
-            text _('preferences_screen_return'): # Вернуться
-                style 'preferences_game_screen_style_button_text'
+            text _('screen_preferences_game_return'): # Вернуться
+                style 'screen_preferences_game_style_button_text'
                 align (0.5, 0.5)
 
 
-style preferences_game_screen_style_settings_item_list:
+style screen_preferences_game_style_settings_item_list:
     spacing 10
-style preferences_game_screen_style_settings_item:
+style screen_preferences_game_style_settings_item:
     xsize 500
-style preferences_game_screen_style_settings_bar_item:
+style screen_preferences_game_style_settings_bar_item:
     xsize 300
-style preferences_game_screen_style_settings_item_text:
+style screen_preferences_game_style_settings_item_text:
     size 18
     color color_yellow
     hover_color color_white
-style preferences_game_screen_style_settings_item_button:
+style screen_preferences_game_style_settings_item_button:
     xfill True
-style preferences_game_screen_style_settings_item_button_on:
+style screen_preferences_game_style_settings_item_button_on:
     background 'gui_switch_on'
-style preferences_game_screen_style_settings_item_button_off:
+style screen_preferences_game_style_settings_item_button_off:
     background 'gui_switch_off'
-style preferences_game_screen_style_button_text:
+style screen_preferences_game_style_button_text:
     size 20
     color color_white

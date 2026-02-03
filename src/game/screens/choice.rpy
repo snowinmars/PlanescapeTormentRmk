@@ -25,15 +25,18 @@ screen choice(items):
     on 'show' action Function(runtime.global_narrat_manager.update_menu_items, items)
     on 'hide' action Function(runtime.global_narrat_manager.update_menu_items, [])
 
-    if len(items) == 1 and renpy.is_skipping():
+    default cached_items = list(enumerate(items, 1))
+    default single_cached_item = len(cached_items) == 1
+
+    if single_cached_item and renpy.is_skipping():
         timer 0.00001 action click_actions(items[0])
 
-    if len(items) == 1:
+    if single_cached_item and not renpy.is_skipping():
         key 'mouseup_1' action click_actions(items[0])
         key 'K_KP_ENTER' action click_actions(items[0])
-        key 'K_KP1' action click_actions(items[0])
+        key 'K_SPACE' action click_actions(items[0])
 
-    for i, item in enumerate(items, 1):
+    for i, item in cached_items:
         if i <= 9:
             key str(i) action click_actions(item)
             key 'K_KP{}'.format(i) action click_actions(item)
