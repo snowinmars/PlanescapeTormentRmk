@@ -151,8 +151,8 @@ init 3 python: # setup hooks for initialyzing managers and applying stores
         config.keymap['screen_inventory'] = keymap_inventory_screen
         config.underlay.append(renpy.Keymap(screen_inventory=Show('screen_inventory')))
 
-        config.keymap['screen_character_screen'] = keymap_character_screen
-        config.underlay.append(renpy.Keymap(screen_character_screen=Show('screen_character_screen')))
+        config.keymap['screen_character'] = keymap_character_screen
+        config.underlay.append(renpy.Keymap(screen_character=Show('screen_character')))
 
         config.keymap['screen_journal'] = keymap_journal_screen
         config.underlay.append(renpy.Keymap(screen_journal=Show('screen_journal')))
@@ -230,6 +230,7 @@ label start:
     #     key x action Function(_dump_settings)
 
     show screen screen_narrat
+    show screen screen_submenu
 
     menu:
         'dev' if enabled_dev:

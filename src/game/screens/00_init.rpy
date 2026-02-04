@@ -51,11 +51,19 @@ define font_exocet        = 'exocet.ttf'
 define font_notosans      = 'NotoSans-Regular.ttf'
 define font_dejavusans    = 'DejaVuSans.ttf'
 
-define cached_button_background = 'gui_button'
-define cached_button_hover_background = Transform('gui_button', matrixcolor=hover_matrix)
+define cached_button_background             =           'gui_button'
+define cached_button_hover_background       = Transform('gui_button', matrixcolor=hover_matrix)
 define cached_button_insensitive_background = Transform('gui_button', matrixcolor=insensitive_matrix)
-define cached_settings_button_background = 'gui_settings_button_idle'
+define cached_settings_button_background       =           'gui_settings_button_idle'
 define cached_settings_button_hover_background = Transform('gui_settings_button_idle', matrixcolor=hover_matrix)
+define cached_submenu1_background       =           'gui_submenu1'
+define cached_submenu1_hover_background = Transform('gui_submenu1', matrixcolor=hover_matrix)
+define cached_submenu2_background       =           'gui_submenu2'
+define cached_submenu2_hover_background = Transform('gui_submenu2', matrixcolor=hover_matrix)
+define cached_submenu3_background       =           'gui_submenu3'
+define cached_submenu3_hover_background = Transform('gui_submenu3', matrixcolor=hover_matrix)
+define cached_submenu4_background       =           'gui_submenu4'
+define cached_submenu4_hover_background = Transform('gui_submenu4', matrixcolor=hover_matrix)
 
 
 define infinite_float_value       = float('inf')

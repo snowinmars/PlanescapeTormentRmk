@@ -86,7 +86,7 @@ screen screen_journal():
                         xsize 385
                         action SetScreenVariable('screen_journal_choosed_quest_id', finished_quest.quest_id)
                         text journalLogic.get_quest_line(finished_quest.quest_id):
-                            style 'screen_journal__style_button_finished_text'
+                            style 'screen_journal_style_button_finished_text'
                             align (0.0, 0.0)
                             strikethrough True
                             if screen_journal_choosed_quest_id == finished_quest.quest_id:
@@ -99,9 +99,9 @@ screen screen_journal():
             mousewheel True
             draggable True
 
-            if choosed_quest_id:
-                text journalLogic.get_quest_state_line(choosed_quest_id):
-                    style 'screen_journal__style_text'
+            if screen_journal_choosed_quest_id:
+                text journalLogic.get_quest_state_line(screen_journal_choosed_quest_id):
+                    style 'screen_journal_style_text'
                     xalign 0.0
     # </quest_screen>
 
@@ -121,7 +121,7 @@ screen screen_journal():
 
                 for note in screen_journal_notes:
                     text note.content:
-                        style 'screen_journal__style_text'
+                        style 'screen_journal_style_text'
                     text '-------':
                         size 12
                         color color_white
@@ -146,8 +146,8 @@ screen screen_journal():
         background cached_button_background
         hover_background cached_button_hover_background
 
-        text _('screen_journal__return'): # Вернуться
-            style 'screen_journal__style_button_text'
+        text _('screen_journal_return'): # Вернуться
+            style 'screen_journal_style_button_text'
             align (0.5, 0.5)
 
 
@@ -169,6 +169,3 @@ style screen_journal_style_text:
     size 20
     color color_yellow
     align (0.0, 0.0)
-style screen_journal_style_button_text:
-    size 20
-    color color_white

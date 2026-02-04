@@ -53,11 +53,11 @@ init 10 python:
     )
 
 
-label mortuary_f3_map:
-    $ renpy.scene(layer = 'screens')
-    $ renpy.music.play(audio.mortuary, channel='music', loop=True, if_changed=True)
+    def screen_location_map_mortuary_f3_get_party():
+        return get_party(runtime.global_state_manager, mortuaryF3LootLogic.get_where_party_stands())
 
-    default screen_location_map_mortuary_f3_static_actions = [
+
+    screen_location_map_mortuary_f3_static_actions = [
         FromMortuaryF3R1ToMortuaryF2R1  (runtime.global_state_manager,  751, 1552),
         FromMortuaryF3R1uToMortuaryF3Rc (runtime.global_state_manager,  441, 1193),
         FromMortuaryF3R1dToMortuaryF3Rc (runtime.global_state_manager,  538, 1865),
@@ -87,7 +87,7 @@ label mortuary_f3_map:
         InMortuaryF3RcPickNeedle        (runtime.global_state_manager, 2144,  665),
         InMortuaryF3RcPickMortuaryKey   (runtime.global_state_manager,  847, 1756),
     ]
-    default screen_location_map_mortuary_f3_dynamic_actions = [
+    screen_location_map_mortuary_f3_dynamic_actions = [
         InMortuaryF3R4Zm79   (runtime.global_state_manager, 1660, 2260),
         InMortuaryF3R4Zf679  (runtime.global_state_manager, 1620, 2300),
         InMortuaryF3R4S1221  (runtime.global_state_manager, 1600, 2360),
@@ -105,14 +105,19 @@ label mortuary_f3_map:
         InMortuaryF3RcZm1146 (runtime.global_state_manager,  750,  950),
         InMortuaryF3RcZf1148 (runtime.global_state_manager, 1400, 1000),
     ]
-    default screen_location_map_mortuary_f3_get_party = lambda: get_party(runtime.global_state_manager, mortuaryF3LootLogic.get_where_party_stands())
-    default screen_location_map_mortuary_f3_shadows = [
+    screen_location_map_mortuary_f3_get_party = screen_location_map_mortuary_f3_get_party
+    screen_location_map_mortuary_f3_shadows = [
         MortuaryF3R1Shadow(runtime.global_state_manager,  465, 1422),
         MortuaryF3R2Shadow(runtime.global_state_manager, 1705,  400),
         MortuaryF3R3Shadow(runtime.global_state_manager, 3220, 1253),
         MortuaryF3R4Shadow(runtime.global_state_manager, 1960, 2280),
         MortuaryF3RcShadow(runtime.global_state_manager, 1809, 1250),
     ]
+
+
+label mortuary_f3_map:
+    $ renpy.scene(layer = 'screens')
+    $ renpy.music.play(audio.mortuary, channel='music', loop=True, if_changed=True)
 
     call screen screen_location_map(
         background='bg/mortuary/f3/root.webp',

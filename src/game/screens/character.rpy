@@ -34,7 +34,7 @@ label never_screen_character:
 screen screen_character():
     default screen_character_npc = characterLogic.get_character()
 
-    on 'show' action SetVariable('screen_character_npc', get_character())
+    on 'show' action SetVariable('screen_character_npc', characterLogic.get_character())
 
     modal True
     zorder 100

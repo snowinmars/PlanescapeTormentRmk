@@ -39,11 +39,12 @@ init 10 python:
         InMortuaryF1RcGiantsk
     )
 
-label mortuary_f1_map:
-    $ renpy.scene(layer = 'screens')
-    $ renpy.music.play(audio.mortuary, channel='music', loop=True, if_changed=True)
 
-    default screen_location_map_mortuary_f1_static_actions = [
+    def screen_location_map_mortuary_f1_get_party():
+        return get_party(runtime.global_state_manager, mortuaryF1LootLogic.get_where_party_stands())
+
+
+    screen_location_map_mortuary_f1_static_actions = [
         FromMortuaryF1R1ToMortuaryF2R1(runtime.global_state_manager, 1185, 2015),
         FromMortuaryF1R1ToMortuaryF1R2(runtime.global_state_manager,  585, 1717),
         FromMortuaryF1R1ToMortuaryF1R4(runtime.global_state_manager, 2421, 2752),
@@ -68,7 +69,7 @@ label mortuary_f1_map:
         FromMortuaryF1RcToMortuaryF1R3(runtime.global_state_manager, 2950, 1044),
         FromMortuaryF1RcToMortuaryF1R4(runtime.global_state_manager, 2874, 1934)
     ]
-    default screen_location_map_mortuary_f1_dynamic_actions = [
+    screen_location_map_mortuary_f1_dynamic_actions = [
         InMortuaryF1R1Soego    (runtime.global_state_manager, 1300, 2600),
 
         InMortuaryF1R2Deionarra(runtime.global_state_manager, 1050, 1000),
@@ -81,14 +82,20 @@ label mortuary_f1_map:
 
         InMortuaryF1RcGiantsk  (runtime.global_state_manager, 2200, 1250)
     ]
-    default screen_location_map_mortuary_f1_get_party = lambda: get_party(runtime.global_state_manager, mortuaryF1LootLogic.get_where_party_stands())
-    default screen_location_map_mortuary_f1_shadows = [
+    screen_location_map_mortuary_f1_get_party = screen_location_map_mortuary_f1_get_party
+    screen_location_map_mortuary_f1_shadows = [
         MortuaryF1R1Shadow(runtime.global_state_manager, 1200, 2450),
         MortuaryF1R2Shadow(runtime.global_state_manager, 1100,  900),
         MortuaryF1R3Shadow(runtime.global_state_manager, 3250,  700),
         MortuaryF1R4Shadow(runtime.global_state_manager, 3300, 2200),
         MortuaryF1RcShadow(runtime.global_state_manager, 2350, 1400),
     ]
+
+
+label mortuary_f1_map:
+    $ renpy.scene(layer = 'screens')
+    $ renpy.music.play(audio.mortuary, channel='music', loop=True, if_changed=True)
+
     call screen screen_location_map(
         background='bg/mortuary/f1/root.webp',
         static_actions=screen_location_map_mortuary_f1_static_actions,

@@ -13,6 +13,6 @@
     new 'Существа'
 
     # game/screens/journal.rpy:149
-    old 'screen_journal__return'
+    old 'screen_journal_return'
     new 'Вернуться'
 

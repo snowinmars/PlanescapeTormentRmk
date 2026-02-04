@@ -42,7 +42,6 @@ screen screen_preferences():
             ysize 143
             background cached_settings_button_background
             hover_background cached_settings_button_hover_background
-            sensitive main_menu
             action ShowMenu('screen_preferences_save')
             text _('screen_preferences_save'):
                 size 20
@@ -134,7 +133,7 @@ screen screen_preferences():
             ysize 143
             background cached_settings_button_background
             hover_background cached_settings_button_hover_background
-            action Function(full_restart_with_save)
+            action MainMenu()
             text _('screen_preferences_main_menu'):
                 size 20
                 color color_white

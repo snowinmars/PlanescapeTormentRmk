@@ -16,6 +16,14 @@ class ShadowItem:
         return self._pos
     def texture(self):
         raise NotImplementedError("Implement method 'texture(self)' before executing it") # pragma: no cover
+    def __getstate__(self):
+        return {
+            'location_id': self.location_id,
+            '_pos': self._pos
+        }
+    def __setstate__(self, state):
+        self.location_id = state['location_id']
+        self._pos = state['_pos']
 
 
 class MenuItem:
@@ -32,6 +40,12 @@ class MenuItem:
         raise NotImplementedError("Implement method 'tooltip(self)' before executing it") # pragma: no cover
     def jump(self):
         raise NotImplementedError("Implement method 'jump(self)' before executing it") # pragma: no cover
+    def __getstate__(self):
+        return {
+            '_pos': self._pos
+        }
+    def __setstate__(self, state):
+        self._pos = state['_pos']
 
 
 class NpcMenuItem(MenuItem):

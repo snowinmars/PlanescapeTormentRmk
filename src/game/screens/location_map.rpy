@@ -8,7 +8,7 @@ init 10 python:
             if current_state != last_state:
                 last_state = current_state
                 cached_displayable = Frame('gui_tooltip', alpha=1.0 if current_state else 0.0)
-            return cached_displayable, 0.1
+            return cached_displayable, 0.5
         return DynamicDisplayable(update)
 
 
@@ -31,7 +31,7 @@ init 10 python:
                     f'{current_values[0]}, {current_values[1]} x{current_values[2]}',
                     style='screen_location_map_style_mouse_text'
                 )
-            return text, 0.1  # Обновляем раз в 100 мс
+            return text, 0.5  # Обновляем раз в 100 мс
         return DynamicDisplayable(update)
 
 
@@ -162,14 +162,9 @@ screen screen_location_map(
                     if not dynamic_action_button.when():
                         continue
 
+                    $ _idle, _hover = get_cached_menu_item(dynamic_action_button.texture())
                     imagebutton:
                         pos (dynamic_action_button.pos()['x'], dynamic_action_button.pos()['y'])
-                        anchor (0.5, 0.5)
-                        idle dynamic_action_button.texture()
-
-                    $ _idle, _hover = get_cached_menu_item('images_icons_speak_idle')
-                    imagebutton:
-                        pos (dynamic_action_button.pos()['x'] + 40, dynamic_action_button.pos()['y'] - 20)
                         anchor (0.5, 0.5)
                         idle _idle
                         hover _hover
@@ -182,14 +177,9 @@ screen screen_location_map(
                     if not party_button.when():
                         continue
 
+                    $ _idle, _hover = get_cached_menu_item(party_button.texture())
                     imagebutton:
                         pos (party_button.pos()['x'], party_button.pos()['y'])
-                        anchor (0.5, 0.5)
-                        idle party_button.texture()
-
-                    $ _idle, _hover = get_cached_menu_item('images_icons_speak_idle')
-                    imagebutton:
-                        pos (party_button.pos()['x'] + 40, party_button.pos()['y'] - 20)
                         anchor (0.5, 0.5)
                         idle _idle
                         hover _hover
