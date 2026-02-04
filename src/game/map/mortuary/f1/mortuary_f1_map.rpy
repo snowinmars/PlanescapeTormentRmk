@@ -81,7 +81,7 @@ label mortuary_f1_map:
 
         InMortuaryF1RcGiantsk  (runtime.global_state_manager, 2200, 1250)
     ]
-    default screen_location_map_mortuary_f1_party = [] # get_party(runtime.global_state_manager, mortuaryF1LootLogic.get_where_party_stands())
+    default screen_location_map_mortuary_f1_get_party = lambda: get_party(runtime.global_state_manager, mortuaryF1LootLogic.get_where_party_stands())
     default screen_location_map_mortuary_f1_shadows = [
         MortuaryF1R1Shadow(runtime.global_state_manager, 1200, 2450),
         MortuaryF1R2Shadow(runtime.global_state_manager, 1100,  900),
@@ -93,6 +93,6 @@ label mortuary_f1_map:
         background='bg/mortuary/f1/root.webp',
         static_actions=screen_location_map_mortuary_f1_static_actions,
         dynamic_actions=screen_location_map_mortuary_f1_dynamic_actions,
-        party=screen_location_map_mortuary_f1_party,
+        get_party=screen_location_map_mortuary_f1_get_party,
         shadows=screen_location_map_mortuary_f1_shadows
     )

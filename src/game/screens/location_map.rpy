@@ -108,14 +108,14 @@ screen screen_location_map(
     background,
     static_actions,  # only one possible action: door (go through), chest (loot)
     dynamic_actions, # sevaral possible actions: npc (talk, steal, kill)
-    party,           # npc
+    get_party,           # npc
     shadows          # images to hide rooms other, than player currently is
 ):
     default screen_location_map_tt                     = Tooltip('')
     default screen_location_map_bg_size                = renpy.render(renpy.displayable(background), 0, 0, 0, 0).get_size()
     default screen_location_map_cached_static_actions  = [CachedActionButton(b) for b in static_actions]
     default screen_location_map_cached_dynamic_actions = [CachedActionButton(b) for b in dynamic_actions]
-    default screen_location_map_cached_party           = [CachedActionButton(b) for b in party]
+    default screen_location_map_cached_party           = [CachedActionButton(b) for b in get_party()]
     default screen_location_map_cached_shadows         = [CachedShadowButton(b) for b in shadows]
 
     frame:

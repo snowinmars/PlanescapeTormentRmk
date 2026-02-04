@@ -123,7 +123,7 @@ label mortuary_f2_map:
 
         InMortuaryF2R8Zf891 (runtime.global_state_manager, 2300, 2600)
     ]
-    default screen_location_map_mortuary_f2_party = [] # get_party(runtime.global_state_manager, mortuaryF2LootLogic.get_where_party_stands())
+    default screen_location_map_mortuary_f2_get_party = lambda: get_party(runtime.global_state_manager, mortuaryF2LootLogic.get_where_party_stands())
     default screen_location_map_mortuary_f2_shadows = [
         MortuaryF2R1Shadow(runtime.global_state_manager, 1265, 2390),
         MortuaryF2R2Shadow(runtime.global_state_manager,  865, 1750),
@@ -139,6 +139,6 @@ label mortuary_f2_map:
         background='bg/mortuary/f2/root.webp',
         static_actions=screen_location_map_mortuary_f2_static_actions,
         dynamic_actions=screen_location_map_mortuary_f2_dynamic_actions,
-        party=screen_location_map_mortuary_f2_party,
+        get_party=screen_location_map_mortuary_f2_get_party,
         shadows=screen_location_map_mortuary_f2_shadows
     )
