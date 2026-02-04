@@ -281,12 +281,11 @@ screen screen_narrat():
                     spacing 0
 
                     for i, item in screen_narrat_cached_menu_items:
-                        $ caption, action, enabled = item
+                        $ caption, action, what_is_it = item # TODO [snow]: what is this boolean? Not 'enabled'
 
                         button:
                             xfill True
                             padding (10, 5)
-                            sensitive enabled
 
                             action [
                                 Function(narratLogic.add_menu_choice, caption),
@@ -296,11 +295,8 @@ screen screen_narrat():
                             text str(i) + '. ' + __(caption):
                                 style 'screen_narrat_style_history_text'
                                 layout 'tex'
-                                if enabled:
-                                    color color_nameless_one
-                                    hover_color color_white
-                                else:
-                                    color color_nameless_one_insensitive
+                                color color_nameless_one
+                                hover_color color_white
             # </narrat_menu>
 
 
