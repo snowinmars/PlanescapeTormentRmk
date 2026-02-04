@@ -1,6 +1,24 @@
 ################################################################################
 ## Инициализация
 ################################################################################
+init python:
+    def change_hex(hex_color, hue_percent=0, saturation_percent=0, value_percent=0):
+        import colorsys
+
+        hex_color = hex_color.lstrip('#')
+        r = int(hex_color[0:2], 16) / 255.0
+        g = int(hex_color[2:4], 16) / 255.0
+        b = int(hex_color[4:6], 16) / 255.0
+
+        h, s, v = colorsys.rgb_to_hsv(r, g, b)
+
+        h *= (1 - hue_percent/100.0)
+        s *= (1 - saturation_percent/100.0)
+        v *= (1 - value_percent/100.0)
+
+        r, g, b = colorsys.hsv_to_rgb(h, s, v)
+        return '#{:02x}{:02x}{:02x}'.format(int(r*255), int(g*255), int(b*255))
+
 
 init offset = -1
 define hover_matrix = BrightnessMatrix(0.2)
@@ -9,15 +27,25 @@ define no_opacity = OpacityMatrix(1)
 define small_opacity = OpacityMatrix(0.9)
 define colorized_opacity = small_opacity * ColorizeMatrix('#ff0000', '#00ff00')
 
-define color_yellow       = '#dbc401'
-define color_orange       = '#bd7a10'
-define color_white        = '#f8f6de'
-define color_narrator     = '#98afb5'
-define color_npc          = '#9ba290'
-define color_br           = '#c4a28a'
-define color_scars        = '#bf6b5f'
-define color_nameless_one = '#ff2e21'
-define color_default      = '#b8a175'
+define  color_yellow                   = '#dbc401'
+default color_yellow_insensitive       = change_hex(color_yellow      , saturation_percent=50, value_percent=50)
+define  color_orange                   = '#bd7a10'
+default color_orange_insensitive       = change_hex(color_orange      , saturation_percent=50, value_percent=50)
+define  color_white                    = '#f8f6de'
+default color_white_insensitive        = change_hex(color_white       , saturation_percent=50, value_percent=50)
+define  color_narrator                 = '#98afb5'
+default color_narrator_insensitive     = change_hex(color_narrator    , saturation_percent=50, value_percent=50)
+define  color_npc                      = '#9ba290'
+default color_npc_insensitive          = change_hex(color_npc         , saturation_percent=50, value_percent=50)
+define  color_br                       = '#c4a28a'
+default color_br_insensitive           = change_hex(color_br          , saturation_percent=50, value_percent=50)
+define  color_scars                    = '#bf6b5f'
+default color_scars_insensitive        = change_hex(color_scars       , saturation_percent=50, value_percent=50)
+define  color_nameless_one             = '#ff2e21'
+default color_nameless_one_insensitive = change_hex(color_nameless_one, saturation_percent=50, value_percent=50)
+define  color_default                  = '#b8a175'
+default color_default_insensitive      = change_hex(color_default     , saturation_percent=50, value_percent=50)
+
 
 define font_exocet        = 'exocet.ttf'
 define font_notosans      = 'NotoSans-Regular.ttf'
@@ -36,24 +64,6 @@ init 2 python:
     keymap_inventory_screen = [ 'K_i' ]
     keymap_character_screen = [ 'K_c' ]
     keymap_journal_screen   = [ 'K_j' ]
-
-    def change_hex(hex_color, hue_percent=0, saturation_percent=0, value_percent=0):
-        import colorsys
-
-        hex_color = hex_color.lstrip('#')
-        r = int(hex_color[0:2], 16) / 255.0
-        g = int(hex_color[2:4], 16) / 255.0
-        b = int(hex_color[4:6], 16) / 255.0
-
-        h, s, v = colorsys.rgb_to_hsv(r, g, b)
-
-        h *= (1 - hue_percent/100.0)
-        s *= (1 - saturation_percent/100.0)
-        v *= (1 - value_percent/100.0)
-
-        r, g, b = colorsys.hsv_to_rgb(h, s, v)
-        return '#{:02x}{:02x}{:02x}'.format(int(r*255), int(g*255), int(b*255))
-
 
     MAX_TEXTURE_CACHE_LENGTH = 100
     _inventory_item_cache = {}

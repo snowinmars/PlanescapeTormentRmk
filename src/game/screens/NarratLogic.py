@@ -33,3 +33,7 @@ class NarratLogic:
 
     def get_last_history_id(self):
         return self.state_manager.narrat_manager.get_last_history_id()
+
+
+    def get_last_menu_items_id(self):
+        return self.state_manager.narrat_manager.get_last_menu_items_id()

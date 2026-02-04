@@ -55,7 +55,7 @@ screen screen_achievement_gallery():
                             elif achievement.has():
                                 color color_yellow
                             else:
-                                color change_hex(color_yellow, saturation_percent=50, value_percent=50)
+                                color color_yellow_insensitive
 
 
         # <selected_achievement>

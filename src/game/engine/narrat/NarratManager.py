@@ -14,6 +14,9 @@ class NarratManager:
     def get_last_history_id(self):
         return self._narrat_store.last_history_id
 
+    def get_last_menu_items_id(self):
+        return self._narrat_store.last_menu_items_id
+
 
     def add_history_entry(
         self,
@@ -116,11 +119,13 @@ class NarratManager:
 
     def update_menu_items(self, items):
         self._narrat_store.current_menu_items = items if items else []
+        self._narrat_store.last_menu_items_id = self._narrat_store.last_menu_items_id + 1
 
 
     def add_menu_choice(self, choice_text):
         self.add_history_entry('protagonist_character_name', '#ff2e21', choice_text, is_nameless=True) # color_nameless_one
         self._narrat_store.current_menu_items = []
+        self._narrat_store.last_menu_items_id = self._narrat_store.last_menu_items_id + 1
 
 
     def add_br(self):

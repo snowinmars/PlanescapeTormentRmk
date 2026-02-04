@@ -195,7 +195,11 @@ screen screen_narrat():
     modal False # Do not set to True: if it is True, it cannot capture input events like mouse clicks, keyboard press, etc.
 
     default screen_narrat_cached_history = []
-    default screen_narrat_cached_last_history_id = 0
+    default screen_narrat_cached_last_history_id = None
+    default screen_narrat_cached_current_line = ''
+    default screen_narrat_cached_current_line_id = None
+    default screen_narrat_cached_menu_items = []
+    default screen_narrat_cached_last_menu_items_id = None
 
     if narratLogic.get_last_history_id() != screen_narrat_cached_last_history_id:
         $ screen_narrat_cached_history = narratLogic.actual_history()
@@ -203,6 +207,15 @@ screen screen_narrat():
         $ screen_narrat_history_yadjustment.value = infinite_float_value
         $ screen_narrat_say_yadjustment.value = infinite_float_value
         $ screen_narrat_menu_yadjustment.value = infinite_float_value
+
+    $ actual_current_line = narratLogic.get_current_line()
+    if actual_current_line and actual_current_line['id'] != screen_narrat_cached_current_line_id:
+        $ screen_narrat_cached_current_line = actual_current_line
+        $ screen_narrat_cached_current_line_id = actual_current_line['id']
+
+    if narratLogic.get_last_menu_items_id() != screen_narrat_cached_last_menu_items_id:
+        $ screen_narrat_cached_menu_items = list(enumerate(narratLogic.get_current_menu_items(), 1))
+        $ screen_narrat_cached_last_menu_items_id = narratLogic.get_last_menu_items_id()
 
 
     frame:
@@ -249,9 +262,8 @@ screen screen_narrat():
                 vscrollbar_unscrollable 'hide'
                 yinitial 0.0
 
-                $ entry = narratLogic.get_current_line()
-                if entry:
-                    add get_cached_narrat_entry(entry)
+                if screen_narrat_cached_current_line:
+                    add get_cached_narrat_entry(screen_narrat_cached_current_line)
             # </narrat_say>
 
 
@@ -268,13 +280,13 @@ screen screen_narrat():
                 vbox:
                     spacing 0
 
-                    for i, item in enumerate(narratLogic.get_current_menu_items(), 1): # TODO [snow]: cache
-                        $ caption = item[0] if len(item) > 0 else ''
-                        $ action = item[1] if len(item) > 1 else None
+                    for i, item in screen_narrat_cached_menu_items:
+                        $ caption, action, enabled = item
 
                         button:
                             xfill True
                             padding (10, 5)
+                            sensitive enabled
 
                             action [
                                 Function(narratLogic.add_menu_choice, caption),
@@ -284,8 +296,11 @@ screen screen_narrat():
                             text str(i) + '. ' + __(caption):
                                 style 'screen_narrat_style_history_text'
                                 layout 'tex'
-                                color color_nameless_one
-                                hover_color color_white
+                                if enabled:
+                                    color color_nameless_one
+                                    hover_color color_white
+                                else:
+                                    color color_nameless_one_insensitive
             # </narrat_menu>
 
 

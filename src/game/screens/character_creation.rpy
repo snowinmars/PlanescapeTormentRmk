@@ -363,7 +363,7 @@ style screen_character_creation_style_button:
     size 20
     color color_white
     hover_color color_yellow
-    insensitive_color change_hex(color_yellow, saturation_percent=50, value_percent=50)
+    insensitive_color color_yellow_insensitive
 style screen_character_creation_style_minus:
     background screen_character_creation_cached_minus_background
     hover_background screen_character_creation_cached_minus_hover_background
