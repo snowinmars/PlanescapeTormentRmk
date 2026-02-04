@@ -1,5 +1,8 @@
 # Change log
 
+## Version 0.13
+- Full reimplementation of gui screens: mostly cache optimization
+
 ## Version 0.12
 - Improve narrat screen perfomance
 - Minor mobile ui improvements
