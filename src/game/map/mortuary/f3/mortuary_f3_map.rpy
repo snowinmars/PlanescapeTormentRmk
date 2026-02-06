@@ -115,6 +115,17 @@ init 10 python:
     ]
 
 
+label never_mortuary_f3_map:
+    $ never = _('InMortuaryF3R2PickTaskList_snack1')
+    $ never = _('InMortuaryF3R4PickPrybar_snack1')
+    $ never = _('InMortuaryF3R4PickDustmanRequest_snack1')
+    $ never = _('FromMortuaryF3RcToMortuaryF3R1u_snack1')
+    $ never = _('FromMortuaryF3RcToMortuaryF3R1d_snack1')
+    $ never = _('InMortuaryF3RcPickGarbage_snack1')
+    $ never = _('InMortuaryF3RcPickNeedle_snack1')
+    $ never = _('InMortuaryF3RcPickMortuaryKey_snack1')
+
+
 label mortuary_f3_map:
     $ renpy.scene(layer = 'screens')
     $ renpy.music.play(audio.mortuary, channel='music', loop=True, if_changed=True)

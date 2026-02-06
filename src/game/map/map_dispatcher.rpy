@@ -4,60 +4,60 @@ init 10 python:
 
 
 label map_mortuary_f1r1:
-    $ self.state_manager.locations_manager.set_location('mortuary_f1r1')
+    $ glm.set_location('mortuary_f1r1')
     jump map_dispatcher
 label map_mortuary_f1r2:
-    $ self.state_manager.locations_manager.set_location('mortuary_f1r2')
+    $ glm.set_location('mortuary_f1r2')
     jump map_dispatcher
 label map_mortuary_f1r3:
-    $ self.state_manager.locations_manager.set_location('mortuary_f1r3')
+    $ glm.set_location('mortuary_f1r3')
     jump map_dispatcher
 label map_mortuary_f1r4:
-    $ self.state_manager.locations_manager.set_location('mortuary_f1r4')
+    $ glm.set_location('mortuary_f1r4')
     jump map_dispatcher
 label map_mortuary_f1rc:
-    $ self.state_manager.locations_manager.set_location('mortuary_f1rc')
+    $ glm.set_location('mortuary_f1rc')
     jump map_dispatcher
 
 label map_mortuary_f2r1:
-    $ self.state_manager.locations_manager.set_location('mortuary_f2r1')
+    $ glm.set_location('mortuary_f2r1')
     jump map_dispatcher
 label map_mortuary_f2r2:
-    $ self.state_manager.locations_manager.set_location('mortuary_f2r2')
+    $ glm.set_location('mortuary_f2r2')
     jump map_dispatcher
 label map_mortuary_f2r3:
-    $ self.state_manager.locations_manager.set_location('mortuary_f2r3')
+    $ glm.set_location('mortuary_f2r3')
     jump map_dispatcher
 label map_mortuary_f2r4:
-    $ self.state_manager.locations_manager.set_location('mortuary_f2r4')
+    $ glm.set_location('mortuary_f2r4')
     jump map_dispatcher
 label map_mortuary_f2r5:
-    $ self.state_manager.locations_manager.set_location('mortuary_f2r5')
+    $ glm.set_location('mortuary_f2r5')
     jump map_dispatcher
 label map_mortuary_f2r6:
-    $ self.state_manager.locations_manager.set_location('mortuary_f2r6')
+    $ glm.set_location('mortuary_f2r6')
     jump map_dispatcher
 label map_mortuary_f2r7:
-    $ self.state_manager.locations_manager.set_location('mortuary_f2r7')
+    $ glm.set_location('mortuary_f2r7')
     jump map_dispatcher
 label map_mortuary_f2r8:
-    $ self.state_manager.locations_manager.set_location('mortuary_f2r8')
+    $ glm.set_location('mortuary_f2r8')
     jump map_dispatcher
 
 label map_mortuary_f3r1:
-    $ self.state_manager.locations_manager.set_location('mortuary_f3r1')
+    $ glm.set_location('mortuary_f3r1')
     jump map_dispatcher
 label map_mortuary_f3r2:
-    $ self.state_manager.locations_manager.set_location('mortuary_f3r2')
+    $ glm.set_location('mortuary_f3r2')
     jump map_dispatcher
 label map_mortuary_f3r3:
-    $ self.state_manager.locations_manager.set_location('mortuary_f3r3')
+    $ glm.set_location('mortuary_f3r3')
     jump map_dispatcher
 label map_mortuary_f3r4:
-    $ self.state_manager.locations_manager.set_location('mortuary_f3r4')
+    $ glm.set_location('mortuary_f3r4')
     jump map_dispatcher
 label map_mortuary_f3rc:
-    $ self.state_manager.locations_manager.set_location('mortuary_f3rc')
+    $ glm.set_location('mortuary_f3rc')
     jump map_dispatcher
 
 label map_dispatcher:

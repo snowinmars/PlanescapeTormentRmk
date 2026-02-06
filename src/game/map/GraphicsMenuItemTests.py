@@ -92,8 +92,8 @@ class GraphicsMenuItemTests(unittest.TestCase):
     def _test_graphics_menu_item(self, item):
         self.assertTrue(item.when())
         self.assertTrue(len(item.texture()) > 0)
-        self.assertEqual(item.pos()['x'], self.x)
-        self.assertEqual(item.pos()['y'], self.y)
+        self.assertEqual(item.pos()[0], self.x)
+        self.assertEqual(item.pos()[1], self.y)
         self.assertTrue(len(item.tooltip()) > 0)
         navigation = item.jump()
         self.assertIsNotNone(navigation)

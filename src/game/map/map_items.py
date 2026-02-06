@@ -2,9 +2,10 @@ import math
 
 
 class ShadowItem:
-    def __init__(self, state_manager, x, y):
+    def __init__(self, state_manager, x, y, xs=None, ys=None):
         self.state_manager = state_manager
-        self._pos = { 'x': x, 'y': y }
+        self._pos = (x, y)
+        self._size = (xs, ys)
         self.location_id = None
     def when_unvisited(self):
         return self.state_manager.locations_manager.get_location() != self.location_id and \
@@ -14,6 +15,8 @@ class ShadowItem:
                self.state_manager.locations_manager.is_visited(self.location_id)
     def pos(self):
         return self._pos
+    def size(self):
+        return self._size
     def texture(self):
         raise NotImplementedError("Implement method 'texture(self)' before executing it") # pragma: no cover
     def __getstate__(self):
@@ -27,11 +30,14 @@ class ShadowItem:
 
 
 class MenuItem:
-    def __init__(self, state_manager, x, y):
+    def __init__(self, state_manager, x, y, xs=None, ys=None):
         self.state_manager = state_manager
-        self._pos = { 'x': x, 'y': y }
+        self._pos = (x, y)
+        self._size = (xs, ys)
     def pos(self):
         return self._pos
+    def size(self):
+        return self._size
     def when(self):
         raise NotImplementedError("Implement method 'when(self)' before executing it") # pragma: no cover
     def texture(self):
@@ -42,10 +48,12 @@ class MenuItem:
         raise NotImplementedError("Implement method 'jump(self)' before executing it") # pragma: no cover
     def __getstate__(self):
         return {
-            '_pos': self._pos
+            '_pos' : self._pos,
+            '_size': self._size
         }
     def __setstate__(self, state):
-        self._pos = state['_pos']
+        self._pos  = state['_pos']
+        self._size = state['_size']
 
 
 class NpcMenuItem(MenuItem):
@@ -58,7 +66,7 @@ class NpcMenuItem(MenuItem):
         party_radius = 40
         hexagon = generate_hexagon_positions(x, y, party_radius)
         return {
-            'morte_character_name' : { 'x': x, 'y': y } ,
+            'morte_character_name' : (x, y) ,
             'annah_character_name' : hexagon[0],
             'dakkon_character_name': hexagon[1],
             'grace_character_name' : hexagon[2],

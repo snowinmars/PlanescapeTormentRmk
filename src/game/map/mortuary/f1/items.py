@@ -7,7 +7,7 @@ from game.map.map_items import (
 
 class FromMortuaryF1R1ToMortuaryF2R1(MenuItem):
     def __init__(self, state_manager, x, y):
-        super().__init__(state_manager, x, y)
+        super().__init__(state_manager, x, y, 338, 319)
     def when(self):
         return self.state_manager.locations_manager.get_location() == 'mortuary_f1r1'
     def tooltip(self):
@@ -22,7 +22,7 @@ class FromMortuaryF1R1ToMortuaryF2R1(MenuItem):
 
 class FromMortuaryF1R1ToMortuaryF1R2(MenuItem):
     def __init__(self, state_manager, x, y):
-        super().__init__(state_manager, x, y)
+        super().__init__(state_manager, x, y, 470, 469)
     def when(self):
         return self.state_manager.locations_manager.get_location() == 'mortuary_f1r1'
     def tooltip(self):
@@ -37,7 +37,7 @@ class FromMortuaryF1R1ToMortuaryF1R2(MenuItem):
 
 class FromMortuaryF1R1ToMortuaryF1R4(MenuItem):
     def __init__(self, state_manager, x, y):
-        super().__init__(state_manager, x, y)
+        super().__init__(state_manager, x, y, 339, 568)
     def when(self):
         return self.state_manager.locations_manager.get_location() == 'mortuary_f1r1'
     def tooltip(self):
@@ -52,7 +52,7 @@ class FromMortuaryF1R1ToMortuaryF1R4(MenuItem):
 
 class FromMortuaryF1R1ToMortuaryF1Rc(MenuItem):
     def __init__(self, state_manager, x, y):
-        super().__init__(state_manager, x, y)
+        super().__init__(state_manager, x, y, 429, 450)
     def when(self):
         return self.state_manager.locations_manager.get_location() == 'mortuary_f1r1'
     def tooltip(self):
@@ -67,7 +67,7 @@ class FromMortuaryF1R1ToMortuaryF1Rc(MenuItem):
 
 class FromMortuaryF1R1ToGameEnd(MenuItem):
     def __init__(self, state_manager, x, y):
-        super().__init__(state_manager, x, y)
+        super().__init__(state_manager, x, y, 624, 552)
     def when(self):
         return self.state_manager.world_manager.get_gate_open() and \
                self.state_manager.locations_manager.get_location() == 'mortuary_f1r1'
@@ -81,7 +81,7 @@ class FromMortuaryF1R1ToGameEnd(MenuItem):
 
 class MortuaryF1R1Shadow(ShadowItem):
     def __init__(self, state_manager, x, y):
-        super().__init__(state_manager, x, y)
+        super().__init__(state_manager, x, y, 2428, 1773)
         self.location_id = 'mortuary_f1r1'
     def texture(self):
         return 'bg/mortuary/f1/shadow_f1r1.webp'
@@ -108,7 +108,7 @@ class InMortuaryF1R1Soego(MenuItem):
 
 class FromMortuaryF1R2ToMortuaryF1Rc(MenuItem):
     def __init__(self, state_manager, x, y):
-        super().__init__(state_manager, x, y)
+        super().__init__(state_manager, x, y, 380, 404)
     def when(self):
         return self.state_manager.locations_manager.get_location() == 'mortuary_f1r2'
     def tooltip(self):
@@ -123,7 +123,7 @@ class FromMortuaryF1R2ToMortuaryF1Rc(MenuItem):
 
 class FromMortuaryF1R2ToMortuaryF1R3(MenuItem):
     def __init__(self, state_manager, x, y):
-        super().__init__(state_manager, x, y)
+        super().__init__(state_manager, x, y, 324, 332)
     def when(self):
         return self.state_manager.locations_manager.get_location() == 'mortuary_f1r2'
     def tooltip(self):
@@ -138,7 +138,7 @@ class FromMortuaryF1R2ToMortuaryF1R3(MenuItem):
 
 class FromMortuaryF1R2ToMortuaryF1R1(MenuItem):
     def __init__(self, state_manager, x, y):
-        super().__init__(state_manager, x, y)
+        super().__init__(state_manager, x, y, 470, 469)
     def when(self):
         return self.state_manager.locations_manager.get_location() == 'mortuary_f1r2'
     def tooltip(self):
@@ -153,7 +153,7 @@ class FromMortuaryF1R2ToMortuaryF1R1(MenuItem):
 
 class MortuaryF1R2Shadow(ShadowItem):
     def __init__(self, state_manager, x, y):
-        super().__init__(state_manager, x, y)
+        super().__init__(state_manager, x, y, 2105, 1792)
         self.location_id = 'mortuary_f1r2'
     def texture(self):
         return 'bg/mortuary/f1/shadow_f1r2.webp'
@@ -180,7 +180,7 @@ class InMortuaryF1R2Deionarra(MenuItem):
 
 class FromMortuaryF1R3ToMortuaryF1R2(MenuItem):
     def __init__(self, state_manager, x, y):
-        super().__init__(state_manager, x, y)
+        super().__init__(state_manager, x, y, 324, 332)
     def when(self):
         return self.state_manager.locations_manager.get_location() == 'mortuary_f1r3'
     def tooltip(self):
@@ -195,7 +195,7 @@ class FromMortuaryF1R3ToMortuaryF1R2(MenuItem):
 
 class FromMortuaryF1R3ToMortuaryF1R4(MenuItem):
     def __init__(self, state_manager, x, y):
-        super().__init__(state_manager, x, y)
+        super().__init__(state_manager, x, y, 431, 562)
     def when(self):
         return self.state_manager.locations_manager.get_location() == 'mortuary_f1r3'
     def tooltip(self):
@@ -210,7 +210,7 @@ class FromMortuaryF1R3ToMortuaryF1R4(MenuItem):
 
 class FromMortuaryF1R3ToMortuaryF1Rc(MenuItem):
     def __init__(self, state_manager, x, y):
-        super().__init__(state_manager, x, y)
+        super().__init__(state_manager, x, y, 369, 449)
     def when(self):
         return self.state_manager.locations_manager.get_location() == 'mortuary_f1r3'
     def tooltip(self):
@@ -225,7 +225,7 @@ class FromMortuaryF1R3ToMortuaryF1Rc(MenuItem):
 
 class MortuaryF1R3Shadow(ShadowItem):
     def __init__(self, state_manager, x, y):
-        super().__init__(state_manager, x, y)
+        super().__init__(state_manager, x, y, 2330, 1458)
         self.location_id = 'mortuary_f1r3'
     def texture(self):
         return 'bg/mortuary/f1/shadow_f1r3.webp'
@@ -286,7 +286,7 @@ class InMortuaryF1R3Xach(MenuItem):
 
 class FromMortuaryF1R4ToMortuaryF1R3(MenuItem):
     def __init__(self, state_manager, x, y):
-        super().__init__(state_manager, x, y)
+        super().__init__(state_manager, x, y, 431, 562)
     def when(self):
         return self.state_manager.locations_manager.get_location() == 'mortuary_f1r4'
     def tooltip(self):
@@ -301,7 +301,7 @@ class FromMortuaryF1R4ToMortuaryF1R3(MenuItem):
 
 class FromMortuaryF1R4ToMortuaryF1R1(MenuItem):
     def __init__(self, state_manager, x, y):
-        super().__init__(state_manager, x, y)
+        super().__init__(state_manager, x, y, 339, 568)
     def when(self):
         return self.state_manager.locations_manager.get_location() == 'mortuary_f1r4'
     def tooltip(self):
@@ -316,7 +316,7 @@ class FromMortuaryF1R4ToMortuaryF1R1(MenuItem):
 
 class FromMortuaryF1R4ToMortuaryF1Rc(MenuItem):
     def __init__(self, state_manager, x, y):
-        super().__init__(state_manager, x, y)
+        super().__init__(state_manager, x, y, 469, 464)
     def when(self):
         return self.state_manager.locations_manager.get_location() == 'mortuary_f1r4'
     def tooltip(self):
@@ -331,7 +331,7 @@ class FromMortuaryF1R4ToMortuaryF1Rc(MenuItem):
 
 class MortuaryF1R4Shadow(ShadowItem):
     def __init__(self, state_manager, x, y):
-        super().__init__(state_manager, x, y)
+        super().__init__(state_manager, x, y, 1996, 1815)
         self.location_id = 'mortuary_f1r4'
     def texture(self):
         return 'bg/mortuary/f1/shadow_f1r4.webp'
@@ -339,7 +339,7 @@ class MortuaryF1R4Shadow(ShadowItem):
 
 class FromMortuaryF1R4ToMortuaryF2R7(MenuItem):
     def __init__(self, state_manager, x, y):
-        super().__init__(state_manager, x, y)
+        super().__init__(state_manager, x, y, 324, 314)
     def when(self):
         return self.state_manager.locations_manager.get_location() == 'mortuary_f1r4'
     def tooltip(self):
@@ -373,7 +373,7 @@ class InMortuaryF1R4Zm732(MenuItem):
 
 class FromMortuaryF1RcToMortuaryF1R1(MenuItem):
     def __init__(self, state_manager, x, y):
-        super().__init__(state_manager, x, y)
+        super().__init__(state_manager, x, y, 429, 450)
     def when(self):
         return self.state_manager.locations_manager.get_location() == 'mortuary_f1rc'
     def tooltip(self):
@@ -388,7 +388,7 @@ class FromMortuaryF1RcToMortuaryF1R1(MenuItem):
 
 class FromMortuaryF1RcToMortuaryF1R2(MenuItem):
     def __init__(self, state_manager, x, y):
-        super().__init__(state_manager, x, y)
+        super().__init__(state_manager, x, y, 380, 404)
     def when(self):
         return self.state_manager.locations_manager.get_location() == 'mortuary_f1rc'
     def tooltip(self):
@@ -403,7 +403,7 @@ class FromMortuaryF1RcToMortuaryF1R2(MenuItem):
 
 class FromMortuaryF1RcToMortuaryF1R3(MenuItem):
     def __init__(self, state_manager, x, y):
-        super().__init__(state_manager, x, y)
+        super().__init__(state_manager, x, y, 369, 449)
     def when(self):
         return self.state_manager.locations_manager.get_location() == 'mortuary_f1rc'
     def tooltip(self):
@@ -418,7 +418,7 @@ class FromMortuaryF1RcToMortuaryF1R3(MenuItem):
 
 class FromMortuaryF1RcToMortuaryF1R4(MenuItem):
     def __init__(self, state_manager, x, y):
-        super().__init__(state_manager, x, y)
+        super().__init__(state_manager, x, y, 469, 464)
     def when(self):
         return self.state_manager.locations_manager.get_location() == 'mortuary_f1rc'
     def tooltip(self):
@@ -433,7 +433,7 @@ class FromMortuaryF1RcToMortuaryF1R4(MenuItem):
 
 class MortuaryF1RcShadow(ShadowItem):
     def __init__(self, state_manager, x, y):
-        super().__init__(state_manager, x, y)
+        super().__init__(state_manager, x, y, 2027, 1468)
         self.location_id = 'mortuary_f1rc'
     def texture(self):
         return 'bg/mortuary/f1/shadow_f1rc.webp'

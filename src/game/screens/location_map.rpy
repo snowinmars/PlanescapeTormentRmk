@@ -42,6 +42,7 @@ init 10 python:
         def __init__(self, button):
             self.button          = button
             self._cached_pos     = None
+            self._cached_size    = None
             self._cached_when    = None
             self._cached_texture = None
             self._cached_tooltip = None
@@ -50,6 +51,7 @@ init 10 python:
         def update_cache(self):
             if self._dirty:
                 self._cached_pos     = self.button.pos()
+                self._cached_size    = self.button.size()
                 self._cached_when    = self.button.when()
                 self._cached_texture = self.button.texture()
                 self._cached_tooltip = self.button.tooltip()
@@ -58,6 +60,9 @@ init 10 python:
         def pos(self):
             self.update_cache()
             return self._cached_pos
+        def size(self):
+            self.update_cache()
+            return self._cached_size
         def when(self):
             self.update_cache()
             return self._cached_when
@@ -70,12 +75,15 @@ init 10 python:
         def jump(self):
             self.update_cache()
             return self._cached_jump
+        def mark_dirty(self):
+            self._dirty = True
     class CachedShadowButton:
         def __init__(self, button):
             self.button                 = button
             self._cached_when_unvisited = None
             self._cached_when_visited   = None
             self._cached_pos            = None
+            self._cached_size           = None
             self._cached_texture        = None
             self._dirty                 = True
         def update_cache(self):
@@ -83,6 +91,7 @@ init 10 python:
                 self._cached_when_unvisited = self.button.when_unvisited()
                 self._cached_when_visited   = self.button.when_visited()
                 self._cached_pos            = self.button.pos()
+                self._cached_size           = self.button.size()
                 self._cached_texture        = self.button.texture()
                 self._dirty                 = False
         def when_unvisited(self):
@@ -94,9 +103,14 @@ init 10 python:
         def pos(self):
             self.update_cache()
             return self._cached_pos
+        def size(self):
+            self.update_cache()
+            return self._cached_size
         def texture(self):
             self.update_cache()
             return self._cached_texture
+        def mark_dirty(self):
+            self._dirty = True
 
 
     ###
@@ -114,22 +128,27 @@ init 10 python:
             self.button = button
 
         def __call__(self):
-            executed = self.button.execute()
-            is_jump  = 'jump'  in executed
-            is_snack = 'snack' in executed
+            navigation = self.button.jump()
 
-            if is_jump:
-                if 'before_jump' in executed:
-                    executed['before_jump']()
-                renpy.jump(executed['jump'])
+            if navigation.is_jump:
+                if navigation.before_jump:
+                    navigation.before_jump()
+                self.button.mark_dirty()
+                renpy.jump(navigation.jump)
 
             global screen_location_map_snack_text
             global screen_location_map_snack_pos
-            if is_snack:
-                if 'before_snack' in executed:
-                    executed['before_snack']()
-                screen_location_map_snack_text = executed['snack']
-                screen_location_map_snack_pos  = (self.button.pos['x'], self.button.pos['y'])
+            if navigation.is_snack:
+                if navigation.snack_on_pickup:
+                    navigation.snack_on_pickup()
+                self.button.mark_dirty()
+                screen_location_map_snack_text = navigation.snack
+                button_pos = self.button.pos()
+                button_size = self.button.size()
+                screen_location_map_snack_pos  = (
+                    button_pos[0],
+                    int(button_pos[1] - button_size[1] / 2)
+                )
 
 
 default screen_location_map_xadj = MyAdjustment(value=700)
@@ -184,11 +203,11 @@ screen screen_location_map(
 
                     $ _idle, _hover = get_cached_menu_item(static_action_button.texture())
                     imagebutton:
-                        pos (static_action_button.pos()['x'], static_action_button.pos()['y'])
+                        pos static_action_button.pos()
                         anchor (0.5, 0.5)
                         idle _idle
                         hover _hover
-                        action ExecuteNavigationDirective(static_action_button.jump())
+                        action ExecuteNavigationDirective(static_action_button)
                         hovered screen_location_map_tt.Action(static_action_button.tooltip())
                         unhovered screen_location_map_tt.Action('')
 
@@ -199,11 +218,11 @@ screen screen_location_map(
 
                     $ _idle, _hover = get_cached_menu_item(dynamic_action_button.texture())
                     imagebutton:
-                        pos (dynamic_action_button.pos()['x'], dynamic_action_button.pos()['y'])
+                        pos dynamic_action_button.pos()
                         anchor (0.5, 0.5)
                         idle _idle
                         hover _hover
-                        action ExecuteNavigationDirective(dynamic_action_button.jump())
+                        action ExecuteNavigationDirective(dynamic_action_button)
                         hovered screen_location_map_tt.Action(dynamic_action_button.tooltip())
                         unhovered screen_location_map_tt.Action('')
 
@@ -214,11 +233,11 @@ screen screen_location_map(
 
                     $ _idle, _hover = get_cached_menu_item(party_button.texture())
                     imagebutton:
-                        pos (party_button.pos()['x'], party_button.pos()['y'])
+                        pos party_button.pos()
                         anchor (0.5, 0.5)
                         idle _idle
                         hover _hover
-                        action ExecuteNavigationDirective(party_button.jump())
+                        action ExecuteNavigationDirective(party_button)
                         hovered screen_location_map_tt.Action(party_button.tooltip())
                         unhovered screen_location_map_tt.Action('')
 
@@ -227,7 +246,7 @@ screen screen_location_map(
                     if shadow.when_unvisited() or shadow.when_visited():
                         $ _idle, _hover = get_cached_shadow(shadow.texture())
                         imagebutton:
-                            pos (shadow.pos()['x'], shadow.pos()['y'])
+                            pos shadow.pos()
                             anchor (0.5, 0.5)
                             if shadow.when_unvisited():
                                 idle _idle
@@ -238,12 +257,13 @@ screen screen_location_map(
 
                 if screen_location_map_snack_text and not local_timer_active:
                     frame:
-                        pos (1200, 2000)
+                        pos screen_location_map_snack_pos
+                        anchor (0.5, 0.5)
                         padding (10, 5)
                         background '#00000066'
                         at screen_location_map_transform_snack
 
-                        text screen_location_map_snack_text:
+                        text _(screen_location_map_snack_text):
                             size 16
                             color "#FFFFFF"
                             align (0.5, 0.5)

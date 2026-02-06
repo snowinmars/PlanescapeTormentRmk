@@ -251,6 +251,7 @@ label dev:
 # do not modify the next line. It's one of the first line in the game)
 label end:
     $ achievement_mortuary_gate.grant()
+    show screen screen_narrat
     snowinmars '…'
     snowinmars '………'
     snowinmars 'Спасибо.'
