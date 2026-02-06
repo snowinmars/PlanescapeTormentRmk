@@ -2,9 +2,11 @@ import unittest
 
 from game.map.GraphicsMenuItemTests import (GraphicsMenuItemTests)
 from game.map.party.get_party import (get_party)
-from game.map.party.morte_menu_item import (MorteMenuItem)
-from game.map.party.morte1_menu_item import (Morte1MenuItem)
-from game.map.party.morte2_menu_item import (Morte2MenuItem)
+from game.map.party.items import (
+    Morte1MenuItem,
+    Morte2MenuItem,
+    MorteMenuItem
+)
 
 
 class GetPartyTests(GraphicsMenuItemTests):

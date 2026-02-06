@@ -101,10 +101,10 @@ init 10 python:
 
     ###
 
-    screen_location_map_popup_text = 'sdfg'
-    screen_location_map_popup_pos = (0, 0)
-    screen_location_map_popup_timeout = 2.0
-    screen_location_map_popup_timer_up = False
+    screen_location_map_snack_text = 'sdfg'
+    screen_location_map_snack_pos = (0, 0)
+    screen_location_map_snack_timeout = 2.0
+    screen_location_map_snack_timer_up = False
     # in rpy file like in engine menu files
     #   `action Jump(logic.foo())`
     # exetutes `logic.foo()` on each render
@@ -114,23 +114,22 @@ init 10 python:
             self.button = button
 
         def __call__(self):
-            global screen_location_map_popup_text
-            global screen_location_map_popup_pos
-
             executed = self.button.execute()
             is_jump  = 'jump'  in executed
-            is_popup = 'popup' in executed
+            is_snack = 'snack' in executed
 
             if is_jump:
                 if 'before_jump' in executed:
                     executed['before_jump']()
-                renpy.show_screen('screen_narrat')
                 renpy.jump(executed['jump'])
-            if is_popup:
-                if 'before_popup' in executed:
-                    executed['before_popup']()
-                screen_location_map_popup_text = executed['popup']
-                screen_location_map_popup_pos  = (self.button.pos['x'], self.button.pos['y'])
+
+            global screen_location_map_snack_text
+            global screen_location_map_snack_pos
+            if is_snack:
+                if 'before_snack' in executed:
+                    executed['before_snack']()
+                screen_location_map_snack_text = executed['snack']
+                screen_location_map_snack_pos  = (self.button.pos['x'], self.button.pos['y'])
 
 
 default screen_location_map_xadj = MyAdjustment(value=700)
@@ -153,13 +152,6 @@ screen screen_location_map(
     default screen_location_map_cached_party           = [CachedActionButton(b) for b in get_party()]
     default screen_location_map_cached_shadows         = [CachedShadowButton(b) for b in shadows]
 
-
-
-
-    # if screen_location_map_popup_text and not screen_location_map_popup_timer_up:
-    #     $ screen_location_map_popup_timer_up = True
-    #     $ renpy.notify(screen_location_map_popup_timer_up)
-    #     timer 2.0 action SetVariable('screen_location_map_popup_timer_up', False)
 
     frame:
         background None
@@ -244,20 +236,20 @@ screen screen_location_map(
                                 # idle Transform(shadow.texture(), matrixcolor=colorized_opacity) # for development usage
 
 
-                if screen_location_map_popup_text and not local_timer_active:
+                if screen_location_map_snack_text and not local_timer_active:
                     frame:
                         pos (1200, 2000)
                         padding (10, 5)
                         background '#00000066'
-                        at screen_location_map_transform_popup
+                        at screen_location_map_transform_snack
 
-                        text screen_location_map_popup_text:
+                        text screen_location_map_snack_text:
                             size 16
                             color "#FFFFFF"
                             align (0.5, 0.5)
 
                     timer 2.0 action [
-                        SetVariable('screen_location_map_popup_text', ''),
+                        SetVariable('screen_location_map_snack_text', ''),
                         SetScreenVariable('local_timer_active', False)
                     ] id 'local_timer_active'
 
@@ -289,6 +281,6 @@ style screen_location_map_style_mouse_text:
     color color_yellow
     font font_notosans
 
-transform screen_location_map_transform_popup:
+transform screen_location_map_transform_snack:
     alpha 0.0
     easein 0.1 alpha 1.0

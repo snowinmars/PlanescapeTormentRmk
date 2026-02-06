@@ -38,7 +38,7 @@ def build_all_inventory_items(inventory_items_manager):
             grid_image='images/icons/copearc.png',
             used_by='inventoryitem_has_copper_earring_closed_used_by',
             properties='inventoryitem_has_copper_earring_closed_properties',
-            jump_on_use_to='copearc_speak'
+            jump_on_use_to='speak_copearc'
         )) \
         .register(InventoryItem(
             settings_id='has_copper_earring_opened',
@@ -75,7 +75,7 @@ def build_all_inventory_items(inventory_items_manager):
             grid_image='images/icons/n1201.png',
             used_by='inventoryitem_has_1201_note_used_by',
             properties='inventoryitem_has_1201_note_properties',
-            jump_on_use_to='n1201_speak'
+            jump_on_use_to='speak_n1201'
         )) \
         .register(InventoryItem(
             settings_id='has_logpage',
@@ -141,14 +141,14 @@ def build_all_inventory_items(inventory_items_manager):
             properties='inventoryitem_has_mortuary_key_properties'
         )) \
         .register(InventoryItem(
-            settings_id='has_dhall_feather',
+            settings_id='has_quill',
             orig_id='quill.itm',
-            name='inventoryitem_has_dhall_feather_name',
-            description='inventoryitem_has_dhall_feather_description',
+            name='inventoryitem_has_quill_name',
+            description='inventoryitem_has_quill_description',
             grid_image='images/icons/quill.png',
-            used_by='inventoryitem_has_dhall_feather_used_by',
-            properties='inventoryitem_has_dhall_feather_properties',
-            jump_on_use_to='start_dhall_feather'
+            used_by='inventoryitem_has_quill_used_by',
+            properties='inventoryitem_has_quill_properties',
+            jump_on_use_to='speak_quill'
         )) \
         .register(InventoryItem(
             settings_id='has_finger_bone',

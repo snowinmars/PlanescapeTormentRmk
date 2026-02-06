@@ -241,19 +241,19 @@
     new ''
 
     # game/engine_data/inventory_items/all_inventory.rpy:72
-    old 'inventoryitem_has_dhall_feather_name'
+    old 'inventoryitem_has_quill_name'
     new 'Dhall\'s quill pen'
 
     # game/engine_data/inventory_items/all_inventory.rpy:73
-    old 'inventoryitem_has_dhall_feather_description'
+    old 'inventoryitem_has_quill_description'
     new 'Examination of the quill pen reveals that the feather is from a Vrock, one of the many races of tanar\'ri that fill the Abyss. The Vrock resemble huge vultures, and they are often used as scouts for the tanar\'ri forces in the Blood War.\nDhall used this quill pen all of his life, and as such, it carries some of his experiences and memories inside it. By snapping it, you will absorb a portion of his knowledge, giving you a permanent bonus to your Lore skill.'
 
     # game/engine_data/inventory_items/all_inventory.rpy:74
-    old 'inventoryitem_has_dhall_feather_used_by'
+    old 'inventoryitem_has_quill_used_by'
     new 'Usable only by Mages'
 
     # game/engine_data/inventory_items/all_inventory.rpy:75
-    old 'inventoryitem_has_dhall_feather_properties'
+    old 'inventoryitem_has_quill_properties'
     new 'Special: Permanent +1 to Lore Skill'
 
     # game/engine_data/inventory_items/all_inventory.rpy:77

@@ -74,10 +74,10 @@ label never_inventory:
     $ never = _('inventoryitem_has_mortuary_key_used_by')
     $ never = _('inventoryitem_has_mortuary_key_properties')
 
-    $ never = _('inventoryitem_has_dhall_feather_name')
-    $ never = _('inventoryitem_has_dhall_feather_description')
-    $ never = _('inventoryitem_has_dhall_feather_used_by')
-    $ never = _('inventoryitem_has_dhall_feather_properties')
+    $ never = _('inventoryitem_has_quill_name')
+    $ never = _('inventoryitem_has_quill_description')
+    $ never = _('inventoryitem_has_quill_used_by')
+    $ never = _('inventoryitem_has_quill_properties')
 
     $ never = _('inventoryitem_has_finger_bone_name')
     $ never = _('inventoryitem_has_finger_bone_description')

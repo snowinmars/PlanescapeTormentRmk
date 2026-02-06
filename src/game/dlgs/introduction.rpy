@@ -41,4 +41,4 @@ label intro:
 
     'intro{#intro}'
 
-    jump morte1_speak
+    jump speak_morte1

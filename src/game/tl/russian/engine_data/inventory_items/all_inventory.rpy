@@ -241,19 +241,19 @@
     new ''
 
     # game/engine_data/inventory_items/all_inventory.rpy:72
-    old 'inventoryitem_has_dhall_feather_name'
+    old 'inventoryitem_has_quill_name'
     new 'Перо Дхолла'
 
     # game/engine_data/inventory_items/all_inventory.rpy:73
-    old 'inventoryitem_has_dhall_feather_description'
+    old 'inventoryitem_has_quill_description'
     new 'Это перо для письма, похоже, принадлежало какой-то огромной птице. Оно слегка отдает пеплом. Изучение пера показывает, что оно принадлежало вроку, одной из многих рас танарри, которыми наполнена Бездна. Вроки напоминают огромных стервятников; они часто использовались как разведчики войск танарри в Кровавой войне.\n\nДхолл пользовался этим пером всю свою жизнь, и, таким образом, оно несет в себе его опыт и воспоминания. Разломив его, ты впитаешь часть его знаний, что даст тебе постоянную прибавку к Осведомленности.'
 
     # game/engine_data/inventory_items/all_inventory.rpy:74
-    old 'inventoryitem_has_dhall_feather_used_by'
+    old 'inventoryitem_has_quill_used_by'
     new 'Используется только магами'
 
     # game/engine_data/inventory_items/all_inventory.rpy:75
-    old 'inventoryitem_has_dhall_feather_properties'
+    old 'inventoryitem_has_quill_properties'
     new 'Особенность: постоянно +1 к Осведомленности'
 
     # game/engine_data/inventory_items/all_inventory.rpy:77

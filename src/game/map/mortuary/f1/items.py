@@ -1,4 +1,4 @@
-from game.map.NavigationDirective import (NavigationDirective)
+from game.map.Navigation import (NavigationJump)
 from game.map.map_items import (
     ShadowItem,
     MenuItem
@@ -17,10 +17,7 @@ class FromMortuaryF1R1ToMortuaryF2R1(MenuItem):
     def texture(self):
         return 'bg/mortuary/f1/door_f1r1_f2r1_opened.webp'
     def jump(self):
-        return NavigationDirective(
-            'map_dispatcher',
-            lambda: self.state_manager.locations_manager.set_location('mortuary_f2r1')
-        )
+        return NavigationJump('map_mortuary_f2r1')
 
 
 class FromMortuaryF1R1ToMortuaryF1R2(MenuItem):
@@ -35,10 +32,7 @@ class FromMortuaryF1R1ToMortuaryF1R2(MenuItem):
     def texture(self):
         return 'bg/mortuary/f1/door_f1r1_f1r2_opened.webp'
     def jump(self):
-        return NavigationDirective(
-            'map_dispatcher',
-            lambda: self.state_manager.locations_manager.set_location('mortuary_f1r2')
-        )
+        return NavigationJump('map_mortuary_f1r2')
 
 
 class FromMortuaryF1R1ToMortuaryF1R4(MenuItem):
@@ -53,10 +47,7 @@ class FromMortuaryF1R1ToMortuaryF1R4(MenuItem):
     def texture(self):
         return 'bg/mortuary/f1/door_f1r4_f1r1_opened.webp'
     def jump(self):
-        return NavigationDirective(
-            'map_dispatcher',
-            lambda: self.state_manager.locations_manager.set_location('mortuary_f1r4')
-        )
+        return NavigationJump('map_mortuary_f1r4')
 
 
 class FromMortuaryF1R1ToMortuaryF1Rc(MenuItem):
@@ -71,10 +62,7 @@ class FromMortuaryF1R1ToMortuaryF1Rc(MenuItem):
     def texture(self):
         return 'bg/mortuary/f1/door_f1r1_f1rc_opened.webp'
     def jump(self):
-        return NavigationDirective(
-            'map_dispatcher',
-            lambda: self.state_manager.locations_manager.set_location('mortuary_f1rc')
-        )
+        return NavigationJump('map_mortuary_f1rc')
 
 
 class FromMortuaryF1R1ToGameEnd(MenuItem):
@@ -88,9 +76,7 @@ class FromMortuaryF1R1ToGameEnd(MenuItem):
     def texture(self):
         return 'bg/mortuary/f1/door_f1r1_sigil_opened.webp'
     def jump(self):
-        return NavigationDirective(
-            'end'
-        )
+        return NavigationJump('end')
 
 
 class MortuaryF1R1Shadow(ShadowItem):
@@ -114,9 +100,7 @@ class InMortuaryF1R1Soego(MenuItem):
             return 'InMortuaryF1R1Soego_tooltip1' # Поговорить с Соего
         return 'InMortuaryF1R1Soego_tooltip2' # Подойти к человеку
     def jump(self):
-        return NavigationDirective(
-            'soego_speak'
-        )
+        return NavigationJump('speak_soego')
 
 
 ###
@@ -134,10 +118,7 @@ class FromMortuaryF1R2ToMortuaryF1Rc(MenuItem):
     def texture(self):
         return 'bg/mortuary/f1/door_f1r2_f1rc_opened.webp'
     def jump(self):
-        return NavigationDirective(
-            'map_dispatcher',
-            lambda: self.state_manager.locations_manager.set_location('mortuary_f1rc')
-        )
+        return NavigationJump('map_mortuary_f1rc')
 
 
 class FromMortuaryF1R2ToMortuaryF1R3(MenuItem):
@@ -152,10 +133,7 @@ class FromMortuaryF1R2ToMortuaryF1R3(MenuItem):
     def texture(self):
         return 'bg/mortuary/f1/door_f1r2_f1r3_opened.webp'
     def jump(self):
-        return NavigationDirective(
-            'map_dispatcher',
-            lambda: self.state_manager.locations_manager.set_location('mortuary_f1r3')
-        )
+        return NavigationJump('map_mortuary_f1r3')
 
 
 class FromMortuaryF1R2ToMortuaryF1R1(MenuItem):
@@ -170,10 +148,7 @@ class FromMortuaryF1R2ToMortuaryF1R1(MenuItem):
     def texture(self):
         return 'bg/mortuary/f1/door_f1r1_f1r2_opened.webp'
     def jump(self):
-        return NavigationDirective(
-            'map_dispatcher',
-            lambda: self.state_manager.locations_manager.set_location('mortuary_f1r1')
-        )
+        return NavigationJump('map_mortuary_f1r1')
 
 
 class MortuaryF1R2Shadow(ShadowItem):
@@ -197,9 +172,7 @@ class InMortuaryF1R2Deionarra(MenuItem):
     def texture(self):
         return 'animated_deionarra_stand_s'
     def jump(self):
-        return NavigationDirective(
-            'deionarra_speak'
-        )
+        return NavigationJump('speak_deionarra')
 
 
 ###
@@ -217,10 +190,7 @@ class FromMortuaryF1R3ToMortuaryF1R2(MenuItem):
     def texture(self):
         return 'bg/mortuary/f1/door_f1r2_f1r3_opened.webp'
     def jump(self):
-        return NavigationDirective(
-            'map_dispatcher',
-            lambda: self.state_manager.locations_manager.set_location('mortuary_f1r2')
-        )
+        return NavigationJump('map_mortuary_f1r2')
 
 
 class FromMortuaryF1R3ToMortuaryF1R4(MenuItem):
@@ -235,10 +205,7 @@ class FromMortuaryF1R3ToMortuaryF1R4(MenuItem):
     def texture(self):
         return 'bg/mortuary/f1/door_f1r3_f1r4_opened.webp'
     def jump(self):
-        return NavigationDirective(
-            'map_dispatcher',
-            lambda: self.state_manager.locations_manager.set_location('mortuary_f1r4')
-        )
+        return NavigationJump('map_mortuary_f1r4')
 
 
 class FromMortuaryF1R3ToMortuaryF1Rc(MenuItem):
@@ -253,10 +220,7 @@ class FromMortuaryF1R3ToMortuaryF1Rc(MenuItem):
     def texture(self):
         return 'bg/mortuary/f1/door_f1r3_f1rc_opened.webp'
     def jump(self):
-        return NavigationDirective(
-            'map_dispatcher',
-            lambda: self.state_manager.locations_manager.set_location('mortuary_f1rc')
-        )
+        return NavigationJump('map_mortuary_f1rc')
 
 
 class MortuaryF1R3Shadow(ShadowItem):
@@ -280,9 +244,7 @@ class InMortuaryF1R3Zf114(MenuItem):
     def texture(self):
         return 'animated_zf114_stand_s'
     def jump(self):
-        return NavigationDirective(
-            'zf114_speak'
-        )
+        return NavigationJump('speak_zf114')
 
 
 class InMortuaryF1R3Zm1041(MenuItem):
@@ -291,7 +253,6 @@ class InMortuaryF1R3Zm1041(MenuItem):
     def when(self):
         return not self.state_manager.world_manager.get_dead_zm1041() and \
                self.state_manager.locations_manager.get_location() == 'mortuary_f1r3'
-
     def tooltip(self):
         if self.state_manager.world_manager.get_talked_to_zm1041_times() > 0:
             return 'InMortuaryF1R3Zm1041_tooltip1' # Поговорить с трупом «1041»
@@ -299,9 +260,7 @@ class InMortuaryF1R3Zm1041(MenuItem):
     def texture(self):
         return 'animated_zm1041_stand_s'
     def jump(self):
-        return NavigationDirective(
-            'zm1041_speak'
-        )
+        return NavigationJump('speak_zm1041')
 
 
 class InMortuaryF1R3Xach(MenuItem):
@@ -319,9 +278,7 @@ class InMortuaryF1R3Xach(MenuItem):
     def texture(self):
         return 'animated_xach_stand_s'
     def jump(self):
-        return NavigationDirective(
-            'xach_speak'
-        )
+        return NavigationJump('speak_xach')
 
 
 ###
@@ -339,10 +296,7 @@ class FromMortuaryF1R4ToMortuaryF1R3(MenuItem):
     def texture(self):
         return 'bg/mortuary/f1/door_f1r3_f1r4_opened.webp'
     def jump(self):
-        return NavigationDirective(
-            'map_dispatcher',
-            lambda: self.state_manager.locations_manager.set_location('mortuary_f1r3')
-        )
+        return NavigationJump('map_mortuary_f1r3')
 
 
 class FromMortuaryF1R4ToMortuaryF1R1(MenuItem):
@@ -357,10 +311,7 @@ class FromMortuaryF1R4ToMortuaryF1R1(MenuItem):
     def texture(self):
         return 'bg/mortuary/f1/door_f1r4_f1r1_opened.webp'
     def jump(self):
-        return NavigationDirective(
-            'map_dispatcher',
-            lambda: self.state_manager.locations_manager.set_location('mortuary_f1r1')
-        )
+        return NavigationJump('map_mortuary_f1r1')
 
 
 class FromMortuaryF1R4ToMortuaryF1Rc(MenuItem):
@@ -375,10 +326,7 @@ class FromMortuaryF1R4ToMortuaryF1Rc(MenuItem):
     def texture(self):
         return 'bg/mortuary/f1/door_f1r4_f1rc_opened.webp'
     def jump(self):
-        return NavigationDirective(
-            'map_dispatcher',
-            lambda: self.state_manager.locations_manager.set_location('mortuary_f1rc')
-        )
+        return NavigationJump('map_mortuary_f1rc')
 
 
 class MortuaryF1R4Shadow(ShadowItem):
@@ -401,10 +349,7 @@ class FromMortuaryF1R4ToMortuaryF2R7(MenuItem):
     def texture(self):
         return 'bg/mortuary/f1/door_f1r4_f2r7_opened.webp'
     def jump(self):
-        return NavigationDirective(
-            'map_dispatcher',
-            lambda: self.state_manager.locations_manager.set_location('mortuary_f2r7')
-        )
+        return NavigationJump('map_mortuary_f2r7')
 
 
 class InMortuaryF1R4Zm732(MenuItem):
@@ -420,9 +365,7 @@ class InMortuaryF1R4Zm732(MenuItem):
     def texture(self):
         return 'animated_zm732_stand_s'
     def jump(self):
-        return NavigationDirective(
-            'zm732_speak'
-        )
+        return NavigationJump('speak_zm732')
 
 
 ###
@@ -440,10 +383,7 @@ class FromMortuaryF1RcToMortuaryF1R1(MenuItem):
     def texture(self):
         return 'bg/mortuary/f1/door_f1r1_f1rc_opened.webp'
     def jump(self):
-        return NavigationDirective(
-            'map_dispatcher',
-            lambda: self.state_manager.locations_manager.set_location('mortuary_f1r1')
-        )
+        return NavigationJump('map_mortuary_f1r1')
 
 
 class FromMortuaryF1RcToMortuaryF1R2(MenuItem):
@@ -458,10 +398,7 @@ class FromMortuaryF1RcToMortuaryF1R2(MenuItem):
     def texture(self):
         return 'bg/mortuary/f1/door_f1r2_f1rc_opened.webp'
     def jump(self):
-        return NavigationDirective(
-            'map_dispatcher',
-            lambda: self.state_manager.locations_manager.set_location('mortuary_f1r2')
-        )
+        return NavigationJump('map_mortuary_f1r2')
 
 
 class FromMortuaryF1RcToMortuaryF1R3(MenuItem):
@@ -476,10 +413,7 @@ class FromMortuaryF1RcToMortuaryF1R3(MenuItem):
     def texture(self):
         return 'bg/mortuary/f1/door_f1r3_f1rc_opened.webp'
     def jump(self):
-        return NavigationDirective(
-            'map_dispatcher',
-            lambda: self.state_manager.locations_manager.set_location('mortuary_f1r3')
-        )
+        return NavigationJump('map_mortuary_f1r3')
 
 
 class FromMortuaryF1RcToMortuaryF1R4(MenuItem):
@@ -494,10 +428,7 @@ class FromMortuaryF1RcToMortuaryF1R4(MenuItem):
     def texture(self):
         return 'bg/mortuary/f1/door_f1r4_f1rc_opened.webp'
     def jump(self):
-        return NavigationDirective(
-            'map_dispatcher',
-            lambda: self.state_manager.locations_manager.set_location('mortuary_f1r4')
-        )
+        return NavigationJump('map_mortuary_f1r4')
 
 
 class MortuaryF1RcShadow(ShadowItem):
@@ -519,6 +450,4 @@ class InMortuaryF1RcGiantsk(MenuItem):
     def texture(self):
         return 'animated_giantsk_stand_s'
     def jump(self):
-        return NavigationDirective(
-            'giantsk_speak'
-        )
+        return NavigationJump('speak_giantsk')

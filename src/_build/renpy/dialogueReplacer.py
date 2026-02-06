@@ -154,7 +154,7 @@ class DialogueReplacer:
         self.inventory_item('Logpage',  'logpage')
         self.inventory_item('N1201',    '1201_note')
         self.inventory_item('Needle',   'needle')
-        self.inventory_item('ouill',    'dhall_feather')
+        self.inventory_item('Quill',    'quill')
         self.inventory_item('Prybar',   'prybar')
         self.inventory_item('Rags',     'rags')
         self.inventory_item('Scalpel',  'scalpel')

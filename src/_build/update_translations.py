@@ -8,7 +8,7 @@ cwd = os.getcwd()
 
 IGNORED_FILES = [
     'introduction.rpy',
-    'dhall_feather.rpy',
+    'quill.rpy',
     'ddeathon.rpy'
 ]
 
