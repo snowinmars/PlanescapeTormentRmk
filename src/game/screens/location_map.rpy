@@ -28,7 +28,7 @@ init 10 python:
             if current_values != last_values:
                 last_values = current_values
                 text = Text(
-                    f'{current_values[0]}, {current_values[1]} x{current_values[2]}',
+                    f'{current_values[0]}, {current_values[1]} x{current_values[2]}\n{xadj.value} , {yadj.value} x{zadj.value}',
                     style='screen_location_map_style_mouse_text'
                 )
             return text, 0.5  # Обновляем раз в 100 мс
@@ -99,6 +99,40 @@ init 10 python:
             return self._cached_texture
 
 
+    ###
+
+    screen_location_map_popup_text = 'sdfg'
+    screen_location_map_popup_pos = (0, 0)
+    screen_location_map_popup_timeout = 2.0
+    screen_location_map_popup_timer_up = False
+    # in rpy file like in engine menu files
+    #   `action Jump(logic.foo())`
+    # exetutes `logic.foo()` on each render
+    # This wrapper prevents it
+    class ExecuteNavigationDirective(Action):
+        def __init__(self, button):
+            self.button = button
+
+        def __call__(self):
+            global screen_location_map_popup_text
+            global screen_location_map_popup_pos
+
+            executed = self.button.execute()
+            is_jump  = 'jump'  in executed
+            is_popup = 'popup' in executed
+
+            if is_jump:
+                if 'before_jump' in executed:
+                    executed['before_jump']()
+                renpy.show_screen('screen_narrat')
+                renpy.jump(executed['jump'])
+            if is_popup:
+                if 'before_popup' in executed:
+                    executed['before_popup']()
+                screen_location_map_popup_text = executed['popup']
+                screen_location_map_popup_pos  = (self.button.pos['x'], self.button.pos['y'])
+
+
 default screen_location_map_xadj = MyAdjustment(value=700)
 default screen_location_map_yadj = MyAdjustment(value=2000)
 default screen_location_map_zadj = MyAdjustment(value=0)
@@ -111,12 +145,21 @@ screen screen_location_map(
     get_party,           # npc
     shadows          # images to hide rooms other, than player currently is
 ):
+    default local_timer_active = False
     default screen_location_map_tt                     = Tooltip('')
     default screen_location_map_bg_size                = renpy.render(renpy.displayable(background), 0, 0, 0, 0).get_size()
     default screen_location_map_cached_static_actions  = [CachedActionButton(b) for b in static_actions]
     default screen_location_map_cached_dynamic_actions = [CachedActionButton(b) for b in dynamic_actions]
     default screen_location_map_cached_party           = [CachedActionButton(b) for b in get_party()]
     default screen_location_map_cached_shadows         = [CachedShadowButton(b) for b in shadows]
+
+
+
+
+    # if screen_location_map_popup_text and not screen_location_map_popup_timer_up:
+    #     $ screen_location_map_popup_timer_up = True
+    #     $ renpy.notify(screen_location_map_popup_timer_up)
+    #     timer 2.0 action SetVariable('screen_location_map_popup_timer_up', False)
 
     frame:
         background None
@@ -201,6 +244,24 @@ screen screen_location_map(
                                 # idle Transform(shadow.texture(), matrixcolor=colorized_opacity) # for development usage
 
 
+                if screen_location_map_popup_text and not local_timer_active:
+                    frame:
+                        pos (1200, 2000)
+                        padding (10, 5)
+                        background '#00000066'
+                        at screen_location_map_transform_popup
+
+                        text screen_location_map_popup_text:
+                            size 16
+                            color "#FFFFFF"
+                            align (0.5, 0.5)
+
+                    timer 2.0 action [
+                        SetVariable('screen_location_map_popup_text', ''),
+                        SetScreenVariable('local_timer_active', False)
+                    ] id 'local_timer_active'
+
+
     frame:
         xysize (600, 50)
         align (0.5, 0.0)
@@ -227,3 +288,7 @@ style screen_location_map_style_mouse_text:
     size 16
     color color_yellow
     font font_notosans
+
+transform screen_location_map_transform_popup:
+    alpha 0.0
+    easein 0.1 alpha 1.0

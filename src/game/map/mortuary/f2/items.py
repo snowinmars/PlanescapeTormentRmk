@@ -21,14 +21,14 @@ class FromMortuaryF2R1ToMortuaryF2R2(MenuItem):
         return 'bg/mortuary/f2/door_f2r1_f2r2_closed.webp'
     def jump(self):
         if self.state_manager.locations_manager.is_visited('mortuary_f2r2'):
-           return NavigationDirective(
-                'map_dispatcher',
-                lambda: self.state_manager.locations_manager.set_location('mortuary_f2r2')
-            )
-        return NavigationDirective(
-            'morte2_speak',
-            lambda: self.state_manager.locations_manager.set_location('mortuary_f2r2')
-        )
+            return {
+                'before_jump': lambda: self.state_manager.locations_manager.set_location('mortuary_f2r2'),
+                'jump'       : 'map_dispatcher'
+            }
+        return {
+            'before_jump': lambda: self.state_manager.locations_manager.set_location('mortuary_f2r2'),
+            'jump'       : 'morte2_speak'
+        }
 
 
 class FromMortuaryF2R1ToMortuaryF2R8(MenuItem):
@@ -45,16 +45,17 @@ class FromMortuaryF2R1ToMortuaryF2R8(MenuItem):
         if self.state_manager.locations_manager.is_visited('mortuary_f2r8'):
             return 'bg/mortuary/f2/door_f2r8_f2r1_opened.webp'
         return 'bg/mortuary/f2/door_f2r8_f2r1_closed.webp'
-    def jump(self):
+    def execute(self):
         if self.state_manager.locations_manager.is_visited('mortuary_f2r8') or \
            self.state_manager.inventory_items_manager.is_own_item('has_mortuary_key'):
-            return NavigationDirective(
-                'map_dispatcher',
-                lambda: self.state_manager.locations_manager.set_location('mortuary_f2r8')
-            )
-        return NavigationDirective(
-            'from_mortuary_f2r1_to_mortuary_f2r8_closed'
-        )
+            return {
+                'before_jump': lambda: self.state_manager.locations_manager.set_location('mortuary_f2r8'),
+                'jump'       : 'map_dispatcher'
+            }
+        return {
+            'before_popup': lambda: None,
+            'popup'       : 'FromMortuaryF2R1ToMortuaryF2R8_popup1'
+        }
 
 
 class FromMortuaryF2R1ToMortuaryF3R1(MenuItem):
@@ -77,13 +78,14 @@ class FromMortuaryF2R1ToMortuaryF3R1(MenuItem):
         if self.state_manager.inventory_items_manager.is_own_item('has_mortuary_key') or \
            self.state_manager.locations_manager.is_visited('mortuary_f3r1') or \
            self.state_manager.locations_manager.is_visited('mortuary_f3r3'):
-            return NavigationDirective(
-                'map_dispatcher',
-                lambda: self.state_manager.locations_manager.set_location('mortuary_f3r1')
-            )
-        return NavigationDirective(
-            'from_mortuary_f2r1_to_mortuary_f3r1_closed'
-        )
+            return {
+                'before_jump': lambda: self.state_manager.locations_manager.set_location('mortuary_f3r1'),
+                'jump'       : 'map_dispatcher'
+            }
+        return {
+            'before_popup': lambda: None,
+            'popup'       : 'FromMortuaryF2R1ToMortuaryF3R1_popup1'
+        }
 
 
 class FromMortuaryF2R1ToMortuaryF1R1(MenuItem):
@@ -106,13 +108,14 @@ class FromMortuaryF2R1ToMortuaryF1R1(MenuItem):
         if self.state_manager.inventory_items_manager.is_own_item('has_mortuary_key') or \
            self.state_manager.locations_manager.is_visited('mortuary_f1r1') or \
            self.state_manager.locations_manager.is_visited('mortuary_f1r4'):
-            return NavigationDirective(
-                'map_dispatcher',
-                lambda: self.state_manager.locations_manager.set_location('mortuary_f1r1')
-            )
-        return NavigationDirective(
-            'from_mortuary_f2r1_to_mortuary_f2r1_closed'
-        )
+            return {
+                'before_jump': lambda: self.state_manager.locations_manager.set_location('mortuary_f1r1'),
+                'jump'       : 'map_dispatcher'
+            }
+        return {
+            'before_popup': lambda: None,
+            'popup'       : 'FromMortuaryF2R1ToMortuaryF1R1_popup1'
+        }
 
 
 class MortuaryF2R1Shadow(ShadowItem):
@@ -134,10 +137,11 @@ class InMortuaryF2R1PickScalpel(MenuItem):
     def texture(self):
         return 'bg/mortuary/f2/loot_f2r1_scalpel.webp'
     def jump(self):
-        return NavigationDirective(
-            'mortuary_f2r1_loot_scalpel',
-            lambda: self.state_manager.world_manager.set_looted_InMortuaryF2R1PickScalpel(True)
-        )
+        return {
+            'before_popup': self.state_manager.world_manager.set_looted_InMortuaryF2R1PickScalpel(True),
+            'popup'       : 'InMortuaryF2R1PickScalpel_popup1',
+            'loop_texture': 'InMortuaryF2R1PickScalpel_loot_texture'
+        }
 
 
 class InMortuaryF2R1Zm569(MenuItem):

@@ -16,9 +16,3 @@ translate english from_mortuary_f2r1_to_mortuary_f2r1_closed_72003171:
     # nr 'За запертой решёткой видна лестница вниз. Тебе понадобится ключ.'
     nr 'Behind the locked bars you can see a staircase leading down. You\'ll need a key.'
 
-# game/engine_data/menus/mortuary/f2r1/loot.rpy:24
-translate english mortuary_f2r1_loot_scalpel_1c3a45fc:
-
-    # nr 'Ты подбираешь скальпель с одной из полок.'
-    nr 'You pick up a scalpel from one of the shelves.'
-

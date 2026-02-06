@@ -19,11 +19,6 @@ label from_mortuary_f2r1_to_mortuary_f2r1_closed:
     jump map_dispatcher
 
 
-label mortuary_f2r1_loot_scalpel:
-    $ mortuaryF2LootLogic.scalpel()
-    nr "Ты подбираешь скальпель с одной из полок."
-    jump map_dispatcher
-
 label from_mortuary_f2r7_to_mortuary_f1r4_closed:
     nr "За запертой решёткой видна лестница вниз. Тебе понадобится ключ."
     jump map_dispatcher
