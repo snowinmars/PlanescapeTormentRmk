@@ -1,8 +1,8 @@
 from game.map.Navigation import (NavigationJump)
-from game.map.map_items import (NpcMenuItem)
+from game.map.map_items import (PartyNpcItem)
 
 
-class Morte1MenuItem(NpcMenuItem):
+class Morte1MenuItem(PartyNpcItem):
     def __init__(self, state_manager, x, y):
         super().__init__(state_manager, x, y, 'morte_character_name')
     def when(self):
@@ -18,7 +18,7 @@ class Morte1MenuItem(NpcMenuItem):
         return NavigationJump('speak_morte1')
 
 
-class Morte2MenuItem(NpcMenuItem):
+class Morte2MenuItem(PartyNpcItem):
     def __init__(self, state_manager, x, y):
         super().__init__(state_manager, x, y, 'morte_character_name')
     def when(self):
@@ -34,7 +34,7 @@ class Morte2MenuItem(NpcMenuItem):
         return NavigationJump('speak_morte2')
 
 
-class MorteMenuItem(NpcMenuItem):
+class MorteMenuItem(PartyNpcItem):
     def __init__(self, state_manager, x, y):
         super().__init__(state_manager, x, y, 'morte_character_name')
     def when(self):

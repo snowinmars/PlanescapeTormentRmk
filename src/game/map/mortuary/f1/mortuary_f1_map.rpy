@@ -44,6 +44,7 @@ init 10 python:
         return get_party(runtime.global_state_manager, mortuaryF1LootLogic.get_where_party_stands())
 
 
+    screen_location_map_mortuary_f1_containers = []
     screen_location_map_mortuary_f1_static_actions = [
         FromMortuaryF1R1ToMortuaryF2R1(runtime.global_state_manager, 1185, 2015),
         FromMortuaryF1R1ToMortuaryF1R2(runtime.global_state_manager,  585, 1717),
@@ -82,7 +83,6 @@ init 10 python:
 
         InMortuaryF1RcGiantsk  (runtime.global_state_manager, 2200, 1250)
     ]
-    screen_location_map_mortuary_f1_get_party = screen_location_map_mortuary_f1_get_party
     screen_location_map_mortuary_f1_shadows = [
         MortuaryF1R1Shadow(runtime.global_state_manager, 1200, 2450),
         MortuaryF1R2Shadow(runtime.global_state_manager, 1100,  900),
@@ -101,5 +101,6 @@ label mortuary_f1_map:
         static_actions=screen_location_map_mortuary_f1_static_actions,
         dynamic_actions=screen_location_map_mortuary_f1_dynamic_actions,
         get_party=screen_location_map_mortuary_f1_get_party,
-        shadows=screen_location_map_mortuary_f1_shadows
+        shadows=screen_location_map_mortuary_f1_shadows,
+        containers=screen_location_map_mortuary_f1_containers
     )

@@ -111,13 +111,67 @@ init 10 python:
             return self._cached_texture
         def mark_dirty(self):
             self._dirty = True
+    class CachedContainerButton:
+        def __init__(self, button):
+            self.button                 = button
+            self._cached_pos     = None
+            self._cached_size    = None
+            self._cached_when    = None
+            self._cached_texture = None
+            self._cached_tooltip = None
+            self._cached_jump    = None
+            self._dirty                 = True
+        def update_cache(self):
+            if self._dirty:
+                self._cached_pos     = self.button.pos()
+                self._cached_size    = self.button.size()
+                self._cached_items   = self.button.items()
+                self._cached_empty   = self.button.empty()
+                self._cached_when    = self.button.when()
+                self._cached_texture = self.button.texture()
+                self._cached_tooltip = self.button.tooltip()
+                self._cached_jump    = self.button.jump()
+                self._dirty                 = False
+        def pos(self):
+            self.update_cache()
+            return self._cached_pos
+        def size(self):
+            self.update_cache()
+            return self._cached_size
+        def items(self):
+            self.update_cache()
+            return self._cached_items
+        def empty(self):
+            self.update_cache()
+            return self._cached_empty
+        def add_item(self, item_id, pos=-1):
+            self.button.add_item(item_id, pos)
+        def remove_item(self, item_id):
+            self.button.remove_item(item_id)
+        def clear(self):
+            self.button.clear()
+        def when(self):
+            self.update_cache()
+            return self._cached_when
+        def texture(self):
+            self.update_cache()
+            return self._cached_texture
+        def tooltip(self):
+            self.update_cache()
+            return self._cached_tooltip
+        def jump(self):
+            self.update_cache()
+            return self._cached_jump
+        def mark_dirty(self):
+            self._dirty = True
+
 
 
     ###
 
-    screen_location_map_snack_text = 'sdfg'
+    screen_location_map_snack_text = ''
     screen_location_map_snack_pos = (0, 0)
-    screen_location_map_snack_timeout = 2.0
+    screen_location_map_snack_timeout = 5.0
     screen_location_map_snack_timer_up = False
     # in rpy file like in engine menu files
     #   `action Jump(logic.foo())`
@@ -139,8 +193,8 @@ init 10 python:
             global screen_location_map_snack_text
             global screen_location_map_snack_pos
             if navigation.is_snack:
-                if navigation.snack_on_pickup:
-                    navigation.snack_on_pickup()
+                if navigation.on_pickup:
+                    navigation.on_pickup()
                 self.button.mark_dirty()
                 screen_location_map_snack_text = navigation.snack
                 button_pos = self.button.pos()
@@ -149,6 +203,10 @@ init 10 python:
                     button_pos[0],
                     int(button_pos[1] - button_size[1] / 2)
                 )
+
+            if navigation.is_loot:
+                self.button.mark_dirty()
+                renpy.show_screen('screen_loot', self.button) # TODO [snow]: is it ok to mutate so brutal? The loot screen affects location screen. I hate mutations so much...
 
 
 default screen_location_map_xadj = MyAdjustment(value=700)
@@ -160,16 +218,18 @@ screen screen_location_map(
     background,
     static_actions,  # only one possible action: door (go through), chest (loot)
     dynamic_actions, # sevaral possible actions: npc (talk, steal, kill)
-    get_party,           # npc
-    shadows          # images to hide rooms other, than player currently is
+    get_party,       # npc
+    shadows,         # images to hide rooms other, than player currently is
+    containers
 ):
     default local_timer_active = False
     default screen_location_map_tt                     = Tooltip('')
     default screen_location_map_bg_size                = renpy.render(renpy.displayable(background), 0, 0, 0, 0).get_size()
-    default screen_location_map_cached_static_actions  = [CachedActionButton(b) for b in static_actions]
-    default screen_location_map_cached_dynamic_actions = [CachedActionButton(b) for b in dynamic_actions]
-    default screen_location_map_cached_party           = [CachedActionButton(b) for b in get_party()]
-    default screen_location_map_cached_shadows         = [CachedShadowButton(b) for b in shadows]
+    default screen_location_map_cached_static_actions  = [CachedActionButton(x)    for x in static_actions]
+    default screen_location_map_cached_dynamic_actions = [CachedActionButton(x)    for x in dynamic_actions]
+    default screen_location_map_cached_party           = [CachedActionButton(x)    for x in get_party()]
+    default screen_location_map_cached_shadows         = [CachedShadowButton(x)    for x in shadows]
+    default screen_location_map_cached_containers      = [CachedContainerButton(x) for x in containers]
 
 
     frame:
@@ -209,6 +269,21 @@ screen screen_location_map(
                         hover _hover
                         action ExecuteNavigationDirective(static_action_button)
                         hovered screen_location_map_tt.Action(static_action_button.tooltip())
+                        unhovered screen_location_map_tt.Action('')
+
+
+                for container in screen_location_map_cached_containers:
+                    if not container.when():
+                        continue
+
+                    $ _idle, _hover = get_cached_menu_item(container.texture())
+                    imagebutton:
+                        pos container.pos()
+                        anchor (0.5, 0.5)
+                        idle _idle
+                        hover _hover
+                        action ExecuteNavigationDirective(container)
+                        hovered screen_location_map_tt.Action(container.tooltip())
                         unhovered screen_location_map_tt.Action('')
 
 
@@ -268,7 +343,7 @@ screen screen_location_map(
                             color "#FFFFFF"
                             align (0.5, 0.5)
 
-                    timer 2.0 action [
+                    timer screen_location_map_snack_timeout action [
                         SetVariable('screen_location_map_snack_text', ''),
                         SetScreenVariable('local_timer_active', False)
                     ] id 'local_timer_active'

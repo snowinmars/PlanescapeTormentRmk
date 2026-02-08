@@ -104,10 +104,9 @@ class GraphicsMenuItemTests(unittest.TestCase):
                 navigation.before_jump()
         if navigation.is_snack:
             self.assertIsNotNone(navigation.snack)
-            if navigation.snack_texture is not None:
-                self.assertTrue(len(navigation.snack_texture) > 0)
-            if navigation.snack_on_pickup is not None:
-                navigation.snack_on_pickup()
+            self.assertIsNotNone(navigation.pickup_items)
+            if navigation.on_pickup is not None:
+                navigation.on_pickup()
 
 
     def _test_graphics_menu_shadow(self, item):

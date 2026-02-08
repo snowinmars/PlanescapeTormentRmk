@@ -65,8 +65,13 @@ init 10 python:
         return get_party(runtime.global_state_manager, mortuaryF2LootLogic.get_where_party_stands())
 
 
-    screen_location_map_mortuary_f2_static_actions = [
+    screen_location_map_mortuary_f2_containers = [
         InMortuaryF2R1PickScalpel            (runtime.global_state_manager,  900, 2280),
+        InMortuaryF2R7PickEmbalm             (runtime.global_state_manager, 3189, 2193),
+        InMortuaryF2R7PickCopperEarringClosed(runtime.global_state_manager, 3058, 1966)
+    ]
+    screen_location_map_mortuary_f2_static_actions = [
+        # InMortuaryF2R1PickScalpel            (runtime.global_state_manager,  900, 2280),
         FromMortuaryF2R1ToMortuaryF2R2       (runtime.global_state_manager,  633, 2299),
         FromMortuaryF2R1ToMortuaryF2R8       (runtime.global_state_manager, 1658, 2842),
         FromMortuaryF2R1ToMortuaryF3R1       (runtime.global_state_manager, 1298, 2139),
@@ -91,8 +96,8 @@ init 10 python:
         FromMortuaryF2R7ToMortuaryF2R8       (runtime.global_state_manager, 3002, 2746),
         FromMortuaryF2R7ToMortuaryF3R3       (runtime.global_state_manager, 3205, 2001),
         FromMortuaryF2R7ToMortuaryF1R4       (runtime.global_state_manager, 3323, 2010),
-        InMortuaryF2R7PickEmbalm             (runtime.global_state_manager, 3189, 2193),
-        InMortuaryF2R7PickCopperEarringClosed(runtime.global_state_manager, 3058, 1966),
+        # InMortuaryF2R7PickEmbalm             (runtime.global_state_manager, 3189, 2193),
+        # InMortuaryF2R7PickCopperEarringClosed(runtime.global_state_manager, 3058, 1966),
 
         FromMortuaryF2R8ToMortuaryF2R7       (runtime.global_state_manager, 3002, 2746),
         FromMortuaryF2R8ToMortuaryF2R1       (runtime.global_state_manager, 1658, 2842)
@@ -123,7 +128,6 @@ init 10 python:
 
         InMortuaryF2R8Zf891 (runtime.global_state_manager, 2300, 2600)
     ]
-    screen_location_map_mortuary_f2_get_party = screen_location_map_mortuary_f2_get_party
     screen_location_map_mortuary_f2_shadows = [
         MortuaryF2R1Shadow(runtime.global_state_manager, 1265, 2390),
         MortuaryF2R2Shadow(runtime.global_state_manager,  865, 1750),
@@ -157,5 +161,6 @@ label mortuary_f2_map:
         static_actions=screen_location_map_mortuary_f2_static_actions,
         dynamic_actions=screen_location_map_mortuary_f2_dynamic_actions,
         get_party=screen_location_map_mortuary_f2_get_party,
-        shadows=screen_location_map_mortuary_f2_shadows
+        shadows=screen_location_map_mortuary_f2_shadows,
+        containers=screen_location_map_mortuary_f2_containers
     )

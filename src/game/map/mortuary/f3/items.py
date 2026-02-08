@@ -1,11 +1,17 @@
-from game.map.Navigation import (NavigationJump, NavigationSnack)
+from game.map.Navigation import (
+    NavigationJump,
+    NavigationSnack,
+    NavigationLoot
+)
 from game.map.map_items import (
-    ShadowItem,
-    MenuItem
+    ContainerItem,
+    DoorItem,
+    NpcItem,
+    ShadowItem
 )
 
 
-class FromMortuaryF3R1ToMortuaryF2R1(MenuItem):
+class FromMortuaryF3R1ToMortuaryF2R1(DoorItem):
     def __init__(self, state_manager, x, y):
         super().__init__(state_manager, x, y, 243, 147)
     def when(self):
@@ -20,7 +26,7 @@ class FromMortuaryF3R1ToMortuaryF2R1(MenuItem):
         return NavigationJump('map_mortuary_f2r1')
 
 
-class FromMortuaryF3R1uToMortuaryF3Rc(MenuItem):
+class FromMortuaryF3R1uToMortuaryF3Rc(DoorItem):
     def __init__(self, state_manager, x, y):
         super().__init__(state_manager, x, y, 256, 192)
     def when(self):
@@ -37,7 +43,7 @@ class FromMortuaryF3R1uToMortuaryF3Rc(MenuItem):
         return NavigationJump('map_mortuary_f3rc')
 
 
-class FromMortuaryF3R1dToMortuaryF3Rc(MenuItem):
+class FromMortuaryF3R1dToMortuaryF3Rc(DoorItem):
     def __init__(self, state_manager, x, y):
         super().__init__(state_manager, x, y, 320, 256)
     def when(self):
@@ -65,7 +71,7 @@ class MortuaryF3R1Shadow(ShadowItem):
 ###
 
 
-class FromMortuaryF3R2lToMortuaryF3Rc(MenuItem):
+class FromMortuaryF3R2lToMortuaryF3Rc(DoorItem):
     def __init__(self, state_manager, x, y):
         super().__init__(state_manager, x, y, 118, 357)
     def when(self):
@@ -80,7 +86,7 @@ class FromMortuaryF3R2lToMortuaryF3Rc(MenuItem):
         return NavigationJump('map_mortuary_f3rc')
 
 
-class FromMortuaryF3R2rToMortuaryF3Rc(MenuItem):
+class FromMortuaryF3R2rToMortuaryF3Rc(DoorItem):
     def __init__(self, state_manager, x, y):
         super().__init__(state_manager, x, y, 95, 338)
     def when(self):
@@ -103,9 +109,9 @@ class MortuaryF3R2Shadow(ShadowItem):
         return 'bg/mortuary/f3/shadow_f3r2.webp'
 
 
-class InMortuaryF3R2PickTaskList(MenuItem):
+class InMortuaryF3R2PickTaskList(ContainerItem):
     def __init__(self, state_manager, x, y):
-        super().__init__(state_manager, x, y, 165, 178)
+        super().__init__(state_manager, x, y, 165, 178, [])
     def when(self):
         return not self.state_manager.world_manager.get_looted_InMortuaryF3R2PickTaskList() and \
                self.state_manager.locations_manager.get_location() == 'mortuary_f3r2'
@@ -114,7 +120,7 @@ class InMortuaryF3R2PickTaskList(MenuItem):
     def texture(self):
         return 'bg/mortuary/f3/loot_f3r2_mortuary_task_list.webp'
     def jump(self):
-        return NavigationSnack('InMortuaryF3R2PickTaskList_snack1', texture='InMortuaryF3R2PickTaskList_snack_texture', on_pickup=self._on_pickup)
+        return NavigationSnack('InMortuaryF3R2PickTaskList_snack1', pickup_items=['has_mortuary_task_list'], on_pickup=self._on_pickup)
     def _on_pickup(self):
         self.state_manager.inventory_items_manager.pick_item('has_mortuary_task_list')
         self.state_manager.world_manager.set_looted_InMortuaryF3R2PickTaskList(True)
@@ -123,7 +129,7 @@ class InMortuaryF3R2PickTaskList(MenuItem):
 ###
 
 
-class FromMortuaryF3R3ToMortuaryF2R7(MenuItem):
+class FromMortuaryF3R3ToMortuaryF2R7(DoorItem):
     def __init__(self, state_manager, x, y):
         super().__init__(state_manager, x, y, 232, 159)
     def when(self):
@@ -138,7 +144,7 @@ class FromMortuaryF3R3ToMortuaryF2R7(MenuItem):
         return NavigationJump('map_mortuary_f2r7')
 
 
-class FromMortuaryF3R3uToMortuaryF3Rc(MenuItem):
+class FromMortuaryF3R3uToMortuaryF3Rc(DoorItem):
     def __init__(self, state_manager, x, y):
         super().__init__(state_manager, x, y, 236, 252)
     def when(self):
@@ -153,7 +159,7 @@ class FromMortuaryF3R3uToMortuaryF3Rc(MenuItem):
         return NavigationJump('map_mortuary_f3rc')
 
 
-class FromMortuaryF3R3dToMortuaryF3Rc(MenuItem):
+class FromMortuaryF3R3dToMortuaryF3Rc(DoorItem):
     def __init__(self, state_manager, x, y):
         super().__init__(state_manager, x, y, 276, 251)
     def when(self):
@@ -179,7 +185,7 @@ class MortuaryF3R3Shadow(ShadowItem):
 ###
 
 
-class FromMortuaryF3R4lToMortuaryF3Rc(MenuItem):
+class FromMortuaryF3R4lToMortuaryF3Rc(DoorItem):
     def __init__(self, state_manager, x, y):
         super().__init__(state_manager, x, y, 110, 273)
     def when(self):
@@ -194,7 +200,7 @@ class FromMortuaryF3R4lToMortuaryF3Rc(MenuItem):
         return NavigationJump('map_mortuary_f3rc')
 
 
-class FromMortuaryF3R4rToMortuaryF3Rc(MenuItem):
+class FromMortuaryF3R4rToMortuaryF3Rc(DoorItem):
     def __init__(self, state_manager, x, y):
         super().__init__(state_manager, x, y, 119, 266)
     def when(self):
@@ -217,9 +223,9 @@ class MortuaryF3R4Shadow(ShadowItem):
         return 'bg/mortuary/f3/shadow_f3r4.webp'
 
 
-class InMortuaryF3R4PickPrybar(MenuItem):
+class InMortuaryF3R4PickPrybar(ContainerItem):
     def __init__(self, state_manager, x, y):
-        super().__init__(state_manager, x, y, 136, 114)
+        super().__init__(state_manager, x, y, 136, 114, [])
     def when(self):
         return not self.state_manager.world_manager.get_looted_InMortuaryF3R4PickPrybar() and \
                self.state_manager.locations_manager.get_location() == 'mortuary_f3r4'
@@ -228,15 +234,15 @@ class InMortuaryF3R4PickPrybar(MenuItem):
     def texture(self):
         return 'bg/mortuary/f3/loot_f3r4_prybar.webp'
     def jump(self):
-        return NavigationSnack('InMortuaryF3R4PickPrybar_snack1', texture='InMortuaryF3R4PickPrybar_snack_texture', on_pickup=self._on_pickup)
+        return NavigationSnack('InMortuaryF3R4PickPrybar_snack1', pickup_items=['has_prybar'], on_pickup=self._on_pickup)
     def _on_pickup(self):
         self.state_manager.inventory_items_manager.pick_item('has_prybar')
         self.state_manager.world_manager.set_looted_InMortuaryF3R4PickPrybar(True)
 
 
-class InMortuaryF3R4PickDustmanRequest(MenuItem):
+class InMortuaryF3R4PickDustmanRequest(ContainerItem):
     def __init__(self, state_manager, x, y):
-        super().__init__(state_manager, x, y, 127, 148)
+        super().__init__(state_manager, x, y, 127, 148, [])
     def when(self):
         return not self.state_manager.world_manager.get_looted_InMortuaryF3R4PickDustmanRequest() and \
                self.state_manager.locations_manager.get_location() == 'mortuary_f3r4'
@@ -245,13 +251,13 @@ class InMortuaryF3R4PickDustmanRequest(MenuItem):
     def texture(self):
         return 'bg/mortuary/f3/loot_f3r4_dustman_request.webp'
     def jump(self):
-        return NavigationSnack('InMortuaryF3R4PickDustmanRequest_snack1', texture='InMortuaryF3R4PickDustmanRequest_snack_texture', on_pickup=self._on_pickup)
+        return NavigationSnack('InMortuaryF3R4PickDustmanRequest_snack1', pickup_items=['has_dustman_request'], on_pickup=self._on_pickup)
     def _on_pickup(self):
         self.state_manager.inventory_items_manager.pick_item('has_dustman_request')
         self.state_manager.world_manager.set_looted_InMortuaryF3R4PickDustmanRequest(True)
 
 
-class InMortuaryF3R4Zm79(MenuItem):
+class InMortuaryF3R4Zm79(NpcItem):
     def __init__(self, state_manager, x, y):
         super().__init__(state_manager, x, y)
     def when(self):
@@ -267,7 +273,7 @@ class InMortuaryF3R4Zm79(MenuItem):
         return NavigationJump('speak_zm79')
 
 
-class InMortuaryF3R4Zf679(MenuItem):
+class InMortuaryF3R4Zf679(NpcItem):
     def __init__(self, state_manager, x, y):
         super().__init__(state_manager, x, y)
     def when(self):
@@ -283,7 +289,7 @@ class InMortuaryF3R4Zf679(MenuItem):
         return NavigationJump('speak_zf679')
 
 
-class InMortuaryF3R4S1221(MenuItem):
+class InMortuaryF3R4S1221(NpcItem):
     def __init__(self, state_manager, x, y):
         super().__init__(state_manager, x, y)
     def when(self):
@@ -302,7 +308,7 @@ class InMortuaryF3R4S1221(MenuItem):
 ###
 
 
-class FromMortuaryF3RcToMortuaryF3R1u(MenuItem):
+class FromMortuaryF3RcToMortuaryF3R1u(DoorItem):
     def __init__(self, state_manager, x, y):
         super().__init__(state_manager, x, y, 256, 192)
     def when(self):
@@ -321,7 +327,7 @@ class FromMortuaryF3RcToMortuaryF3R1u(MenuItem):
         return NavigationSnack('FromMortuaryF3RcToMortuaryF3R1u_snack1')
 
 
-class FromMortuaryF3RcToMortuaryF3R1d(MenuItem):
+class FromMortuaryF3RcToMortuaryF3R1d(DoorItem):
     def __init__(self, state_manager, x, y):
         super().__init__(state_manager, x, y, 320, 256)
     def when(self):
@@ -340,9 +346,9 @@ class FromMortuaryF3RcToMortuaryF3R1d(MenuItem):
         return NavigationSnack('FromMortuaryF3RcToMortuaryF3R1d_snack1',)
 
 
-class FromMortuaryF3RcToMortuaryF3R3u(MenuItem):
+class FromMortuaryF3RcToMortuaryF3R3u(DoorItem):
     def __init__(self, state_manager, x, y):
-        super().__init__(state_manager, x, y)
+        super().__init__(state_manager, x, y, 236, 252)
     def when(self):
         return self.state_manager.locations_manager.get_location() == 'mortuary_f3rc'
     def tooltip(self):
@@ -355,9 +361,9 @@ class FromMortuaryF3RcToMortuaryF3R3u(MenuItem):
         return NavigationJump('map_mortuary_f3r3')
 
 
-class FromMortuaryF3RcToMortuaryF3R3d(MenuItem):
+class FromMortuaryF3RcToMortuaryF3R3d(DoorItem):
     def __init__(self, state_manager, x, y):
-        super().__init__(state_manager, x, y)
+        super().__init__(state_manager, x, y, 276, 251)
     def when(self):
         return self.state_manager.locations_manager.get_location() == 'mortuary_f3rc'
     def tooltip(self):
@@ -370,9 +376,9 @@ class FromMortuaryF3RcToMortuaryF3R3d(MenuItem):
         return NavigationJump('map_mortuary_f3r3')
 
 
-class FromMortuaryF3RcToMortuaryF3R2l(MenuItem):
+class FromMortuaryF3RcToMortuaryF3R2l(DoorItem):
     def __init__(self, state_manager, x, y):
-        super().__init__(state_manager, x, y)
+        super().__init__(state_manager, x, y, 118, 357)
     def when(self):
         return self.state_manager.locations_manager.get_location() == 'mortuary_f3rc'
     def tooltip(self):
@@ -385,9 +391,9 @@ class FromMortuaryF3RcToMortuaryF3R2l(MenuItem):
         return NavigationJump('map_mortuary_f3r2')
 
 
-class FromMortuaryF3RcToMortuaryF3R2r(MenuItem):
+class FromMortuaryF3RcToMortuaryF3R2r(DoorItem):
     def __init__(self, state_manager, x, y):
-        super().__init__(state_manager, x, y)
+        super().__init__(state_manager, x, y, 95, 338)
     def when(self):
         return self.state_manager.locations_manager.get_location() == 'mortuary_f3rc'
     def tooltip(self):
@@ -400,9 +406,9 @@ class FromMortuaryF3RcToMortuaryF3R2r(MenuItem):
         return NavigationJump('map_mortuary_f3r2')
 
 
-class FromMortuaryF3RcToMortuaryF3R4l(MenuItem):
+class FromMortuaryF3RcToMortuaryF3R4l(DoorItem):
     def __init__(self, state_manager, x, y):
-        super().__init__(state_manager, x, y)
+        super().__init__(state_manager, x, y, 110, 273)
     def when(self):
         return self.state_manager.locations_manager.get_location() == 'mortuary_f3rc'
     def tooltip(self):
@@ -415,9 +421,9 @@ class FromMortuaryF3RcToMortuaryF3R4l(MenuItem):
         return NavigationJump('map_mortuary_f3r4')
 
 
-class FromMortuaryF3RcToMortuaryF3R4r(MenuItem):
+class FromMortuaryF3RcToMortuaryF3R4r(DoorItem):
     def __init__(self, state_manager, x, y):
-        super().__init__(state_manager, x, y)
+        super().__init__(state_manager, x, y, 119, 266)
     def when(self):
         return self.state_manager.locations_manager.get_location() == 'mortuary_f3rc'
     def tooltip(self):
@@ -438,9 +444,9 @@ class MortuaryF3RcShadow(ShadowItem):
         return 'bg/mortuary/f3/shadow_f3rc.webp'
 
 
-class InMortuaryF3RcPickGarbage(MenuItem):
+class InMortuaryF3RcPickGarbage(ContainerItem):
     def __init__(self, state_manager, x, y):
-        super().__init__(state_manager, x, y, 155, 187)
+        super().__init__(state_manager, x, y, 155, 187, [])
     def when(self):
         return not self.state_manager.world_manager.get_looted_InMortuaryF3RcPickGarbage() and \
                self.state_manager.locations_manager.get_location() == 'mortuary_f3rc'
@@ -449,15 +455,15 @@ class InMortuaryF3RcPickGarbage(MenuItem):
     def texture(self):
         return 'bg/mortuary/f3/loot_f3rc_garbage.webp'
     def jump(self):
-        return NavigationSnack('InMortuaryF3RcPickGarbage_snack1', texture='InMortuaryF3RcPickGarbage_snack_texture', on_pickup=self._on_pickup)
+        return NavigationSnack('InMortuaryF3RcPickGarbage_snack1', pickup_items=['has_garbage'], on_pickup=self._on_pickup)
     def _on_pickup(self):
         self.state_manager.inventory_items_manager.pick_item('has_garbage')
         self.state_manager.world_manager.set_looted_InMortuaryF3RcPickGarbage(True)
 
 
-class InMortuaryF3RcPickNeedle(MenuItem):
+class InMortuaryF3RcPickNeedle(ContainerItem):
     def __init__(self, state_manager, x, y):
-        super().__init__(state_manager, x, y, 141, 180)
+        super().__init__(state_manager, x, y, 141, 180, [])
     def when(self):
         return not self.state_manager.world_manager.get_looted_InMortuaryF3RcPickNeedle() and \
                self.state_manager.locations_manager.get_location() == 'mortuary_f3rc'
@@ -466,15 +472,15 @@ class InMortuaryF3RcPickNeedle(MenuItem):
     def texture(self):
         return 'bg/mortuary/f3/loot_f3rc_needle.webp'
     def jump(self):
-        return NavigationSnack('InMortuaryF3RcPickNeedle_snack1', texture='InMortuaryF3RcPickNeedle_snack_texture', on_pickup=self._on_pickup)
+        return NavigationSnack('InMortuaryF3RcPickNeedle_snack1', pickup_items=['has_needle'], on_pickup=self._on_pickup)
     def _on_pickup(self):
         self.state_manager.inventory_items_manager.pick_item('has_needle')
         self.state_manager.world_manager.set_looted_InMortuaryF3RcPickNeedle(True)
 
 
-class InMortuaryF3RcPickMortuaryKey(MenuItem):
+class InMortuaryF3RcPickMortuaryKey(ContainerItem):
     def __init__(self, state_manager, x, y):
-        super().__init__(state_manager, x, y, 146, 199)
+        super().__init__(state_manager, x, y, 146, 199, [])
     def when(self):
         return not self.state_manager.world_manager.get_looted_InMortuaryF3RcPickMortuaryKey() and \
                self.state_manager.locations_manager.get_location() == 'mortuary_f3rc'
@@ -483,13 +489,13 @@ class InMortuaryF3RcPickMortuaryKey(MenuItem):
     def texture(self):
         return 'bg/mortuary/f3/loot_f3rc_mortuary_key.webp'
     def jump(self):
-        return NavigationSnack('InMortuaryF3RcPickMortuaryKey_snack1', texture='InMortuaryF3RcPickMortuaryKey_snack_texture', on_pickup=self._on_pickup)
+        return NavigationSnack('InMortuaryF3RcPickMortuaryKey_snack1', pickup_items=['has_mortuary_key'], on_pickup=self._on_pickup)
     def _on_pickup(self):
         self.state_manager.inventory_items_manager.pick_item('has_mortuary_key')
         self.state_manager.world_manager.set_looted_InMortuaryF3RcPickMortuaryKey(True)
 
 
-class InMortuaryF3RcDust(MenuItem):
+class InMortuaryF3RcDust(NpcItem):
     def __init__(self, state_manager, x, y):
         super().__init__(state_manager, x, y)
     def when(self):
@@ -505,7 +511,7 @@ class InMortuaryF3RcDust(MenuItem):
         return NavigationJump('speak_dust')
 
 
-class InMortuaryF3RcDustfem(MenuItem):
+class InMortuaryF3RcDustfem(NpcItem):
     def __init__(self, state_manager, x, y):
         super().__init__(state_manager, x, y)
     def when(self):
@@ -521,7 +527,7 @@ class InMortuaryF3RcDustfem(MenuItem):
         return NavigationJump('speak_dustfem')
 
 
-class InMortuaryF3RcS42(MenuItem):
+class InMortuaryF3RcS42(NpcItem):
     def __init__(self, state_manager, x, y):
         super().__init__(state_manager, x, y)
     def when(self):
@@ -537,7 +543,7 @@ class InMortuaryF3RcS42(MenuItem):
         return NavigationJump('speak_s42')
 
 
-class InMortuaryF3RcS748(MenuItem):
+class InMortuaryF3RcS748(NpcItem):
     def __init__(self, state_manager, x, y):
         super().__init__(state_manager, x, y)
     def when(self):
@@ -553,7 +559,7 @@ class InMortuaryF3RcS748(MenuItem):
         return NavigationJump('speak_s748')
 
 
-class InMortuaryF3RcS863(MenuItem):
+class InMortuaryF3RcS863(NpcItem):
     def __init__(self, state_manager, x, y):
         super().__init__(state_manager, x, y)
     def when(self):
@@ -569,7 +575,7 @@ class InMortuaryF3RcS863(MenuItem):
         return NavigationJump('speak_s863')
 
 
-class InMortuaryF3RcS996(MenuItem):
+class InMortuaryF3RcS996(NpcItem):
     def __init__(self, state_manager, x, y):
         super().__init__(state_manager, x, y)
     def when(self):
@@ -585,7 +591,7 @@ class InMortuaryF3RcS996(MenuItem):
         return NavigationJump('speak_s996')
 
 
-class InMortuaryF3RcZm310(MenuItem):
+class InMortuaryF3RcZm310(NpcItem):
     def __init__(self, state_manager, x, y):
         super().__init__(state_manager, x, y)
     def when(self):
@@ -601,7 +607,7 @@ class InMortuaryF3RcZm310(MenuItem):
         return NavigationJump('speak_zm310')
 
 
-class InMortuaryF3RcZm475(MenuItem):
+class InMortuaryF3RcZm475(NpcItem):
     def __init__(self, state_manager, x, y):
         super().__init__(state_manager, x, y)
     def when(self):
@@ -617,7 +623,7 @@ class InMortuaryF3RcZm475(MenuItem):
         return NavigationJump('speak_zm475')
 
 
-class InMortuaryF3RcZm613(MenuItem):
+class InMortuaryF3RcZm613(NpcItem):
     def __init__(self, state_manager, x, y):
         super().__init__(state_manager, x, y)
     def when(self):
@@ -633,7 +639,7 @@ class InMortuaryF3RcZm613(MenuItem):
         return NavigationJump('speak_zm613')
 
 
-class InMortuaryF3RcZf832(MenuItem):
+class InMortuaryF3RcZf832(NpcItem):
     def __init__(self, state_manager, x, y):
         super().__init__(state_manager, x, y)
     def when(self):
@@ -649,7 +655,7 @@ class InMortuaryF3RcZf832(MenuItem):
         return NavigationJump('speak_zf832')
 
 
-class InMortuaryF3RcZm1146(MenuItem):
+class InMortuaryF3RcZm1146(NpcItem):
     def __init__(self, state_manager, x, y):
         super().__init__(state_manager, x, y)
     def when(self):
@@ -664,7 +670,7 @@ class InMortuaryF3RcZm1146(MenuItem):
         return NavigationJump('speak_zm1146')
 
 
-class InMortuaryF3RcZf1148(MenuItem):
+class InMortuaryF3RcZf1148(NpcItem):
     def __init__(self, state_manager, x, y):
         super().__init__(state_manager, x, y)
     def when(self):

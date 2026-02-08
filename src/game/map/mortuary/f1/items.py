@@ -1,11 +1,17 @@
-from game.map.Navigation import (NavigationJump)
+from game.map.Navigation import (
+    NavigationJump,
+    NavigationSnack,
+    NavigationLoot
+)
 from game.map.map_items import (
-    ShadowItem,
-    MenuItem
+    ContainerItem,
+    DoorItem,
+    NpcItem,
+    ShadowItem
 )
 
 
-class FromMortuaryF1R1ToMortuaryF2R1(MenuItem):
+class FromMortuaryF1R1ToMortuaryF2R1(DoorItem):
     def __init__(self, state_manager, x, y):
         super().__init__(state_manager, x, y, 338, 319)
     def when(self):
@@ -20,7 +26,7 @@ class FromMortuaryF1R1ToMortuaryF2R1(MenuItem):
         return NavigationJump('map_mortuary_f2r1')
 
 
-class FromMortuaryF1R1ToMortuaryF1R2(MenuItem):
+class FromMortuaryF1R1ToMortuaryF1R2(DoorItem):
     def __init__(self, state_manager, x, y):
         super().__init__(state_manager, x, y, 470, 469)
     def when(self):
@@ -35,7 +41,7 @@ class FromMortuaryF1R1ToMortuaryF1R2(MenuItem):
         return NavigationJump('map_mortuary_f1r2')
 
 
-class FromMortuaryF1R1ToMortuaryF1R4(MenuItem):
+class FromMortuaryF1R1ToMortuaryF1R4(DoorItem):
     def __init__(self, state_manager, x, y):
         super().__init__(state_manager, x, y, 339, 568)
     def when(self):
@@ -50,7 +56,7 @@ class FromMortuaryF1R1ToMortuaryF1R4(MenuItem):
         return NavigationJump('map_mortuary_f1r4')
 
 
-class FromMortuaryF1R1ToMortuaryF1Rc(MenuItem):
+class FromMortuaryF1R1ToMortuaryF1Rc(DoorItem):
     def __init__(self, state_manager, x, y):
         super().__init__(state_manager, x, y, 429, 450)
     def when(self):
@@ -65,7 +71,7 @@ class FromMortuaryF1R1ToMortuaryF1Rc(MenuItem):
         return NavigationJump('map_mortuary_f1rc')
 
 
-class FromMortuaryF1R1ToGameEnd(MenuItem):
+class FromMortuaryF1R1ToGameEnd(DoorItem):
     def __init__(self, state_manager, x, y):
         super().__init__(state_manager, x, y, 624, 552)
     def when(self):
@@ -87,7 +93,7 @@ class MortuaryF1R1Shadow(ShadowItem):
         return 'bg/mortuary/f1/shadow_f1r1.webp'
 
 
-class InMortuaryF1R1Soego(MenuItem):
+class InMortuaryF1R1Soego(NpcItem):
     def __init__(self, state_manager, x, y):
         super().__init__(state_manager, x, y)
     def when(self):
@@ -106,7 +112,7 @@ class InMortuaryF1R1Soego(MenuItem):
 ###
 
 
-class FromMortuaryF1R2ToMortuaryF1Rc(MenuItem):
+class FromMortuaryF1R2ToMortuaryF1Rc(DoorItem):
     def __init__(self, state_manager, x, y):
         super().__init__(state_manager, x, y, 380, 404)
     def when(self):
@@ -121,7 +127,7 @@ class FromMortuaryF1R2ToMortuaryF1Rc(MenuItem):
         return NavigationJump('map_mortuary_f1rc')
 
 
-class FromMortuaryF1R2ToMortuaryF1R3(MenuItem):
+class FromMortuaryF1R2ToMortuaryF1R3(DoorItem):
     def __init__(self, state_manager, x, y):
         super().__init__(state_manager, x, y, 324, 332)
     def when(self):
@@ -136,7 +142,7 @@ class FromMortuaryF1R2ToMortuaryF1R3(MenuItem):
         return NavigationJump('map_mortuary_f1r3')
 
 
-class FromMortuaryF1R2ToMortuaryF1R1(MenuItem):
+class FromMortuaryF1R2ToMortuaryF1R1(DoorItem):
     def __init__(self, state_manager, x, y):
         super().__init__(state_manager, x, y, 470, 469)
     def when(self):
@@ -159,7 +165,7 @@ class MortuaryF1R2Shadow(ShadowItem):
         return 'bg/mortuary/f1/shadow_f1r2.webp'
 
 
-class InMortuaryF1R2Deionarra(MenuItem):
+class InMortuaryF1R2Deionarra(NpcItem):
     def __init__(self, state_manager, x, y):
         super().__init__(state_manager, x, y)
     def when(self):
@@ -178,7 +184,7 @@ class InMortuaryF1R2Deionarra(MenuItem):
 ###
 
 
-class FromMortuaryF1R3ToMortuaryF1R2(MenuItem):
+class FromMortuaryF1R3ToMortuaryF1R2(DoorItem):
     def __init__(self, state_manager, x, y):
         super().__init__(state_manager, x, y, 324, 332)
     def when(self):
@@ -193,7 +199,7 @@ class FromMortuaryF1R3ToMortuaryF1R2(MenuItem):
         return NavigationJump('map_mortuary_f1r2')
 
 
-class FromMortuaryF1R3ToMortuaryF1R4(MenuItem):
+class FromMortuaryF1R3ToMortuaryF1R4(DoorItem):
     def __init__(self, state_manager, x, y):
         super().__init__(state_manager, x, y, 431, 562)
     def when(self):
@@ -208,7 +214,7 @@ class FromMortuaryF1R3ToMortuaryF1R4(MenuItem):
         return NavigationJump('map_mortuary_f1r4')
 
 
-class FromMortuaryF1R3ToMortuaryF1Rc(MenuItem):
+class FromMortuaryF1R3ToMortuaryF1Rc(DoorItem):
     def __init__(self, state_manager, x, y):
         super().__init__(state_manager, x, y, 369, 449)
     def when(self):
@@ -231,7 +237,7 @@ class MortuaryF1R3Shadow(ShadowItem):
         return 'bg/mortuary/f1/shadow_f1r3.webp'
 
 
-class InMortuaryF1R3Zf114(MenuItem):
+class InMortuaryF1R3Zf114(NpcItem):
     def __init__(self, state_manager, x, y):
         super().__init__(state_manager, x, y)
     def when(self):
@@ -247,7 +253,7 @@ class InMortuaryF1R3Zf114(MenuItem):
         return NavigationJump('speak_zf114')
 
 
-class InMortuaryF1R3Zm1041(MenuItem):
+class InMortuaryF1R3Zm1041(NpcItem):
     def __init__(self, state_manager, x, y):
         super().__init__(state_manager, x, y)
     def when(self):
@@ -263,7 +269,7 @@ class InMortuaryF1R3Zm1041(MenuItem):
         return NavigationJump('speak_zm1041')
 
 
-class InMortuaryF1R3Xach(MenuItem):
+class InMortuaryF1R3Xach(NpcItem):
     def __init__(self, state_manager, x, y):
         super().__init__(state_manager, x, y)
     def when(self):
@@ -284,7 +290,7 @@ class InMortuaryF1R3Xach(MenuItem):
 ###
 
 
-class FromMortuaryF1R4ToMortuaryF1R3(MenuItem):
+class FromMortuaryF1R4ToMortuaryF1R3(DoorItem):
     def __init__(self, state_manager, x, y):
         super().__init__(state_manager, x, y, 431, 562)
     def when(self):
@@ -299,7 +305,7 @@ class FromMortuaryF1R4ToMortuaryF1R3(MenuItem):
         return NavigationJump('map_mortuary_f1r3')
 
 
-class FromMortuaryF1R4ToMortuaryF1R1(MenuItem):
+class FromMortuaryF1R4ToMortuaryF1R1(DoorItem):
     def __init__(self, state_manager, x, y):
         super().__init__(state_manager, x, y, 339, 568)
     def when(self):
@@ -314,7 +320,7 @@ class FromMortuaryF1R4ToMortuaryF1R1(MenuItem):
         return NavigationJump('map_mortuary_f1r1')
 
 
-class FromMortuaryF1R4ToMortuaryF1Rc(MenuItem):
+class FromMortuaryF1R4ToMortuaryF1Rc(DoorItem):
     def __init__(self, state_manager, x, y):
         super().__init__(state_manager, x, y, 469, 464)
     def when(self):
@@ -329,15 +335,7 @@ class FromMortuaryF1R4ToMortuaryF1Rc(MenuItem):
         return NavigationJump('map_mortuary_f1rc')
 
 
-class MortuaryF1R4Shadow(ShadowItem):
-    def __init__(self, state_manager, x, y):
-        super().__init__(state_manager, x, y, 1996, 1815)
-        self.location_id = 'mortuary_f1r4'
-    def texture(self):
-        return 'bg/mortuary/f1/shadow_f1r4.webp'
-
-
-class FromMortuaryF1R4ToMortuaryF2R7(MenuItem):
+class FromMortuaryF1R4ToMortuaryF2R7(DoorItem):
     def __init__(self, state_manager, x, y):
         super().__init__(state_manager, x, y, 324, 314)
     def when(self):
@@ -352,7 +350,15 @@ class FromMortuaryF1R4ToMortuaryF2R7(MenuItem):
         return NavigationJump('map_mortuary_f2r7')
 
 
-class InMortuaryF1R4Zm732(MenuItem):
+class MortuaryF1R4Shadow(ShadowItem):
+    def __init__(self, state_manager, x, y):
+        super().__init__(state_manager, x, y, 1996, 1815)
+        self.location_id = 'mortuary_f1r4'
+    def texture(self):
+        return 'bg/mortuary/f1/shadow_f1r4.webp'
+
+
+class InMortuaryF1R4Zm732(NpcItem):
     def __init__(self, state_manager, x, y):
         super().__init__(state_manager, x, y)
     def when(self):
@@ -371,7 +377,7 @@ class InMortuaryF1R4Zm732(MenuItem):
 ###
 
 
-class FromMortuaryF1RcToMortuaryF1R1(MenuItem):
+class FromMortuaryF1RcToMortuaryF1R1(DoorItem):
     def __init__(self, state_manager, x, y):
         super().__init__(state_manager, x, y, 429, 450)
     def when(self):
@@ -386,7 +392,7 @@ class FromMortuaryF1RcToMortuaryF1R1(MenuItem):
         return NavigationJump('map_mortuary_f1r1')
 
 
-class FromMortuaryF1RcToMortuaryF1R2(MenuItem):
+class FromMortuaryF1RcToMortuaryF1R2(DoorItem):
     def __init__(self, state_manager, x, y):
         super().__init__(state_manager, x, y, 380, 404)
     def when(self):
@@ -401,7 +407,7 @@ class FromMortuaryF1RcToMortuaryF1R2(MenuItem):
         return NavigationJump('map_mortuary_f1r2')
 
 
-class FromMortuaryF1RcToMortuaryF1R3(MenuItem):
+class FromMortuaryF1RcToMortuaryF1R3(DoorItem):
     def __init__(self, state_manager, x, y):
         super().__init__(state_manager, x, y, 369, 449)
     def when(self):
@@ -416,7 +422,7 @@ class FromMortuaryF1RcToMortuaryF1R3(MenuItem):
         return NavigationJump('map_mortuary_f1r3')
 
 
-class FromMortuaryF1RcToMortuaryF1R4(MenuItem):
+class FromMortuaryF1RcToMortuaryF1R4(DoorItem):
     def __init__(self, state_manager, x, y):
         super().__init__(state_manager, x, y, 469, 464)
     def when(self):
@@ -439,7 +445,7 @@ class MortuaryF1RcShadow(ShadowItem):
         return 'bg/mortuary/f1/shadow_f1rc.webp'
 
 
-class InMortuaryF1RcGiantsk(MenuItem):
+class InMortuaryF1RcGiantsk(NpcItem):
     def __init__(self, state_manager, x, y):
         super().__init__(state_manager, x, y)
     def when(self):
