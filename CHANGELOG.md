@@ -1,5 +1,10 @@
 # Change log
 
+## Version 0.14
+- Implement snacks: one line dialogue-notification handler
+- Implement loot system
+- Lint
+
 ## Version 0.13
 - Full reimplementation of gui screens: mostly cache optimization
 
