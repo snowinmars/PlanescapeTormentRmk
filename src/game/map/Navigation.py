@@ -18,8 +18,7 @@ class NavigationSnack:
 
 
 class NavigationLoot:
-    def __init__(self, jump):
-        self.jump     = jump
+    def __init__(self):
         self.is_jump  = False
         self.is_snack = False
         self.is_loot  = True

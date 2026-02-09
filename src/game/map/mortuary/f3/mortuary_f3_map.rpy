@@ -57,7 +57,14 @@ init 10 python:
         return get_party(runtime.global_state_manager, mortuaryF3LootLogic.get_where_party_stands())
 
 
-    screen_location_map_mortuary_f3_containers = []
+    screen_location_map_mortuary_f3_containers = [
+        InMortuaryF3R2PickTaskList      (runtime.global_state_manager, 1380,  326),
+        InMortuaryF3R4PickPrybar        (runtime.global_state_manager, 2031, 2158),
+        InMortuaryF3R4PickDustmanRequest(runtime.global_state_manager, 1901, 2131),
+        InMortuaryF3RcPickGarbage       (runtime.global_state_manager, 1394,  749),
+        InMortuaryF3RcPickNeedle        (runtime.global_state_manager, 2144,  665),
+        InMortuaryF3RcPickMortuaryKey   (runtime.global_state_manager,  847, 1756)
+    ]
     screen_location_map_mortuary_f3_static_actions = [
         FromMortuaryF3R1ToMortuaryF2R1  (runtime.global_state_manager,  751, 1552),
         FromMortuaryF3R1uToMortuaryF3Rc (runtime.global_state_manager,  441, 1193),
@@ -65,7 +72,6 @@ init 10 python:
 
         FromMortuaryF3R2lToMortuaryF3Rc (runtime.global_state_manager, 1250,  484),
         FromMortuaryF3R2rToMortuaryF3Rc (runtime.global_state_manager, 2183,  437),
-        InMortuaryF3R2PickTaskList      (runtime.global_state_manager, 1380,  326),
 
         FromMortuaryF3R3ToMortuaryF2R7  (runtime.global_state_manager, 2914, 1405),
         FromMortuaryF3R3uToMortuaryF3Rc (runtime.global_state_manager, 3127,  985),
@@ -73,8 +79,6 @@ init 10 python:
 
         FromMortuaryF3R4lToMortuaryF3Rc (runtime.global_state_manager, 1490, 2332),
         FromMortuaryF3R4rToMortuaryF3Rc (runtime.global_state_manager, 2420, 2280),
-        InMortuaryF3R4PickPrybar        (runtime.global_state_manager, 2031, 2158),
-        InMortuaryF3R4PickDustmanRequest(runtime.global_state_manager, 1901, 2131),
 
         FromMortuaryF3RcToMortuaryF3R1u (runtime.global_state_manager,  441, 1193),
         FromMortuaryF3RcToMortuaryF3R1d (runtime.global_state_manager,  538, 1865),
@@ -83,10 +87,7 @@ init 10 python:
         FromMortuaryF3RcToMortuaryF3R2l (runtime.global_state_manager, 1250,  484),
         FromMortuaryF3RcToMortuaryF3R2r (runtime.global_state_manager, 2183,  437),
         FromMortuaryF3RcToMortuaryF3R4l (runtime.global_state_manager, 1490, 2332),
-        FromMortuaryF3RcToMortuaryF3R4r (runtime.global_state_manager, 2420, 2280),
-        InMortuaryF3RcPickGarbage       (runtime.global_state_manager, 1394,  749),
-        InMortuaryF3RcPickNeedle        (runtime.global_state_manager, 2144,  665),
-        InMortuaryF3RcPickMortuaryKey   (runtime.global_state_manager,  847, 1756),
+        FromMortuaryF3RcToMortuaryF3R4r (runtime.global_state_manager, 2420, 2280)
     ]
     screen_location_map_mortuary_f3_dynamic_actions = [
         InMortuaryF3R4Zm79   (runtime.global_state_manager, 1660, 2260),
@@ -104,14 +105,14 @@ init 10 python:
         InMortuaryF3RcZm613  (runtime.global_state_manager, 1300, 1700),
         InMortuaryF3RcZf832  (runtime.global_state_manager, 2800, 1800),
         InMortuaryF3RcZm1146 (runtime.global_state_manager,  750,  950),
-        InMortuaryF3RcZf1148 (runtime.global_state_manager, 1400, 1000),
+        InMortuaryF3RcZf1148 (runtime.global_state_manager, 1400, 1000)
     ]
     screen_location_map_mortuary_f3_shadows = [
         MortuaryF3R1Shadow(runtime.global_state_manager,  465, 1422),
         MortuaryF3R2Shadow(runtime.global_state_manager, 1705,  400),
         MortuaryF3R3Shadow(runtime.global_state_manager, 3220, 1253),
         MortuaryF3R4Shadow(runtime.global_state_manager, 1960, 2280),
-        MortuaryF3RcShadow(runtime.global_state_manager, 1809, 1250),
+        MortuaryF3RcShadow(runtime.global_state_manager, 1809, 1250)
     ]
 
 

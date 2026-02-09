@@ -96,8 +96,6 @@ init 10 python:
         FromMortuaryF2R7ToMortuaryF2R8       (runtime.global_state_manager, 3002, 2746),
         FromMortuaryF2R7ToMortuaryF3R3       (runtime.global_state_manager, 3205, 2001),
         FromMortuaryF2R7ToMortuaryF1R4       (runtime.global_state_manager, 3323, 2010),
-        # InMortuaryF2R7PickEmbalm             (runtime.global_state_manager, 3189, 2193),
-        # InMortuaryF2R7PickCopperEarringClosed(runtime.global_state_manager, 3058, 1966),
 
         FromMortuaryF2R8ToMortuaryF2R7       (runtime.global_state_manager, 3002, 2746),
         FromMortuaryF2R8ToMortuaryF2R1       (runtime.global_state_manager, 1658, 2842)
@@ -136,7 +134,7 @@ init 10 python:
         MortuaryF2R5Shadow(runtime.global_state_manager, 3100,  875),
         MortuaryF2R6Shadow(runtime.global_state_manager, 3425, 1550),
         MortuaryF2R7Shadow(runtime.global_state_manager, 3227, 2280),
-        MortuaryF2R8Shadow(runtime.global_state_manager, 2320, 2620),
+        MortuaryF2R8Shadow(runtime.global_state_manager, 2320, 2620)
     ]
 
 

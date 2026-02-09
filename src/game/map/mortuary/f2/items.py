@@ -119,7 +119,7 @@ class InMortuaryF2R1PickScalpel(ContainerItem):
     def texture(self):
         return 'bg/mortuary/f2/loot_f2r1_scalpel.webp'
     def jump(self):
-        return NavigationLoot('loot_InMortuaryF2R1PickScalpel')
+        return NavigationLoot()
 
 
 class InMortuaryF2R1Zm569(NpcItem):
@@ -714,7 +714,7 @@ class MortuaryF2R7Shadow(ShadowItem):
 
 class InMortuaryF2R7PickCopperEarringClosed(ContainerItem):
     def __init__(self, state_manager, x, y):
-        super().__init__(state_manager, x, y, 133, 121, ['has_copper_earring_closed', 'has_bandage'])
+        super().__init__(state_manager, x, y, 133, 121, ['has_copper_earring_closed', 'has_bandages'])
     def when(self):
         return not self.state_manager.world_manager.get_looted_InMortuaryF2R7PickCopperEarringClosed() and \
                self.state_manager.locations_manager.get_location() == 'mortuary_f2r7'
@@ -723,7 +723,7 @@ class InMortuaryF2R7PickCopperEarringClosed(ContainerItem):
     def texture(self):
         return 'bg/mortuary/f2/loot_f2r7_copper_earing.webp'
     def jump(self):
-        return NavigationLoot('loot_InMortuaryF2R7PickCopperEarringClosed')
+        return NavigationLoot()
 
 
 class InMortuaryF2R7PickEmbalm(ContainerItem):
@@ -737,7 +737,7 @@ class InMortuaryF2R7PickEmbalm(ContainerItem):
     def texture(self):
         return 'bg/mortuary/f2/loot_f2r7_elbam.webp'
     def jump(self):
-        return NavigationLoot('loot_InMortuaryF2R7PickEmbalm')
+        return NavigationLoot()
 
 
 ###

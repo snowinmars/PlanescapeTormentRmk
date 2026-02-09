@@ -111,7 +111,7 @@ class MortuaryF3R2Shadow(ShadowItem):
 
 class InMortuaryF3R2PickTaskList(ContainerItem):
     def __init__(self, state_manager, x, y):
-        super().__init__(state_manager, x, y, 165, 178, [])
+        super().__init__(state_manager, x, y, 165, 178, ['has_mortuary_task_list'])
     def when(self):
         return not self.state_manager.world_manager.get_looted_InMortuaryF3R2PickTaskList() and \
                self.state_manager.locations_manager.get_location() == 'mortuary_f3r2'
@@ -120,10 +120,7 @@ class InMortuaryF3R2PickTaskList(ContainerItem):
     def texture(self):
         return 'bg/mortuary/f3/loot_f3r2_mortuary_task_list.webp'
     def jump(self):
-        return NavigationSnack('InMortuaryF3R2PickTaskList_snack1', pickup_items=['has_mortuary_task_list'], on_pickup=self._on_pickup)
-    def _on_pickup(self):
-        self.state_manager.inventory_items_manager.pick_item('has_mortuary_task_list')
-        self.state_manager.world_manager.set_looted_InMortuaryF3R2PickTaskList(True)
+        return NavigationLoot()
 
 
 ###
@@ -225,7 +222,7 @@ class MortuaryF3R4Shadow(ShadowItem):
 
 class InMortuaryF3R4PickPrybar(ContainerItem):
     def __init__(self, state_manager, x, y):
-        super().__init__(state_manager, x, y, 136, 114, [])
+        super().__init__(state_manager, x, y, 136, 114, ['has_prybar'])
     def when(self):
         return not self.state_manager.world_manager.get_looted_InMortuaryF3R4PickPrybar() and \
                self.state_manager.locations_manager.get_location() == 'mortuary_f3r4'
@@ -234,15 +231,12 @@ class InMortuaryF3R4PickPrybar(ContainerItem):
     def texture(self):
         return 'bg/mortuary/f3/loot_f3r4_prybar.webp'
     def jump(self):
-        return NavigationSnack('InMortuaryF3R4PickPrybar_snack1', pickup_items=['has_prybar'], on_pickup=self._on_pickup)
-    def _on_pickup(self):
-        self.state_manager.inventory_items_manager.pick_item('has_prybar')
-        self.state_manager.world_manager.set_looted_InMortuaryF3R4PickPrybar(True)
+        return NavigationLoot()
 
 
 class InMortuaryF3R4PickDustmanRequest(ContainerItem):
     def __init__(self, state_manager, x, y):
-        super().__init__(state_manager, x, y, 127, 148, [])
+        super().__init__(state_manager, x, y, 127, 148, ['has_dustman_request'])
     def when(self):
         return not self.state_manager.world_manager.get_looted_InMortuaryF3R4PickDustmanRequest() and \
                self.state_manager.locations_manager.get_location() == 'mortuary_f3r4'
@@ -251,10 +245,7 @@ class InMortuaryF3R4PickDustmanRequest(ContainerItem):
     def texture(self):
         return 'bg/mortuary/f3/loot_f3r4_dustman_request.webp'
     def jump(self):
-        return NavigationSnack('InMortuaryF3R4PickDustmanRequest_snack1', pickup_items=['has_dustman_request'], on_pickup=self._on_pickup)
-    def _on_pickup(self):
-        self.state_manager.inventory_items_manager.pick_item('has_dustman_request')
-        self.state_manager.world_manager.set_looted_InMortuaryF3R4PickDustmanRequest(True)
+        return NavigationLoot()
 
 
 class InMortuaryF3R4Zm79(NpcItem):
@@ -446,7 +437,7 @@ class MortuaryF3RcShadow(ShadowItem):
 
 class InMortuaryF3RcPickGarbage(ContainerItem):
     def __init__(self, state_manager, x, y):
-        super().__init__(state_manager, x, y, 155, 187, [])
+        super().__init__(state_manager, x, y, 155, 187, ['has_garbage'])
     def when(self):
         return not self.state_manager.world_manager.get_looted_InMortuaryF3RcPickGarbage() and \
                self.state_manager.locations_manager.get_location() == 'mortuary_f3rc'
@@ -455,15 +446,12 @@ class InMortuaryF3RcPickGarbage(ContainerItem):
     def texture(self):
         return 'bg/mortuary/f3/loot_f3rc_garbage.webp'
     def jump(self):
-        return NavigationSnack('InMortuaryF3RcPickGarbage_snack1', pickup_items=['has_garbage'], on_pickup=self._on_pickup)
-    def _on_pickup(self):
-        self.state_manager.inventory_items_manager.pick_item('has_garbage')
-        self.state_manager.world_manager.set_looted_InMortuaryF3RcPickGarbage(True)
+        return NavigationLoot()
 
 
 class InMortuaryF3RcPickNeedle(ContainerItem):
     def __init__(self, state_manager, x, y):
-        super().__init__(state_manager, x, y, 141, 180, [])
+        super().__init__(state_manager, x, y, 141, 180, ['has_needle'])
     def when(self):
         return not self.state_manager.world_manager.get_looted_InMortuaryF3RcPickNeedle() and \
                self.state_manager.locations_manager.get_location() == 'mortuary_f3rc'
@@ -472,15 +460,12 @@ class InMortuaryF3RcPickNeedle(ContainerItem):
     def texture(self):
         return 'bg/mortuary/f3/loot_f3rc_needle.webp'
     def jump(self):
-        return NavigationSnack('InMortuaryF3RcPickNeedle_snack1', pickup_items=['has_needle'], on_pickup=self._on_pickup)
-    def _on_pickup(self):
-        self.state_manager.inventory_items_manager.pick_item('has_needle')
-        self.state_manager.world_manager.set_looted_InMortuaryF3RcPickNeedle(True)
+        return NavigationLoot()
 
 
 class InMortuaryF3RcPickMortuaryKey(ContainerItem):
     def __init__(self, state_manager, x, y):
-        super().__init__(state_manager, x, y, 146, 199, [])
+        super().__init__(state_manager, x, y, 146, 199, ['has_mortuary_key'])
     def when(self):
         return not self.state_manager.world_manager.get_looted_InMortuaryF3RcPickMortuaryKey() and \
                self.state_manager.locations_manager.get_location() == 'mortuary_f3rc'
@@ -489,10 +474,7 @@ class InMortuaryF3RcPickMortuaryKey(ContainerItem):
     def texture(self):
         return 'bg/mortuary/f3/loot_f3rc_mortuary_key.webp'
     def jump(self):
-        return NavigationSnack('InMortuaryF3RcPickMortuaryKey_snack1', pickup_items=['has_mortuary_key'], on_pickup=self._on_pickup)
-    def _on_pickup(self):
-        self.state_manager.inventory_items_manager.pick_item('has_mortuary_key')
-        self.state_manager.world_manager.set_looted_InMortuaryF3RcPickMortuaryKey(True)
+        return NavigationLoot()
 
 
 class InMortuaryF3RcDust(NpcItem):
