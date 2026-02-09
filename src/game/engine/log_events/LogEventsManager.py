@@ -5,7 +5,7 @@ from game.engine.log_events.LogEvent import (LogEvent)
 
 class LogEventsManager:
     def __init__(self, logger):
-        self.logger = logger
+        self.logger            = logger
         self._log_events_store = None
 
 

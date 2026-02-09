@@ -57,16 +57,16 @@ class LocationsStoreTests(unittest.TestCase):
     def _assert_empty_store(self, store):
         self.assertIsNotNone(store.i2e_mapping)
         self.assertIsNotNone(store.e2i_mapping)
-        self.assertIsNone(store.previous_external)
-        self.assertIsNone(store.previous_internal)
-        self.assertIsNone(store.current_external)
-        self.assertIsNone(store.current_internal)
+        self.assertIsNone   (store.previous_external)
+        self.assertIsNone   (store.previous_internal)
+        self.assertIsNone   (store.current_external)
+        self.assertIsNone   (store.current_internal)
         self.assertIsNotNone(store.visited_externals)
         self.assertIsNotNone(store.visited_internals)
-        self.assertEqual(len(store.i2e_mapping), 0)
-        self.assertEqual(len(store.e2i_mapping), 0)
-        self.assertEqual(len(store.visited_externals), 0)
-        self.assertEqual(len(store.visited_internals), 0)
+        self.assertEqual    (len(store.i2e_mapping)      , 0)
+        self.assertEqual    (len(store.e2i_mapping)      , 0)
+        self.assertEqual    (len(store.visited_externals), 0)
+        self.assertEqual    (len(store.visited_internals), 0)
 
 
     def _fill_store(self, store):
@@ -80,8 +80,8 @@ class LocationsStoreTests(unittest.TestCase):
         }
         store.previous_internal = self.internal_location_a
         store.previous_external = self.external_location_a
-        store.current_internal = self.internal_location_b
-        store.current_external = self.external_location_b
+        store.current_internal  = self.internal_location_b
+        store.current_external  = self.external_location_b
         store.visited_internals = [self.internal_location_b]
         store.visited_externals = [self.external_location_b]
 

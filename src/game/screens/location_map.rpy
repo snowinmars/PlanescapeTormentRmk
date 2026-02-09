@@ -206,7 +206,7 @@ init 10 python:
 
             if navigation.is_loot:
                 self.button.mark_dirty()
-                renpy.show_screen('screen_loot', self.button) # TODO [snow]: is it ok to mutate so brutal? The loot screen affects location screen. I hate mutations so much...
+                renpy.show_screen('screen_loot', self.button) # TODO [snow]: is it ok to mutate so brutal? The loot screen affects location screen. I hate mutations so much.
 
 
 default screen_location_map_xadj = MyAdjustment(value=700)

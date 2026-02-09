@@ -36,8 +36,12 @@ class CharacterCreationLogic:
             raise KeyError('Prop cannot be None')
 
         character = self.get_character(c_id)
+        all_properties = character.get_all_properties()
 
-        if character.get_all_properties()[prop] <= self.min_prop_value:
+        if prop not in all_properties:
+            raise KeyError(f'Prop \'{prop}\' not exist on character {c_id}')
+
+        if all_properties[prop] <= self.min_prop_value:
             return
 
         self.state_manager.characters_manager.modify_property(c_id, prop, -1)
@@ -54,10 +58,14 @@ class CharacterCreationLogic:
             raise KeyError('Prop cannot be None')
 
         character = self.get_character(c_id)
+        all_properties = character.get_all_properties()
+
+        if prop not in all_properties:
+            raise KeyError(f'Prop \'{prop}\' not exist on character {c_id}')
 
         if self._count_all_props_sum(character) >= self.max_props_sum:
             return
-        if character.get_all_properties()[prop] >= self.max_prop_value:
+        if all_properties[prop] >= self.max_prop_value:
             return
 
         self.state_manager.characters_manager.modify_property(c_id, prop, 1)
@@ -73,6 +81,12 @@ class CharacterCreationLogic:
         if prop is None:
             raise KeyError('Prop cannot be None')
 
+        character = self.get_character(c_id)
+        all_properties = character.get_all_properties()
+
+        if prop not in all_properties:
+            raise KeyError(f'Prop \'{prop}\' not exist on character {c_id}')
+
         return getattr(self.get_character(c_id), prop) > self.min_prop_value
 
 
@@ -85,6 +99,11 @@ class CharacterCreationLogic:
             raise KeyError('Prop cannot be None')
 
         character = self.get_character(c_id)
+        all_properties = character.get_all_properties()
+
+        if prop not in all_properties:
+            raise KeyError(f'Prop \'{prop}\' not exist on character {c_id}')
+
         return getattr(character, prop) < self.max_prop_value and \
                        self._count_all_props_sum(character) < self.max_props_sum
 

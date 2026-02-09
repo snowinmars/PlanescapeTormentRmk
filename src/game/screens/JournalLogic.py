@@ -7,8 +7,8 @@ class JournalLogic:
         return f'quest_line_{quest_id}{{#quest_line_{quest_id}}}'
 
 
-    def get_quest_state_line(self, choosed_quest_id):
-        quest_id = self.state_manager.quests_manager.get_quest(choosed_quest_id).active_state_id
+    def get_quest_state_line(self, quest_id):
+        quest_id = self.state_manager.quests_manager.get_quest(quest_id).active_state_id
         return f'quest_line_{quest_id}{{#quest_line_{quest_id}}}'
 
 
@@ -25,5 +25,5 @@ class JournalLogic:
 
 
     def get_beasts(self):
-        return self.state_manager.beatiary_manager.build_journal()
+        return self.state_manager.beatiary_manager.build_beasts()
 

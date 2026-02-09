@@ -5,8 +5,8 @@ from game.engine.characters.Character import (Character)
 
 class CharactersManager:
     def __init__(self, log_events_manager):
-        self._log_events_manager = log_events_manager
-        self._characters_store = None
+        self._log_events_manager     = log_events_manager
+        self._characters_store       = None
         self._report_change_callback = None
 
 
@@ -72,9 +72,9 @@ class CharactersManager:
         self._report_change_callback(
             'character_manager_modify_property',
             {
-                'name': name,
-                'prop': prop,
-                'amount': amount,
+                'name'        : name        ,
+                'prop'        : prop        ,
+                'amount'      : amount      ,
                 'actual_value': actual_value
             }
         )
@@ -104,9 +104,9 @@ class CharactersManager:
         self._report_change_callback(
             'character_manager_modify_property_once',
             {
-                'name': name,
-                'prop': prop,
-                'amount': amount,
+                'name'        : name        ,
+                'prop'        : prop        ,
+                'amount'      : amount      ,
                 'actual_value': actual_value
             }
         )
@@ -127,8 +127,8 @@ class CharactersManager:
         self._report_change_callback(
             'character_manager_set_property',
             {
-                'name': name,
-                'prop': prop,
+                'name'        : name ,
+                'prop'        : prop ,
                 'actual_value': value
             }
         )

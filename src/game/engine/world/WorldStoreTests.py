@@ -54,8 +54,8 @@ class WorldStoreTests(unittest.TestCase):
     def _assert_empty_store(self, store):
         self.assertIsNotNone(store.once_keys)
         self.assertIsNotNone(store.registry)
-        self.assertEqual(len(store.once_keys), 0)
-        self.assertEqual(len(store.registry), 0)
+        self.assertEqual    (len(store.once_keys), 0)
+        self.assertEqual    (len(store.registry) , 0)
 
 
     def _fill_store(self, store):
@@ -68,12 +68,12 @@ class WorldStoreTests(unittest.TestCase):
     def _assert_filled_store(self, store):
         self.assertIsNotNone(store.registry)
         self.assertIsNotNone(store.once_keys)
-        self.assertEqual(len(store.registry), 2)
-        self.assertEqual(len(store.once_keys), 2)
-        self.assertEqual(store.registry['setting_id_1'], 'default_value_1')
-        self.assertEqual(store.registry['setting_id_2'], 'default_value_2')
-        self.assertEqual(store.once_keys[0], 'once_keys_1')
-        self.assertEqual(store.once_keys[1], 'once_keys_2')
+        self.assertEqual    (len(store.registry) , 2)
+        self.assertEqual    (len(store.once_keys), 2)
+        self.assertEqual    (store.registry['setting_id_1'], 'default_value_1')
+        self.assertEqual    (store.registry['setting_id_2'], 'default_value_2')
+        self.assertEqual    (store.once_keys[0], 'once_keys_1')
+        self.assertEqual    (store.once_keys[1], 'once_keys_2')
 
 
 if __name__ == "__main__":

@@ -2,30 +2,37 @@ import json
 
 
 class Quest:
-    def __init__(self, quest_id, quest_state_ids, active_state_id=None, started=False, finished=False):
-        self.quest_id = quest_id
+    def __init__(
+        self                   ,
+        quest_id               ,
+        quest_state_ids        ,
+        active_state_id = None ,
+        started         = False,
+        finished        = False
+    ):
+        self.quest_id        = quest_id
         self.quest_state_ids = quest_state_ids
         self.active_state_id = active_state_id or quest_state_ids[0]
-        self.started = started
-        self.finished = finished
+        self.started         = started
+        self.finished        = finished
 
 
     def __getstate__(self):
         return {
-            'quest_id': self.quest_id,
+            'quest_id'       : self.quest_id       ,
             'quest_state_ids': self.quest_state_ids,
             'active_state_id': self.active_state_id,
-            'started': self.started,
-            'finished': self.finished
+            'started'        : self.started        ,
+            'finished'       : self.finished
         }
 
 
     def __setstate__(self, state):
-        self.quest_id = state['quest_id']
+        self.quest_id        = state['quest_id']
         self.quest_state_ids = state['quest_state_ids']
         self.active_state_id = state['active_state_id']
-        self.started = state['started']
-        self.finished = state['finished']
+        self.started         = state['started']
+        self.finished        = state['finished']
 
 
     def toJson(self, indent=None):
@@ -40,11 +47,11 @@ class Quest:
     def fromJson(cls, json_str):
         data = json.loads(json_str)
         obj = cls(
-            quest_id=data['quest_id'],
-            quest_state_ids=data['quest_state_ids'],
-            active_state_id=data['active_state_id'],
-            started=data['started'],
-            finished=data['finished']
+            quest_id        = data['quest_id']       ,
+            quest_state_ids = data['quest_state_ids'],
+            active_state_id = data['active_state_id'],
+            started         = data['started']        ,
+            finished        = data['finished']
         )
         return obj
 

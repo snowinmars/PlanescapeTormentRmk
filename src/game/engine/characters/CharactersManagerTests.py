@@ -10,8 +10,8 @@ class CharactersManagerTests(LogicTests):
         self.assertIsNotNone(self.characters_manager._characters_store.characters)
         self.assertIsNotNone(self.characters_manager._characters_store.once_keys)
         self.assertIsNotNone(self.characters_manager._log_events_manager)
-        self.assertNotEqual(len(self.characters_manager._characters_store.characters), 0)
-        self.assertEqual(len(self.characters_manager._characters_store.once_keys), 0)
+        self.assertNotEqual (len(self.characters_manager._characters_store.characters), 0)
+        self.assertEqual    (len(self.characters_manager._characters_store.once_keys), 0)
 
 
     def test_get_character_when_all_ok(self):
@@ -32,54 +32,66 @@ class CharactersManagerTests(LogicTests):
 
 
     def test_get_property_when_all_ok(self):
-        name='test_character_name'
-        current_class='Mage'
-        race='Human'
-        sex='Male'
-        max_health=31
-        current_health=31
-        ac=10
-        good=3
-        law=5
-        lore=7
-        experience=9
-        strength=11
-        dexterity=13
-        intelligence=17
-        constitution=19
-        wisdom=23
-        charisma=27
-        looks_like='looks_like'
+        name           = 'test_character_name'
+        current_class  = 'Mage'
+        race           = 'Human'
+        sex            = 'Male'
+        max_health     = 31
+        current_health = 31
+        ac             = 10
+        good           = 3
+        law            = 5
+        lore           = 7
+        experience     = 9
+        strength       = 11
+        dexterity      = 13
+        intelligence   = 17
+        constitution   = 19
+        wisdom         = 23
+        charisma       = 27
+        looks_like     = 'looks_like'
 
         char = Character(
-            name=name, current_class=current_class, race=race, sex=sex, \
-            max_health=max_health, current_health=current_health, ac=ac, \
-            good=good, law=law, \
-            lore=lore, experience=experience, \
-            strength=strength, dexterity=dexterity, intelligence=intelligence, constitution=constitution, wisdom=wisdom, charisma=charisma,
-            looks_like=looks_like
+            name           = name          ,
+            current_class  = current_class ,
+            race           = race          ,
+            sex            = sex           ,
+            max_health     = max_health    ,
+            current_health = current_health,
+            ac             = ac            ,
+            good           = good          ,
+            law            = law           ,
+            lore           = lore          ,
+            experience     = experience    ,
+            strength       = strength      ,
+            dexterity      = dexterity     ,
+            intelligence   = intelligence  ,
+            constitution   = constitution  ,
+            wisdom         = wisdom        ,
+            charisma       = charisma      ,
+            looks_like     = looks_like
         )
 
         self.characters_manager.add_character(char)
 
-        self.assertEqual(self.characters_manager.get_property(name, 'name'), name)
-        self.assertEqual(self.characters_manager.get_property(name, 'current_class'), current_class)
-        self.assertEqual(self.characters_manager.get_property(name, 'race'), race)
-        self.assertEqual(self.characters_manager.get_property(name, 'sex'), sex)
-        self.assertEqual(self.characters_manager.get_property(name, 'max_health'), max_health)
+        self.assertEqual(self.characters_manager.get_property(name, 'name')          , name)
+        self.assertEqual(self.characters_manager.get_property(name, 'current_class') , current_class)
+        self.assertEqual(self.characters_manager.get_property(name, 'race')          , race)
+        self.assertEqual(self.characters_manager.get_property(name, 'sex')           , sex)
+        self.assertEqual(self.characters_manager.get_property(name, 'max_health')    , max_health)
         self.assertEqual(self.characters_manager.get_property(name, 'current_health'), current_health)
-        self.assertEqual(self.characters_manager.get_property(name, 'ac'), ac)
-        self.assertEqual(self.characters_manager.get_property(name, 'good'), good)
-        self.assertEqual(self.characters_manager.get_property(name, 'law'), law)
-        self.assertEqual(self.characters_manager.get_property(name, 'lore'), lore)
-        self.assertEqual(self.characters_manager.get_property(name, 'experience'), experience)
-        self.assertEqual(self.characters_manager.get_property(name, 'strength'), strength)
-        self.assertEqual(self.characters_manager.get_property(name, 'dexterity'), dexterity)
-        self.assertEqual(self.characters_manager.get_property(name, 'intelligence'), intelligence)
-        self.assertEqual(self.characters_manager.get_property(name, 'constitution'), constitution)
-        self.assertEqual(self.characters_manager.get_property(name, 'wisdom'), wisdom)
-        self.assertEqual(self.characters_manager.get_property(name, 'charisma'), charisma)
-        self.assertEqual(self.characters_manager.get_property(name, 'looks_like'), looks_like)
+        self.assertEqual(self.characters_manager.get_property(name, 'ac')            , ac)
+        self.assertEqual(self.characters_manager.get_property(name, 'good')          , good)
+        self.assertEqual(self.characters_manager.get_property(name, 'law')           , law)
+        self.assertEqual(self.characters_manager.get_property(name, 'lore')          , lore)
+        self.assertEqual(self.characters_manager.get_property(name, 'experience')    , experience)
+        self.assertEqual(self.characters_manager.get_property(name, 'strength')      , strength)
+        self.assertEqual(self.characters_manager.get_property(name, 'dexterity')     , dexterity)
+        self.assertEqual(self.characters_manager.get_property(name, 'intelligence')  , intelligence)
+        self.assertEqual(self.characters_manager.get_property(name, 'constitution')  , constitution)
+        self.assertEqual(self.characters_manager.get_property(name, 'wisdom')        , wisdom)
+        self.assertEqual(self.characters_manager.get_property(name, 'charisma')      , charisma)
+        self.assertEqual(self.characters_manager.get_property(name, 'looks_like')    , looks_like)
 
 
     def test_get_property_when_char_not_found(self):
@@ -223,14 +235,14 @@ class CharactersManagerTests(LogicTests):
         self.characters_manager.modify_property_once(name, prop, delta, key)
 
         self.assertEqual(len(self.characters_manager._characters_store.once_keys), 1)
-        self.assertTrue(key in self.characters_manager._characters_store.once_keys.keys())
+        self.assertTrue (key in self.characters_manager._characters_store.once_keys.keys())
         self.assertEqual(len(self.characters_manager._characters_store.once_keys[key]), 1)
         self.assertEqual(self.characters_manager._characters_store.once_keys[key][0], prop)
 
         self.characters_manager.modify_property_once(name, prop, delta, key)
 
         self.assertEqual(len(self.characters_manager._characters_store.once_keys), 1)
-        self.assertTrue(key in self.characters_manager._characters_store.once_keys.keys())
+        self.assertTrue (key in self.characters_manager._characters_store.once_keys.keys())
         self.assertEqual(len(self.characters_manager._characters_store.once_keys[key]), 1)
         self.assertEqual(self.characters_manager._characters_store.once_keys[key][0], prop)
 
@@ -271,8 +283,8 @@ class CharactersManagerTests(LogicTests):
         after = self.characters_manager.get_property(name, prop)
 
         self.assertNotEqual(before, after)
-        self.assertEqual(new_value, after)
-        self.assertEqual(value, after)
+        self.assertEqual   (new_value, after)
+        self.assertEqual   (value, after)
 
 
     def test_set_property_when_char_not_found(self):
@@ -297,53 +309,65 @@ class CharactersManagerTests(LogicTests):
 
 
     def test_get_all_properties_when_all_ok(self):
-        name='test_character_name'
-        current_class='Mage'
-        race='Human'
-        sex='Male'
-        max_health=31
-        current_health=31
-        ac=10
-        good=3
-        law=5
-        lore=7
-        experience=9
-        strength=11
-        dexterity=13
-        intelligence=17
-        constitution=19
-        wisdom=23
-        charisma=27
-        looks_like='looks_like'
+        name           = 'test_character_name'
+        current_class  = 'Mage'
+        race           = 'Human'
+        sex            = 'Male'
+        max_health     = 31
+        current_health = 31
+        ac             = 10
+        good           = 3
+        law            = 5
+        lore           = 7
+        experience     = 9
+        strength       = 11
+        dexterity      = 13
+        intelligence   = 17
+        constitution   = 19
+        wisdom         = 23
+        charisma       = 27
+        looks_like     = 'looks_like'
 
         char = Character(
-            name=name, current_class=current_class, race=race, sex=sex, \
-            max_health=max_health, current_health=current_health, ac=ac, \
-            good=good, law=law, \
-            lore=lore, experience=experience, \
-            strength=strength, dexterity=dexterity, intelligence=intelligence, constitution=constitution, wisdom=wisdom, charisma=charisma,
-            looks_like=looks_like
+            name           = name          ,
+            current_class  = current_class ,
+            race           = race          ,
+            sex            = sex           ,
+            max_health     = max_health    ,
+            current_health = current_health,
+            ac             = ac            ,
+            good           = good          ,
+            law            = law           ,
+            lore           = lore          ,
+            experience     = experience    ,
+            strength       = strength      ,
+            dexterity      = dexterity     ,
+            intelligence   = intelligence  ,
+            constitution   = constitution  ,
+            wisdom         = wisdom        ,
+            charisma       = charisma      ,
+            looks_like     = looks_like
         )
 
         self.characters_manager.add_character(char)
         props = self.characters_manager.get_all_properties(char.name)
 
-        self.assertEqual(props['name'], name)
-        self.assertEqual(props['current_class'], current_class)
-        self.assertEqual(props['max_health'], max_health)
+        self.assertEqual(props['name']          , name)
+        self.assertEqual(props['current_class'] , current_class)
+        self.assertEqual(props['max_health']    , max_health)
         self.assertEqual(props['current_health'], current_health)
-        self.assertEqual(props['ac'], ac)
-        self.assertEqual(props['good'], good)
-        self.assertEqual(props['law'], law)
-        self.assertEqual(props['lore'], lore)
-        self.assertEqual(props['experience'], experience)
-        self.assertEqual(props['strength'], strength)
-        self.assertEqual(props['dexterity'], dexterity)
-        self.assertEqual(props['intelligence'], intelligence)
-        self.assertEqual(props['constitution'], constitution)
-        self.assertEqual(props['wisdom'], wisdom)
-        self.assertEqual(props['charisma'], charisma)
-        self.assertEqual(props['looks_like'], looks_like)
+        self.assertEqual(props['ac']            , ac)
+        self.assertEqual(props['good']          , good)
+        self.assertEqual(props['law']           , law)
+        self.assertEqual(props['lore']          , lore)
+        self.assertEqual(props['experience']    , experience)
+        self.assertEqual(props['strength']      , strength)
+        self.assertEqual(props['dexterity']     , dexterity)
+        self.assertEqual(props['intelligence']  , intelligence)
+        self.assertEqual(props['constitution']  , constitution)
+        self.assertEqual(props['wisdom']        , wisdom)
+        self.assertEqual(props['charisma']      , charisma)
+        self.assertEqual(props['looks_like']    , looks_like)
 
 
     def test_get_all_properties_when_char_not_found(self):
@@ -373,31 +397,43 @@ class CharactersManagerTests(LogicTests):
 
 
 def _create_char(name):
-    current_class='mage'
-    race='human'
-    sex='man'
-    max_health=31
-    current_health=31
-    ac=10
-    good=3
-    law=5
-    lore=7
-    experience=9
-    strength=11
-    dexterity=13
-    intelligence=17
-    constitution=19
-    wisdom=23
-    charisma=27
-    looks_like='looks_like'
+    current_class  = 'mage'
+    race           = 'human'
+    sex            = 'man'
+    max_health     = 31
+    current_health = 31
+    ac             = 10
+    good           = 3
+    law            = 5
+    lore           = 7
+    experience     = 9
+    strength       = 11
+    dexterity      = 13
+    intelligence   = 17
+    constitution   = 19
+    wisdom         = 23
+    charisma       = 27
+    looks_like     = 'looks_like'
 
     return Character(
-        name=name, current_class=current_class, race=race, sex=sex, \
-        max_health=max_health, current_health=current_health, ac=ac, \
-        good=good, law=law, \
-        lore=lore, experience=experience, \
-        strength=strength, dexterity=dexterity, intelligence=intelligence, constitution=constitution, wisdom=wisdom, charisma=charisma,
-        looks_like=looks_like
+        name           = name          ,
+        current_class  = current_class ,
+        race           = race          ,
+        sex            = sex           ,
+        max_health     = max_health    ,
+        current_health = current_health,
+        ac             = ac            ,
+        good           = good          ,
+        law            = law           ,
+        lore           = lore          ,
+        experience     = experience    ,
+        strength       = strength      ,
+        dexterity      = dexterity     ,
+        intelligence   = intelligence  ,
+        constitution   = constitution  ,
+        wisdom         = wisdom        ,
+        charisma       = charisma      ,
+        looks_like     = looks_like
     )
 
 

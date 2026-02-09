@@ -1,12 +1,12 @@
 from game.map.Navigation import (
-    NavigationJump,
+    NavigationJump ,
     NavigationSnack,
     NavigationLoot
 )
-from game.map.map_items import (
+from game.map.map_items  import (
     ContainerItem,
-    DoorItem,
-    NpcItem,
+    DoorItem     ,
+    NpcItem      ,
     ShadowItem
 )
 

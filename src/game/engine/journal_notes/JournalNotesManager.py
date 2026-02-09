@@ -6,9 +6,9 @@ from game.engine.journal_notes.JournalNote import (JournalNote)
 
 class JournalNotesManager:
     def __init__(self, log_events_manager):
-        self._log_events_manager = log_events_manager
-        self._journal_notes_store = None
-        self._on_update_journal = []
+        self._log_events_manager     = log_events_manager
+        self._journal_notes_store    = None
+        self._on_update_journal      = []
         self._report_change_callback = None
 
 
@@ -47,7 +47,7 @@ class JournalNotesManager:
     def update_journal(self, note_id):
         self._log(f"Updated my journal with note '{note_id}'")
         found_note = self.get(note_id)
-        found_note.found = True
+        found_note.found    = True
         found_note.found_at = time.time()
 
         self._report_change_callback(

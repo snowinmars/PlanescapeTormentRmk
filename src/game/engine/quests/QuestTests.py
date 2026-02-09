@@ -7,28 +7,28 @@ from game.engine.quests.Quest import (Quest)
 
 class QuestTests(LogicTests):
     def test_ctor(self):
-        quest_id = 'quest_id'
+        quest_id        = 'quest_id'
         quest_state_ids = [ 'quest_state_id_1', 'quest_state_id_2' ]
         active_state_id = 'quest_state_id_1'
-        started = True
-        finished = True
+        started         = True
+        finished        = True
 
         quest = Quest(
-            quest_id=quest_id,
-            quest_state_ids=quest_state_ids,
-            active_state_id=active_state_id,
-            started=started,
-            finished=finished
+            quest_id        = quest_id       ,
+            quest_state_ids = quest_state_ids,
+            active_state_id = active_state_id,
+            started         = started        ,
+            finished        = finished
         )
 
         self.assertIsNotNone(quest)
 
-        self.assertEqual(quest.quest_id, quest_id)
+        self.assertEqual(quest.quest_id          , quest_id)
         self.assertEqual(quest.quest_state_ids[0], quest_state_ids[0])
         self.assertEqual(quest.quest_state_ids[1], quest_state_ids[1])
-        self.assertEqual(quest.active_state_id, active_state_id)
-        self.assertEqual(quest.started, started)
-        self.assertEqual(quest.finished, finished)
+        self.assertEqual(quest.active_state_id   , active_state_id)
+        self.assertEqual(quest.started           , started)
+        self.assertEqual(quest.finished          , finished)
 
 
     def test_reserialize_pickle(self):
@@ -63,7 +63,7 @@ class QuestTests(LogicTests):
         quest.set_entry_active(quest.quest_state_ids[1])
 
         self.assertEqual(quest.active_state_id, quest.quest_state_ids[1])
-        self.assertTrue(quest.started)
+        self.assertTrue (quest.started)
         self.assertFalse(quest.finished)
 
 
@@ -76,16 +76,16 @@ class QuestTests(LogicTests):
 
         something_changed = quest.set_entry_active(quest.quest_state_ids[1])
 
-        self.assertTrue(something_changed)
+        self.assertTrue (something_changed)
         self.assertEqual(quest.active_state_id, quest.quest_state_ids[1])
-        self.assertTrue(quest.started)
+        self.assertTrue (quest.started)
         self.assertFalse(quest.finished)
 
         something_changed = quest.set_entry_active(quest.quest_state_ids[1])
 
         self.assertFalse(something_changed)
         self.assertEqual(quest.active_state_id, quest.quest_state_ids[1])
-        self.assertTrue(quest.started)
+        self.assertTrue (quest.started)
         self.assertFalse(quest.finished)
 
 
@@ -107,8 +107,8 @@ class QuestTests(LogicTests):
         quest.set_entry_done(quest.quest_state_ids[1])
 
         self.assertEqual(quest.active_state_id, quest.quest_state_ids[1])
-        self.assertTrue(quest.started)
-        self.assertTrue(quest.finished)
+        self.assertTrue (quest.started)
+        self.assertTrue (quest.finished)
 
 
     def test_set_entry_done_twice(self):
@@ -120,17 +120,17 @@ class QuestTests(LogicTests):
 
         something_changed = quest.set_entry_done(quest.quest_state_ids[1])
 
-        self.assertTrue(something_changed)
+        self.assertTrue (something_changed)
         self.assertEqual(quest.active_state_id, quest.quest_state_ids[1])
-        self.assertTrue(quest.started)
-        self.assertTrue(quest.finished)
+        self.assertTrue (quest.started)
+        self.assertTrue (quest.finished)
 
         something_changed = quest.set_entry_done(quest.quest_state_ids[1])
 
         self.assertFalse(something_changed)
         self.assertEqual(quest.active_state_id, quest.quest_state_ids[1])
-        self.assertTrue(quest.started)
-        self.assertTrue(quest.finished)
+        self.assertTrue (quest.started)
+        self.assertTrue (quest.finished)
 
 
     def test_set_entry_done_when_quest_state_id_not_found(self):
@@ -142,20 +142,16 @@ class QuestTests(LogicTests):
 
 
     def _create_quest(self,
-        quest_id='quest_id',
-        quest_state_ids=None,
-        active_state_id=None,
-        started=False,
-        finished=False,
-        postfix=''
+        quest_id        = 'quest_id',
+        started         = False,
+        finished        = False
     ):
-        _quest_id = quest_id + postfix
-        _quest_state_id_1 = _quest_id + '_state_1' + postfix
-        _quest_state_id_2 = _quest_id + '_state_2' + postfix
-        _active_state_id = (active_state_id + postfix) if active_state_id is not None else _quest_state_id_1
+        _quest_state_id_1 = quest_id + '_state_1'
+        _quest_state_id_2 = quest_id + '_state_2'
+        _active_state_id = _quest_state_id_1
 
         return Quest(
-            quest_id=_quest_id,
+            quest_id=quest_id,
             quest_state_ids=[ _quest_state_id_1, _quest_state_id_2 ],
             active_state_id=_active_state_id,
             started=started,
@@ -165,8 +161,8 @@ class QuestTests(LogicTests):
     def _assert_quest(self, lhs, rhs):
         self.assertEqual(lhs.quest_id              , rhs.quest_id)
         self.assertEqual(len(lhs.quest_state_ids)  , len(rhs.quest_state_ids))
-        for i in range(0, len(lhs.quest_state_ids)):
-            self.assertEqual(lhs.quest_state_ids[i], rhs.quest_state_ids[i])
         self.assertEqual(lhs.active_state_id       , rhs.active_state_id)
         self.assertEqual(lhs.started               , rhs.started)
         self.assertEqual(lhs.finished              , rhs.finished)
+        for i in range(0, len(lhs.quest_state_ids)):
+            self.assertEqual(lhs.quest_state_ids[i], rhs.quest_state_ids[i])

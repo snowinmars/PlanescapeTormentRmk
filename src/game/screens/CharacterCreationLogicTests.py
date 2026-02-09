@@ -40,13 +40,38 @@ class CharactersStoreTests(LogicTests):
         self.assertEqual(logic.constitution_threshhold, constitution_threshhold)
 
 
-    def test_get_character(self):
+    def test_get_character_when_ok(self):
         character_name = 'character_name'
         self.characters_manager.add_character(self._create_char(character_name))
         character = self.logic.get_character(character_name)
 
         self.assertIsNotNone(character)
         self.assertEqual(character.name, character_name)
+
+
+    def test_get_character_when_no_character_id(self):
+        with self.assertRaises(KeyError):
+            self.logic.get_character(None)
+
+
+    def test_dec_prop_when_no_character_id(self):
+        with self.assertRaises(KeyError):
+            self.logic.dec_prop(None, 'strength')
+
+
+    def test_dec_prop_when_no_prop(self):
+        character_name = 'character_name'
+        self.characters_manager.add_character(self._create_char(character_name, strength=self.min_prop_value))
+        with self.assertRaises(KeyError):
+            self.logic.dec_prop(character_name, None)
+
+
+    def test_dec_prop_when_wrong_prop(self):
+        character_name = 'character_name'
+        wrong_prop = 'wrong_prop'
+        self.characters_manager.add_character(self._create_char(character_name, strength=self.min_prop_value))
+        with self.assertRaises(KeyError):
+            self.logic.dec_prop(character_name, wrong_prop)
 
 
     def test_dec_prop_strength(self):
@@ -384,6 +409,26 @@ class CharactersStoreTests(LogicTests):
         self.assertEqual(character_constitution, character.constitution)
         self.assertEqual(character_wisdom      , character.wisdom)
         self.assertEqual(character_charisma    , character.charisma)
+
+
+    def test_inc_prop_when_no_character_id(self):
+        with self.assertRaises(KeyError):
+            self.logic.inc_prop(None, 'strength')
+
+
+    def test_inc_prop_when_no_prop(self):
+        character_name = 'character_name'
+        self.characters_manager.add_character(self._create_char(character_name, strength=self.min_prop_value))
+        with self.assertRaises(KeyError):
+            self.logic.inc_prop(character_name, None)
+
+
+    def test_inc_prop_when_wrong_prop(self):
+        character_name = 'character_name'
+        wrong_prop = 'wrong_prop'
+        self.characters_manager.add_character(self._create_char(character_name, strength=self.min_prop_value))
+        with self.assertRaises(KeyError):
+            self.logic.inc_prop(character_name, wrong_prop)
 
 
     def test_inc_prop_strength(self):
@@ -757,6 +802,26 @@ class CharactersStoreTests(LogicTests):
         self.assertTrue(self.logic.minus_sensitive(character_name, 'charisma'))
 
 
+    def test_minus_sensitive_when_no_character_id(self):
+        with self.assertRaises(KeyError):
+            self.logic.minus_sensitive(None, 'strength')
+
+
+    def test_minus_sensitive_when_no_prop(self):
+        character_name = 'character_name'
+        self.characters_manager.add_character(self._create_char(character_name, strength=self.min_prop_value))
+        with self.assertRaises(KeyError):
+            self.logic.minus_sensitive(character_name, None)
+
+
+    def test_minus_sensitive_when_wrong_prop(self):
+        character_name = 'character_name'
+        wrong_prop = 'wrong_prop'
+        self.characters_manager.add_character(self._create_char(character_name, strength=self.min_prop_value))
+        with self.assertRaises(KeyError):
+            self.logic.minus_sensitive(character_name, wrong_prop)
+
+
     def test_plus_sensitive_when_above(self):
         min_prop_value = 1
         max_prop_value = 5
@@ -921,6 +986,36 @@ class CharactersStoreTests(LogicTests):
         self.assertFalse(logic.done(character_name))
 
 
+    def test_remaning_points_when_no_character_id(self):
+        with self.assertRaises(KeyError):
+            self.logic.remaning_points(None)
+
+
+    def test_done_when_no_character_id(self):
+        with self.assertRaises(KeyError):
+            self.logic.done(None)
+
+
+    def test_plus_sensitive_when_no_character_id(self):
+        with self.assertRaises(KeyError):
+            self.logic.plus_sensitive(None, 'strength')
+
+
+    def test_plus_sensitive_when_no_prop(self):
+        character_name = 'character_name'
+        self.characters_manager.add_character(self._create_char(character_name, strength=self.min_prop_value))
+        with self.assertRaises(KeyError):
+            self.logic.plus_sensitive(character_name, None)
+
+
+    def test_plus_sensitive_when_wrong_prop(self):
+        character_name = 'character_name'
+        wrong_prop = 'wrong_prop'
+        self.characters_manager.add_character(self._create_char(character_name, strength=self.min_prop_value))
+        with self.assertRaises(KeyError):
+            self.logic.plus_sensitive(character_name, wrong_prop)
+
+
     def test_set_mage(self):
         character_name = 'character_name'
         self.characters_manager.add_character(self._create_char(
@@ -950,6 +1045,11 @@ class CharactersStoreTests(LogicTests):
         self.assertEqual(character.constitution, 9)
         self.assertEqual(character.wisdom, 17)
         self.assertEqual(character.charisma, 15)
+
+
+    def test_set_mage_when_no_character_id(self):
+        with self.assertRaises(KeyError):
+            self.logic.set_mage(None)
 
 
     def test_reset_character(self):
@@ -983,6 +1083,11 @@ class CharactersStoreTests(LogicTests):
         self.assertEqual(character.charisma, 9)
 
 
+    def test_reset_character_when_no_character_id(self):
+        with self.assertRaises(KeyError):
+            self.logic.reset_character(None)
+
+
     def _create_char(
         self,
         name,
@@ -1008,12 +1113,3 @@ class CharactersStoreTests(LogicTests):
             charisma=charisma or default_property_value, \
             looks_like=''
         )
-
-
-    def _assert_characters(self, lhs, rhs):
-        self.assertEqual(lhs.strength    , rhs.strength)
-        self.assertEqual(lhs.dexterity   , rhs.dexterity)
-        self.assertEqual(lhs.intelligence, rhs.intelligence)
-        self.assertEqual(lhs.constitution, rhs.constitution)
-        self.assertEqual(lhs.wisdom      , rhs.wisdom)
-        self.assertEqual(lhs.charisma    , rhs.charisma)

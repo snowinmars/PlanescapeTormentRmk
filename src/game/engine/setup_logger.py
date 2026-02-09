@@ -5,52 +5,47 @@ def get_logger():
 
 
 def setup_logger(
-    emscripten,
-    android,
-    logs_folder,
-    log_level=None,
-    log_format=None,
-    date_format=None,
-    max_log_files=5,
-    log_file_name=None
+    emscripten          ,
+    android             ,
+    logs_folder         ,
+    log_level     = None,
+    log_format    = None,
+    date_format   = None,
+    max_log_files = 5   ,
+    log_file_name = None
 ):
     if emscripten:
         return _setup_web_logger(
-            log_level,
-            log_format,
+            log_level  ,
+            log_format ,
             date_format,
         )
     elif android:
         return _setup_android_logger(
-            log_level,
-            log_format,
+            log_level  ,
+            log_format ,
             date_format,
         )
     else:
         return _setup_file_logger(
-            logs_folder,
-            log_level,
-            log_format,
-            date_format,
+            logs_folder  ,
+            log_level    ,
+            log_format   ,
+            date_format  ,
             max_log_files,
             log_file_name
         )
 
 
 def _setup_android_logger(
-    log_level=None,
-    log_format=None,
-    date_format=None,
+    log_level   = None,
+    log_format  = None,
+    date_format = None
 ):
-    log_level = logging.DEBUG if log_level is None else log_level
-    log_format = '%(levelname)-6s %(asctime)-25s %(message)s' if log_format is None else log_format
+    log_level   = logging.DEBUG if log_level is None else log_level
+    log_format  = '%(levelname)-6s %(asctime)-25s %(message)s' if log_format is None else log_format
     date_format = '%Y-%m-%d %H:%M:%S' if date_format is None else date_format
-
-    logging.basicConfig(
-        level=log_level,
-        format='%(levelname)-6s %(asctime)-25s %(message)s',
-        datefmt='%Y-%m-%d %H:%M:%S'
-    )
+    logging.basicConfig(level=log_level, format=log_format, datefmt=date_format)
 
     logger = get_logger()
     cleanup_logger(logger)
@@ -64,9 +59,9 @@ def _setup_android_logger(
 
 
 def _setup_web_logger(
-    log_level=None,
-    log_format=None,
-    date_format=None,
+    log_level   = None,
+    log_format  = None,
+    date_format = None
 ):
     log_level = logging.DEBUG if log_level is None else log_level
     log_format = '%(levelname)-6s %(asctime)-25s %(message)s' if log_format is None else log_format
@@ -91,22 +86,22 @@ def _setup_web_logger(
 
 
 def _setup_file_logger(
-    logs_folder,
-    log_level=None,
-    log_format=None,
-    date_format=None,
-    max_log_files=5,
-    log_file_name=None
+    logs_folder         ,
+    log_level     = None,
+    log_format    = None,
+    date_format   = None,
+    max_log_files = 5   ,
+    log_file_name = None
 ):
     import os
     import glob
     import time
     from pathlib import Path
 
-    log_level = logging.DEBUG if log_level is None else log_level
-    log_format = '%(levelname)-6s %(asctime)-25s %(message)s' if log_format is None else log_format
-    date_format = '%Y-%m-%d %H:%M:%S' if date_format is None else date_format
-    now = int(time.time())
+    now           = int(time.time())
+    log_level     = logging.DEBUG if log_level is None else log_level
+    log_format    = '%(levelname)-6s %(asctime)-25s %(message)s' if log_format is None else log_format
+    date_format   = '%Y-%m-%d %H:%M:%S' if date_format is None else date_format
     log_file_name = f"dev-{now}.log" if log_file_name is None else log_file_name
 
     logs_folder_absolute_path = Path(logs_folder).absolute()

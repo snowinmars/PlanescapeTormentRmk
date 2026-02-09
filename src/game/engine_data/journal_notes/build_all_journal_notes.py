@@ -1,59 +1,59 @@
 def build_all_journal_notes(journal_notes_manager):
-    journal_notes_manager.register('20538', 'note_id_20538{#note_id_20538}')
-    journal_notes_manager.register('21805', 'note_id_21805{#note_id_21805}')
-    journal_notes_manager.register('21856', 'note_id_21856{#note_id_21856}')
-    journal_notes_manager.register('21857', 'note_id_21857{#note_id_21857}')
-    journal_notes_manager.register('21926', 'note_id_21926{#note_id_21926}')
-    journal_notes_manager.register('21996', 'note_id_21996{#note_id_21996}')
-    journal_notes_manager.register('22052', 'note_id_22052{#note_id_22052}')
-    journal_notes_manager.register('24933', 'note_id_24933{#note_id_24933}')
-    journal_notes_manager.register('25254', 'note_id_25254{#note_id_25254}')
-    journal_notes_manager.register('26087', 'note_id_26087{#note_id_26087}')
-    journal_notes_manager.register('26108', 'note_id_26108{#note_id_26108}')
-    journal_notes_manager.register('37701', 'note_id_37701{#note_id_37701}')
-    journal_notes_manager.register('37702', 'note_id_37702{#note_id_37702}')
-    journal_notes_manager.register('38199', 'note_id_38199{#note_id_38199}')
-    journal_notes_manager.register('38202', 'note_id_38202{#note_id_38202}')
-    journal_notes_manager.register('38203', 'note_id_38203{#note_id_38203}')
-    journal_notes_manager.register('38205', 'note_id_38205{#note_id_38205}')
-    journal_notes_manager.register('39459', 'note_id_39459{#note_id_39459}')
-    journal_notes_manager.register('39460', 'note_id_39460{#note_id_39460}')
-    journal_notes_manager.register('39461', 'note_id_39461{#note_id_39461}')
-    journal_notes_manager.register('39462', 'note_id_39462{#note_id_39462}')
-    journal_notes_manager.register('39463', 'note_id_39463{#note_id_39463}')
-    journal_notes_manager.register('39464', 'note_id_39464{#note_id_39464}')
-    journal_notes_manager.register('39468', 'note_id_39468{#note_id_39468}')
-    journal_notes_manager.register('39469', 'note_id_39469{#note_id_39469}')
-    journal_notes_manager.register('39470', 'note_id_39470{#note_id_39470}')
-    journal_notes_manager.register('39477', 'note_id_39477{#note_id_39477}')
-    journal_notes_manager.register('39490', 'note_id_39490{#note_id_39490}')
-    journal_notes_manager.register('39516', 'note_id_39516{#note_id_39516}')
-    journal_notes_manager.register('53633', 'note_id_53633{#note_id_53633}')
-    journal_notes_manager.register('53661', 'note_id_53661{#note_id_53661}')
-    journal_notes_manager.register('61612', 'note_id_61612{#note_id_61612}')
-    journal_notes_manager.register('63982', 'note_id_63982{#note_id_63982}')
-    journal_notes_manager.register('64512', 'note_id_64512{#note_id_64512}')
-    journal_notes_manager.register('64513', 'note_id_64513{#note_id_64513}')
-    journal_notes_manager.register('64517', 'note_id_64517{#note_id_64517}')
-    journal_notes_manager.register('64518', 'note_id_64518{#note_id_64518}')
-    journal_notes_manager.register('64519', 'note_id_64519{#note_id_64519}')
-    journal_notes_manager.register('64521', 'note_id_64521{#note_id_64521}')
-    journal_notes_manager.register('64522', 'note_id_64522{#note_id_64522}')
-    journal_notes_manager.register('64528', 'note_id_64528{#note_id_64528}')
-    journal_notes_manager.register('64529', 'note_id_64529{#note_id_64529}')
-    journal_notes_manager.register('64530', 'note_id_64530{#note_id_64530}')
-    journal_notes_manager.register('64531', 'note_id_64531{#note_id_64531}')
-    journal_notes_manager.register('64536', 'note_id_64536{#note_id_64536}')
-    journal_notes_manager.register('64537', 'note_id_64537{#note_id_64537}')
-    journal_notes_manager.register('65573', 'note_id_65573{#note_id_65573}')
-    journal_notes_manager.register('65625', 'note_id_65625{#note_id_65625}')
-    journal_notes_manager.register('65637', 'note_id_65637{#note_id_65637}')
-    journal_notes_manager.register('65669', 'note_id_65669{#note_id_65669}')
-    journal_notes_manager.register('65678', 'note_id_65678{#note_id_65678}')
-    journal_notes_manager.register('65712', 'note_id_65712{#note_id_65712}')
-    journal_notes_manager.register('65825', 'note_id_65825{#note_id_65825}')
-    journal_notes_manager.register('66659', 'note_id_66659{#note_id_66659}')
-    journal_notes_manager.register('66917', 'note_id_66917{#note_id_66917}')
-    journal_notes_manager.register('67862', 'note_id_67862{#note_id_67862}')
-    journal_notes_manager.register('68117', 'note_id_68117{#note_id_68117}')
-    return journal_notes_manager
+    return journal_notes_manager \
+        .register('20538', 'note_id_20538{#note_id_20538}') \
+        .register('21805', 'note_id_21805{#note_id_21805}') \
+        .register('21856', 'note_id_21856{#note_id_21856}') \
+        .register('21857', 'note_id_21857{#note_id_21857}') \
+        .register('21926', 'note_id_21926{#note_id_21926}') \
+        .register('21996', 'note_id_21996{#note_id_21996}') \
+        .register('22052', 'note_id_22052{#note_id_22052}') \
+        .register('24933', 'note_id_24933{#note_id_24933}') \
+        .register('25254', 'note_id_25254{#note_id_25254}') \
+        .register('26087', 'note_id_26087{#note_id_26087}') \
+        .register('26108', 'note_id_26108{#note_id_26108}') \
+        .register('37701', 'note_id_37701{#note_id_37701}') \
+        .register('37702', 'note_id_37702{#note_id_37702}') \
+        .register('38199', 'note_id_38199{#note_id_38199}') \
+        .register('38202', 'note_id_38202{#note_id_38202}') \
+        .register('38203', 'note_id_38203{#note_id_38203}') \
+        .register('38205', 'note_id_38205{#note_id_38205}') \
+        .register('39459', 'note_id_39459{#note_id_39459}') \
+        .register('39460', 'note_id_39460{#note_id_39460}') \
+        .register('39461', 'note_id_39461{#note_id_39461}') \
+        .register('39462', 'note_id_39462{#note_id_39462}') \
+        .register('39463', 'note_id_39463{#note_id_39463}') \
+        .register('39464', 'note_id_39464{#note_id_39464}') \
+        .register('39468', 'note_id_39468{#note_id_39468}') \
+        .register('39469', 'note_id_39469{#note_id_39469}') \
+        .register('39470', 'note_id_39470{#note_id_39470}') \
+        .register('39477', 'note_id_39477{#note_id_39477}') \
+        .register('39490', 'note_id_39490{#note_id_39490}') \
+        .register('39516', 'note_id_39516{#note_id_39516}') \
+        .register('53633', 'note_id_53633{#note_id_53633}') \
+        .register('53661', 'note_id_53661{#note_id_53661}') \
+        .register('61612', 'note_id_61612{#note_id_61612}') \
+        .register('63982', 'note_id_63982{#note_id_63982}') \
+        .register('64512', 'note_id_64512{#note_id_64512}') \
+        .register('64513', 'note_id_64513{#note_id_64513}') \
+        .register('64517', 'note_id_64517{#note_id_64517}') \
+        .register('64518', 'note_id_64518{#note_id_64518}') \
+        .register('64519', 'note_id_64519{#note_id_64519}') \
+        .register('64521', 'note_id_64521{#note_id_64521}') \
+        .register('64522', 'note_id_64522{#note_id_64522}') \
+        .register('64528', 'note_id_64528{#note_id_64528}') \
+        .register('64529', 'note_id_64529{#note_id_64529}') \
+        .register('64530', 'note_id_64530{#note_id_64530}') \
+        .register('64531', 'note_id_64531{#note_id_64531}') \
+        .register('64536', 'note_id_64536{#note_id_64536}') \
+        .register('64537', 'note_id_64537{#note_id_64537}') \
+        .register('65573', 'note_id_65573{#note_id_65573}') \
+        .register('65625', 'note_id_65625{#note_id_65625}') \
+        .register('65637', 'note_id_65637{#note_id_65637}') \
+        .register('65669', 'note_id_65669{#note_id_65669}') \
+        .register('65678', 'note_id_65678{#note_id_65678}') \
+        .register('65712', 'note_id_65712{#note_id_65712}') \
+        .register('65825', 'note_id_65825{#note_id_65825}') \
+        .register('66659', 'note_id_66659{#note_id_66659}') \
+        .register('66917', 'note_id_66917{#note_id_66917}') \
+        .register('67862', 'note_id_67862{#note_id_67862}') \
+        .register('68117', 'note_id_68117{#note_id_68117}')

@@ -7,4 +7,4 @@ RUN pip install coverage --proxy $PROXY
 
 WORKDIR /app
 
-# CMD ["sh", "-c", "coverage run -m unittest discover -s . -p '*_tests.py' && coverage html"]
+# CMD ["sh", "-c", "coverage run -m unittest discover -s . -p '*Tests.py' && coverage html"]

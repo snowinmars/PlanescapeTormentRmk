@@ -6,19 +6,19 @@ from game.engine.quests.Quest import (Quest)
 
 class QuestsStore():
     def __init__(self):
-        self.quests = {}
+        self.quests               = {}
         self.quest_state_id_index = {}
 
 
     def __getstate__(self):
         return {
-            'quests': self.quests,
+            'quests'              : self.quests,
             'quest_state_id_index': self.quest_state_id_index
         }
 
 
     def __setstate__(self, state):
-        self.quests = state['quests']
+        self.quests               = state['quests']
         self.quest_state_id_index = state['quest_state_id_index']
 
 
@@ -42,10 +42,10 @@ class QuestsStore():
         data['quests'] = dict(map(lambda x: (
             x[0],
             Quest(
-                x[1]['quest_id'],
+                x[1]['quest_id']       ,
                 x[1]['quest_state_ids'],
                 x[1]['active_state_id'],
-                x[1]['started'],
+                x[1]['started']        ,
                 x[1]['finished']
             )), data['quests'].items()))
         obj.__setstate__(data)

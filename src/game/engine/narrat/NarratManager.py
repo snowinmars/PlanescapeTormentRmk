@@ -4,7 +4,7 @@ import pickle
 class NarratManager:
     def __init__(self, log_events_manager):
         self._log_events_manager = log_events_manager
-        self._narrat_store = None
+        self._narrat_store       = None
 
 
     def set_store(self, narrat_store):
@@ -14,34 +14,35 @@ class NarratManager:
     def get_last_history_id(self):
         return self._narrat_store.last_history_id
 
+
     def get_last_menu_items_id(self):
         return self._narrat_store.last_menu_items_id
 
 
     def add_history_entry(
-        self,
-        who,
-        who_color,
-        what,
-        is_br=False,
-        is_change=False,
-        is_scars=False,
-        is_nameless=False,
-        is_npc=False,
-        is_nr=False
+        self               ,
+        who                ,
+        who_color          ,
+        what               ,
+        is_br       = False,
+        is_change   = False,
+        is_scars    = False,
+        is_nameless = False,
+        is_npc      = False,
+        is_nr       = False
     ):
         self._narrat_store.last_history_id = self._narrat_store.last_history_id + 1
         entry = {
-            'who': who,
-            'who_color': who_color,
-            'what': what,
-            'is_br': is_br,
-            'is_change': is_change,
-            'is_scars': is_scars,
+            'who'        : who        ,
+            'who_color'  : who_color  ,
+            'what'       : what       ,
+            'is_br'      : is_br      ,
+            'is_change'  : is_change  ,
+            'is_scars'   : is_scars   ,
             'is_nameless': is_nameless,
-            'is_npc': is_npc,
-            'is_nr': is_nr,
-            'id': self._narrat_store.last_history_id,
+            'is_npc'     : is_npc     ,
+            'is_nr'      : is_nr      ,
+            'id'         : self._narrat_store.last_history_id
         }
         self._narrat_store.history.append(entry)
 
@@ -51,10 +52,10 @@ class NarratManager:
 
     def report_change(self, change_id, change_kwargs):
         self.add_history_entry(
-            change_id,
-            '#98afb5', # color_narrator
-            change_kwargs,
-            is_change = True
+            change_id           ,
+            '#98afb5'           , # color_narrator # TODO [snow]: join rpy and py const declarations
+            change_kwargs       ,
+            is_change     = True
         )
 
 
@@ -91,28 +92,28 @@ class NarratManager:
 
 
     def update_current_dialogue(
-        self,
-        who,
-        who_color,
-        what,
-        is_br=False,
-        is_change=False,
-        is_scars=False,
-        is_nameless=False,
-        is_npc=False,
-        is_nr=False
+        self               ,
+        who                ,
+        who_color          ,
+        what               ,
+        is_br       = False,
+        is_change   = False,
+        is_scars    = False,
+        is_nameless = False,
+        is_npc      = False,
+        is_nr       = False
     ):
         entry = {
-            'who': who,
-            'who_color': who_color,
-            'what': what,
-            'is_br': is_br,
-            'is_change': is_change,
-            'is_scars': is_scars,
+            'who'        : who        ,
+            'who_color'  : who_color  ,
+            'what'       : what       ,
+            'is_br'      : is_br      ,
+            'is_change'  : is_change  ,
+            'is_scars'   : is_scars   ,
             'is_nameless': is_nameless,
-            'is_npc': is_npc,
-            'is_nr': is_nr,
-            'id': self._narrat_store.last_history_id,
+            'is_npc'     : is_npc     ,
+            'is_nr'      : is_nr      ,
+            'id'         : self._narrat_store.last_history_id,
         }
         self._narrat_store.current_line = entry
 

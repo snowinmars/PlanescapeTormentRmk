@@ -7,23 +7,23 @@ from game.engine.journal_notes.JournalNote import (JournalNote)
 
 class InventoryItemsTests(LogicTests):
     def test_ctor(self):
-        id = 'id'
-        content = 'content'
-        found = False
+        id       = 'id'
+        content  = 'content'
+        found    = False
         found_at = 0
 
         journal_note = self._create_journal_note(
-            id=id,
-            content=content,
-            found=found,
-            found_at=found_at
+            id       = id      ,
+            content  = content ,
+            found    = found   ,
+            found_at = found_at
         )
 
         self.assertIsNotNone(journal_note)
 
-        self.assertEqual(journal_note.id, id)
-        self.assertEqual(journal_note.content, content)
-        self.assertEqual(journal_note.found, found)
+        self.assertEqual(journal_note.id      , id)
+        self.assertEqual(journal_note.content , content)
+        self.assertEqual(journal_note.found   , found)
         self.assertEqual(journal_note.found_at, found_at)
 
 
@@ -50,16 +50,16 @@ class InventoryItemsTests(LogicTests):
 
 
     def _create_journal_note(self,
-        id ='d',
-        content='content',
-        found=False,
-        found_at=0
+        id                = 'd',
+        content='content'      ,
+        found=False            ,
+        found_at          = 0
     ):
         return JournalNote(
-            id=id,
-            content=content,
-            found=found,
-            found_at=found_at
+            id       = id      ,
+            content  = content ,
+            found    = found   ,
+            found_at = found_at
         )
 
 

@@ -10,28 +10,28 @@ class InventoryItemsStoreTests(unittest.TestCase):
     def setUp(self):
         self.store = InventoryItemsStore()
         self.inventory_item_a = InventoryItem(
-            settings_id="inventory_item_a_settings_id",
-            orig_id='inventory_item_a_orig_id',
-            name="inventory_item_a_name",
-            description="inventory_item_a_description",
-            grid_image="inventory_item_a_grid_image",
-            used_by='inventory_item_a_used_by',
-            properties='inventory_item_a_properties',
-            detail_image="inventory_item_a_detail_image",
-            jump_on_use_to="inventory_item_a_jump_on_use_to",
-            owned_count=3
+            settings_id    = "inventory_item_a_settings_id"   ,
+            orig_id        = 'inventory_item_a_orig_id'       ,
+            name           = "inventory_item_a_name"          ,
+            description    = "inventory_item_a_description"   ,
+            grid_image     = "inventory_item_a_grid_image"    ,
+            used_by        = 'inventory_item_a_used_by'       ,
+            properties     = 'inventory_item_a_properties'    ,
+            detail_image   = "inventory_item_a_detail_image"  ,
+            jump_on_use_to = "inventory_item_a_jump_on_use_to",
+            owned_count    = 3
         )
         self.inventory_item_b = InventoryItem(
-            settings_id="inventory_item_b_settings_id",
-            orig_id='inventory_item_b_orig_id',
-            name="inventory_item_b_name",
-            description="inventory_item_b_description",
-            grid_image="inventory_item_b_grid_image",
-            used_by="inventory_item_b_used_by",
-            properties="inventory_item_b_properties",
-            detail_image="inventory_item_b_detail_image",
-            jump_on_use_to="inventory_item_b_jump_on_use_to",
-            owned_count=5
+            settings_id    = "inventory_item_b_settings_id"   ,
+            orig_id        = 'inventory_item_b_orig_id'       ,
+            name           = "inventory_item_b_name"          ,
+            description    = "inventory_item_b_description"   ,
+            grid_image     = "inventory_item_b_grid_image"    ,
+            used_by        = "inventory_item_b_used_by"       ,
+            properties     = "inventory_item_b_properties"    ,
+            detail_image   = "inventory_item_b_detail_image"  ,
+            jump_on_use_to = "inventory_item_b_jump_on_use_to",
+            owned_count    = 5
         )
 
 
@@ -82,29 +82,29 @@ class InventoryItemsStoreTests(unittest.TestCase):
 
     def _assert_empty_store(self, store):
         self.assertIsNotNone(store.inventory_items)
-        self.assertEqual(len(store.inventory_items), 0)
+        self.assertEqual    (len(store.inventory_items), 0)
 
 
     def _assert_filled_store(self, store):
         self.assertIsNotNone(store.inventory_items)
-        self.assertEqual(len(store.inventory_items), 2)
-        self.assertTrue(self.inventory_item_a.name in store.inventory_items)
-        self.assertTrue(self.inventory_item_b.name in store.inventory_items)
+        self.assertEqual    (len(store.inventory_items), 2)
+        self.assertTrue     (self.inventory_item_a.name in store.inventory_items)
+        self.assertTrue     (self.inventory_item_b.name in store.inventory_items)
         self._assert_equal_inventory_items(store.inventory_items[self.inventory_item_a.name], self.inventory_item_a)
         self._assert_equal_inventory_items(store.inventory_items[self.inventory_item_b.name], self.inventory_item_b)
 
 
     def _assert_equal_inventory_items(self, lhs, rhs):
-        self.assertEqual(lhs.settings_id, rhs.settings_id)
-        self.assertEqual(lhs.orig_id, rhs.orig_id)
-        self.assertEqual(lhs.name, rhs.name)
-        self.assertEqual(lhs.description, rhs.description)
-        self.assertEqual(lhs.grid_image, rhs.grid_image)
-        self.assertEqual(lhs.used_by, rhs.used_by)
-        self.assertEqual(lhs.properties, rhs.properties)
-        self.assertEqual(lhs.detail_image, rhs.detail_image)
+        self.assertEqual(lhs.settings_id   , rhs.settings_id)
+        self.assertEqual(lhs.orig_id       , rhs.orig_id)
+        self.assertEqual(lhs.name          , rhs.name)
+        self.assertEqual(lhs.description   , rhs.description)
+        self.assertEqual(lhs.grid_image    , rhs.grid_image)
+        self.assertEqual(lhs.used_by       , rhs.used_by)
+        self.assertEqual(lhs.properties    , rhs.properties)
+        self.assertEqual(lhs.detail_image  , rhs.detail_image)
         self.assertEqual(lhs.jump_on_use_to, rhs.jump_on_use_to)
-        self.assertEqual(lhs.owned_count, rhs.owned_count)
+        self.assertEqual(lhs.owned_count   , rhs.owned_count)
 
 
 if __name__ == "__main__":

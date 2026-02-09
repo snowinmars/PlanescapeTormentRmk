@@ -15,7 +15,7 @@ class QuestsManagerTests(LogicTests):
 
 
     def test_create_quest_when_all_ok(self):
-        quests_length_delta = 1
+        quests_length_delta               = 1
         quest_state_id_index_length_delta = 2
         quest = self._create_quest('quest')
 
@@ -26,7 +26,7 @@ class QuestsManagerTests(LogicTests):
             quest.quest_id,
             [
                 quest.quest_state_ids[0],
-                quest.quest_state_ids[1],
+                quest.quest_state_ids[1]
             ]
         )
 
@@ -44,7 +44,7 @@ class QuestsManagerTests(LogicTests):
             quest.quest_id,
             [
                 quest.quest_state_ids[0],
-                quest.quest_state_ids[1],
+                quest.quest_state_ids[1]
             ]
         )
 
@@ -53,7 +53,7 @@ class QuestsManagerTests(LogicTests):
                 quest.quest_id,
                 [
                     quest.quest_state_ids[0],
-                    quest.quest_state_ids[1],
+                    quest.quest_state_ids[1]
                 ]
             )
 
@@ -66,7 +66,7 @@ class QuestsManagerTests(LogicTests):
             quest_a.quest_id,
             [
                 quest_a.quest_state_ids[0],
-                quest_a.quest_state_ids[1],
+                quest_a.quest_state_ids[1]
             ]
         )
 
@@ -75,7 +75,7 @@ class QuestsManagerTests(LogicTests):
                 quest_b.quest_id,
                 [
                     quest_b.quest_state_ids[0],
-                    quest_a.quest_state_ids[1],
+                    quest_a.quest_state_ids[1]
                 ]
             )
 
@@ -90,7 +90,7 @@ class QuestsManagerTests(LogicTests):
             quest.quest_id,
             [
                 quest.quest_state_ids[0],
-                quest.quest_state_ids[1],
+                quest.quest_state_ids[1]
             ]
         )
 
@@ -111,7 +111,7 @@ class QuestsManagerTests(LogicTests):
             quest.quest_id,
             [
                 quest.quest_state_ids[0],
-                quest.quest_state_ids[1],
+                quest.quest_state_ids[1]
             ]
         )
 
@@ -121,7 +121,6 @@ class QuestsManagerTests(LogicTests):
 
     def test_set_entry_active(self):
         quest = self._create_quest('quest')
-        wrong_quest_state_id = 'wrong_quest_state_id'
 
         quests = self.quests_manager.build_started_quests()
         quests_length_before = len(quests)
@@ -130,7 +129,7 @@ class QuestsManagerTests(LogicTests):
             quest.quest_id,
             [
                 quest.quest_state_ids[0],
-                quest.quest_state_ids[1],
+                quest.quest_state_ids[1]
             ]
         )
 
@@ -140,13 +139,12 @@ class QuestsManagerTests(LogicTests):
         self.quests_manager.set_entry_active(quest.quest_state_ids[1])
         quest = self.quests_manager.get_quest(quest.quest_id)
 
-        self.assertTrue(quest.started)
+        self.assertTrue (quest.started)
         self.assertEqual(quest.active_state_id, quest.quest_state_ids[1])
 
 
     def test_set_entry_active_twice(self):
         quest = self._create_quest('quest')
-        wrong_quest_state_id = 'wrong_quest_state_id'
 
         quests = self.quests_manager.build_started_quests()
         quests_length_before = len(quests)
@@ -155,7 +153,7 @@ class QuestsManagerTests(LogicTests):
             quest.quest_id,
             [
                 quest.quest_state_ids[0],
-                quest.quest_state_ids[1],
+                quest.quest_state_ids[1]
             ]
         )
 
@@ -165,19 +163,18 @@ class QuestsManagerTests(LogicTests):
         self.quests_manager.set_entry_active(quest.quest_state_ids[1])
         quest = self.quests_manager.get_quest(quest.quest_id)
 
-        self.assertTrue(quest.started)
+        self.assertTrue (quest.started)
         self.assertEqual(quest.active_state_id, quest.quest_state_ids[1])
 
         self.quests_manager.set_entry_active(quest.quest_state_ids[1])
         quest = self.quests_manager.get_quest(quest.quest_id)
 
-        self.assertTrue(quest.started)
+        self.assertTrue (quest.started)
         self.assertEqual(quest.active_state_id, quest.quest_state_ids[1])
 
 
     def test_set_entry_done(self):
         quest = self._create_quest('quest')
-        wrong_quest_state_id = 'wrong_quest_state_id'
 
         quests = self.quests_manager.build_started_quests()
         quests_length_before = len(quests)
@@ -186,7 +183,7 @@ class QuestsManagerTests(LogicTests):
             quest.quest_id,
             [
                 quest.quest_state_ids[0],
-                quest.quest_state_ids[1],
+                quest.quest_state_ids[1]
             ]
         )
 
@@ -196,14 +193,13 @@ class QuestsManagerTests(LogicTests):
         self.quests_manager.set_entry_done(quest.quest_state_ids[1])
         quest = self.quests_manager.get_quest(quest.quest_id)
 
-        self.assertTrue(quest.started)
-        self.assertTrue(quest.finished)
+        self.assertTrue (quest.started)
+        self.assertTrue (quest.finished)
         self.assertEqual(quest.active_state_id, quest.quest_state_ids[1])
 
 
     def test_set_entry_done_twice(self):
         quest = self._create_quest('quest')
-        wrong_quest_state_id = 'wrong_quest_state_id'
 
         quests = self.quests_manager.build_started_quests()
         quests_length_before = len(quests)
@@ -212,7 +208,7 @@ class QuestsManagerTests(LogicTests):
             quest.quest_id,
             [
                 quest.quest_state_ids[0],
-                quest.quest_state_ids[1],
+                quest.quest_state_ids[1]
             ]
         )
 
@@ -222,15 +218,15 @@ class QuestsManagerTests(LogicTests):
         self.quests_manager.set_entry_done(quest.quest_state_ids[1])
         quest = self.quests_manager.get_quest(quest.quest_id)
 
-        self.assertTrue(quest.started)
-        self.assertTrue(quest.finished)
+        self.assertTrue (quest.started)
+        self.assertTrue (quest.finished)
         self.assertEqual(quest.active_state_id, quest.quest_state_ids[1])
 
         self.quests_manager.set_entry_done(quest.quest_state_ids[1])
         quest = self.quests_manager.get_quest(quest.quest_id)
 
-        self.assertTrue(quest.started)
-        self.assertTrue(quest.finished)
+        self.assertTrue (quest.started)
+        self.assertTrue (quest.finished)
         self.assertEqual(quest.active_state_id, quest.quest_state_ids[1])
 
 
@@ -247,14 +243,14 @@ class QuestsManagerTests(LogicTests):
             quest_a.quest_id,
             [
                 quest_a.quest_state_ids[0],
-                quest_a.quest_state_ids[1],
+                quest_a.quest_state_ids[1]
             ]
         )
         self.quests_manager.create_quest(
             quest_b.quest_id,
             [
                 quest_b.quest_state_ids[0],
-                quest_b.quest_state_ids[1],
+                quest_b.quest_state_ids[1]
             ]
         )
 
@@ -278,14 +274,14 @@ class QuestsManagerTests(LogicTests):
             quest_a.quest_id,
             [
                 quest_a.quest_state_ids[0],
-                quest_a.quest_state_ids[1],
+                quest_a.quest_state_ids[1]
             ]
         )
         self.quests_manager.create_quest(
             quest_b.quest_id,
             [
                 quest_b.quest_state_ids[0],
-                quest_b.quest_state_ids[1],
+                quest_b.quest_state_ids[1]
             ]
         )
 
@@ -310,14 +306,14 @@ class QuestsManagerTests(LogicTests):
             quest_a.quest_id,
             [
                 quest_a.quest_state_ids[0],
-                quest_a.quest_state_ids[1],
+                quest_a.quest_state_ids[1]
             ]
         )
         self.quests_manager.create_quest(
             quest_b.quest_id,
             [
                 quest_b.quest_state_ids[0],
-                quest_b.quest_state_ids[1],
+                quest_b.quest_state_ids[1]
             ]
         )
 
@@ -328,11 +324,6 @@ class QuestsManagerTests(LogicTests):
         quests_length_after = len(quests)
 
         self.assertEqual(quests_length_before + quests_length_delta, quests_length_after)
-
-
-
-
-
 
 
     def test_build_finished_quests_when_nothing_started(self):

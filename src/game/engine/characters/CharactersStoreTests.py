@@ -9,20 +9,44 @@ class CharactersStoreTests(unittest.TestCase):
     def setUp(self):
         self.store = CharactersStore()
         self.morte = Character(
-            name='morte_character_name', current_class='Fighter', race='Human. Once', sex='Male', \
-            max_health=20, current_health=20, ac=4, \
-            good=60, law=-60, \
-            lore=0, experience=2000, \
-            strength=12, dexterity=16, intelligence=13, constitution=16, wisdom=9, charisma=6,
-            looks_like='morte'
+            name           = 'morte_character_name',
+            current_class  = 'Fighter'             ,
+            race           = 'Human. Once'         ,
+            sex            = 'Male'                ,
+            max_health     = 20                    ,
+            current_health = 20                    ,
+            ac             = 4                     ,
+            good           = 60                    ,
+            law            = -60                   ,
+            lore           = 0                     ,
+            experience     = 2000                  ,
+            strength       = 12                    ,
+            dexterity      = 16                    ,
+            intelligence   = 13                    ,
+            constitution   = 16                    ,
+            wisdom         = 9                     ,
+            charisma       = 6                     ,
+            looks_like     = 'morte'
         )
         self.annah = Character(
-            name='annah_character_name', current_class='Fighter/Thief', race='Tiefling', sex='Female', \
-            max_health=38, current_health=38, ac=4, \
-            good=0, law=-60, \
-            lore=0, experience=0, \
-            strength=14, dexterity=18, intelligence=12, constitution=16, wisdom=10, charisma=13,
-            looks_like='annah'
+            name           = 'annah_character_name',
+            current_class  = 'Fighter/Thief'       ,
+            race           = 'Tiefling'            ,
+            sex            = 'Female'              ,
+            max_health     = 38                    ,
+            current_health = 38                    ,
+            ac             = 4                     ,
+            good           = 0                     ,
+            law            = -60                   ,
+            lore           = 0                     ,
+            experience     = 0                     ,
+            strength       = 14                    ,
+            dexterity      = 18                    ,
+            intelligence   = 12                    ,
+            constitution   = 16                    ,
+            wisdom         = 10                    ,
+            charisma       = 13                    ,
+            looks_like     = 'annah'
         )
 
 
@@ -69,49 +93,48 @@ class CharactersStoreTests(unittest.TestCase):
     def _assert_empty_store(self, store):
         self.assertIsNotNone(store.characters)
         self.assertIsNotNone(store.once_keys)
-        self.assertEqual(len(store.characters), 0)
-        self.assertEqual(len(store.once_keys), 0)
+        self.assertEqual    (len(store.characters), 0)
+        self.assertEqual    (len(store.once_keys), 0)
 
 
     def _fill_store(self, store):
         store.characters[self.morte.name] = self.morte
         store.characters[self.annah.name] = self.annah
-        store.once_keys[self.morte.name] = []
-        store.once_keys[self.annah.name] = []
-        store.once_keys[self.morte.name].append('selfmortename')
-        store.once_keys[self.annah.name].append('selfannahname')
+        store.once_keys [self.morte.name] = []
+        store.once_keys [self.annah.name] = []
+        store.once_keys [self.morte.name].append('selfmortename')
+        store.once_keys [self.annah.name].append('selfannahname')
 
 
     def _assert_filled_store(self, store):
         self.assertIsNotNone(store.characters)
         self.assertIsNotNone(store.once_keys)
-        self.assertEqual(len(store.characters), 2)
-        self.assertEqual(len(store.once_keys), 2)
+        self.assertEqual    (len(store.characters), 2)
+        self.assertEqual    (len(store.once_keys) , 2)
+        self.assertTrue     (self.morte.name in store.once_keys)
+        self.assertTrue     (self.annah.name in store.once_keys)
+        self.assertEqual    (len(store.once_keys[self.morte.name]), 1)
+        self.assertEqual    (len(store.once_keys[self.annah.name]), 1)
+        self.assertEqual    (store.once_keys[self.morte.name][0], 'selfmortename')
+        self.assertEqual    (store.once_keys[self.annah.name][0], 'selfannahname')
         self._assert_equal_characters(store.characters[self.morte.name], self.morte)
         self._assert_equal_characters(store.characters[self.annah.name], self.annah)
-        self.assertTrue(self.morte.name in store.once_keys)
-        self.assertTrue(self.annah.name in store.once_keys)
-        self.assertEqual(len(store.once_keys[self.morte.name]), 1)
-        self.assertEqual(len(store.once_keys[self.annah.name]), 1)
-        self.assertEqual(store.once_keys[self.morte.name][0], 'selfmortename')
-        self.assertEqual(store.once_keys[self.annah.name][0], 'selfannahname')
-
 
     def _assert_equal_characters(self, lhs, rhs):
-        self.assertEqual(lhs.name, rhs.name)
-        self.assertEqual(lhs.max_health, rhs.max_health)
+        self.assertEqual(lhs.name          , rhs.name)
+        self.assertEqual(lhs.max_health    , rhs.max_health)
         self.assertEqual(lhs.current_health, rhs.current_health)
-        self.assertEqual(lhs.good, rhs.good)
-        self.assertEqual(lhs.law, rhs.law)
-        self.assertEqual(lhs.lore, rhs.lore)
-        self.assertEqual(lhs.experience, rhs.experience)
-        self.assertEqual(lhs.strength, rhs.strength)
-        self.assertEqual(lhs.dexterity, rhs.dexterity)
-        self.assertEqual(lhs.intelligence, rhs.intelligence)
-        self.assertEqual(lhs.constitution, rhs.constitution)
-        self.assertEqual(lhs.wisdom, rhs.wisdom)
-        self.assertEqual(lhs.charisma, rhs.charisma)
-        self.assertEqual(lhs.looks_like, rhs.looks_like)
+        self.assertEqual(lhs.good          , rhs.good)
+        self.assertEqual(lhs.law           , rhs.law)
+        self.assertEqual(lhs.lore          , rhs.lore)
+        self.assertEqual(lhs.experience    , rhs.experience)
+        self.assertEqual(lhs.strength      , rhs.strength)
+        self.assertEqual(lhs.dexterity     , rhs.dexterity)
+        self.assertEqual(lhs.intelligence  , rhs.intelligence)
+        self.assertEqual(lhs.constitution  , rhs.constitution)
+        self.assertEqual(lhs.wisdom        , rhs.wisdom)
+        self.assertEqual(lhs.charisma      , rhs.charisma)
+        self.assertEqual(lhs.looks_like    , rhs.looks_like)
 
 
 if __name__ == "__main__":

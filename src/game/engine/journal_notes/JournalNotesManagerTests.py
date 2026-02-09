@@ -11,9 +11,9 @@ class JournalNotesManagerTests(LogicTests):
 
 
     def test_register_when_all_ok(self):
-        note_id = 'note_id'
+        note_id      = 'note_id'
         note_content = 'note_content'
-        note_found = True
+        note_found   = True
 
         notes_length_before = len(self.journal_notes_manager._journal_notes_store.notes)
 
@@ -25,9 +25,9 @@ class JournalNotesManagerTests(LogicTests):
 
 
     def test_register_when_already_registrated(self):
-        note_id = 'note_id'
+        note_id      = 'note_id'
         note_content = 'note_content'
-        note_found = True
+        note_found   = True
 
         notes_length_before = len(self.journal_notes_manager._journal_notes_store.notes)
 
@@ -39,9 +39,9 @@ class JournalNotesManagerTests(LogicTests):
 
 
     def test_get_when_all_ok(self):
-        note_id = 'note_id'
+        note_id      = 'note_id'
         note_content = 'note_content'
-        note_found = True
+        note_found   = True
 
         notes_length_before = len(self.journal_notes_manager._journal_notes_store.notes)
 
@@ -62,9 +62,9 @@ class JournalNotesManagerTests(LogicTests):
 
 
     def test_found_journal_note_when_all_ok(self):
-        note_id = 'note_id'
+        note_id      = 'note_id'
         note_content = 'note_content'
-        note_found = False
+        note_found   = False
 
         self.journal_notes_manager.register(note_id, note_content, note_found)
         self.assertFalse(self.journal_notes_manager.found_journal_note(note_id))
@@ -81,9 +81,9 @@ class JournalNotesManagerTests(LogicTests):
 
 
     def test_update_journal_when_all_ok(self):
-        note_id = 'note_id'
+        note_id      = 'note_id'
         note_content = 'note_content'
-        note_found = False
+        note_found   = False
 
         self.journal_notes_manager.register(note_id, note_content, note_found)
         note = self.journal_notes_manager.get(note_id)
@@ -102,15 +102,15 @@ class JournalNotesManagerTests(LogicTests):
 
 
     def test_build_journal_when_all_ok(self):
-        note_id1 = 'note_id1'
+        note_id1      = 'note_id1'
         note_content1 = 'note_content'
-        note_found1 = False
-        note_id2 = 'note_id2'
+        note_found1   = False
+        note_id2      = 'note_id2'
         note_content2 = 'note_content'
-        note_found2 = False
-        note_id3 = 'note_id3'
+        note_found2   = False
+        note_id3      = 'note_id3'
         note_content3 = 'note_content'
-        note_found3 = False
+        note_found3   = False
 
         notes_length_before = len(list(self.journal_notes_manager.build_journal()))
 

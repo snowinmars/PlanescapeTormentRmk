@@ -3,13 +3,13 @@ import logging
 
 class InventoryItemsManager:
     def __init__(self, log_events_manager):
-        self._log_events_manager = log_events_manager
+        self._log_events_manager    = log_events_manager
         self._inventory_items_store = None
-        self._selected_item_id = None
+        self._selected_item_id      = None
 
 
-    def set_store(self, IiventoryI_iemsS_sore):
-        self._inventory_items_store = IiventoryI_iemsS_sore
+    def set_store(self, inventory_items_store):
+        self._inventory_items_store = inventory_items_store
 
 
     def register(self, inventory_item):

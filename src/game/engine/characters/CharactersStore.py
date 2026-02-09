@@ -6,19 +6,19 @@ from game.engine.characters.Character import (Character)
 class CharactersStore():
     def __init__(self):
         self.characters = {}
-        self.once_keys = {}
+        self.once_keys  = {}
 
 
     def __getstate__(self):
         return {
             'characters': self.characters,
-            'once_keys': self.once_keys,
+            'once_keys' : self.once_keys ,
         }
 
 
     def __setstate__(self, state):
         self.characters = state['characters']
-        self.once_keys = state['once_keys']
+        self.once_keys  = state['once_keys']
 
 
     def toJson(self, indent=None):
@@ -41,23 +41,23 @@ class CharactersStore():
         data['characters'] = dict(map(lambda x: (
             x[0],
             Character(
-                x[1]['name'],
-                x[1]['current_class'],
-                x[1]['race'],
-                x[1]['sex'],
-                x[1]['max_health'],
+                x[1]['name']          ,
+                x[1]['current_class'] ,
+                x[1]['race']          ,
+                x[1]['sex']           ,
+                x[1]['max_health']    ,
                 x[1]['current_health'],
-                x[1]['ac'],
-                x[1]['good'],
-                x[1]['law'],
-                x[1]['lore'],
-                x[1]['experience'],
-                x[1]['strength'],
-                x[1]['dexterity'],
-                x[1]['intelligence'],
-                x[1]['constitution'],
-                x[1]['wisdom'],
-                x[1]['charisma'],
+                x[1]['ac']            ,
+                x[1]['good']          ,
+                x[1]['law']           ,
+                x[1]['lore']          ,
+                x[1]['experience']    ,
+                x[1]['strength']      ,
+                x[1]['dexterity']     ,
+                x[1]['intelligence']  ,
+                x[1]['constitution']  ,
+                x[1]['wisdom']        ,
+                x[1]['charisma']      ,
                 x[1]['looks_like']
             )), data['characters'].items()))
         obj.__setstate__(data)

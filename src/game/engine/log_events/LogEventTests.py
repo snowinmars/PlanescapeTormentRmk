@@ -8,20 +8,20 @@ from game.engine.log_events.LogEvent import (LogEvent)
 class LogEventTests(LogicTests):
     def test_ctor(self):
         timestamp = 'timestamp'
-        category = 'category'
-        text = 'text'
+        category  = 'category'
+        text      = 'text'
 
         log_event = self._create_log_event(
-            timestamp=timestamp,
-            category=category,
-            text=text
+            timestamp = timestamp,
+            category  = category ,
+            text      = text
         )
 
         self.assertIsNotNone(log_event)
 
         self.assertEqual(log_event.timestamp, timestamp)
-        self.assertEqual(log_event.category, category)
-        self.assertEqual(log_event.text, text)
+        self.assertEqual(log_event.category , category)
+        self.assertEqual(log_event.text     , text)
 
 
     def test_reserialize_pickle(self):
@@ -46,15 +46,16 @@ class LogEventTests(LogicTests):
         self._assert_log_event(log_event, restored_log_event)
 
 
-    def _create_log_event(self,
-        timestamp='timestamp',
-        category='category',
-        text='text'
+    def _create_log_event(
+        self                   ,
+        timestamp = 'timestamp',
+        category  = 'category' ,
+        text      = 'text'
     ):
         return LogEvent(
-            timestamp=timestamp,
-            category=category,
-            text=text
+            timestamp = timestamp,
+            category  = category ,
+            text      = text
         )
 
 

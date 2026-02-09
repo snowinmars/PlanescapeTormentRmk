@@ -1,7 +1,7 @@
 class WorldManager:
     def __init__(self, log_events_manager):
-        self._log_events_manager = log_events_manager
-        self._world_store = None
+        self._log_events_manager     = log_events_manager
+        self._world_store            = None
         self._report_change_callback = None
 
 
@@ -25,7 +25,7 @@ class WorldManager:
                 'world_manager_setter',
                 {
                     'setting_id': setting_id,
-                    'value': value
+                    'value'     : value
                 }
             )
         def inc(delta = 1):
@@ -37,9 +37,9 @@ class WorldManager:
                 'world_manager_inc',
                 {
                     'setting_id': setting_id,
-                    'before': before,
-                    'delta': delta,
-                    'after': after,
+                    'before'    : before    ,
+                    'delta'     : delta     ,
+                    'after'     : after
                 }
             )
         def dec(delta = 1):
@@ -51,9 +51,9 @@ class WorldManager:
                 'world_manager_dec',
                 {
                     'setting_id': setting_id,
-                    'before': before,
-                    'delta': delta,
-                    'after': after,
+                    'before'    : before    ,
+                    'delta'     : delta     ,
+                    'after'     : after
                 }
             )
         def inc_once(key, delta = 1):
@@ -69,9 +69,9 @@ class WorldManager:
                 'world_manager_inc_once',
                 {
                     'setting_id': setting_id,
-                    'before': before,
-                    'delta': delta,
-                    'after': after,
+                    'before'    : before    ,
+                    'delta'     : delta     ,
+                    'after'     : after
                 }
             )
         def dec_once(key, delta = 1):
@@ -87,16 +87,16 @@ class WorldManager:
                 'world_manager_dec_once',
                 {
                     'setting_id': setting_id,
-                    'before': before,
-                    'delta': delta,
-                    'after': after,
+                    'before'    : before    ,
+                    'delta'     : delta     ,
+                    'after'     : after
                 }
             )
 
-        setattr(self, f'get_{setting_id}', getter)
-        setattr(self, f'set_{setting_id}', setter)
-        setattr(self, f'inc_{setting_id}', inc)
-        setattr(self, f'dec_{setting_id}', dec)
+        setattr(self, f'get_{setting_id}'     , getter)
+        setattr(self, f'set_{setting_id}'     , setter)
+        setattr(self, f'inc_{setting_id}'     , inc)
+        setattr(self, f'dec_{setting_id}'     , dec)
         setattr(self, f'inc_once_{setting_id}', inc_once)
         setattr(self, f'dec_once_{setting_id}', dec_once)
 

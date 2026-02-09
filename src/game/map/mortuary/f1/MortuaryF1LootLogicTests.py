@@ -1,7 +1,7 @@
 import unittest
 
 
-from game.engine.LogicTests import (LogicTests)
+from game.engine.LogicTests                   import (LogicTests)
 from game.map.mortuary.f1.MortuaryF1LootLogic import (MortuaryF1LootLogic)
 
 

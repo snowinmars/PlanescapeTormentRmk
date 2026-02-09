@@ -54,9 +54,9 @@ class JournalNotesStoreTests(unittest.TestCase):
 
 
     def _assert_equal_notes(self, lhs, rhs):
-        self.assertEqual(lhs.id, rhs.id)
+        self.assertEqual(lhs.id     , rhs.id)
         self.assertEqual(lhs.content, rhs.content)
-        self.assertEqual(lhs.found, rhs.found)
+        self.assertEqual(lhs.found  , rhs.found)
 
 
     def _assert_empty_store(self, store):

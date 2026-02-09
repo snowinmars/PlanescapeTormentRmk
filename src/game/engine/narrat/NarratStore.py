@@ -4,7 +4,7 @@ import json
 class NarratStore():
     def __init__(self):
         self.last_history_id        = 0
-        self.last_menu_items_id        = 0
+        self.last_menu_items_id     = 0
         self.history                = []
         self.current_line           = None
         self.current_menu_items     = []
@@ -13,21 +13,21 @@ class NarratStore():
 
     def __getstate__(self):
         return {
-            'last_history_id': self.last_history_id,
-            'last_menu_items_id': self.last_menu_items_id,
-            'history': self.history,
-            'current_line': self.current_line,
-            'current_menu_items': self.current_menu_items,
+            'last_history_id'    : self.last_history_id,
+            'last_menu_items_id' : self.last_menu_items_id,
+            'history'            : self.history,
+            'current_line'       : self.current_line,
+            'current_menu_items' : self.current_menu_items,
             'history_entry_limit': self.history_entry_limit
         }
 
 
     def __setstate__(self, state):
-        self.last_history_id = state['last_history_id']
-        self.last_menu_items_id = state['last_menu_items_id']
-        self.history = state['history']
-        self.current_line = state['current_line']
-        self.current_menu_items = state['current_menu_items']
+        self.last_history_id     = state['last_history_id']
+        self.last_menu_items_id  = state['last_menu_items_id']
+        self.history             = state['history']
+        self.current_line        = state['current_line']
+        self.current_menu_items  = state['current_menu_items']
         self.history_entry_limit = state['history_entry_limit']
 
     # cannot be friend with json

@@ -1,5 +1,5 @@
 init 10 python:
-    from game.engine.runtime import (runtime)
+    from game.engine.runtime                      import (runtime)
     from game.map.mortuary.f2.MortuaryF2LootLogic import (MortuaryF2LootLogic)
     mortuaryF2LootLogic = MortuaryF2LootLogic(runtime.global_state_manager)
 

@@ -1,41 +1,41 @@
 init 10 python:
-    from game.engine.runtime import (runtime)
-    from game.map.party.get_party import (get_party)
+    from game.engine.runtime        import (runtime)
+    from game.map.party.get_party   import (get_party)
     from game.map.mortuary.f1.items import (
         FromMortuaryF1R1ToMortuaryF2R1,
         FromMortuaryF1R1ToMortuaryF1R2,
         FromMortuaryF1R1ToMortuaryF1R4,
         FromMortuaryF1R1ToMortuaryF1Rc,
-        FromMortuaryF1R1ToGameEnd,
-        MortuaryF1R1Shadow,
-        InMortuaryF1R1Soego,
+        FromMortuaryF1R1ToGameEnd     ,
+        MortuaryF1R1Shadow            ,
+        InMortuaryF1R1Soego           ,
 
         FromMortuaryF1R2ToMortuaryF1Rc,
         FromMortuaryF1R2ToMortuaryF1R3,
         FromMortuaryF1R2ToMortuaryF1R1,
-        MortuaryF1R2Shadow,
-        InMortuaryF1R2Deionarra,
+        MortuaryF1R2Shadow            ,
+        InMortuaryF1R2Deionarra       ,
 
         FromMortuaryF1R3ToMortuaryF1R2,
         FromMortuaryF1R3ToMortuaryF1R4,
         FromMortuaryF1R3ToMortuaryF1Rc,
-        MortuaryF1R3Shadow,
-        InMortuaryF1R3Zf114,
-        InMortuaryF1R3Zm1041,
-        InMortuaryF1R3Xach,
+        MortuaryF1R3Shadow            ,
+        InMortuaryF1R3Zf114           ,
+        InMortuaryF1R3Zm1041          ,
+        InMortuaryF1R3Xach            ,
 
         FromMortuaryF1R4ToMortuaryF1R3,
         FromMortuaryF1R4ToMortuaryF1R1,
         FromMortuaryF1R4ToMortuaryF1Rc,
         FromMortuaryF1R4ToMortuaryF2R7,
-        MortuaryF1R4Shadow,
-        InMortuaryF1R4Zm732,
+        MortuaryF1R4Shadow            ,
+        InMortuaryF1R4Zm732           ,
 
         FromMortuaryF1RcToMortuaryF1R1,
         FromMortuaryF1RcToMortuaryF1R2,
         FromMortuaryF1RcToMortuaryF1R3,
         FromMortuaryF1RcToMortuaryF1R4,
-        MortuaryF1RcShadow,
+        MortuaryF1RcShadow            ,
         InMortuaryF1RcGiantsk
     )
 

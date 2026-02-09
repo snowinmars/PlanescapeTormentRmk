@@ -7,105 +7,129 @@ from game.engine.characters.Character import (Character)
 
 class CharacterTests(LogicTests):
     def test_ctor(self):
-        name='protagonist_character_name'
-        current_class='Mage'
-        race='Human'
-        sex='Male'
-        max_health=31
-        current_health=31
-        ac=10
-        good=3
-        law=5
-        lore=7
-        experience=9
-        strength=11
-        dexterity=13
-        intelligence=17
-        constitution=19
-        wisdom=23
-        charisma=27
-        looks_like='looks_like'
+        name           = 'protagonist_character_name'
+        current_class  = 'Mage'
+        race           = 'Human'
+        sex            = 'Male'
+        max_health     = 31
+        current_health = 31
+        ac             = 10
+        good           = 3
+        law            = 5
+        lore           = 7
+        experience     = 9
+        strength       = 11
+        dexterity      = 13
+        intelligence   = 17
+        constitution   = 19
+        wisdom         = 23
+        charisma       = 27
+        looks_like     = 'looks_like'
 
         character = self._create_character(
-            name=name, current_class=current_class, race=race, sex=sex, \
-            max_health=max_health, current_health=current_health, ac=ac, \
-            good=good, law=law, \
-            lore=lore, experience=experience, \
-            strength=strength, dexterity=dexterity, intelligence=intelligence, constitution=constitution, wisdom=wisdom, charisma=charisma,
-            looks_like=looks_like
+            name           = name          ,
+            current_class  = current_class ,
+            race           = race          ,
+            sex            = sex           ,
+            max_health     = max_health    ,
+            current_health = current_health,
+            ac             = ac            ,
+            good           = good          ,
+            law            = law           ,
+            lore           = lore          ,
+            experience     = experience    ,
+            strength       = strength      ,
+            dexterity      = dexterity     ,
+            intelligence   = intelligence  ,
+            constitution   = constitution  ,
+            wisdom         = wisdom        ,
+            charisma       = charisma      ,
+            looks_like     = looks_like
         )
 
         self.assertIsNotNone(character)
 
-        self.assertEqual(character.name, name)
-        self.assertEqual(character.current_class, current_class)
-        self.assertEqual(character.race, race)
-        self.assertEqual(character.sex, sex)
-        self.assertEqual(character.max_health, max_health)
+        self.assertEqual(character.name          , name)
+        self.assertEqual(character.current_class , current_class)
+        self.assertEqual(character.race          , race)
+        self.assertEqual(character.sex           , sex)
+        self.assertEqual(character.max_health    , max_health)
         self.assertEqual(character.current_health, current_health)
-        self.assertEqual(character.ac, ac)
-        self.assertEqual(character.good, good)
-        self.assertEqual(character.law, law)
-        self.assertEqual(character.lore, lore)
-        self.assertEqual(character.experience, experience)
-        self.assertEqual(character.strength, strength)
-        self.assertEqual(character.dexterity, dexterity)
-        self.assertEqual(character.intelligence, intelligence)
-        self.assertEqual(character.constitution, constitution)
-        self.assertEqual(character.wisdom, wisdom)
-        self.assertEqual(character.charisma, charisma)
-        self.assertEqual(character.looks_like, looks_like)
+        self.assertEqual(character.ac            , ac)
+        self.assertEqual(character.good          , good)
+        self.assertEqual(character.law           , law)
+        self.assertEqual(character.lore          , lore)
+        self.assertEqual(character.experience    , experience)
+        self.assertEqual(character.strength      , strength)
+        self.assertEqual(character.dexterity     , dexterity)
+        self.assertEqual(character.intelligence  , intelligence)
+        self.assertEqual(character.constitution  , constitution)
+        self.assertEqual(character.wisdom        , wisdom)
+        self.assertEqual(character.charisma      , charisma)
+        self.assertEqual(character.looks_like    , looks_like)
 
 
     def test_get_all_properties_when_all_ok(self):
-        name='protagonist_character_name'
-        current_class='Mage'
-        race='Human'
-        sex='Male'
-        max_health=31
-        current_health=31
-        ac=10
-        good=3
-        law=5
-        lore=7
-        experience=9
-        strength=11
-        dexterity=13
-        intelligence=17
-        constitution=19
-        wisdom=23
-        charisma=27
-        looks_like='looks_like'
+        name           = 'protagonist_character_name'
+        current_class  = 'Mage'
+        race           = 'Human'
+        sex            = 'Male'
+        max_health     = 31
+        current_health = 31
+        ac             = 10
+        good           = 3
+        law            = 5
+        lore           = 7
+        experience     = 9
+        strength       = 11
+        dexterity      = 13
+        intelligence   = 17
+        constitution   = 19
+        wisdom         = 23
+        charisma       = 27
+        looks_like     = 'looks_like'
 
         character = self._create_character(
-            name=name, current_class=current_class, race=race, sex=sex, \
-            max_health=max_health, current_health=current_health, ac=ac, \
-            good=good, law=law, \
-            lore=lore, experience=experience, \
-            strength=strength, dexterity=dexterity, intelligence=intelligence, constitution=constitution, wisdom=wisdom, charisma=charisma,
-            looks_like=looks_like
+            name           = name          ,
+            current_class  = current_class ,
+            race           = race          ,
+            sex            = sex           ,
+            max_health     = max_health    ,
+            current_health = current_health,
+            ac             = ac            ,
+            good           = good          ,
+            law            = law           ,
+            lore           = lore          ,
+            experience     = experience    ,
+            strength       = strength      ,
+            dexterity      = dexterity     ,
+            intelligence   = intelligence  ,
+            constitution   = constitution  ,
+            wisdom         = wisdom        ,
+            charisma       = charisma      ,
+            looks_like     = looks_like
         )
 
         props = character.get_all_properties()
 
-        self.assertEqual(props['name'], name)
-        self.assertEqual(props['current_class'], current_class)
-        self.assertEqual(props['race'], race)
-        self.assertEqual(props['sex'], sex)
-        self.assertEqual(props['max_health'], max_health)
+        self.assertEqual(props['name']          , name)
+        self.assertEqual(props['current_class'] , current_class)
+        self.assertEqual(props['race']          , race)
+        self.assertEqual(props['sex']           , sex)
+        self.assertEqual(props['max_health']    , max_health)
         self.assertEqual(props['current_health'], current_health)
-        self.assertEqual(props['ac'], ac)
-        self.assertEqual(props['good'], good)
-        self.assertEqual(props['law'], law)
-        self.assertEqual(props['lore'], lore)
-        self.assertEqual(props['experience'], experience)
-        self.assertEqual(props['strength'], strength)
-        self.assertEqual(props['dexterity'], dexterity)
-        self.assertEqual(props['intelligence'], intelligence)
-        self.assertEqual(props['constitution'], constitution)
-        self.assertEqual(props['wisdom'], wisdom)
-        self.assertEqual(props['charisma'], charisma)
-        self.assertEqual(props['looks_like'], looks_like)
+        self.assertEqual(props['ac']            , ac)
+        self.assertEqual(props['good']          , good)
+        self.assertEqual(props['law']           , law)
+        self.assertEqual(props['lore']          , lore)
+        self.assertEqual(props['experience']    , experience)
+        self.assertEqual(props['strength']      , strength)
+        self.assertEqual(props['dexterity']     , dexterity)
+        self.assertEqual(props['intelligence']  , intelligence)
+        self.assertEqual(props['constitution']  , constitution)
+        self.assertEqual(props['wisdom']        , wisdom)
+        self.assertEqual(props['charisma']      , charisma)
+        self.assertEqual(props['looks_like']    , looks_like)
 
 
     def test_reserialize_pickle(self):
@@ -131,32 +155,44 @@ class CharacterTests(LogicTests):
 
 
     def _create_character(self,
-        name='protagonist_character_name',
-        current_class='Mage',
-        race='Human',
-        sex='Male',
-        max_health=31,
-        current_health=31,
-        ac=10,
-        good=3,
-        law=5,
-        lore=7,
-        experience=9,
-        strength=11,
-        dexterity=13,
-        intelligence=17,
-        constitution=19,
-        wisdom=23,
-        charisma=27,
-        looks_like='looks_like'
+        name           = 'protagonist_character_name',
+        current_class  = 'Mage'                      ,
+        race           = 'Human'                     ,
+        sex            = 'Male'                      ,
+        max_health     = 31                          ,
+        current_health = 31                          ,
+        ac             = 10                          ,
+        good           = 3                           ,
+        law            = 5                           ,
+        lore           = 7                           ,
+        experience     = 9                           ,
+        strength       = 11                          ,
+        dexterity      = 13                          ,
+        intelligence   = 17                          ,
+        constitution   = 19                          ,
+        wisdom         = 23                          ,
+        charisma       = 27                          ,
+        looks_like     = 'looks_like'
     ):
         return Character(
-            name=name, current_class=current_class, race=race, sex=sex, \
-            max_health=max_health, current_health=current_health, ac=ac, \
-            good=good, law=law, \
-            lore=lore, experience=experience, \
-            strength=strength, dexterity=dexterity, intelligence=intelligence, constitution=constitution, wisdom=wisdom, charisma=charisma,
-            looks_like=looks_like
+            name           = name          ,
+            current_class  = current_class ,
+            race           = race          ,
+            sex            = sex           ,
+            max_health     = max_health    ,
+            current_health = current_health,
+            ac             = ac            ,
+            good           = good          ,
+            law            = law           ,
+            lore           = lore          ,
+            experience     = experience    ,
+            strength       = strength      ,
+            dexterity      = dexterity     ,
+            intelligence   = intelligence  ,
+            constitution   = constitution  ,
+            wisdom         = wisdom        ,
+            charisma       = charisma      ,
+            looks_like     = looks_like
         )
 
 

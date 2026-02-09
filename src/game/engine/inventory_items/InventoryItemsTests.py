@@ -7,39 +7,42 @@ from game.engine.inventory_items.InventoryItem import (InventoryItem)
 
 class InventoryItemsTests(LogicTests):
     def test_ctor(self):
-        settings_id = 'settings_id'
-        orig_id = 'orig_id'
-        name = 'name'
-        description = 'description'
-        grid_image = 'grid_image'
-        used_by = 'used_by'
-        properties = 'properties'
-        detail_image = 'detail_image'
+        settings_id    = 'settings_id'
+        orig_id        = 'orig_id'
+        name           = 'name'
+        description    = 'description'
+        grid_image     = 'grid_image'
+        used_by        = 'used_by'
+        properties     = 'properties'
+        detail_image   = 'detail_image'
         jump_on_use_to = 'jump_on_use_to'
-        owned_count = 0
+        owned_count    = 0
 
         inventory_item = self._create_inventory_item(
-            settings_id=settings_id,
-            orig_id=orig_id,
-            name=name,
-            description=description,
-            grid_image=grid_image,
-            used_by=used_by,
-            properties=properties,
-            detail_image=detail_image,
-            jump_on_use_to=jump_on_use_to,
-            owned_count=owned_count
+            settings_id    = settings_id   ,
+            orig_id        = orig_id       ,
+            name           = name          ,
+            description    = description   ,
+            grid_image     = grid_image    ,
+            used_by        = used_by       ,
+            properties     = properties    ,
+            detail_image   = detail_image  ,
+            jump_on_use_to = jump_on_use_to,
+            owned_count    = owned_count
         )
 
         self.assertIsNotNone(inventory_item)
 
-        self.assertEqual(inventory_item.settings_id, settings_id)
-        self.assertEqual(inventory_item.orig_id, orig_id)
-        self.assertEqual(inventory_item.name, name)
-        self.assertEqual(inventory_item.description, description)
-        self.assertEqual(inventory_item.grid_image, grid_image)
-        self.assertEqual(inventory_item.detail_image, detail_image)
+        self.assertEqual(inventory_item.settings_id   , settings_id)
+        self.assertEqual(inventory_item.orig_id       , orig_id)
+        self.assertEqual(inventory_item.name          , name)
+        self.assertEqual(inventory_item.description   , description)
+        self.assertEqual(inventory_item.grid_image    , grid_image)
+        self.assertEqual(inventory_item.used_by       , used_by)
+        self.assertEqual(inventory_item.properties    , properties)
+        self.assertEqual(inventory_item.detail_image  , detail_image)
         self.assertEqual(inventory_item.jump_on_use_to, jump_on_use_to)
+        self.assertEqual(inventory_item.owned_count   , owned_count)
 
 
     def test_reserialize_pickle(self):
@@ -65,28 +68,28 @@ class InventoryItemsTests(LogicTests):
 
 
     def _create_inventory_item(self,
-        settings_id='settings_id',
-        orig_id='orig_id',
-        name='name',
-        description='description',
-        grid_image='grid_image',
-        used_by='used_by',
-        properties='properties',
-        detail_image='detail_image',
-        jump_on_use_to='jump_on_use_to',
-        owned_count=0
+        settings_id    = 'settings_id'   ,
+        orig_id        = 'orig_id'       ,
+        name           = 'name'          ,
+        description    = 'description'   ,
+        grid_image     = 'grid_image'    ,
+        used_by        = 'used_by'       ,
+        properties     = 'properties'    ,
+        detail_image   = 'detail_image'  ,
+        jump_on_use_to = 'jump_on_use_to',
+        owned_count    = 0
     ):
         return InventoryItem(
-            settings_id=settings_id,
-            orig_id=orig_id,
-            name=name,
-            description=description,
-            grid_image=grid_image,
-            used_by=used_by,
-            properties=properties,
-            detail_image=detail_image,
-            jump_on_use_to=jump_on_use_to,
-            owned_count=owned_count
+            settings_id    = settings_id   ,
+            orig_id        = orig_id       ,
+            name           = name          ,
+            description    = description   ,
+            grid_image     = grid_image    ,
+            used_by        = used_by       ,
+            properties     = properties    ,
+            detail_image   = detail_image  ,
+            jump_on_use_to = jump_on_use_to,
+            owned_count    = owned_count
         )
 
 

@@ -6,8 +6,8 @@ from game.engine.quests.Quest import (Quest)
 
 class QuestsManager:
     def __init__(self, log_events_manager):
-        self._log_events_manager = log_events_manager
-        self._quests_store = None
+        self._log_events_manager     = log_events_manager
+        self._quests_store           = None
         self._report_change_callback = None
 
 
@@ -20,10 +20,7 @@ class QuestsManager:
 
 
     def create_quest(self, quest_id, quest_state_ids):
-        quest = Quest(
-            quest_id,
-            quest_state_ids
-        )
+        quest = Quest(quest_id, quest_state_ids)
 
         self._quests_store.quests[quest_id] = quest
         for state_id in quest_state_ids:
@@ -70,7 +67,7 @@ class QuestsManager:
             self._report_change_callback(
                 'quest_manager_set_entry_active',
                 {
-                    'quest_id': quest.quest_id,
+                    'quest_id'      : quest.quest_id,
                     'quest_state_id': quest_state_id
                 }
             )
@@ -83,7 +80,7 @@ class QuestsManager:
             self._report_change_callback(
                 'quest_manager_set_entry_done',
                 {
-                    'quest_id': quest.quest_id,
+                    'quest_id'      : quest.quest_id,
                     'quest_state_id': quest_state_id
                 }
             )

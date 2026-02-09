@@ -38,9 +38,9 @@ class JournalNotesStore():
         data['notes'] = dict(map(lambda x: (
             x[0],
             JournalNote(
-                x[1]['id'],
-                x[1]['content'],
-                x[1]['found'],
+                x[1]['id']      ,
+                x[1]['content'] ,
+                x[1]['found']   ,
                 x[1]['found_at']
             )), data['notes'].items()))
         obj.__setstate__(data)

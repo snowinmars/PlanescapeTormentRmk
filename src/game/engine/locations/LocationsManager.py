@@ -5,8 +5,8 @@ import logging
 # External is Renpy: mortuary_f2r1
 class LocationsManager:
     def __init__(self, log_events_manager):
-        self._log_events_manager = log_events_manager
-        self._locations_store = None
+        self._log_events_manager     = log_events_manager
+        self._locations_store        = None
         self._report_change_callback = None
 
 
@@ -58,8 +58,8 @@ class LocationsManager:
 
         self._locations_store.previous_external = self._locations_store.current_external
         self._locations_store.previous_internal = self._locations_store.current_internal
-        self._locations_store.current_external = external
-        self._locations_store.current_internal = internal
+        self._locations_store.current_external  = external
+        self._locations_store.current_internal  = internal
 
         if external not in self._locations_store.visited_externals:
             self._locations_store.visited_externals.append(external)

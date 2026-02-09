@@ -10,14 +10,14 @@ class LogEventStoreTests(unittest.TestCase):
     def setUp(self):
         self.store = LogEventsStore()
         self.log_event_a = LogEvent(
-            timestamp = '[15:50]',
-            category = 'log_event_category_a',
-            text = 'log_event_text_a'
+            timestamp = '[15:50]'             ,
+            category  = 'log_event_category_a',
+            text      = 'log_event_text_a'
         )
         self.log_event_b = LogEvent(
-            timestamp = '[05:51]',
-            category = 'log_event_category_b',
-            text = 'log_event_text_b'
+            timestamp = '[05:51]'             ,
+            category  = 'log_event_category_b',
+            text      = 'log_event_text_b'
         )
 
 
@@ -63,8 +63,8 @@ class LogEventStoreTests(unittest.TestCase):
 
     def _assert_empty_store(self, store):
         self.assertIsNotNone(store.log_events)
-        self.assertEqual(len(store.log_events), 0)
-        self.assertEqual(store.max_entries, 100)
+        self.assertEqual    (len(store.log_events), 0)
+        self.assertEqual    (store.max_entries    , 100)
 
 
     def _fill_store(self, store):
@@ -74,15 +74,15 @@ class LogEventStoreTests(unittest.TestCase):
 
     def _assert_filled_store(self, store):
         self.assertIsNotNone(store.log_events)
-        self.assertEqual(len(store.log_events), 2)
+        self.assertEqual    (len(store.log_events), 2)
         self._assert_equal_log_events(store.log_events[0], self.log_event_a)
         self._assert_equal_log_events(store.log_events[1], self.log_event_b)
 
 
     def _assert_equal_log_events(self, lhs, rhs):
         self.assertEqual(lhs.timestamp, rhs.timestamp)
-        self.assertEqual(lhs.category, rhs.category)
-        self.assertEqual(lhs.text, rhs.text)
+        self.assertEqual(lhs.category , rhs.category)
+        self.assertEqual(lhs.text     , rhs.text)
 
 
 if __name__ == "__main__":

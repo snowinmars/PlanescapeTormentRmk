@@ -9,24 +9,24 @@ class LocationsManagerTests(LogicTests):
         self.assertIsNotNone(self.locations_manager._locations_store)
         self.assertIsNotNone(self.locations_manager._locations_store.e2i_mapping)
         self.assertIsNotNone(self.locations_manager._locations_store.i2e_mapping)
-        self.assertNotEqual(len(self.locations_manager._locations_store.e2i_mapping), 0)
-        self.assertNotEqual(len(self.locations_manager._locations_store.i2e_mapping), 0)
-        self.assertIsNone(self.locations_manager._locations_store.current_external)
-        self.assertIsNone(self.locations_manager._locations_store.current_internal)
+        self.assertNotEqual (len(self.locations_manager._locations_store.e2i_mapping), 0)
+        self.assertNotEqual (len(self.locations_manager._locations_store.i2e_mapping), 0)
+        self.assertIsNone   (self.locations_manager._locations_store.current_external)
+        self.assertIsNone   (self.locations_manager._locations_store.current_internal)
         self.assertIsNotNone(self.locations_manager._locations_store.visited_externals)
         self.assertIsNotNone(self.locations_manager._locations_store.visited_internals)
-        self.assertEqual(len(self.locations_manager._locations_store.visited_externals), 0)
-        self.assertEqual(len(self.locations_manager._locations_store.visited_internals), 0)
+        self.assertEqual    (len(self.locations_manager._locations_store.visited_externals), 0)
+        self.assertEqual    (len(self.locations_manager._locations_store.visited_internals), 0)
 
 
     def test_register_when_all_ok(self):
-        il_1 = 'i1'
-        il_2 = 'i2'
-        el_11 = 'i1e1'
-        el_12 = 'i1e2'
-        el_21 = 'i2e1'
-        el_22 = 'i2e2'
-        el_23 = 'i2e3'
+        il_1      = 'i1'
+        il_2      = 'i2'
+        el_11     = 'i1e1'
+        el_12     = 'i1e2'
+        el_21     = 'i2e1'
+        el_22     = 'i2e2'
+        el_23     = 'i2e3'
         i2e_delta = 2
         e2i_delta = 5
 
@@ -56,12 +56,12 @@ class LocationsManagerTests(LogicTests):
 
         self.assertIsNone(self.locations_manager._locations_store.current_external)
         self.assertIsNone(self.locations_manager._locations_store.current_internal)
-        self.assertEqual(len(self.locations_manager._locations_store.visited_externals), 0)
-        self.assertEqual(len(self.locations_manager._locations_store.visited_internals), 0)
+        self.assertEqual (len(self.locations_manager._locations_store.visited_externals), 0)
+        self.assertEqual (len(self.locations_manager._locations_store.visited_internals), 0)
 
 
     def test_register_when_internal_already_registrated(self):
-        il_1 = 'i1'
+        il_1  = 'i1'
         el_11 = 'i1e1'
         el_12 = 'i1e2'
         el_21 = 'i2e1'
@@ -74,8 +74,8 @@ class LocationsManagerTests(LogicTests):
 
 
     def test_register_when_external_already_registrated(self):
-        il_1 = 'i1'
-        il_2 = 'i2'
+        il_1  = 'i1'
+        il_2  = 'i2'
         el_11 = 'i1e1'
         el_12 = 'i1e2'
 
@@ -86,8 +86,8 @@ class LocationsManagerTests(LogicTests):
 
 
     def test_set_location_when_all_ok(self):
-        il_1 = 'i1'
-        il_2 = 'i2'
+        il_1  = 'i1'
+        il_2  = 'i2'
         el_11 = 'i1e1'
         el_12 = 'i1e2'
         el_21 = 'i2e1'
@@ -103,58 +103,58 @@ class LocationsManagerTests(LogicTests):
         self.locations_manager.set_location(el_11)
         self.assertEqual(self.locations_manager.get_location(), el_11)
         self.assertEqual(self.locations_manager.get_current_internal(), il_1)
-        self.assertTrue(self.locations_manager.is_visited(el_11))
+        self.assertTrue (self.locations_manager.is_visited(el_11))
         self.assertFalse(self.locations_manager.is_visited(el_12))
         self.assertFalse(self.locations_manager.is_visited(el_21))
         self.assertFalse(self.locations_manager.is_visited(el_22))
         self.assertFalse(self.locations_manager.is_visited(el_23))
-        self.assertTrue(self.locations_manager.is_visited_internal(il_1))
+        self.assertTrue (self.locations_manager.is_visited_internal(il_1))
         self.assertFalse(self.locations_manager.is_visited_internal(il_2))
 
         self.locations_manager.set_location(el_12)
         self.assertEqual(self.locations_manager.get_location(), el_12)
         self.assertEqual(self.locations_manager.get_current_internal(), il_1)
-        self.assertTrue(self.locations_manager.is_visited(el_11))
-        self.assertTrue(self.locations_manager.is_visited(el_12))
+        self.assertTrue (self.locations_manager.is_visited(el_11))
+        self.assertTrue (self.locations_manager.is_visited(el_12))
         self.assertFalse(self.locations_manager.is_visited(el_21))
         self.assertFalse(self.locations_manager.is_visited(el_22))
         self.assertFalse(self.locations_manager.is_visited(el_23))
-        self.assertTrue(self.locations_manager.is_visited_internal(il_1))
+        self.assertTrue (self.locations_manager.is_visited_internal(il_1))
         self.assertFalse(self.locations_manager.is_visited_internal(il_2))
 
         self.locations_manager.set_location(el_21)
         self.assertEqual(self.locations_manager.get_location(), el_21)
         self.assertEqual(self.locations_manager.get_current_internal(), il_2)
-        self.assertTrue(self.locations_manager.is_visited(el_11))
-        self.assertTrue(self.locations_manager.is_visited(el_12))
-        self.assertTrue(self.locations_manager.is_visited(el_21))
+        self.assertTrue (self.locations_manager.is_visited(el_11))
+        self.assertTrue (self.locations_manager.is_visited(el_12))
+        self.assertTrue (self.locations_manager.is_visited(el_21))
         self.assertFalse(self.locations_manager.is_visited(el_22))
         self.assertFalse(self.locations_manager.is_visited(el_23))
-        self.assertTrue(self.locations_manager.is_visited_internal(il_1))
-        self.assertTrue(self.locations_manager.is_visited_internal(il_2))
+        self.assertTrue (self.locations_manager.is_visited_internal(il_1))
+        self.assertTrue (self.locations_manager.is_visited_internal(il_2))
 
         self.locations_manager.set_location(el_22)
         self.assertEqual(self.locations_manager.get_location(), el_22)
         self.assertEqual(self.locations_manager.get_current_internal(), il_2)
-        self.assertTrue(self.locations_manager.is_visited(el_11))
-        self.assertTrue(self.locations_manager.is_visited(el_12))
-        self.assertTrue(self.locations_manager.is_visited(el_21))
-        self.assertTrue(self.locations_manager.is_visited(el_22))
+        self.assertTrue (self.locations_manager.is_visited(el_11))
+        self.assertTrue (self.locations_manager.is_visited(el_12))
+        self.assertTrue (self.locations_manager.is_visited(el_21))
+        self.assertTrue (self.locations_manager.is_visited(el_22))
         self.assertFalse(self.locations_manager.is_visited(el_23))
-        self.assertTrue(self.locations_manager.is_visited_internal(il_1))
-        self.assertTrue(self.locations_manager.is_visited_internal(il_2))
+        self.assertTrue (self.locations_manager.is_visited_internal(il_1))
+        self.assertTrue (self.locations_manager.is_visited_internal(il_2))
 
 
         self.locations_manager.set_location(el_23)
         self.assertEqual(self.locations_manager.get_location(), el_23)
         self.assertEqual(self.locations_manager.get_current_internal(), il_2)
-        self.assertTrue(self.locations_manager.is_visited(el_11))
-        self.assertTrue(self.locations_manager.is_visited(el_12))
-        self.assertTrue(self.locations_manager.is_visited(el_21))
-        self.assertTrue(self.locations_manager.is_visited(el_22))
-        self.assertTrue(self.locations_manager.is_visited(el_23))
-        self.assertTrue(self.locations_manager.is_visited_internal(il_1))
-        self.assertTrue(self.locations_manager.is_visited_internal(il_2))
+        self.assertTrue (self.locations_manager.is_visited(el_11))
+        self.assertTrue (self.locations_manager.is_visited(el_12))
+        self.assertTrue (self.locations_manager.is_visited(el_21))
+        self.assertTrue (self.locations_manager.is_visited(el_22))
+        self.assertTrue (self.locations_manager.is_visited(el_23))
+        self.assertTrue (self.locations_manager.is_visited_internal(il_1))
+        self.assertTrue (self.locations_manager.is_visited_internal(il_2))
 
 
     def test_set_location_when_internal_was_not_registrated(self):
@@ -164,9 +164,8 @@ class LocationsManagerTests(LogicTests):
             self.locations_manager.set_location(el)
 
 
-
     def test_set_location_when_external_was_not_registrated(self):
-        il_1 = 'i1'
+        il_1  = 'i1'
         el_11 = 'i1e1'
         el_12 = 'i1e2'
 

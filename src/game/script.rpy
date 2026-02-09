@@ -5,8 +5,8 @@ init 1 python: # init logger
     from game.engine.runtime import (runtime)
     from game.engine.setup_logger import (setup_logger)
 
-    enabled_dev = True
-    config.version = '0.13'
+    enabled_dev       = True
+    config.version    = '0.13'
     build.info['sha8'] = '418252ff'
 
     if not persistent.language:
@@ -35,80 +35,80 @@ init 1 python: # init logger
 
 
 init 2 python: # import and create stores
-    from game.engine.locations.LocationsStore import (LocationsStore)
-    from game.engine.journal_notes.JournalNotesStore import (JournalNotesStore)
-    from game.engine.log_events.LogEventsStore import (LogEventsStore)
-    from game.engine.characters.CharactersStore import (CharactersStore)
+    from game.engine.locations.LocationsStore            import (LocationsStore)
+    from game.engine.journal_notes.JournalNotesStore     import (JournalNotesStore)
+    from game.engine.log_events.LogEventsStore           import (LogEventsStore)
+    from game.engine.characters.CharactersStore          import (CharactersStore)
     from game.engine.inventory_items.InventoryItemsStore import (InventoryItemsStore)
-    from game.engine.world.WorldStore import (WorldStore)
-    from game.engine.narrat.NarratStore import (NarratStore)
-    from game.engine.quests.QuestsStore import (QuestsStore)
+    from game.engine.world.WorldStore                    import (WorldStore)
+    from game.engine.narrat.NarratStore                  import (NarratStore)
+    from game.engine.quests.QuestsStore                  import (QuestsStore)
 
     renpy.add_python_directory('engine')
     renpy.add_python_directory('engine_data')
 
 
-default locations_store = LocationsStore()
-default journal_notes_store = JournalNotesStore()
-default log_events_store = LogEventsStore()
-default characters_store = CharactersStore()
+default locations_store       = LocationsStore()
+default journal_notes_store   = JournalNotesStore()
+default log_events_store      = LogEventsStore()
+default characters_store      = CharactersStore()
 default inventory_items_store = InventoryItemsStore()
-default world_store = WorldStore()
-default narrat_store = NarratStore()
-default quests_store = QuestsStore()
+default world_store           = WorldStore()
+default narrat_store          = NarratStore()
+default quests_store          = QuestsStore()
 
 define config.rollback_enabled = False # as it is narrat now
 
 init 3 python: # setup hooks for initialyzing managers and applying stores
     from game.engine.runtime import (runtime)
 
-    from game.engine.log_events.LogEventsManager import (LogEventsManager)
-    from game.engine.state.StateManager import (StateManager)
+    from game.engine.log_events.LogEventsManager           import (LogEventsManager)
+    from game.engine.state.StateManager                    import (StateManager)
     from game.engine.inventory_items.InventoryItemsManager import (InventoryItemsManager)
-    from game.engine.locations.LocationsManager import (LocationsManager)
-    from game.engine.characters.CharactersManager import (CharactersManager)
-    from game.engine.journal_notes.JournalNotesManager import (JournalNotesManager)
-    from game.engine.world.WorldManager import (WorldManager)
-    from game.engine.narrat.NarratManager import (NarratManager)
-    from game.engine.quests.QuestsManager import (QuestsManager)
+    from game.engine.locations.LocationsManager            import (LocationsManager)
+    from game.engine.characters.CharactersManager          import (CharactersManager)
+    from game.engine.journal_notes.JournalNotesManager     import (JournalNotesManager)
+    from game.engine.world.WorldManager                    import (WorldManager)
+    from game.engine.narrat.NarratManager                  import (NarratManager)
+    from game.engine.quests.QuestsManager                  import (QuestsManager)
 
-    from game.engine_data.settings.build_all_settings import (build_all_settings)
+    from game.engine_data.settings.build_all_settings               import (build_all_settings)
     from game.engine_data.inventory_items.build_all_inventory_items import (build_all_inventory_items)
-    from game.engine_data.locations.build_all_locations import (build_all_locations)
-    from game.engine_data.characters.build_all_characters import (build_all_characters)
-    from game.engine_data.journal_notes.build_all_journal_notes import (build_all_journal_notes)
-    from game.engine_data.quests.build_all_quests import (build_all_quests)
+    from game.engine_data.locations.build_all_locations             import (build_all_locations)
+    from game.engine_data.characters.build_all_characters           import (build_all_characters)
+    from game.engine_data.journal_notes.build_all_journal_notes     import (build_all_journal_notes)
+    from game.engine_data.quests.build_all_quests                   import (build_all_quests)
 
 
-    runtime.global_log_events_manager = LogEventsManager(runtime.logger)
-    runtime.global_locations_manager = LocationsManager(runtime.global_log_events_manager)
-    runtime.global_characters_manager = CharactersManager(runtime.global_log_events_manager)
-    runtime.global_journal_notes_manager = JournalNotesManager(runtime.global_log_events_manager)
-    runtime.global_world_manager = WorldManager(runtime.global_log_events_manager)
+    runtime.global_log_events_manager      = LogEventsManager     (runtime.logger)
+    runtime.global_locations_manager       = LocationsManager     (runtime.global_log_events_manager)
+    runtime.global_characters_manager      = CharactersManager    (runtime.global_log_events_manager)
+    runtime.global_journal_notes_manager   = JournalNotesManager  (runtime.global_log_events_manager)
+    runtime.global_world_manager           = WorldManager         (runtime.global_log_events_manager)
     runtime.global_inventory_items_manager = InventoryItemsManager(runtime.global_log_events_manager)
-    runtime.global_narrat_manager = NarratManager(runtime.global_log_events_manager)
-    runtime.global_quests_manager = QuestsManager(runtime.global_log_events_manager)
-    runtime.global_state_manager = StateManager(
-        runtime.global_log_events_manager,
-        runtime.global_world_manager,
-        runtime.global_characters_manager,
-        runtime.global_locations_manager,
-        runtime.global_journal_notes_manager,
+    runtime.global_narrat_manager          = NarratManager        (runtime.global_log_events_manager)
+    runtime.global_quests_manager          = QuestsManager        (runtime.global_log_events_manager)
+    runtime.global_state_manager           = StateManager         (
+        runtime.global_log_events_manager     ,
+        runtime.global_world_manager          ,
+        runtime.global_characters_manager     ,
+        runtime.global_locations_manager      ,
+        runtime.global_journal_notes_manager  ,
         runtime.global_inventory_items_manager,
-        runtime.global_narrat_manager,
+        runtime.global_narrat_manager         ,
         runtime.global_quests_manager
     )
 
 
     def apply_stores():
-        runtime.global_locations_manager.set_store(locations_store)
-        runtime.global_journal_notes_manager.set_store(journal_notes_store)
-        runtime.global_log_events_manager.set_store(log_events_store)
-        runtime.global_characters_manager.set_store(characters_store)
+        runtime.global_locations_manager      .set_store(locations_store)
+        runtime.global_journal_notes_manager  .set_store(journal_notes_store)
+        runtime.global_log_events_manager     .set_store(log_events_store)
+        runtime.global_characters_manager     .set_store(characters_store)
         runtime.global_inventory_items_manager.set_store(inventory_items_store)
-        runtime.global_world_manager.set_store(world_store)
-        runtime.global_narrat_manager.set_store(narrat_store)
-        runtime.global_quests_manager.set_store(quests_store)
+        runtime.global_world_manager          .set_store(world_store)
+        runtime.global_narrat_manager         .set_store(narrat_store)
+        runtime.global_quests_manager         .set_store(quests_store)
 
 
     def init_managers():
@@ -149,13 +149,13 @@ init 3 python: # setup hooks for initialyzing managers and applying stores
         runtime.logger.info('Done building quests, took %s', int(time.time()) - now)
 
         config.keymap['screen_inventory'] = keymap_inventory_screen
-        config.underlay.append(renpy.Keymap(screen_inventory=Show('screen_inventory')))
+        config.underlay.append(renpy.Keymap(screen_inventory = Show('screen_inventory')))
 
         config.keymap['screen_character'] = keymap_character_screen
-        config.underlay.append(renpy.Keymap(screen_character=Show('screen_character')))
+        config.underlay.append(renpy.Keymap(screen_character = Show('screen_character')))
 
         config.keymap['screen_journal'] = keymap_journal_screen
-        config.underlay.append(renpy.Keymap(screen_journal=Show('screen_journal')))
+        config.underlay.append(renpy.Keymap(screen_journal   = Show('screen_journal')))
 
     config.after_load_callbacks.append(apply_stores)
     config.start_callbacks.append(init_managers)
@@ -166,33 +166,33 @@ init 5 python: # inject narrat
 
     _original_say = renpy.say
     def narrat_say(who, what, *args, **kwargs):
-        is_br = False # never sets here, but in narrat_manager.add_br
-        is_change = False # never sets here, but in narrat_manager.report_change
-        is_scars = hasattr(who, 'name') and who.name == 'scars'
+        is_br       = False # never sets here, but in narrat_manager.add_br
+        is_change   = False # never sets here, but in narrat_manager.report_change
+        is_scars    = hasattr(who, 'name') and who.name == 'scars'
         is_nameless = False # never sets here, but in narrat_manager.add_menu_choice
-        is_npc = not is_scars and hasattr(who, 'name') and who.name is not None and who.name != ''
-        is_nr = not is_scars and not is_npc
+        is_npc      = not is_scars and hasattr(who, 'name') and who.name is not None and who.name != ''
+        is_nr       = not is_scars and not is_npc
         runtime.global_narrat_manager.add_history_entry(
-            who,
-            who.who_args['color'],
-            what,
-            is_br=is_br,
-            is_change=is_change,
-            is_scars=is_scars,
-            is_nameless=is_nameless,
-            is_npc=is_npc,
-            is_nr=is_nr
+            who                      ,
+            who.who_args['color']    ,
+            what                     ,
+            is_br       = is_br      ,
+            is_change   = is_change  ,
+            is_scars    = is_scars   ,
+            is_nameless = is_nameless,
+            is_npc      = is_npc     ,
+            is_nr       = is_nr
         )
         runtime.global_narrat_manager.update_current_dialogue(
-            who,
-            who.who_args['color'],
-            what,
-            is_br=is_br,
-            is_change=is_change,
-            is_scars=is_scars,
-            is_nameless=is_nameless,
-            is_npc=is_npc,
-            is_nr=is_nr
+            who                      ,
+            who.who_args['color']    ,
+            what                     ,
+            is_br       = is_br      ,
+            is_change   = is_change  ,
+            is_scars    = is_scars   ,
+            is_nameless = is_nameless,
+            is_npc      = is_npc     ,
+            is_nr       = is_nr
         )
         runtime.global_narrat_manager.update_menu_items([])
         return _original_say(who, what, *args, **kwargs)
