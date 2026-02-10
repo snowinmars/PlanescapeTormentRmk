@@ -5,13 +5,13 @@ class Zm825LogicGenerated:
 
     def r24565_condition(self):
         return self.state_manager.world_manager.get_mortuary_walkthrough() == 0 and \
-               not self.state_manager.inventory_items_manager.is_own_item('has_intro_key') and \
+               not self.state_manager.inventory_items_manager.is_own_item('keypr') and \
                self.state_manager.world_manager.get_in_party_morte()
 
 
     def r24568_condition(self):
         return self.state_manager.world_manager.get_mortuary_walkthrough() == 0 and \
-               not self.state_manager.inventory_items_manager.is_own_item('has_intro_key') and \
+               not self.state_manager.inventory_items_manager.is_own_item('keypr') and \
                not self.state_manager.world_manager.get_in_party_morte()
 
 
@@ -29,7 +29,7 @@ class Zm825LogicGenerated:
 
     def r24574_condition(self):
         return self.state_manager.world_manager.get_mortuary_walkthrough() == 0 and \
-               not self.state_manager.inventory_items_manager.is_own_item('has_intro_key')
+               not self.state_manager.inventory_items_manager.is_own_item('keypr')
 
 
     def r42312_condition(self):

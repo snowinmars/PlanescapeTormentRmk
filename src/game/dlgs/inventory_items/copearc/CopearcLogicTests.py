@@ -36,21 +36,21 @@ class CopearcLogicGeneratedTests(LogicTests):
 
 
     def test_r46733_action(self):
-        self.state_manager.inventory_items_manager.pick_item('has_copper_earring_closed')
-        self.state_manager.inventory_items_manager.drop_all_items('has_copper_earring_opened')
+        self.state_manager.inventory_items_manager.pick_item('copearc')
+        self.state_manager.inventory_items_manager.drop_all_items('copearo')
 
-        self.assertTrue(self.state_manager.inventory_items_manager.is_own_item('has_copper_earring_closed'))
-        self.assertFalse(self.state_manager.inventory_items_manager.is_own_item('has_copper_earring_opened'))
-
-        self.logic.r46733_action()
-
-        self.assertFalse(self.state_manager.inventory_items_manager.is_own_item('has_copper_earring_closed'))
-        self.assertTrue(self.state_manager.inventory_items_manager.is_own_item('has_copper_earring_opened'))
+        self.assertTrue(self.state_manager.inventory_items_manager.is_own_item('copearc'))
+        self.assertFalse(self.state_manager.inventory_items_manager.is_own_item('copearo'))
 
         self.logic.r46733_action()
 
-        self.assertFalse(self.state_manager.inventory_items_manager.is_own_item('has_copper_earring_closed'))
-        self.assertTrue(self.state_manager.inventory_items_manager.is_own_item('has_copper_earring_opened'))
+        self.assertFalse(self.state_manager.inventory_items_manager.is_own_item('copearc'))
+        self.assertTrue(self.state_manager.inventory_items_manager.is_own_item('copearo'))
+
+        self.logic.r46733_action()
+
+        self.assertFalse(self.state_manager.inventory_items_manager.is_own_item('copearc'))
+        self.assertTrue(self.state_manager.inventory_items_manager.is_own_item('copearo'))
 
 
     def test_r46725_condition(self):

@@ -51,14 +51,14 @@ class S996LogicGenerated:
 
     def r35508_action(self):
         self.state_manager.world_manager.set_dead_s996(True)
-        self.state_manager.inventory_items_manager.pick_item('has_spike')
-        self.state_manager.inventory_items_manager.pick_item('has_strap')
+        self.state_manager.inventory_items_manager.pick_item('spike')
+        self.state_manager.inventory_items_manager.pick_item('strap')
 
 
     def r35511_action(self):
         self.state_manager.world_manager.set_dead_s996(True)
-        self.state_manager.inventory_items_manager.pick_item('has_spike')
-        self.state_manager.inventory_items_manager.pick_item('has_strap')
+        self.state_manager.inventory_items_manager.pick_item('spike')
+        self.state_manager.inventory_items_manager.pick_item('strap')
 
 
     def r35461_condition(self):
@@ -91,7 +91,7 @@ class S996LogicGenerated:
         return self.state_manager.world_manager.get_skeleton_examine() and \
                self.state_manager.world_manager.get_in_party_morte() and \
                self.state_manager.world_manager.get_morte_skel_mort_quip2() and \
-               not self.state_manager.inventory_items_manager.is_own_item('has_prybar') and \
+               not self.state_manager.inventory_items_manager.is_own_item('prybar') and \
                self.state_manager.characters_manager.get_property('protagonist_character_name', 'strength') < 13
 
 
@@ -99,7 +99,7 @@ class S996LogicGenerated:
         return self.state_manager.world_manager.get_skeleton_examine() and \
                self.state_manager.world_manager.get_in_party_morte() and \
                self.state_manager.world_manager.get_morte_skel_mort_quip2() and \
-               not self.state_manager.inventory_items_manager.is_own_item('has_prybar') and \
+               not self.state_manager.inventory_items_manager.is_own_item('prybar') and \
                self.state_manager.characters_manager.get_property('protagonist_character_name', 'strength') > 12
 
 
@@ -107,27 +107,27 @@ class S996LogicGenerated:
         return self.state_manager.world_manager.get_skeleton_examine() and \
                self.state_manager.world_manager.get_in_party_morte() and \
                self.state_manager.world_manager.get_morte_skel_mort_quip2() and \
-               self.state_manager.inventory_items_manager.is_own_item('has_prybar')
+               self.state_manager.inventory_items_manager.is_own_item('prybar')
 
 
     def r35529_condition(self):
         return not self.state_manager.world_manager.get_in_party_morte() and \
                self.state_manager.world_manager.get_skeleton_examine() and \
-               not self.state_manager.inventory_items_manager.is_own_item('has_prybar') and \
+               not self.state_manager.inventory_items_manager.is_own_item('prybar') and \
                self.state_manager.characters_manager.get_property('protagonist_character_name', 'strength') < 13
 
 
     def r35530_condition(self):
         return not self.state_manager.world_manager.get_in_party_morte() and \
                self.state_manager.world_manager.get_skeleton_examine() and \
-               not self.state_manager.inventory_items_manager.is_own_item('has_prybar') and \
+               not self.state_manager.inventory_items_manager.is_own_item('prybar') and \
                self.state_manager.characters_manager.get_property('protagonist_character_name', 'strength') > 12
 
 
     def r35531_condition(self):
         return not self.state_manager.world_manager.get_in_party_morte() and \
                self.state_manager.world_manager.get_skeleton_examine() and \
-               self.state_manager.inventory_items_manager.is_own_item('has_prybar')
+               self.state_manager.inventory_items_manager.is_own_item('prybar')
 
 
     def r35532_condition(self):
@@ -185,38 +185,38 @@ class S996LogicGenerated:
     def r35516_condition(self):
         return self.state_manager.world_manager.get_in_party_morte() and \
                self.state_manager.world_manager.get_morte_skel_mort_quip2() and \
-               not self.state_manager.inventory_items_manager.is_own_item('has_prybar') and \
+               not self.state_manager.inventory_items_manager.is_own_item('prybar') and \
                self.state_manager.characters_manager.get_property('protagonist_character_name', 'strength') < 13
 
 
     def r35517_condition(self):
         return self.state_manager.world_manager.get_in_party_morte() and \
                self.state_manager.world_manager.get_morte_skel_mort_quip2() and \
-               not self.state_manager.inventory_items_manager.is_own_item('has_prybar') and \
+               not self.state_manager.inventory_items_manager.is_own_item('prybar') and \
                self.state_manager.characters_manager.get_property('protagonist_character_name', 'strength') > 12
 
 
     def r35518_condition(self):
         return self.state_manager.world_manager.get_in_party_morte() and \
                self.state_manager.world_manager.get_morte_skel_mort_quip2() and \
-               self.state_manager.inventory_items_manager.is_own_item('has_prybar')
+               self.state_manager.inventory_items_manager.is_own_item('prybar')
 
 
     def r35519_condition(self):
         return not self.state_manager.world_manager.get_in_party_morte() and \
-               not self.state_manager.inventory_items_manager.is_own_item('has_prybar') and \
+               not self.state_manager.inventory_items_manager.is_own_item('prybar') and \
                self.state_manager.characters_manager.get_property('protagonist_character_name', 'strength') < 13
 
 
     def r35520_condition(self):
         return not self.state_manager.world_manager.get_in_party_morte() and \
-               not self.state_manager.inventory_items_manager.is_own_item('has_prybar') and \
+               not self.state_manager.inventory_items_manager.is_own_item('prybar') and \
                self.state_manager.characters_manager.get_property('protagonist_character_name', 'strength') > 12
 
 
     def r35521_condition(self):
         return not self.state_manager.world_manager.get_in_party_morte() and \
-               self.state_manager.inventory_items_manager.is_own_item('has_prybar')
+               self.state_manager.inventory_items_manager.is_own_item('prybar')
 
 
     def r35522_condition(self):

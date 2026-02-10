@@ -35,7 +35,7 @@ class Zm732LogicGeneratedTests(LogicTests):
 
     def test_r64271_action(self):
         self._false_then_true_action(
-            lambda: self.state_manager.inventory_items_manager.is_own_item('has_tome_ba'),
+            lambda: self.state_manager.inventory_items_manager.is_own_item('tomeba'),
             self.logic.r64271_action
         )
 

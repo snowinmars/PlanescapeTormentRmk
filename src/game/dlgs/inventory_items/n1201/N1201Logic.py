@@ -89,8 +89,8 @@ class N1201LogicGenerated:
 
 
     def r45025_action(self):
-        self.state_manager.inventory_items_manager.pick_item('has_tearring')
-        self.state_manager.inventory_items_manager.drop_all_items('has_1201_note')
+        self.state_manager.inventory_items_manager.pick_item('tearring')
+        self.state_manager.inventory_items_manager.drop_all_items('n1201')
 
 
     def r45000_condition(self):

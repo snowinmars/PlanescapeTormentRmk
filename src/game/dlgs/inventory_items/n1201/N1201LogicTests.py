@@ -322,21 +322,21 @@ class N1201LogicGeneratedTests(LogicTests):
 
 
     def test_r45025_action(self):
-        self.state_manager.inventory_items_manager.drop_all_items('has_tearring')
-        self.state_manager.inventory_items_manager.pick_item('has_1201_note')
+        self.state_manager.inventory_items_manager.drop_all_items('tearring')
+        self.state_manager.inventory_items_manager.pick_item('n1201')
 
-        self.assertFalse(self.state_manager.inventory_items_manager.is_own_item('has_tearring'))
-        self.assertTrue(self.state_manager.inventory_items_manager.is_own_item('has_1201_note'))
-
-        self.logic.r45025_action()
-
-        self.assertTrue(self.state_manager.inventory_items_manager.is_own_item('has_tearring'))
-        self.assertFalse(self.state_manager.inventory_items_manager.is_own_item('has_1201_note'))
+        self.assertFalse(self.state_manager.inventory_items_manager.is_own_item('tearring'))
+        self.assertTrue(self.state_manager.inventory_items_manager.is_own_item('n1201'))
 
         self.logic.r45025_action()
 
-        self.assertTrue(self.state_manager.inventory_items_manager.is_own_item('has_tearring'))
-        self.assertFalse(self.state_manager.inventory_items_manager.is_own_item('has_1201_note'))
+        self.assertTrue(self.state_manager.inventory_items_manager.is_own_item('tearring'))
+        self.assertFalse(self.state_manager.inventory_items_manager.is_own_item('n1201'))
+
+        self.logic.r45025_action()
+
+        self.assertTrue(self.state_manager.inventory_items_manager.is_own_item('tearring'))
+        self.assertFalse(self.state_manager.inventory_items_manager.is_own_item('n1201'))
 
 
     def test_r45000_condition(self):

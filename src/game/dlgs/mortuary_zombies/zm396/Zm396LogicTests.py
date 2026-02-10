@@ -133,14 +133,14 @@ class Zm396LogicTests(LogicTests):
 
     def test_r34934_action(self):
         self._false_then_true_action(
-            lambda: self.state_manager.inventory_items_manager.is_own_item('has_bandages'),
+            lambda: self.state_manager.inventory_items_manager.is_own_item('bandage'),
             self.logic.r34934_action
         )
 
 
     def test_r34936_action(self):
         self._false_then_true_action(
-            lambda: self.state_manager.inventory_items_manager.is_own_item('has_bandages'),
+            lambda: self.state_manager.inventory_items_manager.is_own_item('bandage'),
             self.logic.r34936_action
         )
 

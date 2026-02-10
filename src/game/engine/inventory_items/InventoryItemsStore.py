@@ -38,16 +38,15 @@ class InventoryItemsStore():
         data['inventory_items'] = dict(map(lambda x: (
             x[0],
             InventoryItem(
-                settings_id   =x[1]['settings_id']   ,
-                orig_id       =x[1]['orig_id']       ,
-                name          =x[1]['name']          ,
-                description   =x[1]['description']   ,
-                used_by       =x[1]['used_by']       ,
-                properties    =x[1]['properties']    ,
-                grid_image    =x[1]['grid_image']    ,
-                detail_image  =x[1]['detail_image']  ,
-                jump_on_use_to=x[1]['jump_on_use_to'],
-                owned_count   =x[1]['owned_count']
+                the_id         = x[1]['the_id']        ,
+                name           = x[1]['name']          ,
+                description    = x[1]['description']   ,
+                used_by        = x[1]['used_by']       ,
+                properties     = x[1]['properties']    ,
+                grid_image     = x[1]['grid_image']    ,
+                detail_image   = x[1]['detail_image']  ,
+                jump_on_use_to = x[1]['jump_on_use_to'],
+                owned_count    = x[1]['owned_count']
             )), data['inventory_items'].items()))
         obj.__setstate__(data)
         return obj

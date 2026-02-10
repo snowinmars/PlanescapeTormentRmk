@@ -15,7 +15,7 @@ class FromMortuaryF2R1ToMortuaryF2R2(DoorItem):
     def __init__(self, state_manager, x, y):
         super().__init__(state_manager, x, y, 257, 256)
     def when(self):
-        return self.state_manager.inventory_items_manager.is_own_item('has_intro_key') and \
+        return self.state_manager.inventory_items_manager.is_own_item('keypr') and \
                self.state_manager.locations_manager.get_location() == 'mortuary_f2r1'
     def tooltip(self):
         if self.state_manager.locations_manager.is_visited('mortuary_f2r2'):
@@ -35,7 +35,7 @@ class FromMortuaryF2R1ToMortuaryF2R8(DoorItem):
     def __init__(self, state_manager, x, y):
         super().__init__(state_manager, x, y, 256, 320)
     def when(self):
-        return self.state_manager.inventory_items_manager.is_own_item('has_intro_key') and \
+        return self.state_manager.inventory_items_manager.is_own_item('keypr') and \
                self.state_manager.locations_manager.get_location() == 'mortuary_f2r1'
     def tooltip(self):
         if self.state_manager.locations_manager.is_visited('mortuary_f2r8'):
@@ -47,7 +47,7 @@ class FromMortuaryF2R1ToMortuaryF2R8(DoorItem):
         return 'bg/mortuary/f2/door_f2r8_f2r1_closed.webp'
     def jump(self):
         if self.state_manager.locations_manager.is_visited('mortuary_f2r8') or \
-           self.state_manager.inventory_items_manager.is_own_item('has_mortuary_key'):
+           self.state_manager.inventory_items_manager.is_own_item('keymo2'):
             return NavigationJump('map_mortuary_f2r8')
         return NavigationSnack('FromMortuaryF2R1ToMortuaryF2R8_snack1')
 
@@ -56,7 +56,7 @@ class FromMortuaryF2R1ToMortuaryF3R1(DoorItem):
     def __init__(self, state_manager, x, y):
         super().__init__(state_manager, x, y, 208, 193)
     def when(self):
-        return self.state_manager.inventory_items_manager.is_own_item('has_intro_key') and \
+        return self.state_manager.inventory_items_manager.is_own_item('keypr') and \
                self.state_manager.locations_manager.get_location() == 'mortuary_f2r1'
     def tooltip(self):
         if self.state_manager.locations_manager.is_visited('mortuary_f3r1') or \
@@ -69,7 +69,7 @@ class FromMortuaryF2R1ToMortuaryF3R1(DoorItem):
             return 'bg/mortuary/f2/door_f2r1_f3r1_opened.webp'
         return 'bg/mortuary/f2/door_f2r1_f3r1_closed.webp'
     def jump(self):
-        if self.state_manager.inventory_items_manager.is_own_item('has_mortuary_key') or \
+        if self.state_manager.inventory_items_manager.is_own_item('keymo2') or \
            self.state_manager.locations_manager.is_visited('mortuary_f3r1') or \
            self.state_manager.locations_manager.is_visited('mortuary_f3r3'):
             return NavigationJump('map_mortuary_f3r1')
@@ -80,7 +80,7 @@ class FromMortuaryF2R1ToMortuaryF1R1(DoorItem):
     def __init__(self, state_manager, x, y):
         super().__init__(state_manager, x, y, 112, 193)
     def when(self):
-        return self.state_manager.inventory_items_manager.is_own_item('has_intro_key') and \
+        return self.state_manager.inventory_items_manager.is_own_item('keypr') and \
                self.state_manager.locations_manager.get_location() == 'mortuary_f2r1'
     def tooltip(self):
         if self.state_manager.locations_manager.is_visited('mortuary_f1r1') or \
@@ -93,7 +93,7 @@ class FromMortuaryF2R1ToMortuaryF1R1(DoorItem):
             return 'bg/mortuary/f2/door_f2r1_f1r1_opened.webp'
         return 'bg/mortuary/f2/door_f2r1_f1r1_closed.webp'
     def jump(self):
-        if self.state_manager.inventory_items_manager.is_own_item('has_mortuary_key') or \
+        if self.state_manager.inventory_items_manager.is_own_item('keymo2') or \
            self.state_manager.locations_manager.is_visited('mortuary_f1r1') or \
            self.state_manager.locations_manager.is_visited('mortuary_f1r4'):
             return NavigationJump('map_mortuary_f1r1')
@@ -110,7 +110,7 @@ class MortuaryF2R1Shadow(ShadowItem):
 
 class InMortuaryF2R1PickScalpel(ContainerItem):
     def __init__(self, state_manager, x, y):
-        super().__init__(state_manager, x, y, 161, 188, ['has_scalpel'])
+        super().__init__(state_manager, x, y, 161, 188, ['scalpel'])
     def when(self):
         return self.state_manager.locations_manager.get_location() == 'mortuary_f2r1' and \
                not self.empty()
@@ -662,7 +662,7 @@ class FromMortuaryF2R7ToMortuaryF1R4(DoorItem):
     def jump(self):
         if self.state_manager.locations_manager.is_visited('mortuary_f1r1') or \
            self.state_manager.locations_manager.is_visited('mortuary_f1r4') or \
-           self.state_manager.inventory_items_manager.is_own_item('has_mortuary_key'):
+           self.state_manager.inventory_items_manager.is_own_item('keymo2'):
             return NavigationJump('map_mortuary_f1r4')
         return NavigationSnack('FromMortuaryF2R7ToMortuaryF1R4_snack1')
 
@@ -699,7 +699,7 @@ class FromMortuaryF2R7ToMortuaryF2R8(DoorItem):
         return 'bg/mortuary/f2/door_f2r7_f2r8_closed.webp'
     def jump(self):
         if self.state_manager.locations_manager.is_visited('mortuary_f2r8') or \
-           self.state_manager.inventory_items_manager.is_own_item('has_mortuary_key'):
+           self.state_manager.inventory_items_manager.is_own_item('keymo2'):
             return NavigationJump('map_mortuary_f2r8')
         return NavigationSnack('FromMortuaryF2R7ToMortuaryF2R8_snack1')
 
@@ -714,7 +714,7 @@ class MortuaryF2R7Shadow(ShadowItem):
 
 class InMortuaryF2R7PickCopperEarringClosed(ContainerItem):
     def __init__(self, state_manager, x, y):
-        super().__init__(state_manager, x, y, 133, 121, ['has_copper_earring_closed', 'has_bandages'])
+        super().__init__(state_manager, x, y, 133, 121, ['copearc', 'bandage'])
     def when(self):
         return not self.state_manager.world_manager.get_looted_InMortuaryF2R7PickCopperEarringClosed() and \
                self.state_manager.locations_manager.get_location() == 'mortuary_f2r7'
@@ -728,7 +728,7 @@ class InMortuaryF2R7PickCopperEarringClosed(ContainerItem):
 
 class InMortuaryF2R7PickEmbalm(ContainerItem):
     def __init__(self, state_manager, x, y):
-        super().__init__(state_manager, x, y, 107, 88, ['has_embalm'])
+        super().__init__(state_manager, x, y, 107, 88, ['embalm'])
     def when(self):
         return not self.state_manager.world_manager.get_looted_InMortuaryF2R7PickEmbalm() and \
                self.state_manager.locations_manager.get_location() == 'mortuary_f2r7'

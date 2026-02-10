@@ -5,7 +5,7 @@ class Zm506LogicGenerated:
 
     def r45480_action(self):
         self.state_manager.world_manager.set_has_506_thread(True)
-        self.state_manager.inventory_items_manager.pick_item('has_needle')
+        self.state_manager.inventory_items_manager.pick_item('needle')
         self.state_manager.gain_experience('party', 100)
 
 
@@ -32,11 +32,11 @@ class Zm506LogicGenerated:
 
 
     def r45480_condition(self):
-        return self.state_manager.inventory_items_manager.is_own_item('has_scalpel')
+        return self.state_manager.inventory_items_manager.is_own_item('scalpel')
 
 
     def r45481_condition(self):
-        return not self.state_manager.inventory_items_manager.is_own_item('has_scalpel')
+        return not self.state_manager.inventory_items_manager.is_own_item('scalpel')
 
 
     def r45484_condition(self):

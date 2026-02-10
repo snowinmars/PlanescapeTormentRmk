@@ -243,7 +243,7 @@ label start:
 
 label dev:
     $ gsm = runtime.global_state_manager
-    $ gsm.world_manager.inventory_items_manager.pick_item('has_mortuary_key')
+    $ gsm.world_manager.inventory_items_manager.pick_item('keymo2')
 
     jump intro
 

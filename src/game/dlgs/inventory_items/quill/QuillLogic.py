@@ -10,7 +10,7 @@ class QuillLogic(QuillLogicGenerated):
 
     def break_quill(self):
         self.state_manager.characters_manager.modify_property('protagonist_character_name', 'lore', 1)
-        self.state_manager.inventory_items_manager.drop_all_items('has_quill')
+        self.state_manager.inventory_items_manager.drop_all_items('quill')
 
 
     def talk(self):

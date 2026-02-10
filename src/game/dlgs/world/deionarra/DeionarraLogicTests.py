@@ -710,21 +710,21 @@ class DeionarraLogicGeneratedTests(LogicTests):
 
 
     def test_r63419_action(self):
-        self.state_manager.inventory_items_manager.pick_item('has_wedding_ring')
-        self.state_manager.inventory_items_manager.drop_all_items('has_sup_ring')
+        self.state_manager.inventory_items_manager.pick_item('dwedring')
+        self.state_manager.inventory_items_manager.drop_all_items('dsupring')
 
-        self.assertTrue(self.state_manager.inventory_items_manager.is_own_item('has_wedding_ring'))
-        self.assertFalse(self.state_manager.inventory_items_manager.is_own_item('has_sup_ring'))
-
-        self.logic.r63419_action()
-
-        self.assertFalse(self.state_manager.inventory_items_manager.is_own_item('has_wedding_ring'))
-        self.assertTrue(self.state_manager.inventory_items_manager.is_own_item('has_sup_ring'))
+        self.assertTrue(self.state_manager.inventory_items_manager.is_own_item('dwedring'))
+        self.assertFalse(self.state_manager.inventory_items_manager.is_own_item('dsupring'))
 
         self.logic.r63419_action()
 
-        self.assertFalse(self.state_manager.inventory_items_manager.is_own_item('has_wedding_ring'))
-        self.assertTrue(self.state_manager.inventory_items_manager.is_own_item('has_sup_ring'))
+        self.assertFalse(self.state_manager.inventory_items_manager.is_own_item('dwedring'))
+        self.assertTrue(self.state_manager.inventory_items_manager.is_own_item('dsupring'))
+
+        self.logic.r63419_action()
+
+        self.assertFalse(self.state_manager.inventory_items_manager.is_own_item('dwedring'))
+        self.assertTrue(self.state_manager.inventory_items_manager.is_own_item('dsupring'))
 
 
     def test_j66917_s73_r66914_action(self):
@@ -1755,12 +1755,12 @@ class DeionarraLogicGeneratedTests(LogicTests):
 
     def test_r63419_condition(self):
         self.state_manager.world_manager.set_deionarra(-1)
-        self.state_manager.inventory_items_manager.drop_all_items('has_wedding_ring')
+        self.state_manager.inventory_items_manager.drop_all_items('dwedring')
 
         self.assertFalse(self.logic.r63419_condition())
 
         self.state_manager.world_manager.set_deionarra(1)
-        self.state_manager.inventory_items_manager.pick_item('has_wedding_ring')
+        self.state_manager.inventory_items_manager.pick_item('dwedring')
 
         self.assertTrue(self.logic.r63419_condition())
 

@@ -9,7 +9,7 @@ class Zm732LogicGenerated:
 
 
     def r64271_action(self):
-        self.state_manager.inventory_items_manager.pick_item('has_tome_ba')
+        self.state_manager.inventory_items_manager.pick_item('tomeba')
 
     def r6533_condition(self):
         return not self.state_manager.world_manager.get_zombie_chaotic()

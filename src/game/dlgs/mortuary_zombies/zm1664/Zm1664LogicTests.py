@@ -12,20 +12,20 @@ class Zm1664LogicGeneratedTests(LogicTests):
 
 
     def test_r47014_action(self):
-        self.state_manager.inventory_items_manager.drop_all_items('has_logpage')
+        self.state_manager.inventory_items_manager.drop_all_items('logpage')
         self.state_manager.world_manager.set_has_zm1664_page(False)
 
-        self.assertFalse(self.state_manager.inventory_items_manager.is_own_item('has_logpage'))
+        self.assertFalse(self.state_manager.inventory_items_manager.is_own_item('logpage'))
         self.assertFalse(self.state_manager.world_manager.get_has_zm1664_page())
 
         self.logic.r47014_action()
 
-        self.assertTrue(self.state_manager.inventory_items_manager.is_own_item('has_logpage'))
+        self.assertTrue(self.state_manager.inventory_items_manager.is_own_item('logpage'))
         self.assertTrue(self.state_manager.world_manager.get_has_zm1664_page())
 
         self.logic.r47014_action()
 
-        self.assertTrue(self.state_manager.inventory_items_manager.is_own_item('has_logpage'))
+        self.assertTrue(self.state_manager.inventory_items_manager.is_own_item('logpage'))
         self.assertTrue(self.state_manager.world_manager.get_has_zm1664_page())
 
 

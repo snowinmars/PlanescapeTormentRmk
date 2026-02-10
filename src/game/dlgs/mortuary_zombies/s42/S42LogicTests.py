@@ -89,24 +89,24 @@ class S42LogicGeneratedTests(LogicTests):
 
     def test_r6642_action(self):
         self.state_manager.world_manager.set_dead_s42(False)
-        self.state_manager.inventory_items_manager.drop_all_items('has_spike')
-        self.state_manager.inventory_items_manager.drop_all_items('has_strap')
+        self.state_manager.inventory_items_manager.drop_all_items('spike')
+        self.state_manager.inventory_items_manager.drop_all_items('strap')
 
         self.assertFalse(self.state_manager.world_manager.get_dead_s42())
-        self.assertFalse(self.state_manager.inventory_items_manager.is_own_item('has_spike'))
-        self.assertFalse(self.state_manager.inventory_items_manager.is_own_item('has_strap'))
+        self.assertFalse(self.state_manager.inventory_items_manager.is_own_item('spike'))
+        self.assertFalse(self.state_manager.inventory_items_manager.is_own_item('strap'))
 
         self.logic.r6642_action()
 
         self.assertTrue(self.state_manager.world_manager.get_dead_s42())
-        self.assertTrue(self.state_manager.inventory_items_manager.is_own_item('has_spike'))
-        self.assertTrue(self.state_manager.inventory_items_manager.is_own_item('has_strap'))
+        self.assertTrue(self.state_manager.inventory_items_manager.is_own_item('spike'))
+        self.assertTrue(self.state_manager.inventory_items_manager.is_own_item('strap'))
 
         self.logic.r6642_action()
 
         self.assertTrue(self.state_manager.world_manager.get_dead_s42())
-        self.assertTrue(self.state_manager.inventory_items_manager.is_own_item('has_spike'))
-        self.assertTrue(self.state_manager.inventory_items_manager.is_own_item('has_strap'))
+        self.assertTrue(self.state_manager.inventory_items_manager.is_own_item('spike'))
+        self.assertTrue(self.state_manager.inventory_items_manager.is_own_item('strap'))
 
 
     def test_r6645_action(self):
@@ -141,33 +141,33 @@ class S42LogicGeneratedTests(LogicTests):
 
 
     def test_r58984_action(self):
-        self.state_manager.inventory_items_manager.drop_all_items('has_gs_knife')
-        self.state_manager.inventory_items_manager.drop_all_items('has_rags')
-        self.state_manager.inventory_items_manager.drop_all_items('has_clotchrm')
+        self.state_manager.inventory_items_manager.drop_all_items('gsknife')
+        self.state_manager.inventory_items_manager.drop_all_items('rags')
+        self.state_manager.inventory_items_manager.drop_all_items('clotchrm')
         gold_before = 0
         gold_after = 99
         gold_after_once = 2 * 99
         self.state_manager.world_manager.set_gold(gold_before)
 
-        self.assertFalse(self.state_manager.inventory_items_manager.is_own_item('has_gs_knife'))
-        self.assertFalse(self.state_manager.inventory_items_manager.is_own_item('has_rags'))
-        self.assertFalse(self.state_manager.inventory_items_manager.is_own_item('has_clotchrm'))
+        self.assertFalse(self.state_manager.inventory_items_manager.is_own_item('gsknife'))
+        self.assertFalse(self.state_manager.inventory_items_manager.is_own_item('rags'))
+        self.assertFalse(self.state_manager.inventory_items_manager.is_own_item('clotchrm'))
         self.assertEqual(self.state_manager.world_manager.get_gold(), gold_before)
 
         self.logic.r58984_action()
 
-        self.assertTrue(self.state_manager.inventory_items_manager.is_own_item('has_gs_knife'))
-        self.assertTrue(self.state_manager.inventory_items_manager.is_own_item('has_rags'))
-        self.assertTrue(self.state_manager.inventory_items_manager.is_own_item('has_clotchrm'))
-        self.assertEqual(self.state_manager.inventory_items_manager.owned_item_count('has_clotchrm'), 2)
+        self.assertTrue(self.state_manager.inventory_items_manager.is_own_item('gsknife'))
+        self.assertTrue(self.state_manager.inventory_items_manager.is_own_item('rags'))
+        self.assertTrue(self.state_manager.inventory_items_manager.is_own_item('clotchrm'))
+        self.assertEqual(self.state_manager.inventory_items_manager.owned_item_count('clotchrm'), 2)
         self.assertEqual(self.state_manager.world_manager.get_gold(), gold_after)
 
         self.logic.r58984_action()
 
-        self.assertTrue(self.state_manager.inventory_items_manager.is_own_item('has_gs_knife'))
-        self.assertTrue(self.state_manager.inventory_items_manager.is_own_item('has_rags'))
-        self.assertTrue(self.state_manager.inventory_items_manager.is_own_item('has_clotchrm'))
-        self.assertEqual(self.state_manager.inventory_items_manager.owned_item_count('has_clotchrm'), 4)
+        self.assertTrue(self.state_manager.inventory_items_manager.is_own_item('gsknife'))
+        self.assertTrue(self.state_manager.inventory_items_manager.is_own_item('rags'))
+        self.assertTrue(self.state_manager.inventory_items_manager.is_own_item('clotchrm'))
+        self.assertEqual(self.state_manager.inventory_items_manager.owned_item_count('clotchrm'), 4)
         self.assertEqual(self.state_manager.world_manager.get_gold(), gold_after_once)
 
 

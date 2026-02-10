@@ -17,12 +17,12 @@ class XachLogicGenerated:
 
 
     def r663_action(self):
-        self.state_manager.inventory_items_manager.pick_item('has_xac_liver')
+        self.state_manager.inventory_items_manager.pick_item('xacliver')
 
 
     def r666_action(self):
         self.state_manager.world_manager.set_xachariah_ring(2)
-        self.state_manager.inventory_items_manager.pick_item('has_xac_heart')
+        self.state_manager.inventory_items_manager.pick_item('xacheart')
 
 
     def r672_action(self):
@@ -356,11 +356,11 @@ class XachLogicGenerated:
 
 
     def r647_condition(self):
-        return self.state_manager.inventory_items_manager.is_own_item('has_scalpel')
+        return self.state_manager.inventory_items_manager.is_own_item('scalpel')
 
 
     def r653_condition(self):
-        return not self.state_manager.inventory_items_manager.is_own_item('has_scalpel')
+        return not self.state_manager.inventory_items_manager.is_own_item('scalpel')
 
 
     def r660_condition(self):

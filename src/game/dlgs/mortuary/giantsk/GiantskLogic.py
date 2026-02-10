@@ -47,7 +47,7 @@ class GiantskLogicGenerated:
 
 
     def r4097_action(self):
-        self.state_manager.inventory_items_manager.pick_item('has_breast1')
+        self.state_manager.inventory_items_manager.pick_item('breast1')
 
 
     def r4098_action(self):
@@ -55,15 +55,15 @@ class GiantskLogicGenerated:
 
 
     def r4099_action(self):
-        self.state_manager.inventory_items_manager.pick_item('has_breast2')
+        self.state_manager.inventory_items_manager.pick_item('breast2')
 
 
     def r4100_action(self):
-        self.state_manager.inventory_items_manager.pick_item('has_breast3')
+        self.state_manager.inventory_items_manager.pick_item('breast3')
 
 
     def r4101_action(self):
-        self.state_manager.inventory_items_manager.pick_item('has_breast4')
+        self.state_manager.inventory_items_manager.pick_item('breast4')
         self.state_manager.world_manager.set_dead_giantsk(True)
 
 
@@ -219,7 +219,7 @@ class GiantskLogicGenerated:
 
 
     def r64294_condition(self):
-        return self.state_manager.inventory_items_manager.is_own_item('has_tome_ba')
+        return self.state_manager.inventory_items_manager.is_own_item('tomeba')
 
 
     def r4072_condition(self):
@@ -273,7 +273,7 @@ class GiantskLogicGenerated:
 
 
     def r64296_condition(self):
-        return self.state_manager.inventory_items_manager.is_own_item('has_tome_ba')
+        return self.state_manager.inventory_items_manager.is_own_item('tomeba')
 
 
     def r4087_condition(self):

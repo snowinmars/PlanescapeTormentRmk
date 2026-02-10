@@ -252,8 +252,8 @@ class DeionarraLogicGenerated:
 
 
     def r63419_action(self):
-        self.state_manager.inventory_items_manager.drop_all_items('has_wedding_ring')
-        self.state_manager.inventory_items_manager.pick_item('has_sup_ring')
+        self.state_manager.inventory_items_manager.drop_all_items('dwedring')
+        self.state_manager.inventory_items_manager.pick_item('dsupring')
 
 
     def j66917_s73_r66914_action(self):
@@ -724,7 +724,7 @@ class DeionarraLogicGenerated:
 
     def r63419_condition(self):
         return self.state_manager.world_manager.get_deionarra() > 0 and \
-               self.state_manager.inventory_items_manager.is_own_item('has_wedding_ring')
+               self.state_manager.inventory_items_manager.is_own_item('dwedring')
 
 
     def r63420_condition(self):

@@ -4,7 +4,7 @@ class Zm1664LogicGenerated:
 
 
     def r47014_action(self):
-        self.state_manager.inventory_items_manager.pick_item('has_logpage')
+        self.state_manager.inventory_items_manager.pick_item('logpage')
         self.state_manager.world_manager.set_has_zm1664_page(True)
 
 

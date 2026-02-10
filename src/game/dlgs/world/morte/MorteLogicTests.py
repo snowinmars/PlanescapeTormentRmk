@@ -12,7 +12,7 @@ class MorteLogicGeneratedTests(LogicTests):
 
 
     def test_r17833_action(self):
-        self.state_manager.inventory_items_manager.drop_all_items('has_intro_key')
+        self.state_manager.inventory_items_manager.drop_all_items('keypr')
         morte_before = 0
         morte_after = 1
         morte_after_once = 1
@@ -20,21 +20,21 @@ class MorteLogicGeneratedTests(LogicTests):
         self.state_manager.world_manager.set_read_scars(False)
         self.state_manager.world_manager.set_in_party_morte(False)
 
-        self.assertFalse(self.state_manager.inventory_items_manager.is_own_item('has_intro_key'))
+        self.assertFalse(self.state_manager.inventory_items_manager.is_own_item('keypr'))
         self.assertEqual(self.state_manager.world_manager.get_morte(), morte_before)
         self.assertFalse(self.state_manager.world_manager.get_read_scars())
         self.assertFalse(self.state_manager.world_manager.get_in_party_morte())
 
         self.logic.r17833_action()
 
-        self.assertTrue(self.state_manager.inventory_items_manager.is_own_item('has_intro_key'))
+        self.assertTrue(self.state_manager.inventory_items_manager.is_own_item('keypr'))
         self.assertEqual(self.state_manager.world_manager.get_morte(), morte_after)
         self.assertTrue(self.state_manager.world_manager.get_read_scars())
         self.assertTrue(self.state_manager.world_manager.get_in_party_morte())
 
         self.logic.r17833_action()
 
-        self.assertTrue(self.state_manager.inventory_items_manager.is_own_item('has_intro_key'))
+        self.assertTrue(self.state_manager.inventory_items_manager.is_own_item('keypr'))
         self.assertEqual(self.state_manager.world_manager.get_morte(), morte_after_once)
         self.assertTrue(self.state_manager.world_manager.get_read_scars())
         self.assertTrue(self.state_manager.world_manager.get_in_party_morte())
@@ -3225,12 +3225,12 @@ class MorteLogicGeneratedTests(LogicTests):
         prop_strength = 'strength'
         delta_strength = 13
 
-        self.state_manager.inventory_items_manager.pick_item('has_prybar')
+        self.state_manager.inventory_items_manager.pick_item('prybar')
         self.state_manager.characters_manager.set_property(who_strength, prop_strength, delta_strength)
 
         self.assertFalse(self.logic.r3969_condition())
 
-        self.state_manager.inventory_items_manager.drop_item('has_prybar')
+        self.state_manager.inventory_items_manager.drop_item('prybar')
         self.state_manager.characters_manager.set_property(who_strength, prop_strength, delta_strength - 1)
 
         self.assertTrue(self.logic.r3969_condition())
@@ -3241,12 +3241,12 @@ class MorteLogicGeneratedTests(LogicTests):
         prop_strength = 'strength'
         delta_strength = 12
 
-        self.state_manager.inventory_items_manager.pick_item('has_prybar')
+        self.state_manager.inventory_items_manager.pick_item('prybar')
         self.state_manager.characters_manager.set_property(who_strength, prop_strength, delta_strength)
 
         self.assertFalse(self.logic.r3970_condition())
 
-        self.state_manager.inventory_items_manager.drop_item('has_prybar')
+        self.state_manager.inventory_items_manager.drop_item('prybar')
         self.state_manager.characters_manager.set_property(who_strength, prop_strength, delta_strength + 1)
 
         self.assertTrue(self.logic.r3970_condition())
@@ -3254,7 +3254,7 @@ class MorteLogicGeneratedTests(LogicTests):
 
     def test_r3971_condition(self):
         self._boolean_straight_condition(
-            lambda x: self.state_manager.inventory_items_manager.pick_item('has_prybar') if x else self.state_manager.inventory_items_manager.drop_item('has_prybar'),
+            lambda x: self.state_manager.inventory_items_manager.pick_item('prybar') if x else self.state_manager.inventory_items_manager.drop_item('prybar'),
             self.logic.r3971_condition
         )
 
@@ -4476,12 +4476,12 @@ class MorteLogicGeneratedTests(LogicTests):
         prop_strength = 'strength'
         delta_strength = 13
 
-        self.state_manager.inventory_items_manager.pick_item('has_prybar')
+        self.state_manager.inventory_items_manager.pick_item('prybar')
         self.state_manager.characters_manager.set_property(who_strength, prop_strength, delta_strength)
 
         self.assertFalse(self.logic.r35344_condition())
 
-        self.state_manager.inventory_items_manager.drop_item('has_prybar')
+        self.state_manager.inventory_items_manager.drop_item('prybar')
         self.state_manager.characters_manager.set_property(who_strength, prop_strength, delta_strength - 1)
 
         self.assertTrue(self.logic.r35344_condition())
@@ -4492,12 +4492,12 @@ class MorteLogicGeneratedTests(LogicTests):
         prop_strength = 'strength'
         delta_strength = 12
 
-        self.state_manager.inventory_items_manager.pick_item('has_prybar')
+        self.state_manager.inventory_items_manager.pick_item('prybar')
         self.state_manager.characters_manager.set_property(who_strength, prop_strength, delta_strength)
 
         self.assertFalse(self.logic.r35352_condition())
 
-        self.state_manager.inventory_items_manager.drop_item('has_prybar')
+        self.state_manager.inventory_items_manager.drop_item('prybar')
         self.state_manager.characters_manager.set_property(who_strength, prop_strength, delta_strength + 1)
 
         self.assertTrue(self.logic.r35352_condition())
@@ -4505,7 +4505,7 @@ class MorteLogicGeneratedTests(LogicTests):
 
     def test_r35355_condition(self):
         self._boolean_straight_condition(
-            lambda x: self.state_manager.inventory_items_manager.pick_item('has_prybar') if x else self.state_manager.inventory_items_manager.drop_item('has_prybar'),
+            lambda x: self.state_manager.inventory_items_manager.pick_item('prybar') if x else self.state_manager.inventory_items_manager.drop_item('prybar'),
             self.logic.r35355_condition
         )
 
@@ -4529,12 +4529,12 @@ class MorteLogicGeneratedTests(LogicTests):
         prop_strength = 'strength'
         delta_strength = 13
 
-        self.state_manager.inventory_items_manager.pick_item('has_prybar')
+        self.state_manager.inventory_items_manager.pick_item('prybar')
         self.state_manager.characters_manager.set_property(who_strength, prop_strength, delta_strength)
 
         self.assertFalse(self.logic.r35421_condition())
 
-        self.state_manager.inventory_items_manager.drop_item('has_prybar')
+        self.state_manager.inventory_items_manager.drop_item('prybar')
         self.state_manager.characters_manager.set_property(who_strength, prop_strength, delta_strength - 1)
 
         self.assertTrue(self.logic.r35421_condition())
@@ -4545,12 +4545,12 @@ class MorteLogicGeneratedTests(LogicTests):
         prop_strength = 'strength'
         delta_strength = 12
 
-        self.state_manager.inventory_items_manager.pick_item('has_prybar')
+        self.state_manager.inventory_items_manager.pick_item('prybar')
         self.state_manager.characters_manager.set_property(who_strength, prop_strength, delta_strength)
 
         self.assertFalse(self.logic.r35429_condition())
 
-        self.state_manager.inventory_items_manager.drop_item('has_prybar')
+        self.state_manager.inventory_items_manager.drop_item('prybar')
         self.state_manager.characters_manager.set_property(who_strength, prop_strength, delta_strength + 1)
 
         self.assertTrue(self.logic.r35429_condition())
@@ -4558,7 +4558,7 @@ class MorteLogicGeneratedTests(LogicTests):
 
     def test_r35432_condition(self):
         self._boolean_straight_condition(
-            lambda x: self.state_manager.inventory_items_manager.pick_item('has_prybar') if x else self.state_manager.inventory_items_manager.drop_item('has_prybar'),
+            lambda x: self.state_manager.inventory_items_manager.pick_item('prybar') if x else self.state_manager.inventory_items_manager.drop_item('prybar'),
             self.logic.r35432_condition
         )
 
@@ -4582,12 +4582,12 @@ class MorteLogicGeneratedTests(LogicTests):
         prop_strength = 'strength'
         delta_strength = 13
 
-        self.state_manager.inventory_items_manager.pick_item('has_prybar')
+        self.state_manager.inventory_items_manager.pick_item('prybar')
         self.state_manager.characters_manager.set_property(who_strength, prop_strength, delta_strength)
 
         self.assertFalse(self.logic.r35498_condition())
 
-        self.state_manager.inventory_items_manager.drop_item('has_prybar')
+        self.state_manager.inventory_items_manager.drop_item('prybar')
         self.state_manager.characters_manager.set_property(who_strength, prop_strength, delta_strength - 1)
 
         self.assertTrue(self.logic.r35498_condition())
@@ -4598,12 +4598,12 @@ class MorteLogicGeneratedTests(LogicTests):
         prop_strength = 'strength'
         delta_strength = 12
 
-        self.state_manager.inventory_items_manager.pick_item('has_prybar')
+        self.state_manager.inventory_items_manager.pick_item('prybar')
         self.state_manager.characters_manager.set_property(who_strength, prop_strength, delta_strength)
 
         self.assertFalse(self.logic.r35506_condition())
 
-        self.state_manager.inventory_items_manager.drop_item('has_prybar')
+        self.state_manager.inventory_items_manager.drop_item('prybar')
         self.state_manager.characters_manager.set_property(who_strength, prop_strength, delta_strength + 1)
 
         self.assertTrue(self.logic.r35506_condition())
@@ -4611,7 +4611,7 @@ class MorteLogicGeneratedTests(LogicTests):
 
     def test_r35509_condition(self):
         self._boolean_straight_condition(
-            lambda x: self.state_manager.inventory_items_manager.pick_item('has_prybar') if x else self.state_manager.inventory_items_manager.drop_item('has_prybar'),
+            lambda x: self.state_manager.inventory_items_manager.pick_item('prybar') if x else self.state_manager.inventory_items_manager.drop_item('prybar'),
             self.logic.r35509_condition
         )
 
@@ -4635,12 +4635,12 @@ class MorteLogicGeneratedTests(LogicTests):
         prop_strength = 'strength'
         delta_strength = 13
 
-        self.state_manager.inventory_items_manager.pick_item('has_prybar')
+        self.state_manager.inventory_items_manager.pick_item('prybar')
         self.state_manager.characters_manager.set_property(who_strength, prop_strength, delta_strength)
 
         self.assertFalse(self.logic.r35575_condition())
 
-        self.state_manager.inventory_items_manager.drop_item('has_prybar')
+        self.state_manager.inventory_items_manager.drop_item('prybar')
         self.state_manager.characters_manager.set_property(who_strength, prop_strength, delta_strength - 1)
 
         self.assertTrue(self.logic.r35575_condition())
@@ -4651,12 +4651,12 @@ class MorteLogicGeneratedTests(LogicTests):
         prop_strength = 'strength'
         delta_strength = 12
 
-        self.state_manager.inventory_items_manager.pick_item('has_prybar')
+        self.state_manager.inventory_items_manager.pick_item('prybar')
         self.state_manager.characters_manager.set_property(who_strength, prop_strength, delta_strength)
 
         self.assertFalse(self.logic.r35583_condition())
 
-        self.state_manager.inventory_items_manager.drop_item('has_prybar')
+        self.state_manager.inventory_items_manager.drop_item('prybar')
         self.state_manager.characters_manager.set_property(who_strength, prop_strength, delta_strength + 1)
 
         self.assertTrue(self.logic.r35583_condition())
@@ -4664,7 +4664,7 @@ class MorteLogicGeneratedTests(LogicTests):
 
     def test_r35586_condition(self):
         self._boolean_straight_condition(
-            lambda x: self.state_manager.inventory_items_manager.pick_item('has_prybar') if x else self.state_manager.inventory_items_manager.drop_item('has_prybar'),
+            lambda x: self.state_manager.inventory_items_manager.pick_item('prybar') if x else self.state_manager.inventory_items_manager.drop_item('prybar'),
             self.logic.r35586_condition
         )
 
@@ -4795,7 +4795,7 @@ class MorteLogicGeneratedTests(LogicTests):
 
     def test_r41846_condition(self):
         self._boolean_straight_condition(
-            lambda x: self.state_manager.inventory_items_manager.pick_item('has_bandages') if x else self.state_manager.inventory_items_manager.drop_item('has_bandages'),
+            lambda x: self.state_manager.inventory_items_manager.pick_item('bandage') if x else self.state_manager.inventory_items_manager.drop_item('bandage'),
             self.logic.r41846_condition
         )
 
@@ -4987,12 +4987,12 @@ class MorteLogicGeneratedTests(LogicTests):
 
 
     def test_r43909_condition(self):
-        self.state_manager.inventory_items_manager.drop_all_items('has_decant')
+        self.state_manager.inventory_items_manager.drop_all_items('decant')
         self.state_manager.world_manager.set_seek_word(0)
 
         self.assertFalse(self.logic.r43909_condition())
 
-        self.state_manager.inventory_items_manager.pick_item('has_decant')
+        self.state_manager.inventory_items_manager.pick_item('decant')
         self.state_manager.world_manager.set_seek_word(1)
 
         self.assertTrue(self.logic.r43909_condition())
@@ -5019,12 +5019,12 @@ class MorteLogicGeneratedTests(LogicTests):
 
 
     def test_r43917_condition(self):
-        self.state_manager.inventory_items_manager.drop_all_items('has_decant')
+        self.state_manager.inventory_items_manager.drop_all_items('decant')
         self.state_manager.world_manager.set_seek_word(0)
 
         self.assertFalse(self.logic.r43917_condition())
 
-        self.state_manager.inventory_items_manager.pick_item('has_decant')
+        self.state_manager.inventory_items_manager.pick_item('decant')
         self.state_manager.world_manager.set_seek_word(1)
 
         self.assertTrue(self.logic.r43917_condition())
@@ -5222,25 +5222,25 @@ class MorteLogicGeneratedTests(LogicTests):
 
     def test_r53837_condition(self):
         self.state_manager.world_manager.set_where_fhjull(False)
-        self.state_manager.inventory_items_manager.drop_all_items('has_cube')
+        self.state_manager.inventory_items_manager.drop_all_items('cube')
 
         self.assertFalse(self.logic.r53837_condition())
 
         self.state_manager.world_manager.set_where_fhjull(True)
-        self.state_manager.inventory_items_manager.pick_item('has_cube')
+        self.state_manager.inventory_items_manager.pick_item('cube')
 
         self.assertTrue(self.logic.r53837_condition())
 
 
     def test_r53838_condition(self):
         self.state_manager.world_manager.set_where_fhjull(False)
-        self.state_manager.inventory_items_manager.pick_item('has_cube')
+        self.state_manager.inventory_items_manager.pick_item('cube')
         self.state_manager.world_manager.set_in_party_grace(False)
 
         self.assertFalse(self.logic.r53838_condition())
 
         self.state_manager.world_manager.set_where_fhjull(True)
-        self.state_manager.inventory_items_manager.drop_all_items('has_cube')
+        self.state_manager.inventory_items_manager.drop_all_items('cube')
         self.state_manager.world_manager.set_in_party_grace(True)
 
         self.assertTrue(self.logic.r53838_condition())
@@ -5248,14 +5248,14 @@ class MorteLogicGeneratedTests(LogicTests):
 
     def test_r53839_condition(self):
         self.state_manager.world_manager.set_where_fhjull(False)
-        self.state_manager.inventory_items_manager.pick_item('has_cube')
+        self.state_manager.inventory_items_manager.pick_item('cube')
         self.state_manager.world_manager.set_in_party_grace(True)
         self.state_manager.world_manager.set_in_party_annah(False)
 
         self.assertFalse(self.logic.r53839_condition())
 
         self.state_manager.world_manager.set_where_fhjull(True)
-        self.state_manager.inventory_items_manager.drop_all_items('has_cube')
+        self.state_manager.inventory_items_manager.drop_all_items('cube')
         self.state_manager.world_manager.set_in_party_grace(False)
         self.state_manager.world_manager.set_in_party_annah(True)
 
@@ -5264,14 +5264,14 @@ class MorteLogicGeneratedTests(LogicTests):
 
     def test_r53840_condition(self):
         self.state_manager.world_manager.set_where_fhjull(False)
-        self.state_manager.inventory_items_manager.pick_item('has_cube')
+        self.state_manager.inventory_items_manager.pick_item('cube')
         self.state_manager.world_manager.set_in_party_grace(True)
         self.state_manager.world_manager.set_in_party_annah(True)
 
         self.assertFalse(self.logic.r53840_condition())
 
         self.state_manager.world_manager.set_where_fhjull(True)
-        self.state_manager.inventory_items_manager.drop_all_items('has_cube')
+        self.state_manager.inventory_items_manager.drop_all_items('cube')
         self.state_manager.world_manager.set_in_party_grace(False)
         self.state_manager.world_manager.set_in_party_annah(False)
 
@@ -5287,25 +5287,25 @@ class MorteLogicGeneratedTests(LogicTests):
 
     def test_r53863_condition(self):
         self.state_manager.world_manager.set_where_fhjull(False)
-        self.state_manager.inventory_items_manager.drop_all_items('has_cube')
+        self.state_manager.inventory_items_manager.drop_all_items('cube')
 
         self.assertFalse(self.logic.r53863_condition())
 
         self.state_manager.world_manager.set_where_fhjull(True)
-        self.state_manager.inventory_items_manager.pick_item('has_cube')
+        self.state_manager.inventory_items_manager.pick_item('cube')
 
         self.assertTrue(self.logic.r53863_condition())
 
 
     def test_r53864_condition(self):
         self.state_manager.world_manager.set_where_fhjull(False)
-        self.state_manager.inventory_items_manager.pick_item('has_cube')
+        self.state_manager.inventory_items_manager.pick_item('cube')
         self.state_manager.world_manager.set_in_party_grace(False)
 
         self.assertFalse(self.logic.r53864_condition())
 
         self.state_manager.world_manager.set_where_fhjull(True)
-        self.state_manager.inventory_items_manager.drop_all_items('has_cube')
+        self.state_manager.inventory_items_manager.drop_all_items('cube')
         self.state_manager.world_manager.set_in_party_grace(True)
 
         self.assertTrue(self.logic.r53864_condition())
@@ -5313,14 +5313,14 @@ class MorteLogicGeneratedTests(LogicTests):
 
     def test_r53865_condition(self):
         self.state_manager.world_manager.set_where_fhjull(False)
-        self.state_manager.inventory_items_manager.pick_item('has_cube')
+        self.state_manager.inventory_items_manager.pick_item('cube')
         self.state_manager.world_manager.set_in_party_grace(True)
         self.state_manager.world_manager.set_in_party_annah(False)
 
         self.assertFalse(self.logic.r53865_condition())
 
         self.state_manager.world_manager.set_where_fhjull(True)
-        self.state_manager.inventory_items_manager.drop_all_items('has_cube')
+        self.state_manager.inventory_items_manager.drop_all_items('cube')
         self.state_manager.world_manager.set_in_party_grace(False)
         self.state_manager.world_manager.set_in_party_annah(True)
 
@@ -5329,14 +5329,14 @@ class MorteLogicGeneratedTests(LogicTests):
 
     def test_r53866_condition(self):
         self.state_manager.world_manager.set_where_fhjull(False)
-        self.state_manager.inventory_items_manager.pick_item('has_cube')
+        self.state_manager.inventory_items_manager.pick_item('cube')
         self.state_manager.world_manager.set_in_party_grace(True)
         self.state_manager.world_manager.set_in_party_annah(True)
 
         self.assertFalse(self.logic.r53866_condition())
 
         self.state_manager.world_manager.set_where_fhjull(True)
-        self.state_manager.inventory_items_manager.drop_all_items('has_cube')
+        self.state_manager.inventory_items_manager.drop_all_items('cube')
         self.state_manager.world_manager.set_in_party_grace(False)
         self.state_manager.world_manager.set_in_party_annah(False)
 
@@ -5352,25 +5352,25 @@ class MorteLogicGeneratedTests(LogicTests):
 
     def test_r53852_condition(self):
         self.state_manager.world_manager.set_where_fhjull(False)
-        self.state_manager.inventory_items_manager.drop_all_items('has_cube')
+        self.state_manager.inventory_items_manager.drop_all_items('cube')
 
         self.assertFalse(self.logic.r53852_condition())
 
         self.state_manager.world_manager.set_where_fhjull(True)
-        self.state_manager.inventory_items_manager.pick_item('has_cube')
+        self.state_manager.inventory_items_manager.pick_item('cube')
 
         self.assertTrue(self.logic.r53852_condition())
 
 
     def test_r53853_condition(self):
         self.state_manager.world_manager.set_where_fhjull(False)
-        self.state_manager.inventory_items_manager.pick_item('has_cube')
+        self.state_manager.inventory_items_manager.pick_item('cube')
         self.state_manager.world_manager.set_in_party_grace(False)
 
         self.assertFalse(self.logic.r53853_condition())
 
         self.state_manager.world_manager.set_where_fhjull(True)
-        self.state_manager.inventory_items_manager.drop_all_items('has_cube')
+        self.state_manager.inventory_items_manager.drop_all_items('cube')
         self.state_manager.world_manager.set_in_party_grace(True)
 
         self.assertTrue(self.logic.r53853_condition())
@@ -5378,14 +5378,14 @@ class MorteLogicGeneratedTests(LogicTests):
 
     def test_r53854_condition(self):
         self.state_manager.world_manager.set_where_fhjull(False)
-        self.state_manager.inventory_items_manager.pick_item('has_cube')
+        self.state_manager.inventory_items_manager.pick_item('cube')
         self.state_manager.world_manager.set_in_party_grace(True)
         self.state_manager.world_manager.set_in_party_annah(False)
 
         self.assertFalse(self.logic.r53854_condition())
 
         self.state_manager.world_manager.set_where_fhjull(True)
-        self.state_manager.inventory_items_manager.drop_all_items('has_cube')
+        self.state_manager.inventory_items_manager.drop_all_items('cube')
         self.state_manager.world_manager.set_in_party_grace(False)
         self.state_manager.world_manager.set_in_party_annah(True)
 
@@ -5394,14 +5394,14 @@ class MorteLogicGeneratedTests(LogicTests):
 
     def test_r53855_condition(self):
         self.state_manager.world_manager.set_where_fhjull(False)
-        self.state_manager.inventory_items_manager.pick_item('has_cube')
+        self.state_manager.inventory_items_manager.pick_item('cube')
         self.state_manager.world_manager.set_in_party_grace(True)
         self.state_manager.world_manager.set_in_party_annah(True)
 
         self.assertFalse(self.logic.r53855_condition())
 
         self.state_manager.world_manager.set_where_fhjull(True)
-        self.state_manager.inventory_items_manager.drop_all_items('has_cube')
+        self.state_manager.inventory_items_manager.drop_all_items('cube')
         self.state_manager.world_manager.set_in_party_grace(False)
         self.state_manager.world_manager.set_in_party_annah(False)
 

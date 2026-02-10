@@ -51,7 +51,7 @@ class XachLogicGeneratedTests(LogicTests):
 
     def test_r663_action(self):
         self._false_then_true_action(
-            lambda: self.state_manager.inventory_items_manager.is_own_item('has_xac_liver'),
+            lambda: self.state_manager.inventory_items_manager.is_own_item('xacliver'),
             self.logic.r663_action
         )
 
@@ -61,22 +61,22 @@ class XachLogicGeneratedTests(LogicTests):
         xachariah_ring_after = 2
         xachariah_ring_after_once = 2
         self.state_manager.world_manager.set_xachariah_ring(xachariah_ring_before)
-        self.state_manager.inventory_items_manager.drop_all_items('has_xac_heart')
+        self.state_manager.inventory_items_manager.drop_all_items('xacheart')
 
         self.assertEqual(self.state_manager.world_manager.get_xachariah_ring(), xachariah_ring_before)
-        self.assertFalse(self.state_manager.inventory_items_manager.is_own_item('has_xac_heart'))
+        self.assertFalse(self.state_manager.inventory_items_manager.is_own_item('xacheart'))
 
         self.logic.r666_action()
 
         self.assertEqual(self.state_manager.world_manager.get_xachariah_ring(), xachariah_ring_after)
-        self.assertTrue(self.state_manager.inventory_items_manager.is_own_item('has_xac_heart'))
-        self.assertEqual(self.state_manager.inventory_items_manager.owned_item_count('has_xac_heart'), 1)
+        self.assertTrue(self.state_manager.inventory_items_manager.is_own_item('xacheart'))
+        self.assertEqual(self.state_manager.inventory_items_manager.owned_item_count('xacheart'), 1)
 
         self.logic.r666_action()
 
         self.assertEqual(self.state_manager.world_manager.get_xachariah_ring(), xachariah_ring_after_once)
-        self.assertTrue(self.state_manager.inventory_items_manager.is_own_item('has_xac_heart'))
-        self.assertEqual(self.state_manager.inventory_items_manager.owned_item_count('has_xac_heart'), 2)
+        self.assertTrue(self.state_manager.inventory_items_manager.is_own_item('xacheart'))
+        self.assertEqual(self.state_manager.inventory_items_manager.owned_item_count('xacheart'), 2)
 
 
     def test_r672_action(self):
@@ -719,15 +719,15 @@ class XachLogicGeneratedTests(LogicTests):
 
     def test_r647_condition(self):
         self._boolean_straight_condition(
-            lambda x: self.state_manager.inventory_items_manager.pick_item('has_scalpel') if x else self.state_manager.inventory_items_manager.drop_item('has_scalpel'),
+            lambda x: self.state_manager.inventory_items_manager.pick_item('scalpel') if x else self.state_manager.inventory_items_manager.drop_item('scalpel'),
             self.logic.r647_condition
         )
 
 
     def test_r653_condition(self):
-        self.state_manager.inventory_items_manager.pick_item('has_scalpel')
+        self.state_manager.inventory_items_manager.pick_item('scalpel')
         self._boolean_invert_condition(
-            lambda x: self.state_manager.inventory_items_manager.pick_item('has_scalpel') if x else self.state_manager.inventory_items_manager.drop_item('has_scalpel'),
+            lambda x: self.state_manager.inventory_items_manager.pick_item('scalpel') if x else self.state_manager.inventory_items_manager.drop_item('scalpel'),
             self.logic.r653_condition
         )
 

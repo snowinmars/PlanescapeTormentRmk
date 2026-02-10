@@ -45,118 +45,118 @@ class InventoryItemsManagerTests(LogicTests):
     def test_pick_item_when_all_ok(self):
         inventory_item = self._create_inventory_item(postfix='_1')
         self.inventory_items_manager.register(inventory_item)
-        inventory_item = self.inventory_items_manager.get_item(inventory_item.settings_id)
+        inventory_item = self.inventory_items_manager.get_item(inventory_item.the_id)
 
         self.assertEqual(inventory_item.owned_count, 0)
 
-        self.inventory_items_manager.pick_item(inventory_item.settings_id)
+        self.inventory_items_manager.pick_item(inventory_item.the_id)
         self.assertEqual(inventory_item.owned_count, 1)
 
-        self.inventory_items_manager.pick_item(inventory_item.settings_id, 3)
+        self.inventory_items_manager.pick_item(inventory_item.the_id, 3)
         self.assertEqual(inventory_item.owned_count, 4)
 
 
     def test_pick_item_when_owned_count_is_weird(self):
         inventory_item = self._create_inventory_item(postfix='_1')
         self.inventory_items_manager.register(inventory_item)
-        inventory_item = self.inventory_items_manager.get_item(inventory_item.settings_id)
+        inventory_item = self.inventory_items_manager.get_item(inventory_item.the_id)
         inventory_item.owned_count = -2
 
         self.assertEqual(inventory_item.owned_count, -2)
 
         with self.assertRaises(IndexError):
-            self.inventory_items_manager.pick_item(inventory_item.settings_id)
+            self.inventory_items_manager.pick_item(inventory_item.the_id)
 
 
-    def test_pick_item_when_wrong_settings_id(self):
-        wrong_settings_id = 'wrong_settings_id'
+    def test_pick_item_when_wrong_the_id(self):
+        wrong_the_id = 'wrong_the_id'
         inventory_item = self._create_inventory_item(postfix='_1')
         self.inventory_items_manager.register(inventory_item)
 
         with self.assertRaises(KeyError):
-            self.inventory_items_manager.pick_item(wrong_settings_id)
+            self.inventory_items_manager.pick_item(wrong_the_id)
 
 
     def test_drop_item_when_all_ok(self):
         inventory_item = self._create_inventory_item(postfix='_1')
         self.inventory_items_manager.register(inventory_item)
-        inventory_item = self.inventory_items_manager.get_item(inventory_item.settings_id)
+        inventory_item = self.inventory_items_manager.get_item(inventory_item.the_id)
 
-        self.inventory_items_manager.pick_item(inventory_item.settings_id, 10)
+        self.inventory_items_manager.pick_item(inventory_item.the_id, 10)
         self.assertEqual(inventory_item.owned_count, 10)
 
-        self.inventory_items_manager.drop_item(inventory_item.settings_id)
+        self.inventory_items_manager.drop_item(inventory_item.the_id)
         self.assertEqual(inventory_item.owned_count, 9)
 
-        self.inventory_items_manager.drop_item(inventory_item.settings_id, 3)
+        self.inventory_items_manager.drop_item(inventory_item.the_id, 3)
         self.assertEqual(inventory_item.owned_count, 6)
 
 
     def test_drop_item_when_owned_count_is_weird(self):
         inventory_item = self._create_inventory_item(postfix='_1')
         self.inventory_items_manager.register(inventory_item)
-        inventory_item = self.inventory_items_manager.get_item(inventory_item.settings_id)
+        inventory_item = self.inventory_items_manager.get_item(inventory_item.the_id)
 
         self.assertEqual(inventory_item.owned_count, 0)
 
         with self.assertRaises(IndexError):
-            self.inventory_items_manager.drop_item(inventory_item.settings_id)
+            self.inventory_items_manager.drop_item(inventory_item.the_id)
 
 
-    def test_drop_item_when_wrong_settings_id(self):
-        wrong_settings_id = 'wrong_settings_id'
+    def test_drop_item_when_wrong_the_id(self):
+        wrong_the_id = 'wrong_the_id'
         inventory_item = self._create_inventory_item(postfix='_1')
         self.inventory_items_manager.register(inventory_item)
 
         with self.assertRaises(KeyError):
-            self.inventory_items_manager.drop_item(wrong_settings_id)
+            self.inventory_items_manager.drop_item(wrong_the_id)
 
 
     def test_drop_all_items(self):
         inventory_item = self._create_inventory_item(postfix='_1')
         self.inventory_items_manager.register(inventory_item)
-        inventory_item = self.inventory_items_manager.get_item(inventory_item.settings_id)
+        inventory_item = self.inventory_items_manager.get_item(inventory_item.the_id)
 
-        self.inventory_items_manager.pick_item(inventory_item.settings_id, 10)
+        self.inventory_items_manager.pick_item(inventory_item.the_id, 10)
         self.assertEqual(inventory_item.owned_count, 10)
 
-        self.inventory_items_manager.drop_all_items(inventory_item.settings_id)
+        self.inventory_items_manager.drop_all_items(inventory_item.the_id)
         self.assertEqual(inventory_item.owned_count, 0)
 
 
-    def test_drop_all_items_when_wrong_settings_id(self):
-        wrong_settings_id = 'wrong_settings_id'
+    def test_drop_all_items_when_wrong_the_id(self):
+        wrong_the_id = 'wrong_the_id'
         inventory_item = self._create_inventory_item(postfix='_1')
         self.inventory_items_manager.register(inventory_item)
 
         with self.assertRaises(KeyError):
-            self.inventory_items_manager.drop_all_items(wrong_settings_id)
+            self.inventory_items_manager.drop_all_items(wrong_the_id)
 
 
     def test_is_own_item_when_all_ok(self):
         inventory_item = self._create_inventory_item(postfix='_1')
         self.inventory_items_manager.register(inventory_item)
 
-        self.assertFalse(self.inventory_items_manager.is_own_item(inventory_item.settings_id))
+        self.assertFalse(self.inventory_items_manager.is_own_item(inventory_item.the_id))
 
-        self.inventory_items_manager.pick_item(inventory_item.settings_id)
-        self.assertTrue(self.inventory_items_manager.is_own_item(inventory_item.settings_id))
+        self.inventory_items_manager.pick_item(inventory_item.the_id)
+        self.assertTrue(self.inventory_items_manager.is_own_item(inventory_item.the_id))
 
-        self.inventory_items_manager.drop_item(inventory_item.settings_id)
-        self.assertFalse(self.inventory_items_manager.is_own_item(inventory_item.settings_id))
+        self.inventory_items_manager.drop_item(inventory_item.the_id)
+        self.assertFalse(self.inventory_items_manager.is_own_item(inventory_item.the_id))
 
 
     def test_owned_item_count_when_all_ok(self):
         inventory_item = self._create_inventory_item(postfix='_1')
         self.inventory_items_manager.register(inventory_item)
 
-        self.assertEqual(self.inventory_items_manager.owned_item_count(inventory_item.settings_id), 0)
+        self.assertEqual(self.inventory_items_manager.owned_item_count(inventory_item.the_id), 0)
 
-        self.inventory_items_manager.pick_item(inventory_item.settings_id, 2)
-        self.assertEqual(self.inventory_items_manager.owned_item_count(inventory_item.settings_id), 2)
+        self.inventory_items_manager.pick_item(inventory_item.the_id, 2)
+        self.assertEqual(self.inventory_items_manager.owned_item_count(inventory_item.the_id), 2)
 
-        self.inventory_items_manager.drop_item(inventory_item.settings_id)
-        self.assertEqual(self.inventory_items_manager.owned_item_count(inventory_item.settings_id), 1)
+        self.inventory_items_manager.drop_item(inventory_item.the_id)
+        self.assertEqual(self.inventory_items_manager.owned_item_count(inventory_item.the_id), 1)
 
 
     def test_get_owned_items_when_all_ok(self):
@@ -169,12 +169,12 @@ class InventoryItemsManagerTests(LogicTests):
         self.inventory_items_manager.register(inventory_item1)
         self.inventory_items_manager.register(inventory_item2)
 
-        self.inventory_items_manager.pick_item(inventory_item2.settings_id)
+        self.inventory_items_manager.pick_item(inventory_item2.the_id)
 
         after = len(self.inventory_items_manager._inventory_items_store.inventory_items)
         self.assertEqual(before + delta, after)
         self.assertEqual(len(self.inventory_items_manager.get_owned_items()), 1)
-        self.assertEqual(self.inventory_items_manager.get_owned_items()[0].settings_id, inventory_item2.settings_id)
+        self.assertEqual(self.inventory_items_manager.get_owned_items()[0].the_id, inventory_item2.the_id)
 
 
     def test_get_item_when_all_ok(self):
@@ -190,9 +190,8 @@ class InventoryItemsManagerTests(LogicTests):
         after = len(self.inventory_items_manager._inventory_items_store.inventory_items)
         self.assertEqual(before + delta, after)
 
-        item1 = self.inventory_items_manager.get_item(inventory_item1.settings_id)
-        self.assertEqual(item1.settings_id   , inventory_item1.settings_id)
-        self.assertEqual(item1.orig_id       , inventory_item1.orig_id)
+        item1 = self.inventory_items_manager.get_item(inventory_item1.the_id)
+        self.assertEqual(item1.the_id   , inventory_item1.the_id)
         self.assertEqual(item1.name          , inventory_item1.name)
         self.assertEqual(item1.description   , inventory_item1.description)
         self.assertEqual(item1.used_by       , inventory_item1.used_by)
@@ -202,9 +201,8 @@ class InventoryItemsManagerTests(LogicTests):
         self.assertEqual(item1.jump_on_use_to, inventory_item1.jump_on_use_to)
         self.assertEqual(item1.owned_count   , inventory_item1.owned_count)
 
-        item2 = self.inventory_items_manager.get_item(inventory_item2.settings_id)
-        self.assertEqual(item2.settings_id   , inventory_item2.settings_id)
-        self.assertEqual(item2.orig_id       , inventory_item2.orig_id)
+        item2 = self.inventory_items_manager.get_item(inventory_item2.the_id)
+        self.assertEqual(item2.the_id   , inventory_item2.the_id)
         self.assertEqual(item2.name          , inventory_item2.name)
         self.assertEqual(item2.description   , inventory_item2.description)
         self.assertEqual(item2.used_by       , inventory_item2.used_by)
@@ -227,16 +225,16 @@ class InventoryItemsManagerTests(LogicTests):
         self.inventory_items_manager.register(inventory_item)
 
         self.assertIsNone(self.inventory_items_manager.get_selected_item_id())
-        self.inventory_items_manager.set_selected_item_id(inventory_item.settings_id)
-        self.assertEqual(self.inventory_items_manager.get_selected_item_id(), inventory_item.settings_id)
+        self.inventory_items_manager.set_selected_item_id(inventory_item.the_id)
+        self.assertEqual(self.inventory_items_manager.get_selected_item_id(), inventory_item.the_id)
 
 
     def test_set_selected_item_id_when_all_ok(self):
         inventory_item = self._create_inventory_item(postfix='_1')
         self.inventory_items_manager.register(inventory_item)
 
-        self.inventory_items_manager.set_selected_item_id(inventory_item.settings_id)
-        self.assertEqual(self.inventory_items_manager.get_selected_item_id(), inventory_item.settings_id)
+        self.inventory_items_manager.set_selected_item_id(inventory_item.the_id)
+        self.assertEqual(self.inventory_items_manager.get_selected_item_id(), inventory_item.the_id)
 
 
     def test_set_selected_item_id_when_inventory_item_not_found(self):
@@ -251,7 +249,7 @@ class InventoryItemsManagerTests(LogicTests):
         self.inventory_items_manager.register(inventory_item)
 
         self.assertFalse(self.inventory_items_manager.has_selected_item_id())
-        self.inventory_items_manager.set_selected_item_id(inventory_item.settings_id)
+        self.inventory_items_manager.set_selected_item_id(inventory_item.the_id)
         self.assertTrue(self.inventory_items_manager.has_selected_item_id())
 
 
@@ -260,15 +258,14 @@ class InventoryItemsManagerTests(LogicTests):
         self.inventory_items_manager.register(inventory_item)
 
         self.assertFalse(self.inventory_items_manager.has_selected_item_id())
-        self.inventory_items_manager.set_selected_item_id(inventory_item.settings_id)
+        self.inventory_items_manager.set_selected_item_id(inventory_item.the_id)
         self.assertTrue (self.inventory_items_manager.has_selected_item_id())
         self.inventory_items_manager.clear_selected_item_id()
         self.assertFalse(self.inventory_items_manager.has_selected_item_id())
 
 
     def _create_inventory_item(self,
-        settings_id    = 'settings_id'   ,
-        orig_id        = 'orig_id'       ,
+        the_id    = 'the_id'   ,
         name           = 'name'          ,
         description    = 'description'   ,
         grid_image     = 'grid_image'    ,
@@ -280,8 +277,7 @@ class InventoryItemsManagerTests(LogicTests):
         postfix        = ''
     ):
         return InventoryItem(
-            settings_id    = settings_id + postfix   ,
-            orig_id        = orig_id + postfix       ,
+            the_id    = the_id + postfix   ,
             name           = name + postfix          ,
             description    = description + postfix   ,
             grid_image     = grid_image + postfix    ,

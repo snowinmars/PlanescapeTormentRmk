@@ -13,52 +13,52 @@ class InventoryItemsManager:
 
 
     def register(self, inventory_item):
-        if inventory_item.settings_id in self._inventory_items_store.inventory_items:
-            raise KeyError(f"InventoryItem '{inventory_item.settings_id}' already registrated")
+        if inventory_item.the_id in self._inventory_items_store.inventory_items:
+            raise KeyError(f"InventoryItem '{inventory_item.the_id}' already registrated")
 
-        self._log(f"register {inventory_item.settings_id}")
-        self._inventory_items_store.inventory_items[inventory_item.settings_id] = inventory_item
+        self._log(f"register {inventory_item.the_id}")
+        self._inventory_items_store.inventory_items[inventory_item.the_id] = inventory_item
 
         return self
 
 
-    def pick_item(self, settings_id, count=1):
-        item = self.get_item(settings_id)
+    def pick_item(self, the_id, count=1):
+        item = self.get_item(the_id)
         if item.owned_count < 0:
-            raise IndexError(f'Why {settings_id} count is below zero?')
+            raise IndexError(f'Why {the_id} count is below zero?')
         item.owned_count += count
 
 
-    def drop_item(self, settings_id, count=1):
-        item = self.get_item(settings_id)
+    def drop_item(self, the_id, count=1):
+        item = self.get_item(the_id)
         if item.owned_count <= 0:
-            raise IndexError(f'Cannot drop {settings_id} count below zero')
+            raise IndexError(f'Cannot drop {the_id} count below zero')
         item.owned_count -= count
 
 
-    def drop_all_items(self, settings_id):
-        item = self.get_item(settings_id)
+    def drop_all_items(self, the_id):
+        item = self.get_item(the_id)
         item.owned_count = 0
 
 
-    def is_own_item(self, settings_id, at_least=1):
-        item = self.get_item(settings_id)
+    def is_own_item(self, the_id, at_least=1):
+        item = self.get_item(the_id)
         return item.owned_count >= at_least
 
 
-    def owned_item_count(self, settings_id):
-        return self.get_item(settings_id).owned_count
+    def owned_item_count(self, the_id):
+        return self.get_item(the_id).owned_count
 
 
     def get_owned_items(self):
         return [inventory_item for inventory_item in self._inventory_items_store.inventory_items.values() if inventory_item.owned_count > 0]
 
 
-    def get_item(self, settings_id):
-        inventory_item = self._inventory_items_store.inventory_items.get(settings_id)
+    def get_item(self, the_id):
+        inventory_item = self._inventory_items_store.inventory_items.get(the_id)
 
         if inventory_item is None:
-            raise KeyError(f"InventoryItem '{settings_id}' not found")
+            raise KeyError(f"InventoryItem '{the_id}' not found")
 
         return inventory_item
 
@@ -67,9 +67,9 @@ class InventoryItemsManager:
         return self._selected_item_id
 
 
-    def set_selected_item_id(self, settings_id):
-        item = self.get_item(settings_id)
-        self._selected_item_id = item.settings_id
+    def set_selected_item_id(self, the_id):
+        item = self.get_item(the_id)
+        self._selected_item_id = item.the_id
 
 
     def has_selected_item_id(self):

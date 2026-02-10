@@ -7,11 +7,11 @@ label speak_zm732:
     $ renpy.show_screen('screen_narrat')
 
     # IF ~  !HasItem("TomeBA","ZM732")
-    if gsm.inventory_items_manager.is_own_item('has_tome_ba'):
+    if gsm.inventory_items_manager.is_own_item('tomeba'):
         jump ctor_zm732_s0
 
     # IF ~  HasItem("TomeBA","ZM732")
-    if not gsm.inventory_items_manager.is_own_item('has_tome_ba'):
+    if not gsm.inventory_items_manager.is_own_item('tomeba'):
         jump ctor_zm732_s3
 
     jump ctor_zm732_s3 # NOTE [snow]: should not be possible

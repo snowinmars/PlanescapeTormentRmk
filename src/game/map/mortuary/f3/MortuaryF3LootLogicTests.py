@@ -13,42 +13,42 @@ class MortuaryF3LootLogicTests(LogicTests):
 
     def test_mortuary_key(self):
         self._false_then_true_action(
-            lambda: self.state_manager.inventory_items_manager.is_own_item('has_mortuary_key'),
+            lambda: self.state_manager.inventory_items_manager.is_own_item('keymo2'),
             self.logic.mortuary_key
         )
 
 
     def test_mortuary_task_list(self):
         self._false_then_true_action(
-            lambda: self.state_manager.inventory_items_manager.is_own_item('has_mortuary_task_list'),
+            lambda: self.state_manager.inventory_items_manager.is_own_item('tasklist'),
             self.logic.mortuary_task_list
         )
 
 
     def test_prybar(self):
         self._false_then_true_action(
-            lambda: self.state_manager.inventory_items_manager.is_own_item('has_prybar'),
+            lambda: self.state_manager.inventory_items_manager.is_own_item('prybar'),
             self.logic.prybar
         )
 
 
     def test_dustman_request(self):
         self._false_then_true_action(
-            lambda: self.state_manager.inventory_items_manager.is_own_item('has_dustman_request'),
+            lambda: self.state_manager.inventory_items_manager.is_own_item('drequest'),
             self.logic.dustman_request
         )
 
 
     def test_needle(self):
         self._false_then_true_action(
-            lambda: self.state_manager.inventory_items_manager.is_own_item('has_needle'),
+            lambda: self.state_manager.inventory_items_manager.is_own_item('needle'),
             self.logic.needle
         )
 
 
     def test_garbage(self):
         self._false_then_true_action(
-            lambda: self.state_manager.inventory_items_manager.is_own_item('has_garbage'),
+            lambda: self.state_manager.inventory_items_manager.is_own_item('junk'),
             self.logic.garbage
         )
 

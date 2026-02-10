@@ -23,7 +23,7 @@ class Zm782LogicTests(LogicTests):
 
     def test_pick_key_up(self):
         self._false_then_true_action(
-            lambda: self.state_manager.inventory_items_manager.is_own_item('has_intro_key'),
+            lambda: self.state_manager.inventory_items_manager.is_own_item('keypr'),
             self.logic.pick_key_up
         )
 
@@ -37,35 +37,35 @@ class Zm782LogicTests(LogicTests):
 
     def test_r24709_condition(self):
         self.state_manager.world_manager.set_in_party_morte(False)
-        self.state_manager.inventory_items_manager.pick_item('has_intro_key')
+        self.state_manager.inventory_items_manager.pick_item('keypr')
         self.assertFalse(self.logic.r24709_condition())
 
         self.state_manager.world_manager.set_in_party_morte(True)
-        self.state_manager.inventory_items_manager.drop_item('has_intro_key')
+        self.state_manager.inventory_items_manager.drop_item('keypr')
         self.assertTrue(self.logic.r24709_condition())
 
 
     def test_r24712_condition(self):
         self.state_manager.world_manager.set_in_party_morte(True)
-        self.state_manager.inventory_items_manager.pick_item('has_intro_key')
+        self.state_manager.inventory_items_manager.pick_item('keypr')
         self.assertFalse(self.logic.r24712_condition())
 
         self.state_manager.world_manager.set_in_party_morte(False)
-        self.state_manager.inventory_items_manager.drop_item('has_intro_key')
+        self.state_manager.inventory_items_manager.drop_item('keypr')
         self.assertTrue(self.logic.r24712_condition())
 
 
     def test_r24713_condition(self):
-        self.state_manager.inventory_items_manager.pick_item('has_intro_key')
+        self.state_manager.inventory_items_manager.pick_item('keypr')
         self._boolean_invert_condition(
-            lambda x: self.state_manager.inventory_items_manager.pick_item('has_intro_key') if x else self.state_manager.inventory_items_manager.drop_item('has_intro_key'),
+            lambda x: self.state_manager.inventory_items_manager.pick_item('keypr') if x else self.state_manager.inventory_items_manager.drop_item('keypr'),
             self.logic.r24713_condition
         )
 
 
     def test_r24714_condition(self):
         self._boolean_straight_condition(
-            lambda x: self.state_manager.inventory_items_manager.pick_item('has_intro_key') if x else self.state_manager.inventory_items_manager.drop_item('has_intro_key'),
+            lambda x: self.state_manager.inventory_items_manager.pick_item('keypr') if x else self.state_manager.inventory_items_manager.drop_item('keypr'),
             self.logic.r24714_condition
         )
 

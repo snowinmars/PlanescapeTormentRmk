@@ -228,9 +228,9 @@ class VaxisLogicGenerated:
 
     def r4469_action(self):
         self.state_manager.world_manager.set_vaxis_leave(True)
-        self.state_manager.inventory_items_manager.pick_item('has_bandages', 3)
-        self.state_manager.inventory_items_manager.pick_item('has_embalm')
-        self.state_manager.inventory_items_manager.pick_item('has_needle')
+        self.state_manager.inventory_items_manager.pick_item('bandage', 3)
+        self.state_manager.inventory_items_manager.pick_item('embalm')
+        self.state_manager.inventory_items_manager.pick_item('needle')
         #$% GiveItemCreate("Knife",Protagonist,1,0,0) %$#
         self.state_manager.gain_experience('party', 500)
 
@@ -269,7 +269,7 @@ class VaxisLogicGenerated:
 
     def r4494_action(self):
         self.state_manager.gain_experience('party', 250)
-        self.state_manager.inventory_items_manager.drop_all_items('has_keyem')
+        self.state_manager.inventory_items_manager.drop_all_items('keyem')
         self.state_manager.world_manager.set_vaxis_has_keyem(True)
 
 
@@ -293,7 +293,7 @@ class VaxisLogicGenerated:
 
     def r4502_action(self):
         self.state_manager.gain_experience('party', 250)
-        self.state_manager.inventory_items_manager.drop_all_items('has_keyem')
+        self.state_manager.inventory_items_manager.drop_all_items('keyem')
         self.state_manager.world_manager.set_vaxis_has_keyem(True)
 
 
@@ -331,7 +331,7 @@ class VaxisLogicGenerated:
 
     def r4519_action(self):
         self.state_manager.gain_experience('party', 250)
-        self.state_manager.inventory_items_manager.drop_all_items('has_keyem')
+        self.state_manager.inventory_items_manager.drop_all_items('keyem')
         self.state_manager.world_manager.set_vaxis_has_keyem(True)
         self.state_manager.world_manager.set_embalm_key_quest(3)
 
@@ -402,18 +402,18 @@ class VaxisLogicGenerated:
 
     def r4592_action(self):
         self.state_manager.gain_experience('party', 250)
-        self.state_manager.inventory_items_manager.drop_all_items('has_keyem')
+        self.state_manager.inventory_items_manager.drop_all_items('keyem')
 
 
     def r4593_action(self):
         self.state_manager.gain_experience('party', 250)
-        self.state_manager.inventory_items_manager.drop_all_items('has_keyem')
+        self.state_manager.inventory_items_manager.drop_all_items('keyem')
 
 
     def r4620_action(self):
         self.state_manager.world_manager.set_vaxis_zombie_disguise(2)
-        self.state_manager.inventory_items_manager.drop_item('has_embalm')
-        self.state_manager.inventory_items_manager.drop_item('has_needle')
+        self.state_manager.inventory_items_manager.drop_item('embalm')
+        self.state_manager.inventory_items_manager.drop_item('needle')
 
 
     def r4621_action(self):
@@ -791,7 +791,7 @@ class VaxisLogicGenerated:
 
 
     def r4494_condition(self):
-        return self.state_manager.inventory_items_manager.is_own_item('has_keyem')
+        return self.state_manager.inventory_items_manager.is_own_item('keyem')
 
 
     def r4496_condition(self):
@@ -811,7 +811,7 @@ class VaxisLogicGenerated:
 
 
     def r4502_condition(self):
-        return self.state_manager.inventory_items_manager.is_own_item('has_keyem')
+        return self.state_manager.inventory_items_manager.is_own_item('keyem')
 
 
     def r64520_condition(self):
@@ -952,15 +952,15 @@ class VaxisLogicGenerated:
 
 
     def r64527_condition(self):
-        return not self.state_manager.inventory_items_manager.is_own_item('has_bone_chrm')
+        return not self.state_manager.inventory_items_manager.is_own_item('bonechrm')
 
 
     def r4568_condition(self):
-        return self.state_manager.inventory_items_manager.is_own_item('has_bone_chrm')
+        return self.state_manager.inventory_items_manager.is_own_item('bonechrm')
 
 
     def r4569_condition(self):
-        return self.state_manager.inventory_items_manager.is_own_item('has_bone_chrm')
+        return self.state_manager.inventory_items_manager.is_own_item('bonechrm')
 
 
     def r4586_condition(self):
@@ -985,17 +985,17 @@ class VaxisLogicGenerated:
 
     def r4592_condition(self):
         return self.state_manager.world_manager.get_embalm_key_quest() == 1 and \
-               self.state_manager.inventory_items_manager.is_own_item('has_keyem')
+               self.state_manager.inventory_items_manager.is_own_item('keyem')
 
 
     def r4593_condition(self):
         return self.state_manager.world_manager.get_embalm_key_quest() == 2 and \
-               self.state_manager.inventory_items_manager.is_own_item('has_keyem')
+               self.state_manager.inventory_items_manager.is_own_item('keyem')
 
 
     def r4594_condition(self):
         return self.state_manager.world_manager.get_embalm_key_quest() == 1 and \
-               not self.state_manager.inventory_items_manager.is_own_item('has_keyem')
+               not self.state_manager.inventory_items_manager.is_own_item('keyem')
 
 
     def r4599_condition(self):
@@ -1054,8 +1054,8 @@ class VaxisLogicGenerated:
 
 
     def r4620_condition(self):
-        return self.state_manager.inventory_items_manager.is_own_item('has_embalm') and \
-               self.state_manager.inventory_items_manager.is_own_item('has_needle')
+        return self.state_manager.inventory_items_manager.is_own_item('embalm') and \
+               self.state_manager.inventory_items_manager.is_own_item('needle')
 
 
 

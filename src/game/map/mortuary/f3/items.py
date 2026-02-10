@@ -111,7 +111,7 @@ class MortuaryF3R2Shadow(ShadowItem):
 
 class InMortuaryF3R2PickTaskList(ContainerItem):
     def __init__(self, state_manager, x, y):
-        super().__init__(state_manager, x, y, 165, 178, ['has_mortuary_task_list'])
+        super().__init__(state_manager, x, y, 165, 178, ['tasklist'])
     def when(self):
         return not self.state_manager.world_manager.get_looted_InMortuaryF3R2PickTaskList() and \
                self.state_manager.locations_manager.get_location() == 'mortuary_f3r2'
@@ -222,7 +222,7 @@ class MortuaryF3R4Shadow(ShadowItem):
 
 class InMortuaryF3R4PickPrybar(ContainerItem):
     def __init__(self, state_manager, x, y):
-        super().__init__(state_manager, x, y, 136, 114, ['has_prybar'])
+        super().__init__(state_manager, x, y, 136, 114, ['prybar'])
     def when(self):
         return not self.state_manager.world_manager.get_looted_InMortuaryF3R4PickPrybar() and \
                self.state_manager.locations_manager.get_location() == 'mortuary_f3r4'
@@ -236,7 +236,7 @@ class InMortuaryF3R4PickPrybar(ContainerItem):
 
 class InMortuaryF3R4PickDustmanRequest(ContainerItem):
     def __init__(self, state_manager, x, y):
-        super().__init__(state_manager, x, y, 127, 148, ['has_dustman_request'])
+        super().__init__(state_manager, x, y, 127, 148, ['drequest'])
     def when(self):
         return not self.state_manager.world_manager.get_looted_InMortuaryF3R4PickDustmanRequest() and \
                self.state_manager.locations_manager.get_location() == 'mortuary_f3r4'
@@ -313,7 +313,7 @@ class FromMortuaryF3RcToMortuaryF3R1u(DoorItem):
             return 'bg/mortuary/f3/door_f3rc_f3r1u_opened.webp'
         return 'bg/mortuary/f3/door_f3rc_f3r1u_closed.webp'
     def jump(self):
-        if self.state_manager.inventory_items_manager.is_own_item('has_mortuary_key'):
+        if self.state_manager.inventory_items_manager.is_own_item('keymo2'):
             return NavigationJump('map_mortuary_f3r1')
         return NavigationSnack('FromMortuaryF3RcToMortuaryF3R1u_snack1')
 
@@ -332,7 +332,7 @@ class FromMortuaryF3RcToMortuaryF3R1d(DoorItem):
             return 'bg/mortuary/f3/door_f3rc_f3r1d_opened.webp'
         return 'bg/mortuary/f3/door_f3rc_f3r1d_closed.webp'
     def jump(self):
-        if self.state_manager.inventory_items_manager.is_own_item('has_mortuary_key'):
+        if self.state_manager.inventory_items_manager.is_own_item('keymo2'):
             return NavigationJump('map_mortuary_f3r1')
         return NavigationSnack('FromMortuaryF3RcToMortuaryF3R1d_snack1',)
 
@@ -437,7 +437,7 @@ class MortuaryF3RcShadow(ShadowItem):
 
 class InMortuaryF3RcPickGarbage(ContainerItem):
     def __init__(self, state_manager, x, y):
-        super().__init__(state_manager, x, y, 155, 187, ['has_garbage'])
+        super().__init__(state_manager, x, y, 155, 187, ['junk'])
     def when(self):
         return not self.state_manager.world_manager.get_looted_InMortuaryF3RcPickGarbage() and \
                self.state_manager.locations_manager.get_location() == 'mortuary_f3rc'
@@ -451,7 +451,7 @@ class InMortuaryF3RcPickGarbage(ContainerItem):
 
 class InMortuaryF3RcPickNeedle(ContainerItem):
     def __init__(self, state_manager, x, y):
-        super().__init__(state_manager, x, y, 141, 180, ['has_needle'])
+        super().__init__(state_manager, x, y, 141, 180, ['needle'])
     def when(self):
         return not self.state_manager.world_manager.get_looted_InMortuaryF3RcPickNeedle() and \
                self.state_manager.locations_manager.get_location() == 'mortuary_f3rc'
@@ -465,7 +465,7 @@ class InMortuaryF3RcPickNeedle(ContainerItem):
 
 class InMortuaryF3RcPickMortuaryKey(ContainerItem):
     def __init__(self, state_manager, x, y):
-        super().__init__(state_manager, x, y, 146, 199, ['has_mortuary_key'])
+        super().__init__(state_manager, x, y, 146, 199, ['keymo2'])
     def when(self):
         return not self.state_manager.world_manager.get_looted_InMortuaryF3RcPickMortuaryKey() and \
                self.state_manager.locations_manager.get_location() == 'mortuary_f3rc'

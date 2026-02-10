@@ -70,16 +70,16 @@ class Zm79LogicGeneratedTests(LogicTests):
 
 
     def test_r64279_condition(self):
-        self.state_manager.inventory_items_manager.pick_item('has_copper_earring_closed')
+        self.state_manager.inventory_items_manager.pick_item('copearc')
         self._boolean_invert_condition(
-            lambda x: self.state_manager.inventory_items_manager.pick_item('has_copper_earring_closed') if x else self.state_manager.inventory_items_manager.drop_item('has_copper_earring_closed'),
+            lambda x: self.state_manager.inventory_items_manager.pick_item('copearc') if x else self.state_manager.inventory_items_manager.drop_item('copearc'),
             self.logic.r64279_condition
         )
 
 
     def test_r64280_condition(self):
         self._boolean_straight_condition(
-            lambda x: self.state_manager.inventory_items_manager.pick_item('has_copper_earring_closed') if x else self.state_manager.inventory_items_manager.drop_item('has_copper_earring_closed'),
+            lambda x: self.state_manager.inventory_items_manager.pick_item('copearc') if x else self.state_manager.inventory_items_manager.drop_item('copearc'),
             self.logic.r64280_condition
         )
 
