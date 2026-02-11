@@ -25,6 +25,7 @@ class InventoryItemsTests(LogicTests):
         weigth               = 29
         jump_on_use_to       = 'jump_on_use_to'
         owned_count          = 31
+        identified           = False
 
         item = self._create_inventory_item(
             the_id               = the_id              ,
@@ -40,7 +41,8 @@ class InventoryItemsTests(LogicTests):
             enchantment          = enchantment         ,
             weigth               = weigth              ,
             jump_on_use_to       = jump_on_use_to      ,
-            owned_count          = owned_count
+            owned_count          = owned_count         ,
+            identified           = identified
         )
 
         self.assertIsNotNone(item)
@@ -59,6 +61,7 @@ class InventoryItemsTests(LogicTests):
         self.assertEqual(item.weigth              , weigth)
         self.assertEqual(item.jump_on_use_to      , jump_on_use_to)
         self.assertEqual(item.owned_count         , owned_count)
+        self.assertEqual(item.identified          , identified)
 
         self.assertEqual(item.general_name          , f'inventory_item_the_id_general_name')
         self.assertEqual(item.identified_name       , f'inventory_item_the_id_identified_name')

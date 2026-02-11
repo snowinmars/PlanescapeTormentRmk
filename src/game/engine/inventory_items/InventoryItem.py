@@ -75,6 +75,7 @@ class InventoryItem:
         weigth                 = 0   ,
         jump_on_use_to         = None,
         owned_count            = 0   ,
+        identified             = True,
         flags                  = None,
         unusable_by            = None
     ):
@@ -92,6 +93,7 @@ class InventoryItem:
         self.weigth               = weigth
         self.jump_on_use_to       = jump_on_use_to
         self.owned_count          = owned_count
+        self.identified           = identified
 
         self.flags       = InventoryItemFlags(0)      if flags       is None else flags
         self.unusable_by = InventoryItemUnusableBy(0) if unusable_by is None else unusable_by
@@ -175,6 +177,82 @@ class InventoryItem:
             unusable_by            = state['unusable_by']         ,
         )
         return obj
+
+    def name(self):
+        if self.identified:
+            return self.identified_name
+        return self.general_name
+    def description(self):
+        if self.identified:
+            return self.identified_description
+        return self.general_description
+    def unusable_by_list(self):
+        result = []
+        if self.unusable_by_chaotic():
+            result.append('inventory_item_unusable_by_chaotic')
+        if self.unusable_by_evil():
+            result.append('inventory_item_unusable_by_evil')
+        if self.unusable_by_good():
+            result.append('inventory_item_unusable_by_good')
+        if self.unusable_by_x_neutral():
+            result.append('inventory_item_unusable_by_x_neutral')
+        if self.unusable_by_lawful():
+            result.append('inventory_item_unusable_by_lawful')
+        if self.unusable_by_neutral_x():
+            result.append('inventory_item_unusable_by_neutral_x')
+        if self.unusable_by_sensate():
+            result.append('inventory_item_unusable_by_sensate')
+        if self.unusable_by_priest():
+            result.append('inventory_item_unusable_by_priest')
+        if self.unusable_by_godsman():
+            result.append('inventory_item_unusable_by_godsman')
+        if self.unusable_by_anarchist():
+            result.append('inventory_item_unusable_by_anarchist')
+        if self.unusable_by_xaositect():
+            result.append('inventory_item_unusable_by_xaositect')
+        if self.unusable_by_fighter():
+            result.append('inventory_item_unusable_by_fighter')
+        if self.unusable_by_non_aligned():
+            result.append('inventory_item_unusable_by_non_aligned')
+        if self.unusable_by_fighter_mage():
+            result.append('inventory_item_unusable_by_fighter_mage')
+        if self.unusable_by_dustman():
+            result.append('inventory_item_unusable_by_dustman')
+        if self.unusable_by_mercykiller():
+            result.append('inventory_item_unusable_by_mercykiller')
+        if self.unusable_by_indep():
+            result.append('inventory_item_unusable_by_indep')
+        if self.unusable_by_fighter_theif():
+            result.append('inventory_item_unusable_by_fighter_theif')
+        if self.unusable_by_mage():
+            result.append('inventory_item_unusable_by_mage')
+        if self.unusable_by_mage_thief():
+            result.append('inventory_item_unusable_by_mage_thief')
+        if self.unusable_by_dakkon():
+            result.append('inventory_item_unusable_by_dakkon')
+        if self.unusable_by_fall_from_grace():
+            result.append('inventory_item_unusable_by_fall_from_grace')
+        if self.unusable_by_thief():
+            result.append('inventory_item_unusable_by_thief')
+        if self.unusable_by_vhailor():
+            result.append('inventory_item_unusable_by_vhailor')
+        if self.unusable_by_ignus():
+            result.append('inventory_item_unusable_by_ignus')
+        if self.unusable_by_morte():
+            result.append('inventory_item_unusable_by_morte')
+        if self.unusable_by_nordom():
+            result.append('inventory_item_unusable_by_nordom')
+        if self.unusable_by_human():
+            result.append('inventory_item_unusable_by_human')
+        if self.unusable_by_annah():
+            result.append('inventory_item_unusable_by_annah')
+        if self.unusable_by_monk():
+            result.append('inventory_item_unusable_by_monk')
+        if self.unusable_by_nameless_one():
+            result.append('inventory_item_unusable_by_nameless_one')
+        if self.unusable_by_half_orc():
+            result.append('inventory_item_unusable_by_half_orc')
+        return result
 
 
     def unsellable(self):

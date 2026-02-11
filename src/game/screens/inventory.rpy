@@ -112,7 +112,7 @@ screen screen_inventory():
                 background _idle
                 hover_background _hover
                 action Show('screen_inventory_item', item=owned_item)
-                hovered SetScreenVariable('screen_inventory_descrption', owned_item.name)
+                hovered SetScreenVariable('screen_inventory_descrption', owned_item.name())
                 unhovered SetScreenVariable('screen_inventory_descrption', '')
 
                 if owned_item.owned_count > 1:
