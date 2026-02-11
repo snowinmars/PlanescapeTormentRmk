@@ -70,13 +70,13 @@ class XachLogicGeneratedTests(LogicTests):
 
         self.assertEqual(self.state_manager.world_manager.get_xachariah_ring(), xachariah_ring_after)
         self.assertTrue(self.state_manager.inventory_items_manager.is_own_item('xacheart'))
-        self.assertEqual(self.state_manager.inventory_items_manager.owned_item_count('xacheart'), 1)
+        self.assertEqual(self.state_manager.inventory_items_manager.count_owned_items('xacheart'), 1)
 
         self.logic.r666_action()
 
         self.assertEqual(self.state_manager.world_manager.get_xachariah_ring(), xachariah_ring_after_once)
         self.assertTrue(self.state_manager.inventory_items_manager.is_own_item('xacheart'))
-        self.assertEqual(self.state_manager.inventory_items_manager.owned_item_count('xacheart'), 2)
+        self.assertEqual(self.state_manager.inventory_items_manager.count_owned_items('xacheart'), 2)
 
 
     def test_r672_action(self):

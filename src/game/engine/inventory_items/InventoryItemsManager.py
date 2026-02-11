@@ -5,7 +5,6 @@ class InventoryItemsManager:
     def __init__(self, log_events_manager):
         self._log_events_manager    = log_events_manager
         self._inventory_items_store = None
-        self._selected_item_id      = None
 
 
     def set_store(self, inventory_items_store):
@@ -46,7 +45,7 @@ class InventoryItemsManager:
         return item.owned_count >= at_least
 
 
-    def owned_item_count(self, the_id):
+    def count_owned_items(self, the_id):
         return self.get_item(the_id).owned_count
 
 
@@ -61,23 +60,6 @@ class InventoryItemsManager:
             raise KeyError(f"InventoryItem '{the_id}' not found")
 
         return inventory_item
-
-
-    def get_selected_item_id(self):
-        return self._selected_item_id
-
-
-    def set_selected_item_id(self, the_id):
-        item = self.get_item(the_id)
-        self._selected_item_id = item.the_id
-
-
-    def has_selected_item_id(self):
-        return self._selected_item_id is not None
-
-
-    def clear_selected_item_id(self):
-        self._selected_item_id = None
 
 
     def _log(self, line):

@@ -606,7 +606,7 @@ class VaxisLogicGeneratedTests(LogicTests):
         self.logic.r4469_action()
 
         self.assertTrue(self.state_manager.world_manager.get_vaxis_leave())
-        self.assertEqual(self.state_manager.inventory_items_manager.owned_item_count('bandage'), 3)
+        self.assertEqual(self.state_manager.inventory_items_manager.count_owned_items('bandage'), 3)
         self.assertTrue(self.state_manager.inventory_items_manager.is_own_item('embalm'))
         self.assertTrue(self.state_manager.inventory_items_manager.is_own_item('needle'))
         experience_after = self.state_manager.characters_manager.get_property(who_experience, prop_experience)
@@ -615,9 +615,9 @@ class VaxisLogicGeneratedTests(LogicTests):
         self.logic.r4469_action()
 
         self.assertTrue(self.state_manager.world_manager.get_vaxis_leave())
-        self.assertEqual(self.state_manager.inventory_items_manager.owned_item_count('bandage'), 6)
-        self.assertEqual(self.state_manager.inventory_items_manager.owned_item_count('embalm'), 2)
-        self.assertEqual(self.state_manager.inventory_items_manager.owned_item_count('needle'), 2)
+        self.assertEqual(self.state_manager.inventory_items_manager.count_owned_items('bandage'), 6)
+        self.assertEqual(self.state_manager.inventory_items_manager.count_owned_items('embalm'), 2)
+        self.assertEqual(self.state_manager.inventory_items_manager.count_owned_items('needle'), 2)
         experience_after_once = self.state_manager.characters_manager.get_property(who_experience, prop_experience)
         self.assertEqual(experience_after + delta_experience, experience_after_once)
 

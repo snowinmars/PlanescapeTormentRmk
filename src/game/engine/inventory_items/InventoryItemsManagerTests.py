@@ -2,17 +2,15 @@ import unittest
 
 from game.engine.LogicTests import (LogicTests)
 from game.engine.inventory_items.InventoryItem import (InventoryItem)
-from game.engine.inventory_items.InventoryItemsManager import (InventoryItemsManager)
-from game.engine.inventory_items.InventoryItemsStore import (InventoryItemsStore)
 
 
 class InventoryItemsManagerTests(LogicTests):
     def test_ctor(self):
         self.assertIsNotNone(self.inventory_items_manager)
         self.assertIsNotNone(self.inventory_items_manager._log_events_manager)
+        self.assertIsNotNone(self.inventory_items_manager._inventory_items_store)
         self.assertIsNotNone(self.inventory_items_manager._inventory_items_store.inventory_items)
         self.assertNotEqual (len(self.inventory_items_manager._inventory_items_store.inventory_items), 0)
-        self.assertIsNone   (self.inventory_items_manager._selected_item_id)
 
 
     def test_register_when_all_ok(self):
@@ -43,7 +41,7 @@ class InventoryItemsManagerTests(LogicTests):
 
 
     def test_pick_item_when_all_ok(self):
-        inventory_item = self._create_inventory_item(postfix='_1')
+        inventory_item = self._create_inventory_item(owned_count=0)
         self.inventory_items_manager.register(inventory_item)
         inventory_item = self.inventory_items_manager.get_item(inventory_item.the_id)
 
@@ -57,7 +55,7 @@ class InventoryItemsManagerTests(LogicTests):
 
 
     def test_pick_item_when_owned_count_is_weird(self):
-        inventory_item = self._create_inventory_item(postfix='_1')
+        inventory_item = self._create_inventory_item()
         self.inventory_items_manager.register(inventory_item)
         inventory_item = self.inventory_items_manager.get_item(inventory_item.the_id)
         inventory_item.owned_count = -2
@@ -70,7 +68,7 @@ class InventoryItemsManagerTests(LogicTests):
 
     def test_pick_item_when_wrong_the_id(self):
         wrong_the_id = 'wrong_the_id'
-        inventory_item = self._create_inventory_item(postfix='_1')
+        inventory_item = self._create_inventory_item()
         self.inventory_items_manager.register(inventory_item)
 
         with self.assertRaises(KeyError):
@@ -78,7 +76,7 @@ class InventoryItemsManagerTests(LogicTests):
 
 
     def test_drop_item_when_all_ok(self):
-        inventory_item = self._create_inventory_item(postfix='_1')
+        inventory_item = self._create_inventory_item(owned_count=0)
         self.inventory_items_manager.register(inventory_item)
         inventory_item = self.inventory_items_manager.get_item(inventory_item.the_id)
 
@@ -93,7 +91,7 @@ class InventoryItemsManagerTests(LogicTests):
 
 
     def test_drop_item_when_owned_count_is_weird(self):
-        inventory_item = self._create_inventory_item(postfix='_1')
+        inventory_item = self._create_inventory_item(owned_count=0)
         self.inventory_items_manager.register(inventory_item)
         inventory_item = self.inventory_items_manager.get_item(inventory_item.the_id)
 
@@ -105,7 +103,7 @@ class InventoryItemsManagerTests(LogicTests):
 
     def test_drop_item_when_wrong_the_id(self):
         wrong_the_id = 'wrong_the_id'
-        inventory_item = self._create_inventory_item(postfix='_1')
+        inventory_item = self._create_inventory_item()
         self.inventory_items_manager.register(inventory_item)
 
         with self.assertRaises(KeyError):
@@ -113,7 +111,7 @@ class InventoryItemsManagerTests(LogicTests):
 
 
     def test_drop_all_items(self):
-        inventory_item = self._create_inventory_item(postfix='_1')
+        inventory_item = self._create_inventory_item(owned_count=0)
         self.inventory_items_manager.register(inventory_item)
         inventory_item = self.inventory_items_manager.get_item(inventory_item.the_id)
 
@@ -126,7 +124,7 @@ class InventoryItemsManagerTests(LogicTests):
 
     def test_drop_all_items_when_wrong_the_id(self):
         wrong_the_id = 'wrong_the_id'
-        inventory_item = self._create_inventory_item(postfix='_1')
+        inventory_item = self._create_inventory_item()
         self.inventory_items_manager.register(inventory_item)
 
         with self.assertRaises(KeyError):
@@ -134,7 +132,7 @@ class InventoryItemsManagerTests(LogicTests):
 
 
     def test_is_own_item_when_all_ok(self):
-        inventory_item = self._create_inventory_item(postfix='_1')
+        inventory_item = self._create_inventory_item(owned_count=0)
         self.inventory_items_manager.register(inventory_item)
 
         self.assertFalse(self.inventory_items_manager.is_own_item(inventory_item.the_id))
@@ -146,22 +144,22 @@ class InventoryItemsManagerTests(LogicTests):
         self.assertFalse(self.inventory_items_manager.is_own_item(inventory_item.the_id))
 
 
-    def test_owned_item_count_when_all_ok(self):
-        inventory_item = self._create_inventory_item(postfix='_1')
+    def test_count_owned_items_when_all_ok(self):
+        inventory_item = self._create_inventory_item(owned_count=0)
         self.inventory_items_manager.register(inventory_item)
 
-        self.assertEqual(self.inventory_items_manager.owned_item_count(inventory_item.the_id), 0)
+        self.assertEqual(self.inventory_items_manager.count_owned_items(inventory_item.the_id), 0)
 
         self.inventory_items_manager.pick_item(inventory_item.the_id, 2)
-        self.assertEqual(self.inventory_items_manager.owned_item_count(inventory_item.the_id), 2)
+        self.assertEqual(self.inventory_items_manager.count_owned_items(inventory_item.the_id), 2)
 
         self.inventory_items_manager.drop_item(inventory_item.the_id)
-        self.assertEqual(self.inventory_items_manager.owned_item_count(inventory_item.the_id), 1)
+        self.assertEqual(self.inventory_items_manager.count_owned_items(inventory_item.the_id), 1)
 
 
     def test_get_owned_items_when_all_ok(self):
-        inventory_item1 = self._create_inventory_item(postfix='_1')
-        inventory_item2 = self._create_inventory_item('_2')
+        inventory_item1 = self._create_inventory_item(the_id='the_id_1', owned_count=0)
+        inventory_item2 = self._create_inventory_item(the_id='the_id_2', owned_count=0)
         delta = 2
 
         before = len(self.inventory_items_manager._inventory_items_store.inventory_items)
@@ -178,8 +176,8 @@ class InventoryItemsManagerTests(LogicTests):
 
 
     def test_get_item_when_all_ok(self):
-        inventory_item1 = self._create_inventory_item(postfix='_1')
-        inventory_item2 = self._create_inventory_item('_2')
+        inventory_item1 = self._create_inventory_item(the_id='the_id_1')
+        inventory_item2 = self._create_inventory_item(the_id='the_id_2')
         delta = 2
 
         before = len(self.inventory_items_manager._inventory_items_store.inventory_items)
@@ -191,26 +189,10 @@ class InventoryItemsManagerTests(LogicTests):
         self.assertEqual(before + delta, after)
 
         item1 = self.inventory_items_manager.get_item(inventory_item1.the_id)
-        self.assertEqual(item1.the_id   , inventory_item1.the_id)
-        self.assertEqual(item1.name          , inventory_item1.name)
-        self.assertEqual(item1.description   , inventory_item1.description)
-        self.assertEqual(item1.used_by       , inventory_item1.used_by)
-        self.assertEqual(item1.properties    , inventory_item1.properties)
-        self.assertEqual(item1.grid_image    , inventory_item1.grid_image)
-        self.assertEqual(item1.detail_image  , inventory_item1.detail_image)
-        self.assertEqual(item1.jump_on_use_to, inventory_item1.jump_on_use_to)
-        self.assertEqual(item1.owned_count   , inventory_item1.owned_count)
+        self._assert_inventory_items(item1, inventory_item1)
 
         item2 = self.inventory_items_manager.get_item(inventory_item2.the_id)
-        self.assertEqual(item2.the_id   , inventory_item2.the_id)
-        self.assertEqual(item2.name          , inventory_item2.name)
-        self.assertEqual(item2.description   , inventory_item2.description)
-        self.assertEqual(item2.used_by       , inventory_item2.used_by)
-        self.assertEqual(item2.properties    , inventory_item2.properties)
-        self.assertEqual(item2.grid_image    , inventory_item2.grid_image)
-        self.assertEqual(item2.detail_image  , inventory_item2.detail_image)
-        self.assertEqual(item2.jump_on_use_to, inventory_item2.jump_on_use_to)
-        self.assertEqual(item2.owned_count   , inventory_item2.owned_count)
+        self._assert_inventory_items(item2, inventory_item2)
 
 
     def test_get_item_when_inventory_item_not_found(self):
@@ -220,70 +202,53 @@ class InventoryItemsManagerTests(LogicTests):
             self.inventory_items_manager.get_item(id)
 
 
-    def test_get_selected_item_id_when_all_ok(self):
-        inventory_item = self._create_inventory_item(postfix='_1')
-        self.inventory_items_manager.register(inventory_item)
-
-        self.assertIsNone(self.inventory_items_manager.get_selected_item_id())
-        self.inventory_items_manager.set_selected_item_id(inventory_item.the_id)
-        self.assertEqual(self.inventory_items_manager.get_selected_item_id(), inventory_item.the_id)
-
-
-    def test_set_selected_item_id_when_all_ok(self):
-        inventory_item = self._create_inventory_item(postfix='_1')
-        self.inventory_items_manager.register(inventory_item)
-
-        self.inventory_items_manager.set_selected_item_id(inventory_item.the_id)
-        self.assertEqual(self.inventory_items_manager.get_selected_item_id(), inventory_item.the_id)
-
-
-    def test_set_selected_item_id_when_inventory_item_not_found(self):
-        id = 'non existing inventory item id'
-
-        with self.assertRaises(KeyError):
-            self.inventory_items_manager.set_selected_item_id(id)
-
-
-    def test_has_selected_item_id_when_all_ok(self):
-        inventory_item = self._create_inventory_item(postfix='_1')
-        self.inventory_items_manager.register(inventory_item)
-
-        self.assertFalse(self.inventory_items_manager.has_selected_item_id())
-        self.inventory_items_manager.set_selected_item_id(inventory_item.the_id)
-        self.assertTrue(self.inventory_items_manager.has_selected_item_id())
-
-
-    def test_clear_selected_item_id_when_all_ok(self):
-        inventory_item = self._create_inventory_item(postfix='_1')
-        self.inventory_items_manager.register(inventory_item)
-
-        self.assertFalse(self.inventory_items_manager.has_selected_item_id())
-        self.inventory_items_manager.set_selected_item_id(inventory_item.the_id)
-        self.assertTrue (self.inventory_items_manager.has_selected_item_id())
-        self.inventory_items_manager.clear_selected_item_id()
-        self.assertFalse(self.inventory_items_manager.has_selected_item_id())
-
-
-    def _create_inventory_item(self,
-        the_id    = 'the_id'   ,
-        name           = 'name'          ,
-        description    = 'description'   ,
-        grid_image     = 'grid_image'    ,
-        used_by        = 'used_by'       ,
-        properties     = 'properties'    ,
-        detail_image   = 'detail_image'  ,
-        jump_on_use_to = 'jump_on_use_to',
-        owned_count    = 0               ,
-        postfix        = ''
+    def _create_inventory_item(
+        self                                   ,
+        the_id               = 'the_id'        ,
+        category             = 'category'      ,
+        minimal_strength     = 2               ,
+        minimal_dexterity    = 3               ,
+        minimal_constitution = 5               ,
+        minimal_intelligence = 7               ,
+        minimal_wisdom       = 11              ,
+        minimal_charisma     = 13              ,
+        price                = 17              ,
+        lore_to_identify     = 19              ,
+        enchantment          = 23              ,
+        weigth               = 29              ,
+        jump_on_use_to       = 'jump_on_use_to',
+        owned_count          = 31
     ):
         return InventoryItem(
-            the_id    = the_id + postfix   ,
-            name           = name + postfix          ,
-            description    = description + postfix   ,
-            grid_image     = grid_image + postfix    ,
-            used_by        = used_by + postfix       ,
-            properties     = properties + postfix    ,
-            detail_image   = detail_image + postfix  ,
-            jump_on_use_to = jump_on_use_to + postfix,
-            owned_count    = owned_count
+            the_id               = the_id              ,
+            category             = category            ,
+            minimal_strength     = minimal_strength    ,
+            minimal_dexterity    = minimal_dexterity   ,
+            minimal_constitution = minimal_constitution,
+            minimal_intelligence = minimal_intelligence,
+            minimal_wisdom       = minimal_wisdom      ,
+            minimal_charisma     = minimal_charisma    ,
+            price                = price               ,
+            lore_to_identify     = lore_to_identify    ,
+            enchantment          = enchantment         ,
+            weigth               = weigth              ,
+            jump_on_use_to       = jump_on_use_to      ,
+            owned_count          = owned_count
         )
+
+
+    def _assert_inventory_items(self, lhs, rhs):
+        self.assertEqual(lhs.the_id              , rhs.the_id)
+        self.assertEqual(lhs.category            , rhs.category)
+        self.assertEqual(lhs.minimal_strength    , rhs.minimal_strength)
+        self.assertEqual(lhs.minimal_dexterity   , rhs.minimal_dexterity)
+        self.assertEqual(lhs.minimal_constitution, rhs.minimal_constitution)
+        self.assertEqual(lhs.minimal_intelligence, rhs.minimal_intelligence)
+        self.assertEqual(lhs.minimal_wisdom      , rhs.minimal_wisdom)
+        self.assertEqual(lhs.minimal_charisma    , rhs.minimal_charisma)
+        self.assertEqual(lhs.price               , rhs.price)
+        self.assertEqual(lhs.lore_to_identify    , rhs.lore_to_identify)
+        self.assertEqual(lhs.enchantment         , rhs.enchantment)
+        self.assertEqual(lhs.weigth              , rhs.weigth)
+        self.assertEqual(lhs.jump_on_use_to      , rhs.jump_on_use_to)
+        self.assertEqual(lhs.owned_count         , rhs.owned_count)

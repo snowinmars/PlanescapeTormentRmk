@@ -159,7 +159,7 @@ class S42LogicGeneratedTests(LogicTests):
         self.assertTrue(self.state_manager.inventory_items_manager.is_own_item('gsknife'))
         self.assertTrue(self.state_manager.inventory_items_manager.is_own_item('rags'))
         self.assertTrue(self.state_manager.inventory_items_manager.is_own_item('clotchrm'))
-        self.assertEqual(self.state_manager.inventory_items_manager.owned_item_count('clotchrm'), 2)
+        self.assertEqual(self.state_manager.inventory_items_manager.count_owned_items('clotchrm'), 2)
         self.assertEqual(self.state_manager.world_manager.get_gold(), gold_after)
 
         self.logic.r58984_action()
@@ -167,7 +167,7 @@ class S42LogicGeneratedTests(LogicTests):
         self.assertTrue(self.state_manager.inventory_items_manager.is_own_item('gsknife'))
         self.assertTrue(self.state_manager.inventory_items_manager.is_own_item('rags'))
         self.assertTrue(self.state_manager.inventory_items_manager.is_own_item('clotchrm'))
-        self.assertEqual(self.state_manager.inventory_items_manager.owned_item_count('clotchrm'), 4)
+        self.assertEqual(self.state_manager.inventory_items_manager.count_owned_items('clotchrm'), 4)
         self.assertEqual(self.state_manager.world_manager.get_gold(), gold_after_once)
 
 
