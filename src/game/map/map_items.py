@@ -21,6 +21,8 @@ class ContainerItem:
         else:
             self._items.insert(pos, item_id)
     def remove_item(self, item_id):
+        if item_id not in self._items:
+            raise KeyError(f'Item id \'{item_id}\' is not in container at pos \'{self._pos[0], self._pos[1]}\'')
         self._items.remove(item_id)
     def clear(self):
         self._items.clear()

@@ -63,24 +63,8 @@ class NarratManager:
         return self._narrat_store.history
 
 
-    def get_config(self):
-        return self._narrat_store.config
-
-
     def get_current_line(self):
         return self._narrat_store.current_line
-
-
-    def get_current_speaker(self):
-        if self._narrat_store.current_line is None:
-            return None
-        return self._narrat_store.current_line['who']
-
-
-    def get_current_text(self):
-        if self._narrat_store.current_line is None:
-            return None
-        return self._narrat_store.current_line['what']
 
 
     def get_current_menu_items(self):
@@ -113,7 +97,7 @@ class NarratManager:
             'is_nameless': is_nameless,
             'is_npc'     : is_npc     ,
             'is_nr'      : is_nr      ,
-            'id'         : self._narrat_store.last_history_id,
+            'id'         : self._narrat_store.last_history_id
         }
         self._narrat_store.current_line = entry
 

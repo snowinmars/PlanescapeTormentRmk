@@ -19,10 +19,6 @@ class NarratLogic:
         return self.state_manager.narrat_manager.get_current_line()
 
 
-    def get_current_text(self):
-        return self.state_manager.narrat_manager.get_current_text()
-
-
     def get_current_menu_items(self):
         return self.state_manager.narrat_manager.get_current_menu_items()
 
