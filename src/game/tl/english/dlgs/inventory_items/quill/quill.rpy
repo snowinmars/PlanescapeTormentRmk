@@ -2,5 +2,5 @@
 translate english quill_s0_6cfd1ff3:
 
     # 'quill_s0{#quill_s0}'
-    'Breaking the feather, you briefly recall the cough of the strange creature from the Morgue. You begin to understand more.{#dhall_feather_s0}'
+    nr 'Breaking the feather, you briefly recall the cough of the strange creature from the Morgue. You begin to understand more.{#dhall_feather_s0}'
 

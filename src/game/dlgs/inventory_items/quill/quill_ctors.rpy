@@ -10,7 +10,7 @@ label speak_quill:
 
 
 label ctor_quill_s0:
-    show quill_img default at center_left_down
+    show dialogue_sprite_quill_default at dialogue
     $ dialogue_stack.append('quill_dispose')
     jump quill_s0
 

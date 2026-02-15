@@ -1,7 +1,6 @@
-init 10 python in quill:
+init 10 python:
     from game.engine.runtime import (runtime)
     from game.dlgs.inventory_items.quill.QuillLogic import (QuillLogic)
-
     quillLogic = QuillLogic(runtime.global_state_manager)
 
 

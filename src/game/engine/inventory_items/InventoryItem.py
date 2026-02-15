@@ -2,6 +2,67 @@ import json
 from enum import (IntFlag)
 
 
+class InventoryItemCategories(IntFlag):
+    miscellaneous               =             1
+    amulets_and_necklaces       =             2
+    armor_chest_slot            =             4
+    belts_and_girdles           =             8
+    boots                       =             16
+    arrows                      =             32
+    bracers_and_gauntiets       =             64
+    headgear                    =            128
+    keys                        =            256
+    potions                     =            512
+    rings                       =           1024
+    scrolls                     =           2048
+    shields                     =           4096
+    food                        =           8192
+    bullets                     =          16384
+    bows                        =          32768
+    daggers                     =          65536
+    maces                       =         131072
+    slings                      =         262144
+    small_swords                =         524288
+    large_swords                =        1048576
+    hammers                     =        2097152
+    morning_stars               =        4194304
+    flails                      =        8388608
+    darts                       =        8388608
+    axes                        =       33554432
+    quarterstaves               =       67108864
+    crossbows                   =      134217728
+    hand_to_hand_weapons_0_slot =      134217728
+    spears                      =      536870912
+    halberds                    =     1073741824
+    bolts                       =     2147483648
+    cloaks_and_robes            =     4294967296
+    gold_pieces                 =     8589934592
+    gems                        =    17179869184
+    wands                       =    34359738368
+    containers                  =    68719476736
+    tatoos                      =   137438953472
+    lenses                      =   274877906944
+    globes_hand_slot            =   549755813888
+    eyeballs                    =  1099511627776
+    earings                     =  2199023255552
+    teeth_weapon_0_slot         =  4398046511104
+    bracelets                   =  8796093022208
+    ALL                         = 17591900831743 # get from __all
+    @classmethod
+    def __all(cls): # do not use it at runtime
+        result = cls(0)
+        for member in cls.__members__.values():
+            result |= member
+        return result
+    def __str__(self):
+        if self.value == 0:
+            return '0'
+        names = []
+        for member in self.__class__.__members__.values():
+            if member.value != 0 and (self.value & member.value):
+                names.append(f'{self.__class__.__name__}.{member.name}')
+        return '|'.join(names) if names else str(self.value)
+
 class InventoryItemFlags(IntFlag): # TODO [snow]: after release clean unused flags
     unsellable                 =      1
     two_handed                 =      2
@@ -21,9 +82,25 @@ class InventoryItemFlags(IntFlag): # TODO [snow]: after release clean unused fla
     ee_adamantine              =  32768
     ee_ex_undispellable        =  65536
     ee_ex_toggle_critical_hits = 131072
+    ALL                        = 262143 # get from __all
+    @classmethod
+    def __all(cls): # do not use it at runtime
+        result = cls(0)
+        for member in cls.__members__.values():
+            result |= member
+        return result
+    def __str__(self):
+        if self.value == 0:
+            return '0'
+        names = []
+        for member in self.__class__.__members__.values():
+            if member.value != 0 and (self.value & member.value):
+                names.append(f'{self.__class__.__name__}.{member.name}')
+        return '|'.join(names) if names else str(self.value)
 
 
 class InventoryItemUnusableBy(IntFlag): # TODO [snow]: after release clean unused flags
+    none            =          0
     chaotic         =          1
     evil            =          2
     good            =          4
@@ -56,6 +133,21 @@ class InventoryItemUnusableBy(IntFlag): # TODO [snow]: after release clean unuse
     ee_monk         =  536870912
     nameless_one    = 1073741824
     ee_half_orc     = 2147483648
+    ALL             = 4294967295 # get from __all
+    @classmethod
+    def __all(cls): # do not use it at runtime
+        result = cls(0)
+        for member in cls.__members__.values():
+            result |= member
+        return result
+    def __str__(self):
+        if self.value == 0:
+            return '0'
+        names = []
+        for member in self.__class__.__members__.values():
+            if member.value != 0 and (self.value & member.value):
+                names.append(f'{self.__class__.__name__}.{member.name}')
+        return '|'.join(names) if names else str(self.value)
 
 
 class InventoryItem:
@@ -63,6 +155,8 @@ class InventoryItem:
         self                         ,
         the_id                       ,
         category                     ,
+        flags                        ,
+        unusable_by                  ,
         minimal_strength       = 0   ,
         minimal_dexterity      = 0   ,
         minimal_constitution   = 0   ,
@@ -76,11 +170,11 @@ class InventoryItem:
         jump_on_use_to         = None,
         owned_count            = 0   ,
         identified             = True,
-        flags                  = None,
-        unusable_by            = None
     ):
         self.the_id               = the_id
         self.category             = category
+        self.flags                = flags
+        self.unusable_by          = unusable_by
         self.minimal_strength     = minimal_strength
         self.minimal_dexterity    = minimal_dexterity
         self.minimal_constitution = minimal_constitution
@@ -95,9 +189,6 @@ class InventoryItem:
         self.owned_count          = owned_count
         self.identified           = identified
 
-        self.flags       = InventoryItemFlags(0)      if flags       is None else flags
-        self.unusable_by = InventoryItemUnusableBy(0) if unusable_by is None else unusable_by
-
         self.general_name           = f'inventory_item_{the_id}_general_name'
         self.identified_name        = f'inventory_item_{the_id}_identified_name'
         self.general_description    = f'inventory_item_{the_id}_general_description'
@@ -111,6 +202,8 @@ class InventoryItem:
         return {
             'the_id'               : self.the_id              ,
             'category'             : self.category            ,
+            'flags'                : self.flags               ,
+            'unusable_by'          : self.unusable_by         ,
             'minimal_strength'     : self.minimal_strength    ,
             'minimal_dexterity'    : self.minimal_dexterity   ,
             'minimal_constitution' : self.minimal_constitution,
@@ -123,14 +216,15 @@ class InventoryItem:
             'weigth'               : self.weigth              ,
             'jump_on_use_to'       : self.jump_on_use_to      ,
             'owned_count'          : self.owned_count         ,
-            'flags'                : self.flags               ,
-            'unusable_by'          : self.unusable_by
+            'identified'           : self.identified
         }
 
 
     def __setstate__(self, state):
         self.the_id               = state['the_id']
         self.category             = state['category']
+        self.flags                = state['flags']
+        self.unusable_by          = state['unusable_by']
         self.minimal_strength     = state['minimal_strength']
         self.minimal_dexterity    = state['minimal_dexterity']
         self.minimal_constitution = state['minimal_constitution']
@@ -143,8 +237,15 @@ class InventoryItem:
         self.weigth               = state['weigth']
         self.jump_on_use_to       = state['jump_on_use_to']
         self.owned_count          = state['owned_count']
-        self.flags                = state['flags']
-        self.unusable_by          = state['unusable_by']
+        self.identified           = state['identified']
+
+        self.general_name           = f'inventory_item_{self.the_id}_general_name'
+        self.identified_name        = f'inventory_item_{self.the_id}_identified_name'
+        self.general_description    = f'inventory_item_{self.the_id}_general_description'
+        self.identified_description = f'inventory_item_{self.the_id}_identified_description'
+        self.fake_properties        = f'inventory_item_{self.the_id}_fake_properties' # '1-4 damage\n+3 str'
+        self.grid_image             = f'images_inventory_items_{self.the_id}_grid'
+        self.detail_image           = f'images_inventory_items_{self.the_id}_detail'
 
 
     def toJson(self, indent=None):
@@ -161,6 +262,8 @@ class InventoryItem:
         obj = cls(
             the_id                 = state['the_id']              ,
             category               = state['category']            ,
+            flags                  = state['flags']               ,
+            unusable_by            = state['unusable_by']         ,
             minimal_strength       = state['minimal_strength']    ,
             minimal_dexterity      = state['minimal_dexterity']   ,
             minimal_constitution   = state['minimal_constitution'],
@@ -173,8 +276,7 @@ class InventoryItem:
             weigth                 = state['weigth']              ,
             jump_on_use_to         = state['jump_on_use_to']      ,
             owned_count            = state['owned_count']         ,
-            flags                  = state['flags']               ,
-            unusable_by            = state['unusable_by']         ,
+            identified            = state['identified']
         )
         return obj
 
@@ -186,173 +288,113 @@ class InventoryItem:
         if self.identified:
             return self.identified_description
         return self.general_description
-    def unusable_by_list(self):
-        result = []
-        if self.unusable_by_chaotic():
-            result.append('inventory_item_unusable_by_chaotic')
-        if self.unusable_by_evil():
-            result.append('inventory_item_unusable_by_evil')
-        if self.unusable_by_good():
-            result.append('inventory_item_unusable_by_good')
-        if self.unusable_by_x_neutral():
-            result.append('inventory_item_unusable_by_x_neutral')
-        if self.unusable_by_lawful():
-            result.append('inventory_item_unusable_by_lawful')
-        if self.unusable_by_neutral_x():
-            result.append('inventory_item_unusable_by_neutral_x')
-        if self.unusable_by_sensate():
-            result.append('inventory_item_unusable_by_sensate')
-        if self.unusable_by_priest():
-            result.append('inventory_item_unusable_by_priest')
-        if self.unusable_by_godsman():
-            result.append('inventory_item_unusable_by_godsman')
-        if self.unusable_by_anarchist():
-            result.append('inventory_item_unusable_by_anarchist')
-        if self.unusable_by_xaositect():
-            result.append('inventory_item_unusable_by_xaositect')
-        if self.unusable_by_fighter():
-            result.append('inventory_item_unusable_by_fighter')
-        if self.unusable_by_non_aligned():
-            result.append('inventory_item_unusable_by_non_aligned')
-        if self.unusable_by_fighter_mage():
-            result.append('inventory_item_unusable_by_fighter_mage')
-        if self.unusable_by_dustman():
-            result.append('inventory_item_unusable_by_dustman')
-        if self.unusable_by_mercykiller():
-            result.append('inventory_item_unusable_by_mercykiller')
-        if self.unusable_by_indep():
-            result.append('inventory_item_unusable_by_indep')
-        if self.unusable_by_fighter_theif():
-            result.append('inventory_item_unusable_by_fighter_theif')
-        if self.unusable_by_mage():
-            result.append('inventory_item_unusable_by_mage')
-        if self.unusable_by_mage_thief():
-            result.append('inventory_item_unusable_by_mage_thief')
-        if self.unusable_by_dakkon():
-            result.append('inventory_item_unusable_by_dakkon')
-        if self.unusable_by_fall_from_grace():
-            result.append('inventory_item_unusable_by_fall_from_grace')
-        if self.unusable_by_thief():
-            result.append('inventory_item_unusable_by_thief')
-        if self.unusable_by_vhailor():
-            result.append('inventory_item_unusable_by_vhailor')
-        if self.unusable_by_ignus():
-            result.append('inventory_item_unusable_by_ignus')
-        if self.unusable_by_morte():
-            result.append('inventory_item_unusable_by_morte')
-        if self.unusable_by_nordom():
-            result.append('inventory_item_unusable_by_nordom')
-        if self.unusable_by_human():
-            result.append('inventory_item_unusable_by_human')
-        if self.unusable_by_annah():
-            result.append('inventory_item_unusable_by_annah')
-        if self.unusable_by_monk():
-            result.append('inventory_item_unusable_by_monk')
-        if self.unusable_by_nameless_one():
-            result.append('inventory_item_unusable_by_nameless_one')
-        if self.unusable_by_half_orc():
-            result.append('inventory_item_unusable_by_half_orc')
-        return result
-
+    def unusable_by_list(self): # unusable by x, y and z
+        names = []
+        if self.unusable_by == InventoryItemUnusableBy.none:
+            return names
+        for unusable_by in InventoryItemUnusableBy:
+            if unusable_by.value != 0 and (self.unusable_by & unusable_by):
+                names.append('InventoryItemUnusableBy.' + unusable_by.name)
+        return names
 
     def unsellable(self):
-        return InventoryItemFlags.unsellable in self.flags
+        return (InventoryItemFlags.unsellable & self.flags) != 0
     def two_handed(self):
-        return InventoryItemFlags.two_handed in self.flags
+        return (InventoryItemFlags.two_handed & self.flags) != 0
     def droppable(self):
-        return InventoryItemFlags.droppable in self.flags
+        return (InventoryItemFlags.droppable & self.flags) != 0
     def displayable(self):
-        return InventoryItemFlags.displayable in self.flags
+        return (InventoryItemFlags.displayable & self.flags) != 0
     def cursed(self):
-        return InventoryItemFlags.cursed in self.flags
+        return (InventoryItemFlags.cursed & self.flags) != 0
     def not_copyable(self):
-        return InventoryItemFlags.not_copyable in self.flags
+        return (InventoryItemFlags.not_copyable & self.flags) != 0
     def magical(self):
-        return InventoryItemFlags.magical in self.flags
+        return (InventoryItemFlags.magical & self.flags) != 0
     def left_handed(self):
-        return InventoryItemFlags.left_handed in self.flags
+        return (InventoryItemFlags.left_handed & self.flags) != 0
     def silver(self):
-        return InventoryItemFlags.silver in self.flags
+        return (InventoryItemFlags.silver & self.flags) != 0
     def cold_iron(self):
-        return InventoryItemFlags.cold_iron in self.flags
+        return (InventoryItemFlags.cold_iron & self.flags) != 0
     def steel(self):
-        return InventoryItemFlags.steel in self.flags
+        return (InventoryItemFlags.steel & self.flags) != 0
     def conversiable(self):
-        return InventoryItemFlags.conversiable in self.flags
+        return (InventoryItemFlags.conversiable & self.flags) != 0
     def fake_two_handed(self):
-        return InventoryItemFlags.ee_fake_two_handed in self.flags
+        return (InventoryItemFlags.ee_fake_two_handed & self.flags) != 0
     def forbid_offhand_weapon(self):
-        return InventoryItemFlags.ee_forbid_offhand_weapon in self.flags
+        return (InventoryItemFlags.ee_forbid_offhand_weapon & self.flags) != 0
     def usable_in_inventory(self):
-        return InventoryItemFlags.usable_in_inventory in self.flags
+        return (InventoryItemFlags.usable_in_inventory & self.flags) != 0
     def adamantine(self):
-        return InventoryItemFlags.ee_adamantine in self.flags
+        return (InventoryItemFlags.ee_adamantine & self.flags) != 0
     def undispellable(self):
-        return InventoryItemFlags.ee_ex_undispellable in self.flags
+        return (InventoryItemFlags.ee_ex_undispellable & self.flags) != 0
     def toggle_critical_hits(self):
-        return InventoryItemFlags.ee_ex_toggle_critical_hits in self.flags
+        return (InventoryItemFlags.ee_ex_toggle_critical_hits & self.flags) != 0
 
     def unusable_by_chaotic(self):
-        return InventoryItemUnusableBy.chaotic in self.unusable_by
+        return (InventoryItemUnusableBy.chaotic & self.unusable_by) != 0
     def unusable_by_evil(self):
-        return InventoryItemUnusableBy.evil in self.unusable_by
+        return (InventoryItemUnusableBy.evil & self.unusable_by) != 0
     def unusable_by_good(self):
-        return InventoryItemUnusableBy.good in self.unusable_by
+        return (InventoryItemUnusableBy.good & self.unusable_by) != 0
     def unusable_by_x_neutral(self):
-        return InventoryItemUnusableBy.x_neutral in self.unusable_by
+        return (InventoryItemUnusableBy.x_neutral & self.unusable_by) != 0
     def unusable_by_lawful(self):
-        return InventoryItemUnusableBy.lawful in self.unusable_by
+        return (InventoryItemUnusableBy.lawful & self.unusable_by) != 0
     def unusable_by_neutral_x(self):
-        return InventoryItemUnusableBy.neutral_x in self.unusable_by
+        return (InventoryItemUnusableBy.neutral_x & self.unusable_by) != 0
     def unusable_by_sensate(self):
-        return InventoryItemUnusableBy.sensate in self.unusable_by
+        return (InventoryItemUnusableBy.sensate & self.unusable_by) != 0
     def unusable_by_priest(self):
-        return InventoryItemUnusableBy.priest in self.unusable_by
+        return (InventoryItemUnusableBy.priest & self.unusable_by) != 0
     def unusable_by_godsman(self):
-        return InventoryItemUnusableBy.godsman in self.unusable_by
+        return (InventoryItemUnusableBy.godsman & self.unusable_by) != 0
     def unusable_by_anarchist(self):
-        return InventoryItemUnusableBy.anarchist in self.unusable_by
+        return (InventoryItemUnusableBy.anarchist & self.unusable_by) != 0
     def unusable_by_xaositect(self):
-        return InventoryItemUnusableBy.xaositect in self.unusable_by
+        return (InventoryItemUnusableBy.xaositect & self.unusable_by) != 0
     def unusable_by_fighter(self):
-        return InventoryItemUnusableBy.fighter in self.unusable_by
+        return (InventoryItemUnusableBy.fighter & self.unusable_by) != 0
     def unusable_by_non_aligned(self):
-        return InventoryItemUnusableBy.non_aligned in self.unusable_by
+        return (InventoryItemUnusableBy.non_aligned & self.unusable_by) != 0
     def unusable_by_fighter_mage(self):
-        return InventoryItemUnusableBy.fighter_mage in self.unusable_by
+        return (InventoryItemUnusableBy.fighter_mage & self.unusable_by) != 0
     def unusable_by_dustman(self):
-        return InventoryItemUnusableBy.dustman in self.unusable_by
+        return (InventoryItemUnusableBy.dustman & self.unusable_by) != 0
     def unusable_by_mercykiller(self):
-        return InventoryItemUnusableBy.mercykiller in self.unusable_by
+        return (InventoryItemUnusableBy.mercykiller & self.unusable_by) != 0
     def unusable_by_indep(self):
-        return InventoryItemUnusableBy.indep in self.unusable_by
+        return (InventoryItemUnusableBy.indep & self.unusable_by) != 0
     def unusable_by_fighter_theif(self):
-        return InventoryItemUnusableBy.fighter_theif in self.unusable_by
+        return (InventoryItemUnusableBy.fighter_theif & self.unusable_by) != 0
     def unusable_by_mage(self):
-        return InventoryItemUnusableBy.mage in self.unusable_by
+        return (InventoryItemUnusableBy.mage & self.unusable_by) != 0
     def unusable_by_mage_thief(self):
-        return InventoryItemUnusableBy.mage_thief in self.unusable_by
+        return (InventoryItemUnusableBy.mage_thief & self.unusable_by) != 0
     def unusable_by_dakkon(self):
-        return InventoryItemUnusableBy.dakkon in self.unusable_by
+        return (InventoryItemUnusableBy.dakkon & self.unusable_by) != 0
     def unusable_by_fall_from_grace(self):
-        return InventoryItemUnusableBy.fall_from_grace in self.unusable_by
+        return (InventoryItemUnusableBy.fall_from_grace & self.unusable_by) != 0
     def unusable_by_thief(self):
-        return InventoryItemUnusableBy.thief in self.unusable_by
+        return (InventoryItemUnusableBy.thief & self.unusable_by) != 0
     def unusable_by_vhailor(self):
-        return InventoryItemUnusableBy.vhailor in self.unusable_by
+        return (InventoryItemUnusableBy.vhailor & self.unusable_by) != 0
     def unusable_by_ignus(self):
-        return InventoryItemUnusableBy.ignus in self.unusable_by
+        return (InventoryItemUnusableBy.ignus & self.unusable_by) != 0
     def unusable_by_morte(self):
-        return InventoryItemUnusableBy.morte in self.unusable_by
+        return (InventoryItemUnusableBy.morte & self.unusable_by) != 0
     def unusable_by_nordom(self):
-        return InventoryItemUnusableBy.nordom in self.unusable_by
+        return (InventoryItemUnusableBy.nordom & self.unusable_by) != 0
     def unusable_by_human(self):
-        return InventoryItemUnusableBy.human in self.unusable_by
+        return (InventoryItemUnusableBy.human & self.unusable_by) != 0
     def unusable_by_annah(self):
-        return InventoryItemUnusableBy.annah in self.unusable_by
+        return (InventoryItemUnusableBy.annah & self.unusable_by) != 0
     def unusable_by_monk(self):
-        return InventoryItemUnusableBy.ee_monk in self.unusable_by
+        return (InventoryItemUnusableBy.ee_monk & self.unusable_by) != 0
     def unusable_by_nameless_one(self):
-        return InventoryItemUnusableBy.nameless_one in self.unusable_by
+        return (InventoryItemUnusableBy.nameless_one & self.unusable_by) != 0
     def unusable_by_half_orc(self):
-        return InventoryItemUnusableBy.ee_half_orc in self.unusable_by
+        return (InventoryItemUnusableBy.ee_half_orc & self.unusable_by) != 0

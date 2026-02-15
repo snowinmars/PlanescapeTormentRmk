@@ -5,25 +5,23 @@ init 10 python:
 
 
     def get_alignment(character):
-        good_treshold = 10
-        law_treshold = 10
-        if                   character.good >  good_treshold and                  character.law >  law_treshold:
+        if character.is_lawful_good():
             return _('screen_character_lawful_good{#screen_character_lawful_good}')
-        if                   character.good >  good_treshold and -law_treshold <= character.law <= law_treshold:
+        if character.is_neutral_good():
             return _('screen_character_neutral_good{#screen_character_neutral_good}')
-        if                   character.good >  good_treshold and                  character.law < -law_treshold:
+        if character.is_chaotic_good():
             return _('screen_character_chaotic_good{#screen_character_chaotic_good}')
-        if -good_treshold <= character.good <= good_treshold and                  character.law >  law_treshold:
+        if character.is_lawful_neutral():
             return _('screen_character_lawful_neutral{#screen_character_lawful_neutral}')
-        if -good_treshold <= character.good <= good_treshold and -law_treshold <= character.law <= law_treshold:
+        if character.is_true_neutral():
             return _('screen_character_true_neutral{#screen_character_true_neutral}')
-        if -good_treshold <= character.good <= good_treshold and                  character.law < -law_treshold:
+        if character.is_chaotic_neutral():
             return _('screen_character_chaotic_neutral{#screen_character_chaotic_neutral}')
-        if                   character.good < -good_treshold and                  character.law >  law_treshold:
+        if character.is_lawful_evil():
             return _('screen_character_lawful_evil{#screen_character_lawful_evil}')
-        if                   character.good < -good_treshold and -law_treshold <= character.law <= law_treshold:
+        if character.is_neutral_evil():
             return _('screen_character_neutral_evil{#screen_character_neutral_evil}')
-        if                   character.good < -good_treshold and                  character.law < -law_treshold:
+        if character.is_chaotic_evil():
             return _('screen_character_chaotic_evil{#screen_character_chaotic_evil}')
 
 

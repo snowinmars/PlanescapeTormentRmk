@@ -42,6 +42,9 @@ class Character:
         self.charisma       = charisma
         self.looks_like     = looks_like
 
+        self.good_treshold = 10
+        self.law_treshold  = 10
+
 
     def get_all_properties(self):
         return self.__getstate__()
@@ -90,6 +93,8 @@ class Character:
         self.charisma       = state['charisma']
         self.looks_like     = state['looks_like']
 
+        self.good_treshold = 10
+        self.law_treshold  = 10
 
     def toJson(self, indent=None):
         return json.dumps(
@@ -123,3 +128,35 @@ class Character:
             looks_like     = data['looks_like']
         )
         return obj
+
+
+    def is_good(self):
+        return character.good >  good_treshold
+    def is_evil(self):
+        return character.good < -good_treshold
+    def is_lawful(self):
+        return character.law  >  law_treshold
+    def is_chaotic(self):
+        return character.law  < -law_treshold
+    def is_lawful_good(self):
+        return                                    self.is_good() and self.is_lawful()
+    def is_neutral_good(self):
+        return                                    self.is_good() and -law_treshold <= character.law <= law_treshold
+    def is_chaotic_good(self):
+        return                                    self.is_good() and self.is_chaotic()
+    def is_lawful_neutral(self):
+        return -good_treshold <= character.good <= good_treshold and self.is_lawful()
+    def is_true_neutral(self):
+        return -good_treshold <= character.good <= good_treshold and -law_treshold <= character.law <= law_treshold
+    def is_chaotic_neutral(self):
+        return -good_treshold <= character.good <= good_treshold and self.is_chaotic()
+    def is_lawful_evil(self):
+        return                                    self.is_evil() and self.is_lawful()
+    def is_neutral_evil(self):
+        return                                    self.is_evil() and -law_treshold <= character.law <= law_treshold
+    def is_chaotic_evil(self):
+        return                                    self.is_evil() and self.is_chaotic()
+    def is_x_neutral(self): # lawful neutral, true neutral, chaotic neutral
+        return self.is_lawful_neutral() or self.is_true_neutral() or self.is_chaotic_neutral()
+    def is_neutral_x(self): # neutral good, true neutral, neutral evil
+        return self.is_neutral_good(self) or self.is_true_neutral() or self.is_neutral_evil()

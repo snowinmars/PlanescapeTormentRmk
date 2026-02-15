@@ -10,7 +10,7 @@ label speak_copearc:
 
 
 label ctor_copearc_s0:
-    show copearc_img default at center_left_down
+    show dialogue_sprite_copearc_default at dialogue
     $ dialogue_stack.append('copearc_dispose')
     jump copearc_s0
 
