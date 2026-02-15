@@ -40,6 +40,8 @@ class InventoryItemsStore():
             InventoryItem(
                 the_id               = x[1]['the_id']              ,
                 category             = x[1]['category']            ,
+                flags                = x[1]['flags']               ,
+                unusable_by          = x[1]['unusable_by']         ,
                 minimal_strength     = x[1]['minimal_strength']    ,
                 minimal_dexterity    = x[1]['minimal_dexterity']   ,
                 minimal_constitution = x[1]['minimal_constitution'],
@@ -52,6 +54,7 @@ class InventoryItemsStore():
                 weigth               = x[1]['weigth']              ,
                 jump_on_use_to       = x[1]['jump_on_use_to']      ,
                 owned_count          = x[1]['owned_count']         ,
+                identified           = x[1]['identified']          ,
             )), state['inventory_items'].items()))
         obj.__setstate__(state)
         return obj

@@ -1,7 +1,11 @@
 import unittest
 
 from game.engine.LogicTests import (LogicTests)
-from game.engine.inventory_items.InventoryItem import (InventoryItem)
+from game.engine.inventory_items.InventoryItem import (
+    InventoryItem          ,
+    InventoryItemFlags     ,
+    InventoryItemUnusableBy
+)
 
 
 class InventoryItemsManagerTests(LogicTests):
@@ -206,6 +210,8 @@ class InventoryItemsManagerTests(LogicTests):
         self                                   ,
         the_id               = 'the_id'        ,
         category             = 'category'      ,
+        flags                = InventoryItemFlags.displayable,
+        unusable_by          = InventoryItemUnusableBy.morte ,
         minimal_strength     = 2               ,
         minimal_dexterity    = 3               ,
         minimal_constitution = 5               ,
@@ -217,11 +223,14 @@ class InventoryItemsManagerTests(LogicTests):
         enchantment          = 23              ,
         weigth               = 29              ,
         jump_on_use_to       = 'jump_on_use_to',
-        owned_count          = 31
+        owned_count          = 31              ,
+        identified           = False
     ):
         return InventoryItem(
             the_id               = the_id              ,
             category             = category            ,
+            flags                = flags               ,
+            unusable_by          = unusable_by         ,
             minimal_strength     = minimal_strength    ,
             minimal_dexterity    = minimal_dexterity   ,
             minimal_constitution = minimal_constitution,
@@ -233,13 +242,16 @@ class InventoryItemsManagerTests(LogicTests):
             enchantment          = enchantment         ,
             weigth               = weigth              ,
             jump_on_use_to       = jump_on_use_to      ,
-            owned_count          = owned_count
+            owned_count          = owned_count         ,
+            identified           = identified
         )
 
 
     def _assert_inventory_items(self, lhs, rhs):
         self.assertEqual(lhs.the_id              , rhs.the_id)
         self.assertEqual(lhs.category            , rhs.category)
+        self.assertEqual(lhs.flags               , rhs.flags)
+        self.assertEqual(lhs.unusable_by         , rhs.unusable_by)
         self.assertEqual(lhs.minimal_strength    , rhs.minimal_strength)
         self.assertEqual(lhs.minimal_dexterity   , rhs.minimal_dexterity)
         self.assertEqual(lhs.minimal_constitution, rhs.minimal_constitution)
@@ -252,3 +264,4 @@ class InventoryItemsManagerTests(LogicTests):
         self.assertEqual(lhs.weigth              , rhs.weigth)
         self.assertEqual(lhs.jump_on_use_to      , rhs.jump_on_use_to)
         self.assertEqual(lhs.owned_count         , rhs.owned_count)
+        self.assertEqual(lhs.identified          , rhs.identified)

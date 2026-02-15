@@ -6,7 +6,7 @@ init 1 python: # init logger
     from game.engine.setup_logger import (setup_logger)
 
     enabled_dev       = True
-    config.version    = '0.14'
+    config.version    = '0.15'
     build.info['sha8'] = '9aafe4c2'
 
     if not persistent.language:
@@ -243,7 +243,45 @@ label start:
 
 label dev:
     $ gsm = runtime.global_state_manager
-    $ gsm.world_manager.inventory_items_manager.pick_item('keymo2')
+    $ gsm.inventory_items_manager.pick_item('bandage')
+    $ gsm.inventory_items_manager.pick_item('bonechrm')
+    $ gsm.inventory_items_manager.pick_item('breast1')
+    $ gsm.inventory_items_manager.pick_item('breast2')
+    $ gsm.inventory_items_manager.pick_item('breast3')
+    $ gsm.inventory_items_manager.pick_item('breast4')
+    $ gsm.inventory_items_manager.pick_item('clotchrm')
+    $ gsm.inventory_items_manager.pick_item('copearc')
+    $ gsm.inventory_items_manager.pick_item('copearo')
+    $ gsm.inventory_items_manager.pick_item('cube')
+    $ gsm.inventory_items_manager.pick_item('decant')
+    $ gsm.inventory_items_manager.pick_item('doornote')
+    $ gsm.inventory_items_manager.pick_item('dremind')
+    $ gsm.inventory_items_manager.pick_item('drequest')
+    $ gsm.inventory_items_manager.pick_item('dsupring')
+    $ gsm.inventory_items_manager.pick_item('dustrobe')
+    $ gsm.inventory_items_manager.pick_item('dwedring')
+    $ gsm.inventory_items_manager.pick_item('embalm')
+    $ gsm.inventory_items_manager.pick_item('fingbone')
+    $ gsm.inventory_items_manager.pick_item('gsknife')
+    $ gsm.inventory_items_manager.pick_item('junk')
+    $ gsm.inventory_items_manager.pick_item('keyem')
+    $ gsm.inventory_items_manager.pick_item('keymo')
+    $ gsm.inventory_items_manager.pick_item('keymo2')
+    $ gsm.inventory_items_manager.pick_item('keypr')
+    $ gsm.inventory_items_manager.pick_item('logpage')
+    $ gsm.inventory_items_manager.pick_item('n1201')
+    $ gsm.inventory_items_manager.pick_item('needle')
+    $ gsm.inventory_items_manager.pick_item('prybar')
+    $ gsm.inventory_items_manager.pick_item('quill')
+    $ gsm.inventory_items_manager.pick_item('rags')
+    $ gsm.inventory_items_manager.pick_item('scalpel')
+    $ gsm.inventory_items_manager.pick_item('spike')
+    $ gsm.inventory_items_manager.pick_item('strap')
+    $ gsm.inventory_items_manager.pick_item('tasklist')
+    $ gsm.inventory_items_manager.pick_item('tearring')
+    $ gsm.inventory_items_manager.pick_item('tomeba')
+    $ gsm.inventory_items_manager.pick_item('xacheart')
+    $ gsm.inventory_items_manager.pick_item('xacliver')
 
     jump intro
 

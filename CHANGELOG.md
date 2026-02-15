@@ -1,5 +1,9 @@
 # Change log
 
+## Version 0.15
+- Implement inventory item 'use' button
+- Bunch of the minor technical clean ups
+
 ## Version 0.14
 - Implement snacks: one line dialogue-notification handler
 - Implement loot system

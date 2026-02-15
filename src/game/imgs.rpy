@@ -37,7 +37,6 @@ image gui_submenu4             = 'gui/submenu4.png'
 image gui_switch_off           = 'gui/switch_off.png'
 image gui_switch_on            = 'gui/switch_on.png'
 image gui_tooltip              = 'gui/tooltip.png'
-image images_icons_speak_idle  = 'images/icons/speak_idle.png'
 
 image images_inventory_items_keypr_grid          = 'images/inventory_items/keypr_grid.png'
 image images_inventory_items_keypr_detail        = 'images/inventory_items/keypr_detail.png'

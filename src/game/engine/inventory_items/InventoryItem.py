@@ -276,7 +276,7 @@ class InventoryItem:
             weigth                 = state['weigth']              ,
             jump_on_use_to         = state['jump_on_use_to']      ,
             owned_count            = state['owned_count']         ,
-            identified            = state['identified']
+            identified             = state['identified']
         )
         return obj
 
