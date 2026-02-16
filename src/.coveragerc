@@ -7,8 +7,6 @@ omit =
 [report]
 show_missing = True
 skip_empty = True
-exclude_also =
-    unittest.main()
 
 [html]
 skip_empty = True

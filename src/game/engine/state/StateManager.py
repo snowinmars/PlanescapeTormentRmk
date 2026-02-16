@@ -14,21 +14,21 @@ class StateManager:
         quests_manager               ,
         external_report_change = None
     ):
-        self._log_events_manager     = log_events_manager
-        self.world_manager           = world_manager
-        self.characters_manager      = characters_manager
-        self.locations_manager       = locations_manager
-        self.journal_notes_manager   = journal_notes_manager
-        self.inventory_items_manager = inventory_items_manager
-        self.narrat_manager          = narrat_manager
-        self.quests_manager          = quests_manager
-        self.external_report_change  = external_report_change
+        self.     _log_events_manager =      log_events_manager
+        self.           world_manager =           world_manager
+        self.      characters_manager =      characters_manager
+        self.       locations_manager =       locations_manager
+        self.   journal_notes_manager =   journal_notes_manager
+        self. inventory_items_manager = inventory_items_manager
+        self.          narrat_manager =          narrat_manager
+        self.          quests_manager =          quests_manager
+        self.  external_report_change =  external_report_change
 
-        self.world_manager        .register_report_change_callback(self.report_change)
-        self.characters_manager   .register_report_change_callback(self.report_change)
-        self.locations_manager    .register_report_change_callback(self.report_change)
+        self.        world_manager.register_report_change_callback(self.report_change)
+        self.   characters_manager.register_report_change_callback(self.report_change)
+        self.    locations_manager.register_report_change_callback(self.report_change)
         self.journal_notes_manager.register_report_change_callback(self.report_change)
-        self.quests_manager       .register_report_change_callback(self.report_change)
+        self.       quests_manager.register_report_change_callback(self.report_change)
 
 
     def report_change(self, change_id, change_kwargs):

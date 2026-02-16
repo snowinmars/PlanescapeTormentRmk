@@ -2,18 +2,36 @@ import re
 import sys
 
 # Regex patterns for matching function calls and definitions
-CALL_PATTERN = re.compile(r'(?:if|\$)(?: not)? ([^\s]*?)Logic\.(.*?)\(')
-CALL_MAP_PATTERN = re.compile(r'get_party\(state_manager, ([^\s]*?)Logic\.(.*?)\(')
-CALL_SCREEN_PATTERN = re.compile(r'(?:sensitive |Function|str)\(([^\s]*?)Logic\.(.*?)(?:\(\)|,|\))')
+
+# Function(fooLogic.bar, x)
+FUNCTION_WITH_ARGS_SCREEN_PATTERN    = re.compile(r'Function\(([^\s]*?)Logic\.([^,\s]*?),')
+
+# Function(fooLogic.bar)
+FUNCTION_WITHOUT_ARGS_SCREEN_PATTERN = re.compile(r'Function\(([^\s]*?)Logic\.([^,\s]*?)\)')
+
+# - $ fooLogic.bar(x)
+# if fooLogic.bar()
+# if not fooLogic.bar()
+# get_party(runtime.global_state_manager, fooLogic.bar())
+# sensitive (fooLogic.bar(x))
+# str(fooLogic.bar().x)
+# default screen_character_npc = fooLogic.bar()
+# SetVariable('screen_character_npc', fooLogic.bar())
+# SetScreenVariable('screen_character_npc', fooLogic.bar())
+EXEC_PATTERN = re.compile(r'([^\(\s]*?)Logic\.(.*?)\(')
+
+# def bar(self):
+# def bar(self): # unused
 DEF_PATTERN = re.compile(r'def (.*?)\(self(.*)')
 
 
 def extract_used_functions(rpy_files):
     used_functions = set()
     for rpy_file in rpy_files:
-        matches = CALL_PATTERN.findall(rpy_file.content) + \
-                  CALL_MAP_PATTERN.findall(rpy_file.content) + \
-                  CALL_SCREEN_PATTERN.findall(rpy_file.content)
+        matches = EXEC_PATTERN                        .findall(rpy_file.content) + \
+                  FUNCTION_WITH_ARGS_SCREEN_PATTERN   .findall(rpy_file.content) + \
+                  FUNCTION_WITHOUT_ARGS_SCREEN_PATTERN.findall(rpy_file.content)
+
         for base, func_name in matches:
             system_func = func_name.startswith('__')
             if system_func:

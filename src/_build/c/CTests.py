@@ -19,7 +19,7 @@ class CTests(unittest.TestCase):
         cwd = os.getcwd()
         in_docker = cwd == '/app'
         folder_with_game = os.path.normpath(cwd)
-        print(f'C found in {folder_with_game}')
+        print(f'Game is in {folder_with_game}')
         self.rpy_files, self.logic_files, self.raw_files, self.dialog_replacer = find_files(folder_with_game)
         print(f'''
 C report:
@@ -104,7 +104,7 @@ def find_files(root_dir):
         content=dialog_replacer_path.read_text(encoding='utf-8')
     )
 
-    raw = root_path.rglob('./sources/russian/d_raw/*.D')
+    raw = root_path.rglob('./sources/src/russian/d_raw/*.D')
     raw_files = []
     for raw_file in raw:
         raw_files.append(GameFile(

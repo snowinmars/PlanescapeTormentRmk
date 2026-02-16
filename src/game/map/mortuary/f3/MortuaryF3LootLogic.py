@@ -3,30 +3,6 @@ class MortuaryF3LootLogic:
         self.state_manager = state_manager
 
 
-    def mortuary_key(self):
-        self.state_manager.inventory_items_manager.pick_item('keymo2')
-
-
-    def mortuary_task_list(self):
-        self.state_manager.inventory_items_manager.pick_item('tasklist')
-
-
-    def prybar(self):
-        self.state_manager.inventory_items_manager.pick_item('prybar')
-
-
-    def dustman_request(self):
-        self.state_manager.inventory_items_manager.pick_item('drequest'),
-
-
-    def needle(self):
-        self.state_manager.inventory_items_manager.pick_item('needle')
-
-
-    def garbage(self):
-        self.state_manager.inventory_items_manager.pick_item('junk')
-
-
     def get_where_party_stands(self):
         current_location = self.state_manager.locations_manager.get_location()
 

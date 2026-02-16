@@ -3,18 +3,6 @@ class MortuaryF2LootLogic:
         self.state_manager = state_manager
 
 
-    def scalpel(self):
-        self.state_manager.inventory_items_manager.pick_item('scalpel')
-
-
-    def embalm(self):
-        self.state_manager.inventory_items_manager.pick_item('embalm')
-
-
-    def copper_earring_closed(self):
-        self.state_manager.inventory_items_manager.pick_item('copearc')
-
-
     def get_where_party_stands(self):
         current_location = self.state_manager.locations_manager.get_location()
 

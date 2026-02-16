@@ -11,27 +11,6 @@ class MortuaryF2LootLogicTests(LogicTests):
         self.logic = MortuaryF2LootLogic(self.state_manager)
 
 
-    def test_prybar(self):
-        self._false_then_true_action(
-            lambda: self.state_manager.inventory_items_manager.is_own_item('scalpel'),
-            self.logic.scalpel
-        )
-
-
-    def test_embalm(self):
-        self._false_then_true_action(
-            lambda: self.state_manager.inventory_items_manager.is_own_item('embalm'),
-            self.logic.embalm
-        )
-
-
-    def test_copper_earring_closed(self):
-        self._false_then_true_action(
-            lambda: self.state_manager.inventory_items_manager.is_own_item('copearc'),
-            self.logic.copper_earring_closed
-        )
-
-
     def test_get_where_party_stands(self):
         self.state_manager.locations_manager.set_location('mortuary_f2r1')
         self._coords_are_not_none(self.logic.get_where_party_stands())

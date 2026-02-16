@@ -22,7 +22,7 @@ def check_boolean_are_not_integers(raw_files, dialog_replacer):
 
     for setting in settings.values():
         if not setting.values:
-            warnings.append(f'Variable not used: {setting.name} {setting.dialog_replacer_type}')
+            warnings.append(f"Variable not used: '{setting.name}' '{setting.dialog_replacer_type}'")
             continue
 
         actual_type = 'boolean' if all(v in {0, 1} for v in setting.values) else 'integer'
@@ -38,8 +38,8 @@ def check_boolean_are_not_integers(raw_files, dialog_replacer):
     return errors, warnings
 
 
-boolean_pattern = re.compile(r"self\.boolean\('(.*?)',")
-integer_pattern = re.compile(r"self\.integer\('(.*?)',")
+boolean_pattern = re.compile(r"self\.boolean\('([a-zA-Z_]*?)'\s*?,")
+integer_pattern = re.compile(r"self\.integer\('([a-zA-Z_]*?)'\s*?,")
 
 
 def parse_dialog_replacer(dialog_replacer):
@@ -50,11 +50,11 @@ def parse_dialog_replacer(dialog_replacer):
         integer_match = integer_pattern.search(line)
 
         if boolean_match is not None:
-            name = boolean_match.group(1)
+            name = boolean_match.group(1).strip()
             settings[name] = Setting(name, 'boolean')
 
         if integer_match is not None:
-            name = integer_match.group(1)
+            name = integer_match.group(1).strip()
             settings[name] = Setting(name, 'integer')
 
     return settings
