@@ -1,5 +1,10 @@
 # PlanescapeTormentRmk
 
+# IMPORTANT
+
+A current repository with a similar idea is https://github.com/snowinmars/planar-echo
+
+The current project served as a good learning platform for understanding InfinityEngine, but there are too much limitations here. I decided to change the paradigm, engine and language to create a more flexible architecture. It has set me back significantly, but I see the results as promising.
 
 [Russian](README.md)
 
